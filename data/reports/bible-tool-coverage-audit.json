@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-16T08:29:32.660Z",
+    "generated_at": "2026-07-16T08:59:23.988Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60634,
+      "entries": 60639,
       "normalizedHeadwords": 51077,
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
@@ -2344,98 +2344,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "groaning",
-          "count": 9,
-          "sampleRefs": [
-            "Exodus 2:24",
-            "Exodus 6:5",
-            "Job 23:2",
-            "Psalms 6:6",
-            "Psalms 38:9"
-          ],
-          "lookupCandidates": [
-            "groaning",
-            "groan",
-            "groane"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GROANING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "handful",
-          "count": 9,
-          "sampleRefs": [
-            "Leviticus 2:2",
-            "Leviticus 5:12",
-            "Leviticus 6:15",
-            "Leviticus 9:17",
-            "Numbers 5:26"
-          ],
-          "lookupCandidates": [
-            "handful"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HAND'FUL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "island",
-          "count": 9,
-          "sampleRefs": [
-            "Job 22:30",
-            "Isaiah 34:14",
-            "Acts 27:16",
-            "Acts 27:26",
-            "Acts 28:1"
-          ],
-          "lookupCandidates": [
-            "island"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ISLAND",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "learning",
-          "count": 9,
-          "sampleRefs": [
-            "Proverbs 1:5",
-            "Proverbs 9:9",
-            "Proverbs 16:21",
-            "Proverbs 16:23",
-            "Daniel 1:4"
-          ],
-          "lookupCandidates": [
-            "learning",
-            "learn",
-            "learne"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LEARNING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "millstone",
           "count": 9,
           "sampleRefs": [
@@ -2679,28 +2587,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "POSTER'ITY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "proclamation",
-          "count": 9,
-          "sampleRefs": [
-            "Exodus 32:5",
-            "1 Kings 15:22",
-            "1 Kings 22:36",
-            "2 Chronicles 24:9",
-            "2 Chronicles 30:5"
-          ],
-          "lookupCandidates": [
-            "proclamation"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PROCLAMATION",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3610,6 +3496,124 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FAN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fillets",
+          "count": 8,
+          "sampleRefs": [
+            "Exodus 27:10",
+            "Exodus 27:11",
+            "Exodus 36:38",
+            "Exodus 38:10",
+            "Exodus 38:11"
+          ],
+          "lookupCandidates": [
+            "fillets",
+            "fillet",
+            "fillete"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FIL'LET",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "flattering",
+          "count": 8,
+          "sampleRefs": [
+            "Job 32:21",
+            "Job 32:22",
+            "Psalms 12:2",
+            "Psalms 12:3",
+            "Proverbs 7:21"
+          ],
+          "lookupCandidates": [
+            "flattering",
+            "flatter",
+            "flattere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FLATTER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "followers",
+          "count": 8,
+          "sampleRefs": [
+            "1 Corinthians 4:16",
+            "1 Corinthians 11:1",
+            "Ephesians 5:1",
+            "Philippians 3:17",
+            "1 Thessalonians 1:6"
+          ],
+          "lookupCandidates": [
+            "followers",
+            "follower",
+            "followere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FOL'LOWER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "furniture",
+          "count": 8,
+          "sampleRefs": [
+            "Genesis 31:34",
+            "Exodus 31:7",
+            "Exodus 31:8",
+            "Exodus 31:8",
+            "Exodus 31:9"
+          ],
+          "lookupCandidates": [
+            "furniture"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FUR'NITURE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "furrows",
+          "count": 8,
+          "sampleRefs": [
+            "Job 31:38",
+            "Psalms 65:10",
+            "Psalms 129:3",
+            "Ezekiel 17:7",
+            "Ezekiel 17:10"
+          ],
+          "lookupCandidates": [
+            "furrows",
+            "furrow",
+            "furrowe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FUR'ROW",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10843,98 +10847,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "groaning",
-        "count": 9,
-        "sampleRefs": [
-          "Exodus 2:24",
-          "Exodus 6:5",
-          "Job 23:2",
-          "Psalms 6:6",
-          "Psalms 38:9"
-        ],
-        "lookupCandidates": [
-          "groaning",
-          "groan",
-          "groane"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GROANING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "handful",
-        "count": 9,
-        "sampleRefs": [
-          "Leviticus 2:2",
-          "Leviticus 5:12",
-          "Leviticus 6:15",
-          "Leviticus 9:17",
-          "Numbers 5:26"
-        ],
-        "lookupCandidates": [
-          "handful"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HAND'FUL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "island",
-        "count": 9,
-        "sampleRefs": [
-          "Job 22:30",
-          "Isaiah 34:14",
-          "Acts 27:16",
-          "Acts 27:26",
-          "Acts 28:1"
-        ],
-        "lookupCandidates": [
-          "island"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ISLAND",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "learning",
-        "count": 9,
-        "sampleRefs": [
-          "Proverbs 1:5",
-          "Proverbs 9:9",
-          "Proverbs 16:21",
-          "Proverbs 16:23",
-          "Daniel 1:4"
-        ],
-        "lookupCandidates": [
-          "learning",
-          "learn",
-          "learne"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LEARNING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "millstone",
         "count": 9,
         "sampleRefs": [
@@ -11178,28 +11090,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "POSTER'ITY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "proclamation",
-        "count": 9,
-        "sampleRefs": [
-          "Exodus 32:5",
-          "1 Kings 15:22",
-          "1 Kings 22:36",
-          "2 Chronicles 24:9",
-          "2 Chronicles 30:5"
-        ],
-        "lookupCandidates": [
-          "proclamation"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PROCLAMATION",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12109,6 +11999,124 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FAN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fillets",
+        "count": 8,
+        "sampleRefs": [
+          "Exodus 27:10",
+          "Exodus 27:11",
+          "Exodus 36:38",
+          "Exodus 38:10",
+          "Exodus 38:11"
+        ],
+        "lookupCandidates": [
+          "fillets",
+          "fillet",
+          "fillete"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FIL'LET",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "flattering",
+        "count": 8,
+        "sampleRefs": [
+          "Job 32:21",
+          "Job 32:22",
+          "Psalms 12:2",
+          "Psalms 12:3",
+          "Proverbs 7:21"
+        ],
+        "lookupCandidates": [
+          "flattering",
+          "flatter",
+          "flattere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FLATTER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "followers",
+        "count": 8,
+        "sampleRefs": [
+          "1 Corinthians 4:16",
+          "1 Corinthians 11:1",
+          "Ephesians 5:1",
+          "Philippians 3:17",
+          "1 Thessalonians 1:6"
+        ],
+        "lookupCandidates": [
+          "followers",
+          "follower",
+          "followere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FOL'LOWER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "furniture",
+        "count": 8,
+        "sampleRefs": [
+          "Genesis 31:34",
+          "Exodus 31:7",
+          "Exodus 31:8",
+          "Exodus 31:8",
+          "Exodus 31:9"
+        ],
+        "lookupCandidates": [
+          "furniture"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FUR'NITURE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "furrows",
+        "count": 8,
+        "sampleRefs": [
+          "Job 31:38",
+          "Psalms 65:10",
+          "Psalms 129:3",
+          "Ezekiel 17:7",
+          "Ezekiel 17:10"
+        ],
+        "lookupCandidates": [
+          "furrows",
+          "furrow",
+          "furrowe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FUR'ROW",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

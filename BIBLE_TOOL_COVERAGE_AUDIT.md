@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T08:29:32.660Z
+Generated: 2026-07-16T08:59:23.988Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -136,12 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | booths | BOOTH | 9 | ocr_full_import_needs_spot_review |
 | chamberlains | CHAMBERLAIN | 9 | ocr_full_import_needs_spot_review |
 | degrees | DEGREE' | 9 | ocr_full_import_needs_spot_review |
-| groaning | GROANING | 9 | ocr_full_import_needs_spot_review |
-| handful | HAND'FUL | 9 | ocr_full_import_needs_spot_review |
-| island | ISLAND | 9 | ocr_full_import_needs_spot_review |
-| learning | LEARNING | 9 | ocr_full_import_needs_spot_review |
 | millstone | MILL'STONE | 9 | ocr_full_import_needs_spot_review |
 | murmurings | MUR'MURING | 9 | ocr_full_import_needs_spot_review |
+| narrow | NAR'ROW | 9 | ocr_full_import_needs_spot_review |
+| nazarite | NAZ'ARITE | 9 | ocr_full_import_needs_spot_review |
+| necessary | NECESSARY | 9 | ocr_full_import_needs_spot_review |
+| noonday | NOON'DAY | 9 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
