@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-16T00:27:40.512Z",
+    "generated_at": "2026-07-16T00:57:43.378Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60439,
+      "entries": 60448,
       "normalizedHeadwords": 51044,
       "meaningfulWordsWithDefinition": 7889,
       "meaningfulWordsWithoutDefinition": 4565,
@@ -2068,116 +2068,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "begun",
-          "count": 12,
-          "sampleRefs": [
-            "Numbers 16:46",
-            "Numbers 16:47",
-            "Deuteronomy 2:31",
-            "Deuteronomy 3:24",
-            "Esther 6:13"
-          ],
-          "lookupCandidates": [
-            "begun"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BEGUN'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "difference",
-          "count": 12,
-          "sampleRefs": [
-            "Exodus 11:7",
-            "Leviticus 10:10",
-            "Leviticus 11:47",
-            "Leviticus 20:25",
-            "Ezekiel 22:26"
-          ],
-          "lookupCandidates": [
-            "difference"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DIF'FERENCE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "divination",
-          "count": 12,
-          "sampleRefs": [
-            "Numbers 22:7",
-            "Numbers 23:23",
-            "Deuteronomy 18:10",
-            "2 Kings 17:17",
-            "Jeremiah 14:14"
-          ],
-          "lookupCandidates": [
-            "divination"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DIVINA'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "drove",
-          "count": 12,
-          "sampleRefs": [
-            "Genesis 3:24",
-            "Genesis 15:11",
-            "Genesis 32:16",
-            "Genesis 32:16",
-            "Genesis 32:16"
-          ],
-          "lookupCandidates": [
-            "drove"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DROVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "foolishly",
-          "count": 12,
-          "sampleRefs": [
-            "Genesis 31:28",
-            "Numbers 12:11",
-            "1 Samuel 13:13",
-            "2 Samuel 24:10",
-            "1 Chronicles 21:8"
-          ],
-          "lookupCandidates": [
-            "foolishly"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FOOL'ISHLY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "happened",
           "count": 12,
           "sampleRefs": [
@@ -2199,28 +2089,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "HAP'PEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "hunt",
-          "count": 12,
-          "sampleRefs": [
-            "Genesis 27:5",
-            "1 Samuel 26:20",
-            "Job 38:39",
-            "Psalms 140:11",
-            "Proverbs 6:26"
-          ],
-          "lookupCandidates": [
-            "hunt"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HUNT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2246,28 +2114,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "mock",
-          "count": 12,
-          "sampleRefs": [
-            "Genesis 39:14",
-            "Genesis 39:17",
-            "Job 13:9",
-            "Job 21:3",
-            "Proverbs 1:26"
-          ],
-          "lookupCandidates": [
-            "mock"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MOCK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "mules",
           "count": 12,
           "sampleRefs": [
@@ -2288,50 +2134,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "MULE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "nature",
-          "count": 12,
-          "sampleRefs": [
-            "Romans 1:26",
-            "Romans 2:14",
-            "Romans 2:27",
-            "Romans 11:24",
-            "Romans 11:24"
-          ],
-          "lookupCandidates": [
-            "nature"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "NA'TURE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "nose",
-          "count": 12,
-          "sampleRefs": [
-            "Leviticus 21:18",
-            "2 Kings 19:28",
-            "Job 40:24",
-            "Job 41:2",
-            "Proverbs 30:33"
-          ],
-          "lookupCandidates": [
-            "nose"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "NOSE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3577,6 +3379,207 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "SIG'NET",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "speckled",
+          "count": 11,
+          "sampleRefs": [
+            "Genesis 30:32",
+            "Genesis 30:32",
+            "Genesis 30:33",
+            "Genesis 30:35",
+            "Genesis 30:39"
+          ],
+          "lookupCandidates": [
+            "speckled",
+            "speckl",
+            "speckle"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SPECK'LE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "speed",
+          "count": 11,
+          "sampleRefs": [
+            "Genesis 24:12",
+            "1 Samuel 20:38",
+            "2 Samuel 15:14",
+            "1 Kings 12:18",
+            "2 Chronicles 10:18"
+          ],
+          "lookupCandidates": [
+            "speed",
+            "spe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SPEED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stedfast",
+          "count": 11,
+          "sampleRefs": [
+            "Job 11:15",
+            "Psalms 78:8",
+            "Psalms 78:37",
+            "Daniel 6:26",
+            "1 Corinthians 7:37"
+          ],
+          "lookupCandidates": [
+            "stedfast"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STED'FAST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "straitly",
+          "count": 11,
+          "sampleRefs": [
+            "Genesis 43:7",
+            "Exodus 13:19",
+            "Joshua 6:1",
+            "1 Samuel 14:28",
+            "Matthew 9:30"
+          ],
+          "lookupCandidates": [
+            "straitly"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STRA'ITLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stroke",
+          "count": 11,
+          "sampleRefs": [
+            "Deuteronomy 17:8",
+            "Deuteronomy 17:8",
+            "Deuteronomy 19:5",
+            "Deuteronomy 21:5",
+            "Esther 9:5"
+          ],
+          "lookupCandidates": [
+            "stroke"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STROKE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "torment",
+          "count": 11,
+          "sampleRefs": [
+            "Matthew 8:29",
+            "Mark 5:7",
+            "Luke 8:28",
+            "Luke 16:28",
+            "1 John 4:18"
+          ],
+          "lookupCandidates": [
+            "torment"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TORMENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "utmost",
+          "count": 11,
+          "sampleRefs": [
+            "Genesis 49:26",
+            "Numbers 22:36",
+            "Numbers 22:41",
+            "Numbers 23:13",
+            "Deuteronomy 34:2"
+          ],
+          "lookupCandidates": [
+            "utmost"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "UT'MOST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "withdraw",
+          "count": 11,
+          "sampleRefs": [
+            "1 Samuel 14:19",
+            "Job 9:13",
+            "Job 13:21",
+            "Job 33:17",
+            "Proverbs 25:17"
+          ],
+          "lookupCandidates": [
+            "withdraw"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WITHDRAW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "wither",
+          "count": 11,
+          "sampleRefs": [
+            "Psalms 1:3",
+            "Psalms 37:2",
+            "Isaiah 19:6",
+            "Isaiah 19:7",
+            "Isaiah 40:24"
+          ],
+          "lookupCandidates": [
+            "wither"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WITHER",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10525,116 +10528,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "begun",
-        "count": 12,
-        "sampleRefs": [
-          "Numbers 16:46",
-          "Numbers 16:47",
-          "Deuteronomy 2:31",
-          "Deuteronomy 3:24",
-          "Esther 6:13"
-        ],
-        "lookupCandidates": [
-          "begun"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BEGUN'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "difference",
-        "count": 12,
-        "sampleRefs": [
-          "Exodus 11:7",
-          "Leviticus 10:10",
-          "Leviticus 11:47",
-          "Leviticus 20:25",
-          "Ezekiel 22:26"
-        ],
-        "lookupCandidates": [
-          "difference"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DIF'FERENCE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "divination",
-        "count": 12,
-        "sampleRefs": [
-          "Numbers 22:7",
-          "Numbers 23:23",
-          "Deuteronomy 18:10",
-          "2 Kings 17:17",
-          "Jeremiah 14:14"
-        ],
-        "lookupCandidates": [
-          "divination"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DIVINA'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "drove",
-        "count": 12,
-        "sampleRefs": [
-          "Genesis 3:24",
-          "Genesis 15:11",
-          "Genesis 32:16",
-          "Genesis 32:16",
-          "Genesis 32:16"
-        ],
-        "lookupCandidates": [
-          "drove"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DROVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "foolishly",
-        "count": 12,
-        "sampleRefs": [
-          "Genesis 31:28",
-          "Numbers 12:11",
-          "1 Samuel 13:13",
-          "2 Samuel 24:10",
-          "1 Chronicles 21:8"
-        ],
-        "lookupCandidates": [
-          "foolishly"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FOOL'ISHLY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "happened",
         "count": 12,
         "sampleRefs": [
@@ -10656,28 +10549,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "HAP'PEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "hunt",
-        "count": 12,
-        "sampleRefs": [
-          "Genesis 27:5",
-          "1 Samuel 26:20",
-          "Job 38:39",
-          "Psalms 140:11",
-          "Proverbs 6:26"
-        ],
-        "lookupCandidates": [
-          "hunt"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HUNT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10703,28 +10574,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "mock",
-        "count": 12,
-        "sampleRefs": [
-          "Genesis 39:14",
-          "Genesis 39:17",
-          "Job 13:9",
-          "Job 21:3",
-          "Proverbs 1:26"
-        ],
-        "lookupCandidates": [
-          "mock"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MOCK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "mules",
         "count": 12,
         "sampleRefs": [
@@ -10745,50 +10594,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "MULE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "nature",
-        "count": 12,
-        "sampleRefs": [
-          "Romans 1:26",
-          "Romans 2:14",
-          "Romans 2:27",
-          "Romans 11:24",
-          "Romans 11:24"
-        ],
-        "lookupCandidates": [
-          "nature"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "NA'TURE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "nose",
-        "count": 12,
-        "sampleRefs": [
-          "Leviticus 21:18",
-          "2 Kings 19:28",
-          "Job 40:24",
-          "Job 41:2",
-          "Proverbs 30:33"
-        ],
-        "lookupCandidates": [
-          "nose"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "NOSE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12034,6 +11839,207 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "SIG'NET",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "speckled",
+        "count": 11,
+        "sampleRefs": [
+          "Genesis 30:32",
+          "Genesis 30:32",
+          "Genesis 30:33",
+          "Genesis 30:35",
+          "Genesis 30:39"
+        ],
+        "lookupCandidates": [
+          "speckled",
+          "speckl",
+          "speckle"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SPECK'LE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "speed",
+        "count": 11,
+        "sampleRefs": [
+          "Genesis 24:12",
+          "1 Samuel 20:38",
+          "2 Samuel 15:14",
+          "1 Kings 12:18",
+          "2 Chronicles 10:18"
+        ],
+        "lookupCandidates": [
+          "speed",
+          "spe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SPEED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stedfast",
+        "count": 11,
+        "sampleRefs": [
+          "Job 11:15",
+          "Psalms 78:8",
+          "Psalms 78:37",
+          "Daniel 6:26",
+          "1 Corinthians 7:37"
+        ],
+        "lookupCandidates": [
+          "stedfast"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STED'FAST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "straitly",
+        "count": 11,
+        "sampleRefs": [
+          "Genesis 43:7",
+          "Exodus 13:19",
+          "Joshua 6:1",
+          "1 Samuel 14:28",
+          "Matthew 9:30"
+        ],
+        "lookupCandidates": [
+          "straitly"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STRA'ITLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stroke",
+        "count": 11,
+        "sampleRefs": [
+          "Deuteronomy 17:8",
+          "Deuteronomy 17:8",
+          "Deuteronomy 19:5",
+          "Deuteronomy 21:5",
+          "Esther 9:5"
+        ],
+        "lookupCandidates": [
+          "stroke"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STROKE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "torment",
+        "count": 11,
+        "sampleRefs": [
+          "Matthew 8:29",
+          "Mark 5:7",
+          "Luke 8:28",
+          "Luke 16:28",
+          "1 John 4:18"
+        ],
+        "lookupCandidates": [
+          "torment"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TORMENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "utmost",
+        "count": 11,
+        "sampleRefs": [
+          "Genesis 49:26",
+          "Numbers 22:36",
+          "Numbers 22:41",
+          "Numbers 23:13",
+          "Deuteronomy 34:2"
+        ],
+        "lookupCandidates": [
+          "utmost"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "UT'MOST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "withdraw",
+        "count": 11,
+        "sampleRefs": [
+          "1 Samuel 14:19",
+          "Job 9:13",
+          "Job 13:21",
+          "Job 33:17",
+          "Proverbs 25:17"
+        ],
+        "lookupCandidates": [
+          "withdraw"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WITHDRAW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "wither",
+        "count": 11,
+        "sampleRefs": [
+          "Psalms 1:3",
+          "Psalms 37:2",
+          "Isaiah 19:6",
+          "Isaiah 19:7",
+          "Isaiah 40:24"
+        ],
+        "lookupCandidates": [
+          "wither"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WITHER",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
