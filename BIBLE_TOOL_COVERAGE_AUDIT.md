@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T08:59:23.988Z
+Generated: 2026-07-16T10:00:37.392Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -125,23 +125,23 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | pollute | POLLU'TE | 11 | ocr_full_import_needs_spot_review |
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
-| nails | NAIL | 10 | ocr_full_import_needs_spot_review |
-| saddled | SAD'DLE | 10 | ocr_full_import_needs_spot_review |
-| scales | SCALE | 10 | ocr_full_import_needs_spot_review |
-| stairs | STAIR | 10 | ocr_full_import_needs_spot_review |
-| threshing | THRESH | 10 | ocr_full_import_needs_spot_review |
-| treasuries | TREASURY | 10 | ocr_full_import_needs_spot_review |
-| babes | BABE | 9 | ocr_full_import_needs_spot_review |
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
-| booths | BOOTH | 9 | ocr_full_import_needs_spot_review |
-| chamberlains | CHAMBERLAIN | 9 | ocr_full_import_needs_spot_review |
-| degrees | DEGREE' | 9 | ocr_full_import_needs_spot_review |
-| millstone | MILL'STONE | 9 | ocr_full_import_needs_spot_review |
-| murmurings | MUR'MURING | 9 | ocr_full_import_needs_spot_review |
-| narrow | NAR'ROW | 9 | ocr_full_import_needs_spot_review |
-| nazarite | NAZ'ARITE | 9 | ocr_full_import_needs_spot_review |
-| necessary | NECESSARY | 9 | ocr_full_import_needs_spot_review |
-| noonday | NOON'DAY | 9 | ocr_full_import_needs_spot_review |
+| pangs | PANG | 9 | ocr_full_import_needs_spot_review |
+| patient | PATIENT | 9 | ocr_full_import_needs_spot_review |
+| point | POINT | 9 | ocr_full_import_needs_spot_review |
+| poison | POIS'ON | 9 | ocr_full_import_needs_spot_review |
+| posterity | POSTER'ITY | 9 | ocr_full_import_needs_spot_review |
+| requite | REQUITE | 9 | ocr_full_import_needs_spot_review |
+| sapphire | SAP'PHIRE | 9 | ocr_full_import_needs_spot_review |
+| scorpions | SCORPION | 9 | ocr_full_import_needs_spot_review |
+| shined | SHIN | 9 | ocr_full_import_needs_spot_review |
+| shineth | SHIN | 9 | ocr_full_import_needs_spot_review |
+| shortened | SHORTEN | 9 | ocr_full_import_needs_spot_review |
+| showers | SHOW'ER | 9 | ocr_full_import_needs_spot_review |
+| stamped | STAMP | 9 | ocr_full_import_needs_spot_review |
+| stiffnecked | STIFF'-NECKED | 9 | ocr_full_import_needs_spot_review |
+| tip | TIP | 9 | ocr_full_import_needs_spot_review |
+| treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

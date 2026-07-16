@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12825,
+    "publicRows": 12828,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 66
   },
   "webster1828": {
-    "entries": 60639,
+    "entries": 60655,
     "baseEntries": 58428,
-    "reviewedOverrides": 2211,
+    "reviewedOverrides": 2227,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "Isaiah",
-      "coveredChapters": 66,
-      "totalChapters": 66,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.015151515151516
-    },
-    {
       "book": "Job",
       "coveredChapters": 42,
       "totalChapters": 42,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 11,
       "rowsPerChapter": 10.045454545454545
+    },
+    {
+      "book": "Judges",
+      "coveredChapters": 21,
+      "totalChapters": 21,
+      "coverage": 1,
+      "authors": 11,
+      "rowsPerChapter": 10.047619047619047
     }
   ]
 }
