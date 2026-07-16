@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T04:30:43.216Z
+Generated: 2026-07-16T04:59:58.265Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -126,22 +126,22 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bag | BAG | 11 | ocr_full_import_needs_spot_review |
 | gog | GOG | 11 | ocr_full_import_needs_spot_review |
 | pollute | POLLU'TE | 11 | ocr_full_import_needs_spot_review |
-| provide | PROVIDE | 11 | ocr_full_import_needs_spot_review |
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
-| signet | SIG'NET | 11 | ocr_full_import_needs_spot_review |
-| speckled | SPECK'LE | 11 | ocr_full_import_needs_spot_review |
-| stedfast | STED'FAST | 11 | ocr_full_import_needs_spot_review |
-| straitly | STRA'ITLY | 11 | ocr_full_import_needs_spot_review |
-| stroke | STROKE | 11 | ocr_full_import_needs_spot_review |
-| torment | TORMENT | 11 | ocr_full_import_needs_spot_review |
-| utmost | UT'MOST | 11 | ocr_full_import_needs_spot_review |
-| withdraw | WITHDRAW | 11 | ocr_full_import_needs_spot_review |
-| wither | WITHER | 11 | ocr_full_import_needs_spot_review |
 | accusation | ACCUSA'TION | 10 | ocr_full_import_needs_spot_review |
 | alarm | AL'ARM | 10 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
 | birthright | BIRTH'RIGHT | 10 | ocr_full_import_needs_spot_review |
 | boldness | BOLDNESS | 10 | ocr_full_import_needs_spot_review |
+| brim | BRIM | 10 | ocr_full_import_needs_spot_review |
+| bulls | BULL | 10 | ocr_full_import_needs_spot_review |
+| cheer | CHEER | 10 | ocr_full_import_needs_spot_review |
+| conspiracy | CONSPIR'ACY | 10 | ocr_full_import_needs_spot_review |
+| couple | COUP'LE | 10 | ocr_full_import_needs_spot_review |
+| coupling | COUP'LING | 10 | ocr_full_import_needs_spot_review |
+| dedication | DEDICA'TION | 10 | ocr_full_import_needs_spot_review |
+| dip | DIP | 10 | ocr_full_import_needs_spot_review |
+| enchantments | ENCH'ANTMENT | 10 | ocr_full_import_needs_spot_review |
+| equity | EQ'UITY | 10 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

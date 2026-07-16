@@ -11554,12 +11554,10 @@ const starterDeferredCommentaryImportFiles = deferredCommentaryImportFiles.filte
   fileName.startsWith("american-commentary") ||
   fileName.startsWith("adam-clarke") ||
   fileName.startsWith("wesley") ||
+  fileName.startsWith("h-a-ironside") ||
   fileName.startsWith("jfb") ||
   fileName.startsWith("treasury-of-david") ||
   fileName === "amos-expanded-public-domain-commentary.json" ||
-  fileName === "h-a-ironside-reviewed-colossians-commentary.json" ||
-  fileName.startsWith("h-a-ironside-hosea") ||
-  fileName.startsWith("h-a-ironside-minor-prophets") ||
   fileName.startsWith("scofield-1917"),
 );
 const VALIDATED_COMMENTARY_CATALOG_BOOKS = 66;
