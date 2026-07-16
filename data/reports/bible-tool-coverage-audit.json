@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-16T07:31:58.355Z",
+    "generated_at": "2026-07-16T08:29:32.660Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60624,
+      "entries": 60634,
       "normalizedHeadwords": 51077,
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
@@ -2321,117 +2321,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "consecration",
-          "count": 9,
-          "sampleRefs": [
-            "Exodus 29:22",
-            "Exodus 29:26",
-            "Exodus 29:27",
-            "Exodus 29:31",
-            "Leviticus 8:22"
-          ],
-          "lookupCandidates": [
-            "consecration"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CONSECRA'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "convenient",
-          "count": 9,
-          "sampleRefs": [
-            "Proverbs 30:8",
-            "Jeremiah 40:4",
-            "Jeremiah 40:5",
-            "Mark 6:21",
-            "Acts 24:25"
-          ],
-          "lookupCandidates": [
-            "convenient"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CONVE'NIENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "copy",
-          "count": 9,
-          "sampleRefs": [
-            "Deuteronomy 17:18",
-            "Joshua 8:32",
-            "Ezra 4:11",
-            "Ezra 4:23",
-            "Ezra 5:6"
-          ],
-          "lookupCandidates": [
-            "copy"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COP'Y",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "covetous",
-          "count": 9,
-          "sampleRefs": [
-            "Psalms 10:3",
-            "Luke 16:14",
-            "1 Corinthians 5:10",
-            "1 Corinthians 5:11",
-            "1 Corinthians 6:10"
-          ],
-          "lookupCandidates": [
-            "covetous",
-            "covetou"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COV'ETOUS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "cruse",
-          "count": 9,
-          "sampleRefs": [
-            "1 Samuel 26:11",
-            "1 Samuel 26:12",
-            "1 Samuel 26:16",
-            "1 Kings 14:3",
-            "1 Kings 17:12"
-          ],
-          "lookupCandidates": [
-            "cruse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CRUSE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "degrees",
           "count": 9,
           "sampleRefs": [
@@ -2452,120 +2341,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DEGREE'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "devout",
-          "count": 9,
-          "sampleRefs": [
-            "Luke 2:25",
-            "Acts 2:5",
-            "Acts 8:2",
-            "Acts 10:2",
-            "Acts 10:7"
-          ],
-          "lookupCandidates": [
-            "devout"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DEVOUT'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "dim",
-          "count": 9,
-          "sampleRefs": [
-            "Genesis 27:1",
-            "Genesis 48:10",
-            "Deuteronomy 34:7",
-            "1 Samuel 3:2",
-            "1 Samuel 4:15"
-          ],
-          "lookupCandidates": [
-            "dim"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DIM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "dread",
-          "count": 9,
-          "sampleRefs": [
-            "Genesis 9:2",
-            "Exodus 15:16",
-            "Deuteronomy 1:29",
-            "Deuteronomy 2:25",
-            "Deuteronomy 11:25"
-          ],
-          "lookupCandidates": [
-            "dread"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DREAD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "dress",
-          "count": 9,
-          "sampleRefs": [
-            "Genesis 2:15",
-            "Genesis 18:7",
-            "Deuteronomy 28:39",
-            "2 Samuel 12:4",
-            "2 Samuel 13:5"
-          ],
-          "lookupCandidates": [
-            "dress",
-            "dres",
-            "drese"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DRESS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "entreated",
-          "count": 9,
-          "sampleRefs": [
-            "Genesis 12:16",
-            "Exodus 5:22",
-            "Deuteronomy 26:6",
-            "Matthew 22:6",
-            "Luke 18:32"
-          ],
-          "lookupCandidates": [
-            "entreated",
-            "entreat",
-            "entreate"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ENTRE'ATED",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3611,6 +3386,230 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CASE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "covet",
+          "count": 8,
+          "sampleRefs": [
+            "Exodus 20:17",
+            "Exodus 20:17",
+            "Deuteronomy 5:21",
+            "Micah 2:2",
+            "Romans 7:7"
+          ],
+          "lookupCandidates": [
+            "covet"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "COVET",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dance",
+          "count": 8,
+          "sampleRefs": [
+            "Judges 21:21",
+            "Job 21:11",
+            "Psalms 149:3",
+            "Psalms 150:4",
+            "Ecclesiastes 3:4"
+          ],
+          "lookupCandidates": [
+            "dance"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "D'ANCE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "diminish",
+          "count": 8,
+          "sampleRefs": [
+            "Exodus 5:8",
+            "Exodus 21:10",
+            "Leviticus 25:16",
+            "Deuteronomy 4:2",
+            "Deuteronomy 12:32"
+          ],
+          "lookupCandidates": [
+            "diminish"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DIMIN'ISH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dissolved",
+          "count": 8,
+          "sampleRefs": [
+            "Psalms 75:3",
+            "Isaiah 14:31",
+            "Isaiah 24:19",
+            "Isaiah 34:4",
+            "Nahum 2:6"
+          ],
+          "lookupCandidates": [
+            "dissolved",
+            "dissolv",
+            "dissolve"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DISSOLVED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "diverse",
+          "count": 8,
+          "sampleRefs": [
+            "Leviticus 19:19",
+            "Esther 1:7",
+            "Esther 3:8",
+            "Daniel 7:3",
+            "Daniel 7:7"
+          ],
+          "lookupCandidates": [
+            "diverse"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DI'VERSE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dross",
+          "count": 8,
+          "sampleRefs": [
+            "Psalms 119:119",
+            "Proverbs 25:4",
+            "Proverbs 26:23",
+            "Isaiah 1:22",
+            "Isaiah 1:25"
+          ],
+          "lookupCandidates": [
+            "dross",
+            "dros",
+            "drose"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DROSS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "duty",
+          "count": 8,
+          "sampleRefs": [
+            "Exodus 21:10",
+            "Deuteronomy 25:5",
+            "Deuteronomy 25:7",
+            "2 Chronicles 8:14",
+            "Ezra 3:4"
+          ],
+          "lookupCandidates": [
+            "duty"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DU'TY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "embrace",
+          "count": 8,
+          "sampleRefs": [
+            "2 Kings 4:16",
+            "Job 24:8",
+            "Proverbs 4:8",
+            "Proverbs 5:20",
+            "Ecclesiastes 3:5"
+          ],
+          "lookupCandidates": [
+            "embrace"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EMBRA'CE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "entice",
+          "count": 8,
+          "sampleRefs": [
+            "Exodus 22:16",
+            "Deuteronomy 13:6",
+            "Judges 14:15",
+            "Judges 16:5",
+            "2 Chronicles 18:19"
+          ],
+          "lookupCandidates": [
+            "entice"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ENTI'CE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fan",
+          "count": 8,
+          "sampleRefs": [
+            "Isaiah 30:24",
+            "Isaiah 41:16",
+            "Jeremiah 4:11",
+            "Jeremiah 15:7",
+            "Jeremiah 15:7"
+          ],
+          "lookupCandidates": [
+            "fan"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FAN",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10821,117 +10820,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "consecration",
-        "count": 9,
-        "sampleRefs": [
-          "Exodus 29:22",
-          "Exodus 29:26",
-          "Exodus 29:27",
-          "Exodus 29:31",
-          "Leviticus 8:22"
-        ],
-        "lookupCandidates": [
-          "consecration"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CONSECRA'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "convenient",
-        "count": 9,
-        "sampleRefs": [
-          "Proverbs 30:8",
-          "Jeremiah 40:4",
-          "Jeremiah 40:5",
-          "Mark 6:21",
-          "Acts 24:25"
-        ],
-        "lookupCandidates": [
-          "convenient"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CONVE'NIENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "copy",
-        "count": 9,
-        "sampleRefs": [
-          "Deuteronomy 17:18",
-          "Joshua 8:32",
-          "Ezra 4:11",
-          "Ezra 4:23",
-          "Ezra 5:6"
-        ],
-        "lookupCandidates": [
-          "copy"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COP'Y",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "covetous",
-        "count": 9,
-        "sampleRefs": [
-          "Psalms 10:3",
-          "Luke 16:14",
-          "1 Corinthians 5:10",
-          "1 Corinthians 5:11",
-          "1 Corinthians 6:10"
-        ],
-        "lookupCandidates": [
-          "covetous",
-          "covetou"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COV'ETOUS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "cruse",
-        "count": 9,
-        "sampleRefs": [
-          "1 Samuel 26:11",
-          "1 Samuel 26:12",
-          "1 Samuel 26:16",
-          "1 Kings 14:3",
-          "1 Kings 17:12"
-        ],
-        "lookupCandidates": [
-          "cruse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CRUSE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "degrees",
         "count": 9,
         "sampleRefs": [
@@ -10952,120 +10840,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DEGREE'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "devout",
-        "count": 9,
-        "sampleRefs": [
-          "Luke 2:25",
-          "Acts 2:5",
-          "Acts 8:2",
-          "Acts 10:2",
-          "Acts 10:7"
-        ],
-        "lookupCandidates": [
-          "devout"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DEVOUT'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "dim",
-        "count": 9,
-        "sampleRefs": [
-          "Genesis 27:1",
-          "Genesis 48:10",
-          "Deuteronomy 34:7",
-          "1 Samuel 3:2",
-          "1 Samuel 4:15"
-        ],
-        "lookupCandidates": [
-          "dim"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DIM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "dread",
-        "count": 9,
-        "sampleRefs": [
-          "Genesis 9:2",
-          "Exodus 15:16",
-          "Deuteronomy 1:29",
-          "Deuteronomy 2:25",
-          "Deuteronomy 11:25"
-        ],
-        "lookupCandidates": [
-          "dread"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DREAD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "dress",
-        "count": 9,
-        "sampleRefs": [
-          "Genesis 2:15",
-          "Genesis 18:7",
-          "Deuteronomy 28:39",
-          "2 Samuel 12:4",
-          "2 Samuel 13:5"
-        ],
-        "lookupCandidates": [
-          "dress",
-          "dres",
-          "drese"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DRESS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "entreated",
-        "count": 9,
-        "sampleRefs": [
-          "Genesis 12:16",
-          "Exodus 5:22",
-          "Deuteronomy 26:6",
-          "Matthew 22:6",
-          "Luke 18:32"
-        ],
-        "lookupCandidates": [
-          "entreated",
-          "entreat",
-          "entreate"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ENTRE'ATED",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12111,6 +11885,230 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CASE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "covet",
+        "count": 8,
+        "sampleRefs": [
+          "Exodus 20:17",
+          "Exodus 20:17",
+          "Deuteronomy 5:21",
+          "Micah 2:2",
+          "Romans 7:7"
+        ],
+        "lookupCandidates": [
+          "covet"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "COVET",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dance",
+        "count": 8,
+        "sampleRefs": [
+          "Judges 21:21",
+          "Job 21:11",
+          "Psalms 149:3",
+          "Psalms 150:4",
+          "Ecclesiastes 3:4"
+        ],
+        "lookupCandidates": [
+          "dance"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "D'ANCE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "diminish",
+        "count": 8,
+        "sampleRefs": [
+          "Exodus 5:8",
+          "Exodus 21:10",
+          "Leviticus 25:16",
+          "Deuteronomy 4:2",
+          "Deuteronomy 12:32"
+        ],
+        "lookupCandidates": [
+          "diminish"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DIMIN'ISH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dissolved",
+        "count": 8,
+        "sampleRefs": [
+          "Psalms 75:3",
+          "Isaiah 14:31",
+          "Isaiah 24:19",
+          "Isaiah 34:4",
+          "Nahum 2:6"
+        ],
+        "lookupCandidates": [
+          "dissolved",
+          "dissolv",
+          "dissolve"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DISSOLVED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "diverse",
+        "count": 8,
+        "sampleRefs": [
+          "Leviticus 19:19",
+          "Esther 1:7",
+          "Esther 3:8",
+          "Daniel 7:3",
+          "Daniel 7:7"
+        ],
+        "lookupCandidates": [
+          "diverse"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DI'VERSE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dross",
+        "count": 8,
+        "sampleRefs": [
+          "Psalms 119:119",
+          "Proverbs 25:4",
+          "Proverbs 26:23",
+          "Isaiah 1:22",
+          "Isaiah 1:25"
+        ],
+        "lookupCandidates": [
+          "dross",
+          "dros",
+          "drose"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DROSS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "duty",
+        "count": 8,
+        "sampleRefs": [
+          "Exodus 21:10",
+          "Deuteronomy 25:5",
+          "Deuteronomy 25:7",
+          "2 Chronicles 8:14",
+          "Ezra 3:4"
+        ],
+        "lookupCandidates": [
+          "duty"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DU'TY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "embrace",
+        "count": 8,
+        "sampleRefs": [
+          "2 Kings 4:16",
+          "Job 24:8",
+          "Proverbs 4:8",
+          "Proverbs 5:20",
+          "Ecclesiastes 3:5"
+        ],
+        "lookupCandidates": [
+          "embrace"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EMBRA'CE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "entice",
+        "count": 8,
+        "sampleRefs": [
+          "Exodus 22:16",
+          "Deuteronomy 13:6",
+          "Judges 14:15",
+          "Judges 16:5",
+          "2 Chronicles 18:19"
+        ],
+        "lookupCandidates": [
+          "entice"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ENTI'CE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fan",
+        "count": 8,
+        "sampleRefs": [
+          "Isaiah 30:24",
+          "Isaiah 41:16",
+          "Jeremiah 4:11",
+          "Jeremiah 15:7",
+          "Jeremiah 15:7"
+        ],
+        "lookupCandidates": [
+          "fan"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FAN",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
