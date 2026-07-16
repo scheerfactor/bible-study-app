@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-16T02:19:25.506Z",
+    "generated_at": "2026-07-16T02:30:28.996Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60488,
+      "entries": 60507,
       "normalizedHeadwords": 51074,
       "meaningfulWordsWithDefinition": 7935,
       "meaningfulWordsWithoutDefinition": 4519,
@@ -2604,28 +2604,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "divine",
-          "count": 11,
-          "sampleRefs": [
-            "Genesis 44:15",
-            "1 Samuel 28:8",
-            "Proverbs 16:10",
-            "Ezekiel 13:9",
-            "Ezekiel 13:23"
-          ],
-          "lookupCandidates": [
-            "divine"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DIVI'NE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "encamp",
           "count": 11,
           "sampleRefs": [
@@ -2713,28 +2691,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FET'TER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "finish",
-          "count": 11,
-          "sampleRefs": [
-            "Genesis 6:16",
-            "Daniel 9:24",
-            "Zechariah 4:9",
-            "Luke 14:28",
-            "Luke 14:29"
-          ],
-          "lookupCandidates": [
-            "finish"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FIN'ISH",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3114,28 +3070,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "SAD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "sentence",
-          "count": 11,
-          "sampleRefs": [
-            "Deuteronomy 17:9",
-            "Deuteronomy 17:10",
-            "Deuteronomy 17:11",
-            "Deuteronomy 17:11",
-            "Psalms 17:2"
-          ],
-          "lookupCandidates": [
-            "sentence"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SEN'TENCE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3584,6 +3518,74 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "COUP'LE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "coupling",
+          "count": 10,
+          "sampleRefs": [
+            "Exodus 26:4",
+            "Exodus 26:4",
+            "Exodus 26:5",
+            "Exodus 26:10",
+            "Exodus 28:27"
+          ],
+          "lookupCandidates": [
+            "coupling",
+            "coupl",
+            "couple"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "COUP'LING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dedication",
+          "count": 10,
+          "sampleRefs": [
+            "Numbers 7:84",
+            "Numbers 7:88",
+            "2 Chronicles 7:9",
+            "Ezra 6:16",
+            "Ezra 6:17"
+          ],
+          "lookupCandidates": [
+            "dedication"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DEDICA'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dip",
+          "count": 10,
+          "sampleRefs": [
+            "Exodus 12:22",
+            "Leviticus 4:6",
+            "Leviticus 4:17",
+            "Leviticus 14:6",
+            "Leviticus 14:16"
+          ],
+          "lookupCandidates": [
+            "dip"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DIP",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11081,28 +11083,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "divine",
-        "count": 11,
-        "sampleRefs": [
-          "Genesis 44:15",
-          "1 Samuel 28:8",
-          "Proverbs 16:10",
-          "Ezekiel 13:9",
-          "Ezekiel 13:23"
-        ],
-        "lookupCandidates": [
-          "divine"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DIVI'NE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "encamp",
         "count": 11,
         "sampleRefs": [
@@ -11190,28 +11170,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FET'TER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "finish",
-        "count": 11,
-        "sampleRefs": [
-          "Genesis 6:16",
-          "Daniel 9:24",
-          "Zechariah 4:9",
-          "Luke 14:28",
-          "Luke 14:29"
-        ],
-        "lookupCandidates": [
-          "finish"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FIN'ISH",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -11591,28 +11549,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "SAD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "sentence",
-        "count": 11,
-        "sampleRefs": [
-          "Deuteronomy 17:9",
-          "Deuteronomy 17:10",
-          "Deuteronomy 17:11",
-          "Deuteronomy 17:11",
-          "Psalms 17:2"
-        ],
-        "lookupCandidates": [
-          "sentence"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SEN'TENCE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12061,6 +11997,74 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "COUP'LE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "coupling",
+        "count": 10,
+        "sampleRefs": [
+          "Exodus 26:4",
+          "Exodus 26:4",
+          "Exodus 26:5",
+          "Exodus 26:10",
+          "Exodus 28:27"
+        ],
+        "lookupCandidates": [
+          "coupling",
+          "coupl",
+          "couple"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "COUP'LING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dedication",
+        "count": 10,
+        "sampleRefs": [
+          "Numbers 7:84",
+          "Numbers 7:88",
+          "2 Chronicles 7:9",
+          "Ezra 6:16",
+          "Ezra 6:17"
+        ],
+        "lookupCandidates": [
+          "dedication"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DEDICA'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dip",
+        "count": 10,
+        "sampleRefs": [
+          "Exodus 12:22",
+          "Leviticus 4:6",
+          "Leviticus 4:17",
+          "Leviticus 14:6",
+          "Leviticus 14:16"
+        ],
+        "lookupCandidates": [
+          "dip"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DIP",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
