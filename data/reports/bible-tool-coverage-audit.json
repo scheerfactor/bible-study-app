@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-16T10:35:14.557Z",
+    "generated_at": "2026-07-16T11:04:32.774Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60699,
+      "entries": 60710,
       "normalizedHeadwords": 51077,
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
@@ -2153,142 +2153,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "furniture",
-          "count": 8,
-          "sampleRefs": [
-            "Genesis 31:34",
-            "Exodus 31:7",
-            "Exodus 31:8",
-            "Exodus 31:8",
-            "Exodus 31:9"
-          ],
-          "lookupCandidates": [
-            "furniture"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FUR'NITURE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "furrows",
-          "count": 8,
-          "sampleRefs": [
-            "Job 31:38",
-            "Psalms 65:10",
-            "Psalms 129:3",
-            "Ezekiel 17:7",
-            "Ezekiel 17:10"
-          ],
-          "lookupCandidates": [
-            "furrows",
-            "furrow",
-            "furrowe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FUR'ROW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "gallows",
-          "count": 8,
-          "sampleRefs": [
-            "Esther 5:14",
-            "Esther 5:14",
-            "Esther 6:4",
-            "Esther 7:9",
-            "Esther 7:10"
-          ],
-          "lookupCandidates": [
-            "gallows",
-            "gallow",
-            "gallowe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GAL'LOWS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "gladly",
-          "count": 8,
-          "sampleRefs": [
-            "Mark 6:20",
-            "Mark 12:37",
-            "Luke 8:40",
-            "Acts 2:41",
-            "Acts 21:17"
-          ],
-          "lookupCandidates": [
-            "gladly"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GLAD'LY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "grain",
-          "count": 8,
-          "sampleRefs": [
-            "Amos 9:9",
-            "Matthew 13:31",
-            "Matthew 17:20",
-            "Mark 4:31",
-            "Luke 13:19"
-          ],
-          "lookupCandidates": [
-            "grain"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GRAIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "hall",
-          "count": 8,
-          "sampleRefs": [
-            "Matthew 27:27",
-            "Mark 15:16",
-            "Luke 22:55",
-            "John 18:28",
-            "John 18:28"
-          ],
-          "lookupCandidates": [
-            "hall"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HALL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "hasten",
           "count": 8,
           "sampleRefs": [
@@ -2308,28 +2172,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "HASTEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "hastily",
-          "count": 8,
-          "sampleRefs": [
-            "Genesis 41:14",
-            "Judges 2:23",
-            "Judges 9:54",
-            "1 Samuel 4:14",
-            "1 Kings 20:33"
-          ],
-          "lookupCandidates": [
-            "hastily"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HASTILY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2355,55 +2197,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "hissing",
-          "count": 8,
-          "sampleRefs": [
-            "2 Chronicles 29:8",
-            "Jeremiah 18:16",
-            "Jeremiah 19:8",
-            "Jeremiah 25:9",
-            "Jeremiah 25:18"
-          ],
-          "lookupCandidates": [
-            "hissing",
-            "hiss",
-            "his",
-            "hisse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HISS'ING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "inclosed",
-          "count": 8,
-          "sampleRefs": [
-            "Exodus 39:6",
-            "Exodus 39:13",
-            "Judges 20:43",
-            "Psalms 17:10",
-            "Psalms 22:16"
-          ],
-          "lookupCandidates": [
-            "inclosed",
-            "inclos",
-            "inclose"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "INCLO'SED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "kin",
           "count": 8,
           "sampleRefs": [
@@ -2423,52 +2216,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "KIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "kneeled",
-          "count": 8,
-          "sampleRefs": [
-            "2 Chronicles 6:13",
-            "Daniel 6:10",
-            "Mark 10:17",
-            "Luke 22:41",
-            "Acts 7:60"
-          ],
-          "lookupCandidates": [
-            "kneeled",
-            "kneel",
-            "kneele"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "KNEEL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "lofty",
-          "count": 8,
-          "sampleRefs": [
-            "Psalms 131:1",
-            "Proverbs 30:13",
-            "Isaiah 2:11",
-            "Isaiah 2:12",
-            "Isaiah 5:15"
-          ],
-          "lookupCandidates": [
-            "lofty"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LOFT'Y",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3601,6 +3348,257 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "EXPE'DIENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fadeth",
+          "count": 7,
+          "sampleRefs": [
+            "Isaiah 1:30",
+            "Isaiah 24:4",
+            "Isaiah 24:4",
+            "Isaiah 40:7",
+            "Isaiah 40:8"
+          ],
+          "lookupCandidates": [
+            "fadeth",
+            "fad",
+            "fade"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FADE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "feathers",
+          "count": 7,
+          "sampleRefs": [
+            "Leviticus 1:16",
+            "Job 39:13",
+            "Psalms 68:13",
+            "Psalms 91:4",
+            "Ezekiel 17:3"
+          ],
+          "lookupCandidates": [
+            "feathers",
+            "feather",
+            "feathere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FEATHER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "feel",
+          "count": 7,
+          "sampleRefs": [
+            "Genesis 27:12",
+            "Genesis 27:21",
+            "Judges 16:26",
+            "Job 20:20",
+            "Psalms 58:9"
+          ],
+          "lookupCandidates": [
+            "feel"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FEEL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "figure",
+          "count": 7,
+          "sampleRefs": [
+            "Deuteronomy 4:16",
+            "Isaiah 44:13",
+            "Romans 5:14",
+            "1 Corinthians 4:6",
+            "Hebrews 9:9"
+          ],
+          "lookupCandidates": [
+            "figure"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FIG'URE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "firm",
+          "count": 7,
+          "sampleRefs": [
+            "Joshua 3:17",
+            "Joshua 4:3",
+            "Job 41:23",
+            "Job 41:24",
+            "Psalms 73:4"
+          ],
+          "lookupCandidates": [
+            "firm"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FIRM",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fishers",
+          "count": 7,
+          "sampleRefs": [
+            "Isaiah 19:8",
+            "Jeremiah 16:16",
+            "Ezekiel 47:10",
+            "Matthew 4:18",
+            "Matthew 4:19"
+          ],
+          "lookupCandidates": [
+            "fishers",
+            "fisher",
+            "fishere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FISH'ER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "foes",
+          "count": 7,
+          "sampleRefs": [
+            "1 Chronicles 21:12",
+            "Esther 9:16",
+            "Psalms 27:2",
+            "Psalms 30:1",
+            "Psalms 89:23"
+          ],
+          "lookupCandidates": [
+            "foes",
+            "foe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FOE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fragments",
+          "count": 7,
+          "sampleRefs": [
+            "Matthew 14:20",
+            "Mark 6:43",
+            "Mark 8:19",
+            "Mark 8:20",
+            "Luke 9:17"
+          ],
+          "lookupCandidates": [
+            "fragments",
+            "fragment",
+            "fragmente"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FRAG'MENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "got",
+          "count": 7,
+          "sampleRefs": [
+            "Genesis 36:6",
+            "Genesis 39:12",
+            "Genesis 39:15",
+            "Psalms 44:3",
+            "Ecclesiastes 2:7"
+          ],
+          "lookupCandidates": [
+            "got"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GOT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "grievously",
+          "count": 7,
+          "sampleRefs": [
+            "Isaiah 9:1",
+            "Jeremiah 23:19",
+            "Lamentations 1:8",
+            "Lamentations 1:20",
+            "Ezekiel 14:13"
+          ],
+          "lookupCandidates": [
+            "grievously"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GRIE'VOUSLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "grind",
+          "count": 7,
+          "sampleRefs": [
+            "Judges 16:21",
+            "Job 31:10",
+            "Isaiah 3:15",
+            "Isaiah 47:2",
+            "Lamentations 5:13"
+          ],
+          "lookupCandidates": [
+            "grind"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GRIND",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10643,142 +10641,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "furniture",
-        "count": 8,
-        "sampleRefs": [
-          "Genesis 31:34",
-          "Exodus 31:7",
-          "Exodus 31:8",
-          "Exodus 31:8",
-          "Exodus 31:9"
-        ],
-        "lookupCandidates": [
-          "furniture"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FUR'NITURE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "furrows",
-        "count": 8,
-        "sampleRefs": [
-          "Job 31:38",
-          "Psalms 65:10",
-          "Psalms 129:3",
-          "Ezekiel 17:7",
-          "Ezekiel 17:10"
-        ],
-        "lookupCandidates": [
-          "furrows",
-          "furrow",
-          "furrowe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FUR'ROW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "gallows",
-        "count": 8,
-        "sampleRefs": [
-          "Esther 5:14",
-          "Esther 5:14",
-          "Esther 6:4",
-          "Esther 7:9",
-          "Esther 7:10"
-        ],
-        "lookupCandidates": [
-          "gallows",
-          "gallow",
-          "gallowe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GAL'LOWS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "gladly",
-        "count": 8,
-        "sampleRefs": [
-          "Mark 6:20",
-          "Mark 12:37",
-          "Luke 8:40",
-          "Acts 2:41",
-          "Acts 21:17"
-        ],
-        "lookupCandidates": [
-          "gladly"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GLAD'LY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "grain",
-        "count": 8,
-        "sampleRefs": [
-          "Amos 9:9",
-          "Matthew 13:31",
-          "Matthew 17:20",
-          "Mark 4:31",
-          "Luke 13:19"
-        ],
-        "lookupCandidates": [
-          "grain"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GRAIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "hall",
-        "count": 8,
-        "sampleRefs": [
-          "Matthew 27:27",
-          "Mark 15:16",
-          "Luke 22:55",
-          "John 18:28",
-          "John 18:28"
-        ],
-        "lookupCandidates": [
-          "hall"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HALL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "hasten",
         "count": 8,
         "sampleRefs": [
@@ -10798,28 +10660,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "HASTEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "hastily",
-        "count": 8,
-        "sampleRefs": [
-          "Genesis 41:14",
-          "Judges 2:23",
-          "Judges 9:54",
-          "1 Samuel 4:14",
-          "1 Kings 20:33"
-        ],
-        "lookupCandidates": [
-          "hastily"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HASTILY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10845,55 +10685,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "hissing",
-        "count": 8,
-        "sampleRefs": [
-          "2 Chronicles 29:8",
-          "Jeremiah 18:16",
-          "Jeremiah 19:8",
-          "Jeremiah 25:9",
-          "Jeremiah 25:18"
-        ],
-        "lookupCandidates": [
-          "hissing",
-          "hiss",
-          "his",
-          "hisse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HISS'ING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "inclosed",
-        "count": 8,
-        "sampleRefs": [
-          "Exodus 39:6",
-          "Exodus 39:13",
-          "Judges 20:43",
-          "Psalms 17:10",
-          "Psalms 22:16"
-        ],
-        "lookupCandidates": [
-          "inclosed",
-          "inclos",
-          "inclose"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "INCLO'SED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "kin",
         "count": 8,
         "sampleRefs": [
@@ -10913,52 +10704,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "KIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "kneeled",
-        "count": 8,
-        "sampleRefs": [
-          "2 Chronicles 6:13",
-          "Daniel 6:10",
-          "Mark 10:17",
-          "Luke 22:41",
-          "Acts 7:60"
-        ],
-        "lookupCandidates": [
-          "kneeled",
-          "kneel",
-          "kneele"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "KNEEL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "lofty",
-        "count": 8,
-        "sampleRefs": [
-          "Psalms 131:1",
-          "Proverbs 30:13",
-          "Isaiah 2:11",
-          "Isaiah 2:12",
-          "Isaiah 5:15"
-        ],
-        "lookupCandidates": [
-          "lofty"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LOFT'Y",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12091,6 +11836,257 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "EXPE'DIENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fadeth",
+        "count": 7,
+        "sampleRefs": [
+          "Isaiah 1:30",
+          "Isaiah 24:4",
+          "Isaiah 24:4",
+          "Isaiah 40:7",
+          "Isaiah 40:8"
+        ],
+        "lookupCandidates": [
+          "fadeth",
+          "fad",
+          "fade"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FADE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "feathers",
+        "count": 7,
+        "sampleRefs": [
+          "Leviticus 1:16",
+          "Job 39:13",
+          "Psalms 68:13",
+          "Psalms 91:4",
+          "Ezekiel 17:3"
+        ],
+        "lookupCandidates": [
+          "feathers",
+          "feather",
+          "feathere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FEATHER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "feel",
+        "count": 7,
+        "sampleRefs": [
+          "Genesis 27:12",
+          "Genesis 27:21",
+          "Judges 16:26",
+          "Job 20:20",
+          "Psalms 58:9"
+        ],
+        "lookupCandidates": [
+          "feel"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FEEL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "figure",
+        "count": 7,
+        "sampleRefs": [
+          "Deuteronomy 4:16",
+          "Isaiah 44:13",
+          "Romans 5:14",
+          "1 Corinthians 4:6",
+          "Hebrews 9:9"
+        ],
+        "lookupCandidates": [
+          "figure"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FIG'URE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "firm",
+        "count": 7,
+        "sampleRefs": [
+          "Joshua 3:17",
+          "Joshua 4:3",
+          "Job 41:23",
+          "Job 41:24",
+          "Psalms 73:4"
+        ],
+        "lookupCandidates": [
+          "firm"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FIRM",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fishers",
+        "count": 7,
+        "sampleRefs": [
+          "Isaiah 19:8",
+          "Jeremiah 16:16",
+          "Ezekiel 47:10",
+          "Matthew 4:18",
+          "Matthew 4:19"
+        ],
+        "lookupCandidates": [
+          "fishers",
+          "fisher",
+          "fishere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FISH'ER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "foes",
+        "count": 7,
+        "sampleRefs": [
+          "1 Chronicles 21:12",
+          "Esther 9:16",
+          "Psalms 27:2",
+          "Psalms 30:1",
+          "Psalms 89:23"
+        ],
+        "lookupCandidates": [
+          "foes",
+          "foe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FOE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fragments",
+        "count": 7,
+        "sampleRefs": [
+          "Matthew 14:20",
+          "Mark 6:43",
+          "Mark 8:19",
+          "Mark 8:20",
+          "Luke 9:17"
+        ],
+        "lookupCandidates": [
+          "fragments",
+          "fragment",
+          "fragmente"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FRAG'MENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "got",
+        "count": 7,
+        "sampleRefs": [
+          "Genesis 36:6",
+          "Genesis 39:12",
+          "Genesis 39:15",
+          "Psalms 44:3",
+          "Ecclesiastes 2:7"
+        ],
+        "lookupCandidates": [
+          "got"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GOT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "grievously",
+        "count": 7,
+        "sampleRefs": [
+          "Isaiah 9:1",
+          "Jeremiah 23:19",
+          "Lamentations 1:8",
+          "Lamentations 1:20",
+          "Ezekiel 14:13"
+        ],
+        "lookupCandidates": [
+          "grievously"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GRIE'VOUSLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "grind",
+        "count": 7,
+        "sampleRefs": [
+          "Judges 16:21",
+          "Job 31:10",
+          "Isaiah 3:15",
+          "Isaiah 47:2",
+          "Lamentations 5:13"
+        ],
+        "lookupCandidates": [
+          "grind"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GRIND",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

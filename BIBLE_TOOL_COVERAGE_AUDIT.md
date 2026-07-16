@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T10:35:14.557Z
+Generated: 2026-07-16T11:04:32.774Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -128,20 +128,20 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
 | stiffnecked | STIFF'-NECKED | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
-| furniture | FUR'NITURE | 8 | ocr_full_import_needs_spot_review |
-| furrows | FUR'ROW | 8 | ocr_full_import_needs_spot_review |
-| gallows | GAL'LOWS | 8 | ocr_full_import_needs_spot_review |
-| gladly | GLAD'LY | 8 | ocr_full_import_needs_spot_review |
-| grain | GRAIN | 8 | ocr_full_import_needs_spot_review |
-| hall | HALL | 8 | ocr_full_import_needs_spot_review |
 | hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
-| hastily | HASTILY | 8 | ocr_full_import_needs_spot_review |
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
-| hissing | HISS'ING | 8 | ocr_full_import_needs_spot_review |
-| inclosed | INCLO'SED | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
-| kneeled | KNEEL | 8 | ocr_full_import_needs_spot_review |
-| lofty | LOFT'Y | 8 | ocr_full_import_needs_spot_review |
+| magistrates | MAGISTRATE | 8 | ocr_full_import_needs_spot_review |
+| manifold | MAN'IFOLD | 8 | ocr_full_import_needs_spot_review |
+| ouches | OUCH | 8 | ocr_full_import_needs_spot_review |
+| peaceable | PE'ACEABLE | 8 | ocr_full_import_needs_spot_review |
+| pearls | PEARL | 8 | ocr_full_import_needs_spot_review |
+| perils | PER'IL | 8 | ocr_full_import_needs_spot_review |
+| pierced | PIERCED | 8 | ocr_full_import_needs_spot_review |
+| prosperous | PROS'PEROUS | 8 | ocr_full_import_needs_spot_review |
+| pursuing | PURSU'ING | 8 | ocr_full_import_needs_spot_review |
+| sail | SAIL | 8 | ocr_full_import_needs_spot_review |
+| sheath | SHEATH | 8 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

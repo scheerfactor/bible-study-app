@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12839,
+    "publicRows": 12842,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
-    "authors": 68
+    "authors": 69
   },
   "webster1828": {
-    "entries": 60699,
+    "entries": 60710,
     "baseEntries": 58428,
-    "reviewedOverrides": 2271,
+    "reviewedOverrides": 2282,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "Deuteronomy",
-      "coveredChapters": 34,
-      "totalChapters": 34,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.029411764705882
-    },
-    {
       "book": "1 Samuel",
       "coveredChapters": 31,
       "totalChapters": 31,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 11,
       "rowsPerChapter": 10.1
+    },
+    {
+      "book": "Ruth",
+      "coveredChapters": 4,
+      "totalChapters": 4,
+      "coverage": 1,
+      "authors": 11,
+      "rowsPerChapter": 10.25
     }
   ]
 }

@@ -1,15 +1,15 @@
 # Core Study Data Audit
 
-Generated: 2026-07-16T10:35:15.662Z
+Generated: 2026-07-16T11:04:34.239Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - Library: 2235 verified resources.
-- Public commentary rows: 12839.
+- Public commentary rows: 12842.
 - Public commentary chapter coverage: 1189/1189 (100%).
-- Commentary authors represented in public imports: 68.
-- Webster 1828 entries: 60699 (51268 normalized headwords; 2271 reviewed overlay).
+- Commentary authors represented in public imports: 69.
+- Webster 1828 entries: 60710 (51268 normalized headwords; 2282 reviewed overlay).
 - Strong's lexicon entries: 14296; reviewed KJV word mappings: 729289 rows from 66 batch files across 66 books and 1189 chapters (broad import).
 - Public TSK rows: 6994; staged TSK rows: 50; source verses covered: 2563; chapters covered: 1189; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
@@ -88,7 +88,6 @@ Generated: 2026-07-16T10:35:15.662Z
 
 | Book | Chapters Covered | Total Chapters | Coverage | Authors | Rows/Chapter |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Deuteronomy | 34 | 34 | 100% | 11 | 10.0 |
 | 1 Samuel | 31 | 31 | 100% | 11 | 10.0 |
 | 1 Chronicles | 29 | 29 | 100% | 11 | 10.0 |
 | Leviticus | 27 | 27 | 100% | 11 | 10.0 |
@@ -100,6 +99,7 @@ Generated: 2026-07-16T10:35:15.662Z
 | Genesis | 50 | 50 | 100% | 11 | 10.1 |
 | Ecclesiastes | 12 | 12 | 100% | 11 | 10.1 |
 | Exodus | 40 | 40 | 100% | 11 | 10.1 |
+| Ruth | 4 | 4 | 100% | 11 | 10.3 |
 
 ## Recommendations
 
