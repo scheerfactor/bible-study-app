@@ -1,10 +1,10 @@
 # Permission Follow-Up Drafts
 
-These drafts are prepared for the first permission requests sent on July 3, 2026.
+These drafts were prepared for the first permission requests sent July 3-4, 2026. The repository still records the Kregel, Thru the Bible, Christian Focus, and Mark Cahill requests as unanswered as of August 14, 2026, but the sender mailbox must be checked before any follow-up is sent.
 
 Do not send automatically. Stephen must review each thread, confirm there has been no reply, and approve each follow-up before sending.
 
-Recommended send date: July 10, 2026.
+Current review date: August 14, 2026.
 
 ## General Follow-Up Rules
 
@@ -129,6 +129,8 @@ hello@fathersbusinessmasteryresources.com
 
 ## Way of Life Literature / David Cloud
 
+Status: Do not send this generic follow-up while the documented public sharing policy is sufficient. Use it only when requesting a specific broader right for a named resource.
+
 Subject:
 
 ```text
@@ -145,6 +147,34 @@ I wanted to briefly follow up on my permissions question for Father's Business B
 I am not asking to publish any Way of Life text, books, audio, or excerpts without written approval. I am simply trying to find the correct process for metadata, official links, approved excerpts, private beta use, or possible future permission discussions.
 
 If there is a better contact or preferred permissions process, I would appreciate your direction.
+
+Thank you,
+
+Stephen Scheer
+Father's Business Bible Study
+hello@fathersbusinessmasteryresources.com
+```
+
+## Mark Cahill
+
+Status: Repository records no response. Verify the original sender mailbox before sending.
+
+Subject:
+
+```text
+Following up on selected evangelism resource permissions
+```
+
+Body:
+
+```text
+Hello,
+
+I wanted to briefly follow up on my July 4 permissions question for selected Mark Cahill evangelism resources in Father's Business Bible Study.
+
+I am not asking to publish anything without written approval. I am trying to find the correct process for a title-specific request involving metadata, an official link, approved cover art, an approved excerpt, or an official audio/video embed.
+
+If there is a better permissions contact or form, I would be grateful for the right next step.
 
 Thank you,
 
