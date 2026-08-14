@@ -46,6 +46,7 @@ import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useM
 import Image from "next/image";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
+import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
 import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
@@ -236,14 +237,14 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
 type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
-type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion";
+type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion" | "Archaeology";
 type PresentationWorkspaceView = "manager" | "deck" | "presenter" | "controller" | "presentation";
 type PresentationStatus = "Draft" | "Ready" | "Archived";
 
@@ -2473,9 +2474,33 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Shepherd",
     assetUrl: "/media/sermon-slides/photos/shepherd.jpg",
   },
+  "nimrud-relief": {
+    label: "Nimrud Assyrian Relief",
+    description: "Bible-world context for Calah, Nimrud, and the Assyrian empire.",
+    background: "linear-gradient(135deg, rgba(20,27,24,0.20), rgba(94,72,44,0.12))",
+    motif: "Nimrud",
+    category: "Archaeology",
+    assetUrl: "/media/sermon-slides/archaeology/nimrud-relief.jpg",
+  },
+  "nineveh-cavalry-relief": {
+    label: "Nineveh Cavalry Relief",
+    description: "Assyrian military context from Sennacherib's Nineveh.",
+    background: "linear-gradient(135deg, rgba(20,27,24,0.24), rgba(94,72,44,0.14))",
+    motif: "Nineveh",
+    category: "Archaeology",
+    assetUrl: "/media/sermon-slides/archaeology/nineveh-cavalry-relief.jpg",
+  },
+  "babylon-lion-panel": {
+    label: "Babylon Lion Panel",
+    description: "Neo-Babylonian context from the reign-period of Nebuchadnezzar II.",
+    background: "linear-gradient(135deg, rgba(24,32,42,0.18), rgba(52,91,106,0.16))",
+    motif: "Babylon",
+    category: "Archaeology",
+    assetUrl: "/media/sermon-slides/archaeology/babylon-lion-panel.jpg",
+  },
 };
 
-const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
+const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
 
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";
@@ -18659,6 +18684,42 @@ export default function Home() {
     setSyncMessage("Presentation draft started.");
   }
 
+  function createResourcePresentation(seed: ResourcePresentationSeed) {
+    const now = new Date().toISOString();
+    const entry: PresentationEntry = {
+      ...createEmptyPresentation(seed.title),
+      slides: seed.slides.map((slide, index) =>
+        normalizeSermonSlide({
+          ...slide,
+          bibleText: "",
+          speakerNotes: seed.notes,
+          backgroundStyle: "Theme",
+          imageTheme: SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot].label,
+          imageSlot: slide.imageSlot,
+          layout: slide.type === "Illustration" ? "Image Left" : "Centered",
+          fontScale: "Normal",
+          titleScale: "Medium",
+          textPlacement: "Center",
+          accentStyle: "Line",
+          verseDisplay: "Reference + Text",
+          backgroundIntensity: "Balanced",
+          showImageMotif: true,
+          showTypeLabel: false,
+          showImageLabel: false,
+          showFooterBranding: false,
+        }, index),
+      ),
+      notes: seed.notes,
+      createdAt: now,
+      updatedAt: now,
+    };
+    savePresentationEntryList((entries) => [entry, ...entries]);
+    setPresentationDraft(entry);
+    setPresentationWorkspaceView("deck");
+    setTab("presentations");
+    setSyncMessage(seed.title + " was added to Presentations.");
+  }
+
   function openPresentationEntry(entry: PresentationEntry) {
     setPresentationDraft(entry);
     setPresentationWorkspaceView("deck");
@@ -22443,6 +22504,7 @@ export default function Home() {
                 onOpenCollection={openLibraryCollection}
                 onOpenReadingPath={openReadingPath}
                 onOpenBible={() => setTab("bible")}
+                onCreateResourcePresentation={createResourcePresentation}
                 onOpenBookIntroduction={openBookIntroduction}
                 onAddToListeningQueue={addLibraryToListeningQueue}
                 onAddToStudyPlaylist={addCurrentResourceToStudyPlaylist}
@@ -35009,6 +35071,7 @@ function LibraryScreen({
   onOpenCollection,
   onOpenReadingPath,
   onOpenBible,
+  onCreateResourcePresentation,
   onOpenBookIntroduction,
   onAddToListeningQueue,
   onAddToStudyPlaylist,
@@ -35110,6 +35173,7 @@ function LibraryScreen({
   onOpenCollection: (collectionId: string) => void;
   onOpenReadingPath: (pathId: string) => void;
   onOpenBible: () => void;
+  onCreateResourcePresentation: (seed: ResourcePresentationSeed) => void;
   onOpenBookIntroduction: (book: string) => void;
   onAddToListeningQueue: (slug: string) => void;
   onAddToStudyPlaylist: (slug: string) => void;
@@ -35719,6 +35783,8 @@ function LibraryScreen({
       )}
 
       <AuthorCompletionDashboard resources={resources} onOpenAuthor={onOpenAuthor} />
+
+      <BibleStudyResourceDesk onCreatePresentation={onCreateResourcePresentation} />
 
       <LibraryMediaCenter
         books={mediaBookResources}

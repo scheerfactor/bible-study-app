@@ -101791,5 +101791,146 @@
     "checksum_sha256": "38c04ff6420cfdc4fd167822476d2da1e07611a280dd355e92b7e6c646394497",
     "file_size_bytes": 235034,
     "word_count": 40329
+  },
+  {
+    "title": "Fresh Light from the Ancient Monuments",
+    "author": "A. H. Sayce",
+    "year": 1884,
+    "category": "Bible Handbooks",
+    "collection": "Bible Lands & Archaeology",
+    "source_url": "https://www.gutenberg.org/ebooks/32883",
+    "download_url": "https://www.gutenberg.org/ebooks/32883",
+    "source_license_url": "https://www.gutenberg.org/policy/permission.html",
+    "file_path": "data/library/verified/fresh-light-from-the-ancient-monuments-a-h-sayce.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg item page identifies this title as Public domain in the USA; source text and Project Gutenberg permission terms are recorded.",
+    "notes": "A pioneering 1884 survey. Valuable historical background, but archaeology has advanced since publication; verify current identifications before teaching.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "approved with discernment",
+    "recommended_use": "Historical Bible-world background for Egypt, Assyria, Babylonia, monuments, inscriptions, and geography.",
+    "resource_labels": [
+      "Bible Archaeology",
+      "Bible Lands & Archaeology",
+      "Public domain"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "Verify current scholarship before teaching"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Fresh Light from the Ancient Monuments",
+      "author": "A. H. Sayce",
+      "category": "Bible Handbooks",
+      "collection": "Bible Lands & Archaeology",
+      "badge": "Bible Archaeology",
+      "palette": {
+        "from": "#324c45",
+        "to": "#8a7046"
+      }
+    },
+    "reading_time_minutes": 231,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "21ac7ac2e95c6ff084a83ed5c3f4671aec3cbebc84e78aebb71d50ff814259a3",
+    "file_size_bytes": 303940,
+    "word_count": 51897
+  },
+  {
+    "title": "Archæology and the Bible",
+    "author": "George A. Barton",
+    "year": 1916,
+    "category": "Bible Handbooks",
+    "collection": "Bible Lands & Archaeology",
+    "source_url": "https://www.gutenberg.org/ebooks/43070",
+    "download_url": "https://www.gutenberg.org/ebooks/43070",
+    "source_license_url": "https://www.gutenberg.org/policy/permission.html",
+    "file_path": "data/library/verified/archaeology-and-the-bible-george-a-barton.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg item page identifies this title as Public domain in the USA; source text and Project Gutenberg permission terms are recorded.",
+    "notes": "Second-edition public-domain text. Use as historical evidence and context, not as final authority; verify dated conclusions.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "approved with discernment",
+    "recommended_use": "Bible lands, excavation history, and translations of ancient documents that illuminate biblical history.",
+    "resource_labels": [
+      "Bible Archaeology",
+      "Bible Lands & Archaeology",
+      "Public domain"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "Verify current scholarship before teaching"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Archæology and the Bible",
+      "author": "George A. Barton",
+      "category": "Bible Handbooks",
+      "collection": "Bible Lands & Archaeology",
+      "badge": "Bible Archaeology",
+      "palette": {
+        "from": "#324c45",
+        "to": "#8a7046"
+      }
+    },
+    "reading_time_minutes": 931,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d1bfd5bed91ab8e1e73030233a84cf9f35963c2d5fac5bfcc099d34bc7a295ea",
+    "file_size_bytes": 1286612,
+    "word_count": 209318
+  },
+  {
+    "title": "Commentary on Revelation",
+    "author": "E. W. Bullinger",
+    "year": 1909,
+    "category": "Commentaries",
+    "collection": "Classic Commentaries",
+    "source_url": "https://www.ccel.org/ccel/bullinger/apocalypse.html",
+    "download_url": "https://www.ccel.org/ccel/bullinger/apocalypse.html",
+    "source_license_url": "https://www.ccel.org/ccel/bullinger/apocalypse.html",
+    "file_path": "data/library/verified/commentary-on-revelation-e-w-bullinger.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": true,
+    "rights_basis": "CCEL text header identifies the F. H. Revell 1909 print basis and explicitly marks Rights: Public Domain.",
+    "notes": "CCEL identifies the 1909 print basis and Public Domain rights. Bullinger reflects ultra-dispensational conclusions; compare every claim with Scripture and other reviewed voices.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "approved with discernment",
+    "recommended_use": "Detailed dispensational commentary for comparing interpretations of Revelation after reading the KJV text.",
+    "resource_labels": [
+      "Commentaries",
+      "Classic Commentaries",
+      "Public domain"
+    ],
+    "resource_warnings": [
+      "Not all doctrine endorsed",
+      "Use with discernment",
+      "Compare with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Commentary on Revelation",
+      "author": "E. W. Bullinger",
+      "category": "Commentaries",
+      "collection": "Classic Commentaries",
+      "badge": "Commentaries",
+      "palette": {
+        "from": "#324c45",
+        "to": "#8a7046"
+      }
+    },
+    "reading_time_minutes": 917,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7c8d65ff4959d8aa2c02ded04160f2125a2d582cfc340bcbbf5e9c90a4432bc0",
+    "file_size_bytes": 1432436,
+    "word_count": 206187
   }
 ]

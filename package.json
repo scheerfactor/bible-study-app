@@ -62,7 +62,10 @@
     "build:strongs-mapping-index": "node scripts/build-kjv-strongs-mapping-index.mjs",
     "build:strongs-chapter-shards": "node scripts/build-strongs-chapter-shards.mjs",
     "plan:strongs-mapping": "node scripts/plan-strongs-mapping-completion.mjs",
-    "storage:upload:strongs-shards": "node scripts/upload-strongs-chapter-shards-with-wrangler.mjs"
+    "storage:upload:strongs-shards": "node scripts/upload-strongs-chapter-shards-with-wrangler.mjs",
+    "hymns:prepare": "node scripts/prepare-hymns.mjs",
+    "validate:hymns": "node scripts/validate-hymns.mjs",
+    "validate:archaeology": "node scripts/validate-archaeology.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
@@ -80,6 +83,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "midi-file": "^1.2.4",
     "playwright": "^1.60.0",
     "tailwindcss": "^4",
     "typescript": "^5"

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:mp="http://www.mutopiaproject.org/piece-data/0.1/">
+
+<rdf:Description rdf:about=".">
+    <mp:title>Amazing Grace</mp:title>
+    <mp:composer>Traditional</mp:composer>
+    <mp:opus/>
+    <mp:lyricist/>
+    <mp:for>Scottish Bagpipes</mp:for>
+    <mp:date/>
+    <mp:style>Hymn</mp:style>
+    <mp:metre>Hymn</mp:metre>
+    <mp:arranger>Trad. / Arr.: Breizh Partitions</mp:arranger>
+    <mp:source>New arrangement</mp:source>
+    <mp:licence>Creative Commons Attribution-ShareAlike 3.0</mp:licence>
+
+    <mp:lyFile>amazing-mutopia.ly</mp:lyFile>
+    <mp:midFile>amazing-mutopia.mid</mp:midFile>
+    <mp:psFileA4>amazing-mutopia-a4.ps.gz</mp:psFileA4>
+    <mp:pdfFileA4>amazing-mutopia-a4.pdf</mp:pdfFileA4>
+    <mp:psFileLet>amazing-mutopia-let.ps.gz</mp:psFileLet>
+    <mp:pdfFileLet>amazing-mutopia-let.pdf</mp:pdfFileLet>
+    <mp:pngFile>amazing-mutopia-preview.png</mp:pngFile>
+    <mp:pngHeight>57</mp:pngHeight>
+    <mp:pngWidth>497</mp:pngWidth>
+
+    <mp:id>Mutopia-2012/02/12-1832</mp:id>
+    <mp:maintainer>Breizh Partitions</mp:maintainer>
+    <mp:maintainerEmail>contact (at) breizh-partitions (dot) fr</mp:maintainerEmail>
+    <mp:maintainerWeb>http://www.breizh-partitions.fr/</mp:maintainerWeb>
+    <mp:moreInfo>Typeset by Breizh Partitions, 2012.</mp:moreInfo>
+    <mp:lilypondVersion>2.14.2</mp:lilypondVersion>
+</rdf:Description>
+
+</rdf:RDF>
