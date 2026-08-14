@@ -17,7 +17,7 @@ Current review date: August 14, 2026.
 
 ## Pastor Bo Wagner / CBC Resources
 
-Status: Draft for reply requested by recipient.
+Status: Draft for written confirmation after phone coordination. The mailbox shows July 7 scheduling messages but no written title/use grant.
 
 Subject:
 
@@ -30,17 +30,20 @@ Body:
 ```text
 Pastor Wagner,
 
-Thank you so much for your kind response. I completely understand and appreciate your desire to do due diligence.
+Thank you again for your encouraging replies and willingness to speak with me about Father's Business Bible Study.
 
-By God’s grace, I am building Father’s Business Mastery Resources to help Christians, pastors, Sunday school teachers, and churches study God’s Word. The centerpiece is a Bible study platform centered on the King James Bible that brings together carefully curated resources, Bible study tools, maps, dictionaries, commentaries, and trusted Christian literature in one place.
+For my permission records, could you please confirm in writing which selected Dr. Bo Wagner / Word of His Mouth resources may be used in these limited ways?
 
-My goal is not simply to sell books, but to encourage believers in sound biblical study while also helping ministries like yours make their materials more accessible to people who may never discover them otherwise.
+1. List the title, description, and official ministry or purchase link
+2. Display the official cover or promotional graphic
+3. Display a short approved excerpt
+4. Link to or embed an official audio/video player
 
-Every ministry or publisher whose materials are included will be clearly credited, linked to their ministry, and represented respectfully. I would like the platform to help send readers back to the original ministries for more resources, support, and continued study.
+I will treat anything not specifically confirmed as not granted. I will also ask separately before any full-text hosting, media rehosting, TTS or audiobook use, presentation export, paid app access, affiliate arrangement, or resale.
 
-I would be happy to answer any questions or schedule a phone call if that would be helpful.
+If you prefer, you may name one title to begin with and mark each item above Yes or No.
 
-Thank you again for considering my request.
+Thank you for helping me document this correctly.
 
 In Christ,
 Stephen Scheer
