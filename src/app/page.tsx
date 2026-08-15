@@ -131,6 +131,7 @@ type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "cros
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader" | "author" | "collection" | "path";
+type LibraryBrowseMode = "catalog" | "shelves";
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
@@ -35373,6 +35374,21 @@ function LibraryScreen({
   onAddManualReadBook: () => void;
   onReadAgain: (slug: string) => void;
 }) {
+  const [browseMode, setBrowseMode] = useState<LibraryBrowseMode>("catalog");
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      const savedMode = window.localStorage.getItem("fathers-business-library-browse-mode");
+      if (savedMode === "catalog" || savedMode === "shelves") setBrowseMode(savedMode);
+    }, 0);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
+  function selectBrowseMode(mode: LibraryBrowseMode) {
+    setBrowseMode(mode);
+    window.localStorage.setItem("fathers-business-library-browse-mode", mode);
+  }
+
   if (view === "reader" && activeResource) {
     const progress = progressState[activeResource.slug];
     const listening = listeningProgress[activeResource.slug];
@@ -35714,9 +35730,31 @@ function LibraryScreen({
               Library Feedback
             </a>
           </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
-            <p className="text-2xl font-semibold text-[var(--green)]">{groupedWorkCount}</p>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
+          <div className="flex flex-col items-end gap-3">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
+              <p className="text-2xl font-semibold text-[var(--green)]">{groupedWorkCount}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
+            </div>
+            <div className="inline-flex rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-1" role="group" aria-label="Library view">
+              <button
+                aria-pressed={browseMode === "shelves"}
+                className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold ${browseMode === "shelves" ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"}`}
+                onClick={() => selectBrowseMode("shelves")}
+                type="button"
+              >
+                <Library size={15} />
+                Shelf view
+              </button>
+              <button
+                aria-pressed={browseMode === "catalog"}
+                className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold ${browseMode === "catalog" ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"}`}
+                onClick={() => selectBrowseMode("catalog")}
+                type="button"
+              >
+                <BookOpen size={15} />
+                Catalog view
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -35820,6 +35858,26 @@ function LibraryScreen({
         )}
       </section>
 
+      {browseMode === "shelves" ? (
+        <>
+          <LibraryShelfBrowser
+            resources={browsingAllResources ? resources : filteredResources}
+            progressState={progressState}
+            completedState={completedState}
+            onOpenDetail={onOpenDetail}
+            onOpenReader={onOpenReader}
+            onOpenAuthor={onOpenAuthor}
+          />
+          {!browsingAllResources && filteredLicensedResourceLinks.length > 0 && (
+            <LibraryShelf title="Permissioned Link Results" horizontal>
+              {filteredLicensedResourceLinks.map((resource) => (
+                <LicensedResourceLinkCard key={`licensed-shelf-search-${resource.id}`} resource={resource} />
+              ))}
+            </LibraryShelf>
+          )}
+        </>
+      ) : (
+        <>
       {!browsingAllResources && (
         <LibraryShelf title="Search Results">
           {displayedLibraryResources.length ? displayedLibraryResources.map((resource) => (
@@ -36563,6 +36621,8 @@ function LibraryScreen({
             Showing the first {displayedLibraryResources.length} resources. Use search or a category above to narrow all {resources.length.toLocaleString()} resources quickly.
           </p>
         </div>
+      )}
+        </>
       )}
     </div>
   );
@@ -43255,6 +43315,178 @@ function LibraryShelf({ title, children, horizontal = false }: { title: string; 
         }
       >
         {children}
+      </div>
+    </section>
+  );
+}
+
+const LIBRARY_SPINE_PALETTE = [
+  { background: "#305247", border: "#17362e", text: "#fffdf7", accent: "#c5a75f" },
+  { background: "#713c42", border: "#462229", text: "#fffaf4", accent: "#d3b06b" },
+  { background: "#31516f", border: "#1d344a", text: "#f8fbff", accent: "#c9ad6b" },
+  { background: "#765f32", border: "#4d3c1d", text: "#fffdf6", accent: "#d8c184" },
+  { background: "#55466f", border: "#342a48", text: "#fcf9ff", accent: "#cbb777" },
+  { background: "#494d51", border: "#292d30", text: "#fffdf8", accent: "#bda86c" },
+];
+
+function librarySpinePalette(resource: LibraryResource, index: number) {
+  const seed = Array.from(`${resource.slug}-${resource.category}`).reduce((total, character) => total + character.charCodeAt(0), index);
+  return LIBRARY_SPINE_PALETTE[seed % LIBRARY_SPINE_PALETTE.length];
+}
+
+function LibraryShelfBrowser({
+  resources,
+  progressState,
+  completedState,
+  onOpenDetail,
+  onOpenReader,
+  onOpenAuthor,
+}: {
+  resources: LibraryResource[];
+  progressState: LibraryProgressState;
+  completedState: CompletedResourceState;
+  onOpenDetail: (slug: string) => void;
+  onOpenReader: (slug: string) => void;
+  onOpenAuthor: (authorOrId: string) => void;
+}) {
+  const [selectedSlug, setSelectedSlug] = useState(resources[0]?.slug ?? "");
+  const [failedCoverSlug, setFailedCoverSlug] = useState<string | null>(null);
+  const selectedResource = resources.find((resource) => resource.slug === selectedSlug) ?? resources[0] ?? null;
+  const selectedProgress = selectedResource ? progressState[selectedResource.slug]?.progress ?? 0 : 0;
+  const selectedCompleted = selectedResource ? Boolean(completedState[selectedResource.slug]) : false;
+  const shelfGroups = useMemo(() => {
+    const grouped = resources.reduce<Map<string, LibraryResource[]>>((groups, resource) => {
+      const label = libraryCategoryLabel(resource.category);
+      groups.set(label, [...(groups.get(label) ?? []), resource]);
+      return groups;
+    }, new Map());
+    return Array.from(grouped.entries())
+      .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+      .slice(0, 8)
+      .map(([title, shelfResources]) => ({ title, resources: shelfResources.slice(0, 18), total: shelfResources.length }));
+  }, [resources]);
+
+  if (!selectedResource) {
+    return (
+      <section className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-6 text-center">
+        <p className="text-base font-semibold text-[var(--ink)]">No books matched this shelf.</p>
+        <p className="mt-2 text-sm text-[var(--muted)]">Clear the search or choose another subject.</p>
+      </section>
+    );
+  }
+
+  const selectedPalette = librarySpinePalette(selectedResource, 0);
+  const showCover = Boolean(selectedResource.cover_image_url && failedCoverSlug !== selectedResource.slug);
+
+  return (
+    <section className="overflow-hidden rounded-2xl border border-[#b9b4a8] bg-[#e7e5df] shadow-sm">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#b9b4a8] bg-[#29352f] px-4 py-3 text-white md:px-6">
+        <div className="flex items-center gap-3">
+          <Library size={20} />
+          <div>
+            <h2 className="text-lg font-semibold">Study library shelves</h2>
+            <p className="text-xs font-semibold text-white/70">{resources.length.toLocaleString()} books in this view</p>
+          </div>
+        </div>
+        <span className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/85">Selected book opens above the shelves</span>
+      </div>
+
+      <div className="grid border-b border-[#b9b4a8] bg-[#d6d1c5] md:grid-cols-2">
+        <div className="relative flex min-h-[300px] items-center justify-center border-b border-[#b9b4a8] bg-[#f5f1e8] p-6 shadow-[inset_-18px_0_24px_-24px_rgba(41,53,47,0.65)] md:border-b-0 md:border-r">
+          <div className="absolute inset-y-5 right-0 w-px bg-[#b9b4a8]" />
+          {showCover ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              alt={`Cover of ${selectedResource.title}`}
+              className="aspect-[3/4] max-h-[250px] w-auto max-w-[185px] border border-black/15 object-cover shadow-xl"
+              loading="lazy"
+              onError={() => setFailedCoverSlug(selectedResource.slug)}
+              src={selectedResource.cover_image_url ?? ""}
+            />
+          ) : (
+            <div
+              className="flex aspect-[3/4] max-h-[250px] w-[175px] flex-col justify-between border-2 p-5 shadow-xl"
+              style={{ backgroundColor: selectedPalette.background, borderColor: selectedPalette.border, color: selectedPalette.text }}
+            >
+              <span className="border-b pb-3 text-[0.65rem] font-semibold uppercase tracking-[0.14em]" style={{ borderColor: selectedPalette.accent }}>
+                {libraryCategoryLabel(selectedResource.category)}
+              </span>
+              <span className="text-xl font-semibold leading-6">{selectedResource.work_title ?? selectedResource.title}</span>
+              <span className="border-t pt-3 text-xs font-semibold" style={{ borderColor: selectedPalette.accent }}>{selectedResource.author}</span>
+            </div>
+          )}
+        </div>
+
+        <div className="relative min-h-[300px] bg-[#faf7ef] p-6 shadow-[inset_18px_0_24px_-24px_rgba(41,53,47,0.65)] md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Open on the reading table</p>
+          <h3 className="mt-3 text-2xl font-semibold leading-8 text-[var(--ink)]">{selectedResource.work_title ?? selectedResource.title}</h3>
+          <button className="mt-2 text-left text-sm font-semibold text-[var(--green)]" onClick={() => onOpenAuthor(selectedResource.author)} type="button">
+            {selectedResource.author}
+          </button>
+          <p className="mt-4 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">{selectedResource.description || selectedResource.recommended_use}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="rounded-full bg-[#ece7db] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(selectedResource.category)}</span>
+            <span className="rounded-full bg-[#ece7db] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(selectedResource)}</span>
+            {selectedCompleted && <span className="rounded-full bg-[#dfe9df] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Finished</span>}
+          </div>
+          <div className="mt-5">
+            <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
+              <span>Reading progress</span>
+              <span>{formatPercent(selectedCompleted ? 100 : selectedProgress)}</span>
+            </div>
+            <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#ddd7ca]">
+              <div className="h-full rounded-full bg-[var(--green)]" style={{ width: formatPercent(selectedCompleted ? 100 : selectedProgress) }} />
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReader(selectedResource.slug)} type="button">
+              <BookOpen size={16} />
+              Read book
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onOpenDetail(selectedResource.slug)} type="button">
+              Details
+              <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-5 bg-[#e7e5df] p-4 md:p-6">
+        {shelfGroups.map((shelf) => (
+          <section key={`physical-shelf-${shelf.title}`}>
+            <div className="mb-2 flex items-center justify-between gap-3 px-1">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#35443d]">{shelf.title}</h3>
+              <span className="text-xs font-semibold text-[#657169]">{shelf.total} books</span>
+            </div>
+            <div className="overflow-x-auto border border-[#18251f] bg-[#24322c] px-4 pt-4 shadow-inner [scrollbar-width:thin]">
+              <div className="flex min-w-max items-end gap-1.5">
+                {shelf.resources.map((resource, index) => {
+                  const palette = librarySpinePalette(resource, index);
+                  const selected = resource.slug === selectedResource.slug;
+                  return (
+                    <button
+                      key={`physical-book-${shelf.title}-${resource.slug}`}
+                      aria-label={`Select ${resource.title} by ${resource.author}`}
+                      aria-pressed={selected}
+                      className={`relative h-44 w-12 shrink-0 border-2 shadow-md transition sm:w-14 ${selected ? "-translate-y-2 ring-2 ring-[#d8bd74] ring-offset-2 ring-offset-[#24322c]" : "hover:-translate-y-1"}`}
+                      onClick={() => setSelectedSlug(resource.slug)}
+                      style={{ backgroundColor: palette.background, borderColor: palette.border, color: palette.text }}
+                      title={`${resource.title} — ${resource.author}`}
+                      type="button"
+                    >
+                      <span className="absolute inset-x-1 top-3 h-px" style={{ backgroundColor: palette.accent }} />
+                      <span className="absolute inset-2 flex items-center justify-center overflow-hidden">
+                        <span className="max-w-[132px] rotate-90 overflow-hidden text-ellipsis whitespace-nowrap text-xs font-semibold">{resource.work_title ?? resource.title}</span>
+                      </span>
+                      <span className="absolute inset-x-1 bottom-3 h-px" style={{ backgroundColor: palette.accent }} />
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-1 h-3 border-t border-[#d8bd74]/70 bg-[#9a7b43]" />
+            </div>
+          </section>
+        ))}
       </div>
     </section>
   );
