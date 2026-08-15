@@ -67,7 +67,7 @@ Review:
 | --- | --- |
 | Known contact | support@wayoflife.org; fbns@wayoflife.org |
 | Website | https://www.wayoflife.org/ |
-| Permission status | Five-title draft ready - not sent |
+| Permission status | Five-title request sent 2026-08-15 - awaiting reply |
 | Requested use | Metadata, cover art, short approved excerpt, and official-hosted media links/embeds |
 | Follow-up needed | Yes |
 
@@ -80,7 +80,8 @@ Notes:
 - Free eBooks may be given to individuals intact but may not be posted or distributed from the Bible Study App website. Use official download links unless written permission says otherwise.
 - First title-level intake queue: `data/library/acquisition/way-of-life-shareable-resource-intake-2026-07-04.csv`.
 - Store items, the Fundamental Baptist Digital Library, print books, paid ebooks, and paid videos are not shareable and remain permission-needed.
-- A five-title follow-up is drafted for metadata, cover art, short approved excerpts, and official-hosted media links/embeds only. It excludes full-file hosting, transcripts, TTS, presentation export, paid access, resale, and paid resources.
+- A five-title follow-up was sent 2026-08-15 at 8:08 AM Eastern to `support@wayoflife.org` for metadata, cover art, short approved excerpts, and official-hosted media links/embeds only. It excludes full-file hosting, transcripts, TTS, presentation export, paid access, resale, and paid resources.
+- Sent-message evidence: `data/library/acquisition/permission-evidence/way-of-life-five-title-follow-up-sent-2026-08-15.md`.
 - Record written permission before any copyrighted material becomes public in the app.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
 
@@ -108,7 +109,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Public sharing policy documented 2026-07-04. Initial permission email also sent manually by Stephen; no direct reply yet. This is not a private permission grant or broad catalog license.
+> Public sharing policy documented 2026-07-04 and re-reviewed 2026-08-14. A five-title request was sent 2026-08-15; no direct reply yet. This is not a private permission grant or broad catalog license.
 
 ## Final Recommendation
 

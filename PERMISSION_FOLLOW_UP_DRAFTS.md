@@ -132,7 +132,7 @@ hello@fathersbusinessmasteryresources.com
 
 ## Way of Life Literature / David Cloud
 
-Status: Draft only. The official policy was re-reviewed 2026-08-14. Do not send without Stephen's explicit approval at send time.
+Status: Sent 2026-08-15 at 8:08 AM Eastern to `support@wayoflife.org` after Stephen's explicit approval. Awaiting written reply; do not infer permission from silence.
 
 Subject:
 

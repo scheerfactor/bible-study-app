@@ -73,9 +73,11 @@ Not requested and not approved:
 - PowerPoint presentations
 - broad catalog rights
 
-## Follow-Up Decision
+## Follow-Up Status
 
-A narrow follow-up may ask for separate yes-or-no approval for the five named
-free eBooks and selected official-hosted media. The message must preserve the
-boundaries above and must not be sent without Stephen's explicit approval at
-send time.
+Stephen explicitly approved the narrow five-title request, and it was sent to
+`support@wayoflife.org` on 2026-08-15 at 8:08 AM Eastern. The sent-message
+evidence is recorded in
+`way-of-life-five-title-follow-up-sent-2026-08-15.md`.
+
+No new right is granted while the request is awaiting a written reply.
