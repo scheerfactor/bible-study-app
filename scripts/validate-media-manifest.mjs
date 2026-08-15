@@ -134,6 +134,30 @@ records.forEach((record, index) => {
   if (record.kind === "Bible Audio" && record.rightsStatus !== "Approved" && record.rightsStatus !== "Permission Needed") {
     warnings.push(`record ${index + 1}: Bible Audio should keep explicit licensing review visible`);
   }
+
+  if (record.id === "ttb-official-sunday-sermons-free-distribution-pilot") {
+    for (const field of ["sourcePageUrl", "feedUrl", "feedGuid", "contentType", "sizeBytes", "sha256", "etag", "requiredAttribution", "rightsEvidence"]) {
+      requireField(record, index, field);
+    }
+    if (!String(record.sourceUrl).startsWith("https://teachings-cdn.thruthebible.io/")) {
+      errors.push(`record ${index + 1}: TTB pilot sourceUrl must use the official teachings CDN`);
+    }
+    if (!String(record.feedUrl).startsWith("https://cmp.thruthebible.io/")) {
+      errors.push(`record ${index + 1}: TTB pilot feedUrl must use the official TTB feed host`);
+    }
+    if (record.feedGuid !== record.sourceUrl.split("/").pop()) {
+      errors.push(`record ${index + 1}: TTB pilot feedGuid must match the official enclosure URL`);
+    }
+    if (record.requiredAttribution !== "By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org.") {
+      errors.push(`record ${index + 1}: TTB pilot must retain the required attribution exactly`);
+    }
+    if (!Number.isInteger(record.sizeBytes) || record.sizeBytes < 1) {
+      errors.push(`record ${index + 1}: TTB pilot sizeBytes must be a positive integer`);
+    }
+    if (!/^[a-f0-9]{64}$/.test(String(record.sha256))) {
+      errors.push(`record ${index + 1}: TTB pilot sha256 must be a lowercase SHA-256 digest`);
+    }
+  }
 });
 
 async function validateAudiobookPilots() {

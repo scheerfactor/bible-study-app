@@ -1040,6 +1040,9 @@ type LicensedResourceLink = {
   category: string;
   collection: string;
   sourceUrl: string;
+  sourcePageUrl?: string;
+  resourceFormat?: "Official Audio Link";
+  duration?: string;
   permissionStatus: string;
   reviewStatus: string;
   approvedPublicUse: string[];
@@ -33925,6 +33928,8 @@ function licensedResourceLinkMatchesAllTerms(resource: LicensedResourceLink, ter
     resource.publisherMinistry,
     resource.category,
     resource.collection,
+    resource.resourceFormat ?? "",
+    resource.duration ?? "",
     resource.permissionStatus,
     resource.reviewStatus,
     resource.recommendedUse,
@@ -43303,6 +43308,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
   const wayOfLifeCount = resources.filter((resource) => resource.publisherMinistry === "Way of Life Literature").length;
   const northstarCount = resources.filter((resource) => resource.publisherMinistry === "Northstar Ministries").length;
   const solveFamilyProblemsCount = resources.filter((resource) => resource.publisherMinistry === "Solve Family Problems").length;
+  const thruTheBibleCount = resources.filter((resource) => resource.publisherMinistry === "Thru the Bible").length;
   const ministrySourceSummaries = [
     {
       ministry: "Way of Life Literature",
@@ -43322,6 +43328,12 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       focus: "Family, marriage, anger, purity, and Christian living resources",
       scope: "Metadata-only listings use website titles, graphics, and descriptions with official links.",
     },
+    {
+      ministry: "Thru the Bible",
+      count: thruTheBibleCount,
+      focus: "Whole-Bible audio study and Dr. J. Vernon McGee Sunday sermons",
+      scope: "Official links remain free, clearly attributed, and outside paid access; copied audio requires a separate file-level intake check.",
+    },
   ].filter((item) => item.count > 0);
   const activeMinistrySummary = ministrySourceSummaries.find((item) => item.ministry === activeMinistry);
 
@@ -43334,11 +43346,12 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
             These records point users to official ministry pages while rights review continues. Public-domain books stay separate from scoped ministry links.
           </p>
-          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-5">
             <MiniStat label="Total links" value={String(resources.length)} />
             <MiniStat label="Way of Life" value={String(wayOfLifeCount)} />
             <MiniStat label="Northstar" value={String(northstarCount)} />
             <MiniStat label="S. M. Davis" value={String(solveFamilyProblemsCount)} />
+            <MiniStat label="Thru the Bible" value={String(thruTheBibleCount)} />
           </div>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -43474,8 +43487,13 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
 }
 
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
-  const linkLabel = resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems" ? "View / buy official page" : "Open official page";
-  const scopeLabel = resource.publisherMinistry === "Solve Family Problems" ? "Metadata only" : "Scoped permission";
+  const isOfficialAudio = resource.resourceFormat === "Official Audio Link";
+  const linkLabel = isOfficialAudio
+    ? "Listen on TTB"
+    : resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems"
+      ? "View / buy official page"
+      : "Open official page";
+  const scopeLabel = isOfficialAudio ? "Official audio" : resource.publisherMinistry === "Solve Family Problems" ? "Metadata only" : "Scoped permission";
 
   return (
     <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
@@ -43484,6 +43502,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Official ministry link</p>
           <h3 className="mt-2 text-lg font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
+          {resource.duration && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.duration}</p>}
         </div>
         <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
           {scopeLabel}
@@ -43498,9 +43517,9 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
         ))}
       </div>
       <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-        <p className="text-xs font-semibold text-[var(--ink)]">No full text or audio hosted</p>
+        <p className="text-xs font-semibold text-[var(--ink)]">{isOfficialAudio ? "Official stream - no audio copied" : "No full text or audio hosted"}</p>
         <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-          {resource.reviewStatus}. Use the official page until title review and any broader license is complete.
+          {resource.reviewStatus}. {isOfficialAudio ? "Playback opens the exact TTB-hosted file." : "Use the official page until title review and any broader license is complete."}
         </p>
       </div>
       <div className="mt-auto pt-4">
@@ -43510,7 +43529,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
           rel="noreferrer"
           target="_blank"
         >
-          <Link size={15} />
+          {isOfficialAudio ? <Headphones size={15} /> : <Link size={15} />}
           {linkLabel}
         </a>
       </div>

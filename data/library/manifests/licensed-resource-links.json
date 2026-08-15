@@ -3576,5 +3576,32 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-audio-distribution-policy-2026-08-15.md",
     "recommendedUse": "Sermon listening; preaching help; pastoral-message discovery",
     "notes": "Official TTB page for sermons from Dr. McGee's Church of the Open Door pastorate. Keep the link and any policy-compliant copy outside paid access with the required attribution."
+  },
+  {
+    "id": "licensed-thru-the-bible-remember-jesus-christ-audio",
+    "title": "Remember Jesus Christ",
+    "author": "Dr. J. Vernon McGee",
+    "publisherMinistry": "Thru the Bible",
+    "category": "Sermons",
+    "collection": "Thru the Bible Free Audio Links",
+    "resourceFormat": "Official Audio Link",
+    "duration": "44:45",
+    "sourceUrl": "https://teachings-cdn.thruthebible.io/9f4feee4-522d-4e0b-b2a2-c8f96bf93d76",
+    "sourcePageUrl": "https://ttb.org/dr-j-vernon-mcgee",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Exact title, TTB feed GUID, official audio enclosure, duration, size, ETag, and SHA-256 reviewed 2026-08-15",
+    "approvedPublicUse": [
+      "Official link to exact TTB-hosted audio",
+      "Citation to the official TTB source page"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting",
+      "Audio rehosting, editing, or excerpting outside the documented policy conditions",
+      "AI/TTS narration or derivative audio",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-remember-jesus-christ-audio-2026-08-15.md",
+    "recommendedUse": "Farewell sermon listening; pastoral reflection; preaching and ministry encouragement",
+    "notes": "Sunday Sermon #2177, published in TTB's official feed on August 11, 2024. Streams from the exact official TTB CDN file; no audio or transcript is copied into the app. Required attribution: By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org."
   }
 ]

@@ -79,6 +79,19 @@ for (const [index, record] of records.entries()) {
     }
   }
 
+  if (record.resourceFormat === "Official Audio Link") {
+    if (!isValidUrl(record.sourcePageUrl)) errors.push(`${label}: official audio requires an https sourcePageUrl`);
+    if (!String(record.sourceUrl).startsWith("https://teachings-cdn.thruthebible.io/")) {
+      errors.push(`${label}: official TTB audio must use the TTB teachings CDN`);
+    }
+    if (!/^\d{1,2}:\d{2}$/.test(String(record.duration ?? ""))) {
+      errors.push(`${label}: official audio duration must use M:SS or MM:SS`);
+    }
+    if (!String(record.notes).includes("By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org.")) {
+      errors.push(`${label}: official TTB audio notes must retain the required attribution`);
+    }
+  }
+
   if (!Array.isArray(record.notApprovedWithoutFollowup) || record.notApprovedWithoutFollowup.length === 0) {
     errors.push(`${label}: notApprovedWithoutFollowup must preserve broader-rights limits`);
   }
