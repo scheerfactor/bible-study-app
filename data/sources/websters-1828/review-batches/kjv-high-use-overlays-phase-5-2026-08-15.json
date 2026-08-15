@@ -1,0 +1,98 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-5-2026-08-15",
+  "reviewed_at": "2026-08-15",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Continued ranking Webster base headwords with unoverlaid high or medium OCR flags by exact lower-case KJV word occurrence, skipped higher-ranked candidates without live exact-headword transcription pages, and selected the next eight source-verifiable words.",
+  "review_method": "Imported the complete displayed definition without editorial rewriting, independently re-fetched each exact-headword page, normalized whitespace only, and required an exact match to the stored overlay.",
+  "unavailable_higher_ranked_candidates": [
+    "plain",
+    "centurion",
+    "hyssop",
+    "hasten",
+    "helmet",
+    "cankerworm"
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No related-word or missing-result page was accepted.",
+    "No definition wording was summarized, modernized, or invented.",
+    "Source paragraph counts are retained as source line ranges in the overlay records."
+  ],
+  "entries": [
+    {
+      "word": "swim",
+      "kjv_occurrences": 6,
+      "base_entries": 2,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/swim",
+      "source_paragraphs": 18,
+      "exact_source_match": true
+    },
+    {
+      "word": "attentive",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/attentive",
+      "source_paragraphs": 2,
+      "exact_source_match": true
+    },
+    {
+      "word": "binding",
+      "kjv_occurrences": 5,
+      "base_entries": 3,
+      "base_ocr_flags": ["split_wh_words"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/binding",
+      "source_paragraphs": 5,
+      "exact_source_match": true
+    },
+    {
+      "word": "breeches",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/breeches",
+      "source_paragraphs": 3,
+      "exact_source_match": true
+    },
+    {
+      "word": "confound",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/confound",
+      "source_paragraphs": 17,
+      "exact_source_match": true
+    },
+    {
+      "word": "continuance",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/continuance",
+      "source_paragraphs": 11,
+      "exact_source_match": true
+    },
+    {
+      "word": "craftiness",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/craftiness",
+      "source_paragraphs": 3,
+      "exact_source_match": true
+    },
+    {
+      "word": "dare",
+      "kjv_occurrences": 5,
+      "base_entries": 4,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dare",
+      "source_paragraphs": 13,
+      "exact_source_match": true
+    }
+  ]
+}
