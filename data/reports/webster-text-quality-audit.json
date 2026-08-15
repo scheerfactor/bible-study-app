@@ -1,11 +1,11 @@
 {
   "summary": {
-    "generated_at": "2026-08-15T13:36:19.613Z",
+    "generated_at": "2026-08-15T13:49:07.583Z",
     "base_entries": 58428,
-    "reviewed_overrides": 2358,
+    "reviewed_overrides": 2362,
     "entries_with_quality_flags": 22443,
     "entries_with_high_or_medium_flags": 4255,
-    "entries_with_unreviewed_high_or_medium_flags": 3480,
+    "entries_with_unreviewed_high_or_medium_flags": 3476,
     "pattern_counts": {
       "split_the": 2309,
       "split_wh_words": 731,
