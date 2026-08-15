@@ -2104,6 +2104,7 @@ type VoiceSettings = {
 const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
+const FAVORITE_LIBRARY_RESOURCES_KEY = "fathers-business-favorite-library-resources";
 const MANUAL_READ_BOOKS_KEY = "fathers-business-manual-read-books";
 const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
 const LIBRARY_LISTENING_QUEUE_KEY = "fathers-business-library-listening-queue";
@@ -15690,6 +15691,25 @@ function saveCompletedResources(state: CompletedResourceState) {
   window.localStorage.setItem(LIBRARY_COMPLETED_KEY, JSON.stringify(state));
 }
 
+function loadFavoriteLibrarySlugs(): string[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(FAVORITE_LIBRARY_RESOURCES_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return Array.from(new Set(parsed.filter((slug): slug is string => typeof slug === "string" && Boolean(slug.trim())))).slice(0, 100);
+  } catch {
+    return [];
+  }
+}
+
+function saveFavoriteLibrarySlugs(slugs: string[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(FAVORITE_LIBRARY_RESOURCES_KEY, JSON.stringify(slugs));
+}
+
 function loadManualReadBooks(): ManualReadBookState {
   if (typeof window === "undefined") return {};
 
@@ -16831,6 +16851,7 @@ export default function Home() {
   const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
+  const [favoriteLibrarySlugs, setFavoriteLibrarySlugs] = useState<string[]>([]);
   const [manualReadBooks, setManualReadBooks] = useState<ManualReadBookState>({});
   const [manualReadBookTitle, setManualReadBookTitle] = useState("");
   const [manualReadBookAuthor, setManualReadBookAuthor] = useState("");
@@ -19000,6 +19021,7 @@ export default function Home() {
     queueMicrotask(() => {
       setLibraryProgress(loadLibraryProgress());
       setCompletedResources(loadCompletedResources());
+      setFavoriteLibrarySlugs(loadFavoriteLibrarySlugs());
       setManualReadBooks(loadManualReadBooks());
       setListeningProgress(loadListeningProgress());
       setLibraryListeningQueue(loadLibraryListeningQueue());
@@ -19959,6 +19981,16 @@ export default function Home() {
       delete nextState[slug];
       saveCompletedResources(nextState);
       return nextState;
+    });
+  }
+
+  function toggleFavoriteLibraryResource(resource: LibraryResource) {
+    setFavoriteLibrarySlugs((current) => {
+      const exists = current.includes(resource.slug);
+      const next = exists ? current.filter((slug) => slug !== resource.slug) : [resource.slug, ...current].slice(0, 100);
+      saveFavoriteLibrarySlugs(next);
+      setSyncMessage(exists ? `${resource.title} removed from Library favorites.` : `${resource.title} added to Library favorites.`);
+      return next;
     });
   }
 
@@ -22624,6 +22656,7 @@ export default function Home() {
                 commentaryEntries={commentaryEntries}
                 progressState={libraryProgress}
                 completedState={completedResources}
+                favoriteLibrarySlugs={favoriteLibrarySlugs}
                 readingListItems={filteredReadingListItems}
                 readingListTotal={readingListItems.length}
                 readingListSearchTerm={readingListSearchTerm}
@@ -22715,6 +22748,7 @@ export default function Home() {
                 onMarkFinished={markLibraryFinished}
                 onRestartResource={restartLibraryResource}
                 onRemoveCompleted={removeCompletedResource}
+                onToggleFavorite={toggleFavoriteLibraryResource}
                 onRemoveManualReadBook={removeManualReadBook}
                 onReadingListSearchTermChange={setReadingListSearchTerm}
                 onManualReadBookTitleChange={setManualReadBookTitle}
@@ -35198,6 +35232,7 @@ function LibraryScreen({
   commentaryEntries,
   progressState,
   completedState,
+  favoriteLibrarySlugs,
   readingListItems,
   readingListTotal,
   readingListSearchTerm,
@@ -35265,6 +35300,7 @@ function LibraryScreen({
   onMarkFinished,
   onRestartResource,
   onRemoveCompleted,
+  onToggleFavorite,
   onRemoveManualReadBook,
   onReadingListSearchTermChange,
   onManualReadBookTitleChange,
@@ -35293,6 +35329,7 @@ function LibraryScreen({
   commentaryEntries: CommentaryEntry[];
   progressState: LibraryProgressState;
   completedState: CompletedResourceState;
+  favoriteLibrarySlugs: string[];
   readingListItems: ReadingListItem[];
   readingListTotal: number;
   readingListSearchTerm: string;
@@ -35367,6 +35404,7 @@ function LibraryScreen({
   onMarkFinished: (resource: LibraryResource) => void;
   onRestartResource: (resource: LibraryResource) => void;
   onRemoveCompleted: (slug: string) => void;
+  onToggleFavorite: (resource: LibraryResource) => void;
   onRemoveManualReadBook: (id: string) => void;
   onReadingListSearchTermChange: (value: string) => void;
   onManualReadBookTitleChange: (value: string) => void;
@@ -35451,11 +35489,13 @@ function LibraryScreen({
         resource={activeResource}
         progress={progressState[activeResource.slug]}
         completed={completedState[activeResource.slug]}
+        favorite={favoriteLibrarySlugs.includes(activeResource.slug)}
         onBack={onOpenHome}
         onOpenReader={() => onOpenReader(activeResource.slug)}
         onAddToListeningQueue={() => onAddToListeningQueue(activeResource.slug)}
         onAddToStudyPlaylist={() => onAddToStudyPlaylist(activeResource.slug)}
         onAddToSermon={() => onAddResourceToSermon(activeResource)}
+        onToggleFavorite={() => onToggleFavorite(activeResource)}
         onReadAgain={() => onReadAgain(activeResource.slug)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
@@ -35864,9 +35904,12 @@ function LibraryScreen({
             resources={browsingAllResources ? resources : filteredResources}
             progressState={progressState}
             completedState={completedState}
+            favoriteLibrarySlugs={favoriteLibrarySlugs}
+            listeningQueue={libraryListeningQueue}
             onOpenDetail={onOpenDetail}
             onOpenReader={onOpenReader}
             onOpenAuthor={onOpenAuthor}
+            onToggleFavorite={onToggleFavorite}
           />
           {!browsingAllResources && filteredLicensedResourceLinks.length > 0 && (
             <LibraryShelf title="Permissioned Link Results" horizontal>
@@ -41919,11 +41962,13 @@ function LibraryDetail({
   resource,
   progress,
   completed,
+  favorite,
   onBack,
   onOpenReader,
   onAddToListeningQueue,
   onAddToStudyPlaylist,
   onAddToSermon,
+  onToggleFavorite,
   onReadAgain,
   onOpenAuthor,
   onOpenCollection,
@@ -41935,11 +41980,13 @@ function LibraryDetail({
   resource: LibraryResource;
   progress?: LibraryProgress;
   completed?: CompletedResource;
+  favorite: boolean;
   onBack: () => void;
   onOpenReader: () => void;
   onAddToListeningQueue: () => void;
   onAddToStudyPlaylist: () => void;
   onAddToSermon: () => void;
+  onToggleFavorite: () => void;
   onReadAgain: () => void;
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
@@ -42022,6 +42069,15 @@ function LibraryDetail({
               <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onAddToListeningQueue} type="button">
                 <ListMusic size={16} />
                 Add to Queue
+              </button>
+              <button
+                aria-pressed={favorite}
+                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold ${favorite ? "border-[var(--gold)] bg-[#f4ecd4] text-[#715b24]" : "border-[var(--line)] bg-white text-[var(--green)]"}`}
+                onClick={onToggleFavorite}
+                type="button"
+              >
+                <Star fill={favorite ? "currentColor" : "none"} size={16} />
+                {favorite ? "Favorited" : "Favorite"}
               </button>
               <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenAuthor} type="button">
                 Author Collection
@@ -43338,22 +43394,58 @@ function LibraryShelfBrowser({
   resources,
   progressState,
   completedState,
+  favoriteLibrarySlugs,
+  listeningQueue,
   onOpenDetail,
   onOpenReader,
   onOpenAuthor,
+  onToggleFavorite,
 }: {
   resources: LibraryResource[];
   progressState: LibraryProgressState;
   completedState: CompletedResourceState;
+  favoriteLibrarySlugs: string[];
+  listeningQueue: LibraryResource[];
   onOpenDetail: (slug: string) => void;
   onOpenReader: (slug: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
+  onToggleFavorite: (resource: LibraryResource) => void;
 }) {
   const [selectedSlug, setSelectedSlug] = useState(resources[0]?.slug ?? "");
   const [failedCoverSlug, setFailedCoverSlug] = useState<string | null>(null);
   const selectedResource = resources.find((resource) => resource.slug === selectedSlug) ?? resources[0] ?? null;
   const selectedProgress = selectedResource ? progressState[selectedResource.slug]?.progress ?? 0 : 0;
   const selectedCompleted = selectedResource ? Boolean(completedState[selectedResource.slug]) : false;
+  const selectedFavorite = selectedResource ? favoriteLibrarySlugs.includes(selectedResource.slug) : false;
+  const personalShelfGroups = useMemo(() => {
+    const resourcesBySlug = new Map(resources.map((resource) => [resource.slug, resource]));
+    const groups = [
+      {
+        title: "Favorites",
+        resources: favoriteLibrarySlugs.flatMap((slug) => resourcesBySlug.get(slug) ?? []).slice(0, 18),
+      },
+      {
+        title: "Continue Reading",
+        resources: Object.values(progressState)
+          .filter((progress) => progress.progress > 0 && progress.progress < 100 && !completedState[progress.slug])
+          .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+          .flatMap((progress) => resourcesBySlug.get(progress.slug) ?? [])
+          .slice(0, 18),
+      },
+      {
+        title: "Listening Queue",
+        resources: listeningQueue.flatMap((resource) => resourcesBySlug.get(resource.slug) ?? []).slice(0, 18),
+      },
+      {
+        title: "Finished",
+        resources: Object.values(completedState)
+          .sort((a, b) => b.completedAt.localeCompare(a.completedAt))
+          .flatMap((completed) => resourcesBySlug.get(completed.slug) ?? [])
+          .slice(0, 18),
+      },
+    ];
+    return groups.filter((group) => group.resources.length).map((group) => ({ ...group, total: group.resources.length, personal: true }));
+  }, [completedState, favoriteLibrarySlugs, listeningQueue, progressState, resources]);
   const shelfGroups = useMemo(() => {
     const grouped = resources.reduce<Map<string, LibraryResource[]>>((groups, resource) => {
       const label = libraryCategoryLabel(resource.category);
@@ -43363,8 +43455,9 @@ function LibraryShelfBrowser({
     return Array.from(grouped.entries())
       .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
       .slice(0, 8)
-      .map(([title, shelfResources]) => ({ title, resources: shelfResources.slice(0, 18), total: shelfResources.length }));
+      .map(([title, shelfResources]) => ({ title, resources: shelfResources.slice(0, 18), total: shelfResources.length, personal: false }));
   }, [resources]);
+  const displayShelfGroups = [...personalShelfGroups, ...shelfGroups];
 
   if (!selectedResource) {
     return (
@@ -43443,6 +43536,16 @@ function LibraryShelfBrowser({
               <BookOpen size={16} />
               Read book
             </button>
+            <button
+              aria-label={selectedFavorite ? `Remove ${selectedResource.title} from favorites` : `Add ${selectedResource.title} to favorites`}
+              aria-pressed={selectedFavorite}
+              className={`inline-flex h-10 w-10 items-center justify-center rounded-full border ${selectedFavorite ? "border-[var(--gold)] bg-[#f4ecd4] text-[#715b24]" : "border-[var(--line)] bg-white text-[var(--green)]"}`}
+              onClick={() => onToggleFavorite(selectedResource)}
+              title={selectedFavorite ? "Remove from favorites" : "Add to favorites"}
+              type="button"
+            >
+              <Star fill={selectedFavorite ? "currentColor" : "none"} size={17} />
+            </button>
             <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onOpenDetail(selectedResource.slug)} type="button">
               Details
               <ChevronRight size={16} />
@@ -43452,11 +43555,23 @@ function LibraryShelfBrowser({
       </div>
 
       <div className="space-y-5 bg-[#e7e5df] p-4 md:p-6">
-        {shelfGroups.map((shelf) => (
-          <section key={`physical-shelf-${shelf.title}`}>
+        {displayShelfGroups.map((shelf, shelfIndex) => (
+          <div key={`physical-shelf-group-${shelf.personal ? "personal" : "subject"}-${shelf.title}`}>
+            {shelf.personal && shelfIndex === 0 && (
+              <div className="mb-3 flex items-center gap-2 border-b border-[#c4beb1] pb-2 text-[#35443d]">
+                <BookMarked size={17} />
+                <h3 className="text-sm font-semibold uppercase tracking-[0.12em]">My shelves</h3>
+              </div>
+            )}
+            {!shelf.personal && shelfIndex === personalShelfGroups.length && personalShelfGroups.length > 0 && (
+              <div className="mb-3 border-b border-[#c4beb1] pb-2">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#35443d]">Browse by subject</h3>
+              </div>
+            )}
+          <section>
             <div className="mb-2 flex items-center justify-between gap-3 px-1">
               <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#35443d]">{shelf.title}</h3>
-              <span className="text-xs font-semibold text-[#657169]">{shelf.total} books</span>
+              <span className="text-xs font-semibold text-[#657169]">{shelf.total} {shelf.total === 1 ? "book" : "books"}</span>
             </div>
             <div className="overflow-x-auto border border-[#18251f] bg-[#24322c] px-4 pt-4 shadow-inner [scrollbar-width:thin]">
               <div className="flex min-w-max items-end gap-1.5">
@@ -43486,6 +43601,7 @@ function LibraryShelfBrowser({
               <div className="mt-1 h-3 border-t border-[#d8bd74]/70 bg-[#9a7b43]" />
             </div>
           </section>
+          </div>
         ))}
       </div>
     </section>
