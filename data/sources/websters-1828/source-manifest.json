@@ -13,6 +13,7 @@
   "rights_notes": "The original 1828 work is public domain. These OCR text files are downloaded source artifacts from Internet Archive/Open Library and should be reviewed before any full production import.",
   "sample_review_notes": "The first sample import uses manually reviewed entries from volume 1 OCR around BELIEVE, FAITH, and GRACE.",
   "review_batches": [
-    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-2026-08-15.json"
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-2-2026-08-15.json"
   ]
 }
