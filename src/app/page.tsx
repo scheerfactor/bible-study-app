@@ -1096,6 +1096,12 @@ type CompletedResource = {
 
 type CompletedResourceState = Record<string, CompletedResource>;
 
+type FavoriteLibraryResourceRecord = {
+  slug: string;
+  favorite: boolean;
+  updatedAt: string;
+};
+
 type ManualReadBook = {
   id: string;
   title: string;
@@ -15691,23 +15697,47 @@ function saveCompletedResources(state: CompletedResourceState) {
   window.localStorage.setItem(LIBRARY_COMPLETED_KEY, JSON.stringify(state));
 }
 
-function loadFavoriteLibrarySlugs(): string[] {
+function normalizeFavoriteLibraryRecords(value: unknown): FavoriteLibraryResourceRecord[] {
+  if (!Array.isArray(value)) return [];
+
+  const records = new Map<string, FavoriteLibraryResourceRecord>();
+  for (const item of value) {
+    const record = typeof item === "string"
+      ? { slug: item.trim(), favorite: true, updatedAt: "1970-01-01T00:00:00.000Z" }
+      : item && typeof item === "object"
+        ? {
+            slug: typeof (item as { slug?: unknown }).slug === "string" ? (item as { slug: string }).slug.trim() : "",
+            favorite: (item as { favorite?: unknown }).favorite === true,
+            updatedAt: typeof (item as { updatedAt?: unknown }).updatedAt === "string"
+              ? (item as { updatedAt: string }).updatedAt
+              : "1970-01-01T00:00:00.000Z",
+          }
+        : null;
+    if (!record?.slug) continue;
+    const current = records.get(record.slug);
+    if (!current || record.updatedAt >= current.updatedAt) records.set(record.slug, record);
+  }
+
+  return Array.from(records.values())
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    .slice(0, 500);
+}
+
+function loadFavoriteLibraryRecords(): FavoriteLibraryResourceRecord[] {
   if (typeof window === "undefined") return [];
 
   try {
     const raw = window.localStorage.getItem(FAVORITE_LIBRARY_RESOURCES_KEY);
     if (!raw) return [];
-    const parsed = JSON.parse(raw) as unknown;
-    if (!Array.isArray(parsed)) return [];
-    return Array.from(new Set(parsed.filter((slug): slug is string => typeof slug === "string" && Boolean(slug.trim())))).slice(0, 100);
+    return normalizeFavoriteLibraryRecords(JSON.parse(raw) as unknown);
   } catch {
     return [];
   }
 }
 
-function saveFavoriteLibrarySlugs(slugs: string[]) {
+function saveFavoriteLibraryRecords(records: FavoriteLibraryResourceRecord[]) {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(FAVORITE_LIBRARY_RESOURCES_KEY, JSON.stringify(slugs));
+  window.localStorage.setItem(FAVORITE_LIBRARY_RESOURCES_KEY, JSON.stringify(records));
 }
 
 function loadManualReadBooks(): ManualReadBookState {
@@ -16851,7 +16881,12 @@ export default function Home() {
   const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
-  const [favoriteLibrarySlugs, setFavoriteLibrarySlugs] = useState<string[]>([]);
+  const [favoriteLibraryRecords, setFavoriteLibraryRecords] = useState<FavoriteLibraryResourceRecord[]>([]);
+  const favoriteLibrarySlugs = favoriteLibraryRecords
+    .filter((record) => record.favorite)
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    .map((record) => record.slug)
+    .slice(0, 100);
   const [manualReadBooks, setManualReadBooks] = useState<ManualReadBookState>({});
   const [manualReadBookTitle, setManualReadBookTitle] = useState("");
   const [manualReadBookAuthor, setManualReadBookAuthor] = useState("");
@@ -16940,6 +16975,7 @@ export default function Home() {
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncHydratingRef = useRef(false);
+  const favoriteLibrarySyncAvailableRef = useRef(true);
   const deferredCommentaryLoadedFilesRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadingFilesRef = useRef<Set<string>>(new Set());
   const speechVoices = useMemo(
@@ -19021,7 +19057,7 @@ export default function Home() {
     queueMicrotask(() => {
       setLibraryProgress(loadLibraryProgress());
       setCompletedResources(loadCompletedResources());
-      setFavoriteLibrarySlugs(loadFavoriteLibrarySlugs());
+      setFavoriteLibraryRecords(loadFavoriteLibraryRecords());
       setManualReadBooks(loadManualReadBooks());
       setListeningProgress(loadListeningProgress());
       setLibraryListeningQueue(loadLibraryListeningQueue());
@@ -19301,6 +19337,7 @@ export default function Home() {
       supabase.from("user_scripture_memory").select("id, verse_ref, verse_text, progress, repetitions, last_reviewed_at, created_at, updated_at"),
       supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, created_at, updated_at"),
       supabase.from("user_study_playlist_items").select("id, playlist_id, item_type, label, book, chapter, chapter_end, verse_start, verse_end, resource_title, resource_slug, position").order("position", { ascending: true }),
+      supabase.from("user_library_favorites").select("resource_slug, is_favorite, updated_at"),
     ]).then(([
       notesResult,
       highlightsResult,
@@ -19313,6 +19350,7 @@ export default function Home() {
       memoryResult,
       playlistResult,
       playlistItemsResult,
+      favoriteLibraryResult,
     ]) => {
       if (cancelled) return;
       const error = [
@@ -19394,6 +19432,23 @@ export default function Home() {
       setListeningProgress(mergedListening);
       saveListeningProgress(mergedListening);
 
+      favoriteLibrarySyncAvailableRef.current = !favoriteLibraryResult.error;
+      const remoteFavoriteRecords = (favoriteLibraryResult.data ?? []).map((row) => ({
+        slug: row.resource_slug,
+        favorite: row.is_favorite,
+        updatedAt: row.updated_at,
+      }));
+      const mergedFavoriteRecords = normalizeFavoriteLibraryRecords(
+        mergeByTimestamp(
+          loadFavoriteLibraryRecords(),
+          remoteFavoriteRecords,
+          (record) => record.slug,
+          (record) => record.updatedAt,
+        ),
+      );
+      setFavoriteLibraryRecords(mergedFavoriteRecords);
+      saveFavoriteLibraryRecords(mergedFavoriteRecords);
+
       const remoteBibleListening = bibleListeningResult.data
         ? {
             targetId: bibleListeningResult.data.target_id,
@@ -19470,7 +19525,9 @@ export default function Home() {
       saveBiblePlaylists(mergedPlaylists);
       setActiveStudyPlaylistId((current) => current ?? mergedPlaylists[0]?.id ?? null);
 
-      setSyncMessage("Signed in and synced.");
+      setSyncMessage(favoriteLibraryResult.error
+        ? "Signed in. Study data synced; Library favorites remain on this device until the updated schema is applied."
+        : "Signed in and synced.");
       setAccountDataLoaded(true);
       accountSyncHydratingRef.current = false;
     });
@@ -19647,6 +19704,18 @@ export default function Home() {
       collectError("scripture memory", error);
     }
 
+    if (favoriteLibrarySyncAvailableRef.current && favoriteLibraryRecords.length) {
+      const { error } = await supabase
+        .from("user_library_favorites")
+        .upsert(favoriteLibraryRecords.map((record) => ({
+          user_id: userId,
+          resource_slug: record.slug,
+          is_favorite: record.favorite,
+          updated_at: record.updatedAt,
+        })), { onConflict: "user_id,resource_slug" });
+      collectError("Library favorites", error);
+    }
+
     if (biblePlaylists.length) {
       const playlistRows = biblePlaylists.map((playlist) => ({
         user_id: userId,
@@ -19708,6 +19777,7 @@ export default function Home() {
     bibleListeningProgress,
     biblePlaylists,
     completedResources,
+    favoriteLibraryRecords,
     libraryProgress,
     listeningProgress,
     repeatStudyPlaylist,
@@ -19736,6 +19806,7 @@ export default function Home() {
     bibleListeningProgress,
     biblePlaylists,
     completedResources,
+    favoriteLibraryRecords,
     libraryProgress,
     listeningProgress,
     localStudyDataLoaded,
@@ -19985,10 +20056,13 @@ export default function Home() {
   }
 
   function toggleFavoriteLibraryResource(resource: LibraryResource) {
-    setFavoriteLibrarySlugs((current) => {
-      const exists = current.includes(resource.slug);
-      const next = exists ? current.filter((slug) => slug !== resource.slug) : [resource.slug, ...current].slice(0, 100);
-      saveFavoriteLibrarySlugs(next);
+    setFavoriteLibraryRecords((current) => {
+      const exists = current.some((record) => record.slug === resource.slug && record.favorite);
+      const next = normalizeFavoriteLibraryRecords([
+        { slug: resource.slug, favorite: !exists, updatedAt: new Date().toISOString() },
+        ...current,
+      ]);
+      saveFavoriteLibraryRecords(next);
       setSyncMessage(exists ? `${resource.title} removed from Library favorites.` : `${resource.title} added to Library favorites.`);
       return next;
     });

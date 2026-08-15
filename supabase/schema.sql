@@ -213,6 +213,36 @@ create table if not exists public.user_completed_resources (
 
 create index if not exists user_completed_resources_user_slug_idx on public.user_completed_resources (user_id, resource_slug);
 
+create table if not exists public.user_library_favorites (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  resource_slug text not null check (length(trim(resource_slug)) between 1 and 240),
+  is_favorite boolean not null default true,
+  updated_at timestamptz not null default now(),
+  unique (user_id, resource_slug)
+);
+
+create or replace function public.keep_newest_library_favorite_update()
+returns trigger
+language plpgsql
+security invoker
+set search_path = ''
+as $$
+begin
+  if old.updated_at > new.updated_at then
+    return old;
+  end if;
+  return new;
+end;
+$$;
+
+revoke all on function public.keep_newest_library_favorite_update() from public;
+
+drop trigger if exists keep_newest_library_favorite_update on public.user_library_favorites;
+create trigger keep_newest_library_favorite_update
+  before update on public.user_library_favorites
+  for each row execute function public.keep_newest_library_favorite_update();
+
 create table if not exists public.user_listening_progress (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
@@ -531,6 +561,7 @@ alter table public.user_highlights enable row level security;
 alter table public.user_bookmarks enable row level security;
 alter table public.user_library_progress enable row level security;
 alter table public.user_completed_resources enable row level security;
+alter table public.user_library_favorites enable row level security;
 alter table public.user_listening_progress enable row level security;
 alter table public.user_bible_listening_progress enable row level security;
 alter table public.user_bible_mastery enable row level security;
@@ -575,6 +606,10 @@ drop policy if exists "Users can read their completed resources" on public.user_
 drop policy if exists "Users can create their completed resources" on public.user_completed_resources;
 drop policy if exists "Users can update their completed resources" on public.user_completed_resources;
 drop policy if exists "Users can delete their completed resources" on public.user_completed_resources;
+drop policy if exists "Users can read their library favorites" on public.user_library_favorites;
+drop policy if exists "Users can create their library favorites" on public.user_library_favorites;
+drop policy if exists "Users can update their library favorites" on public.user_library_favorites;
+drop policy if exists "Users can delete their library favorites" on public.user_library_favorites;
 drop policy if exists "Users can read their listening progress" on public.user_listening_progress;
 drop policy if exists "Users can create their listening progress" on public.user_listening_progress;
 drop policy if exists "Users can update their listening progress" on public.user_listening_progress;
@@ -734,6 +769,27 @@ create policy "Users can update their completed resources"
 
 create policy "Users can delete their completed resources"
   on public.user_completed_resources for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their library favorites"
+  on public.user_library_favorites for select
+  to authenticated
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their library favorites"
+  on public.user_library_favorites for insert
+  to authenticated
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their library favorites"
+  on public.user_library_favorites for update
+  to authenticated
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their library favorites"
+  on public.user_library_favorites for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their listening progress"
@@ -967,6 +1023,8 @@ grant select, insert, update, delete on public.user_highlights to authenticated;
 grant select, insert, update, delete on public.user_bookmarks to authenticated;
 grant select, insert, update, delete on public.user_library_progress to authenticated;
 grant select, insert, update, delete on public.user_completed_resources to authenticated;
+revoke all on public.user_library_favorites from anon, authenticated;
+grant select, insert, update, delete on public.user_library_favorites to authenticated;
 grant select, insert, update, delete on public.user_listening_progress to authenticated;
 grant select, insert, update, delete on public.user_bible_listening_progress to authenticated;
 grant select, insert, update, delete on public.user_bible_mastery to authenticated;
