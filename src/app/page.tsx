@@ -1041,7 +1041,9 @@ type LicensedResourceLink = {
   collection: string;
   sourceUrl: string;
   sourcePageUrl?: string;
+  passageEvidenceUrl?: string;
   resourceFormat?: "Official Audio Link";
+  passage?: string;
   duration?: string;
   permissionStatus: string;
   reviewStatus: string;
@@ -33929,6 +33931,7 @@ function licensedResourceLinkMatchesAllTerms(resource: LicensedResourceLink, ter
     resource.category,
     resource.collection,
     resource.resourceFormat ?? "",
+    resource.passage ?? "",
     resource.duration ?? "",
     resource.permissionStatus,
     resource.reviewStatus,
@@ -43502,6 +43505,12 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Official ministry link</p>
           <h3 className="mt-2 text-lg font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
+          {resource.passage && (
+            <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--ink)]">
+              <BookOpen size={14} />
+              {resource.passage}
+            </p>
+          )}
           {resource.duration && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.duration}</p>}
         </div>
         <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">

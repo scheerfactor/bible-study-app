@@ -90,6 +90,15 @@ for (const [index, record] of records.entries()) {
     if (!String(record.notes).includes("By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org.")) {
       errors.push(`${label}: official TTB audio notes must retain the required attribution`);
     }
+    if (record.passage) {
+      if (!isValidUrl(record.passageEvidenceUrl)) errors.push(`${label}: passage-indexed audio requires an https passageEvidenceUrl`);
+      if (!String(record.passageEvidenceUrl).startsWith("https://ttb.org/") && !String(record.passageEvidenceUrl).startsWith("https://www.ttb.org/")) {
+        errors.push(`${label}: passage evidence must come from an official TTB page`);
+      }
+      if (!String(record.reviewStatus).toLowerCase().includes("passage")) {
+        errors.push(`${label}: passage-indexed audio must keep passage review visible`);
+      }
+    }
   }
 
   if (!Array.isArray(record.notApprovedWithoutFollowup) || record.notApprovedWithoutFollowup.length === 0) {

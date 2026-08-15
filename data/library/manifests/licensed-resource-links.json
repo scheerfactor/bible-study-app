@@ -3603,5 +3603,63 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-remember-jesus-christ-audio-2026-08-15.md",
     "recommendedUse": "Farewell sermon listening; pastoral reflection; preaching and ministry encouragement",
     "notes": "Sunday Sermon #2177, published in TTB's official feed on August 11, 2024. Streams from the exact official TTB CDN file; no audio or transcript is copied into the app. Required attribution: By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org."
+  },
+  {
+    "id": "licensed-thru-the-bible-potter-and-clay-audio",
+    "title": "The Potter and the Clay",
+    "author": "Dr. J. Vernon McGee",
+    "publisherMinistry": "Thru the Bible",
+    "category": "Sermons",
+    "collection": "Thru the Bible Free Audio Links",
+    "resourceFormat": "Official Audio Link",
+    "passage": "Jeremiah 18",
+    "duration": "44:45",
+    "sourceUrl": "https://teachings-cdn.thruthebible.io/658c4525-63bd-44a8-b43a-2145fb87435e",
+    "sourcePageUrl": "https://ttb.org/resources/articles-news/features/2019/06/25/how-is-god-shaping-you",
+    "passageEvidenceUrl": "https://ttb.org/resources/articles-news/features/2019/06/25/how-is-god-shaping-you",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Exact title, passage evidence, TTB feed GUID, official enclosure, duration, size, ETag, and SHA-256 reviewed 2026-08-15",
+    "approvedPublicUse": [
+      "Official link to exact TTB-hosted audio",
+      "Citation to the official TTB passage source"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting",
+      "Audio rehosting, editing, or excerpting outside the documented policy conditions",
+      "AI/TTS narration or derivative audio",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-passage-sermons-2026-08-15.md",
+    "recommendedUse": "Jeremiah 18 sermon study; spiritual formation; preaching illustrations about the Potter and the clay",
+    "notes": "Sunday Sermon #2174, published in TTB's official feed on July 21, 2024. The Jeremiah 18 index is supported by TTB's own article and booklet catalog. Streams from the exact official TTB CDN file; no audio or transcript is copied into the app. Required attribution: By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org."
+  },
+  {
+    "id": "licensed-thru-the-bible-believers-in-days-of-apostasy-audio",
+    "title": "What Can Believers Do in Days of Apostasy?",
+    "author": "Dr. J. Vernon McGee",
+    "publisherMinistry": "Thru the Bible",
+    "category": "Sermons",
+    "collection": "Thru the Bible Free Audio Links",
+    "resourceFormat": "Official Audio Link",
+    "passage": "Jude 20-25",
+    "duration": "44:45",
+    "sourceUrl": "https://teachings-cdn.thruthebible.io/7eefa3d6-0fdb-4c29-b918-fe37ecf25d52",
+    "sourcePageUrl": "https://www.ttb.org/docs/default-source/booklets/what-can-believers-do-in-days-of-apostasy.pdf?sfvrsn=2",
+    "passageEvidenceUrl": "https://www.ttb.org/docs/default-source/booklets/what-can-believers-do-in-days-of-apostasy.pdf?sfvrsn=2",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Exact title, passage evidence, TTB feed GUID, official enclosure, duration, size, ETag, and SHA-256 reviewed 2026-08-15",
+    "approvedPublicUse": [
+      "Official link to exact TTB-hosted audio",
+      "Citation to the official TTB passage source"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting",
+      "Audio rehosting, editing, or excerpting outside the documented policy conditions",
+      "AI/TTS narration or derivative audio",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-passage-sermons-2026-08-15.md",
+    "recommendedUse": "Jude 20-25 sermon study; apostasy and discernment; teaching believers how to remain faithful",
+    "notes": "Published in TTB's official feed on October 5, 2025; the current feed does not supply a program number. TTB's booklet catalog maps the former sermon title to its Jude 20-25 resource. Streams from the exact official TTB CDN file; no audio or transcript is copied into the app. Required attribution: By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org."
   }
 ]
