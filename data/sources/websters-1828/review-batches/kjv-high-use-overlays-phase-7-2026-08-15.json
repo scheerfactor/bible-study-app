@@ -1,0 +1,99 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-7-2026-08-15",
+  "reviewed_at": "2026-08-15",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Continued ranking Webster base headwords with unoverlaid high or medium OCR flags by exact lower-case KJV word occurrence, carried forward unavailable higher-ranked candidates, and selected the next eight source-verifiable words.",
+  "review_method": "Imported the complete displayed definition without editorial rewriting, independently re-fetched each exact-headword page, normalized whitespace only, and required an exact match to the stored overlay.",
+  "unavailable_higher_ranked_candidates": [
+    "plain",
+    "centurion",
+    "hyssop",
+    "hasten",
+    "helmet",
+    "cankerworm",
+    "eventide"
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No related-word or missing-result page was accepted.",
+    "No definition wording was summarized, modernized, or invented.",
+    "Source paragraph counts are retained as source line ranges in the overlay records."
+  ],
+  "entries": [
+    {
+      "word": "mustard",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/mustard",
+      "source_paragraphs": 1,
+      "exact_source_match": true
+    },
+    {
+      "word": "nourish",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the", "split_wh_words"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/nourish",
+      "source_paragraphs": 12,
+      "exact_source_match": true
+    },
+    {
+      "word": "proof",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the", "split_wh_words"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/proof",
+      "source_paragraphs": 15,
+      "exact_source_match": true
+    },
+    {
+      "word": "reputation",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/reputation",
+      "source_paragraphs": 4,
+      "exact_source_match": true
+    },
+    {
+      "word": "size",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/size",
+      "source_paragraphs": 10,
+      "exact_source_match": true
+    },
+    {
+      "word": "skull",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/skull",
+      "source_paragraphs": 5,
+      "exact_source_match": true
+    },
+    {
+      "word": "stubborn",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/stubborn",
+      "source_paragraphs": 10,
+      "exact_source_match": true
+    },
+    {
+      "word": "tale",
+      "kjv_occurrences": 5,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the", "split_wh_words", "known_common_ocr"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/tale",
+      "source_paragraphs": 13,
+      "exact_source_match": true
+    }
+  ]
+}
