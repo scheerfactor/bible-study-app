@@ -132,24 +132,39 @@ hello@fathersbusinessmasteryresources.com
 
 ## Way of Life Literature / David Cloud
 
-Status: Do not send this generic follow-up while the documented public sharing policy is sufficient. Use it only when requesting a specific broader right for a named resource.
+Status: Draft only. The official policy was re-reviewed 2026-08-14. Do not send without Stephen's explicit approval at send time.
 
 Subject:
 
 ```text
-Following up on Father's Business Bible Study permission question
+Specific permission question for five free eBooks and official media links
 ```
 
 Body:
 
 ```text
-Hello,
+Hello Way of Life Literature,
 
-I wanted to briefly follow up on my permissions question for Father's Business Bible Study.
+I am following up on the permission question I sent July 3 for Father's Business Bible Study. I have reviewed your official sharing policy and understand that free eBooks are copyrighted, must remain intact, and may not be posted or distributed from another website. I will honor that boundary and direct readers to the current official Way of Life copies.
 
-I am not asking to publish any Way of Life text, books, audio, or excerpts without written approval. I am simply trying to find the correct process for metadata, official links, approved excerpts, private beta use, or possible future permission discussions.
+Could you please give a separate yes or no for whether the app may use the following for these five free eBooks?
 
-If there is a better contact or preferred permissions process, I would appreciate your direction.
+- Does Salvation Make a Difference?
+- The Bible's Proof
+- The Bible's Amazing Story
+- Questions Answered on the Bible & Christianity
+- The Bible Knowledge Test
+
+1. Title, author, a factual description, and an official Way of Life link
+2. The official cover or promotional image with credit and a source link
+3. A short approved excerpt of up to 100 words with credit and a source link
+4. A link or inline embed to selected audio sermons or free video presentations that remain hosted by Way of Life or its official media provider
+
+I am not requesting permission to host or redistribute full eBook, audio, or video files; import transcripts; create AI or text-to-speech narration; reuse PowerPoint presentations; include paid or Store resources; export copyrighted material into presentations; place it behind paid access; resell it; or imply endorsement.
+
+If item 3 is acceptable only with excerpts selected or approved by you, I would be glad to submit them before use. If inline media embeds are not desired, I will use official links only.
+
+If another person handles these requests, I would appreciate the correct contact.
 
 Thank you,
 

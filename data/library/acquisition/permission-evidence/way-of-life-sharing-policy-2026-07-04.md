@@ -1,5 +1,10 @@
 # Way of Life Literature Sharing Policy Evidence
 
+> Historical review note: This record reflects the 2026-07-04 review. The
+> narrower, current app-use decision is documented in
+> `way-of-life-sharing-policy-review-2026-08-14.md`. In particular, free
+> eBooks may not be posted or distributed from the Bible Study App website.
+
 ## Review Status
 
 | Field | Value |

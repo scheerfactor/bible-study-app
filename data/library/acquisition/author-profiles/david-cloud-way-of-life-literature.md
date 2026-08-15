@@ -12,9 +12,9 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource category | KJV Baptist doctrine apologetics and church issues |
 | Profile status | Needs Review |
 | Resource approval status | Needs Review |
-| Copyright status | Shareable policy documented - title/category review required |
-| Permission needed | Yes for Store/paid items; review shareable categories item by item |
-| Permission/contact info | fbns@wayoflife.org; support@wayoflife.org |
+| Copyright status | Public sharing policy verified - no app file hosting |
+| Permission needed | Yes for cover art, excerpts, embeds, file hosting, derivative uses, and all Store/paid items |
+| Permission/contact info | support@wayoflife.org (website/eBooks/downloads); fbns@wayoflife.org (general) |
 | Website | https://www.wayoflife.org/ |
 | Collection label | Shareable With Citation - Needs Review |
 | Review score | Not scored |
@@ -65,20 +65,22 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | fbns@wayoflife.org |
+| Known contact | support@wayoflife.org; fbns@wayoflife.org |
 | Website | https://www.wayoflife.org/ |
-| Permission status | Sharing Policy Documented - Review Per Item |
-| Requested use | Limited listing/link/excerpt/audio-video inquiry |
+| Permission status | Five-title draft ready - not sent |
+| Requested use | Metadata, cover art, short approved excerpt, and official-hosted media links/embeds |
 | Follow-up needed | Yes |
 
 Notes:
 
 - Do not approve broad catalog use.
-- Public sharing policy was documented 2026-07-04 at `https://www.wayoflife.org/reports/lonnie_frisbee_and_the_jesus_.php`.
+- Public sharing policy was first documented 2026-07-04 and re-reviewed 2026-08-14 at `https://www.wayoflife.org/sharing/`.
+- Current evidence and the conservative app-use decision are recorded in `data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md`.
 - Shareable categories named by the policy include audio sermons, O Timothy magazine, FBIS articles, free eVideos, free eBooks, and reports with proper credit/citation and preferably an original source link.
+- Free eBooks may be given to individuals intact but may not be posted or distributed from the Bible Study App website. Use official download links unless written permission says otherwise.
 - First title-level intake queue: `data/library/acquisition/way-of-life-shareable-resource-intake-2026-07-04.csv`.
 - Store items, the Fundamental Baptist Digital Library, print books, paid ebooks, and paid videos are not shareable and remain permission-needed.
-- Ask about specific titles, excerpts, links, audio, video, transcript use, image/chart use, and future paid-access terms separately.
+- A five-title follow-up is drafted for metadata, cover art, short approved excerpts, and official-hosted media links/embeds only. It excludes full-file hosting, transcripts, TTS, presentation export, paid access, resale, and paid resources.
 - Record written permission before any copyrighted material becomes public in the app.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
 
