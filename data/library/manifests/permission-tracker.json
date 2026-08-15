@@ -56,8 +56,8 @@
     "contactInfo": "info@ttb.org",
     "resourceTitle": "Thru the Bible commentary and study resources",
     "requestedRights": "Limited listing, official links, approved excerpts, transcripts/audio/embed permission, and future licensed/premium access for reading, search, study recommendations, and possible listening workflow.",
-    "status": "Permission requested 2026-07-03",
-    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Treat as premium/licensed only. Do not import transcripts, audio, or commentary text without written permission."
+    "status": "Public distribution policy documented; broader licensing request unanswered",
+    "notes": "Initial permission email was sent manually by Stephen. Separately, the official TTB copyright policy permits free reproduction and distribution of unaltered print or audio TTB material with clear attribution, excerpt labeling where applicable, no fee, and a TTB web link. Keep copied TTB material outside paid access. Verify exact official source files before hosting. Evidence: data/library/acquisition/permission-evidence/thru-the-bible-audio-distribution-policy-2026-08-15.md."
   },
   {
     "id": "permission-mark-cahill",
@@ -86,8 +86,8 @@
     "contactInfo": "administrator@solvefamilyproblems.org",
     "resourceTitle": "Family, preaching, and teaching resources",
     "requestedRights": "Limited listing, official links, approved excerpts, cover/promotional graphics, audio/video embed permission, and future licensed/premium access for reading, listening, and teaching-prep recommendations.",
-    "status": "Permission requested 2026-07-04",
-    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Modern ministry content. Do not publish audio, video, transcripts, or book text without written permission."
+    "status": "Permission granted scoped 2026-07-06 - website metadata only",
+    "notes": "Solve Family Problems granted use of website-available titles, graphics, and descriptions with attribution and official links. Audio, video, transcripts, full text, hosting, embedding, AI/TTS narration, and paid access were not granted. A separate audio/video expansion request is drafted but must not be sent without Stephen's approval. Evidence: data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md."
   },
   {
     "id": "permission-bo-wagner",

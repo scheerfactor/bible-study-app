@@ -44,6 +44,18 @@
       "midi_sha256": "e20b3a41f78b611aaa77e17bf28173eb0c3f9d7421b7996dd877035330df52e8",
       "rdf_file": "villeduh.rdf",
       "rdf_sha256": "dac4141a27de41b331fa151ac9c68070dbf9c0e99166e68a2a0671758f83d144"
+    },
+    {
+      "id": "crown-him-with-many-crowns",
+      "title": "Crown Him with Many Crowns",
+      "text_source_url": "https://hymnary.org/hymn/SDAH1886/125",
+      "text_rights": "Public domain",
+      "music_source_url": "https://www.mutopiaproject.org/ftp/ElveyGJ/Diademata/",
+      "music_rights": "Public Domain",
+      "midi_file": "Diademata.mid",
+      "midi_sha256": "ad8d8e84831f11d4ef5ecd60647c97f2ec37055e1e7e33d5bc18463e1285a39d",
+      "rdf_file": "Diademata.rdf",
+      "rdf_sha256": "0fa012cf4add2954a8e2e02a967adbcdf7f8bcef8cd781e5b7932436b16224f8"
     }
   ]
 }

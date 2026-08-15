@@ -3528,5 +3528,53 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
     "recommendedUse": "Anger counseling; family discipleship; official purchase/listing link",
     "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed MP4/video, MP3/audio, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
+  },
+  {
+    "id": "licensed-thru-the-bible-audio-study",
+    "title": "THRU the BIBLE Audio Study",
+    "author": "Dr. J. Vernon McGee",
+    "publisherMinistry": "Thru the Bible",
+    "category": "Bible Study",
+    "collection": "Thru the Bible Free Audio Links",
+    "sourceUrl": "https://help.ttb.org/en/articles/9617026-thru-the-bible-app-listen",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Official link reviewed; title-level audio hosting review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation to the official TTB audio-study page"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting",
+      "Audio hosting before exact official-file verification",
+      "AI/TTS narration or derivative audio",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-audio-distribution-policy-2026-08-15.md",
+    "recommendedUse": "Whole-Bible audio study; official listening path; Bible-book study companion",
+    "notes": "Link to the official free listening experience. Any later copied audio must remain unaltered, free of charge, clearly attributed, linked to TTB, and verified at the exact title/file level."
+  },
+  {
+    "id": "licensed-thru-the-bible-sunday-sermons",
+    "title": "Sunday Sermons",
+    "author": "Dr. J. Vernon McGee",
+    "publisherMinistry": "Thru the Bible",
+    "category": "Sermons",
+    "collection": "Thru the Bible Free Audio Links",
+    "sourceUrl": "https://ttb.org/programs/sunday-sermon",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Official sermon-series link reviewed; title-level audio hosting review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation to the official TTB Sunday Sermon page"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting",
+      "Audio hosting before exact official-file verification",
+      "AI/TTS narration or derivative audio",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-audio-distribution-policy-2026-08-15.md",
+    "recommendedUse": "Sermon listening; preaching help; pastoral-message discovery",
+    "notes": "Official TTB page for sermons from Dr. McGee's Church of the Open Door pastorate. Keep the link and any policy-compliant copy outside paid access with the required attribution."
   }
 ]

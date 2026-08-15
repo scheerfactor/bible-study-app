@@ -53,7 +53,7 @@ for (const hymn of hymns) {
   }
 }
 
-if (hymns.length !== 6) errors.push("Expected exactly 6 reviewed hymns in the verified set.");
+if (hymns.length !== 7) errors.push("Expected exactly 7 reviewed hymns in the verified set.");
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

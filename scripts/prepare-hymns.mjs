@@ -164,6 +164,31 @@ const hymns = [
     musicAttribution: "Tune by Philip P. Bliss, 1876; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
     reviewedAt: "2026-08-15",
   },
+  {
+    id: "crown-him-with-many-crowns",
+    title: "Crown Him with Many Crowns",
+    lyricist: "Matthew Bridges",
+    lyricYear: 1851,
+    tune: "Diademata",
+    scriptureReferences: ["Revelation 4:10-11", "Revelation 19:12"],
+    stanzas: [
+      "Crown him with many crowns,\nThe Lamb upon his throne;\nHark! how the heavenly anthem drowns,\nAll music but its own!\nAwake, my soul, and sing\nOf him who died for thee;\nAnd hail him as thy matchless King\nThrough all eternity.",
+      "Crown him the Lord of love!\nBehold his hands and side,\nThose wounds, yet visible above,\nIn beauty glorified:\nNo angel in the sky\nCan fully bear that sight,\nBut downward bends his wondering eye\nAt mysteries so great.",
+      "Crown him the Lord of peace!\nWhose hand a scepter sways\nFrom pole to pole, that wars may cease,\nAnd all be prayer and praise:\nHis reign shall know no end,\nAnd round his pierced feet\nFair flowers of paradise extend,\nTheir fragrance ever sweet.",
+      "Crown him the Lord of years,\nThe Potentate of time,\nCreator of the rolling spheres,\nIneffably sublime!\nAll hail! Redeemer, hail!\nFor thou hast died for me;\nThy praise shall never, never fail\nThroughout eternity.",
+    ],
+    refrain: null,
+    textSourceUrl: "https://hymnary.org/hymn/SDAH1886/125",
+    textRights: "Public domain; text checked line by line against The Seventh-Day Adventist Hymn and Tune Book (1886), hymn 125.",
+    midiFile: "Diademata.mid",
+    midiSha256: "ad8d8e84831f11d4ef5ecd60647c97f2ec37055e1e7e33d5bc18463e1285a39d",
+    rdfFile: "Diademata.rdf",
+    rdfSha256: "0fa012cf4add2954a8e2e02a967adbcdf7f8bcef8cd781e5b7932436b16224f8",
+    musicSourceUrl: "https://www.mutopiaproject.org/ftp/ElveyGJ/Diademata/",
+    musicRights: "Public Domain",
+    musicAttribution: "Tune by George J. Elvey, 1868; public-domain SATB file maintained by Peter Chubb for the Mutopia Project.",
+    reviewedAt: "2026-08-15",
+  },
 ];
 
 function round(value) {

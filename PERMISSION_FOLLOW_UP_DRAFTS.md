@@ -4,7 +4,7 @@ These drafts were prepared for the first permission requests sent July 3-4, 2026
 
 Do not send automatically. Stephen must review each thread, confirm there has been no reply, and approve each follow-up before sending.
 
-Current review date: August 14, 2026.
+Current review date: August 15, 2026.
 
 ## General Follow-Up Rules
 
@@ -99,6 +99,43 @@ If these areas are handled by different departments, I would appreciate being po
 
 Thank you,
 
+Stephen Scheer
+Father's Business Bible Study
+hello@fathersbusinessmasteryresources.com
+```
+
+## Dr. S. M. Davis / Solve Family Problems - Audio and Video Expansion
+
+Status: Draft only. The July 6 reply granted website titles, graphics, and descriptions, but did not grant audio, video, transcripts, hosting, or embedding.
+
+Subject:
+
+```text
+Permission question for selected Dr. S. M. Davis audio or video messages
+```
+
+Body:
+
+```text
+Hello,
+
+Thank you again for allowing Father's Business Bible Study to use website-available titles, graphics, and descriptions with links back to Solve Family Problems.
+
+I would like to ask separately about one small audio/video pilot. Would you permit us to place an official player link or inline embed for up to three selected Dr. S. M. Davis messages inside the free Bible-study and sermon-preparation area of the app?
+
+For each approved message, we would:
+
+1. Use the exact official title and ministry attribution
+2. Link users back to the official Solve Family Problems page
+3. Keep the resource free and outside paid access
+4. Not alter, download, rehost, transcribe, excerpt, or use AI/TTS unless separately approved
+5. Submit the exact three titles and intended player method for confirmation before publishing
+
+If inline embedding is not permitted, may we continue with a normal official-page link only?
+
+Thank you for helping me handle the material correctly.
+
+In Christ,
 Stephen Scheer
 Father's Business Bible Study
 hello@fathersbusinessmasteryresources.com

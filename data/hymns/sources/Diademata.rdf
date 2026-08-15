@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:mp="http://www.mutopiaproject.org/piece-data/0.1/">
+
+<rdf:Description rdf:about=".">
+    <mp:title>Diademata</mp:title>
+    <mp:composer>ElveyGJ</mp:composer>
+    <mp:opus/>
+    <mp:lyricist>n/a</mp:lyricist>
+    <mp:for>Voice (SATB)</mp:for>
+    <mp:date>1868</mp:date>
+    <mp:style>Hymn</mp:style>
+    <mp:metre>6 6. 8 6. D</mp:metre>
+    <mp:arranger>n/a</mp:arranger>
+    <mp:source>Book of Common Praise, 1908, number 367</mp:source>
+    <mp:licence>Public Domain</mp:licence>
+
+    <mp:lyFile>Diademata.ly</mp:lyFile>
+    <mp:midFile>Diademata.mid</mp:midFile>
+    <mp:psFileA4>Diademata-a4.ps.gz</mp:psFileA4>
+    <mp:pdfFileA4>Diademata-a4.pdf</mp:pdfFileA4>
+    <mp:psFileLet>Diademata-let.ps.gz</mp:psFileLet>
+    <mp:pdfFileLet>Diademata-let.pdf</mp:pdfFileLet>
+    <mp:pngFile>Diademata-preview.png</mp:pngFile>
+    <mp:pngHeight>122</mp:pngHeight>
+    <mp:pngWidth>507</mp:pngWidth>
+
+    <mp:id>Mutopia-2005/01/18-524</mp:id>
+    <mp:maintainer>Peter Chubb</mp:maintainer>
+    <mp:maintainerEmail>mutopia@chubb.wattle.id.au</mp:maintainerEmail>
+    <mp:maintainerWeb/>
+    <mp:moreInfo>&lt;p&gt;Words include "Crown him with many crowns".&lt;/p&gt;</mp:moreInfo>
+    <mp:lilypondVersion>2.4.2</mp:lilypondVersion>
+</rdf:Description>
+
+</rdf:RDF>

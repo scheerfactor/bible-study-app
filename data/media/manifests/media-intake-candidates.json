@@ -1292,6 +1292,25 @@
     "nextAction": "Wait for Thru the Bible response; if approved, import only within granted scope and keep official links prominent."
   },
   {
+    "id": "ttb-official-sunday-sermons-free-distribution-pilot",
+    "kind": "Sermon Audio",
+    "title": "Thru the Bible Sunday Sermons official-source pilot",
+    "creator": "Dr. J. Vernon McGee / Thru the Bible",
+    "passage": "Selected title to verify",
+    "series": "Sunday Sermons",
+    "duration": "One-message pilot; runtime to verify",
+    "sourceUrl": "https://ttb.org/programs/sunday-sermon",
+    "rightsStatus": "Approved",
+    "intakeStatus": "Draft",
+    "storageBucket": "fathers-business-bible-study-public",
+    "storagePath": "audio/sermons/thru-the-bible/sunday-sermons/pilot/",
+    "transcriptPath": "transcripts/sermons/thru-the-bible/sunday-sermons-pilot.md",
+    "coverPath": "media/covers/teaching/thru-the-bible-sunday-sermons.webp",
+    "visibility": "Private admin draft",
+    "notes": "TTB's public copyright policy permits free distribution of unaltered TTB audio with exact attribution, excerpt labeling where applicable, no fee, and a link to TTB. No audio file has been copied. Use only an exact official TTB source; do not use the unrelated Archive.org upload.",
+    "nextAction": "Choose one official TTB-hosted sermon, verify its title and source file, retain the required attribution, confirm it remains outside paid access, and run playback and duplicate checks before storage."
+  },
+  {
     "id": "archive-kjv-dramatized-genesis-stories-video-permission-candidate",
     "kind": "Bible Audio",
     "title": "KJV Dramatized - Stories From Genesis candidate",

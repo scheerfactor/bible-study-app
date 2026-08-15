@@ -233,7 +233,7 @@ type SermonKind = "Sermon" | "Lesson";
 type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
 type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "presenting";
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
-type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Closing / Invitation";
+type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Countdown" | "Announcement" | "Question" | "Closing / Invitation";
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
@@ -456,6 +456,7 @@ type SermonSlide = {
   body: string;
   bibleText: string;
   speakerNotes: string;
+  countdownMinutes: number;
   backgroundStyle: SermonSlideBackgroundStyle;
   imageTheme: string;
   imageSlot: SermonSlideImageSlotId;
@@ -2327,7 +2328,116 @@ const SERMON_SECTION_LABELS: Record<SermonSectionKey, string> = {
 
 const SERMON_SECTION_FIELDS: SermonSectionKey[] = ["outline", "introduction", "points", "illustrations", "applications", "conclusion", "invitation"];
 
-const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Application", "Closing / Invitation"];
+const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Application", "Countdown", "Announcement", "Question", "Closing / Invitation"];
+const PRESENTATION_SERVICE_PRESETS: Array<{
+  id: string;
+  label: string;
+  type: SermonSlideType;
+  patch: Partial<SermonSlide>;
+}> = [
+  {
+    id: "service-countdown",
+    label: "5:00 Countdown",
+    type: "Countdown",
+    patch: {
+      title: "Service Begins Soon",
+      subtitle: "Welcome",
+      body: "Worship service time - Church location",
+      countdownMinutes: 5,
+      imageSlot: "church-window",
+    },
+  },
+  {
+    id: "service-welcome",
+    label: "Welcome",
+    type: "Announcement",
+    patch: {
+      title: "Welcome",
+      subtitle: "We are glad you are here",
+      body: "Worship service time - Church location",
+      imageSlot: "church-window",
+    },
+  },
+  {
+    id: "service-singing",
+    label: "Worship Singing",
+    type: "Announcement",
+    patch: {
+      title: "Worship in Song",
+      subtitle: "Please stand as you are able",
+      body: "Hymn title or congregational song",
+      imageSlot: "church-window",
+    },
+  },
+  {
+    id: "service-silence-phones",
+    label: "Silence Phones",
+    type: "Announcement",
+    patch: {
+      title: "Please Silence Your Phone",
+      subtitle: "Thank you for helping us worship without distraction",
+      body: "Emergency calls may be taken in the foyer.",
+      imageSlot: "quiet-study",
+    },
+  },
+  {
+    id: "service-scripture",
+    label: "Bible Reading",
+    type: "Scripture",
+    patch: {
+      title: "Scripture Reading",
+      subtitle: "King James Version",
+      bibleText: "Enter the KJV passage and verse text.",
+      imageSlot: "open-bible",
+    },
+  },
+  {
+    id: "service-quote",
+    label: "Attributed Quote",
+    type: "Quote",
+    patch: {
+      title: "Quote",
+      subtitle: "Author or preacher - source",
+      body: "Enter an exact, source-checked quotation.",
+      speakerNotes: "Record the work, page or sermon, source URL, and image rights before presenting.",
+      imageSlot: "quiet-study",
+    },
+  },
+  {
+    id: "service-light-story",
+    label: "Light Story",
+    type: "Illustration",
+    patch: {
+      title: "A Light Moment",
+      subtitle: "Brief illustration",
+      body: "",
+      speakerNotes: "Add a brief, fitting story that serves the passage and does not embarrass a real person.",
+      imageSlot: "shepherd-field",
+    },
+  },
+  {
+    id: "service-question",
+    label: "Good Question",
+    type: "Question",
+    patch: {
+      title: "What does this passage require us to believe and obey?",
+      subtitle: "Consider the text",
+      body: "",
+      imageSlot: "open-bible",
+    },
+  },
+  {
+    id: "service-sermon",
+    label: "Sermon Begins",
+    type: "Title",
+    patch: {
+      title: "Sermon Title",
+      subtitle: "Bible passage - Preacher",
+      body: "",
+      imageSlot: "pulpit",
+    },
+  },
+];
 const SERMON_SLIDE_LAYOUTS: SermonSlideLayout[] = ["Centered", "Scripture Focus", "Two Column", "Teaching Point", "Image Left", "Minimal"];
 const SERMON_SLIDE_BACKGROUND_STYLES: SermonSlideBackgroundStyle[] = ["Theme", "Soft Gradient", "Paper", "Dark", "Light"];
 const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
@@ -14144,6 +14254,7 @@ function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): Sermo
   const accentStyle = ["None", "Line", "Badge", "Panel"].includes(slide.accentStyle ?? "") ? slide.accentStyle as SermonSlideAccentStyle : "Line";
   const verseDisplay = ["Reference + Text", "Text Only", "Reference Only"].includes(slide.verseDisplay ?? "") ? slide.verseDisplay as SermonSlideVerseDisplay : "Reference + Text";
   const backgroundIntensity = ["Soft", "Balanced", "Strong"].includes(slide.backgroundIntensity ?? "") ? slide.backgroundIntensity as SermonSlideBackgroundIntensity : "Balanced";
+  const countdownMinutes = Math.min(60, Math.max(1, Math.round(Number(slide.countdownMinutes) || 5)));
   return {
     id: slide.id || makeId("slide"),
     type,
@@ -14151,10 +14262,11 @@ function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): Sermo
     subtitle: slide.subtitle ?? "",
     body: slide.body ?? "",
     bibleText: slide.bibleText ?? "",
-	    speakerNotes: slide.speakerNotes ?? "",
-	    backgroundStyle,
-	    imageTheme: slide.imageTheme ?? SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
-	    imageSlot,
+    speakerNotes: slide.speakerNotes ?? "",
+    countdownMinutes,
+    backgroundStyle,
+    imageTheme: slide.imageTheme ?? SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
+    imageSlot,
 	    layout,
 	    fontScale,
 	    titleScale,
@@ -14636,6 +14748,43 @@ function formatScriptureSlideText(text: string, display: SermonSlideVerseDisplay
 }
 
 function sermonSlideTemplatePatch(type: SermonSlideType): Partial<SermonSlide> {
+  if (type === "Countdown") {
+    return {
+      layout: "Centered",
+      fontScale: "Large",
+      titleScale: "Medium",
+      textPlacement: "Center",
+      accentStyle: "None",
+      imageTheme: "Church Window",
+      imageSlot: "church-window",
+      backgroundIntensity: "Strong",
+      countdownMinutes: 5,
+    };
+  }
+  if (type === "Announcement") {
+    return {
+      layout: "Centered",
+      fontScale: "Normal",
+      titleScale: "Large",
+      textPlacement: "Center",
+      accentStyle: "Line",
+      imageTheme: "Church Window",
+      imageSlot: "church-window",
+      backgroundIntensity: "Balanced",
+    };
+  }
+  if (type === "Question") {
+    return {
+      layout: "Minimal",
+      fontScale: "Large",
+      titleScale: "Large",
+      textPlacement: "Center",
+      accentStyle: "Line",
+      imageTheme: "Open Bible",
+      imageSlot: "open-bible",
+      backgroundIntensity: "Soft",
+    };
+  }
   if (type === "Scripture") {
     return {
       layout: "Scripture Focus",
@@ -14730,6 +14879,7 @@ function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = 
     body: patch.body ?? "",
     bibleText: patch.bibleText ?? "",
     speakerNotes: patch.speakerNotes ?? "",
+    countdownMinutes: patch.countdownMinutes ?? template.countdownMinutes ?? 5,
     backgroundStyle: patch.backgroundStyle ?? "Theme",
     imageTheme: patch.imageTheme ?? template.imageTheme ?? "Open Bible",
     imageSlot: patch.imageSlot ?? template.imageSlot ?? "open-bible",
@@ -48695,6 +48845,19 @@ function PresentationWorkspaceScreen({
     setSelectedSlideId(slide.id);
   }
 
+  function addServicePreset(preset: (typeof PRESENTATION_SERVICE_PRESETS)[number]) {
+    const imageSlot = preset.patch.imageSlot ?? sermonSlideTemplatePatch(preset.type).imageSlot ?? slidePresetPatch(draft.themeId).imageSlot ?? "open-bible";
+    const slide = createSermonSlide(preset.type, {
+      ...slidePresetPatch(draft.themeId),
+      ...sermonSlideTemplatePatch(preset.type),
+      ...preset.patch,
+      imageSlot,
+      imageTheme: SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
+    });
+    onDraftChange({ slides: [...slides, slide] });
+    setSelectedSlideId(slide.id);
+  }
+
   function duplicateSlide(id: string) {
     const index = slides.findIndex((slide) => slide.id === id);
     if (index < 0) return;
@@ -49528,6 +49691,22 @@ function PresentationWorkspaceScreen({
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">Service Slide Presets</p>
+                </div>
+                <Timer className="text-[var(--green)]" size={18} />
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {PRESENTATION_SERVICE_PRESETS.map((preset) => (
+                  <button key={`presentation-preset-${preset.id}`} className="min-h-11 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold leading-4 text-[var(--green)]" onClick={() => addServicePreset(preset)} type="button">
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
                   <p className="text-sm font-semibold text-[var(--ink)]">Slide Deck Manager</p>
                   <p className="mt-1 text-xs text-[var(--muted)]">{slides.length} slides · {draft.groups.length} groups</p>
                 </div>
@@ -49705,6 +49884,23 @@ function SermonSlideMotif({ slotId, color }: { slotId: SermonSlideImageSlotId; c
   );
 }
 
+function PresentationCountdown({ slideId, minutes, running }: { slideId: string; minutes: number; running: boolean }) {
+  const initialSeconds = Math.max(1, minutes) * 60;
+  const [seconds, setSeconds] = useState(initialSeconds);
+
+  useEffect(() => {
+    if (!running) return;
+    const timer = window.setInterval(() => setSeconds((value) => Math.max(0, value - 1)), 1000);
+    return () => window.clearInterval(timer);
+  }, [running, slideId]);
+
+  return (
+    <p aria-live="off" className="mt-4 font-mono text-6xl font-semibold leading-none tabular-nums md:mt-6 md:text-8xl">
+      {formatSermonTimer(seconds)}
+    </p>
+  );
+}
+
 function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: SermonSlide; themeId: SermonSlideThemeId; presentation?: boolean }) {
   const theme = SERMON_SLIDE_THEMES[themeId] ?? SERMON_SLIDE_THEMES["classic-pulpit"];
   const imageSlot = SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot] ?? SERMON_SLIDE_IMAGE_SLOTS["open-bible"];
@@ -49767,6 +49963,7 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
             {slide.accentStyle !== "Badge" && slide.subtitle && <p className="text-sm font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</p>}
             {slide.accentStyle === "Line" && <div className={`mb-4 mt-3 h-1 w-16 rounded-full ${textAlign === "text-center" ? "mx-auto" : ""}`} style={{ backgroundColor: theme.accent }} />}
             <h3 className={`${titleSize} ${slide.accentStyle === "Line" ? "mt-0" : "mt-3"} font-semibold leading-tight`}>{slide.title || "Untitled slide"}</h3>
+            {slide.type === "Countdown" && <PresentationCountdown key={`${slide.id}-${slide.countdownMinutes}-${presentation ? "live" : "preview"}`} slideId={slide.id} minutes={slide.countdownMinutes} running={presentation} />}
             {slide.bibleText && (
               <p className={`${bodySize} mt-4 whitespace-pre-wrap font-serif ${bodyLeading} md:mt-5`}>
                 {slide.bibleText}
@@ -49870,6 +50067,12 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
               <option value="Text Only">Text Only</option>
               <option value="Reference Only">Reference Only</option>
             </select>
+          </label>
+        )}
+        {slide.type === "Countdown" && (
+          <label className="text-sm font-semibold text-[var(--muted)]">
+            Countdown Minutes
+            <input className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" max={60} min={1} type="number" value={slide.countdownMinutes} onChange={(event) => onChange({ countdownMinutes: Math.min(60, Math.max(1, Number(event.target.value) || 5)) })} />
           </label>
         )}
       </div>
