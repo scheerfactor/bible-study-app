@@ -3490,6 +3490,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "CARRYING",
+    "normalized_headword": "carrying",
+    "definition": "CARRYING, participle present tense Bearing, conveying, removing, etc. CARRYING, noun A bearing, conveying, removing, transporting. CARRYING trade, the trade which consists in the transportation of goods by water from country to country, or place to place. We are rivals with them in navigation and the carrying trade. Federalist, Jay. CARRYING wind, among horsemen, is a tossing of the nose, as high as the horses ears.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/carrying",
+    "source_line_start": 1,
+    "source_line_end": 5,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "CASE",
     "normalized_headword": "case",
     "definition": "CASE, noun 1. A covering, box or sheath; that which incloses or contains; as a case for knives; a case for books; a watch case; a printers case; a pillow case 2. The outer part of a building. 3. A certain quantity; as a case of crown glass. 4. A building unfurnished. CASE, verb transitive 1. To cover with a case; to surround with any material that shall inclose or defend. 2. To put in a case or box. 3. To strip off a case covering, or the skin. CASE, noun Literally, that which falls, comes, or happens; an event. Hence, the particular state, condition, or circumstances that befall a person, or in which he is placed; as, make the case your own; this is the case with my friend; this is his present case 2. The state of the body, with respect to health or disease; as a case of fever; he is in a consumptive case; his case is desperate. To be in good case is to be fat, and this phrase is customarily abridged, to be in case; applied to beasts, but not to men, except in a sense rather ludicrous. 3. A question; a state of facts involving a question for discussion or decision; as, the lawyer stated the case 4. A cause or suit in court; as, the case was tried at the last term. In this sense, case is nearly synonymous with cause, whose primary sense is nearly the same. 5. In grammar, the inflection of nouns, or a change of termination, to express a difference of relation in the word to others, or to the thing represented. The variation of nouns and adjectives is called declension; both case and declension signifying, falling or leaning from the first state of the word. Thus, liber is a book; libri, of a book; libro, to a book. In other words, case denotes a variation in the termination of a noun, to show how the noun acts upon the verb with which it is connected, or is acted upon by it, or by an agent. The cases, except the nominative, are called oblique cases. In case is a phrase denoting condition or supposition; literally, in the event or contingency; if it should so fall out or happen. Put the case suppose the event, or a certain state of things. Action on the case in law, is an action in which the whole cause of complaint is set out in the writ. CASE, verb intransitive To put cases.",
@@ -11850,6 +11860,26 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "LIGHTEN",
+    "normalized_headword": "lighten",
+    "definition": "LIGHTEN, verb intransitive li'tn. [from light, the fluid.] 1. To flash; to burst forth or dart, as lightning; to shine with an instantaneous illumination. This dreadful night that thunders, lightens, opens graves, and roars as doth the lion. 2. To shine like lightning. 3. To fall; to light. obsolete LIGHTEN, verb transitive li'tn. 1. To dissipate darkness; to fill with light; to spread over with light; to illuminate; to enlighten; as, to lighten an apartment with lamps or gas; to lighten the streets. A key of fire ran all along the shore, and lightened all the river with a blaze. 2. To illuminate with knowledge; in a moral sense. A light to lighten the Gentiles. Luke 2:32. 3. To free from trouble and fill with joy. They looked to him and were lightened. Psalms 34:5. LIGHTEN, verb transitive li'tn. [from light, not heavy.] 1. To make lighter; to reduce in weight; to make less heavy; as, to lighten a ship by unloading; to lighten a load or burden. 2. To alleviate; to make less burdensome or afflictive; as, to lighten the cares of life; to lighten the burden of grief. 3. To cheer; to exhilarate. He lightens my humor with his merry jest.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/lighten",
+    "source_line_start": 1,
+    "source_line_end": 17,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "LIGHTLY",
+    "normalized_headword": "lightly",
+    "definition": "LIGHTLY, adverb li'tely. 1. With little weight; as, to tread lightly; to press lightly 2. Without deep impression. The soft ideas of the cheerful note, lightly received, were easily forgot. 3. Easily; readily; without difficulty; of course. 4. Without reason, or for reasons of little weight. Flatter not the rich, neither do thou willingly or lightly appear before great personages. 5. Without dejection; cheerfully. Bid that welcome which comes to punish us, and we punish it, seeming to bear it lightly 6. Not chastely; wantonly. 7. Nimbly; with agility; not heavily or tardily. He led me lightly o'er the stream. 8. Gaily; airily; with levity; without heed or care.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/lightly",
+    "source_line_start": 1,
+    "source_line_end": 13,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "LIGHTNING",
     "normalized_headword": "lightning",
     "definition": "LIGHTNING, noun li'tening. [that is, lightening, the participle present of lighten.] 1. A sudden discharge of electricity from a cloud to the earth, or from the earth to a cloud, or from one cloud to another, that is, from a body positively charged to one negatively charged, producing a vivid flash of light, and usually a loud report, called thunder. Sometimes lightning is a mere instantaneous flash of light without thunder, as heat-lightning, lightning seen by reflection, the flash being beyond the limits of our horizon. 2. [from lighten, to diminish weight.] Abatement; alleviation; mitigation.",
@@ -14370,6 +14400,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "PAN",
+    "normalized_headword": "pan",
+    "definition": "PAN, noun 1. A vessel broad and somewhat hollow or depressed in the middle, or with a raised border; used for setting milk and other domestic purposes. 2. The part of a gun-lock or other fire-arms which holds the priming that communicates with the charge. 3. Something hollow; as the brain pan 4. Among farmers, the hard stratum of earth that lies below the soil; called the hard pan 5. The top of the head. PAN, verb transitive To join; to close together. [Local.]",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/pan",
+    "source_line_start": 1,
+    "source_line_end": 7,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "PANG",
     "normalized_headword": "pang",
     "definition": "PANG, noun Extreme pain; anguish; agony of body; particularly, a sudden paroxysm of extreme pain, as in spasm, or childbirth. Isaiah 21:3. I saw the hoary traitor, Grin in the pangs of death, and bit the ground. PANG, verb transitive To torture; to give extreme pain to.",
@@ -16600,6 +16640,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "RELIE'VE",
+    "normalized_headword": "relieve",
+    "definition": "RELIE'VE, verb transitive [Latin relevo. See Relief.] 1. To free, wholly or partially, from pain, grief, want, anxiety, care, toil, trouble, burden, oppression or any thing that is considered to be an evil; to ease of any thing that pains the body or distresses the mind. Repose relieves the wearied body; a supply of provisions relieves a family in want; medicines may relieve the sick man, even when they do not cure him. We all desire to be relieved from anxiety and from heavy taxes. Law or duty, or both, require that we should relieve the poor and destitute. 2. To alleviate or remove; as when we say, to relieve pain or distress; to relieve the wants of the poor. 3. To dismiss from a post or station, as sentinels, a guard or ships, and station others in their place. Sentinels are generally relieved every two hours; a guard is usually relieved once in twenty four hours. 4. To right; to ease of any burden, wrong or oppression by judicial or legislative interposition, by the removal of a grievance, by indemnification for losses and the like. 5. To abate the inconvenience of any thing by change, or by the interposition of something dissimilar. The moon relieves the luster of the sun with a milder light. The poet must not encumber his poem with, too much business, but sometimes relieve the subject with a moral reflection. 6. To assist; to support. Parallels or like relations alternately relieve each other; when neither will pass asunder, yet are they plausible together.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/relieve",
+    "source_line_start": 1,
+    "source_line_end": 9,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "REMA'IN",
     "normalized_headword": "remain",
     "definition": "REMA'IN, verb intransitive [Latin remaneo; re and maneo, Gr.] 1. To continue; to rest or abide in a place for a time indefinite. They remained a month in Rome. We remain at an inn for a night, for a week, or a longer time. Remain a widow at thy father's house, till Shelah my son be grown. Genesis 38:11. 2. To be left after others have withdrawn; to rest or abide in the same place when others remove, or are lost, destroyed or taken away. Noah only remained alive, and they that were with him in the ark. Genesis 7:23. 3. To be left after a part or others have past. Let our remaining time or years be employed in active duties. 4. To continue unchanged, or in a particular state. He remains stupid; he remains in a low state of health. 5. Not to be lost; not to escape; not to be forgotten. All my wisdom remained with me. 6. To be left, out of a greater number or quantity. Part of the debt is paid; that which remains will be on interest. That which remaineth over, lay up for you to be kept till the morning. Exodus 16:23. 7. To be left as not included or comprised. There remains one argument which has not been considered. That an elder brother has power over his brethren, remains to be proved. 8. To continue in the same state. Children thou art, childless remain REMA'IN, verb transitive To await; to be left to; as, the easier conquest now remains thee. [This is elliptical for remains to thee. remain is not properly a transitive verb.] REMA'IN, noun That which is left; a corpse; also, abode. [Not used.]",
@@ -17177,6 +17227,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/rottenness",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "ROUGH",
+    "normalized_headword": "rough",
+    "definition": "ROUGH, adjective [Latin raucus. Eng. rye, that is rough Latin ruga, a wrinkle. Gr. to snore. Latin ruga, a wrinkle, a ridge. See Ridge. The primary sense is to stretch or strain; but applied to roughness or wrinkling, it is to draw or contract, a straining together.] 1. Having inequalities, small ridges or points on the surface; not smooth or plane; as a rough board, a rough stone; rough cloth. 2. Stony; abounding with stones and stumps; as rough land; or simply with stones; as a rough road. 3. Not wrought or polished; as a rough diamond. 4. Thrown into huge waves; violently agitated; as a rough sea. 5. Tempestuous; stormy; boisterous; as rough weather. 6. Austere to the taste; harsh; as rough wine. 7. Harsh to the ear; grating; jarring; unharmonious; as rough sounds; rough numbers. 8. Rugged of temper; severe; austere; rude; not mild or courteous. A fiend, a fury, pitiless and rough 9. Coarse in manners; rude. A surly boatman, rough as seas and wind. 10. Harsh; violent; not easy; as a rough remedy. 11. Hard featured; not delicate; as a rough visage. 12. Harsh; severe; uncivil; as rough usage. 13. Terrible; dreadful. On the rough edge of battle, ere it join'd, Satan advanc'd. 14. Rugged; disordered in appearance; coarse. ROUGH from the tossing surge Ulysses moves. 15. Hairy; shaggy; covered with hairs, bristles and the like.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/rough",
+    "source_line_start": 1,
+    "source_line_end": 20,
     "review_status": "reviewed_overlay"
   },
   {
@@ -19457,6 +19517,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/stone",
     "source_line_start": 1,
     "source_line_end": 25,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "STOP",
+    "normalized_headword": "stop",
+    "definition": "STOP, verb transitive [G., to stop to check, to pose, to fill, to cram, to stuff, to quilt, to darn, to mend. See Stifle. Latin , tow; to stuff, to crowd; to be stupefied, whence stupid, stupor, [that is, to stop or a stop ] The primary sense is either to cease to move, or to stuff, to press, to thrust in, to cram; probably the latter.] 1. To close, as an aperture, by filling or by obstructing; as, to stop a vent; to stop the ears; to stop wells of water. 2 Kings 3:19. 2. To obstruct; to render impassable; as, to stop a way, road or passage. 3. To hinder; to impede; to arrest progress; as, to stop a passenger in the road; to stop the course of a stream. 4. To restrain; to hinder; to suspend; as to stop the execution of a decree. 5. To repress; to suppress; to restrain; as, to stop the progress of vice. 6. To hinder; to check; as, to stop the approaches of old age or infirmity. 7. To hinder from action or practice. Whose disposition, all the world well knows, will not be rubbd nor stoppd. 8. To put an end to any motion or action; to intercept; as, to stop the breath; to stop proceedings. 9. To regulate the sounds of musical strings; as, to stop a string. 10. In seamanship, to make fast. 11. To point; as a written composition. [Not in use.] STOP, verb intransitive 1. To cease to go forward. Some strange commotion is in his brain; he bites his lip, and starts; stops on a sudden, looks upon the ground--- 2. To cease from any motion or course of action. When you are accustomed to a course of vice, it is very difficult to stop The best time to stop is at the beginning. STOP, noun 1. Cessation of progressive motion; as, to make a stop 2. Hindrance of progress; obstruction; act of stopping. Occult qualities put a stop to the improvement of natural philosophy-- 3. Repression; hindrance of operation or action. It is a great step towards the mastery of our desires, to give this stop to them. 4. Interruption. These stops of thine fright me the more. 5. Prohibition of sale; as the stop of wine and salt. 6. That which obstructs; obstacle; impediment. A fatal stop travesd their headlong course. So melancholy a prospect should inspire us with zeal to oppose some stop to the rising torrent. 7. The instrument by which the sounds of wind music are regulated; as the stops of a flute or an organ. 8. Regulation of musical chords by the fingers. In the stops of lutes, the higher they go, the less distance is between the frets. 9. The act of applying the stops in music. Th organ-sound a time survives the stop 10. A point or mark in writing, intended to distinguish the sentences, parts of a sentence or clauses, and to show the proper pauses in reading. The stops generally used, are the comma, semi-colon, colon and period. To these may be added the marks of interrogation and exclamation.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/stop",
+    "source_line_start": 1,
+    "source_line_end": 36,
     "review_status": "reviewed_overlay"
   },
   {
@@ -23287,6 +23357,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/yoke",
     "source_line_start": 1,
     "source_line_end": 15,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "Yonder",
+    "normalized_headword": "yonder",
+    "definition": "YON, YOND, YONDER adjective [G.] Being at a distance within view. Yonder men are too many for an embassy. Read thy lot in yon celestial sign. Yon flowery arbors, YONDER alleys green. YON, YOND, YONDER, adverb At a distance within view. When we use this word, we often point the hand or direct the eye to the place or object. First and chiefest, with thee bring him that yon soars on golden wing. Yonder are two apple women scolding.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/yonder",
+    "source_line_start": 1,
+    "source_line_end": 7,
     "review_status": "reviewed_overlay"
   },
   {

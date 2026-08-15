@@ -179,6 +179,9 @@ const summary = {
   reviewed_overrides: reviewedOverrides.length,
   entries_with_quality_flags: rowsWithFlags.length,
   entries_with_high_or_medium_flags: rowsWithFlags.filter((entry) => entry.highest_severity !== "low").length,
+  entries_with_unreviewed_high_or_medium_flags: rowsWithFlags.filter(
+    (entry) => entry.highest_severity !== "low" && !entry.has_reviewed_override,
+  ).length,
   pattern_counts: counts,
 };
 
@@ -214,6 +217,7 @@ const md = [
   `- Reviewed overlays: ${summary.reviewed_overrides.toLocaleString()}`,
   `- Entries with any quality flag: ${summary.entries_with_quality_flags.toLocaleString()}`,
   `- Entries with high/medium quality flags: ${summary.entries_with_high_or_medium_flags.toLocaleString()}`,
+  `- High/medium flags without a reviewed overlay: ${summary.entries_with_unreviewed_high_or_medium_flags.toLocaleString()}`,
   "",
   "## Pattern Counts",
   "",
@@ -258,6 +262,7 @@ console.table({
   reviewed_overrides: summary.reviewed_overrides,
   quality_flags: summary.entries_with_quality_flags,
   high_medium_flags: summary.entries_with_high_or_medium_flags,
+  unreviewed_high_medium_flags: summary.entries_with_unreviewed_high_or_medium_flags,
 });
 console.log(`Wrote ${reportMdPath}`);
 console.log(`Wrote ${reportJsonPath}`);

@@ -11,5 +11,8 @@
   "volume_1_sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832",
   "volume_2_sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b",
   "rights_notes": "The original 1828 work is public domain. These OCR text files are downloaded source artifacts from Internet Archive/Open Library and should be reviewed before any full production import.",
-  "sample_review_notes": "The first sample import uses manually reviewed entries from volume 1 OCR around BELIEVE, FAITH, and GRACE."
+  "sample_review_notes": "The first sample import uses manually reviewed entries from volume 1 OCR around BELIEVE, FAITH, and GRACE.",
+  "review_batches": [
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-2026-08-15.json"
+  ]
 }
