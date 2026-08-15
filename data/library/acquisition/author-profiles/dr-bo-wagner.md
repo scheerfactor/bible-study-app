@@ -67,7 +67,7 @@ Review:
 | --- | --- |
 | Known contact | 2knowhim@cbc-web.org |
 | Website | https://wordofhismouth.com/ |
-| Permission status | Pending Written Confirmation / Phone Coordination |
+| Permission status | Follow-up Sent - Awaiting Written Confirmation |
 | Requested use | Limited listing/link/excerpt/audio-video inquiry; title/use confirmation still required |
 | Follow-up needed | Yes |
 
@@ -79,8 +79,11 @@ Notes:
 - Initial permission email sent manually by Stephen on 2026-07-04.
 - Pastor Bo Wagner replied that permission will likely be fine and that they may be glad to grant it, but he asked for more information about Stephen and what is being built before granting final permission.
 - Two July 7 messages coordinated a possible phone call. The mailbox thread does not contain a written title-level or use-level grant.
+- A narrow written-scope follow-up was sent in the original thread on 2026-08-14 at 10:56 PM Eastern.
+- The follow-up requested separate confirmation for metadata/official links, cover graphics, short approved excerpts, and official audio/video links or embeds.
+- Full-text hosting, media rehosting, TTS/audiobook use, presentation export, paid access, affiliate arrangements, and resale remain excluded unless separately granted in writing.
 - Do not treat the reply as final permission.
-- Confirm whether the call occurred and request a short written confirmation naming the approved titles and uses.
+- Await a short written confirmation naming the approved titles and uses; follow up after 2026-08-21 if no reply.
 
 ## Review Score
 
@@ -106,7 +109,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Positive reply and phone coordination received, but no written title/use scope has been granted. Review theology fit and exact resource rights before inclusion.
+> Positive reply and phone coordination received; written-scope follow-up sent 2026-08-14. No title/use scope has been granted. Review theology fit and exact resource rights before inclusion.
 
 ## Final Recommendation
 

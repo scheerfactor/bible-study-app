@@ -17,7 +17,7 @@ Current review date: August 14, 2026.
 
 ## Pastor Bo Wagner / CBC Resources
 
-Status: Draft for written confirmation after phone coordination. The mailbox shows July 7 scheduling messages but no written title/use grant.
+Status: Sent in the original thread on 2026-08-14 at 10:56 PM Eastern. Awaiting written title/use confirmation; no content rights are granted yet.
 
 Subject:
 

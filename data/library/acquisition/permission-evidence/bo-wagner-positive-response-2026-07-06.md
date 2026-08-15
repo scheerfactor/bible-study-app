@@ -2,13 +2,13 @@
 
 ## Status
 
-Pending Follow-Up / Positive Response
+Follow-Up Sent / Awaiting Written Confirmation
 
 ## Date Recorded
 
 2026-07-06
 
-Mailbox review updated 2026-08-14 with two additional messages dated 2026-07-07.
+Mailbox review updated 2026-08-14 with two additional messages dated 2026-07-07 and the verified written-scope follow-up sent that evening.
 
 ## From
 
@@ -34,19 +34,20 @@ Do not treat this as final permission.
 
 Nothing from Bo Wagner / CBC resources may be imported, displayed, summarized, embedded, hosted, recommended, or added to public Library/resource screens until final written permission and theological/resource review are complete.
 
+## Follow-Up Sent
+
+Stephen approved and sent a reply in the original thread on 2026-08-14 at 10:56 PM Eastern. It requested separate written confirmation for:
+
+- title, description, and official ministry or purchase link
+- official cover or promotional graphic
+- short approved excerpt
+- official audio/video link or embed
+
+The message explicitly reserved full-text hosting, media rehosting, TTS/audiobook use, presentation export, paid app access, affiliate arrangements, and resale for separate permission.
+
 ## Next Action
 
-Prepare and send a follow-up reply explaining:
-
-- Father’s Business Bible Study / Father’s Business Mastery Resources
-- the platform purpose
-- the KJV-centered Bible study focus
-- clear attribution
-- links back to ministries
-- that no copyrighted content will be used beyond granted permissions
-- willingness to answer questions or schedule a call
-
-The platform explanation appears to have been sent because the conversation proceeded to phone coordination. The remaining action is to document whether a call occurred and obtain a short written confirmation that names the titles and allowed uses. Do not infer permission from willingness to talk by phone.
+Await a written answer that names approved titles and allowed uses. Follow up after 2026-08-21 if no reply. Do not infer permission from the positive response, phone coordination, or silence.
 
 ## Evidence Location
 
