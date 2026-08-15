@@ -18,6 +18,10 @@ const requiredFields = [
   "recommendedUse",
   "notes",
 ];
+const allowedPermissionStatuses = new Set([
+  "Permission Granted - Scoped",
+  "Public Policy - Official Links Only",
+]);
 
 function isValidUrl(value) {
   try {
@@ -51,8 +55,8 @@ for (const [index, record] of records.entries()) {
   if (urls.has(record.sourceUrl)) errors.push(`${label}: duplicate sourceUrl ${record.sourceUrl}`);
   urls.add(record.sourceUrl);
 
-  if (record.permissionStatus !== "Permission Granted - Scoped") {
-    errors.push(`${label}: permissionStatus must be Permission Granted - Scoped`);
+  if (!allowedPermissionStatuses.has(record.permissionStatus)) {
+    errors.push(`${label}: unsupported permissionStatus ${record.permissionStatus}`);
   }
 
   if (!String(record.reviewStatus).toLowerCase().includes("review")) {
@@ -61,6 +65,18 @@ for (const [index, record] of records.entries()) {
 
   if (!Array.isArray(record.approvedPublicUse) || record.approvedPublicUse.length === 0) {
     errors.push(`${label}: approvedPublicUse must list the scoped approved uses`);
+  }
+
+  if (record.permissionStatus === "Public Policy - Official Links Only") {
+    const approvedText = record.approvedPublicUse.join(" ").toLowerCase();
+    for (const phrase of ["official link", "citation"]) {
+      if (!approvedText.includes(phrase)) {
+        errors.push(`${label}: public-policy records must limit approved use to ${phrase}`);
+      }
+    }
+    if (approvedText.includes("hosting") || approvedText.includes("embed")) {
+      errors.push(`${label}: public-policy records cannot approve hosting or embeds`);
+    }
   }
 
   if (!Array.isArray(record.notApprovedWithoutFollowup) || record.notApprovedWithoutFollowup.length === 0) {
@@ -85,4 +101,14 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Licensed resource links validation OK: ${records.length} scoped licensed resources in ${manifestPath}.`);
+const statusCounts = records.reduce((counts, record) => {
+  counts[record.permissionStatus] = (counts[record.permissionStatus] || 0) + 1;
+  return counts;
+}, {});
+
+console.log(
+  `Licensed resource links validation OK: ${records.length} records in ${manifestPath} ` +
+    `(${Object.entries(statusCounts)
+      .map(([status, count]) => `${count} ${status}`)
+      .join(", ")}).`,
+);

@@ -383,23 +383,26 @@
     "category": "Salvation",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/does_salvation.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Preliminary title-page review complete; official-link listing only; full content review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Salvation and evangelism shelf",
-    "notes": "High-value gospel clarity resource; official-link-only listing under Way of Life public sharing policy. Do not host the ebook file or paid editions. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "notes": "High-value gospel clarity resource; official-link-only listing under Way of Life public sharing policy. Do not host the ebook file or paid editions. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission. Official title page verified 2026-08-15. Written five-title permission request pending; no new rights granted."
   },
   {
     "id": "licensed-way-of-life-the-bibles-proof",
@@ -409,23 +412,26 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/bibles_proof.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Preliminary title-page review complete; official-link listing only; full content review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and Bible defense shelf",
-    "notes": "Useful apologetics resource candidate; official-link-only listing under Way of Life public sharing policy. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "notes": "Useful apologetics resource candidate; official-link-only listing under Way of Life public sharing policy. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission. Official title page verified 2026-08-15. Written five-title permission request pending; no new rights granted."
   },
   {
     "id": "licensed-way-of-life-the-bibles-amazing-story",
@@ -435,23 +441,26 @@
     "category": "Bible Study",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/bibles_amazing_story.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Preliminary title-page review complete; official-link listing only; full content review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Bible overview and new believer path",
-    "notes": "Good Bible overview candidate for guided reading paths; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "notes": "Good Bible overview candidate for guided reading paths; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission. Official title page verified 2026-08-15. Written five-title permission request pending; no new rights granted."
   },
   {
     "id": "licensed-way-of-life-questions-answered-on-the-bible-and-christianity",
@@ -461,23 +470,26 @@
     "category": "Bible Study",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/questions_answered.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Preliminary title-page review complete; official-link listing only; full content review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Bible Q&A and study help",
-    "notes": "Useful for beginner Bible questions and search discovery after title review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "notes": "Useful for beginner Bible questions and search discovery after title review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission. Official title page verified 2026-08-15. Written five-title permission request pending; no new rights granted."
   },
   {
     "id": "licensed-way-of-life-the-bible-knowledge-test",
@@ -487,23 +499,26 @@
     "category": "Bible Study",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/bible-knowledge-test.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Preliminary title-page review complete; official-link listing only; full content review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Teaching and class review",
-    "notes": "Could support Sunday School review and self-check workflows later. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "notes": "Could support Sunday School review and self-check workflows later. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission. Official title page verified 2026-08-15. Written five-title permission request pending; no new rights granted."
   },
   {
     "id": "licensed-way-of-life-ideas-for-evangelism",
@@ -513,21 +528,24 @@
     "category": "Evangelism",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/ideas_for_evangelism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Evangelism path",
     "notes": "Practical ministry resource candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -539,21 +557,24 @@
     "category": "Evangelism",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/fbs_and_quick_prayerism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Evangelism and gospel clarity",
     "notes": "Review carefully for tone and doctrinal notes before prominent recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -565,21 +586,24 @@
     "category": "Theology",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/the_calvinism_debate.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Doctrine comparison",
     "notes": "Use with clear app doctrinal notes; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -591,21 +615,24 @@
     "category": "Prophecy",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/seven_churches_of_revelation.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Revelation ecosystem and sermon prep",
     "notes": "Potentially strong Revelation teaching supplement; no hosted text. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -617,21 +644,24 @@
     "category": "Prophecy",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/bible_prophecies_fullfilled_today.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Prophecy study",
     "notes": "Review prophecy framing and source citations before strong recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -643,21 +673,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/in_the_footsteps.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and English Bible history",
     "notes": "Good Bible history path candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -669,21 +702,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/dynamic_equivalencey.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and textual issues",
     "notes": "Review for tone and source documentation before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -695,21 +731,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/unholy_hands.html",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and textual issues",
     "notes": "Potential KJV defense resource; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -721,21 +760,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/collapse_of_separatism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist history and doctrine",
     "notes": "Baptist history/discernment resource candidate; review before prominent placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -747,21 +789,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/protestant_persecution.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist history",
     "notes": "Good Baptist history shelf candidate after title review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -773,21 +818,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/new_testament_church_discipline.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church doctrine and pastoral ministry",
     "notes": "Useful for pastor and church doctrine paths; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -799,21 +847,24 @@
     "category": "Christian Living",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/keys_to_church_membership.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church membership and Christian living",
     "notes": "Practical discipleship candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -825,21 +876,24 @@
     "category": "Revival",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/reviving_a_church.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Revival and church life",
     "notes": "Good preaching and revival shelf candidate after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -851,21 +905,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/bible_and_islam.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and world religions",
     "notes": "Apologetics candidate; review for careful wording before prominent placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -877,21 +934,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/jehovahs_witnesses.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and false religions",
     "notes": "Quick-reference apologetics candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -903,21 +963,24 @@
     "category": "Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/17_reasons.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Doctrine and testimony",
     "notes": "Review for testimony placement and doctrinal clarity before prominent recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -929,21 +992,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/answering-the-myths-of-the-bible-version-debate.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and English Bible history",
     "notes": "KJV defense candidate; review source handling before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -955,21 +1021,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/bible_version_question_answer_database.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and textual issue study",
     "notes": "Useful Q&A candidate for KJV study workflows; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -981,21 +1050,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/faith-vs-modern-bible-versions.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and textual issue study",
     "notes": "Review tone and citation quality before public recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1007,21 +1079,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/modern_bible_version_hall_of_shame.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and textual issue study",
     "notes": "Use carefully with clear title-level review notes. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1033,21 +1108,24 @@
     "category": "KJV Defense / Textual Issues",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/what_about_ruckman.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "KJV and discernment",
     "notes": "Use with careful context and charity; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1059,21 +1137,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/roman_catholicism_past_present.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and church history",
     "notes": "Review tone and category before prominent placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1085,21 +1166,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/rome_and_the_bible.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and Bible history",
     "notes": "Good church-history comparison candidate after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1111,21 +1195,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/is_catholic_church_changing.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and church history",
     "notes": "Review alongside other Catholicism resources. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1137,21 +1224,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/mormonism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and false religions",
     "notes": "Quick-reference apologetics candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1163,21 +1253,24 @@
     "category": "Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/charismatic_confusion.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Doctrine and discernment",
     "notes": "Review for doctrinal notes and pastoral tone. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1189,21 +1282,24 @@
     "category": "Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/tongues_speaking.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Doctrine and discernment",
     "notes": "Potential doctrine comparison resource. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1215,21 +1311,24 @@
     "category": "Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/is_healing_in_atonement.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Doctrine and discernment",
     "notes": "Review doctrine and Scripture handling before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1241,21 +1340,24 @@
     "category": "Prayer",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/evangelicals_and_contemplative_prayer.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Prayer and discernment",
     "notes": "Review for prayer-path placement and pastoral wording. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1267,21 +1369,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/contemplative_mysticism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Discernment and church issues",
     "notes": "Discernment candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1293,21 +1398,24 @@
     "category": "Church History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/new-evangelicalism-history-fruit.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church history and discernment",
     "notes": "High-value background candidate after title review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1319,21 +1427,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/purpose_driven.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church and ministry discernment",
     "notes": "Review currentness and tone before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1345,21 +1456,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/dangers_in_bookstores.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Resource vetting and discernment",
     "notes": "Useful for resource-vetting philosophy after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1371,21 +1485,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/scientists_who_believe_the_bible.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Creation and apologetics",
     "notes": "Could support apologetics path. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1397,21 +1514,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/ape_men.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Creation and apologetics",
     "notes": "Creation/apologetics candidate; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1423,21 +1543,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/archaeological_dating_methods.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Archaeology and apologetics",
     "notes": "Useful for apologetics shelf if reviewed. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1449,21 +1572,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/darwins_social_influence.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Creation and worldview",
     "notes": "Review history/source quality. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1475,21 +1601,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/lying_evolutionary_art.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Creation and apologetics",
     "notes": "Review for image/chart rights if any. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1501,21 +1630,24 @@
     "category": "Family",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/child_discipline.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Family and parenting",
     "notes": "Sensitive family topic; review before placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1527,21 +1659,24 @@
     "category": "Family",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/television_and_the_christian_home.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Family and Christian living",
     "notes": "Good family/discernment candidate after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1553,21 +1688,24 @@
     "category": "Christian Living",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/do_we_have_the_right_to_die.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Ethics and Christian living",
     "notes": "Sensitive ethics topic; review before public listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1579,21 +1717,24 @@
     "category": "Christian Living",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/cremation.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Ethics and Christian living",
     "notes": "Sensitive pastoral topic; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1605,21 +1746,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/baptist_music_wars.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Music and church life",
     "notes": "Use with clear category and doctrinal notes. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1631,21 +1775,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/baptist_church_on_slippery_slope.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist church issues",
     "notes": "Needs careful title-level review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1657,21 +1804,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/why_most_ibcs_emerging.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist church issues",
     "notes": "Review currentness and usefulness before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1683,21 +1833,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/21-steps-to-a-stronger-church.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church health and ministry",
     "notes": "Practical church-strengthening candidate; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1709,21 +1862,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/avoiding_the_snare_of_seventh_day_adventism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Apologetics and false religions",
     "notes": "Apologetics candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1735,21 +1891,24 @@
     "category": "Bible Study",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/bible_and_western_society.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Bible and culture",
     "notes": "Review for worldview and culture shelf placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1761,21 +1920,24 @@
     "category": "Christian Living",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/the_bible_and_diet.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Christian living and health discernment",
     "notes": "Health-related topic; review carefully before public recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1787,21 +1949,24 @@
     "category": "Bible Study",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/biblical-treasures.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Bible study encouragement",
     "notes": "Potential encouragement resource for Bible reading paths. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1813,21 +1978,24 @@
     "category": "Church History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/billy_grahams_disobedience.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church history and discernment",
     "notes": "Sensitive topic; review for accuracy and public tone. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1839,21 +2007,24 @@
     "category": "Church History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/billy_graham_and_rome.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church history and discernment",
     "notes": "Sensitive topic; review for accuracy and public tone. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1865,21 +2036,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/cs_lewis_and_evangelicals.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Author and theology review",
     "notes": "Useful for author-vetting examples after careful review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1891,21 +2065,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/fellowship_baptist_church_covenant.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church covenant and membership",
     "notes": "Church covenant candidate; review before placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1917,21 +2094,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/church_discipline_in_21st_century.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church discipline and pastoral ministry",
     "notes": "Pastoral/church doctrine candidate; review carefully. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1943,21 +2123,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/deceptive-dangers-of-logos.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Bible software and resource discernment",
     "notes": "Sensitive competitor/resource topic; keep review notes clear. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1969,21 +2152,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/directory-of-contemporary-worship.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Worship and music discernment",
     "notes": "Review currentness before listing prominently. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -1995,21 +2181,24 @@
     "category": "Discipleship",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/the_discipling_church.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church discipleship",
     "notes": "Good discipleship/church health candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2021,21 +2210,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/emerging_church.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church and ministry discernment",
     "notes": "Review currentness and category before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2047,21 +2239,24 @@
     "category": "Prophecy",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/end_time_confusion.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Prophecy and discernment",
     "notes": "Review prophecy framing before prominent placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2073,21 +2268,24 @@
     "category": "Revival",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/evangelist_revivalist_movement.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Revival and church history",
     "notes": "Revival/history candidate; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2099,21 +2297,24 @@
     "category": "Family",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/fantasy_dangers.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Family and discernment",
     "notes": "Family/discernment candidate; review tone and usefulness. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2125,21 +2326,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/god_of_mysticism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Mysticism and discernment",
     "notes": "Discernment candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2151,21 +2355,24 @@
     "category": "History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/history-of-blacks-in-america.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "History and worldview",
     "notes": "Sensitive historical topic; review for accuracy and pastoral tone. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2177,21 +2384,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/house_church_movement.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church doctrine and ecclesiology",
     "notes": "Review for church doctrine notes. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2203,21 +2413,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/hyles_effect.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist history and church issues",
     "notes": "Sensitive Baptist history topic; review before public listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2229,21 +2442,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/in_essentials_unity.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church doctrine and discernment",
     "notes": "Review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2255,21 +2471,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/john_piper_and_hedonism.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Author and theology review",
     "notes": "Sensitive modern-author topic; review before listing prominently. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2281,21 +2500,24 @@
     "category": "Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/judge_not_heresy.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Discernment and Christian living",
     "notes": "Good discernment candidate after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2307,21 +2529,24 @@
     "category": "Christian Living",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/knowing_gods_will.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Guidance and Christian living",
     "notes": "Practical Christian living candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2333,21 +2558,24 @@
     "category": "Biography",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/life_and_songs_of_charles_weigle.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Biography and hymn history",
     "notes": "Good biography/hymn-history candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2359,21 +2587,24 @@
     "category": "Apologetics",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/new_age_tower_of_babel.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "New Age and worldview discernment",
     "notes": "Apologetics/discernment candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2385,21 +2616,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/a_new_baptist_covenant.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist church issues",
     "notes": "Review currentness and context before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2411,21 +2645,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/pastors_deacons_members.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church leadership and membership",
     "notes": "Church leadership candidate; review before placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2437,21 +2674,24 @@
     "category": "Church History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/path_from_ib_to%20shack.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church and doctrinal discernment",
     "notes": "Sensitive topic; review before listing prominently. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2463,21 +2703,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/a-plea-to-southern-gospel-music-fans.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Music and church life",
     "notes": "Music discernment candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2489,21 +2732,24 @@
     "category": "Church History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/protestant_denominations_today.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church history and denominations",
     "notes": "Church history comparison candidate after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2515,21 +2761,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/rock-rolls-war-against-god.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Music and discernment",
     "notes": "Review before public placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2541,21 +2790,24 @@
     "category": "Faith",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/seeing_the_non-existent.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Faith and Christian living",
     "notes": "Christian living/faith candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2567,21 +2819,24 @@
     "category": "Evangelism",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/seekers_bible_study.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Evangelism and Bible study",
     "notes": "Possible outreach study resource; review before placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2593,21 +2848,24 @@
     "category": "History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/slaverys_ugly_history.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "History and worldview",
     "notes": "Sensitive historical topic; review carefully. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2619,21 +2877,24 @@
     "category": "Christian Living",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/spiritual-safety-in-facebook-age.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Technology and Christian living",
     "notes": "Good family/technology discernment candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2645,21 +2906,24 @@
     "category": "Bible Study",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/timeline.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Timeline and study tools",
     "notes": "Possible study-tool reference; review structure and usefulness. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2671,21 +2935,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/transformational_power.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Worship and church music",
     "notes": "Review before public recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2697,21 +2964,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/treacherous_waters.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist church issues",
     "notes": "Sensitive Baptist history/current issues; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2723,21 +2993,24 @@
     "category": "Prophecy",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/antichrist-as-a-muslim.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Prophecy and worldview discernment",
     "notes": "Sensitive prophecy/world-religion topic; review carefully before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2749,21 +3022,24 @@
     "category": "Christian Living",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/beware_ayurvedic_medicine.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Christian living and health discernment",
     "notes": "Health-related topic; review carefully and avoid medical claims in app summaries. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2775,21 +3051,24 @@
     "category": "Memory",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/memory_verse_journal.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Memory and discipleship",
     "notes": "Useful memory-work candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2801,21 +3080,24 @@
     "category": "Worldview",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/the_un_and_new_age.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Worldview and discernment",
     "notes": "Review currentness and app placement before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2827,21 +3109,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/was_mother_teresa.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Discernment and church history",
     "notes": "Sensitive topic; review for public tone and placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2853,21 +3138,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/what_about_steven_anderson.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist church issues and discernment",
     "notes": "Sensitive modern-person topic; review before listing prominently. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2879,21 +3167,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/what-if-no-good-church.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church life and practical help",
     "notes": "Practical church-life candidate; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2905,21 +3196,24 @@
     "category": "Church Doctrine",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/what-every-christian-should-know-rock-music.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Music and Christian living",
     "notes": "Music discernment candidate; review tone and usefulness. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2931,21 +3225,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/what-is-the-emerging-church.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church and ministry discernment",
     "notes": "Review currentness and category before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2957,21 +3254,24 @@
     "category": "Baptist History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/why_not_southern_baptist.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Baptist church issues",
     "notes": "Sensitive denominational topic; review before public placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -2983,21 +3283,24 @@
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/william_branhams_bogus_healings.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Doctrine and discernment",
     "notes": "Sensitive modern religious-history topic; review before listing prominently. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },
@@ -3009,21 +3312,24 @@
     "category": "Church History",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/world_council_of_churches.php",
-    "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
     "approvedPublicUse": [
       "Official link",
       "Citation",
-      "Shareable/free resource listing"
+      "Free-resource listing"
     ],
     "notApprovedWithoutFollowup": [
-      "Full-text hosting",
-      "ebook file hosting",
-      "audio hosting",
+      "Cover or promotional-image use",
+      "Excerpt use",
+      "Full-text hosting or ebook-file redistribution",
+      "Audio or video hosting or inline embeds",
+      "Transcripts or derivative study notes",
       "AI/TTS narration",
-      "paid subscription inclusion"
+      "PowerPoint or presentation export",
+      "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
     "recommendedUse": "Church history and discernment",
     "notes": "Review for historical currentness and app placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   },

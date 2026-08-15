@@ -14,6 +14,11 @@
 | Private permission grant | None |
 | App decision | Official-link cataloging only until item review or written permission |
 
+The licensed-resource manifest uses the status
+`Public Policy - Official Links Only` for these records. This wording replaces
+the earlier `Permission Granted - Scoped` label, which overstated the evidence
+because no private permission grant has been received.
+
 ## Verified Policy Boundaries
 
 The official sharing page identifies audio sermons, video presentations,
@@ -81,3 +86,7 @@ evidence is recorded in
 `way-of-life-five-title-follow-up-sent-2026-08-15.md`.
 
 No new right is granted while the request is awaiting a written reply.
+
+Preliminary official-page reviews for the five requested titles are recorded
+in `data/library/acquisition/way-of-life-five-title-review-2026-08-15.csv`.
+Those records remain `Needs Review` until a human reviewer completes the books.
