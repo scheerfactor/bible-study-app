@@ -23310,9 +23310,14 @@ function BetaNotice() {
         <span>
           <span className="font-semibold text-[var(--green)]">Active beta:</span> This Bible Study App is in active beta. Please report issues or suggestions.
         </span>
-        <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href="/feedback">
-          Give feedback
-        </a>
+        <span className="flex items-center gap-3">
+          <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href="/coming-soon">
+            Public launch
+          </a>
+          <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href="/feedback">
+            Give feedback
+          </a>
+        </span>
       </div>
     </div>
   );

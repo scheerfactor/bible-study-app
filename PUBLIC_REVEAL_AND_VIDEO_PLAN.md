@@ -135,6 +135,8 @@ Do not publish a coming-soon campaign until all of these are true:
 
 The app now clears the 1.5 MB coming-soon bundle gate at approximately 0.70 MB gzip for `/`. The exact 31,102-verse KJV corpus loads separately and still needs real-device timing before public promotion.
 
+The working target for the limited free public beta is Thursday, October 15, 2026 at 7:00 PM Eastern. This target gives preparation a concrete deadline; it does not override the Coming Soon or Public Beta gates. If required checks remain open, the public countdown changes to final-review status and access stays gated.
+
 ## Public Beta Gate
 
 Do not open the free public beta until the Coming Soon gate passes and:
@@ -162,7 +164,7 @@ Do not open the free public beta until the Coming Soon gate passes and:
 - Publish Videos 1 and 2.
 - Open a no-payment beta interest form.
 - Share one workflow result each week rather than daily feature announcements.
-- Say `coming soon to a limited free beta`; do not publish a date.
+- Say `coming soon to a limited free beta` and label October 15, 2026 as a working target rather than a guaranteed opening date.
 
 ### Stage 3: Limited Free Beta
 
