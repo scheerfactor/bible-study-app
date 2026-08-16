@@ -210,9 +210,8 @@ Do not optimize for video views alone. The proof is repeated, faithful use.
 ## Immediate Next Work
 
 1. Reduce the initial reader bundle below 1.5 MB gzip.
-2. Make Commentary Explorer query-driven so opening it does not load all 345 source files.
-3. Finish and time the one-tap Word Lens flow.
-4. Run the complete Hosea 4 internal proof recording on phone, tablet, and desktop.
-5. Fix every confusing or broken step exposed by the recording.
-6. Verify admin access with a signed-out session and a non-admin account.
-7. Only then record the public teaser and open the beta interest list.
+2. Finish and time the one-tap Word Lens flow.
+3. Run the complete Hosea 4 internal proof recording on phone, tablet, and desktop.
+4. Fix every confusing or broken step exposed by the recording.
+5. Verify admin access with a signed-out session and a non-admin account.
+6. Only then record the public teaser and open the beta interest list.

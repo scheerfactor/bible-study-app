@@ -779,6 +779,20 @@ type DeferredCommentaryLoadStatus = {
   mode: "chapter" | "starter" | "complete";
 };
 
+type CommentaryCatalogBook = {
+  book: string;
+  chapters: number[];
+};
+
+type CommentaryCatalogSummary = {
+  schemaVersion: number;
+  catalogFileCount: number;
+  indexedFileCount: number;
+  rowCount: number;
+  chapterCount: number;
+  books: CommentaryCatalogBook[];
+};
+
 type BibleCoverageBook = {
   book: string;
   testament: "Old Testament" | "New Testament";
@@ -11715,6 +11729,19 @@ function rawDeferredCommentaryChapterUrl(book: string, chapter: number) {
   return `/api/commentary/chapter/${encodeURIComponent(book)}/${chapter}`;
 }
 
+function rawDeferredCommentaryCatalogUrl() {
+  return "/api/commentary/catalog";
+}
+
+async function fetchDeferredCommentaryCatalog(signal: AbortSignal) {
+  const response = await fetch(rawDeferredCommentaryCatalogUrl(), { signal });
+  if (!response.ok) throw new Error(`Commentary catalog request failed: ${response.status}`);
+
+  const catalog = (await response.json()) as CommentaryCatalogSummary;
+  if (!Array.isArray(catalog.books)) throw new Error("Commentary catalog response must contain books.");
+  return catalog;
+}
+
 async function fetchDeferredCommentaryChapterEntries(
   signal: AbortSignal,
   book: string,
@@ -16822,7 +16849,7 @@ export default function Home() {
   const [syncMessage, setSyncMessage] = useState("");
   const [crossReferences, setCrossReferences] = useState<CrossReference[]>(localCrossReferences);
   const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>([]);
-  const [deferredCommentaryLoadStatus, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
+  const [, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
     loadedFiles: 0,
     totalFiles: deferredCommentaryImportFiles.length,
     loading: false,
@@ -16955,6 +16982,9 @@ export default function Home() {
   const deferredCommentaryLoadingFilesRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadedChaptersRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadingChaptersRef = useRef<Set<string>>(new Set());
+  const addDeferredCommentaryEntries = useCallback((entries: CommentaryEntry[]) => {
+    setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, entries));
+  }, []);
   const speechVoices = useMemo(
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
@@ -16971,7 +17001,6 @@ export default function Home() {
       tab === "bookIntro" ||
       tab === "sermons";
     const shouldLoadCompleteCommentary =
-      tab === "commentaryExplorer" ||
       tab === "fullStudy" ||
       tab === "passageGuide" ||
       tab === "amosStudyPath" ||
@@ -22669,9 +22698,8 @@ export default function Home() {
                 currentChapter={chapter}
                 themes={STUDY_THEMES}
                 libraryResources={libraryResources}
-                coverage={commentaryCoverage}
-                loadStatus={deferredCommentaryLoadStatus}
                 onBack={() => setTab("bible")}
+                onEntriesLoaded={addDeferredCommentaryEntries}
                 onOpenReference={openReference}
                 onOpenAuthor={openLibraryAuthor}
                 onListenChapter={listenCommentaryChapterEntries}
@@ -40250,9 +40278,8 @@ function CommentaryExplorerScreen({
   currentChapter,
   themes,
   libraryResources,
-  coverage,
-  loadStatus,
   onBack,
+  onEntriesLoaded,
   onOpenReference,
   onOpenAuthor,
   onListenChapter,
@@ -40263,19 +40290,17 @@ function CommentaryExplorerScreen({
   currentChapter: number;
   themes: StudyTheme[];
   libraryResources: LibraryResource[];
-  coverage: CommentaryCoverage;
-  loadStatus: DeferredCommentaryLoadStatus;
   onBack: () => void;
+  onEntriesLoaded: (entries: CommentaryEntry[]) => void;
   onOpenReference: (reference: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
   onListenChapter: (book: string, chapter: number, entries: CommentaryEntry[]) => void;
   onOpenLibraryResource: (slug: string) => void;
 }) {
-  const books = useMemo(
-    () => Array.from(new Set(entries.map((entry) => entry.book))).sort((a, b) => bookOrder.indexOf(a) - bookOrder.indexOf(b)),
-    [entries],
-  );
-  const authors = useMemo(() => Array.from(new Set(entries.map((entry) => entry.author))).sort(), [entries]);
+  const [catalog, setCatalog] = useState<CommentaryCatalogSummary | null>(null);
+  const [catalogError, setCatalogError] = useState("");
+  const [queriedEntriesByChapter, setQueriedEntriesByChapter] = useState<Record<string, CommentaryEntry[]>>({});
+  const [queryError, setQueryError] = useState({ key: "", message: "" });
   const [selectedBook, setSelectedBook] = useState(currentBook);
   const [selectedChapter, setSelectedChapter] = useState(currentChapter);
   const [selectedAuthor, setSelectedAuthor] = useState("All");
@@ -40283,12 +40308,53 @@ function CommentaryExplorerScreen({
   const [selectedUse, setSelectedUse] = useState("All");
   const [selectedGuideId, setSelectedGuideId] = useState<CommentaryExplorerGuideId>("recommended");
   const [searchTerm, setSearchTerm] = useState("");
-  const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? currentBook;
-  const chapters = useMemo(
-    () => Array.from(new Set(entries.filter((entry) => entry.book === safeBook).map((entry) => entry.chapter))).sort((a, b) => a - b),
-    [entries, safeBook],
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    void fetchDeferredCommentaryCatalog(controller.signal)
+      .then((summary) => setCatalog(summary))
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setCatalogError("The commentary catalog could not be loaded.");
+      });
+
+    return () => controller.abort();
+  }, []);
+
+  const catalogBooks = useMemo(
+    () => (catalog?.books ?? []).slice().sort((left, right) => bookOrder.indexOf(left.book) - bookOrder.indexOf(right.book)),
+    [catalog],
   );
+  const books = catalogBooks.length ? catalogBooks.map((item) => item.book) : [currentBook];
+  const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? currentBook;
+  const fallbackChapters = Array.from(new Set(entries.filter((entry) => entry.book === safeBook).map((entry) => entry.chapter))).sort((a, b) => a - b);
+  const chapters = catalogBooks.find((item) => item.book === safeBook)?.chapters ?? (fallbackChapters.length ? fallbackChapters : [currentChapter]);
   const safeChapter = chapters.includes(selectedChapter) ? selectedChapter : chapters[0] ?? currentChapter;
+  const chapterKey = `${safeBook}|${safeChapter}`;
+  const chapterEntries = queriedEntriesByChapter[chapterKey]
+    ?? entries.filter((entry) => entry.book === safeBook && entry.chapter === safeChapter);
+  const authors = useMemo(() => Array.from(new Set(chapterEntries.map((entry) => entry.author))).sort(), [chapterEntries]);
+
+  useEffect(() => {
+    if (queriedEntriesByChapter[chapterKey]) return;
+
+    const controller = new AbortController();
+
+    void fetchDeferredCommentaryChapterEntries(controller.signal, safeBook, safeChapter)
+      .then((loadedEntries) => {
+        setQueriedEntriesByChapter((current) => ({ ...current, [chapterKey]: loadedEntries }));
+        onEntriesLoaded(loadedEntries);
+        setQueryError({ key: "", message: "" });
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setQueryError({ key: chapterKey, message: `Commentary for ${safeBook} ${safeChapter} could not be loaded.` });
+      });
+
+    return () => controller.abort();
+  }, [chapterKey, onEntriesLoaded, queriedEntriesByChapter, safeBook, safeChapter]);
+
   const selectedTheme = selectedThemeId === "All" ? null : themes.find((theme) => theme.id === selectedThemeId) ?? null;
   const themeTerms = selectedTheme ? themeSearchTerms(selectedTheme).map((term) => term.toLowerCase()) : [];
   const useTermsByKind: Record<string, string[]> = {
@@ -40298,7 +40364,6 @@ function CommentaryExplorerScreen({
     "Devotional": ["devotional", "practical", "application", "heart"],
     "Word studies": ["word", "historical", "language", "lexical"],
   };
-  const chapterEntries = entries.filter((entry) => entry.book === safeBook && entry.chapter === safeChapter);
   const guideMatchesEntry = (entry: CommentaryEntry) => {
     if (selectedGuideId === "all") return true;
     const profile = commentaryGuideProfileFor(entry.author);
@@ -40333,8 +40398,7 @@ function CommentaryExplorerScreen({
   });
   const activeGuide = COMMENTARY_EXPLORER_GUIDES.find((guide) => guide.id === selectedGuideId) ?? COMMENTARY_EXPLORER_GUIDES[0];
   const searchTerms = searchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  const filteredEntries = entries.filter((entry) => {
-    if (entry.book !== safeBook || entry.chapter !== safeChapter) return false;
+  const filteredEntries = chapterEntries.filter((entry) => {
     if (selectedAuthor !== "All" && entry.author !== selectedAuthor) return false;
     if (selectedAuthor === "All" && guideCounts[selectedGuideId] > 0 && !guideMatchesEntry(entry)) return false;
     const profile = commentaryGuideProfileFor(entry.author);
@@ -40380,7 +40444,9 @@ function CommentaryExplorerScreen({
     .filter((item): item is { hint: CommentaryVolumeReferenceHint; resource: LibraryResource; chapterIndexed: boolean } => Boolean(item.resource))
     .sort((left, right) => Number(right.chapterIndexed) - Number(left.chapterIndexed))
     .slice(0, 6);
-  const bookCoverage = coverage.bookCoverage.find((item) => item.book === safeBook);
+  const catalogLoading = !catalog && !catalogError;
+  const activeChapterError = queryError.key === chapterKey ? queryError.message : "";
+  const activeChapterLoading = !queriedEntriesByChapter[chapterKey] && !activeChapterError;
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -40403,28 +40469,49 @@ function CommentaryExplorerScreen({
             </p>
           </div>
           <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
-            {coverage.totalEntries.toLocaleString()} public entries
+            {catalog ? `${catalog.rowCount.toLocaleString()} indexed entries` : "Catalog loading"}
           </span>
         </div>
         <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-xs font-semibold leading-5 text-[var(--muted)]">
-          {loadStatus.loading
-            ? `Loading reviewed commentary catalog: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} files ready.`
-            : loadStatus.mode === "complete"
-              ? `Full reviewed commentary catalog ready: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} files.`
-              : `Starter commentary ready for fast study: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} core files.`}
-          {" "}Validated full-catalog goal: {VALIDATED_COMMENTARY_CATALOG_BOOKS} Bible books and {VALIDATED_COMMENTARY_CATALOG_CHAPTERS.toLocaleString()} chapters.
+          {catalogError
+            ? catalogError
+            : catalogLoading
+              ? "Loading the compact commentary catalog."
+              : activeChapterLoading
+                ? `Loading reviewed commentary for ${safeBook} ${safeChapter}.`
+                : activeChapterError
+                  ? activeChapterError
+                  : `${chapterEntries.length} reviewed ${chapterEntries.length === 1 ? "entry" : "entries"} ready for ${safeBook} ${safeChapter}.`}
+          {" "}The complete index covers {catalog?.books.length ?? VALIDATED_COMMENTARY_CATALOG_BOOKS} Bible books and {(catalog?.chapterCount ?? VALIDATED_COMMENTARY_CATALOG_CHAPTERS).toLocaleString()} chapters; commentary text loads only for the selected chapter.
         </p>
 
         <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             Bible book
-            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={safeBook} onChange={(event) => setSelectedBook(event.target.value)}>
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={safeBook}
+              onChange={(event) => {
+                const nextBook = event.target.value;
+                const nextChapters = catalogBooks.find((item) => item.book === nextBook)?.chapters ?? [1];
+                setSelectedBook(nextBook);
+                setSelectedChapter(nextChapters[0] ?? 1);
+                setSelectedAuthor("All");
+              }}
+            >
               {books.map((bookName) => <option key={`commentary-explorer-book-${bookName}`} value={bookName}>{bookName}</option>)}
             </select>
           </label>
           <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             Chapter
-            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={safeChapter} onChange={(event) => setSelectedChapter(Number(event.target.value))}>
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={safeChapter}
+              onChange={(event) => {
+                setSelectedChapter(Number(event.target.value));
+                setSelectedAuthor("All");
+              }}
+            >
               {chapters.map((chapterNumber) => <option key={`commentary-explorer-chapter-${chapterNumber}`} value={chapterNumber}>{safeBook} {chapterNumber}</option>)}
             </select>
           </label>
@@ -40511,15 +40598,15 @@ function CommentaryExplorerScreen({
         </label>
 
         <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
-          <LibraryStat label="Book coverage" value={bookCoverage ? `${bookCoverage.coveragePercentage}%` : "0%"} />
-          <LibraryStat label="Catalog files" value={`${loadStatus.loadedFiles}/${loadStatus.totalFiles}`} />
+          <LibraryStat label="Catalog chapters" value={(catalog?.chapterCount ?? VALIDATED_COMMENTARY_CATALOG_CHAPTERS).toLocaleString()} />
+          <LibraryStat label="Indexed files" value={catalog ? `${catalog.indexedFileCount}/${catalog.catalogFileCount}` : "..."} />
           <LibraryStat label="Authors here" value={String(new Set(chapterEntries.map((entry) => entry.author)).size)} />
           <LibraryStat label="Chapter entries" value={String(chapterEntries.length)} />
           <LibraryStat label="Filtered results" value={String(filteredEntries.length)} />
         </div>
-        {coverage.missingChapters === 0 && coverage.missingBooks.length === 0 ? (
+        {catalog?.books.length === VALIDATED_COMMENTARY_CATALOG_BOOKS && catalog.chapterCount === VALIDATED_COMMENTARY_CATALOG_CHAPTERS ? (
           <p className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-semibold leading-5 text-emerald-900">
-            Complete chapter coverage is connected: every Bible book and every KJV chapter has at least one reviewed commentary entry. Keep using filters to choose the best author for teaching, preaching, or devotional study.
+            Complete chapter coverage is indexed: every Bible book and every KJV chapter has at least one reviewed commentary entry. Keep using filters to choose the best author for teaching, preaching, or devotional study.
           </p>
         ) : null}
       </section>

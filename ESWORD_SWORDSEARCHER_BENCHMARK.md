@@ -128,7 +128,7 @@ The next performance batch added a deterministic, server-only commentary chapter
 - Hosea 4 returns 13 exact reviewed rows from 13 sources in 593,902 bytes uncompressed and 216,109 bytes gzip
 - ordinary Bible commentary requests fell from 17 to 1, while Full Study and Passage Guide fell from as many as 345 to 1 for the active chapter
 
-The full Commentary Explorer and dedicated whole-book study paths still use complete-catalog loading. Their next step is query-driven book/chapter loading without sacrificing catalog browsing.
+Commentary Explorer now reads a compact catalog covering 12,850 entries, 66 Bible books, and 1,189 chapters, then requests only the selected chapter. Visited chapters remain cached for the session, and source rows retain their reviewed wording and provenance. Dedicated whole-book study paths still use complete-catalog loading; their next step is query-driven book/chapter delivery.
 
 ### Required engineering changes
 

@@ -14,6 +14,9 @@ type CommentaryRow = {
 };
 
 const publicCommentaryFilePattern = /^[a-z0-9-]+(?:commentary|samples|batch)\.json$/;
+const commentaryBookIndexAliases: Record<string, string> = {
+  "Song of Solomon": "Solomon's Song",
+};
 let chapterIndexPromise: Promise<CommentaryChapterIndex> | null = null;
 
 function loadChapterIndex() {
@@ -60,7 +63,8 @@ export async function GET(
 
   try {
     const index = await loadChapterIndex();
-    const fileIndexes = index.chapters[`${book}|${chapter}`];
+    const indexedBook = commentaryBookIndexAliases[book] ?? book;
+    const fileIndexes = index.chapters[`${indexedBook}|${chapter}`];
 
     if (!fileIndexes) {
       return NextResponse.json({ error: "Commentary chapter not found." }, { status: 404 });
@@ -76,7 +80,8 @@ export async function GET(
     const groups = await Promise.all(fileNames.map((fileName) => readCommentaryRows(fileName)));
     const entries = groups
       .flat()
-      .filter((row) => String(row.book ?? "").trim() === book && Number(row.chapter) === chapter);
+      .filter((row) => String(row.book ?? "").trim() === indexedBook && Number(row.chapter) === chapter)
+      .map((row) => indexedBook === book ? row : { ...row, book });
 
     return NextResponse.json(entries, {
       headers: {
