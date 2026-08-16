@@ -31,6 +31,8 @@
     "commentary:promote": "node scripts/promote-commentary-staging.mjs",
     "commentary:review-batch": "node scripts/create-commentary-review-batch.mjs",
     "commentary:source-batch": "node scripts/create-commentary-source-batch.mjs",
+    "build:commentary-index": "node scripts/build-commentary-chapter-index.mjs",
+    "validate:commentary-index": "node scripts/build-commentary-chapter-index.mjs --check",
     "validate:commentary": "node scripts/validate-commentary-entries.mjs",
     "audit:commentary-quality": "node scripts/audit-commentary-text-quality.mjs",
     "audit:commentary-thin": "node scripts/audit-major-commentary-thin-sources.mjs",

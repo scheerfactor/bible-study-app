@@ -122,6 +122,7 @@ These are current or near-current beta priorities. Finish these before expanding
 1. Client performance and data delivery
    - Reduce the current `/` first-load JavaScript from 20.13 MB gzip in staged milestones: below 5 MB, then 1.5 MB, then a public target below 750 KB.
    - First extraction completed: commentary deferral reduced `/` to 1.99 MB gzip, clearing the 5 MB milestone.
+   - Chapter delivery completed for Bible, Full Study, and Passage Guide: one cached request now replaces 17 to 345 commentary-file requests for the active chapter.
    - Remove commentary, TSK, library, media, admin, sermon, and presentation datasets from the initial reader chunk.
    - Split the 50,796-line client page by feature and load advanced workspaces only when opened.
    - Add a bundle-size regression check before public beta.

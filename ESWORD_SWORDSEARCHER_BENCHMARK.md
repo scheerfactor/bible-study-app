@@ -116,6 +116,20 @@ The first performance batch removed 24 directly bundled commentary datasets and 
 
 The repository now includes `npm run audit:bundle`, with a first-milestone gzip budget of 5 MB for `/`. The next extraction target remains 1.5 MB gzip.
 
+### Second delivery result
+
+The next performance batch added a deterministic, server-only commentary chapter index and a cached chapter endpoint. Bible reading, Full Study, and Passage Guide now request the current chapter instead of downloading source files individually.
+
+- the index covers all 1,189 KJV chapters across 345 publishable catalog files
+- `/api/commentary/chapter/[book]/[chapter]` reads only files indexed for that chapter and preserves the original validated rows
+- the dashboard makes zero commentary requests
+- opening Hosea 4 makes one chapter request and zero individual commentary-file requests
+- moving to Hosea 5 makes one additional chapter request; Passage Guide and Full Study reuse the chapter cache
+- Hosea 4 returns 13 exact reviewed rows from 13 sources in 593,902 bytes uncompressed and 216,109 bytes gzip
+- ordinary Bible commentary requests fell from 17 to 1, while Full Study and Passage Guide fell from as many as 345 to 1 for the active chapter
+
+The full Commentary Explorer and dedicated whole-book study paths still use complete-catalog loading. Their next step is query-driven book/chapter loading without sacrificing catalog browsing.
+
 ### Required engineering changes
 
 1. Keep only the shell, KJV reader, current chapter, quick navigation, and essential user state in the first route chunk.

@@ -776,7 +776,7 @@ type DeferredCommentaryLoadStatus = {
   loadedFiles: number;
   totalFiles: number;
   loading: boolean;
-  mode: "starter" | "complete";
+  mode: "chapter" | "starter" | "complete";
 };
 
 type BibleCoverageBook = {
@@ -11711,6 +11711,23 @@ function rawDeferredCommentaryUrl(fileName: string) {
   return `/api/commentary/import/${encodeURIComponent(fileName)}`;
 }
 
+function rawDeferredCommentaryChapterUrl(book: string, chapter: number) {
+  return `/api/commentary/chapter/${encodeURIComponent(book)}/${chapter}`;
+}
+
+async function fetchDeferredCommentaryChapterEntries(
+  signal: AbortSignal,
+  book: string,
+  chapter: number,
+) {
+  const response = await fetch(rawDeferredCommentaryChapterUrl(book, chapter), { signal });
+  if (!response.ok) throw new Error(`Commentary chapter request failed: ${response.status}`);
+
+  const entries = (await response.json()) as CommentaryEntry[];
+  if (!Array.isArray(entries)) throw new Error("Commentary chapter response must contain an array.");
+  return entries.map(normalizeCommentaryEntry);
+}
+
 async function fetchDeferredCommentaryEntries(
   signal: AbortSignal,
   onEntriesLoaded: (entries: CommentaryEntry[]) => void,
@@ -16936,6 +16953,8 @@ export default function Home() {
   const favoriteLibrarySyncAvailableRef = useRef(true);
   const deferredCommentaryLoadedFilesRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadingFilesRef = useRef<Set<string>>(new Set());
+  const deferredCommentaryLoadedChaptersRef = useRef<Set<string>>(new Set());
+  const deferredCommentaryLoadingChaptersRef = useRef<Set<string>>(new Set());
   const speechVoices = useMemo(
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
@@ -16943,8 +16962,11 @@ export default function Home() {
   const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
 
   useEffect(() => {
-    const shouldLoadStarterCommentary =
+    const shouldLoadChapterCommentary =
       tab === "bible" ||
+      tab === "fullStudy" ||
+      tab === "passageGuide";
+    const shouldLoadStarterCommentary =
       tab === "themes" ||
       tab === "bookIntro" ||
       tab === "sermons";
@@ -16955,6 +16977,61 @@ export default function Home() {
       tab === "amosStudyPath" ||
       tab === "proverbsStudyPath" ||
       tab === "hoseaStudyPath";
+
+    if (shouldLoadChapterCommentary) {
+      const chapterKey = `${book}|${chapter}`;
+      const completeCatalogLoaded = deferredCommentaryImportFiles.every((fileName) =>
+        deferredCommentaryLoadedFilesRef.current.has(fileName),
+      );
+
+      if (completeCatalogLoaded || deferredCommentaryLoadedChaptersRef.current.has(chapterKey)) {
+        setDeferredCommentaryLoadStatus({
+          loadedFiles: 1,
+          totalFiles: 1,
+          loading: false,
+          mode: "chapter",
+        });
+        return;
+      }
+
+      if (deferredCommentaryLoadingChaptersRef.current.has(chapterKey)) return;
+
+      deferredCommentaryLoadingChaptersRef.current.add(chapterKey);
+      setDeferredCommentaryLoadStatus({
+        loadedFiles: 0,
+        totalFiles: 1,
+        loading: true,
+        mode: "chapter",
+      });
+
+      const controller = new AbortController();
+
+      void fetchDeferredCommentaryChapterEntries(controller.signal, book, chapter)
+        .then((entries) => {
+          setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, entries));
+          deferredCommentaryLoadedChaptersRef.current.add(chapterKey);
+          setDeferredCommentaryLoadStatus({
+            loadedFiles: 1,
+            totalFiles: 1,
+            loading: false,
+            mode: "chapter",
+          });
+        })
+        .catch((error: unknown) => {
+          if (error instanceof DOMException && error.name === "AbortError") return;
+          setDeferredCommentaryLoadStatus({
+            loadedFiles: 0,
+            totalFiles: 1,
+            loading: false,
+            mode: "chapter",
+          });
+        })
+        .finally(() => {
+          deferredCommentaryLoadingChaptersRef.current.delete(chapterKey);
+        });
+
+      return () => controller.abort();
+    }
 
     if (!shouldLoadStarterCommentary && !shouldLoadCompleteCommentary) return;
 
@@ -17016,7 +17093,7 @@ export default function Home() {
         mode: shouldLoadCompleteCommentary ? "complete" : "starter",
       });
     });
-  }, [tab]);
+  }, [book, chapter, tab]);
 
   useLayoutEffect(() => {
     if (!supabase) return;
