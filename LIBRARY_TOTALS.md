@@ -1256,6 +1256,15 @@ warning because decorative headings and some dates contain recognition errors.
 This review does not cover later hymn tunes, arrangements, recordings, modern
 editions, or third-party biography content.
 
+## Latest Fanny Crosby Hymn Sprint
+
+Added *Blessed Assurance* with three public-domain stanzas and refrain, the
+public-domain ASSURANCE tune by Phoebe P. Knapp, retained Mutopia MIDI and RDF
+source files, SHA-256 verification, synthesized piano playback, KJV study
+references, and automatic presentation-slide creation. The text was checked
+against *Hymnal for Church and Home* (1928), hymn 333. No historical or modern
+performance recording is copied or licensed by this record.
+
 ## Next Growth Rule
 
 Grow the Library from verified source records, not broad keyword searches. The next push toward 2,500+ resources should be staged in 50-100 item batches with exact source URLs, duplicate checks, OCR quality labels, and subject shelves so the Library stays enjoyable instead of overwhelming.
