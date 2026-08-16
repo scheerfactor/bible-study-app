@@ -20,3 +20,10 @@
 The short follow-up in `PERMISSION_FOLLOW_UP_DRAFTS.md` is ready for Stephen's message-specific approval. Reply in the original thread when possible. Do not expand the follow-up into broad catalog, paid-access, transcript, rehosting, resale, or derivative-use requests.
 
 The separate published-policy review remains the authority for the three free, unaltered, attributed Sunday Sermons already approved for the public beta radio pilot. A no-reply finding is not permission for any additional use.
+
+## Subsequent Action
+
+After this mailbox review, Stephen gave message-specific approval and the short
+follow-up was sent in the original July 3 thread on 2026-08-15 at 9:17 PM
+Eastern. See `thru-the-bible-follow-up-sent-2026-08-15.md` for the exact message
+and continuing rights boundary.

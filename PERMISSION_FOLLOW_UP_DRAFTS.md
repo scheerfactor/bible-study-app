@@ -1,6 +1,6 @@
 # Permission Follow-Up Drafts
 
-These drafts were prepared for the first permission requests sent July 3-4, 2026. The repository still records the Kregel, Thru the Bible, Christian Focus, and Mark Cahill requests as unanswered as of August 14, 2026, but the sender mailbox must be checked before any follow-up is sent.
+These drafts were prepared for the first permission requests sent July 3-4, 2026. The repository still records the Kregel, Christian Focus, and Mark Cahill requests as unanswered as of August 14, 2026, but the sender mailbox must be checked before any follow-up is sent. The Thru the Bible follow-up was sent on August 15, 2026 and remains unanswered.
 
 Do not send automatically. Stephen must review each thread, confirm there has been no reply, and approve each follow-up before sending.
 
@@ -80,12 +80,12 @@ hello@fathersbusinessmasteryresources.com
 
 ## Thru the Bible / J. Vernon McGee
 
-Status: Inbox, Spam, and Sent were reviewed on 2026-08-15. The July 3 request is present in Sent, Inbox has no TTB reply, and Spam is empty. The follow-up below is ready for Stephen's message-specific approval; it has not been sent.
+Status: Sent in the original July 3 thread to `info@ttb.org` on 2026-08-15 at 9:17 PM Eastern after Inbox and Spam no-reply verification and Stephen's message-specific approval. Awaiting written reply; no additional rights are granted.
 
 Subject:
 
 ```text
-Following up on Thru the Bible resource permissions question
+Re: App permission question for Thru the Bible resources
 ```
 
 Body:
