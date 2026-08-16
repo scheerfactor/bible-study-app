@@ -44,7 +44,6 @@ import {
 } from "lucide-react";
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import RadioWorkspace from "@/components/RadioWorkspace";
@@ -13617,8 +13616,8 @@ function makeSupabaseClient(): SupabaseClient | null {
   return browserSupabaseClient;
 }
 
-function parseVerses(): BibleVerse[] {
-  return Object.entries(verses1769 as Record<string, string>).map(([ref, text]) => {
+function parseVerses(verseRecord: Record<string, string>): BibleVerse[] {
+  return Object.entries(verseRecord).map(([ref, text]) => {
     const match = ref.match(/^(.+) (\d+):(\d+)$/);
     if (!match) {
       return {
@@ -13644,6 +13643,25 @@ function parseVerses(): BibleVerse[] {
 
 function normalizeVerseText(text: string) {
   return text.replace(/^#\s*/, "");
+}
+
+const COMPLETE_KJV_VERSE_COUNT = 31_102;
+const STARTER_KJV_VERSES = parseVerses({
+  "John 3:16": "# For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+});
+
+async function loadCompleteKjvVerses() {
+  const kjvModule = await import("es-kjv/json/verses-1769.js");
+  const verses = parseVerses(kjvModule.default as Record<string, string>);
+
+  if (verses.length !== COMPLETE_KJV_VERSE_COUNT) {
+    throw new Error(`Expected ${COMPLETE_KJV_VERSE_COUNT} KJV verses, received ${verses.length}.`);
+  }
+  if (verses.find((verse) => verse.ref === STARTER_KJV_VERSES[0].ref)?.text !== STARTER_KJV_VERSES[0].text) {
+    throw new Error("The starter KJV verse does not match the complete corpus.");
+  }
+
+  return verses;
 }
 
 function cleanWord(word: string) {
@@ -16820,7 +16838,8 @@ function buildActiveBibleBackground({
 }
 
 export default function Home() {
-  const allVerses = useMemo(() => parseVerses(), []);
+  const [allVerses, setAllVerses] = useState<BibleVerse[]>(STARTER_KJV_VERSES);
+  const [bibleCorpusStatus, setBibleCorpusStatus] = useState<"loading" | "ready" | "error">("loading");
   const supabase = useMemo(() => makeSupabaseClient(), []);
   const [user, setUser] = useState<User | null>(null);
   const [adminRoleLoaded, setAdminRoleLoaded] = useState(false);
@@ -16989,6 +17008,24 @@ export default function Home() {
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
   );
+
+  useEffect(() => {
+    let active = true;
+
+    void loadCompleteKjvVerses()
+      .then((verses) => {
+        if (!active) return;
+        setAllVerses(verses);
+        setBibleCorpusStatus("ready");
+      })
+      .catch(() => {
+        if (active) setBibleCorpusStatus("error");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
   const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
 
   useEffect(() => {
@@ -22298,6 +22335,23 @@ export default function Home() {
         )}
 
         {!immersiveMode && <BetaNotice />}
+
+        {!immersiveMode && bibleCorpusStatus !== "ready" && (
+          <div className="border-b border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--muted)] md:px-6" role={bibleCorpusStatus === "error" ? "alert" : "status"}>
+            <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
+              <p className="font-semibold">
+                {bibleCorpusStatus === "error"
+                  ? "The complete KJV text could not be loaded. John 3:16 remains available."
+                  : "Loading the complete KJV text..."}
+              </p>
+              {bibleCorpusStatus === "error" ? (
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]" onClick={() => window.location.reload()} type="button">
+                  Retry
+                </button>
+              ) : null}
+            </div>
+          </div>
+        )}
 
         <div className={immersiveMode ? "flex min-h-screen flex-1" : "grid flex-1 md:grid-cols-[260px_1fr]"}>
           {!immersiveMode && (

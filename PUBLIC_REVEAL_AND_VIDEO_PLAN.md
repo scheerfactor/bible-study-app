@@ -133,7 +133,7 @@ Do not publish a coming-soon campaign until all of these are true:
 - every resource visible in a recording has source and rights evidence
 - screenshots and recordings contain no personal email, account, permission, or private-note data
 
-The app currently clears the first 5 MB bundle milestone at approximately 1.99 MB gzip, but it does not yet clear the 1.5 MB coming-soon gate.
+The app now clears the 1.5 MB coming-soon bundle gate at approximately 0.70 MB gzip for `/`. The exact 31,102-verse KJV corpus loads separately and still needs real-device timing before public promotion.
 
 ## Public Beta Gate
 
@@ -209,9 +209,8 @@ Do not optimize for video views alone. The proof is repeated, faithful use.
 
 ## Immediate Next Work
 
-1. Reduce the initial reader bundle below 1.5 MB gzip.
-2. Finish and time the one-tap Word Lens flow.
-3. Run the complete Hosea 4 internal proof recording on phone, tablet, and desktop.
-4. Fix every confusing or broken step exposed by the recording.
-5. Verify admin access with a signed-out session and a non-admin account.
-6. Only then record the public teaser and open the beta interest list.
+1. Finish and time the one-tap Word Lens flow.
+2. Run the complete Hosea 4 internal proof recording on phone, tablet, and desktop.
+3. Fix every confusing or broken step exposed by the recording.
+4. Verify admin access with a signed-out session and a non-admin account.
+5. Only then record the public teaser and open the beta interest list.

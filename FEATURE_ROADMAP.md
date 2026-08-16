@@ -122,6 +122,7 @@ These are current or near-current beta priorities. Finish these before expanding
 1. Client performance and data delivery
    - Reduce the current `/` first-load JavaScript from 20.13 MB gzip in staged milestones: below 5 MB, then 1.5 MB, then a public target below 750 KB.
    - First extraction completed: commentary deferral reduced `/` to 1.99 MB gzip, clearing the 5 MB milestone.
+   - KJV corpus extraction completed: the exact 31,102-verse corpus now loads in its own chunk, reducing `/` to 0.70 MB gzip and clearing the 1.5 MB beta milestone.
    - Chapter delivery completed for Bible, Full Study, and Passage Guide: one cached request now replaces 17 to 345 commentary-file requests for the active chapter.
    - Commentary Explorer delivery completed: a compact 66-book catalog and the selected chapter now replace complete-catalog loading, with visited chapters cached for the session.
    - Remove commentary, TSK, library, media, admin, sermon, and presentation datasets from the initial reader chunk.
@@ -169,7 +170,7 @@ These are current or near-current beta priorities. Finish these before expanding
 
 9. Public proof before promotion
    - Use the Study To Teach path as the product's repeatable proof: read, understand, obey, and teach from one KJV passage.
-   - Reduce `/` below the 1.5 MB gzip beta milestone before publishing a coming-soon teaser.
+   - Keep `/` below the enforced 1.5 MB gzip beta budget before publishing a coming-soon teaser; the current production build is 0.70 MB gzip.
    - Record an unedited Hosea 4 preparation session as internal QA before producing public videos.
    - Verify the workflow at 390px, tablet, and desktop widths with no browser errors.
    - Verify signed-out and ordinary signed-in accounts cannot reach admin or acquisition tools.

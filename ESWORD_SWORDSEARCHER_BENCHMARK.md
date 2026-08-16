@@ -130,6 +130,19 @@ The next performance batch added a deterministic, server-only commentary chapter
 
 Commentary Explorer now reads a compact catalog covering 12,850 entries, 66 Bible books, and 1,189 chapters, then requests only the selected chapter. Visited chapters remain cached for the session, and source rows retain their reviewed wording and provenance. Dedicated whole-book study paths still use complete-catalog loading; their next step is query-driven book/chapter delivery.
 
+### Third extraction result
+
+The complete KJV corpus now loads as a separate verified chunk instead of being embedded in the application shell. One exact starter verse keeps the first render safe while the 31,102-verse corpus loads and passes its expected-count check.
+
+- `/` first-load JavaScript: 7.64 MB uncompressed
+- `/` first-load JavaScript: 0.70 MB gzip
+- the route now clears the 1.5 MB coming-soon milestone
+- John 3 expands from the starter verse to all 36 verses after the corpus is ready
+- quick navigation, exact-phrase search, and Word Lens continue to use the full local KJV corpus
+- loading and failure states remain visible; a failed corpus request does not silently present partial coverage as complete
+
+The bundle audit now enforces a 1.5 MB gzip default budget. The separate KJV chunk is still a meaningful download and parse cost, so current-chapter delivery and a precomputed search index remain worthwhile later optimizations.
+
 ### Required engineering changes
 
 1. Keep only the shell, KJV reader, current chapter, quick navigation, and essential user state in the first route chunk.

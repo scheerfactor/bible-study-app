@@ -3,7 +3,7 @@ import { gzipSync } from "node:zlib";
 
 const reportPath = ".next/diagnostics/route-bundle-stats.json";
 const route = process.env.BUNDLE_AUDIT_ROUTE ?? "/";
-const defaultBudget = 5 * 1024 * 1024;
+const defaultBudget = 1.5 * 1024 * 1024;
 const budget = Number(process.env.BUNDLE_BUDGET_GZIP_BYTES ?? defaultBudget);
 
 if (!existsSync(reportPath)) {
