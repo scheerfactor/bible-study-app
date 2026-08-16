@@ -101932,5 +101932,101 @@
     "checksum_sha256": "7c8d65ff4959d8aa2c02ded04160f2125a2d582cfc340bcbbf5e9c90a4432bc0",
     "file_size_bytes": 1432436,
     "word_count": 206187
+  },
+  {
+    "title": "Fanny Crosby's Life-Story",
+    "author": "Fanny Crosby",
+    "year": 1903,
+    "category": "Biographies",
+    "collection": "Fanny Crosby Collection",
+    "source_url": "https://www.loc.gov/item/03014977/",
+    "download_url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/fannycrosbyslife00cros/fannycrosbyslife00cros.text.txt",
+    "source_license_url": "https://www.loc.gov/item/03014977/",
+    "file_path": "data/library/verified/fanny-crosbys-life-story-fanny-crosby.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain_loc",
+    "attribution_required": true,
+    "rights_basis": "The Library of Congress item page identifies the 1903 edition and states that books in this collection are public domain and free to use and reuse. Credit line: Library of Congress.",
+    "notes": "First-person autobiography from the Library of Congress OCR. Decorative headings and some dates contain OCR defects; compare the scan before quotation or public teaching. Source wording is unchanged; trailing blank lines were normalized to one final newline. Rights evidence: data/library/acquisition/permission-evidence/fanny-crosby-library-of-congress-public-domain-2026-08-15.md.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "approved with discernment",
+    "recommended_use": "Primary-source Christian biography, hymn-writing history, ministry testimony, and teaching illustrations.",
+    "resource_labels": [
+      "Christian Biography",
+      "Hymn Writers",
+      "Primary Source",
+      "Public domain"
+    ],
+    "resource_warnings": [
+      "OCR spot-check",
+      "Compare with source scan before quotation",
+      "Historical primary source"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Fanny Crosby's Life-Story",
+      "author": "Fanny Crosby",
+      "category": "Biographies",
+      "collection": "Fanny Crosby Collection",
+      "badge": "Christian Biography",
+      "palette": {
+        "from": "#314c45",
+        "to": "#8a7046"
+      }
+    },
+    "reading_time_minutes": 152,
+    "text_processing": "source_ocr_preserved_trailing_blank_lines_normalized",
+    "checksum_sha256": "288a666cf92cf032f270877d41243a6ff70ec49f40a761a1f0c75bdf39004643",
+    "file_size_bytes": 193937,
+    "word_count": 33980
+  },
+  {
+    "title": "Monterey, and Other Poems",
+    "author": "Fanny Crosby",
+    "year": 1851,
+    "category": "Christian Living",
+    "collection": "Fanny Crosby Collection",
+    "source_url": "https://www.loc.gov/item/31014575/",
+    "download_url": "https://tile.loc.gov/storage-services/public/gdcmassbookdig/montereyotherpoe00cros/montereyotherpoe00cros.text.txt",
+    "source_license_url": "https://www.loc.gov/item/31014575/",
+    "file_path": "data/library/verified/monterey-and-other-poems-fanny-crosby.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain_loc",
+    "attribution_required": true,
+    "rights_basis": "The Library of Congress item page identifies the 1851 edition and states that books in this collection are public domain and free to use and reuse. Credit line: Library of Congress.",
+    "notes": "Early poetry collection from the Library of Congress OCR. The contents include Christian reflection as well as historical and occasional poems. Front matter and decorative headings contain OCR defects; compare the scan before quotation. Source wording is unchanged; trailing blank lines were normalized to one final newline. This record covers the book text, not later musical arrangements or recordings. Rights evidence: data/library/acquisition/permission-evidence/fanny-crosby-library-of-congress-public-domain-2026-08-15.md.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "approved with discernment",
+    "recommended_use": "Study Fanny Crosby's early writing, devotional themes, historical context, and development as a poet.",
+    "resource_labels": [
+      "Christian Poetry",
+      "Hymn Writers",
+      "Primary Source",
+      "Public domain"
+    ],
+    "resource_warnings": [
+      "OCR spot-check",
+      "Compare with source scan before quotation",
+      "Includes non-hymn poetry"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Monterey, and Other Poems",
+      "author": "Fanny Crosby",
+      "category": "Christian Living",
+      "collection": "Fanny Crosby Collection",
+      "badge": "Christian Poetry",
+      "palette": {
+        "from": "#314c45",
+        "to": "#8a7046"
+      }
+    },
+    "reading_time_minutes": 130,
+    "text_processing": "source_ocr_preserved_trailing_blank_lines_normalized",
+    "checksum_sha256": "b3a5ed6de9c4e3bd7761a0277c5dd17a0f5d83becd7cb825a02a4ca88b1902a2",
+    "file_size_bytes": 165473,
+    "word_count": 29231
   }
 ]

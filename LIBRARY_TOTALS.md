@@ -1241,6 +1241,21 @@ eight Chafer records, and seven Carey records; those books remain governed by
 their separate public-domain source evidence. Crosby and DeHaan remain
 title-level rights gaps rather than unverified book imports.
 
+## Latest Fanny Crosby Primary-Source Sprint
+
+Added two exact-edition Library of Congress books:
+
+- *Fanny Crosby's Life-Story* (1903)
+- *Monterey, and Other Poems* (1851)
+
+Both LOC item pages state that books in their collection are public domain and
+free to use and reuse. The app records the exact item page, direct LOC OCR,
+edition date, requested Library of Congress credit, source scan, checksum, and
+OCR review. Source OCR is preserved unchanged and carries a scan-comparison
+warning because decorative headings and some dates contain recognition errors.
+This review does not cover later hymn tunes, arrangements, recordings, modern
+editions, or third-party biography content.
+
 ## Next Growth Rule
 
 Grow the Library from verified source records, not broad keyword searches. The next push toward 2,500+ resources should be staged in 50-100 item batches with exact source URLs, duplicate checks, OCR quality labels, and subject shelves so the Library stays enjoyable instead of overwhelming.
