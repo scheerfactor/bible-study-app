@@ -1223,6 +1223,24 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 - `npm run validate:strongs-mapping`: 724,963 KJV-with-Strong's rows checked with 0 missing lexicon numbers.
 - `npm run validate:tsk:all`: 6,168 TSK rows checked with 0 duplicate references.
 
+## Latest Christian Biography Discovery Links Sprint
+
+Added six reviewed public-policy link records from Wholesome Words:
+
+- Christian Biographies directory
+- Gipsy Smith
+- Lewis Sperry Chafer
+- William Carey
+- Fanny Crosby
+- M. R. DeHaan
+
+These are full-window source links only. No Wholesome Words biography text,
+quotation, portrait, image, HTML eBook, audio, video, or other site content is
+copied into the app. The duplicate audit found six existing Gipsy Smith books,
+eight Chafer records, and seven Carey records; those books remain governed by
+their separate public-domain source evidence. Crosby and DeHaan remain
+title-level rights gaps rather than unverified book imports.
+
 ## Next Growth Rule
 
 Grow the Library from verified source records, not broad keyword searches. The next push toward 2,500+ resources should be staged in 50-100 item batches with exact source URLs, duplicate checks, OCR quality labels, and subject shelves so the Library stays enjoyable instead of overwhelming.

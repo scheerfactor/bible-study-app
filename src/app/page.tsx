@@ -43739,6 +43739,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
   const northstarCount = resources.filter((resource) => resource.publisherMinistry === "Northstar Ministries").length;
   const solveFamilyProblemsCount = resources.filter((resource) => resource.publisherMinistry === "Solve Family Problems").length;
   const thruTheBibleCount = resources.filter((resource) => resource.publisherMinistry === "Thru the Bible").length;
+  const wholesomeWordsCount = resources.filter((resource) => resource.publisherMinistry === "Wholesome Words").length;
   const ministrySourceSummaries = [
     {
       ministry: "Way of Life Literature",
@@ -43764,6 +43765,12 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       focus: "Whole-Bible audio study and Dr. J. Vernon McGee Sunday sermons",
       scope: "Official links remain free, clearly attributed, and outside paid access; copied audio requires a separate file-level intake check.",
     },
+    {
+      ministry: "Wholesome Words",
+      count: wholesomeWordsCount,
+      focus: "Christian biography, missions, hymn writers, preachers, evangelists, and Bible teachers",
+      scope: "Full-window links are permitted; site text, images, audio, and other electronic reuse require item-level written permission.",
+    },
   ].filter((item) => item.count > 0);
   const activeMinistrySummary = ministrySourceSummaries.find((item) => item.ministry === activeMinistry);
 
@@ -43771,17 +43778,18 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
       <div className="grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Permissioned Ministry Links</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Trusted resources with clear boundaries</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Reviewed Resource Links</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Trusted source pages with clear boundaries</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            These records point users to official ministry pages while rights review continues. Public-domain books stay separate from scoped ministry links.
+            These records point users to reviewed source pages under documented permission or linking policies. Public-domain books stay separate from link-only resources.
           </p>
-          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-5">
+          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
             <MiniStat label="Total links" value={String(resources.length)} />
             <MiniStat label="Way of Life" value={String(wayOfLifeCount)} />
             <MiniStat label="Northstar" value={String(northstarCount)} />
             <MiniStat label="S. M. Davis" value={String(solveFamilyProblemsCount)} />
             <MiniStat label="Thru the Bible" value={String(thruTheBibleCount)} />
+            <MiniStat label="Biographies" value={String(wholesomeWordsCount)} />
           </div>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -43918,18 +43926,29 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
 
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
   const isOfficialAudio = resource.resourceFormat === "Official Audio Link";
+  const isOfficialLinkOnly = resource.permissionStatus === "Public Policy - Official Links Only";
   const linkLabel = isOfficialAudio
     ? "Listen on TTB"
+    : resource.publisherMinistry === "Wholesome Words"
+      ? "Browse source page"
     : resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems"
       ? "View / buy official page"
       : "Open official page";
-  const scopeLabel = isOfficialAudio ? "Official audio" : resource.publisherMinistry === "Solve Family Problems" ? "Metadata only" : "Scoped permission";
+  const scopeLabel = isOfficialAudio
+    ? "Official audio"
+    : isOfficialLinkOnly
+      ? "Official links only"
+      : resource.publisherMinistry === "Solve Family Problems"
+        ? "Metadata only"
+        : "Scoped permission";
 
   return (
     <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Official ministry link</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+            {isOfficialLinkOnly ? "Reviewed source link" : "Official ministry link"}
+          </p>
           <h3 className="mt-2 text-lg font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
           {resource.passage && (
@@ -43953,9 +43972,11 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
         ))}
       </div>
       <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-        <p className="text-xs font-semibold text-[var(--ink)]">{isOfficialAudio ? "Official stream - no audio copied" : "No full text or audio hosted"}</p>
+        <p className="text-xs font-semibold text-[var(--ink)]">
+          {isOfficialAudio ? "Official stream - no audio copied" : isOfficialLinkOnly ? "Link only - no source content copied" : "No full text or audio hosted"}
+        </p>
         <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-          {resource.reviewStatus}. {isOfficialAudio ? "Playback opens the exact TTB-hosted file." : "Use the official page until title review and any broader license is complete."}
+          {resource.reviewStatus}. {isOfficialAudio ? "Playback opens the exact TTB-hosted file." : isOfficialLinkOnly ? "The source page opens in a separate browser tab." : "Use the official page until title review and any broader license is complete."}
         </p>
       </div>
       <div className="mt-auto pt-4">

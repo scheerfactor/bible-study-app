@@ -3661,5 +3661,155 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/thru-the-bible-passage-sermons-2026-08-15.md",
     "recommendedUse": "Jude 20-25 sermon study; apostasy and discernment; teaching believers how to remain faithful",
     "notes": "Published in TTB's official feed on October 5, 2025; the current feed does not supply a program number. TTB's booklet catalog maps the former sermon title to its Jude 20-25 resource. Streams from the exact official TTB CDN file; no audio or transcript is copied into the app. Required attribution: By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org."
+  },
+  {
+    "id": "public-link-wholesome-words-christian-biographies",
+    "title": "Christian Biographies Directory",
+    "author": "Wholesome Words",
+    "publisherMinistry": "Wholesome Words",
+    "category": "Biographies",
+    "collection": "Wholesome Words Biography Links",
+    "sourceUrl": "https://www.wholesomewords.org/biography/index.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Directory and linking policy reviewed 2026-08-15; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or electronic copying",
+      "Site text or image reuse",
+      "Audio or video hosting or embedding",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/wholesome-words-linking-policy-review-2026-08-15.md",
+    "recommendedUse": "Discover Christian biography, missions, hymn-writer, preacher, evangelist, and Bible-teacher source pages",
+    "notes": "Open the full Wholesome Words page in a new browser window. No site text, portrait, photograph, HTML, audio, or other content is copied into the app. Item-level written permission is required before any electronic reuse."
+  },
+  {
+    "id": "public-link-wholesome-words-gipsy-smith",
+    "title": "Gipsy Smith Biographies and Information",
+    "author": "Gipsy Smith",
+    "publisherMinistry": "Wholesome Words",
+    "category": "Evangelism",
+    "collection": "Wholesome Words Biography Links",
+    "sourceUrl": "https://www.wholesomewords.org/biography/biorpsmith.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Author page and linking policy reviewed 2026-08-15; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or electronic copying",
+      "Site text or image reuse",
+      "Audio or video hosting or embedding",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/wholesome-words-linking-policy-review-2026-08-15.md",
+    "recommendedUse": "Evangelist biography discovery alongside the six existing public-domain Gipsy Smith Library books",
+    "notes": "Link-only record. No biography text, portrait, audio, or linked eBook content is copied. Existing public-domain Gipsy Smith books use their own separately verified source records."
+  },
+  {
+    "id": "public-link-wholesome-words-lewis-sperry-chafer",
+    "title": "Lewis Sperry Chafer Information and Writings",
+    "author": "Lewis Sperry Chafer",
+    "publisherMinistry": "Wholesome Words",
+    "category": "Bible Study",
+    "collection": "Wholesome Words Biography Links",
+    "sourceUrl": "https://www.wholesomewords.org/biography/biorpchafer.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Author page and linking policy reviewed 2026-08-15; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or electronic copying",
+      "Site text or image reuse",
+      "Audio or video hosting or embedding",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/wholesome-words-linking-policy-review-2026-08-15.md",
+    "recommendedUse": "Bible-teacher biography and writings discovery alongside the eight existing Chafer Library records",
+    "notes": "Link-only record. No Wholesome Words text, image, audio, or HTML eBook is copied. Every Chafer edition still requires its own source and rights review; modern revisions are not covered by early-work public-domain findings."
+  },
+  {
+    "id": "public-link-wholesome-words-william-carey",
+    "title": "William Carey Biographies and Information",
+    "author": "William Carey",
+    "publisherMinistry": "Wholesome Words",
+    "category": "Missions",
+    "collection": "Wholesome Words Biography Links",
+    "sourceUrl": "https://www.wholesomewords.org/biography/biorpcarey.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Author page and linking policy reviewed 2026-08-15; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or electronic copying",
+      "Site text or image reuse",
+      "Audio or video hosting or embedding",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/wholesome-words-linking-policy-review-2026-08-15.md",
+    "recommendedUse": "Baptist missionary biography discovery alongside the seven existing William Carey Library records",
+    "notes": "Link-only record. No Wholesome Words biography text, family details, portraits, recommended-book images, or linked files are copied. Existing Carey texts retain their own Project Gutenberg or Internet Archive evidence."
+  },
+  {
+    "id": "public-link-wholesome-words-fanny-crosby",
+    "title": "Fanny Crosby Biographies and Information",
+    "author": "Fanny Crosby",
+    "publisherMinistry": "Wholesome Words",
+    "category": "Hymns",
+    "collection": "Wholesome Words Biography Links",
+    "sourceUrl": "https://www.wholesomewords.org/biography/biorpcrosby.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Author page and linking policy reviewed 2026-08-15; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or electronic copying",
+      "Site text or image reuse",
+      "Audio or video hosting or embedding",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/wholesome-words-linking-policy-review-2026-08-15.md",
+    "recommendedUse": "Hymn-writer biography and historical-source discovery while exact hymn text, tune, arrangement, and recording rights remain item-level checks",
+    "notes": "Link-only record. No biography, quotation, hymn text, portrait, photograph, book image, or audio is copied. This record does not establish rights for any hymn arrangement or recording."
+  },
+  {
+    "id": "public-link-wholesome-words-m-r-dehaan",
+    "title": "M. R. DeHaan Information and Writings",
+    "author": "M. R. DeHaan",
+    "publisherMinistry": "Wholesome Words",
+    "category": "Bible Study",
+    "collection": "Wholesome Words Biography Links",
+    "sourceUrl": "https://www.wholesomewords.org/biography/biorpdehaan.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Author page and linking policy reviewed 2026-08-15; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or electronic copying",
+      "Site text or image reuse",
+      "Audio or video hosting or embedding",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/wholesome-words-linking-policy-review-2026-08-15.md",
+    "recommendedUse": "Bible-teacher and radio-ministry biography discovery while all DeHaan text and media remain permission- or title-review gated",
+    "notes": "Link-only record. No biography text, quotations, HTML eBooks, audio, portrait, or other site content is copied. Do not infer public-domain status from age; every DeHaan title and recording requires exact publication and rights evidence."
   }
 ]
