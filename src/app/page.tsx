@@ -23209,10 +23209,11 @@ export default function Home() {
 	      {!immersiveMode && <MobileNav tab={tab} onTab={setTab} />}
 
 	      {tab === "bible" && studyRef && activeVerse && (
-        <StudyDrawer
-          verse={activeVerse}
-          activeTab={studyTab}
-          dictionaryEntry={activeDictionaryEntry}
+	        <StudyDrawer
+	          verse={activeVerse}
+	          activeTab={studyTab}
+	          dictionaryEntry={activeDictionaryEntry}
+	          bibleCorpusReady={bibleCorpusStatus === "ready"}
           crossReferences={activeCrossReferences}
           commentaryEntries={activeCommentaryEntries}
           bookIntroduction={activeVerse ? bookIntroductionsByBook.get(activeVerse.book) ?? null : null}
@@ -46875,6 +46876,7 @@ function StudyDrawer({
   verse,
   activeTab,
   dictionaryEntry,
+  bibleCorpusReady,
   crossReferences,
   commentaryEntries,
   bookIntroduction,
@@ -46926,6 +46928,7 @@ function StudyDrawer({
   verse: BibleVerse;
   activeTab: StudyDrawerTab;
   dictionaryEntry: DictionaryEntry | null;
+  bibleCorpusReady: boolean;
   crossReferences: CrossReference[];
   commentaryEntries: CommentaryEntry[];
   bookIntroduction: BookIntroduction | null;
@@ -46974,14 +46977,16 @@ function StudyDrawer({
   onToggleAudio: () => void;
   onSpeechRateChange: (rate: number) => void;
 }) {
-  const [drawerSize, setDrawerSize] = useState<StudyDrawerSize>("half");
+  const [drawerSizeOverride, setDrawerSizeOverride] = useState<StudyDrawerSize | null>(null);
+  const [verseStrongResult, setVerseStrongResult] = useState<{ key: string; mappings: KJVStrongMapping[] } | null>(null);
   const dragStartYRef = useRef<number | null>(null);
   const didDragRef = useRef(false);
   const tabsRef = useRef<HTMLDivElement | null>(null);
+  const drawerContentRef = useRef<HTMLDivElement | null>(null);
   const tabs: { id: StudyDrawerTab; label: string }[] = [
     { id: "study", label: "Study" },
     { id: "actions", label: "Actions" },
-    { id: "dictionary", label: "Dictionary" },
+    { id: "dictionary", label: "Word Lens" },
     { id: "occurrences", label: "Word Study" },
     { id: "crossReferences", label: "Cross References" },
     { id: "notes", label: "Notes" },
@@ -47011,12 +47016,44 @@ function StudyDrawer({
     () => buildWordExplorer(dictionaryEntry?.lookupWord || keyWords[0] || "", verse.book, verse.chapter, allVerses),
     [allVerses, dictionaryEntry?.lookupWord, keyWords, verse.book, verse.chapter],
   );
+  const dictionaryLookupWord = dictionaryEntry?.lookupWord ?? "";
+  const strongRequestKey = dictionaryLookupWord ? `${verse.ref}|${dictionaryLookupWord}` : "";
+  const verseStrongMappings = verseStrongResult?.key === strongRequestKey ? verseStrongResult.mappings : [];
+  const wordLensStrongStatus: "idle" | "loading" | "ready" | "missing" = !strongRequestKey
+    ? "idle"
+    : verseStrongResult?.key !== strongRequestKey
+      ? "loading"
+      : verseStrongMappings.length
+        ? "ready"
+        : "missing";
+  const contextualStrongMappings = (() => {
+    if (!dictionaryLookupWord) return [];
+    const lookupWord = normalizeLookupWord(dictionaryLookupWord);
+    const seen = new Set<string>();
+
+    return verseStrongMappings.filter((mapping) => {
+      const mappingWord = normalizeLookupWord(mapping.normalized_kjv_word || mapping.kjv_word);
+      if (mappingWord !== lookupWord || seen.has(mapping.strongs_number)) return false;
+      seen.add(mapping.strongs_number);
+      return true;
+    });
+  })();
+  const drawerWebsterEntry = useMemo(
+    () => dictionaryEntry?.sourceEntries?.find((entry) => entry.sourceTitle.toLowerCase().includes("webster")) ?? null,
+    [dictionaryEntry],
+  );
+  const additionalDictionaryEntries = useMemo(
+    () => dictionaryEntry?.sourceEntries?.filter((entry) => entry !== drawerWebsterEntry) ?? [],
+    [dictionaryEntry, drawerWebsterEntry],
+  );
+  const drawerFirstOccurrence = drawerWordExplorer.bibleOccurrences[0] ?? null;
   const sizeOrder: StudyDrawerSize[] = ["collapsed", "half", "full"];
   const sizeButtons: { id: StudyDrawerSize; label: string }[] = [
     { id: "collapsed", label: "Low" },
     { id: "half", label: "Half" },
     { id: "full", label: "Full" },
   ];
+  const drawerSize = drawerSizeOverride ?? (activeTab === "dictionary" ? "full" : "half");
   const drawerHeight =
     drawerSize === "collapsed"
       ? "h-[154px]"
@@ -47030,9 +47067,36 @@ function StudyDrawer({
     }
   }, [activeTab, verse.ref]);
 
+  useEffect(() => {
+    drawerContentRef.current?.scrollTo({ top: 0, behavior: "auto" });
+  }, [activeTab, dictionaryLookupWord, verse.ref]);
+
+  useEffect(() => {
+    if (!strongRequestKey) return;
+
+    const controller = new AbortController();
+
+    fetch(`/api/strongs?verse=${encodeURIComponent(verse.ref)}`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("Strong's mapping lookup failed.");
+        return response.json() as Promise<{ mappings?: KJVStrongMapping[] }>;
+      })
+      .then((data) => {
+        const mappings = data.mappings ?? [];
+        setVerseStrongResult({ key: strongRequestKey, mappings });
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setVerseStrongResult({ key: strongRequestKey, mappings: [] });
+      });
+
+    return () => controller.abort();
+  }, [strongRequestKey, verse.ref]);
+
   function resizeDrawer(direction: number) {
-    setDrawerSize((current) => {
-      const currentIndex = sizeOrder.indexOf(current);
+    setDrawerSizeOverride((current) => {
+      const resolvedSize = current ?? (activeTab === "dictionary" ? "full" : "half");
+      const currentIndex = sizeOrder.indexOf(resolvedSize);
       return sizeOrder[Math.max(0, Math.min(sizeOrder.length - 1, currentIndex + direction))];
     });
   }
@@ -47092,7 +47156,7 @@ function StudyDrawer({
                     className={`rounded-full px-2.5 py-1.5 text-xs font-semibold ${
                       drawerSize === size.id ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"
                     }`}
-                    onClick={() => setDrawerSize(size.id)}
+                    onClick={() => setDrawerSizeOverride(size.id)}
                     type="button"
                   >
                     {size.label}
@@ -47134,7 +47198,7 @@ function StudyDrawer({
           )}
         </div>
 
-        {drawerSize !== "collapsed" && <div className="overflow-y-auto px-4 pb-28 pt-4 md:pb-4">
+        {drawerSize !== "collapsed" && <div ref={drawerContentRef} className="overflow-y-auto px-4 pb-28 pt-4 md:pb-4">
           {activeTab === "study" && (
             <div className="space-y-3">
               <StudySection
@@ -47283,16 +47347,14 @@ function StudyDrawer({
 
           {activeTab === "dictionary" && (
             <div className="space-y-4">
-              <WordLookupStrip verse={verse} onLookupWord={onLookupWord} />
-
               {dictionaryEntry ? (
-                <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+                <section aria-labelledby="word-lens-heading" className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">
-                        {dictionaryEntry.sourceTitle ?? "Bible Dictionary"}
-                      </p>
-                      <h3 className="mt-2 text-3xl font-semibold capitalize text-[var(--ink)]">{dictionaryEntry.word}</h3>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">One-tap study</p>
+                      <h3 id="word-lens-heading" className="mt-2 text-2xl font-semibold text-[var(--ink)]">
+                        Word Lens: <span className="capitalize">{dictionaryEntry.word}</span>
+                      </h3>
                     </div>
                     <span className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
                       dictionaryEntry.lookupStatus === "checking"
@@ -47307,57 +47369,103 @@ function StudyDrawer({
                   {dictionaryEntry.lookupWord && dictionaryEntry.lookupWord !== dictionaryEntry.word && (
                     <p className="mt-1 text-sm text-[var(--muted)]">Normalized to: {dictionaryEntry.lookupWord}</p>
                   )}
-                  {dictionaryEntry.sourceEntries?.length ? (
-                    <div className="mt-4 space-y-3">
-                      {dictionaryEntry.sourceEntries.map((entry, index) => (
-                        <article key={`dictionary-source-${entry.sourceTitle}-${entry.headword}-${index}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <p className="text-sm font-semibold capitalize text-[var(--ink)]">{entry.headword}</p>
-                            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{entry.sourceTitle}</span>
-                          </div>
-                          <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[var(--scripture-ink)]">{entry.definition}</p>
-                          {entry.reviewStatus && (
-                            <p className="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                              {entry.reviewStatus.replace(/_/g, " ")}
-                            </p>
-                          )}
-                        </article>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="mt-4 whitespace-pre-line text-base leading-7 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
-                  )}
+
                   <div className="mt-4 grid grid-cols-3 gap-2">
-                    <MiniStat label="Chapter" value={String(drawerWordExplorer.chapterOccurrences.length)} />
-                    <MiniStat label="Book" value={String(drawerWordExplorer.bookOccurrences.length)} />
-                    <MiniStat label="Bible" value={String(drawerWordExplorer.bibleOccurrences.length)} />
+                    <MiniStat label="Chapter" value={bibleCorpusReady ? String(drawerWordExplorer.chapterOccurrences.length) : "..."} />
+                    <MiniStat label="Book" value={bibleCorpusReady ? String(drawerWordExplorer.bookOccurrences.length) : "..."} />
+                    <MiniStat label="Bible" value={bibleCorpusReady ? String(drawerWordExplorer.bibleOccurrences.length) : "..."} />
                   </div>
+
+                  {!bibleCorpusReady && (
+                    <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Loading the complete KJV index for exact occurrence counts and first use.</p>
+                  )}
+
+                  <div className="mt-4 grid gap-3">
+                    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-sm font-semibold text-[var(--green)]">Webster&apos;s 1828</p>
+                        <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                          {drawerWebsterEntry?.reviewStatus?.replace(/_/g, " ") ?? (dictionaryEntry.found ? "Reviewed source" : "Needs review")}
+                        </span>
+                      </div>
+                      <ExpandableSourceDefinition
+                        key={`word-lens-webster-${dictionaryEntry.lookupWord}`}
+                        text={drawerWebsterEntry?.definition ?? dictionaryEntry.definition}
+                      />
+                    </article>
+
+                    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-sm font-semibold text-[var(--green)]">Strong&apos;s in {verse.ref}</p>
+                        <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">Verified mapping only</span>
+                      </div>
+                      {wordLensStrongStatus === "loading" ? (
+                        <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Loading the reviewed verse mapping...</p>
+                      ) : contextualStrongMappings.length ? (
+                        <div className="mt-3 space-y-3">
+                          {contextualStrongMappings.map((mapping) => (
+                            <div key={`word-lens-strong-${mapping.strongs_number}`}>
+                              <p className="text-sm font-semibold text-[var(--ink)]">
+                                {mapping.strongs_number}
+                                {mapping.strong_entry?.original_word ? ` · ${mapping.strong_entry.original_word}` : ""}
+                                {mapping.strong_entry?.transliteration ? ` (${mapping.strong_entry.transliteration})` : ""}
+                              </p>
+                              <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">
+                                {mapping.strong_entry?.plain_definition ?? "The reviewed verse mapping is available; its lexicon entry is still being prepared."}
+                              </p>
+                              <p className="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                                {mapping.source_title} · {mapping.review_status}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="mt-3 text-sm leading-6 text-[var(--muted)]">No verified contextual Strong&apos;s mapping matches this KJV word in {verse.ref} yet.</p>
+                      )}
+                    </article>
+
+                    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <p className="text-sm font-semibold text-[var(--green)]">First KJV use</p>
+                      {bibleCorpusReady && drawerFirstOccurrence ? (
+                        <button className="mt-2 w-full text-left" onClick={() => onOpenReference(drawerFirstOccurrence.ref)} type="button">
+                          <span className="text-sm font-semibold text-[var(--ink)]">{drawerFirstOccurrence.ref}</span>
+                          <span className="mt-1 line-clamp-3 block font-serif text-sm leading-6 text-[var(--scripture-ink)]">{drawerFirstOccurrence.text}</span>
+                        </button>
+                      ) : (
+                        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                          {bibleCorpusReady ? "No matching verse found in the local KJV text." : "Loading the complete KJV index..."}
+                        </p>
+                      )}
+                    </article>
+                  </div>
+
+                  {additionalDictionaryEntries.length > 0 && (
+                    <details className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">Additional reviewed dictionary helps</summary>
+                      <div className="mt-3 space-y-3">
+                        {additionalDictionaryEntries.map((entry, index) => (
+                          <article key={`word-lens-additional-${entry.sourceTitle}-${entry.headword}-${index}`}>
+                            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.sourceTitle}</p>
+                            <p className="mt-2 whitespace-pre-line text-sm leading-7 text-[var(--scripture-ink)]">{entry.definition}</p>
+                          </article>
+                        ))}
+                      </div>
+                    </details>
+                  )}
+
                   <button
-                    className="mt-3 w-full rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
+                    className="mt-4 w-full rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
                     onClick={() => onActiveTabChange("occurrences")}
                     type="button"
                   >
-                    Open Word Connection Mode
+                    Open Full Word Study
                   </button>
-                  {drawerWordExplorer.chapterOccurrences.length > 0 && (
-                    <div className="mt-3 space-y-2">
-                      {drawerWordExplorer.chapterOccurrences.slice(0, 3).map((occurrence) => (
-                        <button
-                          key={`drawer-word-${occurrence.ref}`}
-                          className="w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
-                          onClick={() => onOpenReference(occurrence.ref)}
-                          type="button"
-                        >
-                          <p className="text-xs font-semibold text-[var(--green)]">{occurrence.ref}</p>
-                          <p className="mt-1 line-clamp-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{occurrence.text}</p>
-                        </button>
-                      ))}
-                    </div>
-                  )}
                 </section>
               ) : (
                 <EmptyState title="Tap a word" body="Tap any word in the verse above or the Bible text to look up a Webster's 1828 definition." />
               )}
+
+              <WordLookupStrip verse={verse} onLookupWord={onLookupWord} />
             </div>
           )}
 
@@ -47630,6 +47738,36 @@ function WordLookupStrip({
         ))}
       </div>
     </section>
+  );
+}
+
+function sourceDefinitionPreview(text: string, maxLength = 720) {
+  if (text.length <= maxLength) return text;
+  const sentenceEnd = text.lastIndexOf(". ", maxLength);
+  const breakAt = sentenceEnd >= maxLength * 0.6 ? sentenceEnd + 1 : text.lastIndexOf(" ", maxLength);
+  return text.slice(0, Math.max(1, breakAt)).trimEnd();
+}
+
+function ExpandableSourceDefinition({ text }: { text: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const preview = sourceDefinitionPreview(text);
+  const truncated = preview.length < text.length;
+
+  return (
+    <div className="mt-3">
+      <p className="whitespace-pre-line text-sm leading-7 text-[var(--scripture-ink)]">
+        {expanded || !truncated ? text : `${preview}...`}
+      </p>
+      {truncated && (
+        <button
+          className="mt-3 rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+          onClick={() => setExpanded((current) => !current)}
+          type="button"
+        >
+          {expanded ? "Show shorter definition" : "Show full Webster entry"}
+        </button>
+      )}
+    </div>
   );
 }
 
