@@ -119,36 +119,50 @@ Practical design meaning:
 
 These are current or near-current beta priorities. Finish these before expanding the app into a larger ecosystem.
 
-1. Bible reader navigation
+1. Client performance and data delivery
+   - Reduce the current `/` first-load JavaScript from 20.13 MB gzip in staged milestones: below 5 MB, then 1.5 MB, then a public target below 750 KB.
+   - Remove commentary, TSK, library, media, admin, sermon, and presentation datasets from the initial reader chunk.
+   - Split the 50,796-line client page by feature and load advanced workspaces only when opened.
+   - Add a bundle-size regression check before public beta.
+   - See [e-Sword And SwordSearcher Benchmark](./ESWORD_SWORDSEARCHER_BENCHMARK.md).
+
+2. Bible reader navigation
    - Keep quick navigation always available in Bible Reader.
    - Preserve recent and pinned passages locally.
-   - Add Bible markers/ribbons after the current navigation feels stable.
+   - Add navigation back/forward history and non-destructive verse previews.
 
-2. Study drawer and full study reliability
+3. Quick Word Lens, study drawer, and full study reliability
+   - Show Webster, mapped Strong's data, occurrence counts, and first use together when a KJV word is tapped.
    - Keep Study tab first.
    - Keep selected verse, key words, cross references, notes, and commentary visible without clutter.
    - Make sure notes/highlights/bookmarks persist signed-in and signed-out.
 
-3. Search and occurrence explorer
+4. Search and occurrence explorer
    - Keep Bible search fast on mobile.
-   - Improve phrase search and highlighted results.
+   - Replace repeated full-array scanning with a precomputed KJV search index.
+   - Add phrase, all/any words, KJV word forms, fuzzy spelling, proximity, Strong's number, and range scopes.
    - Keep occurrence counts simple: chapter, book, Bible.
    - Learn from SwordSearcher: verse-centered search should not interrupt the study flow.
 
-4. Webster's 1828
+5. Verse Guide and Study Margin
+   - Build a verse-to-resource index across TSK, commentary, books, study tools, and personal writing.
+   - Show compact optional resource counts beside the passage without covering the KJV text.
+   - Preview results before changing the current reader position.
+
+6. Webster's 1828
    - Continue full import validation.
    - Normalize common KJV forms.
    - Add dictionary search and fast lookup from Bible words.
 
-5. Library reader polish
+7. Library reader polish
    - Keep continue reading, completed books, read again, and listening controls stable.
    - Preserve public-domain rights metadata.
    - Learn from theWord: resources can be flexible and affordable, but must be curated and simple to use.
 
-6. Beta protection
+8. Beta protection
    - Keep Export My Notes.
    - Keep known limitations clear.
-   - Avoid adding paid features, AI, Strong's, or full sermon builder during this stage.
+   - Avoid adding paid features or AI during this stage.
 
 ## Next: Guided Study and Teaching
 
