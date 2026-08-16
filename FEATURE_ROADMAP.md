@@ -166,6 +166,15 @@ These are current or near-current beta priorities. Finish these before expanding
    - Keep known limitations clear.
    - Avoid adding paid features or AI during this stage.
 
+9. Public proof before promotion
+   - Use the Study To Teach path as the product's repeatable proof: read, understand, obey, and teach from one KJV passage.
+   - Reduce `/` below the 1.5 MB gzip beta milestone before publishing a coming-soon teaser.
+   - Record an unedited Hosea 4 preparation session as internal QA before producing public videos.
+   - Verify the workflow at 390px, tablet, and desktop widths with no browser errors.
+   - Verify signed-out and ordinary signed-in accounts cannot reach admin or acquisition tools.
+   - Open a no-payment beta interest list only after the Coming Soon gate passes.
+   - See [Public Reveal And Video Plan](./PUBLIC_REVEAL_AND_VIDEO_PLAN.md).
+
 ## Next: Guided Study and Teaching
 
 Build these after the beta reader, notes, search, dictionary, and library workflows are dependable.

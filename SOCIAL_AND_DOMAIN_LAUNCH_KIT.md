@@ -4,13 +4,15 @@
 
 Prepare Father's Business Bible Study for public visibility without rushing into a broad paid launch.
 
+The detailed positioning, release gates, and recording sequence live in [Public Reveal And Video Plan](./PUBLIC_REVEAL_AND_VIDEO_PLAN.md). Do not publish a teaser or release date until its Coming Soon gate passes.
+
 The app should first be presented as:
 
-> a Scripture-first Bible study, library, sermon preparation, prayer, journal, and presentation app in active beta.
+> a fast, KJV-first path from the words of Scripture to trusted study, a faithful response, and a lesson, sermon, or presentation.
 
-Avoid calling it finished. Avoid promising a replacement for every major Bible software platform. The best early message is simple:
+Avoid calling it finished. Avoid promising a replacement for every major Bible software platform. The public promise is simple:
 
-> Read, study, pray, journal, and prepare Bible lessons from one clean KJV-focused workspace.
+> Read. Understand. Obey. Teach.
 
 ## Current Public Readiness
 
@@ -104,7 +106,9 @@ The app is in active beta.
 7. How to use prayer and journal together.
 8. Why public-domain books still matter for Bible study.
 
-### First Demo Video Structure
+### First Public Demo Video Structure
+
+Record an internal, unedited Hosea 4 proof session before producing this public John 3 demonstration. The internal recording should expose real performance and usability problems; it should not be published.
 
 Title:
 
@@ -121,7 +125,7 @@ Outline:
 7. Add a journal thought.
 8. Save or export.
 
-Keep first videos under 5-8 minutes.
+Keep first videos under 5-8 minutes. Show actual response time, use only public reviewed resources, and never record admin tools or personal account data.
 
 ## Website Plan
 
@@ -213,13 +217,13 @@ Avoid:
 
 ## Next Practical Step
 
-Record one simple screen walkthrough:
+Record one unedited internal screen walkthrough:
 
-> Prepare Hosea 4-9 for Sunday School in Father's Business Bible Study.
+> Prepare Hosea 4 for Sunday School in Father's Business Bible Study.
 
-That video will help:
+That proof recording will help:
 
 - testers understand the app
 - publishers see the mission
-- Facebook/YouTube have useful launch content
+- identify what must be fixed before Facebook or YouTube receives launch content
 - future supporters see what they are supporting
