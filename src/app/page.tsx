@@ -47,6 +47,7 @@ import Image from "next/image";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
+import RadioWorkspace from "@/components/RadioWorkspace";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
 import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
@@ -126,7 +127,7 @@ import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded
 import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
 
-type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
+type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "radio" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -168,6 +169,7 @@ const HASH_TAB_MAP: Partial<Record<string, Tab>> = {
   "#commentary-explorer": "commentaryExplorer",
   "#commentaryexplorer": "commentaryExplorer",
   "#library": "library",
+  "#radio": "radio",
   "#notes": "notes",
   "#prayer": "prayer",
   "#journal": "journal",
@@ -22253,6 +22255,7 @@ export default function Home() {
                   setTab("library");
                 }}
               />
+              <NavButton icon={<Headphones size={18} />} label="Radio" active={tab === "radio"} onClick={() => setTab("radio")} />
               <NavButton icon={<NotebookPen size={18} />} label="Notes" active={tab === "notes"} onClick={() => setTab("notes")} />
               <NavButton icon={<MessageSquareText size={18} />} label="Prayer" active={tab === "prayer"} onClick={() => setTab("prayer")} />
               <NavButton icon={<FileText size={18} />} label="Journal" active={tab === "journal"} onClick={() => setTab("journal")} />
@@ -23050,6 +23053,8 @@ export default function Home() {
                 onExportPdfPreview={exportPresentationPdfPreview}
               />
             )}
+
+            {tab === "radio" && <RadioWorkspace />}
 
             {tab === "settings" && (
               <SettingsScreen
@@ -50737,6 +50742,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "themes", label: "Themes", shortLabel: "Theme", icon: <Brain size={18} /> },
     { id: "commentaryExplorer", label: "Commentary", shortLabel: "Comm", icon: <MessageSquareText size={18} /> },
     { id: "library", label: "Library", shortLabel: "Library", icon: <Library size={18} /> },
+    { id: "radio", label: "Radio", shortLabel: "Radio", icon: <Headphones size={18} /> },
     { id: "notes", label: "Notes", shortLabel: "Notes", icon: <NotebookPen size={18} /> },
     { id: "prayer", label: "Prayer", shortLabel: "Prayer", icon: <MessageSquareText size={18} /> },
     { id: "journal", label: "Journal", shortLabel: "Jrnl", icon: <FileText size={18} /> },
@@ -50747,7 +50753,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-xl grid-cols-6 gap-1">
+      <div className="mx-auto grid max-w-xl grid-cols-7 gap-1">
         {items.map((item) => (
           <button
             key={item.id}

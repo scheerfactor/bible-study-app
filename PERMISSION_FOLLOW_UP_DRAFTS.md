@@ -80,6 +80,8 @@ hello@fathersbusinessmasteryresources.com
 
 ## Thru the Bible / J. Vernon McGee
 
+Status: Inbox, Spam, and Sent were reviewed on 2026-08-15. The July 3 request is present in Sent, Inbox has no TTB reply, and Spam is empty. The follow-up below is ready for Stephen's message-specific approval; it has not been sent.
+
 Subject:
 
 ```text

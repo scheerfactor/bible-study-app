@@ -47,6 +47,7 @@
     "audit:hosea": "node scripts/audit-hosea-readiness.mjs",
     "validate:study-sources": "node scripts/validate-study-tool-source-manifests.mjs",
     "validate:media": "node scripts/validate-media-manifest.mjs",
+    "validate:radio": "node scripts/validate-radio-stations.mjs",
     "media:marker-review": "node scripts/create-bible-audio-marker-review.mjs",
     "media:update-marker": "node scripts/update-bible-audio-marker.mjs",
     "audit:study-data": "node scripts/audit-core-study-data.mjs",
