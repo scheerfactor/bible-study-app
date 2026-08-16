@@ -34,9 +34,12 @@ for (const hymn of hymns) {
   if (!/^https:\/\//.test(hymn.textSourceUrl) || !/^https:\/\//.test(hymn.musicSourceUrl)) {
     errors.push("Hymn source URLs must use HTTPS: " + hymn.id);
   }
+  const evidenceFile = hymn.rightsEvidenceFile ?? hymn.rdfFile;
+  const evidenceSha256 = hymn.rightsEvidenceSha256 ?? hymn.rdfSha256;
+  const evidenceMarker = hymn.rightsEvidenceMarker ?? `<mp:licence>${hymn.musicRights}</mp:licence>`;
   for (const [sourceFile, expectedSha256] of [
     [hymn.midiFile, hymn.midiSha256],
-    [hymn.rdfFile, hymn.rdfSha256],
+    [evidenceFile, evidenceSha256],
   ]) {
     if (!sourceFile || sourceFiles.has(sourceFile)) errors.push("Missing or duplicate hymn source file: " + sourceFile);
     sourceFiles.add(sourceFile);
@@ -47,13 +50,13 @@ for (const hymn of hymns) {
       errors.push("Missing hymn source file: " + sourceFile);
     }
   }
-  const rdf = await readFile(resolve(root, "data", "hymns", "sources", hymn.rdfFile), "utf8").catch(() => "");
-  if (!rdf.includes("<mp:licence>" + hymn.musicRights + "</mp:licence>")) {
-    errors.push("Hymn RDF rights mismatch: " + hymn.id);
+  const evidence = await readFile(resolve(root, "data", "hymns", "sources", evidenceFile), "utf8").catch(() => "");
+  if (!evidence.includes(evidenceMarker)) {
+    errors.push("Hymn music-rights evidence mismatch: " + hymn.id);
   }
 }
 
-if (hymns.length !== 8) errors.push("Expected exactly 8 reviewed hymns in the verified set.");
+if (hymns.length !== 9) errors.push("Expected exactly 9 reviewed hymns in the verified set.");
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

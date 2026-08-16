@@ -1265,6 +1265,16 @@ references, and automatic presentation-slide creation. The text was checked
 against *Hymnal for Church and Home* (1928), hymn 333. No historical or modern
 performance recording is copied or licensed by this record.
 
+## Latest Fanny Crosby Hymn Follow-Up
+
+Added *Pass Me Not, O Gentle Savior* with four public-domain stanzas and
+refrain from *The New Christian Hymnal* (1929), hymn 212. The PASS ME NOT tune
+is by William H. Doane (1870). In-app playback uses Peter Gerloff's CC0 MIDI
+setting from Wikimedia Commons; the exact MIDI and machine-readable license
+metadata are retained with SHA-256 checksums. KJV study references and
+automatic presentation slides are included. No third-party performance
+recording is copied or licensed by this record.
+
 ## Next Growth Rule
 
 Grow the Library from verified source records, not broad keyword searches. The next push toward 2,500+ resources should be staged in 50-100 item batches with exact source URLs, duplicate checks, OCR quality labels, and subject shelves so the Library stays enjoyable instead of overwhelming.

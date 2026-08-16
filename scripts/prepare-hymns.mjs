@@ -78,6 +78,57 @@ const hymns = [
     reviewedAt: "2026-08-15",
   },
   {
+    id: "pass-me-not-o-gentle-savior",
+    title: "Pass Me Not, O Gentle Savior",
+    lyricist: "Fanny J. Crosby",
+    lyricYear: 1868,
+    tune: "Pass Me Not",
+    scriptureReferences: ["Mark 10:46-52", "Hebrews 4:15-16", "Psalm 73:25-26"],
+    stanzas: [
+      [
+        "Pass me not, O gentle Savior,",
+        "Hear my humble cry;",
+        "While on others Thou art calling,",
+        "Do not pass me by.",
+      ].join("\n"),
+      [
+        "Let me at a throne of mercy",
+        "Find a sweet relief;",
+        "Kneeling there in deep contrition,",
+        "Help my unbelief.",
+      ].join("\n"),
+      [
+        "Trusting only in Thy merit,",
+        "Would I seek Thy face;",
+        "Heal my wounded, broken spirit,",
+        "Save me by Thy grace.",
+      ].join("\n"),
+      [
+        "Thou the Spring of all my comfort,",
+        "More than life to me,",
+        "Whom have I on earth beside Thee?",
+        "Whom in heav'n but Thee?",
+      ].join("\n"),
+    ],
+    refrain: [
+      "Savior, Savior,",
+      "Hear my humble cry;",
+      "While on others Thou art calling,",
+      "Do not pass me by.",
+    ].join("\n"),
+    textSourceUrl: "https://hymnary.org/hymn/NCH1929/212",
+    textRights: "Public domain; text checked line by line against The New Christian Hymnal (1929), hymn 212.",
+    midiFile: "pass-me-not.mid",
+    midiSha256: "e5c13fb7802f5a07ead41c693e0d6d8ed021dde28424d6e573db933f5e583143",
+    rightsEvidenceFile: "pass-me-not-wikimedia.json",
+    rightsEvidenceSha256: "ada053b746e2db6c67ea48f5b87ce6cc77c252c35c8023f14abb77aa352b037e",
+    rightsEvidenceMarker: "Creative Commons Zero, Public Domain Dedication",
+    musicSourceUrl: "https://commons.wikimedia.org/wiki/File:Pass_me_not,_o_gentle_Saviour.mid",
+    musicRights: "CC0 1.0 Universal Public Domain Dedication",
+    musicAttribution: "Tune by William H. Doane, 1870; MIDI setting and sound file by Peter Gerloff (Rabanus Flavus), dedicated to the public domain under CC0 1.0.",
+    reviewedAt: "2026-08-16",
+  },
+  {
     id: "fairest-lord-jesus",
     title: "Fairest Lord Jesus",
     lyricist: "Joseph A. Seiss, translator",
@@ -286,12 +337,15 @@ async function main() {
   const prepared = [];
   for (const hymn of hymns) {
     const midi = await readFile(resolve(root, "data", "hymns", "sources", hymn.midiFile));
-    const rdfBuffer = await readFile(resolve(root, "data", "hymns", "sources", hymn.rdfFile));
-    const rdf = rdfBuffer.toString("utf8");
-    if (sha256(midi) !== hymn.midiSha256 || sha256(rdfBuffer) !== hymn.rdfSha256) {
+    const evidenceFile = hymn.rightsEvidenceFile ?? hymn.rdfFile;
+    const evidenceSha256 = hymn.rightsEvidenceSha256 ?? hymn.rdfSha256;
+    const evidenceMarker = hymn.rightsEvidenceMarker ?? `<mp:licence>${hymn.musicRights}</mp:licence>`;
+    const evidenceBuffer = await readFile(resolve(root, "data", "hymns", "sources", evidenceFile));
+    const evidence = evidenceBuffer.toString("utf8");
+    if (sha256(midi) !== hymn.midiSha256 || sha256(evidenceBuffer) !== evidenceSha256) {
       throw new Error("Source checksum mismatch for " + hymn.title);
     }
-    if (!rdf.includes("<mp:licence>" + hymn.musicRights + "</mp:licence>")) {
+    if (!evidence.includes(evidenceMarker)) {
       throw new Error("Music rights mismatch for " + hymn.title);
     }
     const notes = await midiNotes(hymn);
