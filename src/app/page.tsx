@@ -93,30 +93,6 @@ import tskPsalmsPhase20 from "../../data/imports/tsk-metav-reviewed-psalms-phase
 import tskWeakBooksPhase21 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-21.json";
 import tskReviewedFinalChapterGaps from "../../data/imports/tsk-reviewed-final-chapter-gaps.json";
 import tskThinBooksPhase14 from "../../data/imports/tsk-reviewed-thin-books-phase-14.json";
-import hoseaAdamClarkeCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
-import hoseaBarnesCommentary from "../../data/imports/barnes-reviewed-completion-prophets-commentary.json";
-import hoseaBiblicalIllustratorCommentary from "../../data/imports/biblical-illustrator-reviewed-weak-books-commentary.json";
-import hoseaMorganCommentary from "../../data/imports/g-campbell-morgan-hosea-commentary.json";
-import hoseaIronsideCommentary from "../../data/imports/h-a-ironside-hosea-commentary.json";
-import hoseaJfbCommentary from "../../data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json";
-import hoseaMatthewHenryCommentary from "../../data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json";
-import hoseaMatthewPooleCommentary from "../../data/imports/matthew-poole-reviewed-weak-books-commentary.json";
-import hoseaPreachersHomileticalCommentary from "../../data/imports/preachers-homiletical-reviewed-hosea-commentary.json";
-import hoseaPulpitCommentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-commentary.json";
-import hoseaWesleyCommentary from "../../data/imports/wesley-reviewed-minor-prophets-commentary.json";
-import hoseaGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-hosea-commentary.json";
-import amosGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-amos-commentary.json";
-import exodusGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-exodus-1-3-commentary.json";
-import isaiahGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-isaiah-1-3-commentary.json";
-import jobWatsonCommentary from "../../data/imports/robert-a-watson-reviewed-job-1-3-commentary.json";
-import secondChroniclesBennettCommentary from "../../data/imports/w-h-bennett-reviewed-2-chronicles-starter-commentary.json";
-import numbersWatsonCommentary from "../../data/imports/robert-a-watson-reviewed-numbers-1-5-commentary.json";
-import deuteronomyHarperCommentary from "../../data/imports/andrew-harper-reviewed-deuteronomy-starter-commentary.json";
-import firstSamuelBlaikieCommentary from "../../data/imports/w-g-blaikie-reviewed-1-samuel-starter-commentary.json";
-import firstChroniclesBennettCommentary from "../../data/imports/w-h-bennett-reviewed-1-chronicles-starter-commentary.json";
-import leviticusKelloggCommentary from "../../data/imports/s-h-kellogg-reviewed-leviticus-starter-commentary.json";
-import secondKingsFarrarCommentary from "../../data/imports/f-w-farrar-reviewed-2-kings-starter-commentary.json";
-import secondSamuelBlaikieCommentary from "../../data/imports/w-g-blaikie-reviewed-2-samuel-starter-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
@@ -10577,50 +10553,6 @@ const localCrossReferences: CrossReference[] = [
   ...amosTeachingCrossReferences,
 ];
 
-const localCommentaryEntries: CommentaryEntry[] = [
-  ...(hoseaAdamClarkeCommentary as CommentaryEntry[]),
-  ...(hoseaBarnesCommentary as CommentaryEntry[]),
-  ...(hoseaBiblicalIllustratorCommentary as CommentaryEntry[]),
-  ...(hoseaMorganCommentary as CommentaryEntry[]),
-  ...(hoseaIronsideCommentary as CommentaryEntry[]),
-  ...(hoseaJfbCommentary as CommentaryEntry[]),
-  ...(hoseaMatthewHenryCommentary as CommentaryEntry[]),
-  ...(hoseaMatthewPooleCommentary as CommentaryEntry[]),
-  ...(hoseaPreachersHomileticalCommentary as CommentaryEntry[]),
-  ...(hoseaPulpitCommentary as CommentaryEntry[]),
-  ...(hoseaWesleyCommentary as CommentaryEntry[]),
-  ...(hoseaGaebeleinCommentary as CommentaryEntry[]),
-  ...(amosGaebeleinCommentary as CommentaryEntry[]),
-  ...(exodusGaebeleinCommentary as CommentaryEntry[]),
-  ...(isaiahGaebeleinCommentary as CommentaryEntry[]),
-  ...(jobWatsonCommentary as CommentaryEntry[]),
-  ...(secondChroniclesBennettCommentary as CommentaryEntry[]),
-  ...(numbersWatsonCommentary as CommentaryEntry[]),
-  ...(deuteronomyHarperCommentary as CommentaryEntry[]),
-  ...(firstSamuelBlaikieCommentary as CommentaryEntry[]),
-  ...(firstChroniclesBennettCommentary as CommentaryEntry[]),
-  ...(leviticusKelloggCommentary as CommentaryEntry[]),
-  ...(secondKingsFarrarCommentary as CommentaryEntry[]),
-  ...(secondSamuelBlaikieCommentary as CommentaryEntry[]),
-]
-  .filter(
-    (entry) =>
-      entry.book === "Hosea" ||
-      entry.book === "Amos" ||
-      entry.book === "Exodus" ||
-      entry.book === "Isaiah" ||
-      entry.book === "Job" ||
-      entry.book === "2 Chronicles" ||
-      entry.book === "Numbers" ||
-      entry.book === "Deuteronomy" ||
-      entry.book === "1 Samuel" ||
-      entry.book === "1 Chronicles" ||
-      entry.book === "Leviticus" ||
-      entry.book === "2 Kings" ||
-      entry.book === "2 Samuel",
-  )
-  .map(normalizeCommentaryEntry);
-
 const newTestamentCanonBooks = [
   "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
   "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon",
@@ -11402,6 +11334,19 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "a-c-gaebelein-reviewed-hosea-commentary.json",
+  "a-c-gaebelein-reviewed-amos-commentary.json",
+  "a-c-gaebelein-reviewed-exodus-1-3-commentary.json",
+  "a-c-gaebelein-reviewed-isaiah-1-3-commentary.json",
+  "robert-a-watson-reviewed-job-1-3-commentary.json",
+  "w-h-bennett-reviewed-2-chronicles-starter-commentary.json",
+  "robert-a-watson-reviewed-numbers-1-5-commentary.json",
+  "andrew-harper-reviewed-deuteronomy-starter-commentary.json",
+  "w-g-blaikie-reviewed-1-samuel-starter-commentary.json",
+  "w-h-bennett-reviewed-1-chronicles-starter-commentary.json",
+  "s-h-kellogg-reviewed-leviticus-starter-commentary.json",
+  "f-w-farrar-reviewed-2-kings-starter-commentary.json",
+  "w-g-blaikie-reviewed-2-samuel-starter-commentary.json",
   "matthew-henry-phase-1-commentary.json",
   "american-commentary-reviewed-new-testament-commentary.json",
   "matthew-henry-reviewed-batch-2-commentary.json",
@@ -11736,17 +11681,28 @@ const deferredCommentaryImportFiles = [
   "scofield-1917-book-introductions-commentary.json",
 ];
 
+const starterSpecificCommentaryImportFiles = new Set([
+  "a-c-gaebelein-reviewed-hosea-commentary.json",
+  "a-c-gaebelein-reviewed-amos-commentary.json",
+  "a-c-gaebelein-reviewed-exodus-1-3-commentary.json",
+  "a-c-gaebelein-reviewed-isaiah-1-3-commentary.json",
+  "robert-a-watson-reviewed-job-1-3-commentary.json",
+  "w-h-bennett-reviewed-2-chronicles-starter-commentary.json",
+  "robert-a-watson-reviewed-numbers-1-5-commentary.json",
+  "andrew-harper-reviewed-deuteronomy-starter-commentary.json",
+  "w-g-blaikie-reviewed-1-samuel-starter-commentary.json",
+  "w-h-bennett-reviewed-1-chronicles-starter-commentary.json",
+  "s-h-kellogg-reviewed-leviticus-starter-commentary.json",
+  "f-w-farrar-reviewed-2-kings-starter-commentary.json",
+  "w-g-blaikie-reviewed-2-samuel-starter-commentary.json",
+  "g-campbell-morgan-hosea-commentary.json",
+  "h-a-ironside-hosea-commentary.json",
+  "scofield-1917-study-notes-reviewed-sample-commentary.json",
+  "scofield-1917-book-introductions-commentary.json",
+]);
+
 const starterDeferredCommentaryImportFiles = deferredCommentaryImportFiles.filter((fileName) =>
-  fileName.startsWith("matthew-henry") ||
-  fileName.startsWith("american-commentary") ||
-  fileName.startsWith("adam-clarke") ||
-  fileName.startsWith("wesley") ||
-  fileName.startsWith("h-a-ironside") ||
-  fileName.startsWith("g-campbell-morgan") ||
-  fileName.startsWith("jfb") ||
-  fileName.startsWith("treasury-of-david") ||
-  fileName === "amos-expanded-public-domain-commentary.json" ||
-  fileName.startsWith("scofield-1917"),
+  starterSpecificCommentaryImportFiles.has(fileName),
 );
 const VALIDATED_COMMENTARY_CATALOG_BOOKS = 66;
 const VALIDATED_COMMENTARY_CATALOG_CHAPTERS = 1189;
@@ -16848,7 +16804,7 @@ export default function Home() {
   const [savedLoaded, setSavedLoaded] = useState(false);
   const [syncMessage, setSyncMessage] = useState("");
   const [crossReferences, setCrossReferences] = useState<CrossReference[]>(localCrossReferences);
-  const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>(localCommentaryEntries);
+  const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>([]);
   const [deferredCommentaryLoadStatus, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
     loadedFiles: 0,
     totalFiles: deferredCommentaryImportFiles.length,

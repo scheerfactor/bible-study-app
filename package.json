@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "audit:bundle": "node scripts/audit-client-bundle-size.mjs",
     "start": "next start",
     "lint": "eslint",
     "import:webster": "node scripts/import-websters-1828.mjs",

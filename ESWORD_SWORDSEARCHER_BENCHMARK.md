@@ -104,6 +104,18 @@ What not to copy:
 
 These values came from the August 16 production build and `.next/diagnostics/route-bundle-stats.json`.
 
+### First extraction result
+
+The first performance batch removed 24 directly bundled commentary datasets and moved them to the existing deferred commentary API. The same production diagnostic then reported:
+
+- `/` first-load JavaScript: 12,742,572 bytes uncompressed
+- `/` first-load JavaScript: 2,085,285 bytes gzip
+- gzip reduction from the measured baseline: 89.6%
+- ordinary Bible reading now requests a 17-file, 1.44 MB uncompressed curated commentary starter set only after the Bible opens
+- the complete validated commentary catalog remains available when a full-study or commentary workflow requests it
+
+The repository now includes `npm run audit:bundle`, with a first-milestone gzip budget of 5 MB for `/`. The next extraction target remains 1.5 MB gzip.
+
 ### Required engineering changes
 
 1. Keep only the shell, KJV reader, current chapter, quick navigation, and essential user state in the first route chunk.
