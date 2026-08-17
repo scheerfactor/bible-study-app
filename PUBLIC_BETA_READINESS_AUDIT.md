@@ -40,9 +40,9 @@ These must stay hidden from normal public users:
 Production admin access now requires:
 
 - Supabase sign-in configured
-- `NEXT_PUBLIC_ADMIN_EMAILS` configured with allowed admin email addresses
+- an approved `admin` record in the Supabase `user_roles` table
 
-Localhost can still preview admin tools for development.
+Localhost can preview admin tools for development only when `NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_PREVIEW=true` is set explicitly.
 
 ## Recommended Launch Order
 
@@ -79,8 +79,8 @@ Rules:
 
 ## Remaining Before Wider Public Launch
 
-- verify admin routes are locked on production for signed-out users
-- configure `NEXT_PUBLIC_ADMIN_EMAILS`
+- run `npm run audit:public-access` against a production build
+- configure and verify the approved Supabase admin role
 - run mobile QA at 390px
 - confirm no import/planning notes appear in public Library
 - add a gentle donation/support page only after tester feedback
@@ -92,6 +92,6 @@ Rules:
 1. Add a simple public landing page or website page.
 2. Record a 5-minute Hosea 4-9 Sunday School prep demo.
 3. Add a clear beta tester path from the Today screen or website.
-4. Verify a brand-new non-admin account cannot see admin tools.
+4. Verify a brand-new non-admin account cannot see admin tools after sign-in.
 5. Keep the first public launch free with optional donation.
 6. Begin permission outreach for selected modern resources in parallel.

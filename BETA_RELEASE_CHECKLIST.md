@@ -92,6 +92,7 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - `npm run validate:strongs`
 - `npm run validate:commentary`
 - `npm run library:qa`
+- `npm run audit:public-access` while the production build is running
 - `npm run lint`
 - `npm run build`
 
@@ -100,6 +101,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Mobile viewport around 390x844.
 - Desktop viewport around 1280x900 or larger.
 - Signed-out local mode.
+- Private admin deep links return signed-out visitors to the public Library without exposing internal labels.
+- Brand-new signed-in non-admin account cannot reach private admin tools.
 - Refresh persistence test.
 - Export/download test.
 - Production URL test after deploy.

@@ -10,6 +10,8 @@ The first audiobook pilot, _All of Grace_, is using cleaned transcript samples b
 
 ## Simple Workflow
 
+For a localhost admin preview, set `NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_PREVIEW=true` in the local environment and restart the app. Leave it unset or `false` for normal public-access testing.
+
 1. Open Admin -> Library Acquisition Center -> Media Intake.
 2. Use **New audio or sermon upload** to create a private review record.
 3. Choose the media type:

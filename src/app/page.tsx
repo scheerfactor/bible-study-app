@@ -16842,6 +16842,7 @@ export default function Home() {
   const [bibleCorpusStatus, setBibleCorpusStatus] = useState<"loading" | "ready" | "error">("loading");
   const supabase = useMemo(() => makeSupabaseClient(), []);
   const [user, setUser] = useState<User | null>(null);
+  const [authSessionLoaded, setAuthSessionLoaded] = useState(false);
   const [adminRoleLoaded, setAdminRoleLoaded] = useState(false);
   const [hasAdminRole, setHasAdminRole] = useState(false);
   const [tab, setTab] = useState<Tab>("today");
@@ -16849,7 +16850,8 @@ export default function Home() {
   const [isLocalAdminPreviewHost] = useState(() => {
     if (typeof window === "undefined") return false;
     const host = window.location.hostname;
-    return host === "localhost" || host === "127.0.0.1" || host === "::1";
+    const isLocalHost = host === "localhost" || host === "127.0.0.1" || host === "::1";
+    return process.env.NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_PREVIEW === "true" && isLocalHost;
   });
   const [globalQuickJumpText, setGlobalQuickJumpText] = useState("");
   const [book, setBook] = useState(DEFAULT_BOOK);
@@ -17027,6 +17029,27 @@ export default function Home() {
     };
   }, []);
   const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
+  const adminAccessResolved = isLocalAdminPreviewHost || (authSessionLoaded && adminRoleLoaded);
+
+  useEffect(() => {
+    if (!showLibraryAcquisitionAdmin || canOpenAdminArea || !adminAccessResolved) return;
+
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (cancelled) return;
+      const url = new URL(window.location.href);
+      url.hash = "";
+      url.searchParams.delete("open");
+      window.history.replaceState(null, "", `${url.pathname}${url.search}`);
+      setShowLibraryAcquisitionAdmin(false);
+      setLibraryView("home");
+      setTab("library");
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [adminAccessResolved, canOpenAdminArea, showLibraryAcquisitionAdmin]);
 
   useEffect(() => {
     const shouldLoadChapterCommentary =
@@ -19371,19 +19394,37 @@ export default function Home() {
   }, [saved, savedLoaded, user]);
 
   useEffect(() => {
-    if (!supabase) return;
+    let cancelled = false;
+
+    if (!supabase) {
+      queueMicrotask(() => {
+        if (!cancelled) setAuthSessionLoaded(true);
+      });
+      return () => {
+        cancelled = true;
+      };
+    }
 
     supabase.auth.getUser().then(({ data }) => {
+      if (cancelled) return;
       setAccountDataLoaded(false);
+      setAdminRoleLoaded(false);
+      setHasAdminRole(false);
       setUser(data.user);
+      setAuthSessionLoaded(true);
     });
 
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (cancelled) return;
       setAccountDataLoaded(false);
+      setAdminRoleLoaded(false);
+      setHasAdminRole(false);
       setUser(session?.user ?? null);
+      setAuthSessionLoaded(true);
     });
 
     return () => {
+      cancelled = true;
       data.subscription.unsubscribe();
     };
   }, [supabase]);
@@ -22393,43 +22434,20 @@ export default function Home() {
           )}
 
           <section className={immersiveMode ? "min-w-0 flex-1" : "min-w-0 pb-32 md:pb-6"}>
-            {showLibraryAcquisitionAdmin && (
+            {showLibraryAcquisitionAdmin && canOpenAdminArea && (
               <div className="p-4 md:p-6">
-                {canOpenAdminArea ? (
-                  <LibraryAcquisitionCenter
-                    signedIn={Boolean(user)}
-                    signedInEmail={user?.email ?? null}
-                    supabase={supabase}
-                    resources={allLibraryResources.length ? allLibraryResources : libraryResources}
-                    commentaryEntries={commentaryEntries}
-                    onSignOut={signOut}
-                    onClose={() => {
-                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-                      setShowLibraryAcquisitionAdmin(false);
-                    }}
-                  />
-                ) : (
-                  <AdminLockedNotice
-                    signedIn={Boolean(user)}
-                    user={user}
-                    adminRoleLoaded={adminRoleLoaded}
-                    hasSupabaseConfig={hasSupabaseConfig}
-                    authEmail={authEmail}
-                    authMessage={authMessage}
-                    onAuthEmailChange={setAuthEmail}
-                    onSendMagicLink={sendMagicLink}
-                    onSignOut={signOut}
-                    onClose={() => {
-                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-                      setShowLibraryAcquisitionAdmin(false);
-                    }}
-                    onOpenSettings={() => {
-                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-                      setShowLibraryAcquisitionAdmin(false);
-                      setTab("settings");
-                    }}
-                  />
-                )}
+                <LibraryAcquisitionCenter
+                  signedIn={Boolean(user)}
+                  signedInEmail={user?.email ?? null}
+                  supabase={supabase}
+                  resources={allLibraryResources.length ? allLibraryResources : libraryResources}
+                  commentaryEntries={commentaryEntries}
+                  onSignOut={signOut}
+                  onClose={() => {
+                    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                    setShowLibraryAcquisitionAdmin(false);
+                  }}
+                />
               </div>
             )}
 
@@ -35156,87 +35174,6 @@ function adminRecordsOfType<T>(rows: Array<{ record_type: string; payload: unkno
   return rows.filter((row) => row.record_type === recordType).map((row) => row.payload as T);
 }
 
-function AdminLockedNotice({
-  signedIn,
-  user,
-  adminRoleLoaded,
-  hasSupabaseConfig,
-  authEmail,
-  authMessage,
-  onAuthEmailChange,
-  onSendMagicLink,
-  onSignOut,
-  onClose,
-  onOpenSettings,
-}: {
-  signedIn: boolean;
-  user: User | null;
-  adminRoleLoaded: boolean;
-  hasSupabaseConfig: boolean;
-  authEmail: string;
-  authMessage: string;
-  onAuthEmailChange: (value: string) => void;
-  onSendMagicLink: () => void;
-  onSignOut: () => void;
-  onClose: () => void;
-  onOpenSettings: () => void;
-}) {
-  return (
-    <section className="rounded-3xl border border-[var(--line)] bg-white p-6 shadow-sm">
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Admin locked</p>
-          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Library Acquisition Center is private</h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            Rights tracking, import queues, permission-needed resources, draft audio, and publisher notes are hidden from public beta users. Public visitors only see reviewed Bible study content.
-          </p>
-        </div>
-        <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-          Public-safe
-        </span>
-      </div>
-
-      <div className="mt-5 grid gap-3 md:grid-cols-3">
-        <StatusCard label="Public Library" status="Reviewed resources only" good />
-        <StatusCard label="Admin Drafts" status="Hidden from guests" good />
-        <StatusCard
-          label="Admin access"
-          status={!hasSupabaseConfig ? "Sign-in not configured" : signedIn && !adminRoleLoaded ? "Checking role" : signedIn ? "Account not approved" : "Sign in required"}
-          good={false}
-        />
-      </div>
-
-      <AccountSignInCard
-        user={user}
-        hasSupabaseConfig={hasSupabaseConfig}
-        authEmail={authEmail}
-        authMessage={authMessage}
-        title="Sign in to unlock admin tools"
-        signedOutBody="Enter your admin account email. The app will send you a secure sign-in link, then unlock this area only if the account has the admin role."
-        onAuthEmailChange={onAuthEmailChange}
-        onSendMagicLink={onSendMagicLink}
-        onSignOut={onSignOut}
-      />
-
-      <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
-        <p className="text-sm font-semibold text-[var(--ink)]">For Stephen/admin use</p>
-        <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
-          Use a signed-in account with the admin role on production, or use localhost while building. Do not expose permission-needed books, personal-use uploads, or copyrighted review notes to normal guests.
-        </p>
-      </div>
-
-      <div className="mt-5 flex flex-wrap gap-2">
-        <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onOpenSettings} type="button">
-          Open full settings
-        </button>
-        <button className="rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onClose} type="button">
-          Back to the app
-        </button>
-      </div>
-    </section>
-  );
-}
-
 function AccountSignInCard({
   user,
   hasSupabaseConfig,
@@ -35284,7 +35221,7 @@ function AccountSignInCard({
       <div className="grid gap-2 md:grid-cols-[minmax(0,1fr)_auto]">
         <input
           className="h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
-          placeholder="st396@hotmail.com"
+          placeholder="name@example.com"
           type="email"
           value={authEmail}
           onChange={(event) => onAuthEmailChange(event.target.value)}
@@ -35299,7 +35236,7 @@ function AccountSignInCard({
         </button>
       </div>
       <p className="text-xs leading-5 text-[var(--muted)]">
-        After clicking the email link, return to Library Acquisition. If the account has the admin role, the private tools will open.
+        After clicking the email link, return to this page to finish signing in.
       </p>
       {authMessage && <p className="text-sm text-[var(--muted)]">{authMessage}</p>}
     </div>
@@ -35860,7 +35797,7 @@ function LibraryScreen({
   const plannedKjvItems = [
     ...LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.category === "KJV Defense" || candidate.title.toLowerCase().includes("king james") || candidate.title.toLowerCase().includes("way of life")),
   ];
-  const showAdminPlanning = typeof window !== "undefined" && ["#admin-import", "#library-acquisition"].includes(window.location.hash);
+  const showAdminPlanning = canUseAdminDrafts && typeof window !== "undefined" && ["#admin-import", "#library-acquisition"].includes(window.location.hash);
   const devotionalResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["devotional", "devotion", "christian living", "prayer"]))
     .slice(0, 8);
