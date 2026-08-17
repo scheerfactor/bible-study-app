@@ -722,87 +722,107 @@ create policy "Commentary entries are readable"
 
 create policy "Users can read their notes"
   on public.user_notes for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their notes"
   on public.user_notes for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their notes"
   on public.user_notes for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their notes"
   on public.user_notes for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their highlights"
   on public.user_highlights for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their highlights"
   on public.user_highlights for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their highlights"
   on public.user_highlights for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their highlights"
   on public.user_highlights for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their bookmarks"
   on public.user_bookmarks for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their bookmarks"
   on public.user_bookmarks for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their bookmarks"
   on public.user_bookmarks for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their bookmarks"
   on public.user_bookmarks for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their library progress"
   on public.user_library_progress for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their library progress"
   on public.user_library_progress for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their library progress"
   on public.user_library_progress for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their library progress"
   on public.user_library_progress for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their completed resources"
   on public.user_completed_resources for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their completed resources"
   on public.user_completed_resources for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their completed resources"
   on public.user_completed_resources for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their completed resources"
   on public.user_completed_resources for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their library favorites"
@@ -828,104 +848,128 @@ create policy "Users can delete their library favorites"
 
 create policy "Users can read their listening progress"
   on public.user_listening_progress for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their listening progress"
   on public.user_listening_progress for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their listening progress"
   on public.user_listening_progress for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their listening progress"
   on public.user_listening_progress for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their Bible listening progress"
   on public.user_bible_listening_progress for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their Bible listening progress"
   on public.user_bible_listening_progress for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their Bible listening progress"
   on public.user_bible_listening_progress for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their Bible listening progress"
   on public.user_bible_listening_progress for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their Bible mastery"
   on public.user_bible_mastery for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their Bible mastery"
   on public.user_bible_mastery for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their Bible mastery"
   on public.user_bible_mastery for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their Bible mastery"
   on public.user_bible_mastery for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their scripture memory"
   on public.user_scripture_memory for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their scripture memory"
   on public.user_scripture_memory for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their scripture memory"
   on public.user_scripture_memory for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their scripture memory"
   on public.user_scripture_memory for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their study playlists"
   on public.user_study_playlists for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their study playlists"
   on public.user_study_playlists for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their study playlists"
   on public.user_study_playlists for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their study playlists"
   on public.user_study_playlists for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their study playlist items"
   on public.user_study_playlist_items for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their study playlist items"
   on public.user_study_playlist_items for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their study playlist items"
   on public.user_study_playlist_items for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their study playlist items"
   on public.user_study_playlist_items for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Anyone can create beta feedback"
@@ -1037,8 +1081,20 @@ create policy "Admins can read acquisition records"
     )
   );
 
-create policy "Admins can manage acquisition records"
-  on public.admin_acquisition_records for all
+create policy "Admins can create acquisition records"
+  on public.admin_acquisition_records for insert
+  to authenticated
+  with check (
+    exists (
+      select 1
+      from public.user_roles
+      where user_id = (select auth.uid())
+        and role = 'admin'
+    )
+  );
+
+create policy "Admins can update acquisition records"
+  on public.admin_acquisition_records for update
   to authenticated
   using (
     exists (
@@ -1049,6 +1105,18 @@ create policy "Admins can manage acquisition records"
     )
   )
   with check (
+    exists (
+      select 1
+      from public.user_roles
+      where user_id = (select auth.uid())
+        and role = 'admin'
+    )
+  );
+
+create policy "Admins can delete acquisition records"
+  on public.admin_acquisition_records for delete
+  to authenticated
+  using (
     exists (
       select 1
       from public.user_roles

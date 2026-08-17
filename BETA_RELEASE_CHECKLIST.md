@@ -47,6 +47,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 
 - Signed-out local storage fallback is clear.
 - Signed-in sync status is clear.
+- Every signed-in sync query filters by the current `user_id` in addition to database RLS.
+- Every user-owned sync table has explicit authenticated-only CRUD policies and no anonymous grants.
 - Bible notes, highlights, bookmarks, markers, favorites, recent passages, prayer entries, journal entries, memory, library progress, and playlists persist after refresh.
 - Export JSON works from Settings.
 - Prayer exports work.

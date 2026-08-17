@@ -9,7 +9,9 @@ const app = await readFile(path.join(root, "src", "app", "page.tsx"), "utf8");
 const requiredSchemaClauses = [
   'create policy "Users can read their own roles"\n  on public.user_roles for select\n  to authenticated',
   'create policy "Admins can read acquisition records"\n  on public.admin_acquisition_records for select\n  to authenticated',
-  'create policy "Admins can manage acquisition records"\n  on public.admin_acquisition_records for all\n  to authenticated',
+  'create policy "Admins can create acquisition records"\n  on public.admin_acquisition_records for insert\n  to authenticated',
+  'create policy "Admins can update acquisition records"\n  on public.admin_acquisition_records for update\n  to authenticated',
+  'create policy "Admins can delete acquisition records"\n  on public.admin_acquisition_records for delete\n  to authenticated',
   "revoke all on public.user_roles from anon, authenticated",
   "grant select on public.user_roles to authenticated",
   "revoke all on public.admin_acquisition_records from anon, authenticated",
@@ -23,6 +25,7 @@ for (const clause of requiredSchemaClauses) {
 }
 
 const forbiddenSchemaClauses = [
+  'on public.admin_acquisition_records for all',
   "grant insert on public.user_roles",
   "grant update on public.user_roles",
   "grant delete on public.user_roles",
