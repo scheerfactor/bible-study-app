@@ -13923,12 +13923,16 @@ function parseQuickPassage(input: string, allVerses: BibleVerse[], books: string
   return createBiblePassage(targetBook, targetChapter, targetVerse);
 }
 
-function loadLocalState(): SavedState {
-  if (typeof window === "undefined") return { notes: [], highlights: [], bookmarks: [] };
+function emptySavedState(): SavedState {
+  return { notes: [], highlights: [], bookmarks: [] };
+}
+
+function loadSavedState(storageKey: string): SavedState {
+  if (typeof window === "undefined") return emptySavedState();
 
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { notes: [], highlights: [], bookmarks: [] };
+    const raw = window.localStorage.getItem(storageKey);
+    if (!raw) return emptySavedState();
     const parsed = JSON.parse(raw) as SavedState;
     return {
       notes: parsed.notes ?? [],
@@ -13936,13 +13940,49 @@ function loadLocalState(): SavedState {
       bookmarks: parsed.bookmarks ?? [],
     };
   } catch {
-    return { notes: [], highlights: [], bookmarks: [] };
+    return emptySavedState();
   }
+}
+
+function loadLocalState(): SavedState {
+  const stored = loadSavedState(STORAGE_KEY);
+  const anonymousOnly: SavedState = {
+    notes: stored.notes.filter((note) => !isUuid(note.id)),
+    highlights: stored.highlights.filter((highlight) => !isUuid(highlight.id)),
+    bookmarks: stored.bookmarks.filter((bookmark) => !isUuid(bookmark.id)),
+  };
+
+  if (
+    anonymousOnly.notes.length !== stored.notes.length ||
+    anonymousOnly.highlights.length !== stored.highlights.length ||
+    anonymousOnly.bookmarks.length !== stored.bookmarks.length
+  ) {
+    saveLocalState(anonymousOnly);
+  }
+
+  return anonymousOnly;
 }
 
 function saveLocalState(state: SavedState) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function accountStorageKey(userId: string) {
+  return `${STORAGE_KEY}:account:${userId}`;
+}
+
+function loadAccountState(userId: string): SavedState {
+  return loadSavedState(accountStorageKey(userId));
+}
+
+function saveAccountState(userId: string, state: SavedState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(accountStorageKey(userId), JSON.stringify(state));
+}
+
+function clearLocalState() {
+  saveLocalState(emptySavedState());
 }
 
 function normalizePrayerEntry(entry: Partial<PrayerEntry>): PrayerEntry | null {
@@ -16865,7 +16905,7 @@ export default function Home() {
   const [bookIntroBook, setBookIntroBook] = useState<string | null>(null);
   const [studyTab, setStudyTab] = useState<StudyDrawerTab>("study");
   const [noteDraft, setNoteDraft] = useState("");
-  const [saved, setSaved] = useState<SavedState>({ notes: [], highlights: [], bookmarks: [] });
+  const [saved, setSaved] = useState<SavedState>(emptySavedState());
   const [savedLoaded, setSavedLoaded] = useState(false);
   const [syncMessage, setSyncMessage] = useState("");
   const [crossReferences, setCrossReferences] = useState<CrossReference[]>(localCrossReferences);
@@ -17943,7 +17983,11 @@ export default function Home() {
   function saveDeviceFallback(updater: (state: SavedState) => SavedState) {
     setSaved((state) => {
       const nextState = updater(state);
-      saveLocalState(nextState);
+      if (user?.id) {
+        saveAccountState(user.id, nextState);
+      } else {
+        saveLocalState(nextState);
+      }
       return nextState;
     });
   }
@@ -19389,7 +19433,11 @@ export default function Home() {
   }, [studyToolSearchFilter, studyToolSearchTerm]);
 
   useEffect(() => {
-    if (!savedLoaded || user) return;
+    if (!savedLoaded) return;
+    if (user?.id) {
+      saveAccountState(user.id, saved);
+      return;
+    }
     saveLocalState(saved);
   }, [saved, savedLoaded, user]);
 
@@ -19419,6 +19467,7 @@ export default function Home() {
       setAccountDataLoaded(false);
       setAdminRoleLoaded(false);
       setHasAdminRole(false);
+      if (!session?.user) setSaved(loadLocalState());
       setUser(session?.user ?? null);
       setAuthSessionLoaded(true);
     });
@@ -19516,7 +19565,13 @@ export default function Home() {
         return;
       }
 
-      const localSaved = loadLocalState();
+      const anonymousSaved = loadLocalState();
+      const accountSaved = loadAccountState(user.id);
+      const localSaved: SavedState = {
+        notes: mergeByTimestamp(anonymousSaved.notes, accountSaved.notes, (note) => note.id, (note) => note.created_at),
+        highlights: mergeByTimestamp(anonymousSaved.highlights, accountSaved.highlights, (highlight) => highlight.verse_ref, (highlight) => highlight.created_at),
+        bookmarks: mergeByTimestamp(anonymousSaved.bookmarks, accountSaved.bookmarks, (bookmark) => bookmark.verse_ref, (bookmark) => bookmark.created_at),
+      };
       const mergedSaved: SavedState = {
         notes: mergeByTimestamp(localSaved.notes, notesResult.data ?? [], (note) => note.id, (note) => note.created_at)
           .sort((a, b) => b.created_at.localeCompare(a.created_at)),
@@ -19524,7 +19579,7 @@ export default function Home() {
         bookmarks: mergeByTimestamp(localSaved.bookmarks, bookmarksResult.data ?? [], (bookmark) => bookmark.verse_ref, (bookmark) => bookmark.created_at),
       };
       setSaved(mergedSaved);
-      saveLocalState(mergedSaved);
+      saveAccountState(user.id, mergedSaved);
 
       const remoteLibraryProgress = Object.fromEntries((libraryProgressResult.data ?? []).map((row) => [
         row.resource_slug,
@@ -19719,7 +19774,7 @@ export default function Home() {
             notes: [...data, ...state.notes.filter((note) => !localNoteIds.has(note.id))]
               .sort((a, b) => b.created_at.localeCompare(a.created_at)),
           };
-          saveLocalState(nextState);
+          saveAccountState(userId, nextState);
           return nextState;
         });
       }
@@ -19913,6 +19968,7 @@ export default function Home() {
       return;
     }
 
+    clearLocalState();
     setSyncMessage("Signed in and synced.");
   }, [
     bibleBookMastery,
@@ -22042,7 +22098,7 @@ export default function Home() {
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: `${window.location.origin}/?open=library-acquisition`,
+        emailRedirectTo: `${window.location.origin}/?open=settings`,
       },
     });
 
@@ -22051,7 +22107,13 @@ export default function Home() {
 
   async function signOut() {
     if (!supabase) return;
-    await supabase.auth.signOut();
+    const anonymousSaved = loadLocalState();
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      setSyncMessage("Could not sign out yet. Please try again.");
+      return;
+    }
+    setSaved(anonymousSaved);
     setUser(null);
     setSyncMessage("Signed out. Local study data is active.");
   }

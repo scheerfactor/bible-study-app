@@ -52,5 +52,28 @@ for (const table of syncTables) {
   }
 }
 
+const clientIsolationContracts = [
+  ["account-scoped storage key", "function accountStorageKey(userId: string)"],
+  ["account cache hydration", "const accountSaved = loadAccountState(user.id)"],
+  ["account cache persistence", "saveAccountState(user.id, mergedSaved)"],
+  ["legacy anonymous note cache migration", "stored.notes.filter((note) => !isUuid(note.id))"],
+  ["legacy anonymous highlight cache migration", "stored.highlights.filter((highlight) => !isUuid(highlight.id))"],
+  ["legacy anonymous bookmark cache migration", "stored.bookmarks.filter((bookmark) => !isUuid(bookmark.id))"],
+  ["anonymous cache cleanup after successful sync", "clearLocalState();"],
+  ["signed-out anonymous state restoration", "if (!session?.user) setSaved(loadLocalState())"],
+  ["safe post-auth destination", 'emailRedirectTo: `${window.location.origin}/?open=settings`'],
+];
+
+for (const [label, contract] of clientIsolationContracts) {
+  if (!app.includes(contract)) {
+    throw new Error(`Account sync client is missing its ${label} contract.`);
+  }
+}
+
+if (app.includes("saveLocalState(mergedSaved)")) {
+  throw new Error("Account hydration must not copy merged cloud records into anonymous device storage.");
+}
+
 console.log(`PASS account sync schema: ${syncTables.length} user-owned tables have authenticated-only CRUD policies and grants.`);
 console.log(`PASS account sync client: ${syncTables.length} hydration queries filter by the current user ID.`);
+console.log(`PASS account sync device isolation: signed-in records use account-scoped storage and sign-out restores anonymous data only.`);
