@@ -1022,10 +1022,12 @@ create policy "Presentation events can be created"
 
 create policy "Users can read their own roles"
   on public.user_roles for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Admins can read acquisition records"
   on public.admin_acquisition_records for select
+  to authenticated
   using (
     exists (
       select 1
@@ -1037,6 +1039,7 @@ create policy "Admins can read acquisition records"
 
 create policy "Admins can manage acquisition records"
   on public.admin_acquisition_records for all
+  to authenticated
   using (
     exists (
       select 1
@@ -1083,10 +1086,10 @@ grant select, insert, update, delete on public.user_personal_library_resources t
 grant select, insert, update, delete on public.user_resource_permission_requests to authenticated;
 grant select, insert, update on public.presentation_sessions to anon, authenticated;
 grant select, insert on public.presentation_session_events to anon, authenticated;
+revoke all on public.user_roles from anon, authenticated;
 grant select on public.user_roles to authenticated;
-revoke all on public.user_roles from anon;
+revoke all on public.admin_acquisition_records from anon, authenticated;
 grant select, insert, update, delete on public.admin_acquisition_records to authenticated;
-revoke all on public.admin_acquisition_records from anon;
 
 insert into public.user_roles (user_id, role)
 select id, 'admin'

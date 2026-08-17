@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "audit:admin-access": "node scripts/audit-admin-access-contract.mjs",
     "audit:bundle": "node scripts/audit-client-bundle-size.mjs",
     "audit:feedback": "node scripts/audit-feedback-delivery.mjs",
     "audit:feedback:live": "node scripts/audit-feedback-delivery.mjs --live",

@@ -105,6 +105,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Signed-out local mode.
 - Private admin deep links return signed-out visitors to the public Library without exposing internal labels.
 - Brand-new signed-in non-admin account cannot reach private admin tools.
+- Authenticated users have read-only access to their own role row and no role-management grants.
+- Admin acquisition records expose only CRUD grants, with every operation still requiring the admin RLS check.
 - Refresh persistence test.
 - Export/download test.
 - Production URL test after deploy.
