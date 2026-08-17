@@ -302,6 +302,7 @@ button:disabled {
 
 .launch-workflow h2,
 .launch-path h2,
+.launch-roadmap h2,
 .launch-trust h2 {
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: 0;
@@ -405,6 +406,97 @@ button:disabled {
   flex: none;
   margin-top: 2px;
   color: #f1d48b;
+}
+
+.launch-roadmap {
+  padding: 78px 0;
+  background: #f5f1e8;
+}
+
+.launch-roadmap-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+}
+
+.launch-roadmap-layout > div {
+  min-width: 0;
+  padding-right: clamp(32px, 6vw, 72px);
+}
+
+.launch-roadmap-layout > div + div {
+  border-left: 1px solid #cfc6b5;
+  padding-right: 0;
+  padding-left: clamp(32px, 6vw, 72px);
+}
+
+.launch-roadmap h2 {
+  max-width: 480px;
+  margin-top: 12px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.08;
+}
+
+.launch-roadmap-list {
+  margin-top: 28px;
+  border-top: 1px solid #cfc6b5;
+}
+
+.launch-roadmap-list li {
+  border-bottom: 1px solid #cfc6b5;
+  padding: 15px 0;
+  color: #5e6059;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.launch-partner-path > svg {
+  margin-bottom: 18px;
+  color: #276257;
+}
+
+.launch-partner-path ol {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.launch-partner-path li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.launch-partner-path li > span {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #9aa99f;
+  border-radius: 50%;
+  color: #276257;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.launch-partner-path li p {
+  color: #5e6059;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.launch-roadmap-action {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  border-bottom: 2px solid #276257;
+  color: #1f554a;
+  font-size: 14px;
+  font-weight: 800;
 }
 
 .launch-trust {
@@ -547,12 +639,29 @@ button:disabled {
   }
 
   .launch-path-layout,
+  .launch-roadmap-layout,
   .launch-trust-grid {
     grid-template-columns: 1fr;
   }
 
   .launch-path-layout {
     gap: 38px;
+  }
+
+  .launch-roadmap {
+    padding: 56px 0;
+  }
+
+  .launch-roadmap-layout > div {
+    padding-right: 0;
+  }
+
+  .launch-roadmap-layout > div + div {
+    margin-top: 42px;
+    border-top: 1px solid #cfc6b5;
+    border-left: 0;
+    padding-top: 42px;
+    padding-left: 0;
   }
 
   .launch-trust {

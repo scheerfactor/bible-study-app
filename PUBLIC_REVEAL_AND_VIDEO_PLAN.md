@@ -72,7 +72,7 @@ Every published demonstration must:
 - keep admin and acquisition screens out of view
 - avoid unverified claims such as "complete Strong's," "complete TSK," or "every public-domain book"
 - identify the app as private beta, coming soon, or free public beta according to its actual state
-- avoid announcing a calendar date until the release candidate has passed the launch gates
+- label any calendar date as a working target until the release candidate has passed the launch gates
 
 ## Video Sequence
 
@@ -135,7 +135,7 @@ Do not publish a coming-soon campaign until all of these are true:
 
 The app now clears the 1.5 MB coming-soon bundle gate at approximately 0.70 MB gzip for `/`. The exact 31,102-verse KJV corpus loads separately and still needs real-device timing before public promotion.
 
-The working target for the limited free public beta is Thursday, October 15, 2026 at 7:00 PM Eastern. This target gives preparation a concrete deadline; it does not override the Coming Soon or Public Beta gates. If required checks remain open, the public countdown changes to final-review status and access stays gated.
+The working target for the founding free public beta is Thursday, April 15, 2027 at 7:00 PM Eastern. This target creates room for prayer, trusted testing, honest demonstration videos, support preparation, and author conversations. It does not override the Coming Soon or Public Beta gates. If required checks remain open, the public countdown changes to final-review status and access stays gated.
 
 ## Public Beta Gate
 
@@ -164,9 +164,18 @@ Do not open the free public beta until the Coming Soon gate passes and:
 - Publish Videos 1 and 2.
 - Open a no-payment beta interest form.
 - Share one workflow result each week rather than daily feature announcements.
-- Say `coming soon to a limited free beta` and label October 15, 2026 as a working target rather than a guaranteed opening date.
+- Say `coming soon to a founding free beta` and label April 15, 2027 as a working target rather than a guaranteed opening date.
 
-### Stage 3: Limited Free Beta
+### Author And Ministry Partnerships
+
+- Start with trusted authors, preachers, publishers, and ministries whose material fits the app's KJV-first study purpose.
+- Offer an official listing or purchase link before asking to host copyrighted files.
+- Request written, item-level permission for text, excerpts, covers, images, audio, video, narration, in-app sales, and paid-plan use as separate rights.
+- Let the rights holder approve attribution and presentation before publication.
+- Do not advertise a title as coming to the app until permission and delivery scope are signed and recorded.
+- Pilot one or two partnerships before building a broad marketplace.
+
+### Stage 3: Founding Free Beta
 
 - Admit small groups in waves.
 - Publish Videos 3-5 and a visible known-limitations page.

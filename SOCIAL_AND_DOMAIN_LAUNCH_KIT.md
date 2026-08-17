@@ -4,7 +4,7 @@
 
 Prepare Father's Business Bible Study for public visibility without rushing into a broad paid launch.
 
-The detailed positioning, release gates, and recording sequence live in [Public Reveal And Video Plan](./PUBLIC_REVEAL_AND_VIDEO_PLAN.md). Do not publish a teaser or release date until its Coming Soon gate passes.
+The detailed positioning, release gates, and recording sequence live in [Public Reveal And Video Plan](./PUBLIC_REVEAL_AND_VIDEO_PLAN.md). April 15, 2027 may be published as the prayerful working target for the founding free beta, but never as a guarantee that overrides the Coming Soon and Public Beta gates.
 
 The app should first be presented as:
 

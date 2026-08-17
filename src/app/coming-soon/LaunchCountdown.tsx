@@ -61,7 +61,7 @@ export default function LaunchCountdown({ target }: { target: string }) {
   ] as const;
 
   return (
-    <div className="launch-countdown" aria-label="Time remaining until the limited free public beta target" role="timer">
+    <div className="launch-countdown" aria-label="Time remaining until the founding free public beta target" role="timer">
       {units.map(([label, value]) => (
         <div className="launch-countdown-unit" key={label}>
           <strong suppressHydrationWarning>{countdown ? String(value).padStart(2, "0") : "--"}</strong>

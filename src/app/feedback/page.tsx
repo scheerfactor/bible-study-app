@@ -19,6 +19,7 @@ const categories = [
   "Search",
   "Mobile Layout",
   "Sermons / Presentations",
+  "Author / publisher partnership",
   "Other",
 ];
 
@@ -94,13 +95,13 @@ export default function FeedbackPage() {
         <section className="mt-5 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <div className="flex items-center gap-3 text-[var(--green)]">
             <MessageSquareText size={24} />
-            <h1 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">Private Beta Feedback</h1>
+            <h1 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">Beta Feedback &amp; Resource Partnerships</h1>
           </div>
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
-            Send a short note about what you were viewing and what helped, confused you, or did not work.
+            Report a problem, suggest an improvement, or begin a conversation about an author, ministry, or publisher resource.
           </p>
-          <div className="mt-4 grid gap-2 sm:grid-cols-3">
-            {["Bug report", "Resource issue", "Audio issue"].map((item) => (
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {["Bug report", "Resource issue", "Audio issue", "Author / publisher partnership"].map((item) => (
               <button
                 key={`feedback-shortcut-${item}`}
                 className={`rounded-2xl border px-3 py-2 text-left text-xs font-semibold ${
