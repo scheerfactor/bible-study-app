@@ -56,7 +56,9 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Sermon markdown export works.
 - Preaching notes export works.
 - Slide outline copy/download works.
-- Feedback falls back to copy if Supabase feedback table is unavailable.
+- Feedback falls back to copy plus a pre-addressed ministry email if the private Supabase queue is unavailable.
+- Feedback UI categories match the table constraint and insert-only RLS policy.
+- A disposable live delivery probe succeeds and is removed before release.
 
 ## Quality Checks
 

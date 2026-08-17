@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "audit:bundle": "node scripts/audit-client-bundle-size.mjs",
+    "audit:feedback": "node scripts/audit-feedback-delivery.mjs",
+    "audit:feedback:live": "node scripts/audit-feedback-delivery.mjs --live",
     "audit:public-access": "node scripts/audit-public-access.mjs",
     "start": "next start",
     "lint": "eslint",

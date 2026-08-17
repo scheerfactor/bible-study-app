@@ -2,26 +2,12 @@
 
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
-import { ChevronLeft, Clipboard, MessageSquareText, Send } from "lucide-react";
+import { ChevronLeft, Clipboard, Mail, MessageSquareText, Send } from "lucide-react";
 import { useMemo, useState } from "react";
+import feedbackCategories from "./categories.json";
 
-const categories = [
-  "Bug report",
-  "Suggestion",
-  "Resource issue",
-  "Commentary issue",
-  "Audio issue",
-  "Study workflow issue",
-  "Bible Reader",
-  "Study Drawer",
-  "Passage Guide",
-  "Library",
-  "Search",
-  "Mobile Layout",
-  "Sermons / Presentations",
-  "Author / publisher partnership",
-  "Other",
-];
+const categories = feedbackCategories as readonly string[];
+const feedbackEmail = process.env.NEXT_PUBLIC_FEEDBACK_EMAIL?.trim() || "hello@fathersbusinessmasteryresources.com";
 
 export default function FeedbackPage() {
   const [passageOrResource, setPassageOrResource] = useState("");
@@ -29,6 +15,7 @@ export default function FeedbackPage() {
   const [message, setMessage] = useState("");
   const [optionalEmail, setOptionalEmail] = useState("");
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
   const feedbackText = useMemo(
     () => [
@@ -39,10 +26,20 @@ export default function FeedbackPage() {
     ].join("\n"),
     [category, message, optionalEmail, passageOrResource],
   );
+  const feedbackMailto = useMemo(() => {
+    const subjectContext = passageOrResource.trim() || "Bible study app";
+    return `mailto:${feedbackEmail}?subject=${encodeURIComponent(`[${category}] ${subjectContext}`)}&body=${encodeURIComponent(feedbackText)}`;
+  }, [category, feedbackText, passageOrResource]);
 
   async function copyFeedback() {
-    await navigator.clipboard.writeText(feedbackText);
-    setCopied(true);
+    try {
+      await navigator.clipboard.writeText(feedbackText);
+      setCopied(true);
+      return true;
+    } catch {
+      setCopied(false);
+      return false;
+    }
   }
 
   async function submitFeedback() {
@@ -52,31 +49,43 @@ export default function FeedbackPage() {
       return;
     }
 
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (!supabaseUrl || !supabaseAnonKey) {
-      await copyFeedback();
-      setSubmitMessage("Supabase is not configured here yet, so the feedback was copied instead.");
-      return;
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    try {
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (!supabaseUrl || !supabaseAnonKey) {
+        const didCopy = await copyFeedback();
+        setSubmitMessage(didCopy
+          ? "Direct delivery is not configured in this build. Your report was copied; use Email Feedback to send it."
+          : "Direct delivery is not configured in this build. Use Email Feedback to send your report.");
+        return;
+      }
+
+      const supabase = createClient(supabaseUrl, supabaseAnonKey);
+      const { error } = await supabase.from("beta_feedback").insert({
+        passage_or_resource: passageOrResource.trim() || null,
+        category,
+        message: trimmedMessage,
+        optional_email: optionalEmail.trim() || null,
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      setSubmitMessage("Feedback sent to the private beta queue. Thank you for helping make the app better.");
+      setMessage("");
+      setCopied(false);
+    } catch {
+      const didCopy = await copyFeedback();
+      setSubmitMessage(didCopy
+        ? "Direct delivery failed. Your report was copied; use Email Feedback to send it."
+        : "Direct delivery failed. Use Email Feedback to send your report.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
-    const { error } = await supabase.from("beta_feedback").insert({
-      passage_or_resource: passageOrResource.trim() || null,
-      category,
-      message: trimmedMessage,
-      optional_email: optionalEmail.trim() || null,
-    });
-
-    if (error) {
-      await copyFeedback();
-      setSubmitMessage("Could not send feedback yet. Your message was copied so it can still be shared.");
-      return;
-    }
-
-    setSubmitMessage("Feedback sent. Thank you for helping make the app better.");
-    setMessage("");
-    setCopied(false);
   }
 
   return (
@@ -124,6 +133,7 @@ export default function FeedbackPage() {
             <input
               className="mt-3 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-base outline-none"
               placeholder="John 3:16, Amos 1-4, Pilgrim's Progress..."
+              maxLength={500}
               value={passageOrResource}
               onChange={(event) => setPassageOrResource(event.target.value)}
             />
@@ -147,6 +157,7 @@ export default function FeedbackPage() {
             <textarea
               className="mt-3 min-h-36 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-base leading-6 outline-none"
               placeholder="What worked, what confused you, or what should be improved?"
+              maxLength={5000}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
             />
@@ -157,6 +168,7 @@ export default function FeedbackPage() {
             <input
               className="mt-3 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-base outline-none"
               placeholder="Only if you want a follow-up"
+              maxLength={320}
               type="email"
               value={optionalEmail}
               onChange={(event) => setOptionalEmail(event.target.value)}
@@ -166,12 +178,13 @@ export default function FeedbackPage() {
 
         <section className="mt-4 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <button
-            className="mr-2 inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white"
+            className="mr-2 inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white disabled:cursor-wait disabled:opacity-60"
+            disabled={isSubmitting}
             onClick={submitFeedback}
             type="button"
           >
             <Send size={16} />
-            Send Feedback
+            {isSubmitting ? "Sending..." : "Send Feedback"}
           </button>
           <button
             className="mt-2 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-5 py-3 text-sm font-semibold text-[var(--ink)] sm:mt-0"
@@ -181,8 +194,15 @@ export default function FeedbackPage() {
             <Clipboard size={16} />
             Copy Feedback
           </button>
+          <a
+            className="mt-2 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-5 py-3 text-sm font-semibold text-[var(--ink)] sm:ml-2"
+            href={feedbackMailto}
+          >
+            <Mail size={16} />
+            Email Feedback
+          </a>
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
-            {submitMessage || (copied ? "Feedback copied. Send it to the beta coordinator." : "Send feedback directly, or copy it if you prefer to paste into an email or message.")}
+            {submitMessage || (copied ? `Feedback copied. Email it to ${feedbackEmail}.` : `Send to the private beta queue or email ${feedbackEmail}.`)}
           </p>
         </section>
       </div>

@@ -27,6 +27,7 @@ See [LONG_TERM_VISION.md](LONG_TERM_VISION.md) for the Scripture-first platform 
 - Signed-in notes, highlights, bookmarks, Library favorites, study playlists, mastery tracking, memory verses, and reading/listening progress sync to Supabase when env vars and schema are configured
 - Strong's import foundation with reviewed sample lookup, validation, and import scripts
 - Beta feedback form with passage/resource, category, message, and optional email fields
+- Insert-only feedback delivery with a pre-addressed ministry-email fallback and a repeatable live audit
 - Supabase schema includes future-ready tables for resources, dictionary entries, cross references, and content rights tracking
 
 ## Run Locally

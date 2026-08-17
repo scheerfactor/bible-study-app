@@ -344,11 +344,45 @@ create table if not exists public.beta_feedback (
   id uuid primary key default gen_random_uuid(),
   user_id uuid default auth.uid() references auth.users(id) on delete set null,
   passage_or_resource text,
-  category text not null default 'General',
-  message text not null check (length(trim(message)) > 0),
+  category text not null default 'Other',
+  message text not null,
   optional_email text,
   created_at timestamptz not null default now()
 );
+
+alter table public.beta_feedback drop constraint if exists beta_feedback_passage_length_check;
+alter table public.beta_feedback alter column category set default 'Other';
+alter table public.beta_feedback add constraint beta_feedback_passage_length_check
+  check (passage_or_resource is null or length(passage_or_resource) <= 500);
+alter table public.beta_feedback drop constraint if exists beta_feedback_category_check;
+alter table public.beta_feedback add constraint beta_feedback_category_check
+  check (
+    -- feedback-category-contract:start
+    category in (
+      'Bug report',
+      'Suggestion',
+      'Resource issue',
+      'Commentary issue',
+      'Audio issue',
+      'Study workflow issue',
+      'Bible Reader',
+      'Study Drawer',
+      'Passage Guide',
+      'Library',
+      'Search',
+      'Mobile Layout',
+      'Sermons / Presentations',
+      'Author / publisher partnership',
+      'Other'
+    )
+    -- feedback-category-contract:end
+  );
+alter table public.beta_feedback drop constraint if exists beta_feedback_message_check;
+alter table public.beta_feedback add constraint beta_feedback_message_check
+  check (length(trim(message)) > 0 and length(message) <= 5000);
+alter table public.beta_feedback drop constraint if exists beta_feedback_optional_email_length_check;
+alter table public.beta_feedback add constraint beta_feedback_optional_email_length_check
+  check (optional_email is null or length(optional_email) <= 320);
 
 create index if not exists beta_feedback_created_idx on public.beta_feedback (created_at desc);
 create index if not exists beta_feedback_user_idx on public.beta_feedback (user_id, created_at desc);
@@ -896,21 +930,31 @@ create policy "Users can delete their study playlist items"
 
 create policy "Anyone can create beta feedback"
   on public.beta_feedback for insert
+  to anon, authenticated
   with check (
     length(trim(message)) > 0
     and length(message) <= 5000
+    and (passage_or_resource is null or length(passage_or_resource) <= 500)
+    and (optional_email is null or length(optional_email) <= 320)
+    -- feedback-category-contract:start
     and category in (
-      'General',
+      'Bug report',
+      'Suggestion',
+      'Resource issue',
+      'Commentary issue',
+      'Audio issue',
+      'Study workflow issue',
       'Bible Reader',
       'Study Drawer',
+      'Passage Guide',
       'Library',
-      'Listening',
-      'Commentary',
       'Search',
       'Mobile Layout',
-      'Bug',
-      'Feature Request'
+      'Sermons / Presentations',
+      'Author / publisher partnership',
+      'Other'
     )
+    -- feedback-category-contract:end
   );
 
 create policy "Strong sources are readable"
@@ -1031,6 +1075,7 @@ grant select, insert, update, delete on public.user_bible_mastery to authenticat
 grant select, insert, update, delete on public.user_scripture_memory to authenticated;
 grant select, insert, update, delete on public.user_study_playlists to authenticated;
 grant select, insert, update, delete on public.user_study_playlist_items to authenticated;
+revoke all on public.beta_feedback from anon, authenticated;
 grant insert on public.beta_feedback to anon, authenticated;
 grant select on public.strongs_sources to anon, authenticated;
 grant select on public.strongs_entries to anon, authenticated;
