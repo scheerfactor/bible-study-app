@@ -29080,6 +29080,7 @@ async function exportSlideDeckPowerPoint({
   subject: string;
   filename: string;
 }) {
+  // Do not pass untrusted image bytes to PptxGenJS until image-size has a patched release.
   const { default: PptxGenJS } = await import("pptxgenjs");
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE";
