@@ -71,6 +71,7 @@
     "build:strongs-hebrew-lexicon": "node scripts/build-crosswire-hebrew-strongs-lexicon.mjs",
     "import:strongs-crosswire-osis": "node scripts/import-crosswire-kjv-strongs-osis.mjs",
     "storage:plan": "node scripts/prepare-content-storage-migration.mjs",
+    "storage:preflight": "node scripts/upload-public-content-with-wrangler.mjs --preflight-only",
     "storage:upload:r2": "node scripts/upload-public-content-to-r2.mjs",
     "storage:upload:wrangler": "node scripts/upload-public-content-with-wrangler.mjs",
     "build:strongs-mapping-index": "node scripts/build-kjv-strongs-mapping-index.mjs",

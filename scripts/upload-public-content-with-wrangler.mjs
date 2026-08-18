@@ -7,6 +7,7 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const inventoryPath = join(repoRoot, "data", "storage", "public-content-storage-inventory.json");
 const checkpointPath = join(repoRoot, "data", "storage", "wrangler-upload-checkpoint.json");
 const execute = process.argv.includes("--execute");
+const preflightOnly = process.argv.includes("--preflight-only");
 const local = process.argv.includes("--local");
 const startAtArg = process.argv.find((arg) => arg.startsWith("--start-at="));
 const limitArg = process.argv.find((arg) => arg.startsWith("--limit="));
@@ -19,7 +20,7 @@ function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function run(command, args, attempt = 1) {
+async function run(command, args, attempt = 1, maxAttempts = 3) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
       cwd: repoRoot,
@@ -33,12 +34,32 @@ async function run(command, args, attempt = 1) {
       else reject(new Error(`${command} ${args.join(" ")} exited with ${code}`));
     });
   }).catch(async (error) => {
-    if (attempt >= 3) throw error;
+    if (attempt >= maxAttempts) throw error;
     const delayMs = attempt * 5000;
-    console.warn(`Upload command failed. Retrying in ${delayMs / 1000}s (${attempt + 1}/3).`);
+    console.warn(`Upload command failed. Retrying in ${delayMs / 1000}s (${attempt + 1}/${maxAttempts}).`);
     await wait(delayMs);
-    return run(command, args, attempt + 1);
+    return run(command, args, attempt + 1, maxAttempts);
   });
+}
+
+async function assertWranglerReady() {
+  console.log("Checking Wrangler authentication...");
+  try {
+    await run("npx", ["wrangler", "whoami"], 1, 1);
+  } catch (error) {
+    throw new Error(
+      `Wrangler authentication preflight failed. Run \`npx wrangler login\` or set CLOUDFLARE_API_TOKEN, then retry \`npm run storage:preflight\`. ${error.message}`,
+    );
+  }
+
+  console.log(`Checking R2 bucket "${bucket}"...`);
+  try {
+    await run("npx", ["wrangler", "r2", "bucket", "info", bucket, "--json"], 1, 1);
+  } catch (error) {
+    throw new Error(
+      `R2 bucket preflight failed for "${bucket}". Confirm the bucket name and account access, then retry \`npm run storage:preflight\`. ${error.message}`,
+    );
+  }
 }
 
 async function main() {
@@ -48,6 +69,12 @@ async function main() {
   const limit = limitArg ? Number(limitArg.split("=").slice(1).join("=")) : 0;
   if (limitArg && (!Number.isInteger(limit) || limit < 1)) {
     throw new Error("--limit must be a positive integer.");
+  }
+
+  if (preflightOnly) {
+    await assertWranglerReady();
+    console.log(`Storage upload preflight passed for R2 bucket "${bucket}".`);
+    return;
   }
 
   const allItems = inventory.items
@@ -78,6 +105,8 @@ async function main() {
     console.log(`Run: npm run storage:upload:wrangler -- --bucket=${bucket} --execute`);
     return;
   }
+
+  await assertWranglerReady();
 
   let uploaded = 0;
   let lastUploadedPath = "";

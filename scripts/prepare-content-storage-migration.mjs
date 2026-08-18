@@ -326,6 +326,7 @@ ${topLargestRows(largePublicContentItems, 25)}
 
 \`\`\`bash
 npm run storage:plan
+npm run storage:preflight
 npm run storage:upload:r2 -- --dry-run
 npm run storage:upload:r2 -- --kind=commentary_index --dry-run
 npm run storage:upload:r2 -- --kind=strongs_index --dry-run

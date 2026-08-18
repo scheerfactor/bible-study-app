@@ -215,6 +215,7 @@ Planning/upload commands:
 
 ```bash
 npm run storage:plan
+npm run storage:preflight
 npm run storage:upload:r2 -- --dry-run
 npm run storage:upload:r2 -- --execute
 npm run storage:upload:r2 -- --kind=commentary_index --execute
