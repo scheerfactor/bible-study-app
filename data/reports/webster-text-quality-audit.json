@@ -1,11 +1,11 @@
 {
   "summary": {
-    "generated_at": "2026-08-15T22:47:36.314Z",
+    "generated_at": "2026-08-18T15:09:23.842Z",
     "base_entries": 58428,
-    "reviewed_overrides": 2417,
+    "reviewed_overrides": 2429,
     "entries_with_quality_flags": 22443,
     "entries_with_high_or_medium_flags": 4255,
-    "entries_with_unreviewed_high_or_medium_flags": 3417,
+    "entries_with_unreviewed_high_or_medium_flags": 3405,
     "pattern_counts": {
       "split_the": 2309,
       "split_wh_words": 731,
@@ -1565,17 +1565,17 @@
       "source_line_end": 38716
     },
     {
-      "headword": "AM'BER",
-      "normalized_headword": "amber",
+      "headword": "AM'BLYOPY",
+      "normalized_headword": "amblyopy",
       "flags": [
         "split_the",
         "hyphenated_scan_breaks"
       ],
       "highest_severity": "high",
       "has_reviewed_override": false,
-      "sample": "AM'BER, re. [Fr.ambre; Sp. ambar; Port. id; It. ambra; an oriental word; Pers. j^ic anbar or anabar; Ar. j^is anba- ron. In 1 ICings x. 2. 10, the Arabic is ren- dered spices. Tlie Arabic word is render- ed by Castle, amber, a marine fish, a shield made of skuis, crocus and finius. In Eth. OtII^ anb",
-      "source_line_start": 38888,
-      "source_line_end": 38930
+      "sample": "AM'BLYOPY, n. [Gr. a^S?^-?, dull, and ^. eye.] Incipient amaurosis; dulness or obscurity of sight, without any apparent defect of tlie organs; sig'ht so depraved that objects can be seen only in a certain light, dis- tance, or position. Encyc. Coir.",
+      "source_line_start": 39188,
+      "source_line_end": 39196
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-08-18T11:17:43.376Z
+Generated: 2026-08-18T15:13:15.582Z
 
 ## Path Strategy
 
@@ -13,13 +13,13 @@ Mirror current repository-relative paths in object storage during the transition
 | Library text | 2,240 | 2,240 | 0 | 1.86 GB |
 | Commentary chapter index | 1 | 1 | 0 | 81.09 KB |
 | Commentary batches | 345 | 345 | 0 | 505.03 MB |
-| Dictionary files | 1 | 1 | 0 | 34.60 MB |
+| Dictionary files | 2 | 2 | 0 | 37.55 MB |
 | Library manifests | 1 | 1 | 0 | 4.68 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
 | Strong's indexes | 2 | 2 | 0 | 181.01 KB |
 | Bible map media | 21 | 21 | 0 | 12.18 MB |
 | TSK/cross-reference batches | 45 | 45 | 0 | 5.14 MB |
-| Total public content | 2,665 | 2,665 | 0 | 2.44 GB |
+| Total public content | 2,666 | 2,666 | 0 | 2.44 GB |
 
 Commentary entries represented in public batch files: 12,850
 
@@ -29,7 +29,7 @@ Storage-backed library text already uploaded to object storage: 486 files (457.1
 
 Large library text files over 1 MB: 530 files (1.23 GB).
 
-Large public content files over 1 MB: 653 files (1.72 GB).
+Large public content files over 1 MB: 654 files (1.73 GB).
 
 These are the best first candidates for R2 because moving them out of the deploy bundle gives the largest size relief while keeping metadata, rights notes, and indexes in Git.
 

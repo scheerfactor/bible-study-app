@@ -10,6 +10,7 @@ const outputReportPath = join(repoRoot, "STORAGE_MIGRATION_REPORT.md");
 
 const dictionaryFiles = [
   "data/generated/websters-1828.entries.json",
+  "data/generated/websters-1828-reviewed-overrides.json",
 ];
 
 const libraryManifestFiles = [
