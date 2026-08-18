@@ -19322,6 +19322,10 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [libraryView, tab]);
+
+  useEffect(() => {
     speechRateRef.current = speechState.rate;
   }, [speechState.rate]);
 
@@ -23286,7 +23290,15 @@ export default function Home() {
         </div>
 
 	      </div>
-	      {!immersiveMode && <MobileNav tab={tab} onTab={setTab} />}
+	      {!immersiveMode && (
+	        <MobileNav
+	          tab={tab}
+	          onTab={(nextTab) => {
+	            if (nextTab === "library") setLibraryView("home");
+	            setTab(nextTab);
+	          }}
+	        />
+	      )}
 
 	      {tab === "bible" && studyRef && activeVerse && (
 	        <StudyDrawer
@@ -35890,6 +35902,7 @@ function LibraryScreen({
     .slice(0, 8);
   const libraryAuthorCount = new Set(resources.map((resource) => libraryAuthorIdFromName(resource.author))).size;
   const dictionaryCount = resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "dictionaries", "topical bible"])).length;
+  const commentaryBookCount = resources.filter((resource) => libraryCategoryLabel(resource.category) === "Commentaries").length;
   const verifiedResourceCount = allResources.filter((resource) => resource.public_domain_status === "verified" || resource.public_domain_status === "permissioned_free_resource").length;
   const groupedWorkCount = resources.length;
   const totalLibraryWords = allResources.reduce((total, resource) => total + (resource.word_count ?? 0), 0);
@@ -36002,7 +36015,7 @@ function LibraryScreen({
       <section className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <LibraryStat label="Total authors" value={String(libraryAuthorCount)} />
         <LibraryStat label="Grouped works" value={String(groupedWorkCount)} />
-        <LibraryStat label="Total commentaries" value={String(commentaryCoverage.totalEntries)} />
+        <LibraryStat label="Commentary books" value={String(commentaryBookCount)} />
         <LibraryStat label="Total dictionaries" value={String(dictionaryCount)} />
         <LibraryStat label="Verified/free files" value={String(verifiedResourceCount)} />
         <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
@@ -36170,7 +36183,13 @@ function LibraryScreen({
             <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
               <LibraryMetricCard label="Books and resources" value={resources.length.toLocaleString()} detail={`${libraryAuthorCount.toLocaleString()} authors`} />
               <LibraryMetricCard label="Words in reader" value={totalLibraryWords.toLocaleString()} detail={readingMinutesLabel(totalLibraryReadingMinutes)} />
-              <LibraryMetricCard label="Commentary entries" value={commentaryCoverage.totalEntries.toLocaleString()} detail={`${commentaryCoverage.chaptersCovered.toLocaleString()} chapters`} />
+              <LibraryMetricCard
+                label="Commentary books"
+                value={commentaryBookCount.toLocaleString()}
+                detail={commentaryCoverage.totalEntries
+                  ? `${commentaryCoverage.totalEntries.toLocaleString()} verse-linked entries loaded`
+                  : "Verse-linked entries load on demand"}
+              />
               <LibraryMetricCard label="Dictionaries/help" value={dictionaryCount.toLocaleString()} detail="Lookup and study tools" />
             </div>
 
