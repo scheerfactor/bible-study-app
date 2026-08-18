@@ -85246,9 +85246,11 @@
     },
     "reading_time_minutes": 182,
     "text_processing": "source_text_preserved",
-    "checksum_sha256": "0ced56c8a0d193d26d83c23c140e86b19ddf9d43e80592584d6485348803a962",
-    "file_size_bytes": 231132,
-    "word_count": 40859
+    "checksum_sha256": "1f1f07f0573961a0895922f7c2bbf4939e59a826db3dea69b9de51a508ee5990",
+    "file_size_bytes": 231258,
+    "word_count": 40882,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "Living Messages of the Books of the Bible; Genesis to Revelation, Matthew to Revelation, Complete in Two Double Volumes.",
@@ -92918,9 +92920,11 @@
     },
     "reading_time_minutes": 218,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "da9bf4873f47bac5a5684372d8f087cb3f0a68e779ecb3e8be281026a9b472b1",
-    "file_size_bytes": 281663,
-    "word_count": 49100
+    "checksum_sha256": "5b64c58aece4661bfd605993b1cc86ace28a6b2867faf484d212b361162053ca",
+    "file_size_bytes": 281545,
+    "word_count": 49087,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "Heart's-ease",
@@ -96434,9 +96438,11 @@
     },
     "reading_time_minutes": 745,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "a6a60c33f441eff92b2b2b269bc1c231dd9f9d7af8b151468a2ad3f14b04d5e5",
-    "file_size_bytes": 954516,
-    "word_count": 167677
+    "checksum_sha256": "70387228cec265afd249612fa0e6d68cc72ccfa9b3dc4d6580be2eb0627e3bbb",
+    "file_size_bytes": 954490,
+    "word_count": 167684,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "Coming to the King",
@@ -96834,9 +96840,11 @@
     },
     "reading_time_minutes": 504,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "b2e493a8f2b78856353f1b9f0d6084271d22a39ab672d76542333f7ba94091d9",
-    "file_size_bytes": 693843,
-    "word_count": 113458
+    "checksum_sha256": "19d6d01ab278c136e37e34cd2471f67b61063d06ad747d630118d2e132f9ddab",
+    "file_size_bytes": 693851,
+    "word_count": 113456,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "Dr. Scudder's Tales for Little Readers About the Heathen",
@@ -96936,9 +96944,11 @@
     },
     "reading_time_minutes": 441,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "be4356504544682e0cfcce37aa9bfd828d7e673646dd33816a9bf2874fe5e173",
-    "file_size_bytes": 600619,
-    "word_count": 99120
+    "checksum_sha256": "f30ef554215c10675a9189af1134ed566b88c9e7ac647df9dcf12c4602bdae25",
+    "file_size_bytes": 600823,
+    "word_count": 99120,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "History of the Missions of the American Board to the Oriental Churches Volume II",
@@ -96986,9 +96996,11 @@
     },
     "reading_time_minutes": 535,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "a37477ac4a5824ab6e7c2df338e5fc3d75710d823d24776f8040a455031d0397",
-    "file_size_bytes": 757002,
-    "word_count": 120274
+    "checksum_sha256": "01359f9ba689616d02047a914141eed408b638918161707964f8efd5d591dc2c",
+    "file_size_bytes": 757108,
+    "word_count": 120274,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "A Story of One Short Life 1783 to 1818",
@@ -97336,9 +97348,11 @@
     },
     "reading_time_minutes": 123,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "adf8a51da68b1258a48450ad711294cbad51cf92e5866eaaa43aeb2d3daf8022",
-    "file_size_bytes": 153441,
-    "word_count": 27761
+    "checksum_sha256": "b4f633db8a86b7ac3da007795751ba81bd1781c8bdd867ac75a6fe39be7d1a00",
+    "file_size_bytes": 153442,
+    "word_count": 27761,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "Papuan Pictures",
@@ -97686,9 +97700,11 @@
     },
     "reading_time_minutes": 396,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "821bf3f87fc8c05037b4e954c05b27a819e39b777d8e13dde9c332e4ec969084",
-    "file_size_bytes": 503713,
-    "word_count": 89059
+    "checksum_sha256": "7107ed24b42e1dbeecba124d9cb316793f434d1347c8dd0600740db48c6c96cc",
+    "file_size_bytes": 503706,
+    "word_count": 89059,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "The Gospel Object Book",
@@ -97986,9 +98002,11 @@
     },
     "reading_time_minutes": 306,
     "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "73b1e9f4994b5e3a8db57ee4bf5aca66af9076eba9fadf8e90f0bec0292e8809",
-    "file_size_bytes": 424717,
-    "word_count": 68809
+    "checksum_sha256": "b527dc27b3ce53aabf6dda3285bf48798ef3ee6dd1c4dfcd48bb9319f5652067",
+    "file_size_bytes": 424752,
+    "word_count": 68809,
+    "source_content_revalidated_at": "2026-08-18",
+    "source_content_revalidation_report": "data/library/manifests/storage-backed-source-revalidation-2026-08-18.json"
   },
   {
     "title": "Parables of the Christ-Life",
