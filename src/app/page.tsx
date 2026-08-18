@@ -107,6 +107,7 @@ type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "cros
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader" | "author" | "collection" | "path";
+type LibraryCatalogStatus = "idle" | "loading" | "ready" | "error";
 type LibraryBrowseMode = "catalog" | "shelves";
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
@@ -162,6 +163,19 @@ const HASH_TAB_MAP: Partial<Record<string, Tab>> = {
   "#hosea": "hoseaStudyPath",
   "#hosea-study": "hoseaStudyPath",
 };
+
+const LIBRARY_CATALOG_TABS = new Set<Tab>([
+  "library",
+  "search",
+  "themes",
+  "commentaryExplorer",
+  "sermons",
+  "presentations",
+  "passageGuide",
+  "amosStudyPath",
+  "proverbsStudyPath",
+  "hoseaStudyPath",
+]);
 
 function normalizedLocationHash() {
   if (typeof window === "undefined") return "";
@@ -16933,6 +16947,7 @@ export default function Home() {
   const [authMessage, setAuthMessage] = useState("");
   const [allLibraryResources, setAllLibraryResources] = useState<LibraryResource[]>([]);
   const [libraryResources, setLibraryResources] = useState<LibraryResource[]>([]);
+  const [libraryCatalogStatus, setLibraryCatalogStatus] = useState<LibraryCatalogStatus>("idle");
   const [libraryView, setLibraryView] = useState<LibraryView>("home");
   const [librarySearchTerm, setLibrarySearchTerm] = useState("");
   const [libraryCategory, setLibraryCategory] = useState("All");
@@ -17039,6 +17054,9 @@ export default function Home() {
   const accountSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncHydratingRef = useRef(false);
   const favoriteLibrarySyncAvailableRef = useRef(true);
+  const libraryCatalogLoadedRef = useRef(false);
+  const libraryCatalogResourcesRef = useRef<LibraryResource[]>([]);
+  const libraryCatalogRequestRef = useRef<Promise<LibraryResource[]> | null>(null);
   const deferredCommentaryLoadedFilesRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadingFilesRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadedChaptersRef = useRef<Set<string>>(new Set());
@@ -19298,28 +19316,47 @@ export default function Home() {
     });
   }, [speechVoices, voiceSettings.activeProfile, voiceSettings.profileVoiceURIs, voiceSettings.selectedVoiceURI]);
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/library")
-      .then((response) => response.json())
-      .then((data: { resources?: LibraryResource[] }) => {
-        if (!cancelled) {
-          const fullResources = data.resources ?? [];
-          setAllLibraryResources(fullResources);
-          setLibraryResources(groupLibraryWorks(fullResources));
+  const loadLibraryCatalog = useCallback(() => {
+    if (libraryCatalogLoadedRef.current) {
+      return Promise.resolve(libraryCatalogResourcesRef.current);
+    }
+    if (libraryCatalogRequestRef.current) return libraryCatalogRequestRef.current;
+
+    setLibraryCatalogStatus("loading");
+    const request = fetch("/api/library")
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Library catalog request failed with ${response.status}.`);
+        const data = (await response.json()) as { resources?: LibraryResource[] };
+        if (!Array.isArray(data.resources) || data.resources.length === 0) {
+          throw new Error("Library catalog response did not include resources.");
         }
+
+        const groupedResources = groupLibraryWorks(data.resources);
+        libraryCatalogLoadedRef.current = true;
+        libraryCatalogResourcesRef.current = groupedResources;
+        setAllLibraryResources(data.resources);
+        setLibraryResources(groupedResources);
+        setLibraryCatalogStatus("ready");
+        return groupedResources;
       })
       .catch(() => {
-        if (!cancelled) {
-          setAllLibraryResources([]);
-          setLibraryResources([]);
-        }
+        setAllLibraryResources([]);
+        setLibraryResources([]);
+        setLibraryCatalogStatus("error");
+        return [];
+      })
+      .finally(() => {
+        libraryCatalogRequestRef.current = null;
       });
 
-    return () => {
-      cancelled = true;
-    };
+    libraryCatalogRequestRef.current = request;
+    return request;
   }, []);
+
+  useEffect(() => {
+    if (!LIBRARY_CATALOG_TABS.has(tab)) return;
+    void loadLibraryCatalog();
+  }, [loadLibraryCatalog, tab]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -20351,6 +20388,12 @@ export default function Home() {
     setLibraryView(view);
     setTab("library");
 
+    const catalogResources = await loadLibraryCatalog();
+    if (!catalogResources.some((resource) => resource.slug === slug)) {
+      if (catalogResources.length) setSyncMessage("That library resource is not available in the current catalog.");
+      return;
+    }
+
     if (view !== "reader") return;
 
     saveLibraryProgressUpdate(slug, (current) => ({
@@ -20419,7 +20462,8 @@ export default function Home() {
       return;
     }
 
-    const resource = libraryResources.find((candidate) => candidate.slug === progress.slug);
+    const catalogResources = await loadLibraryCatalog();
+    const resource = catalogResources.find((candidate) => candidate.slug === progress.slug);
     if (!resource) {
       setTab("library");
       return;
@@ -22909,7 +22953,16 @@ export default function Home() {
               />
             )}
 
-            {tab === "library" && (
+            {tab === "library" && libraryCatalogStatus !== "ready" && (
+              <LibraryCatalogStatusScreen
+                status={libraryCatalogStatus}
+                onRetry={() => {
+                  void loadLibraryCatalog();
+                }}
+              />
+            )}
+
+            {tab === "library" && libraryCatalogStatus === "ready" && (
               <LibraryScreen
                 view={libraryView}
                 canUseAdminDrafts={canOpenAdminArea}
@@ -35420,6 +35473,43 @@ function isSermonImportType(resourceType: AdminResourceType) {
 
 function isMediaImportType(resourceType: AdminResourceType) {
   return resourceType === "Audiobook" || isSermonImportType(resourceType);
+}
+
+function LibraryCatalogStatusScreen({
+  status,
+  onRetry,
+}: {
+  status: LibraryCatalogStatus;
+  onRetry: () => void;
+}) {
+  const failed = status === "error";
+  return (
+    <section
+      className="mx-auto flex min-h-[52vh] w-full max-w-2xl flex-col items-center justify-center px-6 py-16 text-center"
+      role={failed ? "alert" : "status"}
+      aria-live="polite"
+    >
+      <BookOpen className="text-[var(--green)]" size={36} aria-hidden="true" />
+      <h1 className="mt-5 text-2xl font-semibold text-[var(--ink)]">
+        {failed ? "The library could not be loaded" : "Loading your library"}
+      </h1>
+      <p className="mt-3 max-w-lg text-sm leading-6 text-[var(--muted)]">
+        {failed
+          ? "Your Bible and saved study work are still available. Try the catalog request again when your connection is ready."
+          : "Preparing the book catalog, reading progress, commentaries, and study collections."}
+      </p>
+      {failed ? (
+        <button
+          className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[var(--ink)] px-4 py-2.5 text-sm font-semibold text-white"
+          onClick={onRetry}
+          type="button"
+        >
+          <RotateCcw size={16} aria-hidden="true" />
+          Try again
+        </button>
+      ) : null}
+    </section>
+  );
 }
 
 function LibraryScreen({
