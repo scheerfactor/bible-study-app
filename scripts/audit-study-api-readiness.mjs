@@ -67,6 +67,24 @@ const probes = [
     },
   },
   {
+    label: "Library paginated search",
+    path: "/api/library?q=Spurgeon&category=Evangelism&page=1&limit=5",
+    validate(data) {
+      return data?.resources?.length > 0 &&
+        data.resources.length <= 5 &&
+        data?.resources?.every((resource) => resource.category === "Evangelism") &&
+        data?.pagination?.page === 1 &&
+        data?.pagination?.limit === 5 &&
+        data?.pagination?.total >= data.resources.length &&
+        data?.filters?.query === "Spurgeon" &&
+        data?.facets?.categories?.some((entry) => entry.value === "Evangelism") &&
+        data?.totals?.resources > data.pagination.total;
+    },
+    summary(data) {
+      return `${data.resources.length} of ${data.pagination.total} matching resources; ${data.pagination.totalPages} pages`;
+    },
+  },
+  {
     label: "Study-tool search",
     path: "/api/study-tools?query=prayer&limit=10",
     validate(data) {
