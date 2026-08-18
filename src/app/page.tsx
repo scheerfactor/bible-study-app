@@ -108,6 +108,7 @@ type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader" | "author" | "collection" | "path";
 type LibraryCatalogStatus = "idle" | "loading" | "ready" | "error";
+type LibrarySearchStatus = "idle" | "loading" | "ready" | "error";
 type LibraryBrowseMode = "catalog" | "shelves";
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
@@ -1023,6 +1024,15 @@ type LibraryResource = {
     };
   } | null;
   added_at: string;
+};
+
+type LibrarySearchPagination = {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
 };
 
 type CommentaryVolumeReferenceHint = {
@@ -16951,6 +16961,10 @@ export default function Home() {
   const [libraryView, setLibraryView] = useState<LibraryView>("home");
   const [librarySearchTerm, setLibrarySearchTerm] = useState("");
   const [libraryCategory, setLibraryCategory] = useState("All");
+  const [librarySearchResults, setLibrarySearchResults] = useState<LibraryResource[]>([]);
+  const [librarySearchStatus, setLibrarySearchStatus] = useState<LibrarySearchStatus>("idle");
+  const [librarySearchPage, setLibrarySearchPage] = useState(1);
+  const [librarySearchPagination, setLibrarySearchPagination] = useState<LibrarySearchPagination | null>(null);
   const [activeLibrarySlug, setActiveLibrarySlug] = useState<string | null>(null);
   const [activeLibraryAuthorId, setActiveLibraryAuthorId] = useState<string | null>(null);
   const [activeLibraryCollectionId, setActiveLibraryCollectionId] = useState<string | null>(null);
@@ -17390,6 +17404,11 @@ export default function Home() {
       return categoryMatch && searchMatch;
     });
   }, [libraryCategory, libraryResources, librarySearchTerm]);
+
+  const librarySearchActive = librarySearchTerm.trim().length >= 2 || libraryCategory !== "All";
+  const displayedFilteredLibraryResources = librarySearchActive && librarySearchStatus === "ready"
+    ? librarySearchResults
+    : filteredLibraryResources;
 
   const continueReadingResources = useMemo(
     () =>
@@ -19357,6 +19376,49 @@ export default function Home() {
     if (!LIBRARY_CATALOG_TABS.has(tab)) return;
     void loadLibraryCatalog();
   }, [loadLibraryCatalog, tab]);
+
+  useEffect(() => {
+    const query = librarySearchTerm.trim();
+    const searchActive = query.length >= 2 || libraryCategory !== "All";
+    if (tab !== "library" || libraryView !== "home" || !searchActive) return;
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      const params = new URLSearchParams({
+        page: String(librarySearchPage),
+        limit: "24",
+      });
+      if (query.length >= 2) params.set("q", query);
+      if (libraryCategory !== "All") params.set("filter", libraryCategory);
+
+      setLibrarySearchStatus("loading");
+      fetch(`/api/library?${params.toString()}`, { signal: controller.signal })
+        .then(async (response) => {
+          if (!response.ok) throw new Error(`Library search failed with ${response.status}.`);
+          return response.json() as Promise<{
+            resources?: LibraryResource[];
+            pagination?: LibrarySearchPagination;
+          }>;
+        })
+        .then((data) => {
+          if (!Array.isArray(data.resources) || !data.pagination) {
+            throw new Error("Library search response was incomplete.");
+          }
+          setLibrarySearchResults(groupLibraryWorks(data.resources));
+          setLibrarySearchPagination(data.pagination);
+          setLibrarySearchStatus("ready");
+        })
+        .catch((error: unknown) => {
+          if (error instanceof DOMException && error.name === "AbortError") return;
+          setLibrarySearchStatus("error");
+        });
+    }, 250);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [libraryCategory, librarySearchPage, librarySearchTerm, libraryView, tab]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -22969,10 +23031,12 @@ export default function Home() {
                 resources={libraryResources}
                 allResources={allLibraryResources}
                 licensedResourceLinks={LICENSED_RESOURCE_LINKS}
-                filteredResources={filteredLibraryResources}
+                filteredResources={displayedFilteredLibraryResources}
                 categories={libraryCategories}
                 activeCategory={libraryCategory}
                 searchTerm={librarySearchTerm}
+                searchStatus={librarySearchActive ? librarySearchStatus : "idle"}
+                searchPagination={librarySearchActive && librarySearchStatus === "ready" ? librarySearchPagination : null}
                 activeResource={activeLibraryResource}
                 activeAuthor={activeLibraryAuthor}
                 activeCollection={activeLibraryCollection}
@@ -23009,8 +23073,23 @@ export default function Home() {
                 selectedSpeechVoiceURI={selectedSpeechVoiceURI}
                 voiceSettings={voiceSettings}
                 readerRef={libraryReaderRef}
-                onCategoryChange={setLibraryCategory}
-                onSearchTermChange={setLibrarySearchTerm}
+                onCategoryChange={(category) => {
+                  setLibraryCategory(category);
+                  setLibrarySearchPage(1);
+                  setLibrarySearchPagination(null);
+                  setLibrarySearchStatus(librarySearchTerm.trim().length >= 2 || category !== "All" ? "loading" : "idle");
+                }}
+                onSearchTermChange={(value) => {
+                  setLibrarySearchTerm(value);
+                  setLibrarySearchPage(1);
+                  setLibrarySearchPagination(null);
+                  setLibrarySearchStatus(value.trim().length >= 2 || libraryCategory !== "All" ? "loading" : "idle");
+                }}
+                onSearchPageChange={(page) => {
+                  setLibrarySearchPage(page);
+                  setLibrarySearchStatus("loading");
+                  window.requestAnimationFrame(() => document.getElementById("library-search-input")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+                }}
                 onOpenHome={() => setLibraryView("home")}
                 onOpenDetail={(slug) => {
                   void openLibraryResource(slug, "detail");
@@ -35512,6 +35591,44 @@ function LibraryCatalogStatusScreen({
   );
 }
 
+function LibrarySearchPager({
+  pagination,
+  loading,
+  onPageChange,
+}: {
+  pagination: LibrarySearchPagination | null;
+  loading: boolean;
+  onPageChange: (page: number) => void;
+}) {
+  if (!pagination || pagination.totalPages <= 1) return null;
+
+  return (
+    <nav className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm" aria-label="Library search pages">
+      <button
+        className="inline-flex h-10 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-40"
+        disabled={loading || !pagination.hasPreviousPage}
+        onClick={() => onPageChange(pagination.page - 1)}
+        type="button"
+      >
+        <ChevronLeft size={16} aria-hidden="true" />
+        Previous
+      </button>
+      <p className="min-w-28 text-center text-sm font-semibold text-[var(--muted)]" aria-live="polite">
+        Page {pagination.page} of {pagination.totalPages}
+      </p>
+      <button
+        className="inline-flex h-10 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-40"
+        disabled={loading || !pagination.hasNextPage}
+        onClick={() => onPageChange(pagination.page + 1)}
+        type="button"
+      >
+        Next
+        <ChevronRight size={16} aria-hidden="true" />
+      </button>
+    </nav>
+  );
+}
+
 function LibraryScreen({
   view,
   canUseAdminDrafts,
@@ -35522,6 +35639,8 @@ function LibraryScreen({
   categories,
   activeCategory,
   searchTerm,
+  searchStatus,
+  searchPagination,
   activeResource,
   activeAuthor,
   activeCollection,
@@ -35560,6 +35679,7 @@ function LibraryScreen({
   readerRef,
   onCategoryChange,
   onSearchTermChange,
+  onSearchPageChange,
   onOpenHome,
   onOpenDetail,
   onOpenReader,
@@ -35619,6 +35739,8 @@ function LibraryScreen({
   categories: string[];
   activeCategory: string;
   searchTerm: string;
+  searchStatus: LibrarySearchStatus;
+  searchPagination: LibrarySearchPagination | null;
   activeResource: LibraryResource | null;
   activeAuthor: LibraryAuthorProfile | null;
   activeCollection: LibraryCollection | null;
@@ -35664,6 +35786,7 @@ function LibraryScreen({
   readerRef: React.RefObject<HTMLDivElement | null>;
   onCategoryChange: (category: string) => void;
   onSearchTermChange: (value: string) => void;
+  onSearchPageChange: (page: number) => void;
   onOpenHome: () => void;
   onOpenDetail: (slug: string) => void;
   onOpenReader: (slug: string) => void;
@@ -36137,7 +36260,9 @@ function LibraryScreen({
             </div>
           </label>
           <p className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-	            {filteredResources.length.toLocaleString()} books{filteredLicensedResourceLinks.length ? ` · ${filteredLicensedResourceLinks.length} links` : ""}
+	            {searchStatus === "loading"
+                ? "Searching..."
+                : `${(searchPagination?.total ?? filteredResources.length).toLocaleString()} catalog entries${filteredLicensedResourceLinks.length ? ` · ${filteredLicensedResourceLinks.length} links` : ""}`}
 	          </p>
 	        </div>
 	        <div className="mt-3 flex flex-wrap gap-2">
@@ -36177,6 +36302,17 @@ function LibraryScreen({
             </button>
           ))}
         </div>
+        {searchStatus !== "idle" && (
+          <p className={`mt-3 text-sm font-semibold ${searchStatus === "error" ? "text-red-700" : "text-[var(--muted)]"}`} role={searchStatus === "error" ? "alert" : "status"} aria-live="polite">
+            {searchStatus === "loading"
+              ? "Searching the complete Library catalog..."
+              : searchStatus === "error"
+                ? "The catalog search could not be reached. Showing matching books from the loaded Library instead."
+                : searchPagination
+                  ? `Showing ${filteredResources.length.toLocaleString()} results from ${searchPagination.total.toLocaleString()} matching catalog entries.`
+                  : "Search ready."}
+          </p>
+        )}
         {authorMatches.length > 0 && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -36221,6 +36357,13 @@ function LibraryScreen({
               ))}
             </LibraryShelf>
           )}
+          {!browsingAllResources && (
+            <LibrarySearchPager
+              pagination={searchPagination}
+              loading={searchStatus === "loading"}
+              onPageChange={onSearchPageChange}
+            />
+          )}
         </>
       ) : (
         <>
@@ -36244,6 +36387,14 @@ function LibraryScreen({
             </div>
           )}
         </LibraryShelf>
+      )}
+
+      {!browsingAllResources && (
+        <LibrarySearchPager
+          pagination={searchPagination}
+          loading={searchStatus === "loading"}
+          onPageChange={onSearchPageChange}
+        />
       )}
 
       {!browsingAllResources && filteredLicensedResourceLinks.length > 0 && (

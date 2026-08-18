@@ -85,6 +85,22 @@ const probes = [
     },
   },
   {
+    label: "Library discovery filter",
+    path: "/api/library?filter=Prayer&page=1&limit=5",
+    validate(data) {
+      return data?.resources?.length > 0 &&
+        data.resources.length <= 5 &&
+        data?.filters?.discovery === "Prayer" &&
+        data?.pagination?.page === 1 &&
+        data?.pagination?.limit === 5 &&
+        data?.pagination?.total >= data.resources.length &&
+        data.resources.every((resource) => /pray|intercession/i.test(JSON.stringify(resource)));
+    },
+    summary(data) {
+      return `${data.resources.length} of ${data.pagination.total} prayer resources`;
+    },
+  },
+  {
     label: "Study-tool search",
     path: "/api/study-tools?query=prayer&limit=10",
     validate(data) {

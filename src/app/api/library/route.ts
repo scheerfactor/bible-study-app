@@ -13,6 +13,18 @@ const DEFAULT_PAGE_SIZE = 24;
 const MAX_PAGE_SIZE = 100;
 const MAX_QUERY_LENGTH = 120;
 
+const DISCOVERY_FILTER_TERMS: Record<string, string[]> = {
+  Commentaries: ["commentary", "commentaries", "exposition", "expository"],
+  "Dictionaries / Helps": ["dictionary", "dictionaries", "encyclopedia", "topical", "handbook", "survey", "cross references", "study helps", "bible study"],
+  Prayer: ["prayer", "pray", "intercession"],
+  "Preaching & Teaching": ["preaching", "teaching", "sermon", "lesson", "illustration"],
+  "Baptist History": ["baptist history", "baptist", "church history"],
+  Missions: ["missions", "missionary", "mission"],
+  "KJV / Textual Issues": ["kjv", "king james", "authorized", "textual", "scripture"],
+};
+
+const STUDY_HELP_TERMS = ["commentary", "dictionary", "encyclopedia", "topical", "handbook", "survey", "cross references"];
+
 type LibraryCatalogResource = ReturnType<typeof curateLibraryEntry> & { slug: string };
 
 type LibraryCatalogPayload = {
@@ -71,6 +83,13 @@ function resourceSearchScore(resource: LibraryCatalogResource, normalizedQuery: 
   if (author.includes(normalizedQuery)) return 250;
   if (category === normalizedQuery) return 200;
   return 100;
+}
+
+function resourceMatchesDiscoveryFilter(resource: LibraryCatalogResource, filter: string) {
+  if (!filter || filter === "All") return true;
+  const haystack = searchableResourceText(resource);
+  if (filter === "Books") return !STUDY_HELP_TERMS.some((term) => haystack.includes(term));
+  return (DISCOVERY_FILTER_TERMS[filter] ?? []).some((term) => haystack.includes(term));
 }
 
 function parsePositiveInteger(value: string | null, fallback: number, maximum?: number) {
@@ -143,7 +162,7 @@ function payloadResponse(request: Request, payload: LibraryCatalogPayload, extra
 }
 
 function paginatedRequest(searchParams: URLSearchParams) {
-  return ["q", "query", "category", "page", "limit"].some((name) => searchParams.has(name));
+  return ["q", "query", "category", "filter", "page", "limit"].some((name) => searchParams.has(name));
 }
 
 async function paginatedCatalogPayload(searchParams: URLSearchParams, data: LibraryCatalogData) {
@@ -152,11 +171,13 @@ async function paginatedCatalogPayload(searchParams: URLSearchParams, data: Libr
   const terms = normalizedQuery.split(/\s+/).filter(Boolean).slice(0, 10);
   const category = (searchParams.get("category") ?? "").trim();
   const normalizedCategory = normalizeSearchText(category);
+  const discoveryFilter = (searchParams.get("filter") ?? "").trim();
   const page = parsePositiveInteger(searchParams.get("page"), 1);
   const limit = parsePositiveInteger(searchParams.get("limit"), DEFAULT_PAGE_SIZE, MAX_PAGE_SIZE);
 
   const matches = data.resources
     .filter((resource) => !normalizedCategory || normalizeSearchText(resource.category) === normalizedCategory)
+    .filter((resource) => resourceMatchesDiscoveryFilter(resource, discoveryFilter))
     .filter((resource) => {
       if (!terms.length) return true;
       const haystack = searchableResourceText(resource);
@@ -189,7 +210,7 @@ async function paginatedCatalogPayload(searchParams: URLSearchParams, data: Libr
       hasNextPage: page < totalPages,
       hasPreviousPage: page > 1 && totalPages > 0,
     },
-    filters: { query, category },
+    filters: { query, category, discovery: discoveryFilter },
     facets: {
       categories: [...categoryCounts.entries()]
         .map(([value, count]) => ({ value, count }))
