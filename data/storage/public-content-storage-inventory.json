@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T15:55:38.437Z",
+  "generated_at": "2026-08-18T20:20:31.791Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 12850,
@@ -29,8 +29,8 @@
       "files": 2,
       "present": 2,
       "missing": 0,
-      "total_bytes": 39382204,
-      "total_size": "37.56 MB"
+      "total_bytes": 39400116,
+      "total_size": "37.57 MB"
     },
     "library_manifest": {
       "files": 1,
@@ -71,7 +71,7 @@
       "files": 2666,
       "present": 2666,
       "missing": 0,
-      "total_bytes": 2621390645,
+      "total_bytes": 2621408557,
       "total_size": "2.44 GB"
     }
   },
@@ -79,7 +79,7 @@
     "library_text_files_over_1mb": 530,
     "library_text_bytes_over_1mb": 1325730346,
     "public_content_files_over_1mb": 654,
-    "public_content_bytes_over_1mb": 1854132908,
+    "public_content_bytes_over_1mb": 1854150820,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -30921,8 +30921,8 @@
       "source_path": "data/generated/websters-1828-reviewed-overrides.json",
       "storage_path": "data/generated/websters-1828-reviewed-overrides.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3099961,
-      "checksum_sha256": "3fd17234b317d36cf097d4daeb76a436e9bf4053bde3553cba4df84e8afc94b0"
+      "size_bytes": 3117873,
+      "checksum_sha256": "d47468f3fd3691bffbc84eec9908b63399c7ac508a7fb15b5fa2cc6c2a4b68d7"
     },
     {
       "kind": "library_manifest",

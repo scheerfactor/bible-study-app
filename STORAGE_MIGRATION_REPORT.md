@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-08-18T15:55:38.437Z
+Generated: 2026-08-18T20:20:31.791Z
 
 ## Path Strategy
 
@@ -13,7 +13,7 @@ Mirror current repository-relative paths in object storage during the transition
 | Library text | 2,240 | 2,240 | 0 | 1.86 GB |
 | Commentary chapter index | 1 | 1 | 0 | 81.09 KB |
 | Commentary batches | 345 | 345 | 0 | 505.03 MB |
-| Dictionary files | 2 | 2 | 0 | 37.56 MB |
+| Dictionary files | 2 | 2 | 0 | 37.57 MB |
 | Library manifests | 1 | 1 | 0 | 4.68 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
 | Strong's indexes | 2 | 2 | 0 | 181.01 KB |
