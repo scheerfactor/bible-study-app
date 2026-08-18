@@ -11,6 +11,8 @@
     "audit:feedback": "node scripts/audit-feedback-delivery.mjs",
     "audit:feedback:live": "node scripts/audit-feedback-delivery.mjs --live",
     "audit:public-access": "node scripts/audit-public-access.mjs",
+    "audit:release": "node scripts/audit-release-deployment.mjs",
+    "audit:release:live": "node scripts/audit-release-deployment.mjs --live",
     "start": "next start",
     "lint": "eslint",
     "import:webster": "node scripts/import-websters-1828.mjs",

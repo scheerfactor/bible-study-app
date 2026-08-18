@@ -97,6 +97,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - `npm run validate:commentary`
 - `npm run library:qa`
 - `npm run audit:public-access` while the production build is running
+- `npm run audit:release` while the production build is running
+- `npm run audit:release:live` after deployment and before sharing the beta URL
 - `npm run lint`
 - `npm run build`
 
