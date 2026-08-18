@@ -95,6 +95,7 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 
 - `npm run validate:strongs`
 - `npm run validate:commentary`
+- `npm run audit:commentary-storage`
 - `npm run library:qa`
 - `npm run audit:public-access` while the production build is running
 - `npm run audit:release` while the production build is running

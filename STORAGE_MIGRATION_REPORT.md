@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-07-09T22:01:15.273Z
+Generated: 2026-08-18T01:57:54.675Z
 
 ## Path Strategy
 
@@ -10,44 +10,47 @@ Mirror current repository-relative paths in object storage during the transition
 
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
-| Library text | 1,855 | 1,855 | 0 | 1.52 GB |
-| Commentary batches | 256 | 256 | 0 | 412.38 MB |
-| Dictionary files | 1 | 1 | 0 | 34.28 MB |
-| Library manifests | 1 | 1 | 0 | 3.79 MB |
+| Library text | 2,240 | 2,240 | 0 | 1.86 GB |
+| Commentary chapter index | 1 | 1 | 0 | 81.09 KB |
+| Commentary batches | 345 | 345 | 0 | 505.03 MB |
+| Dictionary files | 1 | 1 | 0 | 34.60 MB |
+| Library manifests | 1 | 1 | 0 | 4.68 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
 | Strong's indexes | 2 | 2 | 0 | 181.01 KB |
 | Bible map media | 21 | 21 | 0 | 12.18 MB |
-| TSK/cross-reference batches | 28 | 28 | 0 | 4.45 MB |
-| Total public content | 2,173 | 2,173 | 0 | 2.00 GB |
+| TSK/cross-reference batches | 45 | 45 | 0 | 5.14 MB |
+| Total public content | 2,665 | 2,665 | 0 | 2.44 GB |
 
-Commentary entries represented in public batch files: 11,404
+Commentary entries represented in public batch files: 12,850
 
-Storage-backed library text already uploaded to object storage: 176 files (180.64 MB).
+Storage-backed library text already uploaded to object storage: 486 files (457.19 MB).
 
 ## Biggest Storage Pressure
 
-Large library text files over 1 MB: 435 files (1023.62 MB).
+Large library text files over 1 MB: 530 files (1.23 GB).
 
-Large public content files over 1 MB: 532 files (1.42 GB).
+Large public content files over 1 MB: 653 files (1.72 GB).
 
 These are the best first candidates for R2 because moving them out of the deploy bundle gives the largest size relief while keeping metadata, rights notes, and indexes in Git.
 
 | Size | Kind | Resource | Path |
 | ---: | --- | --- | --- |
-| 34.28 MB | dictionary | data/generated/websters-1828.entries.json | `data/generated/websters-1828.entries.json` |
+| 46.91 MB | library_text | John Gill's Commentary On The Whole Bible | `data/library/verified/john-gill-s-commentary-on-the-whole-bible-john-gill.txt` |
+| 34.60 MB | dictionary | data/generated/websters-1828.entries.json | `data/generated/websters-1828.entries.json` |
 | 34.00 MB | commentary_batch | biblical-illustrator-reviewed-epistles-depth-phase-1-commentary.json | `data/imports/biblical-illustrator-reviewed-epistles-depth-phase-1-commentary.json` |
+| 21.56 MB | commentary_batch | american-commentary-reviewed-new-testament-commentary.json | `data/imports/american-commentary-reviewed-new-testament-commentary.json` |
 | 18.22 MB | library_text | Young's Analytical Concordance to the Bible | `data/library/verified/young-s-analytical-concordance-to-the-bible-young-robert.txt` |
-| 17.72 MB | commentary_batch | pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json | `data/imports/pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json` |
-| 15.89 MB | commentary_batch | biblical-illustrator-reviewed-foundation-books-phase-1-commentary.json | `data/imports/biblical-illustrator-reviewed-foundation-books-phase-1-commentary.json` |
+| 18.02 MB | commentary_batch | pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json | `data/imports/pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json` |
+| 15.90 MB | commentary_batch | biblical-illustrator-reviewed-foundation-books-phase-1-commentary.json | `data/imports/biblical-illustrator-reviewed-foundation-books-phase-1-commentary.json` |
 | 15.01 MB | commentary_batch | pulpit-commentary-reviewed-weak-books-commentary.json | `data/imports/pulpit-commentary-reviewed-weak-books-commentary.json` |
-| 14.53 MB | commentary_batch | biblical-illustrator-reviewed-weak-books-commentary.json | `data/imports/biblical-illustrator-reviewed-weak-books-commentary.json` |
+| 14.58 MB | commentary_batch | biblical-illustrator-reviewed-weak-books-commentary.json | `data/imports/biblical-illustrator-reviewed-weak-books-commentary.json` |
 | 13.95 MB | commentary_batch | pulpit-commentary-reviewed-epistles-depth-phase-1-commentary.json | `data/imports/pulpit-commentary-reviewed-epistles-depth-phase-1-commentary.json` |
 | 13.52 MB | library_text | Hastings Dictionary of the Bible, Volume 4 | `data/library/verified/hastings-dictionary-of-the-bible-volume-4-james-hastings.txt` |
 | 12.67 MB | library_text | The Bible Interpreter; or, Improved Helps to Bible Study | `data/library/verified/the-bible-interpreter-or-improved-helps-to-bible-study-roswell-d-hitchcock-and-contributors.txt` |
 | 11.68 MB | library_text | Works of John Bunyan — Complete | `data/library/verified/works-of-john-bunyan-complete-bunyan-john-and-offor-george.txt` |
+| 11.61 MB | commentary_batch | pulpit-commentary-reviewed-historical-books-phase-1-commentary.json | `data/imports/pulpit-commentary-reviewed-historical-books-phase-1-commentary.json` |
 | 11.60 MB | library_text | Hastings Dictionary of the Bible, Volume 2 | `data/library/verified/hastings-dictionary-of-the-bible-volume-2-james-hastings.txt` |
 | 11.52 MB | commentary_batch | matthew-henry-reviewed-batch-2-commentary.json | `data/imports/matthew-henry-reviewed-batch-2-commentary.json` |
-| 11.51 MB | commentary_batch | pulpit-commentary-reviewed-historical-books-phase-1-commentary.json | `data/imports/pulpit-commentary-reviewed-historical-books-phase-1-commentary.json` |
 | 11.39 MB | library_text | Hastings Dictionary of the Bible, Volume 1 | `data/library/verified/hastings-dictionary-of-the-bible-volume-1-james-hastings.txt` |
 | 10.33 MB | commentary_batch | biblical-illustrator-reviewed-focus-books-commentary.json | `data/imports/biblical-illustrator-reviewed-focus-books-commentary.json` |
 | 10.00 MB | library_text | Nave's Topical Bible | `data/library/verified/naves-topical-bible.txt` |
@@ -55,15 +58,13 @@ These are the best first candidates for R2 because moving them out of the deploy
 | 9.90 MB | commentary_batch | biblical-illustrator-reviewed-prophecy-teaching-commentary.json | `data/imports/biblical-illustrator-reviewed-prophecy-teaching-commentary.json` |
 | 9.38 MB | commentary_batch | biblical-illustrator-reviewed-historical-books-phase-1-commentary.json | `data/imports/biblical-illustrator-reviewed-historical-books-phase-1-commentary.json` |
 | 8.30 MB | commentary_batch | barnes-reviewed-completion-prophets-commentary.json | `data/imports/barnes-reviewed-completion-prophets-commentary.json` |
+| 8.24 MB | library_text | An exposition of the Old and New Testament : with practical remarks and observations | `data/library/verified/an-exposition-of-the-old-and-new-testament-with-practical-remarks-and-observations-matthew-henry.txt` |
 | 8.21 MB | commentary_batch | biblical-illustrator-reviewed-luke-complete-commentary.json | `data/imports/biblical-illustrator-reviewed-luke-complete-commentary.json` |
-| 7.82 MB | library_text | Smith's Comprehensive Dictionary of the Bible | `data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt` |
-| 7.82 MB | study_tool | data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt | `data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt` |
-| 7.55 MB | commentary_batch | barnes-reviewed-phase-3-commentary.json | `data/imports/barnes-reviewed-phase-3-commentary.json` |
 
 ## Recommended Migration Order
 
 1. Upload all `library_text` objects to R2 first. This removes the biggest pressure while preserving Library metadata in Git.
-2. Upload `commentary_batch` objects next, especially Pulpit Commentary, Biblical Illustrator, Poole, and other large set files.
+2. Upload the `commentary_index` and all `commentary_batch` objects next, especially Pulpit Commentary, Biblical Illustrator, Poole, and other large set files.
 3. Upload dictionaries and study tools after the reader is confirmed to load external text quickly.
 4. Keep manifests, rights metadata, import reports, author profiles, and validation scripts in Git.
 5. After production is verified against R2, stop committing new full-text files to `data/library/verified`; commit metadata plus storage paths instead.
@@ -73,6 +74,7 @@ These are the best first candidates for R2 because moving them out of the deploy
 ```bash
 npm run storage:plan
 npm run storage:upload:r2 -- --dry-run
+npm run storage:upload:r2 -- --kind=commentary_index --dry-run
 npm run storage:upload:r2 -- --kind=strongs_index --dry-run
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --dry-run
 ```
@@ -81,6 +83,7 @@ When R2 credentials and a public base URL are configured:
 
 ```bash
 npm run storage:upload:r2 -- --execute
+npm run storage:upload:r2 -- --kind=commentary_index --execute
 npm run storage:upload:r2 -- --kind=strongs_index --execute
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
 ```
@@ -88,6 +91,7 @@ npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
 If using Wrangler instead of S3 credentials:
 
 ```bash
+npm run storage:upload:wrangler -- --kind=commentary_index --execute
 npm run storage:upload:wrangler -- --kind=strongs_index --execute
 npm run storage:upload:wrangler -- --kind=tsk_cross_reference_batch --execute
 ```

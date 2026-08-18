@@ -217,17 +217,19 @@ Planning/upload commands:
 npm run storage:plan
 npm run storage:upload:r2 -- --dry-run
 npm run storage:upload:r2 -- --execute
+npm run storage:upload:r2 -- --kind=commentary_index --execute
 npm run storage:upload:wrangler -- --dry-run
 npm run storage:upload:wrangler -- --bucket=fathers-business-bible-study-public --execute
 ```
 
 Current public-content migration inventory:
 
-- Library text files: 1,302 files, about 702 MB.
-- Commentary batch files: 118 files, about 308 MB.
+- Library text files: 2,240 files, about 1.86 GB.
+- Commentary batch files: 345 files, about 505 MB.
+- Commentary chapter index: one small JSON file required before commentary APIs can resolve chapter batches.
 - Webster dictionary file: about 34 MB.
 - Study tool files: 9 files, about 26 MB.
-- Total first storage move: about 1.05 GB.
+- Total public-content inventory: 2,665 files, about 2.44 GB.
 
 Recommended environment variables:
 

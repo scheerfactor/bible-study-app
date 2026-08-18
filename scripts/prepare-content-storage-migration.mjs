@@ -16,6 +16,10 @@ const libraryManifestFiles = [
   defaultLibraryManifest,
 ];
 
+const commentaryIndexFiles = [
+  "data/commentary/reports/commentary-chapter-file-index.json",
+];
+
 const studyToolFiles = [
   "data/library/verified/eastons-bible-dictionary.txt",
   "data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt",
@@ -203,6 +207,10 @@ async function main() {
     }),
   );
 
+  const commentaryIndexItems = await Promise.all(
+    commentaryIndexFiles.map((filePath) => existingInventoryFile("commentary_index", filePath)),
+  );
+
   const dictionaryItems = await Promise.all(dictionaryFiles.map((filePath) => existingInventoryFile("dictionary", filePath)));
   const libraryManifestItems = await Promise.all(
     libraryManifestFiles.map((filePath) => existingInventoryFile("library_manifest", filePath)),
@@ -217,6 +225,7 @@ async function main() {
 
   const items = [
     ...libraryItems,
+    ...commentaryIndexItems,
     ...commentaryItems,
     ...dictionaryItems,
     ...libraryManifestItems,
@@ -227,6 +236,7 @@ async function main() {
   ];
   const summaries = {
     library_text: summarize(libraryItems),
+    commentary_index: summarize(commentaryIndexItems),
     commentary_batch: summarize(commentaryItems),
     dictionary: summarize(dictionaryItems),
     library_manifest: summarize(libraryManifestItems),
@@ -278,6 +288,7 @@ Mirror current repository-relative paths in object storage during the transition
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
 ${tableRow("Library text", summaries.library_text)}
+${tableRow("Commentary chapter index", summaries.commentary_index)}
 ${tableRow("Commentary batches", summaries.commentary_batch)}
 ${tableRow("Dictionary files", summaries.dictionary)}
 ${tableRow("Library manifests", summaries.library_manifest)}
@@ -306,7 +317,7 @@ ${topLargestRows(largePublicContentItems, 25)}
 ## Recommended Migration Order
 
 1. Upload all \`library_text\` objects to R2 first. This removes the biggest pressure while preserving Library metadata in Git.
-2. Upload \`commentary_batch\` objects next, especially Pulpit Commentary, Biblical Illustrator, Poole, and other large set files.
+2. Upload the \`commentary_index\` and all \`commentary_batch\` objects next, especially Pulpit Commentary, Biblical Illustrator, Poole, and other large set files.
 3. Upload dictionaries and study tools after the reader is confirmed to load external text quickly.
 4. Keep manifests, rights metadata, import reports, author profiles, and validation scripts in Git.
 5. After production is verified against R2, stop committing new full-text files to \`data/library/verified\`; commit metadata plus storage paths instead.
@@ -316,6 +327,7 @@ ${topLargestRows(largePublicContentItems, 25)}
 \`\`\`bash
 npm run storage:plan
 npm run storage:upload:r2 -- --dry-run
+npm run storage:upload:r2 -- --kind=commentary_index --dry-run
 npm run storage:upload:r2 -- --kind=strongs_index --dry-run
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --dry-run
 \`\`\`
@@ -324,6 +336,7 @@ When R2 credentials and a public base URL are configured:
 
 \`\`\`bash
 npm run storage:upload:r2 -- --execute
+npm run storage:upload:r2 -- --kind=commentary_index --execute
 npm run storage:upload:r2 -- --kind=strongs_index --execute
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
 \`\`\`
@@ -331,6 +344,7 @@ npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
 If using Wrangler instead of S3 credentials:
 
 \`\`\`bash
+npm run storage:upload:wrangler -- --kind=commentary_index --execute
 npm run storage:upload:wrangler -- --kind=strongs_index --execute
 npm run storage:upload:wrangler -- --kind=tsk_cross_reference_batch --execute
 \`\`\`
