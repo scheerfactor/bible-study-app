@@ -28633,6 +28633,137 @@ function BibleReader({
         </details>
       </section>
 
+      <article id="kjv-chapter-text" className="mx-auto w-full max-w-5xl scroll-mt-20 rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:scroll-mt-40 md:px-10 md:py-8">
+        <div className="mb-5 flex flex-col gap-4 border-b border-stone-300/70 pb-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
+            <p className="mt-1 text-sm text-[var(--muted)]">King James Version</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{verses.length} verses</span>
+            <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">
+              <input
+                checked={showStrongNumbers}
+                className="accent-[var(--green)]"
+                onChange={(event) => setShowStrongNumbers(event.target.checked)}
+                type="checkbox"
+              />
+              Show Strong&apos;s numbers
+            </label>
+          </div>
+        </div>
+        {showStrongNumbers && (
+          <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+            {strongMappingDisplayStatus} Reviewed KJV word mapping is live for the available data. Tap a Strong&apos;s number to open the word-study panel.
+          </p>
+        )}
+
+        <div className="space-y-2">
+          {verses.map((verse) => {
+            const highlighted = highlightsByRef.has(verse.ref);
+            const hasNote = notesByRef.has(verse.ref);
+            const bookmarked = bookmarksByRef.has(verse.ref);
+            const selected = selectedRef === verse.ref;
+            const flashed = flashRef === verse.ref;
+            const strongMappingsForVerse = strongMappingsByVerse.get(verse.ref);
+            let wordTokenIndex = 0;
+            return (
+              <div
+                key={verse.ref}
+                ref={selected ? selectedVerseRef : null}
+                className={`group rounded-2xl border px-2 py-3 transition md:px-4 md:py-4 ${
+                  selected
+                    ? "border-[var(--gold)] bg-white shadow-sm"
+                    : "border-transparent hover:border-stone-200 hover:bg-white/70"
+                } ${highlighted ? "bg-[var(--highlight)]" : ""} ${flashed ? "ring-4 ring-[var(--gold-soft)]" : ""}`}
+                onClick={() => onVerseClick(verse.ref)}
+                role="button"
+                tabIndex={0}
+              >
+                <p className="font-serif text-[1.28rem] leading-[2.15rem] text-[var(--scripture-ink)] md:text-[1.45rem] md:leading-[2.45rem]">
+                  <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
+                  {verse.text.split(/(\s+)/).map((part, index) => {
+                    if (!part) return null;
+                    if (/^\s+$/.test(part)) return part;
+                    wordTokenIndex += 1;
+                    const strongMapping = showStrongNumbers ? strongMappingsForVerse?.get(wordTokenIndex) : undefined;
+                    const matchingWordSet = enabledWordHighlightSets.find((set) => {
+                      if (!wordHighlightAppliesToVerse(set, verse, book, chapter)) return false;
+                      const normalizedPart = normalizeLookupWord(part);
+                      return normalizedPart === set.lookupWord || cleanWord(part) === set.lookupWord;
+                    });
+                    return (
+                      <button
+                        key={`${verse.ref}-${index}`}
+                        className={`rounded px-0.5 text-left font-serif transition hover:bg-[var(--gold-soft)] hover:text-[var(--ink)] ${
+                          matchingWordSet ? wordHighlightClass(matchingWordSet.color) : ""
+                        }`}
+                        title={strongMapping?.strong_entry ? `${strongMapping.strongs_number} · ${strongMapping.strong_entry.plain_definition}` : matchingWordSet ? `${matchingWordSet.word} word set · ${wordHighlightScopeLabel(matchingWordSet.scope)}` : undefined}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          onWordClick(part, verse.ref);
+                        }}
+                        type="button"
+                      >
+                        {part}
+                        {strongMapping && (
+                          <span className="ml-0.5 align-super font-sans text-[0.58em] font-bold leading-none text-[var(--green)]">
+                            {strongMapping.strongs_number}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </p>
+                <div className="mt-2 flex items-center gap-2 text-[var(--muted)]">
+                  {highlighted && <Highlighter size={14} />}
+                  {hasNote && <NotebookPen size={14} />}
+                  {bookmarked && <Bookmark size={14} />}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <nav aria-label="End of chapter navigation" className="mt-6 border-t border-stone-300/70 pt-4">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)] disabled:opacity-40"
+              disabled={!hasPrevious}
+              onClick={onPrevious}
+              type="button"
+            >
+              <ChevronLeft size={18} />
+              Previous
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
+              onClick={() => scrollToBibleSection("bible-study-tools")}
+              type="button"
+            >
+              <Brain size={17} />
+              Study tools
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
+              onClick={() => scrollToBibleSection("bible-reader-top")}
+              type="button"
+            >
+              <ArrowUp size={17} />
+              Top
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-3 text-sm font-semibold text-white disabled:opacity-40"
+              disabled={!hasNext}
+              onClick={onNext}
+              type="button"
+            >
+              Next
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </nav>
+      </article>
+
       <details
         id="bible-study-tools"
         className="scroll-mt-20 rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:scroll-mt-40 md:rounded-3xl"
@@ -29172,136 +29303,6 @@ function BibleReader({
         </div>
       </details>
 
-      <article id="kjv-chapter-text" className="mx-auto w-full max-w-5xl scroll-mt-20 rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:scroll-mt-40 md:px-10 md:py-8">
-        <div className="mb-5 flex flex-col gap-4 border-b border-stone-300/70 pb-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
-            <p className="mt-1 text-sm text-[var(--muted)]">King James Version</p>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{verses.length} verses</span>
-            <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">
-              <input
-                checked={showStrongNumbers}
-                className="accent-[var(--green)]"
-                onChange={(event) => setShowStrongNumbers(event.target.checked)}
-                type="checkbox"
-              />
-              Show Strong&apos;s numbers
-            </label>
-          </div>
-        </div>
-        {showStrongNumbers && (
-          <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
-            {strongMappingDisplayStatus} Reviewed KJV word mapping is live for the available data. Tap a Strong&apos;s number to open the word-study panel.
-          </p>
-        )}
-
-        <div className="space-y-2">
-          {verses.map((verse) => {
-            const highlighted = highlightsByRef.has(verse.ref);
-            const hasNote = notesByRef.has(verse.ref);
-            const bookmarked = bookmarksByRef.has(verse.ref);
-            const selected = selectedRef === verse.ref;
-            const flashed = flashRef === verse.ref;
-            const strongMappingsForVerse = strongMappingsByVerse.get(verse.ref);
-            let wordTokenIndex = 0;
-            return (
-              <div
-                key={verse.ref}
-                ref={selected ? selectedVerseRef : null}
-                className={`group rounded-2xl border px-2 py-3 transition md:px-4 md:py-4 ${
-                  selected
-                    ? "border-[var(--gold)] bg-white shadow-sm"
-                    : "border-transparent hover:border-stone-200 hover:bg-white/70"
-                } ${highlighted ? "bg-[var(--highlight)]" : ""} ${flashed ? "ring-4 ring-[var(--gold-soft)]" : ""}`}
-                onClick={() => onVerseClick(verse.ref)}
-                role="button"
-                tabIndex={0}
-              >
-                <p className="font-serif text-[1.28rem] leading-[2.15rem] text-[var(--scripture-ink)] md:text-[1.45rem] md:leading-[2.45rem]">
-                  <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
-                  {verse.text.split(/(\s+)/).map((part, index) => {
-                    if (!part) return null;
-                    if (/^\s+$/.test(part)) return part;
-                    wordTokenIndex += 1;
-                    const strongMapping = showStrongNumbers ? strongMappingsForVerse?.get(wordTokenIndex) : undefined;
-                    const matchingWordSet = enabledWordHighlightSets.find((set) => {
-                      if (!wordHighlightAppliesToVerse(set, verse, book, chapter)) return false;
-                      const normalizedPart = normalizeLookupWord(part);
-                      return normalizedPart === set.lookupWord || cleanWord(part) === set.lookupWord;
-                    });
-                    return (
-                      <button
-                        key={`${verse.ref}-${index}`}
-                        className={`rounded px-0.5 text-left font-serif transition hover:bg-[var(--gold-soft)] hover:text-[var(--ink)] ${
-                          matchingWordSet ? wordHighlightClass(matchingWordSet.color) : ""
-                        }`}
-                        title={strongMapping?.strong_entry ? `${strongMapping.strongs_number} · ${strongMapping.strong_entry.plain_definition}` : matchingWordSet ? `${matchingWordSet.word} word set · ${wordHighlightScopeLabel(matchingWordSet.scope)}` : undefined}
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          onWordClick(part, verse.ref);
-                        }}
-                        type="button"
-                      >
-                        {part}
-                        {strongMapping && (
-                          <span className="ml-0.5 align-super font-sans text-[0.58em] font-bold leading-none text-[var(--green)]">
-                            {strongMapping.strongs_number}
-                          </span>
-                        )}
-                      </button>
-                    );
-                  })}
-                </p>
-                <div className="mt-2 flex items-center gap-2 text-[var(--muted)]">
-                  {highlighted && <Highlighter size={14} />}
-                  {hasNote && <NotebookPen size={14} />}
-                  {bookmarked && <Bookmark size={14} />}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <nav aria-label="End of chapter navigation" className="mt-6 border-t border-stone-300/70 pt-4">
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-            <button
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)] disabled:opacity-40"
-              disabled={!hasPrevious}
-              onClick={onPrevious}
-              type="button"
-            >
-              <ChevronLeft size={18} />
-              Previous
-            </button>
-            <button
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
-              onClick={() => scrollToBibleSection("bible-study-tools")}
-              type="button"
-            >
-              <Brain size={17} />
-              Study tools
-            </button>
-            <button
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
-              onClick={() => scrollToBibleSection("bible-reader-top")}
-              type="button"
-            >
-              <ArrowUp size={17} />
-              Top
-            </button>
-            <button
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-3 text-sm font-semibold text-white disabled:opacity-40"
-              disabled={!hasNext}
-              onClick={onNext}
-              type="button"
-            >
-              Next
-              <ChevronRight size={18} />
-            </button>
-          </div>
-        </nav>
-      </article>
     </div>
   );
 }
