@@ -28728,7 +28728,7 @@ function BibleReader({
         {focusReading && (
           <nav
             aria-label="Focused reading navigation"
-            className="mb-2 grid grid-cols-[minmax(0,1fr)_4.75rem_4.75rem] gap-2 rounded-2xl border border-[var(--line)] bg-white p-2 shadow-sm md:grid-cols-[3rem_minmax(0,1fr)_6rem_6rem_3rem]"
+            className="mb-2 grid grid-cols-[minmax(0,1fr)_4.75rem_4.75rem] gap-2 rounded-2xl border border-[var(--line)] bg-white p-2 shadow-sm md:sticky md:top-[225px] md:z-10 md:grid-cols-[3rem_minmax(0,1fr)_6rem_6rem_3rem] md:bg-white/95 md:backdrop-blur"
           >
             <button
               aria-label="Focused previous chapter"
