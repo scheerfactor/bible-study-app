@@ -2,6 +2,7 @@
 
 import { createClient, type SupabaseClient, type User } from "@supabase/supabase-js";
 import {
+  ArrowUp,
   Bookmark,
   BookMarked,
   BookOpen,
@@ -22415,6 +22416,7 @@ export default function Home() {
   const immersiveMode =
     (tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) ||
     (tab === "presentations" && (presentationWorkspaceView === "presenter" || presentationWorkspaceView === "presentation"));
+  const focusedMobileReading = tab === "bible" || (tab === "library" && libraryView === "reader");
 
   return (
     <main className="min-h-screen bg-[var(--page)] text-[var(--ink)]">
@@ -22426,7 +22428,7 @@ export default function Home() {
         }
       >
         {!immersiveMode && (
-        <header className="sticky top-0 z-20 border-b border-stone-200/80 bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:rounded-t-[1.75rem]">
+        <header className={`sticky top-0 z-20 border-b border-stone-200/80 bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:rounded-t-[1.75rem] ${focusedMobileReading ? "hidden md:block" : ""}`}>
           <div className="flex items-center justify-between gap-3">
             <button
               className="flex min-w-0 flex-col text-left"
@@ -22556,7 +22558,11 @@ export default function Home() {
         </header>
         )}
 
-        {!immersiveMode && <BetaNotice />}
+        {!immersiveMode && (
+          <div className={focusedMobileReading ? "hidden md:block" : ""}>
+            <BetaNotice />
+          </div>
+        )}
 
         {!immersiveMode && bibleCorpusStatus !== "ready" && (
           <div className="border-b border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--muted)] md:px-6" role={bibleCorpusStatus === "error" ? "alert" : "status"}>
@@ -22614,7 +22620,7 @@ export default function Home() {
           </aside>
           )}
 
-          <section className={immersiveMode ? "min-w-0 flex-1" : "min-w-0 pb-32 md:pb-6"}>
+          <section className={immersiveMode ? "min-w-0 flex-1" : "min-w-0 pb-20 md:pb-6"}>
             {showLibraryAcquisitionAdmin && canOpenAdminArea && (
               <div className="p-4 md:p-6">
                 <LibraryAcquisitionCenter
@@ -27834,6 +27840,7 @@ function BibleReader({
   const [playlistResourceSlug, setPlaylistResourceSlug] = useState("");
   const [studySessions, setStudySessions] = useState<SavedStudySession[]>(() => loadStudySessions());
   const [studyWorkspaceMessage, setStudyWorkspaceMessage] = useState("");
+  const [studyToolsOpen, setStudyToolsOpen] = useState(false);
   const [showStrongNumbers, setShowStrongNumbers] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem("fbbs_show_strongs_numbers") === "true";
@@ -28206,8 +28213,56 @@ function BibleReader({
     onOpenPassageGuide();
   }
 
+  function scrollToBibleSection(sectionId: "kjv-chapter-text" | "bible-study-tools" | "bible-reader-top") {
+    if (sectionId === "bible-study-tools") setStudyToolsOpen(true);
+    requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   return (
-    <div className="space-y-4 p-3 md:p-6">
+    <div id="bible-reader-top" className="space-y-4 p-3 md:p-6">
+      <nav
+        aria-label="Bible reading navigation"
+        className="sticky top-0 z-20 grid grid-cols-[3rem_minmax(0,1fr)_minmax(0,1fr)_3rem] gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)]/95 p-2 shadow-sm backdrop-blur md:static md:hidden"
+      >
+        <button
+          aria-label="Previous chapter"
+          className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--line)] bg-white text-[var(--green)] disabled:opacity-40"
+          disabled={!hasPrevious}
+          onClick={onPrevious}
+          title="Previous chapter"
+          type="button"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          className="inline-flex h-12 min-w-0 items-center justify-center gap-1.5 rounded-xl bg-[var(--green)] px-2 text-sm font-semibold text-white"
+          onClick={() => scrollToBibleSection("kjv-chapter-text")}
+          type="button"
+        >
+          <BookOpen size={17} />
+          <span className="truncate">Read {book} {chapter}</span>
+        </button>
+        <button
+          className="inline-flex h-12 min-w-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--line)] bg-white px-2 text-sm font-semibold text-[var(--green)]"
+          onClick={() => scrollToBibleSection("bible-study-tools")}
+          type="button"
+        >
+          <Brain size={17} />
+          Tools
+        </button>
+        <button
+          aria-label="Next chapter"
+          className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--line)] bg-white text-[var(--green)] disabled:opacity-40"
+          disabled={!hasNext}
+          onClick={onNext}
+          title="Next chapter"
+          type="button"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </nav>
       <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:rounded-3xl md:p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
@@ -28340,6 +28395,25 @@ function BibleReader({
           >
             Next chapter
             <ChevronRight size={18} />
+          </button>
+        </div>
+
+        <div className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+          <button
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-4 text-sm font-semibold text-white"
+            onClick={() => scrollToBibleSection("kjv-chapter-text")}
+            type="button"
+          >
+            <BookOpen size={17} />
+            Read KJV
+          </button>
+          <button
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)]"
+            onClick={() => scrollToBibleSection("bible-study-tools")}
+            type="button"
+          >
+            <Brain size={17} />
+            Study tools
           </button>
         </div>
 
@@ -28559,11 +28633,24 @@ function BibleReader({
         </details>
       </section>
 
-      <details className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+      <details
+        id="bible-study-tools"
+        className="scroll-mt-20 rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:scroll-mt-40 md:rounded-3xl"
+        open={studyToolsOpen}
+        onToggle={(event) => setStudyToolsOpen(event.currentTarget.open)}
+      >
         <summary className="cursor-pointer list-none text-sm font-semibold uppercase tracking-[0.14em] text-[var(--green)]">
           Study tools for {book} {chapter}
         </summary>
         <div className="mt-4">
+          <button
+            className="mb-4 inline-flex min-h-11 items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-4 text-sm font-semibold text-[var(--green)]"
+            onClick={() => scrollToBibleSection("kjv-chapter-text")}
+            type="button"
+          >
+            <BookOpen size={16} />
+            Back to KJV text
+          </button>
           <AtAGlanceStudyPanel
             passage={`${book} ${chapter}`}
             chapterSummary={workspaceSummary}
@@ -29085,7 +29172,7 @@ function BibleReader({
         </div>
       </details>
 
-      <article className="mx-auto w-full max-w-5xl rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:px-10 md:py-8">
+      <article id="kjv-chapter-text" className="mx-auto w-full max-w-5xl scroll-mt-20 rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:scroll-mt-40 md:px-10 md:py-8">
         <div className="mb-5 flex flex-col gap-4 border-b border-stone-300/70 pb-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
@@ -29176,6 +29263,44 @@ function BibleReader({
             );
           })}
         </div>
+        <nav aria-label="End of chapter navigation" className="mt-6 border-t border-stone-300/70 pt-4">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)] disabled:opacity-40"
+              disabled={!hasPrevious}
+              onClick={onPrevious}
+              type="button"
+            >
+              <ChevronLeft size={18} />
+              Previous
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
+              onClick={() => scrollToBibleSection("bible-study-tools")}
+              type="button"
+            >
+              <Brain size={17} />
+              Study tools
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
+              onClick={() => scrollToBibleSection("bible-reader-top")}
+              type="button"
+            >
+              <ArrowUp size={17} />
+              Top
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-3 text-sm font-semibold text-white disabled:opacity-40"
+              disabled={!hasNext}
+              onClick={onNext}
+              type="button"
+            >
+              Next
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </nav>
       </article>
     </div>
   );
@@ -51359,14 +51484,14 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
   ];
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-xl grid-cols-7 gap-1">
+    <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.35rem+env(safe-area-inset-bottom))] pt-1.5 backdrop-blur md:hidden">
+      <div className="mx-auto flex max-w-xl gap-1 overflow-x-auto overscroll-x-contain pb-0.5">
         {items.map((item) => (
           <button
             key={item.id}
             aria-label={item.label}
             title={item.label}
-            className={`flex h-12 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 text-[0.58rem] font-semibold leading-none min-[430px]:h-14 ${
+            className={`flex h-14 w-16 shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl px-1 text-[0.58rem] font-semibold leading-none ${
               tab === item.id ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"
             }`}
             onClick={() => onTab(item.id)}
