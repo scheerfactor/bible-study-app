@@ -28697,6 +28697,73 @@ function BibleReader({
             </label>
           </div>
         </div>
+        {focusReading && (
+          <nav
+            aria-label="Focused reading navigation"
+            className="mb-5 grid grid-cols-[minmax(0,1fr)_4.75rem_4.75rem] gap-2 rounded-2xl border border-[var(--line)] bg-white p-2 shadow-sm md:grid-cols-[3rem_minmax(0,1fr)_6rem_6rem_3rem]"
+          >
+            <button
+              aria-label="Focused previous chapter"
+              className="hidden h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-[var(--paper)] text-[var(--green)] disabled:opacity-40 md:inline-flex"
+              disabled={!hasPrevious}
+              onClick={onPrevious}
+              title="Previous chapter"
+              type="button"
+            >
+              <ChevronLeft size={19} />
+            </button>
+            <label className="sr-only" htmlFor="focused-reader-book-select">Book</label>
+            <select
+              id="focused-reader-book-select"
+              aria-label="Focused book"
+              className="h-11 min-w-0 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)]"
+              value={book}
+              onChange={(event) => onBookChange(event.target.value)}
+            >
+              {books.map((bookName) => (
+                <option key={`focused-book-${bookName}`} value={bookName}>{bookName}</option>
+              ))}
+            </select>
+            <label className="sr-only" htmlFor="focused-reader-chapter-select">Chapter</label>
+            <select
+              id="focused-reader-chapter-select"
+              aria-label="Focused chapter"
+              className="h-11 min-w-0 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-2 text-sm font-semibold text-[var(--ink)]"
+              value={chapter}
+              onChange={(event) => onChapterChange(Number(event.target.value))}
+            >
+              {chapters.map((chapterNumber) => (
+                <option key={`focused-chapter-${chapterNumber}`} value={chapterNumber}>{chapterNumber}</option>
+              ))}
+            </select>
+            <label className="sr-only" htmlFor="focused-reader-verse-select">Verse</label>
+            <select
+              id="focused-reader-verse-select"
+              aria-label="Focused verse"
+              className="h-11 min-w-0 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-2 text-sm font-semibold text-[var(--ink)]"
+              value={Number.isFinite(selectedVerseNumber) ? selectedVerseNumber : verseJump}
+              onChange={(event) => {
+                const nextVerse = Number(event.target.value);
+                onVerseJumpChange(nextVerse);
+                onVerseSelect(nextVerse);
+              }}
+            >
+              {verses.map((verse) => (
+                <option key={`focused-verse-${verse.ref}`} value={verse.verse}>{verse.verse}</option>
+              ))}
+            </select>
+            <button
+              aria-label="Focused next chapter"
+              className="hidden h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-[var(--paper)] text-[var(--green)] disabled:opacity-40 md:inline-flex"
+              disabled={!hasNext}
+              onClick={onNext}
+              title="Next chapter"
+              type="button"
+            >
+              <ChevronRight size={19} />
+            </button>
+          </nav>
+        )}
         {showStrongNumbers && (
           <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
             {strongMappingDisplayStatus} Reviewed KJV word mapping is live for the available data. Tap a Strong&apos;s number to open the word-study panel.
