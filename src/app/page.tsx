@@ -27845,6 +27845,17 @@ function BibleReader({
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem("fbbs_focus_reading") === "true";
   });
+  const [focusedTextSize, setFocusedTextSize] = useState<0 | 1 | 2>(() => {
+    if (typeof window === "undefined") return 1;
+    const storedSize = window.localStorage.getItem("fbbs_focused_text_size");
+    if (storedSize === "0") return 0;
+    if (storedSize === "2") return 2;
+    return 1;
+  });
+  const [focusedRelaxedLines, setFocusedRelaxedLines] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem("fbbs_focused_relaxed_lines") === "true";
+  });
   const [showStrongNumbers, setShowStrongNumbers] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem("fbbs_show_strongs_numbers") === "true";
@@ -27853,11 +27864,28 @@ function BibleReader({
   const [strongMappingStatus, setStrongMappingStatus] = useState("");
   const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
   const progressPercent = Math.round(readingProgress.percent);
+  const focusedTextSizeName = ["Small", "Standard", "Large"][focusedTextSize];
+  const scriptureTextSizeClass = focusReading
+    ? [
+        "text-[1.1rem] md:text-[1.25rem]",
+        "text-[1.28rem] md:text-[1.45rem]",
+        "text-[1.48rem] md:text-[1.68rem]",
+      ][focusedTextSize]
+    : "text-[1.28rem] md:text-[1.45rem]";
+  const scriptureLineHeightClass = focusReading
+    ? focusedRelaxedLines ? "leading-[1.95]" : "leading-[1.68]"
+    : "leading-[2.15rem] md:leading-[2.45rem]";
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem("fbbs_focus_reading", focusReading ? "true" : "false");
     }
   }, [focusReading]);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("fbbs_focused_text_size", String(focusedTextSize));
+      window.localStorage.setItem("fbbs_focused_relaxed_lines", focusedRelaxedLines ? "true" : "false");
+    }
+  }, [focusedRelaxedLines, focusedTextSize]);
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem("fbbs_show_strongs_numbers", showStrongNumbers ? "true" : "false");
@@ -28700,7 +28728,7 @@ function BibleReader({
         {focusReading && (
           <nav
             aria-label="Focused reading navigation"
-            className="mb-5 grid grid-cols-[minmax(0,1fr)_4.75rem_4.75rem] gap-2 rounded-2xl border border-[var(--line)] bg-white p-2 shadow-sm md:grid-cols-[3rem_minmax(0,1fr)_6rem_6rem_3rem]"
+            className="mb-2 grid grid-cols-[minmax(0,1fr)_4.75rem_4.75rem] gap-2 rounded-2xl border border-[var(--line)] bg-white p-2 shadow-sm md:grid-cols-[3rem_minmax(0,1fr)_6rem_6rem_3rem]"
           >
             <button
               aria-label="Focused previous chapter"
@@ -28764,6 +28792,45 @@ function BibleReader({
             </button>
           </nav>
         )}
+        {focusReading && (
+          <div aria-label="Focused reading appearance" className="mb-5 grid grid-cols-2 gap-2">
+            <div className="grid min-h-11 grid-cols-[2.75rem_minmax(0,1fr)_2.75rem] items-center rounded-xl border border-[var(--line)] bg-white">
+              <button
+                aria-label="Decrease Scripture text size"
+                className="inline-flex h-full items-center justify-center rounded-l-xl text-[var(--green)] disabled:opacity-35"
+                disabled={focusedTextSize === 0}
+                onClick={() => setFocusedTextSize((current) => current === 0 ? 0 : (current - 1) as 0 | 1 | 2)}
+                title="Decrease text size"
+                type="button"
+              >
+                <Minus size={17} />
+              </button>
+              <span className="truncate text-center text-xs font-semibold text-[var(--ink)]">{focusedTextSizeName} text</span>
+              <button
+                aria-label="Increase Scripture text size"
+                className="inline-flex h-full items-center justify-center rounded-r-xl text-[var(--green)] disabled:opacity-35"
+                disabled={focusedTextSize === 2}
+                onClick={() => setFocusedTextSize((current) => current === 2 ? 2 : (current + 1) as 0 | 1 | 2)}
+                title="Increase text size"
+                type="button"
+              >
+                <Plus size={17} />
+              </button>
+            </div>
+            <button
+              aria-pressed={focusedRelaxedLines}
+              className={`inline-flex min-h-11 items-center justify-center rounded-xl border px-3 text-xs font-semibold ${
+                focusedRelaxedLines
+                  ? "border-[var(--green)] bg-[var(--green)] text-white"
+                  : "border-[var(--line)] bg-white text-[var(--green)]"
+              }`}
+              onClick={() => setFocusedRelaxedLines((current) => !current)}
+              type="button"
+            >
+              {focusedRelaxedLines ? "Relaxed lines" : "Normal lines"}
+            </button>
+          </div>
+        )}
         {showStrongNumbers && (
           <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
             {strongMappingDisplayStatus} Reviewed KJV word mapping is live for the available data. Tap a Strong&apos;s number to open the word-study panel.
@@ -28792,7 +28859,7 @@ function BibleReader({
                 role="button"
                 tabIndex={0}
               >
-                <p className="font-serif text-[1.28rem] leading-[2.15rem] text-[var(--scripture-ink)] md:text-[1.45rem] md:leading-[2.45rem]">
+                <p className={`font-serif text-[var(--scripture-ink)] ${scriptureTextSizeClass} ${scriptureLineHeightClass}`}>
                   <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
                   {verse.text.split(/(\s+)/).map((part, index) => {
                     if (!part) return null;
