@@ -27841,6 +27841,10 @@ function BibleReader({
   const [studySessions, setStudySessions] = useState<SavedStudySession[]>(() => loadStudySessions());
   const [studyWorkspaceMessage, setStudyWorkspaceMessage] = useState("");
   const [studyToolsOpen, setStudyToolsOpen] = useState(false);
+  const [focusReading, setFocusReading] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem("fbbs_focus_reading") === "true";
+  });
   const [showStrongNumbers, setShowStrongNumbers] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem("fbbs_show_strongs_numbers") === "true";
@@ -27849,6 +27853,11 @@ function BibleReader({
   const [strongMappingStatus, setStrongMappingStatus] = useState("");
   const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
   const progressPercent = Math.round(readingProgress.percent);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("fbbs_focus_reading", focusReading ? "true" : "false");
+    }
+  }, [focusReading]);
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem("fbbs_show_strongs_numbers", showStrongNumbers ? "true" : "false");
@@ -28214,9 +28223,23 @@ function BibleReader({
   }
 
   function scrollToBibleSection(sectionId: "kjv-chapter-text" | "bible-study-tools" | "bible-reader-top") {
-    if (sectionId === "bible-study-tools") setStudyToolsOpen(true);
+    if (sectionId === "bible-study-tools") {
+      setFocusReading(false);
+      setStudyToolsOpen(true);
+    }
     requestAnimationFrame(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      requestAnimationFrame(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+
+  function enterFocusReading() {
+    setFocusReading(true);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.getElementById("kjv-chapter-text")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     });
   }
 
@@ -28263,7 +28286,7 @@ function BibleReader({
           <ChevronRight size={20} />
         </button>
       </nav>
-      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:rounded-3xl md:p-4">
+      <section hidden={focusReading} className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:rounded-3xl md:p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Navigation</p>
@@ -28414,6 +28437,15 @@ function BibleReader({
           >
             <Brain size={17} />
             Study tools
+          </button>
+          <button
+            aria-pressed={focusReading}
+            className="col-span-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-4 text-sm font-semibold text-[var(--green)] sm:col-span-1"
+            onClick={enterFocusReading}
+            type="button"
+          >
+            <BookOpen size={17} />
+            Focus reading
           </button>
         </div>
 
@@ -28633,7 +28665,7 @@ function BibleReader({
         </details>
       </section>
 
-      <article id="kjv-chapter-text" className="mx-auto w-full max-w-5xl scroll-mt-20 rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:scroll-mt-40 md:px-10 md:py-8">
+      <article id="kjv-chapter-text" className={`mx-auto w-full scroll-mt-20 rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:scroll-mt-40 md:px-10 md:py-8 ${focusReading ? "max-w-4xl" : "max-w-5xl"}`}>
         <div className="mb-5 flex flex-col gap-4 border-b border-stone-300/70 pb-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
@@ -28641,6 +28673,19 @@ function BibleReader({
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{verses.length} verses</span>
+            <button
+              aria-pressed={focusReading}
+              className={`inline-flex min-h-10 items-center gap-2 rounded-full border px-3 py-2 text-sm font-semibold ${
+                focusReading
+                  ? "border-[var(--green)] bg-[var(--green)] text-white"
+                  : "border-[var(--line)] bg-white text-[var(--green)]"
+              }`}
+              onClick={() => focusReading ? setFocusReading(false) : enterFocusReading()}
+              type="button"
+            >
+              <BookOpen size={16} />
+              {focusReading ? "Exit focus" : "Focus reading"}
+            </button>
             <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">
               <input
                 checked={showStrongNumbers}
@@ -28766,6 +28811,7 @@ function BibleReader({
 
       <details
         id="bible-study-tools"
+        hidden={focusReading}
         className="scroll-mt-20 rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:scroll-mt-40 md:rounded-3xl"
         open={studyToolsOpen}
         onToggle={(event) => setStudyToolsOpen(event.currentTarget.open)}
