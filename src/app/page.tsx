@@ -20298,7 +20298,9 @@ export default function Home() {
   }
 
   function saveLibraryProgressUpdate(slug: string, updater: (progress: LibraryProgress) => LibraryProgress) {
-    const resource = libraryResources.find((candidate) => candidate.slug === slug);
+    const resource =
+      allLibraryResources.find((candidate) => candidate.slug === slug) ??
+      libraryResources.find((candidate) => candidate.slug === slug);
     if (!resource) return;
 
     setLibraryProgress((state) => {
@@ -20451,7 +20453,11 @@ export default function Home() {
     setTab("library");
 
     const catalogResources = await loadLibraryCatalog();
-    if (!catalogResources.some((resource) => resource.slug === slug)) {
+    const resourceAvailable =
+      allLibraryResources.some((resource) => resource.slug === slug) ||
+      catalogResources.some((resource) => resource.slug === slug) ||
+      librarySearchResults.some((resource) => resource.slug === slug);
+    if (!resourceAvailable) {
       if (catalogResources.length) setSyncMessage("That library resource is not available in the current catalog.");
       return;
     }
@@ -20468,9 +20474,11 @@ export default function Home() {
       updatedAt: new Date().toISOString(),
     }));
 
+    setActiveLibraryText("");
     setActiveLibraryLoading(true);
     try {
       const response = await fetch(`/api/library/${slug}`);
+      if (!response.ok) throw new Error(`Library resource request failed with ${response.status}.`);
       const data = (await response.json()) as { resource?: LibraryResource; text?: string };
       setActiveLibraryText(data.text ?? "");
       const savedProgress = libraryProgress[slug];
@@ -20577,6 +20585,7 @@ export default function Home() {
         .slice(-12),
       updatedAt: new Date().toISOString(),
     }));
+    setSyncMessage(`${resource.title} bookmarked at ${Math.round(progress)}%.`);
   }
 
   function selectedLibraryText() {
