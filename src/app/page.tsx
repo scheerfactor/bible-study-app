@@ -15379,6 +15379,74 @@ function preachingHelpResourceScore(resource: LibraryResource) {
   return score;
 }
 
+const AMBIGUOUS_BIBLE_BOOK_RESOURCE_NAMES = new Set([
+  "Acts",
+  "Esther",
+  "James",
+  "Job",
+  "John",
+  "Jude",
+  "Luke",
+  "Mark",
+  "Numbers",
+  "Romans",
+  "Ruth",
+]);
+
+function sermonLibraryBookPatterns(book: string) {
+  const escape = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  const numberedBook = book.match(/^([123])\s+(.+)$/);
+  if (!numberedBook) return [new RegExp(`\\b${escape(book)}\\b`, "i")];
+  const ordinal = numberedBook[1] === "1" ? "first" : numberedBook[1] === "2" ? "second" : "third";
+  const suffix = escape(numberedBook[2]);
+  return [
+    new RegExp(`\\b${numberedBook[1]}\\s+${suffix}\\b`, "i"),
+    new RegExp(`\\b${ordinal}\\s+${suffix}\\b`, "i"),
+    new RegExp(`\\b${ordinal}\\s+epistle\\s+(?:of|to)\\s+(?:the\\s+)?${suffix}\\b`, "i"),
+  ];
+}
+
+function ambiguousBibleBookResourceTextMatch(text: string, book: string) {
+  const escapedBook = book.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const optionalSaint = "(?:st\\.?\\s+)?";
+  const studyType = "(?:commentary|discourse|exposition|expositions|lecture|lectures|note|notes|sermon|sermons|study|studies)";
+  return [
+    new RegExp(`\\b(?:books?|gospels?|epistles?)\\s+(?:(?:according\\s+to|of|to)\\s+)?${optionalSaint}${escapedBook}\\b`, "i"),
+    new RegExp(`\\b${studyType}\\s+(?:for|from|in|of|on|upon)\\s+(?:the\\s+)?${optionalSaint}${escapedBook}\\b`, "i"),
+    new RegExp(`\\b${optionalSaint}${escapedBook}(?:'s)?\\s+(?:book|chapter|chapters|commentary|epistle|gospel|study|studies)\\b`, "i"),
+    new RegExp(`\\b${studyType}[^:;]{0,70}:\\s*${optionalSaint}${escapedBook}\\b`, "i"),
+    new RegExp(`\\b${optionalSaint}${escapedBook}\\s+(?:chapter|chapters|chap|chaps|[ivxlcdm]+|\\d+)\\b`, "i"),
+    new RegExp(`\\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth)\\s+of\\s+${optionalSaint}${escapedBook}\\b`, "i"),
+  ].some((pattern) => pattern.test(text));
+}
+
+function sermonLibraryPassageScore(resource: LibraryResource, passage: ReturnType<typeof parseSermonPassageReference>) {
+  if (!passage) return 0;
+  const patterns = sermonLibraryBookPatterns(passage.book);
+  const title = resource.title.toLowerCase();
+  const supportingText = [
+    resource.collection,
+    resource.description,
+    resource.recommended_use,
+    resource.perspective_notes,
+    ...resource.resource_labels,
+  ].join(" ").toLowerCase();
+  const numberedJohnPattern = /\b(?:1|2|3|first|second|third)\s+(?:epistle\s+(?:of|to)\s+(?:the\s+)?)?john\b/i;
+  const titleIsNumberedJohn = passage.book === "John" && numberedJohnPattern.test(title);
+  const supportingTextIsNumberedJohn = passage.book === "John" && numberedJohnPattern.test(supportingText);
+  const titleHasBook = !titleIsNumberedJohn && patterns.some((pattern) => pattern.test(title));
+  const supportingTextHasBook = !supportingTextIsNumberedJohn && patterns.some((pattern) => pattern.test(supportingText));
+  const supportingTextHasStudyContext = /bible|commentary|exposition|preaching|scripture|study|teaching/.test(supportingText);
+  const titleMatchIsReliable = titleHasBook
+    && (!AMBIGUOUS_BIBLE_BOOK_RESOURCE_NAMES.has(passage.book) || ambiguousBibleBookResourceTextMatch(title, passage.book));
+  const supportingTextMatchIsReliable = supportingTextHasBook
+    && supportingTextHasStudyContext
+    && (!AMBIGUOUS_BIBLE_BOOK_RESOURCE_NAMES.has(passage.book) || titleMatchIsReliable);
+
+  return (titleMatchIsReliable ? 20 : 0)
+    + (supportingTextMatchIsReliable ? 10 : 0);
+}
+
 function parseSermonPassageReference(searchText: string) {
   const text = searchText.replace(/\s+/g, " ");
   const sortedBooks = [...bookOrder].sort((a, b) => b.length - a.length);
@@ -15445,12 +15513,25 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
     });
 }
 
+function sermonRecommendationWorkKey(resource: LibraryResource) {
+  const title = canonicalLibraryTitle(resource.work_title || resource.title)
+    .replace(/\bexpositions\b/g, "exposition")
+    .replace(/\bgospel according to\b/g, "gospel")
+    .replace(/\bgospel of\b/g, "gospel")
+    .replace(/\bst\b/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return `${title}::${canonicalLibraryAuthor(resource.author)}`;
+}
+
 function suggestedSermonLibraryResources(resources: LibraryResource[], searchText: string): SmartSermonSuggestion[] {
   const terms = sermonLibraryExpansionTerms(searchText);
+  const passage = parseSermonPassageReference(searchText);
   const scored = resources
     .map((resource) => {
       const authorProfile = libraryAuthorProfileForName(resource.author);
-      const score = scoreSmartSuggestion([
+      const passageScore = sermonLibraryPassageScore(resource, passage);
+      const topicScore = scoreSmartSuggestion([
         resource.title,
         resource.author,
         resource.category,
@@ -15464,33 +15545,34 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
         authorProfile?.subjects.join(" ") ?? "",
         authorProfile?.recommendedReadingOrder.join(" ") ?? "",
       ].join(" "), terms);
-      return { resource, score };
+      return { resource, passageScore, score: passageScore + topicScore };
     })
     .filter(({ resource }) => !/do not import|permission needed/i.test(`${resource.rights_status} ${resource.public_domain_status}`));
 
   const directMatches = scored
     .filter(({ score }) => score > 0)
-    .sort((a, b) => b.score - a.score || preachingHelpResourceScore(b.resource) - preachingHelpResourceScore(a.resource) || a.resource.title.localeCompare(b.resource.title));
+    .sort((a, b) => b.passageScore - a.passageScore || b.score - a.score || preachingHelpResourceScore(b.resource) - preachingHelpResourceScore(a.resource) || a.resource.title.localeCompare(b.resource.title));
 
   const fallbackMatches = scored
     .filter(({ score }) => score === 0)
-    .map(({ resource }) => ({ resource, score: preachingHelpResourceScore(resource) }))
+    .map(({ resource }) => ({ resource, passageScore: 0, score: preachingHelpResourceScore(resource) }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score || a.resource.title.localeCompare(b.resource.title));
 
-  const deduped = new Map<string, { resource: LibraryResource; score: number }>();
+  const deduped = new Map<string, { resource: LibraryResource; passageScore: number; score: number }>();
   [...directMatches, ...fallbackMatches].forEach((item) => {
-    if (!deduped.has(item.resource.slug)) deduped.set(item.resource.slug, item);
+    const workKey = sermonRecommendationWorkKey(item.resource);
+    if (!deduped.has(workKey)) deduped.set(workKey, item);
   });
 
   return Array.from(deduped.values())
     .slice(0, 10)
-    .map(({ resource }) => ({
+    .map(({ resource, passageScore }) => ({
       id: `library-${resource.slug}`,
       title: resource.title,
       subtitle: resource.author,
       body: resource.description || resource.recommended_use,
-      meta: `${resource.category} - ${resource.public_domain_status}`,
+      meta: `${passageScore ? `Passage match: ${passage?.book} - ` : ""}${resource.category} - ${resource.public_domain_status}`,
       actionText: "Add resource connection",
       importLabel: `Library: ${resource.title}`,
       importBody: [
