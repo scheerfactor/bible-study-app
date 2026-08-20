@@ -15808,6 +15808,41 @@ function addStudyPlaylistLibraryResources(playlist: BibleAudioPlaylist, resource
   };
 }
 
+const STUDY_PLAYLIST_LIBRARY_SLUG_ALIASES: Record<string, string> = {
+  "pleasure-and-profit-in-bible-study": "pleasure-profit-in-bible-study",
+};
+
+function resolveStudyPlaylistLibraryResources(playlists: BibleAudioPlaylist[], resources: LibraryResource[]) {
+  const resourcesBySlug = new Map(resources.map((resource) => [resource.slug, resource]));
+  const resourcesByTitle = new Map<string, LibraryResource[]>();
+  for (const resource of resources) {
+    const titleKey = canonicalLibraryTitle(resource.work_title || resource.title);
+    resourcesByTitle.set(titleKey, [...(resourcesByTitle.get(titleKey) ?? []), resource]);
+  }
+
+  let playlistsChanged = false;
+  const nextPlaylists = playlists.map((playlist) => {
+    let playlistChanged = false;
+    const items = playlist.items.map((item) => {
+      if (item.type !== "library_placeholder") return item;
+      const aliasedSlug = item.resourceSlug ? STUDY_PLAYLIST_LIBRARY_SLUG_ALIASES[item.resourceSlug] ?? item.resourceSlug : "";
+      const titleKey = canonicalLibraryTitle(item.resourceTitle || item.label);
+      const resource = resourcesBySlug.get(aliasedSlug) ?? resourcesByTitle.get(titleKey)?.[0];
+      const resourceSlug = (resource?.slug ?? aliasedSlug) || undefined;
+      const resourceTitle = resource?.title ?? item.resourceTitle;
+      const resourceAuthor = resource?.author ?? item.resourceAuthor;
+      if (resourceSlug === item.resourceSlug && resourceTitle === item.resourceTitle && resourceAuthor === item.resourceAuthor) return item;
+      playlistChanged = true;
+      return { ...item, resourceSlug, resourceTitle, resourceAuthor };
+    });
+    if (!playlistChanged) return playlist;
+    playlistsChanged = true;
+    return { ...playlist, items };
+  });
+
+  return playlistsChanged ? nextPlaylists : playlists;
+}
+
 function addStudyPlaylistTemplateMetadata(playlist: BibleAudioPlaylist, template: StudyPlaylistTemplate) {
   return {
     ...playlist,
@@ -16485,7 +16520,7 @@ function defaultStudyPlaylists(): BibleAudioPlaylist[] {
         { id: "preacher-2-timothy-4", type: "bible_chapter", label: "2 Timothy 4", book: "2 Timothy", chapter: 4 },
         { id: "preacher-john-3", type: "bible_chapter", label: "John 3", book: "John", chapter: 3 },
         { id: "preacher-commentary", type: "commentary_chapter", label: "John 3 commentary", book: "John", chapter: 3 },
-        { id: "preacher-pleasure-profit", type: "library_placeholder", label: "Pleasure & Profit in Bible Study", resourceTitle: "Pleasure & Profit in Bible Study", resourceSlug: "pleasure-and-profit-in-bible-study" },
+        { id: "preacher-pleasure-profit", type: "library_placeholder", label: "Pleasure & Profit in Bible Study", resourceTitle: "Pleasure & Profit in Bible Study", resourceAuthor: "D. L. Moody", resourceSlug: "pleasure-profit-in-bible-study" },
         { id: "preacher-teaching-notes", type: "teaching_notes", label: "Teaching notes", book: "John", chapter: 3 },
       ],
     },
@@ -16606,13 +16641,13 @@ function markBibleBookMasteryChapter(
 
 function loadBiblePlaylists(): BibleAudioPlaylist[] {
   const starters = defaultStudyPlaylists();
-  if (typeof window === "undefined") return starters;
+  if (typeof window === "undefined") return resolveStudyPlaylistLibraryResources(starters, []);
 
   try {
     const raw = window.localStorage.getItem(BIBLE_PLAYLISTS_KEY);
-    if (!raw) return starters;
+    if (!raw) return resolveStudyPlaylistLibraryResources(starters, []);
     const parsed = JSON.parse(raw) as BibleAudioPlaylist[];
-    if (!Array.isArray(parsed) || !parsed.length) return starters;
+    if (!Array.isArray(parsed) || !parsed.length) return resolveStudyPlaylistLibraryResources(starters, []);
     const merged = parsed.map((playlist) => {
       const starter = starters.find((candidate) => candidate.id === playlist.id);
       if (!starter) return playlist;
@@ -16623,9 +16658,12 @@ function loadBiblePlaylists(): BibleAudioPlaylist[] {
       };
     });
     const existingIds = new Set(merged.map((playlist) => playlist.id));
-    return [...merged, ...starters.filter((playlist) => !existingIds.has(playlist.id))];
+    return resolveStudyPlaylistLibraryResources(
+      [...merged, ...starters.filter((playlist) => !existingIds.has(playlist.id))],
+      [],
+    );
   } catch {
-    return starters;
+    return resolveStudyPlaylistLibraryResources(starters, []);
   }
 }
 
@@ -19801,11 +19839,17 @@ export default function Home() {
           throw new Error("Library catalog response did not include resources.");
         }
 
-        const groupedResources = groupLibraryWorks(data.resources);
+        const catalogResources = data.resources;
+        const groupedResources = groupLibraryWorks(catalogResources);
         libraryCatalogLoadedRef.current = true;
         libraryCatalogResourcesRef.current = groupedResources;
-        setAllLibraryResources(data.resources);
+        setAllLibraryResources(catalogResources);
         setLibraryResources(groupedResources);
+        setBiblePlaylists((current) => {
+          const next = resolveStudyPlaylistLibraryResources(current, catalogResources);
+          if (next !== current) saveBiblePlaylists(next);
+          return next;
+        });
         setLibraryCatalogStatus("ready");
         return groupedResources;
       })
@@ -23342,6 +23386,9 @@ export default function Home() {
                 onOpenPassageGuide={openPassageGuide}
                 onOpenCommentaryCenter={openCommentaryCenter}
                 onOpenThemeExplorer={() => setTab("themes")}
+                onLoadLibraryCatalog={() => {
+                  void loadLibraryCatalog();
+                }}
                 onOpenLibraryResource={(slug) => {
                   void openLibraryResource(slug, "detail");
                 }}
@@ -28206,6 +28253,7 @@ function BibleReader({
   onOpenPassageGuide,
   onOpenCommentaryCenter,
   onOpenThemeExplorer,
+  onLoadLibraryCatalog,
   onOpenLibraryResource,
   onOpenStudyToolSearch,
   onOpenPersonStudy,
@@ -28338,6 +28386,7 @@ function BibleReader({
   onOpenPassageGuide: () => void;
   onOpenCommentaryCenter: () => void;
   onOpenThemeExplorer: () => void;
+  onLoadLibraryCatalog: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenStudyToolSearch: (query: string, filter?: string) => void;
   onOpenPersonStudy: (personId: string) => void;
@@ -28735,9 +28784,11 @@ function BibleReader({
     {
       title: "Book Playlist",
       detail: playlistLibraryOptions.length ? `${playlistLibraryOptions.length} recommended books ready` : "Open Library to add books.",
-      action: "Add first book",
-      onAction: () => onAddLibraryPlaylistItem(playlistResourceSlug || playlistLibraryOptions[0]?.slug || ""),
-      disabled: !playlistLibraryOptions.length,
+      action: playlistLibraryOptions.length ? "Add first book" : "Load books",
+      onAction: () => playlistLibraryOptions.length
+        ? onAddLibraryPlaylistItem(playlistResourceSlug || playlistLibraryOptions[0]?.slug || "")
+        : onLoadLibraryCatalog(),
+      disabled: false,
     },
   ];
 
@@ -29788,7 +29839,13 @@ function BibleReader({
           </button>
         </div>
 
-        <details className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3" open={playlistReplacementItem ? true : undefined}>
+        <details
+          className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3"
+          onToggle={(event) => {
+            if (event.currentTarget.open) onLoadLibraryCatalog();
+          }}
+          open={playlistReplacementItem ? true : undefined}
+        >
           <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">More listening options</summary>
           <div className="mt-4 grid gap-3 md:grid-cols-[1fr_1fr_1.2fr]">
             <div className="grid grid-cols-2 gap-2">
