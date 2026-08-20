@@ -226,6 +226,7 @@ type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Test
 type SermonKind = "Sermon" | "Lesson";
 type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
 type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "presenting";
+type SermonQuickStartId = "expository" | "topical" | "evangelistic" | "doctrinal" | "devotional";
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
 type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Countdown" | "Announcement" | "Question" | "Closing / Invitation";
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
@@ -2801,6 +2802,80 @@ const SERMON_IMAGE_THEME_SUGGESTIONS = [
   { terms: ["resurrection", "risen", "life", "empty tomb"], slot: "empty-tomb" },
   { terms: ["scripture", "word", "bible"], slot: "open-bible" },
 ];
+
+const SERMON_QUICK_STARTS: Record<SermonQuickStartId, {
+  label: string;
+  description: string;
+  targetMinutes: number;
+  slideTheme: SermonSlideThemeId;
+  outline: string;
+  introduction: string;
+  points: string;
+  applications: string;
+  conclusion: string;
+  invitation: string;
+}> = {
+  expository: {
+    label: "Expository",
+    description: "Follow the passage from meaning to obedience.",
+    targetMinutes: 35,
+    slideTheme: "classic-pulpit",
+    outline: "I. The setting and flow of the passage\nII. The main truth of the passage\nIII. The response required by the passage",
+    introduction: "[Establish the context, identify the main question, and read the passage.]",
+    points: "[Explain the first movement of the text.]\n[Explain the central truth of the text.]\n[Show how the text leads to response.]",
+    applications: "[Name one belief, attitude, and action that this passage should change.]",
+    conclusion: "[Restate the main truth in one sentence and return to the passage.]",
+    invitation: "[Call for the response clearly required by the passage.]",
+  },
+  topical: {
+    label: "Topical",
+    description: "Trace one subject through its controlling KJV passages.",
+    targetMinutes: 30,
+    slideTheme: "warm-bible-study",
+    outline: "I. Define the subject from Scripture\nII. Trace the clearest supporting passages\nIII. Apply the Bible's teaching faithfully",
+    introduction: "[State the question this study will answer and name the controlling passage.]",
+    points: "[What does the controlling passage teach?]\n[What do related passages add?]\n[What errors or misunderstandings does Scripture correct?]",
+    applications: "[Turn the Bible's teaching into specific obedience, prayer, and witness.]",
+    conclusion: "[Summarize the subject using the language of the controlling passage.]",
+    invitation: "[Invite hearers to believe and obey what Scripture has established.]",
+  },
+  evangelistic: {
+    label: "Evangelistic",
+    description: "Explain the need, Christ's provision, and the biblical response.",
+    targetMinutes: 25,
+    slideTheme: "salvation",
+    outline: "I. The sinner's need\nII. The Saviour's provision\nIII. The hearer's response",
+    introduction: "[Begin with the text and make the eternal question plain.]",
+    points: "[Show the problem of sin from the passage.]\n[Show who Christ is and what He has done.]\n[Show the response commanded or invited in the passage.]",
+    applications: "[Distinguish personal faith and repentance from mere religious activity.]",
+    conclusion: "[Return to the promise, warning, or invitation in the text.]",
+    invitation: "[Give a clear gospel appeal without pressure, confusion, or manipulation.]",
+  },
+  doctrinal: {
+    label: "Doctrinal",
+    description: "Define, establish, connect, and apply a Bible doctrine.",
+    targetMinutes: 40,
+    slideTheme: "simple-scripture",
+    outline: "I. Define the doctrine biblically\nII. Establish it from its clearest passages\nIII. Connect it to the whole counsel of God\nIV. Apply it to faith and life",
+    introduction: "[State why this doctrine matters and identify the primary passage.]",
+    points: "[Define key terms from Scripture.]\n[Explain the clearest proof passages in context.]\n[Show how the doctrine guards truth and shapes life.]",
+    applications: "[State what this doctrine calls believers to know, reject, trust, and do.]",
+    conclusion: "[Summarize the doctrine in plain language anchored to the primary text.]",
+    invitation: "[Call for the faith or obedience that follows from this doctrine.]",
+  },
+  devotional: {
+    label: "Devotional / Lesson",
+    description: "Move from observation to reflection, obedience, and prayer.",
+    targetMinutes: 20,
+    slideTheme: "prayer",
+    outline: "I. What the passage says\nII. What the passage reveals\nIII. What the passage asks us to do",
+    introduction: "[Read the passage and name the need it addresses today.]",
+    points: "[Observe one important detail.]\n[Reflect on what it reveals about God and people.]\n[Identify one faithful response.]",
+    applications: "[Write one personal step, one discussion question, and one prayer response.]",
+    conclusion: "[Repeat the key truth and the next step.]",
+    invitation: "[Invite the class or congregation to respond in prayer and obedience.]",
+  },
+};
 
 const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
   {
@@ -14781,6 +14856,21 @@ function sermonSectionProgress(entry: SermonEntry) {
   return SERMON_SECTION_FIELDS.filter((section) => entry[section].trim()).length;
 }
 
+function sermonQuickStartPatch(entry: SermonEntry, presetId: SermonQuickStartId): Partial<SermonEntry> {
+  const preset = SERMON_QUICK_STARTS[presetId];
+  const fillEmpty = (current: string, starter: string) => current.trim() ? current : starter;
+  return {
+    outline: fillEmpty(entry.outline, preset.outline),
+    introduction: fillEmpty(entry.introduction, preset.introduction),
+    points: fillEmpty(entry.points, preset.points),
+    applications: fillEmpty(entry.applications, preset.applications),
+    conclusion: fillEmpty(entry.conclusion, preset.conclusion),
+    invitation: fillEmpty(entry.invitation, preset.invitation),
+    targetMinutes: entry.targetMinutes === EMPTY_SERMON_ENTRY.targetMinutes ? preset.targetMinutes : entry.targetMinutes,
+    slideTheme: entry.slides.length ? entry.slideTheme : preset.slideTheme,
+  };
+}
+
 function sermonContentLines(text: string, limit = 8) {
   return text
     .split(/\n+|;|\u2022/)
@@ -15329,7 +15419,7 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
     })
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score || a.entry.author.localeCompare(b.entry.author))
-    .slice(0, 5)
+    .slice(0, 8)
     .map(({ entry }) => {
       const reference = entry.reference || `${entry.book} ${entry.chapter}`;
       const verseRange = entry.verse_start && entry.verse_end
@@ -15392,7 +15482,7 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
   });
 
   return Array.from(deduped.values())
-    .slice(0, 6)
+    .slice(0, 10)
     .map(({ resource }) => ({
       id: `library-${resource.slug}`,
       title: resource.title,
@@ -48851,6 +48941,7 @@ function SermonWorkspaceScreen({
 	  const [scriptureSlideFontScale, setScriptureSlideFontScale] = useState<SermonSlideFontScale>("Large");
 	  const [scriptureSlideVerseDisplay, setScriptureSlideVerseDisplay] = useState<SermonSlideVerseDisplay>("Reference + Text");
 	  const [sermonTranscriptDraft, setSermonTranscriptDraft] = useState("");
+	  const [quickStartId, setQuickStartId] = useState<SermonQuickStartId>("expository");
 	  const [savedChurchThemes, setSavedChurchThemes] = useState<SavedChurchTheme[]>(() => loadSavedChurchThemes());
 	  const [churchThemeName, setChurchThemeName] = useState("Home Church Theme");
 		  const sermonEstimate = sermonLengthEstimate(draft);
@@ -48861,6 +48952,7 @@ function SermonWorkspaceScreen({
 	  const nextPresentationSlide = sermonSlides[Math.min(presentationSlideIndex + 1, Math.max(0, sermonSlides.length - 1))] ?? null;
 	  const targetSeconds = Math.max(1, draft.targetMinutes || 30) * 60;
   const remainingSeconds = Math.max(0, targetSeconds - elapsedSeconds);
+  const overtimeSeconds = Math.max(0, elapsedSeconds - targetSeconds);
   const orderedSections = (draft.sectionOrder?.length ? draft.sectionOrder : SERMON_SECTION_FIELDS)
     .filter((section) => SERMON_SECTION_FIELDS.includes(section));
   const preachingSections = orderedSections
@@ -48875,6 +48967,9 @@ function SermonWorkspaceScreen({
   const activePreachingSection = preachingSections[safePreachingSectionIndex] ?? null;
   const nextPreachingSection = preachingSections[Math.min(safePreachingSectionIndex + 1, Math.max(0, preachingSections.length - 1))] ?? null;
   const preachingProgressPercent = preachingSections.length ? ((safePreachingSectionIndex + 1) / preachingSections.length) * 100 : 0;
+  const sectionTargetSeconds = preachingSections.length ? Math.max(60, Math.round(targetSeconds / preachingSections.length)) : targetSeconds;
+  const expectedSectionIndex = preachingSections.length ? Math.min(preachingSections.length - 1, Math.floor(elapsedSeconds / sectionTargetSeconds)) : 0;
+  const preachingPace = safePreachingSectionIndex < expectedSectionIndex ? "Move forward" : safePreachingSectionIndex > expectedSectionIndex ? "Ahead" : "On pace";
   const goToPreviousPreachingSection = () => setPreachingSectionIndex((index) => Math.max(0, index - 1));
   const goToNextPreachingSection = () => setPreachingSectionIndex((index) => Math.min(Math.max(0, preachingSections.length - 1), index + 1));
   const filteredActiveSermons = activeSermons.filter((entry) => {
@@ -48942,6 +49037,10 @@ function SermonWorkspaceScreen({
 	        `## ${label}\n${body}`,
 	      ].filter(Boolean).join("\n\n"),
 	    });
+	  }
+
+	  function applyQuickStart() {
+	    onDraftChange(sermonQuickStartPatch(draft, quickStartId));
 	  }
 
 	  function moveSection(section: SermonSectionKey, direction: -1 | 1) {
@@ -49189,18 +49288,22 @@ function SermonWorkspaceScreen({
               </button>
             </div>
           </div>
-          <div className="mt-4 grid gap-2 sm:grid-cols-3">
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
             <div className={`rounded-2xl px-4 py-3 ${darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
               <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${darkPreachingMode ? "text-white/55" : "text-[var(--muted)]"}`}>Elapsed</p>
               <p className="mt-1 text-2xl font-semibold tabular-nums">{formatSermonTimer(elapsedSeconds)}</p>
             </div>
             <div className={`rounded-2xl px-4 py-3 ${remainingSeconds <= 300 ? "bg-[var(--highlight)] text-[var(--ink)]" : darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">Remaining</p>
-              <p className="mt-1 text-2xl font-semibold tabular-nums">{formatSermonTimer(remainingSeconds)}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">{overtimeSeconds ? "Over Target" : "Remaining"}</p>
+              <p className="mt-1 text-2xl font-semibold tabular-nums">{formatSermonTimer(overtimeSeconds || remainingSeconds)}</p>
             </div>
             <div className={`rounded-2xl px-4 py-3 ${darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
               <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${darkPreachingMode ? "text-white/55" : "text-[var(--muted)]"}`}>Section</p>
               <p className="mt-1 text-2xl font-semibold tabular-nums">{preachingSections.length ? safePreachingSectionIndex + 1 : 0}/{preachingSections.length}</p>
+            </div>
+            <div className={`rounded-2xl px-4 py-3 ${preachingPace === "Move forward" ? "bg-[var(--highlight)] text-[var(--ink)]" : darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">Pace</p>
+              <p className="mt-1 text-xl font-semibold">{preachingPace}</p>
             </div>
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -49220,7 +49323,7 @@ function SermonWorkspaceScreen({
             <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(preachingProgressPercent) }} />
           </div>
           <p className={`mt-2 text-sm font-semibold ${darkPreachingMode ? "text-white/55" : "text-[var(--muted)]"}`}>
-            Section {preachingSections.length ? safePreachingSectionIndex + 1 : 0} of {preachingSections.length} · {activePreachingSection?.label ?? "No section selected"}
+            Section {preachingSections.length ? safePreachingSectionIndex + 1 : 0} of {preachingSections.length} · {activePreachingSection?.label ?? "No section selected"} · about {Math.max(1, Math.round(sectionTargetSeconds / 60))} min per section
           </p>
 
           <div className="mt-7 grid min-w-0 gap-5 xl:grid-cols-[minmax(0,1fr)_320px]">
@@ -49306,7 +49409,7 @@ function SermonWorkspaceScreen({
                 {activePreachingSection?.label ?? "No section"}
               </p>
               <p className={`mt-1 text-sm font-semibold ${darkPreachingMode ? "text-white" : "text-[var(--ink)]"}`}>
-                {formatSermonTimer(elapsedSeconds)} · {formatSermonTimer(remainingSeconds)} left
+                {formatSermonTimer(elapsedSeconds)} · {overtimeSeconds ? `${formatSermonTimer(overtimeSeconds)} over` : `${formatSermonTimer(remainingSeconds)} left`}
               </p>
             </div>
             <button
@@ -49810,6 +49913,36 @@ function SermonWorkspaceScreen({
                 <StatusCard label="Target" status={`${draft.targetMinutes || 30} min`} good />
               </div>
               {currentSeries && <p className="mt-3 rounded-2xl bg-[var(--warm)] px-4 py-3 text-sm font-semibold text-[var(--green)]">Series: {currentSeries.title} {currentSeries.passageRange ? `- ${currentSeries.passageRange}` : ""}</p>}
+            </article>
+
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Start</p>
+                  <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Choose a faithful message structure</h2>
+                </div>
+                <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={applyQuickStart} type="button">
+                  Fill Empty Sections
+                </button>
+              </div>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5" role="radiogroup" aria-label="Sermon quick-start structure">
+                {(Object.entries(SERMON_QUICK_STARTS) as Array<[SermonQuickStartId, (typeof SERMON_QUICK_STARTS)[SermonQuickStartId]]>).map(([id, preset]) => (
+                  <button
+                    aria-checked={quickStartId === id}
+                    className={`min-h-24 rounded-2xl border p-3 text-left ${quickStartId === id ? "border-[var(--green)] bg-[var(--warm)]" : "border-[var(--line)] bg-[var(--paper)]"}`}
+                    key={`sermon-quick-start-${id}`}
+                    onClick={() => setQuickStartId(id)}
+                    role="radio"
+                    type="button"
+                  >
+                    <span className="block text-sm font-semibold text-[var(--green)]">{preset.label}</span>
+                    <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{preset.description}</span>
+                  </button>
+                ))}
+              </div>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                Existing writing is preserved. The selected plan fills only empty sections, suggests a target time, and prepares a matching slide theme.
+              </p>
             </article>
 
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -51559,6 +51692,8 @@ function SmartSermonConnectionList({
   suggestions: SmartSermonSuggestion[];
   onAdd: (label: string, body: string) => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
+  const visibleSuggestions = expanded ? suggestions : suggestions.slice(0, 3);
   return (
     <div className="min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -51569,7 +51704,7 @@ function SmartSermonConnectionList({
       </div>
       {suggestions.length ? (
         <div className="mt-3 grid min-w-0 grid-cols-1 gap-2">
-          {suggestions.map((suggestion) => (
+          {visibleSuggestions.map((suggestion) => (
             <div key={suggestion.id} className="min-w-0 rounded-2xl border border-[var(--line)] bg-white p-3">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">
@@ -51590,6 +51725,15 @@ function SmartSermonConnectionList({
               </button>
             </div>
           ))}
+          {suggestions.length > 3 && (
+            <button
+              className="min-h-11 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => setExpanded((value) => !value)}
+              type="button"
+            >
+              {expanded ? "Show fewer" : `Show ${suggestions.length - 3} more`}
+            </button>
+          )}
         </div>
       ) : (
         <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{emptyText}</p>

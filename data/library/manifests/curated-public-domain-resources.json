@@ -102046,5 +102046,53 @@
     "checksum_sha256": "b3a5ed6de9c4e3bd7761a0277c5dd17a0f5d83becd7cb825a02a4ca88b1902a2",
     "file_size_bytes": 165473,
     "word_count": 29231
+  },
+  {
+    "title": "Sermons: Selected from the Papers of the Late Rev. Clement Bailhache",
+    "author": "Clement Bailhache; edited by J. P. Barnett",
+    "year": 1880,
+    "category": "Preaching & Teaching",
+    "collection": "Baptist Sermons",
+    "source_url": "https://www.gutenberg.org/ebooks/44053",
+    "download_url": "https://www.gutenberg.org/ebooks/44053.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sermons-selected-from-the-papers-of-the-late-rev-clement-bailhache-clement-bailhache-edited-by-j-p-barnett.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/44053.",
+    "notes": "Public-domain Baptist sermon collection on salvation, faith, prayer, Christian duty, assurance, and hope. Use for historical sermon study and preaching comparison after direct KJV study. Labels/warnings: Use with discernment;Historical Baptist sermons;Compare doctrine with KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist sermon collection on salvation, faith, prayer, Christian duty, assurance, and hope. Use for historical sermon study and preaching comparison after direct KJV study.",
+    "resource_labels": [
+      "Baptist Sermons",
+      "Use with discernment",
+      "Historical Baptist sermons",
+      "Compare doctrine with KJV"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Historical Baptist sermons",
+      "Compare doctrine with KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons: Selected from the Papers of the Late Rev. Clement Bailhache",
+      "author": "Clement Bailhache; edited by J. P. Barnett",
+      "category": "Preaching & Teaching",
+      "collection": "Baptist Sermons",
+      "badge": "Baptist Sermons",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 239,
+    "text_processing": "project_gutenberg_boilerplate_removed_line_endings_normalized",
+    "checksum_sha256": "1ca702d139c6aa687ef4740cd457a14e4802ebb3910c8aad1b914796862b8925",
+    "file_size_bytes": 303682,
+    "word_count": 53834
   }
 ]
