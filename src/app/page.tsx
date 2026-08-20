@@ -15450,22 +15450,40 @@ function sermonLibraryPassageScore(resource: LibraryResource, passage: ReturnTyp
 function parseSermonPassageReference(searchText: string) {
   const text = searchText.replace(/\s+/g, " ");
   const sortedBooks = [...bookOrder].sort((a, b) => b.length - a.length);
+  let earliestMatch: { index: number; book: string; chapter?: number; verse?: number; label: string } | null = null;
   for (const bookName of sortedBooks) {
     const escapedBook = bookName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
     const chapterMatch = text.match(new RegExp(`\\b${escapedBook}\\s+(\\d+)(?::(\\d+))?`, "i"));
     if (chapterMatch) {
-      return {
+      const candidate = {
+        index: chapterMatch.index ?? Number.MAX_SAFE_INTEGER,
         book: bookName,
         chapter: Number(chapterMatch[1]),
         verse: chapterMatch[2] ? Number(chapterMatch[2]) : undefined,
         label: `${bookName} ${chapterMatch[1]}${chapterMatch[2] ? `:${chapterMatch[2]}` : ""}`,
       };
+      if (!earliestMatch || candidate.index < earliestMatch.index) earliestMatch = candidate;
+      continue;
     }
-    if (new RegExp(`\\b${escapedBook}\\b`, "i").test(text)) {
-      return { book: bookName, chapter: undefined, verse: undefined, label: bookName };
+    const bookMatch = text.match(new RegExp(`\\b${escapedBook}\\b`, "i"));
+    if (bookMatch) {
+      const candidate = {
+        index: bookMatch.index ?? Number.MAX_SAFE_INTEGER,
+        book: bookName,
+        chapter: undefined,
+        verse: undefined,
+        label: bookName,
+      };
+      if (!earliestMatch || candidate.index < earliestMatch.index) earliestMatch = candidate;
     }
   }
-  return null;
+  if (!earliestMatch) return null;
+  return {
+    book: earliestMatch.book,
+    chapter: earliestMatch.chapter,
+    verse: earliestMatch.verse,
+    label: earliestMatch.label,
+  };
 }
 
 function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: string): SmartSermonSuggestion[] {
@@ -15588,29 +15606,58 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
 
 function suggestedSermonStudyPlaylists(playlists: StudyPlaylistTemplate[], searchText: string): SmartSermonSuggestion[] {
   const terms = smartSuggestionTerms(searchText);
+  const passage = parseSermonPassageReference(searchText);
   const scored = playlists
     .map((playlist) => {
-      const score = scoreSmartSuggestion([
+      const searchableText = [
         playlist.title,
         playlist.description,
         ...playlist.items.map((item) => `${item.kind} ${item.label}`),
         ...playlist.repeatOptions,
-      ].join(" "), terms);
-      return { playlist, score };
+      ].join(" ");
+      const patterns = passage ? sermonLibraryBookPatterns(passage.book) : [];
+      const numberedJohnPattern = /\b(?:1|2|3|first|second|third)\s+(?:epistle\s+(?:of|to)\s+(?:the\s+)?)?john\b/i;
+      const passageMatch = Boolean(
+        passage
+        && !(passage.book === "John" && numberedJohnPattern.test(searchableText))
+        && patterns.some((pattern) => pattern.test(searchableText)),
+      );
+      const topicScore = scoreSmartSuggestion(searchableText, terms);
+      return { playlist, passageMatch, score: topicScore + (passageMatch ? 20 : 0) };
     })
-    .sort((a, b) => b.score - a.score || a.playlist.title.localeCompare(b.playlist.title));
-  return scored
-    .filter(({ score }) => score > 0)
-    .concat(scored.filter(({ score }) => score === 0).slice(0, 2))
+    .sort((a, b) => Number(b.passageMatch) - Number(a.passageMatch) || b.score - a.score || a.playlist.title.localeCompare(b.playlist.title));
+
+  const passageMatches = scored.filter(({ passageMatch }) => passageMatch);
+  const generatedPassagePlaylist: StudyPlaylistTemplate | null = passage && !passageMatches.length
+    ? {
+        id: `passage-${passage.book.toLowerCase().replace(/\s+/g, "-")}-${passage.chapter ?? "book"}`,
+        title: `${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book} Passage Study`,
+        description: `A focused Scripture-first study queue for ${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book}, ready for sermon or lesson preparation.`,
+        items: [
+          { kind: "Bible", label: `${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book} KJV`, minutes: 8 },
+          { kind: "Commentary", label: `${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book} commentary comparison`, minutes: 20 },
+          { kind: "Book", label: `${passage.book} background and exposition`, minutes: 15 },
+          { kind: "Notes", label: "Observations, interpretation, applications, and invitation", minutes: 7 },
+        ],
+        repeatOptions: ["Repeat Bible text", "Stop after commentary", "Review sermon notes"],
+      }
+    : null;
+  const selected = passage
+    ? (generatedPassagePlaylist ? [{ playlist: generatedPassagePlaylist, passageMatch: true, score: 20 }] : passageMatches)
+    : scored
+        .filter(({ score }) => score > 0)
+        .concat(scored.filter(({ score }) => score === 0).slice(0, 2));
+
+  return selected
     .slice(0, 4)
-    .map(({ playlist }) => {
+    .map(({ playlist, passageMatch }) => {
       const totalMinutes = playlist.items.reduce((total, item) => total + item.minutes, 0);
       return {
         id: `playlist-${playlist.id}`,
         title: playlist.title,
         subtitle: `${playlist.items.length} items - about ${totalMinutes} minutes`,
         body: playlist.description,
-        meta: playlist.items.map((item) => item.kind).join(" + "),
+        meta: `${passageMatch ? `Passage match: ${passage?.book} - ` : ""}${playlist.items.map((item) => item.kind).join(" + ")}`,
         actionText: "Add playlist connection",
         importLabel: `Study Playlist: ${playlist.title}`,
         importBody: [
@@ -49078,9 +49125,9 @@ function SermonWorkspaceScreen({
     return searchMatch && statusMatch && kindMatch;
   });
   const sermonSuggestionText = [
+    draft.passage,
     draft.title,
     draft.theme,
-    draft.passage,
     draft.outline,
     draft.points,
     draft.introduction,
