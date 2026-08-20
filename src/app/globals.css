@@ -361,6 +361,90 @@ button:disabled {
   font-size: 14px;
 }
 
+.launch-preview {
+  padding: 74px 0 82px;
+  background: #e3ebeb;
+}
+
+.launch-preview-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  align-items: end;
+  gap: clamp(36px, 7vw, 96px);
+}
+
+.launch-preview-heading h2 {
+  max-width: 640px;
+  margin-top: 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 52px;
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.launch-preview-heading > p {
+  color: #5d6761;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.launch-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 40px;
+  border-top: 1px solid #afc1be;
+}
+
+.launch-preview-grid > a {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  border-bottom: 1px solid #afc1be;
+  padding: 24px 24px 24px 0;
+}
+
+.launch-preview-grid > a:nth-child(odd) {
+  border-right: 1px solid #afc1be;
+}
+
+.launch-preview-grid > a:nth-child(even) {
+  padding-right: 0;
+  padding-left: 24px;
+}
+
+.launch-preview-grid svg {
+  color: #276257;
+}
+
+.launch-preview-grid a > span:not(.launch-preview-action) {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.launch-preview-grid strong {
+  font-size: 17px;
+}
+
+.launch-preview-grid small {
+  margin-top: 8px;
+  color: #5d6761;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.launch-preview-action {
+  display: inline-flex;
+  grid-column: 2;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+  color: #1f554a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .launch-path {
   padding: 82px 0;
   background: #244b39;
@@ -632,6 +716,34 @@ button:disabled {
 
   .launch-workflow-grid h3 {
     margin-top: 12px;
+  }
+
+  .launch-preview {
+    padding: 54px 0 60px;
+  }
+
+  .launch-preview-heading,
+  .launch-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .launch-preview-heading {
+    align-items: start;
+    gap: 18px;
+  }
+
+  .launch-preview-heading h2 {
+    font-size: 36px;
+  }
+
+  .launch-preview-grid {
+    margin-top: 30px;
+  }
+
+  .launch-preview-grid > a,
+  .launch-preview-grid > a:nth-child(even) {
+    border-right: 0;
+    padding: 21px 0;
   }
 
   .launch-path {

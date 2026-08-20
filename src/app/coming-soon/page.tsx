@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpenText, Check, Clock3, Handshake, MessageSquareText, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpenText,
+  Check,
+  Clock3,
+  Handshake,
+  LibraryBig,
+  MessageSquareText,
+  Presentation,
+  RadioTower,
+  ShieldCheck,
+} from "lucide-react";
 import LaunchCountdown from "./LaunchCountdown";
 
 const DEFAULT_PUBLIC_BETA_TARGET = "2027-04-15T19:00:00-04:00";
@@ -31,6 +42,37 @@ const workflow = [
   ["Understand", "Use quick Webster 1828, Strong's, cross-reference, and commentary study."],
   ["Obey", "Capture prayer, application, memory work, and the next faithful action."],
   ["Teach", "Carry the passage into a lesson, sermon outline, or presentation."],
+] as const;
+
+const workingPreview = [
+  {
+    title: "Read the KJV",
+    description: "Open the Bible reader at John 3 and try passage navigation, Word Lens, and focused reading.",
+    href: "/#bible",
+    action: "Open Bible",
+    icon: BookOpenText,
+  },
+  {
+    title: "Browse the library",
+    description: "Find reviewed public-domain books with source, rights, reading, and listening details.",
+    href: "/#library",
+    action: "Open Library",
+    icon: LibraryBig,
+  },
+  {
+    title: "Build a listening session",
+    description: "Combine KJV Scripture, hymns, sermons, and study audio in one listening workspace.",
+    href: "/#radio",
+    action: "Open Radio",
+    icon: RadioTower,
+  },
+  {
+    title: "Prepare to teach",
+    description: "Turn Scripture, quotes, hymns, images, and sermon notes into a presentation-ready plan.",
+    href: "/#presentations",
+    action: "Open Presentations",
+    icon: Presentation,
+  },
 ] as const;
 
 const betaScope = [
@@ -66,7 +108,7 @@ export default function ComingSoonPage() {
           </span>
         </Link>
         <nav aria-label="Launch page navigation">
-          <Link href="#launch-path">Launch path</Link>
+          <Link href="#working-preview">Try it now</Link>
           <Link className="launch-header-action" href="/">Open preview</Link>
         </nav>
       </header>
@@ -118,6 +160,35 @@ export default function ComingSoonPage() {
                 <h3>{title}</h3>
                 <p>{description}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="launch-preview" id="working-preview" aria-labelledby="working-preview-title">
+        <div className="launch-section-inner">
+          <div className="launch-preview-heading">
+            <div>
+              <p className="launch-section-label">Available in the working preview</p>
+              <h2 id="working-preview-title">Start with a real study task.</h2>
+            </div>
+            <p>
+              These links open features that are already working in the current beta. Saved work remains on this
+              browser while signed out.
+            </p>
+          </div>
+          <div className="launch-preview-grid">
+            {workingPreview.map(({ title, description, href, action, icon: Icon }) => (
+              <Link href={href} key={title}>
+                <Icon aria-hidden="true" size={24} />
+                <span>
+                  <strong>{title}</strong>
+                  <small>{description}</small>
+                </span>
+                <span className="launch-preview-action">
+                  {action} <ArrowRight aria-hidden="true" size={17} />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
