@@ -1643,6 +1643,7 @@ type BiblePlaylistItem = {
   verseStart?: number;
   verseEnd?: number;
   resourceTitle?: string;
+  resourceAuthor?: string;
   resourceSlug?: string;
   targetMinutes?: number;
 };
@@ -15738,6 +15739,80 @@ function addStudyPlaylistCommentarySources(playlist: BibleAudioPlaylist, entries
   };
 }
 
+function studyPlaylistLibraryResource(item: BiblePlaylistItem, playlistName: string, resources: LibraryResource[]) {
+  const wantsPassageExposition = /background|commentary|exposition|study/i.test(item.label);
+  const itemTerms = smartSuggestionTerms(item.label).filter((term) => !["book", "new", "reading", "related", "resource"].includes(term));
+  const passage = item.book
+    ? { book: item.book, chapter: item.chapter, verse: undefined, label: item.chapter ? `${item.book} ${item.chapter}` : item.book }
+    : parseSermonPassageReference(`${playlistName} ${item.label}`);
+  const searchText = [playlistName, item.label, passage?.label ?? "", "Bible study teaching preaching"].join(" ");
+  const terms = sermonLibraryExpansionTerms(searchText);
+
+  const candidates = resources
+    .filter((resource) => Boolean(resource.word_count && resource.word_count > 0 && resource.source_url))
+    .filter((resource) => !/do not import|permission needed/i.test(`${resource.rights_status} ${resource.public_domain_status}`))
+    .filter((resource) => wantsPassageExposition || libraryResourceMatchesDiscoveryFilter(resource, "Books"))
+    .map((resource) => {
+      const passageScore = wantsPassageExposition ? sermonLibraryPassageScore(resource, passage) : 0;
+      const searchableText = [
+        resource.title,
+        resource.author,
+        resource.category,
+        resource.collection,
+        resource.description,
+        resource.recommended_use,
+        resource.perspective_notes,
+        ...resource.resource_labels,
+      ].join(" ");
+      const itemScore = scoreSmartSuggestion(searchableText, itemTerms);
+      const topicScore = scoreSmartSuggestion(searchableText, terms);
+      return {
+        resource,
+        passageScore,
+        itemScore,
+        score: passageScore + (itemScore * 10) + topicScore + preachingHelpResourceScore(resource),
+      };
+    })
+    .filter(({ score }) => score > 0);
+  const subjectMatches = itemTerms.length ? candidates.filter(({ itemScore }) => itemScore > 0) : [];
+
+  return (subjectMatches.length ? subjectMatches : candidates)
+    .sort((left, right) =>
+      right.passageScore - left.passageScore ||
+      right.itemScore - left.itemScore ||
+      right.score - left.score ||
+      left.resource.title.localeCompare(right.resource.title),
+    )[0]?.resource;
+}
+
+function addStudyPlaylistLibraryResources(playlist: BibleAudioPlaylist, resources: LibraryResource[]) {
+  return {
+    ...playlist,
+    items: playlist.items.map((item) => {
+      if (item.type !== "library_placeholder" || item.resourceSlug) return item;
+      const resource = studyPlaylistLibraryResource(item, playlist.name, resources);
+      return resource
+        ? {
+            ...item,
+            resourceTitle: resource.title,
+            resourceAuthor: resource.author,
+            resourceSlug: resource.slug,
+          }
+        : item;
+    }),
+  };
+}
+
+function addStudyPlaylistTemplateMetadata(playlist: BibleAudioPlaylist, template: StudyPlaylistTemplate) {
+  return {
+    ...playlist,
+    items: playlist.items.map((item) => {
+      const templateItem = template.items.find((candidate) => candidate.label === item.label);
+      return templateItem ? { ...item, targetMinutes: templateItem.minutes } : item;
+    }),
+  };
+}
+
 function biblePlaylistFromStudyTemplate(template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage): BibleAudioPlaylist {
   const templateText = [
     template.title,
@@ -15790,6 +15865,10 @@ function biblePlaylistFromStudyTemplate(template: StudyPlaylistTemplate, sermonP
         type: "library_placeholder",
         label: item.label,
         resourceTitle: item.label,
+        book,
+        chapter,
+        chapterEnd,
+        targetMinutes: item.minutes,
       }];
     }
 
@@ -21977,9 +22056,15 @@ export default function Home() {
 
   function createSermonStudyPlaylist(template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage) {
     const existing = biblePlaylists.find((playlist) => playlist.name.toLowerCase() === template.title.toLowerCase());
-    const playlist = addStudyPlaylistCommentarySources(
-      existing ?? biblePlaylistFromStudyTemplate(template, sermonPassage),
-      commentaryEntries,
+    const playlist = addStudyPlaylistLibraryResources(
+      addStudyPlaylistCommentarySources(
+        addStudyPlaylistTemplateMetadata(
+          existing ?? biblePlaylistFromStudyTemplate(template, sermonPassage),
+          template,
+        ),
+        commentaryEntries,
+      ),
+      libraryResources,
     );
 
     setBiblePlaylists((current) => saveNextBiblePlaylists(
@@ -22167,10 +22252,15 @@ export default function Home() {
       try {
         const response = await fetch(`/api/library/${item.resourceSlug}`);
         const data = (await response.json()) as { text?: string };
-        const resourceChunks = chunkSpeechText(data.text ?? "").slice(0, 80);
+        const resourceText = data.text ?? "";
+        const excerptWordLimit = item.targetMinutes ? Math.max(155, item.targetMinutes * 155) : null;
+        const excerptText = excerptWordLimit
+          ? resourceText.trim().split(/\s+/).slice(0, excerptWordLimit).join(" ")
+          : resourceText;
+        const resourceChunks = chunkSpeechText(excerptText).slice(0, 80);
         if (resourceChunks.length) {
           return {
-            chunks: [`${item.resourceTitle ?? item.label}.`, ...resourceChunks],
+            chunks: [`${item.resourceTitle ?? item.label}${item.resourceAuthor ? ` by ${item.resourceAuthor}` : ""}.`, ...resourceChunks],
             verseRefs: Array(resourceChunks.length + 1).fill(null),
           };
         }
@@ -28358,7 +28448,10 @@ function BibleReader({
     }
     if (item.type === "library_placeholder" && item.resourceSlug) {
       const resource = libraryResources.find((candidate) => candidate.slug === item.resourceSlug);
-      return listeningSecondsFromWordCount(resource?.word_count ?? 1200, speechState.rate);
+      const wordCount = item.targetMinutes
+        ? Math.min(resource?.word_count ?? item.targetMinutes * 155, item.targetMinutes * 155)
+        : resource?.word_count ?? 1200;
+      return listeningSecondsFromWordCount(wordCount, speechState.rate);
     }
     if ((item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.book && item.chapter) {
       const endChapter = item.chapterEnd ?? item.chapter;
@@ -29795,6 +29888,9 @@ function BibleReader({
                       </p>
                       {(item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.resourceTitle && (
                         <p className="mt-1 text-[11px] text-[var(--muted)]">Source: {item.resourceTitle}</p>
+                      )}
+                      {item.type === "library_placeholder" && item.resourceSlug && item.resourceTitle && (
+                        <p className="mt-1 text-[11px] text-[var(--muted)]">Book: {item.resourceTitle}{item.resourceAuthor ? ` · ${item.resourceAuthor}` : ""}</p>
                       )}
                       <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
                     </div>
