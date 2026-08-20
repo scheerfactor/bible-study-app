@@ -13,6 +13,7 @@ import {
   RadioTower,
   ShieldCheck,
 } from "lucide-react";
+import { siteName, socialPreviewImage } from "@/lib/site-metadata";
 import LaunchCountdown from "./LaunchCountdown";
 
 const DEFAULT_PUBLIC_BETA_TARGET = "2027-04-15T19:00:00-04:00";
@@ -31,10 +32,29 @@ const PUBLIC_BETA_TARGET_LABEL = new Intl.DateTimeFormat("en-US", {
   timeZoneName: "short",
 }).format(new Date(PUBLIC_BETA_TARGET));
 
+const launchDescription =
+  `${siteName} is being prepared for a founding free public beta targeted for ${PUBLIC_BETA_TARGET_LABEL}.`;
+
 export const metadata: Metadata = {
-  title: "Coming Soon | Father's Business Bible Study",
-  description:
-    `Father's Business Bible Study is being prepared for a founding free public beta targeted for ${PUBLIC_BETA_TARGET_LABEL}.`,
+  title: "Coming Soon",
+  description: launchDescription,
+  alternates: {
+    canonical: "/coming-soon",
+  },
+  openGraph: {
+    type: "website",
+    url: "/coming-soon",
+    siteName,
+    title: `${siteName} Public Beta`,
+    description: launchDescription,
+    images: [socialPreviewImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteName} Public Beta`,
+    description: launchDescription,
+    images: [socialPreviewImage.url],
+  },
 };
 
 const workflow = [
