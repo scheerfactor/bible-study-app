@@ -287,7 +287,12 @@ export default function ComingSoonPage() {
         <div className="launch-section-inner">
           <strong>Father&apos;s Business Bible Study</strong>
           <span>KJV-first study for reading, understanding, obeying, and teaching.</span>
-          <Link href="/feedback">Beta feedback</Link>
+          <nav aria-label="Launch footer links">
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="/rights">Rights</Link>
+            <Link href="/support">Support</Link>
+          </nav>
         </div>
       </footer>
     </main>

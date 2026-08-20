@@ -227,6 +227,13 @@ export default function FeedbackPage() {
             {submitMessage || (copied ? `Feedback copied. Email it to ${feedbackEmail}.` : `Send to the private beta queue or email ${feedbackEmail}.`)}
           </p>
         </section>
+
+        <nav className="mt-6 flex flex-wrap gap-x-4 gap-y-2 border-t border-[var(--line)] pt-5 text-sm font-semibold text-[var(--green)]" aria-label="Legal and support pages">
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/terms">Terms</Link>
+          <Link href="/rights">Content rights</Link>
+          <Link href="/support">Support</Link>
+        </nav>
       </div>
     </main>
   );
