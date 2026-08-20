@@ -15739,7 +15739,7 @@ function addStudyPlaylistCommentarySources(playlist: BibleAudioPlaylist, entries
   };
 }
 
-function studyPlaylistLibraryResource(item: BiblePlaylistItem, playlistName: string, resources: LibraryResource[]) {
+function studyPlaylistLibraryResources(item: BiblePlaylistItem, playlistName: string, resources: LibraryResource[]) {
   const wantsPassageExposition = /background|commentary|exposition|study/i.test(item.label);
   const itemTerms = smartSuggestionTerms(item.label).filter((term) => !["book", "new", "reading", "related", "resource"].includes(term));
   const passage = item.book
@@ -15782,7 +15782,12 @@ function studyPlaylistLibraryResource(item: BiblePlaylistItem, playlistName: str
       right.itemScore - left.itemScore ||
       right.score - left.score ||
       left.resource.title.localeCompare(right.resource.title),
-    )[0]?.resource;
+    )
+    .map(({ resource }) => resource);
+}
+
+function studyPlaylistLibraryResource(item: BiblePlaylistItem, playlistName: string, resources: LibraryResource[]) {
+  return studyPlaylistLibraryResources(item, playlistName, resources)[0];
 }
 
 function addStudyPlaylistLibraryResources(playlist: BibleAudioPlaylist, resources: LibraryResource[]) {
@@ -22119,10 +22124,38 @@ export default function Home() {
       type: "library_placeholder",
       label: resource.title,
       resourceTitle: resource.title,
+      resourceAuthor: resource.author,
       resourceSlug: resource.slug,
     };
 
     appendItemToActiveStudyPlaylist(item);
+  }
+
+  function replaceBiblePlaylistLibraryItem(playlistId: string, itemId: string, slug: string) {
+    const resource = libraryResources.find((candidate) => candidate.slug === slug);
+    if (!resource) return;
+
+    setBiblePlaylists((current) => {
+      const next = current.map((playlist) =>
+        playlist.id === playlistId
+          ? {
+              ...playlist,
+              items: playlist.items.map((item) =>
+                item.id === itemId
+                  ? {
+                      ...item,
+                      resourceTitle: resource.title,
+                      resourceAuthor: resource.author,
+                      resourceSlug: resource.slug,
+                    }
+                  : item,
+              ),
+            }
+          : playlist,
+      );
+      return saveNextBiblePlaylists(next);
+    });
+    setSyncMessage(`${resource.title} selected for this playlist book slot.`);
   }
 
   function addCurrentResourceToStudyPlaylist(slug: string) {
@@ -23290,6 +23323,7 @@ export default function Home() {
                 onCreatePlaylist={createBiblePlaylist}
                 onAddPlaylistItem={addBiblePlaylistItem}
                 onAddLibraryPlaylistItem={addBiblePlaylistLibraryItem}
+                onReplaceLibraryPlaylistItem={replaceBiblePlaylistLibraryItem}
                 onRemovePlaylistItem={removeBiblePlaylistItem}
                 onMovePlaylistItem={moveBiblePlaylistItem}
                 onMarkPlaylistItemComplete={markBiblePlaylistItemComplete}
@@ -28153,6 +28187,7 @@ function BibleReader({
   onCreatePlaylist,
   onAddPlaylistItem,
   onAddLibraryPlaylistItem,
+  onReplaceLibraryPlaylistItem,
   onRemovePlaylistItem,
   onMovePlaylistItem,
   onMarkPlaylistItemComplete,
@@ -28284,6 +28319,7 @@ function BibleReader({
   onCreatePlaylist: () => void;
   onAddPlaylistItem: (type: BiblePlaylistItemType) => void;
   onAddLibraryPlaylistItem: (slug: string) => void;
+  onReplaceLibraryPlaylistItem: (playlistId: string, itemId: string, slug: string) => void;
   onRemovePlaylistItem: (playlistId: string, itemId: string) => void;
   onMovePlaylistItem: (playlistId: string, itemId: string, direction: -1 | 1) => void;
   onMarkPlaylistItemComplete: (playlistId: string, itemId: string) => void;
@@ -28323,6 +28359,7 @@ function BibleReader({
   const [quickJumpText, setQuickJumpText] = useState("");
   const [explorerWord, setExplorerWord] = useState("believe");
   const [playlistResourceSlug, setPlaylistResourceSlug] = useState("");
+  const [playlistReplacementItemId, setPlaylistReplacementItemId] = useState<string | null>(null);
   const [studySessions, setStudySessions] = useState<SavedStudySession[]>(() => loadStudySessions());
   const [studyWorkspaceMessage, setStudyWorkspaceMessage] = useState("");
   const [studyToolsOpen, setStudyToolsOpen] = useState(false);
@@ -28430,10 +28467,24 @@ function BibleReader({
   const commentaryConsensus = useMemo(() => commentaryComparisonInsights(chapterCommentaryEntries), [chapterCommentaryEntries]);
   const chapterNotes = Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`));
   const memoryForChapter = scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} ${chapter}:`));
-  const playlistLibraryOptions = libraryResources
-    .filter((resource) => resource.word_count && resource.word_count > 0)
-    .filter((resource) => libraryResourceMatches(resource, ["commentary", "prayer", "evangelism", "preaching", "teaching", "christian living", "missions", "bible study"]))
-    .slice(0, 40);
+  const activePlaylist = playlists.find((playlist) => playlist.id === activePlaylistId) ?? playlists[0] ?? null;
+  const playlistReplacementItem = activePlaylist?.items.find((item) => item.id === playlistReplacementItemId) ?? null;
+  const playlistLibraryOptions = useMemo(() => {
+    const broadOptions = libraryResources
+      .filter((resource) => resource.word_count && resource.word_count > 0)
+      .filter((resource) => libraryResourceMatches(resource, ["commentary", "prayer", "evangelism", "preaching", "teaching", "christian living", "missions", "bible study"]));
+    if (!playlistReplacementItem || !activePlaylist) return broadOptions.slice(0, 40);
+
+    const currentResource = libraryResources.find((resource) => resource.slug === playlistReplacementItem.resourceSlug);
+    const rankedOptions = studyPlaylistLibraryResources(playlistReplacementItem, activePlaylist.name, libraryResources);
+    return Array.from(
+      new Map(
+        [currentResource, ...rankedOptions]
+          .filter((resource): resource is LibraryResource => Boolean(resource))
+          .map((resource) => [resource.slug, resource]),
+      ).values(),
+    ).slice(0, 40);
+  }, [activePlaylist, libraryResources, playlistReplacementItem]);
   const estimatePlaylistItemSeconds = (item: BiblePlaylistItem) => {
     const versesForItem =
       item.type === "bible_book" && item.book
@@ -28470,7 +28521,6 @@ function BibleReader({
     }
     return listeningSecondsFromWordCount(220, speechState.rate);
   };
-  const activePlaylist = playlists.find((playlist) => playlist.id === activePlaylistId) ?? playlists[0] ?? null;
   const currentPlaylistItem = activePlaylist?.items[activePlaylistItemIndex] ?? activePlaylist?.items[0] ?? null;
   const activePlaylistSeconds = activePlaylist?.items.reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
   const activePlaylistRemainingSeconds = activePlaylist?.items
@@ -28690,6 +28740,32 @@ function BibleReader({
       disabled: !playlistLibraryOptions.length,
     },
   ];
+
+  function beginPlaylistBookReplacement(item: BiblePlaylistItem) {
+    setPlaylistReplacementItemId(item.id);
+    setPlaylistResourceSlug(item.resourceSlug ?? "");
+    window.setTimeout(() => {
+      document.getElementById("playlist-library-book-picker")?.scrollIntoView({ block: "center", behavior: "smooth" });
+    }, 80);
+  }
+
+  function savePlaylistLibrarySelection() {
+    const slug = playlistResourceSlug || playlistLibraryOptions[0]?.slug || "";
+    if (!slug) return;
+    if (playlistReplacementItem && activePlaylist) {
+      onReplaceLibraryPlaylistItem(activePlaylist.id, playlistReplacementItem.id, slug);
+      setPlaylistReplacementItemId(null);
+      setPlaylistResourceSlug("");
+      return;
+    }
+    onAddLibraryPlaylistItem(slug);
+  }
+
+  function cancelPlaylistBookReplacement() {
+    setPlaylistReplacementItemId(null);
+    setPlaylistResourceSlug("");
+  }
+
   const bibleStudyDeskResources = ([
     ["Best Commentary", workspaceBestResources.commentary],
     ["Study Book", workspaceBestResources.studyBook],
@@ -29712,7 +29788,7 @@ function BibleReader({
           </button>
         </div>
 
-        <details className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+        <details className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3" open={playlistReplacementItem ? true : undefined}>
           <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">More listening options</summary>
           <div className="mt-4 grid gap-3 md:grid-cols-[1fr_1fr_1.2fr]">
             <div className="grid grid-cols-2 gap-2">
@@ -29759,7 +29835,10 @@ function BibleReader({
                 <select
                   className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)]"
                   value={activePlaylist?.id ?? ""}
-                  onChange={(event) => onSelectPlaylist(event.target.value)}
+                  onChange={(event) => {
+                    cancelPlaylistBookReplacement();
+                    onSelectPlaylist(event.target.value);
+                  }}
                 >
                   {playlists.map((playlist) => (
                     <option key={`study-playlist-select-${playlist.id}`} value={playlist.id}>
@@ -29787,9 +29866,9 @@ function BibleReader({
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("teaching_notes")} type="button">Add teaching notes</button>
               </div>
               {playlistLibraryOptions.length > 0 && (
-                <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+                <div id="playlist-library-book-picker" className="mt-3 scroll-mt-28 rounded-2xl border border-[var(--line)] bg-white p-3">
                   <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                    Add Library book
+                    {playlistReplacementItem ? `Replace ${playlistReplacementItem.label}` : "Add Library book"}
                     <select
                       className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]"
                       value={playlistResourceSlug || playlistLibraryOptions[0]?.slug || ""}
@@ -29804,12 +29883,21 @@ function BibleReader({
                   </label>
                   <button
                     className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
-                    onClick={() => onAddLibraryPlaylistItem(playlistResourceSlug || playlistLibraryOptions[0]?.slug || "")}
+                    onClick={savePlaylistLibrarySelection}
                     type="button"
                   >
                     <Library size={15} />
-                    Add selected book
+                    {playlistReplacementItem ? "Replace book" : "Add selected book"}
                   </button>
+                  {playlistReplacementItem && (
+                    <button
+                      className="mt-2 w-full rounded-full px-3 py-2 text-xs font-semibold text-[var(--muted)]"
+                      onClick={cancelPlaylistBookReplacement}
+                      type="button"
+                    >
+                      Cancel change
+                    </button>
+                  )}
                 </div>
               )}
             </div>
@@ -29878,31 +29966,59 @@ function BibleReader({
                 )}
               </div>
               <div className="mt-3 space-y-2">
-                {activePlaylist.items.map((item, index) => (
-                  <div key={item.id} className={`grid grid-cols-[1fr_auto] gap-2 rounded-xl px-3 py-2 ${index === activePlaylistItemIndex ? "bg-[var(--highlight)]" : "bg-white"}`}>
-                    <div>
-                      <p className="text-xs font-semibold text-[var(--muted)]">
-                        {item.label}
-                        {index === activePlaylistItemIndex && <> <span className="ml-2 rounded-full bg-white px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-[var(--green)]">Current</span></>}
-                        {activeCompletedItemIds.has(item.id) && <> <span className="ml-2 rounded-full bg-[var(--green)] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-white">Complete</span></>}
-                      </p>
-                      {(item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.resourceTitle && (
-                        <p className="mt-1 text-[11px] text-[var(--muted)]">Source: {item.resourceTitle}</p>
-                      )}
-                      {item.type === "library_placeholder" && item.resourceSlug && item.resourceTitle && (
-                        <p className="mt-1 text-[11px] text-[var(--muted)]">Book: {item.resourceTitle}{item.resourceAuthor ? ` · ${item.resourceAuthor}` : ""}</p>
-                      )}
-                      <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
+                {activePlaylist.items.map((item, index) => {
+                  const playlistBook = item.resourceSlug
+                    ? libraryResources.find((resource) => resource.slug === item.resourceSlug)
+                    : null;
+                  return (
+                    <div key={item.id} className={`grid gap-2 rounded-xl px-3 py-2 sm:grid-cols-[1fr_auto] ${index === activePlaylistItemIndex ? "bg-[var(--highlight)]" : "bg-white"}`}>
+                      <div>
+                        <p className="text-xs font-semibold text-[var(--muted)]">
+                          {item.label}
+                          {index === activePlaylistItemIndex && <> <span className="ml-2 rounded-full bg-white px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-[var(--green)]">Current</span></>}
+                          {activeCompletedItemIds.has(item.id) && <> <span className="ml-2 rounded-full bg-[var(--green)] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-white">Complete</span></>}
+                        </p>
+                        {(item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.resourceTitle && (
+                          <p className="mt-1 text-[11px] text-[var(--muted)]">Source: {item.resourceTitle}</p>
+                        )}
+                        {item.type === "library_placeholder" && item.resourceSlug && item.resourceTitle && (
+                          <>
+                            <p className="mt-1 text-[11px] text-[var(--muted)]">Book: {item.resourceTitle}{item.resourceAuthor ? ` · ${item.resourceAuthor}` : ""}</p>
+                            <div className="mt-2 flex flex-wrap gap-1">
+                              <button className="rounded-full border border-[var(--line)] bg-white px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenLibraryResource(item.resourceSlug!)} type="button">
+                                Open Book
+                              </button>
+                              <button className="rounded-full border border-[var(--line)] bg-white px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => beginPlaylistBookReplacement(item)} type="button">
+                                Change Book
+                              </button>
+                            </div>
+                            {playlistBook && (
+                              <details className="mt-2 text-[11px] leading-5 text-[var(--muted)]">
+                                <summary className="cursor-pointer font-semibold text-[var(--green)]">Rights &amp; source</summary>
+                                <p className="mt-1 capitalize">Rights: {playlistBook.rights_status.replaceAll("_", " ")}</p>
+                                <p>{playlistBook.rights_basis}</p>
+                                {playlistBook.ocr_quality_label && (
+                                  <p>Text quality: {playlistBook.ocr_quality_label}{playlistBook.ocr_cleanup_notes ? ` · ${playlistBook.ocr_cleanup_notes}` : ""}</p>
+                                )}
+                                <a className="font-semibold text-[var(--green)] underline" href={playlistBook.source_url} rel="noreferrer" target="_blank">
+                                  Open source record
+                                </a>
+                              </details>
+                            )}
+                          </>
+                        )}
+                        <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-1 sm:justify-end">
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onPlayPlaylistItem(activePlaylist, index)} type="button">Play</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onMarkPlaylistItemComplete(activePlaylist.id, item.id)} type="button">Done</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, -1)} type="button">Up</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === activePlaylist.items.length - 1} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, 1)} type="button">Down</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemovePlaylistItem(activePlaylist.id, item.id)} type="button">Remove</button>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onPlayPlaylistItem(activePlaylist, index)} type="button">Play</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onMarkPlaylistItemComplete(activePlaylist.id, item.id)} type="button">Done</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, -1)} type="button">Up</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === activePlaylist.items.length - 1} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, 1)} type="button">Down</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemovePlaylistItem(activePlaylist.id, item.id)} type="button">Remove</button>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
                 {!activePlaylist.items.length && (
                   <p className="rounded-xl bg-white px-3 py-3 text-sm leading-6 text-[var(--muted)]">
                     This playlist is empty. Add Bible chapters, commentary, books, reader notes, or teaching notes above.
