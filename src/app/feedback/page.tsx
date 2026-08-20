@@ -3,7 +3,7 @@
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { ChevronLeft, Clipboard, Mail, MessageSquareText, Send } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import feedbackCategories from "./categories.json";
 
 const categories = feedbackCategories as readonly string[];
@@ -17,6 +17,28 @@ export default function FeedbackPage() {
   const [copied, setCopied] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedCategory = params.get("category");
+    const requestedContext = params.get("context")?.trim();
+    let cancelled = false;
+
+    queueMicrotask(() => {
+      if (cancelled) return;
+      if (requestedCategory && categories.includes(requestedCategory)) {
+        setCategory(requestedCategory);
+      }
+      if (requestedContext) {
+        setPassageOrResource(requestedContext.slice(0, 500));
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const feedbackText = useMemo(
     () => [
       `Passage/resource: ${passageOrResource.trim() || "(not provided)"}`,

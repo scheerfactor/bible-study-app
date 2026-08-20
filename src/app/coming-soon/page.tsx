@@ -238,7 +238,10 @@ export default function ComingSoonPage() {
                 </li>
               ))}
             </ol>
-            <Link className="launch-roadmap-action" href="/feedback">
+            <Link
+              className="launch-roadmap-action"
+              href="/feedback?category=Author%20%2F%20publisher%20partnership&context=Resource%20partnership"
+            >
               Discuss a resource partnership <ArrowRight aria-hidden="true" size={17} />
             </Link>
           </div>
