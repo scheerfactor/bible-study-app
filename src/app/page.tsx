@@ -15405,8 +15405,10 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
   const terms = smartSuggestionTerms(searchText);
   return entries
     .map((entry) => {
+      const sameBook = passage ? entry.book === passage.book : false;
+      const sameChapter = sameBook && passage?.chapter ? entry.chapter === passage.chapter : false;
       const referenceScore = passage
-        ? (entry.book === passage.book ? 5 : 0) + (passage.chapter && entry.chapter === passage.chapter ? 8 : 0)
+        ? (sameBook ? 5 : 0) + (sameChapter ? 8 : 0)
         : 0;
       const textScore = scoreSmartSuggestion([
         entry.author,
@@ -15417,7 +15419,7 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
       ].join(" "), terms);
       return { entry, score: referenceScore + textScore };
     })
-    .filter(({ score }) => score > 0)
+    .filter(({ entry, score }) => score > 0 && (!passage || entry.book === passage.book))
     .sort((a, b) => b.score - a.score || a.entry.author.localeCompare(b.entry.author))
     .slice(0, 8)
     .map(({ entry }) => {
