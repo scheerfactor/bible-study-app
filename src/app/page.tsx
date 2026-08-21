@@ -4894,6 +4894,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read one campaign at a time", "Compare commentary after the KJV text", "Save applications for teaching"],
   },
   {
+    id: "judges-study",
+    title: "Judges Study",
+    shortLabel: "Decline and deliverance",
+    description: "A whole-book path through Israel's recurring rebellion and deliverance with KJV reading, word study, cross references, commentary, and verified library helps.",
+    biblePassages: ["Judges 2", "Judges 4", "Judges 6", "Judges 7", "Judges 11", "Judges 13", "Judges 16", "Judges 21"],
+    resourceTerms: ["judges", "deborah", "gideon", "jephthah", "samson", "deliverance", "apostasy", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace one judge at a time", "Mark each cycle of decline and deliverance", "Save warnings and applications for teaching"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4941,7 +4952,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5053,6 +5064,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Joshua 1", "Joshua 2", "Joshua 3", "Joshua 6", "Joshua 7", "Joshua 10", "Joshua 23", "Joshua 24"],
     playlistTitle: "Joshua Courage and Obedience Study",
     relatedResourceTerms: ["joshua", "land of promise", "canaan", "inheritance", "courage", "obedience", "commentary"],
+  },
+  {
+    id: "judges-study-collection",
+    book: "Judges",
+    title: "Judges Study Collection",
+    description: "Incomplete obedience, spiritual decline, bondage, crying unto the LORD, merciful deliverance, and the cost of every man doing that which was right in his own eyes.",
+    featuredChapters: ["Judges 2", "Judges 4", "Judges 6", "Judges 7", "Judges 11", "Judges 13", "Judges 16", "Judges 21"],
+    playlistTitle: "Judges Decline and Deliverance Study",
+    relatedResourceTerms: ["judges", "deborah", "gideon", "jephthah", "samson", "deliverance", "apostasy", "commentary"],
   },
 ];
 
