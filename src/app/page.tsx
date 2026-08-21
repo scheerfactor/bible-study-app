@@ -4928,6 +4928,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Trace Samuel, Saul, and David separately", "Compare obedience and presumption", "Save character lessons for teaching"],
   },
   {
+    id: "second-samuel-study",
+    title: "2 Samuel Study",
+    shortLabel: "Covenant and consequences",
+    description: "A whole-book path through David's reign, the LORD's covenant, victories, grievous sin, family consequences, discipline, and restoration.",
+    biblePassages: ["2 Samuel 1", "2 Samuel 5", "2 Samuel 6", "2 Samuel 7", "2 Samuel 11", "2 Samuel 12", "2 Samuel 15", "2 Samuel 18", "2 Samuel 22", "2 Samuel 24"],
+    resourceTerms: ["2 samuel", "second book of samuel", "david", "davidic covenant", "kingdom", "consequences", "restoration", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace David's reign in stages", "Compare covenant promise and personal failure", "Save leadership warnings and applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4975,7 +4986,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5114,6 +5125,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["1 Samuel 1", "1 Samuel 3", "1 Samuel 8", "1 Samuel 15", "1 Samuel 16", "1 Samuel 17", "1 Samuel 24", "1 Samuel 31"],
     playlistTitle: "1 Samuel Obedience and Kingship Study",
     relatedResourceTerms: ["1 samuel", "first book of samuel", "samuel", "saul", "david", "kingship", "obedience", "commentary"],
+  },
+  {
+    id: "second-samuel-study-collection",
+    book: "2 Samuel",
+    title: "2 Samuel Study Collection",
+    description: "David's reign, Jerusalem, the LORD's covenant, victories, grievous sin, family consequences, discipline, worship, and restoration.",
+    featuredChapters: ["2 Samuel 1", "2 Samuel 5", "2 Samuel 6", "2 Samuel 7", "2 Samuel 11", "2 Samuel 12", "2 Samuel 15", "2 Samuel 18", "2 Samuel 22", "2 Samuel 24"],
+    playlistTitle: "2 Samuel Covenant and Consequences Study",
+    relatedResourceTerms: ["2 samuel", "second book of samuel", "david", "davidic covenant", "kingdom", "consequences", "restoration", "commentary"],
   },
 ];
 
