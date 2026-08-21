@@ -9,6 +9,7 @@
     "audit:account-sync": "node scripts/audit-account-sync-contract.mjs",
     "audit:bundle": "node scripts/audit-client-bundle-size.mjs",
     "audit:commentary-storage": "node scripts/audit-commentary-storage-contract.mjs",
+    "audit:strongs-storage": "node scripts/audit-strongs-storage-contract.mjs",
     "audit:feedback": "node scripts/audit-feedback-delivery.mjs",
     "audit:feedback:live": "node scripts/audit-feedback-delivery.mjs --live",
     "audit:public-access": "node scripts/audit-public-access.mjs",

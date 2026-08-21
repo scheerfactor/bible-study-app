@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-08-18T20:20:31.791Z
+Generated: 2026-08-21T02:46:47.558Z
 
 ## Path Strategy
 
@@ -10,16 +10,17 @@ Mirror current repository-relative paths in object storage during the transition
 
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
-| Library text | 2,240 | 2,240 | 0 | 1.86 GB |
+| Library text | 2,241 | 2,241 | 0 | 1.86 GB |
 | Commentary chapter index | 1 | 1 | 0 | 81.09 KB |
 | Commentary batches | 345 | 345 | 0 | 505.03 MB |
 | Dictionary files | 2 | 2 | 0 | 37.57 MB |
 | Library manifests | 1 | 1 | 0 | 4.68 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
 | Strong's indexes | 2 | 2 | 0 | 181.01 KB |
+| Strong's chapter mappings | 1,190 | 1,190 | 0 | 481.39 MB |
 | Bible map media | 21 | 21 | 0 | 12.18 MB |
 | TSK/cross-reference batches | 45 | 45 | 0 | 5.14 MB |
-| Total public content | 2,666 | 2,666 | 0 | 2.44 GB |
+| Total public content | 3,857 | 3,857 | 0 | 2.91 GB |
 
 Commentary entries represented in public batch files: 12,850
 
@@ -29,7 +30,7 @@ Storage-backed library text already uploaded to object storage: 486 files (457.1
 
 Large library text files over 1 MB: 530 files (1.23 GB).
 
-Large public content files over 1 MB: 654 files (1.73 GB).
+Large public content files over 1 MB: 667 files (1.74 GB).
 
 These are the best first candidates for R2 because moving them out of the deploy bundle gives the largest size relief while keeping metadata, rights notes, and indexes in Git.
 
@@ -77,6 +78,7 @@ npm run storage:preflight
 npm run storage:upload:r2 -- --dry-run
 npm run storage:upload:r2 -- --kind=commentary_index --dry-run
 npm run storage:upload:r2 -- --kind=strongs_index --dry-run
+npm run storage:upload:r2 -- --kind=strongs_mapping_chapter --dry-run
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --dry-run
 ```
 
@@ -86,6 +88,7 @@ When R2 credentials and a public base URL are configured:
 npm run storage:upload:r2 -- --execute
 npm run storage:upload:r2 -- --kind=commentary_index --execute
 npm run storage:upload:r2 -- --kind=strongs_index --execute
+npm run storage:upload:r2 -- --kind=strongs_mapping_chapter --execute
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
 ```
 
@@ -94,6 +97,7 @@ If using Wrangler instead of S3 credentials:
 ```bash
 npm run storage:upload:wrangler -- --kind=commentary_index --execute
 npm run storage:upload:wrangler -- --kind=strongs_index --execute
+npm run storage:upload:wrangler -- --kind=strongs_mapping_chapter --path-prefix=data/strongs/mappings-by-chapter/genesis- --execute
 npm run storage:upload:wrangler -- --kind=tsk_cross_reference_batch --execute
 ```
 
