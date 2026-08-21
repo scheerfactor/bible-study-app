@@ -1,35 +1,13 @@
 import { NextResponse } from "next/server";
-import { readTextContent } from "@/lib/server-content-storage";
+import { commentaryChapterIndex } from "@/lib/commentary-chapter-index";
 
-type CommentaryChapterIndex = {
-  schema_version: number;
-  catalog_file_count: number;
-  indexed_file_count: number;
-  row_count: number;
-  chapter_count: number;
-  chapters: Record<string, number[]>;
-};
-
-let catalogPromise: Promise<CommentaryChapterIndex> | null = null;
 const commentaryBookDisplayAliases: Record<string, string> = {
   "Solomon's Song": "Song of Solomon",
 };
 
-function loadCatalog() {
-  catalogPromise ??= readTextContent(
-    ["data", "commentary", "reports", "commentary-chapter-file-index.json"],
-    {
-      errorLabel: "Commentary chapter index",
-      revalidateSeconds: 60 * 60 * 24,
-    },
-  ).then((raw) => JSON.parse(raw) as CommentaryChapterIndex);
-
-  return catalogPromise;
-}
-
 export async function GET() {
   try {
-    const catalog = await loadCatalog();
+    const catalog = commentaryChapterIndex;
     const chaptersByBook = new Map<string, number[]>();
 
     Object.keys(catalog.chapters).forEach((chapterKey) => {

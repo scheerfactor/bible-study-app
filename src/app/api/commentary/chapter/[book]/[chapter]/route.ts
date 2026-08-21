@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
+import { commentaryChapterIndex } from "@/lib/commentary-chapter-index";
 import { readTextContent } from "@/lib/server-content-storage";
-
-type CommentaryChapterIndex = {
-  schema_version: number;
-  files: string[];
-  chapters: Record<string, number[]>;
-};
 
 type CommentaryRow = {
   book?: unknown;
@@ -17,19 +12,6 @@ const publicCommentaryFilePattern = /^[a-z0-9-]+(?:commentary|samples|batch)\.js
 const commentaryBookIndexAliases: Record<string, string> = {
   "Song of Solomon": "Solomon's Song",
 };
-let chapterIndexPromise: Promise<CommentaryChapterIndex> | null = null;
-
-function loadChapterIndex() {
-  chapterIndexPromise ??= readTextContent(
-    ["data", "commentary", "reports", "commentary-chapter-file-index.json"],
-    {
-      errorLabel: "Commentary chapter index",
-      revalidateSeconds: 60 * 60 * 24,
-    },
-  ).then((raw) => JSON.parse(raw) as CommentaryChapterIndex);
-
-  return chapterIndexPromise;
-}
 
 async function readCommentaryRows(fileName: string) {
   if (!publicCommentaryFilePattern.test(fileName)) {
@@ -62,7 +44,7 @@ export async function GET(
   }
 
   try {
-    const index = await loadChapterIndex();
+    const index = commentaryChapterIndex;
     const indexedBook = commentaryBookIndexAliases[book] ?? book;
     const fileIndexes = index.chapters[`${indexedBook}|${chapter}`];
 
