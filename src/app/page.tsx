@@ -4872,6 +4872,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read one doctrine at a time", "Compare with KJV passages", "Use with doctrinal review notes"],
   },
   {
+    id: "deuteronomy-study",
+    title: "Deuteronomy Study",
+    shortLabel: "Remember and obey",
+    description: "A whole-book path through Moses' final messages with KJV reading, word study, cross references, commentary, and verified library helps.",
+    biblePassages: ["Deuteronomy 1", "Deuteronomy 4", "Deuteronomy 6", "Deuteronomy 18", "Deuteronomy 28", "Deuteronomy 30", "Deuteronomy 34"],
+    resourceTerms: ["deuteronomy", "pentateuch", "law", "covenant", "obedience", "moses", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["matthew-henry"],
+    repeatOptions: ["Read one message at a time", "Compare commentary after the KJV text", "Save applications for teaching"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4919,7 +4930,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5013,6 +5024,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Genesis 1", "Genesis 3", "Genesis 12", "Genesis 22", "Genesis 50"],
     playlistTitle: "Genesis Foundations Study",
     relatedResourceTerms: ["genesis", "creation", "covenant", "abraham", "joseph", "foundations", "commentary"],
+  },
+  {
+    id: "deuteronomy-study-collection",
+    book: "Deuteronomy",
+    title: "Deuteronomy Study Collection",
+    description: "Moses' final messages, covenant remembrance, obedience, love for the LORD, blessing and warning, and preparation to enter the land.",
+    featuredChapters: ["Deuteronomy 1", "Deuteronomy 4", "Deuteronomy 6", "Deuteronomy 18", "Deuteronomy 28", "Deuteronomy 30", "Deuteronomy 34"],
+    playlistTitle: "Deuteronomy Remember and Obey Study",
+    relatedResourceTerms: ["deuteronomy", "pentateuch", "law", "covenant", "obedience", "moses", "commentary"],
   },
 ];
 
