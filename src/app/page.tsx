@@ -5005,6 +5005,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read the whole book in three sittings", "Trace prayer, planning, and perseverance", "Save leadership and renewal applications"],
   },
   {
+    id: "esther-study",
+    title: "Esther Study",
+    shortLabel: "Providence and courageous intercession",
+    description: "A ten-chapter path through hidden providence, mortal danger, courageous intercession, righteous reversal, deliverance, and remembrance.",
+    biblePassages: ["Esther 1", "Esther 2", "Esther 3", "Esther 4", "Esther 5", "Esther 6", "Esther 7", "Esther 8", "Esther 9", "Esther 10"],
+    resourceTerms: ["esther", "mordecai", "providence", "courage", "intercession", "deliverance", "purim", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["ironside", "matthew-henry"],
+    repeatOptions: ["Read the whole book in one sitting", "Trace providence and reversal", "Save courage and intercession applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -5052,7 +5063,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "nehemiah-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "nehemiah-study", "esther-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5254,6 +5265,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Nehemiah 1", "Nehemiah 2", "Nehemiah 3", "Nehemiah 4", "Nehemiah 5", "Nehemiah 6", "Nehemiah 7", "Nehemiah 8", "Nehemiah 9", "Nehemiah 10", "Nehemiah 11", "Nehemiah 12", "Nehemiah 13"],
     playlistTitle: "Nehemiah Prayer and Faithful Rebuilding Study",
     relatedResourceTerms: ["nehemiah", "prayer", "jerusalem", "walls", "rebuilding", "opposition", "scripture", "covenant", "reform", "commentary"],
+  },
+  {
+    id: "esther-study-collection",
+    book: "Esther",
+    title: "Esther Study Collection",
+    description: "Hidden providence, mortal danger, courageous intercession, righteous reversal, deliverance, remembrance, and Mordecai's faithful service.",
+    featuredChapters: ["Esther 1", "Esther 2", "Esther 3", "Esther 4", "Esther 5", "Esther 6", "Esther 7", "Esther 8", "Esther 9", "Esther 10"],
+    playlistTitle: "Esther Providence and Courageous Intercession Study",
+    relatedResourceTerms: ["esther", "mordecai", "providence", "courage", "intercession", "deliverance", "purim", "commentary"],
   },
 ];
 
