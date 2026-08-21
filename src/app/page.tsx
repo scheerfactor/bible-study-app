@@ -4939,6 +4939,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Trace David's reign in stages", "Compare covenant promise and personal failure", "Save leadership warnings and applications"],
   },
   {
+    id: "first-kings-study",
+    title: "1 Kings Study",
+    shortLabel: "Wisdom and divided hearts",
+    description: "A whole-book path through Solomon's wisdom, the temple, spiritual decline, the divided kingdom, Elijah's ministry, and the authority of the word of the LORD.",
+    biblePassages: ["1 Kings 1", "1 Kings 3", "1 Kings 8", "1 Kings 11", "1 Kings 12", "1 Kings 17", "1 Kings 18", "1 Kings 19", "1 Kings 21", "1 Kings 22"],
+    resourceTerms: ["1 kings", "first book of kings", "solomon", "temple", "divided kingdom", "elijah", "apostasy", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace Solomon and Elijah separately", "Compare wisdom, compromise, and obedience", "Save kingdom and leadership applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4986,7 +4997,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5134,6 +5145,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["2 Samuel 1", "2 Samuel 5", "2 Samuel 6", "2 Samuel 7", "2 Samuel 11", "2 Samuel 12", "2 Samuel 15", "2 Samuel 18", "2 Samuel 22", "2 Samuel 24"],
     playlistTitle: "2 Samuel Covenant and Consequences Study",
     relatedResourceTerms: ["2 samuel", "second book of samuel", "david", "davidic covenant", "kingdom", "consequences", "restoration", "commentary"],
+  },
+  {
+    id: "first-kings-study-collection",
+    book: "1 Kings",
+    title: "1 Kings Study Collection",
+    description: "Solomon's wisdom, the temple and its dedication, spiritual decline, the divided kingdom, Elijah's ministry, and the authority of the word of the LORD.",
+    featuredChapters: ["1 Kings 1", "1 Kings 3", "1 Kings 8", "1 Kings 11", "1 Kings 12", "1 Kings 17", "1 Kings 18", "1 Kings 19", "1 Kings 21", "1 Kings 22"],
+    playlistTitle: "1 Kings Wisdom and Divided Hearts Study",
+    relatedResourceTerms: ["1 kings", "first book of kings", "solomon", "temple", "divided kingdom", "elijah", "apostasy", "commentary"],
   },
 ];
 
