@@ -4950,6 +4950,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Trace Solomon and Elijah separately", "Compare wisdom, compromise, and obedience", "Save kingdom and leadership applications"],
   },
   {
+    id: "second-kings-study",
+    title: "2 Kings Study",
+    shortLabel: "Prophets, reform, and exile",
+    description: "A whole-book path through Elisha's ministry, the decline and fall of Israel, Hezekiah's faith, Josiah's reform, and Judah's exile.",
+    biblePassages: ["2 Kings 2", "2 Kings 4", "2 Kings 5", "2 Kings 6", "2 Kings 7", "2 Kings 17", "2 Kings 18", "2 Kings 19", "2 Kings 22", "2 Kings 23", "2 Kings 25"],
+    resourceTerms: ["2 kings", "second book of kings", "elisha", "naaman", "hezekiah", "josiah", "reform", "exile", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace Elisha and the kings separately", "Compare reform, unbelief, and obedience", "Save prophetic and leadership applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4997,7 +5008,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5154,6 +5165,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["1 Kings 1", "1 Kings 3", "1 Kings 8", "1 Kings 11", "1 Kings 12", "1 Kings 17", "1 Kings 18", "1 Kings 19", "1 Kings 21", "1 Kings 22"],
     playlistTitle: "1 Kings Wisdom and Divided Hearts Study",
     relatedResourceTerms: ["1 kings", "first book of kings", "solomon", "temple", "divided kingdom", "elijah", "apostasy", "commentary"],
+  },
+  {
+    id: "second-kings-study-collection",
+    book: "2 Kings",
+    title: "2 Kings Study Collection",
+    description: "Elisha's ministry, the decline and fall of Israel, Hezekiah's faith, Josiah's reform, Jerusalem's fall, and Judah's exile.",
+    featuredChapters: ["2 Kings 2", "2 Kings 4", "2 Kings 5", "2 Kings 6", "2 Kings 7", "2 Kings 17", "2 Kings 18", "2 Kings 19", "2 Kings 22", "2 Kings 23", "2 Kings 25"],
+    playlistTitle: "2 Kings Prophets, Reform, and Exile Study",
+    relatedResourceTerms: ["2 kings", "second book of kings", "elisha", "naaman", "hezekiah", "josiah", "reform", "exile", "commentary"],
   },
 ];
 

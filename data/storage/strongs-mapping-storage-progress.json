@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-21T16:07:23.566Z",
-  "completed_book_count": 11,
-  "completed_chapter_count": 313,
-  "completed_size_bytes": 169649745,
+  "updated_at": "2026-08-21T16:11:17.495Z",
+  "completed_book_count": 12,
+  "completed_chapter_count": 338,
+  "completed_size_bytes": 184681821,
   "completed_books": [
     {
       "book": "Genesis",
@@ -114,6 +114,16 @@
       "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
       "inventory_generated_at": "2026-08-21T02:46:47.558Z",
       "verified_at": "2026-08-21T16:07:23.566Z"
+    },
+    {
+      "book": "2 Kings",
+      "slug": "2-kings",
+      "chapter_count": 25,
+      "size_bytes": 15032076,
+      "verification": "remote_sha256_matches_inventory",
+      "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
+      "inventory_generated_at": "2026-08-21T02:46:47.558Z",
+      "verified_at": "2026-08-21T16:11:17.495Z"
     }
   ]
 }
