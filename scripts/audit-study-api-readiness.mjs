@@ -4,6 +4,21 @@ const baseUrl = new URL(
   process.env.STUDY_API_AUDIT_BASE_URL ?? (useLiveBeta ? LIVE_BETA_URL : "http://127.0.0.1:3000/"),
 );
 
+function strongMappingProbe(reference) {
+  return {
+    label: `Strong's ${reference} mapping`,
+    path: `/api/strongs?verse=${encodeURIComponent(reference)}`,
+    validate(data) {
+      return data?.mapping_source === "chapter-shard" &&
+        data?.mappings?.length > 0 &&
+        data.mappings.every((mapping) => mapping.verse_ref === reference);
+    },
+    summary(data) {
+      return `${data.mappings.length} reviewed ${reference} mappings`;
+    },
+  };
+}
+
 const probes = [
   {
     label: "Webster lookup",
@@ -25,16 +40,11 @@ const probes = [
       return `${data.entries.length} entries; G25 found`;
     },
   },
-  {
-    label: "Strong's verse mapping",
-    path: "/api/strongs?verse=John%203%3A16",
-    validate(data) {
-      return data?.mapping_source === "chapter-shard" && data?.mappings?.length > 0;
-    },
-    summary(data) {
-      return `${data.mappings.length} reviewed John 3:16 mappings`;
-    },
-  },
+  strongMappingProbe("Genesis 1:1"),
+  strongMappingProbe("Psalms 23:1"),
+  strongMappingProbe("John 3:16"),
+  strongMappingProbe("Romans 8:28"),
+  strongMappingProbe("Revelation 22:21"),
   {
     label: "Commentary catalog",
     path: "/api/commentary/catalog",
