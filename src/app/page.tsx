@@ -4917,6 +4917,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read the whole book in one sitting", "Trace the kinsman-redeemer theme", "Save providence and faithfulness applications"],
   },
   {
+    id: "first-samuel-study",
+    title: "1 Samuel Study",
+    shortLabel: "Obedience and kingship",
+    description: "A whole-book path through Samuel's ministry, Israel's demand for a king, Saul's disobedience, David's anointing, and faith under trial.",
+    biblePassages: ["1 Samuel 1", "1 Samuel 3", "1 Samuel 8", "1 Samuel 15", "1 Samuel 16", "1 Samuel 17", "1 Samuel 24", "1 Samuel 31"],
+    resourceTerms: ["1 samuel", "first book of samuel", "samuel", "saul", "david", "kingship", "obedience", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace Samuel, Saul, and David separately", "Compare obedience and presumption", "Save character lessons for teaching"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4964,7 +4975,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5094,6 +5105,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Ruth 1", "Ruth 2", "Ruth 3", "Ruth 4"],
     playlistTitle: "Ruth Providence and Redemption Study",
     relatedResourceTerms: ["ruth", "boaz", "naomi", "redeemer", "redemption", "providence", "bethlehem", "commentary"],
+  },
+  {
+    id: "first-samuel-study-collection",
+    book: "1 Samuel",
+    title: "1 Samuel Study Collection",
+    description: "Hannah's prayer, Samuel's ministry, Israel's demand for a king, Saul's disobedience, David's anointing, faith under trial, and Saul's fall.",
+    featuredChapters: ["1 Samuel 1", "1 Samuel 3", "1 Samuel 8", "1 Samuel 15", "1 Samuel 16", "1 Samuel 17", "1 Samuel 24", "1 Samuel 31"],
+    playlistTitle: "1 Samuel Obedience and Kingship Study",
+    relatedResourceTerms: ["1 samuel", "first book of samuel", "samuel", "saul", "david", "kingship", "obedience", "commentary"],
   },
 ];
 
