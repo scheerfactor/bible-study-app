@@ -46,6 +46,7 @@ import {
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
+import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
@@ -4905,6 +4906,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Trace one judge at a time", "Mark each cycle of decline and deliverance", "Save warnings and applications for teaching"],
   },
   {
+    id: "ruth-study",
+    title: "Ruth Study",
+    shortLabel: "Providence and redemption",
+    description: "A four-chapter path through loss, faithfulness, providence, redemption, and the family line leading to David, with KJV reading and verified study helps.",
+    biblePassages: ["Ruth 1", "Ruth 2", "Ruth 3", "Ruth 4"],
+    resourceTerms: ["ruth", "boaz", "naomi", "redeemer", "redemption", "providence", "bethlehem", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Read the whole book in one sitting", "Trace the kinsman-redeemer theme", "Save providence and faithfulness applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4952,7 +4964,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5073,6 +5085,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Judges 2", "Judges 4", "Judges 6", "Judges 7", "Judges 11", "Judges 13", "Judges 16", "Judges 21"],
     playlistTitle: "Judges Decline and Deliverance Study",
     relatedResourceTerms: ["judges", "deborah", "gideon", "jephthah", "samson", "deliverance", "apostasy", "commentary"],
+  },
+  {
+    id: "ruth-study-collection",
+    book: "Ruth",
+    title: "Ruth Study Collection",
+    description: "Loss, faithful commitment, providence in ordinary labor, the kinsman-redeemer, restoration, and the family line leading to David.",
+    featuredChapters: ["Ruth 1", "Ruth 2", "Ruth 3", "Ruth 4"],
+    playlistTitle: "Ruth Providence and Redemption Study",
+    relatedResourceTerms: ["ruth", "boaz", "naomi", "redeemer", "redemption", "providence", "bethlehem", "commentary"],
   },
 ];
 
@@ -17302,7 +17323,7 @@ function itemMatchesQuery(query: string, parts: Array<string | number | undefine
   const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return true;
   const haystack = searchableText(parts);
-  return terms.every((term) => haystack.includes(term));
+  return terms.every((term) => librarySearchTextContainsTerm(haystack, term));
 }
 
 function testamentForReference(reference: string) {
@@ -31604,7 +31625,7 @@ function commentaryEntryMatchesSearch(entry: CommentaryEntry, terms: string[]) {
     profile?.doctrinalNotes ?? "",
     entry.entry_text,
   ].join(" ").toLowerCase();
-  return terms.every((term) => haystack.includes(term));
+  return terms.every((term) => librarySearchTextContainsTerm(haystack, term));
 }
 
 function commentaryPublicStatusLabel(status: ResourceImportStatus) {

@@ -4,6 +4,7 @@ import { promisify } from "node:util";
 import { gzip } from "node:zlib";
 import { curateLibraryEntry } from "@/lib/library-curation";
 import { loadLibraryManifestEntries } from "@/lib/library-manifest";
+import { librarySearchTextContainsTerm, normalizeLibrarySearchText } from "@/lib/library-search";
 
 export const runtime = "nodejs";
 
@@ -50,12 +51,8 @@ function slugFromPath(filePath: string) {
   return basename(filePath, ".txt");
 }
 
-function normalizeSearchText(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-}
-
 function searchableResourceText(resource: LibraryCatalogResource) {
-  return normalizeSearchText([
+  return normalizeLibrarySearchText([
     resource.title,
     resource.author,
     resource.category,
@@ -72,15 +69,15 @@ function searchableResourceText(resource: LibraryCatalogResource) {
 
 function resourceSearchScore(resource: LibraryCatalogResource, normalizedQuery: string) {
   if (!normalizedQuery) return 0;
-  const title = normalizeSearchText(resource.title);
-  const author = normalizeSearchText(resource.author);
-  const category = normalizeSearchText(resource.category);
+  const title = normalizeLibrarySearchText(resource.title);
+  const author = normalizeLibrarySearchText(resource.author);
+  const category = normalizeLibrarySearchText(resource.category);
   if (title === normalizedQuery) return 500;
   if (author === normalizedQuery) return 450;
-  if (title.startsWith(normalizedQuery)) return 400;
-  if (author.startsWith(normalizedQuery)) return 350;
-  if (title.includes(normalizedQuery)) return 300;
-  if (author.includes(normalizedQuery)) return 250;
+  if (title.startsWith(`${normalizedQuery} `)) return 400;
+  if (author.startsWith(`${normalizedQuery} `)) return 350;
+  if (librarySearchTextContainsTerm(title, normalizedQuery)) return 300;
+  if (librarySearchTextContainsTerm(author, normalizedQuery)) return 250;
   if (category === normalizedQuery) return 200;
   return 100;
 }
@@ -167,21 +164,21 @@ function paginatedRequest(searchParams: URLSearchParams) {
 
 async function paginatedCatalogPayload(searchParams: URLSearchParams, data: LibraryCatalogData) {
   const query = (searchParams.get("q") ?? searchParams.get("query") ?? "").trim().slice(0, MAX_QUERY_LENGTH);
-  const normalizedQuery = normalizeSearchText(query);
+  const normalizedQuery = normalizeLibrarySearchText(query);
   const terms = normalizedQuery.split(/\s+/).filter(Boolean).slice(0, 10);
   const category = (searchParams.get("category") ?? "").trim();
-  const normalizedCategory = normalizeSearchText(category);
+  const normalizedCategory = normalizeLibrarySearchText(category);
   const discoveryFilter = (searchParams.get("filter") ?? "").trim();
   const page = parsePositiveInteger(searchParams.get("page"), 1);
   const limit = parsePositiveInteger(searchParams.get("limit"), DEFAULT_PAGE_SIZE, MAX_PAGE_SIZE);
 
   const matches = data.resources
-    .filter((resource) => !normalizedCategory || normalizeSearchText(resource.category) === normalizedCategory)
+    .filter((resource) => !normalizedCategory || normalizeLibrarySearchText(resource.category) === normalizedCategory)
     .filter((resource) => resourceMatchesDiscoveryFilter(resource, discoveryFilter))
     .filter((resource) => {
       if (!terms.length) return true;
       const haystack = searchableResourceText(resource);
-      return terms.every((term) => haystack.includes(term));
+      return terms.every((term) => librarySearchTextContainsTerm(haystack, term));
     })
     .sort((a, b) => {
       const scoreDifference = resourceSearchScore(b, normalizedQuery) - resourceSearchScore(a, normalizedQuery);
