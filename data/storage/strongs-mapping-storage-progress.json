@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-21T03:17:13.666Z",
+  "completed_book_count": 3,
+  "completed_chapter_count": 117,
+  "completed_size_bytes": 59976331,
+  "completed_books": [
+    {
+      "book": "Genesis",
+      "slug": "genesis",
+      "chapter_count": 50,
+      "size_bytes": 24245831,
+      "verification": "remote_sha256_matches_inventory",
+      "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
+      "inventory_generated_at": "2026-08-21T02:46:47.558Z",
+      "verified_at": "2026-08-21T03:17:12.083Z"
+    },
+    {
+      "book": "Exodus",
+      "slug": "exodus",
+      "chapter_count": 40,
+      "size_bytes": 20664260,
+      "verification": "remote_sha256_matches_inventory",
+      "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
+      "inventory_generated_at": "2026-08-21T02:46:47.558Z",
+      "verified_at": "2026-08-21T03:17:12.990Z"
+    },
+    {
+      "book": "Leviticus",
+      "slug": "leviticus",
+      "chapter_count": 27,
+      "size_bytes": 15066240,
+      "verification": "remote_sha256_matches_inventory",
+      "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
+      "inventory_generated_at": "2026-08-21T02:46:47.558Z",
+      "verified_at": "2026-08-21T03:17:13.666Z"
+    }
+  ]
+}

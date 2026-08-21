@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
 function argument(name) {
   return process.argv.find((value) => value.startsWith(`--${name}=`))?.split("=").slice(1).join("=");
@@ -12,6 +12,8 @@ function slug(value) {
 const book = argument("book")?.trim();
 const baseUrl = (argument("base-url") ?? process.env.CONTENT_PUBLIC_BASE_URL ?? process.env.NEXT_PUBLIC_CONTENT_BASE_URL)?.replace(/\/+$/, "");
 const concurrency = Math.max(1, Math.min(12, Number(argument("concurrency") ?? 6)));
+const recordProgress = process.argv.includes("--record");
+const progressPath = "data/storage/strongs-mapping-storage-progress.json";
 
 if (!book || !baseUrl) {
   throw new Error(
@@ -62,3 +64,31 @@ if (failures.length) {
 
 console.log(`PASS Strong's live storage: ${items.length} ${book} chapter shards match committed checksums.`);
 console.log(`PASS Strong's live volume: ${(verifiedBytes / 1024 / 1024).toFixed(2)} MB verified from ${new URL(baseUrl).host}.`);
+
+if (recordProgress) {
+  const progress = await readFile(progressPath, "utf8")
+    .then(JSON.parse)
+    .catch(() => ({ schema_version: 1, completed_books: [] }));
+  const completedBooks = Array.isArray(progress.completed_books) ? progress.completed_books : [];
+  const record = {
+    book,
+    slug: slug(book),
+    chapter_count: items.length,
+    size_bytes: verifiedBytes,
+    verification: "remote_sha256_matches_inventory",
+    storage_host: new URL(baseUrl).host,
+    inventory_generated_at: inventory.generated_at,
+    verified_at: new Date().toISOString(),
+  };
+  const nextBooks = [...completedBooks.filter((entry) => entry.slug !== record.slug), record];
+  const nextProgress = {
+    schema_version: 1,
+    updated_at: record.verified_at,
+    completed_book_count: nextBooks.length,
+    completed_chapter_count: nextBooks.reduce((sum, entry) => sum + entry.chapter_count, 0),
+    completed_size_bytes: nextBooks.reduce((sum, entry) => sum + entry.size_bytes, 0),
+    completed_books: nextBooks,
+  };
+  await writeFile(progressPath, `${JSON.stringify(nextProgress, null, 2)}\n`);
+  console.log(`Recorded verified ${book} migration progress in ${progressPath}.`);
+}
