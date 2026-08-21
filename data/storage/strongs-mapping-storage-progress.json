@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-21T16:11:17.495Z",
-  "completed_book_count": 12,
-  "completed_chapter_count": 338,
-  "completed_size_bytes": 184681821,
+  "updated_at": "2026-08-21T16:14:18.781Z",
+  "completed_book_count": 13,
+  "completed_chapter_count": 367,
+  "completed_size_bytes": 197671355,
   "completed_books": [
     {
       "book": "Genesis",
@@ -124,6 +124,16 @@
       "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
       "inventory_generated_at": "2026-08-21T02:46:47.558Z",
       "verified_at": "2026-08-21T16:11:17.495Z"
+    },
+    {
+      "book": "1 Chronicles",
+      "slug": "1-chronicles",
+      "chapter_count": 29,
+      "size_bytes": 12989534,
+      "verification": "remote_sha256_matches_inventory",
+      "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
+      "inventory_generated_at": "2026-08-21T02:46:47.558Z",
+      "verified_at": "2026-08-21T16:14:18.781Z"
     }
   ]
 }

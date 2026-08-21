@@ -4961,6 +4961,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Trace Elisha and the kings separately", "Compare reform, unbelief, and obedience", "Save prophetic and leadership applications"],
   },
   {
+    id: "first-chronicles-study",
+    title: "1 Chronicles Study",
+    shortLabel: "Remembering and preparing",
+    description: "A whole-book path through Israel's genealogies, David's kingdom, the ark, ordered worship, the covenant promise, and preparation for the temple.",
+    biblePassages: ["1 Chronicles 1", "1 Chronicles 10", "1 Chronicles 11", "1 Chronicles 13", "1 Chronicles 15", "1 Chronicles 16", "1 Chronicles 17", "1 Chronicles 21", "1 Chronicles 22", "1 Chronicles 25", "1 Chronicles 28", "1 Chronicles 29"],
+    resourceTerms: ["1 chronicles", "first chronicles", "genealogy", "david", "ark", "worship", "temple", "levites", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace genealogy, kingdom, and worship sections", "Compare David's victories and preparation", "Save worship and stewardship applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -5008,7 +5019,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5174,6 +5185,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["2 Kings 2", "2 Kings 4", "2 Kings 5", "2 Kings 6", "2 Kings 7", "2 Kings 17", "2 Kings 18", "2 Kings 19", "2 Kings 22", "2 Kings 23", "2 Kings 25"],
     playlistTitle: "2 Kings Prophets, Reform, and Exile Study",
     relatedResourceTerms: ["2 kings", "second book of kings", "elisha", "naaman", "hezekiah", "josiah", "reform", "exile", "commentary"],
+  },
+  {
+    id: "first-chronicles-study-collection",
+    book: "1 Chronicles",
+    title: "1 Chronicles Study Collection",
+    description: "Israel's genealogies, David's kingdom, the ark, ordered worship, the covenant promise, temple preparation, and the charge to Solomon.",
+    featuredChapters: ["1 Chronicles 1", "1 Chronicles 10", "1 Chronicles 11", "1 Chronicles 13", "1 Chronicles 15", "1 Chronicles 16", "1 Chronicles 17", "1 Chronicles 21", "1 Chronicles 22", "1 Chronicles 25", "1 Chronicles 28", "1 Chronicles 29"],
+    playlistTitle: "1 Chronicles Remembering and Preparing Study",
+    relatedResourceTerms: ["1 chronicles", "first chronicles", "genealogy", "david", "ark", "worship", "temple", "levites", "commentary"],
   },
 ];
 
