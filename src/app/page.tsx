@@ -5016,6 +5016,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read the whole book in one sitting", "Trace providence and reversal", "Save courage and intercession applications"],
   },
   {
+    id: "job-study",
+    title: "Job Study",
+    shortLabel: "Suffering, wisdom, and the LORD's answer",
+    description: "A whole-book path through testing, lament, disputed counsel, hope, wisdom, Elihu's words, the LORD's answer, humility, intercession, and restoration.",
+    biblePassages: ["Job 1", "Job 2", "Job 3", "Job 9", "Job 13", "Job 14", "Job 19", "Job 23", "Job 28", "Job 31", "Job 32", "Job 33", "Job 37", "Job 38", "Job 40", "Job 42"],
+    resourceTerms: ["job", "suffering", "faith", "counsel", "wisdom", "redeemer", "elihu", "creation", "restoration", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["kelly", "matthew-henry"],
+    repeatOptions: ["Trace Job and his counselors separately", "Compare human counsel with the LORD's answer", "Save suffering and pastoral-care applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -5063,7 +5074,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "nehemiah-study", "esther-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "nehemiah-study", "esther-study", "job-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5274,6 +5285,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Esther 1", "Esther 2", "Esther 3", "Esther 4", "Esther 5", "Esther 6", "Esther 7", "Esther 8", "Esther 9", "Esther 10"],
     playlistTitle: "Esther Providence and Courageous Intercession Study",
     relatedResourceTerms: ["esther", "mordecai", "providence", "courage", "intercession", "deliverance", "purim", "commentary"],
+  },
+  {
+    id: "job-study-collection",
+    book: "Job",
+    title: "Job Study Collection",
+    description: "Testing, lament, disputed counsel, hope, wisdom, Elihu's words, creation, the LORD's answer, humility, intercession, and restoration.",
+    featuredChapters: ["Job 1", "Job 2", "Job 3", "Job 9", "Job 13", "Job 14", "Job 19", "Job 23", "Job 28", "Job 31", "Job 32", "Job 33", "Job 37", "Job 38", "Job 40", "Job 42"],
+    playlistTitle: "Job Suffering, Wisdom, and the LORD's Answer Study",
+    relatedResourceTerms: ["job", "suffering", "faith", "counsel", "wisdom", "redeemer", "elihu", "creation", "restoration", "commentary"],
   },
 ];
 
