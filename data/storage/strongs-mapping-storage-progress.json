@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-21T16:18:13.529Z",
-  "completed_book_count": 14,
-  "completed_chapter_count": 403,
-  "completed_size_bytes": 214485793,
+  "updated_at": "2026-08-21T16:20:50.234Z",
+  "completed_book_count": 15,
+  "completed_chapter_count": 413,
+  "completed_size_bytes": 219230181,
   "completed_books": [
     {
       "book": "Genesis",
@@ -144,6 +144,16 @@
       "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
       "inventory_generated_at": "2026-08-21T02:46:47.558Z",
       "verified_at": "2026-08-21T16:18:13.529Z"
+    },
+    {
+      "book": "Ezra",
+      "slug": "ezra",
+      "chapter_count": 10,
+      "size_bytes": 4744388,
+      "verification": "remote_sha256_matches_inventory",
+      "storage_host": "pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
+      "inventory_generated_at": "2026-08-21T02:46:47.558Z",
+      "verified_at": "2026-08-21T16:20:50.234Z"
     }
   ]
 }

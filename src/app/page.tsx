@@ -4983,6 +4983,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Trace the kings and reforms in order", "Compare seeking the LORD and forsaking him", "Save revival and leadership applications"],
   },
   {
+    id: "ezra-study",
+    title: "Ezra Study",
+    shortLabel: "Return and rebuilding",
+    description: "A ten-chapter path through the return to Jerusalem, restored worship, temple rebuilding, opposition, renewed work, prayer, confession, and obedience.",
+    biblePassages: ["Ezra 1", "Ezra 2", "Ezra 3", "Ezra 4", "Ezra 5", "Ezra 6", "Ezra 7", "Ezra 8", "Ezra 9", "Ezra 10"],
+    resourceTerms: ["ezra", "return", "jerusalem", "temple", "rebuilding", "opposition", "confession", "obedience", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "ironside", "matthew-henry"],
+    repeatOptions: ["Read the whole book in two sittings", "Trace rebuilding and spiritual renewal", "Save prayer and leadership applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -5030,7 +5041,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5214,6 +5225,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["2 Chronicles 1", "2 Chronicles 5", "2 Chronicles 6", "2 Chronicles 7", "2 Chronicles 14", "2 Chronicles 15", "2 Chronicles 20", "2 Chronicles 24", "2 Chronicles 29", "2 Chronicles 30", "2 Chronicles 32", "2 Chronicles 34", "2 Chronicles 36"],
     playlistTitle: "2 Chronicles Seeking, Reform, and Return Study",
     relatedResourceTerms: ["2 chronicles", "second chronicles", "temple", "prayer", "judah", "revival", "reform", "exile", "return", "commentary"],
+  },
+  {
+    id: "ezra-study-collection",
+    book: "Ezra",
+    title: "Ezra Study Collection",
+    description: "Return to Jerusalem, restored worship, temple rebuilding, opposition, renewed work, Ezra's preparation, prayer, confession, and obedience.",
+    featuredChapters: ["Ezra 1", "Ezra 2", "Ezra 3", "Ezra 4", "Ezra 5", "Ezra 6", "Ezra 7", "Ezra 8", "Ezra 9", "Ezra 10"],
+    playlistTitle: "Ezra Return and Rebuilding Study",
+    relatedResourceTerms: ["ezra", "return", "jerusalem", "temple", "rebuilding", "opposition", "confession", "obedience", "commentary"],
   },
 ];
 
