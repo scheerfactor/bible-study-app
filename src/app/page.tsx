@@ -4972,6 +4972,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Trace genealogy, kingdom, and worship sections", "Compare David's victories and preparation", "Save worship and stewardship applications"],
   },
   {
+    id: "second-chronicles-study",
+    title: "2 Chronicles Study",
+    shortLabel: "Seeking, reform, and return",
+    description: "A whole-book path through the temple, prayer, the kings of Judah, revival and reform, repeated warning, exile, and the promise of return.",
+    biblePassages: ["2 Chronicles 1", "2 Chronicles 5", "2 Chronicles 6", "2 Chronicles 7", "2 Chronicles 14", "2 Chronicles 15", "2 Chronicles 20", "2 Chronicles 24", "2 Chronicles 29", "2 Chronicles 30", "2 Chronicles 32", "2 Chronicles 34", "2 Chronicles 36"],
+    resourceTerms: ["2 chronicles", "second chronicles", "temple", "prayer", "judah", "revival", "reform", "exile", "return", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace the kings and reforms in order", "Compare seeking the LORD and forsaking him", "Save revival and leadership applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -5019,7 +5030,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5194,6 +5205,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["1 Chronicles 1", "1 Chronicles 10", "1 Chronicles 11", "1 Chronicles 13", "1 Chronicles 15", "1 Chronicles 16", "1 Chronicles 17", "1 Chronicles 21", "1 Chronicles 22", "1 Chronicles 25", "1 Chronicles 28", "1 Chronicles 29"],
     playlistTitle: "1 Chronicles Remembering and Preparing Study",
     relatedResourceTerms: ["1 chronicles", "first chronicles", "genealogy", "david", "ark", "worship", "temple", "levites", "commentary"],
+  },
+  {
+    id: "second-chronicles-study-collection",
+    book: "2 Chronicles",
+    title: "2 Chronicles Study Collection",
+    description: "The temple, prayer, Judah's kings, seeking the LORD, revival and reform, repeated warning, exile, and the promise of return.",
+    featuredChapters: ["2 Chronicles 1", "2 Chronicles 5", "2 Chronicles 6", "2 Chronicles 7", "2 Chronicles 14", "2 Chronicles 15", "2 Chronicles 20", "2 Chronicles 24", "2 Chronicles 29", "2 Chronicles 30", "2 Chronicles 32", "2 Chronicles 34", "2 Chronicles 36"],
+    playlistTitle: "2 Chronicles Seeking, Reform, and Return Study",
+    relatedResourceTerms: ["2 chronicles", "second chronicles", "temple", "prayer", "judah", "revival", "reform", "exile", "return", "commentary"],
   },
 ];
 
