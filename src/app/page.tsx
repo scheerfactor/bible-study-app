@@ -4994,6 +4994,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read the whole book in two sittings", "Trace rebuilding and spiritual renewal", "Save prayer and leadership applications"],
   },
   {
+    id: "nehemiah-study",
+    title: "Nehemiah Study",
+    shortLabel: "Prayer and faithful rebuilding",
+    description: "A thirteen-chapter path through prayer, wise planning, united labor, opposition, completed walls, Scripture reading, confession, covenant, and reform.",
+    biblePassages: ["Nehemiah 1", "Nehemiah 2", "Nehemiah 3", "Nehemiah 4", "Nehemiah 5", "Nehemiah 6", "Nehemiah 7", "Nehemiah 8", "Nehemiah 9", "Nehemiah 10", "Nehemiah 11", "Nehemiah 12", "Nehemiah 13"],
+    resourceTerms: ["nehemiah", "prayer", "jerusalem", "walls", "rebuilding", "opposition", "scripture", "covenant", "reform", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["ironside", "matthew-henry"],
+    repeatOptions: ["Read the whole book in three sittings", "Trace prayer, planning, and perseverance", "Save leadership and renewal applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -5041,7 +5052,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "nehemiah-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -5234,6 +5245,15 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Ezra 1", "Ezra 2", "Ezra 3", "Ezra 4", "Ezra 5", "Ezra 6", "Ezra 7", "Ezra 8", "Ezra 9", "Ezra 10"],
     playlistTitle: "Ezra Return and Rebuilding Study",
     relatedResourceTerms: ["ezra", "return", "jerusalem", "temple", "rebuilding", "opposition", "confession", "obedience", "commentary"],
+  },
+  {
+    id: "nehemiah-study-collection",
+    book: "Nehemiah",
+    title: "Nehemiah Study Collection",
+    description: "Prayer, wise planning, united labor, opposition, completed walls, public Scripture reading, confession, covenant, dedication, and reform.",
+    featuredChapters: ["Nehemiah 1", "Nehemiah 2", "Nehemiah 3", "Nehemiah 4", "Nehemiah 5", "Nehemiah 6", "Nehemiah 7", "Nehemiah 8", "Nehemiah 9", "Nehemiah 10", "Nehemiah 11", "Nehemiah 12", "Nehemiah 13"],
+    playlistTitle: "Nehemiah Prayer and Faithful Rebuilding Study",
+    relatedResourceTerms: ["nehemiah", "prayer", "jerusalem", "walls", "rebuilding", "opposition", "scripture", "covenant", "reform", "commentary"],
   },
 ];
 
