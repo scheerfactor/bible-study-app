@@ -492,6 +492,23 @@ type PresentationEntry = {
   archived: boolean;
 };
 
+type MinistryWorkspaceBackupData = {
+  sermons: SermonEntry[];
+  sermonSeries: SermonSeries[];
+  presentations: PresentationEntry[];
+  churchThemes: SavedChurchTheme[];
+  activeSermon: SermonEntry | null;
+  activePresentation: PresentationEntry | null;
+};
+
+type MinistryWorkspaceBackupV1 = {
+  app: "Father's Business Bible Study";
+  kind: "ministry_workspace_backup";
+  schemaVersion: 1;
+  exportedAt: string;
+  data: MinistryWorkspaceBackupData;
+};
+
 type PresentationRemoteState = {
   sessionId: string;
   presentationId: string;
@@ -15098,6 +15115,57 @@ function saveSavedChurchThemes(themes: SavedChurchTheme[]) {
   window.localStorage.setItem(SERMON_CHURCH_THEMES_KEY, JSON.stringify(themes));
 }
 
+function isJsonRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function normalizeBackupArray<T>(value: unknown, normalize: (entry: Record<string, unknown>) => T | null): T[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter(isJsonRecord)
+    .map(normalize)
+    .filter((entry): entry is T => Boolean(entry));
+}
+
+function parseMinistryWorkspaceBackup(text: string): MinistryWorkspaceBackupData {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw new Error("That file is not valid JSON.");
+  }
+
+  if (!isJsonRecord(parsed) || parsed.kind !== "ministry_workspace_backup" || parsed.schemaVersion !== 1 || !isJsonRecord(parsed.data)) {
+    throw new Error("Choose a Father's Business ministry workspace backup file.");
+  }
+
+  const data = parsed.data;
+  const activeSermon = isJsonRecord(data.activeSermon)
+    ? normalizeSermonEntry(data.activeSermon as Partial<SermonEntry>)
+    : null;
+  const activePresentation = isJsonRecord(data.activePresentation)
+    ? normalizePresentationEntry(data.activePresentation as Partial<PresentationEntry>)
+    : null;
+
+  return {
+    sermons: normalizeBackupArray(data.sermons, (entry) => normalizeSermonEntry(entry as Partial<SermonEntry>)),
+    sermonSeries: normalizeBackupArray(data.sermonSeries, (entry) => normalizeSermonSeries(entry as Partial<SermonSeries>)),
+    presentations: normalizeBackupArray(data.presentations, (entry) => normalizePresentationEntry(entry as Partial<PresentationEntry>)),
+    churchThemes: normalizeBackupArray(data.churchThemes, (entry) => normalizeSavedChurchTheme(entry as Partial<SavedChurchTheme>)),
+    activeSermon,
+    activePresentation,
+  };
+}
+
+function mergeNewestRecords<T extends { id: string }>(current: T[], incoming: T[], dateFor: (entry: T) => string): T[] {
+  const records = new Map(current.map((entry) => [entry.id, entry]));
+  incoming.forEach((entry) => {
+    const existing = records.get(entry.id);
+    if (!existing || dateFor(entry).localeCompare(dateFor(existing)) >= 0) records.set(entry.id, entry);
+  });
+  return [...records.values()].sort((a, b) => dateFor(b).localeCompare(dateFor(a)));
+}
+
 function savedChurchThemePatch(theme: SavedChurchTheme): Partial<SermonSlide> {
   return {
     imageSlot: theme.imageSlot,
@@ -23101,6 +23169,68 @@ export default function Home() {
     setSyncMessage("Study data export downloaded.");
   }
 
+  function exportMinistryWorkspaceBackup() {
+    const payload: MinistryWorkspaceBackupV1 = {
+      app: "Father's Business Bible Study",
+      kind: "ministry_workspace_backup",
+      schemaVersion: 1,
+      exportedAt: new Date().toISOString(),
+      data: {
+        sermons: sermonEntries,
+        sermonSeries,
+        presentations: presentationEntries,
+        churchThemes: loadSavedChurchThemes(),
+        activeSermon: normalizeSermonEntry(sermonDraft),
+        activePresentation: normalizePresentationEntry(presentationDraft),
+      },
+    };
+    downloadTextFile(
+      `fathers-business-ministry-backup-${new Date().toISOString().slice(0, 10)}.json`,
+      JSON.stringify(payload, null, 2),
+      "application/json;charset=utf-8",
+    );
+    setSyncMessage(`Ministry backup downloaded with ${sermonEntries.length} sermons or lessons and ${presentationEntries.length} presentations.`);
+  }
+
+  async function importMinistryWorkspaceBackup(file: File): Promise<SavedChurchTheme[] | null> {
+    try {
+      const imported = parseMinistryWorkspaceBackup(await file.text());
+      const incomingSermons = imported.activeSermon
+        ? [imported.activeSermon, ...imported.sermons]
+        : imported.sermons;
+      const incomingPresentations = imported.activePresentation
+        ? [imported.activePresentation, ...imported.presentations]
+        : imported.presentations;
+      const mergedSermons = mergeNewestRecords(sermonEntries, incomingSermons, (entry) => entry.updatedAt);
+      const mergedSeries = mergeNewestRecords(sermonSeries, imported.sermonSeries, (entry) => entry.updatedAt);
+      const mergedPresentations = mergeNewestRecords(presentationEntries, incomingPresentations, (entry) => entry.updatedAt);
+      const mergedChurchThemes = mergeNewestRecords(loadSavedChurchThemes(), imported.churchThemes, (entry) => entry.createdAt);
+
+      setSermonEntries(mergedSermons);
+      setSermonSeries(mergedSeries);
+      setPresentationEntries(mergedPresentations);
+      saveSermonEntries(mergedSermons);
+      saveSermonSeries(mergedSeries);
+      savePresentationEntries(mergedPresentations);
+      saveSavedChurchThemes(mergedChurchThemes);
+
+      if (imported.activeSermon) {
+        setSermonDraft(mergedSermons.find((entry) => entry.id === imported.activeSermon?.id) ?? imported.activeSermon);
+      }
+      if (imported.activePresentation) {
+        setPresentationDraft(mergedPresentations.find((entry) => entry.id === imported.activePresentation?.id) ?? imported.activePresentation);
+      }
+
+      setSyncMessage(
+        `Ministry backup restored: ${imported.sermons.length} saved sermons or lessons, ${imported.sermonSeries.length} series, ${imported.presentations.length} presentations, and ${imported.churchThemes.length} themes reviewed. Newer work was kept.`,
+      );
+      return mergedChurchThemes;
+    } catch (error) {
+      setSyncMessage(error instanceof Error ? error.message : "The ministry backup could not be restored.");
+      return null;
+    }
+  }
+
   async function lookupWord(word: string) {
     const fallbackEntry = findDictionaryEntry(word);
     const checkingEntry: DictionaryEntry = fallbackEntry.found
@@ -24201,6 +24331,8 @@ export default function Home() {
                 onSeriesTitleChange={setSermonSeriesTitleDraft}
                 onSeriesPassageChange={setSermonSeriesPassageDraft}
                 onCreateSeries={createSermonSeries}
+                onExportMinistryBackup={exportMinistryWorkspaceBackup}
+                onImportMinistryBackup={importMinistryWorkspaceBackup}
                 onAppendImport={appendSermonImport}
                 onAddThemeToSermon={addThemeToSermon}
 	                onCreateStudyPlaylist={createSermonStudyPlaylist}
@@ -24220,6 +24352,7 @@ export default function Home() {
                   setSermonPreachingStartedAt(Date.now());
                   setSermonTimerNow(Date.now());
                 }}
+                onOpenPresentationWorkspace={() => openPresentationWorkspace("manager")}
                 onBackToBible={() => setTab("bible")}
               />
             )}
@@ -49721,6 +49854,8 @@ function SermonWorkspaceScreen({
   onSeriesTitleChange,
   onSeriesPassageChange,
   onCreateSeries,
+	onExportMinistryBackup,
+	onImportMinistryBackup,
 	  onAppendImport,
   onAddThemeToSermon,
 	  onCreateStudyPlaylist,
@@ -49737,6 +49872,7 @@ function SermonWorkspaceScreen({
 	  onResolveScriptureText,
 	  onStartPreaching,
 	  onResetTimer,
+	  onOpenPresentationWorkspace,
 	  onBackToBible,
 }: {
   view: SermonWorkspaceView;
@@ -49769,6 +49905,8 @@ function SermonWorkspaceScreen({
   onSeriesTitleChange: (value: string) => void;
   onSeriesPassageChange: (value: string) => void;
   onCreateSeries: () => void;
+  onExportMinistryBackup: () => void;
+  onImportMinistryBackup: (file: File) => Promise<SavedChurchTheme[] | null>;
   onAppendImport: (label: string, body: string) => void;
   onAddThemeToSermon: (theme: StudyTheme) => void;
 	  onCreateStudyPlaylist: (template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage) => void;
@@ -49785,6 +49923,7 @@ function SermonWorkspaceScreen({
 	  onResolveScriptureText: (passage: string) => string;
 	  onStartPreaching: () => void;
 	  onResetTimer: () => void;
+	  onOpenPresentationWorkspace: () => void;
 	  onBackToBible: () => void;
 	}) {
   const activeSermons = sermons.filter((entry) => !entry.archived && entry.status !== "Archived");
@@ -49809,6 +49948,7 @@ function SermonWorkspaceScreen({
 	  const [quickStartId, setQuickStartId] = useState<SermonQuickStartId>("expository");
 	  const [savedChurchThemes, setSavedChurchThemes] = useState<SavedChurchTheme[]>(() => loadSavedChurchThemes());
 	  const [churchThemeName, setChurchThemeName] = useState("Home Church Theme");
+	  const ministryBackupInputRef = useRef<HTMLInputElement | null>(null);
 		  const sermonEstimate = sermonLengthEstimate(draft);
 		  const sermonSlides = useMemo(() => draft.slides ?? [], [draft.slides]);
 	  const activeSlide = sermonSlides.find((slide) => slide.id === selectedSlideId) ?? sermonSlides[0] ?? null;
@@ -50010,6 +50150,11 @@ function SermonWorkspaceScreen({
 	      slides: sermonSlides.map((slide) => ({ ...slide, ...patch })),
 	    });
 	    if (activeSlide) setSelectedSlideId(activeSlide.id);
+	  }
+
+	  async function restoreMinistryWorkspaceBackup(file: File) {
+	    const restoredThemes = await onImportMinistryBackup(file);
+	    if (restoredThemes) setSavedChurchThemes(restoredThemes);
 	  }
 
 	  function buildTranscriptOutlineAndSlides() {
@@ -50306,6 +50451,28 @@ function SermonWorkspaceScreen({
             <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onCreateDraft("Sermon")} type="button">Create Sermon</button>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onCreateDraft("Lesson")} type="button">Create Lesson</button>
             <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onLoadSampleSermon} type="button">Load John 3 Sample</button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onExportMinistryBackup} type="button">
+              <Download aria-hidden="true" size={16} />
+              Ministry Backup
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => ministryBackupInputRef.current?.click()} type="button">
+              <Upload aria-hidden="true" size={16} />
+              Restore Backup
+            </button>
+            <input
+              ref={ministryBackupInputRef}
+              accept="application/json,.json"
+              className="sr-only"
+              onChange={(event) => {
+                const input = event.currentTarget;
+                const file = input.files?.[0];
+                if (!file) return;
+                void restoreMinistryWorkspaceBackup(file).finally(() => {
+                  input.value = "";
+                });
+              }}
+              type="file"
+            />
           </div>
         </div>
       </section>
@@ -50706,8 +50873,12 @@ function SermonWorkspaceScreen({
 
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Preacher Control</p>
-	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Phone/tablet remote control coming later</h2>
-	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">This MVP does not build network remote control yet. It prepares the sermon slide structure so a future remote can control the same slide list.</p>
+	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Control slides from an iPad or phone</h2>
+	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Save this sermon or lesson, then attach its deck in Presentations. Presenter View creates a session code for the Controller and full-screen display.</p>
+	              <button className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onOpenPresentationWorkspace} type="button">
+	                <MonitorPlay aria-hidden="true" size={16} />
+	                Open Remote Presentations
+	              </button>
 	            </article>
 	          </section>
 	        </div>
