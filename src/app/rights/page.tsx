@@ -45,6 +45,9 @@ export default function RightsPage() {
           are admitted through separate source manifests and review checks. Project Gutenberg material retains its
           applicable license and trademark considerations.
         </p>
+        <p>
+          Resource recommendations are also evaluated against the public <Link href="/doctrine">doctrinal basis</Link>.
+        </p>
       </section>
 
       <section>

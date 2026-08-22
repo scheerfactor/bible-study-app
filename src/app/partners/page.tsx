@@ -74,6 +74,7 @@ export default function PartnersPage() {
           <a href="mailto:hello@fathersbusinessmasteryresources.com">
             Email hello@fathersbusinessmasteryresources.com
           </a>
+          <Link href="/doctrine">Read the doctrinal basis</Link>
           <Link href="/rights">Read the content-rights policy</Link>
         </div>
       </section>

@@ -292,6 +292,7 @@ export default function ComingSoonPage() {
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
             <Link href="/rights">Rights</Link>
+            <Link href="/doctrine">Doctrine</Link>
             <Link href="/partners">Authors</Link>
             <Link href="/support">Support</Link>
           </nav>

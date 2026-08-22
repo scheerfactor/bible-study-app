@@ -13,6 +13,7 @@ const publicLinks = [
   ["Privacy", "/privacy"],
   ["Terms", "/terms"],
   ["Content rights", "/rights"],
+  ["Doctrinal basis", "/doctrine"],
   ["Author partnerships", "/partners"],
   ["Support", "/support"],
 ] as const;
