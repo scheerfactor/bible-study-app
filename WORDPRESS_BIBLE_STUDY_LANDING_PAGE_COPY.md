@@ -1,6 +1,6 @@
 # WordPress Bible Study Landing Page Copy
 
-Prepared 2026-08-22. Draft only. Publish after the custom app domain, screenshots, links, and beta status are verified.
+Prepared and reviewed 2026-08-22. Ready for a WordPress staging preview. Publish only after the launch screenshot is deployed and the final WordPress preview is checked on desktop and mobile.
 
 ## Page
 
@@ -21,6 +21,15 @@ Father's Business Bible Study is being built for Christians, pastors, Sunday Sch
 Primary button: `Open the Bible Study App`
 
 Secondary button: `Join the Beta and Share Feedback`
+
+## Hero Screenshot
+
+- Image after the next app deployment: `https://study.fathersbusinessmasteryresources.com/launch/daily-growth-dashboard-beta.png`
+- Local source: `public/launch/daily-growth-dashboard-beta.png`
+- Alt text: `Father's Business Bible Study active-beta dashboard with Bible reading, study, commentary, library, radio, notes, and lesson preparation tools.`
+- Caption: `Begin with Scripture, continue your study, and move toward a sermon, lesson, or presentation without losing your place.`
+
+Use the full dashboard screenshot at a readable width. Do not crop away the active-beta notice, the product name, or the main study navigation.
 
 ## Study Without Losing Your Place
 
@@ -63,7 +72,7 @@ Father's Business Bible Study is in active beta. Core Bible reading, study, libr
 
 We are not promising every planned feature at launch. We are building carefully, testing real ministry workflows, respecting copyrights, and publishing only what is ready.
 
-## Links To Verify Before Publishing
+## Verified Public Links
 
 - App: `https://study.fathersbusinessmasteryresources.com`
 - Partners: `https://study.fathersbusinessmasteryresources.com/partners`
@@ -72,4 +81,24 @@ We are not promising every planned feature at launch. We are building carefully,
 - Doctrinal basis: `https://study.fathersbusinessmasteryresources.com/doctrine`
 - General feedback: `https://study.fathersbusinessmasteryresources.com/feedback`
 
-Do not publish these custom-domain links until DNS, TLS, the deployment, and live route checks pass.
+DNS, TLS, the production deployment, authentication return URL, and these public routes were verified on 2026-08-22. The live content-health endpoint reports production commit `2896dca817678ade911388c26590f73c7d3f5513`.
+
+## WordPress Assembly Order
+
+1. Product name and introduction.
+2. Primary and secondary buttons.
+3. Verified dashboard screenshot and caption.
+4. `Study Without Losing Your Place` feature list.
+5. Curated library and copyright-respect statement.
+6. Author, publisher, and ministry partner invitation.
+7. Active-beta status and feedback link.
+
+Keep the existing store header and footer. Add the menu label `Bible Study App`, pointing to `/bible-study/`, only when the page itself is published.
+
+## Final Preview Gate
+
+- Confirm every button opens the intended custom-domain route.
+- Confirm the screenshot remains legible and does not stretch on mobile.
+- Confirm the page says `active beta`, not finished or fully launched.
+- Confirm no paid-plan promise or unlicensed modern resource is advertised.
+- Confirm the existing WordPress store, checkout, and primary navigation still work.
