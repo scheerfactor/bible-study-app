@@ -4,6 +4,8 @@ import PublicInfoPage from "@/components/PublicInfoPage";
 
 const partnershipHref =
   "/feedback?category=Author%20%2F%20publisher%20partnership&context=Founding%20author%20invitation";
+const productFeedbackHref =
+  "/feedback?category=Publisher%20product%20feedback&context=Publisher%20and%20author%20product%20interview";
 
 export const metadata: Metadata = {
   title: "Authors and Ministry Partners",
@@ -80,6 +82,18 @@ export default function PartnersPage() {
           <li>A direct correction, restriction, and removal path for rights holders.</li>
           <li>Separate conversations about free access, paid access, referrals, royalties, and direct sales.</li>
         </ul>
+      </section>
+
+      <section>
+        <h2>Help shape the study experience</h2>
+        <p>
+          Authors and publishers understand their readers, files, permissions, and support needs. We welcome
+          candid feedback about the resources pastors need, how commentary should appear beside a passage, which
+          audio and video workflows are useful, and what reporting or controls would make a partnership trustworthy.
+        </p>
+        <div className="public-info-actions">
+          <Link href={productFeedbackHref}>Share publisher product feedback</Link>
+        </div>
       </section>
 
       <section>

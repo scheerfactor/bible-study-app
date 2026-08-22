@@ -373,6 +373,7 @@ alter table public.beta_feedback add constraint beta_feedback_category_check
       'Mobile Layout',
       'Sermons / Presentations',
       'Author / publisher partnership',
+      'Publisher product feedback',
       'Other'
     )
     -- feedback-category-contract:end
@@ -996,6 +997,7 @@ create policy "Anyone can create beta feedback"
       'Mobile Layout',
       'Sermons / Presentations',
       'Author / publisher partnership',
+      'Publisher product feedback',
       'Other'
     )
     -- feedback-category-contract:end

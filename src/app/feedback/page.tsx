@@ -132,7 +132,7 @@ export default function FeedbackPage() {
             Report a problem, suggest an improvement, or begin a conversation about an author, ministry, or publisher resource.
           </p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            {["Bug report", "Resource issue", "Audio issue", "Author / publisher partnership"].map((item) => (
+            {["Bug report", "Resource issue", "Author / publisher partnership", "Publisher product feedback"].map((item) => (
               <button
                 key={`feedback-shortcut-${item}`}
                 className={`rounded-2xl border px-3 py-2 text-left text-xs font-semibold ${
@@ -148,6 +148,24 @@ export default function FeedbackPage() {
             ))}
           </div>
         </section>
+
+        {category === "Publisher product feedback" && (
+          <section className="mt-4 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <h2 className="text-xl font-semibold text-[var(--ink)]">Publisher and author questions</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              You may answer any that apply in the message box below. This is product discovery, not a rights grant
+              or licensing agreement.
+            </p>
+            <ol className="mt-4 space-y-2 pl-5 text-sm leading-6 text-[var(--muted)]">
+              <li>Which books, commentaries, lessons, sermons, audio, or video would serve serious Bible students best?</li>
+              <li>How should your material connect to Bible books, chapters, verses, topics, or Strong&apos;s numbers?</li>
+              <li>Would you prefer official-store purchases, app marketplace sales, subscriptions, or church and school licensing?</li>
+              <li>What attribution, preview, reporting, pricing, correction, and removal controls would you require?</li>
+              <li>Which search, notes, highlights, quotations, offline reading, audio, or presentation uses should be allowed or restricted?</li>
+              <li>What would make this app genuinely useful enough for you to recommend to pastors, teachers, and students?</li>
+            </ol>
+          </section>
+        )}
 
         <form className="mt-4 space-y-4" onSubmit={(event) => event.preventDefault()}>
           <label className="block rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
