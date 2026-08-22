@@ -9,7 +9,8 @@ Prepare Father's Business Bible Study to request permission for modern copyright
 The app is close enough to begin conversations with rights holders because it can show:
 
 - a working Bible-centered study platform
-- a curated public-domain library with more than 1,300 verified resources
+- a curated public-domain library with 2,241 verified public/free resources
+- 135 licensed-link records with separate scope tracking
 - public commentary coverage across all 66 Bible books at chapter level
 - admin-only rights tracking
 - public/private resource separation

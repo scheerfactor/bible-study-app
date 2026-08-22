@@ -128,6 +128,7 @@ export default function ComingSoonPage() {
           </span>
         </Link>
         <nav aria-label="Launch page navigation">
+          <Link href="/partners">For authors</Link>
           <Link href="#working-preview">Try it now</Link>
           <Link className="launch-header-action" href="/">Open preview</Link>
         </nav>
@@ -260,9 +261,9 @@ export default function ComingSoonPage() {
             </ol>
             <Link
               className="launch-roadmap-action"
-              href="/feedback?category=Author%20%2F%20publisher%20partnership&context=Resource%20partnership"
+              href="/partners"
             >
-              Discuss a resource partnership <ArrowRight aria-hidden="true" size={17} />
+              Review the partnership path <ArrowRight aria-hidden="true" size={17} />
             </Link>
           </div>
         </div>
@@ -291,6 +292,7 @@ export default function ComingSoonPage() {
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
             <Link href="/rights">Rights</Link>
+            <Link href="/partners">Authors</Link>
             <Link href="/support">Support</Link>
           </nav>
         </div>

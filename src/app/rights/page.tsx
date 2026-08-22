@@ -54,6 +54,10 @@ export default function RightsPage() {
           assumed to be available. Written scope must address attribution, storage, editing, narration, paid access,
           sales, territories, reporting, and withdrawal where those uses apply.
         </p>
+        <p>
+          Rights holders may review the <Link href="/partners">founding partnership path</Link> before beginning a
+          title-specific conversation.
+        </p>
       </section>
 
       <section>

@@ -40,7 +40,7 @@ Father's Business Bible Study does not publicly publish copyrighted books, comme
 
 - Working private beta app
 - KJV-focused Bible reader and study workflow
-- 2,238 verified public/free library resources plus 124 scoped licensed-link records
+- 2,241 verified public/free library resources plus 135 scoped licensed-link records
 - 15,235 validated public-domain commentary rows across 349 files
 - Webster's 1828, Strong's lexicons, KJV Strong's mapping, and TSK cross-references
 - Presentation-ready hymn and Bible-world evidence workflows
@@ -48,6 +48,7 @@ Father's Business Bible Study does not publicly publish copyrighted books, comme
 - Admin-only rights tracking and review workflow
 - Public/private resource separation
 - Audio and video intake stays rights-first
+- Public author and ministry partnership page at `/partners`
 
 Do not claim the app has complete verse-level commentary segmentation yet. The major verified commentary sets have full chapter coverage, while verse-level indexing is a separate improvement pass.
 
