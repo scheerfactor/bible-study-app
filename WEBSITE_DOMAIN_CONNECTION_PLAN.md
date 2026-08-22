@@ -11,7 +11,8 @@ Prepared and verified 2026-08-22 from live DNS, hosting, deployment, and authent
 - `https://bible-study-app-eight.vercel.app` remains the technical Vercel fallback.
 - The local repository is linked to the Vercel project `bible-study-app`.
 - Namecheap points the `study` CNAME to `6651c33ccfc197c6.vercel-dns-017.com`.
-- Vercel production deployment `7fAngvVUiEftJGr4vA4ULswiR14T` is ready and assigned to the custom domain.
+- Vercel production deployment `GgJgvfeqQ9PWCvCQQ59UauBpEGYa` is ready and assigned to the custom domain.
+- The custom domain serves merged production commit `2896dca817678ade911388c26590f73c7d3f5513`.
 - Vercel sets `NEXT_PUBLIC_SITE_URL` to `https://study.fathersbusinessmasteryresources.com` for production and preview deployments.
 - Supabase uses the custom domain as its Site URL and allows the exact production sign-in return `https://study.fathersbusinessmasteryresources.com/?open=settings`.
 - Existing Vercel preview, fallback, localhost, and local test redirect URLs remain allowed.
@@ -47,9 +48,10 @@ The landing page should explain the product, show verified screenshots or a shor
 3. Completed: verify the domain and TLS in Vercel.
 4. Completed: set `NEXT_PUBLIC_SITE_URL` to the verified custom domain.
 5. Completed: set the Supabase Site URL and exact production authentication redirect.
-6. Completed: deploy reviewed commit `ad5311a` and verify the live app, feedback page, partners page, and production build.
+6. Completed: merge pull request #1, deploy reviewed commit `2896dca`, and verify the live app, feedback page, partners page, library API, content-health API, and production build.
 7. Pending: create the WordPress `/bible-study/` landing page and add the app link to navigation.
-8. Pending: restore GitHub terminal authentication and push the reviewed branch history.
+8. Completed: restore GitHub access, push the reviewed branch history, and merge it into `main`.
+9. In progress: deploy the reviewed anonymous dashboard screenshot for the WordPress landing page.
 
 ## Do Not Change Yet
 
