@@ -1,6 +1,6 @@
 # Permission Ready-To-Send Batch 3
 
-Prepared 2026-08-22. These are drafts only. Do not submit either form until Stephen approves the exact message immediately before sending.
+Prepared 2026-08-22. The Bogard Press request was submitted after Stephen's approval. The Sword of the Lord request remains a draft and must not be submitted until Stephen approves that exact message immediately before sending.
 
 ## Batch Safety Rules
 
@@ -12,6 +12,10 @@ Prepared 2026-08-22. These are drafts only. Do not submit either form until Step
 - Record the date, route, exact request, and screenshot or confirmation after submission.
 
 ## 1. Bogard Press
+
+Status: `Submitted 2026-08-22 - awaiting written reply`
+
+Follow-up: `2026-08-29 if no reply`
 
 Official route: `https://bogardpress.org/contact/`
 
@@ -49,7 +53,11 @@ Father's Business Bible Study
 hello@fathersbusinessmasteryresources.com
 ```
 
+Submission evidence: `data/library/acquisition/permission-evidence/bogard-press-form-submission-2026-08-22.md`
+
 ## 2. Sword Of The Lord / John R. Rice
+
+Status: `Draft - not sent`
 
 Official route: `https://www.swordofthelord.com/contact`
 

@@ -63,7 +63,7 @@ Review:
 | --- | --- |
 | Known contact | Official contact form; general calls 903-792-2783; customer service 903-793-5112 |
 | Website | https://bogardpress.org/contact/ |
-| Permission status | Needs Review |
+| Permission status | Requested 2026-08-22 - awaiting written reply |
 | Requested use | Proposed metadata, official link, approved cover/promotional image, and approved excerpt/sample for *Baptist & the Bible - Adult* |
 | Follow-up needed | Yes |
 
@@ -100,6 +100,8 @@ Current intake note:
 > Publisher permission required for curriculum, books, and excerpts.
 
 The verified contact route and public ministry description do not grant permission and do not approve any title.
+
+Title-specific request submitted through the official contact form on 2026-08-22 for *Baptist & the Bible - Adult*. The form confirmed successful receipt. Follow up on 2026-08-29 if no reply is received. No permission has been granted.
 
 ## Final Recommendation
 
