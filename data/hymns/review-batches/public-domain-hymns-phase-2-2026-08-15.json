@@ -1,0 +1,61 @@
+{
+  "batch_id": "public-domain-hymns-phase-2-2026-08-15",
+  "reviewed_at": "2026-08-15",
+  "purpose": "Add source-traceable hymn texts and playable piano arrangements for study and presentation use.",
+  "guardrails": [
+    "Every lyric was transcribed from a cited public-domain source without modernization.",
+    "Every arrangement was obtained from a piece-specific Mutopia source page.",
+    "Every MIDI and RDF source artifact is retained locally and verified by SHA-256.",
+    "The Mutopia RDF license must match the rights statement stored with the hymn."
+  ],
+  "entries": [
+    {
+      "id": "o-god-our-help-in-ages-past",
+      "title": "O God, Our Help in Ages Past",
+      "text_source_url": "https://en.wikisource.org/wiki/The_Canadian_Soldiers%27_Song_Book/O_God%2C_Our_Help_in_Ages_Past",
+      "text_rights": "Public domain",
+      "music_source_url": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+      "music_rights": "Public Domain",
+      "midi_file": "st_anne.mid",
+      "midi_sha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+      "rdf_file": "st_anne.rdf",
+      "rdf_sha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6"
+    },
+    {
+      "id": "praise-to-the-lord-the-almighty",
+      "title": "Praise to the Lord, the Almighty",
+      "text_source_url": "https://hymnary.org/hymn/CHCS1898/167",
+      "text_rights": "Public domain",
+      "music_source_url": "https://www.mutopiaproject.org/ftp/Anonymous/lobe_den_Herren/",
+      "music_rights": "Public Domain",
+      "midi_file": "lobe_den_Herren.mid",
+      "midi_sha256": "2ceaccb73d5b35b7ea8033426eac6f602113eb3a1bfbd2c722f9e53693e17af6",
+      "rdf_file": "lobe_den_Herren.rdf",
+      "rdf_sha256": "149dc055ef280b74c42d727d93e38fe67447bb508a6c03914ba4141d2cd8b1b9"
+    },
+    {
+      "id": "it-is-well-with-my-soul",
+      "title": "It Is Well with My Soul",
+      "text_source_url": "https://hymnary.org/media/fetch/146502",
+      "text_rights": "Public domain",
+      "music_source_url": "https://www.mutopiaproject.org/ftp/BlissPP/villeduh/",
+      "music_rights": "Public Domain",
+      "midi_file": "villeduh.mid",
+      "midi_sha256": "e20b3a41f78b611aaa77e17bf28173eb0c3f9d7421b7996dd877035330df52e8",
+      "rdf_file": "villeduh.rdf",
+      "rdf_sha256": "dac4141a27de41b331fa151ac9c68070dbf9c0e99166e68a2a0671758f83d144"
+    },
+    {
+      "id": "crown-him-with-many-crowns",
+      "title": "Crown Him with Many Crowns",
+      "text_source_url": "https://hymnary.org/hymn/SDAH1886/125",
+      "text_rights": "Public domain",
+      "music_source_url": "https://www.mutopiaproject.org/ftp/ElveyGJ/Diademata/",
+      "music_rights": "Public Domain",
+      "midi_file": "Diademata.mid",
+      "midi_sha256": "ad8d8e84831f11d4ef5ecd60647c97f2ec37055e1e7e33d5bc18463e1285a39d",
+      "rdf_file": "Diademata.rdf",
+      "rdf_sha256": "0fa012cf4add2954a8e2e02a967adbcdf7f8bcef8cd781e5b7932436b16224f8"
+    }
+  ]
+}

@@ -2,11 +2,13 @@
 
 ## Status
 
-Pending Follow-Up / Positive Response
+Follow-Up Sent / Awaiting Written Confirmation
 
 ## Date Recorded
 
 2026-07-06
+
+Mailbox review updated 2026-08-14 with two additional messages dated 2026-07-07 and the verified written-scope follow-up sent that evening.
 
 ## From
 
@@ -24,23 +26,28 @@ Pastor Bo Wagner replied that permission will likely be fine and that they may b
 
 He asked for more information about Stephen and what is being built before granting final permission.
 
+The July 7 messages moved the conversation toward a phone call and supplied scheduling/contact instructions. They did not state title-level permissions or define approved app uses in writing.
+
 ## App Use Decision
 
 Do not treat this as final permission.
 
 Nothing from Bo Wagner / CBC resources may be imported, displayed, summarized, embedded, hosted, recommended, or added to public Library/resource screens until final written permission and theological/resource review are complete.
 
+## Follow-Up Sent
+
+Stephen approved and sent a reply in the original thread on 2026-08-14 at 10:56 PM Eastern. It requested separate written confirmation for:
+
+- title, description, and official ministry or purchase link
+- official cover or promotional graphic
+- short approved excerpt
+- official audio/video link or embed
+
+The message explicitly reserved full-text hosting, media rehosting, TTS/audiobook use, presentation export, paid app access, affiliate arrangements, and resale for separate permission.
+
 ## Next Action
 
-Prepare and send a follow-up reply explaining:
-
-- Father’s Business Bible Study / Father’s Business Mastery Resources
-- the platform purpose
-- the KJV-centered Bible study focus
-- clear attribution
-- links back to ministries
-- that no copyrighted content will be used beyond granted permissions
-- willingness to answer questions or schedule a call
+Await a written answer that names approved titles and allowed uses. Follow up after 2026-08-21 if no reply. Do not infer permission from the positive response, phone coordination, or silence.
 
 ## Evidence Location
 

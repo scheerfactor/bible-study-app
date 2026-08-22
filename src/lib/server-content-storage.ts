@@ -40,15 +40,21 @@ function publicContentUrl(relativePath: string) {
   return `${githubRawBase}/${encodeURIComponent(ref)}/${encodedPath(relativePath)}`;
 }
 
-function githubRawContentUrl(relativePath: string) {
-  const ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main";
+function githubRawContentUrl(relativePath: string, ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main") {
   return withContentVersion(`${githubRawBase}/${encodeURIComponent(ref)}/${encodedPath(relativePath)}`);
 }
 
+function repositoryContentUrls(relativePath: string) {
+  const ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main";
+  const urls = [githubRawContentUrl(relativePath, ref)];
+
+  if (ref !== "main") urls.push(githubRawContentUrl(relativePath, "main"));
+
+  return urls;
+}
+
 function candidateContentUrls(relativePath: string) {
-  const primaryUrl = publicContentUrl(relativePath);
-  const fallbackUrl = githubRawContentUrl(relativePath);
-  return primaryUrl === fallbackUrl ? [primaryUrl] : [primaryUrl, fallbackUrl];
+  return [...new Set([publicContentUrl(relativePath), ...repositoryContentUrls(relativePath)])];
 }
 
 export async function readTextContent(relativePathInput: string | string[], options: ReadContentOptions = {}) {
@@ -58,7 +64,7 @@ export async function readTextContent(relativePathInput: string | string[], opti
     return readFile(resolve(/* turbopackIgnore: true */ process.cwd(), relativePath), "utf8");
   }
 
-  const urls = options.preferRepository ? [githubRawContentUrl(relativePath)] : candidateContentUrls(relativePath);
+  const urls = options.preferRepository ? repositoryContentUrls(relativePath) : candidateContentUrls(relativePath);
   let lastStatus = 0;
 
   for (const url of urls) {

@@ -40,12 +40,15 @@ Father's Business Bible Study does not publicly publish copyrighted books, comme
 
 - Working private beta app
 - KJV-focused Bible reader and study workflow
-- More than 1,300 public-domain library resources
-- More than 11,000 public commentary entries
+- 2,241 verified public/free library resources plus 135 scoped licensed-link records
+- 15,235 validated public-domain commentary rows across 349 files
+- Webster's 1828, Strong's lexicons, KJV Strong's mapping, and TSK cross-references
+- Presentation-ready hymn and Bible-world evidence workflows
 - Full chapter-level coverage for several verified public-domain commentary sets
 - Admin-only rights tracking and review workflow
 - Public/private resource separation
 - Audio and video intake stays rights-first
+- Public author and ministry partnership page at `/partners`
 
 Do not claim the app has complete verse-level commentary segmentation yet. The major verified commentary sets have full chapter coverage, while verse-level indexing is a separate improvement pass.
 
@@ -56,12 +59,32 @@ Start small.
 Best first ask:
 
 1. Permission to list the title, author, description, and official link.
-2. Permission to show one approved excerpt or sample chapter.
-3. Permission to include one selected resource in private beta.
-4. Permission to discuss full digital text later.
-5. Permission to discuss audio, TTS, audiobook, or video rights separately.
+2. Permission to display the official cover or one named promotional image.
+3. Permission to show one approved excerpt or sample chapter.
+4. Permission to include one selected resource in private beta.
+5. Permission to discuss full digital text, presentation export, audio, TTS, video, paid access, affiliate links, or resale separately.
 
 Avoid asking for broad catalog rights in the first message unless the rights holder already offers a formal licensing process.
+
+## Rights Decision Checklist
+
+Permission is not one yes/no field. Record a separate answer for every requested use:
+
+1. Bibliographic metadata and official outbound links
+2. Cover art, photographs, maps, illustrations, or promotional graphics
+3. Exact excerpt length and whether excerpts may appear in search results
+4. Full text, PDF, download, offline access, and user printing
+5. Search indexing, bookmarks, highlights, notes, and recommendations
+6. Sermon or lesson presentation slides, projection, export, and handouts
+7. Audio linking, official-player embedding, streaming, download, and rehosting
+8. Transcript excerpts and full transcripts
+9. Browser/device TTS, generated TTS, and human audiobook narration
+10. Video linking, embedding, download, and rehosting
+11. Free beta, free public app, paid subscription, institutional, and church use
+12. Affiliate links, direct resale, distribution, royalties, and reporting
+13. Territory, term, attribution, modification, revocation, and removal rules
+
+For hymns, confirm the words, musical composition, arrangement, sheet music, performance, and sound recording separately. For archaeological and Bible-geography media, confirm the object description, photograph, map, illustration, and presentation/export use separately.
 
 ## Attachments To Prepare
 
@@ -153,6 +176,7 @@ Requested use:
 - allow search inside the title
 - allow bookmarks, reading progress, highlights, and personal notes
 - recommend the resource in related Bible study workflows
+- permit clearly attributed excerpts in sermon or lesson presentations if allowed
 - show author, publisher, source, and rights metadata
 
 Please let me know:
@@ -160,6 +184,7 @@ Please let me know:
 - whether this is permitted
 - whether the permission applies to free beta, free public access, paid access, or all of these
 - whether excerpts may be copied into notes or exports
+- whether presentation slides, projection, printing, or handouts are permitted
 - what attribution is required
 - whether audio/TTS rights are separate
 - any royalty, reporting, term length, or removal requirements
@@ -169,6 +194,34 @@ Nothing will be published until the terms are documented.
 Thank you,
 
 Stephen Scheer
+hello@fathersbusinessmasteryresources.com
+```
+
+## Purchase, Affiliate, Or Resale Request
+
+Use only after the ministry, author, publisher, or retailer identifies the correct commercial contact. Content permission alone does not authorize selling the work.
+
+```text
+Hello [NAME],
+
+Thank you for helping me understand your permissions process.
+
+Father's Business Bible Study would also like to help readers obtain approved resources from their official source. Could you tell me which of these arrangements, if any, you offer for [TITLE / CATALOG]?
+
+- an official outbound purchase link with no commission
+- an affiliate or referral link
+- direct resale of print, ebook, audio, or video products
+- licensed in-app digital access
+- church, school, classroom, or institutional purchasing
+
+Please identify the products covered, pricing or discount terms, territory, reporting and payment requirements, refund responsibility, tax responsibilities, use of cover art or descriptions, and any restrictions on advertising or bundling.
+
+We will not sell, distribute, or imply endorsement of any resource unless the commercial terms and content permissions are documented separately.
+
+Thank you,
+
+Stephen Scheer
+Father's Business Mastery Resources
 hello@fathersbusinessmasteryresources.com
 ```
 
@@ -219,6 +272,9 @@ Record these in the Rights Management Center:
 - excerpt permission
 - audiobook permission
 - AI/TTS narration permission
+- presentation, projection, export, and handout permission
+- image, map, illustration, cover-art, and promotional-graphic permission
+- affiliate, resale, distribution, and institutional-use permission
 - royalty terms
 - attribution requirements
 - removal or revocation requirements
@@ -234,6 +290,14 @@ Record these in the Rights Management Center:
 - Denial: mark `Denied`.
 - Personal/private use only: mark `Personal Use Only`.
 - Do not import: mark `Do Not Import`.
+
+## Official Copyright References
+
+- U.S. Copyright Office, [How to Obtain Permission](https://www.copyright.gov/circs/circ16a.pdf)
+- U.S. Copyright Office, [Copyright Ownership and Transfer](https://www.copyright.gov/title17/92chap2.html)
+- U.S. Copyright Office, [Copyright Basics](https://www.copyright.gov/circs/circ01.pdf)
+
+The Copyright Office advises identifying the current owner of the exact material and describing the exact material, intended use, audience, sale status, and requester. Ownership of a copy is separate from ownership of copyright, and individual rights may be owned or licensed separately. This packet is an operational workflow, not legal advice; use qualified counsel for uncertain ownership, negotiated licenses, royalties, exclusivity, or significant commercial distribution.
 
 ## Recommended First Week
 

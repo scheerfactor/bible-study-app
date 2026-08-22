@@ -1223,6 +1223,58 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 - `npm run validate:strongs-mapping`: 724,963 KJV-with-Strong's rows checked with 0 missing lexicon numbers.
 - `npm run validate:tsk:all`: 6,168 TSK rows checked with 0 duplicate references.
 
+## Latest Christian Biography Discovery Links Sprint
+
+Added six reviewed public-policy link records from Wholesome Words:
+
+- Christian Biographies directory
+- Gipsy Smith
+- Lewis Sperry Chafer
+- William Carey
+- Fanny Crosby
+- M. R. DeHaan
+
+These are full-window source links only. No Wholesome Words biography text,
+quotation, portrait, image, HTML eBook, audio, video, or other site content is
+copied into the app. The duplicate audit found six existing Gipsy Smith books,
+eight Chafer records, and seven Carey records; those books remain governed by
+their separate public-domain source evidence. Crosby and DeHaan remain
+title-level rights gaps rather than unverified book imports.
+
+## Latest Fanny Crosby Primary-Source Sprint
+
+Added two exact-edition Library of Congress books:
+
+- *Fanny Crosby's Life-Story* (1903)
+- *Monterey, and Other Poems* (1851)
+
+Both LOC item pages state that books in their collection are public domain and
+free to use and reuse. The app records the exact item page, direct LOC OCR,
+edition date, requested Library of Congress credit, source scan, checksum, and
+OCR review. Source OCR is preserved unchanged and carries a scan-comparison
+warning because decorative headings and some dates contain recognition errors.
+This review does not cover later hymn tunes, arrangements, recordings, modern
+editions, or third-party biography content.
+
+## Latest Fanny Crosby Hymn Sprint
+
+Added *Blessed Assurance* with three public-domain stanzas and refrain, the
+public-domain ASSURANCE tune by Phoebe P. Knapp, retained Mutopia MIDI and RDF
+source files, SHA-256 verification, synthesized piano playback, KJV study
+references, and automatic presentation-slide creation. The text was checked
+against *Hymnal for Church and Home* (1928), hymn 333. No historical or modern
+performance recording is copied or licensed by this record.
+
+## Latest Fanny Crosby Hymn Follow-Up
+
+Added *Pass Me Not, O Gentle Savior* with four public-domain stanzas and
+refrain from *The New Christian Hymnal* (1929), hymn 212. The PASS ME NOT tune
+is by William H. Doane (1870). In-app playback uses Peter Gerloff's CC0 MIDI
+setting from Wikimedia Commons; the exact MIDI and machine-readable license
+metadata are retained with SHA-256 checksums. KJV study references and
+automatic presentation slides are included. No third-party performance
+recording is copied or licensed by this record.
+
 ## Next Growth Rule
 
 Grow the Library from verified source records, not broad keyword searches. The next push toward 2,500+ resources should be staged in 50-100 item batches with exact source URLs, duplicate checks, OCR quality labels, and subject shelves so the Library stays enjoyable instead of overwhelming.

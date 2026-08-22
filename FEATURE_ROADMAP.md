@@ -119,36 +119,63 @@ Practical design meaning:
 
 These are current or near-current beta priorities. Finish these before expanding the app into a larger ecosystem.
 
-1. Bible reader navigation
+1. Client performance and data delivery
+   - Reduce the current `/` first-load JavaScript from 20.13 MB gzip in staged milestones: below 5 MB, then 1.5 MB, then a public target below 750 KB.
+   - First extraction completed: commentary deferral reduced `/` to 1.99 MB gzip, clearing the 5 MB milestone.
+   - KJV corpus extraction completed: the exact 31,102-verse corpus now loads in its own chunk, reducing `/` to 0.70 MB gzip and clearing the 1.5 MB beta milestone.
+   - Chapter delivery completed for Bible, Full Study, and Passage Guide: one cached request now replaces 17 to 345 commentary-file requests for the active chapter.
+   - Commentary Explorer delivery completed: a compact 66-book catalog and the selected chapter now replace complete-catalog loading, with visited chapters cached for the session.
+   - Remove commentary, TSK, library, media, admin, sermon, and presentation datasets from the initial reader chunk.
+   - Split the 50,796-line client page by feature and load advanced workspaces only when opened.
+   - Add a bundle-size regression check before public beta.
+   - See [e-Sword And SwordSearcher Benchmark](./ESWORD_SWORDSEARCHER_BENCHMARK.md).
+
+2. Bible reader navigation
    - Keep quick navigation always available in Bible Reader.
    - Preserve recent and pinned passages locally.
-   - Add Bible markers/ribbons after the current navigation feels stable.
+   - Add navigation back/forward history and non-destructive verse previews.
 
-2. Study drawer and full study reliability
+3. Quick Word Lens, study drawer, and full study reliability
+   - Show Webster, mapped Strong's data, occurrence counts, and first use together when a KJV word is tapped.
    - Keep Study tab first.
    - Keep selected verse, key words, cross references, notes, and commentary visible without clutter.
    - Make sure notes/highlights/bookmarks persist signed-in and signed-out.
 
-3. Search and occurrence explorer
+4. Search and occurrence explorer
    - Keep Bible search fast on mobile.
-   - Improve phrase search and highlighted results.
+   - Replace repeated full-array scanning with a precomputed KJV search index.
+   - Add phrase, all/any words, KJV word forms, fuzzy spelling, proximity, Strong's number, and range scopes.
    - Keep occurrence counts simple: chapter, book, Bible.
    - Learn from SwordSearcher: verse-centered search should not interrupt the study flow.
 
-4. Webster's 1828
+5. Verse Guide and Study Margin
+   - Build a verse-to-resource index across TSK, commentary, books, study tools, and personal writing.
+   - Show compact optional resource counts beside the passage without covering the KJV text.
+   - Preview results before changing the current reader position.
+
+6. Webster's 1828
    - Continue full import validation.
    - Normalize common KJV forms.
    - Add dictionary search and fast lookup from Bible words.
 
-5. Library reader polish
+7. Library reader polish
    - Keep continue reading, completed books, read again, and listening controls stable.
    - Preserve public-domain rights metadata.
    - Learn from theWord: resources can be flexible and affordable, but must be curated and simple to use.
 
-6. Beta protection
+8. Beta protection
    - Keep Export My Notes.
    - Keep known limitations clear.
-   - Avoid adding paid features, AI, Strong's, or full sermon builder during this stage.
+   - Avoid adding paid features or AI during this stage.
+
+9. Public proof before promotion
+   - Use the Study To Teach path as the product's repeatable proof: read, understand, obey, and teach from one KJV passage.
+   - Keep `/` below the enforced 1.5 MB gzip beta budget before publishing a coming-soon teaser; the current production build is 0.70 MB gzip.
+   - Record an unedited Hosea 4 preparation session as internal QA before producing public videos.
+   - Verify the workflow at 390px, tablet, and desktop widths with no browser errors.
+   - Verify signed-out and ordinary signed-in accounts cannot reach admin or acquisition tools.
+   - Open a no-payment beta interest list only after the Coming Soon gate passes.
+   - See [Public Reveal And Video Plan](./PUBLIC_REVEAL_AND_VIDEO_PLAN.md).
 
 ## Next: Guided Study and Teaching
 

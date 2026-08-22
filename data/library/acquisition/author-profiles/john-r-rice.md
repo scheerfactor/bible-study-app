@@ -1,4 +1,4 @@
-# John R. Rice Acquisition Profile Stub
+# John R. Rice Acquisition Profile
 
 ## Do Not Use Yet
 
@@ -14,24 +14,20 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | TBD |
-| Website | TBD |
+| Permission/contact info | Sword of the Lord official contact form verified 2026-08-22 |
+| Website | https://www.swordofthelord.com/about |
 | Collection label | Needs Review |
 | Review score | Not scored |
 | License obtained | No |
 
 ## Biography
 
-Placeholder. Add a short verified biography after source review.
+Sword of the Lord identifies John R. Rice (1895-1980) as its founder and editor from 1932 to 1980. Its official history describes his Baptist pastoral and evangelistic work, the 1934 founding of the Sword of the Lord, and his Voice of Revival radio ministry. Sword of the Lord currently describes itself as a KJV-centered revival, soul-winning, and publishing ministry.
 
-Include:
+Sources reviewed 2026-08-22:
 
-- birth and death years, if applicable
-- ministry background
-- major ministry work
-- theological tradition
-- publication history
-- source citations
+- https://www.swordofthelord.com/about
+- https://www.swordofthelord.com/contact
 
 ## Doctrinal Notes
 
@@ -52,7 +48,7 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| TBD | Evangelism revival and preaching | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
+| Prayer - Asking and Receiving | Prayer and Christian life book | Current official listing verified 2026-08-22 | Permission Needed | Needs Review | Proposed first outreach title; official product page only, no content approved. |
 
 ## Audio / Video Availability
 
@@ -65,10 +61,10 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | TBD |
-| Website | TBD |
+| Known contact | Sword of the Lord official contact form; 800-247-9673 |
+| Website | https://www.swordofthelord.com/contact |
 | Permission status | Needs Review |
-| Requested use | TBD |
+| Requested use | Proposed metadata, official purchase link, approved cover, and short approved excerpt for *Prayer - Asking and Receiving* |
 | Follow-up needed | Yes |
 
 Notes:
@@ -103,6 +99,8 @@ Placeholder. Add notes after review.
 Current intake note:
 
 > Modern copyrighted works require permission.
+
+The official biography and contact route do not establish current title ownership or grant digital rights. Confirm the exact title, edition, and rights holder before sending or importing anything.
 
 ## Final Recommendation
 

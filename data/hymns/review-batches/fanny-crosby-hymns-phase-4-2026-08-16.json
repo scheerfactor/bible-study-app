@@ -1,0 +1,35 @@
+{
+  "batch_id": "fanny-crosby-hymns-phase-4-2026-08-16",
+  "reviewed_at": "2026-08-16",
+  "purpose": "Add a second source-traceable Fanny Crosby hymn with public-domain lyrics, CC0 playable notation, and presentation-ready text.",
+  "guardrails": [
+    "Lyrics were transcribed line by line from the cited public-domain hymnal record without modernization.",
+    "Hymnary identifies both Fanny Crosby's text and William H. Doane's tune as public domain.",
+    "The MIDI setting is retained from the exact Wikimedia Commons file page under its CC0 dedication.",
+    "The MIDI and machine-readable Wikimedia license metadata are verified by SHA-256.",
+    "No historical or modern performance recording is included or implied to be reusable."
+  ],
+  "entries": [
+    {
+      "id": "pass-me-not-o-gentle-savior",
+      "title": "Pass Me Not, O Gentle Savior",
+      "lyricist": "Fanny J. Crosby",
+      "lyric_year": 1868,
+      "text_source_url": "https://hymnary.org/hymn/NCH1929/212",
+      "text_source_edition": "The New Christian Hymnal, 1929, hymn 212",
+      "text_rights": "Public domain",
+      "tune": "Pass Me Not",
+      "composer": "William H. Doane",
+      "tune_year": 1870,
+      "music_source_url": "https://commons.wikimedia.org/wiki/File:Pass_me_not,_o_gentle_Saviour.mid",
+      "music_rights": "CC0 1.0 Universal Public Domain Dedication",
+      "midi_setting_creator": "Peter Gerloff (Rabanus Flavus)",
+      "midi_file": "pass-me-not.mid",
+      "midi_sha256": "e5c13fb7802f5a07ead41c693e0d6d8ed021dde28424d6e573db933f5e583143",
+      "rights_evidence_file": "pass-me-not-wikimedia.json",
+      "rights_evidence_sha256": "ada053b746e2db6c67ea48f5b87ce6cc77c252c35c8023f14abb77aa352b037e",
+      "presentation_use": "Four stanza slides with the public-domain refrain and a title slide linked to KJV Scripture references.",
+      "recording_scope": "The in-app Web Audio playback is synthesized from the retained CC0 MIDI. No third-party performance recording is copied."
+    }
+  ]
+}

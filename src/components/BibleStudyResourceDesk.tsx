@@ -104,7 +104,7 @@ export default function BibleStudyResourceDesk({
           type: "Quote" as const,
           title: hymn.title + " · Stanza " + (index + 1),
           subtitle: hymn.lyricist,
-          body: stanza,
+          body: hymn.refrain ? stanza + "\n\nRefrain:\n" + hymn.refrain : stanza,
           imageSlot: "church-window" as const,
         })),
       ],
@@ -190,6 +190,12 @@ export default function BibleStudyResourceDesk({
                   <p className="mt-1 whitespace-pre-line text-sm leading-6 text-[var(--ink)]">{stanza}</p>
                 </div>
               ))}
+              {selectedHymn.refrain && (
+                <div className="border-l-2 border-[var(--green)] pl-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Refrain</p>
+                  <p className="mt-1 whitespace-pre-line text-sm leading-6 text-[var(--ink)]">{selectedHymn.refrain}</p>
+                </div>
+              )}
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[var(--line)] pt-3 text-xs text-[var(--muted)]">
               <span>{selectedHymn.musicRights}</span>

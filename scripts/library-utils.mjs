@@ -33,6 +33,7 @@ const trustedDownloadHosts = new Set([
   "archive.org",
   "www.ccel.org",
   "www.ttb.org",
+  "tile.loc.gov",
 ]);
 
 export const trustedLibrarySourceHosts = trustedDownloadHosts;

@@ -42,6 +42,8 @@ const errors = [];
 const warnings = [];
 const seenIds = new Set();
 const seenStoragePaths = new Set();
+const seenTtbFeedGuids = new Set();
+const seenTtbHashes = new Set();
 
 function requireField(record, index, field) {
   if (!String(record[field] ?? "").trim()) {
@@ -133,6 +135,42 @@ records.forEach((record, index) => {
 
   if (record.kind === "Bible Audio" && record.rightsStatus !== "Approved" && record.rightsStatus !== "Permission Needed") {
     warnings.push(`record ${index + 1}: Bible Audio should keep explicit licensing review visible`);
+  }
+
+  const isOfficialTtbSermon = record.kind === "Sermon Audio" && String(record.sourceUrl).startsWith("https://teachings-cdn.thruthebible.io/");
+  if (isOfficialTtbSermon) {
+    for (const field of ["sourcePageUrl", "feedUrl", "feedGuid", "contentType", "sizeBytes", "sha256", "etag", "requiredAttribution", "rightsEvidence"]) {
+      requireField(record, index, field);
+    }
+    if (!String(record.feedUrl).startsWith("https://cmp.thruthebible.io/")) {
+      errors.push(`record ${index + 1}: official TTB sermon feedUrl must use the official TTB feed host`);
+    }
+    if (record.feedGuid !== record.sourceUrl.split("/").pop()) {
+      errors.push(`record ${index + 1}: official TTB sermon feedGuid must match the official enclosure URL`);
+    }
+    if (record.requiredAttribution !== "By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org.") {
+      errors.push(`record ${index + 1}: official TTB sermon must retain the required attribution exactly`);
+    }
+    if (!Number.isInteger(record.sizeBytes) || record.sizeBytes < 1) {
+      errors.push(`record ${index + 1}: official TTB sermon sizeBytes must be a positive integer`);
+    }
+    if (!/^[a-f0-9]{64}$/.test(String(record.sha256))) {
+      errors.push(`record ${index + 1}: official TTB sermon sha256 must be a lowercase SHA-256 digest`);
+    }
+    if (record.contentType !== "audio/mp4" || !String(record.storagePath).endsWith(".m4a")) {
+      errors.push(`record ${index + 1}: verified TTB AAC/MP4 audio must use audio/mp4 metadata and a .m4a storage path`);
+    }
+    if (seenTtbFeedGuids.has(record.feedGuid)) errors.push(`record ${index + 1}: duplicate official TTB feedGuid ${record.feedGuid}`);
+    seenTtbFeedGuids.add(record.feedGuid);
+    if (seenTtbHashes.has(record.sha256)) errors.push(`record ${index + 1}: duplicate official TTB audio hash ${record.sha256}`);
+    seenTtbHashes.add(record.sha256);
+
+    if (record.passageIndexed === true) {
+      for (const field of ["passage", "passageEvidenceUrl"]) requireField(record, index, field);
+      if (!String(record.passageEvidenceUrl).startsWith("https://ttb.org/") && !String(record.passageEvidenceUrl).startsWith("https://www.ttb.org/")) {
+        errors.push(`record ${index + 1}: passage-indexed TTB sermon must cite an official TTB passage source`);
+      }
+    }
   }
 });
 

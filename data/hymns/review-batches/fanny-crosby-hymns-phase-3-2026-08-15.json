@@ -1,0 +1,33 @@
+{
+  "batch_id": "fanny-crosby-hymns-phase-3-2026-08-15",
+  "reviewed_at": "2026-08-15",
+  "purpose": "Add a source-traceable Fanny Crosby hymn with public-domain lyrics, playable notation, and presentation-ready text.",
+  "guardrails": [
+    "Lyrics were transcribed line by line from the cited public-domain hymnal record without modernization.",
+    "The tune and SATB MIDI come from the exact Mutopia piece directory.",
+    "The Mutopia MIDI and RDF are retained locally and verified by SHA-256.",
+    "The RDF Public Domain declaration must match the hymn music-rights field.",
+    "No historical or modern audio recording is included or implied to be reusable."
+  ],
+  "entries": [
+    {
+      "id": "blessed-assurance",
+      "title": "Blessed Assurance",
+      "lyricist": "Fanny J. Crosby",
+      "lyric_year": 1873,
+      "text_source_url": "https://hymnary.org/hymn/HFCH1928/333",
+      "text_source_edition": "Hymnal for Church and Home, second edition, 1928, hymn 333",
+      "text_rights": "Public domain",
+      "tune": "Assurance",
+      "composer": "Phoebe P. Knapp",
+      "music_source_url": "https://www.mutopiaproject.org/ftp/KnappPP/blessed_assurance/",
+      "music_rights": "Public Domain",
+      "midi_file": "blessed_assurance.mid",
+      "midi_sha256": "e3bc4a614cb3fbc58314fa9e9b7dd38de59ae0706b85e826b716817dd9ad4c2b",
+      "rdf_file": "blessed_assurance.rdf",
+      "rdf_sha256": "7710224f831ca3bf62f310225ea27a9486146200d31e11dea74a287d595d9a93",
+      "presentation_use": "Three stanza slides with the public-domain refrain and a title slide linked to KJV Scripture references.",
+      "recording_scope": "The in-app Web Audio playback is synthesized from the retained public-domain MIDI. No third-party performance recording is copied."
+    }
+  ]
+}

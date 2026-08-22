@@ -1,9 +1,32 @@
 import type { Metadata, Viewport } from "next";
+import { publicSiteUrl, siteDescription, siteName, socialPreviewImage } from "@/lib/site-metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Father's Business Bible Study",
-  description: "A mobile-first KJV Bible reader with search, notes, highlights, bookmarks, and Webster's 1828 lookup.",
+  metadataBase: publicSiteUrl,
+  applicationName: siteName,
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName,
+    title: siteName,
+    description: siteDescription,
+    images: [socialPreviewImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [socialPreviewImage.url],
+  },
 };
 
 export const viewport: Viewport = {

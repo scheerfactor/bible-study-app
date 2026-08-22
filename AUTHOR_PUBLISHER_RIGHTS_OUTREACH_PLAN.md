@@ -9,14 +9,15 @@ Prepare Father's Business Bible Study to request permission for modern copyright
 The app is close enough to begin conversations with rights holders because it can show:
 
 - a working Bible-centered study platform
-- a curated public-domain library with more than 1,300 verified resources
+- a curated public-domain library with 2,241 verified public/free resources
+- 135 licensed-link records with separate scope tracking
 - public commentary coverage across all 66 Bible books at chapter level
 - admin-only rights tracking
 - public/private resource separation
 - no automatic public publishing of unreviewed imports
 - a clear mission for pastors, Sunday School teachers, missionaries, and serious Bible students
 
-Do not promise paid placement or broad public distribution until written permission terms are documented.
+Do not promise paid placement or broad public distribution until written permission terms are documented. The long-term goal is a multi-publisher catalog, but every relationship must establish a verified rights holder, approved titles, exact uses, commercial terms, and technical delivery controls.
 
 ## Recommendation
 
@@ -130,6 +131,9 @@ Before sending the first email, prepare a small packet:
 - explanation that unapproved works stay hidden
 - requested title and exact uses requested
 - contact email and removal/revocation promise
+- publisher catalog proposal and product-discovery interview
+
+Use `PUBLISHER_CATALOG_PARTNERSHIP_PROPOSAL.md` for the commercial vision and `PUBLISHER_DISCOVERY_INTERVIEW.md` to learn what partners need before proposing terms. Product feedback is not permission.
 
 ## Recommended First Ask Sequence
 

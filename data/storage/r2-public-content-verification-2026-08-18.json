@@ -1,0 +1,210 @@
+{
+  "verified_at": "2026-08-18",
+  "bucket": "fathers-business-bible-study-public",
+  "public_base_url": "https://pub-946f17bb4d0b4b64ba01fd6d826e9e25.r2.dev",
+  "inventory_path": "data/storage/public-content-storage-inventory.json",
+  "result": "passed",
+  "inventory": {
+    "objects": 2665,
+    "total_size_bytes": 2618290684,
+    "missing_inventory_sources": 0
+  },
+  "public_head_audit": {
+    "checked": 2665,
+    "http_200": 2665,
+    "content_length_matches": 2665,
+    "errors": 0,
+    "method": "All inventory keys were checked through the public R2 endpoint. Requests rate-limited during the initial burst were retried at concurrency 2 with backoff; the updated library manifest was then uploaded and hash-verified."
+  },
+  "checksum_samples": {
+    "checked": 20,
+    "passed": 20,
+    "failed": 0,
+    "selection": "First, middle, and last object per content kind; singleton kinds sampled once.",
+    "items": [
+      {
+        "kind": "library_text",
+        "path": "data/library/verified/white-queen-of-the-cannibals-the-story-of-mary-slessor-of-calabar-a-j-bueltmann.txt",
+        "expected_size": 206350,
+        "actual_size": 206350,
+        "expected_sha256": "71acf7fe01a526ee756d9c3040748602bc34c4d76ab3c94a0d52370ce7eb3f96",
+        "actual_sha256": "71acf7fe01a526ee756d9c3040748602bc34c4d76ab3c94a0d52370ce7eb3f96",
+        "passed": true
+      },
+      {
+        "kind": "library_text",
+        "path": "data/library/verified/the-annotated-bible-the-holy-scriptures-analyzed-and-annotated-a-c-gaebelein.txt",
+        "expected_size": 985658,
+        "actual_size": 985658,
+        "expected_sha256": "c5435964cc2b1f8dee8e1e008927fd1e2c1e496b27750118aee6a9b8c070999d",
+        "actual_sha256": "c5435964cc2b1f8dee8e1e008927fd1e2c1e496b27750118aee6a9b8c070999d",
+        "passed": true
+      },
+      {
+        "kind": "library_text",
+        "path": "data/library/verified/monterey-and-other-poems-fanny-crosby.txt",
+        "expected_size": 165473,
+        "actual_size": 165473,
+        "expected_sha256": "b3a5ed6de9c4e3bd7761a0277c5dd17a0f5d83becd7cb825a02a4ca88b1902a2",
+        "actual_sha256": "b3a5ed6de9c4e3bd7761a0277c5dd17a0f5d83becd7cb825a02a4ca88b1902a2",
+        "passed": true
+      },
+      {
+        "kind": "commentary_index",
+        "path": "data/commentary/reports/commentary-chapter-file-index.json",
+        "expected_size": 83036,
+        "actual_size": 83036,
+        "expected_sha256": "f5decd6d79c630180e075b672effd78620c2c9cb7ca8fe806821e7c316b070c2",
+        "actual_sha256": "f5decd6d79c630180e075b672effd78620c2c9cb7ca8fe806821e7c316b070c2",
+        "passed": true
+      },
+      {
+        "kind": "commentary_batch",
+        "path": "data/imports/a-c-gaebelein-reviewed-amos-commentary.json",
+        "expected_size": 49823,
+        "actual_size": 49823,
+        "expected_sha256": "275ad2d989940573a671e6232133b38525bb7c448543c240a90453ea2b7f117c",
+        "actual_sha256": "275ad2d989940573a671e6232133b38525bb7c448543c240a90453ea2b7f117c",
+        "passed": true
+      },
+      {
+        "kind": "commentary_batch",
+        "path": "data/imports/matthew-poole-reviewed-focus-books-commentary.json",
+        "expected_size": 783847,
+        "actual_size": 783847,
+        "expected_sha256": "660f7a2f88f2acfbef6f5ffaddd500a0f27d1189537f6a991918f5be291ffc53",
+        "actual_sha256": "660f7a2f88f2acfbef6f5ffaddd500a0f27d1189537f6a991918f5be291ffc53",
+        "passed": true
+      },
+      {
+        "kind": "commentary_batch",
+        "path": "data/imports/wesley-reviewed-solomons-song-commentary.json",
+        "expected_size": 58562,
+        "actual_size": 58562,
+        "expected_sha256": "42aa4319a05bc13baec5fb5a539f7d79d1baac15b4a5f30ba8618d63b80c2930",
+        "actual_sha256": "42aa4319a05bc13baec5fb5a539f7d79d1baac15b4a5f30ba8618d63b80c2930",
+        "passed": true
+      },
+      {
+        "kind": "dictionary",
+        "path": "data/generated/websters-1828.entries.json",
+        "expected_size": 36282243,
+        "actual_size": 36282243,
+        "expected_sha256": "1e7482f6d141c48335cd8d690689be471a87eee42443a4c87202935ddb6726f2",
+        "actual_sha256": "1e7482f6d141c48335cd8d690689be471a87eee42443a4c87202935ddb6726f2",
+        "passed": true
+      },
+      {
+        "kind": "library_manifest",
+        "path": "data/library/manifests/curated-public-domain-resources.json",
+        "expected_size": 4907903,
+        "actual_size": 4907903,
+        "expected_sha256": "f7000446abcac2f6cee3cc1f0cc72f8fb31afc17a05a1db20f1bb6882fce9227",
+        "actual_sha256": "f7000446abcac2f6cee3cc1f0cc72f8fb31afc17a05a1db20f1bb6882fce9227",
+        "passed": true
+      },
+      {
+        "kind": "study_tool",
+        "path": "data/library/verified/eastons-bible-dictionary.txt",
+        "expected_size": 5463775,
+        "actual_size": 5463775,
+        "expected_sha256": "291260d29a0ddef706aa9dc8457e601b66dab755597ca090b72e63a394062310",
+        "actual_sha256": "291260d29a0ddef706aa9dc8457e601b66dab755597ca090b72e63a394062310",
+        "passed": true
+      },
+      {
+        "kind": "study_tool",
+        "path": "data/library/verified/biblical-geography-and-history-kent-charles-foster.txt",
+        "expected_size": 628166,
+        "actual_size": 628166,
+        "expected_sha256": "eeefba0cf86d9c95bab043c46fa71dd9ce65d382692798e839e66e4509d7805f",
+        "actual_sha256": "eeefba0cf86d9c95bab043c46fa71dd9ce65d382692798e839e66e4509d7805f",
+        "passed": true
+      },
+      {
+        "kind": "study_tool",
+        "path": "data/library/verified/a-class-book-of-biblical-history-and-geography-with-numerous-maps-osborn-h-s-henry-stafford.txt",
+        "expected_size": 432092,
+        "actual_size": 432092,
+        "expected_sha256": "d59f5002286fcd5c06c26f2123433241b14026bd4a6ddd2393082cac24c3e635",
+        "actual_sha256": "d59f5002286fcd5c06c26f2123433241b14026bd4a6ddd2393082cac24c3e635",
+        "passed": true
+      },
+      {
+        "kind": "strongs_index",
+        "path": "data/strongs/sample-verified-strongs.json",
+        "expected_size": 184763,
+        "actual_size": 184763,
+        "expected_sha256": "45f96380ac3d5da273608265804c2f778e51d587ffd9bfdcf08e69dbab535aba",
+        "actual_sha256": "45f96380ac3d5da273608265804c2f778e51d587ffd9bfdcf08e69dbab535aba",
+        "passed": true
+      },
+      {
+        "kind": "strongs_index",
+        "path": "data/strongs/lexicon-batches/index.json",
+        "expected_size": 594,
+        "actual_size": 594,
+        "expected_sha256": "6402f17bfb97f39b03d937662c993d49eafd8743612e89cdf13e7093e6fb3c6d",
+        "actual_sha256": "6402f17bfb97f39b03d937662c993d49eafd8743612e89cdf13e7093e6fb3c6d",
+        "passed": true
+      },
+      {
+        "kind": "bible_map_media",
+        "path": "public/media/bible-maps/hurlbut/assyrian-empire.jpg",
+        "expected_size": 534434,
+        "actual_size": 534434,
+        "expected_sha256": "a303db06938f0bdd474caa70ed4c4459f65480b5b1457e5db9b85da0a6c14832",
+        "actual_sha256": "a303db06938f0bdd474caa70ed4c4459f65480b5b1457e5db9b85da0a6c14832",
+        "passed": true
+      },
+      {
+        "kind": "bible_map_media",
+        "path": "public/media/bible-maps/hurlbut/passion-week-life-of-christ.jpg",
+        "expected_size": 547939,
+        "actual_size": 547939,
+        "expected_sha256": "95668b3937de95bf45deb4e63d1282037775c28eb52d397c146f67b014259d74",
+        "actual_sha256": "95668b3937de95bf45deb4e63d1282037775c28eb52d397c146f67b014259d74",
+        "passed": true
+      },
+      {
+        "kind": "bible_map_media",
+        "path": "public/media/bible-maps/hurlbut/temple-time-of-christ.jpg",
+        "expected_size": 516363,
+        "actual_size": 516363,
+        "expected_sha256": "638977d2e4932fd904ad1925a53da4f3cb4471e95d42f00c70f8ad832524f93e",
+        "actual_sha256": "638977d2e4932fd904ad1925a53da4f3cb4471e95d42f00c70f8ad832524f93e",
+        "passed": true
+      },
+      {
+        "kind": "tsk_cross_reference_batch",
+        "path": "data/imports/tsk-beta-depth-reviewed-sample.json",
+        "expected_size": 124046,
+        "actual_size": 124046,
+        "expected_sha256": "a01364387ca4ffd5bf6f9d371f0eeb82b535a61bd70b00a4976d100389e8f5b7",
+        "actual_sha256": "a01364387ca4ffd5bf6f9d371f0eeb82b535a61bd70b00a4976d100389e8f5b7",
+        "passed": true
+      },
+      {
+        "kind": "tsk_cross_reference_batch",
+        "path": "data/imports/tsk-metav-reviewed-weak-books-phase-10.json",
+        "expected_size": 233164,
+        "actual_size": 233164,
+        "expected_sha256": "efd82410eba5a15cc86c26a7dd2ab7193d9c4708edbe26a35cf6aefca2b3af2f",
+        "actual_sha256": "efd82410eba5a15cc86c26a7dd2ab7193d9c4708edbe26a35cf6aefca2b3af2f",
+        "passed": true
+      },
+      {
+        "kind": "tsk_cross_reference_batch",
+        "path": "data/imports/tsk-reviewed-thin-books-phase-14.json",
+        "expected_size": 19395,
+        "actual_size": 19395,
+        "expected_sha256": "d04ab829be2314340f3f4857845784fa042340004472d1f2f4ca87cb9889b5ad",
+        "actual_sha256": "d04ab829be2314340f3f4857845784fa042340004472d1f2f4ca87cb9889b5ad",
+        "passed": true
+      }
+    ]
+  },
+  "notes": [
+    "Cloudflare bucket-info object counters remained stale during migration, so public object reads, Content-Length checks, and SHA-256 samples are the authoritative verification evidence for this batch."
+  ]
+}

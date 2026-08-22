@@ -10,10 +10,15 @@ const outputReportPath = join(repoRoot, "STORAGE_MIGRATION_REPORT.md");
 
 const dictionaryFiles = [
   "data/generated/websters-1828.entries.json",
+  "data/generated/websters-1828-reviewed-overrides.json",
 ];
 
 const libraryManifestFiles = [
   defaultLibraryManifest,
+];
+
+const commentaryIndexFiles = [
+  "data/commentary/reports/commentary-chapter-file-index.json",
 ];
 
 const studyToolFiles = [
@@ -144,6 +149,12 @@ async function tskFiles() {
   return fileNames.map((fileName) => relativePath("data", "imports", fileName));
 }
 
+async function strongsMappingFiles() {
+  const mappingsDir = join(repoRoot, "data", "strongs", "mappings-by-chapter");
+  const fileNames = (await readdir(mappingsDir)).filter((fileName) => fileName.endsWith(".json")).sort();
+  return fileNames.map((fileName) => relativePath("data", "strongs", "mappings-by-chapter", fileName));
+}
+
 function summarize(items) {
   const present = items.filter((item) => !item.missing);
   const missing = items.filter((item) => item.missing);
@@ -203,12 +214,20 @@ async function main() {
     }),
   );
 
+  const commentaryIndexItems = await Promise.all(
+    commentaryIndexFiles.map((filePath) => existingInventoryFile("commentary_index", filePath)),
+  );
+
   const dictionaryItems = await Promise.all(dictionaryFiles.map((filePath) => existingInventoryFile("dictionary", filePath)));
   const libraryManifestItems = await Promise.all(
     libraryManifestFiles.map((filePath) => existingInventoryFile("library_manifest", filePath)),
   );
   const studyToolItems = await Promise.all(studyToolFiles.map((filePath) => existingInventoryFile("study_tool", filePath)));
   const strongsItems = await Promise.all(strongsFiles.map((filePath) => existingInventoryFile("strongs_index", filePath)));
+  const strongsMappingPaths = await strongsMappingFiles();
+  const strongsMappingItems = await Promise.all(
+    strongsMappingPaths.map((filePath) => existingInventoryFile("strongs_mapping_chapter", filePath)),
+  );
   const bibleMapMediaItems = await Promise.all(
     bibleMapMediaFiles.map((filePath) => existingInventoryFile("bible_map_media", filePath)),
   );
@@ -217,21 +236,25 @@ async function main() {
 
   const items = [
     ...libraryItems,
+    ...commentaryIndexItems,
     ...commentaryItems,
     ...dictionaryItems,
     ...libraryManifestItems,
     ...studyToolItems,
     ...strongsItems,
+    ...strongsMappingItems,
     ...bibleMapMediaItems,
     ...tskItems,
   ];
   const summaries = {
     library_text: summarize(libraryItems),
+    commentary_index: summarize(commentaryIndexItems),
     commentary_batch: summarize(commentaryItems),
     dictionary: summarize(dictionaryItems),
     library_manifest: summarize(libraryManifestItems),
     study_tool: summarize(studyToolItems),
     strongs_index: summarize(strongsItems),
+    strongs_mapping_chapter: summarize(strongsMappingItems),
     bible_map_media: summarize(bibleMapMediaItems),
     tsk_cross_reference_batch: summarize(tskItems),
     all_public_content: summarize(items),
@@ -278,11 +301,13 @@ Mirror current repository-relative paths in object storage during the transition
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
 ${tableRow("Library text", summaries.library_text)}
+${tableRow("Commentary chapter index", summaries.commentary_index)}
 ${tableRow("Commentary batches", summaries.commentary_batch)}
 ${tableRow("Dictionary files", summaries.dictionary)}
 ${tableRow("Library manifests", summaries.library_manifest)}
 ${tableRow("Study tool files", summaries.study_tool)}
 ${tableRow("Strong's indexes", summaries.strongs_index)}
+${tableRow("Strong's chapter mappings", summaries.strongs_mapping_chapter)}
 ${tableRow("Bible map media", summaries.bible_map_media)}
 ${tableRow("TSK/cross-reference batches", summaries.tsk_cross_reference_batch)}
 ${tableRow("Total public content", summaries.all_public_content)}
@@ -306,7 +331,7 @@ ${topLargestRows(largePublicContentItems, 25)}
 ## Recommended Migration Order
 
 1. Upload all \`library_text\` objects to R2 first. This removes the biggest pressure while preserving Library metadata in Git.
-2. Upload \`commentary_batch\` objects next, especially Pulpit Commentary, Biblical Illustrator, Poole, and other large set files.
+2. Upload the \`commentary_index\` and all \`commentary_batch\` objects next, especially Pulpit Commentary, Biblical Illustrator, Poole, and other large set files.
 3. Upload dictionaries and study tools after the reader is confirmed to load external text quickly.
 4. Keep manifests, rights metadata, import reports, author profiles, and validation scripts in Git.
 5. After production is verified against R2, stop committing new full-text files to \`data/library/verified\`; commit metadata plus storage paths instead.
@@ -315,8 +340,11 @@ ${topLargestRows(largePublicContentItems, 25)}
 
 \`\`\`bash
 npm run storage:plan
+npm run storage:preflight
 npm run storage:upload:r2 -- --dry-run
+npm run storage:upload:r2 -- --kind=commentary_index --dry-run
 npm run storage:upload:r2 -- --kind=strongs_index --dry-run
+npm run storage:upload:r2 -- --kind=strongs_mapping_chapter --dry-run
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --dry-run
 \`\`\`
 
@@ -324,14 +352,18 @@ When R2 credentials and a public base URL are configured:
 
 \`\`\`bash
 npm run storage:upload:r2 -- --execute
+npm run storage:upload:r2 -- --kind=commentary_index --execute
 npm run storage:upload:r2 -- --kind=strongs_index --execute
+npm run storage:upload:r2 -- --kind=strongs_mapping_chapter --execute
 npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
 \`\`\`
 
 If using Wrangler instead of S3 credentials:
 
 \`\`\`bash
+npm run storage:upload:wrangler -- --kind=commentary_index --execute
 npm run storage:upload:wrangler -- --kind=strongs_index --execute
+npm run storage:upload:wrangler -- --kind=strongs_mapping_chapter --path-prefix=data/strongs/mappings-by-chapter/genesis- --execute
 npm run storage:upload:wrangler -- --kind=tsk_cross_reference_batch --execute
 \`\`\`
 

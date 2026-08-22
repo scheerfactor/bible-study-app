@@ -1,0 +1,127 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-10-2026-08-15",
+  "reviewed_at": "2026-08-15",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected every remaining source-verifiable Webster base headword with unoverlaid high or medium OCR flags from the four-occurrence KJV tier, preserving alphabetical rank order.",
+  "review_method": "Imported the complete displayed definition without editorial rewriting, independently re-fetched each exact-headword page, normalized whitespace only, and required an exact match to the stored overlay.",
+  "unavailable_higher_ranked_candidates": [
+    "plain",
+    "centurion",
+    "hyssop",
+    "hasten",
+    "helmet",
+    "cankerworm",
+    "eventide",
+    "ur"
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No related-word or missing-result page was accepted.",
+    "No definition wording was summarized, modernized, or invented.",
+    "Source paragraph counts are retained as source line ranges in the overlay records."
+  ],
+  "entries": [
+    {
+      "word": "profession",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the", "replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/profession",
+      "source_paragraphs": 7,
+      "exact_source_match": true
+    },
+    {
+      "word": "proper",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/proper",
+      "source_paragraphs": 18,
+      "exact_source_match": true
+    },
+    {
+      "word": "roebuck",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/roebuck",
+      "source_paragraphs": 5,
+      "exact_source_match": true
+    },
+    {
+      "word": "shod",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/shod",
+      "source_paragraphs": 1,
+      "exact_source_match": true
+    },
+    {
+      "word": "signify",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/signify",
+      "source_paragraphs": 6,
+      "exact_source_match": true
+    },
+    {
+      "word": "stays",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/stays",
+      "source_paragraphs": 6,
+      "exact_source_match": true
+    },
+    {
+      "word": "thenceforth",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the", "known_common_ocr"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/thenceforth",
+      "source_paragraphs": 4,
+      "exact_source_match": true
+    },
+    {
+      "word": "view",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the", "replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/view",
+      "source_paragraphs": 29,
+      "exact_source_match": true
+    },
+    {
+      "word": "voluntary",
+      "kjv_occurrences": 4,
+      "base_entries": 2,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/voluntary",
+      "source_paragraphs": 19,
+      "exact_source_match": true
+    },
+    {
+      "word": "wake",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/wake",
+      "source_paragraphs": 26,
+      "exact_source_match": true
+    },
+    {
+      "word": "yes",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/yes",
+      "source_paragraphs": 2,
+      "exact_source_match": true
+    }
+  ]
+}

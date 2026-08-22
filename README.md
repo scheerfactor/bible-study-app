@@ -24,9 +24,10 @@ See [LONG_TERM_VISION.md](LONG_TERM_VISION.md) for the Scripture-first platform 
 - Local Library Reader controls for progress, completed books, reading settings, and listening position
 - Search results highlight matched words/phrases
 - Signed-out notes, highlights, and bookmarks persist in local storage
-- Signed-in notes, highlights, bookmarks, study playlists, mastery tracking, memory verses, and reading/listening progress sync to Supabase when env vars and schema are configured
+- Signed-in notes, highlights, bookmarks, Library favorites, study playlists, mastery tracking, memory verses, and reading/listening progress sync to Supabase when env vars and schema are configured
 - Strong's import foundation with reviewed sample lookup, validation, and import scripts
 - Beta feedback form with passage/resource, category, message, and optional email fields
+- Insert-only feedback delivery with a pre-addressed ministry-email fallback and a repeatable live audit
 - Supabase schema includes future-ready tables for resources, dictionary entries, cross references, and content rights tracking
 
 ## Run Locally
@@ -62,10 +63,10 @@ SUPABASE_SERVICE_ROLE_KEY=
 
 The service-role key is only for local import scripts. Never put it in `NEXT_PUBLIC_` variables and never commit it.
 
-This prototype is currently wired locally to:
+The Bible Study Supabase project currently connected to this workspace is:
 
 ```text
-https://sxsypmvlneegzgudqgcn.supabase.co
+https://fmwgvgdmmlkcgyqalwfe.supabase.co
 ```
 
 ### Run the schema
@@ -90,6 +91,7 @@ user_highlights
 user_bookmarks
 user_library_progress
 user_completed_resources
+user_library_favorites
 user_listening_progress
 user_bible_listening_progress
 user_bible_mastery
@@ -127,6 +129,7 @@ where schemaname = 'public'
     'user_bookmarks',
     'user_library_progress',
     'user_completed_resources',
+    'user_library_favorites',
     'user_listening_progress',
     'user_bible_listening_progress',
     'user_bible_mastery',
@@ -173,10 +176,10 @@ npm run dev
 5. Confirm the app shows `Signed in — synced to Supabase`.
 6. Go to John 3:16.
 7. Add a highlight, bookmark, and note.
-8. Add John 3 to a study playlist, mark the chapter read, add John 3:16 to memory, and open a library resource long enough to create progress.
+8. Add John 3 to a study playlist, mark the chapter read, add John 3:16 to memory, favorite a Library resource, and open it long enough to create progress.
 9. Refresh the page.
 10. Confirm the data remains visible.
-10. In Supabase Table Editor, check:
+11. In Supabase Table Editor, check:
 
 ```text
 user_notes
@@ -187,6 +190,7 @@ user_study_playlist_items
 user_bible_mastery
 user_scripture_memory
 user_library_progress
+user_library_favorites
 user_listening_progress
 ```
 
@@ -209,6 +213,7 @@ Library reader data and Bible study workflow data now use local storage first, t
 
 - `user_library_progress`
 - `user_completed_resources`
+- `user_library_favorites`
 - `user_listening_progress`
 - `user_bible_listening_progress`
 - `user_bible_mastery`
@@ -221,6 +226,7 @@ Signed-out fallback keys:
 - `fathers-business-bible-listening-progress`
 - `fathers-business-bible-audio-playlists`
 - `fathers-business-scripture-memory`
+- `fathers-business-favorite-library-resources`
 
 The app currently uses:
 

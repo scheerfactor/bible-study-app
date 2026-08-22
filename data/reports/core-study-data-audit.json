@@ -5,7 +5,7 @@
     "verses": 31102
   },
   "library": {
-    "verifiedResources": 2235
+    "verifiedResources": 2241
   },
   "commentary": {
     "publicRows": 12857,
@@ -14,11 +14,11 @@
     "authors": 72
   },
   "webster1828": {
-    "entries": 60762,
+    "entries": 60901,
     "baseEntries": 58428,
-    "reviewedOverrides": 2334,
-    "uniqueNormalizedHeadwords": 51268,
-    "suspiciousOcrEntries": 1895,
+    "reviewedOverrides": 2473,
+    "uniqueNormalizedHeadwords": 51272,
+    "suspiciousOcrEntries": 1897,
     "normalizationChecks": [
       {
         "word": "believeth",

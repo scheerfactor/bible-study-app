@@ -2,6 +2,8 @@
 
 Use this plan to move Father's Business Bible Study from private beta toward public use without confusing free resources, licensed resources, admin-only material, and paid app features.
 
+For current competitor findings, funding ranges, break-even math, pricing boundaries, and measurable launch gates, see [Bible Study App Sustainability Research](./BIBLE_STUDY_APP_SUSTAINABILITY_RESEARCH.md).
+
 ## Launch Posture
 
 The app is close to a public beta, but not a full commercial library platform yet.

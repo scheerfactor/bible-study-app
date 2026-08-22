@@ -1,0 +1,50 @@
+{
+  "reviewed_on": "2026-08-18",
+  "scope": "Launch-critical application dependencies and the client-side PowerPoint export path",
+  "changes": {
+    "next": {
+      "from": "16.2.6",
+      "to": "16.3.1"
+    },
+    "eslint-config-next": {
+      "from": "16.2.6",
+      "to": "16.3.1"
+    },
+    "brace-expansion": [
+      "1.1.18",
+      "5.0.9"
+    ],
+    "js-yaml": "4.3.1"
+  },
+  "audit_result": {
+    "before": {
+      "high": 8,
+      "critical": 0
+    },
+    "after_supported_fixes": {
+      "high": 2,
+      "critical": 0
+    }
+  },
+  "remaining_advisory": {
+    "packages": {
+      "pptxgenjs": "4.0.1",
+      "image-size": "1.2.1"
+    },
+    "severity": "high",
+    "advisories": [
+      "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+      "https://github.com/advisories/GHSA-5p2g-fcmc-qvqq"
+    ],
+    "upstream_status": "No non-vulnerable image-size version was available from the npm registry at review time. npm's forced remediation proposes pptxgenjs 1.1.5, an unsupported breaking downgrade that does not represent a valid forward fix.",
+    "current_exposure": "Contained. exportSlideDeckPowerPoint dynamically imports PptxGenJS in the browser and builds slides with text, shapes, notes, and writeFile. It does not call addImage or provide uploaded image bytes to the vulnerable image parsers.",
+    "guardrail": "Do not add untrusted image embedding to the PowerPoint export until PptxGenJS uses a patched parser or the application replaces and isolates image parsing with strict input limits.",
+    "launch_decision": "The text-and-shape PowerPoint export may remain enabled. Real image embedding remains blocked pending a patched or replaced parser."
+  },
+  "verification_sources": [
+    "npm audit",
+    "npm registry package metadata",
+    "package-lock.json",
+    "src/app/page.tsx exportSlideDeckPowerPoint implementation"
+  ]
+}

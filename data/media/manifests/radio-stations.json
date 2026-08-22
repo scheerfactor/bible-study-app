@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-08-15",
+  "launchStatus": "Public beta approved",
+  "stations": [
+    {
+      "id": "mix",
+      "title": "Father's Business Radio",
+      "shortLabel": "Mix",
+      "description": "KJV Scripture, prayer, gospel truth, and Bible preaching.",
+      "trackIds": [
+        "kjv-john-librivox-001-john-1-4",
+        "ttb-the-potter-and-the-clay-official-audio",
+        "essentials-of-prayer-librivox-000-preface",
+        "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
+        "all-of-grace-librivox-001-to-you",
+        "ttb-believers-in-days-of-apostasy-official-audio",
+        "kjv-john-librivox-004-john-13-17",
+        "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
+      ]
+    },
+    {
+      "id": "kjv-bible",
+      "title": "KJV Bible Radio",
+      "shortLabel": "KJV Bible",
+      "description": "Continuous King James Bible listening from the Gospel of John.",
+      "trackIds": [
+        "kjv-john-librivox-001-john-1-4",
+        "kjv-john-librivox-004-john-13-17"
+      ]
+    },
+    {
+      "id": "prayer-devotion",
+      "title": "Prayer & Devotion Radio",
+      "shortLabel": "Devotions",
+      "description": "Public-domain readings for prayer, gospel meditation, and Christian living.",
+      "trackIds": [
+        "essentials-of-prayer-librivox-000-preface",
+        "all-of-grace-librivox-001-to-you",
+        "around-the-wicket-gate-librivox-000-preface"
+      ]
+    },
+    {
+      "id": "preaching",
+      "title": "Bible Preaching Radio",
+      "shortLabel": "Preaching",
+      "description": "Free attributed messages from J. Vernon McGee and public-domain Spurgeon readings.",
+      "trackIds": [
+        "ttb-official-sunday-sermons-free-distribution-pilot",
+        "ttb-the-potter-and-the-clay-official-audio",
+        "ttb-believers-in-days-of-apostasy-official-audio",
+        "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
+        "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
+        "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
+      ]
+    }
+  ],
+  "reviewedTracks": [
+    {
+      "mediaRecordId": "kjv-john-librivox-001-john-1-4",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "kjv-john-librivox-004-john-13-17",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "essentials-of-prayer-librivox-000-preface",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "all-of-grace-librivox-001-to-you",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "around-the-wicket-gate-librivox-000-preface",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "ttb-official-sunday-sermons-free-distribution-pilot",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "ttb-the-potter-and-the-clay-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "ttb-believers-in-days-of-apostasy-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-08-15"
+    }
+  ]
+}

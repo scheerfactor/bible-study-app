@@ -10,6 +10,8 @@ Send permission emails from:
 
 Keep first-contact requests narrow. Do not ask about AI summaries, AI search, vector indexing, TTS, or AI training in the first outreach unless that is the specific reason for the request. Track AI-specific permissions separately after a relationship is established.
 
+Do not treat a general positive reply as permission for every use. Confirm metadata, cover art, excerpts, full text, search, presentation export, images, audio, video, TTS, paid access, affiliate links, and resale separately.
+
 ## Sample Email
 
 Subject:
@@ -224,6 +226,42 @@ I wanted to briefly follow up on my permission request for Father's Business Bib
 I am not asking to publish anything without written approval. I am simply trying to find the correct process for metadata, official links, approved excerpts, embedded audio/video where allowed, or future licensing for selected resources from [AUTHOR/MINISTRY/PUBLISHER].
 
 If there is a better contact person or permissions form, I would be grateful if you could point me in the right direction.
+
+Thank you,
+
+Stephen Scheer
+Father's Business Mastery Resources
+fathersbusinessmasteryresources.com
+hello@fathersbusinessmasteryresources.com
+```
+
+## Detailed Rights Confirmation After A Positive Reply
+
+Subject:
+
+`Confirming the approved uses for [TITLE / RESOURCE]`
+
+Body:
+
+```text
+Hello [NAME],
+
+Thank you for your encouraging reply. To make sure I honor your permission exactly, would you please mark each item below Yes, No, or Contact Someone Else for [TITLE / RESOURCE]?
+
+1. List the title, author, description, and official purchase/ministry link
+2. Display the official cover or named promotional graphics
+3. Display an approved excerpt of up to [WORD COUNT] words
+4. Search and index the approved text inside the app
+5. Include the full text for free beta, free public, paid, or institutional access
+6. Permit attributed excerpts in sermon/lesson slides, projection, exports, or handouts
+7. Link to or embed official audio/video players
+8. Host audio, video, or transcripts inside the app
+9. Allow browser/device TTS, generated TTS, or a human audiobook recording
+10. Use an official purchase link, affiliate link, direct resale, or licensed in-app access
+
+Please also tell me the required attribution, territory, term, reporting or royalty terms, and any removal or revocation procedure.
+
+I will record unmarked items as not granted.
 
 Thank you,
 

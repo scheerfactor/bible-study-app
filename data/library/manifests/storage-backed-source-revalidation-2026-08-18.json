@@ -1,0 +1,224 @@
+{
+  "reviewed_at": "2026-08-18",
+  "purpose": "Revalidate trusted storage-backed public-domain source text whose source-host bytes changed after initial import.",
+  "policy": "No source wording was rewritten. Current text was fetched from the recorded Archive.org or Project Gutenberg download URL, processed by the recorded import method, and accepted only after rights/source review. Previous and current checksums are retained here for traceability.",
+  "result": "approved_current_source_bytes",
+  "entries": [
+    {
+      "title": "God's Methods with Man",
+      "author": "G. Campbell Morgan",
+      "content_storage_path": "data/library/verified/god-s-methods-with-man-g-campbell-morgan.txt",
+      "source_url": "https://archive.org/download/godsmethodswithm0000unse/godsmethodswithm0000unse_djvu.txt",
+      "download_url": "https://archive.org/download/godsmethodswithm0000unse/godsmethodswithm0000unse_djvu.txt",
+      "source_license_url": "https://archive.org/about/terms.php",
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/godsmethodswithm0000unse/godsmethodswithm0000unse_djvu.txt.",
+      "text_processing": "source_text_preserved",
+      "previous": {
+        "checksum_sha256": "0ced56c8a0d193d26d83c23c140e86b19ddf9d43e80592584d6485348803a962",
+        "file_size_bytes": 231132,
+        "word_count": 40859,
+        "reading_time_minutes": 182
+      },
+      "current": {
+        "checksum_sha256": "1f1f07f0573961a0895922f7c2bbf4939e59a826db3dea69b9de51a508ee5990",
+        "file_size_bytes": 231258,
+        "word_count": 40882,
+        "reading_time_minutes": 182
+      },
+      "byte_delta": 126,
+      "word_delta": 23
+    },
+    {
+      "title": "The Whole Armour of God",
+      "author": "John Henry Jowett",
+      "content_storage_path": "data/library/verified/the-whole-armour-of-god-john-henry-jowett.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/36692",
+      "download_url": "https://www.gutenberg.org/ebooks/36692.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/36692.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "da9bf4873f47bac5a5684372d8f087cb3f0a68e779ecb3e8be281026a9b472b1",
+        "file_size_bytes": 281663,
+        "word_count": 49100,
+        "reading_time_minutes": 218
+      },
+      "current": {
+        "checksum_sha256": "5b64c58aece4661bfd605993b1cc86ace28a6b2867faf484d212b361162053ca",
+        "file_size_bytes": 281545,
+        "word_count": 49087,
+        "reading_time_minutes": 218
+      },
+      "byte_delta": -118,
+      "word_delta": -13
+    },
+    {
+      "title": "Works of Martin Luther with Introductions and Notes Volume II",
+      "author": "Martin Luther",
+      "content_storage_path": "data/library/verified/works-of-martin-luther-with-introductions-and-notes-volume-ii-martin-luther.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/34904",
+      "download_url": "https://www.gutenberg.org/ebooks/34904.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/34904.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "a6a60c33f441eff92b2b2b269bc1c231dd9f9d7af8b151468a2ad3f14b04d5e5",
+        "file_size_bytes": 954516,
+        "word_count": 167677,
+        "reading_time_minutes": 745
+      },
+      "current": {
+        "checksum_sha256": "70387228cec265afd249612fa0e6d68cc72ccfa9b3dc4d6580be2eb0627e3bbb",
+        "file_size_bytes": 954490,
+        "word_count": 167684,
+        "reading_time_minutes": 745
+      },
+      "byte_delta": -26,
+      "word_delta": 7
+    },
+    {
+      "title": "Female Scripture Biography Volume I",
+      "author": "Francis Augustus Cox",
+      "content_storage_path": "data/library/verified/female-scripture-biography-volume-i-francis-augustus-cox.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/9782",
+      "download_url": "https://www.gutenberg.org/ebooks/9782.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/9782.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "b2e493a8f2b78856353f1b9f0d6084271d22a39ab672d76542333f7ba94091d9",
+        "file_size_bytes": 693843,
+        "word_count": 113458,
+        "reading_time_minutes": 504
+      },
+      "current": {
+        "checksum_sha256": "19d6d01ab278c136e37e34cd2471f67b61063d06ad747d630118d2e132f9ddab",
+        "file_size_bytes": 693851,
+        "word_count": 113456,
+        "reading_time_minutes": 504
+      },
+      "byte_delta": 8,
+      "word_delta": -2
+    },
+    {
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume I",
+      "author": "Rufus Anderson",
+      "content_storage_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-i-rufus-anderson.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/18930",
+      "download_url": "https://www.gutenberg.org/ebooks/18930.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/18930.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "be4356504544682e0cfcce37aa9bfd828d7e673646dd33816a9bf2874fe5e173",
+        "file_size_bytes": 600619,
+        "word_count": 99120,
+        "reading_time_minutes": 441
+      },
+      "current": {
+        "checksum_sha256": "f30ef554215c10675a9189af1134ed566b88c9e7ac647df9dcf12c4602bdae25",
+        "file_size_bytes": 600823,
+        "word_count": 99120,
+        "reading_time_minutes": 441
+      },
+      "byte_delta": 204,
+      "word_delta": 0
+    },
+    {
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume II",
+      "author": "Rufus Anderson",
+      "content_storage_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-ii-rufus-anderson.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/19939",
+      "download_url": "https://www.gutenberg.org/ebooks/19939.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/19939.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "a37477ac4a5824ab6e7c2df338e5fc3d75710d823d24776f8040a455031d0397",
+        "file_size_bytes": 757002,
+        "word_count": 120274,
+        "reading_time_minutes": 535
+      },
+      "current": {
+        "checksum_sha256": "01359f9ba689616d02047a914141eed408b638918161707964f8efd5d591dc2c",
+        "file_size_bytes": 757108,
+        "word_count": 120274,
+        "reading_time_minutes": 535
+      },
+      "byte_delta": 106,
+      "word_delta": 0
+    },
+    {
+      "title": "Everlasting Pearl: One of China's Women",
+      "author": "Anna Magdalena Johannsen",
+      "content_storage_path": "data/library/verified/everlasting-pearl-one-of-china-s-women-anna-magdalena-johannsen.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/19365",
+      "download_url": "https://www.gutenberg.org/ebooks/19365.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/19365.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "adf8a51da68b1258a48450ad711294cbad51cf92e5866eaaa43aeb2d3daf8022",
+        "file_size_bytes": 153441,
+        "word_count": 27761,
+        "reading_time_minutes": 123
+      },
+      "current": {
+        "checksum_sha256": "b4f633db8a86b7ac3da007795751ba81bd1781c8bdd867ac75a6fe39be7d1a00",
+        "file_size_bytes": 153442,
+        "word_count": 27761,
+        "reading_time_minutes": 123
+      },
+      "byte_delta": 1,
+      "word_delta": 0
+    },
+    {
+      "title": "With the Children on Sundays",
+      "author": "Sylvanus Stall",
+      "content_storage_path": "data/library/verified/with-the-children-on-sundays-sylvanus-stall.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/32355",
+      "download_url": "https://www.gutenberg.org/ebooks/32355.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/32355.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "821bf3f87fc8c05037b4e954c05b27a819e39b777d8e13dde9c332e4ec969084",
+        "file_size_bytes": 503713,
+        "word_count": 89059,
+        "reading_time_minutes": 396
+      },
+      "current": {
+        "checksum_sha256": "7107ed24b42e1dbeecba124d9cb316793f434d1347c8dd0600740db48c6c96cc",
+        "file_size_bytes": 503706,
+        "word_count": 89059,
+        "reading_time_minutes": 396
+      },
+      "byte_delta": -7,
+      "word_delta": 0
+    },
+    {
+      "title": "Leaves of Life for Daily Inspiration",
+      "author": "Margaret Bird Steinmetz",
+      "content_storage_path": "data/library/verified/leaves-of-life-for-daily-inspiration-margaret-bird-steinmetz.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/14849",
+      "download_url": "https://www.gutenberg.org/ebooks/14849.txt.utf-8",
+      "source_license_url": "https://www.gutenberg.org/policy/license.html",
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/14849.",
+      "text_processing": "project_gutenberg_boilerplate_removed",
+      "previous": {
+        "checksum_sha256": "73b1e9f4994b5e3a8db57ee4bf5aca66af9076eba9fadf8e90f0bec0292e8809",
+        "file_size_bytes": 424717,
+        "word_count": 68809,
+        "reading_time_minutes": 306
+      },
+      "current": {
+        "checksum_sha256": "b527dc27b3ce53aabf6dda3285bf48798ef3ee6dd1c4dfcd48bb9319f5652067",
+        "file_size_bytes": 424752,
+        "word_count": 68809,
+        "reading_time_minutes": 306
+      },
+      "byte_delta": 35,
+      "word_delta": 0
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Bogard Press Author Profile Stub
+# Bogard Press Acquisition Profile
 
 ## Do Not Use Yet
 
@@ -14,24 +14,20 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | TBD |
-| Website | TBD |
+| Permission/contact info | Official web form and customer-service route verified 2026-08-22 |
+| Website | https://bogardpress.org/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
 | License obtained | No |
 
-## Biography
+## Ministry Summary
 
-Placeholder. Add a short verified biography after source review.
+Bogard Press identifies itself as the publishing ministry of the Baptist Sunday School Committee of the American Baptist Association. Its official site states that it has served churches since 1915 and currently offers Sunday School curriculum, Baptist discipleship material, Bible studies, books, commentaries, pastoral helps, and other church resources.
 
-Include:
+Sources reviewed 2026-08-22:
 
-- birth and death years, if applicable
-- ministry background
-- major ministry work
-- theological tradition
-- publication history
-- source citations
+- https://bogardpress.org/
+- https://bogardpress.org/contact/
 
 ## Doctrinal Notes
 
@@ -52,7 +48,7 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| TBD | Baptist publisher and Sunday School resources | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
+| Baptist & the Bible - Adult | Adult discipleship study | Current official listing verified 2026-08-22 | Permission Needed | Needs Review | Proposed first outreach title; official product page only, no content approved. |
 
 ## Audio / Video Availability
 
@@ -65,10 +61,10 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | TBD |
-| Website | TBD |
-| Permission status | Needs Review |
-| Requested use | TBD |
+| Known contact | Official contact form; general calls 903-792-2783; customer service 903-793-5112 |
+| Website | https://bogardpress.org/contact/ |
+| Permission status | Requested 2026-08-22 - awaiting written reply |
+| Requested use | Proposed metadata, official link, approved cover/promotional image, and approved excerpt/sample for *Baptist & the Bible - Adult* |
 | Follow-up needed | Yes |
 
 Notes:
@@ -102,6 +98,12 @@ Placeholder. Add notes after review.
 Current intake note:
 
 > Publisher permission required for curriculum, books, and excerpts.
+
+The verified contact route and public ministry description do not grant permission and do not approve any title.
+
+Title-specific request submitted through the official contact form on 2026-08-22 for *Baptist & the Bible - Adult*. The form confirmed successful receipt. Follow up on 2026-08-29 if no reply is received. No permission has been granted.
+
+Stephen's longer-term objective is a multi-title commercial relationship that could support authorized purchases, account unlocks, full-text reading, search, verse-linked notes, and publisher royalties. That broader objective was not included in the submitted request and has not been approved. If Bogard Press replies positively, use the separate catalog partnership proposal as a follow-up discussion rather than treating the first request as commercial permission.
 
 ## Final Recommendation
 

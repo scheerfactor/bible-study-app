@@ -2,6 +2,8 @@
 
 Father's Business Bible Study should learn from major Bible software, Bible reading apps, and prayer apps without becoming bloated. The goal is not to copy every tool. The goal is to make Bible reading, study, teaching, listening, prayer, and journaling faster, clearer, and useful in the first five minutes.
 
+For the detailed current feature comparison, measured client-performance baseline, and implementation order for e-Sword and SwordSearcher, see [e-Sword And SwordSearcher Benchmark](./ESWORD_SWORDSEARCHER_BENCHMARK.md).
+
 Research note: complaint summaries below are practical product observations from public reviews, forums, and product feedback. They should guide design decisions, not marketing claims.
 
 ## Logos

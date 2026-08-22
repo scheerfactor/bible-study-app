@@ -47,6 +47,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 
 - Signed-out local storage fallback is clear.
 - Signed-in sync status is clear.
+- Every signed-in sync query filters by the current `user_id` in addition to database RLS.
+- Every user-owned sync table has explicit authenticated-only CRUD policies and no anonymous grants.
 - Bible notes, highlights, bookmarks, markers, favorites, recent passages, prayer entries, journal entries, memory, library progress, and playlists persist after refresh.
 - Export JSON works from Settings.
 - Prayer exports work.
@@ -56,7 +58,9 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Sermon markdown export works.
 - Preaching notes export works.
 - Slide outline copy/download works.
-- Feedback falls back to copy if Supabase feedback table is unavailable.
+- Feedback falls back to copy plus a pre-addressed ministry email if the private Supabase queue is unavailable.
+- Feedback UI categories match the table constraint and insert-only RLS policy.
+- A disposable live delivery probe succeeds and is removed before release.
 
 ## Quality Checks
 
@@ -91,7 +95,13 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 
 - `npm run validate:strongs`
 - `npm run validate:commentary`
+- `npm run audit:commentary-storage`
 - `npm run library:qa`
+- `npm run audit:public-access` while the production build is running
+- `npm run audit:release` while the production build is running
+- `npm run audit:study-apis` while the production build is running
+- `npm run audit:release:live` after deployment and before sharing the beta URL
+- `npm run audit:study-apis:live` after deployment and before sharing the beta URL
 - `npm run lint`
 - `npm run build`
 
@@ -100,6 +110,10 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Mobile viewport around 390x844.
 - Desktop viewport around 1280x900 or larger.
 - Signed-out local mode.
+- Private admin deep links return signed-out visitors to the public Library without exposing internal labels.
+- Brand-new signed-in non-admin account cannot reach private admin tools.
+- Authenticated users have read-only access to their own role row and no role-management grants.
+- Admin acquisition records expose only CRUD grants, with every operation still requiring the admin RLS check.
 - Refresh persistence test.
 - Export/download test.
 - Production URL test after deploy.

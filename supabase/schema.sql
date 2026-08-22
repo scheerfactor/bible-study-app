@@ -213,6 +213,36 @@ create table if not exists public.user_completed_resources (
 
 create index if not exists user_completed_resources_user_slug_idx on public.user_completed_resources (user_id, resource_slug);
 
+create table if not exists public.user_library_favorites (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  resource_slug text not null check (length(trim(resource_slug)) between 1 and 240),
+  is_favorite boolean not null default true,
+  updated_at timestamptz not null default now(),
+  unique (user_id, resource_slug)
+);
+
+create or replace function public.keep_newest_library_favorite_update()
+returns trigger
+language plpgsql
+security invoker
+set search_path = ''
+as $$
+begin
+  if old.updated_at > new.updated_at then
+    return old;
+  end if;
+  return new;
+end;
+$$;
+
+revoke all on function public.keep_newest_library_favorite_update() from public;
+
+drop trigger if exists keep_newest_library_favorite_update on public.user_library_favorites;
+create trigger keep_newest_library_favorite_update
+  before update on public.user_library_favorites
+  for each row execute function public.keep_newest_library_favorite_update();
+
 create table if not exists public.user_listening_progress (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
@@ -314,11 +344,46 @@ create table if not exists public.beta_feedback (
   id uuid primary key default gen_random_uuid(),
   user_id uuid default auth.uid() references auth.users(id) on delete set null,
   passage_or_resource text,
-  category text not null default 'General',
-  message text not null check (length(trim(message)) > 0),
+  category text not null default 'Other',
+  message text not null,
   optional_email text,
   created_at timestamptz not null default now()
 );
+
+alter table public.beta_feedback drop constraint if exists beta_feedback_passage_length_check;
+alter table public.beta_feedback alter column category set default 'Other';
+alter table public.beta_feedback add constraint beta_feedback_passage_length_check
+  check (passage_or_resource is null or length(passage_or_resource) <= 500);
+alter table public.beta_feedback drop constraint if exists beta_feedback_category_check;
+alter table public.beta_feedback add constraint beta_feedback_category_check
+  check (
+    -- feedback-category-contract:start
+    category in (
+      'Bug report',
+      'Suggestion',
+      'Resource issue',
+      'Commentary issue',
+      'Audio issue',
+      'Study workflow issue',
+      'Bible Reader',
+      'Study Drawer',
+      'Passage Guide',
+      'Library',
+      'Search',
+      'Mobile Layout',
+      'Sermons / Presentations',
+      'Author / publisher partnership',
+      'Publisher product feedback',
+      'Other'
+    )
+    -- feedback-category-contract:end
+  );
+alter table public.beta_feedback drop constraint if exists beta_feedback_message_check;
+alter table public.beta_feedback add constraint beta_feedback_message_check
+  check (length(trim(message)) > 0 and length(message) <= 5000);
+alter table public.beta_feedback drop constraint if exists beta_feedback_optional_email_length_check;
+alter table public.beta_feedback add constraint beta_feedback_optional_email_length_check
+  check (optional_email is null or length(optional_email) <= 320);
 
 create index if not exists beta_feedback_created_idx on public.beta_feedback (created_at desc);
 create index if not exists beta_feedback_user_idx on public.beta_feedback (user_id, created_at desc);
@@ -531,6 +596,7 @@ alter table public.user_highlights enable row level security;
 alter table public.user_bookmarks enable row level security;
 alter table public.user_library_progress enable row level security;
 alter table public.user_completed_resources enable row level security;
+alter table public.user_library_favorites enable row level security;
 alter table public.user_listening_progress enable row level security;
 alter table public.user_bible_listening_progress enable row level security;
 alter table public.user_bible_mastery enable row level security;
@@ -575,6 +641,10 @@ drop policy if exists "Users can read their completed resources" on public.user_
 drop policy if exists "Users can create their completed resources" on public.user_completed_resources;
 drop policy if exists "Users can update their completed resources" on public.user_completed_resources;
 drop policy if exists "Users can delete their completed resources" on public.user_completed_resources;
+drop policy if exists "Users can read their library favorites" on public.user_library_favorites;
+drop policy if exists "Users can create their library favorites" on public.user_library_favorites;
+drop policy if exists "Users can update their library favorites" on public.user_library_favorites;
+drop policy if exists "Users can delete their library favorites" on public.user_library_favorites;
 drop policy if exists "Users can read their listening progress" on public.user_listening_progress;
 drop policy if exists "Users can create their listening progress" on public.user_listening_progress;
 drop policy if exists "Users can update their listening progress" on public.user_listening_progress;
@@ -653,208 +723,284 @@ create policy "Commentary entries are readable"
 
 create policy "Users can read their notes"
   on public.user_notes for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their notes"
   on public.user_notes for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their notes"
   on public.user_notes for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their notes"
   on public.user_notes for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their highlights"
   on public.user_highlights for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their highlights"
   on public.user_highlights for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their highlights"
   on public.user_highlights for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their highlights"
   on public.user_highlights for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their bookmarks"
   on public.user_bookmarks for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their bookmarks"
   on public.user_bookmarks for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their bookmarks"
   on public.user_bookmarks for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their bookmarks"
   on public.user_bookmarks for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their library progress"
   on public.user_library_progress for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their library progress"
   on public.user_library_progress for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their library progress"
   on public.user_library_progress for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their library progress"
   on public.user_library_progress for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their completed resources"
   on public.user_completed_resources for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their completed resources"
   on public.user_completed_resources for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their completed resources"
   on public.user_completed_resources for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their completed resources"
   on public.user_completed_resources for delete
+  to authenticated
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their library favorites"
+  on public.user_library_favorites for select
+  to authenticated
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their library favorites"
+  on public.user_library_favorites for insert
+  to authenticated
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their library favorites"
+  on public.user_library_favorites for update
+  to authenticated
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their library favorites"
+  on public.user_library_favorites for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their listening progress"
   on public.user_listening_progress for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their listening progress"
   on public.user_listening_progress for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their listening progress"
   on public.user_listening_progress for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their listening progress"
   on public.user_listening_progress for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their Bible listening progress"
   on public.user_bible_listening_progress for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their Bible listening progress"
   on public.user_bible_listening_progress for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their Bible listening progress"
   on public.user_bible_listening_progress for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their Bible listening progress"
   on public.user_bible_listening_progress for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their Bible mastery"
   on public.user_bible_mastery for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their Bible mastery"
   on public.user_bible_mastery for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their Bible mastery"
   on public.user_bible_mastery for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their Bible mastery"
   on public.user_bible_mastery for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their scripture memory"
   on public.user_scripture_memory for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their scripture memory"
   on public.user_scripture_memory for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their scripture memory"
   on public.user_scripture_memory for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their scripture memory"
   on public.user_scripture_memory for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their study playlists"
   on public.user_study_playlists for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their study playlists"
   on public.user_study_playlists for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their study playlists"
   on public.user_study_playlists for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their study playlists"
   on public.user_study_playlists for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can read their study playlist items"
   on public.user_study_playlist_items for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can create their study playlist items"
   on public.user_study_playlist_items for insert
+  to authenticated
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can update their study playlist items"
   on public.user_study_playlist_items for update
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
   with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Users can delete their study playlist items"
   on public.user_study_playlist_items for delete
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Anyone can create beta feedback"
   on public.beta_feedback for insert
+  to anon, authenticated
   with check (
     length(trim(message)) > 0
     and length(message) <= 5000
+    and (passage_or_resource is null or length(passage_or_resource) <= 500)
+    and (optional_email is null or length(optional_email) <= 320)
+    -- feedback-category-contract:start
     and category in (
-      'General',
+      'Bug report',
+      'Suggestion',
+      'Resource issue',
+      'Commentary issue',
+      'Audio issue',
+      'Study workflow issue',
       'Bible Reader',
       'Study Drawer',
+      'Passage Guide',
       'Library',
-      'Listening',
-      'Commentary',
       'Search',
       'Mobile Layout',
-      'Bug',
-      'Feature Request'
+      'Sermons / Presentations',
+      'Author / publisher partnership',
+      'Publisher product feedback',
+      'Other'
     )
+    -- feedback-category-contract:end
   );
 
 create policy "Strong sources are readable"
@@ -922,10 +1068,12 @@ create policy "Presentation events can be created"
 
 create policy "Users can read their own roles"
   on public.user_roles for select
+  to authenticated
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 create policy "Admins can read acquisition records"
   on public.admin_acquisition_records for select
+  to authenticated
   using (
     exists (
       select 1
@@ -935,8 +1083,21 @@ create policy "Admins can read acquisition records"
     )
   );
 
-create policy "Admins can manage acquisition records"
-  on public.admin_acquisition_records for all
+create policy "Admins can create acquisition records"
+  on public.admin_acquisition_records for insert
+  to authenticated
+  with check (
+    exists (
+      select 1
+      from public.user_roles
+      where user_id = (select auth.uid())
+        and role = 'admin'
+    )
+  );
+
+create policy "Admins can update acquisition records"
+  on public.admin_acquisition_records for update
+  to authenticated
   using (
     exists (
       select 1
@@ -946,6 +1107,18 @@ create policy "Admins can manage acquisition records"
     )
   )
   with check (
+    exists (
+      select 1
+      from public.user_roles
+      where user_id = (select auth.uid())
+        and role = 'admin'
+    )
+  );
+
+create policy "Admins can delete acquisition records"
+  on public.admin_acquisition_records for delete
+  to authenticated
+  using (
     exists (
       select 1
       from public.user_roles
@@ -967,12 +1140,15 @@ grant select, insert, update, delete on public.user_highlights to authenticated;
 grant select, insert, update, delete on public.user_bookmarks to authenticated;
 grant select, insert, update, delete on public.user_library_progress to authenticated;
 grant select, insert, update, delete on public.user_completed_resources to authenticated;
+revoke all on public.user_library_favorites from anon, authenticated;
+grant select, insert, update, delete on public.user_library_favorites to authenticated;
 grant select, insert, update, delete on public.user_listening_progress to authenticated;
 grant select, insert, update, delete on public.user_bible_listening_progress to authenticated;
 grant select, insert, update, delete on public.user_bible_mastery to authenticated;
 grant select, insert, update, delete on public.user_scripture_memory to authenticated;
 grant select, insert, update, delete on public.user_study_playlists to authenticated;
 grant select, insert, update, delete on public.user_study_playlist_items to authenticated;
+revoke all on public.beta_feedback from anon, authenticated;
 grant insert on public.beta_feedback to anon, authenticated;
 grant select on public.strongs_sources to anon, authenticated;
 grant select on public.strongs_entries to anon, authenticated;
@@ -980,10 +1156,10 @@ grant select, insert, update, delete on public.user_personal_library_resources t
 grant select, insert, update, delete on public.user_resource_permission_requests to authenticated;
 grant select, insert, update on public.presentation_sessions to anon, authenticated;
 grant select, insert on public.presentation_session_events to anon, authenticated;
+revoke all on public.user_roles from anon, authenticated;
 grant select on public.user_roles to authenticated;
-revoke all on public.user_roles from anon;
+revoke all on public.admin_acquisition_records from anon, authenticated;
 grant select, insert, update, delete on public.admin_acquisition_records to authenticated;
-revoke all on public.admin_acquisition_records from anon;
 
 insert into public.user_roles (user_id, role)
 select id, 'admin'

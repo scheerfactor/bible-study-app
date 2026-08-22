@@ -1,0 +1,136 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-9-2026-08-15",
+  "reviewed_at": "2026-08-15",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next twelve source-verifiable Webster base headwords with unoverlaid high or medium OCR flags from the four-occurrence KJV tier, preserving frequency and alphabetical rank order.",
+  "review_method": "Imported the complete displayed definition without editorial rewriting, independently re-fetched each exact-headword page, normalized whitespace only, and required an exact match to the stored overlay.",
+  "unavailable_higher_ranked_candidates": [
+    "plain",
+    "centurion",
+    "hyssop",
+    "hasten",
+    "helmet",
+    "cankerworm",
+    "eventide",
+    "ur"
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No related-word or missing-result page was accepted.",
+    "No definition wording was summarized, modernized, or invented.",
+    "Source paragraph counts are retained as source line ranges in the overlay records."
+  ],
+  "entries": [
+    {
+      "word": "considering",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the", "replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/considering",
+      "source_paragraphs": 3,
+      "exact_source_match": true
+    },
+    {
+      "word": "crush",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/crush",
+      "source_paragraphs": 15,
+      "exact_source_match": true
+    },
+    {
+      "word": "debtor",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/debtor",
+      "source_paragraphs": 7,
+      "exact_source_match": true
+    },
+    {
+      "word": "dedicate",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_wh_words"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dedicate",
+      "source_paragraphs": 6,
+      "exact_source_match": true
+    },
+    {
+      "word": "dignity",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dignity",
+      "source_paragraphs": 10,
+      "exact_source_match": true
+    },
+    {
+      "word": "dish",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dish",
+      "source_paragraphs": 7,
+      "exact_source_match": true
+    },
+    {
+      "word": "eve",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/eve",
+      "source_paragraphs": 9,
+      "exact_source_match": true
+    },
+    {
+      "word": "farewell",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/farewell",
+      "source_paragraphs": 8,
+      "exact_source_match": true
+    },
+    {
+      "word": "fresh",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/fresh",
+      "source_paragraphs": 17,
+      "exact_source_match": true
+    },
+    {
+      "word": "knock",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["replacement_marks"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/knock",
+      "source_paragraphs": 13,
+      "exact_source_match": true
+    },
+    {
+      "word": "melody",
+      "kjv_occurrences": 4,
+      "base_entries": 1,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/melody",
+      "source_paragraphs": 3,
+      "exact_source_match": true
+    },
+    {
+      "word": "print",
+      "kjv_occurrences": 4,
+      "base_entries": 2,
+      "base_ocr_flags": ["split_the"],
+      "source_url": "https://webstersdictionary1828.com/Dictionary/print",
+      "source_paragraphs": 22,
+      "exact_source_match": true
+    }
+  ]
+}

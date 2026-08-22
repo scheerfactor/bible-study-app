@@ -2,6 +2,7 @@
 
 import { createClient, type SupabaseClient, type User } from "@supabase/supabase-js";
 import {
+  ArrowUp,
   Bookmark,
   BookMarked,
   BookOpen,
@@ -44,9 +45,10 @@ import {
 } from "lucide-react";
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
+import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
+import RadioWorkspace from "@/components/RadioWorkspace";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
 import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
@@ -92,30 +94,6 @@ import tskPsalmsPhase20 from "../../data/imports/tsk-metav-reviewed-psalms-phase
 import tskWeakBooksPhase21 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-21.json";
 import tskReviewedFinalChapterGaps from "../../data/imports/tsk-reviewed-final-chapter-gaps.json";
 import tskThinBooksPhase14 from "../../data/imports/tsk-reviewed-thin-books-phase-14.json";
-import hoseaAdamClarkeCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
-import hoseaBarnesCommentary from "../../data/imports/barnes-reviewed-completion-prophets-commentary.json";
-import hoseaBiblicalIllustratorCommentary from "../../data/imports/biblical-illustrator-reviewed-weak-books-commentary.json";
-import hoseaMorganCommentary from "../../data/imports/g-campbell-morgan-hosea-commentary.json";
-import hoseaIronsideCommentary from "../../data/imports/h-a-ironside-hosea-commentary.json";
-import hoseaJfbCommentary from "../../data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json";
-import hoseaMatthewHenryCommentary from "../../data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json";
-import hoseaMatthewPooleCommentary from "../../data/imports/matthew-poole-reviewed-weak-books-commentary.json";
-import hoseaPreachersHomileticalCommentary from "../../data/imports/preachers-homiletical-reviewed-hosea-commentary.json";
-import hoseaPulpitCommentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-commentary.json";
-import hoseaWesleyCommentary from "../../data/imports/wesley-reviewed-minor-prophets-commentary.json";
-import hoseaGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-hosea-commentary.json";
-import amosGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-amos-commentary.json";
-import exodusGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-exodus-1-3-commentary.json";
-import isaiahGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-isaiah-1-3-commentary.json";
-import jobWatsonCommentary from "../../data/imports/robert-a-watson-reviewed-job-1-3-commentary.json";
-import secondChroniclesBennettCommentary from "../../data/imports/w-h-bennett-reviewed-2-chronicles-starter-commentary.json";
-import numbersWatsonCommentary from "../../data/imports/robert-a-watson-reviewed-numbers-1-5-commentary.json";
-import deuteronomyHarperCommentary from "../../data/imports/andrew-harper-reviewed-deuteronomy-starter-commentary.json";
-import firstSamuelBlaikieCommentary from "../../data/imports/w-g-blaikie-reviewed-1-samuel-starter-commentary.json";
-import firstChroniclesBennettCommentary from "../../data/imports/w-h-bennett-reviewed-1-chronicles-starter-commentary.json";
-import leviticusKelloggCommentary from "../../data/imports/s-h-kellogg-reviewed-leviticus-starter-commentary.json";
-import secondKingsFarrarCommentary from "../../data/imports/f-w-farrar-reviewed-2-kings-starter-commentary.json";
-import secondSamuelBlaikieCommentary from "../../data/imports/w-g-blaikie-reviewed-2-samuel-starter-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
@@ -126,11 +104,14 @@ import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded
 import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
 
-type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
+type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "radio" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader" | "author" | "collection" | "path";
+type LibraryCatalogStatus = "idle" | "loading" | "ready" | "error";
+type LibrarySearchStatus = "idle" | "loading" | "ready" | "error";
+type LibraryBrowseMode = "catalog" | "shelves";
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
@@ -167,6 +148,7 @@ const HASH_TAB_MAP: Partial<Record<string, Tab>> = {
   "#commentary-explorer": "commentaryExplorer",
   "#commentaryexplorer": "commentaryExplorer",
   "#library": "library",
+  "#radio": "radio",
   "#notes": "notes",
   "#prayer": "prayer",
   "#journal": "journal",
@@ -184,6 +166,19 @@ const HASH_TAB_MAP: Partial<Record<string, Tab>> = {
   "#hosea": "hoseaStudyPath",
   "#hosea-study": "hoseaStudyPath",
 };
+
+const LIBRARY_CATALOG_TABS = new Set<Tab>([
+  "library",
+  "search",
+  "themes",
+  "commentaryExplorer",
+  "sermons",
+  "presentations",
+  "passageGuide",
+  "amosStudyPath",
+  "proverbsStudyPath",
+  "hoseaStudyPath",
+]);
 
 function normalizedLocationHash() {
   if (typeof window === "undefined") return "";
@@ -232,8 +227,9 @@ type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Test
 type SermonKind = "Sermon" | "Lesson";
 type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
 type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "presenting";
+type SermonQuickStartId = "expository" | "topical" | "evangelistic" | "doctrinal" | "devotional";
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
-type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Closing / Invitation";
+type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Countdown" | "Announcement" | "Question" | "Closing / Invitation";
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
@@ -456,6 +452,7 @@ type SermonSlide = {
   body: string;
   bibleText: string;
   speakerNotes: string;
+  countdownMinutes: number;
   backgroundStyle: SermonSlideBackgroundStyle;
   imageTheme: string;
   imageSlot: SermonSlideImageSlotId;
@@ -493,6 +490,23 @@ type PresentationEntry = {
   createdAt: string;
   updatedAt: string;
   archived: boolean;
+};
+
+type MinistryWorkspaceBackupData = {
+  sermons: SermonEntry[];
+  sermonSeries: SermonSeries[];
+  presentations: PresentationEntry[];
+  churchThemes: SavedChurchTheme[];
+  activeSermon: SermonEntry | null;
+  activePresentation: PresentationEntry | null;
+};
+
+type MinistryWorkspaceBackupV1 = {
+  app: "Father's Business Bible Study";
+  kind: "ministry_workspace_backup";
+  schemaVersion: 1;
+  exportedAt: string;
+  data: MinistryWorkspaceBackupData;
 };
 
 type PresentationRemoteState = {
@@ -796,7 +810,21 @@ type DeferredCommentaryLoadStatus = {
   loadedFiles: number;
   totalFiles: number;
   loading: boolean;
-  mode: "starter" | "complete";
+  mode: "chapter" | "starter" | "complete";
+};
+
+type CommentaryCatalogBook = {
+  book: string;
+  chapters: number[];
+};
+
+type CommentaryCatalogSummary = {
+  schemaVersion: number;
+  catalogFileCount: number;
+  indexedFileCount: number;
+  rowCount: number;
+  chapterCount: number;
+  books: CommentaryCatalogBook[];
 };
 
 type BibleCoverageBook = {
@@ -1018,6 +1046,15 @@ type LibraryResource = {
   added_at: string;
 };
 
+type LibrarySearchPagination = {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+};
+
 type CommentaryVolumeReferenceHint = {
   resourceSlug: string;
   books: string[];
@@ -1039,6 +1076,11 @@ type LicensedResourceLink = {
   category: string;
   collection: string;
   sourceUrl: string;
+  sourcePageUrl?: string;
+  passageEvidenceUrl?: string;
+  resourceFormat?: "Official Audio Link";
+  passage?: string;
+  duration?: string;
   permissionStatus: string;
   reviewStatus: string;
   approvedPublicUse: string[];
@@ -1088,6 +1130,12 @@ type CompletedResource = {
 };
 
 type CompletedResourceState = Record<string, CompletedResource>;
+
+type FavoriteLibraryResourceRecord = {
+  slug: string;
+  favorite: boolean;
+  updatedAt: string;
+};
 
 type ManualReadBook = {
   id: string;
@@ -1196,6 +1244,13 @@ type StudyPlaylistTemplate = {
   repeatOptions: string[];
 };
 
+type StudyPlaylistPassage = {
+  book: string;
+  chapter?: number;
+  verse?: number;
+  label: string;
+};
+
 type SmartSermonSuggestion = {
   id: string;
   title: string;
@@ -1205,6 +1260,8 @@ type SmartSermonSuggestion = {
   actionText: string;
   importLabel: string;
   importBody: string;
+  playlist?: StudyPlaylistTemplate;
+  playlistPassage?: StudyPlaylistPassage;
 };
 
 type LibraryImportCandidate = {
@@ -1604,7 +1661,9 @@ type BiblePlaylistItem = {
   verseStart?: number;
   verseEnd?: number;
   resourceTitle?: string;
+  resourceAuthor?: string;
   resourceSlug?: string;
+  targetMinutes?: number;
 };
 
 type BibleAudioPlaylist = {
@@ -2097,6 +2156,7 @@ type VoiceSettings = {
 const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
+const FAVORITE_LIBRARY_RESOURCES_KEY = "fathers-business-favorite-library-resources";
 const MANUAL_READ_BOOKS_KEY = "fathers-business-manual-read-books";
 const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
 const LIBRARY_LISTENING_QUEUE_KEY = "fathers-business-library-listening-queue";
@@ -2327,7 +2387,116 @@ const SERMON_SECTION_LABELS: Record<SermonSectionKey, string> = {
 
 const SERMON_SECTION_FIELDS: SermonSectionKey[] = ["outline", "introduction", "points", "illustrations", "applications", "conclusion", "invitation"];
 
-const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Application", "Closing / Invitation"];
+const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Application", "Countdown", "Announcement", "Question", "Closing / Invitation"];
+const PRESENTATION_SERVICE_PRESETS: Array<{
+  id: string;
+  label: string;
+  type: SermonSlideType;
+  patch: Partial<SermonSlide>;
+}> = [
+  {
+    id: "service-countdown",
+    label: "5:00 Countdown",
+    type: "Countdown",
+    patch: {
+      title: "Service Begins Soon",
+      subtitle: "Welcome",
+      body: "Worship service time - Church location",
+      countdownMinutes: 5,
+      imageSlot: "church-window",
+    },
+  },
+  {
+    id: "service-welcome",
+    label: "Welcome",
+    type: "Announcement",
+    patch: {
+      title: "Welcome",
+      subtitle: "We are glad you are here",
+      body: "Worship service time - Church location",
+      imageSlot: "church-window",
+    },
+  },
+  {
+    id: "service-singing",
+    label: "Worship Singing",
+    type: "Announcement",
+    patch: {
+      title: "Worship in Song",
+      subtitle: "Please stand as you are able",
+      body: "Hymn title or congregational song",
+      imageSlot: "church-window",
+    },
+  },
+  {
+    id: "service-silence-phones",
+    label: "Silence Phones",
+    type: "Announcement",
+    patch: {
+      title: "Please Silence Your Phone",
+      subtitle: "Thank you for helping us worship without distraction",
+      body: "Emergency calls may be taken in the foyer.",
+      imageSlot: "quiet-study",
+    },
+  },
+  {
+    id: "service-scripture",
+    label: "Bible Reading",
+    type: "Scripture",
+    patch: {
+      title: "Scripture Reading",
+      subtitle: "King James Version",
+      bibleText: "Enter the KJV passage and verse text.",
+      imageSlot: "open-bible",
+    },
+  },
+  {
+    id: "service-quote",
+    label: "Attributed Quote",
+    type: "Quote",
+    patch: {
+      title: "Quote",
+      subtitle: "Author or preacher - source",
+      body: "Enter an exact, source-checked quotation.",
+      speakerNotes: "Record the work, page or sermon, source URL, and image rights before presenting.",
+      imageSlot: "quiet-study",
+    },
+  },
+  {
+    id: "service-light-story",
+    label: "Light Story",
+    type: "Illustration",
+    patch: {
+      title: "A Light Moment",
+      subtitle: "Brief illustration",
+      body: "",
+      speakerNotes: "Add a brief, fitting story that serves the passage and does not embarrass a real person.",
+      imageSlot: "shepherd-field",
+    },
+  },
+  {
+    id: "service-question",
+    label: "Good Question",
+    type: "Question",
+    patch: {
+      title: "What does this passage require us to believe and obey?",
+      subtitle: "Consider the text",
+      body: "",
+      imageSlot: "open-bible",
+    },
+  },
+  {
+    id: "service-sermon",
+    label: "Sermon Begins",
+    type: "Title",
+    patch: {
+      title: "Sermon Title",
+      subtitle: "Bible passage - Preacher",
+      body: "",
+      imageSlot: "pulpit",
+    },
+  },
+];
 const SERMON_SLIDE_LAYOUTS: SermonSlideLayout[] = ["Centered", "Scripture Focus", "Two Column", "Teaching Point", "Image Left", "Minimal"];
 const SERMON_SLIDE_BACKGROUND_STYLES: SermonSlideBackgroundStyle[] = ["Theme", "Soft Gradient", "Paper", "Dark", "Light"];
 const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
@@ -2662,6 +2831,80 @@ const SERMON_IMAGE_THEME_SUGGESTIONS = [
   { terms: ["resurrection", "risen", "life", "empty tomb"], slot: "empty-tomb" },
   { terms: ["scripture", "word", "bible"], slot: "open-bible" },
 ];
+
+const SERMON_QUICK_STARTS: Record<SermonQuickStartId, {
+  label: string;
+  description: string;
+  targetMinutes: number;
+  slideTheme: SermonSlideThemeId;
+  outline: string;
+  introduction: string;
+  points: string;
+  applications: string;
+  conclusion: string;
+  invitation: string;
+}> = {
+  expository: {
+    label: "Expository",
+    description: "Follow the passage from meaning to obedience.",
+    targetMinutes: 35,
+    slideTheme: "classic-pulpit",
+    outline: "I. The setting and flow of the passage\nII. The main truth of the passage\nIII. The response required by the passage",
+    introduction: "[Establish the context, identify the main question, and read the passage.]",
+    points: "[Explain the first movement of the text.]\n[Explain the central truth of the text.]\n[Show how the text leads to response.]",
+    applications: "[Name one belief, attitude, and action that this passage should change.]",
+    conclusion: "[Restate the main truth in one sentence and return to the passage.]",
+    invitation: "[Call for the response clearly required by the passage.]",
+  },
+  topical: {
+    label: "Topical",
+    description: "Trace one subject through its controlling KJV passages.",
+    targetMinutes: 30,
+    slideTheme: "warm-bible-study",
+    outline: "I. Define the subject from Scripture\nII. Trace the clearest supporting passages\nIII. Apply the Bible's teaching faithfully",
+    introduction: "[State the question this study will answer and name the controlling passage.]",
+    points: "[What does the controlling passage teach?]\n[What do related passages add?]\n[What errors or misunderstandings does Scripture correct?]",
+    applications: "[Turn the Bible's teaching into specific obedience, prayer, and witness.]",
+    conclusion: "[Summarize the subject using the language of the controlling passage.]",
+    invitation: "[Invite hearers to believe and obey what Scripture has established.]",
+  },
+  evangelistic: {
+    label: "Evangelistic",
+    description: "Explain the need, Christ's provision, and the biblical response.",
+    targetMinutes: 25,
+    slideTheme: "salvation",
+    outline: "I. The sinner's need\nII. The Saviour's provision\nIII. The hearer's response",
+    introduction: "[Begin with the text and make the eternal question plain.]",
+    points: "[Show the problem of sin from the passage.]\n[Show who Christ is and what He has done.]\n[Show the response commanded or invited in the passage.]",
+    applications: "[Distinguish personal faith and repentance from mere religious activity.]",
+    conclusion: "[Return to the promise, warning, or invitation in the text.]",
+    invitation: "[Give a clear gospel appeal without pressure, confusion, or manipulation.]",
+  },
+  doctrinal: {
+    label: "Doctrinal",
+    description: "Define, establish, connect, and apply a Bible doctrine.",
+    targetMinutes: 40,
+    slideTheme: "simple-scripture",
+    outline: "I. Define the doctrine biblically\nII. Establish it from its clearest passages\nIII. Connect it to the whole counsel of God\nIV. Apply it to faith and life",
+    introduction: "[State why this doctrine matters and identify the primary passage.]",
+    points: "[Define key terms from Scripture.]\n[Explain the clearest proof passages in context.]\n[Show how the doctrine guards truth and shapes life.]",
+    applications: "[State what this doctrine calls believers to know, reject, trust, and do.]",
+    conclusion: "[Summarize the doctrine in plain language anchored to the primary text.]",
+    invitation: "[Call for the faith or obedience that follows from this doctrine.]",
+  },
+  devotional: {
+    label: "Devotional / Lesson",
+    description: "Move from observation to reflection, obedience, and prayer.",
+    targetMinutes: 20,
+    slideTheme: "prayer",
+    outline: "I. What the passage says\nII. What the passage reveals\nIII. What the passage asks us to do",
+    introduction: "[Read the passage and name the need it addresses today.]",
+    points: "[Observe one important detail.]\n[Reflect on what it reveals about God and people.]\n[Identify one faithful response.]",
+    applications: "[Write one personal step, one discussion question, and one prayer response.]",
+    conclusion: "[Repeat the key truth and the next step.]",
+    invitation: "[Invite the class or congregation to respond in prayer and obedience.]",
+  },
+};
 
 const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
   {
@@ -4647,6 +4890,160 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read one doctrine at a time", "Compare with KJV passages", "Use with doctrinal review notes"],
   },
   {
+    id: "deuteronomy-study",
+    title: "Deuteronomy Study",
+    shortLabel: "Remember and obey",
+    description: "A whole-book path through Moses' final messages with KJV reading, word study, cross references, commentary, and verified library helps.",
+    biblePassages: ["Deuteronomy 1", "Deuteronomy 4", "Deuteronomy 6", "Deuteronomy 18", "Deuteronomy 28", "Deuteronomy 30", "Deuteronomy 34"],
+    resourceTerms: ["deuteronomy", "pentateuch", "law", "covenant", "obedience", "moses", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["matthew-henry"],
+    repeatOptions: ["Read one message at a time", "Compare commentary after the KJV text", "Save applications for teaching"],
+  },
+  {
+    id: "joshua-study",
+    title: "Joshua Study",
+    shortLabel: "Courage and obedience",
+    description: "A whole-book path through Israel's entrance into the land with KJV reading, word study, cross references, commentary, and verified library helps.",
+    biblePassages: ["Joshua 1", "Joshua 2", "Joshua 3", "Joshua 6", "Joshua 7", "Joshua 10", "Joshua 23", "Joshua 24"],
+    resourceTerms: ["joshua", "land of promise", "canaan", "inheritance", "courage", "obedience", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Read one campaign at a time", "Compare commentary after the KJV text", "Save applications for teaching"],
+  },
+  {
+    id: "judges-study",
+    title: "Judges Study",
+    shortLabel: "Decline and deliverance",
+    description: "A whole-book path through Israel's recurring rebellion and deliverance with KJV reading, word study, cross references, commentary, and verified library helps.",
+    biblePassages: ["Judges 2", "Judges 4", "Judges 6", "Judges 7", "Judges 11", "Judges 13", "Judges 16", "Judges 21"],
+    resourceTerms: ["judges", "deborah", "gideon", "jephthah", "samson", "deliverance", "apostasy", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace one judge at a time", "Mark each cycle of decline and deliverance", "Save warnings and applications for teaching"],
+  },
+  {
+    id: "ruth-study",
+    title: "Ruth Study",
+    shortLabel: "Providence and redemption",
+    description: "A four-chapter path through loss, faithfulness, providence, redemption, and the family line leading to David, with KJV reading and verified study helps.",
+    biblePassages: ["Ruth 1", "Ruth 2", "Ruth 3", "Ruth 4"],
+    resourceTerms: ["ruth", "boaz", "naomi", "redeemer", "redemption", "providence", "bethlehem", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Read the whole book in one sitting", "Trace the kinsman-redeemer theme", "Save providence and faithfulness applications"],
+  },
+  {
+    id: "first-samuel-study",
+    title: "1 Samuel Study",
+    shortLabel: "Obedience and kingship",
+    description: "A whole-book path through Samuel's ministry, Israel's demand for a king, Saul's disobedience, David's anointing, and faith under trial.",
+    biblePassages: ["1 Samuel 1", "1 Samuel 3", "1 Samuel 8", "1 Samuel 15", "1 Samuel 16", "1 Samuel 17", "1 Samuel 24", "1 Samuel 31"],
+    resourceTerms: ["1 samuel", "first book of samuel", "samuel", "saul", "david", "kingship", "obedience", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace Samuel, Saul, and David separately", "Compare obedience and presumption", "Save character lessons for teaching"],
+  },
+  {
+    id: "second-samuel-study",
+    title: "2 Samuel Study",
+    shortLabel: "Covenant and consequences",
+    description: "A whole-book path through David's reign, the LORD's covenant, victories, grievous sin, family consequences, discipline, and restoration.",
+    biblePassages: ["2 Samuel 1", "2 Samuel 5", "2 Samuel 6", "2 Samuel 7", "2 Samuel 11", "2 Samuel 12", "2 Samuel 15", "2 Samuel 18", "2 Samuel 22", "2 Samuel 24"],
+    resourceTerms: ["2 samuel", "second book of samuel", "david", "davidic covenant", "kingdom", "consequences", "restoration", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace David's reign in stages", "Compare covenant promise and personal failure", "Save leadership warnings and applications"],
+  },
+  {
+    id: "first-kings-study",
+    title: "1 Kings Study",
+    shortLabel: "Wisdom and divided hearts",
+    description: "A whole-book path through Solomon's wisdom, the temple, spiritual decline, the divided kingdom, Elijah's ministry, and the authority of the word of the LORD.",
+    biblePassages: ["1 Kings 1", "1 Kings 3", "1 Kings 8", "1 Kings 11", "1 Kings 12", "1 Kings 17", "1 Kings 18", "1 Kings 19", "1 Kings 21", "1 Kings 22"],
+    resourceTerms: ["1 kings", "first book of kings", "solomon", "temple", "divided kingdom", "elijah", "apostasy", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace Solomon and Elijah separately", "Compare wisdom, compromise, and obedience", "Save kingdom and leadership applications"],
+  },
+  {
+    id: "second-kings-study",
+    title: "2 Kings Study",
+    shortLabel: "Prophets, reform, and exile",
+    description: "A whole-book path through Elisha's ministry, the decline and fall of Israel, Hezekiah's faith, Josiah's reform, and Judah's exile.",
+    biblePassages: ["2 Kings 2", "2 Kings 4", "2 Kings 5", "2 Kings 6", "2 Kings 7", "2 Kings 17", "2 Kings 18", "2 Kings 19", "2 Kings 22", "2 Kings 23", "2 Kings 25"],
+    resourceTerms: ["2 kings", "second book of kings", "elisha", "naaman", "hezekiah", "josiah", "reform", "exile", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace Elisha and the kings separately", "Compare reform, unbelief, and obedience", "Save prophetic and leadership applications"],
+  },
+  {
+    id: "first-chronicles-study",
+    title: "1 Chronicles Study",
+    shortLabel: "Remembering and preparing",
+    description: "A whole-book path through Israel's genealogies, David's kingdom, the ark, ordered worship, the covenant promise, and preparation for the temple.",
+    biblePassages: ["1 Chronicles 1", "1 Chronicles 10", "1 Chronicles 11", "1 Chronicles 13", "1 Chronicles 15", "1 Chronicles 16", "1 Chronicles 17", "1 Chronicles 21", "1 Chronicles 22", "1 Chronicles 25", "1 Chronicles 28", "1 Chronicles 29"],
+    resourceTerms: ["1 chronicles", "first chronicles", "genealogy", "david", "ark", "worship", "temple", "levites", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace genealogy, kingdom, and worship sections", "Compare David's victories and preparation", "Save worship and stewardship applications"],
+  },
+  {
+    id: "second-chronicles-study",
+    title: "2 Chronicles Study",
+    shortLabel: "Seeking, reform, and return",
+    description: "A whole-book path through the temple, prayer, the kings of Judah, revival and reform, repeated warning, exile, and the promise of return.",
+    biblePassages: ["2 Chronicles 1", "2 Chronicles 5", "2 Chronicles 6", "2 Chronicles 7", "2 Chronicles 14", "2 Chronicles 15", "2 Chronicles 20", "2 Chronicles 24", "2 Chronicles 29", "2 Chronicles 30", "2 Chronicles 32", "2 Chronicles 34", "2 Chronicles 36"],
+    resourceTerms: ["2 chronicles", "second chronicles", "temple", "prayer", "judah", "revival", "reform", "exile", "return", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "matthew-henry"],
+    repeatOptions: ["Trace the kings and reforms in order", "Compare seeking the LORD and forsaking him", "Save revival and leadership applications"],
+  },
+  {
+    id: "ezra-study",
+    title: "Ezra Study",
+    shortLabel: "Return and rebuilding",
+    description: "A ten-chapter path through the return to Jerusalem, restored worship, temple rebuilding, opposition, renewed work, prayer, confession, and obedience.",
+    biblePassages: ["Ezra 1", "Ezra 2", "Ezra 3", "Ezra 4", "Ezra 5", "Ezra 6", "Ezra 7", "Ezra 8", "Ezra 9", "Ezra 10"],
+    resourceTerms: ["ezra", "return", "jerusalem", "temple", "rebuilding", "opposition", "confession", "obedience", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["meyer", "ironside", "matthew-henry"],
+    repeatOptions: ["Read the whole book in two sittings", "Trace rebuilding and spiritual renewal", "Save prayer and leadership applications"],
+  },
+  {
+    id: "nehemiah-study",
+    title: "Nehemiah Study",
+    shortLabel: "Prayer and faithful rebuilding",
+    description: "A thirteen-chapter path through prayer, wise planning, united labor, opposition, completed walls, Scripture reading, confession, covenant, and reform.",
+    biblePassages: ["Nehemiah 1", "Nehemiah 2", "Nehemiah 3", "Nehemiah 4", "Nehemiah 5", "Nehemiah 6", "Nehemiah 7", "Nehemiah 8", "Nehemiah 9", "Nehemiah 10", "Nehemiah 11", "Nehemiah 12", "Nehemiah 13"],
+    resourceTerms: ["nehemiah", "prayer", "jerusalem", "walls", "rebuilding", "opposition", "scripture", "covenant", "reform", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["ironside", "matthew-henry"],
+    repeatOptions: ["Read the whole book in three sittings", "Trace prayer, planning, and perseverance", "Save leadership and renewal applications"],
+  },
+  {
+    id: "esther-study",
+    title: "Esther Study",
+    shortLabel: "Providence and courageous intercession",
+    description: "A ten-chapter path through hidden providence, mortal danger, courageous intercession, righteous reversal, deliverance, and remembrance.",
+    biblePassages: ["Esther 1", "Esther 2", "Esther 3", "Esther 4", "Esther 5", "Esther 6", "Esther 7", "Esther 8", "Esther 9", "Esther 10"],
+    resourceTerms: ["esther", "mordecai", "providence", "courage", "intercession", "deliverance", "purim", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["ironside", "matthew-henry"],
+    repeatOptions: ["Read the whole book in one sitting", "Trace providence and reversal", "Save courage and intercession applications"],
+  },
+  {
+    id: "job-study",
+    title: "Job Study",
+    shortLabel: "Suffering, wisdom, and the LORD's answer",
+    description: "A whole-book path through testing, lament, disputed counsel, hope, wisdom, Elihu's words, the LORD's answer, humility, intercession, and restoration.",
+    biblePassages: ["Job 1", "Job 2", "Job 3", "Job 9", "Job 13", "Job 14", "Job 19", "Job 23", "Job 28", "Job 31", "Job 32", "Job 33", "Job 37", "Job 38", "Job 40", "Job 42"],
+    resourceTerms: ["job", "suffering", "faith", "counsel", "wisdom", "redeemer", "elihu", "creation", "restoration", "commentary"],
+    collectionIds: ["commentary", "study-helps", "bible-handbooks", "preaching-teaching"],
+    authorIds: ["kelly", "matthew-henry"],
+    repeatOptions: ["Trace Job and his counselors separately", "Compare human counsel with the LORD's answer", "Save suffering and pastoral-care applications"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -4694,7 +5091,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "deuteronomy-study", "joshua-study", "judges-study", "ruth-study", "first-samuel-study", "second-samuel-study", "first-kings-study", "second-kings-study", "first-chronicles-study", "second-chronicles-study", "ezra-study", "nehemiah-study", "esther-study", "job-study", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -4788,6 +5185,132 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Genesis 1", "Genesis 3", "Genesis 12", "Genesis 22", "Genesis 50"],
     playlistTitle: "Genesis Foundations Study",
     relatedResourceTerms: ["genesis", "creation", "covenant", "abraham", "joseph", "foundations", "commentary"],
+  },
+  {
+    id: "deuteronomy-study-collection",
+    book: "Deuteronomy",
+    title: "Deuteronomy Study Collection",
+    description: "Moses' final messages, covenant remembrance, obedience, love for the LORD, blessing and warning, and preparation to enter the land.",
+    featuredChapters: ["Deuteronomy 1", "Deuteronomy 4", "Deuteronomy 6", "Deuteronomy 18", "Deuteronomy 28", "Deuteronomy 30", "Deuteronomy 34"],
+    playlistTitle: "Deuteronomy Remember and Obey Study",
+    relatedResourceTerms: ["deuteronomy", "pentateuch", "law", "covenant", "obedience", "moses", "commentary"],
+  },
+  {
+    id: "joshua-study-collection",
+    book: "Joshua",
+    title: "Joshua Study Collection",
+    description: "Courage, obedience, crossing Jordan, conquest, inheritance, covenant faithfulness, and the LORD's promise-keeping care.",
+    featuredChapters: ["Joshua 1", "Joshua 2", "Joshua 3", "Joshua 6", "Joshua 7", "Joshua 10", "Joshua 23", "Joshua 24"],
+    playlistTitle: "Joshua Courage and Obedience Study",
+    relatedResourceTerms: ["joshua", "land of promise", "canaan", "inheritance", "courage", "obedience", "commentary"],
+  },
+  {
+    id: "judges-study-collection",
+    book: "Judges",
+    title: "Judges Study Collection",
+    description: "Incomplete obedience, spiritual decline, bondage, crying unto the LORD, merciful deliverance, and the cost of every man doing that which was right in his own eyes.",
+    featuredChapters: ["Judges 2", "Judges 4", "Judges 6", "Judges 7", "Judges 11", "Judges 13", "Judges 16", "Judges 21"],
+    playlistTitle: "Judges Decline and Deliverance Study",
+    relatedResourceTerms: ["judges", "deborah", "gideon", "jephthah", "samson", "deliverance", "apostasy", "commentary"],
+  },
+  {
+    id: "ruth-study-collection",
+    book: "Ruth",
+    title: "Ruth Study Collection",
+    description: "Loss, faithful commitment, providence in ordinary labor, the kinsman-redeemer, restoration, and the family line leading to David.",
+    featuredChapters: ["Ruth 1", "Ruth 2", "Ruth 3", "Ruth 4"],
+    playlistTitle: "Ruth Providence and Redemption Study",
+    relatedResourceTerms: ["ruth", "boaz", "naomi", "redeemer", "redemption", "providence", "bethlehem", "commentary"],
+  },
+  {
+    id: "first-samuel-study-collection",
+    book: "1 Samuel",
+    title: "1 Samuel Study Collection",
+    description: "Hannah's prayer, Samuel's ministry, Israel's demand for a king, Saul's disobedience, David's anointing, faith under trial, and Saul's fall.",
+    featuredChapters: ["1 Samuel 1", "1 Samuel 3", "1 Samuel 8", "1 Samuel 15", "1 Samuel 16", "1 Samuel 17", "1 Samuel 24", "1 Samuel 31"],
+    playlistTitle: "1 Samuel Obedience and Kingship Study",
+    relatedResourceTerms: ["1 samuel", "first book of samuel", "samuel", "saul", "david", "kingship", "obedience", "commentary"],
+  },
+  {
+    id: "second-samuel-study-collection",
+    book: "2 Samuel",
+    title: "2 Samuel Study Collection",
+    description: "David's reign, Jerusalem, the LORD's covenant, victories, grievous sin, family consequences, discipline, worship, and restoration.",
+    featuredChapters: ["2 Samuel 1", "2 Samuel 5", "2 Samuel 6", "2 Samuel 7", "2 Samuel 11", "2 Samuel 12", "2 Samuel 15", "2 Samuel 18", "2 Samuel 22", "2 Samuel 24"],
+    playlistTitle: "2 Samuel Covenant and Consequences Study",
+    relatedResourceTerms: ["2 samuel", "second book of samuel", "david", "davidic covenant", "kingdom", "consequences", "restoration", "commentary"],
+  },
+  {
+    id: "first-kings-study-collection",
+    book: "1 Kings",
+    title: "1 Kings Study Collection",
+    description: "Solomon's wisdom, the temple and its dedication, spiritual decline, the divided kingdom, Elijah's ministry, and the authority of the word of the LORD.",
+    featuredChapters: ["1 Kings 1", "1 Kings 3", "1 Kings 8", "1 Kings 11", "1 Kings 12", "1 Kings 17", "1 Kings 18", "1 Kings 19", "1 Kings 21", "1 Kings 22"],
+    playlistTitle: "1 Kings Wisdom and Divided Hearts Study",
+    relatedResourceTerms: ["1 kings", "first book of kings", "solomon", "temple", "divided kingdom", "elijah", "apostasy", "commentary"],
+  },
+  {
+    id: "second-kings-study-collection",
+    book: "2 Kings",
+    title: "2 Kings Study Collection",
+    description: "Elisha's ministry, the decline and fall of Israel, Hezekiah's faith, Josiah's reform, Jerusalem's fall, and Judah's exile.",
+    featuredChapters: ["2 Kings 2", "2 Kings 4", "2 Kings 5", "2 Kings 6", "2 Kings 7", "2 Kings 17", "2 Kings 18", "2 Kings 19", "2 Kings 22", "2 Kings 23", "2 Kings 25"],
+    playlistTitle: "2 Kings Prophets, Reform, and Exile Study",
+    relatedResourceTerms: ["2 kings", "second book of kings", "elisha", "naaman", "hezekiah", "josiah", "reform", "exile", "commentary"],
+  },
+  {
+    id: "first-chronicles-study-collection",
+    book: "1 Chronicles",
+    title: "1 Chronicles Study Collection",
+    description: "Israel's genealogies, David's kingdom, the ark, ordered worship, the covenant promise, temple preparation, and the charge to Solomon.",
+    featuredChapters: ["1 Chronicles 1", "1 Chronicles 10", "1 Chronicles 11", "1 Chronicles 13", "1 Chronicles 15", "1 Chronicles 16", "1 Chronicles 17", "1 Chronicles 21", "1 Chronicles 22", "1 Chronicles 25", "1 Chronicles 28", "1 Chronicles 29"],
+    playlistTitle: "1 Chronicles Remembering and Preparing Study",
+    relatedResourceTerms: ["1 chronicles", "first chronicles", "genealogy", "david", "ark", "worship", "temple", "levites", "commentary"],
+  },
+  {
+    id: "second-chronicles-study-collection",
+    book: "2 Chronicles",
+    title: "2 Chronicles Study Collection",
+    description: "The temple, prayer, Judah's kings, seeking the LORD, revival and reform, repeated warning, exile, and the promise of return.",
+    featuredChapters: ["2 Chronicles 1", "2 Chronicles 5", "2 Chronicles 6", "2 Chronicles 7", "2 Chronicles 14", "2 Chronicles 15", "2 Chronicles 20", "2 Chronicles 24", "2 Chronicles 29", "2 Chronicles 30", "2 Chronicles 32", "2 Chronicles 34", "2 Chronicles 36"],
+    playlistTitle: "2 Chronicles Seeking, Reform, and Return Study",
+    relatedResourceTerms: ["2 chronicles", "second chronicles", "temple", "prayer", "judah", "revival", "reform", "exile", "return", "commentary"],
+  },
+  {
+    id: "ezra-study-collection",
+    book: "Ezra",
+    title: "Ezra Study Collection",
+    description: "Return to Jerusalem, restored worship, temple rebuilding, opposition, renewed work, Ezra's preparation, prayer, confession, and obedience.",
+    featuredChapters: ["Ezra 1", "Ezra 2", "Ezra 3", "Ezra 4", "Ezra 5", "Ezra 6", "Ezra 7", "Ezra 8", "Ezra 9", "Ezra 10"],
+    playlistTitle: "Ezra Return and Rebuilding Study",
+    relatedResourceTerms: ["ezra", "return", "jerusalem", "temple", "rebuilding", "opposition", "confession", "obedience", "commentary"],
+  },
+  {
+    id: "nehemiah-study-collection",
+    book: "Nehemiah",
+    title: "Nehemiah Study Collection",
+    description: "Prayer, wise planning, united labor, opposition, completed walls, public Scripture reading, confession, covenant, dedication, and reform.",
+    featuredChapters: ["Nehemiah 1", "Nehemiah 2", "Nehemiah 3", "Nehemiah 4", "Nehemiah 5", "Nehemiah 6", "Nehemiah 7", "Nehemiah 8", "Nehemiah 9", "Nehemiah 10", "Nehemiah 11", "Nehemiah 12", "Nehemiah 13"],
+    playlistTitle: "Nehemiah Prayer and Faithful Rebuilding Study",
+    relatedResourceTerms: ["nehemiah", "prayer", "jerusalem", "walls", "rebuilding", "opposition", "scripture", "covenant", "reform", "commentary"],
+  },
+  {
+    id: "esther-study-collection",
+    book: "Esther",
+    title: "Esther Study Collection",
+    description: "Hidden providence, mortal danger, courageous intercession, righteous reversal, deliverance, remembrance, and Mordecai's faithful service.",
+    featuredChapters: ["Esther 1", "Esther 2", "Esther 3", "Esther 4", "Esther 5", "Esther 6", "Esther 7", "Esther 8", "Esther 9", "Esther 10"],
+    playlistTitle: "Esther Providence and Courageous Intercession Study",
+    relatedResourceTerms: ["esther", "mordecai", "providence", "courage", "intercession", "deliverance", "purim", "commentary"],
+  },
+  {
+    id: "job-study-collection",
+    book: "Job",
+    title: "Job Study Collection",
+    description: "Testing, lament, disputed counsel, hope, wisdom, Elihu's words, creation, the LORD's answer, humility, intercession, and restoration.",
+    featuredChapters: ["Job 1", "Job 2", "Job 3", "Job 9", "Job 13", "Job 14", "Job 19", "Job 23", "Job 28", "Job 31", "Job 32", "Job 33", "Job 37", "Job 38", "Job 40", "Job 42"],
+    playlistTitle: "Job Suffering, Wisdom, and the LORD's Answer Study",
+    relatedResourceTerms: ["job", "suffering", "faith", "counsel", "wisdom", "redeemer", "elihu", "creation", "restoration", "commentary"],
   },
 ];
 
@@ -10452,50 +10975,6 @@ const localCrossReferences: CrossReference[] = [
   ...amosTeachingCrossReferences,
 ];
 
-const localCommentaryEntries: CommentaryEntry[] = [
-  ...(hoseaAdamClarkeCommentary as CommentaryEntry[]),
-  ...(hoseaBarnesCommentary as CommentaryEntry[]),
-  ...(hoseaBiblicalIllustratorCommentary as CommentaryEntry[]),
-  ...(hoseaMorganCommentary as CommentaryEntry[]),
-  ...(hoseaIronsideCommentary as CommentaryEntry[]),
-  ...(hoseaJfbCommentary as CommentaryEntry[]),
-  ...(hoseaMatthewHenryCommentary as CommentaryEntry[]),
-  ...(hoseaMatthewPooleCommentary as CommentaryEntry[]),
-  ...(hoseaPreachersHomileticalCommentary as CommentaryEntry[]),
-  ...(hoseaPulpitCommentary as CommentaryEntry[]),
-  ...(hoseaWesleyCommentary as CommentaryEntry[]),
-  ...(hoseaGaebeleinCommentary as CommentaryEntry[]),
-  ...(amosGaebeleinCommentary as CommentaryEntry[]),
-  ...(exodusGaebeleinCommentary as CommentaryEntry[]),
-  ...(isaiahGaebeleinCommentary as CommentaryEntry[]),
-  ...(jobWatsonCommentary as CommentaryEntry[]),
-  ...(secondChroniclesBennettCommentary as CommentaryEntry[]),
-  ...(numbersWatsonCommentary as CommentaryEntry[]),
-  ...(deuteronomyHarperCommentary as CommentaryEntry[]),
-  ...(firstSamuelBlaikieCommentary as CommentaryEntry[]),
-  ...(firstChroniclesBennettCommentary as CommentaryEntry[]),
-  ...(leviticusKelloggCommentary as CommentaryEntry[]),
-  ...(secondKingsFarrarCommentary as CommentaryEntry[]),
-  ...(secondSamuelBlaikieCommentary as CommentaryEntry[]),
-]
-  .filter(
-    (entry) =>
-      entry.book === "Hosea" ||
-      entry.book === "Amos" ||
-      entry.book === "Exodus" ||
-      entry.book === "Isaiah" ||
-      entry.book === "Job" ||
-      entry.book === "2 Chronicles" ||
-      entry.book === "Numbers" ||
-      entry.book === "Deuteronomy" ||
-      entry.book === "1 Samuel" ||
-      entry.book === "1 Chronicles" ||
-      entry.book === "Leviticus" ||
-      entry.book === "2 Kings" ||
-      entry.book === "2 Samuel",
-  )
-  .map(normalizeCommentaryEntry);
-
 const newTestamentCanonBooks = [
   "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
   "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon",
@@ -11277,6 +11756,19 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "a-c-gaebelein-reviewed-hosea-commentary.json",
+  "a-c-gaebelein-reviewed-amos-commentary.json",
+  "a-c-gaebelein-reviewed-exodus-1-3-commentary.json",
+  "a-c-gaebelein-reviewed-isaiah-1-3-commentary.json",
+  "robert-a-watson-reviewed-job-1-3-commentary.json",
+  "w-h-bennett-reviewed-2-chronicles-starter-commentary.json",
+  "robert-a-watson-reviewed-numbers-1-5-commentary.json",
+  "andrew-harper-reviewed-deuteronomy-starter-commentary.json",
+  "w-g-blaikie-reviewed-1-samuel-starter-commentary.json",
+  "w-h-bennett-reviewed-1-chronicles-starter-commentary.json",
+  "s-h-kellogg-reviewed-leviticus-starter-commentary.json",
+  "f-w-farrar-reviewed-2-kings-starter-commentary.json",
+  "w-g-blaikie-reviewed-2-samuel-starter-commentary.json",
   "matthew-henry-phase-1-commentary.json",
   "american-commentary-reviewed-new-testament-commentary.json",
   "matthew-henry-reviewed-batch-2-commentary.json",
@@ -11611,23 +12103,64 @@ const deferredCommentaryImportFiles = [
   "scofield-1917-book-introductions-commentary.json",
 ];
 
+const starterSpecificCommentaryImportFiles = new Set([
+  "a-c-gaebelein-reviewed-hosea-commentary.json",
+  "a-c-gaebelein-reviewed-amos-commentary.json",
+  "a-c-gaebelein-reviewed-exodus-1-3-commentary.json",
+  "a-c-gaebelein-reviewed-isaiah-1-3-commentary.json",
+  "robert-a-watson-reviewed-job-1-3-commentary.json",
+  "w-h-bennett-reviewed-2-chronicles-starter-commentary.json",
+  "robert-a-watson-reviewed-numbers-1-5-commentary.json",
+  "andrew-harper-reviewed-deuteronomy-starter-commentary.json",
+  "w-g-blaikie-reviewed-1-samuel-starter-commentary.json",
+  "w-h-bennett-reviewed-1-chronicles-starter-commentary.json",
+  "s-h-kellogg-reviewed-leviticus-starter-commentary.json",
+  "f-w-farrar-reviewed-2-kings-starter-commentary.json",
+  "w-g-blaikie-reviewed-2-samuel-starter-commentary.json",
+  "g-campbell-morgan-hosea-commentary.json",
+  "h-a-ironside-hosea-commentary.json",
+  "scofield-1917-study-notes-reviewed-sample-commentary.json",
+  "scofield-1917-book-introductions-commentary.json",
+]);
+
 const starterDeferredCommentaryImportFiles = deferredCommentaryImportFiles.filter((fileName) =>
-  fileName.startsWith("matthew-henry") ||
-  fileName.startsWith("american-commentary") ||
-  fileName.startsWith("adam-clarke") ||
-  fileName.startsWith("wesley") ||
-  fileName.startsWith("h-a-ironside") ||
-  fileName.startsWith("g-campbell-morgan") ||
-  fileName.startsWith("jfb") ||
-  fileName.startsWith("treasury-of-david") ||
-  fileName === "amos-expanded-public-domain-commentary.json" ||
-  fileName.startsWith("scofield-1917"),
+  starterSpecificCommentaryImportFiles.has(fileName),
 );
 const VALIDATED_COMMENTARY_CATALOG_BOOKS = 66;
 const VALIDATED_COMMENTARY_CATALOG_CHAPTERS = 1189;
 
 function rawDeferredCommentaryUrl(fileName: string) {
   return `/api/commentary/import/${encodeURIComponent(fileName)}`;
+}
+
+function rawDeferredCommentaryChapterUrl(book: string, chapter: number) {
+  return `/api/commentary/chapter/${encodeURIComponent(book)}/${chapter}`;
+}
+
+function rawDeferredCommentaryCatalogUrl() {
+  return "/api/commentary/catalog";
+}
+
+async function fetchDeferredCommentaryCatalog(signal: AbortSignal) {
+  const response = await fetch(rawDeferredCommentaryCatalogUrl(), { signal });
+  if (!response.ok) throw new Error(`Commentary catalog request failed: ${response.status}`);
+
+  const catalog = (await response.json()) as CommentaryCatalogSummary;
+  if (!Array.isArray(catalog.books)) throw new Error("Commentary catalog response must contain books.");
+  return catalog;
+}
+
+async function fetchDeferredCommentaryChapterEntries(
+  signal: AbortSignal,
+  book: string,
+  chapter: number,
+) {
+  const response = await fetch(rawDeferredCommentaryChapterUrl(book, chapter), { signal });
+  if (!response.ok) throw new Error(`Commentary chapter request failed: ${response.status}`);
+
+  const entries = (await response.json()) as CommentaryEntry[];
+  if (!Array.isArray(entries)) throw new Error("Commentary chapter response must contain an array.");
+  return entries.map(normalizeCommentaryEntry);
 }
 
 async function fetchDeferredCommentaryEntries(
@@ -13492,8 +14025,8 @@ function makeSupabaseClient(): SupabaseClient | null {
   return browserSupabaseClient;
 }
 
-function parseVerses(): BibleVerse[] {
-  return Object.entries(verses1769 as Record<string, string>).map(([ref, text]) => {
+function parseVerses(verseRecord: Record<string, string>): BibleVerse[] {
+  return Object.entries(verseRecord).map(([ref, text]) => {
     const match = ref.match(/^(.+) (\d+):(\d+)$/);
     if (!match) {
       return {
@@ -13519,6 +14052,25 @@ function parseVerses(): BibleVerse[] {
 
 function normalizeVerseText(text: string) {
   return text.replace(/^#\s*/, "");
+}
+
+const COMPLETE_KJV_VERSE_COUNT = 31_102;
+const STARTER_KJV_VERSES = parseVerses({
+  "John 3:16": "# For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+});
+
+async function loadCompleteKjvVerses() {
+  const kjvModule = await import("es-kjv/json/verses-1769.js");
+  const verses = parseVerses(kjvModule.default as Record<string, string>);
+
+  if (verses.length !== COMPLETE_KJV_VERSE_COUNT) {
+    throw new Error(`Expected ${COMPLETE_KJV_VERSE_COUNT} KJV verses, received ${verses.length}.`);
+  }
+  if (verses.find((verse) => verse.ref === STARTER_KJV_VERSES[0].ref)?.text !== STARTER_KJV_VERSES[0].text) {
+    throw new Error("The starter KJV verse does not match the complete corpus.");
+  }
+
+  return verses;
 }
 
 function cleanWord(word: string) {
@@ -13780,12 +14332,16 @@ function parseQuickPassage(input: string, allVerses: BibleVerse[], books: string
   return createBiblePassage(targetBook, targetChapter, targetVerse);
 }
 
-function loadLocalState(): SavedState {
-  if (typeof window === "undefined") return { notes: [], highlights: [], bookmarks: [] };
+function emptySavedState(): SavedState {
+  return { notes: [], highlights: [], bookmarks: [] };
+}
+
+function loadSavedState(storageKey: string): SavedState {
+  if (typeof window === "undefined") return emptySavedState();
 
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { notes: [], highlights: [], bookmarks: [] };
+    const raw = window.localStorage.getItem(storageKey);
+    if (!raw) return emptySavedState();
     const parsed = JSON.parse(raw) as SavedState;
     return {
       notes: parsed.notes ?? [],
@@ -13793,13 +14349,49 @@ function loadLocalState(): SavedState {
       bookmarks: parsed.bookmarks ?? [],
     };
   } catch {
-    return { notes: [], highlights: [], bookmarks: [] };
+    return emptySavedState();
   }
+}
+
+function loadLocalState(): SavedState {
+  const stored = loadSavedState(STORAGE_KEY);
+  const anonymousOnly: SavedState = {
+    notes: stored.notes.filter((note) => !isUuid(note.id)),
+    highlights: stored.highlights.filter((highlight) => !isUuid(highlight.id)),
+    bookmarks: stored.bookmarks.filter((bookmark) => !isUuid(bookmark.id)),
+  };
+
+  if (
+    anonymousOnly.notes.length !== stored.notes.length ||
+    anonymousOnly.highlights.length !== stored.highlights.length ||
+    anonymousOnly.bookmarks.length !== stored.bookmarks.length
+  ) {
+    saveLocalState(anonymousOnly);
+  }
+
+  return anonymousOnly;
 }
 
 function saveLocalState(state: SavedState) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function accountStorageKey(userId: string) {
+  return `${STORAGE_KEY}:account:${userId}`;
+}
+
+function loadAccountState(userId: string): SavedState {
+  return loadSavedState(accountStorageKey(userId));
+}
+
+function saveAccountState(userId: string, state: SavedState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(accountStorageKey(userId), JSON.stringify(state));
+}
+
+function clearLocalState() {
+  saveLocalState(emptySavedState());
 }
 
 function normalizePrayerEntry(entry: Partial<PrayerEntry>): PrayerEntry | null {
@@ -14144,6 +14736,7 @@ function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): Sermo
   const accentStyle = ["None", "Line", "Badge", "Panel"].includes(slide.accentStyle ?? "") ? slide.accentStyle as SermonSlideAccentStyle : "Line";
   const verseDisplay = ["Reference + Text", "Text Only", "Reference Only"].includes(slide.verseDisplay ?? "") ? slide.verseDisplay as SermonSlideVerseDisplay : "Reference + Text";
   const backgroundIntensity = ["Soft", "Balanced", "Strong"].includes(slide.backgroundIntensity ?? "") ? slide.backgroundIntensity as SermonSlideBackgroundIntensity : "Balanced";
+  const countdownMinutes = Math.min(60, Math.max(1, Math.round(Number(slide.countdownMinutes) || 5)));
   return {
     id: slide.id || makeId("slide"),
     type,
@@ -14151,10 +14744,11 @@ function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): Sermo
     subtitle: slide.subtitle ?? "",
     body: slide.body ?? "",
     bibleText: slide.bibleText ?? "",
-	    speakerNotes: slide.speakerNotes ?? "",
-	    backgroundStyle,
-	    imageTheme: slide.imageTheme ?? SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
-	    imageSlot,
+    speakerNotes: slide.speakerNotes ?? "",
+    countdownMinutes,
+    backgroundStyle,
+    imageTheme: slide.imageTheme ?? SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
+    imageSlot,
 	    layout,
 	    fontScale,
 	    titleScale,
@@ -14521,6 +15115,57 @@ function saveSavedChurchThemes(themes: SavedChurchTheme[]) {
   window.localStorage.setItem(SERMON_CHURCH_THEMES_KEY, JSON.stringify(themes));
 }
 
+function isJsonRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function normalizeBackupArray<T>(value: unknown, normalize: (entry: Record<string, unknown>) => T | null): T[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter(isJsonRecord)
+    .map(normalize)
+    .filter((entry): entry is T => Boolean(entry));
+}
+
+function parseMinistryWorkspaceBackup(text: string): MinistryWorkspaceBackupData {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw new Error("That file is not valid JSON.");
+  }
+
+  if (!isJsonRecord(parsed) || parsed.kind !== "ministry_workspace_backup" || parsed.schemaVersion !== 1 || !isJsonRecord(parsed.data)) {
+    throw new Error("Choose a Father's Business ministry workspace backup file.");
+  }
+
+  const data = parsed.data;
+  const activeSermon = isJsonRecord(data.activeSermon)
+    ? normalizeSermonEntry(data.activeSermon as Partial<SermonEntry>)
+    : null;
+  const activePresentation = isJsonRecord(data.activePresentation)
+    ? normalizePresentationEntry(data.activePresentation as Partial<PresentationEntry>)
+    : null;
+
+  return {
+    sermons: normalizeBackupArray(data.sermons, (entry) => normalizeSermonEntry(entry as Partial<SermonEntry>)),
+    sermonSeries: normalizeBackupArray(data.sermonSeries, (entry) => normalizeSermonSeries(entry as Partial<SermonSeries>)),
+    presentations: normalizeBackupArray(data.presentations, (entry) => normalizePresentationEntry(entry as Partial<PresentationEntry>)),
+    churchThemes: normalizeBackupArray(data.churchThemes, (entry) => normalizeSavedChurchTheme(entry as Partial<SavedChurchTheme>)),
+    activeSermon,
+    activePresentation,
+  };
+}
+
+function mergeNewestRecords<T extends { id: string }>(current: T[], incoming: T[], dateFor: (entry: T) => string): T[] {
+  const records = new Map(current.map((entry) => [entry.id, entry]));
+  incoming.forEach((entry) => {
+    const existing = records.get(entry.id);
+    if (!existing || dateFor(entry).localeCompare(dateFor(existing)) >= 0) records.set(entry.id, entry);
+  });
+  return [...records.values()].sort((a, b) => dateFor(b).localeCompare(dateFor(a)));
+}
+
 function savedChurchThemePatch(theme: SavedChurchTheme): Partial<SermonSlide> {
   return {
     imageSlot: theme.imageSlot,
@@ -14569,6 +15214,21 @@ function sermonLengthEstimate(entry: SermonEntry) {
 
 function sermonSectionProgress(entry: SermonEntry) {
   return SERMON_SECTION_FIELDS.filter((section) => entry[section].trim()).length;
+}
+
+function sermonQuickStartPatch(entry: SermonEntry, presetId: SermonQuickStartId): Partial<SermonEntry> {
+  const preset = SERMON_QUICK_STARTS[presetId];
+  const fillEmpty = (current: string, starter: string) => current.trim() ? current : starter;
+  return {
+    outline: fillEmpty(entry.outline, preset.outline),
+    introduction: fillEmpty(entry.introduction, preset.introduction),
+    points: fillEmpty(entry.points, preset.points),
+    applications: fillEmpty(entry.applications, preset.applications),
+    conclusion: fillEmpty(entry.conclusion, preset.conclusion),
+    invitation: fillEmpty(entry.invitation, preset.invitation),
+    targetMinutes: entry.targetMinutes === EMPTY_SERMON_ENTRY.targetMinutes ? preset.targetMinutes : entry.targetMinutes,
+    slideTheme: entry.slides.length ? entry.slideTheme : preset.slideTheme,
+  };
 }
 
 function sermonContentLines(text: string, limit = 8) {
@@ -14636,6 +15296,43 @@ function formatScriptureSlideText(text: string, display: SermonSlideVerseDisplay
 }
 
 function sermonSlideTemplatePatch(type: SermonSlideType): Partial<SermonSlide> {
+  if (type === "Countdown") {
+    return {
+      layout: "Centered",
+      fontScale: "Large",
+      titleScale: "Medium",
+      textPlacement: "Center",
+      accentStyle: "None",
+      imageTheme: "Church Window",
+      imageSlot: "church-window",
+      backgroundIntensity: "Strong",
+      countdownMinutes: 5,
+    };
+  }
+  if (type === "Announcement") {
+    return {
+      layout: "Centered",
+      fontScale: "Normal",
+      titleScale: "Large",
+      textPlacement: "Center",
+      accentStyle: "Line",
+      imageTheme: "Church Window",
+      imageSlot: "church-window",
+      backgroundIntensity: "Balanced",
+    };
+  }
+  if (type === "Question") {
+    return {
+      layout: "Minimal",
+      fontScale: "Large",
+      titleScale: "Large",
+      textPlacement: "Center",
+      accentStyle: "Line",
+      imageTheme: "Open Bible",
+      imageSlot: "open-bible",
+      backgroundIntensity: "Soft",
+    };
+  }
   if (type === "Scripture") {
     return {
       layout: "Scripture Focus",
@@ -14730,6 +15427,7 @@ function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = 
     body: patch.body ?? "",
     bibleText: patch.bibleText ?? "",
     speakerNotes: patch.speakerNotes ?? "",
+    countdownMinutes: patch.countdownMinutes ?? template.countdownMinutes ?? 5,
     backgroundStyle: patch.backgroundStyle ?? "Theme",
     imageTheme: patch.imageTheme ?? template.imageTheme ?? "Open Bible",
     imageSlot: patch.imageSlot ?? template.imageSlot ?? "open-bible",
@@ -15041,25 +15739,111 @@ function preachingHelpResourceScore(resource: LibraryResource) {
   return score;
 }
 
+const AMBIGUOUS_BIBLE_BOOK_RESOURCE_NAMES = new Set([
+  "Acts",
+  "Esther",
+  "James",
+  "Job",
+  "John",
+  "Jude",
+  "Luke",
+  "Mark",
+  "Numbers",
+  "Romans",
+  "Ruth",
+]);
+
+function sermonLibraryBookPatterns(book: string) {
+  const escape = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  const numberedBook = book.match(/^([123])\s+(.+)$/);
+  if (!numberedBook) return [new RegExp(`\\b${escape(book)}\\b`, "i")];
+  const ordinal = numberedBook[1] === "1" ? "first" : numberedBook[1] === "2" ? "second" : "third";
+  const suffix = escape(numberedBook[2]);
+  return [
+    new RegExp(`\\b${numberedBook[1]}\\s+${suffix}\\b`, "i"),
+    new RegExp(`\\b${ordinal}\\s+${suffix}\\b`, "i"),
+    new RegExp(`\\b${ordinal}\\s+epistle\\s+(?:of|to)\\s+(?:the\\s+)?${suffix}\\b`, "i"),
+  ];
+}
+
+function ambiguousBibleBookResourceTextMatch(text: string, book: string) {
+  const escapedBook = book.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const optionalSaint = "(?:st\\.?\\s+)?";
+  const studyType = "(?:commentary|discourse|exposition|expositions|lecture|lectures|note|notes|sermon|sermons|study|studies)";
+  return [
+    new RegExp(`\\b(?:books?|gospels?|epistles?)\\s+(?:(?:according\\s+to|of|to)\\s+)?${optionalSaint}${escapedBook}\\b`, "i"),
+    new RegExp(`\\b${studyType}\\s+(?:for|from|in|of|on|upon)\\s+(?:the\\s+)?${optionalSaint}${escapedBook}\\b`, "i"),
+    new RegExp(`\\b${optionalSaint}${escapedBook}(?:'s)?\\s+(?:book|chapter|chapters|commentary|epistle|gospel|study|studies)\\b`, "i"),
+    new RegExp(`\\b${studyType}[^:;]{0,70}:\\s*${optionalSaint}${escapedBook}\\b`, "i"),
+    new RegExp(`\\b${optionalSaint}${escapedBook}\\s+(?:chapter|chapters|chap|chaps|[ivxlcdm]+|\\d+)\\b`, "i"),
+    new RegExp(`\\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth)\\s+of\\s+${optionalSaint}${escapedBook}\\b`, "i"),
+  ].some((pattern) => pattern.test(text));
+}
+
+function sermonLibraryPassageScore(resource: LibraryResource, passage: ReturnType<typeof parseSermonPassageReference>) {
+  if (!passage) return 0;
+  const patterns = sermonLibraryBookPatterns(passage.book);
+  const title = resource.title.toLowerCase();
+  const supportingText = [
+    resource.collection,
+    resource.description,
+    resource.recommended_use,
+    resource.perspective_notes,
+    ...resource.resource_labels,
+  ].join(" ").toLowerCase();
+  const numberedJohnPattern = /\b(?:1|2|3|first|second|third)\s+(?:epistle\s+(?:of|to)\s+(?:the\s+)?)?john\b/i;
+  const titleIsNumberedJohn = passage.book === "John" && numberedJohnPattern.test(title);
+  const supportingTextIsNumberedJohn = passage.book === "John" && numberedJohnPattern.test(supportingText);
+  const titleHasBook = !titleIsNumberedJohn && patterns.some((pattern) => pattern.test(title));
+  const supportingTextHasBook = !supportingTextIsNumberedJohn && patterns.some((pattern) => pattern.test(supportingText));
+  const supportingTextHasStudyContext = /bible|commentary|exposition|preaching|scripture|study|teaching/.test(supportingText);
+  const titleMatchIsReliable = titleHasBook
+    && (!AMBIGUOUS_BIBLE_BOOK_RESOURCE_NAMES.has(passage.book) || ambiguousBibleBookResourceTextMatch(title, passage.book));
+  const supportingTextMatchIsReliable = supportingTextHasBook
+    && supportingTextHasStudyContext
+    && (!AMBIGUOUS_BIBLE_BOOK_RESOURCE_NAMES.has(passage.book) || titleMatchIsReliable);
+
+  return (titleMatchIsReliable ? 20 : 0)
+    + (supportingTextMatchIsReliable ? 10 : 0);
+}
+
 function parseSermonPassageReference(searchText: string) {
   const text = searchText.replace(/\s+/g, " ");
   const sortedBooks = [...bookOrder].sort((a, b) => b.length - a.length);
+  let earliestMatch: { index: number; book: string; chapter?: number; verse?: number; label: string } | null = null;
   for (const bookName of sortedBooks) {
     const escapedBook = bookName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
     const chapterMatch = text.match(new RegExp(`\\b${escapedBook}\\s+(\\d+)(?::(\\d+))?`, "i"));
     if (chapterMatch) {
-      return {
+      const candidate = {
+        index: chapterMatch.index ?? Number.MAX_SAFE_INTEGER,
         book: bookName,
         chapter: Number(chapterMatch[1]),
         verse: chapterMatch[2] ? Number(chapterMatch[2]) : undefined,
         label: `${bookName} ${chapterMatch[1]}${chapterMatch[2] ? `:${chapterMatch[2]}` : ""}`,
       };
+      if (!earliestMatch || candidate.index < earliestMatch.index) earliestMatch = candidate;
+      continue;
     }
-    if (new RegExp(`\\b${escapedBook}\\b`, "i").test(text)) {
-      return { book: bookName, chapter: undefined, verse: undefined, label: bookName };
+    const bookMatch = text.match(new RegExp(`\\b${escapedBook}\\b`, "i"));
+    if (bookMatch) {
+      const candidate = {
+        index: bookMatch.index ?? Number.MAX_SAFE_INTEGER,
+        book: bookName,
+        chapter: undefined,
+        verse: undefined,
+        label: bookName,
+      };
+      if (!earliestMatch || candidate.index < earliestMatch.index) earliestMatch = candidate;
     }
   }
-  return null;
+  if (!earliestMatch) return null;
+  return {
+    book: earliestMatch.book,
+    chapter: earliestMatch.chapter,
+    verse: earliestMatch.verse,
+    label: earliestMatch.label,
+  };
 }
 
 function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: string): SmartSermonSuggestion[] {
@@ -15067,8 +15851,10 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
   const terms = smartSuggestionTerms(searchText);
   return entries
     .map((entry) => {
+      const sameBook = passage ? entry.book === passage.book : false;
+      const sameChapter = sameBook && passage?.chapter ? entry.chapter === passage.chapter : false;
       const referenceScore = passage
-        ? (entry.book === passage.book ? 5 : 0) + (passage.chapter && entry.chapter === passage.chapter ? 8 : 0)
+        ? (sameBook ? 5 : 0) + (sameChapter ? 8 : 0)
         : 0;
       const textScore = scoreSmartSuggestion([
         entry.author,
@@ -15079,9 +15865,9 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
       ].join(" "), terms);
       return { entry, score: referenceScore + textScore };
     })
-    .filter(({ score }) => score > 0)
+    .filter(({ entry, score }) => score > 0 && (!passage || entry.book === passage.book))
     .sort((a, b) => b.score - a.score || a.entry.author.localeCompare(b.entry.author))
-    .slice(0, 5)
+    .slice(0, 8)
     .map(({ entry }) => {
       const reference = entry.reference || `${entry.book} ${entry.chapter}`;
       const verseRange = entry.verse_start && entry.verse_end
@@ -15105,12 +15891,25 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
     });
 }
 
+function sermonRecommendationWorkKey(resource: LibraryResource) {
+  const title = canonicalLibraryTitle(resource.work_title || resource.title)
+    .replace(/\bexpositions\b/g, "exposition")
+    .replace(/\bgospel according to\b/g, "gospel")
+    .replace(/\bgospel of\b/g, "gospel")
+    .replace(/\bst\b/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return `${title}::${canonicalLibraryAuthor(resource.author)}`;
+}
+
 function suggestedSermonLibraryResources(resources: LibraryResource[], searchText: string): SmartSermonSuggestion[] {
   const terms = sermonLibraryExpansionTerms(searchText);
+  const passage = parseSermonPassageReference(searchText);
   const scored = resources
     .map((resource) => {
       const authorProfile = libraryAuthorProfileForName(resource.author);
-      const score = scoreSmartSuggestion([
+      const passageScore = sermonLibraryPassageScore(resource, passage);
+      const topicScore = scoreSmartSuggestion([
         resource.title,
         resource.author,
         resource.category,
@@ -15124,33 +15923,34 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
         authorProfile?.subjects.join(" ") ?? "",
         authorProfile?.recommendedReadingOrder.join(" ") ?? "",
       ].join(" "), terms);
-      return { resource, score };
+      return { resource, passageScore, score: passageScore + topicScore };
     })
     .filter(({ resource }) => !/do not import|permission needed/i.test(`${resource.rights_status} ${resource.public_domain_status}`));
 
   const directMatches = scored
     .filter(({ score }) => score > 0)
-    .sort((a, b) => b.score - a.score || preachingHelpResourceScore(b.resource) - preachingHelpResourceScore(a.resource) || a.resource.title.localeCompare(b.resource.title));
+    .sort((a, b) => b.passageScore - a.passageScore || b.score - a.score || preachingHelpResourceScore(b.resource) - preachingHelpResourceScore(a.resource) || a.resource.title.localeCompare(b.resource.title));
 
   const fallbackMatches = scored
     .filter(({ score }) => score === 0)
-    .map(({ resource }) => ({ resource, score: preachingHelpResourceScore(resource) }))
+    .map(({ resource }) => ({ resource, passageScore: 0, score: preachingHelpResourceScore(resource) }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score || a.resource.title.localeCompare(b.resource.title));
 
-  const deduped = new Map<string, { resource: LibraryResource; score: number }>();
+  const deduped = new Map<string, { resource: LibraryResource; passageScore: number; score: number }>();
   [...directMatches, ...fallbackMatches].forEach((item) => {
-    if (!deduped.has(item.resource.slug)) deduped.set(item.resource.slug, item);
+    const workKey = sermonRecommendationWorkKey(item.resource);
+    if (!deduped.has(workKey)) deduped.set(workKey, item);
   });
 
   return Array.from(deduped.values())
-    .slice(0, 6)
-    .map(({ resource }) => ({
+    .slice(0, 10)
+    .map(({ resource, passageScore }) => ({
       id: `library-${resource.slug}`,
       title: resource.title,
       subtitle: resource.author,
       body: resource.description || resource.recommended_use,
-      meta: `${resource.category} - ${resource.public_domain_status}`,
+      meta: `${passageScore ? `Passage match: ${passage?.book} - ` : ""}${resource.category} - ${resource.public_domain_status}`,
       actionText: "Add resource connection",
       importLabel: `Library: ${resource.title}`,
       importBody: [
@@ -15166,38 +15966,320 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
 
 function suggestedSermonStudyPlaylists(playlists: StudyPlaylistTemplate[], searchText: string): SmartSermonSuggestion[] {
   const terms = smartSuggestionTerms(searchText);
+  const passage = parseSermonPassageReference(searchText);
   const scored = playlists
     .map((playlist) => {
-      const score = scoreSmartSuggestion([
+      const searchableText = [
         playlist.title,
         playlist.description,
         ...playlist.items.map((item) => `${item.kind} ${item.label}`),
         ...playlist.repeatOptions,
-      ].join(" "), terms);
-      return { playlist, score };
+      ].join(" ");
+      const patterns = passage ? sermonLibraryBookPatterns(passage.book) : [];
+      const numberedJohnPattern = /\b(?:1|2|3|first|second|third)\s+(?:epistle\s+(?:of|to)\s+(?:the\s+)?)?john\b/i;
+      const passageMatch = Boolean(
+        passage
+        && !(passage.book === "John" && numberedJohnPattern.test(searchableText))
+        && patterns.some((pattern) => pattern.test(searchableText)),
+      );
+      const topicScore = scoreSmartSuggestion(searchableText, terms);
+      return { playlist, passageMatch, score: topicScore + (passageMatch ? 20 : 0) };
     })
-    .sort((a, b) => b.score - a.score || a.playlist.title.localeCompare(b.playlist.title));
-  return scored
-    .filter(({ score }) => score > 0)
-    .concat(scored.filter(({ score }) => score === 0).slice(0, 2))
+    .sort((a, b) => Number(b.passageMatch) - Number(a.passageMatch) || b.score - a.score || a.playlist.title.localeCompare(b.playlist.title));
+
+  const passageMatches = scored.filter(({ passageMatch }) => passageMatch);
+  const generatedPassagePlaylist: StudyPlaylistTemplate | null = passage && !passageMatches.length
+    ? {
+        id: `passage-${passage.book.toLowerCase().replace(/\s+/g, "-")}-${passage.chapter ?? "book"}`,
+        title: `${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book} Passage Study`,
+        description: `A focused Scripture-first study queue for ${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book}, ready for sermon or lesson preparation.`,
+        items: [
+          { kind: "Bible", label: `${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book} KJV`, minutes: 8 },
+          { kind: "Commentary", label: `${passage.chapter ? `${passage.book} ${passage.chapter}` : passage.book} commentary comparison`, minutes: 20 },
+          { kind: "Book", label: `${passage.book} background and exposition`, minutes: 15 },
+          { kind: "Notes", label: "Observations, interpretation, applications, and invitation", minutes: 7 },
+        ],
+        repeatOptions: ["Repeat Bible text", "Stop after commentary", "Review sermon notes"],
+      }
+    : null;
+  const selected = passage
+    ? (generatedPassagePlaylist ? [{ playlist: generatedPassagePlaylist, passageMatch: true, score: 20 }] : passageMatches)
+    : scored
+        .filter(({ score }) => score > 0)
+        .concat(scored.filter(({ score }) => score === 0).slice(0, 2));
+
+  return selected
     .slice(0, 4)
-    .map(({ playlist }) => {
+    .map(({ playlist, passageMatch }) => {
       const totalMinutes = playlist.items.reduce((total, item) => total + item.minutes, 0);
       return {
         id: `playlist-${playlist.id}`,
         title: playlist.title,
         subtitle: `${playlist.items.length} items - about ${totalMinutes} minutes`,
         body: playlist.description,
-        meta: playlist.items.map((item) => item.kind).join(" + "),
-        actionText: "Add playlist connection",
+        meta: `${passageMatch ? `Passage match: ${passage?.book} - ` : ""}${playlist.items.map((item) => item.kind).join(" + ")}`,
+        actionText: "Create & open playlist",
         importLabel: `Study Playlist: ${playlist.title}`,
         importBody: [
           playlist.description,
           `Estimated time: ${totalMinutes} minutes`,
           ...playlist.items.map((item) => `- ${item.kind}: ${item.label} (${item.minutes} min)`),
         ].join("\n"),
+        playlist,
+        playlistPassage: passage ?? undefined,
       };
     });
+}
+
+function studyPlaylistChapterRange(text: string, book: string) {
+  const escapedBook = book.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  const match = text.match(new RegExp(`\\b${escapedBook}\\s+(\\d+)\\s*[-–]\\s*(\\d+)`, "i"));
+  if (!match) return null;
+  const start = Number(match[1]);
+  const end = Number(match[2]);
+  return { start: Math.min(start, end), end: Math.max(start, end) };
+}
+
+function studyPlaylistCommentaryResource(item: BiblePlaylistItem, entries: CommentaryEntry[]) {
+  if (!item.book || !item.chapter) return undefined;
+  const endChapter = item.chapterEnd ?? item.chapter;
+  const matchingEntries = entries.filter((entry) =>
+    entry.book === item.book && entry.chapter >= item.chapter! && entry.chapter <= endChapter,
+  );
+  if (!matchingEntries.length) return undefined;
+
+  const grouped = Array.from(
+    matchingEntries.reduce((groups, entry) => {
+      const group = groups.get(entry.resource_title) ?? {
+        resourceTitle: entry.resource_title,
+        authors: new Set<string>(),
+        chapters: new Set<number>(),
+        wordCount: 0,
+      };
+      group.authors.add(entry.author);
+      group.chapters.add(entry.chapter);
+      group.wordCount += wordsFromText(entry.entry_text).length;
+      groups.set(entry.resource_title, group);
+      return groups;
+    }, new Map<string, { resourceTitle: string; authors: Set<string>; chapters: Set<number>; wordCount: number }>()).values(),
+  );
+  const bestCoverage = Math.max(...grouped.map((group) => group.chapters.size));
+  const targetWords = Math.max(1, item.targetMinutes ?? 15) * 155;
+
+  return grouped
+    .filter((group) => group.chapters.size === bestCoverage)
+    .sort((left, right) => {
+      const durationDifference = Math.abs(left.wordCount - targetWords) - Math.abs(right.wordCount - targetWords);
+      if (durationDifference) return durationDifference;
+      const leftPriority = Math.min(...Array.from(left.authors).map((author) => commentaryGuideProfileFor(author)?.priority ?? 99));
+      const rightPriority = Math.min(...Array.from(right.authors).map((author) => commentaryGuideProfileFor(author)?.priority ?? 99));
+      return leftPriority - rightPriority || left.wordCount - right.wordCount || left.resourceTitle.localeCompare(right.resourceTitle);
+    })[0]?.resourceTitle;
+}
+
+function addStudyPlaylistCommentarySources(playlist: BibleAudioPlaylist, entries: CommentaryEntry[]) {
+  return {
+    ...playlist,
+    items: playlist.items.map((item) => {
+      if (item.type !== "commentary_chapter" && item.type !== "commentary_placeholder") return item;
+      const resourceTitle = studyPlaylistCommentaryResource(item, entries);
+      return resourceTitle ? { ...item, resourceTitle } : item;
+    }),
+  };
+}
+
+function studyPlaylistLibraryResources(item: BiblePlaylistItem, playlistName: string, resources: LibraryResource[]) {
+  const wantsPassageExposition = /background|commentary|exposition|study/i.test(item.label);
+  const itemTerms = smartSuggestionTerms(item.label).filter((term) => !["book", "new", "reading", "related", "resource"].includes(term));
+  const passage = item.book
+    ? { book: item.book, chapter: item.chapter, verse: undefined, label: item.chapter ? `${item.book} ${item.chapter}` : item.book }
+    : parseSermonPassageReference(`${playlistName} ${item.label}`);
+  const searchText = [playlistName, item.label, passage?.label ?? "", "Bible study teaching preaching"].join(" ");
+  const terms = sermonLibraryExpansionTerms(searchText);
+
+  const candidates = resources
+    .filter((resource) => Boolean(resource.word_count && resource.word_count > 0 && resource.source_url))
+    .filter((resource) => !/do not import|permission needed/i.test(`${resource.rights_status} ${resource.public_domain_status}`))
+    .filter((resource) => wantsPassageExposition || libraryResourceMatchesDiscoveryFilter(resource, "Books"))
+    .map((resource) => {
+      const passageScore = wantsPassageExposition ? sermonLibraryPassageScore(resource, passage) : 0;
+      const searchableText = [
+        resource.title,
+        resource.author,
+        resource.category,
+        resource.collection,
+        resource.description,
+        resource.recommended_use,
+        resource.perspective_notes,
+        ...resource.resource_labels,
+      ].join(" ");
+      const itemScore = scoreSmartSuggestion(searchableText, itemTerms);
+      const topicScore = scoreSmartSuggestion(searchableText, terms);
+      return {
+        resource,
+        passageScore,
+        itemScore,
+        score: passageScore + (itemScore * 10) + topicScore + preachingHelpResourceScore(resource),
+      };
+    })
+    .filter(({ score }) => score > 0);
+  const subjectMatches = itemTerms.length ? candidates.filter(({ itemScore }) => itemScore > 0) : [];
+
+  return (subjectMatches.length ? subjectMatches : candidates)
+    .sort((left, right) =>
+      right.passageScore - left.passageScore ||
+      right.itemScore - left.itemScore ||
+      right.score - left.score ||
+      left.resource.title.localeCompare(right.resource.title),
+    )
+    .map(({ resource }) => resource);
+}
+
+function studyPlaylistLibraryResource(item: BiblePlaylistItem, playlistName: string, resources: LibraryResource[]) {
+  return studyPlaylistLibraryResources(item, playlistName, resources)[0];
+}
+
+function addStudyPlaylistLibraryResources(playlist: BibleAudioPlaylist, resources: LibraryResource[]) {
+  return {
+    ...playlist,
+    items: playlist.items.map((item) => {
+      if (item.type !== "library_placeholder" || item.resourceSlug) return item;
+      const resource = studyPlaylistLibraryResource(item, playlist.name, resources);
+      return resource
+        ? {
+            ...item,
+            resourceTitle: resource.title,
+            resourceAuthor: resource.author,
+            resourceSlug: resource.slug,
+          }
+        : item;
+    }),
+  };
+}
+
+const STUDY_PLAYLIST_LIBRARY_SLUG_ALIASES: Record<string, string> = {
+  "pleasure-and-profit-in-bible-study": "pleasure-profit-in-bible-study",
+};
+
+function resolveStudyPlaylistLibraryResources(playlists: BibleAudioPlaylist[], resources: LibraryResource[]) {
+  const resourcesBySlug = new Map(resources.map((resource) => [resource.slug, resource]));
+  const resourcesByTitle = new Map<string, LibraryResource[]>();
+  for (const resource of resources) {
+    const titleKey = canonicalLibraryTitle(resource.work_title || resource.title);
+    resourcesByTitle.set(titleKey, [...(resourcesByTitle.get(titleKey) ?? []), resource]);
+  }
+
+  let playlistsChanged = false;
+  const nextPlaylists = playlists.map((playlist) => {
+    let playlistChanged = false;
+    const items = playlist.items.map((item) => {
+      if (item.type !== "library_placeholder") return item;
+      const aliasedSlug = item.resourceSlug ? STUDY_PLAYLIST_LIBRARY_SLUG_ALIASES[item.resourceSlug] ?? item.resourceSlug : "";
+      const titleKey = canonicalLibraryTitle(item.resourceTitle || item.label);
+      const resource = resourcesBySlug.get(aliasedSlug) ?? resourcesByTitle.get(titleKey)?.[0];
+      const resourceSlug = (resource?.slug ?? aliasedSlug) || undefined;
+      const resourceTitle = resource?.title ?? item.resourceTitle;
+      const resourceAuthor = resource?.author ?? item.resourceAuthor;
+      if (resourceSlug === item.resourceSlug && resourceTitle === item.resourceTitle && resourceAuthor === item.resourceAuthor) return item;
+      playlistChanged = true;
+      return { ...item, resourceSlug, resourceTitle, resourceAuthor };
+    });
+    if (!playlistChanged) return playlist;
+    playlistsChanged = true;
+    return { ...playlist, items };
+  });
+
+  return playlistsChanged ? nextPlaylists : playlists;
+}
+
+function addStudyPlaylistTemplateMetadata(playlist: BibleAudioPlaylist, template: StudyPlaylistTemplate) {
+  return {
+    ...playlist,
+    items: playlist.items.map((item) => {
+      const templateItem = template.items.find((candidate) => candidate.label === item.label);
+      return templateItem ? { ...item, targetMinutes: templateItem.minutes } : item;
+    }),
+  };
+}
+
+function biblePlaylistFromStudyTemplate(template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage): BibleAudioPlaylist {
+  const templateText = [
+    template.title,
+    template.description,
+    ...template.items.map((item) => item.label),
+  ].join(" ");
+  const templatePassage = parseSermonPassageReference(templateText) ?? sermonPassage ?? null;
+  const templateRange = templatePassage ? studyPlaylistChapterRange(templateText, templatePassage.book) : null;
+  const items = template.items.flatMap<BiblePlaylistItem>((item) => {
+    const itemPassage = parseSermonPassageReference(item.label);
+    const passage = itemPassage ?? sermonPassage ?? templatePassage;
+    const book = passage?.book;
+    const itemRange = book ? studyPlaylistChapterRange(item.label, book) : null;
+    const range = itemRange ?? templateRange;
+    const chapter = itemPassage?.chapter ?? range?.start ?? sermonPassage?.chapter ?? templatePassage?.chapter ?? (book ? 1 : undefined);
+    const chapterEnd = range?.end ?? chapter;
+
+    if (item.kind === "Bible" && book) {
+      if (!chapter) {
+        return [{ id: makeId("playlist_item"), type: "bible_book", label: item.label, book }];
+      }
+      const safeEnd = Math.min(chapter + 24, chapterEnd ?? chapter);
+      return Array.from({ length: safeEnd - chapter + 1 }, (_, index) => {
+        const chapterNumber = chapter + index;
+        return {
+          id: makeId("playlist_item"),
+          type: "bible_chapter",
+          label: `${book} ${chapterNumber}`,
+          book,
+          chapter: chapterNumber,
+        };
+      });
+    }
+
+    if (item.kind === "Commentary") {
+      return [{
+        id: makeId("playlist_item"),
+        type: chapter && book ? "commentary_chapter" : "commentary_placeholder",
+        label: item.label,
+        book,
+        chapter,
+        chapterEnd,
+        targetMinutes: item.minutes,
+      }];
+    }
+
+    if (item.kind === "Book") {
+      return [{
+        id: makeId("playlist_item"),
+        type: "library_placeholder",
+        label: item.label,
+        resourceTitle: item.label,
+        book,
+        chapter,
+        chapterEnd,
+        targetMinutes: item.minutes,
+      }];
+    }
+
+    return [{
+      id: makeId("playlist_item"),
+      type: "teaching_notes",
+      label: item.label,
+      book,
+      chapter,
+      chapterEnd,
+    }];
+  });
+
+  return {
+    id: makeId("playlist"),
+    name: template.title,
+    items,
+    createdAt: new Date().toISOString(),
+    completedItemIds: [],
+    completedAt: null,
+    lastItemIndex: 0,
+  };
 }
 
 function suggestedSermonPrayerConnections(entries: PrayerEntry[], searchText: string): SmartSermonSuggestion[] {
@@ -15534,6 +16616,49 @@ function saveCompletedResources(state: CompletedResourceState) {
   window.localStorage.setItem(LIBRARY_COMPLETED_KEY, JSON.stringify(state));
 }
 
+function normalizeFavoriteLibraryRecords(value: unknown): FavoriteLibraryResourceRecord[] {
+  if (!Array.isArray(value)) return [];
+
+  const records = new Map<string, FavoriteLibraryResourceRecord>();
+  for (const item of value) {
+    const record = typeof item === "string"
+      ? { slug: item.trim(), favorite: true, updatedAt: "1970-01-01T00:00:00.000Z" }
+      : item && typeof item === "object"
+        ? {
+            slug: typeof (item as { slug?: unknown }).slug === "string" ? (item as { slug: string }).slug.trim() : "",
+            favorite: (item as { favorite?: unknown }).favorite === true,
+            updatedAt: typeof (item as { updatedAt?: unknown }).updatedAt === "string"
+              ? (item as { updatedAt: string }).updatedAt
+              : "1970-01-01T00:00:00.000Z",
+          }
+        : null;
+    if (!record?.slug) continue;
+    const current = records.get(record.slug);
+    if (!current || record.updatedAt >= current.updatedAt) records.set(record.slug, record);
+  }
+
+  return Array.from(records.values())
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    .slice(0, 500);
+}
+
+function loadFavoriteLibraryRecords(): FavoriteLibraryResourceRecord[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(FAVORITE_LIBRARY_RESOURCES_KEY);
+    if (!raw) return [];
+    return normalizeFavoriteLibraryRecords(JSON.parse(raw) as unknown);
+  } catch {
+    return [];
+  }
+}
+
+function saveFavoriteLibraryRecords(records: FavoriteLibraryResourceRecord[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(FAVORITE_LIBRARY_RESOURCES_KEY, JSON.stringify(records));
+}
+
 function loadManualReadBooks(): ManualReadBookState {
   if (typeof window === "undefined") return {};
 
@@ -15744,7 +16869,7 @@ function defaultStudyPlaylists(): BibleAudioPlaylist[] {
         { id: "preacher-2-timothy-4", type: "bible_chapter", label: "2 Timothy 4", book: "2 Timothy", chapter: 4 },
         { id: "preacher-john-3", type: "bible_chapter", label: "John 3", book: "John", chapter: 3 },
         { id: "preacher-commentary", type: "commentary_chapter", label: "John 3 commentary", book: "John", chapter: 3 },
-        { id: "preacher-pleasure-profit", type: "library_placeholder", label: "Pleasure & Profit in Bible Study", resourceTitle: "Pleasure & Profit in Bible Study", resourceSlug: "pleasure-and-profit-in-bible-study" },
+        { id: "preacher-pleasure-profit", type: "library_placeholder", label: "Pleasure & Profit in Bible Study", resourceTitle: "Pleasure & Profit in Bible Study", resourceAuthor: "D. L. Moody", resourceSlug: "pleasure-profit-in-bible-study" },
         { id: "preacher-teaching-notes", type: "teaching_notes", label: "Teaching notes", book: "John", chapter: 3 },
       ],
     },
@@ -15865,13 +16990,13 @@ function markBibleBookMasteryChapter(
 
 function loadBiblePlaylists(): BibleAudioPlaylist[] {
   const starters = defaultStudyPlaylists();
-  if (typeof window === "undefined") return starters;
+  if (typeof window === "undefined") return resolveStudyPlaylistLibraryResources(starters, []);
 
   try {
     const raw = window.localStorage.getItem(BIBLE_PLAYLISTS_KEY);
-    if (!raw) return starters;
+    if (!raw) return resolveStudyPlaylistLibraryResources(starters, []);
     const parsed = JSON.parse(raw) as BibleAudioPlaylist[];
-    if (!Array.isArray(parsed) || !parsed.length) return starters;
+    if (!Array.isArray(parsed) || !parsed.length) return resolveStudyPlaylistLibraryResources(starters, []);
     const merged = parsed.map((playlist) => {
       const starter = starters.find((candidate) => candidate.id === playlist.id);
       if (!starter) return playlist;
@@ -15882,9 +17007,12 @@ function loadBiblePlaylists(): BibleAudioPlaylist[] {
       };
     });
     const existingIds = new Set(merged.map((playlist) => playlist.id));
-    return [...merged, ...starters.filter((playlist) => !existingIds.has(playlist.id))];
+    return resolveStudyPlaylistLibraryResources(
+      [...merged, ...starters.filter((playlist) => !existingIds.has(playlist.id))],
+      [],
+    );
   } catch {
-    return starters;
+    return resolveStudyPlaylistLibraryResources(starters, []);
   }
 }
 
@@ -16463,7 +17591,7 @@ function itemMatchesQuery(query: string, parts: Array<string | number | undefine
   const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return true;
   const haystack = searchableText(parts);
-  return terms.every((term) => haystack.includes(term));
+  return terms.every((term) => librarySearchTextContainsTerm(haystack, term));
 }
 
 function testamentForReference(reference: string) {
@@ -16612,9 +17740,11 @@ function buildActiveBibleBackground({
 }
 
 export default function Home() {
-  const allVerses = useMemo(() => parseVerses(), []);
+  const [allVerses, setAllVerses] = useState<BibleVerse[]>(STARTER_KJV_VERSES);
+  const [bibleCorpusStatus, setBibleCorpusStatus] = useState<"loading" | "ready" | "error">("loading");
   const supabase = useMemo(() => makeSupabaseClient(), []);
   const [user, setUser] = useState<User | null>(null);
+  const [authSessionLoaded, setAuthSessionLoaded] = useState(false);
   const [adminRoleLoaded, setAdminRoleLoaded] = useState(false);
   const [hasAdminRole, setHasAdminRole] = useState(false);
   const [tab, setTab] = useState<Tab>("today");
@@ -16622,7 +17752,8 @@ export default function Home() {
   const [isLocalAdminPreviewHost] = useState(() => {
     if (typeof window === "undefined") return false;
     const host = window.location.hostname;
-    return host === "localhost" || host === "127.0.0.1" || host === "::1";
+    const isLocalHost = host === "localhost" || host === "127.0.0.1" || host === "::1";
+    return process.env.NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_PREVIEW === "true" && isLocalHost;
   });
   const [globalQuickJumpText, setGlobalQuickJumpText] = useState("");
   const [book, setBook] = useState(DEFAULT_BOOK);
@@ -16636,12 +17767,12 @@ export default function Home() {
   const [bookIntroBook, setBookIntroBook] = useState<string | null>(null);
   const [studyTab, setStudyTab] = useState<StudyDrawerTab>("study");
   const [noteDraft, setNoteDraft] = useState("");
-  const [saved, setSaved] = useState<SavedState>({ notes: [], highlights: [], bookmarks: [] });
+  const [saved, setSaved] = useState<SavedState>(emptySavedState());
   const [savedLoaded, setSavedLoaded] = useState(false);
   const [syncMessage, setSyncMessage] = useState("");
   const [crossReferences, setCrossReferences] = useState<CrossReference[]>(localCrossReferences);
-  const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>(localCommentaryEntries);
-  const [deferredCommentaryLoadStatus, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
+  const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>([]);
+  const [, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
     loadedFiles: 0,
     totalFiles: deferredCommentaryImportFiles.length,
     loading: false,
@@ -16664,9 +17795,14 @@ export default function Home() {
   const [authMessage, setAuthMessage] = useState("");
   const [allLibraryResources, setAllLibraryResources] = useState<LibraryResource[]>([]);
   const [libraryResources, setLibraryResources] = useState<LibraryResource[]>([]);
+  const [libraryCatalogStatus, setLibraryCatalogStatus] = useState<LibraryCatalogStatus>("idle");
   const [libraryView, setLibraryView] = useState<LibraryView>("home");
   const [librarySearchTerm, setLibrarySearchTerm] = useState("");
   const [libraryCategory, setLibraryCategory] = useState("All");
+  const [librarySearchResults, setLibrarySearchResults] = useState<LibraryResource[]>([]);
+  const [librarySearchStatus, setLibrarySearchStatus] = useState<LibrarySearchStatus>("idle");
+  const [librarySearchPage, setLibrarySearchPage] = useState(1);
+  const [librarySearchPagination, setLibrarySearchPagination] = useState<LibrarySearchPagination | null>(null);
   const [activeLibrarySlug, setActiveLibrarySlug] = useState<string | null>(null);
   const [activeLibraryAuthorId, setActiveLibraryAuthorId] = useState<string | null>(null);
   const [activeLibraryCollectionId, setActiveLibraryCollectionId] = useState<string | null>(null);
@@ -16675,6 +17811,12 @@ export default function Home() {
   const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
+  const [favoriteLibraryRecords, setFavoriteLibraryRecords] = useState<FavoriteLibraryResourceRecord[]>([]);
+  const favoriteLibrarySlugs = favoriteLibraryRecords
+    .filter((record) => record.favorite)
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    .map((record) => record.slug)
+    .slice(0, 100);
   const [manualReadBooks, setManualReadBooks] = useState<ManualReadBookState>({});
   const [manualReadBookTitle, setManualReadBookTitle] = useState("");
   const [manualReadBookAuthor, setManualReadBookAuthor] = useState("");
@@ -16763,27 +17905,132 @@ export default function Home() {
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncHydratingRef = useRef(false);
+  const favoriteLibrarySyncAvailableRef = useRef(true);
+  const libraryCatalogLoadedRef = useRef(false);
+  const libraryCatalogResourcesRef = useRef<LibraryResource[]>([]);
+  const libraryCatalogRequestRef = useRef<Promise<LibraryResource[]> | null>(null);
   const deferredCommentaryLoadedFilesRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadingFilesRef = useRef<Set<string>>(new Set());
+  const deferredCommentaryLoadedChaptersRef = useRef<Set<string>>(new Set());
+  const deferredCommentaryLoadingChaptersRef = useRef<Set<string>>(new Set());
+  const addDeferredCommentaryEntries = useCallback((entries: CommentaryEntry[]) => {
+    setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, entries));
+  }, []);
   const speechVoices = useMemo(
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
   );
-  const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
 
   useEffect(() => {
-    const shouldLoadStarterCommentary =
+    let active = true;
+
+    void loadCompleteKjvVerses()
+      .then((verses) => {
+        if (!active) return;
+        setAllVerses(verses);
+        setBibleCorpusStatus("ready");
+      })
+      .catch(() => {
+        if (active) setBibleCorpusStatus("error");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+  const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
+  const adminAccessResolved = isLocalAdminPreviewHost || (authSessionLoaded && adminRoleLoaded);
+
+  useEffect(() => {
+    if (!showLibraryAcquisitionAdmin || canOpenAdminArea || !adminAccessResolved) return;
+
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (cancelled) return;
+      const url = new URL(window.location.href);
+      url.hash = "";
+      url.searchParams.delete("open");
+      window.history.replaceState(null, "", `${url.pathname}${url.search}`);
+      setShowLibraryAcquisitionAdmin(false);
+      setLibraryView("home");
+      setTab("library");
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [adminAccessResolved, canOpenAdminArea, showLibraryAcquisitionAdmin]);
+
+  useEffect(() => {
+    const shouldLoadChapterCommentary =
       tab === "bible" ||
+      tab === "fullStudy" ||
+      tab === "passageGuide";
+    const shouldLoadStarterCommentary =
       tab === "themes" ||
       tab === "bookIntro" ||
       tab === "sermons";
     const shouldLoadCompleteCommentary =
-      tab === "commentaryExplorer" ||
       tab === "fullStudy" ||
       tab === "passageGuide" ||
       tab === "amosStudyPath" ||
       tab === "proverbsStudyPath" ||
       tab === "hoseaStudyPath";
+
+    if (shouldLoadChapterCommentary) {
+      const chapterKey = `${book}|${chapter}`;
+      const completeCatalogLoaded = deferredCommentaryImportFiles.every((fileName) =>
+        deferredCommentaryLoadedFilesRef.current.has(fileName),
+      );
+
+      if (completeCatalogLoaded || deferredCommentaryLoadedChaptersRef.current.has(chapterKey)) {
+        setDeferredCommentaryLoadStatus({
+          loadedFiles: 1,
+          totalFiles: 1,
+          loading: false,
+          mode: "chapter",
+        });
+        return;
+      }
+
+      if (deferredCommentaryLoadingChaptersRef.current.has(chapterKey)) return;
+
+      deferredCommentaryLoadingChaptersRef.current.add(chapterKey);
+      setDeferredCommentaryLoadStatus({
+        loadedFiles: 0,
+        totalFiles: 1,
+        loading: true,
+        mode: "chapter",
+      });
+
+      const controller = new AbortController();
+
+      void fetchDeferredCommentaryChapterEntries(controller.signal, book, chapter)
+        .then((entries) => {
+          setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, entries));
+          deferredCommentaryLoadedChaptersRef.current.add(chapterKey);
+          setDeferredCommentaryLoadStatus({
+            loadedFiles: 1,
+            totalFiles: 1,
+            loading: false,
+            mode: "chapter",
+          });
+        })
+        .catch((error: unknown) => {
+          if (error instanceof DOMException && error.name === "AbortError") return;
+          setDeferredCommentaryLoadStatus({
+            loadedFiles: 0,
+            totalFiles: 1,
+            loading: false,
+            mode: "chapter",
+          });
+        })
+        .finally(() => {
+          deferredCommentaryLoadingChaptersRef.current.delete(chapterKey);
+        });
+
+      return () => controller.abort();
+    }
 
     if (!shouldLoadStarterCommentary && !shouldLoadCompleteCommentary) return;
 
@@ -16845,7 +18092,7 @@ export default function Home() {
         mode: shouldLoadCompleteCommentary ? "complete" : "starter",
       });
     });
-  }, [tab]);
+  }, [book, chapter, tab]);
 
   useLayoutEffect(() => {
     if (!supabase) return;
@@ -16995,6 +18242,11 @@ export default function Home() {
       return categoryMatch && searchMatch;
     });
   }, [libraryCategory, libraryResources, librarySearchTerm]);
+
+  const librarySearchActive = librarySearchTerm.trim().length >= 2 || libraryCategory !== "All";
+  const displayedFilteredLibraryResources = librarySearchActive && librarySearchStatus === "ready"
+    ? librarySearchResults
+    : filteredLibraryResources;
 
   const continueReadingResources = useMemo(
     () =>
@@ -17606,7 +18858,11 @@ export default function Home() {
   function saveDeviceFallback(updater: (state: SavedState) => SavedState) {
     setSaved((state) => {
       const nextState = updater(state);
-      saveLocalState(nextState);
+      if (user?.id) {
+        saveAccountState(user.id, nextState);
+      } else {
+        saveLocalState(nextState);
+      }
       return nextState;
     });
   }
@@ -18844,6 +20100,7 @@ export default function Home() {
     queueMicrotask(() => {
       setLibraryProgress(loadLibraryProgress());
       setCompletedResources(loadCompletedResources());
+      setFavoriteLibraryRecords(loadFavoriteLibraryRecords());
       setManualReadBooks(loadManualReadBooks());
       setListeningProgress(loadListeningProgress());
       setLibraryListeningQueue(loadLibraryListeningQueue());
@@ -18916,28 +20173,100 @@ export default function Home() {
     });
   }, [speechVoices, voiceSettings.activeProfile, voiceSettings.profileVoiceURIs, voiceSettings.selectedVoiceURI]);
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/library")
-      .then((response) => response.json())
-      .then((data: { resources?: LibraryResource[] }) => {
-        if (!cancelled) {
-          const fullResources = data.resources ?? [];
-          setAllLibraryResources(fullResources);
-          setLibraryResources(groupLibraryWorks(fullResources));
+  const loadLibraryCatalog = useCallback(() => {
+    if (libraryCatalogLoadedRef.current) {
+      return Promise.resolve(libraryCatalogResourcesRef.current);
+    }
+    if (libraryCatalogRequestRef.current) return libraryCatalogRequestRef.current;
+
+    setLibraryCatalogStatus("loading");
+    const request = fetch("/api/library")
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Library catalog request failed with ${response.status}.`);
+        const data = (await response.json()) as { resources?: LibraryResource[] };
+        if (!Array.isArray(data.resources) || data.resources.length === 0) {
+          throw new Error("Library catalog response did not include resources.");
         }
+
+        const catalogResources = data.resources;
+        const groupedResources = groupLibraryWorks(catalogResources);
+        libraryCatalogLoadedRef.current = true;
+        libraryCatalogResourcesRef.current = groupedResources;
+        setAllLibraryResources(catalogResources);
+        setLibraryResources(groupedResources);
+        setBiblePlaylists((current) => {
+          const next = resolveStudyPlaylistLibraryResources(current, catalogResources);
+          if (next !== current) saveBiblePlaylists(next);
+          return next;
+        });
+        setLibraryCatalogStatus("ready");
+        return groupedResources;
       })
       .catch(() => {
-        if (!cancelled) {
-          setAllLibraryResources([]);
-          setLibraryResources([]);
-        }
+        setAllLibraryResources([]);
+        setLibraryResources([]);
+        setLibraryCatalogStatus("error");
+        return [];
+      })
+      .finally(() => {
+        libraryCatalogRequestRef.current = null;
       });
 
-    return () => {
-      cancelled = true;
-    };
+    libraryCatalogRequestRef.current = request;
+    return request;
   }, []);
+
+  useEffect(() => {
+    if (!LIBRARY_CATALOG_TABS.has(tab)) return;
+    void loadLibraryCatalog();
+  }, [loadLibraryCatalog, tab]);
+
+  useEffect(() => {
+    const query = librarySearchTerm.trim();
+    const searchActive = query.length >= 2 || libraryCategory !== "All";
+    if (tab !== "library" || libraryView !== "home" || !searchActive) return;
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      const params = new URLSearchParams({
+        page: String(librarySearchPage),
+        limit: "24",
+      });
+      if (query.length >= 2) params.set("q", query);
+      if (libraryCategory !== "All") params.set("filter", libraryCategory);
+
+      setLibrarySearchStatus("loading");
+      fetch(`/api/library?${params.toString()}`, { signal: controller.signal })
+        .then(async (response) => {
+          if (!response.ok) throw new Error(`Library search failed with ${response.status}.`);
+          return response.json() as Promise<{
+            resources?: LibraryResource[];
+            pagination?: LibrarySearchPagination;
+          }>;
+        })
+        .then((data) => {
+          if (!Array.isArray(data.resources) || !data.pagination) {
+            throw new Error("Library search response was incomplete.");
+          }
+          setLibrarySearchResults(groupLibraryWorks(data.resources));
+          setLibrarySearchPagination(data.pagination);
+          setLibrarySearchStatus("ready");
+        })
+        .catch((error: unknown) => {
+          if (error instanceof DOMException && error.name === "AbortError") return;
+          setLibrarySearchStatus("error");
+        });
+    }, 250);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [libraryCategory, librarySearchPage, librarySearchTerm, libraryView, tab]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [libraryView, tab]);
 
   useEffect(() => {
     speechRateRef.current = speechState.rate;
@@ -19051,24 +20380,47 @@ export default function Home() {
   }, [studyToolSearchFilter, studyToolSearchTerm]);
 
   useEffect(() => {
-    if (!savedLoaded || user) return;
+    if (!savedLoaded) return;
+    if (user?.id) {
+      saveAccountState(user.id, saved);
+      return;
+    }
     saveLocalState(saved);
   }, [saved, savedLoaded, user]);
 
   useEffect(() => {
-    if (!supabase) return;
+    let cancelled = false;
+
+    if (!supabase) {
+      queueMicrotask(() => {
+        if (!cancelled) setAuthSessionLoaded(true);
+      });
+      return () => {
+        cancelled = true;
+      };
+    }
 
     supabase.auth.getUser().then(({ data }) => {
+      if (cancelled) return;
       setAccountDataLoaded(false);
+      setAdminRoleLoaded(false);
+      setHasAdminRole(false);
       setUser(data.user);
+      setAuthSessionLoaded(true);
     });
 
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (cancelled) return;
       setAccountDataLoaded(false);
+      setAdminRoleLoaded(false);
+      setHasAdminRole(false);
+      if (!session?.user) setSaved(loadLocalState());
       setUser(session?.user ?? null);
+      setAuthSessionLoaded(true);
     });
 
     return () => {
+      cancelled = true;
       data.subscription.unsubscribe();
     };
   }, [supabase]);
@@ -19112,17 +20464,18 @@ export default function Home() {
     accountSyncHydratingRef.current = true;
 
     Promise.all([
-      supabase.from("user_notes").select("id, verse_ref, body, created_at").order("created_at", { ascending: false }),
-      supabase.from("user_highlights").select("id, verse_ref, color, created_at"),
-      supabase.from("user_bookmarks").select("id, verse_ref, created_at"),
-      supabase.from("user_library_progress").select("resource_slug, title, author, progress, font_size, line_spacing, reading_width, theme, bookmarks, started_at, updated_at"),
-      supabase.from("user_completed_resources").select("resource_slug, title, author, completed_at"),
-      supabase.from("user_listening_progress").select("resource_slug, title, author, progress, rate, updated_at"),
-      supabase.from("user_bible_listening_progress").select("target_id, label, book, chapter, verse_ref, progress, updated_at").order("updated_at", { ascending: false }).limit(1).maybeSingle(),
-      supabase.from("user_bible_mastery").select("book, read_chapters, listened_chapters, updated_at"),
-      supabase.from("user_scripture_memory").select("id, verse_ref, verse_text, progress, repetitions, last_reviewed_at, created_at, updated_at"),
-      supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, created_at, updated_at"),
-      supabase.from("user_study_playlist_items").select("id, playlist_id, item_type, label, book, chapter, chapter_end, verse_start, verse_end, resource_title, resource_slug, position").order("position", { ascending: true }),
+      supabase.from("user_notes").select("id, verse_ref, body, created_at").eq("user_id", user.id).order("created_at", { ascending: false }),
+      supabase.from("user_highlights").select("id, verse_ref, color, created_at").eq("user_id", user.id),
+      supabase.from("user_bookmarks").select("id, verse_ref, created_at").eq("user_id", user.id),
+      supabase.from("user_library_progress").select("resource_slug, title, author, progress, font_size, line_spacing, reading_width, theme, bookmarks, started_at, updated_at").eq("user_id", user.id),
+      supabase.from("user_completed_resources").select("resource_slug, title, author, completed_at").eq("user_id", user.id),
+      supabase.from("user_listening_progress").select("resource_slug, title, author, progress, rate, updated_at").eq("user_id", user.id),
+      supabase.from("user_bible_listening_progress").select("target_id, label, book, chapter, verse_ref, progress, updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }).limit(1).maybeSingle(),
+      supabase.from("user_bible_mastery").select("book, read_chapters, listened_chapters, updated_at").eq("user_id", user.id),
+      supabase.from("user_scripture_memory").select("id, verse_ref, verse_text, progress, repetitions, last_reviewed_at, created_at, updated_at").eq("user_id", user.id),
+      supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, created_at, updated_at").eq("user_id", user.id),
+      supabase.from("user_study_playlist_items").select("id, playlist_id, item_type, label, book, chapter, chapter_end, verse_start, verse_end, resource_title, resource_slug, position").eq("user_id", user.id).order("position", { ascending: true }),
+      supabase.from("user_library_favorites").select("resource_slug, is_favorite, updated_at").eq("user_id", user.id),
     ]).then(([
       notesResult,
       highlightsResult,
@@ -19135,6 +20488,7 @@ export default function Home() {
       memoryResult,
       playlistResult,
       playlistItemsResult,
+      favoriteLibraryResult,
     ]) => {
       if (cancelled) return;
       const error = [
@@ -19158,7 +20512,13 @@ export default function Home() {
         return;
       }
 
-      const localSaved = loadLocalState();
+      const anonymousSaved = loadLocalState();
+      const accountSaved = loadAccountState(user.id);
+      const localSaved: SavedState = {
+        notes: mergeByTimestamp(anonymousSaved.notes, accountSaved.notes, (note) => note.id, (note) => note.created_at),
+        highlights: mergeByTimestamp(anonymousSaved.highlights, accountSaved.highlights, (highlight) => highlight.verse_ref, (highlight) => highlight.created_at),
+        bookmarks: mergeByTimestamp(anonymousSaved.bookmarks, accountSaved.bookmarks, (bookmark) => bookmark.verse_ref, (bookmark) => bookmark.created_at),
+      };
       const mergedSaved: SavedState = {
         notes: mergeByTimestamp(localSaved.notes, notesResult.data ?? [], (note) => note.id, (note) => note.created_at)
           .sort((a, b) => b.created_at.localeCompare(a.created_at)),
@@ -19166,7 +20526,7 @@ export default function Home() {
         bookmarks: mergeByTimestamp(localSaved.bookmarks, bookmarksResult.data ?? [], (bookmark) => bookmark.verse_ref, (bookmark) => bookmark.created_at),
       };
       setSaved(mergedSaved);
-      saveLocalState(mergedSaved);
+      saveAccountState(user.id, mergedSaved);
 
       const remoteLibraryProgress = Object.fromEntries((libraryProgressResult.data ?? []).map((row) => [
         row.resource_slug,
@@ -19215,6 +20575,23 @@ export default function Home() {
       const mergedListening = mergeObjectStateByTimestamp(loadListeningProgress(), remoteListening, (progress) => progress.updatedAt);
       setListeningProgress(mergedListening);
       saveListeningProgress(mergedListening);
+
+      favoriteLibrarySyncAvailableRef.current = !favoriteLibraryResult.error;
+      const remoteFavoriteRecords = (favoriteLibraryResult.data ?? []).map((row) => ({
+        slug: row.resource_slug,
+        favorite: row.is_favorite,
+        updatedAt: row.updated_at,
+      }));
+      const mergedFavoriteRecords = normalizeFavoriteLibraryRecords(
+        mergeByTimestamp(
+          loadFavoriteLibraryRecords(),
+          remoteFavoriteRecords,
+          (record) => record.slug,
+          (record) => record.updatedAt,
+        ),
+      );
+      setFavoriteLibraryRecords(mergedFavoriteRecords);
+      saveFavoriteLibraryRecords(mergedFavoriteRecords);
 
       const remoteBibleListening = bibleListeningResult.data
         ? {
@@ -19292,7 +20669,9 @@ export default function Home() {
       saveBiblePlaylists(mergedPlaylists);
       setActiveStudyPlaylistId((current) => current ?? mergedPlaylists[0]?.id ?? null);
 
-      setSyncMessage("Signed in and synced.");
+      setSyncMessage(favoriteLibraryResult.error
+        ? "Signed in. Study data synced; Library favorites remain on this device until the updated schema is applied."
+        : "Signed in and synced.");
       setAccountDataLoaded(true);
       accountSyncHydratingRef.current = false;
     });
@@ -19342,7 +20721,7 @@ export default function Home() {
             notes: [...data, ...state.notes.filter((note) => !localNoteIds.has(note.id))]
               .sort((a, b) => b.created_at.localeCompare(a.created_at)),
           };
-          saveLocalState(nextState);
+          saveAccountState(userId, nextState);
           return nextState;
         });
       }
@@ -19469,6 +20848,18 @@ export default function Home() {
       collectError("scripture memory", error);
     }
 
+    if (favoriteLibrarySyncAvailableRef.current && favoriteLibraryRecords.length) {
+      const { error } = await supabase
+        .from("user_library_favorites")
+        .upsert(favoriteLibraryRecords.map((record) => ({
+          user_id: userId,
+          resource_slug: record.slug,
+          is_favorite: record.favorite,
+          updated_at: record.updatedAt,
+        })), { onConflict: "user_id,resource_slug" });
+      collectError("Library favorites", error);
+    }
+
     if (biblePlaylists.length) {
       const playlistRows = biblePlaylists.map((playlist) => ({
         user_id: userId,
@@ -19524,12 +20915,14 @@ export default function Home() {
       return;
     }
 
+    clearLocalState();
     setSyncMessage("Signed in and synced.");
   }, [
     bibleBookMastery,
     bibleListeningProgress,
     biblePlaylists,
     completedResources,
+    favoriteLibraryRecords,
     libraryProgress,
     listeningProgress,
     repeatStudyPlaylist,
@@ -19558,6 +20951,7 @@ export default function Home() {
     bibleListeningProgress,
     biblePlaylists,
     completedResources,
+    favoriteLibraryRecords,
     libraryProgress,
     listeningProgress,
     localStudyDataLoaded,
@@ -19748,7 +21142,9 @@ export default function Home() {
   }
 
   function saveLibraryProgressUpdate(slug: string, updater: (progress: LibraryProgress) => LibraryProgress) {
-    const resource = libraryResources.find((candidate) => candidate.slug === slug);
+    const resource =
+      allLibraryResources.find((candidate) => candidate.slug === slug) ??
+      libraryResources.find((candidate) => candidate.slug === slug);
     if (!resource) return;
 
     setLibraryProgress((state) => {
@@ -19803,6 +21199,19 @@ export default function Home() {
       delete nextState[slug];
       saveCompletedResources(nextState);
       return nextState;
+    });
+  }
+
+  function toggleFavoriteLibraryResource(resource: LibraryResource) {
+    setFavoriteLibraryRecords((current) => {
+      const exists = current.some((record) => record.slug === resource.slug && record.favorite);
+      const next = normalizeFavoriteLibraryRecords([
+        { slug: resource.slug, favorite: !exists, updatedAt: new Date().toISOString() },
+        ...current,
+      ]);
+      saveFavoriteLibraryRecords(next);
+      setSyncMessage(exists ? `${resource.title} removed from Library favorites.` : `${resource.title} added to Library favorites.`);
+      return next;
     });
   }
 
@@ -19887,6 +21296,16 @@ export default function Home() {
     setLibraryView(view);
     setTab("library");
 
+    const catalogResources = await loadLibraryCatalog();
+    const resourceAvailable =
+      allLibraryResources.some((resource) => resource.slug === slug) ||
+      catalogResources.some((resource) => resource.slug === slug) ||
+      librarySearchResults.some((resource) => resource.slug === slug);
+    if (!resourceAvailable) {
+      if (catalogResources.length) setSyncMessage("That library resource is not available in the current catalog.");
+      return;
+    }
+
     if (view !== "reader") return;
 
     saveLibraryProgressUpdate(slug, (current) => ({
@@ -19899,9 +21318,11 @@ export default function Home() {
       updatedAt: new Date().toISOString(),
     }));
 
+    setActiveLibraryText("");
     setActiveLibraryLoading(true);
     try {
       const response = await fetch(`/api/library/${slug}`);
+      if (!response.ok) throw new Error(`Library resource request failed with ${response.status}.`);
       const data = (await response.json()) as { resource?: LibraryResource; text?: string };
       setActiveLibraryText(data.text ?? "");
       const savedProgress = libraryProgress[slug];
@@ -19955,7 +21376,8 @@ export default function Home() {
       return;
     }
 
-    const resource = libraryResources.find((candidate) => candidate.slug === progress.slug);
+    const catalogResources = await loadLibraryCatalog();
+    const resource = catalogResources.find((candidate) => candidate.slug === progress.slug);
     if (!resource) {
       setTab("library");
       return;
@@ -20007,6 +21429,7 @@ export default function Home() {
         .slice(-12),
       updatedAt: new Date().toISOString(),
     }));
+    setSyncMessage(`${resource.title} bookmarked at ${Math.round(progress)}%.`);
   }
 
   function selectedLibraryText() {
@@ -21029,6 +22452,37 @@ export default function Home() {
     setSyncMessage(`${playlist.name} created. Open Bible playlist builder to play continuously.`);
   }
 
+  function createSermonStudyPlaylist(template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage) {
+    const existing = biblePlaylists.find((playlist) => playlist.name.toLowerCase() === template.title.toLowerCase());
+    const playlist = addStudyPlaylistLibraryResources(
+      addStudyPlaylistCommentarySources(
+        addStudyPlaylistTemplateMetadata(
+          existing ?? biblePlaylistFromStudyTemplate(template, sermonPassage),
+          template,
+        ),
+        commentaryEntries,
+      ),
+      libraryResources,
+    );
+
+    setBiblePlaylists((current) => saveNextBiblePlaylists(
+      existing
+        ? current.map((candidate) => candidate.id === playlist.id ? playlist : candidate)
+        : [playlist, ...current].slice(0, 12),
+    ));
+    setActiveStudyPlaylistId(playlist.id);
+    setStudyPlaylistCurrentIndex(playlist.lastItemIndex ?? 0);
+
+    const firstBibleItem = playlist.items.find((item) => item.type.startsWith("bible_") && item.book);
+    if (firstBibleItem?.book) setBook(firstBibleItem.book);
+    if (firstBibleItem?.chapter) setChapter(firstBibleItem.chapter);
+    setTab("bible");
+    setSyncMessage(existing ? `${playlist.name} opened in the playlist builder.` : `${playlist.name} created and opened in the playlist builder.`);
+    window.setTimeout(() => {
+      document.getElementById("study-playlist-builder")?.scrollIntoView({ block: "start", behavior: "smooth" });
+    }, 80);
+  }
+
   function addBiblePlaylistItem(type: BiblePlaylistItemType) {
     const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
     const safeEnd = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeEnd));
@@ -21063,10 +22517,38 @@ export default function Home() {
       type: "library_placeholder",
       label: resource.title,
       resourceTitle: resource.title,
+      resourceAuthor: resource.author,
       resourceSlug: resource.slug,
     };
 
     appendItemToActiveStudyPlaylist(item);
+  }
+
+  function replaceBiblePlaylistLibraryItem(playlistId: string, itemId: string, slug: string) {
+    const resource = libraryResources.find((candidate) => candidate.slug === slug);
+    if (!resource) return;
+
+    setBiblePlaylists((current) => {
+      const next = current.map((playlist) =>
+        playlist.id === playlistId
+          ? {
+              ...playlist,
+              items: playlist.items.map((item) =>
+                item.id === itemId
+                  ? {
+                      ...item,
+                      resourceTitle: resource.title,
+                      resourceAuthor: resource.author,
+                      resourceSlug: resource.slug,
+                    }
+                  : item,
+              ),
+            }
+          : playlist,
+      );
+      return saveNextBiblePlaylists(next);
+    });
+    setSyncMessage(`${resource.title} selected for this playlist book slot.`);
   }
 
   function addCurrentResourceToStudyPlaylist(slug: string) {
@@ -21169,7 +22651,10 @@ export default function Home() {
     if (!item.book || !item.chapter) return [];
     const endChapter = item.chapterEnd ?? item.chapter;
     return commentaryEntries.filter((entry) =>
-      entry.book === item.book && entry.chapter >= item.chapter! && entry.chapter <= endChapter,
+      entry.book === item.book &&
+      entry.chapter >= item.chapter! &&
+      entry.chapter <= endChapter &&
+      (!item.resourceTitle || entry.resource_title === item.resourceTitle),
     );
   }
 
@@ -21193,10 +22678,15 @@ export default function Home() {
       try {
         const response = await fetch(`/api/library/${item.resourceSlug}`);
         const data = (await response.json()) as { text?: string };
-        const resourceChunks = chunkSpeechText(data.text ?? "").slice(0, 80);
+        const resourceText = data.text ?? "";
+        const excerptWordLimit = item.targetMinutes ? Math.max(155, item.targetMinutes * 155) : null;
+        const excerptText = excerptWordLimit
+          ? resourceText.trim().split(/\s+/).slice(0, excerptWordLimit).join(" ")
+          : resourceText;
+        const resourceChunks = chunkSpeechText(excerptText).slice(0, 80);
         if (resourceChunks.length) {
           return {
-            chunks: [`${item.resourceTitle ?? item.label}.`, ...resourceChunks],
+            chunks: [`${item.resourceTitle ?? item.label}${item.resourceAuthor ? ` by ${item.resourceAuthor}` : ""}.`, ...resourceChunks],
             verseRefs: Array(resourceChunks.length + 1).fill(null),
           };
         }
@@ -21638,7 +23128,7 @@ export default function Home() {
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: `${window.location.origin}/?open=library-acquisition`,
+        emailRedirectTo: `${window.location.origin}/?open=settings`,
       },
     });
 
@@ -21647,7 +23137,13 @@ export default function Home() {
 
   async function signOut() {
     if (!supabase) return;
-    await supabase.auth.signOut();
+    const anonymousSaved = loadLocalState();
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      setSyncMessage("Could not sign out yet. Please try again.");
+      return;
+    }
+    setSaved(anonymousSaved);
     setUser(null);
     setSyncMessage("Signed out. Local study data is active.");
   }
@@ -21671,6 +23167,68 @@ export default function Home() {
     link.remove();
     URL.revokeObjectURL(url);
     setSyncMessage("Study data export downloaded.");
+  }
+
+  function exportMinistryWorkspaceBackup() {
+    const payload: MinistryWorkspaceBackupV1 = {
+      app: "Father's Business Bible Study",
+      kind: "ministry_workspace_backup",
+      schemaVersion: 1,
+      exportedAt: new Date().toISOString(),
+      data: {
+        sermons: sermonEntries,
+        sermonSeries,
+        presentations: presentationEntries,
+        churchThemes: loadSavedChurchThemes(),
+        activeSermon: normalizeSermonEntry(sermonDraft),
+        activePresentation: normalizePresentationEntry(presentationDraft),
+      },
+    };
+    downloadTextFile(
+      `fathers-business-ministry-backup-${new Date().toISOString().slice(0, 10)}.json`,
+      JSON.stringify(payload, null, 2),
+      "application/json;charset=utf-8",
+    );
+    setSyncMessage(`Ministry backup downloaded with ${sermonEntries.length} sermons or lessons and ${presentationEntries.length} presentations.`);
+  }
+
+  async function importMinistryWorkspaceBackup(file: File): Promise<SavedChurchTheme[] | null> {
+    try {
+      const imported = parseMinistryWorkspaceBackup(await file.text());
+      const incomingSermons = imported.activeSermon
+        ? [imported.activeSermon, ...imported.sermons]
+        : imported.sermons;
+      const incomingPresentations = imported.activePresentation
+        ? [imported.activePresentation, ...imported.presentations]
+        : imported.presentations;
+      const mergedSermons = mergeNewestRecords(sermonEntries, incomingSermons, (entry) => entry.updatedAt);
+      const mergedSeries = mergeNewestRecords(sermonSeries, imported.sermonSeries, (entry) => entry.updatedAt);
+      const mergedPresentations = mergeNewestRecords(presentationEntries, incomingPresentations, (entry) => entry.updatedAt);
+      const mergedChurchThemes = mergeNewestRecords(loadSavedChurchThemes(), imported.churchThemes, (entry) => entry.createdAt);
+
+      setSermonEntries(mergedSermons);
+      setSermonSeries(mergedSeries);
+      setPresentationEntries(mergedPresentations);
+      saveSermonEntries(mergedSermons);
+      saveSermonSeries(mergedSeries);
+      savePresentationEntries(mergedPresentations);
+      saveSavedChurchThemes(mergedChurchThemes);
+
+      if (imported.activeSermon) {
+        setSermonDraft(mergedSermons.find((entry) => entry.id === imported.activeSermon?.id) ?? imported.activeSermon);
+      }
+      if (imported.activePresentation) {
+        setPresentationDraft(mergedPresentations.find((entry) => entry.id === imported.activePresentation?.id) ?? imported.activePresentation);
+      }
+
+      setSyncMessage(
+        `Ministry backup restored: ${imported.sermons.length} saved sermons or lessons, ${imported.sermonSeries.length} series, ${imported.presentations.length} presentations, and ${imported.churchThemes.length} themes reviewed. Newer work was kept.`,
+      );
+      return mergedChurchThemes;
+    } catch (error) {
+      setSyncMessage(error instanceof Error ? error.message : "The ministry backup could not be restored.");
+      return null;
+    }
   }
 
   async function lookupWord(word: string) {
@@ -21830,6 +23388,7 @@ export default function Home() {
   const immersiveMode =
     (tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) ||
     (tab === "presentations" && (presentationWorkspaceView === "presenter" || presentationWorkspaceView === "presentation"));
+  const focusedMobileReading = tab === "bible" || (tab === "library" && libraryView === "reader");
 
   return (
     <main className="min-h-screen bg-[var(--page)] text-[var(--ink)]">
@@ -21841,7 +23400,7 @@ export default function Home() {
         }
       >
         {!immersiveMode && (
-        <header className="sticky top-0 z-20 border-b border-stone-200/80 bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:rounded-t-[1.75rem]">
+        <header className={`sticky top-0 z-20 border-b border-stone-200/80 bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:rounded-t-[1.75rem] ${focusedMobileReading ? "hidden md:block" : ""}`}>
           <div className="flex items-center justify-between gap-3">
             <button
               className="flex min-w-0 flex-col text-left"
@@ -21971,7 +23530,28 @@ export default function Home() {
         </header>
         )}
 
-        {!immersiveMode && <BetaNotice />}
+        {!immersiveMode && (
+          <div className={focusedMobileReading ? "hidden md:block" : ""}>
+            <BetaNotice />
+          </div>
+        )}
+
+        {!immersiveMode && bibleCorpusStatus !== "ready" && (
+          <div className="border-b border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--muted)] md:px-6" role={bibleCorpusStatus === "error" ? "alert" : "status"}>
+            <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
+              <p className="font-semibold">
+                {bibleCorpusStatus === "error"
+                  ? "The complete KJV text could not be loaded. John 3:16 remains available."
+                  : "Loading the complete KJV text..."}
+              </p>
+              {bibleCorpusStatus === "error" ? (
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]" onClick={() => window.location.reload()} type="button">
+                  Retry
+                </button>
+              ) : null}
+            </div>
+          </div>
+        )}
 
         <div className={immersiveMode ? "flex min-h-screen flex-1" : "grid flex-1 md:grid-cols-[260px_1fr]"}>
           {!immersiveMode && (
@@ -21991,6 +23571,7 @@ export default function Home() {
                   setTab("library");
                 }}
               />
+              <NavButton icon={<Headphones size={18} />} label="Radio" active={tab === "radio"} onClick={() => setTab("radio")} />
               <NavButton icon={<NotebookPen size={18} />} label="Notes" active={tab === "notes"} onClick={() => setTab("notes")} />
               <NavButton icon={<MessageSquareText size={18} />} label="Prayer" active={tab === "prayer"} onClick={() => setTab("prayer")} />
               <NavButton icon={<FileText size={18} />} label="Journal" active={tab === "journal"} onClick={() => setTab("journal")} />
@@ -22011,44 +23592,21 @@ export default function Home() {
           </aside>
           )}
 
-          <section className={immersiveMode ? "min-w-0 flex-1" : "min-w-0 pb-32 md:pb-6"}>
-            {showLibraryAcquisitionAdmin && (
+          <section className={immersiveMode ? "min-w-0 flex-1" : "min-w-0 pb-20 md:pb-6"}>
+            {showLibraryAcquisitionAdmin && canOpenAdminArea && (
               <div className="p-4 md:p-6">
-                {canOpenAdminArea ? (
-                  <LibraryAcquisitionCenter
-                    signedIn={Boolean(user)}
-                    signedInEmail={user?.email ?? null}
-                    supabase={supabase}
-                    resources={allLibraryResources.length ? allLibraryResources : libraryResources}
-                    commentaryEntries={commentaryEntries}
-                    onSignOut={signOut}
-                    onClose={() => {
-                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-                      setShowLibraryAcquisitionAdmin(false);
-                    }}
-                  />
-                ) : (
-                  <AdminLockedNotice
-                    signedIn={Boolean(user)}
-                    user={user}
-                    adminRoleLoaded={adminRoleLoaded}
-                    hasSupabaseConfig={hasSupabaseConfig}
-                    authEmail={authEmail}
-                    authMessage={authMessage}
-                    onAuthEmailChange={setAuthEmail}
-                    onSendMagicLink={sendMagicLink}
-                    onSignOut={signOut}
-                    onClose={() => {
-                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-                      setShowLibraryAcquisitionAdmin(false);
-                    }}
-                    onOpenSettings={() => {
-                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
-                      setShowLibraryAcquisitionAdmin(false);
-                      setTab("settings");
-                    }}
-                  />
-                )}
+                <LibraryAcquisitionCenter
+                  signedIn={Boolean(user)}
+                  signedInEmail={user?.email ?? null}
+                  supabase={supabase}
+                  resources={allLibraryResources.length ? allLibraryResources : libraryResources}
+                  commentaryEntries={commentaryEntries}
+                  onSignOut={signOut}
+                  onClose={() => {
+                    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                    setShowLibraryAcquisitionAdmin(false);
+                  }}
+                />
               </div>
             )}
 
@@ -22220,6 +23778,7 @@ export default function Home() {
                 onCreatePlaylist={createBiblePlaylist}
                 onAddPlaylistItem={addBiblePlaylistItem}
                 onAddLibraryPlaylistItem={addBiblePlaylistLibraryItem}
+                onReplaceLibraryPlaylistItem={replaceBiblePlaylistLibraryItem}
                 onRemovePlaylistItem={removeBiblePlaylistItem}
                 onMovePlaylistItem={moveBiblePlaylistItem}
                 onMarkPlaylistItemComplete={markBiblePlaylistItemComplete}
@@ -22238,6 +23797,9 @@ export default function Home() {
                 onOpenPassageGuide={openPassageGuide}
                 onOpenCommentaryCenter={openCommentaryCenter}
                 onOpenThemeExplorer={() => setTab("themes")}
+                onLoadLibraryCatalog={() => {
+                  void loadLibraryCatalog();
+                }}
                 onOpenLibraryResource={(slug) => {
                   void openLibraryResource(slug, "detail");
                 }}
@@ -22371,9 +23933,8 @@ export default function Home() {
                 currentChapter={chapter}
                 themes={STUDY_THEMES}
                 libraryResources={libraryResources}
-                coverage={commentaryCoverage}
-                loadStatus={deferredCommentaryLoadStatus}
                 onBack={() => setTab("bible")}
+                onEntriesLoaded={addDeferredCommentaryEntries}
                 onOpenReference={openReference}
                 onOpenAuthor={openLibraryAuthor}
                 onListenChapter={listenCommentaryChapterEntries}
@@ -22445,17 +24006,28 @@ export default function Home() {
               />
             )}
 
-            {tab === "library" && (
+            {tab === "library" && libraryCatalogStatus !== "ready" && (
+              <LibraryCatalogStatusScreen
+                status={libraryCatalogStatus}
+                onRetry={() => {
+                  void loadLibraryCatalog();
+                }}
+              />
+            )}
+
+            {tab === "library" && libraryCatalogStatus === "ready" && (
               <LibraryScreen
                 view={libraryView}
                 canUseAdminDrafts={canOpenAdminArea}
                 resources={libraryResources}
                 allResources={allLibraryResources}
                 licensedResourceLinks={LICENSED_RESOURCE_LINKS}
-                filteredResources={filteredLibraryResources}
+                filteredResources={displayedFilteredLibraryResources}
                 categories={libraryCategories}
                 activeCategory={libraryCategory}
                 searchTerm={librarySearchTerm}
+                searchStatus={librarySearchActive ? librarySearchStatus : "idle"}
+                searchPagination={librarySearchActive && librarySearchStatus === "ready" ? librarySearchPagination : null}
                 activeResource={activeLibraryResource}
                 activeAuthor={activeLibraryAuthor}
                 activeCollection={activeLibraryCollection}
@@ -22468,6 +24040,7 @@ export default function Home() {
                 commentaryEntries={commentaryEntries}
                 progressState={libraryProgress}
                 completedState={completedResources}
+                favoriteLibrarySlugs={favoriteLibrarySlugs}
                 readingListItems={filteredReadingListItems}
                 readingListTotal={readingListItems.length}
                 readingListSearchTerm={readingListSearchTerm}
@@ -22491,8 +24064,23 @@ export default function Home() {
                 selectedSpeechVoiceURI={selectedSpeechVoiceURI}
                 voiceSettings={voiceSettings}
                 readerRef={libraryReaderRef}
-                onCategoryChange={setLibraryCategory}
-                onSearchTermChange={setLibrarySearchTerm}
+                onCategoryChange={(category) => {
+                  setLibraryCategory(category);
+                  setLibrarySearchPage(1);
+                  setLibrarySearchPagination(null);
+                  setLibrarySearchStatus(librarySearchTerm.trim().length >= 2 || category !== "All" ? "loading" : "idle");
+                }}
+                onSearchTermChange={(value) => {
+                  setLibrarySearchTerm(value);
+                  setLibrarySearchPage(1);
+                  setLibrarySearchPagination(null);
+                  setLibrarySearchStatus(value.trim().length >= 2 || libraryCategory !== "All" ? "loading" : "idle");
+                }}
+                onSearchPageChange={(page) => {
+                  setLibrarySearchPage(page);
+                  setLibrarySearchStatus("loading");
+                  window.requestAnimationFrame(() => document.getElementById("library-search-input")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+                }}
                 onOpenHome={() => setLibraryView("home")}
                 onOpenDetail={(slug) => {
                   void openLibraryResource(slug, "detail");
@@ -22559,6 +24147,7 @@ export default function Home() {
                 onMarkFinished={markLibraryFinished}
                 onRestartResource={restartLibraryResource}
                 onRemoveCompleted={removeCompletedResource}
+                onToggleFavorite={toggleFavoriteLibraryResource}
                 onRemoveManualReadBook={removeManualReadBook}
                 onReadingListSearchTermChange={setReadingListSearchTerm}
                 onManualReadBookTitleChange={setManualReadBookTitle}
@@ -22742,8 +24331,11 @@ export default function Home() {
                 onSeriesTitleChange={setSermonSeriesTitleDraft}
                 onSeriesPassageChange={setSermonSeriesPassageDraft}
                 onCreateSeries={createSermonSeries}
+                onExportMinistryBackup={exportMinistryWorkspaceBackup}
+                onImportMinistryBackup={importMinistryWorkspaceBackup}
                 onAppendImport={appendSermonImport}
                 onAddThemeToSermon={addThemeToSermon}
+	                onCreateStudyPlaylist={createSermonStudyPlaylist}
 	                onBulletDraft={bulletSermonDraft}
 	                onExportDraft={exportSermonDraft}
 	                onCopySermonOutline={copySermonOutline}
@@ -22760,6 +24352,7 @@ export default function Home() {
                   setSermonPreachingStartedAt(Date.now());
                   setSermonTimerNow(Date.now());
                 }}
+                onOpenPresentationWorkspace={() => openPresentationWorkspace("manager")}
                 onBackToBible={() => setTab("bible")}
               />
             )}
@@ -22786,6 +24379,8 @@ export default function Home() {
                 onExportPdfPreview={exportPresentationPdfPreview}
               />
             )}
+
+            {tab === "radio" && <RadioWorkspace />}
 
             {tab === "settings" && (
               <SettingsScreen
@@ -22822,13 +24417,22 @@ export default function Home() {
         </div>
 
 	      </div>
-	      {!immersiveMode && <MobileNav tab={tab} onTab={setTab} />}
+	      {!immersiveMode && (
+	        <MobileNav
+	          tab={tab}
+	          onTab={(nextTab) => {
+	            if (nextTab === "library") setLibraryView("home");
+	            setTab(nextTab);
+	          }}
+	        />
+	      )}
 
 	      {tab === "bible" && studyRef && activeVerse && (
-        <StudyDrawer
-          verse={activeVerse}
-          activeTab={studyTab}
-          dictionaryEntry={activeDictionaryEntry}
+	        <StudyDrawer
+	          verse={activeVerse}
+	          activeTab={studyTab}
+	          dictionaryEntry={activeDictionaryEntry}
+	          bibleCorpusReady={bibleCorpusStatus === "ready"}
           crossReferences={activeCrossReferences}
           commentaryEntries={activeCommentaryEntries}
           bookIntroduction={activeVerse ? bookIntroductionsByBook.get(activeVerse.book) ?? null : null}
@@ -22925,9 +24529,14 @@ function BetaNotice() {
         <span>
           <span className="font-semibold text-[var(--green)]">Active beta:</span> This Bible Study App is in active beta. Please report issues or suggestions.
         </span>
-        <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href="/feedback">
-          Give feedback
-        </a>
+        <span className="flex items-center gap-3">
+          <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href="/coming-soon">
+            Public launch
+          </a>
+          <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href="/feedback">
+            Give feedback
+          </a>
+        </span>
       </div>
     </div>
   );
@@ -27039,6 +28648,7 @@ function BibleReader({
   onCreatePlaylist,
   onAddPlaylistItem,
   onAddLibraryPlaylistItem,
+  onReplaceLibraryPlaylistItem,
   onRemovePlaylistItem,
   onMovePlaylistItem,
   onMarkPlaylistItemComplete,
@@ -27057,6 +28667,7 @@ function BibleReader({
   onOpenPassageGuide,
   onOpenCommentaryCenter,
   onOpenThemeExplorer,
+  onLoadLibraryCatalog,
   onOpenLibraryResource,
   onOpenStudyToolSearch,
   onOpenPersonStudy,
@@ -27170,6 +28781,7 @@ function BibleReader({
   onCreatePlaylist: () => void;
   onAddPlaylistItem: (type: BiblePlaylistItemType) => void;
   onAddLibraryPlaylistItem: (slug: string) => void;
+  onReplaceLibraryPlaylistItem: (playlistId: string, itemId: string, slug: string) => void;
   onRemovePlaylistItem: (playlistId: string, itemId: string) => void;
   onMovePlaylistItem: (playlistId: string, itemId: string, direction: -1 | 1) => void;
   onMarkPlaylistItemComplete: (playlistId: string, itemId: string) => void;
@@ -27188,6 +28800,7 @@ function BibleReader({
   onOpenPassageGuide: () => void;
   onOpenCommentaryCenter: () => void;
   onOpenThemeExplorer: () => void;
+  onLoadLibraryCatalog: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenStudyToolSearch: (query: string, filter?: string) => void;
   onOpenPersonStudy: (personId: string) => void;
@@ -27209,8 +28822,25 @@ function BibleReader({
   const [quickJumpText, setQuickJumpText] = useState("");
   const [explorerWord, setExplorerWord] = useState("believe");
   const [playlistResourceSlug, setPlaylistResourceSlug] = useState("");
+  const [playlistReplacementItemId, setPlaylistReplacementItemId] = useState<string | null>(null);
   const [studySessions, setStudySessions] = useState<SavedStudySession[]>(() => loadStudySessions());
   const [studyWorkspaceMessage, setStudyWorkspaceMessage] = useState("");
+  const [studyToolsOpen, setStudyToolsOpen] = useState(false);
+  const [focusReading, setFocusReading] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem("fbbs_focus_reading") === "true";
+  });
+  const [focusedTextSize, setFocusedTextSize] = useState<0 | 1 | 2>(() => {
+    if (typeof window === "undefined") return 1;
+    const storedSize = window.localStorage.getItem("fbbs_focused_text_size");
+    if (storedSize === "0") return 0;
+    if (storedSize === "2") return 2;
+    return 1;
+  });
+  const [focusedRelaxedLines, setFocusedRelaxedLines] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem("fbbs_focused_relaxed_lines") === "true";
+  });
   const [showStrongNumbers, setShowStrongNumbers] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem("fbbs_show_strongs_numbers") === "true";
@@ -27219,6 +28849,28 @@ function BibleReader({
   const [strongMappingStatus, setStrongMappingStatus] = useState("");
   const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
   const progressPercent = Math.round(readingProgress.percent);
+  const focusedTextSizeName = ["Small", "Standard", "Large"][focusedTextSize];
+  const scriptureTextSizeClass = focusReading
+    ? [
+        "text-[1.1rem] md:text-[1.25rem]",
+        "text-[1.28rem] md:text-[1.45rem]",
+        "text-[1.48rem] md:text-[1.68rem]",
+      ][focusedTextSize]
+    : "text-[1.28rem] md:text-[1.45rem]";
+  const scriptureLineHeightClass = focusReading
+    ? focusedRelaxedLines ? "leading-[1.95]" : "leading-[1.68]"
+    : "leading-[2.15rem] md:leading-[2.45rem]";
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("fbbs_focus_reading", focusReading ? "true" : "false");
+    }
+  }, [focusReading]);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("fbbs_focused_text_size", String(focusedTextSize));
+      window.localStorage.setItem("fbbs_focused_relaxed_lines", focusedRelaxedLines ? "true" : "false");
+    }
+  }, [focusedRelaxedLines, focusedTextSize]);
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem("fbbs_show_strongs_numbers", showStrongNumbers ? "true" : "false");
@@ -27278,10 +28930,24 @@ function BibleReader({
   const commentaryConsensus = useMemo(() => commentaryComparisonInsights(chapterCommentaryEntries), [chapterCommentaryEntries]);
   const chapterNotes = Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`));
   const memoryForChapter = scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} ${chapter}:`));
-  const playlistLibraryOptions = libraryResources
-    .filter((resource) => resource.word_count && resource.word_count > 0)
-    .filter((resource) => libraryResourceMatches(resource, ["commentary", "prayer", "evangelism", "preaching", "teaching", "christian living", "missions", "bible study"]))
-    .slice(0, 40);
+  const activePlaylist = playlists.find((playlist) => playlist.id === activePlaylistId) ?? playlists[0] ?? null;
+  const playlistReplacementItem = activePlaylist?.items.find((item) => item.id === playlistReplacementItemId) ?? null;
+  const playlistLibraryOptions = useMemo(() => {
+    const broadOptions = libraryResources
+      .filter((resource) => resource.word_count && resource.word_count > 0)
+      .filter((resource) => libraryResourceMatches(resource, ["commentary", "prayer", "evangelism", "preaching", "teaching", "christian living", "missions", "bible study"]));
+    if (!playlistReplacementItem || !activePlaylist) return broadOptions.slice(0, 40);
+
+    const currentResource = libraryResources.find((resource) => resource.slug === playlistReplacementItem.resourceSlug);
+    const rankedOptions = studyPlaylistLibraryResources(playlistReplacementItem, activePlaylist.name, libraryResources);
+    return Array.from(
+      new Map(
+        [currentResource, ...rankedOptions]
+          .filter((resource): resource is LibraryResource => Boolean(resource))
+          .map((resource) => [resource.slug, resource]),
+      ).values(),
+    ).slice(0, 40);
+  }, [activePlaylist, libraryResources, playlistReplacementItem]);
   const estimatePlaylistItemSeconds = (item: BiblePlaylistItem) => {
     const versesForItem =
       item.type === "bible_book" && item.book
@@ -27296,12 +28962,20 @@ function BibleReader({
     }
     if (item.type === "library_placeholder" && item.resourceSlug) {
       const resource = libraryResources.find((candidate) => candidate.slug === item.resourceSlug);
-      return listeningSecondsFromWordCount(resource?.word_count ?? 1200, speechState.rate);
+      const wordCount = item.targetMinutes
+        ? Math.min(resource?.word_count ?? item.targetMinutes * 155, item.targetMinutes * 155)
+        : resource?.word_count ?? 1200;
+      return listeningSecondsFromWordCount(wordCount, speechState.rate);
     }
     if ((item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.book && item.chapter) {
       const endChapter = item.chapterEnd ?? item.chapter;
       const words = allCommentaryEntries
-        .filter((entry) => entry.book === item.book && entry.chapter >= item.chapter! && entry.chapter <= endChapter)
+        .filter((entry) =>
+          entry.book === item.book &&
+          entry.chapter >= item.chapter! &&
+          entry.chapter <= endChapter &&
+          (!item.resourceTitle || entry.resource_title === item.resourceTitle),
+        )
         .reduce((total, entry) => total + wordsFromText(entry.entry_text).length, 0);
       return listeningSecondsFromWordCount(words || 650, speechState.rate);
     }
@@ -27310,7 +28984,6 @@ function BibleReader({
     }
     return listeningSecondsFromWordCount(220, speechState.rate);
   };
-  const activePlaylist = playlists.find((playlist) => playlist.id === activePlaylistId) ?? playlists[0] ?? null;
   const currentPlaylistItem = activePlaylist?.items[activePlaylistItemIndex] ?? activePlaylist?.items[0] ?? null;
   const activePlaylistSeconds = activePlaylist?.items.reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
   const activePlaylistRemainingSeconds = activePlaylist?.items
@@ -27525,11 +29198,39 @@ function BibleReader({
     {
       title: "Book Playlist",
       detail: playlistLibraryOptions.length ? `${playlistLibraryOptions.length} recommended books ready` : "Open Library to add books.",
-      action: "Add first book",
-      onAction: () => onAddLibraryPlaylistItem(playlistResourceSlug || playlistLibraryOptions[0]?.slug || ""),
-      disabled: !playlistLibraryOptions.length,
+      action: playlistLibraryOptions.length ? "Add first book" : "Load books",
+      onAction: () => playlistLibraryOptions.length
+        ? onAddLibraryPlaylistItem(playlistResourceSlug || playlistLibraryOptions[0]?.slug || "")
+        : onLoadLibraryCatalog(),
+      disabled: false,
     },
   ];
+
+  function beginPlaylistBookReplacement(item: BiblePlaylistItem) {
+    setPlaylistReplacementItemId(item.id);
+    setPlaylistResourceSlug(item.resourceSlug ?? "");
+    window.setTimeout(() => {
+      document.getElementById("playlist-library-book-picker")?.scrollIntoView({ block: "center", behavior: "smooth" });
+    }, 80);
+  }
+
+  function savePlaylistLibrarySelection() {
+    const slug = playlistResourceSlug || playlistLibraryOptions[0]?.slug || "";
+    if (!slug) return;
+    if (playlistReplacementItem && activePlaylist) {
+      onReplaceLibraryPlaylistItem(activePlaylist.id, playlistReplacementItem.id, slug);
+      setPlaylistReplacementItemId(null);
+      setPlaylistResourceSlug("");
+      return;
+    }
+    onAddLibraryPlaylistItem(slug);
+  }
+
+  function cancelPlaylistBookReplacement() {
+    setPlaylistReplacementItemId(null);
+    setPlaylistResourceSlug("");
+  }
+
   const bibleStudyDeskResources = ([
     ["Best Commentary", workspaceBestResources.commentary],
     ["Study Book", workspaceBestResources.studyBook],
@@ -27583,9 +29284,71 @@ function BibleReader({
     onOpenPassageGuide();
   }
 
+  function scrollToBibleSection(sectionId: "kjv-chapter-text" | "bible-study-tools" | "bible-reader-top") {
+    if (sectionId === "bible-study-tools") {
+      setFocusReading(false);
+      setStudyToolsOpen(true);
+    }
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+
+  function enterFocusReading() {
+    setFocusReading(true);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.getElementById("kjv-chapter-text")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+
   return (
-    <div className="space-y-4 p-3 md:p-6">
-      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:rounded-3xl md:p-4">
+    <div id="bible-reader-top" className="space-y-4 p-3 md:p-6">
+      <nav
+        aria-label="Bible reading navigation"
+        className="sticky top-0 z-20 grid grid-cols-[3rem_minmax(0,1fr)_minmax(0,1fr)_3rem] gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)]/95 p-2 shadow-sm backdrop-blur md:static md:hidden"
+      >
+        <button
+          aria-label="Previous chapter"
+          className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--line)] bg-white text-[var(--green)] disabled:opacity-40"
+          disabled={!hasPrevious}
+          onClick={onPrevious}
+          title="Previous chapter"
+          type="button"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          className="inline-flex h-12 min-w-0 items-center justify-center gap-1.5 rounded-xl bg-[var(--green)] px-2 text-sm font-semibold text-white"
+          onClick={() => scrollToBibleSection("kjv-chapter-text")}
+          type="button"
+        >
+          <BookOpen size={17} />
+          <span className="truncate">Read {book} {chapter}</span>
+        </button>
+        <button
+          className="inline-flex h-12 min-w-0 items-center justify-center gap-1.5 rounded-xl border border-[var(--line)] bg-white px-2 text-sm font-semibold text-[var(--green)]"
+          onClick={() => scrollToBibleSection("bible-study-tools")}
+          type="button"
+        >
+          <Brain size={17} />
+          Tools
+        </button>
+        <button
+          aria-label="Next chapter"
+          className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--line)] bg-white text-[var(--green)] disabled:opacity-40"
+          disabled={!hasNext}
+          onClick={onNext}
+          title="Next chapter"
+          type="button"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </nav>
+      <section hidden={focusReading} className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:rounded-3xl md:p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Navigation</p>
@@ -27717,6 +29480,34 @@ function BibleReader({
           >
             Next chapter
             <ChevronRight size={18} />
+          </button>
+        </div>
+
+        <div className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+          <button
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-4 text-sm font-semibold text-white"
+            onClick={() => scrollToBibleSection("kjv-chapter-text")}
+            type="button"
+          >
+            <BookOpen size={17} />
+            Read KJV
+          </button>
+          <button
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)]"
+            onClick={() => scrollToBibleSection("bible-study-tools")}
+            type="button"
+          >
+            <Brain size={17} />
+            Study tools
+          </button>
+          <button
+            aria-pressed={focusReading}
+            className="col-span-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-4 text-sm font-semibold text-[var(--green)] sm:col-span-1"
+            onClick={enterFocusReading}
+            type="button"
+          >
+            <BookOpen size={17} />
+            Focus reading
           </button>
         </div>
 
@@ -27936,11 +29727,275 @@ function BibleReader({
         </details>
       </section>
 
-      <details className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+      <article id="kjv-chapter-text" className={`mx-auto w-full scroll-mt-20 rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:scroll-mt-40 md:px-10 md:py-8 ${focusReading ? "max-w-4xl" : "max-w-5xl"}`}>
+        <div className="mb-5 flex flex-col gap-4 border-b border-stone-300/70 pb-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
+            <p className="mt-1 text-sm text-[var(--muted)]">King James Version</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{verses.length} verses</span>
+            <button
+              aria-pressed={focusReading}
+              className={`inline-flex min-h-10 items-center gap-2 rounded-full border px-3 py-2 text-sm font-semibold ${
+                focusReading
+                  ? "border-[var(--green)] bg-[var(--green)] text-white"
+                  : "border-[var(--line)] bg-white text-[var(--green)]"
+              }`}
+              onClick={() => focusReading ? setFocusReading(false) : enterFocusReading()}
+              type="button"
+            >
+              <BookOpen size={16} />
+              {focusReading ? "Exit focus" : "Focus reading"}
+            </button>
+            <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">
+              <input
+                checked={showStrongNumbers}
+                className="accent-[var(--green)]"
+                onChange={(event) => setShowStrongNumbers(event.target.checked)}
+                type="checkbox"
+              />
+              Show Strong&apos;s numbers
+            </label>
+          </div>
+        </div>
+        {focusReading && (
+          <nav
+            aria-label="Focused reading navigation"
+            className="mb-2 grid grid-cols-[minmax(0,1fr)_4.75rem_4.75rem] gap-2 rounded-2xl border border-[var(--line)] bg-white p-2 shadow-sm md:sticky md:top-[225px] md:z-10 md:grid-cols-[3rem_minmax(0,1fr)_6rem_6rem_3rem] md:bg-white/95 md:backdrop-blur"
+          >
+            <button
+              aria-label="Focused previous chapter"
+              className="hidden h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-[var(--paper)] text-[var(--green)] disabled:opacity-40 md:inline-flex"
+              disabled={!hasPrevious}
+              onClick={onPrevious}
+              title="Previous chapter"
+              type="button"
+            >
+              <ChevronLeft size={19} />
+            </button>
+            <label className="sr-only" htmlFor="focused-reader-book-select">Book</label>
+            <select
+              id="focused-reader-book-select"
+              aria-label="Focused book"
+              className="h-11 min-w-0 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)]"
+              value={book}
+              onChange={(event) => onBookChange(event.target.value)}
+            >
+              {books.map((bookName) => (
+                <option key={`focused-book-${bookName}`} value={bookName}>{bookName}</option>
+              ))}
+            </select>
+            <label className="sr-only" htmlFor="focused-reader-chapter-select">Chapter</label>
+            <select
+              id="focused-reader-chapter-select"
+              aria-label="Focused chapter"
+              className="h-11 min-w-0 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-2 text-sm font-semibold text-[var(--ink)]"
+              value={chapter}
+              onChange={(event) => onChapterChange(Number(event.target.value))}
+            >
+              {chapters.map((chapterNumber) => (
+                <option key={`focused-chapter-${chapterNumber}`} value={chapterNumber}>{chapterNumber}</option>
+              ))}
+            </select>
+            <label className="sr-only" htmlFor="focused-reader-verse-select">Verse</label>
+            <select
+              id="focused-reader-verse-select"
+              aria-label="Focused verse"
+              className="h-11 min-w-0 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-2 text-sm font-semibold text-[var(--ink)]"
+              value={Number.isFinite(selectedVerseNumber) ? selectedVerseNumber : verseJump}
+              onChange={(event) => {
+                const nextVerse = Number(event.target.value);
+                onVerseJumpChange(nextVerse);
+                onVerseSelect(nextVerse);
+              }}
+            >
+              {verses.map((verse) => (
+                <option key={`focused-verse-${verse.ref}`} value={verse.verse}>{verse.verse}</option>
+              ))}
+            </select>
+            <button
+              aria-label="Focused next chapter"
+              className="hidden h-11 items-center justify-center rounded-xl border border-[var(--line)] bg-[var(--paper)] text-[var(--green)] disabled:opacity-40 md:inline-flex"
+              disabled={!hasNext}
+              onClick={onNext}
+              title="Next chapter"
+              type="button"
+            >
+              <ChevronRight size={19} />
+            </button>
+          </nav>
+        )}
+        {focusReading && (
+          <div aria-label="Focused reading appearance" className="mb-5 grid grid-cols-2 gap-2">
+            <div className="grid min-h-11 grid-cols-[2.75rem_minmax(0,1fr)_2.75rem] items-center rounded-xl border border-[var(--line)] bg-white">
+              <button
+                aria-label="Decrease Scripture text size"
+                className="inline-flex h-full items-center justify-center rounded-l-xl text-[var(--green)] disabled:opacity-35"
+                disabled={focusedTextSize === 0}
+                onClick={() => setFocusedTextSize((current) => current === 0 ? 0 : (current - 1) as 0 | 1 | 2)}
+                title="Decrease text size"
+                type="button"
+              >
+                <Minus size={17} />
+              </button>
+              <span className="truncate text-center text-xs font-semibold text-[var(--ink)]">{focusedTextSizeName} text</span>
+              <button
+                aria-label="Increase Scripture text size"
+                className="inline-flex h-full items-center justify-center rounded-r-xl text-[var(--green)] disabled:opacity-35"
+                disabled={focusedTextSize === 2}
+                onClick={() => setFocusedTextSize((current) => current === 2 ? 2 : (current + 1) as 0 | 1 | 2)}
+                title="Increase text size"
+                type="button"
+              >
+                <Plus size={17} />
+              </button>
+            </div>
+            <button
+              aria-pressed={focusedRelaxedLines}
+              className={`inline-flex min-h-11 items-center justify-center rounded-xl border px-3 text-xs font-semibold ${
+                focusedRelaxedLines
+                  ? "border-[var(--green)] bg-[var(--green)] text-white"
+                  : "border-[var(--line)] bg-white text-[var(--green)]"
+              }`}
+              onClick={() => setFocusedRelaxedLines((current) => !current)}
+              type="button"
+            >
+              {focusedRelaxedLines ? "Relaxed lines" : "Normal lines"}
+            </button>
+          </div>
+        )}
+        {showStrongNumbers && (
+          <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+            {strongMappingDisplayStatus} Reviewed KJV word mapping is live for the available data. Tap a Strong&apos;s number to open the word-study panel.
+          </p>
+        )}
+
+        <div className="space-y-2">
+          {verses.map((verse) => {
+            const highlighted = highlightsByRef.has(verse.ref);
+            const hasNote = notesByRef.has(verse.ref);
+            const bookmarked = bookmarksByRef.has(verse.ref);
+            const selected = selectedRef === verse.ref;
+            const flashed = flashRef === verse.ref;
+            const strongMappingsForVerse = strongMappingsByVerse.get(verse.ref);
+            let wordTokenIndex = 0;
+            return (
+              <div
+                key={verse.ref}
+                ref={selected ? selectedVerseRef : null}
+                className={`group rounded-2xl border px-2 py-3 transition md:px-4 md:py-4 ${
+                  selected
+                    ? "border-[var(--gold)] bg-white shadow-sm"
+                    : "border-transparent hover:border-stone-200 hover:bg-white/70"
+                } ${highlighted ? "bg-[var(--highlight)]" : ""} ${flashed ? "ring-4 ring-[var(--gold-soft)]" : ""}`}
+                onClick={() => onVerseClick(verse.ref)}
+                role="button"
+                tabIndex={0}
+              >
+                <p className={`font-serif text-[var(--scripture-ink)] ${scriptureTextSizeClass} ${scriptureLineHeightClass}`}>
+                  <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
+                  {verse.text.split(/(\s+)/).map((part, index) => {
+                    if (!part) return null;
+                    if (/^\s+$/.test(part)) return part;
+                    wordTokenIndex += 1;
+                    const strongMapping = showStrongNumbers ? strongMappingsForVerse?.get(wordTokenIndex) : undefined;
+                    const matchingWordSet = enabledWordHighlightSets.find((set) => {
+                      if (!wordHighlightAppliesToVerse(set, verse, book, chapter)) return false;
+                      const normalizedPart = normalizeLookupWord(part);
+                      return normalizedPart === set.lookupWord || cleanWord(part) === set.lookupWord;
+                    });
+                    return (
+                      <button
+                        key={`${verse.ref}-${index}`}
+                        className={`rounded px-0.5 text-left font-serif transition hover:bg-[var(--gold-soft)] hover:text-[var(--ink)] ${
+                          matchingWordSet ? wordHighlightClass(matchingWordSet.color) : ""
+                        }`}
+                        title={strongMapping?.strong_entry ? `${strongMapping.strongs_number} · ${strongMapping.strong_entry.plain_definition}` : matchingWordSet ? `${matchingWordSet.word} word set · ${wordHighlightScopeLabel(matchingWordSet.scope)}` : undefined}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          onWordClick(part, verse.ref);
+                        }}
+                        type="button"
+                      >
+                        {part}
+                        {strongMapping && (
+                          <span className="ml-0.5 align-super font-sans text-[0.58em] font-bold leading-none text-[var(--green)]">
+                            {strongMapping.strongs_number}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </p>
+                <div className="mt-2 flex items-center gap-2 text-[var(--muted)]">
+                  {highlighted && <Highlighter size={14} />}
+                  {hasNote && <NotebookPen size={14} />}
+                  {bookmarked && <Bookmark size={14} />}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <nav aria-label="End of chapter navigation" className="mt-6 border-t border-stone-300/70 pt-4">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)] disabled:opacity-40"
+              disabled={!hasPrevious}
+              onClick={onPrevious}
+              type="button"
+            >
+              <ChevronLeft size={18} />
+              Previous
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
+              onClick={() => scrollToBibleSection("bible-study-tools")}
+              type="button"
+            >
+              <Brain size={17} />
+              Study tools
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]"
+              onClick={() => scrollToBibleSection("bible-reader-top")}
+              type="button"
+            >
+              <ArrowUp size={17} />
+              Top
+            </button>
+            <button
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-3 text-sm font-semibold text-white disabled:opacity-40"
+              disabled={!hasNext}
+              onClick={onNext}
+              type="button"
+            >
+              Next
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </nav>
+      </article>
+
+      <details
+        id="bible-study-tools"
+        hidden={focusReading}
+        className="scroll-mt-20 rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:scroll-mt-40 md:rounded-3xl"
+        open={studyToolsOpen}
+        onToggle={(event) => setStudyToolsOpen(event.currentTarget.open)}
+      >
         <summary className="cursor-pointer list-none text-sm font-semibold uppercase tracking-[0.14em] text-[var(--green)]">
           Study tools for {book} {chapter}
         </summary>
         <div className="mt-4">
+          <button
+            className="mb-4 inline-flex min-h-11 items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-4 text-sm font-semibold text-[var(--green)]"
+            onClick={() => scrollToBibleSection("kjv-chapter-text")}
+            type="button"
+          >
+            <BookOpen size={16} />
+            Back to KJV text
+          </button>
           <AtAGlanceStudyPanel
             passage={`${book} ${chapter}`}
             chapterSummary={workspaceSummary}
@@ -28082,7 +30137,7 @@ function BibleReader({
         )}
       </section>
 
-      <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+      <section id="study-playlist-builder" className="scroll-mt-28 rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Playlist Builder</p>
@@ -28198,7 +30253,13 @@ function BibleReader({
           </button>
         </div>
 
-        <details className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+        <details
+          className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3"
+          onToggle={(event) => {
+            if (event.currentTarget.open) onLoadLibraryCatalog();
+          }}
+          open={playlistReplacementItem ? true : undefined}
+        >
           <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">More listening options</summary>
           <div className="mt-4 grid gap-3 md:grid-cols-[1fr_1fr_1.2fr]">
             <div className="grid grid-cols-2 gap-2">
@@ -28245,7 +30306,10 @@ function BibleReader({
                 <select
                   className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)]"
                   value={activePlaylist?.id ?? ""}
-                  onChange={(event) => onSelectPlaylist(event.target.value)}
+                  onChange={(event) => {
+                    cancelPlaylistBookReplacement();
+                    onSelectPlaylist(event.target.value);
+                  }}
                 >
                   {playlists.map((playlist) => (
                     <option key={`study-playlist-select-${playlist.id}`} value={playlist.id}>
@@ -28273,9 +30337,9 @@ function BibleReader({
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("teaching_notes")} type="button">Add teaching notes</button>
               </div>
               {playlistLibraryOptions.length > 0 && (
-                <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+                <div id="playlist-library-book-picker" className="mt-3 scroll-mt-28 rounded-2xl border border-[var(--line)] bg-white p-3">
                   <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                    Add Library book
+                    {playlistReplacementItem ? `Replace ${playlistReplacementItem.label}` : "Add Library book"}
                     <select
                       className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]"
                       value={playlistResourceSlug || playlistLibraryOptions[0]?.slug || ""}
@@ -28290,12 +30354,21 @@ function BibleReader({
                   </label>
                   <button
                     className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
-                    onClick={() => onAddLibraryPlaylistItem(playlistResourceSlug || playlistLibraryOptions[0]?.slug || "")}
+                    onClick={savePlaylistLibrarySelection}
                     type="button"
                   >
                     <Library size={15} />
-                    Add selected book
+                    {playlistReplacementItem ? "Replace book" : "Add selected book"}
                   </button>
+                  {playlistReplacementItem && (
+                    <button
+                      className="mt-2 w-full rounded-full px-3 py-2 text-xs font-semibold text-[var(--muted)]"
+                      onClick={cancelPlaylistBookReplacement}
+                      type="button"
+                    >
+                      Cancel change
+                    </button>
+                  )}
                 </div>
               )}
             </div>
@@ -28364,25 +30437,59 @@ function BibleReader({
                 )}
               </div>
               <div className="mt-3 space-y-2">
-                {activePlaylist.items.map((item, index) => (
-                  <div key={item.id} className={`grid grid-cols-[1fr_auto] gap-2 rounded-xl px-3 py-2 ${index === activePlaylistItemIndex ? "bg-[var(--highlight)]" : "bg-white"}`}>
-                    <div>
-                      <p className="text-xs font-semibold text-[var(--muted)]">
-                        {item.label}
-                        {index === activePlaylistItemIndex && <> <span className="ml-2 rounded-full bg-white px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-[var(--green)]">Current</span></>}
-                        {activeCompletedItemIds.has(item.id) && <> <span className="ml-2 rounded-full bg-[var(--green)] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-white">Complete</span></>}
-                      </p>
-                      <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
+                {activePlaylist.items.map((item, index) => {
+                  const playlistBook = item.resourceSlug
+                    ? libraryResources.find((resource) => resource.slug === item.resourceSlug)
+                    : null;
+                  return (
+                    <div key={item.id} className={`grid gap-2 rounded-xl px-3 py-2 sm:grid-cols-[1fr_auto] ${index === activePlaylistItemIndex ? "bg-[var(--highlight)]" : "bg-white"}`}>
+                      <div>
+                        <p className="text-xs font-semibold text-[var(--muted)]">
+                          {item.label}
+                          {index === activePlaylistItemIndex && <> <span className="ml-2 rounded-full bg-white px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-[var(--green)]">Current</span></>}
+                          {activeCompletedItemIds.has(item.id) && <> <span className="ml-2 rounded-full bg-[var(--green)] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-white">Complete</span></>}
+                        </p>
+                        {(item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.resourceTitle && (
+                          <p className="mt-1 text-[11px] text-[var(--muted)]">Source: {item.resourceTitle}</p>
+                        )}
+                        {item.type === "library_placeholder" && item.resourceSlug && item.resourceTitle && (
+                          <>
+                            <p className="mt-1 text-[11px] text-[var(--muted)]">Book: {item.resourceTitle}{item.resourceAuthor ? ` · ${item.resourceAuthor}` : ""}</p>
+                            <div className="mt-2 flex flex-wrap gap-1">
+                              <button className="rounded-full border border-[var(--line)] bg-white px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenLibraryResource(item.resourceSlug!)} type="button">
+                                Open Book
+                              </button>
+                              <button className="rounded-full border border-[var(--line)] bg-white px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => beginPlaylistBookReplacement(item)} type="button">
+                                Change Book
+                              </button>
+                            </div>
+                            {playlistBook && (
+                              <details className="mt-2 text-[11px] leading-5 text-[var(--muted)]">
+                                <summary className="cursor-pointer font-semibold text-[var(--green)]">Rights &amp; source</summary>
+                                <p className="mt-1 capitalize">Rights: {playlistBook.rights_status.replaceAll("_", " ")}</p>
+                                <p>{playlistBook.rights_basis}</p>
+                                {playlistBook.ocr_quality_label && (
+                                  <p>Text quality: {playlistBook.ocr_quality_label}{playlistBook.ocr_cleanup_notes ? ` · ${playlistBook.ocr_cleanup_notes}` : ""}</p>
+                                )}
+                                <a className="font-semibold text-[var(--green)] underline" href={playlistBook.source_url} rel="noreferrer" target="_blank">
+                                  Open source record
+                                </a>
+                              </details>
+                            )}
+                          </>
+                        )}
+                        <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-1 sm:justify-end">
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onPlayPlaylistItem(activePlaylist, index)} type="button">Play</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onMarkPlaylistItemComplete(activePlaylist.id, item.id)} type="button">Done</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, -1)} type="button">Up</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === activePlaylist.items.length - 1} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, 1)} type="button">Down</button>
+                        <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemovePlaylistItem(activePlaylist.id, item.id)} type="button">Remove</button>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onPlayPlaylistItem(activePlaylist, index)} type="button">Play</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onMarkPlaylistItemComplete(activePlaylist.id, item.id)} type="button">Done</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, -1)} type="button">Up</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === activePlaylist.items.length - 1} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, 1)} type="button">Down</button>
-                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemovePlaylistItem(activePlaylist.id, item.id)} type="button">Remove</button>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
                 {!activePlaylist.items.length && (
                   <p className="rounded-xl bg-white px-3 py-3 text-sm leading-6 text-[var(--muted)]">
                     This playlist is empty. Add Bible chapters, commentary, books, reader notes, or teaching notes above.
@@ -28462,98 +30569,6 @@ function BibleReader({
         </div>
       </details>
 
-      <article className="mx-auto w-full max-w-5xl rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:px-10 md:py-8">
-        <div className="mb-5 flex flex-col gap-4 border-b border-stone-300/70 pb-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
-            <p className="mt-1 text-sm text-[var(--muted)]">King James Version</p>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{verses.length} verses</span>
-            <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">
-              <input
-                checked={showStrongNumbers}
-                className="accent-[var(--green)]"
-                onChange={(event) => setShowStrongNumbers(event.target.checked)}
-                type="checkbox"
-              />
-              Show Strong&apos;s numbers
-            </label>
-          </div>
-        </div>
-        {showStrongNumbers && (
-          <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
-            {strongMappingDisplayStatus} Reviewed KJV word mapping is live for the available data. Tap a Strong&apos;s number to open the word-study panel.
-          </p>
-        )}
-
-        <div className="space-y-2">
-          {verses.map((verse) => {
-            const highlighted = highlightsByRef.has(verse.ref);
-            const hasNote = notesByRef.has(verse.ref);
-            const bookmarked = bookmarksByRef.has(verse.ref);
-            const selected = selectedRef === verse.ref;
-            const flashed = flashRef === verse.ref;
-            const strongMappingsForVerse = strongMappingsByVerse.get(verse.ref);
-            let wordTokenIndex = 0;
-            return (
-              <div
-                key={verse.ref}
-                ref={selected ? selectedVerseRef : null}
-                className={`group rounded-2xl border px-2 py-3 transition md:px-4 md:py-4 ${
-                  selected
-                    ? "border-[var(--gold)] bg-white shadow-sm"
-                    : "border-transparent hover:border-stone-200 hover:bg-white/70"
-                } ${highlighted ? "bg-[var(--highlight)]" : ""} ${flashed ? "ring-4 ring-[var(--gold-soft)]" : ""}`}
-                onClick={() => onVerseClick(verse.ref)}
-                role="button"
-                tabIndex={0}
-              >
-                <p className="font-serif text-[1.28rem] leading-[2.15rem] text-[var(--scripture-ink)] md:text-[1.45rem] md:leading-[2.45rem]">
-                  <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
-                  {verse.text.split(/(\s+)/).map((part, index) => {
-                    if (!part) return null;
-                    if (/^\s+$/.test(part)) return part;
-                    wordTokenIndex += 1;
-                    const strongMapping = showStrongNumbers ? strongMappingsForVerse?.get(wordTokenIndex) : undefined;
-                    const matchingWordSet = enabledWordHighlightSets.find((set) => {
-                      if (!wordHighlightAppliesToVerse(set, verse, book, chapter)) return false;
-                      const normalizedPart = normalizeLookupWord(part);
-                      return normalizedPart === set.lookupWord || cleanWord(part) === set.lookupWord;
-                    });
-                    return (
-                      <button
-                        key={`${verse.ref}-${index}`}
-                        className={`rounded px-0.5 text-left font-serif transition hover:bg-[var(--gold-soft)] hover:text-[var(--ink)] ${
-                          matchingWordSet ? wordHighlightClass(matchingWordSet.color) : ""
-                        }`}
-                        title={strongMapping?.strong_entry ? `${strongMapping.strongs_number} · ${strongMapping.strong_entry.plain_definition}` : matchingWordSet ? `${matchingWordSet.word} word set · ${wordHighlightScopeLabel(matchingWordSet.scope)}` : undefined}
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          onWordClick(part, verse.ref);
-                        }}
-                        type="button"
-                      >
-                        {part}
-                        {strongMapping && (
-                          <span className="ml-0.5 align-super font-sans text-[0.58em] font-bold leading-none text-[var(--green)]">
-                            {strongMapping.strongs_number}
-                          </span>
-                        )}
-                      </button>
-                    );
-                  })}
-                </p>
-                <div className="mt-2 flex items-center gap-2 text-[var(--muted)]">
-                  {highlighted && <Highlighter size={14} />}
-                  {hasNote && <NotebookPen size={14} />}
-                  {bookmarked && <Bookmark size={14} />}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </article>
     </div>
   );
 }
@@ -28610,6 +30625,7 @@ async function exportSlideDeckPowerPoint({
   subject: string;
   filename: string;
 }) {
+  // Do not pass untrusted image bytes to PptxGenJS until image-size has a patched release.
   const { default: PptxGenJS } = await import("pptxgenjs");
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE";
@@ -29942,7 +31958,7 @@ function commentaryEntryMatchesSearch(entry: CommentaryEntry, terms: string[]) {
     profile?.doctrinalNotes ?? "",
     entry.entry_text,
   ].join(" ").toLowerCase();
-  return terms.every((term) => haystack.includes(term));
+  return terms.every((term) => librarySearchTextContainsTerm(haystack, term));
 }
 
 function commentaryPublicStatusLabel(status: ResourceImportStatus) {
@@ -33775,6 +35791,9 @@ function licensedResourceLinkMatchesAllTerms(resource: LicensedResourceLink, ter
     resource.publisherMinistry,
     resource.category,
     resource.collection,
+    resource.resourceFormat ?? "",
+    resource.passage ?? "",
+    resource.duration ?? "",
     resource.permissionStatus,
     resource.reviewStatus,
     resource.recommendedUse,
@@ -34763,87 +36782,6 @@ function adminRecordsOfType<T>(rows: Array<{ record_type: string; payload: unkno
   return rows.filter((row) => row.record_type === recordType).map((row) => row.payload as T);
 }
 
-function AdminLockedNotice({
-  signedIn,
-  user,
-  adminRoleLoaded,
-  hasSupabaseConfig,
-  authEmail,
-  authMessage,
-  onAuthEmailChange,
-  onSendMagicLink,
-  onSignOut,
-  onClose,
-  onOpenSettings,
-}: {
-  signedIn: boolean;
-  user: User | null;
-  adminRoleLoaded: boolean;
-  hasSupabaseConfig: boolean;
-  authEmail: string;
-  authMessage: string;
-  onAuthEmailChange: (value: string) => void;
-  onSendMagicLink: () => void;
-  onSignOut: () => void;
-  onClose: () => void;
-  onOpenSettings: () => void;
-}) {
-  return (
-    <section className="rounded-3xl border border-[var(--line)] bg-white p-6 shadow-sm">
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Admin locked</p>
-          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Library Acquisition Center is private</h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            Rights tracking, import queues, permission-needed resources, draft audio, and publisher notes are hidden from public beta users. Public visitors only see reviewed Bible study content.
-          </p>
-        </div>
-        <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-          Public-safe
-        </span>
-      </div>
-
-      <div className="mt-5 grid gap-3 md:grid-cols-3">
-        <StatusCard label="Public Library" status="Reviewed resources only" good />
-        <StatusCard label="Admin Drafts" status="Hidden from guests" good />
-        <StatusCard
-          label="Admin access"
-          status={!hasSupabaseConfig ? "Sign-in not configured" : signedIn && !adminRoleLoaded ? "Checking role" : signedIn ? "Account not approved" : "Sign in required"}
-          good={false}
-        />
-      </div>
-
-      <AccountSignInCard
-        user={user}
-        hasSupabaseConfig={hasSupabaseConfig}
-        authEmail={authEmail}
-        authMessage={authMessage}
-        title="Sign in to unlock admin tools"
-        signedOutBody="Enter your admin account email. The app will send you a secure sign-in link, then unlock this area only if the account has the admin role."
-        onAuthEmailChange={onAuthEmailChange}
-        onSendMagicLink={onSendMagicLink}
-        onSignOut={onSignOut}
-      />
-
-      <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
-        <p className="text-sm font-semibold text-[var(--ink)]">For Stephen/admin use</p>
-        <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
-          Use a signed-in account with the admin role on production, or use localhost while building. Do not expose permission-needed books, personal-use uploads, or copyrighted review notes to normal guests.
-        </p>
-      </div>
-
-      <div className="mt-5 flex flex-wrap gap-2">
-        <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onOpenSettings} type="button">
-          Open full settings
-        </button>
-        <button className="rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onClose} type="button">
-          Back to the app
-        </button>
-      </div>
-    </section>
-  );
-}
-
 function AccountSignInCard({
   user,
   hasSupabaseConfig,
@@ -34891,7 +36829,7 @@ function AccountSignInCard({
       <div className="grid gap-2 md:grid-cols-[minmax(0,1fr)_auto]">
         <input
           className="h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
-          placeholder="st396@hotmail.com"
+          placeholder="name@example.com"
           type="email"
           value={authEmail}
           onChange={(event) => onAuthEmailChange(event.target.value)}
@@ -34906,7 +36844,7 @@ function AccountSignInCard({
         </button>
       </div>
       <p className="text-xs leading-5 text-[var(--muted)]">
-        After clicking the email link, return to Library Acquisition. If the account has the admin role, the private tools will open.
+        After clicking the email link, return to this page to finish signing in.
       </p>
       {authMessage && <p className="text-sm text-[var(--muted)]">{authMessage}</p>}
     </div>
@@ -35017,6 +36955,81 @@ function isMediaImportType(resourceType: AdminResourceType) {
   return resourceType === "Audiobook" || isSermonImportType(resourceType);
 }
 
+function LibraryCatalogStatusScreen({
+  status,
+  onRetry,
+}: {
+  status: LibraryCatalogStatus;
+  onRetry: () => void;
+}) {
+  const failed = status === "error";
+  return (
+    <section
+      className="mx-auto flex min-h-[52vh] w-full max-w-2xl flex-col items-center justify-center px-6 py-16 text-center"
+      role={failed ? "alert" : "status"}
+      aria-live="polite"
+    >
+      <BookOpen className="text-[var(--green)]" size={36} aria-hidden="true" />
+      <h1 className="mt-5 text-2xl font-semibold text-[var(--ink)]">
+        {failed ? "The library could not be loaded" : "Loading your library"}
+      </h1>
+      <p className="mt-3 max-w-lg text-sm leading-6 text-[var(--muted)]">
+        {failed
+          ? "Your Bible and saved study work are still available. Try the catalog request again when your connection is ready."
+          : "Preparing the book catalog, reading progress, commentaries, and study collections."}
+      </p>
+      {failed ? (
+        <button
+          className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[var(--ink)] px-4 py-2.5 text-sm font-semibold text-white"
+          onClick={onRetry}
+          type="button"
+        >
+          <RotateCcw size={16} aria-hidden="true" />
+          Try again
+        </button>
+      ) : null}
+    </section>
+  );
+}
+
+function LibrarySearchPager({
+  pagination,
+  loading,
+  onPageChange,
+}: {
+  pagination: LibrarySearchPagination | null;
+  loading: boolean;
+  onPageChange: (page: number) => void;
+}) {
+  if (!pagination || pagination.totalPages <= 1) return null;
+
+  return (
+    <nav className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm" aria-label="Library search pages">
+      <button
+        className="inline-flex h-10 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-40"
+        disabled={loading || !pagination.hasPreviousPage}
+        onClick={() => onPageChange(pagination.page - 1)}
+        type="button"
+      >
+        <ChevronLeft size={16} aria-hidden="true" />
+        Previous
+      </button>
+      <p className="min-w-28 text-center text-sm font-semibold text-[var(--muted)]" aria-live="polite">
+        Page {pagination.page} of {pagination.totalPages}
+      </p>
+      <button
+        className="inline-flex h-10 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-40"
+        disabled={loading || !pagination.hasNextPage}
+        onClick={() => onPageChange(pagination.page + 1)}
+        type="button"
+      >
+        Next
+        <ChevronRight size={16} aria-hidden="true" />
+      </button>
+    </nav>
+  );
+}
+
 function LibraryScreen({
   view,
   canUseAdminDrafts,
@@ -35027,6 +37040,8 @@ function LibraryScreen({
   categories,
   activeCategory,
   searchTerm,
+  searchStatus,
+  searchPagination,
   activeResource,
   activeAuthor,
   activeCollection,
@@ -35039,6 +37054,7 @@ function LibraryScreen({
   commentaryEntries,
   progressState,
   completedState,
+  favoriteLibrarySlugs,
   readingListItems,
   readingListTotal,
   readingListSearchTerm,
@@ -35064,6 +37080,7 @@ function LibraryScreen({
   readerRef,
   onCategoryChange,
   onSearchTermChange,
+  onSearchPageChange,
   onOpenHome,
   onOpenDetail,
   onOpenReader,
@@ -35106,6 +37123,7 @@ function LibraryScreen({
   onMarkFinished,
   onRestartResource,
   onRemoveCompleted,
+  onToggleFavorite,
   onRemoveManualReadBook,
   onReadingListSearchTermChange,
   onManualReadBookTitleChange,
@@ -35122,6 +37140,8 @@ function LibraryScreen({
   categories: string[];
   activeCategory: string;
   searchTerm: string;
+  searchStatus: LibrarySearchStatus;
+  searchPagination: LibrarySearchPagination | null;
   activeResource: LibraryResource | null;
   activeAuthor: LibraryAuthorProfile | null;
   activeCollection: LibraryCollection | null;
@@ -35134,6 +37154,7 @@ function LibraryScreen({
   commentaryEntries: CommentaryEntry[];
   progressState: LibraryProgressState;
   completedState: CompletedResourceState;
+  favoriteLibrarySlugs: string[];
   readingListItems: ReadingListItem[];
   readingListTotal: number;
   readingListSearchTerm: string;
@@ -35166,6 +37187,7 @@ function LibraryScreen({
   readerRef: React.RefObject<HTMLDivElement | null>;
   onCategoryChange: (category: string) => void;
   onSearchTermChange: (value: string) => void;
+  onSearchPageChange: (page: number) => void;
   onOpenHome: () => void;
   onOpenDetail: (slug: string) => void;
   onOpenReader: (slug: string) => void;
@@ -35208,6 +37230,7 @@ function LibraryScreen({
   onMarkFinished: (resource: LibraryResource) => void;
   onRestartResource: (resource: LibraryResource) => void;
   onRemoveCompleted: (slug: string) => void;
+  onToggleFavorite: (resource: LibraryResource) => void;
   onRemoveManualReadBook: (id: string) => void;
   onReadingListSearchTermChange: (value: string) => void;
   onManualReadBookTitleChange: (value: string) => void;
@@ -35215,6 +37238,21 @@ function LibraryScreen({
   onAddManualReadBook: () => void;
   onReadAgain: (slug: string) => void;
 }) {
+  const [browseMode, setBrowseMode] = useState<LibraryBrowseMode>("catalog");
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      const savedMode = window.localStorage.getItem("fathers-business-library-browse-mode");
+      if (savedMode === "catalog" || savedMode === "shelves") setBrowseMode(savedMode);
+    }, 0);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
+  function selectBrowseMode(mode: LibraryBrowseMode) {
+    setBrowseMode(mode);
+    window.localStorage.setItem("fathers-business-library-browse-mode", mode);
+  }
+
   if (view === "reader" && activeResource) {
     const progress = progressState[activeResource.slug];
     const listening = listeningProgress[activeResource.slug];
@@ -35277,11 +37315,13 @@ function LibraryScreen({
         resource={activeResource}
         progress={progressState[activeResource.slug]}
         completed={completedState[activeResource.slug]}
+        favorite={favoriteLibrarySlugs.includes(activeResource.slug)}
         onBack={onOpenHome}
         onOpenReader={() => onOpenReader(activeResource.slug)}
         onAddToListeningQueue={() => onAddToListeningQueue(activeResource.slug)}
         onAddToStudyPlaylist={() => onAddToStudyPlaylist(activeResource.slug)}
         onAddToSermon={() => onAddResourceToSermon(activeResource)}
+        onToggleFavorite={() => onToggleFavorite(activeResource)}
         onReadAgain={() => onReadAgain(activeResource.slug)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
@@ -35446,7 +37486,7 @@ function LibraryScreen({
   const plannedKjvItems = [
     ...LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.category === "KJV Defense" || candidate.title.toLowerCase().includes("king james") || candidate.title.toLowerCase().includes("way of life")),
   ];
-  const showAdminPlanning = typeof window !== "undefined" && ["#admin-import", "#library-acquisition"].includes(window.location.hash);
+  const showAdminPlanning = canUseAdminDrafts && typeof window !== "undefined" && ["#admin-import", "#library-acquisition"].includes(window.location.hash);
   const devotionalResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["devotional", "devotion", "christian living", "prayer"]))
     .slice(0, 8);
@@ -35476,6 +37516,7 @@ function LibraryScreen({
     .slice(0, 8);
   const libraryAuthorCount = new Set(resources.map((resource) => libraryAuthorIdFromName(resource.author))).size;
   const dictionaryCount = resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "dictionaries", "topical bible"])).length;
+  const commentaryBookCount = resources.filter((resource) => libraryCategoryLabel(resource.category) === "Commentaries").length;
   const verifiedResourceCount = allResources.filter((resource) => resource.public_domain_status === "verified" || resource.public_domain_status === "permissioned_free_resource").length;
   const groupedWorkCount = resources.length;
   const totalLibraryWords = allResources.reduce((total, resource) => total + (resource.word_count ?? 0), 0);
@@ -35556,9 +37597,31 @@ function LibraryScreen({
               Library Feedback
             </a>
           </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
-            <p className="text-2xl font-semibold text-[var(--green)]">{groupedWorkCount}</p>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
+          <div className="flex flex-col items-end gap-3">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
+              <p className="text-2xl font-semibold text-[var(--green)]">{groupedWorkCount}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
+            </div>
+            <div className="inline-flex rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-1" role="group" aria-label="Library view">
+              <button
+                aria-pressed={browseMode === "shelves"}
+                className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold ${browseMode === "shelves" ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"}`}
+                onClick={() => selectBrowseMode("shelves")}
+                type="button"
+              >
+                <Library size={15} />
+                Shelf view
+              </button>
+              <button
+                aria-pressed={browseMode === "catalog"}
+                className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold ${browseMode === "catalog" ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"}`}
+                onClick={() => selectBrowseMode("catalog")}
+                type="button"
+              >
+                <BookOpen size={15} />
+                Catalog view
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -35566,7 +37629,7 @@ function LibraryScreen({
       <section className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <LibraryStat label="Total authors" value={String(libraryAuthorCount)} />
         <LibraryStat label="Grouped works" value={String(groupedWorkCount)} />
-        <LibraryStat label="Total commentaries" value={String(commentaryCoverage.totalEntries)} />
+        <LibraryStat label="Commentary books" value={String(commentaryBookCount)} />
         <LibraryStat label="Total dictionaries" value={String(dictionaryCount)} />
         <LibraryStat label="Verified/free files" value={String(verifiedResourceCount)} />
         <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
@@ -35598,7 +37661,9 @@ function LibraryScreen({
             </div>
           </label>
           <p className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-	            {filteredResources.length.toLocaleString()} books{filteredLicensedResourceLinks.length ? ` · ${filteredLicensedResourceLinks.length} links` : ""}
+	            {searchStatus === "loading"
+                ? "Searching..."
+                : `${(searchPagination?.total ?? filteredResources.length).toLocaleString()} catalog entries${filteredLicensedResourceLinks.length ? ` · ${filteredLicensedResourceLinks.length} links` : ""}`}
 	          </p>
 	        </div>
 	        <div className="mt-3 flex flex-wrap gap-2">
@@ -35638,6 +37703,17 @@ function LibraryScreen({
             </button>
           ))}
         </div>
+        {searchStatus !== "idle" && (
+          <p className={`mt-3 text-sm font-semibold ${searchStatus === "error" ? "text-red-700" : "text-[var(--muted)]"}`} role={searchStatus === "error" ? "alert" : "status"} aria-live="polite">
+            {searchStatus === "loading"
+              ? "Searching the complete Library catalog..."
+              : searchStatus === "error"
+                ? "The catalog search could not be reached. Showing matching books from the loaded Library instead."
+                : searchPagination
+                  ? `Showing ${filteredResources.length.toLocaleString()} results from ${searchPagination.total.toLocaleString()} matching catalog entries.`
+                  : "Search ready."}
+          </p>
+        )}
         {authorMatches.length > 0 && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -35662,6 +37738,36 @@ function LibraryScreen({
         )}
       </section>
 
+      {browseMode === "shelves" ? (
+        <>
+          <LibraryShelfBrowser
+            resources={browsingAllResources ? resources : filteredResources}
+            progressState={progressState}
+            completedState={completedState}
+            favoriteLibrarySlugs={favoriteLibrarySlugs}
+            listeningQueue={libraryListeningQueue}
+            onOpenDetail={onOpenDetail}
+            onOpenReader={onOpenReader}
+            onOpenAuthor={onOpenAuthor}
+            onToggleFavorite={onToggleFavorite}
+          />
+          {!browsingAllResources && filteredLicensedResourceLinks.length > 0 && (
+            <LibraryShelf title="Permissioned Link Results" horizontal>
+              {filteredLicensedResourceLinks.map((resource) => (
+                <LicensedResourceLinkCard key={`licensed-shelf-search-${resource.id}`} resource={resource} />
+              ))}
+            </LibraryShelf>
+          )}
+          {!browsingAllResources && (
+            <LibrarySearchPager
+              pagination={searchPagination}
+              loading={searchStatus === "loading"}
+              onPageChange={onSearchPageChange}
+            />
+          )}
+        </>
+      ) : (
+        <>
       {!browsingAllResources && (
         <LibraryShelf title="Search Results">
           {displayedLibraryResources.length ? displayedLibraryResources.map((resource) => (
@@ -35682,6 +37788,14 @@ function LibraryScreen({
             </div>
           )}
         </LibraryShelf>
+      )}
+
+      {!browsingAllResources && (
+        <LibrarySearchPager
+          pagination={searchPagination}
+          loading={searchStatus === "loading"}
+          onPageChange={onSearchPageChange}
+        />
       )}
 
       {!browsingAllResources && filteredLicensedResourceLinks.length > 0 && (
@@ -35711,7 +37825,13 @@ function LibraryScreen({
             <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
               <LibraryMetricCard label="Books and resources" value={resources.length.toLocaleString()} detail={`${libraryAuthorCount.toLocaleString()} authors`} />
               <LibraryMetricCard label="Words in reader" value={totalLibraryWords.toLocaleString()} detail={readingMinutesLabel(totalLibraryReadingMinutes)} />
-              <LibraryMetricCard label="Commentary entries" value={commentaryCoverage.totalEntries.toLocaleString()} detail={`${commentaryCoverage.chaptersCovered.toLocaleString()} chapters`} />
+              <LibraryMetricCard
+                label="Commentary books"
+                value={commentaryBookCount.toLocaleString()}
+                detail={commentaryCoverage.totalEntries
+                  ? `${commentaryCoverage.totalEntries.toLocaleString()} verse-linked entries loaded`
+                  : "Verse-linked entries load on demand"}
+              />
               <LibraryMetricCard label="Dictionaries/help" value={dictionaryCount.toLocaleString()} detail="Lookup and study tools" />
             </div>
 
@@ -36405,6 +38525,8 @@ function LibraryScreen({
             Showing the first {displayedLibraryResources.length} resources. Use search or a category above to narrow all {resources.length.toLocaleString()} resources quickly.
           </p>
         </div>
+      )}
+        </>
       )}
     </div>
   );
@@ -39877,9 +41999,8 @@ function CommentaryExplorerScreen({
   currentChapter,
   themes,
   libraryResources,
-  coverage,
-  loadStatus,
   onBack,
+  onEntriesLoaded,
   onOpenReference,
   onOpenAuthor,
   onListenChapter,
@@ -39890,19 +42011,17 @@ function CommentaryExplorerScreen({
   currentChapter: number;
   themes: StudyTheme[];
   libraryResources: LibraryResource[];
-  coverage: CommentaryCoverage;
-  loadStatus: DeferredCommentaryLoadStatus;
   onBack: () => void;
+  onEntriesLoaded: (entries: CommentaryEntry[]) => void;
   onOpenReference: (reference: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
   onListenChapter: (book: string, chapter: number, entries: CommentaryEntry[]) => void;
   onOpenLibraryResource: (slug: string) => void;
 }) {
-  const books = useMemo(
-    () => Array.from(new Set(entries.map((entry) => entry.book))).sort((a, b) => bookOrder.indexOf(a) - bookOrder.indexOf(b)),
-    [entries],
-  );
-  const authors = useMemo(() => Array.from(new Set(entries.map((entry) => entry.author))).sort(), [entries]);
+  const [catalog, setCatalog] = useState<CommentaryCatalogSummary | null>(null);
+  const [catalogError, setCatalogError] = useState("");
+  const [queriedEntriesByChapter, setQueriedEntriesByChapter] = useState<Record<string, CommentaryEntry[]>>({});
+  const [queryError, setQueryError] = useState({ key: "", message: "" });
   const [selectedBook, setSelectedBook] = useState(currentBook);
   const [selectedChapter, setSelectedChapter] = useState(currentChapter);
   const [selectedAuthor, setSelectedAuthor] = useState("All");
@@ -39910,12 +42029,53 @@ function CommentaryExplorerScreen({
   const [selectedUse, setSelectedUse] = useState("All");
   const [selectedGuideId, setSelectedGuideId] = useState<CommentaryExplorerGuideId>("recommended");
   const [searchTerm, setSearchTerm] = useState("");
-  const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? currentBook;
-  const chapters = useMemo(
-    () => Array.from(new Set(entries.filter((entry) => entry.book === safeBook).map((entry) => entry.chapter))).sort((a, b) => a - b),
-    [entries, safeBook],
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    void fetchDeferredCommentaryCatalog(controller.signal)
+      .then((summary) => setCatalog(summary))
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setCatalogError("The commentary catalog could not be loaded.");
+      });
+
+    return () => controller.abort();
+  }, []);
+
+  const catalogBooks = useMemo(
+    () => (catalog?.books ?? []).slice().sort((left, right) => bookOrder.indexOf(left.book) - bookOrder.indexOf(right.book)),
+    [catalog],
   );
+  const books = catalogBooks.length ? catalogBooks.map((item) => item.book) : [currentBook];
+  const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? currentBook;
+  const fallbackChapters = Array.from(new Set(entries.filter((entry) => entry.book === safeBook).map((entry) => entry.chapter))).sort((a, b) => a - b);
+  const chapters = catalogBooks.find((item) => item.book === safeBook)?.chapters ?? (fallbackChapters.length ? fallbackChapters : [currentChapter]);
   const safeChapter = chapters.includes(selectedChapter) ? selectedChapter : chapters[0] ?? currentChapter;
+  const chapterKey = `${safeBook}|${safeChapter}`;
+  const chapterEntries = queriedEntriesByChapter[chapterKey]
+    ?? entries.filter((entry) => entry.book === safeBook && entry.chapter === safeChapter);
+  const authors = useMemo(() => Array.from(new Set(chapterEntries.map((entry) => entry.author))).sort(), [chapterEntries]);
+
+  useEffect(() => {
+    if (queriedEntriesByChapter[chapterKey]) return;
+
+    const controller = new AbortController();
+
+    void fetchDeferredCommentaryChapterEntries(controller.signal, safeBook, safeChapter)
+      .then((loadedEntries) => {
+        setQueriedEntriesByChapter((current) => ({ ...current, [chapterKey]: loadedEntries }));
+        onEntriesLoaded(loadedEntries);
+        setQueryError({ key: "", message: "" });
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setQueryError({ key: chapterKey, message: `Commentary for ${safeBook} ${safeChapter} could not be loaded.` });
+      });
+
+    return () => controller.abort();
+  }, [chapterKey, onEntriesLoaded, queriedEntriesByChapter, safeBook, safeChapter]);
+
   const selectedTheme = selectedThemeId === "All" ? null : themes.find((theme) => theme.id === selectedThemeId) ?? null;
   const themeTerms = selectedTheme ? themeSearchTerms(selectedTheme).map((term) => term.toLowerCase()) : [];
   const useTermsByKind: Record<string, string[]> = {
@@ -39925,7 +42085,6 @@ function CommentaryExplorerScreen({
     "Devotional": ["devotional", "practical", "application", "heart"],
     "Word studies": ["word", "historical", "language", "lexical"],
   };
-  const chapterEntries = entries.filter((entry) => entry.book === safeBook && entry.chapter === safeChapter);
   const guideMatchesEntry = (entry: CommentaryEntry) => {
     if (selectedGuideId === "all") return true;
     const profile = commentaryGuideProfileFor(entry.author);
@@ -39960,8 +42119,7 @@ function CommentaryExplorerScreen({
   });
   const activeGuide = COMMENTARY_EXPLORER_GUIDES.find((guide) => guide.id === selectedGuideId) ?? COMMENTARY_EXPLORER_GUIDES[0];
   const searchTerms = searchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  const filteredEntries = entries.filter((entry) => {
-    if (entry.book !== safeBook || entry.chapter !== safeChapter) return false;
+  const filteredEntries = chapterEntries.filter((entry) => {
     if (selectedAuthor !== "All" && entry.author !== selectedAuthor) return false;
     if (selectedAuthor === "All" && guideCounts[selectedGuideId] > 0 && !guideMatchesEntry(entry)) return false;
     const profile = commentaryGuideProfileFor(entry.author);
@@ -40007,7 +42165,9 @@ function CommentaryExplorerScreen({
     .filter((item): item is { hint: CommentaryVolumeReferenceHint; resource: LibraryResource; chapterIndexed: boolean } => Boolean(item.resource))
     .sort((left, right) => Number(right.chapterIndexed) - Number(left.chapterIndexed))
     .slice(0, 6);
-  const bookCoverage = coverage.bookCoverage.find((item) => item.book === safeBook);
+  const catalogLoading = !catalog && !catalogError;
+  const activeChapterError = queryError.key === chapterKey ? queryError.message : "";
+  const activeChapterLoading = !queriedEntriesByChapter[chapterKey] && !activeChapterError;
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -40030,28 +42190,49 @@ function CommentaryExplorerScreen({
             </p>
           </div>
           <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
-            {coverage.totalEntries.toLocaleString()} public entries
+            {catalog ? `${catalog.rowCount.toLocaleString()} indexed entries` : "Catalog loading"}
           </span>
         </div>
         <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-xs font-semibold leading-5 text-[var(--muted)]">
-          {loadStatus.loading
-            ? `Loading reviewed commentary catalog: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} files ready.`
-            : loadStatus.mode === "complete"
-              ? `Full reviewed commentary catalog ready: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} files.`
-              : `Starter commentary ready for fast study: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} core files.`}
-          {" "}Validated full-catalog goal: {VALIDATED_COMMENTARY_CATALOG_BOOKS} Bible books and {VALIDATED_COMMENTARY_CATALOG_CHAPTERS.toLocaleString()} chapters.
+          {catalogError
+            ? catalogError
+            : catalogLoading
+              ? "Loading the compact commentary catalog."
+              : activeChapterLoading
+                ? `Loading reviewed commentary for ${safeBook} ${safeChapter}.`
+                : activeChapterError
+                  ? activeChapterError
+                  : `${chapterEntries.length} reviewed ${chapterEntries.length === 1 ? "entry" : "entries"} ready for ${safeBook} ${safeChapter}.`}
+          {" "}The complete index covers {catalog?.books.length ?? VALIDATED_COMMENTARY_CATALOG_BOOKS} Bible books and {(catalog?.chapterCount ?? VALIDATED_COMMENTARY_CATALOG_CHAPTERS).toLocaleString()} chapters; commentary text loads only for the selected chapter.
         </p>
 
         <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             Bible book
-            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={safeBook} onChange={(event) => setSelectedBook(event.target.value)}>
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={safeBook}
+              onChange={(event) => {
+                const nextBook = event.target.value;
+                const nextChapters = catalogBooks.find((item) => item.book === nextBook)?.chapters ?? [1];
+                setSelectedBook(nextBook);
+                setSelectedChapter(nextChapters[0] ?? 1);
+                setSelectedAuthor("All");
+              }}
+            >
               {books.map((bookName) => <option key={`commentary-explorer-book-${bookName}`} value={bookName}>{bookName}</option>)}
             </select>
           </label>
           <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             Chapter
-            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={safeChapter} onChange={(event) => setSelectedChapter(Number(event.target.value))}>
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={safeChapter}
+              onChange={(event) => {
+                setSelectedChapter(Number(event.target.value));
+                setSelectedAuthor("All");
+              }}
+            >
               {chapters.map((chapterNumber) => <option key={`commentary-explorer-chapter-${chapterNumber}`} value={chapterNumber}>{safeBook} {chapterNumber}</option>)}
             </select>
           </label>
@@ -40138,15 +42319,15 @@ function CommentaryExplorerScreen({
         </label>
 
         <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
-          <LibraryStat label="Book coverage" value={bookCoverage ? `${bookCoverage.coveragePercentage}%` : "0%"} />
-          <LibraryStat label="Catalog files" value={`${loadStatus.loadedFiles}/${loadStatus.totalFiles}`} />
+          <LibraryStat label="Catalog chapters" value={(catalog?.chapterCount ?? VALIDATED_COMMENTARY_CATALOG_CHAPTERS).toLocaleString()} />
+          <LibraryStat label="Indexed files" value={catalog ? `${catalog.indexedFileCount}/${catalog.catalogFileCount}` : "..."} />
           <LibraryStat label="Authors here" value={String(new Set(chapterEntries.map((entry) => entry.author)).size)} />
           <LibraryStat label="Chapter entries" value={String(chapterEntries.length)} />
           <LibraryStat label="Filtered results" value={String(filteredEntries.length)} />
         </div>
-        {coverage.missingChapters === 0 && coverage.missingBooks.length === 0 ? (
+        {catalog?.books.length === VALIDATED_COMMENTARY_CATALOG_BOOKS && catalog.chapterCount === VALIDATED_COMMENTARY_CATALOG_CHAPTERS ? (
           <p className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-semibold leading-5 text-emerald-900">
-            Complete chapter coverage is connected: every Bible book and every KJV chapter has at least one reviewed commentary entry. Keep using filters to choose the best author for teaching, preaching, or devotional study.
+            Complete chapter coverage is indexed: every Bible book and every KJV chapter has at least one reviewed commentary entry. Keep using filters to choose the best author for teaching, preaching, or devotional study.
           </p>
         ) : null}
       </section>
@@ -41701,11 +43882,13 @@ function LibraryDetail({
   resource,
   progress,
   completed,
+  favorite,
   onBack,
   onOpenReader,
   onAddToListeningQueue,
   onAddToStudyPlaylist,
   onAddToSermon,
+  onToggleFavorite,
   onReadAgain,
   onOpenAuthor,
   onOpenCollection,
@@ -41717,11 +43900,13 @@ function LibraryDetail({
   resource: LibraryResource;
   progress?: LibraryProgress;
   completed?: CompletedResource;
+  favorite: boolean;
   onBack: () => void;
   onOpenReader: () => void;
   onAddToListeningQueue: () => void;
   onAddToStudyPlaylist: () => void;
   onAddToSermon: () => void;
+  onToggleFavorite: () => void;
   onReadAgain: () => void;
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
@@ -41804,6 +43989,15 @@ function LibraryDetail({
               <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onAddToListeningQueue} type="button">
                 <ListMusic size={16} />
                 Add to Queue
+              </button>
+              <button
+                aria-pressed={favorite}
+                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold ${favorite ? "border-[var(--gold)] bg-[#f4ecd4] text-[#715b24]" : "border-[var(--line)] bg-white text-[var(--green)]"}`}
+                onClick={onToggleFavorite}
+                type="button"
+              >
+                <Star fill={favorite ? "currentColor" : "none"} size={16} />
+                {favorite ? "Favorited" : "Favorite"}
               </button>
               <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenAuthor} type="button">
                 Author Collection
@@ -43102,6 +45296,238 @@ function LibraryShelf({ title, children, horizontal = false }: { title: string; 
   );
 }
 
+const LIBRARY_SPINE_PALETTE = [
+  { background: "#305247", border: "#17362e", text: "#fffdf7", accent: "#c5a75f" },
+  { background: "#713c42", border: "#462229", text: "#fffaf4", accent: "#d3b06b" },
+  { background: "#31516f", border: "#1d344a", text: "#f8fbff", accent: "#c9ad6b" },
+  { background: "#765f32", border: "#4d3c1d", text: "#fffdf6", accent: "#d8c184" },
+  { background: "#55466f", border: "#342a48", text: "#fcf9ff", accent: "#cbb777" },
+  { background: "#494d51", border: "#292d30", text: "#fffdf8", accent: "#bda86c" },
+];
+
+function librarySpinePalette(resource: LibraryResource, index: number) {
+  const seed = Array.from(`${resource.slug}-${resource.category}`).reduce((total, character) => total + character.charCodeAt(0), index);
+  return LIBRARY_SPINE_PALETTE[seed % LIBRARY_SPINE_PALETTE.length];
+}
+
+function LibraryShelfBrowser({
+  resources,
+  progressState,
+  completedState,
+  favoriteLibrarySlugs,
+  listeningQueue,
+  onOpenDetail,
+  onOpenReader,
+  onOpenAuthor,
+  onToggleFavorite,
+}: {
+  resources: LibraryResource[];
+  progressState: LibraryProgressState;
+  completedState: CompletedResourceState;
+  favoriteLibrarySlugs: string[];
+  listeningQueue: LibraryResource[];
+  onOpenDetail: (slug: string) => void;
+  onOpenReader: (slug: string) => void;
+  onOpenAuthor: (authorOrId: string) => void;
+  onToggleFavorite: (resource: LibraryResource) => void;
+}) {
+  const [selectedSlug, setSelectedSlug] = useState(resources[0]?.slug ?? "");
+  const [failedCoverSlug, setFailedCoverSlug] = useState<string | null>(null);
+  const selectedResource = resources.find((resource) => resource.slug === selectedSlug) ?? resources[0] ?? null;
+  const selectedProgress = selectedResource ? progressState[selectedResource.slug]?.progress ?? 0 : 0;
+  const selectedCompleted = selectedResource ? Boolean(completedState[selectedResource.slug]) : false;
+  const selectedFavorite = selectedResource ? favoriteLibrarySlugs.includes(selectedResource.slug) : false;
+  const personalShelfGroups = useMemo(() => {
+    const resourcesBySlug = new Map(resources.map((resource) => [resource.slug, resource]));
+    const groups = [
+      {
+        title: "Favorites",
+        resources: favoriteLibrarySlugs.flatMap((slug) => resourcesBySlug.get(slug) ?? []).slice(0, 18),
+      },
+      {
+        title: "Continue Reading",
+        resources: Object.values(progressState)
+          .filter((progress) => progress.progress > 0 && progress.progress < 100 && !completedState[progress.slug])
+          .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+          .flatMap((progress) => resourcesBySlug.get(progress.slug) ?? [])
+          .slice(0, 18),
+      },
+      {
+        title: "Listening Queue",
+        resources: listeningQueue.flatMap((resource) => resourcesBySlug.get(resource.slug) ?? []).slice(0, 18),
+      },
+      {
+        title: "Finished",
+        resources: Object.values(completedState)
+          .sort((a, b) => b.completedAt.localeCompare(a.completedAt))
+          .flatMap((completed) => resourcesBySlug.get(completed.slug) ?? [])
+          .slice(0, 18),
+      },
+    ];
+    return groups.filter((group) => group.resources.length).map((group) => ({ ...group, total: group.resources.length, personal: true }));
+  }, [completedState, favoriteLibrarySlugs, listeningQueue, progressState, resources]);
+  const shelfGroups = useMemo(() => {
+    const grouped = resources.reduce<Map<string, LibraryResource[]>>((groups, resource) => {
+      const label = libraryCategoryLabel(resource.category);
+      groups.set(label, [...(groups.get(label) ?? []), resource]);
+      return groups;
+    }, new Map());
+    return Array.from(grouped.entries())
+      .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+      .slice(0, 8)
+      .map(([title, shelfResources]) => ({ title, resources: shelfResources.slice(0, 18), total: shelfResources.length, personal: false }));
+  }, [resources]);
+  const displayShelfGroups = [...personalShelfGroups, ...shelfGroups];
+
+  if (!selectedResource) {
+    return (
+      <section className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-6 text-center">
+        <p className="text-base font-semibold text-[var(--ink)]">No books matched this shelf.</p>
+        <p className="mt-2 text-sm text-[var(--muted)]">Clear the search or choose another subject.</p>
+      </section>
+    );
+  }
+
+  const selectedPalette = librarySpinePalette(selectedResource, 0);
+  const showCover = Boolean(selectedResource.cover_image_url && failedCoverSlug !== selectedResource.slug);
+
+  return (
+    <section className="overflow-hidden rounded-2xl border border-[#b9b4a8] bg-[#e7e5df] shadow-sm">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#b9b4a8] bg-[#29352f] px-4 py-3 text-white md:px-6">
+        <div className="flex items-center gap-3">
+          <Library size={20} />
+          <div>
+            <h2 className="text-lg font-semibold">Study library shelves</h2>
+            <p className="text-xs font-semibold text-white/70">{resources.length.toLocaleString()} books in this view</p>
+          </div>
+        </div>
+        <span className="rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/85">Selected book opens above the shelves</span>
+      </div>
+
+      <div className="grid border-b border-[#b9b4a8] bg-[#d6d1c5] md:grid-cols-2">
+        <div className="relative flex min-h-[300px] items-center justify-center border-b border-[#b9b4a8] bg-[#f5f1e8] p-6 shadow-[inset_-18px_0_24px_-24px_rgba(41,53,47,0.65)] md:border-b-0 md:border-r">
+          <div className="absolute inset-y-5 right-0 w-px bg-[#b9b4a8]" />
+          {showCover ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              alt={`Cover of ${selectedResource.title}`}
+              className="aspect-[3/4] max-h-[250px] w-auto max-w-[185px] border border-black/15 object-cover shadow-xl"
+              loading="lazy"
+              onError={() => setFailedCoverSlug(selectedResource.slug)}
+              src={selectedResource.cover_image_url ?? ""}
+            />
+          ) : (
+            <div
+              className="flex aspect-[3/4] max-h-[250px] w-[175px] flex-col justify-between border-2 p-5 shadow-xl"
+              style={{ backgroundColor: selectedPalette.background, borderColor: selectedPalette.border, color: selectedPalette.text }}
+            >
+              <span className="border-b pb-3 text-[0.65rem] font-semibold uppercase tracking-[0.14em]" style={{ borderColor: selectedPalette.accent }}>
+                {libraryCategoryLabel(selectedResource.category)}
+              </span>
+              <span className="text-xl font-semibold leading-6">{selectedResource.work_title ?? selectedResource.title}</span>
+              <span className="border-t pt-3 text-xs font-semibold" style={{ borderColor: selectedPalette.accent }}>{selectedResource.author}</span>
+            </div>
+          )}
+        </div>
+
+        <div className="relative min-h-[300px] bg-[#faf7ef] p-6 shadow-[inset_18px_0_24px_-24px_rgba(41,53,47,0.65)] md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Open on the reading table</p>
+          <h3 className="mt-3 text-2xl font-semibold leading-8 text-[var(--ink)]">{selectedResource.work_title ?? selectedResource.title}</h3>
+          <button className="mt-2 text-left text-sm font-semibold text-[var(--green)]" onClick={() => onOpenAuthor(selectedResource.author)} type="button">
+            {selectedResource.author}
+          </button>
+          <p className="mt-4 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">{selectedResource.description || selectedResource.recommended_use}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="rounded-full bg-[#ece7db] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(selectedResource.category)}</span>
+            <span className="rounded-full bg-[#ece7db] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(selectedResource)}</span>
+            {selectedCompleted && <span className="rounded-full bg-[#dfe9df] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Finished</span>}
+          </div>
+          <div className="mt-5">
+            <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
+              <span>Reading progress</span>
+              <span>{formatPercent(selectedCompleted ? 100 : selectedProgress)}</span>
+            </div>
+            <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#ddd7ca]">
+              <div className="h-full rounded-full bg-[var(--green)]" style={{ width: formatPercent(selectedCompleted ? 100 : selectedProgress) }} />
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReader(selectedResource.slug)} type="button">
+              <BookOpen size={16} />
+              Read book
+            </button>
+            <button
+              aria-label={selectedFavorite ? `Remove ${selectedResource.title} from favorites` : `Add ${selectedResource.title} to favorites`}
+              aria-pressed={selectedFavorite}
+              className={`inline-flex h-10 w-10 items-center justify-center rounded-full border ${selectedFavorite ? "border-[var(--gold)] bg-[#f4ecd4] text-[#715b24]" : "border-[var(--line)] bg-white text-[var(--green)]"}`}
+              onClick={() => onToggleFavorite(selectedResource)}
+              title={selectedFavorite ? "Remove from favorites" : "Add to favorites"}
+              type="button"
+            >
+              <Star fill={selectedFavorite ? "currentColor" : "none"} size={17} />
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onOpenDetail(selectedResource.slug)} type="button">
+              Details
+              <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-5 bg-[#e7e5df] p-4 md:p-6">
+        {displayShelfGroups.map((shelf, shelfIndex) => (
+          <div key={`physical-shelf-group-${shelf.personal ? "personal" : "subject"}-${shelf.title}`}>
+            {shelf.personal && shelfIndex === 0 && (
+              <div className="mb-3 flex items-center gap-2 border-b border-[#c4beb1] pb-2 text-[#35443d]">
+                <BookMarked size={17} />
+                <h3 className="text-sm font-semibold uppercase tracking-[0.12em]">My shelves</h3>
+              </div>
+            )}
+            {!shelf.personal && shelfIndex === personalShelfGroups.length && personalShelfGroups.length > 0 && (
+              <div className="mb-3 border-b border-[#c4beb1] pb-2">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#35443d]">Browse by subject</h3>
+              </div>
+            )}
+          <section>
+            <div className="mb-2 flex items-center justify-between gap-3 px-1">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#35443d]">{shelf.title}</h3>
+              <span className="text-xs font-semibold text-[#657169]">{shelf.total} {shelf.total === 1 ? "book" : "books"}</span>
+            </div>
+            <div className="overflow-x-auto border border-[#18251f] bg-[#24322c] px-4 pt-4 shadow-inner [scrollbar-width:thin]">
+              <div className="flex min-w-max items-end gap-1.5">
+                {shelf.resources.map((resource, index) => {
+                  const palette = librarySpinePalette(resource, index);
+                  const selected = resource.slug === selectedResource.slug;
+                  return (
+                    <button
+                      key={`physical-book-${shelf.title}-${resource.slug}`}
+                      aria-label={`Select ${resource.title} by ${resource.author}`}
+                      aria-pressed={selected}
+                      className={`relative h-44 w-12 shrink-0 border-2 shadow-md transition sm:w-14 ${selected ? "-translate-y-2 ring-2 ring-[#d8bd74] ring-offset-2 ring-offset-[#24322c]" : "hover:-translate-y-1"}`}
+                      onClick={() => setSelectedSlug(resource.slug)}
+                      style={{ backgroundColor: palette.background, borderColor: palette.border, color: palette.text }}
+                      title={`${resource.title} — ${resource.author}`}
+                      type="button"
+                    >
+                      <span className="absolute inset-x-1 top-3 h-px" style={{ backgroundColor: palette.accent }} />
+                      <span className="absolute inset-2 flex items-center justify-center overflow-hidden">
+                        <span className="max-w-[132px] rotate-90 overflow-hidden text-ellipsis whitespace-nowrap text-xs font-semibold">{resource.work_title ?? resource.title}</span>
+                      </span>
+                      <span className="absolute inset-x-1 bottom-3 h-px" style={{ backgroundColor: palette.accent }} />
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-1 h-3 border-t border-[#d8bd74]/70 bg-[#9a7b43]" />
+            </div>
+          </section>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function LibraryStat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
@@ -43153,6 +45579,8 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
   const wayOfLifeCount = resources.filter((resource) => resource.publisherMinistry === "Way of Life Literature").length;
   const northstarCount = resources.filter((resource) => resource.publisherMinistry === "Northstar Ministries").length;
   const solveFamilyProblemsCount = resources.filter((resource) => resource.publisherMinistry === "Solve Family Problems").length;
+  const thruTheBibleCount = resources.filter((resource) => resource.publisherMinistry === "Thru the Bible").length;
+  const wholesomeWordsCount = resources.filter((resource) => resource.publisherMinistry === "Wholesome Words").length;
   const ministrySourceSummaries = [
     {
       ministry: "Way of Life Literature",
@@ -43172,6 +45600,18 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       focus: "Family, marriage, anger, purity, and Christian living resources",
       scope: "Metadata-only listings use website titles, graphics, and descriptions with official links.",
     },
+    {
+      ministry: "Thru the Bible",
+      count: thruTheBibleCount,
+      focus: "Whole-Bible audio study and Dr. J. Vernon McGee Sunday sermons",
+      scope: "Official links remain free, clearly attributed, and outside paid access; copied audio requires a separate file-level intake check.",
+    },
+    {
+      ministry: "Wholesome Words",
+      count: wholesomeWordsCount,
+      focus: "Christian biography, missions, hymn writers, preachers, evangelists, and Bible teachers",
+      scope: "Full-window links are permitted; site text, images, audio, and other electronic reuse require item-level written permission.",
+    },
   ].filter((item) => item.count > 0);
   const activeMinistrySummary = ministrySourceSummaries.find((item) => item.ministry === activeMinistry);
 
@@ -43179,16 +45619,18 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
       <div className="grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Permissioned Ministry Links</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Trusted resources with clear boundaries</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Reviewed Resource Links</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Trusted source pages with clear boundaries</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            These records point users to official ministry pages while rights review continues. Public-domain books stay separate from scoped ministry links.
+            These records point users to reviewed source pages under documented permission or linking policies. Public-domain books stay separate from link-only resources.
           </p>
-          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
             <MiniStat label="Total links" value={String(resources.length)} />
             <MiniStat label="Way of Life" value={String(wayOfLifeCount)} />
             <MiniStat label="Northstar" value={String(northstarCount)} />
             <MiniStat label="S. M. Davis" value={String(solveFamilyProblemsCount)} />
+            <MiniStat label="Thru the Bible" value={String(thruTheBibleCount)} />
+            <MiniStat label="Biographies" value={String(wholesomeWordsCount)} />
           </div>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -43324,16 +45766,39 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
 }
 
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
-  const linkLabel = resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems" ? "View / buy official page" : "Open official page";
-  const scopeLabel = resource.publisherMinistry === "Solve Family Problems" ? "Metadata only" : "Scoped permission";
+  const isOfficialAudio = resource.resourceFormat === "Official Audio Link";
+  const isOfficialLinkOnly = resource.permissionStatus === "Public Policy - Official Links Only";
+  const linkLabel = isOfficialAudio
+    ? "Listen on TTB"
+    : resource.publisherMinistry === "Wholesome Words"
+      ? "Browse source page"
+    : resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems"
+      ? "View / buy official page"
+      : "Open official page";
+  const scopeLabel = isOfficialAudio
+    ? "Official audio"
+    : isOfficialLinkOnly
+      ? "Official links only"
+      : resource.publisherMinistry === "Solve Family Problems"
+        ? "Metadata only"
+        : "Scoped permission";
 
   return (
     <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Official ministry link</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
+            {isOfficialLinkOnly ? "Reviewed source link" : "Official ministry link"}
+          </p>
           <h3 className="mt-2 text-lg font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
+          {resource.passage && (
+            <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--ink)]">
+              <BookOpen size={14} />
+              {resource.passage}
+            </p>
+          )}
+          {resource.duration && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.duration}</p>}
         </div>
         <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
           {scopeLabel}
@@ -43348,9 +45813,11 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
         ))}
       </div>
       <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-        <p className="text-xs font-semibold text-[var(--ink)]">No full text or audio hosted</p>
+        <p className="text-xs font-semibold text-[var(--ink)]">
+          {isOfficialAudio ? "Official stream - no audio copied" : isOfficialLinkOnly ? "Link only - no source content copied" : "No full text or audio hosted"}
+        </p>
         <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-          {resource.reviewStatus}. Use the official page until title review and any broader license is complete.
+          {resource.reviewStatus}. {isOfficialAudio ? "Playback opens the exact TTB-hosted file." : isOfficialLinkOnly ? "The source page opens in a separate browser tab." : "Use the official page until title review and any broader license is complete."}
         </p>
       </div>
       <div className="mt-auto pt-4">
@@ -43360,7 +45827,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
           rel="noreferrer"
           target="_blank"
         >
-          <Link size={15} />
+          {isOfficialAudio ? <Headphones size={15} /> : <Link size={15} />}
           {linkLabel}
         </a>
       </div>
@@ -46075,6 +48542,7 @@ function StudyDrawer({
   verse,
   activeTab,
   dictionaryEntry,
+  bibleCorpusReady,
   crossReferences,
   commentaryEntries,
   bookIntroduction,
@@ -46126,6 +48594,7 @@ function StudyDrawer({
   verse: BibleVerse;
   activeTab: StudyDrawerTab;
   dictionaryEntry: DictionaryEntry | null;
+  bibleCorpusReady: boolean;
   crossReferences: CrossReference[];
   commentaryEntries: CommentaryEntry[];
   bookIntroduction: BookIntroduction | null;
@@ -46174,14 +48643,16 @@ function StudyDrawer({
   onToggleAudio: () => void;
   onSpeechRateChange: (rate: number) => void;
 }) {
-  const [drawerSize, setDrawerSize] = useState<StudyDrawerSize>("half");
+  const [drawerSizeOverride, setDrawerSizeOverride] = useState<StudyDrawerSize | null>(null);
+  const [verseStrongResult, setVerseStrongResult] = useState<{ key: string; mappings: KJVStrongMapping[] } | null>(null);
   const dragStartYRef = useRef<number | null>(null);
   const didDragRef = useRef(false);
   const tabsRef = useRef<HTMLDivElement | null>(null);
+  const drawerContentRef = useRef<HTMLDivElement | null>(null);
   const tabs: { id: StudyDrawerTab; label: string }[] = [
     { id: "study", label: "Study" },
     { id: "actions", label: "Actions" },
-    { id: "dictionary", label: "Dictionary" },
+    { id: "dictionary", label: "Word Lens" },
     { id: "occurrences", label: "Word Study" },
     { id: "crossReferences", label: "Cross References" },
     { id: "notes", label: "Notes" },
@@ -46211,12 +48682,44 @@ function StudyDrawer({
     () => buildWordExplorer(dictionaryEntry?.lookupWord || keyWords[0] || "", verse.book, verse.chapter, allVerses),
     [allVerses, dictionaryEntry?.lookupWord, keyWords, verse.book, verse.chapter],
   );
+  const dictionaryLookupWord = dictionaryEntry?.lookupWord ?? "";
+  const strongRequestKey = dictionaryLookupWord ? `${verse.ref}|${dictionaryLookupWord}` : "";
+  const verseStrongMappings = verseStrongResult?.key === strongRequestKey ? verseStrongResult.mappings : [];
+  const wordLensStrongStatus: "idle" | "loading" | "ready" | "missing" = !strongRequestKey
+    ? "idle"
+    : verseStrongResult?.key !== strongRequestKey
+      ? "loading"
+      : verseStrongMappings.length
+        ? "ready"
+        : "missing";
+  const contextualStrongMappings = (() => {
+    if (!dictionaryLookupWord) return [];
+    const lookupWord = normalizeLookupWord(dictionaryLookupWord);
+    const seen = new Set<string>();
+
+    return verseStrongMappings.filter((mapping) => {
+      const mappingWord = normalizeLookupWord(mapping.normalized_kjv_word || mapping.kjv_word);
+      if (mappingWord !== lookupWord || seen.has(mapping.strongs_number)) return false;
+      seen.add(mapping.strongs_number);
+      return true;
+    });
+  })();
+  const drawerWebsterEntry = useMemo(
+    () => dictionaryEntry?.sourceEntries?.find((entry) => entry.sourceTitle.toLowerCase().includes("webster")) ?? null,
+    [dictionaryEntry],
+  );
+  const additionalDictionaryEntries = useMemo(
+    () => dictionaryEntry?.sourceEntries?.filter((entry) => entry !== drawerWebsterEntry) ?? [],
+    [dictionaryEntry, drawerWebsterEntry],
+  );
+  const drawerFirstOccurrence = drawerWordExplorer.bibleOccurrences[0] ?? null;
   const sizeOrder: StudyDrawerSize[] = ["collapsed", "half", "full"];
   const sizeButtons: { id: StudyDrawerSize; label: string }[] = [
     { id: "collapsed", label: "Low" },
     { id: "half", label: "Half" },
     { id: "full", label: "Full" },
   ];
+  const drawerSize = drawerSizeOverride ?? (activeTab === "dictionary" ? "full" : "half");
   const drawerHeight =
     drawerSize === "collapsed"
       ? "h-[154px]"
@@ -46230,9 +48733,36 @@ function StudyDrawer({
     }
   }, [activeTab, verse.ref]);
 
+  useEffect(() => {
+    drawerContentRef.current?.scrollTo({ top: 0, behavior: "auto" });
+  }, [activeTab, dictionaryLookupWord, verse.ref]);
+
+  useEffect(() => {
+    if (!strongRequestKey) return;
+
+    const controller = new AbortController();
+
+    fetch(`/api/strongs?verse=${encodeURIComponent(verse.ref)}`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("Strong's mapping lookup failed.");
+        return response.json() as Promise<{ mappings?: KJVStrongMapping[] }>;
+      })
+      .then((data) => {
+        const mappings = data.mappings ?? [];
+        setVerseStrongResult({ key: strongRequestKey, mappings });
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setVerseStrongResult({ key: strongRequestKey, mappings: [] });
+      });
+
+    return () => controller.abort();
+  }, [strongRequestKey, verse.ref]);
+
   function resizeDrawer(direction: number) {
-    setDrawerSize((current) => {
-      const currentIndex = sizeOrder.indexOf(current);
+    setDrawerSizeOverride((current) => {
+      const resolvedSize = current ?? (activeTab === "dictionary" ? "full" : "half");
+      const currentIndex = sizeOrder.indexOf(resolvedSize);
       return sizeOrder[Math.max(0, Math.min(sizeOrder.length - 1, currentIndex + direction))];
     });
   }
@@ -46292,7 +48822,7 @@ function StudyDrawer({
                     className={`rounded-full px-2.5 py-1.5 text-xs font-semibold ${
                       drawerSize === size.id ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"
                     }`}
-                    onClick={() => setDrawerSize(size.id)}
+                    onClick={() => setDrawerSizeOverride(size.id)}
                     type="button"
                   >
                     {size.label}
@@ -46334,7 +48864,7 @@ function StudyDrawer({
           )}
         </div>
 
-        {drawerSize !== "collapsed" && <div className="overflow-y-auto px-4 pb-28 pt-4 md:pb-4">
+        {drawerSize !== "collapsed" && <div ref={drawerContentRef} className="overflow-y-auto px-4 pb-28 pt-4 md:pb-4">
           {activeTab === "study" && (
             <div className="space-y-3">
               <StudySection
@@ -46483,16 +49013,14 @@ function StudyDrawer({
 
           {activeTab === "dictionary" && (
             <div className="space-y-4">
-              <WordLookupStrip verse={verse} onLookupWord={onLookupWord} />
-
               {dictionaryEntry ? (
-                <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+                <section aria-labelledby="word-lens-heading" className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">
-                        {dictionaryEntry.sourceTitle ?? "Bible Dictionary"}
-                      </p>
-                      <h3 className="mt-2 text-3xl font-semibold capitalize text-[var(--ink)]">{dictionaryEntry.word}</h3>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">One-tap study</p>
+                      <h3 id="word-lens-heading" className="mt-2 text-2xl font-semibold text-[var(--ink)]">
+                        Word Lens: <span className="capitalize">{dictionaryEntry.word}</span>
+                      </h3>
                     </div>
                     <span className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
                       dictionaryEntry.lookupStatus === "checking"
@@ -46507,57 +49035,103 @@ function StudyDrawer({
                   {dictionaryEntry.lookupWord && dictionaryEntry.lookupWord !== dictionaryEntry.word && (
                     <p className="mt-1 text-sm text-[var(--muted)]">Normalized to: {dictionaryEntry.lookupWord}</p>
                   )}
-                  {dictionaryEntry.sourceEntries?.length ? (
-                    <div className="mt-4 space-y-3">
-                      {dictionaryEntry.sourceEntries.map((entry, index) => (
-                        <article key={`dictionary-source-${entry.sourceTitle}-${entry.headword}-${index}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <p className="text-sm font-semibold capitalize text-[var(--ink)]">{entry.headword}</p>
-                            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{entry.sourceTitle}</span>
-                          </div>
-                          <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[var(--scripture-ink)]">{entry.definition}</p>
-                          {entry.reviewStatus && (
-                            <p className="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                              {entry.reviewStatus.replace(/_/g, " ")}
-                            </p>
-                          )}
-                        </article>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="mt-4 whitespace-pre-line text-base leading-7 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
-                  )}
+
                   <div className="mt-4 grid grid-cols-3 gap-2">
-                    <MiniStat label="Chapter" value={String(drawerWordExplorer.chapterOccurrences.length)} />
-                    <MiniStat label="Book" value={String(drawerWordExplorer.bookOccurrences.length)} />
-                    <MiniStat label="Bible" value={String(drawerWordExplorer.bibleOccurrences.length)} />
+                    <MiniStat label="Chapter" value={bibleCorpusReady ? String(drawerWordExplorer.chapterOccurrences.length) : "..."} />
+                    <MiniStat label="Book" value={bibleCorpusReady ? String(drawerWordExplorer.bookOccurrences.length) : "..."} />
+                    <MiniStat label="Bible" value={bibleCorpusReady ? String(drawerWordExplorer.bibleOccurrences.length) : "..."} />
                   </div>
+
+                  {!bibleCorpusReady && (
+                    <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Loading the complete KJV index for exact occurrence counts and first use.</p>
+                  )}
+
+                  <div className="mt-4 grid gap-3">
+                    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-sm font-semibold text-[var(--green)]">Webster&apos;s 1828</p>
+                        <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                          {drawerWebsterEntry?.reviewStatus?.replace(/_/g, " ") ?? (dictionaryEntry.found ? "Reviewed source" : "Needs review")}
+                        </span>
+                      </div>
+                      <ExpandableSourceDefinition
+                        key={`word-lens-webster-${dictionaryEntry.lookupWord}`}
+                        text={drawerWebsterEntry?.definition ?? dictionaryEntry.definition}
+                      />
+                    </article>
+
+                    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-sm font-semibold text-[var(--green)]">Strong&apos;s in {verse.ref}</p>
+                        <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">Verified mapping only</span>
+                      </div>
+                      {wordLensStrongStatus === "loading" ? (
+                        <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Loading the reviewed verse mapping...</p>
+                      ) : contextualStrongMappings.length ? (
+                        <div className="mt-3 space-y-3">
+                          {contextualStrongMappings.map((mapping) => (
+                            <div key={`word-lens-strong-${mapping.strongs_number}`}>
+                              <p className="text-sm font-semibold text-[var(--ink)]">
+                                {mapping.strongs_number}
+                                {mapping.strong_entry?.original_word ? ` · ${mapping.strong_entry.original_word}` : ""}
+                                {mapping.strong_entry?.transliteration ? ` (${mapping.strong_entry.transliteration})` : ""}
+                              </p>
+                              <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">
+                                {mapping.strong_entry?.plain_definition ?? "The reviewed verse mapping is available; its lexicon entry is still being prepared."}
+                              </p>
+                              <p className="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                                {mapping.source_title} · {mapping.review_status}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="mt-3 text-sm leading-6 text-[var(--muted)]">No verified contextual Strong&apos;s mapping matches this KJV word in {verse.ref} yet.</p>
+                      )}
+                    </article>
+
+                    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <p className="text-sm font-semibold text-[var(--green)]">First KJV use</p>
+                      {bibleCorpusReady && drawerFirstOccurrence ? (
+                        <button className="mt-2 w-full text-left" onClick={() => onOpenReference(drawerFirstOccurrence.ref)} type="button">
+                          <span className="text-sm font-semibold text-[var(--ink)]">{drawerFirstOccurrence.ref}</span>
+                          <span className="mt-1 line-clamp-3 block font-serif text-sm leading-6 text-[var(--scripture-ink)]">{drawerFirstOccurrence.text}</span>
+                        </button>
+                      ) : (
+                        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                          {bibleCorpusReady ? "No matching verse found in the local KJV text." : "Loading the complete KJV index..."}
+                        </p>
+                      )}
+                    </article>
+                  </div>
+
+                  {additionalDictionaryEntries.length > 0 && (
+                    <details className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                      <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">Additional reviewed dictionary helps</summary>
+                      <div className="mt-3 space-y-3">
+                        {additionalDictionaryEntries.map((entry, index) => (
+                          <article key={`word-lens-additional-${entry.sourceTitle}-${entry.headword}-${index}`}>
+                            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.sourceTitle}</p>
+                            <p className="mt-2 whitespace-pre-line text-sm leading-7 text-[var(--scripture-ink)]">{entry.definition}</p>
+                          </article>
+                        ))}
+                      </div>
+                    </details>
+                  )}
+
                   <button
-                    className="mt-3 w-full rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
+                    className="mt-4 w-full rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
                     onClick={() => onActiveTabChange("occurrences")}
                     type="button"
                   >
-                    Open Word Connection Mode
+                    Open Full Word Study
                   </button>
-                  {drawerWordExplorer.chapterOccurrences.length > 0 && (
-                    <div className="mt-3 space-y-2">
-                      {drawerWordExplorer.chapterOccurrences.slice(0, 3).map((occurrence) => (
-                        <button
-                          key={`drawer-word-${occurrence.ref}`}
-                          className="w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
-                          onClick={() => onOpenReference(occurrence.ref)}
-                          type="button"
-                        >
-                          <p className="text-xs font-semibold text-[var(--green)]">{occurrence.ref}</p>
-                          <p className="mt-1 line-clamp-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{occurrence.text}</p>
-                        </button>
-                      ))}
-                    </div>
-                  )}
                 </section>
               ) : (
                 <EmptyState title="Tap a word" body="Tap any word in the verse above or the Bible text to look up a Webster's 1828 definition." />
               )}
+
+              <WordLookupStrip verse={verse} onLookupWord={onLookupWord} />
             </div>
           )}
 
@@ -46830,6 +49404,36 @@ function WordLookupStrip({
         ))}
       </div>
     </section>
+  );
+}
+
+function sourceDefinitionPreview(text: string, maxLength = 720) {
+  if (text.length <= maxLength) return text;
+  const sentenceEnd = text.lastIndexOf(". ", maxLength);
+  const breakAt = sentenceEnd >= maxLength * 0.6 ? sentenceEnd + 1 : text.lastIndexOf(" ", maxLength);
+  return text.slice(0, Math.max(1, breakAt)).trimEnd();
+}
+
+function ExpandableSourceDefinition({ text }: { text: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const preview = sourceDefinitionPreview(text);
+  const truncated = preview.length < text.length;
+
+  return (
+    <div className="mt-3">
+      <p className="whitespace-pre-line text-sm leading-7 text-[var(--scripture-ink)]">
+        {expanded || !truncated ? text : `${preview}...`}
+      </p>
+      {truncated && (
+        <button
+          className="mt-3 rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+          onClick={() => setExpanded((current) => !current)}
+          type="button"
+        >
+          {expanded ? "Show shorter definition" : "Show full Webster entry"}
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -47250,8 +49854,11 @@ function SermonWorkspaceScreen({
   onSeriesTitleChange,
   onSeriesPassageChange,
   onCreateSeries,
+	onExportMinistryBackup,
+	onImportMinistryBackup,
 	  onAppendImport,
   onAddThemeToSermon,
+	  onCreateStudyPlaylist,
 	  onBulletDraft,
 	  onExportDraft,
 	  onCopySermonOutline,
@@ -47265,6 +49872,7 @@ function SermonWorkspaceScreen({
 	  onResolveScriptureText,
 	  onStartPreaching,
 	  onResetTimer,
+	  onOpenPresentationWorkspace,
 	  onBackToBible,
 }: {
   view: SermonWorkspaceView;
@@ -47297,8 +49905,11 @@ function SermonWorkspaceScreen({
   onSeriesTitleChange: (value: string) => void;
   onSeriesPassageChange: (value: string) => void;
   onCreateSeries: () => void;
+  onExportMinistryBackup: () => void;
+  onImportMinistryBackup: (file: File) => Promise<SavedChurchTheme[] | null>;
   onAppendImport: (label: string, body: string) => void;
   onAddThemeToSermon: (theme: StudyTheme) => void;
+	  onCreateStudyPlaylist: (template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage) => void;
 	  onBulletDraft: () => void;
 	  onExportDraft: (format?: "markdown" | "text") => void;
 	  onCopySermonOutline: () => void;
@@ -47312,6 +49923,7 @@ function SermonWorkspaceScreen({
 	  onResolveScriptureText: (passage: string) => string;
 	  onStartPreaching: () => void;
 	  onResetTimer: () => void;
+	  onOpenPresentationWorkspace: () => void;
 	  onBackToBible: () => void;
 	}) {
   const activeSermons = sermons.filter((entry) => !entry.archived && entry.status !== "Archived");
@@ -47333,8 +49945,10 @@ function SermonWorkspaceScreen({
 	  const [scriptureSlideFontScale, setScriptureSlideFontScale] = useState<SermonSlideFontScale>("Large");
 	  const [scriptureSlideVerseDisplay, setScriptureSlideVerseDisplay] = useState<SermonSlideVerseDisplay>("Reference + Text");
 	  const [sermonTranscriptDraft, setSermonTranscriptDraft] = useState("");
+	  const [quickStartId, setQuickStartId] = useState<SermonQuickStartId>("expository");
 	  const [savedChurchThemes, setSavedChurchThemes] = useState<SavedChurchTheme[]>(() => loadSavedChurchThemes());
 	  const [churchThemeName, setChurchThemeName] = useState("Home Church Theme");
+	  const ministryBackupInputRef = useRef<HTMLInputElement | null>(null);
 		  const sermonEstimate = sermonLengthEstimate(draft);
 		  const sermonSlides = useMemo(() => draft.slides ?? [], [draft.slides]);
 	  const activeSlide = sermonSlides.find((slide) => slide.id === selectedSlideId) ?? sermonSlides[0] ?? null;
@@ -47343,6 +49957,7 @@ function SermonWorkspaceScreen({
 	  const nextPresentationSlide = sermonSlides[Math.min(presentationSlideIndex + 1, Math.max(0, sermonSlides.length - 1))] ?? null;
 	  const targetSeconds = Math.max(1, draft.targetMinutes || 30) * 60;
   const remainingSeconds = Math.max(0, targetSeconds - elapsedSeconds);
+  const overtimeSeconds = Math.max(0, elapsedSeconds - targetSeconds);
   const orderedSections = (draft.sectionOrder?.length ? draft.sectionOrder : SERMON_SECTION_FIELDS)
     .filter((section) => SERMON_SECTION_FIELDS.includes(section));
   const preachingSections = orderedSections
@@ -47357,6 +49972,9 @@ function SermonWorkspaceScreen({
   const activePreachingSection = preachingSections[safePreachingSectionIndex] ?? null;
   const nextPreachingSection = preachingSections[Math.min(safePreachingSectionIndex + 1, Math.max(0, preachingSections.length - 1))] ?? null;
   const preachingProgressPercent = preachingSections.length ? ((safePreachingSectionIndex + 1) / preachingSections.length) * 100 : 0;
+  const sectionTargetSeconds = preachingSections.length ? Math.max(60, Math.round(targetSeconds / preachingSections.length)) : targetSeconds;
+  const expectedSectionIndex = preachingSections.length ? Math.min(preachingSections.length - 1, Math.floor(elapsedSeconds / sectionTargetSeconds)) : 0;
+  const preachingPace = safePreachingSectionIndex < expectedSectionIndex ? "Move forward" : safePreachingSectionIndex > expectedSectionIndex ? "Ahead" : "On pace";
   const goToPreviousPreachingSection = () => setPreachingSectionIndex((index) => Math.max(0, index - 1));
   const goToNextPreachingSection = () => setPreachingSectionIndex((index) => Math.min(Math.max(0, preachingSections.length - 1), index + 1));
   const filteredActiveSermons = activeSermons.filter((entry) => {
@@ -47381,9 +49999,9 @@ function SermonWorkspaceScreen({
     return searchMatch && statusMatch && kindMatch;
   });
   const sermonSuggestionText = [
+    draft.passage,
     draft.title,
     draft.theme,
-    draft.passage,
     draft.outline,
     draft.points,
     draft.introduction,
@@ -47424,6 +50042,10 @@ function SermonWorkspaceScreen({
 	        `## ${label}\n${body}`,
 	      ].filter(Boolean).join("\n\n"),
 	    });
+	  }
+
+	  function applyQuickStart() {
+	    onDraftChange(sermonQuickStartPatch(draft, quickStartId));
 	  }
 
 	  function moveSection(section: SermonSectionKey, direction: -1 | 1) {
@@ -47528,6 +50150,11 @@ function SermonWorkspaceScreen({
 	      slides: sermonSlides.map((slide) => ({ ...slide, ...patch })),
 	    });
 	    if (activeSlide) setSelectedSlideId(activeSlide.id);
+	  }
+
+	  async function restoreMinistryWorkspaceBackup(file: File) {
+	    const restoredThemes = await onImportMinistryBackup(file);
+	    if (restoredThemes) setSavedChurchThemes(restoredThemes);
 	  }
 
 	  function buildTranscriptOutlineAndSlides() {
@@ -47671,18 +50298,22 @@ function SermonWorkspaceScreen({
               </button>
             </div>
           </div>
-          <div className="mt-4 grid gap-2 sm:grid-cols-3">
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
             <div className={`rounded-2xl px-4 py-3 ${darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
               <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${darkPreachingMode ? "text-white/55" : "text-[var(--muted)]"}`}>Elapsed</p>
               <p className="mt-1 text-2xl font-semibold tabular-nums">{formatSermonTimer(elapsedSeconds)}</p>
             </div>
             <div className={`rounded-2xl px-4 py-3 ${remainingSeconds <= 300 ? "bg-[var(--highlight)] text-[var(--ink)]" : darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">Remaining</p>
-              <p className="mt-1 text-2xl font-semibold tabular-nums">{formatSermonTimer(remainingSeconds)}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">{overtimeSeconds ? "Over Target" : "Remaining"}</p>
+              <p className="mt-1 text-2xl font-semibold tabular-nums">{formatSermonTimer(overtimeSeconds || remainingSeconds)}</p>
             </div>
             <div className={`rounded-2xl px-4 py-3 ${darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
               <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${darkPreachingMode ? "text-white/55" : "text-[var(--muted)]"}`}>Section</p>
               <p className="mt-1 text-2xl font-semibold tabular-nums">{preachingSections.length ? safePreachingSectionIndex + 1 : 0}/{preachingSections.length}</p>
+            </div>
+            <div className={`rounded-2xl px-4 py-3 ${preachingPace === "Move forward" ? "bg-[var(--highlight)] text-[var(--ink)]" : darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">Pace</p>
+              <p className="mt-1 text-xl font-semibold">{preachingPace}</p>
             </div>
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -47702,7 +50333,7 @@ function SermonWorkspaceScreen({
             <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(preachingProgressPercent) }} />
           </div>
           <p className={`mt-2 text-sm font-semibold ${darkPreachingMode ? "text-white/55" : "text-[var(--muted)]"}`}>
-            Section {preachingSections.length ? safePreachingSectionIndex + 1 : 0} of {preachingSections.length} · {activePreachingSection?.label ?? "No section selected"}
+            Section {preachingSections.length ? safePreachingSectionIndex + 1 : 0} of {preachingSections.length} · {activePreachingSection?.label ?? "No section selected"} · about {Math.max(1, Math.round(sectionTargetSeconds / 60))} min per section
           </p>
 
           <div className="mt-7 grid min-w-0 gap-5 xl:grid-cols-[minmax(0,1fr)_320px]">
@@ -47788,7 +50419,7 @@ function SermonWorkspaceScreen({
                 {activePreachingSection?.label ?? "No section"}
               </p>
               <p className={`mt-1 text-sm font-semibold ${darkPreachingMode ? "text-white" : "text-[var(--ink)]"}`}>
-                {formatSermonTimer(elapsedSeconds)} · {formatSermonTimer(remainingSeconds)} left
+                {formatSermonTimer(elapsedSeconds)} · {overtimeSeconds ? `${formatSermonTimer(overtimeSeconds)} over` : `${formatSermonTimer(remainingSeconds)} left`}
               </p>
             </div>
             <button
@@ -47820,6 +50451,28 @@ function SermonWorkspaceScreen({
             <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onCreateDraft("Sermon")} type="button">Create Sermon</button>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onCreateDraft("Lesson")} type="button">Create Lesson</button>
             <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onLoadSampleSermon} type="button">Load John 3 Sample</button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onExportMinistryBackup} type="button">
+              <Download aria-hidden="true" size={16} />
+              Ministry Backup
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => ministryBackupInputRef.current?.click()} type="button">
+              <Upload aria-hidden="true" size={16} />
+              Restore Backup
+            </button>
+            <input
+              ref={ministryBackupInputRef}
+              accept="application/json,.json"
+              className="sr-only"
+              onChange={(event) => {
+                const input = event.currentTarget;
+                const file = input.files?.[0];
+                if (!file) return;
+                void restoreMinistryWorkspaceBackup(file).finally(() => {
+                  input.value = "";
+                });
+              }}
+              type="file"
+            />
           </div>
         </div>
       </section>
@@ -48220,8 +50873,12 @@ function SermonWorkspaceScreen({
 
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Preacher Control</p>
-	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Phone/tablet remote control coming later</h2>
-	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">This MVP does not build network remote control yet. It prepares the sermon slide structure so a future remote can control the same slide list.</p>
+	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Control slides from an iPad or phone</h2>
+	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Save this sermon or lesson, then attach its deck in Presentations. Presenter View creates a session code for the Controller and full-screen display.</p>
+	              <button className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onOpenPresentationWorkspace} type="button">
+	                <MonitorPlay aria-hidden="true" size={16} />
+	                Open Remote Presentations
+	              </button>
 	            </article>
 	          </section>
 	        </div>
@@ -48292,6 +50949,36 @@ function SermonWorkspaceScreen({
                 <StatusCard label="Target" status={`${draft.targetMinutes || 30} min`} good />
               </div>
               {currentSeries && <p className="mt-3 rounded-2xl bg-[var(--warm)] px-4 py-3 text-sm font-semibold text-[var(--green)]">Series: {currentSeries.title} {currentSeries.passageRange ? `- ${currentSeries.passageRange}` : ""}</p>}
+            </article>
+
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Start</p>
+                  <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Choose a faithful message structure</h2>
+                </div>
+                <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={applyQuickStart} type="button">
+                  Fill Empty Sections
+                </button>
+              </div>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5" role="radiogroup" aria-label="Sermon quick-start structure">
+                {(Object.entries(SERMON_QUICK_STARTS) as Array<[SermonQuickStartId, (typeof SERMON_QUICK_STARTS)[SermonQuickStartId]]>).map(([id, preset]) => (
+                  <button
+                    aria-checked={quickStartId === id}
+                    className={`min-h-24 rounded-2xl border p-3 text-left ${quickStartId === id ? "border-[var(--green)] bg-[var(--warm)]" : "border-[var(--line)] bg-[var(--paper)]"}`}
+                    key={`sermon-quick-start-${id}`}
+                    onClick={() => setQuickStartId(id)}
+                    role="radio"
+                    type="button"
+                  >
+                    <span className="block text-sm font-semibold text-[var(--green)]">{preset.label}</span>
+                    <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{preset.description}</span>
+                  </button>
+                ))}
+              </div>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                Existing writing is preserved. The selected plan fills only empty sections, suggests a target time, and prepares a matching slide theme.
+              </p>
             </article>
 
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -48406,6 +51093,9 @@ function SermonWorkspaceScreen({
                   emptyText="No playlist suggestions available yet."
                   suggestions={suggestedStudyPlaylists}
                   onAdd={appendSmartSermonConnection}
+                  onAction={(suggestion) => {
+                    if (suggestion.playlist) onCreateStudyPlaylist(suggestion.playlist, suggestion.playlistPassage);
+                  }}
                 />
                 <SmartSermonConnectionList
                   title="Suggested Prayer Connections"
@@ -48691,6 +51381,19 @@ function PresentationWorkspaceScreen({
 
   function addSlide(type: SermonSlideType) {
     const slide = createSermonSlide(type, slidePresetPatch(draft.themeId));
+    onDraftChange({ slides: [...slides, slide] });
+    setSelectedSlideId(slide.id);
+  }
+
+  function addServicePreset(preset: (typeof PRESENTATION_SERVICE_PRESETS)[number]) {
+    const imageSlot = preset.patch.imageSlot ?? sermonSlideTemplatePatch(preset.type).imageSlot ?? slidePresetPatch(draft.themeId).imageSlot ?? "open-bible";
+    const slide = createSermonSlide(preset.type, {
+      ...slidePresetPatch(draft.themeId),
+      ...sermonSlideTemplatePatch(preset.type),
+      ...preset.patch,
+      imageSlot,
+      imageTheme: SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
+    });
     onDraftChange({ slides: [...slides, slide] });
     setSelectedSlideId(slide.id);
   }
@@ -49528,6 +52231,22 @@ function PresentationWorkspaceScreen({
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">Service Slide Presets</p>
+                </div>
+                <Timer className="text-[var(--green)]" size={18} />
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {PRESENTATION_SERVICE_PRESETS.map((preset) => (
+                  <button key={`presentation-preset-${preset.id}`} className="min-h-11 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold leading-4 text-[var(--green)]" onClick={() => addServicePreset(preset)} type="button">
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
                   <p className="text-sm font-semibold text-[var(--ink)]">Slide Deck Manager</p>
                   <p className="mt-1 text-xs text-[var(--muted)]">{slides.length} slides · {draft.groups.length} groups</p>
                 </div>
@@ -49705,6 +52424,23 @@ function SermonSlideMotif({ slotId, color }: { slotId: SermonSlideImageSlotId; c
   );
 }
 
+function PresentationCountdown({ slideId, minutes, running }: { slideId: string; minutes: number; running: boolean }) {
+  const initialSeconds = Math.max(1, minutes) * 60;
+  const [seconds, setSeconds] = useState(initialSeconds);
+
+  useEffect(() => {
+    if (!running) return;
+    const timer = window.setInterval(() => setSeconds((value) => Math.max(0, value - 1)), 1000);
+    return () => window.clearInterval(timer);
+  }, [running, slideId]);
+
+  return (
+    <p aria-live="off" className="mt-4 font-mono text-6xl font-semibold leading-none tabular-nums md:mt-6 md:text-8xl">
+      {formatSermonTimer(seconds)}
+    </p>
+  );
+}
+
 function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: SermonSlide; themeId: SermonSlideThemeId; presentation?: boolean }) {
   const theme = SERMON_SLIDE_THEMES[themeId] ?? SERMON_SLIDE_THEMES["classic-pulpit"];
   const imageSlot = SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot] ?? SERMON_SLIDE_IMAGE_SLOTS["open-bible"];
@@ -49767,6 +52503,7 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
             {slide.accentStyle !== "Badge" && slide.subtitle && <p className="text-sm font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</p>}
             {slide.accentStyle === "Line" && <div className={`mb-4 mt-3 h-1 w-16 rounded-full ${textAlign === "text-center" ? "mx-auto" : ""}`} style={{ backgroundColor: theme.accent }} />}
             <h3 className={`${titleSize} ${slide.accentStyle === "Line" ? "mt-0" : "mt-3"} font-semibold leading-tight`}>{slide.title || "Untitled slide"}</h3>
+            {slide.type === "Countdown" && <PresentationCountdown key={`${slide.id}-${slide.countdownMinutes}-${presentation ? "live" : "preview"}`} slideId={slide.id} minutes={slide.countdownMinutes} running={presentation} />}
             {slide.bibleText && (
               <p className={`${bodySize} mt-4 whitespace-pre-wrap font-serif ${bodyLeading} md:mt-5`}>
                 {slide.bibleText}
@@ -49870,6 +52607,12 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
               <option value="Text Only">Text Only</option>
               <option value="Reference Only">Reference Only</option>
             </select>
+          </label>
+        )}
+        {slide.type === "Countdown" && (
+          <label className="text-sm font-semibold text-[var(--muted)]">
+            Countdown Minutes
+            <input className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" max={60} min={1} type="number" value={slide.countdownMinutes} onChange={(event) => onChange({ countdownMinutes: Math.min(60, Math.max(1, Number(event.target.value) || 5)) })} />
           </label>
         )}
       </div>
@@ -49982,12 +52725,16 @@ function SmartSermonConnectionList({
   emptyText,
   suggestions,
   onAdd,
+  onAction,
 }: {
   title: string;
   emptyText: string;
   suggestions: SmartSermonSuggestion[];
   onAdd: (label: string, body: string) => void;
+  onAction?: (suggestion: SmartSermonSuggestion) => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
+  const visibleSuggestions = expanded ? suggestions : suggestions.slice(0, 3);
   return (
     <div className="min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -49998,7 +52745,7 @@ function SmartSermonConnectionList({
       </div>
       {suggestions.length ? (
         <div className="mt-3 grid min-w-0 grid-cols-1 gap-2">
-          {suggestions.map((suggestion) => (
+          {visibleSuggestions.map((suggestion) => (
             <div key={suggestion.id} className="min-w-0 rounded-2xl border border-[var(--line)] bg-white p-3">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">
@@ -50012,13 +52759,22 @@ function SmartSermonConnectionList({
               <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{suggestion.body}</p>
               <button
                 className="mt-3 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
-                onClick={() => onAdd(suggestion.importLabel, suggestion.importBody)}
+                onClick={() => onAction ? onAction(suggestion) : onAdd(suggestion.importLabel, suggestion.importBody)}
                 type="button"
               >
                 {suggestion.actionText}
               </button>
             </div>
           ))}
+          {suggestions.length > 3 && (
+            <button
+              className="min-h-11 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => setExpanded((value) => !value)}
+              type="button"
+            >
+              {expanded ? "Show fewer" : `Show ${suggestions.length - 3} more`}
+            </button>
+          )}
         </div>
       ) : (
         <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{emptyText}</p>
@@ -50084,6 +52840,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "themes", label: "Themes", shortLabel: "Theme", icon: <Brain size={18} /> },
     { id: "commentaryExplorer", label: "Commentary", shortLabel: "Comm", icon: <MessageSquareText size={18} /> },
     { id: "library", label: "Library", shortLabel: "Library", icon: <Library size={18} /> },
+    { id: "radio", label: "Radio", shortLabel: "Radio", icon: <Headphones size={18} /> },
     { id: "notes", label: "Notes", shortLabel: "Notes", icon: <NotebookPen size={18} /> },
     { id: "prayer", label: "Prayer", shortLabel: "Prayer", icon: <MessageSquareText size={18} /> },
     { id: "journal", label: "Journal", shortLabel: "Jrnl", icon: <FileText size={18} /> },
@@ -50093,14 +52850,14 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
   ];
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-xl grid-cols-6 gap-1">
+    <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.35rem+env(safe-area-inset-bottom))] pt-1.5 backdrop-blur md:hidden">
+      <div className="mx-auto flex max-w-xl gap-1 overflow-x-auto overscroll-x-contain pb-0.5">
         {items.map((item) => (
           <button
             key={item.id}
             aria-label={item.label}
             title={item.label}
-            className={`flex h-12 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 text-[0.58rem] font-semibold leading-none min-[430px]:h-14 ${
+            className={`flex h-14 w-16 shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl px-1 text-[0.58rem] font-semibold leading-none ${
               tab === item.id ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"
             }`}
             onClick={() => onTab(item.id)}

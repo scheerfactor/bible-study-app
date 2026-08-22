@@ -11,5 +11,25 @@
   "volume_1_sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832",
   "volume_2_sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b",
   "rights_notes": "The original 1828 work is public domain. These OCR text files are downloaded source artifacts from Internet Archive/Open Library and should be reviewed before any full production import.",
-  "sample_review_notes": "The first sample import uses manually reviewed entries from volume 1 OCR around BELIEVE, FAITH, and GRACE."
+  "sample_review_notes": "The first sample import uses manually reviewed entries from volume 1 OCR around BELIEVE, FAITH, and GRACE.",
+  "review_batches": [
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-2-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-3-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-4-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-5-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-6-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-7-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-8-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-9-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-10-2026-08-15.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-11-2026-08-18.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-12-2026-08-18.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-13-2026-08-18.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-14-2026-08-21.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-15-2026-08-21.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-16-2026-08-21.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-17-2026-08-21.json",
+    "data/sources/websters-1828/review-batches/kjv-high-use-overlays-phase-18-2026-08-22.json"
+  ]
 }
