@@ -16,7 +16,7 @@ Father's Business Bible Study connects the work that pastors, teachers, and seri
 
 The library is curated instead of treated as an unmarked warehouse. Every resource must have source and rights evidence. Modern copyrighted works remain private or absent until written permission defines what may be listed, quoted, displayed, hosted, narrated, presented, or sold. Historical works may carry perspective and caution labels because inclusion is not blanket endorsement.
 
-The first partnership request is intentionally small. We would like to represent one useful resource accurately, send readers to its official source, and earn trust before discussing broader digital or commercial rights.
+The first partnership request may be intentionally small, but the long-term goal is a carefully licensed multi-publisher library. We would like to represent an initial resource accurately, earn trust, and then discuss a catalog framework that can support authorized sales, account unlocks, search, verse-linked study, notes, and publisher reporting.
 
 ## Initial Email Template
 
@@ -73,6 +73,12 @@ Ask for each item separately so a rights holder can say yes to one use without a
 - Treat silence as no permission.
 - Store the complete reply and translate it into title-level scope before publication.
 - Provide a correction, restriction, revocation, and removal path.
+
+## Catalog Partnership Path
+
+When a rights holder is open to a broader conversation, use `PUBLISHER_CATALOG_PARTNERSHIP_PROPOSAL.md`. A catalog discussion should still launch with 1-3 pilot titles so checkout, entitlements, search, verse links, reporting, and rights controls can be verified before scaling.
+
+The goal is not a one-book library. The pilot is the first quality and trust gate for a repeatable multi-title agreement.
 
 ## Next High-Value Wave
 

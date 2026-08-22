@@ -40,6 +40,25 @@ export default function PartnersPage() {
       </section>
 
       <section>
+        <h2>Grow into a trusted catalog</h2>
+        <p>
+          The long-term goal is a multi-publisher digital library, not a collection limited to one-off samples.
+          A founding partner may identify a larger group of suitable titles while 1-3 pilot books establish the
+          reading, search, passage-linking, entitlement, reporting, and review process.
+        </p>
+        <ul>
+          <li><strong>Publisher checkout:</strong> the publisher sells the book and a verified purchase unlocks it in the reader.</li>
+          <li><strong>App marketplace:</strong> the app sells an authorized digital edition and remits the agreed publisher royalty.</li>
+          <li><strong>Licensed plans:</strong> approved titles may support individual, church, ministry, school, or seminary access.</li>
+          <li><strong>Official discovery:</strong> reviewed listings and official links can remain available while broader digital rights are considered.</li>
+        </ul>
+        <p>
+          These models are in partnership development and are not yet a public digital bookstore. Every title and
+          use remains subject to a written agreement and technical readiness review.
+        </p>
+      </section>
+
+      <section>
         <h2>Your work stays yours</h2>
         <p>
           A conversation does not grant publication rights. Unapproved copyrighted material stays out of the public
@@ -67,7 +86,8 @@ export default function PartnersPage() {
         <h2>Explore a founding partnership</h2>
         <p>
           Authors, publishers, pastors, teachers, missionaries, evangelists, and ministry media owners may begin
-          with one selected resource and a narrow request. There is no expectation of broad catalog permission.
+          with one selected resource or discuss a multi-title catalog pilot. No catalog, full text, sale, search,
+          passage link, or account unlock is assumed without written permission.
         </p>
         <div className="public-info-actions">
           <Link href={partnershipHref}>Start a partnership conversation</Link>

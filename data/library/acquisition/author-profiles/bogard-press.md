@@ -103,6 +103,8 @@ The verified contact route and public ministry description do not grant permissi
 
 Title-specific request submitted through the official contact form on 2026-08-22 for *Baptist & the Bible - Adult*. The form confirmed successful receipt. Follow up on 2026-08-29 if no reply is received. No permission has been granted.
 
+Stephen's longer-term objective is a multi-title commercial relationship that could support authorized purchases, account unlocks, full-text reading, search, verse-linked notes, and publisher royalties. That broader objective was not included in the submitted request and has not been approved. If Bogard Press replies positively, use the separate catalog partnership proposal as a follow-up discussion rather than treating the first request as commercial permission.
+
 ## Final Recommendation
 
 Needs Review. No author, ministry, book, sermon, audio, video, quote, chart, transcript, or excerpt is approved by this stub.
