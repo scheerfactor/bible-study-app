@@ -2,6 +2,8 @@
 
 Use this checklist before trusting remote presentation control in a live service.
 
+For the dated September 11 rehearsal schedule and Proclaim renewal decision gate, see `SEPTEMBER_11_PRESENTATION_READINESS.md`.
+
 ## Service-Day Rule
 
 For the first live use, treat the app as a preaching and slide-support tool, not the only copy of the service. Keep a PowerPoint export, PDF/printed notes, and a manual advance option ready.

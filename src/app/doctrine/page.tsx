@@ -59,9 +59,10 @@ export default function DoctrinePage() {
       <section>
         <h2>Interpretation and future events</h2>
         <p>
-          The app is Baptist-friendly and dispensational-friendly, keeps Israel and the Church distinct, and favors
-          a literal, premillennial understanding of prophecy. Prophecy resources should distinguish clear doctrine
-          from inference and avoid date-setting, sensationalism, and needless speculation.
+          The app&apos;s working doctrinal position is Baptist and dispensational. It keeps Israel and the Church
+          distinct and holds a literal, premillennial understanding of prophecy. Prophecy resources should
+          distinguish what Scripture states from human inference and avoid date-setting, sensationalism, and
+          needless speculation.
         </p>
       </section>
 
@@ -82,9 +83,12 @@ export default function DoctrinePage() {
           Comparative Study, Needs Review, or Do Not Include.
         </p>
         <p>
-          Differences on secondary matters do not automatically disqualify a historically useful work. Perspective
-          and caution labels explain why it is included and where readers should exercise discernment. Inclusion is
-          not blanket endorsement of every conclusion in a resource.
+          Doctrinal disagreement is never treated as unimportant merely because a work is old, respected, or useful.
+          A resource that conflicts with this basis may be included only for clearly identified historical or
+          comparative study, not as a default doctrinal recommendation. Its label should state what the author
+          teaches, where the app disagrees, which KJV passages readers should examine, and why the work is still
+          available. Inclusion preserves access to historical evidence and opposing arguments; it does not imply
+          agreement or make doctrine a matter of indifference.
         </p>
       </section>
 

@@ -102094,5 +102094,55 @@
     "checksum_sha256": "1ca702d139c6aa687ef4740cd457a14e4802ebb3910c8aad1b914796862b8925",
     "file_size_bytes": 303682,
     "word_count": 53834
+  },
+  {
+    "title": "Fifty Years in the Church of Rome",
+    "author": "Charles Paschal Telesphore Chiniquy",
+    "year": 1886,
+    "category": "Biographies",
+    "collection": "Historical Christian Testimony",
+    "source_url": "https://www.gutenberg.org/ebooks/51634",
+    "download_url": "https://www.gutenberg.org/ebooks/51634.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/fifty-years-in-the-church-of-rome-charles-paschal-telesphore-chiniquy.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg ebook 51634 identifies this text as public domain in the USA. The author died in 1899. Source text and Project Gutenberg distribution terms remain linked in the library record.",
+    "notes": "Public-domain first-person account by a former Roman Catholic priest. Use for historical testimony, religious-liberty context, and comparison of claims with Scripture and independent primary sources; do not treat every recollection as independently established fact. Labels/warnings: Historical autobiography;Polemical account;Verify historical claims independently;Compare doctrine with KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "beta reviewed",
+    "recommended_use": "Public-domain first-person account by a former Roman Catholic priest. Use for historical testimony, religious-liberty context, and comparison of claims with Scripture and independent primary sources; do not treat every recollection as independently established fact.",
+    "resource_labels": [
+      "Historical Christian Testimony",
+      "Historical autobiography",
+      "Polemical account",
+      "Verify historical claims independently",
+      "Compare doctrine with KJV"
+    ],
+    "resource_warnings": [
+      "Historical autobiography",
+      "Polemical account",
+      "Verify historical claims independently",
+      "Compare doctrine with KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Fifty Years in the Church of Rome",
+      "author": "Charles Paschal Telesphore Chiniquy",
+      "category": "Biographies",
+      "collection": "Historical Christian Testimony",
+      "badge": "Historical Christian Testimony",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 1403,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "00e98105a80a74eb76a8a23a531134b5c87c14ff998e85e504dd8b2eac393bda",
+    "file_size_bytes": 1799004,
+    "word_count": 315643
   }
 ]

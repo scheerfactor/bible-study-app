@@ -45,6 +45,7 @@ import {
 } from "lucide-react";
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import { brandMark } from "@/lib/site-metadata";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
@@ -617,6 +618,13 @@ type DictionarySearchResult = {
   source_line_start: number;
   source_line_end: number;
   review_status: string;
+};
+
+type DictionaryLookupResponse = {
+  word: string;
+  lookupWord: string;
+  found: boolean;
+  entries?: DictionarySearchResult[];
 };
 
 type StudyToolSearchResult = {
@@ -14590,11 +14598,52 @@ function saveJournalEntries(entries: JournalEntry[]) {
   window.localStorage.setItem(JOURNAL_ENTRIES_KEY, JSON.stringify(entries));
 }
 
-function wordsToDefinitionList(words: string) {
-  return Array.from(new Set(words.split(/[,;\n]/).map((word) => cleanWord(word)).filter(Boolean)))
-    .slice(0, 10)
+function wordsToDefineList(words: string) {
+  return Array.from(new Set(words.split(/[,;\n]/).map((word) => cleanWord(word)).filter(Boolean))).slice(0, 10);
+}
+
+function dictionaryEntryFromLookupResponse(data: DictionaryLookupResponse): DictionaryEntry | null {
+  const definitions = data.entries ?? [];
+  if (!data.found || !definitions.length) return null;
+
+  const sourceEntries = definitions.slice(0, 4).map((entry) => ({
+    headword: entry.headword,
+    sourceTitle: entry.source_title,
+    definition: entry.definition,
+    reviewStatus: entry.review_status,
+  }));
+
+  return {
+    word: data.word,
+    lookupWord: data.lookupWord,
+    definition: sourceEntries.map((entry) => `${entry.sourceTitle}: ${entry.definition}`).join("\n\n"),
+    found: true,
+    lookupStatus: "found",
+    sourceTitle: definitions.length > 1 ? `${definitions.length} dictionary matches` : definitions[0]?.source_title,
+    sourceEntries,
+  };
+}
+
+function reviewedDictionaryEntryForWord(word: string, reviewedEntries: Record<string, DictionaryEntry>) {
+  const fallbackEntry = findDictionaryEntry(word);
+  return reviewedEntries[fallbackEntry.lookupWord] ?? (fallbackEntry.found
+    ? fallbackEntry
+    : {
+        ...fallbackEntry,
+        lookupStatus: "checking" as const,
+        sourceTitle: "Checking reviewed dictionaries",
+        definition: "Checking reviewed dictionary sources for this word.",
+      });
+}
+
+function dictionaryWordsArePending(words: string, reviewedEntries: Record<string, DictionaryEntry>) {
+  return wordsToDefineList(words).some((word) => reviewedDictionaryEntryForWord(word, reviewedEntries).lookupStatus === "checking");
+}
+
+function wordsToDefinitionList(words: string, reviewedEntries: Record<string, DictionaryEntry> = {}) {
+  return wordsToDefineList(words)
     .map((word) => {
-      const entry = findDictionaryEntry(word);
+      const entry = reviewedDictionaryEntryForWord(word, reviewedEntries);
       return {
         word: entry.lookupWord || word,
         definition: entry.definition,
@@ -14602,7 +14651,7 @@ function wordsToDefinitionList(words: string) {
     });
 }
 
-function journalDraftToEntry(draft: JournalDraft, existing?: JournalEntry): JournalEntry {
+function journalDraftToEntry(draft: JournalDraft, existing?: JournalEntry, websterDefinitions?: JournalDefinition[]): JournalEntry {
   const now = new Date().toISOString();
   return {
     id: existing?.id ?? draft.id ?? makeId("journal"),
@@ -14614,7 +14663,7 @@ function journalDraftToEntry(draft: JournalDraft, existing?: JournalEntry): Jour
     readingPlanStatus: draft.readingPlanStatus.trim(),
     versePassage: draft.versePassage.trim(),
     wordsToDefine: draft.wordsToDefine.trim(),
-    websterDefinitions: wordsToDefinitionList(draft.wordsToDefine),
+    websterDefinitions: websterDefinitions ?? wordsToDefinitionList(draft.wordsToDefine),
     strongsConnection: draft.strongsConnection.trim(),
     verseSays: draft.verseSays.trim(),
     verseMeans: draft.verseMeans.trim(),
@@ -14723,6 +14772,33 @@ function createEmptySermon(kind: SermonKind, passage: string): SermonEntry {
     createdAt: now,
     updatedAt: now,
   };
+}
+
+function sermonDraftHasUserContent(entry: SermonEntry) {
+  const generatedTitle = entry.kind === "Sermon" ? `${entry.passage} Sermon` : `${entry.passage} Lesson`;
+  const textFields = [
+    entry.theme,
+    entry.outline,
+    entry.introduction,
+    entry.points,
+    entry.illustrations,
+    entry.applications,
+    entry.conclusion,
+    entry.invitation,
+    entry.importedStudyNotes,
+    entry.quotes,
+    entry.bulletManuscript,
+  ];
+
+  return (
+    entry.title.trim() !== generatedTitle ||
+    textFields.some((value) => value.trim()) ||
+    entry.slides.length > 0 ||
+    entry.seriesId !== "" ||
+    entry.status !== "Draft" ||
+    entry.preachedAt !== "" ||
+    entry.archived
+  );
 }
 
 function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): SermonSlide {
@@ -17641,8 +17717,16 @@ function rankCrossReference(reference: CrossReference) {
 }
 
 function rankedCrossReferences(references: CrossReference[], limit = 12) {
+  const seenReferencePairs = new Set<string>();
+
   return [...references]
     .sort((a, b) => rankCrossReference(b) - rankCrossReference(a) || a.verse_ref.localeCompare(b.verse_ref) || a.target_ref.localeCompare(b.target_ref))
+    .filter((reference) => {
+      const pairKey = `${reference.verse_ref}|${reference.target_ref}`;
+      if (seenReferencePairs.has(pairKey)) return false;
+      seenReferencePairs.add(pairKey);
+      return true;
+    })
     .slice(0, limit);
 }
 
@@ -17761,6 +17845,8 @@ export default function Home() {
   const [verseJump, setVerseJump] = useState(DEFAULT_VERSE);
   const [selectedRef, setSelectedRef] = useState("John 3:16");
   const [activeDictionaryEntry, setActiveDictionaryEntry] = useState<DictionaryEntry | null>(null);
+  const [reviewedDictionaryEntries, setReviewedDictionaryEntries] = useState<Record<string, DictionaryEntry>>({});
+  const requestedDictionaryWordsRef = useRef(new Set<string>());
   const [studyRef, setStudyRef] = useState<string | null>(null);
   const [fullStudyRef, setFullStudyRef] = useState<string | null>(null);
   const [activePersonId, setActivePersonId] = useState<string | null>(null);
@@ -17772,7 +17858,7 @@ export default function Home() {
   const [syncMessage, setSyncMessage] = useState("");
   const [crossReferences, setCrossReferences] = useState<CrossReference[]>(localCrossReferences);
   const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>([]);
-  const [, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
+  const [deferredCommentaryLoadStatus, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
     loadedFiles: 0,
     totalFiles: deferredCommentaryImportFiles.length,
     loading: false,
@@ -18724,7 +18810,7 @@ export default function Home() {
       wordStudies: chapterAnalysis.repeatedWords.slice(0, 6).map((item) => ({
         word: item.word,
         count: item.count,
-        definition: findDictionaryEntry(item.word).definition,
+        definition: reviewedDictionaryEntryForWord(item.word, reviewedDictionaryEntries).definition,
       })),
       commentaryRecommendations: Array.from(commentaryByAuthor.values()).slice(0, 4),
       crossReferences: chapterCrossReferences.slice(0, 5).map((referenceItem) => ({
@@ -18753,11 +18839,72 @@ export default function Home() {
     chapterCommentaryEntries,
     chapterCrossReferences,
     chapterKeyVerses,
+    reviewedDictionaryEntries,
     saved.notes,
     selectedRef,
     todaysPrayerFocus,
     versesByRef,
   ]);
+
+  const dictionaryPrefetchWords = useMemo(
+    () => uniqueStrings([
+      ...chapterAnalysis.repeatedWords.slice(0, 6).map((item) => item.word),
+      ...wordsToDefineList(journalDraft.wordsToDefine),
+    ]),
+    [chapterAnalysis.repeatedWords, journalDraft.wordsToDefine],
+  );
+
+  useEffect(() => {
+    dictionaryPrefetchWords.forEach((word) => {
+      const fallbackEntry = findDictionaryEntry(word);
+      const lookupWord = fallbackEntry.lookupWord;
+      if (!lookupWord || requestedDictionaryWordsRef.current.has(lookupWord)) return;
+      requestedDictionaryWordsRef.current.add(lookupWord);
+
+      setReviewedDictionaryEntries((entries) => ({
+        ...entries,
+        [lookupWord]: {
+          ...fallbackEntry,
+          lookupStatus: "checking",
+          sourceTitle: "Checking reviewed dictionaries",
+          definition: "Checking reviewed dictionary sources for this word.",
+        },
+      }));
+
+      void fetch(`/api/dictionary/${encodeURIComponent(word)}`)
+        .then(async (response) => {
+          if (!response.ok) throw new Error("Dictionary lookup failed");
+          const data = (await response.json()) as DictionaryLookupResponse;
+          return dictionaryEntryFromLookupResponse(data);
+        })
+        .then((reviewedEntry) => {
+          setReviewedDictionaryEntries((entries) => ({
+            ...entries,
+            [lookupWord]: reviewedEntry ?? (fallbackEntry.found
+              ? { ...fallbackEntry, lookupStatus: "found", sourceTitle: fallbackEntry.sourceTitle ?? "Webster's 1828 starter" }
+              : {
+                  ...fallbackEntry,
+                  lookupStatus: "missing",
+                  sourceTitle: "Dictionary lookup",
+                  definition: "No reviewed dictionary entry matched this word yet.",
+                }),
+          }));
+        })
+        .catch(() => {
+          setReviewedDictionaryEntries((entries) => ({
+            ...entries,
+            [lookupWord]: fallbackEntry.found
+              ? { ...fallbackEntry, lookupStatus: "found", sourceTitle: fallbackEntry.sourceTitle ?? "Webster's 1828 starter" }
+              : {
+                  ...fallbackEntry,
+                  lookupStatus: "missing",
+                  sourceTitle: "Dictionary lookup unavailable",
+                  definition: "The reviewed dictionary lookup is unavailable. Try again when the connection is restored.",
+                },
+          }));
+        });
+    });
+  }, [dictionaryPrefetchWords]);
 
   const journalStats = useMemo(() => {
     const today = todayIsoDate();
@@ -18958,7 +19105,12 @@ export default function Home() {
 
   function saveJournalDraft() {
     const existing = journalDraft.id ? journalEntries.find((entry) => entry.id === journalDraft.id) : undefined;
-    const entry = journalDraftToEntry(journalDraft, existing);
+    const definitions = wordsToDefinitionList(journalDraft.wordsToDefine, reviewedDictionaryEntries);
+    if (dictionaryWordsArePending(journalDraft.wordsToDefine, reviewedDictionaryEntries)) {
+      setSyncMessage("Reviewed dictionary definitions are still loading. Please save again in a moment.");
+      return;
+    }
+    const entry = journalDraftToEntry(journalDraft, existing, definitions);
     saveJournalEntryList((entries) => {
       const withoutExisting = entries.filter((item) => item.id !== entry.id);
       return [entry, ...withoutExisting];
@@ -19076,19 +19228,44 @@ export default function Home() {
   }
 
   function sendDailyChapterStudyToSermon() {
-    appendSermonImport(
-      `${dailyChapterStudy.reference} Daily Chapter Study`,
-      [
-        `Passage: ${dailyChapterStudy.reference}`,
-        `Summary: ${dailyChapterStudy.summary}`,
-        dailyChapterStudy.keyThemes.length ? `Themes: ${dailyChapterStudy.keyThemes.join(", ")}` : "Themes: No reviewed themes yet.",
-        dailyChapterStudy.highlightVerses.length ? `Key verses:\n${dailyChapterStudy.highlightVerses.map((verse) => `- ${verse.ref} - ${verse.text}`).join("\n")}` : "Key verses: No reviewed key verses yet.",
-        dailyChapterStudy.wordStudies.length ? `Word studies:\n${dailyChapterStudy.wordStudies.map((item) => `- ${item.word} (${item.count}): ${item.definition}`).join("\n")}` : "Word studies: No repeated words loaded yet.",
-        dailyChapterStudy.crossReferences.length ? `Cross references:\n${dailyChapterStudy.crossReferences.map((item) => `- ${item.source} -> ${item.target}: ${item.label}`).join("\n")}` : "Cross references: No reviewed entries yet.",
-        dailyChapterStudy.commentaryRecommendations.length ? `Commentary:\n${dailyChapterStudy.commentaryRecommendations.map((item) => `- ${item.author}, ${item.title}: ${item.recommendedUse}`).join("\n")}` : "Commentary: No reviewed entries yet.",
-        dailyChapterStudy.applicationPrompts.length ? `Applications:\n${dailyChapterStudy.applicationPrompts.map((item) => `- ${item}`).join("\n")}` : "Applications: No reviewed applications yet.",
-      ].join("\n\n"),
-    );
+    const label = `${dailyChapterStudy.reference} Daily Chapter Study`;
+    const body = [
+      `Passage: ${dailyChapterStudy.reference}`,
+      `Summary: ${dailyChapterStudy.summary}`,
+      dailyChapterStudy.keyThemes.length ? `Themes: ${dailyChapterStudy.keyThemes.join(", ")}` : "Themes: No reviewed themes yet.",
+      dailyChapterStudy.highlightVerses.length ? `Key verses:\n${dailyChapterStudy.highlightVerses.map((verse) => `- ${verse.ref} - ${verse.text}`).join("\n")}` : "Key verses: No reviewed key verses yet.",
+      dailyChapterStudy.wordStudies.length ? `Word studies:\n${dailyChapterStudy.wordStudies.map((item) => `- ${item.word} (${item.count}): ${item.definition}`).join("\n")}` : "Word studies: No repeated words loaded yet.",
+      dailyChapterStudy.crossReferences.length ? `Cross references:\n${dailyChapterStudy.crossReferences.map((item) => `- ${item.source} -> ${item.target}: ${item.label}`).join("\n")}` : "Cross references: No reviewed entries yet.",
+      dailyChapterStudy.commentaryRecommendations.length ? `Commentary:\n${dailyChapterStudy.commentaryRecommendations.map((item) => `- ${item.author}, ${item.title}: ${item.recommendedUse}`).join("\n")}` : "Commentary: No reviewed entries yet.",
+      dailyChapterStudy.applicationPrompts.length ? `Applications:\n${dailyChapterStudy.applicationPrompts.map((item) => `- ${item}`).join("\n")}` : "Applications: No reviewed applications yet.",
+    ].join("\n\n");
+
+    if (sermonDraft.passage.trim() !== dailyChapterStudy.reference) {
+      const preservedCurrentDraft = sermonDraftHasUserContent(sermonDraft);
+      if (preservedCurrentDraft) {
+        const now = new Date().toISOString();
+        const currentEntry = {
+          ...sermonDraft,
+          title: sermonDraft.title.trim() || `${sermonDraft.passage || "Untitled"} ${sermonDraft.kind}`,
+          passage: sermonDraft.passage.trim() || `${book} ${chapter}`,
+          createdAt: sermonDraft.createdAt || now,
+          updatedAt: now,
+        };
+        saveSermonEntryList((entries) => [currentEntry, ...entries.filter((item) => item.id !== currentEntry.id)]);
+      }
+
+      const nextDraft = createEmptySermon("Sermon", dailyChapterStudy.reference);
+      setSermonDraft({
+        ...nextDraft,
+        importedStudyNotes: `## ${label}\n\n${body}`,
+        updatedAt: new Date().toISOString(),
+      });
+      openSermonWorkspace("builder");
+      setSyncMessage(`${dailyChapterStudy.reference} sermon draft prepared with the daily chapter study.${preservedCurrentDraft ? " Your previous draft was saved locally." : ""}`);
+      return;
+    }
+
+    appendSermonImport(label, body);
     openSermonWorkspace("builder");
   }
 
@@ -19111,7 +19288,16 @@ export default function Home() {
   }
 
   function exportActiveJournalEntry() {
-    const entry = journalDraftToEntry(journalDraft, journalDraft.id ? journalEntries.find((item) => item.id === journalDraft.id) : undefined);
+    if (dictionaryWordsArePending(journalDraft.wordsToDefine, reviewedDictionaryEntries)) {
+      setSyncMessage("Reviewed dictionary definitions are still loading. Please export again in a moment.");
+      return;
+    }
+    const definitions = wordsToDefinitionList(journalDraft.wordsToDefine, reviewedDictionaryEntries);
+    const entry = journalDraftToEntry(
+      journalDraft,
+      journalDraft.id ? journalEntries.find((item) => item.id === journalDraft.id) : undefined,
+      definitions,
+    );
     downloadTextFile(`journal-${entry.date}.md`, journalMarkdown(entry), "text/markdown;charset=utf-8");
     setSyncMessage("Journal entry exported.");
   }
@@ -23268,29 +23454,11 @@ export default function Home() {
     try {
       const response = await fetch(`/api/dictionary/${encodeURIComponent(word)}`);
       if (response.ok) {
-        const data = (await response.json()) as {
-          word: string;
-          lookupWord: string;
-          found: boolean;
-          entries?: DictionarySearchResult[];
-        };
-        const definitions = data.entries ?? [];
-        if (data.found && definitions.length) {
-          const sourceEntries = definitions.slice(0, 4).map((entry) => ({
-            headword: entry.headword,
-            sourceTitle: entry.source_title,
-            definition: entry.definition,
-            reviewStatus: entry.review_status,
-          }));
-          setActiveDictionaryEntry({
-            word: data.word,
-            lookupWord: data.lookupWord,
-            definition: sourceEntries.map((entry) => `${entry.sourceTitle}: ${entry.definition}`).join("\n\n"),
-            found: true,
-            lookupStatus: "found",
-            sourceTitle: definitions.length > 1 ? `${definitions.length} dictionary matches` : definitions[0]?.source_title,
-            sourceEntries,
-          });
+        const data = (await response.json()) as DictionaryLookupResponse;
+        const reviewedEntry = dictionaryEntryFromLookupResponse(data);
+        if (reviewedEntry) {
+          setActiveDictionaryEntry(reviewedEntry);
+          setReviewedDictionaryEntries((entries) => ({ ...entries, [reviewedEntry.lookupWord]: reviewedEntry }));
           return;
         }
       }
@@ -23403,14 +23571,17 @@ export default function Home() {
         <header className={`sticky top-0 z-20 border-b border-stone-200/80 bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:rounded-t-[1.75rem] ${focusedMobileReading ? "hidden md:block" : ""}`}>
           <div className="flex items-center justify-between gap-3">
             <button
-              className="flex min-w-0 flex-col text-left"
+              className="flex min-w-0 items-center gap-2 text-left"
               onClick={() => setTab("today")}
               type="button"
             >
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
-                Father&apos;s Business
+              <Image alt="" aria-hidden="true" className="h-10 w-10 shrink-0 object-contain" height={40} priority src={brandMark} width={40} />
+              <span className="flex min-w-0 flex-col">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                  Father&apos;s Business
+                </span>
+                <span className="truncate text-lg font-semibold text-[var(--ink)]">Bible Study</span>
               </span>
-              <span className="truncate text-lg font-semibold text-[var(--ink)]">Bible Study</span>
             </button>
             <div className="flex shrink-0 items-center gap-2">
               {tab !== "prayer" && tab !== "journal" && (
@@ -23703,6 +23874,7 @@ export default function Home() {
                 bibleBackground={activeBibleBackground}
                 chapterCrossReferences={chapterCrossReferences}
                 chapterCommentaryEntries={chapterCommentaryEntries}
+                commentaryLoading={deferredCommentaryLoadStatus.loading && deferredCommentaryLoadStatus.mode === "chapter"}
                 allCommentaryEntries={commentaryEntries}
                 chapterKeyVerses={chapterKeyVerses}
                 chapterResourceRecommendations={activeChapterResourceRecommendations}
@@ -23979,6 +24151,7 @@ export default function Home() {
                 draft={journalDraft}
                 stats={journalStats}
                 dailyChapterStudy={dailyChapterStudy}
+                reviewedDictionaryEntries={reviewedDictionaryEntries}
                 readingPlans={READING_PLAN_FOUNDATION}
                 exportStart={journalExportStart}
                 exportEnd={journalExportEnd}
@@ -25256,6 +25429,7 @@ function JournalScreen({
   draft,
   stats,
   dailyChapterStudy,
+  reviewedDictionaryEntries,
   readingPlans,
   exportStart,
   exportEnd,
@@ -25285,6 +25459,7 @@ function JournalScreen({
   draft: JournalDraft;
   stats: { total: number; today: number; devotional: number; plans: number };
   dailyChapterStudy: DailyChapterStudy;
+  reviewedDictionaryEntries: Record<string, DictionaryEntry>;
   readingPlans: ReadingPlanFoundation[];
   exportStart: string;
   exportEnd: string;
@@ -25310,7 +25485,7 @@ function JournalScreen({
   onExportStartChange: (value: string) => void;
   onExportEndChange: (value: string) => void;
 }) {
-  const definitionPreview = wordsToDefinitionList(draft.wordsToDefine);
+  const definitionPreview = wordsToDefinitionList(draft.wordsToDefine, reviewedDictionaryEntries);
   const recentEntries = entries.slice(0, 6);
   const readyPlans = readingPlans.filter((plan) => plan.status === "Ready");
   const plannedPlans = readingPlans.filter((plan) => plan.status === "Planned");
@@ -25499,7 +25674,7 @@ function JournalScreen({
           <div className="mt-5 grid gap-3">
             <JournalField label="Words to define" value={draft.wordsToDefine} onChange={(value) => onDraftChange({ ...draft, wordsToDefine: value })} placeholder="believe, grace, faith" />
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
-              <p className="text-sm font-semibold text-[var(--green)]">Webster&apos;s 1828 Definitions</p>
+              <p className="text-sm font-semibold text-[var(--green)]">Reviewed Dictionary Definitions</p>
               <div className="mt-3 space-y-2">
                 {definitionPreview.length ? definitionPreview.map((item) => (
                   <div key={`journal-definition-${item.word}`} className="rounded-xl bg-white p-3">
@@ -28573,6 +28748,7 @@ function BibleReader({
   bibleBackground,
   chapterCrossReferences,
   chapterCommentaryEntries,
+  commentaryLoading,
   allCommentaryEntries,
   chapterKeyVerses,
   chapterResourceRecommendations,
@@ -28706,6 +28882,7 @@ function BibleReader({
   bibleBackground: ActiveBibleBackground;
   chapterCrossReferences: CrossReference[];
   chapterCommentaryEntries: CommentaryEntry[];
+  commentaryLoading: boolean;
   allCommentaryEntries: CommentaryEntry[];
   chapterKeyVerses: string[];
   chapterResourceRecommendations: ChapterResourceRecommendation[];
@@ -28926,6 +29103,7 @@ function BibleReader({
     () => Array.from(new Set(chapterCommentaryEntries.map((entry) => entry.author))).sort(),
     [chapterCommentaryEntries],
   );
+  const commentaryChecking = commentaryLoading && chapterCommentaryEntries.length === 0;
   const commentaryOrder = useMemo(() => commentaryProfilesForEntries(chapterCommentaryEntries), [chapterCommentaryEntries]);
   const commentaryConsensus = useMemo(() => commentaryComparisonInsights(chapterCommentaryEntries), [chapterCommentaryEntries]);
   const chapterNotes = Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`));
@@ -29050,9 +29228,10 @@ function BibleReader({
   const studyCoverageItems = [
     {
       label: "Commentary",
-      value: `${chapterCommentaryEntries.length}`,
-      detail: commentaryAuthors.slice(0, 2).join(", ") || "Needs review",
+      value: commentaryChecking ? "..." : `${chapterCommentaryEntries.length}`,
+      detail: commentaryChecking ? "Checking reviewed commentary" : commentaryAuthors.slice(0, 2).join(", ") || "Needs review",
       ready: chapterCommentaryEntries.length > 0,
+      loading: commentaryChecking,
       action: onOpenCommentaryCenter,
     },
     {
@@ -29060,6 +29239,7 @@ function BibleReader({
       value: `${chapterCrossReferences.length}`,
       detail: workspaceTopCrossReferences[0] ? `Best: ${workspaceTopCrossReferences[0].target_ref}` : "Needs review",
       ready: chapterCrossReferences.length > 0,
+      loading: false,
       action: () => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide(),
     },
     {
@@ -29067,6 +29247,7 @@ function BibleReader({
       value: showStrongNumbers ? `${currentChapterStrongMappingCount}` : `${workspaceStrongEntries.length}`,
       detail: showStrongNumbers ? strongMappingDisplayStatus : "Starter word studies",
       ready: currentChapterStrongMappingCount > 0 || workspaceStrongEntries.length > 0,
+      loading: false,
       action: () => onOpenStudyToolSearch(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || book, "strongs"),
     },
     {
@@ -29074,6 +29255,7 @@ function BibleReader({
       value: `${chapterDictionaryEntries.length}`,
       detail: chapterDictionaryEntries.slice(0, 2).map((entry) => entry.lookupWord).join(", ") || "Needs review",
       ready: chapterDictionaryEntries.length > 0,
+      loading: false,
       action: () => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref),
     },
     {
@@ -29081,6 +29263,7 @@ function BibleReader({
       value: `${chapterConnectionsData.people.length + chapterConnectionsData.places.length + chapterConnectionsData.timeline.length}`,
       detail: `${chapterConnectionsData.people.length} people, ${chapterConnectionsData.places.length} places`,
       ready: Boolean(bibleBackground.historicalSetting) || chapterConnectionsData.people.length > 0 || chapterConnectionsData.places.length > 0 || chapterConnectionsData.timeline.length > 0,
+      loading: false,
       action: onOpenPassageGuide,
     },
     {
@@ -29088,6 +29271,7 @@ function BibleReader({
       value: `${atAGlanceRelatedBooks.length}`,
       detail: atAGlanceRelatedBooks[0]?.title ?? "Needs review",
       ready: atAGlanceRelatedBooks.length > 0,
+      loading: false,
       action: () => atAGlanceRelatedBooks[0]?.slug ? onOpenLibraryResource(atAGlanceRelatedBooks[0].slug) : onOpenPassageGuide(),
     },
   ];
@@ -29553,8 +29737,8 @@ function BibleReader({
             />
             <BibleStudyDeskMetric
               label="Commentary"
-              value={`${chapterCommentaryEntries.length}`}
-              detail={commentaryAuthors.slice(0, 3).join(", ") || "No reviewed entries yet"}
+              value={commentaryChecking ? "Checking" : `${chapterCommentaryEntries.length}`}
+              detail={commentaryChecking ? "Loading reviewed entries for this chapter" : commentaryAuthors.slice(0, 3).join(", ") || "No reviewed entries yet"}
               onClick={onOpenCommentaryCenter}
             />
             <BibleStudyDeskMetric
@@ -29576,11 +29760,13 @@ function BibleReader({
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Study data ready for this chapter</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
-                  {studyCoverageReadyCount} of {studyCoverageItems.length} study helps are connected to {book} {chapter}.
+                  {commentaryChecking
+                    ? `Checking reviewed commentary for ${book} ${chapter}. ${studyCoverageReadyCount} other study helps are already connected.`
+                    : `${studyCoverageReadyCount} of ${studyCoverageItems.length} study helps are connected to ${book} ${chapter}.`}
                 </p>
               </div>
               <span className="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-[var(--green)]">
-                {studyCoveragePercent}%
+                {commentaryChecking ? "Checking" : `${studyCoveragePercent}%`}
               </span>
             </div>
             <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-6">
@@ -29593,8 +29779,8 @@ function BibleReader({
                 >
                   <span className="flex items-center justify-between gap-2">
                     <span className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">{item.label}</span>
-                    <span className={`rounded-full px-2 py-0.5 text-[0.62rem] font-bold ${item.ready ? "bg-[var(--highlight)] text-[var(--green)]" : "bg-stone-100 text-[var(--muted)]"}`}>
-                      {item.ready ? "Ready" : "Gap"}
+                    <span className={`rounded-full px-2 py-0.5 text-[0.62rem] font-bold ${item.ready ? "bg-[var(--highlight)] text-[var(--green)]" : item.loading ? "bg-amber-50 text-amber-800" : "bg-stone-100 text-[var(--muted)]"}`}>
+                      {item.loading ? "Checking" : item.ready ? "Ready" : "Gap"}
                     </span>
                   </span>
                   <span className="mt-1 block text-lg font-bold text-[var(--green)]">{item.value}</span>
@@ -51230,7 +51416,7 @@ function PresentationWorkspaceScreen({
   const [joinSessionId, setJoinSessionId] = useState("");
   const [remoteState, setRemoteState] = useState<PresentationRemoteState | null>(null);
   const [remoteMode, setRemoteMode] = useState<PresentationRemoteMode>("local");
-  const [remoteMessage, setRemoteMessage] = useState(supabase ? "Shared Supabase sessions are available. Local fallback remains ready." : "Supabase is not configured here, so remote control is local-only.");
+  const [remoteMessage, setRemoteMessage] = useState(supabase && user?.id ? "Secure shared sessions are available for your signed-in devices." : supabase ? "Sign in on each device for secure shared control. Local presentation remains available." : "Supabase is not configured here, so remote control is local-only.");
   const [controllerClientId] = useState(() => loadPresentationControllerId());
   const slides = draft.slides ?? [];
   const activeSlide = slides.find((slide) => slide.id === selectedSlideId) ?? slides[0] ?? null;
@@ -51248,7 +51434,7 @@ function PresentationWorkspaceScreen({
   const controlMode = remoteActive ? remoteState?.controlMode ?? "open" : "open";
   const controllerLocked = Boolean(remoteActive && remoteState?.controllerLocked);
   const signedInOwner = Boolean(user?.id && remoteState?.presenterUserId && user.id === remoteState.presenterUserId);
-  const unsignedBetaOwner = Boolean(remoteActive && !remoteState?.presenterUserId && view !== "controller");
+  const unsignedBetaOwner = Boolean(remoteMode === "local" && remoteActive && !remoteState?.presenterUserId && view !== "controller");
   const canOwnSession = signedInOwner || unsignedBetaOwner || (!remoteActive && view !== "controller");
   const canControlSession = !sessionExpired && !sessionEnded && (!remoteActive || view !== "controller" || (!controllerLocked && (controlMode === "open" || currentController?.status === "approved" || currentController?.status === "owner")));
   const canEndSession = canOwnSession && !sessionExpired;
@@ -51313,7 +51499,7 @@ function PresentationWorkspaceScreen({
   }, [remoteSessionId]);
 
   useEffect(() => {
-    if (!supabase || !remoteSessionId) return;
+    if (!supabase || !user?.id || !remoteSessionId) return;
 
     const channel = supabase
       .channel(`presentation-session-${remoteSessionId}`)
@@ -51351,7 +51537,7 @@ function PresentationWorkspaceScreen({
     return () => {
       void supabase.removeChannel(channel);
     };
-  }, [remoteSessionId, supabase]);
+  }, [remoteSessionId, supabase, user?.id]);
 
   useEffect(() => {
     if (!initialSessionId || remoteSessionId) return;
@@ -51361,10 +51547,10 @@ function PresentationWorkspaceScreen({
     });
     // The join helper owns Supabase/local fallback state and is intentionally reused for URL reconnects.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialSessionId, remoteSessionId]);
+  }, [initialSessionId, remoteSessionId, user?.id]);
 
   useEffect(() => {
-    if (!supabase || view !== "presentation" || !remoteActive || !remoteSessionId || sessionEnded) return;
+    if (!supabase || !user?.id || view !== "presentation" || !remoteActive || !remoteSessionId || sessionEnded) return;
     const heartbeat = window.setInterval(() => {
       const now = new Date().toISOString();
       void supabase
@@ -51373,7 +51559,7 @@ function PresentationWorkspaceScreen({
         .eq("session_id", remoteSessionId);
     }, 15000);
     return () => window.clearInterval(heartbeat);
-  }, [remoteActive, remoteSessionId, sessionEnded, supabase, view]);
+  }, [remoteActive, remoteSessionId, sessionEnded, supabase, user?.id, view]);
 
   function updateSlide(id: string, patch: Partial<SermonSlide>) {
     onDraftChange({ slides: slides.map((slide) => slide.id === id ? { ...slide, ...patch } : slide) });
@@ -51516,8 +51702,9 @@ function PresentationWorkspaceScreen({
   }
 
   async function syncSupabasePresentationSession(state: PresentationRemoteState, eventType: string) {
-    if (!supabase) {
+    if (!supabase || !user?.id) {
       setRemoteMode("local");
+      if (supabase) setRemoteMessage("Sign in on each device for secure shared control. This presentation is local to this browser.");
       return false;
     }
     const controlEventTypes = ["next", "previous", "jump", "first", "last", "blank", "unblank", "refresh", "restart_timer"];
@@ -51530,7 +51717,7 @@ function PresentationWorkspaceScreen({
       return false;
     }
 
-    const row = presentationSessionRowFromState(state, user?.id);
+    const row = presentationSessionRowFromState(state, user.id);
     const { error } = await supabase
       .from("presentation_sessions")
       .upsert(row, { onConflict: "session_id" });
@@ -51546,7 +51733,7 @@ function PresentationWorkspaceScreen({
       event_type: eventType,
       slide_index: state.slideIndex,
       is_blank: state.blank,
-      created_by: user?.id ?? null,
+      created_by: user.id,
       payload: {
         presentation_id: state.presentationId,
         title: state.title,
@@ -51605,7 +51792,7 @@ function PresentationWorkspaceScreen({
     setPresenterSlideIndex(0);
     setPresenterStartedAt(Date.now());
     setPresenterNow(Date.now());
-    setRemoteMessage(user?.id ? `Session ${nextState.sessionId} is ready and owned by the signed-in presenter.` : `Session ${nextState.sessionId} is ready. Signed-out beta sessions are controlled by session code.`);
+    setRemoteMessage(user?.id ? `Session ${nextState.sessionId} is ready for devices signed in to this account.` : `Local session ${nextState.sessionId} is ready in this browser. Sign in on every device for shared control.`);
     if (typeof window !== "undefined" && nextView === "presentation") {
       window.location.hash = `presentation-session-${nextState.sessionId}`;
     }
@@ -51619,7 +51806,7 @@ function PresentationWorkspaceScreen({
       setRemoteMessage("Enter a presentation session ID first.");
       return;
     }
-    if (supabase) {
+    if (supabase && user?.id) {
       const { data, error } = await supabase
         .from("presentation_sessions")
         .select("session_id, presentation_id, current_slide_index, is_blank, is_active, presenter_user_id, control_mode, controller_lock, controllers, last_controller_id, display_last_seen_at, expires_at, title, theme_id, slides, target_minutes, notes, created_at, updated_at")
@@ -51676,18 +51863,20 @@ function PresentationWorkspaceScreen({
           event_type: view === "presentation" ? "display_join" : "join",
           slide_index: joinedState.slideIndex,
           is_blank: joinedState.blank,
-          created_by: user?.id ?? null,
+          created_by: user.id,
           payload: { source: "presentation_workspace", controller_id: view === "controller" ? controllerClientId : null, status: joinStatus },
         });
         return;
       }
 
-      setRemoteMessage("Shared session was not found yet. Checking local fallback.");
+      setRemoteMessage("No shared session owned by this account was found. Checking local fallback.");
+    } else if (supabase) {
+      setRemoteMessage("Sign in on every device to join a secure shared session. Checking local fallback in this browser.");
     }
 
     const nextState = loadPresentationRemoteState(sessionId);
     if (!nextState) {
-      setRemoteMessage("No local presentation session found for that ID yet.");
+      setRemoteMessage(supabase && !user?.id ? "Sign in on every device to join a secure shared session. No local session with that ID exists in this browser." : "No local presentation session found for that ID yet.");
       return;
     }
     if (isPresentationSessionExpired(nextState)) {
@@ -52170,11 +52359,11 @@ function PresentationWorkspaceScreen({
                 <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
                   <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Controller approval</p>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    <button className={`rounded-full px-3 py-1.5 text-xs font-semibold ${controlMode === "open" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"}`} onClick={() => updateSessionControlMode("open")} type="button">Anyone with code</button>
+                    <button className={`rounded-full px-3 py-1.5 text-xs font-semibold ${controlMode === "open" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"}`} onClick={() => updateSessionControlMode("open")} type="button">Owner devices</button>
                     <button className={`rounded-full px-3 py-1.5 text-xs font-semibold ${controlMode === "approval" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"}`} onClick={() => updateSessionControlMode("approval")} type="button">Require approval</button>
                     <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={toggleControllerLock} type="button">{controllerLocked ? "Unlock controllers" : "Lock controllers"}</button>
                   </div>
-                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{user?.id ? "Signed-in sessions are tied to the presenter account." : "Signed out beta session: protect the code and use approval mode for safer testing."}</p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{user?.id ? "Use this same signed-in account on the presenter, projector, and controller devices." : "Signed-out presentations remain local to this browser. Sign in on every device for shared control."}</p>
                 </div>
                 <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
                   <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Connected controllers</p>

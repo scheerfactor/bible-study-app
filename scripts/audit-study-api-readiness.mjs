@@ -1,4 +1,4 @@
-const LIVE_BETA_URL = "https://bible-study-app-eight.vercel.app/";
+const LIVE_BETA_URL = "https://study.fathersbusinessmasteryresources.com/";
 const useLiveBeta = process.argv.includes("--live");
 const baseUrl = new URL(
   process.env.STUDY_API_AUDIT_BASE_URL ?? (useLiveBeta ? LIVE_BETA_URL : "http://127.0.0.1:3000/"),

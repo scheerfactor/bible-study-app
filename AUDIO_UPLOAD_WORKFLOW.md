@@ -67,7 +67,7 @@ Suggested CORS intent:
 
 ```text
 Allowed origins:
-- https://bible-study-app-eight.vercel.app
+- https://study.fathersbusinessmasteryresources.com
 - http://localhost:3052
 
 Allowed methods:

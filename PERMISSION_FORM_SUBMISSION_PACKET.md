@@ -10,7 +10,7 @@ Email: `hello@fathersbusinessmasteryresources.com`
 
 Project: Father's Business Bible Study
 
-Website: `https://bible-study-app-eight.vercel.app/`
+Website: `https://study.fathersbusinessmasteryresources.com/`
 
 ## Project Description
 

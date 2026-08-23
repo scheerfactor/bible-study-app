@@ -284,6 +284,33 @@ const hymns = [
     musicAttribution: "Tune by George J. Elvey, 1868; public-domain SATB file maintained by Peter Chubb for the Mutopia Project.",
     reviewedAt: "2026-08-15",
   },
+  {
+    id: "abide-with-me",
+    title: "Abide with Me",
+    lyricist: "Henry F. Lyte",
+    lyricYear: 1847,
+    tune: "Eventide",
+    scriptureReferences: ["Luke 24:29", "Psalm 46:1", "1 Corinthians 15:55-57"],
+    stanzas: [
+      "Abide with me; fast falls the eventide;\nThe darkness deepens; Lord, with me abide:\nWhen other helpers fail, and comforts flee,\nHelp of the helpless, O abide with me.",
+      "Swift to its close ebbs out life's little day;\nEarth's joys grow dim, its glories pass away;\nChange and decay in all around I see;\nO Thou who changest not, abide with me.",
+      "I need Thy presence ev'ry passing hour,\nWhat but Thy grace can foil the tempter's pow'r?\nWho like Thyself my guide and stay can be?\nThro' cloud and sunshine, O abide with me.",
+      "I fear no foe,with Thee at hand to bless;\nIlls have no weight, and tears no bitterness;\nWhere is death's sting? where, grave, thy victory?\nI triumph still, if Thou abide with me.",
+      "Hold Thou Thy cross before my closing eyes;\nShine thro' the gloom, and point me to the skies;\nHeav'n's morning breaks, and earth's vain shadows flee;\nIn life, in death, O Lord, abide with me.",
+    ],
+    refrain: null,
+    textSourceUrl: "https://hymnary.org/hymn/HCH11927/52",
+    textRights: "Public domain; text checked line by line against Hymnal for Church and Home (1927), hymn 52.",
+    midiFile: "abide-with-me.mid",
+    midiSha256: "29847f715406da7f17eeac926b41d33891f0daebfcff7c30e82e385174ab4773",
+    rightsEvidenceFile: "abide-with-me-wikimedia.json",
+    rightsEvidenceSha256: "e5c197b279e038c3aa3027cd51f227a66198e533d03bbc2d52ee03c35cbe3314",
+    rightsEvidenceMarker: "Creative Commons Zero, Public Domain Dedication",
+    musicSourceUrl: "https://commons.wikimedia.org/wiki/File:Bleibe_bei_uns.mid",
+    musicRights: "CC0 1.0 Universal Public Domain Dedication",
+    musicAttribution: "Tune by William Henry Monk, 1861; MIDI setting and sound file by Peter Gerloff (Rabanus Flavus), dedicated to the public domain under CC0 1.0.",
+    reviewedAt: "2026-08-23",
+  },
 ];
 
 function round(value) {

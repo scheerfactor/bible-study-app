@@ -13,27 +13,12 @@ import {
   RadioTower,
   ShieldCheck,
 } from "lucide-react";
-import { siteName, socialPreviewImage } from "@/lib/site-metadata";
+import { publicBetaTarget, publicBetaTargetLabel } from "@/lib/launch-plan";
+import { brandMark, siteName, socialPreviewImage } from "@/lib/site-metadata";
 import LaunchCountdown from "./LaunchCountdown";
 
-const DEFAULT_PUBLIC_BETA_TARGET = "2027-04-15T19:00:00-04:00";
-const configuredTarget = process.env.NEXT_PUBLIC_PUBLIC_BETA_TARGET_AT ?? DEFAULT_PUBLIC_BETA_TARGET;
-const PUBLIC_BETA_TARGET = Number.isNaN(Date.parse(configuredTarget))
-  ? DEFAULT_PUBLIC_BETA_TARGET
-  : configuredTarget;
-const PUBLIC_BETA_TARGET_LABEL = new Intl.DateTimeFormat("en-US", {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  hour: "numeric",
-  minute: "2-digit",
-  timeZone: "America/New_York",
-  timeZoneName: "short",
-}).format(new Date(PUBLIC_BETA_TARGET));
-
 const launchDescription =
-  `${siteName} is being prepared for a founding free public beta targeted for ${PUBLIC_BETA_TARGET_LABEL}.`;
+  `${siteName} is being prepared for a founding free public beta targeted for ${publicBetaTargetLabel}.`;
 
 export const metadata: Metadata = {
   title: "Coming Soon",
@@ -121,15 +106,15 @@ export default function ComingSoonPage() {
     <main className="launch-page">
       <header className="launch-header">
         <Link className="launch-brand" href="/" aria-label="Father's Business Bible Study home">
-          <BookOpenText aria-hidden="true" size={24} />
+          <Image alt="" aria-hidden="true" height={42} priority src={brandMark} width={42} />
           <span>
             <strong>Father&apos;s Business</strong>
             <small>Bible Study</small>
           </span>
         </Link>
         <nav aria-label="Launch page navigation">
-          <Link href="/partners">For authors</Link>
-          <Link href="#working-preview">Try it now</Link>
+          <Link href="/why">Why this app</Link>
+          <Link href="/support-the-work">Support the work</Link>
           <Link className="launch-header-action" href="/">Open preview</Link>
         </nav>
       </header>
@@ -153,9 +138,9 @@ export default function ComingSoonPage() {
           </p>
           <div className="launch-target-line">
             <Clock3 aria-hidden="true" size={18} />
-            <span>Founding beta target: {PUBLIC_BETA_TARGET_LABEL}</span>
+            <span>Founding beta target: {publicBetaTargetLabel}</span>
           </div>
-          <LaunchCountdown target={PUBLIC_BETA_TARGET} />
+          <LaunchCountdown target={publicBetaTarget} />
           <div className="launch-actions">
             <Link className="launch-primary-action" href="/">
               Open current preview <ArrowRight aria-hidden="true" size={18} />
@@ -294,6 +279,8 @@ export default function ComingSoonPage() {
             <Link href="/rights">Rights</Link>
             <Link href="/doctrine">Doctrine</Link>
             <Link href="/partners">Authors</Link>
+            <Link href="/why">Why this app</Link>
+            <Link href="/support-the-work">Support the work</Link>
             <Link href="/support">Support</Link>
           </nav>
         </div>

@@ -685,6 +685,11 @@ drop policy if exists "Presentation sessions can be started" on public.presentat
 drop policy if exists "Presentation sessions can be controlled by code" on public.presentation_sessions;
 drop policy if exists "Presentation events are readable" on public.presentation_session_events;
 drop policy if exists "Presentation events can be created" on public.presentation_session_events;
+drop policy if exists "Users can read their presentation sessions" on public.presentation_sessions;
+drop policy if exists "Users can start their presentation sessions" on public.presentation_sessions;
+drop policy if exists "Users can update their presentation sessions" on public.presentation_sessions;
+drop policy if exists "Users can read their presentation events" on public.presentation_session_events;
+drop policy if exists "Users can create their presentation events" on public.presentation_session_events;
 drop policy if exists "Users can read their own roles" on public.user_roles;
 drop policy if exists "Admins can read acquisition records" on public.admin_acquisition_records;
 drop policy if exists "Admins can manage acquisition records" on public.admin_acquisition_records;
@@ -1045,26 +1050,55 @@ create policy "Users can delete their permission requests"
   on public.user_resource_permission_requests for delete
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
-create policy "Presentation sessions are joinable by code"
+create policy "Users can read their presentation sessions"
   on public.presentation_sessions for select
-  using (true);
+  to authenticated
+  using ((select auth.uid()) is not null and (select auth.uid()) = presenter_user_id);
 
-create policy "Presentation sessions can be started"
+create policy "Users can start their presentation sessions"
   on public.presentation_sessions for insert
-  with check (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$');
+  to authenticated
+  with check (
+    (select auth.uid()) is not null
+    and (select auth.uid()) = presenter_user_id
+    and session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$'
+  );
 
-create policy "Presentation sessions can be controlled by code"
+create policy "Users can update their presentation sessions"
   on public.presentation_sessions for update
-  using (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$')
-  with check (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$');
+  to authenticated
+  using ((select auth.uid()) is not null and (select auth.uid()) = presenter_user_id)
+  with check (
+    (select auth.uid()) is not null
+    and (select auth.uid()) = presenter_user_id
+    and session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$'
+  );
 
-create policy "Presentation events are readable"
+create policy "Users can read their presentation events"
   on public.presentation_session_events for select
-  using (true);
+  to authenticated
+  using (
+    exists (
+      select 1
+      from public.presentation_sessions
+      where presentation_sessions.session_id = presentation_session_events.session_id
+        and presentation_sessions.presenter_user_id = (select auth.uid())
+    )
+  );
 
-create policy "Presentation events can be created"
+create policy "Users can create their presentation events"
   on public.presentation_session_events for insert
-  with check (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$');
+  to authenticated
+  with check (
+    (select auth.uid()) is not null
+    and created_by = (select auth.uid())
+    and exists (
+      select 1
+      from public.presentation_sessions
+      where presentation_sessions.session_id = presentation_session_events.session_id
+        and presentation_sessions.presenter_user_id = (select auth.uid())
+    )
+  );
 
 create policy "Users can read their own roles"
   on public.user_roles for select
@@ -1154,8 +1188,10 @@ grant select on public.strongs_sources to anon, authenticated;
 grant select on public.strongs_entries to anon, authenticated;
 grant select, insert, update, delete on public.user_personal_library_resources to authenticated;
 grant select, insert, update, delete on public.user_resource_permission_requests to authenticated;
-grant select, insert, update on public.presentation_sessions to anon, authenticated;
-grant select, insert on public.presentation_session_events to anon, authenticated;
+revoke all on public.presentation_sessions from anon, authenticated;
+revoke all on public.presentation_session_events from anon, authenticated;
+grant select, insert, update on public.presentation_sessions to authenticated;
+grant select, insert on public.presentation_session_events to authenticated;
 revoke all on public.user_roles from anon, authenticated;
 grant select on public.user_roles to authenticated;
 revoke all on public.admin_acquisition_records from anon, authenticated;
