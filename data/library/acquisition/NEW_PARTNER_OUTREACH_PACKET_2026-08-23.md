@@ -2,8 +2,9 @@
 
 Prepared: 2026-08-23
 
-Status: Draft 1 was sent to Bible Visuals International on 2026-08-23 at 11:45 PM EDT. Drafts 2-3
-remain unsent. No permission is implied by sending an inquiry.
+Status: Draft 1 was sent to Bible Visuals International on 2026-08-23 at 11:45 PM EDT. Draft 2 was
+verified against Majesty Music's official customer-service route on 2026-08-23 and remains unsent
+pending explicit approval. Draft 3 remains unsent. No permission is implied by an inquiry.
 
 ## Why these prospects come first
 
@@ -60,6 +61,10 @@ Father's Business Mastery Resources
 https://study.fathersbusinessmasteryresources.com/
 
 ## Draft 2: Majesty Music
+
+**Verified:** 2026-08-23 against the official Majesty Music customer-service and catalog pages
+
+**Status:** Ready for approval; not sent
 
 **To:** service@majestymusic.com  
 **Subject:** Request for the right contact for a hymn and presentation app pilot
