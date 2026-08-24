@@ -48,7 +48,7 @@ import Image from "next/image";
 import { brandMark } from "@/lib/site-metadata";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
-import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
+import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
@@ -24330,6 +24330,15 @@ export default function Home() {
             {tab === "library" && libraryCatalogStatus === "ready" && (
               <LibraryScreen
                 view={libraryView}
+                resourceDeskPassage={{
+                  book,
+                  chapter,
+                  terms: uniqueStrings([
+                    ...activeChapterThemes.map((theme) => theme.title),
+                    ...activeChapterConnections.themes,
+                    ...chapterAnalysis.repeatedWords.slice(0, 8).map((item) => item.word),
+                  ]),
+                }}
                 canUseAdminDrafts={canOpenAdminArea}
                 resources={libraryResources}
                 allResources={allLibraryResources}
@@ -37361,6 +37370,7 @@ function LibrarySearchPager({
 
 function LibraryScreen({
   view,
+  resourceDeskPassage,
   canUseAdminDrafts,
   resources,
   allResources,
@@ -37461,6 +37471,7 @@ function LibraryScreen({
   onReadAgain,
 }: {
   view: LibraryView;
+  resourceDeskPassage: ResourceDeskPassageContext;
   canUseAdminDrafts: boolean;
   resources: LibraryResource[];
   allResources: LibraryResource[];
@@ -38233,7 +38244,11 @@ function LibraryScreen({
 
       <AuthorCompletionDashboard resources={resources} onOpenAuthor={onOpenAuthor} />
 
-      <BibleStudyResourceDesk onCreatePresentation={onCreateResourcePresentation} />
+      <BibleStudyResourceDesk
+        key={`${resourceDeskPassage.book}-${resourceDeskPassage.chapter}-${resourceDeskPassage.terms.join("|")}`}
+        passageContext={resourceDeskPassage}
+        onCreatePresentation={onCreateResourcePresentation}
+      />
 
       <LibraryMediaCenter
         books={mediaBookResources}

@@ -21,10 +21,57 @@ export type ResourcePresentationSeed = {
   }>;
 };
 
+export type ResourceDeskPassageContext = {
+  book: string;
+  chapter: number;
+  terms: string[];
+};
+
 type Hymn = (typeof hymnsData)[number];
 type Evidence = (typeof evidenceData)[number];
 type PreachingHelp = (typeof preachingData)[number];
 type PreachingHelpFilter = "All" | "Quote" | "Poem" | "Illustration";
+
+function referenceMatchesChapter(reference: string, context: ResourceDeskPassageContext) {
+  const normalizedReference = reference.toLowerCase();
+  const chapterPrefix = `${context.book} ${context.chapter}`.toLowerCase();
+  if (normalizedReference === chapterPrefix || normalizedReference.startsWith(`${chapterPrefix}:`)) return true;
+  const psalmPrefix = `psalm ${context.chapter}`;
+  if (context.book === "Psalms" && (normalizedReference === psalmPrefix || normalizedReference.startsWith(`${psalmPrefix}:`))) return true;
+  return false;
+}
+
+function referenceMatchesBook(reference: string, context: ResourceDeskPassageContext) {
+  const normalizedReference = reference.toLowerCase();
+  const bookPrefix = context.book.toLowerCase();
+  if (normalizedReference.startsWith(`${bookPrefix} `)) return true;
+  if (context.book === "Psalms" && normalizedReference.startsWith("psalm ")) return true;
+  return false;
+}
+
+function passageTopicScore(haystack: string, terms: string[]) {
+  const normalizedHaystack = ` ${haystack.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `;
+  return terms.reduce((score, term) => {
+    const normalizedTerm = term.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    return normalizedTerm.length > 2 && normalizedHaystack.includes(` ${normalizedTerm} `) ? score + 4 : score;
+  }, 0);
+}
+
+function rankedForPassage<T>(
+  items: readonly T[],
+  score: (item: T) => number,
+) {
+  return items
+    .map((item, index) => ({ item, index, score: score(item) }))
+    .sort((left, right) => right.score - left.score || left.index - right.index);
+}
+
+function passageMatchLabel(references: string[], score: number, context: ResourceDeskPassageContext) {
+  if (references.some((reference) => referenceMatchesChapter(reference, context))) return "Direct chapter reference";
+  if (references.some((reference) => referenceMatchesBook(reference, context))) return "Same Bible book";
+  if (score > 0) return "Topic and word match";
+  return "Closest reviewed resource";
+}
 
 function midiFrequency(note: number) {
   return 440 * 2 ** ((note - 69) / 12);
@@ -32,19 +79,70 @@ function midiFrequency(note: number) {
 
 export default function BibleStudyResourceDesk({
   onCreatePresentation,
+  passageContext,
 }: {
   onCreatePresentation: (seed: ResourcePresentationSeed) => void;
+  passageContext?: ResourceDeskPassageContext;
 }) {
   const [mode, setMode] = useState<"hymns" | "evidence" | "preaching">("hymns");
-  const [selectedHymnId, setSelectedHymnId] = useState(hymnsData[0].id);
   const [preachingHelpFilter, setPreachingHelpFilter] = useState<PreachingHelpFilter>("All");
   const [preachingHelpQuery, setPreachingHelpQuery] = useState("");
   const [playingHymnId, setPlayingHymnId] = useState<string | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorsRef = useRef<OscillatorNode[]>([]);
   const playbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const selectedHymn = hymnsData.find((hymn) => hymn.id === selectedHymnId) ?? hymnsData[0];
-  const filteredPreachingHelps = preachingData.filter((entry) => {
+  const rankedHymns = rankedForPassage(hymnsData, (hymn) => {
+    if (!passageContext) return 0;
+    const referenceScore = hymn.scriptureReferences.reduce((score, reference) => {
+      if (referenceMatchesChapter(reference, passageContext)) return score + 100;
+      if (referenceMatchesBook(reference, passageContext)) return score + 30;
+      return score;
+    }, 0);
+    return referenceScore + passageTopicScore([
+      hymn.title,
+      hymn.lyricist,
+      ...hymn.scriptureReferences,
+      ...hymn.stanzas,
+      hymn.refrain ?? "",
+    ].join(" "), passageContext.terms);
+  });
+  const rankedPreachingHelps = rankedForPassage(preachingData, (entry) => {
+    if (!passageContext) return 0;
+    const referenceScore = entry.bibleReferences.reduce((score, reference) => {
+      if (referenceMatchesChapter(reference, passageContext)) return score + 100;
+      if (referenceMatchesBook(reference, passageContext)) return score + 30;
+      return score;
+    }, 0);
+    return referenceScore + passageTopicScore([
+      entry.title,
+      entry.type,
+      entry.author,
+      entry.text,
+      entry.recommendedUse,
+      ...entry.topics,
+      ...entry.bibleReferences,
+    ].join(" "), passageContext.terms);
+  });
+  const rankedEvidence = rankedForPassage(evidenceData, (entry) => {
+    if (!passageContext) return 0;
+    const referenceScore = entry.bibleReferences.reduce((score, reference) => {
+      if (referenceMatchesChapter(reference, passageContext)) return score + 100;
+      if (referenceMatchesBook(reference, passageContext)) return score + 30;
+      return score;
+    }, 0);
+    return referenceScore + passageTopicScore([
+      entry.title,
+      entry.object,
+      entry.culture,
+      entry.place,
+      entry.studyNote,
+      entry.teachingPrompt,
+      ...entry.bibleReferences,
+    ].join(" "), passageContext.terms);
+  });
+  const [selectedHymnId, setSelectedHymnId] = useState(rankedHymns[0]?.item.id ?? hymnsData[0].id);
+  const selectedHymn = hymnsData.find((hymn) => hymn.id === selectedHymnId) ?? rankedHymns[0]?.item ?? hymnsData[0];
+  const filteredPreachingHelps = rankedPreachingHelps.map((ranked) => ranked.item).filter((entry) => {
     if (preachingHelpFilter !== "All" && entry.type !== preachingHelpFilter) return false;
     const query = preachingHelpQuery.trim().toLowerCase();
     if (!query) return true;
@@ -53,6 +151,9 @@ export default function BibleStudyResourceDesk({
       .toLowerCase()
       .includes(query);
   });
+  const recommendedHymn = rankedHymns[0];
+  const recommendedPreachingHelp = rankedPreachingHelps[0];
+  const recommendedEvidence = rankedEvidence[0];
 
   function stopPlayback() {
     for (const oscillator of oscillatorsRef.current) {
@@ -193,12 +294,59 @@ export default function BibleStudyResourceDesk({
         </div>
       </div>
 
+      {passageContext && recommendedHymn && recommendedPreachingHelp && recommendedEvidence && (
+        <div className="mt-5 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Best matches for this passage</p>
+              <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{passageContext.book} {passageContext.chapter}</h3>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Reviewed resources only</span>
+          </div>
+          <div className="mt-3 grid gap-2 lg:grid-cols-3">
+            <button
+              className="rounded-lg border border-[var(--line)] bg-white p-3 text-left"
+              onClick={() => {
+                setMode("hymns");
+                setSelectedHymnId(recommendedHymn.item.id);
+              }}
+              type="button"
+            >
+              <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]"><Music2 size={15} /> Hymn</span>
+              <span className="mt-2 block text-sm font-semibold text-[var(--green)]">{recommendedHymn.item.title}</span>
+              <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{passageMatchLabel(recommendedHymn.item.scriptureReferences, recommendedHymn.score, passageContext)}</span>
+            </button>
+            <button
+              className="rounded-lg border border-[var(--line)] bg-white p-3 text-left"
+              onClick={() => {
+                setMode("preaching");
+                setPreachingHelpFilter("All");
+                setPreachingHelpQuery(recommendedPreachingHelp.item.title);
+              }}
+              type="button"
+            >
+              <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]"><Feather size={15} /> {recommendedPreachingHelp.item.type}</span>
+              <span className="mt-2 block text-sm font-semibold text-[var(--green)]">{recommendedPreachingHelp.item.title}</span>
+              <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{passageMatchLabel(recommendedPreachingHelp.item.bibleReferences, recommendedPreachingHelp.score, passageContext)}</span>
+            </button>
+            <button className="rounded-lg border border-[var(--line)] bg-white p-3 text-left" onClick={() => setMode("evidence")} type="button">
+              <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]"><Landmark size={15} /> Bible-world evidence</span>
+              <span className="mt-2 block text-sm font-semibold text-[var(--green)]">{recommendedEvidence.item.title}</span>
+              <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{passageMatchLabel(recommendedEvidence.item.bibleReferences, recommendedEvidence.score, passageContext)}</span>
+            </button>
+          </div>
+          <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+            Matches use reviewed Scripture references, chapter themes, and repeated words. Read the KJV passage first, then confirm that each hymn, illustration, or historical item genuinely serves the text.
+          </p>
+        </div>
+      )}
+
       {mode === "hymns" && (
         <div className="mt-5">
           <div className="flex gap-2 overflow-x-auto pb-2">
-            {hymnsData.map((hymn) => (
+            {rankedHymns.map(({ item: hymn }, index) => (
               <button key={hymn.id} className={"shrink-0 rounded-lg border px-3 py-2 text-left text-sm font-semibold " + (selectedHymn.id === hymn.id ? "border-[var(--green)] bg-[var(--green)] text-white" : "border-[var(--line)] bg-white text-[var(--ink)]")} onClick={() => setSelectedHymnId(hymn.id)} type="button">
-                {hymn.title}
+                {hymn.title}{passageContext && index === 0 ? " · Best match" : ""}
               </button>
             ))}
           </div>
@@ -243,7 +391,7 @@ export default function BibleStudyResourceDesk({
 
       {mode === "evidence" && (
         <div className="mt-5 grid gap-4 lg:grid-cols-3">
-          {evidenceData.map((entry) => (
+          {rankedEvidence.map(({ item: entry }) => (
             <article key={entry.id} className="overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--paper)]">
               <div className="relative aspect-[4/3] bg-stone-200">
                 <Image alt={entry.title} className="object-cover" fill loading="eager" sizes="(max-width: 1024px) 100vw, 33vw" src={entry.assetUrl} />
