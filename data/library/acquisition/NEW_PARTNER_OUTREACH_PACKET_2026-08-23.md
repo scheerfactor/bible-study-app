@@ -5,7 +5,8 @@ Prepared: 2026-08-23
 Status: Draft 1 was sent to Bible Visuals International on 2026-08-23 at 11:45 PM EDT. Draft 2 was
 sent to Majesty Music on 2026-08-24 at 6:01 AM EDT. Draft 3 was sent to Positive Action for Christ on
 2026-08-24 at 6:28 AM EDT after verification against its official contact, licensing, terms, and
-product pages. No permission is implied by an inquiry.
+product pages. Draft 4 was submitted to Regular Baptist Press on 2026-08-24 at 6:31 PM EDT through its
+official permissions contact form. No permission is implied by an inquiry.
 
 ## Why these prospects come first
 
@@ -142,6 +143,9 @@ https://study.fathersbusinessmasteryresources.com/
 
 **Verified:** 2026-08-24 against the official RBP contact route, KJV product page, store catalog,
 digital-resource listings, and copyright notice
+
+**Sent:** 2026-08-24 at 6:31 PM EDT through the official contact form using
+hello@fathersbusinessmasteryresources.com
 
 **Route:** https://regularbaptistpress.org/about-us/contact-us/
 
