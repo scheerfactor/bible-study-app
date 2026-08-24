@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-24T23:51:20.105Z
+Generated: 2026-08-24T23:56:01.372Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -133,15 +133,15 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fishers | FISH'ER | 7 | ocr_full_import_needs_spot_review |
 | foes | FOE | 7 | ocr_full_import_needs_spot_review |
 | fragments | FRAG'MENT | 7 | ocr_full_import_needs_spot_review |
-| jasper | JASPER | 7 | ocr_full_import_needs_spot_review |
-| laughter | LAUGHTER | 7 | ocr_full_import_needs_spot_review |
-| lent | LENT | 7 | ocr_full_import_needs_spot_review |
 | market | MARKET | 7 | ocr_full_import_needs_spot_review |
 | masons | MA'SON | 7 | ocr_full_import_needs_spot_review |
 | ministration | MINISTRA'TION | 7 | ocr_full_import_needs_spot_review |
 | network | NET' -WORK | 7 | ocr_full_import_needs_spot_review |
 | overwhelmed | OVERWHELM' | 7 | ocr_full_import_needs_spot_review |
 | pen | PEN | 7 | ocr_full_import_needs_spot_review |
+| principalities | PRINCIPALITY | 7 | ocr_full_import_needs_spot_review |
+| provender | PROVENDER | 7 | ocr_full_import_needs_spot_review |
+| quite | QUITE | 7 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

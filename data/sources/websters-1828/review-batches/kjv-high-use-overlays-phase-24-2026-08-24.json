@@ -1,0 +1,48 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-24-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next three high-use KJV words remaining in the OCR-cleanup queue after phase 23.",
+  "review_method": "Verified each page heading and entry heading, preserved every displayed sense and the displayed wording, normalized whitespace only, and excluded redirects or neighboring-word entries.",
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No neighboring-word or related-word page was accepted.",
+    "No sense was omitted because of historical or ecclesiastical subject matter.",
+    "No definition wording was summarized, modernized, or invented."
+  ],
+  "entries": [
+    {
+      "word": "jasper",
+      "kjv_occurrences": 7,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/jasper",
+      "source_paragraphs": 2,
+      "exact_page_heading": "Jasper",
+      "exact_entry_heading": "J'ASPER",
+      "exact_source_match": true
+    },
+    {
+      "word": "laughter",
+      "kjv_occurrences": 7,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/laughter",
+      "source_paragraphs": 2,
+      "exact_page_heading": "Laughter",
+      "exact_entry_heading": "LAUGHTER",
+      "exact_source_match": true
+    },
+    {
+      "word": "lent",
+      "kjv_occurrences": 7,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/lent",
+      "source_paragraphs": 3,
+      "exact_page_heading": "Lent",
+      "exact_entry_heading": "LENT",
+      "exact_source_match": true
+    }
+  ]
+}

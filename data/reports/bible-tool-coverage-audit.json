@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-24T23:51:20.105Z",
+    "generated_at": "2026-08-24T23:56:01.372Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60918,
+      "entries": 60921,
       "normalizedHeadwords": 51077,
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
@@ -2268,72 +2268,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "jasper",
-          "count": 7,
-          "sampleRefs": [
-            "Exodus 28:20",
-            "Exodus 39:13",
-            "Ezekiel 28:13",
-            "Revelation 4:3",
-            "Revelation 21:11"
-          ],
-          "lookupCandidates": [
-            "jasper"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "JASPER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "laughter",
-          "count": 7,
-          "sampleRefs": [
-            "Psalms 126:2",
-            "Proverbs 14:13",
-            "Ecclesiastes 2:2",
-            "Ecclesiastes 7:3",
-            "Ecclesiastes 7:6"
-          ],
-          "lookupCandidates": [
-            "laughter"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LAUGHTER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "lent",
-          "count": 7,
-          "sampleRefs": [
-            "Exodus 12:36",
-            "Deuteronomy 23:19",
-            "1 Samuel 1:28",
-            "1 Samuel 1:28",
-            "1 Samuel 2:20"
-          ],
-          "lookupCandidates": [
-            "lent"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "market",
           "count": 7,
           "sampleRefs": [
@@ -3597,6 +3531,73 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DRUNK'ARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dying",
+          "count": 6,
+          "sampleRefs": [
+            "Numbers 17:13",
+            "Mark 12:20",
+            "Luke 8:42",
+            "2 Corinthians 4:10",
+            "2 Corinthians 6:9"
+          ],
+          "lookupCandidates": [
+            "dying"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DY'ING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "envied",
+          "count": 6,
+          "sampleRefs": [
+            "Genesis 26:14",
+            "Genesis 30:1",
+            "Genesis 37:11",
+            "Psalms 106:16",
+            "Ecclesiastes 4:4"
+          ],
+          "lookupCandidates": [
+            "envied",
+            "envi"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EN'VIED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "expert",
+          "count": 6,
+          "sampleRefs": [
+            "1 Chronicles 12:33",
+            "1 Chronicles 12:35",
+            "1 Chronicles 12:36",
+            "Solomon's Song 3:8",
+            "Jeremiah 50:9"
+          ],
+          "lookupCandidates": [
+            "expert"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EXPERT'",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10754,72 +10755,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "jasper",
-        "count": 7,
-        "sampleRefs": [
-          "Exodus 28:20",
-          "Exodus 39:13",
-          "Ezekiel 28:13",
-          "Revelation 4:3",
-          "Revelation 21:11"
-        ],
-        "lookupCandidates": [
-          "jasper"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "JASPER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "laughter",
-        "count": 7,
-        "sampleRefs": [
-          "Psalms 126:2",
-          "Proverbs 14:13",
-          "Ecclesiastes 2:2",
-          "Ecclesiastes 7:3",
-          "Ecclesiastes 7:6"
-        ],
-        "lookupCandidates": [
-          "laughter"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LAUGHTER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "lent",
-        "count": 7,
-        "sampleRefs": [
-          "Exodus 12:36",
-          "Deuteronomy 23:19",
-          "1 Samuel 1:28",
-          "1 Samuel 1:28",
-          "1 Samuel 2:20"
-        ],
-        "lookupCandidates": [
-          "lent"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "market",
         "count": 7,
         "sampleRefs": [
@@ -12083,6 +12018,73 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DRUNK'ARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dying",
+        "count": 6,
+        "sampleRefs": [
+          "Numbers 17:13",
+          "Mark 12:20",
+          "Luke 8:42",
+          "2 Corinthians 4:10",
+          "2 Corinthians 6:9"
+        ],
+        "lookupCandidates": [
+          "dying"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DY'ING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "envied",
+        "count": 6,
+        "sampleRefs": [
+          "Genesis 26:14",
+          "Genesis 30:1",
+          "Genesis 37:11",
+          "Psalms 106:16",
+          "Ecclesiastes 4:4"
+        ],
+        "lookupCandidates": [
+          "envied",
+          "envi"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EN'VIED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "expert",
+        "count": 6,
+        "sampleRefs": [
+          "1 Chronicles 12:33",
+          "1 Chronicles 12:35",
+          "1 Chronicles 12:36",
+          "Solomon's Song 3:8",
+          "Jeremiah 50:9"
+        ],
+        "lookupCandidates": [
+          "expert"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EXPERT'",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
