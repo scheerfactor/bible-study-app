@@ -31,8 +31,9 @@ Father's Business Bible Study is a KJV-centered study, teaching, sermon, lesson,
 | Dr. David H. Sorenson | Existing permission thread; current public route is `dhs.northstar@gmail.com` | Links, excerpts, and cover graphics are permitted. Full text, passage indexing, paid unlocks, resale, audio, video, and transcripts require a new written agreement. |
 | Pastor Doug Hammett | Begin through Lehigh Valley Baptist Church and request the current direct or rights-holder route | Ministry and catalog leads are verified. No reuse, embed, transcript, audio/video, or commercial permission is recorded. |
 
-The exact send-ready Sorenson email, Hammett routing message, phone fallback, evidence logs, and agreement checklist
-are in `SORENSON_HAMMETT_PERMISSION_PACKET_2026-08-24.md`. Both remain unsent as of 2026-08-23.
+The exact Sorenson email, Hammett routing message, phone fallback, evidence logs, and agreement checklist are in
+`SORENSON_HAMMETT_PERMISSION_PACKET_2026-08-24.md`. The Sorenson request was sent 2026-08-23 and is awaiting a
+written reply. The Hammett routing request remains unsubmitted.
 
 Official starting points:
 

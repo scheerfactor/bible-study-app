@@ -11,7 +11,7 @@ Prepared 2026-08-23. Both messages are send-ready drafts. Neither message has be
 
 ## 1. Dr. David H. Sorenson / Northstar Ministries
 
-Status: `Draft - not sent`
+Status: `Sent 2026-08-23 - awaiting written reply`
 
 Official route verified 2026-08-23: `dhs.northstar@gmail.com`
 
@@ -57,13 +57,13 @@ https://study.fathersbusinessmasteryresources.com/partners
 
 | Field | Value |
 | --- | --- |
-| Sent date | Not sent |
-| Sent from | Not sent |
-| Sent to | Not sent |
-| Message evidence | Not created |
+| Sent date | 2026-08-23 at 9:58 PM EDT |
+| Sent from | hello@fathersbusinessmasteryresources.com |
+| Sent to | dhs.northstar@gmail.com |
+| Message evidence | `data/library/acquisition/permission-evidence/northstar-understanding-the-bible-pilot-request-2026-08-23.md` |
 | Reply date | No reply |
 | Rights status | Existing scoped permission only; commercial/full-text pilot pending |
-| Follow-up date | Set only after sending |
+| Follow-up date | Review 2026-08-31 if no reply |
 
 ## 2. Pastor Doug Hammett Rights-Holder Route
 

@@ -88,6 +88,7 @@ Notes:
 - Title-level review and theological/resource review are still required before public recommendation.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
 - The send-ready one-title request and commercial-rights checklist are in `SORENSON_HAMMETT_PERMISSION_PACKET_2026-08-24.md`.
+- The `Understanding the Bible` digital-access pilot request was sent 2026-08-23 to `dhs.northstar@gmail.com`. No new rights are granted unless a written reply supplies the exact terms. Review for a reply on 2026-08-31.
 
 ## Review Score
 
