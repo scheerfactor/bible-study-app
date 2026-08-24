@@ -3,8 +3,18 @@
   "title": "Father's Business Bible Study mark",
   "created_at": "2026-08-23",
   "created_with": "OpenAI built-in image generation",
-  "source_assets": [],
-  "prompt_summary": "A minimal open Bible whose center gutter continues upward as a compass needle, using forest green, parchment, burgundy, and brass on a transparent background.",
+  "source_assets": [
+    "design/brand/candidates/pulpit-bible-cross-crown-flat-b.png"
+  ],
+  "prompt_summary": "A professional heraldic Bible study mark combining an open Bible, pulpit, negative-space cross, and small crown in forest green, parchment, burgundy, and gold on a transparent background.",
+  "approved_candidate": "B",
+  "approved_at": "2026-08-23",
+  "design_notes": [
+    "The open Bible is the primary first-read symbol.",
+    "The pulpit and cross connect study with faithful teaching and preaching.",
+    "The crown is intentionally subordinate so the mark remains clear at small sizes.",
+    "The burgundy ribbon provides a restrained visual reference to redemption without using graphic imagery."
+  ],
   "intended_use": [
     "application icon",
     "website brand mark",
@@ -12,7 +22,8 @@
     "video end card"
   ],
   "rights_basis": "Original project artwork generated without third-party input images. Retain this provenance record with the asset.",
-  "review_status": "approved for project beta",
+  "review_status": "approved for project beta and promoted as the primary mark",
+  "supersedes": "The original open-Bible and north-star beta mark.",
   "trademark_status": "clearance search pending",
   "constraints": [
     "Do not claim trademark registration.",

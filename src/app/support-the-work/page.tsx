@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, CircleDollarSign, ShieldCheck } from "lucide-react";
+import { Check, CircleDollarSign, Handshake, ShieldCheck } from "lucide-react";
 import PublicInfoPage from "@/components/PublicInfoPage";
 import {
   foundingFundBudget,
@@ -96,6 +96,20 @@ export default function SupportTheWorkPage() {
             <Link href="/rights"><ShieldCheck aria-hidden="true" size={17} />Review content-rights safeguards</Link>
           </div>
           <p className="funding-disclaimer">No payment is collected through either link.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Carefully selected sponsors</h2>
+        <div>
+          <p>
+            A future direct-sponsorship pilot may help support operations without putting ads inside Scripture,
+            study, prayer, sermons, lessons, or presentations. No automated ad network, behavioral targeting, or
+            sale of user data is planned.
+          </p>
+          <div className="public-info-actions">
+            <Link href="/sponsorships"><Handshake aria-hidden="true" size={17} />Review sponsorship safeguards</Link>
+          </div>
         </div>
       </section>
     </PublicInfoPage>

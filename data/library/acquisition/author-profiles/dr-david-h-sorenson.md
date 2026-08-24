@@ -14,7 +14,7 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Approved With Permission Pending Review |
 | Copyright status | Permission Granted - scoped |
 | Permission needed | No for links/excerpts/cover graphics; yes for any broader use |
-| Permission/contact info | dhs.northstar@charter.net |
+| Permission/contact info | Permission reply: dhs.northstar@charter.net; current public route: dhs.northstar@gmail.com |
 | Website | https://northstarministries.com/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
@@ -22,16 +22,12 @@ This author/profile is for acquisition review only. No content may be imported, 
 
 ## Biography
 
-Placeholder. Add a short verified biography after source review.
+Northstar Ministries identifies Dr. David H. Sorenson as a third-generation independent Baptist preacher, founder
+and Pastor Emeritus of Northstar Baptist Church in Duluth, Minnesota, and author of the eleven-volume
+`Understanding the Bible` commentary. The ministry describes the commentary as KJV-based, fundamental Baptist,
+dispensational, pre-tribulation, and premillennial.
 
-Include:
-
-- birth and death years, if applicable
-- ministry background
-- major ministry work
-- theological tradition
-- publication history
-- source citations
+Current official source and catalog: https://northstarministries.com/
 
 ## Doctrinal Notes
 
@@ -74,7 +70,7 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | dhs.northstar@charter.net |
+| Known contact | Scoped permission reply: dhs.northstar@charter.net; current public book/order contact: dhs.northstar@gmail.com and (218) 726-0209 |
 | Website | https://northstarministries.com/ |
 | Permission status | Permission Granted - Scoped |
 | Requested use | Links to official resources, excerpts, and cover graphics |
@@ -83,6 +79,7 @@ Review:
 Notes:
 
 - Permission granted for linking to Northstar Ministries resources, use of excerpts, and display of cover graphics.
+- The current official site lists `dhs.northstar@gmail.com`; preserve the original permission email separately as evidence of the 2026-07-04 grant.
 - Do not treat this as permission to host full copyrighted books, audio/video files, transcripts, AI/TTS narration, or paid subscription content unless separately confirmed.
 - Title-level review and theological/resource review are still required before public recommendation.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.

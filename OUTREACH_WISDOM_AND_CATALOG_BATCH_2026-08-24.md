@@ -28,6 +28,8 @@ Father's Business Bible Study is a KJV-centered study, teaching, sermon, lesson,
 | J. Vernon McGee | Thru the Bible | Dr. McGee died in 1988. A follow-up was sent 2026-08-15; wait until 2026-08-29. Text, audio, transcript, and paid access are separate rights. |
 | H. A. Ironside | Exact-edition public-domain review, Kregel, Moody, or another verified title-level rightsholder | Dr. Ironside died in 1951. Some early editions are public domain and already reviewed; later editions and current series require title-level verification. |
 | Dr. William P. Grady | Official Grady Publications contact form | New counsel and catalog conversation. No rights are assumed. |
+| Dr. David H. Sorenson | Existing permission thread; current public route is `dhs.northstar@gmail.com` | Links, excerpts, and cover graphics are permitted. Full text, passage indexing, paid unlocks, resale, audio, video, and transcripts require a new written agreement. |
+| Pastor Doug Hammett | Begin through Lehigh Valley Baptist Church and request the current direct or rights-holder route | Ministry and catalog leads are verified. No reuse, embed, transcript, audio/video, or commercial permission is recorded. |
 
 Official starting points:
 
@@ -37,6 +39,46 @@ Official starting points:
 - Grady Publications: `https://gradypublications.com/pages/contact-us`
 - Kregel rights and permissions: `https://www.kregel.com/contact-us/rights-and-permissions`
 - Thru the Bible: `https://ttb.org/about/contact-us`
+- Northstar Ministries: `https://northstarministries.com/`
+- Lehigh Valley Baptist Church: `https://lvbaptist.org/`
+
+## Doug Hammett Counsel And Catalog Draft
+
+Use only after confirming the proper current route through Lehigh Valley Baptist Church. The first message asks for
+counsel and the correct rightsholder; it does not request blanket permission.
+
+Subject: `Counsel and resource-rights contact for a KJV Bible study app`
+
+```text
+Hello Lehigh Valley Baptist Church team,
+
+My name is Stephen Scheer. I am building Father's Business Bible Study, a KJV-centered study, sermon, Sunday School lesson, and presentation platform for pastors, teachers, missionaries, evangelists, and serious Bible students.
+
+I would value Pastor Doug Hammett's counsel about what would help believers move from careful Bible study to faithful teaching and obedience. Would you please tell me the best current way to invite him to a short private demonstration?
+
+I am also trying to identify the correct rightsholder for a few named resources associated with Pastor Hammett, including Bible studies, counseling material, sermon recordings, and the Choosing Godly Music series. I am not assuming that the church, Challenge Press, SermonAudio, or Pastor Hammett controls every item, and I will not copy, host, transcribe, sell, excerpt, or embed anything without exact written permission.
+
+Thank you for directing me to the right person.
+
+Stephen Scheer
+Father's Business Bible Study
+hello@fathersbusinessmasteryresources.com
+https://study.fathersbusinessmasteryresources.com/partners
+```
+
+## David Sorenson Paid-Access Pilot Questions
+
+Use the existing relationship and current public contact route. Begin with `Understanding the Bible`, not a blanket
+catalog request. Ask separately whether Northstar would consider:
+
+- official purchase links with approved cover and description
+- a sample excerpt beside a relevant passage
+- publisher checkout followed by a verified in-app entitlement
+- an authorized app sale with agreed royalty, reporting, refunds, updates, and removal rights
+- full-text search and passage indexing inside the purchaser's account
+
+The existing permission does not cover the last three items. Record each answer in a new written agreement before
+technical work or public announcement.
 
 ## Way Of Life Follow-Up Draft
 
