@@ -3,8 +3,9 @@
 Prepared: 2026-08-23
 
 Status: Draft 1 was sent to Bible Visuals International on 2026-08-23 at 11:45 PM EDT. Draft 2 was
-sent to Majesty Music on 2026-08-24 at 6:01 AM EDT. Draft 3 remains unsent. No permission is implied
-by an inquiry.
+sent to Majesty Music on 2026-08-24 at 6:01 AM EDT. Draft 3 was verified against Positive Action for
+Christ's official contact, licensing, terms, and product pages on 2026-08-24 and remains unsent. No
+permission is implied by an inquiry.
 
 ## Why these prospects come first
 
@@ -97,24 +98,37 @@ https://study.fathersbusinessmasteryresources.com/
 
 ## Draft 3: Positive Action for Christ
 
-**Route:** https://www.positiveaction.org/contact/  
-**Subject:** Teacher-workflow feedback and one-course digital pilot question
+**Verified:** 2026-08-24 against Positive Action for Christ's official contact, digital-product,
+terms, and product pages
+
+**To:** info@positiveaction.org
+
+**Alternate route:** https://www.positiveaction.org/contact/
+
+**Subject:** Request for the right contact for one-course digital curriculum pilot
 
 Hello Positive Action for Christ team,
 
 My name is Stephen Scheer. I am building Father's Business Bible Study, a KJV-centered Bible study,
 lesson and sermon preparation, library, and church presentation app. I am especially interested in
-helping Sunday school, Christian school, homeschool, and youth teachers prepare carefully from the
-Bible while keeping purchased curriculum, personal notes, and presentation tools easy to reach.
+helping Sunday school, Christian school, homeschool, and youth teachers prepare carefully from the Bible
+while keeping lawfully purchased curriculum, personal notes, and presentation tools easy to reach.
 
-Your stated mission of equipping Bible teachers is closely related to this need. Would the appropriate
-person be willing to see a short private demonstration and offer feedback on the workflow? I would also
-like to learn whether you consider one-course digital pilots or account-linked purchase access.
+Would you please direct me to the person who handles digital licensing or ministry partnerships? I would
+be glad to provide a short private demonstration and discuss one carefully limited pilot using one named,
+separately reviewed KJV-compatible course rather than ask for broad catalog permission.
 
-Any pilot would need a written title-level agreement covering metadata, approved images or samples,
-teacher and student text, passage and topic indexing, classroom display, export and printing limits,
-user entitlement, pricing, reporting, updates, and withdrawal. I have not imported or published your
-curriculum content.
+I understand that your digital student-workbook licenses are assigned per student for one school year,
+and that teacher materials can include protected quizzes, answers, and assessments. I am not asking to
+upload purchased files under ordinary customer terms. For a pilot course, I would want to discuss each
+use separately: catalog metadata and official purchase links, cover or approved sample images,
+purchaser-only teacher and student access, passage and topic indexing, classroom or church presentation,
+printing and export limits, user entitlement, pricing or revenue share, reporting, updates, and
+withdrawal.
+
+I have not imported or published Positive Action curriculum text, student pages, teacher materials,
+answers, tests, images, slides, or paid downloads. Advice about what would genuinely help Bible teachers
+in this workflow would also be very valuable.
 
 Thank you for your time and direction,
 
@@ -141,6 +155,13 @@ https://study.fathersbusinessmasteryresources.com/
 - Majesty Music customer service: https://www.majestymusic.com/customer-service
 - Positive Action for Christ mission and publishing scope: https://www.positiveaction.org/about/
 - Positive Action for Christ contact page: https://www.positiveaction.org/contact/
+- Positive Action for Christ curriculum preview and published email route:
+  https://positiveaction.org/blog/how-do-curriculum-previews-work/
+- Positive Action for Christ digital-workbook licensing:
+  https://positiveaction.org/help/digital-products/digital-workbooks/
+- Positive Action for Christ terms and copying restrictions: https://www.positiveaction.org/terms-conditions/
+- Positive Action for Christ KJV-labelled product example:
+  https://www.positiveaction.org/store/group/gospel-coloring-book
 - Regular Baptist Press store and catalog: https://www.rbpstore.org/
 - Regular Baptist Press contact route: https://regularbaptistpress.org/about-us/contact-us/
 - Associates for Biblical Research contact page: https://biblearchaeology.org/about/contact/
