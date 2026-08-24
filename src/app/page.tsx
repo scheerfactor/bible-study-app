@@ -21224,6 +21224,22 @@ export default function Home() {
     setTab("passageGuide");
   }
 
+  function openTeachingWorshipDesk() {
+    setLibraryView("home");
+    setTab("library");
+    let attempts = 0;
+    const scrollWhenReady = () => {
+      const desk = document.getElementById("teaching-worship-desk");
+      if (desk) {
+        desk.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      attempts += 1;
+      if (attempts < 20) window.setTimeout(scrollWhenReady, 200);
+    };
+    window.setTimeout(scrollWhenReady, 100);
+  }
+
   function openCommentaryCenter() {
     recordRecentPassage(book, chapter, versesByRef.get(selectedRef)?.verse ?? verseJump);
     setStudyRef(null);
@@ -23624,21 +23640,7 @@ export default function Home() {
       group: "Find resources",
       keywords: ["hymns", "piano", "archaeology", "quotes", "poems", "illustrations", "worship"],
       icon: <Star size={19} />,
-      action: () => {
-        setLibraryView("home");
-        setTab("library");
-        let attempts = 0;
-        const scrollWhenReady = () => {
-          const desk = document.getElementById("teaching-worship-desk");
-          if (desk) {
-            desk.scrollIntoView({ behavior: "smooth", block: "start" });
-            return;
-          }
-          attempts += 1;
-          if (attempts < 20) window.setTimeout(scrollWhenReady, 200);
-        };
-        window.setTimeout(scrollWhenReady, 100);
-      },
+      action: openTeachingWorshipDesk,
     },
     {
       id: "audio-radio",
@@ -23648,6 +23650,15 @@ export default function Home() {
       keywords: ["listen", "audio", "radio", "preaching", "devotions"],
       icon: <Headphones size={19} />,
       action: () => setTab("radio"),
+    },
+    {
+      id: "prepare-passage",
+      label: `Prepare ${book} ${chapter}`,
+      description: "Gather KJV text, word tools, cross-references, commentary, background, books, teaching helps, and presentation handoffs.",
+      group: "Prepare and present",
+      keywords: ["passage guide", "packet", "sermon prep", "lesson prep", "study pack"],
+      icon: <Clipboard size={19} />,
+      action: openPassageGuide,
     },
     {
       id: "sermon-builder",
@@ -24519,6 +24530,9 @@ export default function Home() {
                 onOpenThemeExplorer={() => setTab("themes")}
                 onListenCommentary={listenCurrentChapterCommentary}
                 onAddCommentaryToPlaylist={() => addBiblePlaylistItem("commentary_chapter")}
+                onPrepareSermon={() => addStudyWorkflowToSermon("builder")}
+                onPrepareSlides={() => addStudyWorkflowToSermon("slides")}
+                onOpenTeachingWorshipDesk={openTeachingWorshipDesk}
               />
             )}
 
@@ -47097,6 +47111,9 @@ function PassageGuideScreen({
   onOpenThemeExplorer,
   onListenCommentary,
   onAddCommentaryToPlaylist,
+  onPrepareSermon,
+  onPrepareSlides,
+  onOpenTeachingWorshipDesk,
 }: {
   book: string;
   chapter: number;
@@ -47122,6 +47139,9 @@ function PassageGuideScreen({
   onOpenThemeExplorer: () => void;
   onListenCommentary: () => void;
   onAddCommentaryToPlaylist: () => void;
+  onPrepareSermon: () => void;
+  onPrepareSlides: () => void;
+  onOpenTeachingWorshipDesk: () => void;
 }) {
   const firstVerse = verses[0];
   const passage = `${book} ${chapter}`;
@@ -47223,6 +47243,7 @@ function PassageGuideScreen({
       ? `Reviewed themes for ${passage}: ${connections.themes.slice(0, 4).join(", ")}.`
       : `A one-scroll guide for ${passage} using reviewed study data already loaded in the app.`;
   const sections = [
+    ["passage-prepare", "Prepare"],
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
     ["passage-best-resources", "Best Resources"],
@@ -47327,6 +47348,43 @@ function PassageGuideScreen({
           <MiniStat label="Themes" value={String(activeThemes.length)} />
         </div>
       </section>
+
+      <StudySection id="passage-prepare" title="Prepare This Passage">
+        <div className="grid gap-4 xl:grid-cols-[1fr_auto]">
+          <div>
+            <p className="max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Gather the chapter&apos;s KJV text and reviewed study helps into one working path, then carry the material into a sermon, lesson, or slide deck without rebuilding the research.
+            </p>
+            <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-4">
+              <MiniStat label="KJV verses" value={String(verses.length)} />
+              <MiniStat label="Word tools" value={String(guideDictionaryEntries.length + guideStrongEntries.length)} />
+              <MiniStat label="References" value={String(crossReferences.length)} />
+              <MiniStat label="Study voices" value={String(commentaryAuthors.length)} />
+            </div>
+          </div>
+          <div className="grid min-w-64 gap-2 sm:grid-cols-2 xl:grid-cols-1">
+            <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onPrepareSermon} type="button">
+              <Clipboard size={16} />
+              Send to Sermon or Lesson
+            </button>
+            <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onPrepareSlides} type="button">
+              <MonitorPlay size={16} />
+              Build Teaching Slides
+            </button>
+            <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenTeachingWorshipDesk} type="button">
+              <Star size={16} />
+              Find Hymns and Helps
+            </button>
+            <a className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" href="#passage-study-pack">
+              <Download size={16} />
+              Export Study Packet
+            </a>
+          </div>
+        </div>
+        <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+          The KJV passage remains the authority. Commentary, definitions, illustrations, books, and presentation media remain identified helps with their existing source and rights boundaries.
+        </p>
+      </StudySection>
 
       <StudySection id="passage-scorecard" title="Passage Guide Scorecard">
         <div className="grid gap-2 md:grid-cols-3">
