@@ -14,7 +14,7 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | Nathan Luellen, Editor in Chief, replied 2026-08-24 and invited a discussion |
+| Permission/contact info | Nathan Luellen, Editor in Chief, invited a discussion; scheduling reply sent 2026-08-24 |
 | Website | https://bogardpress.org/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
@@ -63,7 +63,7 @@ Review:
 | --- | --- |
 | Known contact | Nathan Luellen, Editor in Chief; Nathan.Luellen@bogardpress.org; 903-793-5131 |
 | Website | https://bogardpress.org/contact/ |
-| Permission status | Positive reply 2026-08-24 - meeting invited; no rights granted |
+| Permission status | Scheduling reply sent 2026-08-24 - awaiting meeting time; no rights granted |
 | Requested use | Proposed metadata, official link, approved cover/promotional image, and approved excerpt/sample for *Baptist & the Bible - Adult* |
 | Follow-up needed | Yes |
 
@@ -103,7 +103,9 @@ The verified contact route and public ministry description do not grant permissi
 
 Title-specific request submitted through the official contact form on 2026-08-22 for *Baptist & the
 Bible - Adult*. Nathan Luellen replied on 2026-08-24 and invited a phone or Teams discussion about using
-selected elements to point users toward the book. No permission has been granted. Use
+selected elements to point users toward the book. Stephen replied at 6:54 PM EDT, requested a
+30-minute Teams meeting after 6:30 PM Eastern on weekdays or another time arranged with advance
+notice, and preserved the narrow title-level boundary. No permission has been granted. Use
 `data/library/acquisition/BOGARD_PRESS_MEETING_BRIEF_2026-08-24.md` for the meeting and obtain written
 title-level scope before publishing anything.
 

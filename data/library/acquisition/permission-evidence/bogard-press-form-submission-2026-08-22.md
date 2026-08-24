@@ -14,7 +14,9 @@
 | Reply received | 2026-08-24 at 9:22 AM EDT |
 | Reply from | Nathan Luellen, Editor in Chief, Baptist Sunday School Committee / Bogard Press |
 | Reply address | Nathan.Luellen@bogardpress.org |
-| Reply status | Positive discussion invitation; no permission granted yet |
+| Scheduling reply sent | 2026-08-24 at 6:54 PM EDT |
+| Scheduling reply from | hello@fathersbusinessmasteryresources.com |
+| Reply status | Scheduling reply sent; awaiting meeting time; no permission granted yet |
 
 Official confirmation displayed after submission:
 
@@ -88,7 +90,11 @@ No permission has been granted. All requested uses remain `Unknown` and the reso
 from public inclusion until a written agreement identifies the exact title, edition, elements, uses,
 attribution, commercial terms, reporting, updates, term, and withdrawal process.
 
-## Prepared Response
+## Response Sent
+
+The following response was sent in Nathan Luellen's existing email thread on 2026-08-24 at 6:54 PM
+EDT and verified in the Sent folder. It requested a 30-minute Teams meeting after Stephen's weekday
+work hours and preserved the title-level permission boundary.
 
 ```text
 Brother Nathan,
@@ -97,8 +103,10 @@ Thank you for your kind reply. Yes, you understood my request correctly. I would
 you and learn how this could serve Bogard Press, churches, teachers, and users of the Bible study app.
 
 A 30-minute Teams meeting would be ideal because I can give you a brief private demonstration of the
-current app and show exactly how a title-level pilot could work. Would you have a convenient time
-tomorrow or another day this week? I can also use your scheduling link if that is easier.
+current app and show exactly how a title-level pilot could work. I work until 6:00 PM Eastern on
+weekdays, so after 6:30 PM Eastern is usually easiest for me. If evenings do not fit your schedule,
+please let me know what day and time would work, and I will see what I can arrange with advance notice.
+I can also use your scheduling link if that is easier.
 
 For the first discussion, I would like to keep the pilot narrow around Baptists and the Bible. We can
 consider the official title and description, purchase link, an approved cover or promotional image,
@@ -116,3 +124,7 @@ Father's Business Bible Study
 hello@fathersbusinessmasteryresources.com
 https://study.fathersbusinessmasteryresources.com/
 ```
+
+The next action is to wait for Nathan to propose or confirm a meeting time. No calendar booking has
+been made, and no publishing, display, indexing, presentation, commercial, or broader catalog rights
+should be inferred from this scheduling exchange.
