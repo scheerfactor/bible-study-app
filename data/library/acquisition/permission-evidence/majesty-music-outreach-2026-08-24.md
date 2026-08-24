@@ -1,6 +1,15 @@
-# Majesty Music Outreach Pre-Send Record
+# Majesty Music Outreach Record
 
-Status: Verified draft; not sent. No Majesty Music content or rights are approved by this record.
+Status: Sent; awaiting reply. This inquiry is not permission to import, publish, sell, stream, adapt,
+index, present, or distribute any Majesty Music content.
+
+## Delivery record
+
+- Sent: 2026-08-24 at 6:01 AM EDT
+- From: hello@fathersbusinessmasteryresources.com
+- To: service@majestymusic.com
+- Subject: Request for the right contact for a hymn and presentation app pilot
+- Verification: PrivateEmail displayed the message as the newest item in the Sent folder after sending.
 
 ## Verified route
 
@@ -15,7 +24,7 @@ Majesty Music offers hymnals, digital sheet music, recordings, books, and relate
 resources. No reviewed public page grants permission for in-app lyrics, arrangements, sheet music,
 audio, projection, streaming, purchaser access, export, or resale.
 
-## Exact draft awaiting approval
+## Exact message sent
 
 Hello Majesty Music team,
 
