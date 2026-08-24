@@ -1,7 +1,15 @@
-# Positive Action for Christ Outreach Pre-Send Record
+# Positive Action for Christ Outreach Record
 
-Status: Verified draft; not sent. This inquiry would not grant permission to import, publish, sell,
+Status: Sent; awaiting reply. This inquiry does not grant permission to import, publish, sell,
 adapt, index, present, or distribute any Positive Action for Christ content.
+
+## Delivery record
+
+- Sent: 2026-08-24 at 6:28 AM EDT
+- From: hello@fathersbusinessmasteryresources.com
+- To: info@positiveaction.org
+- Subject: Request for the right contact for one-course digital curriculum pilot
+- Verification: PrivateEmail displayed the message as the newest item in the Sent folder after sending.
 
 ## Verified route
 
@@ -27,7 +35,7 @@ copyright and prohibit unauthorized duplication. Product pages show that the cat
 version-specific editions, including a KJV-labelled product, so KJV compatibility must be reviewed
 title by title rather than inferred for the entire catalog.
 
-## Exact proposed message
+## Exact message sent
 
 Hello Positive Action for Christ team,
 
