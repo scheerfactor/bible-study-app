@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-24T02:33:59.380Z",
+    "generated_at": "2026-08-24T13:46:30.485Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60912,
+      "entries": 60915,
       "normalizedHeadwords": 51077,
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
@@ -2268,72 +2268,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "got",
-          "count": 7,
-          "sampleRefs": [
-            "Genesis 36:6",
-            "Genesis 39:12",
-            "Genesis 39:15",
-            "Psalms 44:3",
-            "Ecclesiastes 2:7"
-          ],
-          "lookupCandidates": [
-            "got"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GOT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "grievously",
-          "count": 7,
-          "sampleRefs": [
-            "Isaiah 9:1",
-            "Jeremiah 23:19",
-            "Lamentations 1:8",
-            "Lamentations 1:20",
-            "Ezekiel 14:13"
-          ],
-          "lookupCandidates": [
-            "grievously"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GRIE'VOUSLY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "grind",
-          "count": 7,
-          "sampleRefs": [
-            "Judges 16:21",
-            "Job 31:10",
-            "Isaiah 3:15",
-            "Isaiah 47:2",
-            "Lamentations 5:13"
-          ],
-          "lookupCandidates": [
-            "grind"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GRIND",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "hammer",
           "count": 7,
           "sampleRefs": [
@@ -3593,6 +3527,72 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CONSTRAINED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "craft",
+          "count": 6,
+          "sampleRefs": [
+            "Daniel 8:25",
+            "Mark 14:1",
+            "Acts 18:3",
+            "Acts 19:25",
+            "Acts 19:27"
+          ],
+          "lookupCandidates": [
+            "craft"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CR'AFT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "damage",
+          "count": 6,
+          "sampleRefs": [
+            "Ezra 4:22",
+            "Esther 7:4",
+            "Proverbs 26:6",
+            "Daniel 6:2",
+            "Acts 27:10"
+          ],
+          "lookupCandidates": [
+            "damage"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DAM'AGE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ditch",
+          "count": 6,
+          "sampleRefs": [
+            "Job 9:31",
+            "Psalms 7:15",
+            "Proverbs 23:27",
+            "Isaiah 22:11",
+            "Matthew 15:14"
+          ],
+          "lookupCandidates": [
+            "ditch"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DITCH",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10750,72 +10750,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "got",
-        "count": 7,
-        "sampleRefs": [
-          "Genesis 36:6",
-          "Genesis 39:12",
-          "Genesis 39:15",
-          "Psalms 44:3",
-          "Ecclesiastes 2:7"
-        ],
-        "lookupCandidates": [
-          "got"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GOT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "grievously",
-        "count": 7,
-        "sampleRefs": [
-          "Isaiah 9:1",
-          "Jeremiah 23:19",
-          "Lamentations 1:8",
-          "Lamentations 1:20",
-          "Ezekiel 14:13"
-        ],
-        "lookupCandidates": [
-          "grievously"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GRIE'VOUSLY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "grind",
-        "count": 7,
-        "sampleRefs": [
-          "Judges 16:21",
-          "Job 31:10",
-          "Isaiah 3:15",
-          "Isaiah 47:2",
-          "Lamentations 5:13"
-        ],
-        "lookupCandidates": [
-          "grind"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GRIND",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "hammer",
         "count": 7,
         "sampleRefs": [
@@ -12075,6 +12009,72 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CONSTRAINED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "craft",
+        "count": 6,
+        "sampleRefs": [
+          "Daniel 8:25",
+          "Mark 14:1",
+          "Acts 18:3",
+          "Acts 19:25",
+          "Acts 19:27"
+        ],
+        "lookupCandidates": [
+          "craft"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CR'AFT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "damage",
+        "count": 6,
+        "sampleRefs": [
+          "Ezra 4:22",
+          "Esther 7:4",
+          "Proverbs 26:6",
+          "Daniel 6:2",
+          "Acts 27:10"
+        ],
+        "lookupCandidates": [
+          "damage"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DAM'AGE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ditch",
+        "count": 6,
+        "sampleRefs": [
+          "Job 9:31",
+          "Psalms 7:15",
+          "Proverbs 23:27",
+          "Isaiah 22:11",
+          "Matthew 15:14"
+        ],
+        "lookupCandidates": [
+          "ditch"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DITCH",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

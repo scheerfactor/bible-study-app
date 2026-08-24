@@ -5900,16 +5900,6 @@
     "review_status": "reviewed_overlay"
   },
   {
-    "headword": "DECREASE",
-    "normalized_headword": "decrease",
-    "definition": "DECREASE, verb intransitive [Latin To grow.] To become less; to be diminished gradually, in extent, bulk, quantity, or amount, or in strength, quality, or excellence; as, the days decrease in length from June to December. He must increase, but I must decrease John 3:30. DECREASE, verb transitive To lessen; to make smaller in dimensions, amount, quality or excellence, etc.; to diminish gradually or by small deductions; as, extravagance decreases the means of charity; every payment decreases a debt; intemperance decreases the strength and powers of life. DECREASE, noun 1. A becoming less; gradual diminution; decay; as a decrease of revenue; a decrease of strength. 2. The wane of the moon; the gradual diminution of the visible face of the moon from the full to the change.",
-    "source_title": "American Dictionary of the English Language",
-    "source_file": "https://webstersdictionary1828.com/Dictionary/decrease",
-    "source_line_start": 1,
-    "source_line_end": 6,
-    "review_status": "reviewed_overlay"
-  },
-  {
     "headword": "DECLA'RE",
     "normalized_headword": "declare",
     "definition": "DECLA'RE, verb transitive [Latin to make clear.] 1. To clear; to free from obscurity; to make plain. 2. To make known; to tell explicitly; to manifest or communicate plainly to others by words. I will declare what he hath done for my soul. Psalms 66:16. 3. To make known; to show to the eye or to the understanding; to exhibit; to manifest by other means than words. The heavens declare the glory of God. Psalms 19:1. 4. To publish; to proclaim. Declare his glory among the heathen. 1 Chronicles 16:24. Declaring the conversion of the Gentiles. Acts 15:4. 5. To assert; to affirm; as, he declares the story to be false. To declare one's self, to throw off reserve and avow one's opinion; to show openly what one thinks, or which side he espouses. DECLA'RE, verb intransitive 1. To make a declaration; to proclaim or avow some opinion or resolution in favor or in opposition; to make known explicitly some determination; with for or against; as, the prince declared for the allies; the allied powers declared against France. Like fawning courtiers, for success they wait; And then come smiling, and declare for fate. 2. In law, to recite the causes of complaint against the defendant; as, the plaintiff declares in debt or trespass. 3. To show or manifest the issue or event; to decide in favor of; as, victory had not declared for either party.",
@@ -5927,6 +5917,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/declared",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "DECREASE",
+    "normalized_headword": "decrease",
+    "definition": "DECREASE, verb intransitive [Latin To grow.] To become less; to be diminished gradually, in extent, bulk, quantity, or amount, or in strength, quality, or excellence; as, the days decrease in length from June to December. He must increase, but I must decrease John 3:30. DECREASE, verb transitive To lessen; to make smaller in dimensions, amount, quality or excellence, etc.; to diminish gradually or by small deductions; as, extravagance decreases the means of charity; every payment decreases a debt; intemperance decreases the strength and powers of life. DECREASE, noun 1. A becoming less; gradual diminution; decay; as a decrease of revenue; a decrease of strength. 2. The wane of the moon; the gradual diminution of the visible face of the moon from the full to the change.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/decrease",
+    "source_line_start": 1,
+    "source_line_end": 6,
     "review_status": "reviewed_overlay"
   },
   {
@@ -6180,16 +6180,6 @@
     "review_status": "reviewed_overlay"
   },
   {
-    "headword": "DESPITE",
-    "normalized_headword": "despite",
-    "definition": "DESPITE, noun 1. Extreme malice; violent hatred; malignity; malice irritated or enraged; active malignity; angry hatred. With all thy despite against the land of Israel. Ezekiel 25:6. 2. Defiance with contempt, or contempt of opposition. He will rise to fame in despite of his enemies. 3. An act of malice or contempt; as a despite to the Most High. DESPITE, verb transitive To vex; to offend; to tease.",
-    "source_title": "American Dictionary of the English Language",
-    "source_file": "https://webstersdictionary1828.com/Dictionary/despite",
-    "source_line_start": 1,
-    "source_line_end": 8,
-    "review_status": "reviewed_overlay"
-  },
-  {
     "headword": "DESIRED",
     "normalized_headword": "desired",
     "definition": "DESIRED, participle passive Wished for; coveted; requested; entreated.",
@@ -6227,6 +6217,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/despise",
     "source_line_start": 1,
     "source_line_end": 5,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "DESPITE",
+    "normalized_headword": "despite",
+    "definition": "DESPITE, noun 1. Extreme malice; violent hatred; malignity; malice irritated or enraged; active malignity; angry hatred. With all thy despite against the land of Israel. Ezekiel 25:6. 2. Defiance with contempt, or contempt of opposition. He will rise to fame in despite of his enemies. 3. An act of malice or contempt; as a despite to the Most High. DESPITE, verb transitive To vex; to offend; to tease.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/despite",
+    "source_line_start": 1,
+    "source_line_end": 8,
     "review_status": "reviewed_overlay"
   },
   {
@@ -8000,16 +8000,6 @@
     "review_status": "reviewed_overlay"
   },
   {
-    "headword": "FAINT",
-    "normalized_headword": "faint",
-    "definition": "FAINT, adjective [Latin vanus, whence to vanish. Eng. to wane.] 1. weak; languid; inclined to swoon; as, to be rendered faint by excessive evacuations. 2. Weak; feeble; languid; exhausted; as faint with fatigue, hunger or thirst. 3. Weak, as color; not bright or vivid; not strong; as a faint color; a faint red or blue; a faint light. 4. Feeble; weak, as sound; not loud; as a faint sound; a faint voice. 5. Imperfect; feeble; not striking; as a faint resemblance or image. 6. Cowardly; timorous. A faint heart never wins a fair lady. 7. Feeble; not vigorous; not active; as a faint resistance; a faint exertion. 8. Dejected; depressed; dispirited. My heart is faint Lamentations 1:13. FAINT, verb intransitive 1. To lose the animal functions; to lose strength and color, and become senseless and motionless; to swoon; sometimes with away. he fainted for loss of blood. On hearing the honor intended her, she fainted away. 2. To become feeble; to decline or fail in strength and vigor; to be weak. If I send them away fasting to their own houses, they will faint by the way. Mark 8:3. 3. To sink into dejection; to lose courage or spirit. Let not your hearts faint Deuteronomy 20:3. If thou faint in the day of adversity, thy strength is small. Proverbs 24:10. 4. To decay; to disappear; to vanish. Gilded clouds, while we gaze on them, faint before the eye. FAINT, verb transitive To deject; to depress; to weaken. [Unusual.]",
-    "source_title": "American Dictionary of the English Language",
-    "source_file": "https://webstersdictionary1828.com/Dictionary/faint",
-    "source_line_start": 1,
-    "source_line_end": 21,
-    "review_status": "reviewed_overlay"
-  },
-  {
     "headword": "FAIN",
     "normalized_headword": "fain",
     "definition": "FAIN, adjective 1. Glad; pleased; rejoiced. but the appropriate sense of the word is, glad or pleased to do something under some kind of necessity; that is, glad to evade evil or secure good. Thus, says Locke, 'The learned Castalio was fain to make trenches at Basil, to keep himself from starving.' this appropriation of the word, which is modern, led Dr. Johnson into a mistake in defining the word. The proper signification is glad, joyful. FAIN, adverb Gladly; with joy or pleasure. He would fain flee out of his hand. Job 27:22. He would fain have filled his belly with husks. Luke 15:16. FAIN, verb intransitive to wish or desire. [Not used.]",
@@ -8017,6 +8007,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/fain",
     "source_line_start": 1,
     "source_line_end": 7,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "FAINT",
+    "normalized_headword": "faint",
+    "definition": "FAINT, adjective [Latin vanus, whence to vanish. Eng. to wane.] 1. weak; languid; inclined to swoon; as, to be rendered faint by excessive evacuations. 2. Weak; feeble; languid; exhausted; as faint with fatigue, hunger or thirst. 3. Weak, as color; not bright or vivid; not strong; as a faint color; a faint red or blue; a faint light. 4. Feeble; weak, as sound; not loud; as a faint sound; a faint voice. 5. Imperfect; feeble; not striking; as a faint resemblance or image. 6. Cowardly; timorous. A faint heart never wins a fair lady. 7. Feeble; not vigorous; not active; as a faint resistance; a faint exertion. 8. Dejected; depressed; dispirited. My heart is faint Lamentations 1:13. FAINT, verb intransitive 1. To lose the animal functions; to lose strength and color, and become senseless and motionless; to swoon; sometimes with away. he fainted for loss of blood. On hearing the honor intended her, she fainted away. 2. To become feeble; to decline or fail in strength and vigor; to be weak. If I send them away fasting to their own houses, they will faint by the way. Mark 8:3. 3. To sink into dejection; to lose courage or spirit. Let not your hearts faint Deuteronomy 20:3. If thou faint in the day of adversity, thy strength is small. Proverbs 24:10. 4. To decay; to disappear; to vanish. Gilded clouds, while we gaze on them, faint before the eye. FAINT, verb transitive To deject; to depress; to weaken. [Unusual.]",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/faint",
+    "source_line_start": 1,
+    "source_line_end": 21,
     "review_status": "reviewed_overlay"
   },
   {
@@ -9950,6 +9950,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "GOT",
+    "normalized_headword": "got",
+    "definition": "GOT, preterit of get. The old preterit gat, pronounced got is nearly obsolete.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/got",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "Gotten",
     "normalized_headword": "gotten",
     "definition": "GOT AND GOTTEN participle passive of get.",
@@ -10147,6 +10157,26 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/grieved",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "GRIE'VOUSLY",
+    "normalized_headword": "grievously",
+    "definition": "GRIE'VOUSLY, adverb With pain; painfully; with great pain or distress; as, to be grievously afflicted. 1. With discontent, ill will or grief. 2. Calamitously; miserably; greatly; with great uneasiness, distress or grief. 3. Atrociously; as, to sin or offend grievously",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/grievously",
+    "source_line_start": 1,
+    "source_line_end": 4,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "GRIND",
+    "normalized_headword": "grind",
+    "definition": "GRIND, verb transitive preterit tense and participle passive ground. [This word, if n is radical, may be allied to rend; if not, it coincides with grate; to make smooth, as mollis in Latin , allied to molo.] 1. To break and reduce to fine particles or powder by friction; to comminute by attrition; to triturate. Take the millstones and grind meal. Isaiah 47:2. We say, to grind meal, but this is an elliptical phrase. The true phrase is, to grind corn to meal. 2. To break and reduce to small pieces by the teeth. 3. To sharpen by rubbing or friction; to wear off the substance of a metallic instrument, and reduce it to a sharp edge by the friction of a stone; as, to grind an ax or scythe. 4. To make smooth; to polish by friction; as, to grind glass. 5. To rub one against another. Harsh sounds--and the grinding of one stone against another, make a shivering or horror in the body and set the teeth on edge. 6. To oppress by severe exactions; to afflict cruelly; to harass; as, to grind the faces of the poor Isaiah 3:15. 7. To crush in pieces; to ruin. Matthew 21:44. 8. To grate; as grinding pains. GRIND, verb intransitive To perform the operation of grinding; to move a mill. 1. To be moved or rubbed together, as in the operation of grinding; as the grinding jaws. 2. To be ground or pulverized by friction. Corn will not grind well before it is dry. 3. To be polished and made smooth by friction. Glass grinds smooth. 4. To be sharpened by grinding. Steel grinds to a fine edge.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/grind",
+    "source_line_start": 1,
+    "source_line_end": 18,
     "review_status": "reviewed_overlay"
   },
   {

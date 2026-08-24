@@ -188,5 +188,57 @@
     "topics": ["ministry", "discouragement", "faithfulness", "results"],
     "recommendedUse": "Use to encourage faithful ministry when visible results are small, followed by the cited Scripture in context.",
     "reviewNote": "Some chronology and response claims in the anecdote are sermonic observations rather than conclusions stated directly in Genesis. Use the story as encouragement, not as an exact historical count."
+  },
+  {
+    "id": "spurgeon-teach-after-scripture",
+    "type": "Quote",
+    "title": "Teach after the manner of Scripture",
+    "author": "C. H. Spurgeon",
+    "text": "Teachers of Scripture cannot do better than instruct their fellows after the manner of the Scriptures.",
+    "slideText": "Teachers of Scripture cannot do better than instruct their fellows after the manner of the Scriptures.",
+    "sourceTitle": "The Art of Illustration",
+    "sourceLocator": "Anecdotes from the pulpit, paragraph beginning 'It ought never to be forgotten'",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/42558",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/the-art-of-illustration.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "bibleReferences": [
+      "Nehemiah 8:8",
+      "2 Timothy 3:16-17"
+    ],
+    "topics": [
+      "teaching",
+      "Scripture",
+      "illustration"
+    ],
+    "recommendedUse": "Use as a preparation reminder to let Scripture shape both the content and manner of Bible teaching.",
+    "reviewNote": "This is homiletic counsel. The cited passages, read in context, remain the authority for teaching practice."
+  },
+  {
+    "id": "moody-hearers-check-the-word",
+    "type": "Quote",
+    "title": "Teach hearers to check the Word",
+    "author": "D. L. Moody",
+    "text": "And so if the preachers could get the people to read the Word of God more carefully, and note what they heard, there would not be so much infidelity among us.",
+    "slideText": "And so if the preachers could get the people to read the Word of God more carefully, and note what they heard, there would not be so much infidelity among us.",
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceLocator": "The Bible, 'The Scotch Draw the Bible on False Doctrine'",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "bibleReferences": [
+      "Acts 17:11",
+      "1 Thessalonians 5:21"
+    ],
+    "topics": [
+      "Bible study",
+      "discernment",
+      "preaching"
+    ],
+    "recommendedUse": "Use to encourage hearers to examine teaching carefully by the Word of God.",
+    "reviewNote": "Moody's conclusion is an attributed observation. Use Acts 17:11 and related KJV passages to establish the duty of biblical examination."
   }
 ]

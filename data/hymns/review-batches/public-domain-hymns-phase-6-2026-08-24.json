@@ -1,0 +1,35 @@
+{
+  "batch_id": "public-domain-hymns-phase-6-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "purpose": "Add Holy, Holy, Holy with source-traceable public-domain text, a public-domain playable SATB MIDI arrangement, and presentation-ready stanza text.",
+  "guardrails": [
+    "Lyrics were transcribed line by line from the cited validated 1918 hymnal page without modernization or correction.",
+    "Reginald Heber's 1826 text and John B. Dykes's 1861 NICAEA tune are public domain.",
+    "The exact MIDI and machine-readable Mutopia license record are retained locally and verified by SHA-256.",
+    "The Mutopia record identifies the SATB setting as Public Domain.",
+    "No historical or modern performance recording is included or implied to be reusable."
+  ],
+  "entries": [
+    {
+      "id": "holy-holy-holy",
+      "title": "Holy, Holy, Holy",
+      "lyricist": "Reginald Heber",
+      "lyric_year": 1826,
+      "text_source_url": "https://en.wikisource.org/wiki/The_Army_and_Navy_Hymnal/Hymns/Holy%2C_Holy%2C_Holy%2C_Lord_God_Almighty",
+      "text_source_edition": "The Army and Navy Hymnal, 1918, hymn 4",
+      "text_rights": "Public domain",
+      "tune": "Nicaea",
+      "composer": "John B. Dykes",
+      "tune_year": 1861,
+      "music_source_url": "https://www.mutopiaproject.org/ftp/DykesJB/nicaea/",
+      "music_rights": "Public Domain",
+      "midi_setting_creator": "Steve Dunlop for the Mutopia Project",
+      "midi_file": "nicaea.mid",
+      "midi_sha256": "57184adabcdcd0f4f63d1a4913bc061f5c7df1e44649c376f9c73f4f5c7f00c9",
+      "rights_evidence_file": "nicaea.rdf",
+      "rights_evidence_sha256": "f7b9542e7fa95499d42c5016fb5b181443cdecfb6f477e5fe22ca4f5715b9d08",
+      "presentation_use": "Four exact-source stanza slides and a title slide linked to KJV Scripture references.",
+      "recording_scope": "The in-app Web Audio playback is synthesized from the retained public-domain MIDI. No third-party performance recording is copied."
+    }
+  ]
+}

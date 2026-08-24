@@ -311,6 +311,31 @@ const hymns = [
     musicAttribution: "Tune by William Henry Monk, 1861; MIDI setting and sound file by Peter Gerloff (Rabanus Flavus), dedicated to the public domain under CC0 1.0.",
     reviewedAt: "2026-08-23",
   },
+  {
+    id: "holy-holy-holy",
+    title: "Holy, Holy, Holy",
+    lyricist: "Reginald Heber",
+    lyricYear: 1826,
+    tune: "Nicaea",
+    scriptureReferences: ["Isaiah 6:1-3", "Revelation 4:8-11"],
+    stanzas: [
+      "Holy, holy, holy! Lord God Almighty\nEarly in the morning our song shall rise to thee;\nHoly, holy, holy merciful and mighty!\nGod in Three Persons, blessèd Trinity!",
+      "Holy, holy, holy! all the saints adore thee,\nCasting down their golden crowns around the glassy sea;\nCherubim and seraphim falling down before thee,\nWhich wert, and art, and evermore shalt be.",
+      "Holy, holy, holy! tho' the darkness hide thee,\nThough the eye of sinful man thy glory may not see,\nOnly thou art holy, there is none beside thee,\nPerfect in power, in love, and purity.",
+      "Holy, holy, holy! Lord God Almighty\nAll thy works shall praise thy name, in earth, and sky, and sea;\nHoly, holy, holy merciful and mighty!\nGod in Three Persons, blessèd Trinity!\nAmen.",
+    ],
+    refrain: null,
+    textSourceUrl: "https://en.wikisource.org/wiki/The_Army_and_Navy_Hymnal/Hymns/Holy%2C_Holy%2C_Holy%2C_Lord_God_Almighty",
+    textRights: "Public domain; text checked line by line against The Army and Navy Hymnal (1918), hymn 4.",
+    midiFile: "nicaea.mid",
+    midiSha256: "57184adabcdcd0f4f63d1a4913bc061f5c7df1e44649c376f9c73f4f5c7f00c9",
+    rdfFile: "nicaea.rdf",
+    rdfSha256: "f7b9542e7fa95499d42c5016fb5b181443cdecfb6f477e5fe22ca4f5715b9d08",
+    musicSourceUrl: "https://www.mutopiaproject.org/ftp/DykesJB/nicaea/",
+    musicRights: "Public Domain",
+    musicAttribution: "Tune by John B. Dykes, 1861; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    reviewedAt: "2026-08-24",
+  },
 ];
 
 function round(value) {

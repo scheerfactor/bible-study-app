@@ -138,6 +138,48 @@ Stephen Scheer
 Father's Business Mastery Resources  
 https://study.fathersbusinessmasteryresources.com/
 
+## Draft 4: Regular Baptist Press
+
+**Verified:** 2026-08-24 against the official RBP contact route, KJV product page, store catalog,
+digital-resource listings, and copyright notice
+
+**Route:** https://regularbaptistpress.org/about-us/contact-us/
+
+**Alternate route:** Customer Service at 800-727-4440 can identify the correct digital-rights or
+business-development contact.
+
+**Subject:** Request for the right contact for one KJV Bible study course pilot
+
+Hello Regular Baptist Press team,
+
+My name is Stephen Scheer. I am building Father's Business Bible Study, a KJV-centered Bible study,
+lesson and sermon preparation, library, and church presentation app. The goal is to help pastors,
+teachers, families, and serious Bible students move carefully from a Bible passage to study, teaching
+notes, and presentation while keeping purchased resources and their rights information clear.
+
+Would you please direct me to the person who handles digital licensing or ministry partnerships? I
+would be glad to provide a short private demonstration and discuss one carefully limited pilot using
+the KJV course *Effective Bible Study: Discerning and Applying God's Truth* rather than ask for broad
+catalog permission.
+
+For that named course, I would want to discuss each use separately: catalog metadata and official
+purchase links, cover or approved sample images, purchaser-only access to licensed teacher and student
+material, passage and topic indexing, classroom or church presentation, printing and export limits,
+account entitlement, pricing or revenue share, reporting, updates, and withdrawal. I would also value
+your advice about what would genuinely help pastors and teachers prepare from Scripture without
+weakening the course's licensing or classroom model.
+
+I have not imported or published RBP course text, teacher materials, student pages, answers, images,
+PowerPoint files, downloads, or paid-product content. I understand that KJV curriculum, third-party
+books, the New Testament Exposition Commentary series, music, and other catalog categories may involve
+different rights holders and would require separate title-level review.
+
+Thank you for your time and direction,
+
+Stephen Scheer
+Father's Business Mastery Resources
+https://study.fathersbusinessmasteryresources.com/
+
 ## Send controls
 
 - Recheck Inbox, Spam, and Sent before contacting any organization already in an earlier outreach file.
@@ -166,6 +208,12 @@ https://study.fathersbusinessmasteryresources.com/
   https://www.positiveaction.org/store/group/gospel-coloring-book
 - Regular Baptist Press store and catalog: https://www.rbpstore.org/
 - Regular Baptist Press contact route: https://regularbaptistpress.org/about-us/contact-us/
+- Regular Baptist Press KJV Effective Bible Study leader's guide:
+  https://www.rbpstore.org/Products/0189/effective-bible-study-discerning-and-applying-gods-truth-bradult-leaders-guide
+- Regular Baptist Press curriculum ordering page with KJV-labelled editions:
+  https://www.rbpstore.org/Pages/Item/6129/quick-order-forms--curriculum
+- Regular Baptist Press copyright notice:
+  https://cdn.garbc.org/wp-content/uploads/sites/13/2016/01/20204241/Copyright-Notice.pdf
 - Associates for Biblical Research contact page: https://biblearchaeology.org/about/contact/
 - Abeka contact page: https://www.abeka.com/ContactInfo.aspx
 - Abeka terms of use and licensing limits: https://www.abeka.com/termsofuse.aspx
