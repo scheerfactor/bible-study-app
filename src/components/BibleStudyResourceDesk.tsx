@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, ExternalLink, Landmark, Music2, Play, Presentation, Square } from "lucide-react";
+import { BookOpen, ExternalLink, Feather, Landmark, Music2, Play, Presentation, Quote as QuoteIcon, Search, Square } from "lucide-react";
 import hymnsData from "../../data/hymns/verified-hymns.json";
 import evidenceData from "../../data/archaeology/verified-evidence.json";
+import preachingData from "../../data/preaching-helps/verified-preaching-helps.json";
 
-type ResourceImageSlot = "church-window" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type ResourceImageSlot = "church-window" | "open-bible" | "pulpit" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 
 export type ResourcePresentationSeed = {
   title: string;
@@ -22,6 +23,8 @@ export type ResourcePresentationSeed = {
 
 type Hymn = (typeof hymnsData)[number];
 type Evidence = (typeof evidenceData)[number];
+type PreachingHelp = (typeof preachingData)[number];
+type PreachingHelpFilter = "All" | "Quote" | "Poem" | "Illustration";
 
 function midiFrequency(note: number) {
   return 440 * 2 ** ((note - 69) / 12);
@@ -32,13 +35,24 @@ export default function BibleStudyResourceDesk({
 }: {
   onCreatePresentation: (seed: ResourcePresentationSeed) => void;
 }) {
-  const [mode, setMode] = useState<"hymns" | "evidence">("hymns");
+  const [mode, setMode] = useState<"hymns" | "evidence" | "preaching">("hymns");
   const [selectedHymnId, setSelectedHymnId] = useState(hymnsData[0].id);
+  const [preachingHelpFilter, setPreachingHelpFilter] = useState<PreachingHelpFilter>("All");
+  const [preachingHelpQuery, setPreachingHelpQuery] = useState("");
   const [playingHymnId, setPlayingHymnId] = useState<string | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorsRef = useRef<OscillatorNode[]>([]);
   const playbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const selectedHymn = hymnsData.find((hymn) => hymn.id === selectedHymnId) ?? hymnsData[0];
+  const filteredPreachingHelps = preachingData.filter((entry) => {
+    if (preachingHelpFilter !== "All" && entry.type !== preachingHelpFilter) return false;
+    const query = preachingHelpQuery.trim().toLowerCase();
+    if (!query) return true;
+    return [entry.title, entry.author, entry.text, entry.recommendedUse, entry.topics.join(" "), entry.bibleReferences.join(" ")]
+      .join(" ")
+      .toLowerCase()
+      .includes(query);
+  });
 
   function stopPlayback() {
     for (const oscillator of oscillatorsRef.current) {
@@ -141,19 +155,40 @@ export default function BibleStudyResourceDesk({
     });
   }
 
+  function addPreachingHelpPresentation(entry: PreachingHelp) {
+    const slideType = entry.type === "Illustration" ? "Illustration" : "Quote";
+    const imageSlot: ResourceImageSlot = entry.type === "Illustration" ? "pulpit" : entry.type === "Poem" ? "church-window" : "open-bible";
+    onCreatePresentation({
+      title: entry.title,
+      notes: `${entry.author}, ${entry.sourceTitle}, ${entry.sourceLocator}. ${entry.rightsStatus}. Source: ${entry.sourceUrl}\n\nReview: ${entry.reviewNote}`,
+      slides: [
+        {
+          type: slideType,
+          title: entry.title,
+          subtitle: `${entry.author} · ${entry.bibleReferences.join(" · ")}`,
+          body: entry.slideText,
+          imageSlot,
+        },
+      ],
+    });
+  }
+
   return (
     <section className="border-y border-[var(--line)] bg-white/55 py-6">
       <div className="flex flex-col gap-4 px-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Teaching and worship desk</p>
-          <h2 className="mt-1 text-xl font-semibold text-[var(--ink)]">Hymns and Bible-world evidence</h2>
+          <h2 className="mt-1 text-xl font-semibold text-[var(--ink)]">Hymns, Bible-world evidence, and preaching helps</h2>
         </div>
-        <div className="grid grid-cols-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-1">
+        <div className="grid grid-cols-3 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-1">
           <button className={"flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-semibold " + (mode === "hymns" ? "bg-[var(--green)] text-white" : "text-[var(--green)]")} onClick={() => setMode("hymns")} type="button">
             <Music2 size={17} /> Hymns
           </button>
           <button className={"flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-semibold " + (mode === "evidence" ? "bg-[var(--green)] text-white" : "text-[var(--green)]")} onClick={() => setMode("evidence")} type="button">
             <Landmark size={17} /> Evidence
+          </button>
+          <button className={"flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-semibold " + (mode === "preaching" ? "bg-[var(--green)] text-white" : "text-[var(--green)]")} onClick={() => setMode("preaching")} type="button">
+            <Feather size={17} /> Helps
           </button>
         </div>
       </div>
@@ -230,6 +265,80 @@ export default function BibleStudyResourceDesk({
               </div>
             </article>
           ))}
+        </div>
+      )}
+
+      {mode === "preaching" && (
+        <div className="mt-5">
+          <div className="flex flex-col gap-3 border-b border-[var(--line)] pb-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex gap-2 overflow-x-auto pb-1">
+              {(["All", "Quote", "Poem", "Illustration"] as PreachingHelpFilter[]).map((filter) => (
+                <button
+                  key={filter}
+                  className={"shrink-0 rounded-lg border px-3 py-2 text-sm font-semibold " + (preachingHelpFilter === filter ? "border-[var(--green)] bg-[var(--green)] text-white" : "border-[var(--line)] bg-white text-[var(--ink)]")}
+                  onClick={() => setPreachingHelpFilter(filter)}
+                  type="button"
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+            <label className="relative block w-full lg:max-w-sm">
+              <span className="sr-only">Search preaching helps</span>
+              <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--muted)]" size={16} />
+              <input
+                className="h-11 w-full rounded-lg border border-[var(--line)] bg-white pl-10 pr-3 text-sm text-[var(--ink)] outline-none focus:border-[var(--green)]"
+                onChange={(event) => setPreachingHelpQuery(event.target.value)}
+                placeholder="Search topic, passage, or author"
+                type="search"
+                value={preachingHelpQuery}
+              />
+            </label>
+          </div>
+
+          <p className="mt-3 text-sm text-[var(--muted)]">
+            {filteredPreachingHelps.length} source-verified public-domain {filteredPreachingHelps.length === 1 ? "entry" : "entries"}
+          </p>
+
+          <div className="mt-3 grid gap-4 lg:grid-cols-2">
+            {filteredPreachingHelps.map((entry) => (
+              <article key={entry.id} className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.type} · {entry.author}</p>
+                    <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">{entry.title}</h3>
+                  </div>
+                  {entry.type === "Quote" ? <QuoteIcon aria-hidden="true" className="shrink-0 text-[var(--gold)]" size={20} /> : <Feather aria-hidden="true" className="shrink-0 text-[var(--gold)]" size={20} />}
+                </div>
+
+                <blockquote className="mt-3 whitespace-pre-line border-l-2 border-[var(--gold)] pl-3 text-sm leading-6 text-[var(--ink)]">
+                  {entry.slideText}
+                </blockquote>
+                <p className="mt-3 text-xs font-semibold text-[var(--green)]">{entry.bibleReferences.join(" · ")}</p>
+                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{entry.recommendedUse}</p>
+
+                <details className="mt-3 border-t border-[var(--line)] pt-3 text-sm text-[var(--muted)]">
+                  <summary className="cursor-pointer font-semibold text-[var(--green)]">Full excerpt and review note</summary>
+                  <p className="mt-3 whitespace-pre-line leading-6 text-[var(--ink)]">{entry.text}</p>
+                  <p className="mt-3 leading-6"><strong>Review:</strong> {entry.reviewNote}</p>
+                </details>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <button className="flex h-10 items-center gap-2 rounded-lg bg-[var(--green)] px-3 text-sm font-semibold text-white" onClick={() => addPreachingHelpPresentation(entry)} type="button">
+                    <Presentation size={16} /> Add slide
+                  </button>
+                  <a className="flex h-10 items-center gap-2 rounded-lg border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--green)]" href={entry.sourceUrl} rel="noreferrer" target="_blank">
+                    <BookOpen size={16} /> Source
+                  </a>
+                </div>
+                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{entry.sourceTitle} · {entry.sourceLocator} · {entry.rightsStatus}</p>
+              </article>
+            ))}
+          </div>
+
+          {filteredPreachingHelps.length === 0 && (
+            <p className="mt-4 border-l-2 border-[var(--gold)] pl-3 text-sm text-[var(--muted)]">No reviewed preaching helps match that search.</p>
+          )}
         </div>
       )}
     </section>

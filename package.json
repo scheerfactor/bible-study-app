@@ -84,6 +84,7 @@
     "storage:upload:strongs-shards": "node scripts/upload-strongs-chapter-shards-with-wrangler.mjs",
     "hymns:prepare": "node scripts/prepare-hymns.mjs",
     "validate:hymns": "node scripts/validate-hymns.mjs",
+    "validate:preaching-helps": "node scripts/validate-preaching-helps.mjs",
     "validate:archaeology": "node scripts/validate-archaeology.mjs"
   },
   "dependencies": {
