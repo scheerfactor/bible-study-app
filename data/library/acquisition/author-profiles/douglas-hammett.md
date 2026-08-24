@@ -14,7 +14,7 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Copyrighted / controlled material |
 | Permission needed | Yes |
-| Permission/contact info | Begin through Lehigh Valley Baptist Church; confirm Doug Hammett or current rightsholder before sending |
+| Permission/contact info | Begin through the Lehigh Valley Baptist Church contact route verified 2026-08-23; confirm Doug Hammett or each current rightsholder before requesting rights |
 | Website | https://lvbaptist.org/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
@@ -30,12 +30,17 @@ Current source trail:
 
 - ministry background: https://lvbaptist.org/lvbc-staff/
 - current church and doctrinal route: https://lvbaptist.org/what-we-believe/
+- official contact route: https://lvbaptist.org/contact-us/
 - sermon catalog discovery only: https://www.sermonaudio.com/gb/speakers/1581/series
 - copyrighted counseling-manual imprint evidence: https://gbbc.net/wp-content/uploads/2023/08/COUNSELING-MANUAL.pdf
 - current retail discovery for the music series: https://www.baptist-books.com/products/choosing-godly-music-dvds
 
 These sources verify identity and resource leads. They do not grant reuse, embedding, transcription, resale, or
 distribution rights.
+
+The official contact route was rechecked 2026-08-23. The church office lists `(610) 965-4700`; Book Heaven and
+Challenge Press list `(610) 967-4005`. These are routing leads only, not evidence that either organization controls
+every Doug Hammett resource.
 
 ## Doctrinal Notes
 
@@ -83,6 +88,7 @@ Notes:
 - Do not approve broad catalog use.
 - Ask about specific titles, excerpts, links, audio, video, transcript use, and future paid-access terms separately.
 - Record written permission before any copyrighted material becomes public in the app.
+- Use the routing request and title/category checklist in `SORENSON_HAMMETT_PERMISSION_PACKET_2026-08-24.md`; keep every item blocked until its actual rights holder replies in writing.
 
 ## Review Score
 

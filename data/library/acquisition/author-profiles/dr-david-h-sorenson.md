@@ -14,7 +14,7 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Approved With Permission Pending Review |
 | Copyright status | Permission Granted - scoped |
 | Permission needed | No for links/excerpts/cover graphics; yes for any broader use |
-| Permission/contact info | Permission reply: dhs.northstar@charter.net; current public route: dhs.northstar@gmail.com |
+| Permission/contact info | Permission reply: dhs.northstar@charter.net; current public route verified 2026-08-23: dhs.northstar@gmail.com |
 | Website | https://northstarministries.com/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
@@ -28,6 +28,10 @@ and Pastor Emeritus of Northstar Baptist Church in Duluth, Minnesota, and author
 dispensational, pre-tribulation, and premillennial.
 
 Current official source and catalog: https://northstarministries.com/
+
+The official catalog was rechecked 2026-08-23. It describes `Understanding the Bible` as an eleven-volume,
+8,368-page commentary and offers hardback, USB, and direct-download PDF formats. Those public sales formats verify
+the product route only; they do not grant app hosting, purchaser unlock, search, passage indexing, or resale rights.
 
 ## Doctrinal Notes
 
@@ -48,7 +52,7 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Understanding the Bible | Whole-Bible commentary | TBD | Permission Granted - Scoped | Needs title-level review | Highest priority. Link, cover graphic, and excerpts permitted. Do not host full text without separate confirmation. |
+| Understanding the Bible | Whole-Bible commentary | Current hardback, USB, and PDF formats verified 2026-08-23 | Permission Granted - Scoped | Needs title-level review | Highest priority. Link, cover graphic, and excerpts permitted. A one-title commercial/full-text pilot request is drafted; do not host or index full text without a new written agreement. |
 | The Majesty of the Psalms | Psalms commentary / devotional exposition | TBD | Permission Granted - Scoped | Needs title-level review | Strong Psalms ecosystem candidate. |
 | When He Shall Come | Prophecy / doctrine | TBD | Permission Granted - Scoped | Needs title-level review | Strong Daniel/Revelation/prophecy candidate. |
 | The Faithful Word | KJV / English Bible history | TBD | Permission Granted - Scoped | Needs title-level review | Strong KJV study resource candidate. |
@@ -83,6 +87,7 @@ Notes:
 - Do not treat this as permission to host full copyrighted books, audio/video files, transcripts, AI/TTS narration, or paid subscription content unless separately confirmed.
 - Title-level review and theological/resource review are still required before public recommendation.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
+- The send-ready one-title request and commercial-rights checklist are in `SORENSON_HAMMETT_PERMISSION_PACKET_2026-08-24.md`.
 
 ## Review Score
 
