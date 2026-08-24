@@ -2,7 +2,8 @@
 
 Prepared: 2026-08-23
 
-Status: Drafts only. Nothing in this packet has been sent, and no permission is implied.
+Status: Draft 1 was sent to Bible Visuals International on 2026-08-23 at 11:45 PM EDT. Drafts 2-3
+remain unsent. No permission is implied by sending an inquiry.
 
 ## Why these prospects come first
 
@@ -20,6 +21,8 @@ Status: Drafts only. Nothing in this packet has been sent, and no permission is 
    copying, indexing, adaptation, commercial use, or app distribution being considered.
 
 ## Draft 1: Bible Visuals International
+
+**Sent:** 2026-08-23 at 11:45 PM EDT from hello@fathersbusinessmasteryresources.com
 
 **To:** info@biblevisuals.org  
 **Subject:** Bible app licensing question for one visualized Bible lesson pilot
