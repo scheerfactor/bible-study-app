@@ -30,6 +30,8 @@ Thank you again for your July 4 written permission allowing Father's Business Bi
 
 Would Northstar consider a one-title digital-access pilot for the current PDF edition of Understanding the Bible? The purpose would be to let a purchaser read the commentary inside the app beside the relevant KJV passage while Northstar retains ownership, pricing control, corrections, and the right to end the pilot.
 
+If this first pilot proves useful to Northstar and readers, I would also welcome a later conversation about selected works on Psalms, Proverbs, the KJV, evangelism, prophecy, and pastoral ministry. I am not requesting rights to those titles in this first message.
+
 Before any technical work or public announcement, I would need written agreement on these separate questions:
 
 1. May the app securely store and deliver the full commentary only to authenticated purchasers?
