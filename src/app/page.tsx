@@ -49,6 +49,7 @@ import { brandMark } from "@/lib/site-metadata";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
+import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
@@ -17840,6 +17841,7 @@ export default function Home() {
     return process.env.NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_PREVIEW === "true" && isLocalHost;
   });
   const [globalQuickJumpText, setGlobalQuickJumpText] = useState("");
+  const [quickStudyOpen, setQuickStudyOpen] = useState(false);
   const [book, setBook] = useState(DEFAULT_BOOK);
   const [chapter, setChapter] = useState(DEFAULT_CHAPTER);
   const [verseJump, setVerseJump] = useState(DEFAULT_VERSE);
@@ -23557,6 +23559,115 @@ export default function Home() {
     (tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) ||
     (tab === "presentations" && (presentationWorkspaceView === "presenter" || presentationWorkspaceView === "presentation"));
   const focusedMobileReading = tab === "bible" || (tab === "library" && libraryView === "reader");
+  const quickStudyCommands: QuickStudyCommand[] = [
+    {
+      id: "definitions",
+      label: `Define words in ${selectedRef}`,
+      description: "Open Webster 1828 and available Strong's information beside the selected verse.",
+      group: "Selected verse",
+      keywords: ["dictionary", "webster", "strongs", "greek", "hebrew", "word lens"],
+      icon: <BookMarked size={19} />,
+      action: () => {
+        setTab("bible");
+        openStudyDrawer(selectedRef, "dictionary");
+      },
+    },
+    {
+      id: "cross-references",
+      label: `Cross-references for ${selectedRef}`,
+      description: "Trace the selected verse through the reviewed Treasury of Scripture Knowledge links.",
+      group: "Selected verse",
+      keywords: ["tsk", "references", "connections", "related verses"],
+      icon: <Link size={19} />,
+      action: () => {
+        setTab("bible");
+        openStudyDrawer(selectedRef, "crossReferences");
+      },
+    },
+    {
+      id: "commentary",
+      label: `Commentary on ${selectedRef}`,
+      description: "Compare the available verse-linked public-domain commentary.",
+      group: "Selected verse",
+      keywords: ["notes", "exposition", "matthew henry", "jfb"],
+      icon: <MessageSquareText size={19} />,
+      action: () => {
+        setTab("bible");
+        openStudyDrawer(selectedRef, "commentary");
+      },
+    },
+    {
+      id: "bible-search",
+      label: "Search the KJV Bible",
+      description: "Find words and phrases across the complete King James Bible.",
+      group: "Find resources",
+      keywords: ["kjv", "concordance", "phrase", "verse"],
+      icon: <Search size={19} />,
+      action: () => setTab("search"),
+    },
+    {
+      id: "library",
+      label: "Search books and study tools",
+      description: "Open the verified library of books, commentaries, dictionaries, maps, and media.",
+      group: "Find resources",
+      keywords: ["books", "authors", "maps", "audio", "video", "resources"],
+      icon: <Library size={19} />,
+      action: () => {
+        setLibraryView("home");
+        setTab("library");
+      },
+    },
+    {
+      id: "teaching-worship-desk",
+      label: "Hymns, evidence, quotes, and illustrations",
+      description: "Open the source-reviewed teaching and worship desk and create slides from its material.",
+      group: "Find resources",
+      keywords: ["hymns", "piano", "archaeology", "quotes", "poems", "illustrations", "worship"],
+      icon: <Star size={19} />,
+      action: () => {
+        setLibraryView("home");
+        setTab("library");
+        let attempts = 0;
+        const scrollWhenReady = () => {
+          const desk = document.getElementById("teaching-worship-desk");
+          if (desk) {
+            desk.scrollIntoView({ behavior: "smooth", block: "start" });
+            return;
+          }
+          attempts += 1;
+          if (attempts < 20) window.setTimeout(scrollWhenReady, 200);
+        };
+        window.setTimeout(scrollWhenReady, 100);
+      },
+    },
+    {
+      id: "audio-radio",
+      label: "Open Bible audio and radio",
+      description: "Listen to Scripture, hymns, preaching, devotions, and approved radio streams.",
+      group: "Find resources",
+      keywords: ["listen", "audio", "radio", "preaching", "devotions"],
+      icon: <Headphones size={19} />,
+      action: () => setTab("radio"),
+    },
+    {
+      id: "sermon-builder",
+      label: "Write a sermon or lesson",
+      description: "Open the builder for outlines, Scripture, notes, teaching helps, timing, and export.",
+      group: "Prepare and present",
+      keywords: ["sermon", "lesson", "sunday school", "outline", "preach", "teach"],
+      icon: <Clipboard size={19} />,
+      action: () => openSermonWorkspace("builder"),
+    },
+    {
+      id: "presentations",
+      label: "Build slides and choose backgrounds",
+      description: "Create sermon, teaching, Scripture, hymn, and worship presentations with remote control.",
+      group: "Prepare and present",
+      keywords: ["slides", "presentation", "backgrounds", "images", "remote", "ipad"],
+      icon: <MonitorPlay size={19} />,
+      action: () => openPresentationWorkspace("manager"),
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-[var(--page)] text-[var(--ink)]">
@@ -23567,6 +23678,14 @@ export default function Home() {
             : "mx-auto flex min-h-screen w-full max-w-6xl flex-col bg-[var(--paper)] shadow-2xl shadow-stone-950/10 md:my-6 md:min-h-[calc(100vh-3rem)] md:rounded-[1.75rem] md:border md:border-stone-200"
         }
       >
+        {!immersiveMode && (
+          <QuickStudyPalette
+            commands={quickStudyCommands}
+            onOpenChange={setQuickStudyOpen}
+            open={quickStudyOpen}
+            selectedRef={selectedRef}
+          />
+        )}
         {!immersiveMode && (
         <header className={`sticky top-0 z-20 border-b border-stone-200/80 bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:rounded-t-[1.75rem] ${focusedMobileReading ? "hidden md:block" : ""}`}>
           <div className="flex items-center justify-between gap-3">
@@ -23584,6 +23703,15 @@ export default function Home() {
               </span>
             </button>
             <div className="flex shrink-0 items-center gap-2">
+              <button
+                className="hidden h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm sm:inline-flex"
+                onClick={() => setQuickStudyOpen(true)}
+                title="Quick Study (Command or Control + K)"
+                type="button"
+              >
+                <Search size={17} />
+                Quick Study
+              </button>
               {tab !== "prayer" && tab !== "journal" && (
                 <button
                   className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
@@ -24593,6 +24721,7 @@ export default function Home() {
 	      {!immersiveMode && (
 	        <MobileNav
 	          tab={tab}
+	          onOpenQuickStudy={() => setQuickStudyOpen(true)}
 	          onTab={(nextTab) => {
 	            if (nextTab === "library") setLibraryView("home");
 	            setTab(nextTab);
@@ -53021,7 +53150,7 @@ function formatSermonTimer(seconds: number) {
   return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
 }
 
-function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
+function MobileNav({ tab, onTab, onOpenQuickStudy }: { tab: Tab; onTab: (tab: Tab) => void; onOpenQuickStudy: () => void }) {
   const items: { id: Tab; label: string; shortLabel: string; icon: React.ReactNode }[] = [
     { id: "today", label: "Today", shortLabel: "Today", icon: <HomeIcon size={18} /> },
     { id: "bible", label: "Bible", shortLabel: "Bible", icon: <BookOpen size={18} /> },
@@ -53041,6 +53170,16 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
   return (
     <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.35rem+env(safe-area-inset-bottom))] pt-1.5 backdrop-blur md:hidden">
       <div className="mx-auto flex max-w-xl gap-1 overflow-x-auto overscroll-x-contain pb-0.5">
+        <button
+          aria-label="Quick Study"
+          title="Quick Study"
+          className="flex h-14 w-16 shrink-0 flex-col items-center justify-center gap-0.5 rounded-xl bg-[var(--warm)] px-1 text-[0.58rem] font-semibold leading-none text-[var(--green)]"
+          onClick={onOpenQuickStudy}
+          type="button"
+        >
+          <Search size={18} />
+          <span className="block max-w-full truncate">Quick</span>
+        </button>
         {items.map((item) => (
           <button
             key={item.id}

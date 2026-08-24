@@ -174,7 +174,7 @@ export default function BibleStudyResourceDesk({
   }
 
   return (
-    <section className="border-y border-[var(--line)] bg-white/55 py-6">
+    <section id="teaching-worship-desk" className="scroll-mt-28 border-y border-[var(--line)] bg-white/55 py-6">
       <div className="flex flex-col gap-4 px-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Teaching and worship desk</p>

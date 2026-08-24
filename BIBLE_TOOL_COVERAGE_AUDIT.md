@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T13:35:15.660Z
+Generated: 2026-08-24T02:33:59.380Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -118,7 +118,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
-| selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
 | hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
 | bag | BAG | 11 | ocr_full_import_needs_spot_review |
@@ -126,14 +125,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
-| stiffnecked | STIFF'-NECKED | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
 | hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
 | alienated | A'LIENATE | 7 | ocr_full_import_needs_spot_review |
-| figure | FIG'URE | 7 | ocr_full_import_needs_spot_review |
-| firm | FIRM | 7 | ocr_full_import_needs_spot_review |
 | fishers | FISH'ER | 7 | ocr_full_import_needs_spot_review |
 | foes | FOE | 7 | ocr_full_import_needs_spot_review |
 | fragments | FRAG'MENT | 7 | ocr_full_import_needs_spot_review |
@@ -142,6 +138,10 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | grind | GRIND | 7 | ocr_full_import_needs_spot_review |
 | hammer | HAM'MER | 7 | ocr_full_import_needs_spot_review |
 | honest | HON'EST | 7 | ocr_full_import_needs_spot_review |
+| innumerable | INNU'MERABLE | 7 | ocr_full_import_needs_spot_review |
+| jasper | JASPER | 7 | ocr_full_import_needs_spot_review |
+| laughter | LAUGHTER | 7 | ocr_full_import_needs_spot_review |
+| lent | LENT | 7 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
