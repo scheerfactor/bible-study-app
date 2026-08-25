@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T01:12:12.185Z
+Generated: 2026-08-25T02:06:14.385Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -129,19 +129,19 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
-| alienated | A'LIENATE | 7 | ocr_full_import_needs_spot_review |
-| fishers | FISH'ER | 7 | ocr_full_import_needs_spot_review |
-| foes | FOE | 7 | ocr_full_import_needs_spot_review |
-| fragments | FRAG'MENT | 7 | ocr_full_import_needs_spot_review |
 | network | NET' -WORK | 7 | ocr_full_import_needs_spot_review |
 | overwhelmed | OVERWHELM' | 7 | ocr_full_import_needs_spot_review |
 | thread | THREAD | 7 | ocr_full_import_needs_spot_review |
-| value | VALUE | 7 | ocr_full_import_needs_spot_review |
-| weaver | WE'AVER | 7 | ocr_full_import_needs_spot_review |
-| wedding | WEDDING | 7 | ocr_full_import_needs_spot_review |
-| workmanship | WORKMANSHIP | 7 | ocr_full_import_needs_spot_review |
-| wrongfully | WRONG'FULLY | 7 | ocr_full_import_needs_spot_review |
 | abib | A'BIB | 6 | ocr_full_import_needs_spot_review |
+| abstain | ABSTA'IN | 6 | ocr_full_import_needs_spot_review |
+| amend | AMEND' | 6 | ocr_full_import_needs_spot_review |
+| arabians | ARA'BIAN | 6 | ocr_full_import_needs_spot_review |
+| bewail | BEWA'IL | 6 | ocr_full_import_needs_spot_review |
+| blackness | BLACK'NESS | 6 | ocr_full_import_needs_spot_review |
+| blossom | BLOS'SOM | 6 | ocr_full_import_needs_spot_review |
+| boat | BOAT | 6 | ocr_full_import_needs_spot_review |
+| bolster | BOLSTER | 6 | ocr_full_import_needs_spot_review |
+| bonnets | BON'NET | 6 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
