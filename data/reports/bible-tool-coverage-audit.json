@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-24T23:56:01.372Z",
+    "generated_at": "2026-08-25T00:01:24.304Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60921,
+      "entries": 60924,
       "normalizedHeadwords": 51077,
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
@@ -2268,74 +2268,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "market",
-          "count": 7,
-          "sampleRefs": [
-            "Ezekiel 27:13",
-            "Ezekiel 27:17",
-            "Ezekiel 27:19",
-            "Ezekiel 27:25",
-            "Mark 7:4"
-          ],
-          "lookupCandidates": [
-            "market"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MARKET",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "masons",
-          "count": 7,
-          "sampleRefs": [
-            "2 Samuel 5:11",
-            "2 Kings 12:12",
-            "2 Kings 22:6",
-            "1 Chronicles 14:1",
-            "1 Chronicles 22:2"
-          ],
-          "lookupCandidates": [
-            "masons",
-            "mason",
-            "masone"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MA'SON",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ministration",
-          "count": 7,
-          "sampleRefs": [
-            "Luke 1:23",
-            "Acts 6:1",
-            "2 Corinthians 3:7",
-            "2 Corinthians 3:8",
-            "2 Corinthians 3:9"
-          ],
-          "lookupCandidates": [
-            "ministration"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MINISTRA'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "network",
           "count": 7,
           "sampleRefs": [
@@ -3598,6 +3530,74 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "EXPERT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "finally",
+          "count": 6,
+          "sampleRefs": [
+            "2 Corinthians 13:11",
+            "Ephesians 6:10",
+            "Philippians 3:1",
+            "Philippians 4:8",
+            "2 Thessalonians 3:1"
+          ],
+          "lookupCandidates": [
+            "finally"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FI'NALLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "flanks",
+          "count": 6,
+          "sampleRefs": [
+            "Leviticus 3:4",
+            "Leviticus 3:10",
+            "Leviticus 3:15",
+            "Leviticus 4:9",
+            "Leviticus 7:4"
+          ],
+          "lookupCandidates": [
+            "flanks",
+            "flank",
+            "flanke"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FLANK",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fort",
+          "count": 6,
+          "sampleRefs": [
+            "2 Samuel 5:9",
+            "Isaiah 25:12",
+            "Ezekiel 4:2",
+            "Ezekiel 21:22",
+            "Ezekiel 26:8"
+          ],
+          "lookupCandidates": [
+            "fort"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FORT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10755,74 +10755,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "market",
-        "count": 7,
-        "sampleRefs": [
-          "Ezekiel 27:13",
-          "Ezekiel 27:17",
-          "Ezekiel 27:19",
-          "Ezekiel 27:25",
-          "Mark 7:4"
-        ],
-        "lookupCandidates": [
-          "market"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MARKET",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "masons",
-        "count": 7,
-        "sampleRefs": [
-          "2 Samuel 5:11",
-          "2 Kings 12:12",
-          "2 Kings 22:6",
-          "1 Chronicles 14:1",
-          "1 Chronicles 22:2"
-        ],
-        "lookupCandidates": [
-          "masons",
-          "mason",
-          "masone"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MA'SON",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ministration",
-        "count": 7,
-        "sampleRefs": [
-          "Luke 1:23",
-          "Acts 6:1",
-          "2 Corinthians 3:7",
-          "2 Corinthians 3:8",
-          "2 Corinthians 3:9"
-        ],
-        "lookupCandidates": [
-          "ministration"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MINISTRA'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "network",
         "count": 7,
         "sampleRefs": [
@@ -12085,6 +12017,74 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "EXPERT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "finally",
+        "count": 6,
+        "sampleRefs": [
+          "2 Corinthians 13:11",
+          "Ephesians 6:10",
+          "Philippians 3:1",
+          "Philippians 4:8",
+          "2 Thessalonians 3:1"
+        ],
+        "lookupCandidates": [
+          "finally"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FI'NALLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "flanks",
+        "count": 6,
+        "sampleRefs": [
+          "Leviticus 3:4",
+          "Leviticus 3:10",
+          "Leviticus 3:15",
+          "Leviticus 4:9",
+          "Leviticus 7:4"
+        ],
+        "lookupCandidates": [
+          "flanks",
+          "flank",
+          "flanke"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FLANK",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fort",
+        "count": 6,
+        "sampleRefs": [
+          "2 Samuel 5:9",
+          "Isaiah 25:12",
+          "Ezekiel 4:2",
+          "Ezekiel 21:22",
+          "Ezekiel 26:8"
+        ],
+        "lookupCandidates": [
+          "fort"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FORT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
