@@ -1,33 +1,18 @@
 {
-  "generated_at": "2026-08-25T11:02:11.817Z",
+  "generated_at": "2026-08-25T12:41:42.920Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4230,
+  "total": 4204,
   "priorityCounts": {
     "high": 254,
-    "medium": 709,
-    "low": 1277,
+    "medium": 705,
+    "low": 1255,
     "single-use": 1990
   },
   "withSupplementalHelp": 2971,
-  "withoutSupplementalHelp": 1259,
+  "withoutSupplementalHelp": 1233,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "threshingfloor",
-      "count": 17,
-      "priority": "medium",
-      "lookupCandidates": [
-        "threshingfloor"
-      ],
-      "sampleRefs": [
-        "Genesis 50:10",
-        "Numbers 15:20",
-        "Numbers 18:27",
-        "Numbers 18:30",
-        "Ruth 3:2"
-      ]
-    },
     {
       "word": "iscariot",
       "count": 11,
@@ -148,21 +133,6 @@
         "2 Samuel 22:16",
         "2 Kings 19:7",
         "Job 4:9"
-      ]
-    },
-    {
-      "word": "bondwoman",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "bondwoman"
-      ],
-      "sampleRefs": [
-        "Genesis 21:10",
-        "Genesis 21:10",
-        "Genesis 21:12",
-        "Genesis 21:13",
-        "Galatians 4:23"
       ]
     },
     {
@@ -546,21 +516,6 @@
       ]
     },
     {
-      "word": "rotten",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "rotten"
-      ],
-      "sampleRefs": [
-        "Job 13:28",
-        "Job 41:27",
-        "Jeremiah 38:11",
-        "Jeremiah 38:12",
-        "Joel 1:17"
-      ]
-    },
-    {
       "word": "shelumiel",
       "count": 5,
       "priority": "medium",
@@ -605,23 +560,6 @@
         "Joshua 13:6",
         "Judges 3:3",
         "1 Kings 5:6"
-      ]
-    },
-    {
-      "word": "straitness",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "straitness",
-        "straitnes",
-        "straitnese"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 28:53",
-        "Deuteronomy 28:55",
-        "Deuteronomy 28:57",
-        "Job 36:16",
-        "Jeremiah 19:9"
       ]
     },
     {
@@ -767,20 +705,6 @@
         "Jeremiah 22:14",
         "Ezekiel 41:16",
         "Haggai 1:4"
-      ]
-    },
-    {
-      "word": "crafty",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "crafty"
-      ],
-      "sampleRefs": [
-        "Job 5:12",
-        "Job 15:5",
-        "Psalms 83:3",
-        "2 Corinthians 12:16"
       ]
     },
     {
@@ -1089,22 +1013,6 @@
       ]
     },
     {
-      "word": "soundness",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "soundness",
-        "soundnes",
-        "soundnese"
-      ],
-      "sampleRefs": [
-        "Psalms 38:3",
-        "Psalms 38:7",
-        "Isaiah 1:6",
-        "Acts 3:16"
-      ]
-    },
-    {
       "word": "spue",
       "count": 4,
       "priority": "low",
@@ -1130,20 +1038,6 @@
         "Nehemiah 9:21",
         "Psalms 55:22",
         "Proverbs 18:14"
-      ]
-    },
-    {
-      "word": "swiftly",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "swiftly"
-      ],
-      "sampleRefs": [
-        "Psalms 147:15",
-        "Isaiah 5:26",
-        "Daniel 9:21",
-        "Joel 3:4"
       ]
     },
     {
@@ -1225,20 +1119,6 @@
       ]
     },
     {
-      "word": "unholy",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "unholy"
-      ],
-      "sampleRefs": [
-        "Leviticus 10:10",
-        "1 Timothy 1:9",
-        "2 Timothy 3:2",
-        "Hebrews 10:29"
-      ]
-    },
-    {
       "word": "unmarried",
       "count": 4,
       "priority": "low",
@@ -1254,34 +1134,6 @@
       ]
     },
     {
-      "word": "untimely",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "untimely"
-      ],
-      "sampleRefs": [
-        "Job 3:16",
-        "Psalms 58:8",
-        "Ecclesiastes 6:3",
-        "Revelation 6:13"
-      ]
-    },
-    {
-      "word": "widowhood",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "widowhood"
-      ],
-      "sampleRefs": [
-        "Genesis 38:19",
-        "2 Samuel 20:3",
-        "Isaiah 47:9",
-        "Isaiah 54:4"
-      ]
-    },
-    {
       "word": "woven",
       "count": 4,
       "priority": "low",
@@ -1293,20 +1145,6 @@
         "Exodus 39:22",
         "Exodus 39:27",
         "John 19:23"
-      ]
-    },
-    {
-      "word": "writer",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "writer"
-      ],
-      "sampleRefs": [
-        "Judges 5:14",
-        "Psalms 45:1",
-        "Ezekiel 9:2",
-        "Ezekiel 9:3"
       ]
     },
     {
@@ -1478,6 +1316,162 @@
         "Leviticus 11:3",
         "Leviticus 11:7",
         "Leviticus 11:26"
+      ]
+    },
+    {
+      "word": "concluded",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "concluded",
+        "conclud",
+        "conclude"
+      ],
+      "sampleRefs": [
+        "Acts 21:25",
+        "Romans 11:32",
+        "Galatians 3:22"
+      ]
+    },
+    {
+      "word": "conduct",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "conduct"
+      ],
+      "sampleRefs": [
+        "2 Samuel 19:15",
+        "2 Samuel 19:31",
+        "1 Corinthians 16:11"
+      ]
+    },
+    {
+      "word": "crumbs",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "crumbs",
+        "crumb",
+        "crumbe"
+      ],
+      "sampleRefs": [
+        "Matthew 15:27",
+        "Mark 7:28",
+        "Luke 16:21"
+      ]
+    },
+    {
+      "word": "deceitfulness",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "deceitfulness",
+        "deceitfulnes",
+        "deceitfulnese"
+      ],
+      "sampleRefs": [
+        "Matthew 13:22",
+        "Mark 4:19",
+        "Hebrews 3:13"
+      ]
+    },
+    {
+      "word": "discreet",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "discreet"
+      ],
+      "sampleRefs": [
+        "Genesis 41:33",
+        "Genesis 41:39",
+        "Titus 2:5"
+      ]
+    },
+    {
+      "word": "dwellers",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "dwellers",
+        "dweller",
+        "dwellere"
+      ],
+      "sampleRefs": [
+        "Isaiah 18:3",
+        "Acts 1:19",
+        "Acts 2:9"
+      ]
+    },
+    {
+      "word": "edifieth",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "edifieth",
+        "edifi"
+      ],
+      "sampleRefs": [
+        "1 Corinthians 8:1",
+        "1 Corinthians 14:4",
+        "1 Corinthians 14:4"
+      ]
+    },
+    {
+      "word": "eloth",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "eloth"
+      ],
+      "sampleRefs": [
+        "1 Kings 9:26",
+        "2 Chronicles 8:17",
+        "2 Chronicles 26:2"
+      ]
+    },
+    {
+      "word": "excelleth",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "excelleth",
+        "excell",
+        "excelle"
+      ],
+      "sampleRefs": [
+        "Ecclesiastes 2:13",
+        "Ecclesiastes 2:13",
+        "2 Corinthians 3:10"
+      ]
+    },
+    {
+      "word": "excuse",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "excuse"
+      ],
+      "sampleRefs": [
+        "Luke 14:18",
+        "Romans 1:20",
+        "2 Corinthians 12:19"
+      ]
+    },
+    {
+      "word": "fainthearted",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "fainthearted",
+        "faintheart",
+        "fainthearte"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 20:8",
+        "Isaiah 7:4",
+        "Jeremiah 49:23"
       ]
     }
   ]

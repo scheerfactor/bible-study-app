@@ -1,0 +1,123 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-38-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Screened the highest-frequency unresolved KJV compounds and ordinary words without supplemental dictionary help, including historical Webster compound spellings.",
+  "review_method": "Required exact Webster page and entry headings, compared promoted text with the Internet Archive 1828 scans, repaired a truncated compound from the scan, applied only scan-confirmed transcription corrections, and held damaged entries for separate review.",
+  "screening_summary": {
+    "requested_source_pages": 44,
+    "exact_source_pages_found": 32,
+    "requested_spellings_without_exact_entry": 12,
+    "reviewed_overlays_promoted": 25,
+    "source_pages_held_for_further_review": 7,
+    "lookup_relationships_promoted": 2,
+    "automatic_inflection_forms_resolved": 1,
+    "missing_kjv_forms_resolved": 26,
+    "kjv_occurrences_resolved": 107
+  },
+  "promoted_headwords": [
+    "bondswoman",
+    "crafty",
+    "descent",
+    "desirable",
+    "despiteful",
+    "feign",
+    "hurtful",
+    "inquisition",
+    "manifestation",
+    "pin",
+    "pitiful",
+    "platter",
+    "rotten",
+    "ruinous",
+    "scarce",
+    "scornful",
+    "slippery",
+    "soundness",
+    "straitness",
+    "swiftly",
+    "thrashing-floor",
+    "unholy",
+    "untimely",
+    "widowhood",
+    "writer"
+  ],
+  "reviewed_transcription_actions": [
+    {"word": "bondswoman", "actions": ["Restored the noun label, etymology, and complete one-sentence definition from the scan after the web capture returned only the entry heading."]},
+    {"word": "crafty", "actions": ["Restored punctuation before the Job 5:12 citation and inside the 2 Corinthians 12:16 quotation."]},
+    {"word": "descent", "actions": ["Restored sentence capitalization and punctuation between senses 8 and 9."]},
+    {"word": "desirable", "actions": ["Restored punctuation between senses 1 and 2."]},
+    {"word": "despiteful", "actions": ["Corrected Hater to Haters in the Romans 1:30 quotation."]},
+    {"word": "feign", "actions": ["Restored Webster's obsolete usage label in sense 4."]},
+    {"word": "pin", "actions": ["Restored punctuation before sense 4."]},
+    {"word": "scarce", "actions": ["Restored punctuation in the usage examples from the scan."]},
+    {"word": "slippery", "actions": ["Restored punctuation before sense 2."]},
+    {"word": "straitness", "actions": ["Restored the possessive apostrophe in man's proceedings."]},
+    {"word": "writer", "actions": ["Restored the possessive apostrophe in tellers' bills."]}
+  ],
+  "held_for_further_review": [
+    {
+      "words": ["allow", "approve", "conduct", "describe", "discreet"],
+      "reason": "The exact web entries contain incomplete or damaged etymologies and require dedicated scan transcription."
+    },
+    {
+      "words": ["excuse"],
+      "reason": "The exact web entry contains a misspelling and a damaged Scripture citation that require a dedicated scan review."
+    },
+    {
+      "words": ["sustain"],
+      "reason": "The exact web entry contains an incomplete quotation boundary and requires a dedicated scan review."
+    },
+    {
+      "words": ["housetop", "house-top", "hundredfold", "hundred-fold", "inasmuch", "upside", "spue", "obscurity", "sufficiency", "suit", "tanner", "bond-woman"],
+      "reason": "No exact Webster page and entry heading was found under these requested spellings."
+    }
+  ],
+  "verified_lookup_relationships": [
+    {"word": "bondwoman", "lookup_headword": "bondswoman", "kjv_occurrences": 8, "relationship": "KJV compound spelling variant documented by Webster's alternate compound entry"},
+    {"word": "threshingfloor", "lookup_headword": "thrashing-floor", "kjv_occurrences": 17, "relationship": "KJV joined compound and Webster historical spelling variant"}
+  ],
+  "automatic_lookup_relationships": [
+    {"word": "feignest", "lookup_headword": "feign", "kjv_occurrences": 2, "relationship": "Automatically recognized KJV verb inflection"}
+  ],
+  "entries": [
+    {"word": "bondswoman", "kjv_occurrences": 0, "lookup_headword": "bondswoman", "base_entries": 1, "source_url": "https://webstersdictionary1828.com/Dictionary/bondswoman", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "BONDS'WOMAN", "exact_entry_heading": "BONDS'WOMAN", "exact_source_match": true},
+    {"word": "crafty", "kjv_occurrences": 4, "lookup_headword": "crafty", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/crafty", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "CRAFTY", "exact_entry_heading": "CRAFTY", "exact_source_match": true},
+    {"word": "descent", "kjv_occurrences": 3, "lookup_headword": "descent", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/descent", "source_line_start": 1, "source_line_end": 16, "exact_page_heading": "DESCENT", "exact_entry_heading": "DESCENT", "exact_source_match": true},
+    {"word": "desirable", "kjv_occurrences": 3, "lookup_headword": "desirable", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/desirable", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "DESIRABLE", "exact_entry_heading": "DESIRABLE", "exact_source_match": true},
+    {"word": "despiteful", "kjv_occurrences": 3, "lookup_headword": "despiteful", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/despiteful", "source_line_start": 1, "source_line_end": 2, "exact_page_heading": "DESPITEFUL", "exact_entry_heading": "DESPITEFUL", "exact_source_match": true},
+    {"word": "feign", "kjv_occurrences": 3, "lookup_headword": "feign", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/feign", "source_line_start": 1, "source_line_end": 9, "exact_page_heading": "FEIGN", "exact_entry_heading": "FEIGN", "exact_source_match": true},
+    {"word": "hurtful", "kjv_occurrences": 3, "lookup_headword": "hurtful", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/hurtful", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "HURT'FUL", "exact_entry_heading": "HURT'FUL", "exact_source_match": true},
+    {"word": "inquisition", "kjv_occurrences": 3, "lookup_headword": "inquisition", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/inquisition", "source_line_start": 1, "source_line_end": 6, "exact_page_heading": "INQUISI'TION", "exact_entry_heading": "INQUISI'TION", "exact_source_match": true},
+    {"word": "manifestation", "kjv_occurrences": 3, "lookup_headword": "manifestation", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/manifestation", "source_line_start": 1, "source_line_end": 2, "exact_page_heading": "MANIFESTA'TION", "exact_entry_heading": "MANIFESTA'TION", "exact_source_match": true},
+    {"word": "pin", "kjv_occurrences": 3, "lookup_headword": "pin", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/pin", "source_line_start": 1, "source_line_end": 17, "exact_page_heading": "PIN", "exact_entry_heading": "PIN", "exact_source_match": true},
+    {"word": "pitiful", "kjv_occurrences": 3, "lookup_headword": "pitiful", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/pitiful", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "PIT'IFUL", "exact_entry_heading": "PIT'IFUL", "exact_source_match": true},
+    {"word": "platter", "kjv_occurrences": 3, "lookup_headword": "platter", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/platter", "source_line_start": 1, "source_line_end": 2, "exact_page_heading": "PLAT'TER", "exact_entry_heading": "PLAT'TER", "exact_source_match": true},
+    {"word": "rotten", "kjv_occurrences": 5, "lookup_headword": "rotten", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/rotten", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "ROTTEN", "exact_entry_heading": "ROTTEN", "exact_source_match": true},
+    {"word": "ruinous", "kjv_occurrences": 3, "lookup_headword": "ruinous", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/ruinous", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "RU'INOUS", "exact_entry_heading": "RU'INOUS", "exact_source_match": true},
+    {"word": "scarce", "kjv_occurrences": 3, "lookup_headword": "scarce", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/scarce", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "SCARCE", "exact_entry_heading": "SCARCE", "exact_source_match": true},
+    {"word": "scornful", "kjv_occurrences": 3, "lookup_headword": "scornful", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/scornful", "source_line_start": 1, "source_line_end": 6, "exact_page_heading": "SCORN'FUL", "exact_entry_heading": "SCORN'FUL", "exact_source_match": true},
+    {"word": "slippery", "kjv_occurrences": 3, "lookup_headword": "slippery", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/slippery", "source_line_start": 1, "source_line_end": 8, "exact_page_heading": "SLIP'PERY", "exact_entry_heading": "SLIP'PERY", "exact_source_match": true},
+    {"word": "soundness", "kjv_occurrences": 4, "lookup_headword": "soundness", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/soundness", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "SOUND'NESS", "exact_entry_heading": "SOUND'NESS", "exact_source_match": true},
+    {"word": "straitness", "kjv_occurrences": 5, "lookup_headword": "straitness", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/straitness", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "STRAITNESS", "exact_entry_heading": "STRAITNESS", "exact_source_match": true},
+    {"word": "swiftly", "kjv_occurrences": 4, "lookup_headword": "swiftly", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/swiftly", "source_line_start": 1, "source_line_end": 2, "exact_page_heading": "SWIFT'LY", "exact_entry_heading": "SWIFT'LY", "exact_source_match": true},
+    {"word": "thrashing-floor", "kjv_occurrences": 0, "lookup_headword": "thrashing-floor", "base_entries": 1, "source_url": "https://webstersdictionary1828.com/Dictionary/thrashing-floor", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "THRASH'ING-FLOOR", "exact_entry_heading": "THRASH'ING-FLOOR", "exact_source_match": true},
+    {"word": "unholy", "kjv_occurrences": 4, "lookup_headword": "unholy", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/unholy", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "UNHO'LY", "exact_entry_heading": "UNHO'LY", "exact_source_match": true},
+    {"word": "untimely", "kjv_occurrences": 4, "lookup_headword": "untimely", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/untimely", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "UNTI'MELY", "exact_entry_heading": "UNTI'MELY", "exact_source_match": true},
+    {"word": "widowhood", "kjv_occurrences": 4, "lookup_headword": "widowhood", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/widowhood", "source_line_start": 1, "source_line_end": 3, "exact_page_heading": "WIDOWHOOD", "exact_entry_heading": "WIDOWHOOD", "exact_source_match": true},
+    {"word": "writer", "kjv_occurrences": 4, "lookup_headword": "writer", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/writer", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "WRITER", "exact_entry_heading": "WRITER", "exact_source_match": true}
+  ]
+}

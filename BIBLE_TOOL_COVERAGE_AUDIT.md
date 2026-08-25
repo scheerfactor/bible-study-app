@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T11:02:11.817Z
+Generated: 2026-08-25T12:41:42.920Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,224/12,454 meaningful KJV words have a lookup candidate (66%).
-- Combined word/topic lookup: 11,195/12,454 meaningful KJV words have Webster, Easton, or Nave help (89.9%).
+- Webster 1828: 8,250/12,454 meaningful KJV words have a lookup candidate (66.2%).
+- Combined word/topic lookup: 11,221/12,454 meaningful KJV words have Webster, Easton, or Nave help (90.1%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,7 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| threshingfloor | 17 | Genesis 50:10; Numbers 15:20; Numbers 18:27; Numbers 18:30; Ruth 3:2 |
 | iscariot | 11 | Matthew 10:4; Matthew 26:14; Mark 3:19; Mark 14:10; Luke 6:16 |
 | jazer | 11 | Numbers 32:1; Numbers 32:3; Joshua 13:25; Joshua 21:39; 2 Samuel 24:5 |
 | milcah | 11 | Genesis 11:29; Genesis 11:29; Genesis 22:20; Genesis 22:23; Genesis 24:15 |
@@ -80,7 +79,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | shelomith | 9 | Leviticus 24:11; 1 Chronicles 3:19; 1 Chronicles 23:9; 1 Chronicles 23:18; 1 Chronicles 26:25 |
 | aphek | 8 | Joshua 12:18; Joshua 13:4; Joshua 19:30; 1 Samuel 4:1; 1 Samuel 29:1 |
 | blast | 8 | Exodus 15:8; Joshua 6:5; 2 Samuel 22:16; 2 Kings 19:7; Job 4:9 |
-| bondwoman | 8 | Genesis 21:10; Genesis 21:10; Genesis 21:12; Genesis 21:13; Galatians 4:23 |
 | housetops | 8 | 2 Kings 19:26; Psalms 129:6; Isaiah 22:1; Isaiah 37:27; Jeremiah 48:38 |
 | quarter | 8 | Genesis 19:4; Numbers 34:3; Joshua 15:5; Joshua 18:14; Joshua 18:15 |
 | uri | 8 | Exodus 31:2; Exodus 35:30; Exodus 38:22; 1 Kings 4:19; 1 Chronicles 2:20 |
@@ -101,6 +99,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | hararite | 5 | 2 Samuel 23:11; 2 Samuel 23:33; 2 Samuel 23:33; 1 Chronicles 11:34; 1 Chronicles 11:35 |
 | hushathite | 5 | 2 Samuel 21:18; 2 Samuel 23:27; 1 Chronicles 11:29; 1 Chronicles 20:4; 1 Chronicles 27:11 |
 | jezreelitess | 5 | 1 Samuel 27:3; 1 Samuel 30:5; 2 Samuel 2:2; 2 Samuel 3:2; 1 Chronicles 3:1 |
+| jozadak | 5 | Ezra 3:2; Ezra 3:8; Ezra 5:2; Ezra 10:18; Nehemiah 12:26 |
+| noe | 5 | Matthew 24:37; Matthew 24:38; Luke 3:36; Luke 17:26; Luke 17:27 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
