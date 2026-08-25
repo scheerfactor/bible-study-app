@@ -1,4 +1,5 @@
 import { readTextContent } from "@/lib/server-content-storage";
+import reviewedKjvDictionaryAliases from "../../data/generated/kjv-dictionary-reviewed-aliases.json";
 
 export type WebsterEntry = {
   headword: string;
@@ -235,6 +236,7 @@ const dictionaryAliases: Record<string, string> = {
   doeth: "do",
   doth: "do",
   didst: "do",
+  ...reviewedKjvDictionaryAliases,
 };
 
 export function cleanDictionaryWord(value: string) {

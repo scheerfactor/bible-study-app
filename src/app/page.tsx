@@ -51,6 +51,7 @@ import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
+import reviewedKjvDictionaryAliases from "../../data/generated/kjv-dictionary-reviewed-aliases.json";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
 import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
@@ -9906,6 +9907,7 @@ const dictionaryAliases: Record<string, string> = {
   worshipping: "worship",
   worshippedst: "worship",
   worlds: "world",
+  ...reviewedKjvDictionaryAliases,
 };
 
 const strongsMvpEntries: Record<string, StrongMvpEntry> = {

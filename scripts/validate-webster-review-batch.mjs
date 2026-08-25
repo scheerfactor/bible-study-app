@@ -2,6 +2,7 @@
 import { readFile } from "node:fs/promises";
 
 const overlaysPath = "data/generated/websters-1828-reviewed-overrides.json";
+const aliasesPath = "data/generated/kjv-dictionary-reviewed-aliases.json";
 const batchPath = process.argv.slice(2).find((value) => !value.startsWith("--"));
 
 if (!batchPath) {
@@ -25,6 +26,19 @@ const highRiskPatterns = [
 
 const overlays = JSON.parse(await readFile(overlaysPath, "utf8"));
 const batch = JSON.parse(await readFile(batchPath, "utf8"));
+const aliases = JSON.parse(await readFile(aliasesPath, "utf8"));
+const targetEntries = [
+  ...overlays,
+  ...JSON.parse(await readFile("data/generated/websters-1828.entries.json", "utf8")),
+  ...JSON.parse(await readFile("data/generated/eastons-bible-dictionary.entries.json", "utf8")),
+  ...JSON.parse(await readFile("data/generated/naves-topical-bible.topics.json", "utf8")),
+  ...JSON.parse(await readFile("data/generated/kjv-rare-term-reviewed-overrides.json", "utf8")),
+];
+const availableTargets = new Set(
+  targetEntries.map((entry) =>
+    normalize(entry.normalized_headword || entry.headword || entry.normalized_topic || entry.topic),
+  ),
+);
 const errors = [];
 
 if (!Array.isArray(overlays)) errors.push(`${overlaysPath} must contain an array.`);
@@ -73,6 +87,30 @@ for (const entry of batch.entries ?? []) {
   }
 }
 
+const seenRelationships = new Set();
+for (const relationship of batch.verified_lookup_relationships ?? []) {
+  const word = normalize(relationship.word);
+  const target = normalize(relationship.lookup_headword);
+  if (!word || !target) {
+    errors.push(`Invalid lookup relationship: ${JSON.stringify(relationship)}`);
+    continue;
+  }
+  if (seenRelationships.has(word)) errors.push(`Duplicate lookup relationship: ${word}.`);
+  seenRelationships.add(word);
+  if (normalize(aliases[word]) !== target) {
+    errors.push(`${word}: reviewed alias does not resolve to ${target}.`);
+  }
+  if (!availableTargets.has(target)) {
+    errors.push(`${word}: target headword ${target} is unavailable in approved dictionary data.`);
+  }
+  if (!Number.isInteger(relationship.kjv_occurrences) || relationship.kjv_occurrences < 1) {
+    errors.push(`${word}: KJV occurrence count must be a positive integer.`);
+  }
+  if (!String(relationship.relationship ?? "").trim()) {
+    errors.push(`${word}: relationship explanation is required.`);
+  }
+}
+
 if (errors.length) {
   console.error(`Webster review batch validation failed (${errors.length} error${errors.length === 1 ? "" : "s"}).`);
   for (const error of errors) console.error(`- ${error}`);
@@ -80,4 +118,5 @@ if (errors.length) {
 }
 
 console.log(`Webster review batch validation passed: ${batch.entries.length} entries, ${overlays.length} unique overlays.`);
+console.log(`Reviewed lookup relationships validated: ${(batch.verified_lookup_relationships ?? []).length}.`);
 console.log(`Batch: ${batchPath}`);

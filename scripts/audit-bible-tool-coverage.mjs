@@ -8,6 +8,9 @@ const reportJsonPath = "data/reports/bible-tool-coverage-audit.json";
 const reportMdPath = "BIBLE_TOOL_COVERAGE_AUDIT.md";
 const websterMissingJsonPath = "data/reports/webster-missing-word-inventory.json";
 const websterMissingCsvPath = "data/reports/webster-missing-word-inventory.csv";
+const reviewedDictionaryAliases = JSON.parse(
+  await readFile("data/generated/kjv-dictionary-reviewed-aliases.json", "utf8"),
+);
 
 const bookOrder = [
   "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth",
@@ -188,6 +191,7 @@ const dictionaryAliases = {
   doth: "do",
   didst: "do",
   testifieth: "testify",
+  ...reviewedDictionaryAliases,
 };
 
 const stopWords = new Set([
