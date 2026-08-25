@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-25T12:41:42.920Z",
+  "generated_at": "2026-08-25T12:53:48.722Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4204,
+  "total": 4174,
   "priorityCounts": {
     "high": 254,
-    "medium": 705,
-    "low": 1255,
+    "medium": 704,
+    "low": 1226,
     "single-use": 1990
   },
-  "withSupplementalHelp": 2971,
-  "withoutSupplementalHelp": 1233,
+  "withSupplementalHelp": 2970,
+  "withoutSupplementalHelp": 1204,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -781,22 +781,6 @@
       ]
     },
     {
-      "word": "grisled",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "grisled",
-        "grisl",
-        "grisle"
-      ],
-      "sampleRefs": [
-        "Genesis 31:10",
-        "Genesis 31:12",
-        "Zechariah 6:3",
-        "Zechariah 6:6"
-      ]
-    },
-    {
       "word": "husham",
       "count": 4,
       "priority": "low",
@@ -1013,20 +997,6 @@
       ]
     },
     {
-      "word": "spue",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "spue"
-      ],
-      "sampleRefs": [
-        "Leviticus 18:28",
-        "Leviticus 20:22",
-        "Jeremiah 25:27",
-        "Revelation 3:16"
-      ]
-    },
-    {
       "word": "sustain",
       "count": 4,
       "priority": "low",
@@ -1038,22 +1008,6 @@
         "Nehemiah 9:21",
         "Psalms 55:22",
         "Proverbs 18:14"
-      ]
-    },
-    {
-      "word": "trumpeters",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "trumpeters",
-        "trumpeter",
-        "trumpetere"
-      ],
-      "sampleRefs": [
-        "2 Kings 11:14",
-        "2 Chronicles 5:13",
-        "2 Chronicles 29:28",
-        "Revelation 18:22"
       ]
     },
     {
@@ -1116,21 +1070,6 @@
         "1 Kings 7:30",
         "1 Kings 7:34",
         "1 Kings 7:34"
-      ]
-    },
-    {
-      "word": "unmarried",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "unmarried",
-        "unmarri"
-      ],
-      "sampleRefs": [
-        "1 Corinthians 7:8",
-        "1 Corinthians 7:11",
-        "1 Corinthians 7:32",
-        "1 Corinthians 7:34"
       ]
     },
     {
@@ -1239,32 +1178,6 @@
       ]
     },
     {
-      "word": "behaviour",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "behaviour"
-      ],
-      "sampleRefs": [
-        "1 Samuel 21:13",
-        "1 Timothy 3:2",
-        "Titus 2:3"
-      ]
-    },
-    {
-      "word": "bondwomen",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "bondwomen"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 28:68",
-        "2 Chronicles 28:10",
-        "Esther 7:4"
-      ]
-    },
-    {
       "word": "booz",
       "count": 3,
       "priority": "low",
@@ -1288,34 +1201,6 @@
         "Matthew 9:15",
         "Mark 2:19",
         "Luke 5:34"
-      ]
-    },
-    {
-      "word": "buyer",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "buyer"
-      ],
-      "sampleRefs": [
-        "Proverbs 20:14",
-        "Isaiah 24:2",
-        "Ezekiel 7:12"
-      ]
-    },
-    {
-      "word": "clovenfooted",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "clovenfooted",
-        "clovenfoot",
-        "clovenfoote"
-      ],
-      "sampleRefs": [
-        "Leviticus 11:3",
-        "Leviticus 11:7",
-        "Leviticus 11:26"
       ]
     },
     {
@@ -1362,21 +1247,6 @@
       ]
     },
     {
-      "word": "deceitfulness",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "deceitfulness",
-        "deceitfulnes",
-        "deceitfulnese"
-      ],
-      "sampleRefs": [
-        "Matthew 13:22",
-        "Mark 4:19",
-        "Hebrews 3:13"
-      ]
-    },
-    {
       "word": "discreet",
       "count": 3,
       "priority": "low",
@@ -1387,21 +1257,6 @@
         "Genesis 41:33",
         "Genesis 41:39",
         "Titus 2:5"
-      ]
-    },
-    {
-      "word": "dwellers",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "dwellers",
-        "dweller",
-        "dwellere"
-      ],
-      "sampleRefs": [
-        "Isaiah 18:3",
-        "Acts 1:19",
-        "Acts 2:9"
       ]
     },
     {
@@ -1472,6 +1327,141 @@
         "Deuteronomy 20:8",
         "Isaiah 7:4",
         "Jeremiah 49:23"
+      ]
+    },
+    {
+      "word": "fourfooted",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "fourfooted",
+        "fourfoot",
+        "fourfoote"
+      ],
+      "sampleRefs": [
+        "Acts 10:12",
+        "Acts 11:6",
+        "Romans 1:23"
+      ]
+    },
+    {
+      "word": "galilaean",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "galilaean"
+      ],
+      "sampleRefs": [
+        "Mark 14:70",
+        "Luke 22:59",
+        "Luke 23:6"
+      ]
+    },
+    {
+      "word": "gershonite",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "gershonite"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 26:21",
+        "1 Chronicles 26:21",
+        "1 Chronicles 29:8"
+      ]
+    },
+    {
+      "word": "grecia",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "grecia"
+      ],
+      "sampleRefs": [
+        "Daniel 8:21",
+        "Daniel 10:20",
+        "Daniel 11:2"
+      ]
+    },
+    {
+      "word": "hagarites",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "hagarites",
+        "hagarite"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 5:10",
+        "1 Chronicles 5:19",
+        "1 Chronicles 5:20"
+      ]
+    },
+    {
+      "word": "holiest",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "holiest",
+        "holi"
+      ],
+      "sampleRefs": [
+        "Hebrews 9:3",
+        "Hebrews 9:8",
+        "Hebrews 10:19"
+      ]
+    },
+    {
+      "word": "holon",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "holon"
+      ],
+      "sampleRefs": [
+        "Joshua 15:51",
+        "Joshua 21:15",
+        "Jeremiah 48:21"
+      ]
+    },
+    {
+      "word": "isshiah",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "isshiah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 24:21",
+        "1 Chronicles 24:25",
+        "1 Chronicles 24:25"
+      ]
+    },
+    {
+      "word": "izharites",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "izharites",
+        "izharite"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 24:22",
+        "1 Chronicles 26:23",
+        "1 Chronicles 26:29"
+      ]
+    },
+    {
+      "word": "jahazah",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "jahazah"
+      ],
+      "sampleRefs": [
+        "Joshua 13:18",
+        "Joshua 21:36",
+        "Jeremiah 48:21"
       ]
     }
   ]

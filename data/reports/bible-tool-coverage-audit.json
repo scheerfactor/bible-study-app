@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-25T12:41:42.920Z",
+    "generated_at": "2026-08-25T12:53:48.722Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,19 +10,19 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61111,
-      "normalizedHeadwords": 51175,
-      "meaningfulWordsWithDefinition": 8250,
-      "meaningfulWordsWithoutDefinition": 4204,
-      "meaningfulDefinitionCoveragePercent": 66.2,
+      "entries": 61138,
+      "normalizedHeadwords": 51198,
+      "meaningfulWordsWithDefinition": 8280,
+      "meaningfulWordsWithoutDefinition": 4174,
+      "meaningfulDefinitionCoveragePercent": 66.5,
       "missingPriorityCounts": {
         "high": 254,
-        "medium": 705,
-        "low": 1255,
+        "medium": 704,
+        "low": 1226,
         "single-use": 1990
       },
-      "missingWithSupplementalHelp": 2971,
-      "missingWithoutSupplementalHelp": 1233,
+      "missingWithSupplementalHelp": 2970,
+      "missingWithoutSupplementalHelp": 1204,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -3625,10 +3625,10 @@
       "eastonEntries": 3883,
       "naveTopics": 4674,
       "rareTermEntries": 28,
-      "meaningfulWordsWithEastonEntry": 4131,
+      "meaningfulWordsWithEastonEntry": 4132,
       "meaningfulWordsWithNaveTopic": 4015,
-      "meaningfulWordsWithAnyStudyLookup": 11221,
-      "combinedStudyLookupCoveragePercent": 90.1,
+      "meaningfulWordsWithAnyStudyLookup": 11250,
+      "combinedStudyLookupCoveragePercent": 90.3,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
           "word": "iscariot",
@@ -4755,29 +4755,6 @@
           "reviewStatus": null
         },
         {
-          "word": "grisled",
-          "count": 4,
-          "sampleRefs": [
-            "Genesis 31:10",
-            "Genesis 31:12",
-            "Zechariah 6:3",
-            "Zechariah 6:6"
-          ],
-          "lookupCandidates": [
-            "grisled",
-            "grisl",
-            "grisle"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "husham",
           "count": 4,
           "sampleRefs": [
@@ -5099,27 +5076,6 @@
           "reviewStatus": null
         },
         {
-          "word": "spue",
-          "count": 4,
-          "sampleRefs": [
-            "Leviticus 18:28",
-            "Leviticus 20:22",
-            "Jeremiah 25:27",
-            "Revelation 3:16"
-          ],
-          "lookupCandidates": [
-            "spue"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "sustain",
           "count": 4,
           "sampleRefs": [
@@ -5130,29 +5086,6 @@
           ],
           "lookupCandidates": [
             "sustain"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "trumpeters",
-          "count": 4,
-          "sampleRefs": [
-            "2 Kings 11:14",
-            "2 Chronicles 5:13",
-            "2 Chronicles 29:28",
-            "Revelation 18:22"
-          ],
-          "lookupCandidates": [
-            "trumpeters",
-            "trumpeter",
-            "trumpetere"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -5254,28 +5187,6 @@
           "reviewStatus": null
         },
         {
-          "word": "unmarried",
-          "count": 4,
-          "sampleRefs": [
-            "1 Corinthians 7:8",
-            "1 Corinthians 7:11",
-            "1 Corinthians 7:32",
-            "1 Corinthians 7:34"
-          ],
-          "lookupCandidates": [
-            "unmarried",
-            "unmarri"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "woven",
           "count": 4,
           "sampleRefs": [
@@ -5366,6 +5277,86 @@
           ],
           "lookupCandidates": [
             "ashbel"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "askelon",
+          "count": 3,
+          "sampleRefs": [
+            "Judges 1:18",
+            "1 Samuel 6:17",
+            "2 Samuel 1:20"
+          ],
+          "lookupCandidates": [
+            "askelon"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "azmon",
+          "count": 3,
+          "sampleRefs": [
+            "Numbers 34:4",
+            "Numbers 34:5",
+            "Joshua 15:4"
+          ],
+          "lookupCandidates": [
+            "azmon"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "azriel",
+          "count": 3,
+          "sampleRefs": [
+            "1 Chronicles 5:24",
+            "1 Chronicles 27:19",
+            "Jeremiah 36:26"
+          ],
+          "lookupCandidates": [
+            "azriel"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "booz",
+          "count": 3,
+          "sampleRefs": [
+            "Matthew 1:5",
+            "Matthew 1:5",
+            "Luke 3:32"
+          ],
+          "lookupCandidates": [
+            "booz"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -13188,29 +13179,6 @@
         "reviewStatus": null
       },
       {
-        "word": "grisled",
-        "count": 4,
-        "sampleRefs": [
-          "Genesis 31:10",
-          "Genesis 31:12",
-          "Zechariah 6:3",
-          "Zechariah 6:6"
-        ],
-        "lookupCandidates": [
-          "grisled",
-          "grisl",
-          "grisle"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "husham",
         "count": 4,
         "sampleRefs": [
@@ -13532,27 +13500,6 @@
         "reviewStatus": null
       },
       {
-        "word": "spue",
-        "count": 4,
-        "sampleRefs": [
-          "Leviticus 18:28",
-          "Leviticus 20:22",
-          "Jeremiah 25:27",
-          "Revelation 3:16"
-        ],
-        "lookupCandidates": [
-          "spue"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "sustain",
         "count": 4,
         "sampleRefs": [
@@ -13563,29 +13510,6 @@
         ],
         "lookupCandidates": [
           "sustain"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "trumpeters",
-        "count": 4,
-        "sampleRefs": [
-          "2 Kings 11:14",
-          "2 Chronicles 5:13",
-          "2 Chronicles 29:28",
-          "Revelation 18:22"
-        ],
-        "lookupCandidates": [
-          "trumpeters",
-          "trumpeter",
-          "trumpetere"
         ],
         "hasDefinition": false,
         "hasEaston": false,
@@ -13687,28 +13611,6 @@
         "reviewStatus": null
       },
       {
-        "word": "unmarried",
-        "count": 4,
-        "sampleRefs": [
-          "1 Corinthians 7:8",
-          "1 Corinthians 7:11",
-          "1 Corinthians 7:32",
-          "1 Corinthians 7:34"
-        ],
-        "lookupCandidates": [
-          "unmarried",
-          "unmarri"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "woven",
         "count": 4,
         "sampleRefs": [
@@ -13799,6 +13701,86 @@
         ],
         "lookupCandidates": [
           "ashbel"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "askelon",
+        "count": 3,
+        "sampleRefs": [
+          "Judges 1:18",
+          "1 Samuel 6:17",
+          "2 Samuel 1:20"
+        ],
+        "lookupCandidates": [
+          "askelon"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "azmon",
+        "count": 3,
+        "sampleRefs": [
+          "Numbers 34:4",
+          "Numbers 34:5",
+          "Joshua 15:4"
+        ],
+        "lookupCandidates": [
+          "azmon"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "azriel",
+        "count": 3,
+        "sampleRefs": [
+          "1 Chronicles 5:24",
+          "1 Chronicles 27:19",
+          "Jeremiah 36:26"
+        ],
+        "lookupCandidates": [
+          "azriel"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "booz",
+        "count": 3,
+        "sampleRefs": [
+          "Matthew 1:5",
+          "Matthew 1:5",
+          "Luke 3:32"
+        ],
+        "lookupCandidates": [
+          "booz"
         ],
         "hasDefinition": false,
         "hasEaston": false,
