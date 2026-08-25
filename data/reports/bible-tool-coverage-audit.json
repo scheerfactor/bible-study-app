@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-25T02:38:08.142Z",
+    "generated_at": "2026-08-25T02:58:28.108Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -15,6 +15,14 @@
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
       "meaningfulDefinitionCoveragePercent": 64,
+      "missingPriorityCounts": {
+        "high": 269,
+        "medium": 874,
+        "low": 1345,
+        "single-use": 1998
+      },
+      "missingWithSupplementalHelp": 2954,
+      "missingWithoutSupplementalHelp": 1532,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",

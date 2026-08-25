@@ -14069,8 +14069,24 @@ const STARTER_KJV_VERSES = parseVerses({
 });
 
 async function loadCompleteKjvVerses() {
-  const kjvModule = await import("es-kjv/json/verses-1769.js");
-  const verses = parseVerses(kjvModule.default as Record<string, string>);
+  const loadPart = async (part: number, attempt = 1): Promise<Record<string, string>> => {
+    try {
+      const response = await fetch(`/api/bible?part=${part}`);
+      if (!response.ok) throw new Error(`KJV part ${part} returned ${response.status}.`);
+      const data = (await response.json()) as { verses?: Record<string, string> };
+      if (!data.verses || Object.keys(data.verses).length === 0) {
+        throw new Error(`KJV part ${part} was empty.`);
+      }
+      return data.verses;
+    } catch (error) {
+      if (attempt >= 3) throw error;
+      await new Promise((resolve) => window.setTimeout(resolve, attempt * 400));
+      return loadPart(part, attempt + 1);
+    }
+  };
+
+  const parts = await Promise.all([1, 2, 3, 4].map((part) => loadPart(part)));
+  const verses = parseVerses(Object.assign({}, ...parts));
 
   if (verses.length !== COMPLETE_KJV_VERSE_COUNT) {
     throw new Error(`Expected ${COMPLETE_KJV_VERSE_COUNT} KJV verses, received ${verses.length}.`);
@@ -17827,6 +17843,7 @@ function buildActiveBibleBackground({
 export default function Home() {
   const [allVerses, setAllVerses] = useState<BibleVerse[]>(STARTER_KJV_VERSES);
   const [bibleCorpusStatus, setBibleCorpusStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [bibleCorpusRequest, setBibleCorpusRequest] = useState(0);
   const supabase = useMemo(() => makeSupabaseClient(), []);
   const [user, setUser] = useState<User | null>(null);
   const [authSessionLoaded, setAuthSessionLoaded] = useState(false);
@@ -18025,7 +18042,7 @@ export default function Home() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [bibleCorpusRequest]);
   const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
   const adminAccessResolved = isLocalAdminPreviewHost || (authSessionLoaded && adminRoleLoaded);
 
@@ -23855,8 +23872,15 @@ export default function Home() {
                   : "Loading the complete KJV text..."}
               </p>
               {bibleCorpusStatus === "error" ? (
-                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]" onClick={() => window.location.reload()} type="button">
-                  Retry
+                <button
+                  className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]"
+                  onClick={() => {
+                    setBibleCorpusStatus("loading");
+                    setBibleCorpusRequest((current) => current + 1);
+                  }}
+                  type="button"
+                >
+                  Try again
                 </button>
               ) : null}
             </div>

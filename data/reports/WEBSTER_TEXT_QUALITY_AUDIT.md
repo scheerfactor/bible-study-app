@@ -1,6 +1,6 @@
 # Webster 1828 Text Quality Audit
 
-Generated: 2026-08-25T02:38:05.428Z
+Generated: 2026-08-25T02:54:24.094Z
 
 This audit looks for scan/OCR patterns in the structured Webster 1828 data. It does not change Webster's wording. It helps us decide which entries need reviewed overlays or safe display-time cleanup before users rely on them for Bible study.
 

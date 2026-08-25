@@ -19,7 +19,24 @@ function strongMappingProbe(reference) {
   };
 }
 
+function biblePartProbe(part, expectedVerses) {
+  return {
+    label: `KJV corpus part ${part}`,
+    path: `/api/bible?part=${part}`,
+    validate(data) {
+      return data?.part === part && Object.keys(data?.verses ?? {}).length === expectedVerses;
+    },
+    summary(data) {
+      return `${Object.keys(data.verses).length} KJV verses`;
+    },
+  };
+}
+
 const probes = [
+  biblePartProbe(1, 10_253),
+  biblePartProbe(2, 7_402),
+  biblePartProbe(3, 5_490),
+  biblePartProbe(4, 7_957),
   {
     label: "Webster lookup",
     path: "/api/dictionary/believeth",
