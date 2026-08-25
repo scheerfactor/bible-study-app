@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-25T15:12:46.339Z",
+  "generated_at": "2026-08-25T15:30:59.157Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4101,
+  "total": 4077,
   "priorityCounts": {
-    "high": 245,
-    "medium": 698,
-    "low": 1180,
-    "single-use": 1978
+    "high": 241,
+    "medium": 684,
+    "low": 1176,
+    "single-use": 1976
   },
-  "withSupplementalHelp": 2951,
+  "withSupplementalHelp": 2927,
   "withoutSupplementalHelp": 1150,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
