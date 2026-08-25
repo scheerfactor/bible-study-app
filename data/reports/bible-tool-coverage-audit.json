@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-25T22:42:22.424Z",
+    "generated_at": "2026-08-25T22:53:54.317Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,18 +10,18 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61206,
-      "normalizedHeadwords": 51266,
-      "meaningfulWordsWithDefinition": 8381,
-      "meaningfulWordsWithoutDefinition": 4073,
-      "meaningfulDefinitionCoveragePercent": 67.3,
+      "entries": 61211,
+      "normalizedHeadwords": 51271,
+      "meaningfulWordsWithDefinition": 8392,
+      "meaningfulWordsWithoutDefinition": 4062,
+      "meaningfulDefinitionCoveragePercent": 67.4,
       "missingPriorityCounts": {
-        "high": 238,
-        "medium": 683,
-        "low": 1176,
+        "high": 231,
+        "medium": 680,
+        "low": 1175,
         "single-use": 1976
       },
-      "missingWithSupplementalHelp": 2923,
+      "missingWithSupplementalHelp": 2912,
       "missingWithoutSupplementalHelp": 1150,
       "topUsedWordsNeedingDefinition": [
         {
@@ -953,30 +953,6 @@
           "reviewStatus": null
         },
         {
-          "word": "messengers",
-          "count": 79,
-          "sampleRefs": [
-            "Genesis 32:3",
-            "Genesis 32:6",
-            "Numbers 20:14",
-            "Numbers 21:21",
-            "Numbers 22:5"
-          ],
-          "lookupCandidates": [
-            "messengers",
-            "messenger",
-            "messengere"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "simon",
           "count": 76,
           "sampleRefs": [
@@ -1690,28 +1666,6 @@
           "reviewStatus": null
         },
         {
-          "word": "sepulchre",
-          "count": 54,
-          "sampleRefs": [
-            "Genesis 23:6",
-            "Deuteronomy 34:6",
-            "Judges 8:32",
-            "1 Samuel 10:2",
-            "2 Samuel 2:32"
-          ],
-          "lookupCandidates": [
-            "sepulchre"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "haman",
           "count": 53,
           "sampleRefs": [
@@ -1789,6 +1743,50 @@
           ],
           "lookupCandidates": [
             "zadok"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "jehoiada",
+          "count": 52,
+          "sampleRefs": [
+            "2 Samuel 8:18",
+            "2 Samuel 20:23",
+            "2 Samuel 23:20",
+            "2 Samuel 23:22",
+            "1 Kings 1:8"
+          ],
+          "lookupCandidates": [
+            "jehoiada"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "naphtali",
+          "count": 50,
+          "sampleRefs": [
+            "Genesis 30:8",
+            "Genesis 35:25",
+            "Genesis 46:24",
+            "Genesis 49:21",
+            "Exodus 1:4"
+          ],
+          "lookupCandidates": [
+            "naphtali"
           ],
           "hasDefinition": false,
           "hasEaston": true,
@@ -9376,30 +9374,6 @@
         "reviewStatus": null
       },
       {
-        "word": "messengers",
-        "count": 79,
-        "sampleRefs": [
-          "Genesis 32:3",
-          "Genesis 32:6",
-          "Numbers 20:14",
-          "Numbers 21:21",
-          "Numbers 22:5"
-        ],
-        "lookupCandidates": [
-          "messengers",
-          "messenger",
-          "messengere"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "simon",
         "count": 76,
         "sampleRefs": [
@@ -10113,28 +10087,6 @@
         "reviewStatus": null
       },
       {
-        "word": "sepulchre",
-        "count": 54,
-        "sampleRefs": [
-          "Genesis 23:6",
-          "Deuteronomy 34:6",
-          "Judges 8:32",
-          "1 Samuel 10:2",
-          "2 Samuel 2:32"
-        ],
-        "lookupCandidates": [
-          "sepulchre"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "haman",
         "count": 53,
         "sampleRefs": [
@@ -10212,6 +10164,50 @@
         ],
         "lookupCandidates": [
           "zadok"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "jehoiada",
+        "count": 52,
+        "sampleRefs": [
+          "2 Samuel 8:18",
+          "2 Samuel 20:23",
+          "2 Samuel 23:20",
+          "2 Samuel 23:22",
+          "1 Kings 1:8"
+        ],
+        "lookupCandidates": [
+          "jehoiada"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "naphtali",
+        "count": 50,
+        "sampleRefs": [
+          "Genesis 30:8",
+          "Genesis 35:25",
+          "Genesis 46:24",
+          "Genesis 49:21",
+          "Exodus 1:4"
+        ],
+        "lookupCandidates": [
+          "naphtali"
         ],
         "hasDefinition": false,
         "hasEaston": true,

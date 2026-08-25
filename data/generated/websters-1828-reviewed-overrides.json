@@ -4040,6 +4040,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "CARCASS",
+    "normalized_headword": "carcass",
+    "definition": "CARCASS, noun [French carcasse; Italian carcame; Norman carkoys, a mast, and a carcass. Query Greek καρχησιον.] 1. The body of an animal; usually the body when dead. It is not applied to the living body of the human species, except in low or ludicrous language. 2. The decaying remains of a bulky thing, as of a boat or ship. 3. The frame or main parts of a thing, unfinished or without ornament. This seems to be the primary sense of the word. [See the next word.] Hale.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.xml",
+    "source_line_start": 704546,
+    "source_line_end": 704707,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "CARE",
     "normalized_headword": "care",
     "definition": "CARE, noun 1. Concern; anxiety; solicitude; nothing some degree of pain in the mind, from apprehension of evil. They shall eat bread by weight and with care Ezekiel 4:16. 2. Caution; a looking to; regard; attention, or heed, with a view to safety or protection, as in the phrase, take care of yourself. A want of care does more damage than a want of knowledge. 3. Charge or oversight, implying concern for safety and prosperity; as, he was under the care of a physician. That which cometh upon me daily, the care of all the churches. 2 Corinthians 6:1. 4. The object of care or watchful regard and attention; as, Is she thy care? CARE, verb transitive 1. To be anxious or solicitous; to be concerned about. Master, carest thou not that we perish? Mark 4:19. 2. To be inclined or disposed; to have regard to; with for before a noun, and to before a verb. Not caring to observe the wind. Great masters in painting never care for drawing people in the fashion. In this sense the word implies a less degree of concern. The different degrees of anxiety expressed by this word constitute the chief differences in its signification or applications.",
@@ -4637,6 +4647,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/circumcise",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "CIRCUMCIS'ION",
+    "normalized_headword": "circumcision",
+    "definition": "CIRCUMCIS'ION, noun The act of cutting off the prepuce or foreskin.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.xml",
+    "source_line_start": 805200,
+    "source_line_end": 805237,
     "review_status": "reviewed_overlay"
   },
   {
@@ -15260,6 +15280,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "MES'SAGER, MES'SENGER",
+    "normalized_headword": "messenger",
+    "definition": "MES'SAGER, MES'SENGER, noun [French messager; Italian messaggiere; Spanish mensagero. The correct orthography is messager.] 1. One who bears a message or an errand; the bearer of a verbal or written communication, notice or invitation from one person to another, or to a public body; one who conveys dispatches from one prince or court to another. 2. A harbinger; a forerunner; he or that which foreshows. Yon gray lines That fret the clouds, are messengers of day. Shak.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.xml",
+    "source_line_start": 253537,
+    "source_line_end": 253660,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "MESSIAH",
     "normalized_headword": "messiah",
     "definition": "MESSI'AH, adjective. Christ, the anointed; the Savior of the world. I know that when Messiah cometh, who is called Christ, he will tell us all things. Jesus answered her, I that speak to thee am he. John 4:25-26.",
@@ -16522,7 +16552,7 @@
   {
     "headword": "OFFENSE",
     "normalized_headword": "offense",
-    "definition": "OFFENSE, noun offens'. [Latin offensus, offensa.] 1. Displeasure; anger, or moderate anger. He gave them just cause of offense He took offense 2. Scandal; cause of stumbling. Christ is called a stone of stumbling and rock of offense to both the houses of Israel. Psalms 8:1. 3. Any transgression of law, divine or human; a crime; sin; act of wickedness or omission of duty. Christ was delivered for our offenses, and raised again for our justification. Romans 4:25. 4. An injury. I have given my opinion against the authority of two great men, but I hope without offense to their memories. 5. Attack; assault; as a weapon of offense 6. Impediment. Matthew 16:1.",
+    "definition": "OFFENSE, noun offens'. [Latin offensus, offensa; Italian offesa; Spanish ofensa; French offence.] 1. Displeasure; anger, or moderate anger. He gave them just cause of offense. He took offense. 2. Scandal; cause of stumbling. Christ is called a stone of stumbling and rock of offense to both the houses of Israel. Psalms 8. 3. Any transgression of law, divine or human; a crime; sin; act of wickedness or omission of duty. Christ was delivered for our offenses, and raised again for our justification. Romans 4. 4. An injury. I have given my opinion against the authority of two great men, but I hope without offense to their memories. Dryden. 5. Attack; assault; as a weapon of offense. Richardson. 6. Impediment. Matthew 16.",
     "source_title": "American Dictionary of the English Language",
     "source_file": "https://webstersdictionary1828.com/Dictionary/offense",
     "source_line_start": 1,
@@ -17577,6 +17607,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/pervert",
     "source_line_start": 1,
     "source_line_end": 4,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "PEST'ILENCE",
+    "normalized_headword": "pestilence",
+    "definition": "PEST'ILENCE, noun [Latin pestilentia, from pestilens; pestis, plague.] 1. Plague, appropriately so called; but in a general sense, any contagious or infectious disease that is epidemic and mortal. Shak. 2. Corruption or moral disease destructive to happiness. Profligate habits carry pestilence into the bosom of domestic society. J. M. Mason.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.xml",
+    "source_line_start": 567022,
+    "source_line_end": 567101,
     "review_status": "reviewed_overlay"
   },
   {
@@ -21297,6 +21337,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/separation",
     "source_line_start": 1,
     "source_line_end": 6,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SEP'ULCHER",
+    "normalized_headword": "sepulcher",
+    "definition": "SEP'ULCHER, noun [French sepulchre; Spanish and Portuguese sepulcro; Italian sepolcro; from Latin sepulchrum, from sepelio, to bury, which seems to be formed with a prefix on the Gothic filhan, to bury.] A grave; a tomb; the place in which the dead body of a human being is interred, or a place destined for that purpose. Among the Jews, sepulchers were often excavations in rocks. Isaiah 22. Matthew 27. SEP'ULCHER, verb transitive To bury; to inter; to entomb; as obscurely sepulchered. Prior.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.xml",
+    "source_line_start": 1144900,
+    "source_line_end": 1145140,
     "review_status": "reviewed_overlay"
   },
   {
