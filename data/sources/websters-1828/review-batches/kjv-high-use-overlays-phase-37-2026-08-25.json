@@ -1,0 +1,137 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-37-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected unresolved KJV forms without supplemental dictionary help, prioritizing exact Webster headwords and deterministic inflection, spelling, comparative, and plural relationships.",
+  "review_method": "Required exact Webster page and entry headings, compared promoted text with the Internet Archive 1828 scans, applied only scan-confirmed transcription corrections, and held wrong-part-of-speech, damaged, or unusually long entries for separate review.",
+  "screening_summary": {
+    "requested_source_pages": 9,
+    "exact_source_pages_found": 9,
+    "reviewed_overlays_promoted": 6,
+    "source_pages_held_for_further_review": 3,
+    "lookup_relationships_promoted": 55,
+    "kjv_occurrences_resolved_by_lookup_relationships": 199
+  },
+  "promoted_headwords": [
+    "avail",
+    "compare",
+    "furnish",
+    "horror",
+    "pilgrimage",
+    "shaft"
+  ],
+  "reviewed_transcription_actions": [
+    {
+      "word": "avail",
+      "actions": ["Restored sentence punctuation between the intransitive and noun senses."]
+    },
+    {
+      "word": "compare",
+      "actions": ["Restored sentence capitalization and corrected three scan-confirmed word substitutions: thins to things and it to if."]
+    },
+    {
+      "word": "furnish",
+      "actions": ["Restored the comma between furnish and garnish in the etymological note."]
+    },
+    {
+      "word": "horror",
+      "actions": ["Restored sentence capitalization and punctuation before the Genesis 15:12 example."]
+    },
+    {
+      "word": "shaft",
+      "actions": ["Restored the opening etymology bracket and corrected weapon, lofty, with, feather, gig, length, and feathers from the scan."]
+    }
+  ],
+  "held_for_further_review": [
+    {
+      "words": ["blast"],
+      "reason": "The exact page capture contains the verb entry, while the frequent KJV form requires the noun sense. It was not promoted as an incomplete lookup result."
+    },
+    {
+      "words": ["conceal"],
+      "reason": "The exact page capture has a damaged and incomplete etymology that requires a dedicated scan transcription."
+    },
+    {
+      "words": ["quarter"],
+      "reason": "The exact page capture is unusually long and contains several damaged clauses; it requires a dedicated line-by-line scan review."
+    }
+  ],
+  "verified_lookup_relationships": [
+    {"word": "availeth", "lookup_headword": "avail", "kjv_occurrences": 4, "relationship": "KJV verb inflection"},
+    {"word": "begetteth", "lookup_headword": "beget", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "calledst", "lookup_headword": "call", "kjv_occurrences": 4, "relationship": "KJV second-person past inflection"},
+    {"word": "carefully", "lookup_headword": "careful", "kjv_occurrences": 4, "relationship": "adverbial form"},
+    {"word": "carrieth", "lookup_headword": "carry", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "commandedst", "lookup_headword": "command", "kjv_occurrences": 4, "relationship": "KJV second-person past inflection"},
+    {"word": "comparison", "lookup_headword": "compare", "kjv_occurrences": 4, "relationship": "documented nominal sense under Webster's compare entry"},
+    {"word": "continueth", "lookup_headword": "continue", "kjv_occurrences": 5, "relationship": "KJV verb inflection"},
+    {"word": "continuing", "lookup_headword": "continue", "kjv_occurrences": 4, "relationship": "present participle"},
+    {"word": "criest", "lookup_headword": "cry", "kjv_occurrences": 5, "relationship": "KJV verb inflection"},
+    {"word": "decreed", "lookup_headword": "decree", "kjv_occurrences": 5, "relationship": "past form"},
+    {"word": "deliveredst", "lookup_headword": "deliver", "kjv_occurrences": 3, "relationship": "KJV second-person past inflection"},
+    {"word": "denieth", "lookup_headword": "deny", "kjv_occurrences": 4, "relationship": "KJV verb inflection"},
+    {"word": "diggeth", "lookup_headword": "dig", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "dishonoureth", "lookup_headword": "dishonor", "kjv_occurrences": 3, "relationship": "KJV spelling and verb inflection"},
+    {"word": "drieth", "lookup_headword": "dry", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "fairer", "lookup_headword": "fair", "kjv_occurrences": 3, "relationship": "comparative form"},
+    {"word": "fitly", "lookup_headword": "fit", "kjv_occurrences": 4, "relationship": "adverbial form"},
+    {"word": "flieth", "lookup_headword": "fly", "kjv_occurrences": 5, "relationship": "KJV verb inflection"},
+    {"word": "forbare", "lookup_headword": "forbear", "kjv_occurrences": 3, "relationship": "historical past form"},
+    {"word": "forgetteth", "lookup_headword": "forget", "kjv_occurrences": 4, "relationship": "KJV verb inflection"},
+    {"word": "fortified", "lookup_headword": "fortify", "kjv_occurrences": 4, "relationship": "past form"},
+    {"word": "glorieth", "lookup_headword": "glory", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "harder", "lookup_headword": "hard", "kjv_occurrences": 3, "relationship": "comparative form"},
+    {"word": "heavier", "lookup_headword": "heavy", "kjv_occurrences": 3, "relationship": "comparative form"},
+    {"word": "leddest", "lookup_headword": "lead", "kjv_occurrences": 5, "relationship": "KJV second-person past inflection"},
+    {"word": "lettest", "lookup_headword": "let", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "letteth", "lookup_headword": "let", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "lied", "lookup_headword": "lie", "kjv_occurrences": 4, "relationship": "past form"},
+    {"word": "liest", "lookup_headword": "lie", "kjv_occurrences": 5, "relationship": "KJV verb inflection"},
+    {"word": "marrieth", "lookup_headword": "marry", "kjv_occurrences": 4, "relationship": "KJV verb inflection"},
+    {"word": "marvellously", "lookup_headword": "marvelously", "kjv_occurrences": 3, "relationship": "KJV spelling variant and adverbial form"},
+    {"word": "multiplieth", "lookup_headword": "multiply", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "overcame", "lookup_headword": "overcome", "kjv_occurrences": 3, "relationship": "irregular past form"},
+    {"word": "owed", "lookup_headword": "owe", "kjv_occurrences": 3, "relationship": "past form"},
+    {"word": "owest", "lookup_headword": "owe", "kjv_occurrences": 4, "relationship": "KJV verb inflection"},
+    {"word": "pitieth", "lookup_headword": "pity", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "pourtrayed", "lookup_headword": "portray", "kjv_occurrences": 3, "relationship": "KJV spelling and past form"},
+    {"word": "practise", "lookup_headword": "practice", "kjv_occurrences": 4, "relationship": "KJV spelling variant"},
+    {"word": "pretence", "lookup_headword": "pretense", "kjv_occurrences": 3, "relationship": "KJV spelling variant"},
+    {"word": "promisedst", "lookup_headword": "promise", "kjv_occurrences": 3, "relationship": "KJV second-person past inflection"},
+    {"word": "relied", "lookup_headword": "rely", "kjv_occurrences": 3, "relationship": "past form"},
+    {"word": "satisfieth", "lookup_headword": "satisfy", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "shorn", "lookup_headword": "shear", "kjv_occurrences": 4, "relationship": "irregular participle"},
+    {"word": "slippeth", "lookup_headword": "slip", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "spunge", "lookup_headword": "sponge", "kjv_occurrences": 3, "relationship": "KJV spelling variant"},
+    {"word": "stoppeth", "lookup_headword": "stop", "kjv_occurrences": 4, "relationship": "KJV verb inflection"},
+    {"word": "subdueth", "lookup_headword": "subdue", "kjv_occurrences": 3, "relationship": "KJV verb inflection"},
+    {"word": "succour", "lookup_headword": "succor", "kjv_occurrences": 3, "relationship": "KJV spelling variant"},
+    {"word": "swarest", "lookup_headword": "swear", "kjv_occurrences": 5, "relationship": "KJV second-person past inflection"},
+    {"word": "sweeter", "lookup_headword": "sweet", "kjv_occurrences": 3, "relationship": "comparative form"},
+    {"word": "terrified", "lookup_headword": "terrify", "kjv_occurrences": 4, "relationship": "past form"},
+    {"word": "valued", "lookup_headword": "value", "kjv_occurrences": 4, "relationship": "past form"},
+    {"word": "vapour", "lookup_headword": "vapor", "kjv_occurrences": 5, "relationship": "KJV spelling variant"},
+    {"word": "vapours", "lookup_headword": "vapor", "kjv_occurrences": 3, "relationship": "KJV spelling and plural form"}
+  ],
+  "entries": [
+    {"word": "avail", "kjv_occurrences": 0, "lookup_headword": "avail", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/avail", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "AVA'IL", "exact_entry_heading": "AVA'IL", "exact_source_match": true},
+    {"word": "compare", "kjv_occurrences": 4, "lookup_headword": "compare", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/compare", "source_line_start": 1, "source_line_end": 14, "exact_page_heading": "COMPARE", "exact_entry_heading": "COMPARE", "exact_source_match": true},
+    {"word": "furnish", "kjv_occurrences": 4, "lookup_headword": "furnish", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/furnish", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "FUR'NISH", "exact_entry_heading": "FUR'NISH", "exact_source_match": true},
+    {"word": "horror", "kjv_occurrences": 4, "lookup_headword": "horror", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/horror", "source_line_start": 1, "source_line_end": 9, "exact_page_heading": "HOR'ROR", "exact_entry_heading": "HOR'ROR", "exact_source_match": true},
+    {"word": "pilgrimage", "kjv_occurrences": 4, "lookup_headword": "pilgrimage", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/pilgrimage", "source_line_start": 1, "source_line_end": 3, "exact_page_heading": "PIL'GRIMAGE", "exact_entry_heading": "PIL'GRIMAGE", "exact_source_match": true},
+    {"word": "shaft", "kjv_occurrences": 4, "lookup_headword": "shaft", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/shaft", "source_line_start": 1, "source_line_end": 11, "exact_page_heading": "SH'AFT", "exact_entry_heading": "SH'AFT", "exact_source_match": true}
+  ]
+}

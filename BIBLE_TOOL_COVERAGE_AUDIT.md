@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T10:51:28.002Z
+Generated: 2026-08-25T11:02:11.817Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,163/12,454 meaningful KJV words have a lookup candidate (65.5%).
-- Combined word/topic lookup: 11,134/12,454 meaningful KJV words have Webster, Easton, or Nave help (89.4%).
+- Webster 1828: 8,224/12,454 meaningful KJV words have a lookup candidate (66%).
+- Combined word/topic lookup: 11,195/12,454 meaningful KJV words have Webster, Easton, or Nave help (89.9%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -96,11 +96,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | tahath | 6 | Numbers 33:26; Numbers 33:27; 1 Chronicles 6:24; 1 Chronicles 6:37; 1 Chronicles 7:20 |
 | ahilud | 5 | 2 Samuel 8:16; 2 Samuel 20:24; 1 Kings 4:3; 1 Kings 4:12; 1 Chronicles 18:15 |
 | azareel | 5 | 1 Chronicles 12:6; 1 Chronicles 25:18; 1 Chronicles 27:22; Ezra 10:41; Nehemiah 11:13 |
-| continueth | 5 | Job 14:2; Galatians 3:10; 1 Timothy 5:5; Hebrews 7:24; James 1:25 |
-| criest | 5 | Exodus 14:15; 1 Samuel 26:14; Proverbs 2:3; Isaiah 57:13; Jeremiah 30:15 |
-| decreed | 5 | Esther 2:1; Esther 9:31; Job 38:10; Isaiah 10:22; 1 Corinthians 7:37 |
 | ephraimites | 5 | Joshua 16:10; Judges 12:4; Judges 12:5; Judges 12:5; Judges 12:6 |
-| flieth | 5 | Deuteronomy 4:17; Deuteronomy 14:19; Deuteronomy 28:49; Psalms 91:5; Nahum 3:16 |
+| gomorrha | 5 | Matthew 10:15; Mark 6:11; Romans 9:29; 2 Peter 2:6; Jude 1:7 |
+| hararite | 5 | 2 Samuel 23:11; 2 Samuel 23:33; 2 Samuel 23:33; 1 Chronicles 11:34; 1 Chronicles 11:35 |
+| hushathite | 5 | 2 Samuel 21:18; 2 Samuel 23:27; 1 Chronicles 11:29; 1 Chronicles 20:4; 1 Chronicles 27:11 |
+| jezreelitess | 5 | 1 Samuel 27:3; 1 Samuel 30:5; 2 Samuel 2:2; 2 Samuel 3:2; 1 Chronicles 3:1 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
