@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T00:01:24.304Z
+Generated: 2026-08-25T00:14:09.848Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -135,13 +135,13 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fragments | FRAG'MENT | 7 | ocr_full_import_needs_spot_review |
 | network | NET' -WORK | 7 | ocr_full_import_needs_spot_review |
 | overwhelmed | OVERWHELM' | 7 | ocr_full_import_needs_spot_review |
-| pen | PEN | 7 | ocr_full_import_needs_spot_review |
-| principalities | PRINCIPALITY | 7 | ocr_full_import_needs_spot_review |
-| provender | PROVENDER | 7 | ocr_full_import_needs_spot_review |
-| quite | QUITE | 7 | ocr_full_import_needs_spot_review |
-| ravished | RAVISHED | 7 | ocr_full_import_needs_spot_review |
-| raw | RAW | 7 | ocr_full_import_needs_spot_review |
-| ripe | RIPE | 7 | ocr_full_import_needs_spot_review |
+| suffice | SUFFICE | 7 | ocr_full_import_needs_spot_review |
+| sunder | SUN'DER | 7 | ocr_full_import_needs_spot_review |
+| supposing | SUPPOSING | 7 | ocr_full_import_needs_spot_review |
+| tempting | TEMPT'ING | 7 | ocr_full_import_needs_spot_review |
+| tetrarch | TE'TRARCH | 7 | ocr_full_import_needs_spot_review |
+| thread | THREAD | 7 | ocr_full_import_needs_spot_review |
+| throat | THROAT | 7 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
