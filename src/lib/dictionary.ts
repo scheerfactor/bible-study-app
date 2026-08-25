@@ -64,6 +64,7 @@ const reviewedDictionaryOverlays: WebsterEntry[] = [
 ];
 
 const dictionaryAliases: Record<string, string> = {
+  ...reviewedKjvDictionaryAliases,
   innocency: "innocence",
   sware: "swear",
   sworn: "swear",
@@ -236,7 +237,6 @@ const dictionaryAliases: Record<string, string> = {
   doeth: "do",
   doth: "do",
   didst: "do",
-  ...reviewedKjvDictionaryAliases,
 };
 
 export function cleanDictionaryWord(value: string) {
@@ -246,7 +246,7 @@ export function cleanDictionaryWord(value: string) {
 export function normalizeDictionaryWord(value: string) {
   const cleaned = cleanDictionaryWord(value);
   if (!cleaned) return "";
-  if (dictionaryAliases[cleaned]) return dictionaryAliases[cleaned];
+  if (dictionaryAliases[cleaned]) return cleanDictionaryWord(dictionaryAliases[cleaned]);
   return cleaned;
 }
 

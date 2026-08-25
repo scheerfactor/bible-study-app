@@ -9787,6 +9787,7 @@ const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "fo
 };
 
 const dictionaryAliases: Record<string, string> = {
+  ...reviewedKjvDictionaryAliases,
   hath: "have",
   hast: "have",
   hadst: "have",
@@ -9907,7 +9908,6 @@ const dictionaryAliases: Record<string, string> = {
   worshipping: "worship",
   worshippedst: "worship",
   worlds: "world",
-  ...reviewedKjvDictionaryAliases,
 };
 
 const strongsMvpEntries: Record<string, StrongMvpEntry> = {

@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-25T10:19:47.060Z",
+  "generated_at": "2026-08-25T10:36:30.959Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4386,
+  "total": 4325,
   "priorityCounts": {
     "high": 254,
-    "medium": 797,
-    "low": 1341,
-    "single-use": 1994
+    "medium": 740,
+    "low": 1339,
+    "single-use": 1992
   },
-  "withSupplementalHelp": 2966,
-  "withoutSupplementalHelp": 1420,
+  "withSupplementalHelp": 2973,
+  "withoutSupplementalHelp": 1352,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -26,39 +26,6 @@
         "Numbers 18:27",
         "Numbers 18:30",
         "Ruth 3:2"
-      ]
-    },
-    {
-      "word": "gadites",
-      "count": 14,
-      "priority": "medium",
-      "lookupCandidates": [
-        "gadites",
-        "gadite"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 3:12",
-        "Deuteronomy 3:16",
-        "Deuteronomy 4:43",
-        "Deuteronomy 29:8",
-        "Joshua 1:12"
-      ]
-    },
-    {
-      "word": "ethiopians",
-      "count": 13,
-      "priority": "medium",
-      "lookupCandidates": [
-        "ethiopians",
-        "ethiopian",
-        "ethiopiane"
-      ],
-      "sampleRefs": [
-        "2 Chronicles 12:3",
-        "2 Chronicles 14:12",
-        "2 Chronicles 14:12",
-        "2 Chronicles 14:13",
-        "2 Chronicles 16:8"
       ]
     },
     {
@@ -104,38 +71,6 @@
         "Genesis 22:20",
         "Genesis 22:23",
         "Genesis 24:15"
-      ]
-    },
-    {
-      "word": "wreathen",
-      "count": 10,
-      "priority": "medium",
-      "lookupCandidates": [
-        "wreathen"
-      ],
-      "sampleRefs": [
-        "Exodus 28:14",
-        "Exodus 28:14",
-        "Exodus 28:22",
-        "Exodus 28:24",
-        "Exodus 28:25"
-      ]
-    },
-    {
-      "word": "zidonians",
-      "count": 10,
-      "priority": "medium",
-      "lookupCandidates": [
-        "zidonians",
-        "zidonian",
-        "zidoniane"
-      ],
-      "sampleRefs": [
-        "Judges 10:12",
-        "Judges 18:7",
-        "Judges 18:7",
-        "1 Kings 11:1",
-        "1 Kings 11:5"
       ]
     },
     {
@@ -186,21 +121,6 @@
       ]
     },
     {
-      "word": "woof",
-      "count": 9,
-      "priority": "medium",
-      "lookupCandidates": [
-        "woof"
-      ],
-      "sampleRefs": [
-        "Leviticus 13:48",
-        "Leviticus 13:49",
-        "Leviticus 13:51",
-        "Leviticus 13:52",
-        "Leviticus 13:53"
-      ]
-    },
-    {
       "word": "aphek",
       "count": 8,
       "priority": "medium",
@@ -213,22 +133,6 @@
         "Joshua 19:30",
         "1 Samuel 4:1",
         "1 Samuel 29:1"
-      ]
-    },
-    {
-      "word": "benjamites",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "benjamites",
-        "benjamite"
-      ],
-      "sampleRefs": [
-        "Judges 19:16",
-        "Judges 20:35",
-        "Judges 20:36",
-        "Judges 20:40",
-        "Judges 20:43"
       ]
     },
     {
@@ -279,23 +183,6 @@
       ]
     },
     {
-      "word": "persecutors",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "persecutors",
-        "persecutor",
-        "persecutore"
-      ],
-      "sampleRefs": [
-        "Nehemiah 9:11",
-        "Psalms 7:13",
-        "Psalms 119:157",
-        "Psalms 142:6",
-        "Jeremiah 15:15"
-      ]
-    },
-    {
       "word": "quarter",
       "count": 8,
       "priority": "medium",
@@ -311,70 +198,6 @@
       ]
     },
     {
-      "word": "righteously",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "righteously"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 1:16",
-        "Psalms 67:4",
-        "Psalms 96:10",
-        "Proverbs 31:9",
-        "Isaiah 33:15"
-      ]
-    },
-    {
-      "word": "shutteth",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "shutteth",
-        "shutt",
-        "shutte"
-      ],
-      "sampleRefs": [
-        "Job 12:14",
-        "Proverbs 16:30",
-        "Proverbs 17:28",
-        "Isaiah 33:15",
-        "Lamentations 3:8"
-      ]
-    },
-    {
-      "word": "sojourner",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "sojourner"
-      ],
-      "sampleRefs": [
-        "Genesis 23:4",
-        "Leviticus 22:10",
-        "Leviticus 25:35",
-        "Leviticus 25:40",
-        "Leviticus 25:47"
-      ]
-    },
-    {
-      "word": "stirreth",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "stirreth",
-        "stirr",
-        "stirre"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 32:11",
-        "Proverbs 10:12",
-        "Proverbs 15:18",
-        "Proverbs 28:25",
-        "Proverbs 29:22"
-      ]
-    },
-    {
       "word": "uri",
       "count": 8,
       "priority": "medium",
@@ -387,21 +210,6 @@
         "Exodus 38:22",
         "1 Kings 4:19",
         "1 Chronicles 2:20"
-      ]
-    },
-    {
-      "word": "wiser",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "wiser"
-      ],
-      "sampleRefs": [
-        "1 Kings 4:31",
-        "Job 35:11",
-        "Psalms 119:98",
-        "Proverbs 9:9",
-        "Proverbs 26:16"
       ]
     },
     {
@@ -435,83 +243,6 @@
       ]
     },
     {
-      "word": "befallen",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "befallen"
-      ],
-      "sampleRefs": [
-        "Leviticus 10:19",
-        "Numbers 20:14",
-        "Deuteronomy 31:21",
-        "Judges 6:13",
-        "1 Samuel 20:26"
-      ]
-    },
-    {
-      "word": "careful",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "careful"
-      ],
-      "sampleRefs": [
-        "2 Kings 4:13",
-        "Jeremiah 17:8",
-        "Daniel 3:16",
-        "Luke 10:41",
-        "Philippians 4:6"
-      ]
-    },
-    {
-      "word": "contain",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "contain"
-      ],
-      "sampleRefs": [
-        "1 Kings 8:27",
-        "1 Kings 18:32",
-        "2 Chronicles 2:6",
-        "2 Chronicles 6:18",
-        "Ezekiel 45:11"
-      ]
-    },
-    {
-      "word": "daytime",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "daytime"
-      ],
-      "sampleRefs": [
-        "Job 5:14",
-        "Job 24:16",
-        "Psalms 22:2",
-        "Psalms 42:8",
-        "Psalms 78:14"
-      ]
-    },
-    {
-      "word": "hardness",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "hardness",
-        "hardnes",
-        "hardnese"
-      ],
-      "sampleRefs": [
-        "Job 38:38",
-        "Matthew 19:8",
-        "Mark 3:5",
-        "Mark 10:5",
-        "Mark 16:14"
-      ]
-    },
-    {
       "word": "housetop",
       "count": 7,
       "priority": "medium",
@@ -542,213 +273,6 @@
       ]
     },
     {
-      "word": "issued",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "issued",
-        "issu"
-      ],
-      "sampleRefs": [
-        "Joshua 8:22",
-        "Job 38:8",
-        "Ezekiel 47:1",
-        "Ezekiel 47:12",
-        "Daniel 7:10"
-      ]
-    },
-    {
-      "word": "kinsmen",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "kinsmen"
-      ],
-      "sampleRefs": [
-        "Ruth 2:20",
-        "Psalms 38:11",
-        "Luke 14:12",
-        "Acts 10:24",
-        "Romans 9:3"
-      ]
-    },
-    {
-      "word": "midwives",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "midwives",
-        "midwive"
-      ],
-      "sampleRefs": [
-        "Exodus 1:15",
-        "Exodus 1:17",
-        "Exodus 1:18",
-        "Exodus 1:19",
-        "Exodus 1:19"
-      ]
-    },
-    {
-      "word": "occupied",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "occupied",
-        "occupi"
-      ],
-      "sampleRefs": [
-        "Exodus 38:24",
-        "Judges 16:11",
-        "Ezekiel 27:16",
-        "Ezekiel 27:19",
-        "Ezekiel 27:21"
-      ]
-    },
-    {
-      "word": "odours",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "odours",
-        "odour",
-        "odoure"
-      ],
-      "sampleRefs": [
-        "Leviticus 26:31",
-        "2 Chronicles 16:14",
-        "Esther 2:12",
-        "Jeremiah 34:5",
-        "Daniel 2:46"
-      ]
-    },
-    {
-      "word": "plaister",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "plaister"
-      ],
-      "sampleRefs": [
-        "Leviticus 14:42",
-        "Deuteronomy 27:2",
-        "Deuteronomy 27:2",
-        "Deuteronomy 27:4",
-        "Deuteronomy 27:4"
-      ]
-    },
-    {
-      "word": "pomp",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "pomp"
-      ],
-      "sampleRefs": [
-        "Isaiah 5:14",
-        "Isaiah 14:11",
-        "Ezekiel 7:24",
-        "Ezekiel 30:18",
-        "Ezekiel 32:12"
-      ]
-    },
-    {
-      "word": "prophesieth",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "prophesieth",
-        "prophesi"
-      ],
-      "sampleRefs": [
-        "Jeremiah 28:9",
-        "Ezekiel 12:27",
-        "Zechariah 13:3",
-        "1 Corinthians 11:5",
-        "1 Corinthians 14:3"
-      ]
-    },
-    {
-      "word": "puttest",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "puttest",
-        "putt",
-        "putte"
-      ],
-      "sampleRefs": [
-        "Numbers 24:21",
-        "Deuteronomy 12:18",
-        "Deuteronomy 15:10",
-        "2 Kings 18:14",
-        "Job 13:27"
-      ]
-    },
-    {
-      "word": "realm",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "realm"
-      ],
-      "sampleRefs": [
-        "2 Chronicles 20:30",
-        "Ezra 7:13",
-        "Ezra 7:23",
-        "Daniel 1:20",
-        "Daniel 6:3"
-      ]
-    },
-    {
-      "word": "ringstraked",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "ringstraked",
-        "ringstrak",
-        "ringstrake"
-      ],
-      "sampleRefs": [
-        "Genesis 30:35",
-        "Genesis 30:39",
-        "Genesis 30:40",
-        "Genesis 31:8",
-        "Genesis 31:8"
-      ]
-    },
-    {
-      "word": "settest",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "settest",
-        "sett",
-        "sette"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 23:20",
-        "Deuteronomy 28:8",
-        "Deuteronomy 28:20",
-        "Job 7:12",
-        "Job 13:27"
-      ]
-    },
-    {
-      "word": "shaven",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "shaven"
-      ],
-      "sampleRefs": [
-        "Leviticus 13:33",
-        "Numbers 6:19",
-        "Judges 16:17",
-        "Judges 16:22",
-        "Jeremiah 41:5"
-      ]
-    },
-    {
       "word": "shinar",
       "count": 7,
       "priority": "medium",
@@ -761,177 +285,6 @@
         "Genesis 14:1",
         "Genesis 14:9",
         "Isaiah 11:11"
-      ]
-    },
-    {
-      "word": "sittest",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "sittest",
-        "sitt",
-        "sitte"
-      ],
-      "sampleRefs": [
-        "Exodus 18:14",
-        "Deuteronomy 6:7",
-        "Deuteronomy 11:19",
-        "Psalms 50:20",
-        "Proverbs 23:1"
-      ]
-    },
-    {
-      "word": "skilful",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "skilful"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 5:18",
-        "1 Chronicles 15:22",
-        "1 Chronicles 28:21",
-        "2 Chronicles 2:14",
-        "Ezekiel 21:31"
-      ]
-    },
-    {
-      "word": "sky",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "sky"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 33:26",
-        "Job 37:18",
-        "Matthew 16:2",
-        "Matthew 16:3",
-        "Matthew 16:3"
-      ]
-    },
-    {
-      "word": "struck",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "struck"
-      ],
-      "sampleRefs": [
-        "1 Samuel 2:14",
-        "2 Samuel 12:15",
-        "2 Samuel 20:10",
-        "2 Chronicles 13:20",
-        "Matthew 26:51"
-      ]
-    },
-    {
-      "word": "sycomore",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "sycomore"
-      ],
-      "sampleRefs": [
-        "1 Kings 10:27",
-        "1 Chronicles 27:28",
-        "2 Chronicles 1:15",
-        "2 Chronicles 9:27",
-        "Psalms 78:47"
-      ]
-    },
-    {
-      "word": "turtledoves",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "turtledoves",
-        "turtledove"
-      ],
-      "sampleRefs": [
-        "Leviticus 1:14",
-        "Leviticus 5:7",
-        "Leviticus 5:11",
-        "Leviticus 14:22",
-        "Leviticus 14:30"
-      ]
-    },
-    {
-      "word": "undefiled",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "undefiled",
-        "undefil",
-        "undefile"
-      ],
-      "sampleRefs": [
-        "Psalms 119:1",
-        "Solomon's Song 5:2",
-        "Solomon's Song 6:9",
-        "Hebrews 7:26",
-        "Hebrews 13:4"
-      ]
-    },
-    {
-      "word": "useth",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "useth"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 18:10",
-        "Esther 6:8",
-        "Proverbs 15:2",
-        "Proverbs 18:23",
-        "Jeremiah 22:13"
-      ]
-    },
-    {
-      "word": "welfare",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "welfare"
-      ],
-      "sampleRefs": [
-        "Genesis 43:27",
-        "Exodus 18:7",
-        "1 Chronicles 18:10",
-        "Nehemiah 2:10",
-        "Job 30:15"
-      ]
-    },
-    {
-      "word": "wolves",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "wolves",
-        "wolve"
-      ],
-      "sampleRefs": [
-        "Ezekiel 22:27",
-        "Habakkuk 1:8",
-        "Zephaniah 3:3",
-        "Matthew 7:15",
-        "Matthew 10:16"
-      ]
-    },
-    {
-      "word": "agreement",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "agreement"
-      ],
-      "sampleRefs": [
-        "2 Kings 18:31",
-        "Isaiah 28:15",
-        "Isaiah 28:18",
-        "Isaiah 36:16",
-        "Daniel 11:6"
       ]
     },
     {
@@ -965,21 +318,6 @@
       ]
     },
     {
-      "word": "bountifully",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "bountifully"
-      ],
-      "sampleRefs": [
-        "Psalms 13:6",
-        "Psalms 116:7",
-        "Psalms 119:17",
-        "Psalms 142:7",
-        "2 Corinthians 9:6"
-      ]
-    },
-    {
       "word": "conceal",
       "count": 6,
       "priority": "medium",
@@ -995,131 +333,6 @@
       ]
     },
     {
-      "word": "costly",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "costly"
-      ],
-      "sampleRefs": [
-        "1 Kings 5:17",
-        "1 Kings 7:9",
-        "1 Kings 7:10",
-        "1 Kings 7:11",
-        "John 12:3"
-      ]
-    },
-    {
-      "word": "cutteth",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "cutteth",
-        "cutt",
-        "cutte"
-      ],
-      "sampleRefs": [
-        "Job 28:10",
-        "Psalms 46:9",
-        "Psalms 141:7",
-        "Proverbs 26:6",
-        "Jeremiah 10:3"
-      ]
-    },
-    {
-      "word": "defied",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "defied",
-        "defi"
-      ],
-      "sampleRefs": [
-        "Numbers 23:8",
-        "1 Samuel 17:36",
-        "1 Samuel 17:45",
-        "2 Samuel 21:21",
-        "2 Samuel 23:9"
-      ]
-    },
-    {
-      "word": "edomite",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "edomite"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 23:7",
-        "1 Samuel 21:7",
-        "1 Samuel 22:9",
-        "1 Samuel 22:18",
-        "1 Samuel 22:22"
-      ]
-    },
-    {
-      "word": "effectual",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "effectual"
-      ],
-      "sampleRefs": [
-        "1 Corinthians 16:9",
-        "2 Corinthians 1:6",
-        "Ephesians 3:7",
-        "Ephesians 4:16",
-        "Philemon 1:6"
-      ]
-    },
-    {
-      "word": "gibeonites",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "gibeonites",
-        "gibeonite"
-      ],
-      "sampleRefs": [
-        "2 Samuel 21:1",
-        "2 Samuel 21:2",
-        "2 Samuel 21:2",
-        "2 Samuel 21:3",
-        "2 Samuel 21:4"
-      ]
-    },
-    {
-      "word": "hebronites",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "hebronites",
-        "hebronite"
-      ],
-      "sampleRefs": [
-        "Numbers 3:27",
-        "Numbers 26:58",
-        "1 Chronicles 26:23",
-        "1 Chronicles 26:30",
-        "1 Chronicles 26:31"
-      ]
-    },
-    {
-      "word": "kenite",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "kenite"
-      ],
-      "sampleRefs": [
-        "Numbers 24:22",
-        "Judges 1:16",
-        "Judges 4:11",
-        "Judges 4:17",
-        "Judges 4:17"
-      ]
-    },
-    {
       "word": "malchijah",
       "count": 6,
       "priority": "medium",
@@ -1132,82 +345,6 @@
         "Ezra 10:25",
         "Nehemiah 3:11",
         "Nehemiah 10:3"
-      ]
-    },
-    {
-      "word": "plagued",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "plagued",
-        "plagu"
-      ],
-      "sampleRefs": [
-        "Genesis 12:17",
-        "Exodus 32:35",
-        "Joshua 24:5",
-        "1 Chronicles 21:17",
-        "Psalms 73:5"
-      ]
-    },
-    {
-      "word": "presumptuously",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "presumptuously"
-      ],
-      "sampleRefs": [
-        "Exodus 21:14",
-        "Numbers 15:30",
-        "Deuteronomy 1:43",
-        "Deuteronomy 17:12",
-        "Deuteronomy 17:13"
-      ]
-    },
-    {
-      "word": "prospect",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "prospect"
-      ],
-      "sampleRefs": [
-        "Ezekiel 40:44",
-        "Ezekiel 40:44",
-        "Ezekiel 40:45",
-        "Ezekiel 40:46",
-        "Ezekiel 42:15"
-      ]
-    },
-    {
-      "word": "roughly",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "roughly"
-      ],
-      "sampleRefs": [
-        "Genesis 42:7",
-        "Genesis 42:30",
-        "1 Samuel 20:10",
-        "1 Kings 12:13",
-        "2 Chronicles 10:13"
-      ]
-    },
-    {
-      "word": "savoury",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "savoury"
-      ],
-      "sampleRefs": [
-        "Genesis 27:4",
-        "Genesis 27:7",
-        "Genesis 27:9",
-        "Genesis 27:14",
-        "Genesis 27:17"
       ]
     },
     {
@@ -1240,22 +377,6 @@
         "1 Timothy 4:10",
         "1 Timothy 5:8",
         "Titus 1:10"
-      ]
-    },
-    {
-      "word": "spied",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "spied",
-        "spi"
-      ],
-      "sampleRefs": [
-        "Exodus 2:11",
-        "Joshua 6:22",
-        "2 Kings 9:17",
-        "2 Kings 13:21",
-        "2 Kings 23:16"
       ]
     },
     {
@@ -1301,116 +422,6 @@
         "1 Corinthians 14:14",
         "Ephesians 5:11",
         "Titus 3:14"
-      ]
-    },
-    {
-      "word": "wayfaring",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "wayfaring",
-        "wayfar",
-        "wayfare"
-      ],
-      "sampleRefs": [
-        "Judges 19:17",
-        "2 Samuel 12:4",
-        "Isaiah 33:8",
-        "Isaiah 35:8",
-        "Jeremiah 9:2"
-      ]
-    },
-    {
-      "word": "wert",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "wert"
-      ],
-      "sampleRefs": [
-        "Job 8:6",
-        "Solomon's Song 8:1",
-        "Romans 11:17",
-        "Romans 11:24",
-        "Romans 11:24"
-      ]
-    },
-    {
-      "word": "withdrew",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "withdrew"
-      ],
-      "sampleRefs": [
-        "Nehemiah 9:29",
-        "Ezekiel 20:22",
-        "Matthew 12:15",
-        "Mark 3:7",
-        "Luke 5:16"
-      ]
-    },
-    {
-      "word": "withstood",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "withstood"
-      ],
-      "sampleRefs": [
-        "2 Chronicles 26:18",
-        "Daniel 10:13",
-        "Acts 13:8",
-        "Galatians 2:11",
-        "2 Timothy 3:8"
-      ]
-    },
-    {
-      "word": "woollen",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "woollen"
-      ],
-      "sampleRefs": [
-        "Leviticus 13:47",
-        "Leviticus 13:48",
-        "Leviticus 13:52",
-        "Leviticus 13:59",
-        "Leviticus 19:19"
-      ]
-    },
-    {
-      "word": "worshippeth",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "worshippeth",
-        "worshipp",
-        "worshippe"
-      ],
-      "sampleRefs": [
-        "Nehemiah 9:6",
-        "Isaiah 44:15",
-        "Isaiah 44:17",
-        "Daniel 3:6",
-        "Daniel 3:11"
-      ]
-    },
-    {
-      "word": "zarhites",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "zarhites",
-        "zarhite"
-      ],
-      "sampleRefs": [
-        "Numbers 26:13",
-        "Numbers 26:20",
-        "Joshua 7:17",
-        "Joshua 7:17",
-        "1 Chronicles 27:11"
       ]
     },
     {
@@ -1568,6 +579,960 @@
         "Isaiah 57:15",
         "Isaiah 57:15",
         "Isaiah 66:2"
+      ]
+    },
+    {
+      "word": "criest",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "criest",
+        "cri"
+      ],
+      "sampleRefs": [
+        "Exodus 14:15",
+        "1 Samuel 26:14",
+        "Proverbs 2:3",
+        "Isaiah 57:13",
+        "Jeremiah 30:15"
+      ]
+    },
+    {
+      "word": "deceiver",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "deceiver"
+      ],
+      "sampleRefs": [
+        "Genesis 27:12",
+        "Job 12:16",
+        "Malachi 1:14",
+        "Matthew 27:63",
+        "2 John 1:7"
+      ]
+    },
+    {
+      "word": "decline",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "decline"
+      ],
+      "sampleRefs": [
+        "Exodus 23:2",
+        "Deuteronomy 17:11",
+        "Psalms 119:157",
+        "Proverbs 4:5",
+        "Proverbs 7:25"
+      ]
+    },
+    {
+      "word": "decreed",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "decreed",
+        "decre"
+      ],
+      "sampleRefs": [
+        "Esther 2:1",
+        "Esther 9:31",
+        "Job 38:10",
+        "Isaiah 10:22",
+        "1 Corinthians 7:37"
+      ]
+    },
+    {
+      "word": "encouraged",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "encouraged",
+        "encourag",
+        "encourage"
+      ],
+      "sampleRefs": [
+        "Judges 20:22",
+        "1 Samuel 30:6",
+        "2 Chronicles 31:4",
+        "2 Chronicles 35:2",
+        "Isaiah 41:7"
+      ]
+    },
+    {
+      "word": "endued",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "endued",
+        "endu"
+      ],
+      "sampleRefs": [
+        "Genesis 30:20",
+        "2 Chronicles 2:12",
+        "2 Chronicles 2:13",
+        "Luke 24:49",
+        "James 3:13"
+      ]
+    },
+    {
+      "word": "ephraimites",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "ephraimites",
+        "ephraimite"
+      ],
+      "sampleRefs": [
+        "Joshua 16:10",
+        "Judges 12:4",
+        "Judges 12:5",
+        "Judges 12:5",
+        "Judges 12:6"
+      ]
+    },
+    {
+      "word": "especially",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "especially"
+      ],
+      "sampleRefs": [
+        "Psalms 31:11",
+        "Acts 26:3",
+        "Galatians 6:10",
+        "1 Timothy 5:17",
+        "2 Timothy 4:13"
+      ]
+    },
+    {
+      "word": "estranged",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "estranged",
+        "estrang",
+        "estrange"
+      ],
+      "sampleRefs": [
+        "Job 19:13",
+        "Psalms 58:3",
+        "Psalms 78:30",
+        "Jeremiah 19:4",
+        "Ezekiel 14:5"
+      ]
+    },
+    {
+      "word": "flieth",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "flieth",
+        "fli"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 4:17",
+        "Deuteronomy 14:19",
+        "Deuteronomy 28:49",
+        "Psalms 91:5",
+        "Nahum 3:16"
+      ]
+    },
+    {
+      "word": "forbad",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "forbad"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 2:37",
+        "Matthew 3:14",
+        "Mark 9:38",
+        "Luke 9:49",
+        "2 Peter 2:16"
+      ]
+    },
+    {
+      "word": "gomorrha",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "gomorrha"
+      ],
+      "sampleRefs": [
+        "Matthew 10:15",
+        "Mark 6:11",
+        "Romans 9:29",
+        "2 Peter 2:6",
+        "Jude 1:7"
+      ]
+    },
+    {
+      "word": "hararite",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "hararite"
+      ],
+      "sampleRefs": [
+        "2 Samuel 23:11",
+        "2 Samuel 23:33",
+        "2 Samuel 23:33",
+        "1 Chronicles 11:34",
+        "1 Chronicles 11:35"
+      ]
+    },
+    {
+      "word": "holpen",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "holpen"
+      ],
+      "sampleRefs": [
+        "Psalms 83:8",
+        "Psalms 86:17",
+        "Isaiah 31:3",
+        "Daniel 11:34",
+        "Luke 1:54"
+      ]
+    },
+    {
+      "word": "hushathite",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "hushathite"
+      ],
+      "sampleRefs": [
+        "2 Samuel 21:18",
+        "2 Samuel 23:27",
+        "1 Chronicles 11:29",
+        "1 Chronicles 20:4",
+        "1 Chronicles 27:11"
+      ]
+    },
+    {
+      "word": "jezreelitess",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "jezreelitess",
+        "jezreelites",
+        "jezreelitese"
+      ],
+      "sampleRefs": [
+        "1 Samuel 27:3",
+        "1 Samuel 30:5",
+        "2 Samuel 2:2",
+        "2 Samuel 3:2",
+        "1 Chronicles 3:1"
+      ]
+    },
+    {
+      "word": "jozadak",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "jozadak"
+      ],
+      "sampleRefs": [
+        "Ezra 3:2",
+        "Ezra 3:8",
+        "Ezra 5:2",
+        "Ezra 10:18",
+        "Nehemiah 12:26"
+      ]
+    },
+    {
+      "word": "knives",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "knives",
+        "knive"
+      ],
+      "sampleRefs": [
+        "Joshua 5:2",
+        "Joshua 5:3",
+        "1 Kings 18:28",
+        "Ezra 1:9",
+        "Proverbs 30:14"
+      ]
+    },
+    {
+      "word": "leddest",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "leddest",
+        "ledd",
+        "ledde"
+      ],
+      "sampleRefs": [
+        "2 Samuel 5:2",
+        "1 Chronicles 11:2",
+        "Nehemiah 9:12",
+        "Psalms 77:20",
+        "Acts 21:38"
+      ]
+    },
+    {
+      "word": "liest",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "liest"
+      ],
+      "sampleRefs": [
+        "Genesis 28:13",
+        "Deuteronomy 6:7",
+        "Deuteronomy 11:19",
+        "Joshua 7:10",
+        "Proverbs 3:24"
+      ]
+    },
+    {
+      "word": "noe",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "noe"
+      ],
+      "sampleRefs": [
+        "Matthew 24:37",
+        "Matthew 24:38",
+        "Luke 3:36",
+        "Luke 17:26",
+        "Luke 17:27"
+      ]
+    },
+    {
+      "word": "ordain",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "ordain"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 9:22",
+        "1 Chronicles 17:9",
+        "Isaiah 26:12",
+        "1 Corinthians 7:17",
+        "Titus 1:5"
+      ]
+    },
+    {
+      "word": "parosh",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "parosh"
+      ],
+      "sampleRefs": [
+        "Ezra 2:3",
+        "Ezra 10:25",
+        "Nehemiah 3:25",
+        "Nehemiah 7:8",
+        "Nehemiah 10:14"
+      ]
+    },
+    {
+      "word": "perizzite",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "perizzite"
+      ],
+      "sampleRefs": [
+        "Genesis 13:7",
+        "Exodus 33:2",
+        "Exodus 34:11",
+        "Joshua 9:1",
+        "Joshua 11:3"
+      ]
+    },
+    {
+      "word": "reu",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "reu"
+      ],
+      "sampleRefs": [
+        "Genesis 11:18",
+        "Genesis 11:19",
+        "Genesis 11:20",
+        "Genesis 11:21",
+        "1 Chronicles 1:25"
+      ]
+    },
+    {
+      "word": "rigour",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "rigour"
+      ],
+      "sampleRefs": [
+        "Exodus 1:13",
+        "Exodus 1:14",
+        "Leviticus 25:43",
+        "Leviticus 25:46",
+        "Leviticus 25:53"
+      ]
+    },
+    {
+      "word": "rotten",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "rotten"
+      ],
+      "sampleRefs": [
+        "Job 13:28",
+        "Job 41:27",
+        "Jeremiah 38:11",
+        "Jeremiah 38:12",
+        "Joel 1:17"
+      ]
+    },
+    {
+      "word": "shelumiel",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "shelumiel"
+      ],
+      "sampleRefs": [
+        "Numbers 1:6",
+        "Numbers 2:12",
+        "Numbers 7:36",
+        "Numbers 7:41",
+        "Numbers 10:19"
+      ]
+    },
+    {
+      "word": "sheshan",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "sheshan"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:31",
+        "1 Chronicles 2:31",
+        "1 Chronicles 2:34",
+        "1 Chronicles 2:34",
+        "1 Chronicles 2:35"
+      ]
+    },
+    {
+      "word": "sidonians",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "sidonians",
+        "sidonian",
+        "sidoniane"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 3:9",
+        "Joshua 13:4",
+        "Joshua 13:6",
+        "Judges 3:3",
+        "1 Kings 5:6"
+      ]
+    },
+    {
+      "word": "straitness",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "straitness",
+        "straitnes",
+        "straitnese"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 28:53",
+        "Deuteronomy 28:55",
+        "Deuteronomy 28:57",
+        "Job 36:16",
+        "Jeremiah 19:9"
+      ]
+    },
+    {
+      "word": "swarest",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "swarest",
+        "swar",
+        "sware"
+      ],
+      "sampleRefs": [
+        "Exodus 32:13",
+        "Numbers 11:12",
+        "Deuteronomy 26:15",
+        "1 Kings 1:17",
+        "Psalms 89:49"
+      ]
+    },
+    {
+      "word": "tahpanhes",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "tahpanhes",
+        "tahpanhe"
+      ],
+      "sampleRefs": [
+        "Jeremiah 43:7",
+        "Jeremiah 43:8",
+        "Jeremiah 43:9",
+        "Jeremiah 44:1",
+        "Jeremiah 46:14"
+      ]
+    },
+    {
+      "word": "upside",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "upside"
+      ],
+      "sampleRefs": [
+        "2 Kings 21:13",
+        "Psalms 146:9",
+        "Isaiah 24:1",
+        "Isaiah 29:16",
+        "Acts 17:6"
+      ]
+    },
+    {
+      "word": "vapour",
+      "count": 5,
+      "priority": "medium",
+      "lookupCandidates": [
+        "vapour"
+      ],
+      "sampleRefs": [
+        "Job 36:27",
+        "Job 36:33",
+        "Psalms 148:8",
+        "Acts 2:19",
+        "James 4:14"
+      ]
+    },
+    {
+      "word": "abiah",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "abiah"
+      ],
+      "sampleRefs": [
+        "1 Samuel 8:2",
+        "1 Chronicles 2:24",
+        "1 Chronicles 6:28",
+        "1 Chronicles 7:8"
+      ]
+    },
+    {
+      "word": "accompanied",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "accompanied",
+        "accompani"
+      ],
+      "sampleRefs": [
+        "Acts 10:23",
+        "Acts 11:12",
+        "Acts 20:4",
+        "Acts 20:38"
+      ]
+    },
+    {
+      "word": "arah",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "arah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:39",
+        "Ezra 2:5",
+        "Nehemiah 6:18",
+        "Nehemiah 7:10"
+      ]
+    },
+    {
+      "word": "arimathaea",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "arimathaea"
+      ],
+      "sampleRefs": [
+        "Matthew 27:57",
+        "Mark 15:43",
+        "Luke 23:51",
+        "John 19:38"
+      ]
+    },
+    {
+      "word": "ashan",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "ashan"
+      ],
+      "sampleRefs": [
+        "Joshua 15:42",
+        "Joshua 19:7",
+        "1 Chronicles 4:32",
+        "1 Chronicles 6:59"
+      ]
+    },
+    {
+      "word": "attai",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "attai"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:35",
+        "1 Chronicles 2:36",
+        "1 Chronicles 12:11",
+        "2 Chronicles 11:20"
+      ]
+    },
+    {
+      "word": "availeth",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "availeth",
+        "avail",
+        "availe"
+      ],
+      "sampleRefs": [
+        "Esther 5:13",
+        "Galatians 5:6",
+        "Galatians 6:15",
+        "James 5:16"
+      ]
+    },
+    {
+      "word": "azgad",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "azgad"
+      ],
+      "sampleRefs": [
+        "Ezra 2:12",
+        "Ezra 8:12",
+        "Nehemiah 7:17",
+        "Nehemiah 10:15"
+      ]
+    },
+    {
+      "word": "beerothite",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "beerothite"
+      ],
+      "sampleRefs": [
+        "2 Samuel 4:2",
+        "2 Samuel 4:5",
+        "2 Samuel 4:9",
+        "2 Samuel 23:37"
+      ]
+    },
+    {
+      "word": "calledst",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "calledst"
+      ],
+      "sampleRefs": [
+        "Judges 8:1",
+        "1 Samuel 3:5",
+        "Psalms 81:7",
+        "Ezekiel 23:21"
+      ]
+    },
+    {
+      "word": "carefully",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "carefully"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 15:5",
+        "Micah 1:12",
+        "Philippians 2:28",
+        "Hebrews 12:17"
+      ]
+    },
+    {
+      "word": "caterpillers",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "caterpillers",
+        "caterpiller",
+        "caterpillere"
+      ],
+      "sampleRefs": [
+        "2 Chronicles 6:28",
+        "Psalms 105:34",
+        "Jeremiah 51:14",
+        "Jeremiah 51:27"
+      ]
+    },
+    {
+      "word": "cieled",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "cieled",
+        "ciel",
+        "ciele"
+      ],
+      "sampleRefs": [
+        "2 Chronicles 3:5",
+        "Jeremiah 22:14",
+        "Ezekiel 41:16",
+        "Haggai 1:4"
+      ]
+    },
+    {
+      "word": "commandedst",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "commandedst"
+      ],
+      "sampleRefs": [
+        "Nehemiah 1:7",
+        "Nehemiah 1:8",
+        "Nehemiah 9:14",
+        "Jeremiah 32:23"
+      ]
+    },
+    {
+      "word": "compare",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "compare"
+      ],
+      "sampleRefs": [
+        "Isaiah 40:18",
+        "Isaiah 46:5",
+        "Mark 4:30",
+        "2 Corinthians 10:12"
+      ]
+    },
+    {
+      "word": "comparison",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "comparison"
+      ],
+      "sampleRefs": [
+        "Judges 8:2",
+        "Judges 8:3",
+        "Haggai 2:3",
+        "Mark 4:30"
+      ]
+    },
+    {
+      "word": "continuing",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "continuing",
+        "continu"
+      ],
+      "sampleRefs": [
+        "Jeremiah 30:23",
+        "Acts 2:46",
+        "Romans 12:12",
+        "Hebrews 13:14"
+      ]
+    },
+    {
+      "word": "crafty",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "crafty"
+      ],
+      "sampleRefs": [
+        "Job 5:12",
+        "Job 15:5",
+        "Psalms 83:3",
+        "2 Corinthians 12:16"
+      ]
+    },
+    {
+      "word": "danites",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "danites",
+        "danite"
+      ],
+      "sampleRefs": [
+        "Judges 13:2",
+        "Judges 18:1",
+        "Judges 18:11",
+        "1 Chronicles 12:35"
+      ]
+    },
+    {
+      "word": "declined",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "declined",
+        "declin",
+        "decline"
+      ],
+      "sampleRefs": [
+        "2 Chronicles 34:2",
+        "Job 23:11",
+        "Psalms 44:18",
+        "Psalms 119:51"
+      ]
+    },
+    {
+      "word": "denieth",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "denieth",
+        "deni"
+      ],
+      "sampleRefs": [
+        "Luke 12:9",
+        "1 John 2:22",
+        "1 John 2:22",
+        "1 John 2:23"
+      ]
+    },
+    {
+      "word": "describe",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "describe"
+      ],
+      "sampleRefs": [
+        "Joshua 18:4",
+        "Joshua 18:6",
+        "Joshua 18:8",
+        "Joshua 18:8"
+      ]
+    },
+    {
+      "word": "encourage",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "encourage"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 1:38",
+        "Deuteronomy 3:28",
+        "2 Samuel 11:25",
+        "Psalms 64:5"
+      ]
+    },
+    {
+      "word": "favourable",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "favourable"
+      ],
+      "sampleRefs": [
+        "Judges 21:22",
+        "Job 33:26",
+        "Psalms 77:7",
+        "Psalms 85:1"
+      ]
+    },
+    {
+      "word": "fiftieth",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "fiftieth",
+        "fifti"
+      ],
+      "sampleRefs": [
+        "Leviticus 25:10",
+        "Leviticus 25:11",
+        "2 Kings 15:23",
+        "2 Kings 15:27"
+      ]
+    },
+    {
+      "word": "fitly",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "fitly"
+      ],
+      "sampleRefs": [
+        "Proverbs 25:11",
+        "Solomon's Song 5:12",
+        "Ephesians 2:21",
+        "Ephesians 4:16"
+      ]
+    },
+    {
+      "word": "forgetteth",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "forgetteth",
+        "forgett",
+        "forgette"
+      ],
+      "sampleRefs": [
+        "Job 39:15",
+        "Psalms 9:12",
+        "Proverbs 2:17",
+        "James 1:24"
+      ]
+    },
+    {
+      "word": "fortified",
+      "count": 4,
+      "priority": "low",
+      "lookupCandidates": [
+        "fortified",
+        "fortifi"
+      ],
+      "sampleRefs": [
+        "2 Chronicles 11:11",
+        "2 Chronicles 26:9",
+        "Nehemiah 3:8",
+        "Micah 7:12"
       ]
     }
   ]

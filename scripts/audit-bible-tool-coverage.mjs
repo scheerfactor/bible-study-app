@@ -224,7 +224,7 @@ function dictionaryLookupCandidates(value) {
   if (!cleaned) return [];
 
   const candidates = [cleaned];
-  if (dictionaryAliases[cleaned]) candidates.push(dictionaryAliases[cleaned]);
+  if (dictionaryAliases[cleaned]) candidates.push(normalizeWord(dictionaryAliases[cleaned]));
 
   const suffixRules = [
     [/eth$/, ""],

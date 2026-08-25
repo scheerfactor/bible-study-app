@@ -1,0 +1,792 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-35-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Screened the next highest-use KJV forms without supplemental dictionary help, including archaic inflections, British spellings, compounds, and Bible-name forms.",
+  "review_method": "Required exact Webster page and entry headings, compared promoted text with the Internet Archive 1828 scans, applied only scan- or KJV-confirmed corrections, and held BLAST, QUARTER, and CONCEAL for separate transcription repair.",
+  "screening_summary": {
+    "requested_source_pages": 64,
+    "exact_source_pages_found": 38,
+    "reviewed_overlays_promoted": 35,
+    "source_pages_held_for_further_review": 3,
+    "lookup_relationships_promoted": 45
+  },
+  "reviewed_transcription_actions": [
+    {
+      "word": "contain",
+      "actions": [
+        "Restored the Latin etymology from the scan.",
+        "Restored the possessive in King's person."
+      ]
+    },
+    {
+      "word": "costly",
+      "actions": [
+        "Restored punctuation before the John 12:3 citation."
+      ]
+    },
+    {
+      "word": "effectual",
+      "actions": [
+        "Restored sentence punctuation and capitalization between senses."
+      ]
+    },
+    {
+      "word": "midwife",
+      "actions": [
+        "Restored punctuation between the noun, intransitive verb, and transitive verb sections."
+      ]
+    },
+    {
+      "word": "plaster",
+      "actions": [
+        "Restored the sentence break before the repeated headword."
+      ]
+    },
+    {
+      "word": "savory",
+      "actions": [
+        "Corrected the KJV citation from Genesis 27:1 to Genesis 27:4."
+      ]
+    },
+    {
+      "word": "shave",
+      "actions": [
+        "Corrected four scan-confirmed transcription slips: tto, sythe, tho, and beyong."
+      ]
+    },
+    {
+      "word": "sojourner",
+      "actions": [
+        "Corrected out father to our fathers in the 1 Chronicles 29 quotation."
+      ]
+    },
+    {
+      "word": "strike",
+      "actions": [
+        "Restored e'en and corrected work I a body to work in a body."
+      ]
+    },
+    {
+      "word": "woof",
+      "actions": [
+        "Restored terminal punctuation."
+      ]
+    }
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "befallen",
+      "lookup_headword": "befall",
+      "kjv_occurrences": 7,
+      "relationship": "irregular participle"
+    },
+    {
+      "word": "benjamites",
+      "lookup_headword": "benjamin",
+      "kjv_occurrences": 8,
+      "relationship": "Bible-family plural form"
+    },
+    {
+      "word": "cutteth",
+      "lookup_headword": "cut",
+      "kjv_occurrences": 6,
+      "relationship": "KJV verb inflection"
+    },
+    {
+      "word": "defied",
+      "lookup_headword": "defy",
+      "kjv_occurrences": 6,
+      "relationship": "past form"
+    },
+    {
+      "word": "edomite",
+      "lookup_headword": "edom",
+      "kjv_occurrences": 6,
+      "relationship": "Bible-place gentilic form"
+    },
+    {
+      "word": "ethiopians",
+      "lookup_headword": "ethiopia",
+      "kjv_occurrences": 13,
+      "relationship": "Bible-place gentilic plural"
+    },
+    {
+      "word": "gadites",
+      "lookup_headword": "gad",
+      "kjv_occurrences": 14,
+      "relationship": "Bible-tribe plural form"
+    },
+    {
+      "word": "gibeonites",
+      "lookup_headword": "gibeon",
+      "kjv_occurrences": 6,
+      "relationship": "Bible-place gentilic plural"
+    },
+    {
+      "word": "hebronites",
+      "lookup_headword": "hebron",
+      "kjv_occurrences": 6,
+      "relationship": "Bible-family plural form"
+    },
+    {
+      "word": "issued",
+      "lookup_headword": "issue",
+      "kjv_occurrences": 7,
+      "relationship": "past form"
+    },
+    {
+      "word": "kenite",
+      "lookup_headword": "kenites",
+      "kjv_occurrences": 6,
+      "relationship": "singular Bible-name form"
+    },
+    {
+      "word": "kinsmen",
+      "lookup_headword": "kinsman",
+      "kjv_occurrences": 7,
+      "relationship": "irregular plural"
+    },
+    {
+      "word": "midwives",
+      "lookup_headword": "midwife",
+      "kjv_occurrences": 7,
+      "relationship": "irregular plural"
+    },
+    {
+      "word": "occupied",
+      "lookup_headword": "occupy",
+      "kjv_occurrences": 7,
+      "relationship": "past form"
+    },
+    {
+      "word": "odours",
+      "lookup_headword": "odor",
+      "kjv_occurrences": 7,
+      "relationship": "KJV spelling and plural form"
+    },
+    {
+      "word": "plagued",
+      "lookup_headword": "plague",
+      "kjv_occurrences": 6,
+      "relationship": "past form"
+    },
+    {
+      "word": "plaister",
+      "lookup_headword": "plaster",
+      "kjv_occurrences": 7,
+      "relationship": "KJV spelling variant"
+    },
+    {
+      "word": "prophesieth",
+      "lookup_headword": "prophesy",
+      "kjv_occurrences": 7,
+      "relationship": "KJV verb inflection"
+    },
+    {
+      "word": "puttest",
+      "lookup_headword": "put",
+      "kjv_occurrences": 7,
+      "relationship": "KJV second-person verb inflection"
+    },
+    {
+      "word": "righteously",
+      "lookup_headword": "righteous",
+      "kjv_occurrences": 8,
+      "relationship": "adverbial form"
+    },
+    {
+      "word": "ringstraked",
+      "lookup_headword": "ring-streaked",
+      "kjv_occurrences": 7,
+      "relationship": "KJV spelling and unhyphenated compound form"
+    },
+    {
+      "word": "roughly",
+      "lookup_headword": "rough",
+      "kjv_occurrences": 6,
+      "relationship": "adverbial form"
+    },
+    {
+      "word": "savoury",
+      "lookup_headword": "savory",
+      "kjv_occurrences": 6,
+      "relationship": "KJV spelling variant"
+    },
+    {
+      "word": "settest",
+      "lookup_headword": "set",
+      "kjv_occurrences": 7,
+      "relationship": "KJV second-person verb inflection"
+    },
+    {
+      "word": "shaven",
+      "lookup_headword": "shave",
+      "kjv_occurrences": 7,
+      "relationship": "irregular participle"
+    },
+    {
+      "word": "shutteth",
+      "lookup_headword": "shut",
+      "kjv_occurrences": 8,
+      "relationship": "KJV verb inflection"
+    },
+    {
+      "word": "sittest",
+      "lookup_headword": "sit",
+      "kjv_occurrences": 7,
+      "relationship": "KJV second-person verb inflection"
+    },
+    {
+      "word": "skilful",
+      "lookup_headword": "skillful",
+      "kjv_occurrences": 7,
+      "relationship": "KJV spelling variant"
+    },
+    {
+      "word": "spied",
+      "lookup_headword": "spy",
+      "kjv_occurrences": 6,
+      "relationship": "past form"
+    },
+    {
+      "word": "stirreth",
+      "lookup_headword": "stir",
+      "kjv_occurrences": 8,
+      "relationship": "KJV verb inflection"
+    },
+    {
+      "word": "struck",
+      "lookup_headword": "strike",
+      "kjv_occurrences": 7,
+      "relationship": "irregular past form"
+    },
+    {
+      "word": "sycomore",
+      "lookup_headword": "sycamore",
+      "kjv_occurrences": 7,
+      "relationship": "KJV spelling variant"
+    },
+    {
+      "word": "turtledoves",
+      "lookup_headword": "turtle-dove",
+      "kjv_occurrences": 7,
+      "relationship": "unhyphenated plural compound"
+    },
+    {
+      "word": "useth",
+      "lookup_headword": "use",
+      "kjv_occurrences": 7,
+      "relationship": "KJV verb inflection"
+    },
+    {
+      "word": "wayfaring",
+      "lookup_headword": "wayfarer",
+      "kjv_occurrences": 6,
+      "relationship": "archaic adjectival and participial form"
+    },
+    {
+      "word": "wert",
+      "lookup_headword": "be",
+      "kjv_occurrences": 6,
+      "relationship": "archaic second-person past form"
+    },
+    {
+      "word": "wiser",
+      "lookup_headword": "wise",
+      "kjv_occurrences": 8,
+      "relationship": "comparative form"
+    },
+    {
+      "word": "withdrew",
+      "lookup_headword": "withdraw",
+      "kjv_occurrences": 6,
+      "relationship": "irregular past form"
+    },
+    {
+      "word": "withstood",
+      "lookup_headword": "withstand",
+      "kjv_occurrences": 6,
+      "relationship": "irregular past form"
+    },
+    {
+      "word": "woollen",
+      "lookup_headword": "woolen",
+      "kjv_occurrences": 6,
+      "relationship": "KJV spelling variant"
+    },
+    {
+      "word": "wolves",
+      "lookup_headword": "wolf",
+      "kjv_occurrences": 7,
+      "relationship": "irregular plural"
+    },
+    {
+      "word": "worshippeth",
+      "lookup_headword": "worship",
+      "kjv_occurrences": 6,
+      "relationship": "KJV verb inflection"
+    },
+    {
+      "word": "wreathen",
+      "lookup_headword": "wreath",
+      "kjv_occurrences": 10,
+      "relationship": "archaic adjectival form"
+    },
+    {
+      "word": "zarhites",
+      "lookup_headword": "zarah",
+      "kjv_occurrences": 6,
+      "relationship": "Bible-family plural form"
+    },
+    {
+      "word": "zidonians",
+      "lookup_headword": "zidon",
+      "kjv_occurrences": 10,
+      "relationship": "Bible-place gentilic plural"
+    }
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "Every promoted page had an exact source headword match.",
+    "Scan- and KJV-confirmed corrections are recorded and applied deterministically.",
+    "Aliases were limited to source-supported lexical or Bible-name relationships.",
+    "BLAST, QUARTER, and CONCEAL were not promoted because their extracted source text needs further repair.",
+    "No unsupported modernization, paraphrase, or new definition was introduced."
+  ],
+  "entries": [
+    {
+      "word": "agreement",
+      "kjv_occurrences": 6,
+      "lookup_headword": "agreement",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/agreement",
+      "source_line_start": 1,
+      "source_line_end": 9,
+      "exact_page_heading": "AGREE'MENT",
+      "exact_entry_heading": "AGREE'MENT",
+      "exact_source_match": true
+    },
+    {
+      "word": "bountifully",
+      "kjv_occurrences": 6,
+      "lookup_headword": "bountifully",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/bountifully",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "BOUN'TIFULLY",
+      "exact_entry_heading": "BOUN'TIFULLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "careful",
+      "kjv_occurrences": 7,
+      "lookup_headword": "careful",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/careful",
+      "source_line_start": 1,
+      "source_line_end": 10,
+      "exact_page_heading": "CAREFUL",
+      "exact_entry_heading": "CAREFUL",
+      "exact_source_match": true
+    },
+    {
+      "word": "contain",
+      "kjv_occurrences": 7,
+      "lookup_headword": "contain",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/contain",
+      "source_line_start": 1,
+      "source_line_end": 11,
+      "exact_page_heading": "CONTAIN",
+      "exact_entry_heading": "CONTAIN",
+      "exact_source_match": true
+    },
+    {
+      "word": "costly",
+      "kjv_occurrences": 6,
+      "lookup_headword": "costly",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/costly",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "COSTLY",
+      "exact_entry_heading": "COSTLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "daytime",
+      "kjv_occurrences": 7,
+      "lookup_headword": "daytime",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/daytime",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "DA'YTIME",
+      "exact_entry_heading": "DA'YTIME",
+      "exact_source_match": true
+    },
+    {
+      "word": "defy",
+      "kjv_occurrences": 6,
+      "lookup_headword": "defy",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/defy",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "DEFY",
+      "exact_entry_heading": "DEFY",
+      "exact_source_match": true
+    },
+    {
+      "word": "effectual",
+      "kjv_occurrences": 6,
+      "lookup_headword": "effectual",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/effectual",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "EFFECT'UAL",
+      "exact_entry_heading": "EFFECT'UAL",
+      "exact_source_match": true
+    },
+    {
+      "word": "hardness",
+      "kjv_occurrences": 7,
+      "lookup_headword": "hardness",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/hardness",
+      "source_line_start": 1,
+      "source_line_end": 14,
+      "exact_page_heading": "H'ARDNESS",
+      "exact_entry_heading": "H'ARDNESS",
+      "exact_source_match": true
+    },
+    {
+      "word": "issue",
+      "kjv_occurrences": 7,
+      "lookup_headword": "issue",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/issue",
+      "source_line_start": 1,
+      "source_line_end": 23,
+      "exact_page_heading": "ISSUE",
+      "exact_entry_heading": "ISSUE",
+      "exact_source_match": true
+    },
+    {
+      "word": "kinsman",
+      "kjv_occurrences": 7,
+      "lookup_headword": "kinsman",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/kinsman",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "KINS'MAN",
+      "exact_entry_heading": "KINS'MAN",
+      "exact_source_match": true
+    },
+    {
+      "word": "midwife",
+      "kjv_occurrences": 7,
+      "lookup_headword": "midwife",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/midwife",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "MID'WIFE",
+      "exact_entry_heading": "MID'WIFE",
+      "exact_source_match": true
+    },
+    {
+      "word": "occupy",
+      "kjv_occurrences": 7,
+      "lookup_headword": "occupy",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/occupy",
+      "source_line_start": 1,
+      "source_line_end": 13,
+      "exact_page_heading": "OC'CUPY",
+      "exact_entry_heading": "OC'CUPY",
+      "exact_source_match": true
+    },
+    {
+      "word": "odor",
+      "kjv_occurrences": 7,
+      "lookup_headword": "odor",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/odor",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "O'DOR",
+      "exact_entry_heading": "O'DOR",
+      "exact_source_match": true
+    },
+    {
+      "word": "persecutor",
+      "kjv_occurrences": 1,
+      "lookup_headword": "persecutor",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/persecutor",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "PER'SECUTOR",
+      "exact_entry_heading": "PER'SECUTOR",
+      "exact_source_match": true
+    },
+    {
+      "word": "plague",
+      "kjv_occurrences": 6,
+      "lookup_headword": "plague",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/plague",
+      "source_line_start": 1,
+      "source_line_end": 12,
+      "exact_page_heading": "PLAGUE",
+      "exact_entry_heading": "PLAGUE",
+      "exact_source_match": true
+    },
+    {
+      "word": "plaster",
+      "kjv_occurrences": 7,
+      "lookup_headword": "plaster",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/plaster",
+      "source_line_start": 1,
+      "source_line_end": 7,
+      "exact_page_heading": "PL'ASTER",
+      "exact_entry_heading": "PL'ASTER",
+      "exact_source_match": true
+    },
+    {
+      "word": "pomp",
+      "kjv_occurrences": 7,
+      "lookup_headword": "pomp",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/pomp",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "POMP",
+      "exact_entry_heading": "POMP",
+      "exact_source_match": true
+    },
+    {
+      "word": "presumptuously",
+      "kjv_occurrences": 6,
+      "lookup_headword": "presumptuously",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/presumptuously",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "PRESUMP'TUOUSLY",
+      "exact_entry_heading": "PRESUMP'TUOUSLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "prospect",
+      "kjv_occurrences": 6,
+      "lookup_headword": "prospect",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/prospect",
+      "source_line_start": 1,
+      "source_line_end": 14,
+      "exact_page_heading": "PROS'PECT",
+      "exact_entry_heading": "PROS'PECT",
+      "exact_source_match": true
+    },
+    {
+      "word": "realm",
+      "kjv_occurrences": 7,
+      "lookup_headword": "realm",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/realm",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "REALM",
+      "exact_entry_heading": "REALM",
+      "exact_source_match": true
+    },
+    {
+      "word": "righteous",
+      "kjv_occurrences": 8,
+      "lookup_headword": "righteous",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/righteous",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "RIGHTEOUS",
+      "exact_entry_heading": "RIGHTEOUS",
+      "exact_source_match": true
+    },
+    {
+      "word": "ring-streaked",
+      "kjv_occurrences": 7,
+      "lookup_headword": "ring-streaked",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/ring-streaked",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "RING'-STREAKED",
+      "exact_entry_heading": "RING'-STREAKED",
+      "exact_source_match": true
+    },
+    {
+      "word": "savory",
+      "kjv_occurrences": 6,
+      "lookup_headword": "savory",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/savory",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "SA'VORY",
+      "exact_entry_heading": "SA'VORY",
+      "exact_source_match": true
+    },
+    {
+      "word": "shave",
+      "kjv_occurrences": 7,
+      "lookup_headword": "shave",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/shave",
+      "source_line_start": 1,
+      "source_line_end": 15,
+      "exact_page_heading": "SHAVE",
+      "exact_entry_heading": "SHAVE",
+      "exact_source_match": true
+    },
+    {
+      "word": "skillful",
+      "kjv_occurrences": 7,
+      "lookup_headword": "skillful",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/skillful",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "SKILL'FUL",
+      "exact_entry_heading": "SKILL'FUL",
+      "exact_source_match": true
+    },
+    {
+      "word": "sky",
+      "kjv_occurrences": 7,
+      "lookup_headword": "sky",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/sky",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "SKY",
+      "exact_entry_heading": "SKY",
+      "exact_source_match": true
+    },
+    {
+      "word": "sojourner",
+      "kjv_occurrences": 8,
+      "lookup_headword": "sojourner",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/sojourner",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "SO'JOURNER",
+      "exact_entry_heading": "SO'JOURNER",
+      "exact_source_match": true
+    },
+    {
+      "word": "strike",
+      "kjv_occurrences": 7,
+      "lookup_headword": "strike",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/strike",
+      "source_line_start": 1,
+      "source_line_end": 24,
+      "exact_page_heading": "STRIKE",
+      "exact_entry_heading": "STRIKE",
+      "exact_source_match": true
+    },
+    {
+      "word": "sycamore",
+      "kjv_occurrences": 7,
+      "lookup_headword": "sycamore",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/sycamore",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "SYC'AMORE",
+      "exact_entry_heading": "SYC'AMORE",
+      "exact_source_match": true
+    },
+    {
+      "word": "turtle-dove",
+      "kjv_occurrences": 7,
+      "lookup_headword": "turtle-dove",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/turtle-dove",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "TUR'TLE-DOVE",
+      "exact_entry_heading": "TUR'TLE-DOVE",
+      "exact_source_match": true
+    },
+    {
+      "word": "undefiled",
+      "kjv_occurrences": 7,
+      "lookup_headword": "undefiled",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/undefiled",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "UNDEFI'LED",
+      "exact_entry_heading": "UNDEFI'LED",
+      "exact_source_match": true
+    },
+    {
+      "word": "welfare",
+      "kjv_occurrences": 7,
+      "lookup_headword": "welfare",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/welfare",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "WELFARE",
+      "exact_entry_heading": "WELFARE",
+      "exact_source_match": true
+    },
+    {
+      "word": "wolf",
+      "kjv_occurrences": 7,
+      "lookup_headword": "wolf",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/wolf",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "WOLF",
+      "exact_entry_heading": "WOLF",
+      "exact_source_match": true
+    },
+    {
+      "word": "woof",
+      "kjv_occurrences": 9,
+      "lookup_headword": "woof",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/woof",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "WOOF",
+      "exact_entry_heading": "WOOF",
+      "exact_source_match": true
+    }
+  ]
+}

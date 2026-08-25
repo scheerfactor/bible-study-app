@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T10:19:47.060Z
+Generated: 2026-08-25T10:36:30.959Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,068/12,454 meaningful KJV words have a lookup candidate (64.8%).
-- Combined word/topic lookup: 11,034/12,454 meaningful KJV words have Webster, Easton, or Nave help (88.6%).
+- Webster 1828: 8,129/12,454 meaningful KJV words have a lookup candidate (65.3%).
+- Combined word/topic lookup: 11,102/12,454 meaningful KJV words have Webster, Easton, or Nave help (89.1%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -72,35 +72,35 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Word | Count | Sample References |
 | --- | ---: | --- |
 | threshingfloor | 17 | Genesis 50:10; Numbers 15:20; Numbers 18:27; Numbers 18:30; Ruth 3:2 |
-| gadites | 14 | Deuteronomy 3:12; Deuteronomy 3:16; Deuteronomy 4:43; Deuteronomy 29:8; Joshua 1:12 |
-| ethiopians | 13 | 2 Chronicles 12:3; 2 Chronicles 14:12; 2 Chronicles 14:12; 2 Chronicles 14:13; 2 Chronicles 16:8 |
 | iscariot | 11 | Matthew 10:4; Matthew 26:14; Mark 3:19; Mark 14:10; Luke 6:16 |
 | jazer | 11 | Numbers 32:1; Numbers 32:3; Joshua 13:25; Joshua 21:39; 2 Samuel 24:5 |
 | milcah | 11 | Genesis 11:29; Genesis 11:29; Genesis 22:20; Genesis 22:23; Genesis 24:15 |
-| wreathen | 10 | Exodus 28:14; Exodus 28:14; Exodus 28:22; Exodus 28:24; Exodus 28:25 |
-| zidonians | 10 | Judges 10:12; Judges 18:7; Judges 18:7; 1 Kings 11:1; 1 Kings 11:5 |
 | inasmuch | 9 | Deuteronomy 19:6; Ruth 3:10; Matthew 25:40; Matthew 25:45; Romans 11:13 |
 | quarters | 9 | Exodus 13:7; Deuteronomy 22:12; 1 Chronicles 9:24; Jeremiah 49:36; Ezekiel 38:6 |
 | shelomith | 9 | Leviticus 24:11; 1 Chronicles 3:19; 1 Chronicles 23:9; 1 Chronicles 23:18; 1 Chronicles 26:25 |
-| woof | 9 | Leviticus 13:48; Leviticus 13:49; Leviticus 13:51; Leviticus 13:52; Leviticus 13:53 |
 | aphek | 8 | Joshua 12:18; Joshua 13:4; Joshua 19:30; 1 Samuel 4:1; 1 Samuel 29:1 |
-| benjamites | 8 | Judges 19:16; Judges 20:35; Judges 20:36; Judges 20:40; Judges 20:43 |
 | blast | 8 | Exodus 15:8; Joshua 6:5; 2 Samuel 22:16; 2 Kings 19:7; Job 4:9 |
 | bondwoman | 8 | Genesis 21:10; Genesis 21:10; Genesis 21:12; Genesis 21:13; Galatians 4:23 |
 | housetops | 8 | 2 Kings 19:26; Psalms 129:6; Isaiah 22:1; Isaiah 37:27; Jeremiah 48:38 |
-| persecutors | 8 | Nehemiah 9:11; Psalms 7:13; Psalms 119:157; Psalms 142:6; Jeremiah 15:15 |
 | quarter | 8 | Genesis 19:4; Numbers 34:3; Joshua 15:5; Joshua 18:14; Joshua 18:15 |
-| righteously | 8 | Deuteronomy 1:16; Psalms 67:4; Psalms 96:10; Proverbs 31:9; Isaiah 33:15 |
-| shutteth | 8 | Job 12:14; Proverbs 16:30; Proverbs 17:28; Isaiah 33:15; Lamentations 3:8 |
-| sojourner | 8 | Genesis 23:4; Leviticus 22:10; Leviticus 25:35; Leviticus 25:40; Leviticus 25:47 |
-| stirreth | 8 | Deuteronomy 32:11; Proverbs 10:12; Proverbs 15:18; Proverbs 28:25; Proverbs 29:22 |
 | uri | 8 | Exodus 31:2; Exodus 35:30; Exodus 38:22; 1 Kings 4:19; 1 Chronicles 2:20 |
-| wiser | 8 | 1 Kings 4:31; Job 35:11; Psalms 119:98; Proverbs 9:9; Proverbs 26:16 |
 | abiezer | 7 | Joshua 17:2; Judges 6:34; Judges 8:2; 2 Samuel 23:27; 1 Chronicles 7:18 |
 | aijalon | 7 | Joshua 21:24; Judges 1:35; Judges 12:12; 1 Samuel 14:31; 1 Chronicles 6:69 |
-| befallen | 7 | Leviticus 10:19; Numbers 20:14; Deuteronomy 31:21; Judges 6:13; 1 Samuel 20:26 |
-| careful | 7 | 2 Kings 4:13; Jeremiah 17:8; Daniel 3:16; Luke 10:41; Philippians 4:6 |
-| contain | 7 | 1 Kings 8:27; 1 Kings 18:32; 2 Chronicles 2:6; 2 Chronicles 6:18; Ezekiel 45:11 |
+| housetop | 7 | Proverbs 21:9; Proverbs 25:24; Matthew 24:17; Mark 13:15; Luke 5:19 |
+| hundredfold | 7 | Genesis 26:12; 2 Samuel 24:3; Matthew 13:8; Matthew 13:23; Matthew 19:29 |
+| shinar | 7 | Genesis 10:10; Genesis 11:2; Genesis 14:1; Genesis 14:9; Isaiah 11:11 |
+| asaiah | 6 | 1 Chronicles 4:36; 1 Chronicles 6:30; 1 Chronicles 9:5; 1 Chronicles 15:6; 1 Chronicles 15:11 |
+| azrikam | 6 | 1 Chronicles 3:23; 1 Chronicles 8:38; 1 Chronicles 9:14; 1 Chronicles 9:44; 2 Chronicles 28:7 |
+| conceal | 6 | Genesis 37:26; Deuteronomy 13:8; Job 27:11; Job 41:12; Proverbs 25:2 |
+| malchijah | 6 | 1 Chronicles 9:12; 1 Chronicles 24:9; Ezra 10:25; Nehemiah 3:11; Nehemiah 10:3 |
+| snuffers | 6 | Exodus 37:23; 1 Kings 7:50; 2 Kings 12:13; 2 Kings 25:14; 2 Chronicles 4:22 |
+| specially | 6 | Deuteronomy 4:10; Acts 25:26; 1 Timothy 4:10; 1 Timothy 5:8; Titus 1:10 |
+| subtilty | 6 | Genesis 27:35; 2 Kings 10:19; Proverbs 1:4; Matthew 26:4; Acts 13:10 |
+| tahath | 6 | Numbers 33:26; Numbers 33:27; 1 Chronicles 6:24; 1 Chronicles 6:37; 1 Chronicles 7:20 |
+| unfruitful | 6 | Matthew 13:22; Mark 4:19; 1 Corinthians 14:14; Ephesians 5:11; Titus 3:14 |
+| abhorreth | 5 | Job 33:20; Psalms 10:3; Psalms 36:4; Psalms 107:18; Isaiah 49:7 |
+| admonished | 5 | Ecclesiastes 4:13; Ecclesiastes 12:12; Jeremiah 42:19; Acts 27:9; Hebrews 8:5 |
+| ahilud | 5 | 2 Samuel 8:16; 2 Samuel 20:24; 1 Kings 4:3; 1 Kings 4:12; 1 Chronicles 18:15 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
