@@ -5,7 +5,7 @@ import midiFile from "midi-file";
 
 const { parseMidi } = midiFile;
 const root = process.cwd();
-const hymns = [
+const curatedHymns = [
   {
     id: "amazing-grace",
     title: "Amazing Grace",
@@ -337,6 +337,10 @@ const hymns = [
     reviewedAt: "2026-08-24",
   },
 ];
+const supplementalHymns = JSON.parse(
+  await readFile(resolve(root, "data", "hymns", "supplemental-hymns.json"), "utf8"),
+);
+const hymns = [...curatedHymns, ...supplementalHymns];
 
 function round(value) {
   return Math.round(value * 1000) / 1000;

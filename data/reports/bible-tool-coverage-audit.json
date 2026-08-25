@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-25T13:52:51.327Z",
+    "generated_at": "2026-08-25T15:12:46.339Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,19 +10,19 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61176,
-      "normalizedHeadwords": 51236,
-      "meaningfulWordsWithDefinition": 8330,
-      "meaningfulWordsWithoutDefinition": 4124,
-      "meaningfulDefinitionCoveragePercent": 66.9,
+      "entries": 61188,
+      "normalizedHeadwords": 51248,
+      "meaningfulWordsWithDefinition": 8353,
+      "meaningfulWordsWithoutDefinition": 4101,
+      "meaningfulDefinitionCoveragePercent": 67.1,
       "missingPriorityCounts": {
-        "high": 254,
-        "medium": 701,
-        "low": 1188,
-        "single-use": 1981
+        "high": 245,
+        "medium": 698,
+        "low": 1180,
+        "single-use": 1978
       },
-      "missingWithSupplementalHelp": 2967,
-      "missingWithoutSupplementalHelp": 1157,
+      "missingWithSupplementalHelp": 2951,
+      "missingWithoutSupplementalHelp": 1150,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -3627,8 +3627,8 @@
       "rareTermEntries": 28,
       "meaningfulWordsWithEastonEntry": 4132,
       "meaningfulWordsWithNaveTopic": 4015,
-      "meaningfulWordsWithAnyStudyLookup": 11297,
-      "combinedStudyLookupCoveragePercent": 90.7,
+      "meaningfulWordsWithAnyStudyLookup": 11304,
+      "combinedStudyLookupCoveragePercent": 90.8,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
           "word": "iscariot",
@@ -3952,28 +3952,6 @@
           ],
           "lookupCandidates": [
             "azrikam"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "conceal",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 37:26",
-            "Deuteronomy 13:8",
-            "Job 27:11",
-            "Job 41:12",
-            "Proverbs 25:2"
-          ],
-          "lookupCandidates": [
-            "conceal"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -5173,26 +5151,6 @@
           "reviewStatus": null
         },
         {
-          "word": "conduct",
-          "count": 3,
-          "sampleRefs": [
-            "2 Samuel 19:15",
-            "2 Samuel 19:31",
-            "1 Corinthians 16:11"
-          ],
-          "lookupCandidates": [
-            "conduct"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "crumbs",
           "count": 3,
           "sampleRefs": [
@@ -5204,26 +5162,6 @@
             "crumbs",
             "crumb",
             "crumbe"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "discreet",
-          "count": 3,
-          "sampleRefs": [
-            "Genesis 41:33",
-            "Genesis 41:39",
-            "Titus 2:5"
-          ],
-          "lookupCandidates": [
-            "discreet"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -5347,6 +5285,68 @@
           ],
           "lookupCandidates": [
             "grecia"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "hagarites",
+          "count": 3,
+          "sampleRefs": [
+            "1 Chronicles 5:10",
+            "1 Chronicles 5:19",
+            "1 Chronicles 5:20"
+          ],
+          "lookupCandidates": [
+            "hagarites",
+            "hagarite"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "holiest",
+          "count": 3,
+          "sampleRefs": [
+            "Hebrews 9:3",
+            "Hebrews 9:8",
+            "Hebrews 10:19"
+          ],
+          "lookupCandidates": [
+            "holiest",
+            "holi"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "holon",
+          "count": 3,
+          "sampleRefs": [
+            "Joshua 15:51",
+            "Joshua 21:15",
+            "Jeremiah 48:21"
+          ],
+          "lookupCandidates": [
+            "holon"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -12377,28 +12377,6 @@
         "reviewStatus": null
       },
       {
-        "word": "conceal",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 37:26",
-          "Deuteronomy 13:8",
-          "Job 27:11",
-          "Job 41:12",
-          "Proverbs 25:2"
-        ],
-        "lookupCandidates": [
-          "conceal"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "malchijah",
         "count": 6,
         "sampleRefs": [
@@ -13587,26 +13565,6 @@
         "reviewStatus": null
       },
       {
-        "word": "conduct",
-        "count": 3,
-        "sampleRefs": [
-          "2 Samuel 19:15",
-          "2 Samuel 19:31",
-          "1 Corinthians 16:11"
-        ],
-        "lookupCandidates": [
-          "conduct"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "crumbs",
         "count": 3,
         "sampleRefs": [
@@ -13618,26 +13576,6 @@
           "crumbs",
           "crumb",
           "crumbe"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "discreet",
-        "count": 3,
-        "sampleRefs": [
-          "Genesis 41:33",
-          "Genesis 41:39",
-          "Titus 2:5"
-        ],
-        "lookupCandidates": [
-          "discreet"
         ],
         "hasDefinition": false,
         "hasEaston": false,
@@ -13761,6 +13699,68 @@
         ],
         "lookupCandidates": [
           "grecia"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "hagarites",
+        "count": 3,
+        "sampleRefs": [
+          "1 Chronicles 5:10",
+          "1 Chronicles 5:19",
+          "1 Chronicles 5:20"
+        ],
+        "lookupCandidates": [
+          "hagarites",
+          "hagarite"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "holiest",
+        "count": 3,
+        "sampleRefs": [
+          "Hebrews 9:3",
+          "Hebrews 9:8",
+          "Hebrews 10:19"
+        ],
+        "lookupCandidates": [
+          "holiest",
+          "holi"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "holon",
+        "count": 3,
+        "sampleRefs": [
+          "Joshua 15:51",
+          "Joshua 21:15",
+          "Jeremiah 48:21"
+        ],
+        "lookupCandidates": [
+          "holon"
         ],
         "hasDefinition": false,
         "hasEaston": false,

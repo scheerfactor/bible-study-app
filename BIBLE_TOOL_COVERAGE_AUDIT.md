@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T13:52:51.327Z
+Generated: 2026-08-25T15:12:46.339Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,330/12,454 meaningful KJV words have a lookup candidate (66.9%).
-- Combined word/topic lookup: 11,297/12,454 meaningful KJV words have Webster, Easton, or Nave help (90.7%).
+- Webster 1828: 8,353/12,454 meaningful KJV words have a lookup candidate (67.1%).
+- Combined word/topic lookup: 11,304/12,454 meaningful KJV words have Webster, Easton, or Nave help (90.8%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -86,7 +86,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | shinar | 7 | Genesis 10:10; Genesis 11:2; Genesis 14:1; Genesis 14:9; Isaiah 11:11 |
 | asaiah | 6 | 1 Chronicles 4:36; 1 Chronicles 6:30; 1 Chronicles 9:5; 1 Chronicles 15:6; 1 Chronicles 15:11 |
 | azrikam | 6 | 1 Chronicles 3:23; 1 Chronicles 8:38; 1 Chronicles 9:14; 1 Chronicles 9:44; 2 Chronicles 28:7 |
-| conceal | 6 | Genesis 37:26; Deuteronomy 13:8; Job 27:11; Job 41:12; Proverbs 25:2 |
 | malchijah | 6 | 1 Chronicles 9:12; 1 Chronicles 24:9; Ezra 10:25; Nehemiah 3:11; Nehemiah 10:3 |
 | tahath | 6 | Numbers 33:26; Numbers 33:27; 1 Chronicles 6:24; 1 Chronicles 6:37; 1 Chronicles 7:20 |
 | ahilud | 5 | 2 Samuel 8:16; 2 Samuel 20:24; 1 Kings 4:3; 1 Kings 4:12; 1 Chronicles 18:15 |
@@ -101,6 +100,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | parosh | 5 | Ezra 2:3; Ezra 10:25; Nehemiah 3:25; Nehemiah 7:8; Nehemiah 10:14 |
 | perizzite | 5 | Genesis 13:7; Exodus 33:2; Exodus 34:11; Joshua 9:1; Joshua 11:3 |
 | reu | 5 | Genesis 11:18; Genesis 11:19; Genesis 11:20; Genesis 11:21; 1 Chronicles 1:25 |
+| shelumiel | 5 | Numbers 1:6; Numbers 2:12; Numbers 7:36; Numbers 7:41; Numbers 10:19 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

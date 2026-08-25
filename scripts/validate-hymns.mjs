@@ -4,6 +4,9 @@ import { resolve } from "node:path";
 
 const root = process.cwd();
 const hymns = JSON.parse(await readFile(resolve(root, "data", "hymns", "verified-hymns.json"), "utf8"));
+const supplementalHymns = JSON.parse(
+  await readFile(resolve(root, "data", "hymns", "supplemental-hymns.json"), "utf8"),
+);
 const errors = [];
 const ids = new Set();
 const titles = new Set();
@@ -56,7 +59,10 @@ for (const hymn of hymns) {
   }
 }
 
-if (hymns.length !== 11) errors.push("Expected exactly 11 reviewed hymns in the verified set.");
+const expectedHymnCount = 11 + supplementalHymns.length;
+if (hymns.length !== expectedHymnCount) {
+  errors.push(`Expected exactly ${expectedHymnCount} reviewed hymns in the verified set.`);
+}
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

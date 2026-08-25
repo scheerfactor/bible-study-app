@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-25T13:52:51.327Z",
+  "generated_at": "2026-08-25T15:12:46.339Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4124,
+  "total": 4101,
   "priorityCounts": {
-    "high": 254,
-    "medium": 701,
-    "low": 1188,
-    "single-use": 1981
+    "high": 245,
+    "medium": 698,
+    "low": 1180,
+    "single-use": 1978
   },
-  "withSupplementalHelp": 2967,
-  "withoutSupplementalHelp": 1157,
+  "withSupplementalHelp": 2951,
+  "withoutSupplementalHelp": 1150,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -238,21 +238,6 @@
         "1 Chronicles 9:14",
         "1 Chronicles 9:44",
         "2 Chronicles 28:7"
-      ]
-    },
-    {
-      "word": "conceal",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "conceal"
-      ],
-      "sampleRefs": [
-        "Genesis 37:26",
-        "Deuteronomy 13:8",
-        "Job 27:11",
-        "Job 41:12",
-        "Proverbs 25:2"
       ]
     },
     {
@@ -1059,19 +1044,6 @@
       ]
     },
     {
-      "word": "conduct",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "conduct"
-      ],
-      "sampleRefs": [
-        "2 Samuel 19:15",
-        "2 Samuel 19:31",
-        "1 Corinthians 16:11"
-      ]
-    },
-    {
       "word": "crumbs",
       "count": 3,
       "priority": "low",
@@ -1084,19 +1056,6 @@
         "Matthew 15:27",
         "Mark 7:28",
         "Luke 16:21"
-      ]
-    },
-    {
-      "word": "discreet",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "discreet"
-      ],
-      "sampleRefs": [
-        "Genesis 41:33",
-        "Genesis 41:39",
-        "Titus 2:5"
       ]
     },
     {
@@ -1446,6 +1405,48 @@
         "1 Chronicles 4:2",
         "Ezra 2:47",
         "Nehemiah 7:50"
+      ]
+    },
+    {
+      "word": "shubael",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "shubael"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 24:20",
+        "1 Chronicles 24:20",
+        "1 Chronicles 25:20"
+      ]
+    },
+    {
+      "word": "simeonites",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "simeonites",
+        "simeonite"
+      ],
+      "sampleRefs": [
+        "Numbers 25:14",
+        "Numbers 26:14",
+        "1 Chronicles 27:16"
+      ]
+    },
+    {
+      "word": "snuffdishes",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "snuffdishes",
+        "snuffdish",
+        "snuffdishe"
+      ],
+      "sampleRefs": [
+        "Exodus 25:38",
+        "Exodus 37:23",
+        "Numbers 4:9"
       ]
     }
   ]

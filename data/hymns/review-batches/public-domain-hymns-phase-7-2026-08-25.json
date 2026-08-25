@@ -1,0 +1,17 @@
+{
+  "batch_id": "public-domain-hymns-phase-7-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "purpose": "Add three source-traceable public-domain hymns with playable MIDI music and establish a supplemental data catalog for faster reviewed additions.",
+  "guardrails": [
+    "Lyrics were retained stanza by stanza from each cited source record without theological modernization.",
+    "Each source record explicitly marks both the text and named tune as public domain.",
+    "The exact MIDI and retained HTML rights-evidence snapshot are verified by SHA-256.",
+    "Playback is synthesized in the app from MIDI; no third-party performance recording is included.",
+    "Future hymns may be appended to the supplemental catalog only after equivalent source, rights, checksum, and lyric review."
+  ],
+  "entries": [
+    {"id":"all-hail-the-power-of-jesus-name","title":"All Hail the Power of Jesus’ Name","text_source_url":"https://library.timelesstruths.org/music/All_Hail_the_Power_of_Jesus_Name/","text_rights":"Public Domain","tune":"Coronation","composer":"Oliver Holden","music_source_url":"https://library.timelesstruths.org/library/music/A/All_Hail_the_Power_of_Jesus_Name/All_Hail_the_Power_of_Jesus_Name.mid","music_rights":"Public Domain","midi_sha256":"f691573be593d3d5a033be1631629de1a9ea07439b791a033fa4888134d74be9","rights_evidence_sha256":"841d06d2e27d366dfaab292bdc2bfabbcd8f17fb179e9a95fa928f16f46b1d1a"},
+    {"id":"rock-of-ages","title":"Rock of Ages","text_source_url":"https://library.timelesstruths.org/music/Rock_of_Ages/","text_rights":"Public Domain","tune":"Toplady","composer":"Thomas Hastings","music_source_url":"https://library.timelesstruths.org/library/music/R/Rock_of_Ages/Rock_of_Ages.mid","music_rights":"Public Domain","midi_sha256":"a0d82c675c525a612651fe07ffc91e9e5abc65bc56549844c58e61aaec3f5672","rights_evidence_sha256":"596be37c3c44cb1e690add9c29a214c64a22872168a928116434f4c750a1b187"},
+    {"id":"nearer-my-god-to-thee","title":"Nearer, My God, to Thee","text_source_url":"https://library.timelesstruths.org/music/Nearer_My_God_to_Thee/","text_rights":"Public Domain","tune":"Bethany","composer":"Lowell Mason","music_source_url":"https://library.timelesstruths.org/library/music/N/Nearer_My_God_to_Thee/Nearer_My_God_to_Thee.mid","music_rights":"Public Domain","midi_sha256":"87398108f924e8fd55752fe041fb5db0a4f54527567f24654db86f49ff94064e","rights_evidence_sha256":"b86de0220d875f64e1c306067d1f5ece8250717cbf0321940ed16b942940e7fb"}
+  ]
+}
