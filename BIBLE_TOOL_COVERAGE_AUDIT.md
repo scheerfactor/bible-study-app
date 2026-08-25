@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T10:02:21.857Z
+Generated: 2026-08-25T10:19:47.060Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,003/12,454 meaningful KJV words have a lookup candidate (64.3%).
-- Combined word/topic lookup: 10,963/12,454 meaningful KJV words have Webster, Easton, or Nave help (88%).
+- Webster 1828: 8,068/12,454 meaningful KJV words have a lookup candidate (64.8%).
+- Combined word/topic lookup: 11,034/12,454 meaningful KJV words have Webster, Easton, or Nave help (88.6%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,36 +71,36 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| divisions | 17 | Joshua 11:23; Joshua 12:7; Joshua 18:10; Judges 5:15; Judges 5:16 |
 | threshingfloor | 17 | Genesis 50:10; Numbers 15:20; Numbers 18:27; Numbers 18:30; Ruth 3:2 |
-| soever | 16 | Leviticus 15:9; Leviticus 17:3; Leviticus 22:4; Deuteronomy 12:32; 2 Samuel 15:35 |
-| consecrate | 14 | Exodus 28:3; Exodus 28:41; Exodus 29:9; Exodus 29:33; Exodus 29:35 |
-| consecrated | 14 | Exodus 29:29; Leviticus 21:10; Numbers 3:3; Joshua 6:19; Judges 17:5 |
 | gadites | 14 | Deuteronomy 3:12; Deuteronomy 3:16; Deuteronomy 4:43; Deuteronomy 29:8; Joshua 1:12 |
 | ethiopians | 13 | 2 Chronicles 12:3; 2 Chronicles 14:12; 2 Chronicles 14:12; 2 Chronicles 14:13; 2 Chronicles 16:8 |
-| manservant | 13 | Exodus 20:10; Exodus 20:17; Exodus 21:27; Exodus 21:32; Deuteronomy 5:14 |
-| hew | 12 | Exodus 34:1; Deuteronomy 10:1; Deuteronomy 12:3; Deuteronomy 19:5; 1 Kings 5:6 |
-| stumblingblock | 12 | Leviticus 19:14; Isaiah 57:14; Ezekiel 3:20; Ezekiel 7:19; Ezekiel 14:3 |
-| throughly | 12 | Genesis 11:3; Job 6:2; Psalms 51:2; Jeremiah 6:9; Jeremiah 7:5 |
-| wheresoever | 12 | Leviticus 13:12; 2 Kings 8:1; 2 Kings 12:5; 1 Chronicles 17:6; Jeremiah 40:5 |
-| workmen | 12 | Judges 5:26; 2 Kings 12:14; 2 Kings 12:15; 1 Chronicles 22:15; 1 Chronicles 25:1 |
-| acquaintance | 11 | 2 Kings 12:5; 2 Kings 12:7; Job 19:13; Job 42:11; Psalms 31:11 |
-| besiege | 11 | Deuteronomy 20:12; Deuteronomy 20:19; Deuteronomy 28:52; Deuteronomy 28:52; 1 Samuel 23:8 |
-| deceitfully | 11 | Genesis 34:13; Exodus 8:29; Exodus 21:8; Leviticus 6:4; Job 6:15 |
-| dishonour | 11 | Ezra 4:14; Psalms 35:26; Psalms 69:19; Psalms 71:13; Proverbs 6:33 |
-| enlarged | 11 | 1 Samuel 2:1; 2 Samuel 22:37; Psalms 4:1; Psalms 18:36; Psalms 25:17 |
 | iscariot | 11 | Matthew 10:4; Matthew 26:14; Mark 3:19; Mark 14:10; Luke 6:16 |
 | jazer | 11 | Numbers 32:1; Numbers 32:3; Joshua 13:25; Joshua 21:39; 2 Samuel 24:5 |
 | milcah | 11 | Genesis 11:29; Genesis 11:29; Genesis 22:20; Genesis 22:23; Genesis 24:15 |
-| provision | 11 | Genesis 42:25; Genesis 45:21; Joshua 9:5; Joshua 9:12; 1 Kings 4:7 |
-| runneth | 11 | Ezra 8:15; Job 15:26; Job 16:14; Psalms 23:5; Psalms 147:15 |
-| unpunished | 11 | Proverbs 11:21; Proverbs 16:5; Proverbs 17:5; Proverbs 19:5; Proverbs 19:9 |
-| warn | 11 | 2 Chronicles 19:10; Ezekiel 3:18; Ezekiel 3:19; Ezekiel 3:21; Ezekiel 33:3 |
-| aha | 10 | Psalms 35:21; Psalms 35:21; Psalms 40:15; Psalms 40:15; Psalms 70:3 |
-| circumcise | 10 | Genesis 17:11; Deuteronomy 10:16; Deuteronomy 30:6; Joshua 5:2; Joshua 5:4 |
-| contempt | 10 | Esther 1:18; Job 12:21; Job 31:34; Psalms 107:40; Psalms 119:22 |
-| curious | 10 | Exodus 28:8; Exodus 28:27; Exodus 28:28; Exodus 29:5; Exodus 35:32 |
-| enlarge | 10 | Genesis 9:27; Exodus 34:24; Deuteronomy 12:20; Deuteronomy 19:8; 1 Chronicles 4:10 |
+| wreathen | 10 | Exodus 28:14; Exodus 28:14; Exodus 28:22; Exodus 28:24; Exodus 28:25 |
+| zidonians | 10 | Judges 10:12; Judges 18:7; Judges 18:7; 1 Kings 11:1; 1 Kings 11:5 |
+| inasmuch | 9 | Deuteronomy 19:6; Ruth 3:10; Matthew 25:40; Matthew 25:45; Romans 11:13 |
+| quarters | 9 | Exodus 13:7; Deuteronomy 22:12; 1 Chronicles 9:24; Jeremiah 49:36; Ezekiel 38:6 |
+| shelomith | 9 | Leviticus 24:11; 1 Chronicles 3:19; 1 Chronicles 23:9; 1 Chronicles 23:18; 1 Chronicles 26:25 |
+| woof | 9 | Leviticus 13:48; Leviticus 13:49; Leviticus 13:51; Leviticus 13:52; Leviticus 13:53 |
+| aphek | 8 | Joshua 12:18; Joshua 13:4; Joshua 19:30; 1 Samuel 4:1; 1 Samuel 29:1 |
+| benjamites | 8 | Judges 19:16; Judges 20:35; Judges 20:36; Judges 20:40; Judges 20:43 |
+| blast | 8 | Exodus 15:8; Joshua 6:5; 2 Samuel 22:16; 2 Kings 19:7; Job 4:9 |
+| bondwoman | 8 | Genesis 21:10; Genesis 21:10; Genesis 21:12; Genesis 21:13; Galatians 4:23 |
+| housetops | 8 | 2 Kings 19:26; Psalms 129:6; Isaiah 22:1; Isaiah 37:27; Jeremiah 48:38 |
+| persecutors | 8 | Nehemiah 9:11; Psalms 7:13; Psalms 119:157; Psalms 142:6; Jeremiah 15:15 |
+| quarter | 8 | Genesis 19:4; Numbers 34:3; Joshua 15:5; Joshua 18:14; Joshua 18:15 |
+| righteously | 8 | Deuteronomy 1:16; Psalms 67:4; Psalms 96:10; Proverbs 31:9; Isaiah 33:15 |
+| shutteth | 8 | Job 12:14; Proverbs 16:30; Proverbs 17:28; Isaiah 33:15; Lamentations 3:8 |
+| sojourner | 8 | Genesis 23:4; Leviticus 22:10; Leviticus 25:35; Leviticus 25:40; Leviticus 25:47 |
+| stirreth | 8 | Deuteronomy 32:11; Proverbs 10:12; Proverbs 15:18; Proverbs 28:25; Proverbs 29:22 |
+| uri | 8 | Exodus 31:2; Exodus 35:30; Exodus 38:22; 1 Kings 4:19; 1 Chronicles 2:20 |
+| wiser | 8 | 1 Kings 4:31; Job 35:11; Psalms 119:98; Proverbs 9:9; Proverbs 26:16 |
+| abiezer | 7 | Joshua 17:2; Judges 6:34; Judges 8:2; 2 Samuel 23:27; 1 Chronicles 7:18 |
+| aijalon | 7 | Joshua 21:24; Judges 1:35; Judges 12:12; 1 Samuel 14:31; 1 Chronicles 6:69 |
+| befallen | 7 | Leviticus 10:19; Numbers 20:14; Deuteronomy 31:21; Judges 6:13; 1 Samuel 20:26 |
+| careful | 7 | 2 Kings 4:13; Jeremiah 17:8; Daniel 3:16; Luke 10:41; Philippians 4:6 |
+| contain | 7 | 1 Kings 8:27; 1 Kings 18:32; 2 Chronicles 2:6; 2 Chronicles 6:18; Ezekiel 45:11 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
@@ -127,21 +127,21 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
 | hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
 | bag | BAG | 11 | ocr_full_import_needs_spot_review |
+| dishonour | DISHONOR | 11 | ocr_full_import_needs_spot_review |
 | pollute | POLLU'TE | 11 | ocr_full_import_needs_spot_review |
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
+| rumour | RU'MOR | 10 | ocr_full_import_needs_spot_review |
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
+| defenced | DEFENSE | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
+| easier | E'ASY | 8 | ocr_full_import_needs_spot_review |
 | hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
 | network | NET' -WORK | 7 | ocr_full_import_needs_spot_review |
 | overwhelmed | OVERWHELM' | 7 | ocr_full_import_needs_spot_review |
 | thread | THREAD | 7 | ocr_full_import_needs_spot_review |
-| arabians | ARA'BIAN | 6 | ocr_full_import_needs_spot_review |
-| byword | BY'-WORD | 6 | ocr_full_import_needs_spot_review |
-| cankerworm | CANK'ER-WORM | 6 | ocr_full_import_needs_spot_review |
-| hastened | HASTEN | 6 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
