@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-25T13:04:01.719Z",
+    "generated_at": "2026-08-25T13:41:10.480Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,19 +10,19 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61141,
-      "normalizedHeadwords": 51201,
-      "meaningfulWordsWithDefinition": 8286,
-      "meaningfulWordsWithoutDefinition": 4168,
-      "meaningfulDefinitionCoveragePercent": 66.5,
+      "entries": 61164,
+      "normalizedHeadwords": 51224,
+      "meaningfulWordsWithDefinition": 8314,
+      "meaningfulWordsWithoutDefinition": 4140,
+      "meaningfulDefinitionCoveragePercent": 66.8,
       "missingPriorityCounts": {
         "high": 254,
-        "medium": 704,
-        "low": 1223,
-        "single-use": 1987
+        "medium": 703,
+        "low": 1200,
+        "single-use": 1983
       },
-      "missingWithSupplementalHelp": 2970,
-      "missingWithoutSupplementalHelp": 1198,
+      "missingWithSupplementalHelp": 2968,
+      "missingWithoutSupplementalHelp": 1172,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -3627,8 +3627,8 @@
       "rareTermEntries": 28,
       "meaningfulWordsWithEastonEntry": 4132,
       "meaningfulWordsWithNaveTopic": 4015,
-      "meaningfulWordsWithAnyStudyLookup": 11256,
-      "combinedStudyLookupCoveragePercent": 90.4,
+      "meaningfulWordsWithAnyStudyLookup": 11282,
+      "combinedStudyLookupCoveragePercent": 90.6,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
           "word": "iscariot",
@@ -3776,28 +3776,6 @@
           ],
           "lookupCandidates": [
             "aphek"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "blast",
-          "count": 8,
-          "sampleRefs": [
-            "Exodus 15:8",
-            "Joshua 6:5",
-            "2 Samuel 22:16",
-            "2 Kings 19:7",
-            "Job 4:9"
-          ],
-          "lookupCandidates": [
-            "blast"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -4690,28 +4668,6 @@
           "reviewStatus": null
         },
         {
-          "word": "fiftieth",
-          "count": 4,
-          "sampleRefs": [
-            "Leviticus 25:10",
-            "Leviticus 25:11",
-            "2 Kings 15:23",
-            "2 Kings 15:27"
-          ],
-          "lookupCandidates": [
-            "fiftieth",
-            "fifti"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "giddel",
           "count": 4,
           "sampleRefs": [
@@ -5097,29 +5053,6 @@
           "reviewStatus": null
         },
         {
-          "word": "twoedged",
-          "count": 4,
-          "sampleRefs": [
-            "Psalms 149:6",
-            "Proverbs 5:4",
-            "Hebrews 4:12",
-            "Revelation 1:16"
-          ],
-          "lookupCandidates": [
-            "twoedged",
-            "twoedg",
-            "twoedge"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "ulam",
           "count": 4,
           "sampleRefs": [
@@ -5248,26 +5181,6 @@
           "reviewStatus": null
         },
         {
-          "word": "approve",
-          "count": 3,
-          "sampleRefs": [
-            "Psalms 49:13",
-            "1 Corinthians 16:3",
-            "Philippians 1:10"
-          ],
-          "lookupCandidates": [
-            "approve"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "ashbel",
           "count": 3,
           "sampleRefs": [
@@ -5357,6 +5270,89 @@
           ],
           "lookupCandidates": [
             "booz"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "conduct",
+          "count": 3,
+          "sampleRefs": [
+            "2 Samuel 19:15",
+            "2 Samuel 19:31",
+            "1 Corinthians 16:11"
+          ],
+          "lookupCandidates": [
+            "conduct"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "crumbs",
+          "count": 3,
+          "sampleRefs": [
+            "Matthew 15:27",
+            "Mark 7:28",
+            "Luke 16:21"
+          ],
+          "lookupCandidates": [
+            "crumbs",
+            "crumb",
+            "crumbe"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "discreet",
+          "count": 3,
+          "sampleRefs": [
+            "Genesis 41:33",
+            "Genesis 41:39",
+            "Titus 2:5"
+          ],
+          "lookupCandidates": [
+            "discreet"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "edifieth",
+          "count": 3,
+          "sampleRefs": [
+            "1 Corinthians 8:1",
+            "1 Corinthians 14:4",
+            "1 Corinthians 14:4"
+          ],
+          "lookupCandidates": [
+            "edifieth",
+            "edifi"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -12211,28 +12207,6 @@
         "reviewStatus": null
       },
       {
-        "word": "blast",
-        "count": 8,
-        "sampleRefs": [
-          "Exodus 15:8",
-          "Joshua 6:5",
-          "2 Samuel 22:16",
-          "2 Kings 19:7",
-          "Job 4:9"
-        ],
-        "lookupCandidates": [
-          "blast"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "housetops",
         "count": 8,
         "sampleRefs": [
@@ -13114,28 +13088,6 @@
         "reviewStatus": null
       },
       {
-        "word": "fiftieth",
-        "count": 4,
-        "sampleRefs": [
-          "Leviticus 25:10",
-          "Leviticus 25:11",
-          "2 Kings 15:23",
-          "2 Kings 15:27"
-        ],
-        "lookupCandidates": [
-          "fiftieth",
-          "fifti"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "giddel",
         "count": 4,
         "sampleRefs": [
@@ -13521,29 +13473,6 @@
         "reviewStatus": null
       },
       {
-        "word": "twoedged",
-        "count": 4,
-        "sampleRefs": [
-          "Psalms 149:6",
-          "Proverbs 5:4",
-          "Hebrews 4:12",
-          "Revelation 1:16"
-        ],
-        "lookupCandidates": [
-          "twoedged",
-          "twoedg",
-          "twoedge"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "ulam",
         "count": 4,
         "sampleRefs": [
@@ -13672,26 +13601,6 @@
         "reviewStatus": null
       },
       {
-        "word": "approve",
-        "count": 3,
-        "sampleRefs": [
-          "Psalms 49:13",
-          "1 Corinthians 16:3",
-          "Philippians 1:10"
-        ],
-        "lookupCandidates": [
-          "approve"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "ashbel",
         "count": 3,
         "sampleRefs": [
@@ -13781,6 +13690,89 @@
         ],
         "lookupCandidates": [
           "booz"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "conduct",
+        "count": 3,
+        "sampleRefs": [
+          "2 Samuel 19:15",
+          "2 Samuel 19:31",
+          "1 Corinthians 16:11"
+        ],
+        "lookupCandidates": [
+          "conduct"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "crumbs",
+        "count": 3,
+        "sampleRefs": [
+          "Matthew 15:27",
+          "Mark 7:28",
+          "Luke 16:21"
+        ],
+        "lookupCandidates": [
+          "crumbs",
+          "crumb",
+          "crumbe"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "discreet",
+        "count": 3,
+        "sampleRefs": [
+          "Genesis 41:33",
+          "Genesis 41:39",
+          "Titus 2:5"
+        ],
+        "lookupCandidates": [
+          "discreet"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "edifieth",
+        "count": 3,
+        "sampleRefs": [
+          "1 Corinthians 8:1",
+          "1 Corinthians 14:4",
+          "1 Corinthians 14:4"
+        ],
+        "lookupCandidates": [
+          "edifieth",
+          "edifi"
         ],
         "hasDefinition": false,
         "hasEaston": false,

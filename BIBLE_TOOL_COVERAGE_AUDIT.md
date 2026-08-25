@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T13:04:01.719Z
+Generated: 2026-08-25T13:41:10.480Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,286/12,454 meaningful KJV words have a lookup candidate (66.5%).
-- Combined word/topic lookup: 11,256/12,454 meaningful KJV words have Webster, Easton, or Nave help (90.4%).
+- Webster 1828: 8,314/12,454 meaningful KJV words have a lookup candidate (66.8%).
+- Combined word/topic lookup: 11,282/12,454 meaningful KJV words have Webster, Easton, or Nave help (90.6%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -78,7 +78,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | quarters | 9 | Exodus 13:7; Deuteronomy 22:12; 1 Chronicles 9:24; Jeremiah 49:36; Ezekiel 38:6 |
 | shelomith | 9 | Leviticus 24:11; 1 Chronicles 3:19; 1 Chronicles 23:9; 1 Chronicles 23:18; 1 Chronicles 26:25 |
 | aphek | 8 | Joshua 12:18; Joshua 13:4; Joshua 19:30; 1 Samuel 4:1; 1 Samuel 29:1 |
-| blast | 8 | Exodus 15:8; Joshua 6:5; 2 Samuel 22:16; 2 Kings 19:7; Job 4:9 |
 | housetops | 8 | 2 Kings 19:26; Psalms 129:6; Isaiah 22:1; Isaiah 37:27; Jeremiah 48:38 |
 | quarter | 8 | Genesis 19:4; Numbers 34:3; Joshua 15:5; Joshua 18:14; Joshua 18:15 |
 | uri | 8 | Exodus 31:2; Exodus 35:30; Exodus 38:22; 1 Kings 4:19; 1 Chronicles 2:20 |
@@ -101,6 +100,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | jezreelitess | 5 | 1 Samuel 27:3; 1 Samuel 30:5; 2 Samuel 2:2; 2 Samuel 3:2; 1 Chronicles 3:1 |
 | jozadak | 5 | Ezra 3:2; Ezra 3:8; Ezra 5:2; Ezra 10:18; Nehemiah 12:26 |
 | noe | 5 | Matthew 24:37; Matthew 24:38; Luke 3:36; Luke 17:26; Luke 17:27 |
+| parosh | 5 | Ezra 2:3; Ezra 10:25; Nehemiah 3:25; Nehemiah 7:8; Nehemiah 10:14 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

@@ -1,0 +1,115 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-41-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {"headword": "approve", "url": "https://archive.org/download/americandictiona01websrich/page/n186_w2300.jpg", "sha256": "1ada292ee5669e5375a9960422b756e69ac31b339a06ea5b221042d7e05ed118"},
+    {"headword": "blast", "url": "https://archive.org/download/americandictiona01websrich/page/n277_w2300.jpg", "sha256": "05f53f0166208fafe1a1085a3596bac3170a198f083d5970f535213ed3a5f103"},
+    {"headword": "bridechamber", "url": "https://archive.org/download/americandictiona01websrich/page/n306_w2300.jpg", "sha256": "e94b0788c2e685693aaaeef8bb785fa945d4779b06afb3abf4bddfb140e5780d"},
+    {"headword": "clad", "url": "https://archive.org/download/americandictiona01websrich/page/n395_w2300.jpg", "sha256": "a362d86728cfd8a3fb1a51de4b5ef8ebfa96c24c41133af4436c02975f9ad428"},
+    {"headword": "cloven", "url": "https://archive.org/download/americandictiona01websrich/page/n407_w2300.jpg", "sha256": "80bd66527ad9ca4eca81895a358654e893d5bcdcfc3372cadd2c66327c6c402f"},
+    {"headword": "comfortable", "url": "https://archive.org/download/americandictiona01websrich/page/n424_w2300.jpg", "sha256": "a6bc93229127201b71a0bc6ed684143b5c311716575cedc3c2734c4d1d4a6e12"},
+    {"headword": "commonly", "url": "https://archive.org/download/americandictiona01websrich/page/n429_w2300.jpg", "sha256": "b3999fc5295b101a39251f9c76476515727f8a34189bb80a3a9aaded4641174f"},
+    {"headword": "corruptly", "url": "https://archive.org/download/americandictiona01websrich/page/n487_w2300.jpg", "sha256": "5bd3e7775bc4fa8b037d979ca99848bbc6e6fada34caf6f0e74d53b7e066ac6e"},
+    {"headword": "courteously", "url": "https://archive.org/download/americandictiona01websrich/page/n497_w2300.jpg", "sha256": "43364236dca18209e31a034c145271ef0a7716b3eb2cce3842a5b0aeae87f3fd"},
+    {"headword": "deliciously", "url": "https://archive.org/download/americandictiona01websrich/page/n552_w2300.jpg", "sha256": "14892f51781b634cf6e570a26a64c34eea0ec8c5bc11cacd189aef5e6913e221"},
+    {"headword": "embroiderer", "url": "https://archive.org/download/americandictiona01websrich/page/n661_w2300.jpg", "sha256": "2501af2211c4cec44965a51a9f580420109a3a0b8de64eeff0326cdb3fb1c08a"},
+    {"headword": "evidently", "url": "https://archive.org/download/americandictiona01websrich/page/n700_w2300.jpg", "sha256": "49ef3c14e7f6382f4f3c002152949b6b0155c5086f8c56051ab37d851cdec858"},
+    {"headword": "excuse", "url": "https://archive.org/download/americandictiona01websrich/page/n707_w2300.jpg", "sha256": "5e9ea53d273bdfcf51fba5579c4bb23e4d230553b5b899cdbdb27cbf32de3479"},
+    {"headword": "fainthearted", "url": "https://archive.org/download/americandictiona01websrich/page/n726_w2300.jpg", "sha256": "62df5125c9e4a2d3c22aef11f4b29d30f579ce20897753e9f0eb5476ca210bd7"},
+    {"headword": "faultless", "url": "https://archive.org/download/americandictiona01websrich/page/n739_w2300.jpg", "sha256": "56ab3cd8aeae8adb4c3f8908c0f745cd71e8e045fafe9c08553ac3a1cfaf2ef6"},
+    {"headword": "fiftieth", "url": "https://archive.org/download/americandictiona01websrich/page/n752_w2300.jpg", "sha256": "11d9f40aed9c7d2f4b4aab4078731340eb5bf7d2d6cec5c460330e125a0163a7"},
+    {"headword": "fourfooted", "url": "https://archive.org/download/americandictiona01websrich/page/n796_w2300.jpg", "sha256": "20878006c149c4556ecd7d6e2e3e73574f273cc30d6380daa6fd70e29dc710b4"},
+    {"headword": "furtherance", "url": "https://archive.org/download/americandictiona01websrich/page/n811_w2300.jpg", "sha256": "9c5acc4fbf0586ffefeb6b2ad29210147161dac3d0b63a77c32597a6871d0461"},
+    {"headword": "generally", "url": "https://archive.org/download/americandictiona01websrich/page/n824_w2300.jpg", "sha256": "61668b27197796bdb11a0ee3ca4728fb063c3aea798252d8496b8454400ec560"},
+    {"headword": "gently", "url": "https://archive.org/download/americandictiona01websrich/page/n826_w2300.jpg", "sha256": "9bdb6e3719059f2f680a73fb9f5107043475bf8f5ff9c5d72aec754627564fe4"},
+    {"headword": "gorgeously", "url": "https://archive.org/download/americandictiona01websrich/page/n847_w2300.jpg", "sha256": "3f6899402b05bb1554d4b89521dfe16b57bbdcec882b8f08a93976b6a5ef649d"},
+    {"headword": "sufficiency", "url": "https://archive.org/download/americandictiona02websrich/page/n697_w2300.jpg", "sha256": "9db1d529d4e97cef4e0953a0c82d4d478486eafa72f482de9faf7cd91b4825fd"},
+    {"headword": "twoedged", "url": "https://archive.org/download/americandictiona02websrich/page/n816_w2300.jpg", "sha256": "8a5832ccef3afe12bd77a73b6e3be0bbee60fb7156da1756f8f80529c9f51298"}
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Screened 65 unresolved KJV spellings in two high-value review packets, accepted only exact Webster headwords whose complete displayed wording could be verified against the original 1828 scan, and held every omitted, damaged, or uncertain transcription.",
+  "review_method": "Compared every promoted web transcription with its full-resolution printed page, preserved Webster's wording, made only three visually confirmed punctuation or citation corrections, inspected final transformed definitions, and retained scan hashes for reproducibility.",
+  "screening_summary": {
+    "requested_spellings": 65,
+    "exact_source_pages_found": 39,
+    "requested_spellings_without_exact_entry": 26,
+    "reviewed_overlays_promoted": 23,
+    "exact_entries_held_for_restoration": 16,
+    "net_new_reviewed_overlays": 23,
+    "automatic_inflection_forms_resolved": 5,
+    "missing_kjv_forms_resolved": 28,
+    "kjv_occurrences_resolved": 68
+  },
+  "promoted_headwords": [
+    "approve", "blast", "bridechamber", "clad", "cloven", "comfortable", "commonly", "corruptly", "courteously", "deliciously", "embroiderer", "evidently", "excuse", "fainthearted", "faultless", "fiftieth", "fourfooted", "furtherance", "generally", "gently", "gorgeously", "sufficiency", "twoedged"
+  ],
+  "reviewed_transcription_actions": [
+    {"word": "excuse", "actions": ["Replaced the unsupported web citation Romans 2:1 with Webster's printed Romans 2 citation."]},
+    {"word": "corruptly", "actions": ["Restored the terminal period after the final usage sentence."]},
+    {"word": "furtherance", "actions": ["Replaced the unsupported web citation Philippians 1:12 with Webster's printed Philippians 1 citation."]}
+  ],
+  "held_exact_entries": [
+    {"word": "allow", "reason": "Printed etymology is damaged or omitted in the web transcription."},
+    {"word": "austere", "reason": "Web transcription has a broken etymology bracket."},
+    {"word": "bountiful", "reason": "Web transcription omits printed wording."},
+    {"word": "childhood", "reason": "Web transcription omits the printed etymology."},
+    {"word": "conceal", "reason": "Printed etymology is damaged or omitted in the web transcription."},
+    {"word": "concourse", "reason": "Web transcription omits the printed etymology."},
+    {"word": "conduct", "reason": "Printed wording requires dedicated restoration."},
+    {"word": "confirmation", "reason": "Long entry requires dedicated restoration and theological section review."},
+    {"word": "describe", "reason": "Printed etymology is damaged or omitted in the web transcription."},
+    {"word": "discreet", "reason": "Printed etymology is damaged or omitted in the web transcription."},
+    {"word": "dissimulation", "reason": "Web transcription omits the printed etymology and damages capitalization."},
+    {"word": "doubtful", "reason": "Long entry requires dedicated restoration."},
+    {"word": "engrave", "reason": "Web transcription omits a substantial printed etymology."},
+    {"word": "extinct", "reason": "Web transcription has a broken etymology bracket and punctuation."},
+    {"word": "quarter", "reason": "Printed etymology is damaged or omitted in the web transcription."},
+    {"word": "sustain", "reason": "Printed etymology is damaged or omitted in the web transcription."}
+  ],
+  "verified_lookup_relationships": [],
+  "automatic_lookup_relationships": [
+    {"word": "approvest", "lookup_headword": "approve", "kjv_occurrences": 1, "relationship": "Automatically recognized KJV verb inflection"},
+    {"word": "approveth", "lookup_headword": "approve", "kjv_occurrences": 1, "relationship": "Automatically recognized KJV verb inflection"},
+    {"word": "approving", "lookup_headword": "approve", "kjv_occurrences": 1, "relationship": "Automatically recognized regular verb inflection"},
+    {"word": "excused", "lookup_headword": "excuse", "kjv_occurrences": 2, "relationship": "Automatically recognized regular verb inflection"},
+    {"word": "excusing", "lookup_headword": "excuse", "kjv_occurrences": 1, "relationship": "Automatically recognized regular verb inflection"}
+  ],
+  "entries": [
+    {"word":"approve","kjv_occurrences":3,"lookup_headword":"approve","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/approve","source_line_start":1,"source_line_end":13,"exact_page_heading":"APPROVE","exact_entry_heading":"APPROVE","exact_source_match":true},
+    {"word":"blast","kjv_occurrences":8,"lookup_headword":"blast","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/blast","source_line_start":1,"source_line_end":5,"exact_page_heading":"BL'AST","exact_entry_heading":"BL'AST","exact_source_match":true},
+    {"word":"bridechamber","kjv_occurrences":3,"lookup_headword":"bridechamber","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/bridechamber","source_line_start":1,"source_line_end":1,"exact_page_heading":"BRI'DECHAMBER","exact_entry_heading":"BRI'DECHAMBER","exact_source_match":true},
+    {"word":"clad","kjv_occurrences":2,"lookup_headword":"clad","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/clad","source_line_start":1,"source_line_end":3,"exact_page_heading":"CLAD","exact_entry_heading":"CLAD","exact_source_match":true},
+    {"word":"cloven","kjv_occurrences":2,"lookup_headword":"cloven","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/cloven","source_line_start":1,"source_line_end":1,"exact_page_heading":"CLOVEN","exact_entry_heading":"CLOVEN","exact_source_match":true},
+    {"word":"comfortable","kjv_occurrences":2,"lookup_headword":"comfortable","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/comfortable","source_line_start":1,"source_line_end":7,"exact_page_heading":"COMFORTABLE","exact_entry_heading":"COMFORTABLE","exact_source_match":true},
+    {"word":"commonly","kjv_occurrences":2,"lookup_headword":"commonly","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/commonly","source_line_start":1,"source_line_end":1,"exact_page_heading":"COMMONLY","exact_entry_heading":"COMMONLY","exact_source_match":true},
+    {"word":"corruptly","kjv_occurrences":2,"lookup_headword":"corruptly","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/corruptly","source_line_start":1,"source_line_end":4,"exact_page_heading":"CORRUPTLY","exact_entry_heading":"CORRUPTLY","exact_source_match":true},
+    {"word":"courteously","kjv_occurrences":2,"lookup_headword":"courteously","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/courteously","source_line_start":1,"source_line_end":1,"exact_page_heading":"COURTEOUSLY","exact_entry_heading":"COURTEOUSLY","exact_source_match":true},
+    {"word":"deliciously","kjv_occurrences":2,"lookup_headword":"deliciously","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/deliciously","source_line_start":1,"source_line_end":1,"exact_page_heading":"DELICIOUSLY","exact_entry_heading":"DELICIOUSLY","exact_source_match":true},
+    {"word":"embroiderer","kjv_occurrences":2,"lookup_headword":"embroiderer","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/embroiderer","source_line_start":1,"source_line_end":1,"exact_page_heading":"EMBROID'ERER","exact_entry_heading":"EMBROID'ERER","exact_source_match":true},
+    {"word":"evidently","kjv_occurrences":2,"lookup_headword":"evidently","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/evidently","source_line_start":1,"source_line_end":1,"exact_page_heading":"EV'IDENTLY","exact_entry_heading":"EV'IDENTLY","exact_source_match":true},
+    {"word":"excuse","kjv_occurrences":3,"lookup_headword":"excuse","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/excuse","source_line_start":1,"source_line_end":15,"exact_page_heading":"EXCU'SE","exact_entry_heading":"EXCU'SE","exact_source_match":true},
+    {"word":"fainthearted","kjv_occurrences":3,"lookup_headword":"fainthearted","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/fainthearted","source_line_start":1,"source_line_end":2,"exact_page_heading":"FAINTHEARTED","exact_entry_heading":"FAINTHEARTED","exact_source_match":true},
+    {"word":"faultless","kjv_occurrences":2,"lookup_headword":"faultless","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/faultless","source_line_start":1,"source_line_end":3,"exact_page_heading":"FAULT'LESS","exact_entry_heading":"FAULT'LESS","exact_source_match":true},
+    {"word":"fiftieth","kjv_occurrences":4,"lookup_headword":"fiftieth","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/fiftieth","source_line_start":1,"source_line_end":2,"exact_page_heading":"FIF'TIETH","exact_entry_heading":"FIF'TIETH","exact_source_match":true},
+    {"word":"fourfooted","kjv_occurrences":3,"lookup_headword":"fourfooted","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/fourfooted","source_line_start":1,"source_line_end":1,"exact_page_heading":"FOURFOOTED","exact_entry_heading":"FOURFOOTED","exact_source_match":true},
+    {"word":"furtherance","kjv_occurrences":2,"lookup_headword":"furtherance","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/furtherance","source_line_start":1,"source_line_end":2,"exact_page_heading":"FUR'THERANCE","exact_entry_heading":"FUR'THERANCE","exact_source_match":true},
+    {"word":"generally","kjv_occurrences":2,"lookup_headword":"generally","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/generally","source_line_start":1,"source_line_end":3,"exact_page_heading":"GEN'ERALLY","exact_entry_heading":"GEN'ERALLY","exact_source_match":true},
+    {"word":"gently","kjv_occurrences":2,"lookup_headword":"gently","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/gently","source_line_start":1,"source_line_end":3,"exact_page_heading":"GEN'TLY","exact_entry_heading":"GEN'TLY","exact_source_match":true},
+    {"word":"gorgeously","kjv_occurrences":2,"lookup_headword":"gorgeously","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/gorgeously","source_line_start":1,"source_line_end":1,"exact_page_heading":"GOR'GEOUSLY","exact_entry_heading":"GOR'GEOUSLY","exact_source_match":true},
+    {"word":"sufficiency","kjv_occurrences":3,"lookup_headword":"sufficiency","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/sufficiency","source_line_start":1,"source_line_end":10,"exact_page_heading":"SUFFI'CIENCY","exact_entry_heading":"SUFFI'CIENCY","exact_source_match":true},
+    {"word":"twoedged","kjv_occurrences":4,"lookup_headword":"twoedged","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/twoedged","source_line_start":1,"source_line_end":1,"exact_page_heading":"TWOEDGED","exact_entry_heading":"TWOEDGED","exact_source_match":true}
+  ]
+}
