@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-25T00:14:09.848Z",
+    "generated_at": "2026-08-25T01:12:12.185Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60938,
+      "entries": 60945,
       "normalizedHeadwords": 51077,
       "meaningfulWordsWithDefinition": 7968,
       "meaningfulWordsWithoutDefinition": 4486,
@@ -2314,120 +2314,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "suffice",
-          "count": 7,
-          "sampleRefs": [
-            "Numbers 11:22",
-            "Numbers 11:22",
-            "Deuteronomy 3:26",
-            "1 Kings 20:10",
-            "Ezekiel 44:6"
-          ],
-          "lookupCandidates": [
-            "suffice"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SUFFICE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "sunder",
-          "count": 7,
-          "sampleRefs": [
-            "Psalms 46:9",
-            "Psalms 107:14",
-            "Psalms 107:16",
-            "Isaiah 27:9",
-            "Isaiah 45:2"
-          ],
-          "lookupCandidates": [
-            "sunder"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SUN'DER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "supposing",
-          "count": 7,
-          "sampleRefs": [
-            "Luke 2:44",
-            "John 20:15",
-            "Acts 14:19",
-            "Acts 16:27",
-            "Acts 27:13"
-          ],
-          "lookupCandidates": [
-            "supposing",
-            "suppos",
-            "suppose"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SUPPOSING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "tempting",
-          "count": 7,
-          "sampleRefs": [
-            "Matthew 16:1",
-            "Matthew 19:3",
-            "Matthew 22:35",
-            "Mark 8:11",
-            "Mark 10:2"
-          ],
-          "lookupCandidates": [
-            "tempting",
-            "tempt",
-            "tempte"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TEMPT'ING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "tetrarch",
-          "count": 7,
-          "sampleRefs": [
-            "Matthew 14:1",
-            "Luke 3:1",
-            "Luke 3:1",
-            "Luke 3:1",
-            "Luke 3:19"
-          ],
-          "lookupCandidates": [
-            "tetrarch"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TE'TRARCH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "thread",
           "count": 7,
           "sampleRefs": [
@@ -2447,50 +2333,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "THREAD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "throat",
-          "count": 7,
-          "sampleRefs": [
-            "Psalms 5:9",
-            "Psalms 69:3",
-            "Psalms 115:7",
-            "Proverbs 23:2",
-            "Jeremiah 2:25"
-          ],
-          "lookupCandidates": [
-            "throat"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "THROAT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "unprofitable",
-          "count": 7,
-          "sampleRefs": [
-            "Job 15:3",
-            "Matthew 25:30",
-            "Luke 17:10",
-            "Romans 3:12",
-            "Titus 3:9"
-          ],
-          "lookupCandidates": [
-            "unprofitable"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UNPROFITABLE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3602,6 +3444,163 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "KNIFE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "knit",
+          "count": 6,
+          "sampleRefs": [
+            "Judges 20:11",
+            "1 Samuel 18:1",
+            "1 Chronicles 12:17",
+            "Acts 10:11",
+            "Colossians 2:2"
+          ],
+          "lookupCandidates": [
+            "knit"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "KNIT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "laden",
+          "count": 6,
+          "sampleRefs": [
+            "Genesis 45:23",
+            "Genesis 45:23",
+            "1 Samuel 16:20",
+            "Isaiah 1:4",
+            "Matthew 11:28"
+          ],
+          "lookupCandidates": [
+            "laden"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LA'DEN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "liberal",
+          "count": 6,
+          "sampleRefs": [
+            "Proverbs 11:25",
+            "Isaiah 32:5",
+            "Isaiah 32:8",
+            "Isaiah 32:8",
+            "Isaiah 32:8"
+          ],
+          "lookupCandidates": [
+            "liberal"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LIB'ERAL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "lodging",
+          "count": 6,
+          "sampleRefs": [
+            "Joshua 4:3",
+            "Judges 19:15",
+            "Isaiah 10:29",
+            "Jeremiah 9:2",
+            "Acts 28:23"
+          ],
+          "lookupCandidates": [
+            "lodging",
+            "lodg",
+            "lodge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LODG'ING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "lowly",
+          "count": 6,
+          "sampleRefs": [
+            "Psalms 138:6",
+            "Proverbs 3:34",
+            "Proverbs 11:2",
+            "Proverbs 16:19",
+            "Zechariah 9:9"
+          ],
+          "lookupCandidates": [
+            "lowly"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LOWLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "mandrakes",
+          "count": 6,
+          "sampleRefs": [
+            "Genesis 30:14",
+            "Genesis 30:14",
+            "Genesis 30:15",
+            "Genesis 30:15",
+            "Genesis 30:16"
+          ],
+          "lookupCandidates": [
+            "mandrakes",
+            "mandrake"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MAN'DRAKE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "mankind",
+          "count": 6,
+          "sampleRefs": [
+            "Leviticus 18:22",
+            "Leviticus 20:13",
+            "Job 12:10",
+            "1 Corinthians 6:9",
+            "1 Timothy 1:10"
+          ],
+          "lookupCandidates": [
+            "mankind"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MANKIND",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10805,120 +10804,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "suffice",
-        "count": 7,
-        "sampleRefs": [
-          "Numbers 11:22",
-          "Numbers 11:22",
-          "Deuteronomy 3:26",
-          "1 Kings 20:10",
-          "Ezekiel 44:6"
-        ],
-        "lookupCandidates": [
-          "suffice"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SUFFICE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "sunder",
-        "count": 7,
-        "sampleRefs": [
-          "Psalms 46:9",
-          "Psalms 107:14",
-          "Psalms 107:16",
-          "Isaiah 27:9",
-          "Isaiah 45:2"
-        ],
-        "lookupCandidates": [
-          "sunder"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SUN'DER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "supposing",
-        "count": 7,
-        "sampleRefs": [
-          "Luke 2:44",
-          "John 20:15",
-          "Acts 14:19",
-          "Acts 16:27",
-          "Acts 27:13"
-        ],
-        "lookupCandidates": [
-          "supposing",
-          "suppos",
-          "suppose"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SUPPOSING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "tempting",
-        "count": 7,
-        "sampleRefs": [
-          "Matthew 16:1",
-          "Matthew 19:3",
-          "Matthew 22:35",
-          "Mark 8:11",
-          "Mark 10:2"
-        ],
-        "lookupCandidates": [
-          "tempting",
-          "tempt",
-          "tempte"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TEMPT'ING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "tetrarch",
-        "count": 7,
-        "sampleRefs": [
-          "Matthew 14:1",
-          "Luke 3:1",
-          "Luke 3:1",
-          "Luke 3:1",
-          "Luke 3:19"
-        ],
-        "lookupCandidates": [
-          "tetrarch"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TE'TRARCH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "thread",
         "count": 7,
         "sampleRefs": [
@@ -10938,50 +10823,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "THREAD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "throat",
-        "count": 7,
-        "sampleRefs": [
-          "Psalms 5:9",
-          "Psalms 69:3",
-          "Psalms 115:7",
-          "Proverbs 23:2",
-          "Jeremiah 2:25"
-        ],
-        "lookupCandidates": [
-          "throat"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "THROAT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "unprofitable",
-        "count": 7,
-        "sampleRefs": [
-          "Job 15:3",
-          "Matthew 25:30",
-          "Luke 17:10",
-          "Romans 3:12",
-          "Titus 3:9"
-        ],
-        "lookupCandidates": [
-          "unprofitable"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UNPROFITABLE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12093,6 +11934,163 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "KNIFE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "knit",
+        "count": 6,
+        "sampleRefs": [
+          "Judges 20:11",
+          "1 Samuel 18:1",
+          "1 Chronicles 12:17",
+          "Acts 10:11",
+          "Colossians 2:2"
+        ],
+        "lookupCandidates": [
+          "knit"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "KNIT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "laden",
+        "count": 6,
+        "sampleRefs": [
+          "Genesis 45:23",
+          "Genesis 45:23",
+          "1 Samuel 16:20",
+          "Isaiah 1:4",
+          "Matthew 11:28"
+        ],
+        "lookupCandidates": [
+          "laden"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LA'DEN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "liberal",
+        "count": 6,
+        "sampleRefs": [
+          "Proverbs 11:25",
+          "Isaiah 32:5",
+          "Isaiah 32:8",
+          "Isaiah 32:8",
+          "Isaiah 32:8"
+        ],
+        "lookupCandidates": [
+          "liberal"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LIB'ERAL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "lodging",
+        "count": 6,
+        "sampleRefs": [
+          "Joshua 4:3",
+          "Judges 19:15",
+          "Isaiah 10:29",
+          "Jeremiah 9:2",
+          "Acts 28:23"
+        ],
+        "lookupCandidates": [
+          "lodging",
+          "lodg",
+          "lodge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LODG'ING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "lowly",
+        "count": 6,
+        "sampleRefs": [
+          "Psalms 138:6",
+          "Proverbs 3:34",
+          "Proverbs 11:2",
+          "Proverbs 16:19",
+          "Zechariah 9:9"
+        ],
+        "lookupCandidates": [
+          "lowly"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LOWLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "mandrakes",
+        "count": 6,
+        "sampleRefs": [
+          "Genesis 30:14",
+          "Genesis 30:14",
+          "Genesis 30:15",
+          "Genesis 30:15",
+          "Genesis 30:16"
+        ],
+        "lookupCandidates": [
+          "mandrakes",
+          "mandrake"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MAN'DRAKE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "mankind",
+        "count": 6,
+        "sampleRefs": [
+          "Leviticus 18:22",
+          "Leviticus 20:13",
+          "Job 12:10",
+          "1 Corinthians 6:9",
+          "1 Timothy 1:10"
+        ],
+        "lookupCandidates": [
+          "mankind"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MANKIND",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
