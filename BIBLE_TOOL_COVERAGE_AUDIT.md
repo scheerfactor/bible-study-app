@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T02:23:04.932Z
+Generated: 2026-08-25T02:38:08.142Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -135,13 +135,13 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | arabians | ARA'BIAN | 6 | ocr_full_import_needs_spot_review |
 | byword | BY'-WORD | 6 | ocr_full_import_needs_spot_review |
 | cankerworm | CANK'ER-WORM | 6 | ocr_full_import_needs_spot_review |
-| frost | FROST | 6 | ocr_full_import_needs_spot_review |
-| furious | FURIOUS | 6 | ocr_full_import_needs_spot_review |
-| guests | GUEST | 6 | ocr_full_import_needs_spot_review |
-| halt | HALT | 6 | ocr_full_import_needs_spot_review |
 | hastened | HASTEN | 6 | ocr_full_import_needs_spot_review |
-| highly | HIGHLY | 6 | ocr_full_import_needs_spot_review |
-| hosanna | HOSAN'NA | 6 | ocr_full_import_needs_spot_review |
+| jared | JAR | 6 | ocr_full_import_needs_spot_review |
+| laden | LA'DEN | 6 | ocr_full_import_needs_spot_review |
+| lowly | LOWLY | 6 | ocr_full_import_needs_spot_review |
+| mandrakes | MAN'DRAKE | 6 | ocr_full_import_needs_spot_review |
+| mankind | MANKIND | 6 | ocr_full_import_needs_spot_review |
+| manners | MAN'NERS | 6 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

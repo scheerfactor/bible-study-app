@@ -52,6 +52,8 @@
     "audit:commentary-coverage": "node scripts/audit-major-commentary-coverage.mjs",
     "audit:dictionary": "node scripts/audit-dictionary-coverage.mjs",
     "audit:webster-quality": "node scripts/audit-webster-text-quality.mjs",
+    "webster:review-packet": "node scripts/import-webster-reviewed-web-overlays.mjs --dry-run --continue-on-missing --report=data/reports/webster-review-packet.json",
+    "validate:webster-review": "node scripts/validate-webster-review-batch.mjs",
     "build:dictionary-indexes": "node scripts/build-dictionary-resource-indexes.mjs",
     "build:nave-index": "node scripts/build-nave-topical-index.mjs",
     "commentary:cleanup-studylight": "node scripts/cleanup-studylight-commentary-wrappers.mjs",
