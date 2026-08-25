@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-25T22:53:54.317Z",
+  "generated_at": "2026-08-25T23:33:42.050Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4062,
+  "total": 4053,
   "priorityCounts": {
     "high": 231,
     "medium": 680,
-    "low": 1175,
+    "low": 1166,
     "single-use": 1976
   },
   "withSupplementalHelp": 2912,
-  "withoutSupplementalHelp": 1150,
+  "withoutSupplementalHelp": 1141,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -630,22 +630,6 @@
       ]
     },
     {
-      "word": "cieled",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "cieled",
-        "ciel",
-        "ciele"
-      ],
-      "sampleRefs": [
-        "2 Chronicles 3:5",
-        "Jeremiah 22:14",
-        "Ezekiel 41:16",
-        "Haggai 1:4"
-      ]
-    },
-    {
       "word": "danites",
       "count": 4,
       "priority": "low",
@@ -715,21 +699,6 @@
         "1 Chronicles 7:12",
         "1 Chronicles 8:8",
         "1 Chronicles 8:11"
-      ]
-    },
-    {
-      "word": "justifieth",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "justifieth",
-        "justifi"
-      ],
-      "sampleRefs": [
-        "Proverbs 17:15",
-        "Isaiah 50:8",
-        "Romans 4:5",
-        "Romans 8:33"
       ]
     },
     {
@@ -920,52 +889,6 @@
       ]
     },
     {
-      "word": "unbelievers",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "unbelievers",
-        "unbeliever",
-        "unbelievere"
-      ],
-      "sampleRefs": [
-        "Luke 12:46",
-        "1 Corinthians 6:6",
-        "1 Corinthians 14:23",
-        "2 Corinthians 6:14"
-      ]
-    },
-    {
-      "word": "undersetters",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "undersetters",
-        "undersetter",
-        "undersettere"
-      ],
-      "sampleRefs": [
-        "1 Kings 7:30",
-        "1 Kings 7:30",
-        "1 Kings 7:34",
-        "1 Kings 7:34"
-      ]
-    },
-    {
-      "word": "woven",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "woven"
-      ],
-      "sampleRefs": [
-        "Exodus 28:32",
-        "Exodus 39:22",
-        "Exodus 39:27",
-        "John 19:23"
-      ]
-    },
-    {
       "word": "aminadab",
       "count": 3,
       "priority": "low",
@@ -1044,35 +967,6 @@
       ]
     },
     {
-      "word": "crumbs",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "crumbs",
-        "crumb",
-        "crumbe"
-      ],
-      "sampleRefs": [
-        "Matthew 15:27",
-        "Mark 7:28",
-        "Luke 16:21"
-      ]
-    },
-    {
-      "word": "edifieth",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "edifieth",
-        "edifi"
-      ],
-      "sampleRefs": [
-        "1 Corinthians 8:1",
-        "1 Corinthians 14:4",
-        "1 Corinthians 14:4"
-      ]
-    },
-    {
       "word": "eloth",
       "count": 3,
       "priority": "low",
@@ -1083,21 +977,6 @@
         "1 Kings 9:26",
         "2 Chronicles 8:17",
         "2 Chronicles 26:2"
-      ]
-    },
-    {
-      "word": "excelleth",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "excelleth",
-        "excell",
-        "excelle"
-      ],
-      "sampleRefs": [
-        "Ecclesiastes 2:13",
-        "Ecclesiastes 2:13",
-        "2 Corinthians 3:10"
       ]
     },
     {
@@ -1151,20 +1030,6 @@
         "1 Chronicles 5:10",
         "1 Chronicles 5:19",
         "1 Chronicles 5:20"
-      ]
-    },
-    {
-      "word": "holiest",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "holiest",
-        "holi"
-      ],
-      "sampleRefs": [
-        "Hebrews 9:3",
-        "Hebrews 9:8",
-        "Hebrews 10:19"
       ]
     },
     {
@@ -1447,6 +1312,125 @@
         "Exodus 25:38",
         "Exodus 37:23",
         "Numbers 4:9"
+      ]
+    },
+    {
+      "word": "suit",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "suit"
+      ],
+      "sampleRefs": [
+        "Judges 17:10",
+        "2 Samuel 15:4",
+        "Job 11:19"
+      ]
+    },
+    {
+      "word": "tanner",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "tanner"
+      ],
+      "sampleRefs": [
+        "Acts 9:43",
+        "Acts 10:6",
+        "Acts 10:32"
+      ]
+    },
+    {
+      "word": "tekoite",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "tekoite"
+      ],
+      "sampleRefs": [
+        "2 Samuel 23:26",
+        "1 Chronicles 11:28",
+        "1 Chronicles 27:9"
+      ]
+    },
+    {
+      "word": "trustedst",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "trustedst"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 28:52",
+        "Jeremiah 5:17",
+        "Jeremiah 12:5"
+      ]
+    },
+    {
+      "word": "unwashen",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "unwashen"
+      ],
+      "sampleRefs": [
+        "Matthew 15:20",
+        "Mark 7:2",
+        "Mark 7:5"
+      ]
+    },
+    {
+      "word": "weaker",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "weaker"
+      ],
+      "sampleRefs": [
+        "2 Samuel 3:1",
+        "2 Samuel 3:1",
+        "1 Peter 3:7"
+      ]
+    },
+    {
+      "word": "womenservants",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "womenservants",
+        "womenservant",
+        "womenservante"
+      ],
+      "sampleRefs": [
+        "Genesis 20:14",
+        "Genesis 32:5",
+        "Genesis 32:22"
+      ]
+    },
+    {
+      "word": "abhorrest",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "abhorrest",
+        "abhorr",
+        "abhorre"
+      ],
+      "sampleRefs": [
+        "Isaiah 7:16",
+        "Romans 2:22"
+      ]
+    },
+    {
+      "word": "achaz",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "achaz"
+      ],
+      "sampleRefs": [
+        "Matthew 1:9",
+        "Matthew 1:9"
       ]
     }
   ]

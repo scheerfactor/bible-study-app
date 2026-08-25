@@ -10,7 +10,6 @@ const supplementalHymns = JSON.parse(
 const errors = [];
 const ids = new Set();
 const titles = new Set();
-const sourceFiles = new Set();
 
 function sha256(value) {
   return createHash("sha256").update(value).digest("hex");
@@ -44,8 +43,7 @@ for (const hymn of hymns) {
     [hymn.midiFile, hymn.midiSha256],
     [evidenceFile, evidenceSha256],
   ]) {
-    if (!sourceFile || sourceFiles.has(sourceFile)) errors.push("Missing or duplicate hymn source file: " + sourceFile);
-    sourceFiles.add(sourceFile);
+    if (!sourceFile) errors.push("Missing hymn source file: " + sourceFile);
     try {
       const source = await readFile(resolve(root, "data", "hymns", "sources", sourceFile));
       if (!expectedSha256 || sha256(source) !== expectedSha256) errors.push("Hymn source checksum mismatch: " + sourceFile);

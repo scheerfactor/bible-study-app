@@ -1,0 +1,136 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-47-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive full-resolution page scans and OCR XML, with Webster's 1828 web transcription used as a locator and cross-check.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {
+      "headword": "ceiled",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n359_w2300.jpg",
+      "sha256": "2cbc3cd6a95dfb0fc10710a0fd9700c7adcfd72980711679d312c6346aaa91bc"
+    },
+    {
+      "headword": "crum",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n513_w2300.jpg",
+      "sha256": "df110a235c1cacfea5cb21df505e45154226b1ae4785ed07616397ec466f8ecd"
+    },
+    {
+      "headword": "edify",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n647_w2300.jpg",
+      "sha256": "cae05773d16bd668b13e4039de241ea21d6d9bcd291951839e4d6b7fd5fa957b"
+    },
+    {
+      "headword": "unbeliever",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n823_w2300.jpg",
+      "sha256": "62f1adeb255b1cdddf53a82880ed03c00782f698cb57bcb4c211b47f2ef60f2d"
+    },
+    {
+      "headword": "undersetter",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n831_w2300.jpg",
+      "sha256": "d4882cb0cd1917e1d8e3fe84de31c8f2cd425de78196777d8615bde99669bd91"
+    }
+  ],
+  "ocr_review_spans": [
+    {"headword": "ceiled", "volume": 1, "source_line_start": 736750, "source_line_end": 736767},
+    {"headword": "crum", "volume": 1, "source_line_start": 1058236, "source_line_end": 1058258},
+    {"headword": "edify", "volume": 1, "source_line_start": 1338452, "source_line_end": 1338554},
+    {"headword": "unbeliever", "volume": 2, "source_line_start": 1700183, "source_line_end": 1700245},
+    {"headword": "undersetter", "volume": 2, "source_line_start": 1716063, "source_line_end": 1716083}
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Reviewed the next unresolved KJV forms with three or four occurrences, prioritizing exact Webster headwords and conservative inflection or spelling relationships.",
+  "review_method": "Located each printed entry in the OCR XML, verified every word against its full-resolution page scan, joined line wraps, expanded abbreviated language labels, and retained historical wording and chapter-level Scripture citations.",
+  "screening_summary": {
+    "reviewed_headwords": 5,
+    "net_new_reviewed_overlays": 5,
+    "verified_lookup_relationships_added": 9,
+    "missing_kjv_forms_resolved": 9,
+    "kjv_occurrences_resolved": 32
+  },
+  "promoted_headwords": [
+    "ceiled",
+    "crum",
+    "edify",
+    "unbeliever",
+    "undersetter"
+  ],
+  "verified_lookup_relationships": [
+    {"word": "cieled", "lookup_headword": "ceiled", "kjv_occurrences": 4, "relationship": "KJV spelling mapped to Webster's printed spelling"},
+    {"word": "crumbs", "lookup_headword": "crum", "kjv_occurrences": 3, "relationship": "KJV spelling and plural form mapped to Webster's printed spelling"},
+    {"word": "edifieth", "lookup_headword": "edify", "kjv_occurrences": 3, "relationship": "KJV third-person verb form mapped to Webster's headword"},
+    {"word": "excelleth", "lookup_headword": "excel", "kjv_occurrences": 3, "relationship": "KJV third-person verb form mapped to an existing reviewed headword"},
+    {"word": "holiest", "lookup_headword": "holy", "kjv_occurrences": 3, "relationship": "KJV superlative form mapped to an existing reviewed headword"},
+    {"word": "justifieth", "lookup_headword": "justify", "kjv_occurrences": 4, "relationship": "KJV third-person verb form mapped to an existing reviewed headword"},
+    {"word": "unbelievers", "lookup_headword": "unbeliever", "kjv_occurrences": 4, "relationship": "KJV plural form mapped to Webster's singular headword"},
+    {"word": "undersetters", "lookup_headword": "undersetter", "kjv_occurrences": 4, "relationship": "KJV plural form mapped to Webster's singular headword"},
+    {"word": "woven", "lookup_headword": "weave", "kjv_occurrences": 4, "relationship": "KJV past participle mapped to an existing reviewed headword"}
+  ],
+  "entries": [
+    {
+      "word": "ceiled",
+      "lookup_headword": "ceiled",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/ceiled",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "CE'ILED",
+      "exact_entry_heading": "CE'ILED",
+      "exact_source_match": true
+    },
+    {
+      "word": "crum",
+      "lookup_headword": "crum",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/crum",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "CRUM",
+      "exact_entry_heading": "CRUM",
+      "exact_source_match": true
+    },
+    {
+      "word": "edify",
+      "lookup_headword": "edify",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/edify",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "ED'IFY",
+      "exact_entry_heading": "ED'IFY",
+      "exact_source_match": true
+    },
+    {
+      "word": "unbeliever",
+      "lookup_headword": "unbeliever",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/unbeliever",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "UNBELIE'VER",
+      "exact_entry_heading": "UNBELIE'VER",
+      "exact_source_match": true
+    },
+    {
+      "word": "undersetter",
+      "lookup_headword": "undersetter",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/undersetter",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "UNDERSET'TER",
+      "exact_entry_heading": "UNDERSET'TER",
+      "exact_source_match": true
+    }
+  ]
+}
