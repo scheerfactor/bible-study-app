@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-25T10:36:30.959Z
+Generated: 2026-08-25T10:51:28.002Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,129/12,454 meaningful KJV words have a lookup candidate (65.3%).
-- Combined word/topic lookup: 11,102/12,454 meaningful KJV words have Webster, Easton, or Nave help (89.1%).
+- Webster 1828: 8,163/12,454 meaningful KJV words have a lookup candidate (65.5%).
+- Combined word/topic lookup: 11,134/12,454 meaningful KJV words have Webster, Easton, or Nave help (89.4%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -93,14 +93,14 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | azrikam | 6 | 1 Chronicles 3:23; 1 Chronicles 8:38; 1 Chronicles 9:14; 1 Chronicles 9:44; 2 Chronicles 28:7 |
 | conceal | 6 | Genesis 37:26; Deuteronomy 13:8; Job 27:11; Job 41:12; Proverbs 25:2 |
 | malchijah | 6 | 1 Chronicles 9:12; 1 Chronicles 24:9; Ezra 10:25; Nehemiah 3:11; Nehemiah 10:3 |
-| snuffers | 6 | Exodus 37:23; 1 Kings 7:50; 2 Kings 12:13; 2 Kings 25:14; 2 Chronicles 4:22 |
-| specially | 6 | Deuteronomy 4:10; Acts 25:26; 1 Timothy 4:10; 1 Timothy 5:8; Titus 1:10 |
-| subtilty | 6 | Genesis 27:35; 2 Kings 10:19; Proverbs 1:4; Matthew 26:4; Acts 13:10 |
 | tahath | 6 | Numbers 33:26; Numbers 33:27; 1 Chronicles 6:24; 1 Chronicles 6:37; 1 Chronicles 7:20 |
-| unfruitful | 6 | Matthew 13:22; Mark 4:19; 1 Corinthians 14:14; Ephesians 5:11; Titus 3:14 |
-| abhorreth | 5 | Job 33:20; Psalms 10:3; Psalms 36:4; Psalms 107:18; Isaiah 49:7 |
-| admonished | 5 | Ecclesiastes 4:13; Ecclesiastes 12:12; Jeremiah 42:19; Acts 27:9; Hebrews 8:5 |
 | ahilud | 5 | 2 Samuel 8:16; 2 Samuel 20:24; 1 Kings 4:3; 1 Kings 4:12; 1 Chronicles 18:15 |
+| azareel | 5 | 1 Chronicles 12:6; 1 Chronicles 25:18; 1 Chronicles 27:22; Ezra 10:41; Nehemiah 11:13 |
+| continueth | 5 | Job 14:2; Galatians 3:10; 1 Timothy 5:5; Hebrews 7:24; James 1:25 |
+| criest | 5 | Exodus 14:15; 1 Samuel 26:14; Proverbs 2:3; Isaiah 57:13; Jeremiah 30:15 |
+| decreed | 5 | Esther 2:1; Esther 9:31; Job 38:10; Isaiah 10:22; 1 Corinthians 7:37 |
+| ephraimites | 5 | Joshua 16:10; Judges 12:4; Judges 12:5; Judges 12:5; Judges 12:6 |
+| flieth | 5 | Deuteronomy 4:17; Deuteronomy 14:19; Deuteronomy 28:49; Psalms 91:5; Nahum 3:16 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
@@ -120,7 +120,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | defence | DEFENSE | 22 | ocr_full_import_needs_spot_review |
 | jubile | JUBILEE | 22 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| basons | BA'SIN | 18 | ocr_full_import_needs_spot_review |
 | intreated | ENTRE'AT | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
 | intreat | ENTRE'AT | 15 | ocr_full_import_needs_spot_review |
@@ -142,6 +141,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | network | NET' -WORK | 7 | ocr_full_import_needs_spot_review |
 | overwhelmed | OVERWHELM' | 7 | ocr_full_import_needs_spot_review |
 | thread | THREAD | 7 | ocr_full_import_needs_spot_review |
+| arabians | ARA'BIAN | 6 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
