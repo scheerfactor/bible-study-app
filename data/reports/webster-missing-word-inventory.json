@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-25T13:41:10.480Z",
+  "generated_at": "2026-08-25T13:52:51.327Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4140,
+  "total": 4124,
   "priorityCounts": {
     "high": 254,
-    "medium": 703,
-    "low": 1200,
-    "single-use": 1983
+    "medium": 701,
+    "low": 1188,
+    "single-use": 1981
   },
-  "withSupplementalHelp": 2968,
-  "withoutSupplementalHelp": 1172,
+  "withSupplementalHelp": 2967,
+  "withoutSupplementalHelp": 1157,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -74,23 +74,6 @@
       ]
     },
     {
-      "word": "quarters",
-      "count": 9,
-      "priority": "medium",
-      "lookupCandidates": [
-        "quarters",
-        "quarter",
-        "quartere"
-      ],
-      "sampleRefs": [
-        "Exodus 13:7",
-        "Deuteronomy 22:12",
-        "1 Chronicles 9:24",
-        "Jeremiah 49:36",
-        "Ezekiel 38:6"
-      ]
-    },
-    {
       "word": "shelomith",
       "count": 9,
       "priority": "medium",
@@ -135,21 +118,6 @@
         "Isaiah 22:1",
         "Isaiah 37:27",
         "Jeremiah 48:38"
-      ]
-    },
-    {
-      "word": "quarter",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "quarter"
-      ],
-      "sampleRefs": [
-        "Genesis 19:4",
-        "Numbers 34:3",
-        "Joshua 15:5",
-        "Joshua 18:14",
-        "Joshua 18:15"
       ]
     },
     {
@@ -708,20 +676,6 @@
       ]
     },
     {
-      "word": "describe",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "describe"
-      ],
-      "sampleRefs": [
-        "Joshua 18:4",
-        "Joshua 18:6",
-        "Joshua 18:8",
-        "Joshua 18:8"
-      ]
-    },
-    {
       "word": "giddel",
       "count": 4,
       "priority": "low",
@@ -967,20 +921,6 @@
       ]
     },
     {
-      "word": "sustain",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "sustain"
-      ],
-      "sampleRefs": [
-        "1 Kings 17:9",
-        "Nehemiah 9:21",
-        "Psalms 55:22",
-        "Proverbs 18:14"
-      ]
-    },
-    {
       "word": "ulam",
       "count": 4,
       "priority": "low",
@@ -1038,19 +978,6 @@
         "Exodus 39:22",
         "Exodus 39:27",
         "John 19:23"
-      ]
-    },
-    {
-      "word": "allow",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "allow"
-      ],
-      "sampleRefs": [
-        "Luke 11:48",
-        "Acts 24:15",
-        "Romans 7:15"
       ]
     },
     {
@@ -1454,6 +1381,71 @@
         "Matthew 1:4",
         "Matthew 1:4",
         "Luke 3:32"
+      ]
+    },
+    {
+      "word": "neariah",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "neariah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 3:22",
+        "1 Chronicles 3:23",
+        "1 Chronicles 4:42"
+      ]
+    },
+    {
+      "word": "nebajoth",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "nebajoth"
+      ],
+      "sampleRefs": [
+        "Genesis 25:13",
+        "Genesis 28:9",
+        "Genesis 36:3"
+      ]
+    },
+    {
+      "word": "obscurity",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "obscurity"
+      ],
+      "sampleRefs": [
+        "Isaiah 29:18",
+        "Isaiah 58:10",
+        "Isaiah 59:9"
+      ]
+    },
+    {
+      "word": "palestina",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "palestina"
+      ],
+      "sampleRefs": [
+        "Exodus 15:14",
+        "Isaiah 14:29",
+        "Isaiah 14:31"
+      ]
+    },
+    {
+      "word": "reaiah",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "reaiah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 4:2",
+        "Ezra 2:47",
+        "Nehemiah 7:50"
       ]
     }
   ]

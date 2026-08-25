@@ -1,0 +1,77 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-42-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {"url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"},
+    {"url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"}
+  ],
+  "visual_scan_pages": [
+    {"headword":"allow","url":"https://archive.org/download/americandictiona01websrich/page/n147_w2300.jpg","sha256":"baa99834343bb33cf52f9eb6187ab297427919308cc9f0053783d4e8133ce0bc"},
+    {"headword":"austere","url":"https://archive.org/download/americandictiona01websrich/page/n217_w2300.jpg","sha256":"abaf7ff2fb565154cbe50d5d97eea093099bebb75d4231e739a2ec42b28bec7d"},
+    {"headword":"bountiful","url":"https://archive.org/download/americandictiona01websrich/page/n296_w2300.jpg","sha256":"b80ffefe6d18a4c3c8c13ce72ecea9c230163a17286cfd39465fd9349f981834"},
+    {"headword":"childhood","url":"https://archive.org/download/americandictiona01websrich/page/n381_w2300.jpg","sha256":"dabbc58c5d856bdc8bde5fd8333496c29e94f65267fc3fa4484c5bfc65e118d2"},
+    {"headword":"concourse","url":"https://archive.org/download/americandictiona01websrich/page/n446_w2300.jpg","sha256":"d302c84ca859e0796cd0976b5e2027691e9ce5619e33162748dfa29470d97950"},
+    {"headword":"confirmation","url":"https://archive.org/download/americandictiona01websrich/page/n452_w2300.jpg","sha256":"2f7b6285b8434553811c17770fb92fb37a0bba85aae9cb683296a1897e0a5c5d"},
+    {"headword":"describe","url":"https://archive.org/download/americandictiona01websrich/page/n564_w2300.jpg","sha256":"316552742ba93c496b23d03b737d46b2b197c2465e9ba3cf91fc3522bc079d0e"},
+    {"headword":"doubtful","url":"https://archive.org/download/americandictiona01websrich/page/n623_w2300.jpg","sha256":"55dd7dc01f0a19fe15bbd3bbb420f206a15016cb0a7aff0bf3afe381bf5e0239"},
+    {"headword":"engrave","url":"https://archive.org/download/americandictiona01websrich/page/n674_w2300.jpg","sha256":"a58f242b813102efe76c2ee8bb8ce0d9fe6f8c7136d80487f7c4b35667d14537"},
+    {"headword":"extinct","url":"https://archive.org/download/americandictiona01websrich/page/n719_w2300.jpg","sha256":"3846e0db3dc9a8dd7e44e9bea64c87172a217eef4500d5b685af8c9cb531bfbe"},
+    {"headword":"quarter","url":"https://archive.org/download/americandictiona02websrich/page/n399_w2300.jpg","sha256":"bdcef8fa19b72707c4fae0d33eee9a6b4067da6624d080c2b244112ab9a77f8c"},
+    {"headword":"sustain","url":"https://archive.org/download/americandictiona02websrich/page/n712_w2300.jpg","sha256":"5d1e266ea8b1f9214bbf2a0eba0df308d1a8b215a04ceade5d0dcf1281350e9d"}
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Revisited all 16 exact entries held from phase 41, prioritized the highest-use KJV forms, and promoted only entries whose complete wording could be verified or restored from full-resolution 1828 scans.",
+  "review_method": "Compared each web transcription with its original printed page, restored omitted etymologies and visible punctuation, corrected two unsupported chapter-and-verse expansions to Webster's printed chapter citations, retained historical wording without theological modernization, and inspected each transformed definition.",
+  "screening_summary": {
+    "requested_source_pages": 16,
+    "exact_source_pages_found": 16,
+    "reviewed_overlays_promoted": 12,
+    "exact_entries_held_for_restoration": 4,
+    "net_new_reviewed_overlays": 12,
+    "automatic_inflection_forms_resolved": 4,
+    "missing_kjv_forms_resolved": 16,
+    "kjv_occurrences_resolved": 48
+  },
+  "promoted_headwords": ["allow","austere","bountiful","childhood","concourse","confirmation","describe","doubtful","engrave","extinct","quarter","sustain"],
+  "reviewed_transcription_actions": [
+    {"word":"allow","actions":["Restored the French, Latin, Welsh, and Norman etymology from the scan.","Replaced the unsupported web citations Luke 11:48 and Romans 8:1 with Webster's printed Luke 11 and Romans 7 citations."]},
+    {"word":"austere","actions":["Restored the missing closing bracket after the Latin etymology."]},
+    {"word":"childhood","actions":["Restored the Saxon cildhad etymology and Hood cross-reference."]},
+    {"word":"concourse","actions":["Restored the French, Spanish, Italian, and Latin etymology from the scan."]},
+    {"word":"describe","actions":["Restored the Latin, Spanish, Italian, French, and Armenian etymology and Scribe cross-reference."]},
+    {"word":"engrave","actions":["Restored the French, Spanish, Italian, Welsh, German, Dutch, and Greek etymology and Grave cross-reference."]},
+    {"word":"extinct","actions":["Closed the damaged etymology bracket and restored four visible sentence-ending periods."]},
+    {"word":"quarter","actions":["Restored the French, Italian, Spanish, Dutch, German, Swedish, Danish, Latin, and Welsh etymology.","Corrected must from the web transcription's much and restored five visible punctuation marks in the long entry."]},
+    {"word":"sustain","actions":["Restored the French, Italian, and Spanish etymology omitted by the web transcription.","Restored the period after the Dryden usage example."]}
+  ],
+  "held_exact_entries": [
+    {"word":"conceal","reason":"The multilingual etymology contains Hebrew, Arabic, Greek, and damaged OCR requiring dedicated reconstruction."},
+    {"word":"conduct","reason":"The noun begins on the preceding scan page and requires cross-page restoration."},
+    {"word":"discreet","reason":"The multilingual etymology contains damaged Welsh and Greek forms requiring dedicated reconstruction."},
+    {"word":"dissimulation","reason":"The Latin etymology and sentence capitalization require dedicated restoration."}
+  ],
+  "verified_lookup_relationships": [],
+  "automatic_lookup_relationships": [
+    {"word":"quarters","lookup_headword":"quarter","kjv_occurrences":9,"relationship":"Automatically recognized regular noun inflection"},
+    {"word":"describeth","lookup_headword":"describe","kjv_occurrences":2,"relationship":"Automatically recognized KJV verb inflection"},
+    {"word":"allowed","lookup_headword":"allow","kjv_occurrences":1,"relationship":"Automatically recognized regular verb inflection"},
+    {"word":"alloweth","lookup_headword":"allow","kjv_occurrences":1,"relationship":"Automatically recognized KJV verb inflection"}
+  ],
+  "entries": [
+    {"word":"allow","kjv_occurrences":3,"lookup_headword":"allow","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/allow","source_line_start":1,"source_line_end":9,"exact_page_heading":"ALLOW","exact_entry_heading":"ALLOW","exact_source_match":true},
+    {"word":"austere","kjv_occurrences":2,"lookup_headword":"austere","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/austere","source_line_start":1,"source_line_end":3,"exact_page_heading":"AUSTE'RE","exact_entry_heading":"AUSTE'RE","exact_source_match":true},
+    {"word":"bountiful","kjv_occurrences":2,"lookup_headword":"bountiful","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/bountiful","source_line_start":1,"source_line_end":3,"exact_page_heading":"BOUN'TIFUL","exact_entry_heading":"BOUN'TIFUL","exact_source_match":true},
+    {"word":"childhood","kjv_occurrences":2,"lookup_headword":"childhood","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/childhood","source_line_start":1,"source_line_end":4,"exact_page_heading":"CHILDHOOD","exact_entry_heading":"CHILDHOOD","exact_source_match":true},
+    {"word":"concourse","kjv_occurrences":2,"lookup_headword":"concourse","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/concourse","source_line_start":1,"source_line_end":5,"exact_page_heading":"CONCOURSE","exact_entry_heading":"CONCOURSE","exact_source_match":true},
+    {"word":"confirmation","kjv_occurrences":2,"lookup_headword":"confirmation","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/confirmation","source_line_start":1,"source_line_end":10,"exact_page_heading":"CONFIRMATION","exact_entry_heading":"CONFIRMATION","exact_source_match":true},
+    {"word":"describe","kjv_occurrences":4,"lookup_headword":"describe","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/describe","source_line_start":1,"source_line_end":7,"exact_page_heading":"DESCRIBE","exact_entry_heading":"DESCRIBE","exact_source_match":true},
+    {"word":"doubtful","kjv_occurrences":2,"lookup_headword":"doubtful","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/doubtful","source_line_start":1,"source_line_end":10,"exact_page_heading":"DOUBTFUL","exact_entry_heading":"DOUBTFUL","exact_source_match":true},
+    {"word":"engrave","kjv_occurrences":2,"lookup_headword":"engrave","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/engrave","source_line_start":1,"source_line_end":8,"exact_page_heading":"ENGRA'VE","exact_entry_heading":"ENGRA'VE","exact_source_match":true},
+    {"word":"extinct","kjv_occurrences":2,"lookup_headword":"extinct","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/extinct","source_line_start":1,"source_line_end":6,"exact_page_heading":"EXTINCT","exact_entry_heading":"EXTINCT","exact_source_match":true},
+    {"word":"quarter","kjv_occurrences":8,"lookup_headword":"quarter","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/quarter","source_line_start":1,"source_line_end":49,"exact_page_heading":"QUARTER","exact_entry_heading":"QUARTER","exact_source_match":true},
+    {"word":"sustain","kjv_occurrences":4,"lookup_headword":"sustain","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/sustain","source_line_start":1,"source_line_end":15,"exact_page_heading":"SUSTA'IN","exact_entry_heading":"SUSTA'IN","exact_source_match":true}
+  ]
+}
