@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-25T12:53:48.722Z",
+  "generated_at": "2026-08-25T13:04:01.719Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4174,
+  "total": 4168,
   "priorityCounts": {
     "high": 254,
     "medium": 704,
-    "low": 1226,
-    "single-use": 1990
+    "low": 1223,
+    "single-use": 1987
   },
   "withSupplementalHelp": 2970,
-  "withoutSupplementalHelp": 1204,
+  "withoutSupplementalHelp": 1198,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -1204,21 +1204,6 @@
       ]
     },
     {
-      "word": "concluded",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "concluded",
-        "conclud",
-        "conclude"
-      ],
-      "sampleRefs": [
-        "Acts 21:25",
-        "Romans 11:32",
-        "Galatians 3:22"
-      ]
-    },
-    {
       "word": "conduct",
       "count": 3,
       "priority": "low",
@@ -1462,6 +1447,19 @@
         "Joshua 13:18",
         "Joshua 21:36",
         "Jeremiah 48:21"
+      ]
+    },
+    {
+      "word": "kenezite",
+      "count": 3,
+      "priority": "low",
+      "lookupCandidates": [
+        "kenezite"
+      ],
+      "sampleRefs": [
+        "Numbers 32:12",
+        "Joshua 14:6",
+        "Joshua 14:14"
       ]
     }
   ]

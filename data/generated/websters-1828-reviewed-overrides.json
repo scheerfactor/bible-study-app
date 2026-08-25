@@ -720,6 +720,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "AFFECT",
+    "normalized_headword": "affect",
+    "definition": "AFFECT', verb transitive [Latin afficio, affectum, of ad and facio, to make; affecto, to desire, from the same root. Affect is to make to, or upon, to press upon.] 1. To act upon; to produce an effect or change upon; as, cold affects the body; loss affects our interests. 2. To act upon, or move the passions; as, affected with grief. 3. To aim at; aspire to; desire or entertain pretension to; as, to affect imperial sway. [See the etymology of Affair.] 4. To tend to by natural affinity or disposition; as, the drops of a fluid affect a spherical form. 5. To love, or regard with fondness. Think not that wars we love and strife affect. [This sense is closely allied to the third.] 6. To make a show of; to attempt to imitate, in a manner not natural; to study the appearance of what is not natural, or real; as, to affect to be grave; affected friendship. It seems to have been used formerly for convict or attaint, as in Ayliffe's Parergon; but this sense is not now in use.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/affect",
+    "source_line_start": 1,
+    "source_line_end": 10,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "AFFECT'ED",
     "normalized_headword": "affected",
     "definition": "AFFECT'ED, participle passive 1. Impressed; moved, or touched, either in person or in interest; having suffered some change by external force, loss, danger, and the like; as, we are more or less affected by the failure of the bank. 2. Touched in the feelings; having the feelings excited; as, affected with cold or heat. 3. Having the passions moved; as, affected with sorrow or joy. 4. adjective Inclined, or disposed; followed by to; as, well affected to government. 5. adjective Given to false show; assuming, or pretending to possess what is not natural or real; as, an affected lady. 6. adjective Assumed artificially; not natural; as, affected airs.",
@@ -5017,6 +5027,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/concerning",
     "source_line_start": 1,
     "source_line_end": 4,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "CONCLUDE",
+    "normalized_headword": "conclude",
+    "definition": "CONCLUDE, verb transitive [Latin concludo; con and claudo or cludo, to shut; Greek κλειδω, or κλειω, contracted; Italian conchiudere; Spanish concluir; Portuguese id.; French conclure. The sense is to stop, make fast, shut, or rather to thrust together. Hence in Latin, claudo signifies to halt, or limp, that is, to stop, as well as to shut. See Lid.] 1. To shut. The very person of Christ--was only, touching bodily substance, concluded in the grave. [This use of the word is uncommon.] 2. To include; to comprehend. For God hath concluded them all in unbelief. Romans 11:32. The scripture hath concluded all under sin. Galatians 3:22. The meaning of the word in the latter passage may be to declare irrevocably or to doom. 3. To collect by reasoning; to infer, as from premises; to close an argument by inferring. Therefore we conclude, that a man is justified by faith without the deeds of the law. Romans 3:28. 4. To decide; to determine; to make a final judgment or determination. As touching the Gentiles who believe, we have written and concluded that they observe no such thing. Romans 11. 5. To end; to finish. I will conclude this part with the speech of a counselor of state. 6. To stop or restrain, or as in law, to estop from further argument or proceedings; to oblige or bind, as by authority or by one's own argument or concession; generally in the passive. If they will appeal to revelation for their creation, they must be concluded by it. The defendant is concluded by his own plea. I do not consider the decision of that motion, upon affidavits, to amount to a res judicata, which ought to conclude the present inquiry. CONCLUDE, verb intransitive 1. To infer, as a consequence; to determine. The world will conclude I had a guilty conscience. But this verb is really transitive. The world will conclude that I had a guilty conscience--that is here the object, referring to the subsequent clause of the sentence. [See Verb Transitive, No. 3.] 2. To settle opinion; to form a final judgment. Can we conclude upon Luther's instability, as our author has done. 3. To end. A train of lies, That, made in lust, conclude in perjuries. The old form of expression, to conclude of, is no longer in use.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/conclude",
+    "source_line_start": 1,
+    "source_line_end": 26,
     "review_status": "reviewed_overlay"
   },
   {
@@ -25792,7 +25812,7 @@
   {
     "headword": "WEAK",
     "normalized_headword": "weak",
-    "definition": "WEAK, adjective [G. The primary sense of the root is to yield, fail, give way, recede, or to be soft.] 1. Having little physical strength; feeble. Children are born weak; men are rendered weak by disease. 2. Infirm; not healthy; as a weak constitution. 3. Not able to bear a great weight; as a weak bridge; weak timber. 4. Not strong; not compact; easily broken; as a weak ship; a weak rope. 5. Not able to resist a violent attack; as a weak fortress. 6. Soft; pliant; not stiff. 7. Low; small; feeble; as a weak voice. 8. Feeble of mind; wanting spirit; wanting vigor of understanding; as a weak prince; a weak magistrate. To think every thing disputable, si a proof of a weak mind and captious temper. 9. Not much impregnated with ingredients, or with things that excite action, or with stimulating and nourishing substances; as weak broth; weak tea; weak toddy; a weak solution; a weak decoction. 10. Not politically powerful; as a weak nation or state. 11. Not having force of authority or energy; as a weak government. 12. Not having moral force or power to convince; not well supported by truth or reason; as a weak argument. 13. Not well supported by argument; as weak reasoning. 14. Unfortified; accessible; impressible; as the weak side of a person. 15. Not having full conviction or confidence; as weak in faith. 16. weak land is land of a light thin soil. [I believe never used in New England.] WEAK, verb transitive To make weak [Not used.] WEAK, verb intransitive To become weak [Not used.]",
+    "definition": "WEAK, adjective [Saxon waac, wace; German weich, schwach; Dutch zwak; Danish veeg, veg; Swedish vek. The primary sense of the root is to yield, fail, give way, recede, or to be soft.] 1. Having little physical strength; feeble. Children are born weak; men are rendered weak by disease. 2. Infirm; not healthy; as a weak constitution. 3. Not able to bear a great weight; as a weak bridge; weak timber. 4. Not strong; not compact; easily broken; as a weak ship; a weak rope. 5. Not able to resist a violent attack; as a weak fortress. 6. Soft; pliant; not stiff. 7. Low; small; feeble; as a weak voice. 8. Feeble of mind; wanting spirit; wanting vigor of understanding; as a weak prince; a weak magistrate. To think every thing disputable, is a proof of a weak mind and captious temper. 9. Not much impregnated with ingredients, or with things that excite action, or with stimulating and nourishing substances; as weak broth; weak tea; weak toddy; a weak solution; a weak decoction. 10. Not politically powerful; as a weak nation or state. 11. Not having force of authority or energy; as a weak government. 12. Not having moral force or power to convince; not well supported by truth or reason; as a weak argument. 13. Not well supported by argument; as weak reasoning. 14. Unfortified; accessible; impressible; as the weak side of a person. 15. Not having full conviction or confidence; as weak in faith. 16. Weak land is land of a light thin soil. [I believe never used in New England.] WEAK, verb transitive To make weak. [Not used.] WEAK, verb intransitive To become weak. [Not used.]",
     "source_title": "American Dictionary of the English Language",
     "source_file": "https://webstersdictionary1828.com/Dictionary/weak",
     "source_line_start": 1,
@@ -25847,6 +25867,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/weary",
     "source_line_start": 1,
     "source_line_end": 11,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WEAVE",
+    "normalized_headword": "weave",
+    "definition": "WEAVE, verb transitive preterit tense wove; participle passive woven, wove. The regular form, weaved, is rarely or never used. [Saxon wefan; German weben; Dutch weven; Swedish väfva; Danish væver; Persian baftan; Greek υφαω.] 1. To unite threads of any kind in such a manner as to form cloth. This is done by crossing the threads by means of a shuttle. The modes of weaving, and the kinds of texture, are various. The threads first laid in length are called the warp; those which cross them in the direction of the breadth, are called the weft or woof. 2. To unite any thing flexible; as, to weave twigs. 3. To unite by intermixture or close connection; as a form of religion woven into the civil government. 4. To interpose; to insert. This weaves itself perforce into my business. WEAVE, verb intransitive To practice weaving; to work with a loom.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/weave",
+    "source_line_start": 1,
+    "source_line_end": 7,
     "review_status": "reviewed_overlay"
   },
   {

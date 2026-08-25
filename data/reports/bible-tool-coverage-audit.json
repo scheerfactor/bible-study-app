@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-25T12:53:48.722Z",
+    "generated_at": "2026-08-25T13:04:01.719Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,19 +10,19 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61138,
-      "normalizedHeadwords": 51198,
-      "meaningfulWordsWithDefinition": 8280,
-      "meaningfulWordsWithoutDefinition": 4174,
+      "entries": 61141,
+      "normalizedHeadwords": 51201,
+      "meaningfulWordsWithDefinition": 8286,
+      "meaningfulWordsWithoutDefinition": 4168,
       "meaningfulDefinitionCoveragePercent": 66.5,
       "missingPriorityCounts": {
         "high": 254,
         "medium": 704,
-        "low": 1226,
-        "single-use": 1990
+        "low": 1223,
+        "single-use": 1987
       },
       "missingWithSupplementalHelp": 2970,
-      "missingWithoutSupplementalHelp": 1204,
+      "missingWithoutSupplementalHelp": 1198,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -3627,8 +3627,8 @@
       "rareTermEntries": 28,
       "meaningfulWordsWithEastonEntry": 4132,
       "meaningfulWordsWithNaveTopic": 4015,
-      "meaningfulWordsWithAnyStudyLookup": 11250,
-      "combinedStudyLookupCoveragePercent": 90.3,
+      "meaningfulWordsWithAnyStudyLookup": 11256,
+      "combinedStudyLookupCoveragePercent": 90.4,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
           "word": "iscariot",
