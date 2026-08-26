@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T15:54:43.800Z
+Generated: 2026-08-26T16:08:33.159Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,719/12,454 meaningful KJV words have Webster, Easton, or Nave help (94.1%).
+- Combined word/topic lookup: 11,739/12,454 meaningful KJV words have Webster, Easton, or Nave help (94.3%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,26 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| wellpleasing | 2 | Philippians 4:18; Hebrews 13:21 |
-| zeboiim | 2 | Genesis 14:2; Genesis 14:8 |
-| ziphites | 2 | 1 Samuel 23:19; 1 Samuel 26:1 |
-| zoba | 2 | 2 Samuel 10:6; 2 Samuel 10:8 |
-| accomplishment | 1 | Acts 21:26 |
-| achar | 1 | 1 Chronicles 2:7 |
-| achsa | 1 | 1 Chronicles 2:49 |
-| acknowledgement | 1 | Colossians 2:2 |
-| actions | 1 | 1 Samuel 2:3 |
-| activity | 1 | Genesis 47:6 |
-| adadah | 1 | Joshua 15:22 |
-| adalia | 1 | Esther 9:8 |
-| adami | 1 | Joshua 19:33 |
-| addan | 1 | Ezra 2:59 |
-| ader | 1 | 1 Chronicles 8:15 |
-| adithaim | 1 | Joshua 15:36 |
-| adlai | 1 | 1 Chronicles 27:29 |
-| admatha | 1 | Esther 1:14 |
-| ado | 1 | Mark 5:39 |
-| adoraim | 1 | 2 Chronicles 11:9 |
 | advisement | 1 | 1 Chronicles 12:19 |
 | affectionately | 1 | 1 Thessalonians 2:8 |
 | afternoon | 1 | Judges 19:8 |
@@ -101,6 +81,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | ahiramites | 1 | Numbers 26:38 |
 | ahishahar | 1 | 1 Chronicles 7:10 |
 | ahumai | 1 | 1 Chronicles 4:2 |
+| ahuzam | 1 | 1 Chronicles 4:6 |
+| ahuzzath | 1 | Genesis 26:26 |
+| aiath | 1 | Isaiah 10:28 |
+| aija | 1 | Nehemiah 11:31 |
+| ajah | 1 | Genesis 36:24 |
+| alameth | 1 | 1 Chronicles 7:8 |
+| alammelech | 1 | Joshua 19:26 |
+| aliah | 1 | 1 Chronicles 1:51 |
+| alian | 1 | 1 Chronicles 1:40 |
+| almsdeeds | 1 | Acts 9:36 |
+| aloth | 1 | 1 Kings 4:16 |
+| alvah | 1 | Genesis 36:40 |
+| alvan | 1 | Genesis 36:23 |
+| amad | 1 | Joshua 19:26 |
+| amal | 1 | 1 Chronicles 7:35 |
+| amam | 1 | Joshua 15:26 |
+| ambassage | 1 | Luke 14:32 |
+| ami | 1 | Ezra 2:57 |
+| anaharath | 1 | Joshua 19:19 |
+| ancle | 1 | Acts 3:7 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

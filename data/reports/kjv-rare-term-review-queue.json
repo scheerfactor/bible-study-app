@@ -1,765 +1,10 @@
 {
-  "generated_at": "2026-08-26T15:54:46.652Z",
+  "generated_at": "2026-08-26T16:08:36.020Z",
   "source_inventory": "data/reports/webster-missing-word-inventory.csv",
   "source_bible": "King James Bible, standard 1769 text",
   "purpose": "Human review queue only. Entries must not be published without source and identity review.",
   "limit": 50,
   "entries": [
-    {
-      "word": "wellpleasing",
-      "normalized_word": "wellpleasing",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "wellpleasing",
-        "wellpleas",
-        "wellplease"
-      ],
-      "sample_references": [
-        "Philippians 4:18",
-        "Hebrews 13:21"
-      ],
-      "occurrences": [
-        {
-          "reference": "Philippians 4:18",
-          "count": 1,
-          "text": "But I have all, and abound: I am full, having received of Epaphroditus the things [which were sent] from you, an odour of a sweet smell, a sacrifice acceptable, wellpleasing to God."
-        },
-        {
-          "reference": "Hebrews 13:21",
-          "count": 1,
-          "text": "Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight, through Jesus Christ; to whom [be] glory for ever and ever. Amen."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Humility"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "zeboiim",
-      "normalized_word": "zeboiim",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "zeboiim"
-      ],
-      "sample_references": [
-        "Genesis 14:2",
-        "Genesis 14:8"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 14:2",
-          "count": 1,
-          "text": "[That these] made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar."
-        },
-        {
-          "reference": "Genesis 14:8",
-          "count": 1,
-          "text": "And there went out the king of Sodom, and the king of Gomorrah, and the king of Admah, and the king of Zeboiim, and the king of Bela (the same [is] Zoar;) and they joined battle with them in the vale of Siddim;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Shemeber"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "ziphites",
-      "normalized_word": "ziphites",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "ziphites",
-        "ziphite"
-      ],
-      "sample_references": [
-        "1 Samuel 23:19",
-        "1 Samuel 26:1"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Samuel 23:19",
-          "count": 1,
-          "text": "# Then came up the Ziphites to Saul to Gibeah, saying, Doth not David hide himself with us in strong holds in the wood, in the hill of Hachilah, which [is] on the south of Jeshimon?"
-        },
-        {
-          "reference": "1 Samuel 26:1",
-          "count": 1,
-          "text": "And the Ziphites came unto Saul to Gibeah, saying, Doth not David hide himself in the hill of Hachilah, [which is] before Jeshimon?"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Hachilah"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "zoba",
-      "normalized_word": "zoba",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "zoba"
-      ],
-      "sample_references": [
-        "2 Samuel 10:6",
-        "2 Samuel 10:8"
-      ],
-      "occurrences": [
-        {
-          "reference": "2 Samuel 10:6",
-          "count": 1,
-          "text": "# And when the children of Ammon saw that they stank before David, the children of Ammon sent and hired the Syrians of Beth-rehob, and the Syrians of Zoba, twenty thousand footmen, and of king Maacah a thousand men, and of Ish-tob twelve thousand men."
-        },
-        {
-          "reference": "2 Samuel 10:8",
-          "count": 1,
-          "text": "And the children of Ammon came out, and put the battle in array at the entering in of the gate: and the Syrians of Zoba, and of Rehob, and Ish-tob, and Maacah, [were] by themselves in the field."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Aram-zobah",
-            "Betah",
-            "Chariot",
-            "Eliada",
-            "Hadadezer",
-            "Hamath",
-            "Hamath-zobah",
-            "Igal",
-            "Laver",
-            "Rezon"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "HAMATH-ZOBAH",
-            "ZOBAH"
-          ]
-        }
-      }
-    },
-    {
-      "word": "accomplishment",
-      "normalized_word": "accomplishment",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "accomplishment"
-      ],
-      "sample_references": [
-        "Acts 21:26"
-      ],
-      "occurrences": [
-        {
-          "reference": "Acts 21:26",
-          "count": 1,
-          "text": "Then Paul took the men, and the next day purifying himself with them entered into the temple, to signify the accomplishment of the days of purification, until that an offering should be offered for every one of them."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Covenant"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "achar",
-      "normalized_word": "achar",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "achar"
-      ],
-      "sample_references": [
-        "1 Chronicles 2:7"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 2:7",
-          "count": 1,
-          "text": "And the sons of Carmi; Achar, the troubler of Israel, who transgressed in the thing accursed."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abel-meholah",
-            "Abez",
-            "Accuser",
-            "Achan",
-            "Altar",
-            "Anem",
-            "Aphik",
-            "Ass",
-            "Baasha",
-            "Beth-shemesh"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "ISSACHAR",
-            "JOZ ACH AR",
-            "MAGNA CHARTA"
-          ]
-        }
-      }
-    },
-    {
-      "word": "achsa",
-      "normalized_word": "achsa",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "achsa"
-      ],
-      "sample_references": [
-        "1 Chronicles 2:49"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 2:49",
-          "count": 1,
-          "text": "She bare also Shaaph the father of Madmannah, Sheva the father of Machbenah, and the father of Gibea: and the daughter of Caleb [was] Achsa."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Achsah",
-            "Debir",
-            "Othniel"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "ACHSAH"
-          ]
-        }
-      }
-    },
-    {
-      "word": "acknowledgement",
-      "normalized_word": "acknowledgement",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "acknowledgement"
-      ],
-      "sample_references": [
-        "Colossians 2:2"
-      ],
-      "occurrences": [
-        {
-          "reference": "Colossians 2:2",
-          "count": 1,
-          "text": "That their hearts might be comforted, being knit together in love, and unto all riches of the full assurance of understanding, to the acknowledgement of the mystery of God, and of the Father, and of Christ;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "First-fruits"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "actions",
-      "normalized_word": "actions",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "actions",
-        "action",
-        "actione"
-      ],
-      "sample_references": [
-        "1 Samuel 2:3"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Samuel 2:3",
-          "count": 1,
-          "text": "Talk no more so exceeding proudly; let [not] arrogancy come out of your mouth: for the LORD [is] a God of knowledge, and by him actions are weighed."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Chronicles",
-            "Daemoniac",
-            "Darkness",
-            "Ephesians, Epistle to",
-            "Ezekiel, Book of",
-            "Fall of man",
-            "Incarnation",
-            "Judgment, The final",
-            "Man",
-            "Matthew, Gospel according to"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "ACTIONS AT LAW"
-          ]
-        }
-      }
-    },
-    {
-      "word": "activity",
-      "normalized_word": "activity",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "activity"
-      ],
-      "sample_references": [
-        "Genesis 47:6"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 47:6",
-          "count": 1,
-          "text": "The land of Egypt [is] before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowest [any] men of activity among them, then make them rulers over my cattle."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Archippus",
-            "Canaanites",
-            "Cyprus",
-            "Damascus",
-            "Heart",
-            "Hind",
-            "Jesus",
-            "John, Gospel of",
-            "Jonathan",
-            "Lust"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "adadah",
-      "normalized_word": "adadah",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "adadah"
-      ],
-      "sample_references": [
-        "Joshua 15:22"
-      ],
-      "occurrences": [
-        {
-          "reference": "Joshua 15:22",
-          "count": 1,
-          "text": "And Kinah, and Dimonah, and Adadah,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Micaiah"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "adalia",
-      "normalized_word": "adalia",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "adalia"
-      ],
-      "sample_references": [
-        "Esther 9:8"
-      ],
-      "occurrences": [
-        {
-          "reference": "Esther 9:8",
-          "count": 1,
-          "text": "And Poratha, and Adalia, and Aridatha,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "adami",
-      "normalized_word": "adami",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "adami"
-      ],
-      "sample_references": [
-        "Joshua 19:33"
-      ],
-      "occurrences": [
-        {
-          "reference": "Joshua 19:33",
-          "count": 1,
-          "text": "And their coast was from Heleph, from Allon to Zaanannim, and Adami, Nekeb, and Jabneel, unto Lakum; and the outgoings thereof were at Jordan:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Adam",
-            "Fall of man",
-            "Imputation",
-            "Post"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "addan",
-      "normalized_word": "addan",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "addan"
-      ],
-      "sample_references": [
-        "Ezra 2:59"
-      ],
-      "occurrences": [
-        {
-          "reference": "Ezra 2:59",
-          "count": 1,
-          "text": "And these [were] they which went up from Tel-melah, Tel-harsa, Cherub, Addan, [and] Immer: but they could not shew their father's house, and their seed, whether they [were] of Israel:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Dan-jaan",
-            "Jehoaddan",
-            "Zedekiah"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "JEHOADDAN"
-          ]
-        }
-      }
-    },
-    {
-      "word": "ader",
-      "normalized_word": "ader",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "ader"
-      ],
-      "sample_references": [
-        "1 Chronicles 8:15"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 8:15",
-          "count": 1,
-          "text": "And Zebadiah, and Arad, and Ader,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abiathar",
-            "Abigail",
-            "Abner",
-            "Ajalon",
-            "Amasai",
-            "Antiochus",
-            "Army",
-            "Asaph",
-            "Ashkelon",
-            "Assyria"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "BETH-GADER",
-            "LEADERSHIP"
-          ]
-        }
-      }
-    },
-    {
-      "word": "adithaim",
-      "normalized_word": "adithaim",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "adithaim"
-      ],
-      "sample_references": [
-        "Joshua 15:36"
-      ],
-      "occurrences": [
-        {
-          "reference": "Joshua 15:36",
-          "count": 1,
-          "text": "And Sharaim, and Adithaim, and Gederah, and Gederothaim; fourteen cities with their villages:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "adlai",
-      "normalized_word": "adlai",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "adlai"
-      ],
-      "sample_references": [
-        "1 Chronicles 27:29"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 27:29",
-          "count": 1,
-          "text": "And over the herds that fed in Sharon [was] Shitrai the Sharonite: and over the herds [that were] in the valleys [was] Shaphat the son of Adlai:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abraham",
-            "Amasa",
-            "Hadlai",
-            "Lazarus",
-            "Pharaoh"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "HADLAI"
-          ]
-        }
-      }
-    },
-    {
-      "word": "admatha",
-      "normalized_word": "admatha",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "admatha"
-      ],
-      "sample_references": [
-        "Esther 1:14"
-      ],
-      "occurrences": [
-        {
-          "reference": "Esther 1:14",
-          "count": 1,
-          "text": "And the next unto him [was] Carshena, Shethar, Admatha, Tarshish, Meres, Marsena, [and] Memucan, the seven princes of Persia and Media, which saw the king's face, [and] which sat the first in the kingdom;)"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "ado",
-      "normalized_word": "ado",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "ado"
-      ],
-      "sample_references": [
-        "Mark 5:39"
-      ],
-      "occurrences": [
-        {
-          "reference": "Mark 5:39",
-          "count": 1,
-          "text": "And when he was come in, he saith unto them, Why make ye this ado, and weep? the damsel is not dead, but sleepeth."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Aaron",
-            "Aaronites",
-            "Abarim",
-            "Abda",
-            "Abel",
-            "Abel-beth-maachah",
-            "Abel-meholah",
-            "Abel-mizraim",
-            "Abel-shittim",
-            "Abia"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "ADONI-ZEDEK",
-            "ADONIBAM",
-            "ADOPTION",
-            "AMBASSADORS",
-            "CAPPADOCIA",
-            "FLEEING AS A SHADOW",
-            "HADOKAM",
-            "MADON",
-            "PADON",
-            "PARADOX"
-          ]
-        }
-      }
-    },
-    {
-      "word": "adoraim",
-      "normalized_word": "adoraim",
-      "kjv_count": 1,
-      "measured_kjv_count": 1,
-      "priority": "single-use",
-      "lookup_candidates": [
-        "adoraim"
-      ],
-      "sample_references": [
-        "2 Chronicles 11:9"
-      ],
-      "occurrences": [
-        {
-          "reference": "2 Chronicles 11:9",
-          "count": 1,
-          "text": "And Adoraim, and Lachish, and Azekah,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
     {
       "word": "advisement",
       "normalized_word": "advisement",
@@ -1781,6 +1026,649 @@
           "exact": [],
           "related": [
             "Atonement"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "ancles",
+      "normalized_word": "ancles",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "ancles",
+        "ancle"
+      ],
+      "sample_references": [
+        "Ezekiel 47:3"
+      ],
+      "occurrences": [
+        {
+          "reference": "Ezekiel 47:3",
+          "count": 1,
+          "text": "And when the man that had the line in his hand went forth eastward, he measured a thousand cubits, and he brought me through the waters; the waters [were] to the ancles."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "anethothite",
+      "normalized_word": "anethothite",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "anethothite"
+      ],
+      "sample_references": [
+        "2 Samuel 23:27"
+      ],
+      "occurrences": [
+        {
+          "reference": "2 Samuel 23:27",
+          "count": 1,
+          "text": "Abiezer the Anethothite, Mebunnai the Hushathite,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Antothite"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "anetothite",
+      "normalized_word": "anetothite",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "anetothite"
+      ],
+      "sample_references": [
+        "1 Chronicles 27:12"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 27:12",
+          "count": 1,
+          "text": "The ninth [captain] for the ninth month [was] Abiezer the Anetothite, of the Benjamites: and in his course [were] twenty and four thousand."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Antothite"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "answerable",
+      "normalized_word": "answerable",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "answerable"
+      ],
+      "sample_references": [
+        "Exodus 38:18"
+      ],
+      "occurrences": [
+        {
+          "reference": "Exodus 38:18",
+          "count": 1,
+          "text": "And the hanging for the gate of the court [was] needlework, [of] blue, and purple, and scarlet, and fine twined linen: and twenty cubits [was] the length, and the height in the breadth [was] five cubits, answerable to the hangings of the court."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "antothijah",
+      "normalized_word": "antothijah",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "antothijah"
+      ],
+      "sample_references": [
+        "1 Chronicles 8:24"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 8:24",
+          "count": 1,
+          "text": "And Hananiah, and Elam, and Antothijah,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "anub",
+      "normalized_word": "anub",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "anub"
+      ],
+      "sample_references": [
+        "1 Chronicles 4:8"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 4:8",
+          "count": 1,
+          "text": "And Coz begat Anub, and Zobebah, and the families of Aharhel the son of Harum."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Persia",
+            "Sivan"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "apharsathchites",
+      "normalized_word": "apharsathchites",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "apharsathchites",
+        "apharsathchite"
+      ],
+      "sample_references": [
+        "Ezra 4:9"
+      ],
+      "occurrences": [
+        {
+          "reference": "Ezra 4:9",
+          "count": 1,
+          "text": "Then [wrote] Rehum the chancellor, and Shimshai the scribe, and the rest of their companions; the Dinaites, the Apharsathchites, the Tarpelites, the Apharsites, the Archevites, the Babylonians, the Susanchites, the Dehavites, [and] the Elamites,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "aphekah",
+      "normalized_word": "aphekah",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "aphekah"
+      ],
+      "sample_references": [
+        "Joshua 15:53"
+      ],
+      "occurrences": [
+        {
+          "reference": "Joshua 15:53",
+          "count": 1,
+          "text": "And Janum, and Beth-tappuah, and Aphekah,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "appii",
+      "normalized_word": "appii",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "appii"
+      ],
+      "sample_references": [
+        "Acts 28:15"
+      ],
+      "occurrences": [
+        {
+          "reference": "Acts 28:15",
+          "count": 1,
+          "text": "And from thence, when the brethren heard of us, they came to meet us as far as Appii forum, and The three taverns: whom when Paul saw, he thanked God, and took courage."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Appii Forum"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "aramitess",
+      "normalized_word": "aramitess",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "aramitess",
+        "aramites",
+        "aramitese"
+      ],
+      "sample_references": [
+        "1 Chronicles 7:14"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 7:14",
+          "count": 1,
+          "text": "# The sons of Manasseh; Ashriel, whom she bare: ([but] his concubine the Aramitess bare Machir the father of Gilead:"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "arbah",
+      "normalized_word": "arbah",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "arbah"
+      ],
+      "sample_references": [
+        "Genesis 35:27"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 35:27",
+          "count": 1,
+          "text": "# And Jacob came unto Isaac his father unto Mamre, unto the city of Arbah, which [is] Hebron, where Abraham and Isaac sojourned."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "arbite",
+      "normalized_word": "arbite",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "arbite"
+      ],
+      "sample_references": [
+        "2 Samuel 23:35"
+      ],
+      "occurrences": [
+        {
+          "reference": "2 Samuel 23:35",
+          "count": 1,
+          "text": "Hezrai the Carmelite, Paarai the Arbite,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Daysman",
+            "Paarai"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "ardites",
+      "normalized_word": "ardites",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "ardites",
+        "ardite"
+      ],
+      "sample_references": [
+        "Numbers 26:40"
+      ],
+      "occurrences": [
+        {
+          "reference": "Numbers 26:40",
+          "count": 1,
+          "text": "And the sons of Bela were Ard and Naaman: [of Ard], the family of the Ardites: [and] of Naaman, the family of the Naamites."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "SARDITES"
+          ]
+        }
+      }
+    },
+    {
+      "word": "arelites",
+      "normalized_word": "arelites",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "arelites",
+        "arelite"
+      ],
+      "sample_references": [
+        "Numbers 26:17"
+      ],
+      "occurrences": [
+        {
+          "reference": "Numbers 26:17",
+          "count": 1,
+          "text": "Of Arod, the family of the Arodites: of Areli, the family of the Arelites."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "arguments",
+      "normalized_word": "arguments",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "arguments",
+        "argument",
+        "argumente"
+      ],
+      "sample_references": [
+        "Job 23:4"
+      ],
+      "occurrences": [
+        {
+          "reference": "Job 23:4",
+          "count": 1,
+          "text": "I would order [my] cause before him, and fill my mouth with arguments."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Baptism, Christian",
+            "Daniel, Book of",
+            "God",
+            "Isaiah, The Book of",
+            "Pentateuch"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "aridai",
+      "normalized_word": "aridai",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "aridai"
+      ],
+      "sample_references": [
+        "Esther 9:9"
+      ],
+      "occurrences": [
+        {
+          "reference": "Esther 9:9",
+          "count": 1,
+          "text": "And Parmashta, and Arisai, and Aridai, and Vajezatha,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "aridatha",
+      "normalized_word": "aridatha",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "aridatha"
+      ],
+      "sample_references": [
+        "Esther 9:8"
+      ],
+      "occurrences": [
+        {
+          "reference": "Esther 9:8",
+          "count": 1,
+          "text": "And Poratha, and Adalia, and Aridatha,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "arnan",
+      "normalized_word": "arnan",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "arnan"
+      ],
+      "sample_references": [
+        "1 Chronicles 3:21"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 3:21",
+          "count": 1,
+          "text": "And the sons of Hananiah; Pelatiah, and Jesaiah: the sons of Rephaiah, the sons of Arnan, the sons of Obadiah, the sons of Shechaniah."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "arod",
+      "normalized_word": "arod",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "arod"
+      ],
+      "sample_references": [
+        "Numbers 26:17"
+      ],
+      "occurrences": [
+        {
+          "reference": "Numbers 26:17",
+          "count": 1,
+          "text": "Of Arod, the family of the Arodites: of Areli, the family of the Arelites."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Aaron",
+            "Almond",
+            "Ass",
+            "Balance",
+            "Book",
+            "Coney",
+            "Cubit",
+            "Hare",
+            "Harod",
+            "Harodite"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "HAROD"
+          ]
+        }
+      }
+    },
+    {
+      "word": "arodi",
+      "normalized_word": "arodi",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "arodi"
+      ],
+      "sample_references": [
+        "Genesis 46:16"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 46:16",
+          "count": 1,
+          "text": "# And the sons of Gad; Ziphion, and Haggi, Shuni, and Ezbon, Eri, and Arodi, and Areli."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Harodite"
           ]
         },
         "nave": {
