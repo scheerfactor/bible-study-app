@@ -968,5 +968,205 @@
     "source_line_start": 1,
     "source_line_end": 1,
     "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ISSHIAH",
+    "normalized_headword": "isshiah",
+    "definition": "A name borne by Levites, including the first of Rehabiah's sons and the brother of Michah.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Chronicles 24:21, 25",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "IZHARITES",
+    "normalized_headword": "izharites",
+    "definition": "IZHARITES, plural noun. Descendants of Izhar among the Levites; men of this family served as officers and judges.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: 1 Chronicles 24:22; 26:23, 29",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "JAHAZAH",
+    "normalized_headword": "jahazah",
+    "definition": "A city in the inheritance of Reuben, assigned with its suburbs to the Levites, and later named in judgment upon Moab.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Joshua 13:18; 21:36; Jeremiah 48:21",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "KENEZITE",
+    "normalized_headword": "kenezite",
+    "definition": "The designation applied to Caleb the son of Jephunneh, who wholly followed the LORD God of Israel.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Numbers 32:12; Joshua 14:6, 14",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "LEANFLESHED",
+    "normalized_headword": "leanfleshed",
+    "definition": "LEANFLESHED, adjective. Having little flesh; very thin or gaunt. Used of the ill-favoured kine in Pharaoh's dream.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Genesis 41:3-4, 19",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "MAACAH",
+    "normalized_headword": "maacah",
+    "definition": "A personal and place name used of Talmai's daughter, the mother of Absalom, and of a Syrian kingdom or people allied with Ammon.",
+    "source_title": "KJV Bible Name and Place Guide",
+    "source_file": "KJV: 2 Samuel 3:3; 10:6, 8",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "MANASSES",
+    "normalized_headword": "manasses",
+    "definition": "The KJV New Testament spelling of Manasseh, used of the king in Christ's genealogy and of the tribe in Revelation. See MANASSEH.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Matthew 1:10; Revelation 7:6",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "MANASSITES",
+    "normalized_headword": "manassites",
+    "definition": "MANASSITES, plural noun. Members or descendants of the tribe of Manasseh.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Deuteronomy 4:43; Judges 12:4; 2 Kings 10:33",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "MATTENAI",
+    "normalized_headword": "mattenai",
+    "definition": "A name borne by several Israelites recorded in Ezra and by a priestly representative named in Nehemiah.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Ezra 10:33, 37; Nehemiah 12:19",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "MIDIANITISH",
+    "normalized_headword": "midianitish",
+    "definition": "MIDIANITISH, adjective. Of or belonging to Midian; used of Cozbi, the daughter of Zur.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Numbers 25:6, 14-15",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "MILCOM",
+    "normalized_headword": "milcom",
+    "definition": "The false god and abomination of the children of Ammon after whom Solomon went and for whom he built a high place.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Kings 11:5, 33; 2 Kings 23:13",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "NAASSON",
+    "normalized_headword": "naasson",
+    "definition": "The KJV New Testament spelling of Nahshon, the son of Aminadab and an ancestor named in the genealogy of Jesus Christ. See NAHSHON.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Matthew 1:4; Luke 3:32",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "NEARIAH",
+    "normalized_headword": "neariah",
+    "definition": "A name borne by a man in the royal genealogy of Judah and by a Simeonite captain who went to mount Seir.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Chronicles 3:22-23; 4:42",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "NEBAJOTH",
+    "normalized_headword": "nebajoth",
+    "definition": "The firstborn son of Ishmael and the brother named in connection with the marriages of Mahalath and Bashemath.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Genesis 25:13; 28:9; 36:3",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "OBSCURITY",
+    "normalized_headword": "obscurity",
+    "definition": "OBSCURITY, noun. Darkness, dimness, or a state lacking light; used in Isaiah in contrast with light and brightness.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Isaiah 29:18; 58:10; 59:9",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "PALESTINA",
+    "normalized_headword": "palestina",
+    "definition": "A KJV place name for the land associated with the Philistines in Exodus and Isaiah. See PHILISTIA.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Exodus 15:14; Isaiah 14:29, 31",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "REAIAH",
+    "normalized_headword": "reaiah",
+    "definition": "A name borne by a son of Shobal and associated with a family of temple servants who returned from captivity.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Chronicles 4:2; Ezra 2:47; Nehemiah 7:50",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "SHUBAEL",
+    "normalized_headword": "shubael",
+    "definition": "A name appearing in Levitical service lists among the sons of Amram and in a division of twelve with his sons and brethren.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Chronicles 24:20; 25:20",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "SIMEONITES",
+    "normalized_headword": "simeonites",
+    "definition": "SIMEONITES, plural noun. Members or descendants of the tribe of Simeon.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Numbers 25:14; 26:14; 1 Chronicles 27:16",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "SNUFFDISHES",
+    "normalized_headword": "snuffdishes",
+    "definition": "SNUFFDISHES, plural noun. Vessels belonging to the service of the candlestick, listed with its lamps, tongs, and snuffers and made of pure gold.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Exodus 25:38; 37:23; Numbers 4:9",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
   }
 ]

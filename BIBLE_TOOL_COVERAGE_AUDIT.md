@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T12:56:29.868Z
+Generated: 2026-08-26T13:09:24.747Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,534/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.6%).
+- Combined word/topic lookup: 11,554/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.8%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,26 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| isshiah | 3 | 1 Chronicles 24:21; 1 Chronicles 24:25; 1 Chronicles 24:25 |
-| izharites | 3 | 1 Chronicles 24:22; 1 Chronicles 26:23; 1 Chronicles 26:29 |
-| jahazah | 3 | Joshua 13:18; Joshua 21:36; Jeremiah 48:21 |
-| kenezite | 3 | Numbers 32:12; Joshua 14:6; Joshua 14:14 |
-| leanfleshed | 3 | Genesis 41:3; Genesis 41:4; Genesis 41:19 |
-| maacah | 3 | 2 Samuel 3:3; 2 Samuel 10:6; 2 Samuel 10:8 |
-| manasses | 3 | Matthew 1:10; Matthew 1:10; Revelation 7:6 |
-| manassites | 3 | Deuteronomy 4:43; Judges 12:4; 2 Kings 10:33 |
-| mattenai | 3 | Ezra 10:33; Ezra 10:37; Nehemiah 12:19 |
-| midianitish | 3 | Numbers 25:6; Numbers 25:14; Numbers 25:15 |
-| milcom | 3 | 1 Kings 11:5; 1 Kings 11:33; 2 Kings 23:13 |
-| naasson | 3 | Matthew 1:4; Matthew 1:4; Luke 3:32 |
-| neariah | 3 | 1 Chronicles 3:22; 1 Chronicles 3:23; 1 Chronicles 4:42 |
-| nebajoth | 3 | Genesis 25:13; Genesis 28:9; Genesis 36:3 |
-| obscurity | 3 | Isaiah 29:18; Isaiah 58:10; Isaiah 59:9 |
-| palestina | 3 | Exodus 15:14; Isaiah 14:29; Isaiah 14:31 |
-| reaiah | 3 | 1 Chronicles 4:2; Ezra 2:47; Nehemiah 7:50 |
-| shubael | 3 | 1 Chronicles 24:20; 1 Chronicles 24:20; 1 Chronicles 25:20 |
-| simeonites | 3 | Numbers 25:14; Numbers 26:14; 1 Chronicles 27:16 |
-| snuffdishes | 3 | Exodus 25:38; Exodus 37:23; Numbers 4:9 |
 | tekoite | 3 | 2 Samuel 23:26; 1 Chronicles 11:28; 1 Chronicles 27:9 |
 | womenservants | 3 | Genesis 20:14; Genesis 32:5; Genesis 32:22 |
 | achaz | 2 | Matthew 1:9; Matthew 1:9 |
@@ -101,6 +81,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | amzi | 2 | 1 Chronicles 6:46; Nehemiah 11:12 |
 | anaiah | 2 | Nehemiah 8:4; Nehemiah 10:22 |
 | appaim | 2 | 1 Chronicles 2:30; 1 Chronicles 2:31 |
+| arphad | 2 | Isaiah 36:19; Isaiah 37:13 |
+| arvadite | 2 | Genesis 10:18; 1 Chronicles 1:16 |
+| asahiah | 2 | 2 Kings 22:12; 2 Kings 22:14 |
+| aser | 2 | Luke 2:36; Revelation 7:6 |
+| ashchenaz | 2 | 1 Chronicles 1:6; Jeremiah 51:27 |
+| ashur | 2 | 1 Chronicles 2:24; 1 Chronicles 4:5 |
+| asriel | 2 | Numbers 26:31; Joshua 17:2 |
+| assur | 2 | Ezra 4:2; Psalms 83:8 |
+| aul | 2 | Exodus 21:6; Deuteronomy 15:17 |
+| avites | 2 | Joshua 13:3; 2 Kings 17:31 |
+| avith | 2 | Genesis 36:35; 1 Chronicles 1:46 |
+| axletrees | 2 | 1 Kings 7:32; 1 Kings 7:33 |
+| azaliah | 2 | 2 Kings 22:3; 2 Chronicles 34:8 |
+| azem | 2 | Joshua 15:29; Joshua 19:3 |
+| azor | 2 | Matthew 1:13; Matthew 1:14 |
+| azur | 2 | Jeremiah 28:1; Ezekiel 11:1 |
+| babel | 2 | Genesis 10:10; Genesis 11:9 |
+| bakbuk | 2 | Ezra 2:51; Nehemiah 7:53 |
+| bedad | 2 | Genesis 36:35; 1 Chronicles 1:46 |
+| besai | 2 | Ezra 2:49; Nehemiah 7:52 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
