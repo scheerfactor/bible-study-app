@@ -236,14 +236,14 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
 type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
-type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion" | "Archaeology";
+type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion" | "Worship" | "Scripture" | "Creation" | "Archaeology";
 type PresentationWorkspaceView = "manager" | "deck" | "presenter" | "controller" | "presentation";
 type PresentationStatus = "Draft" | "Ready" | "Archived";
 
@@ -2653,6 +2653,38 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Shepherd",
     assetUrl: "/media/sermon-slides/photos/shepherd.jpg",
   },
+  "worship-piano": {
+    label: "Piano & Hymnal",
+    description: "Hymn lyrics, congregational singing, worship, and music ministry.",
+    background: "linear-gradient(110deg, rgba(14,10,8,0.72), rgba(14,10,8,0.08) 62%)",
+    motif: "Piano",
+    category: "Worship",
+    assetUrl: "/media/sermon-slides/photos/worship-piano.jpg",
+  },
+  "still-waters": {
+    label: "Still Waters",
+    description: "Psalm 23, peace, guidance, comfort, and devotional verses.",
+    background: "linear-gradient(110deg, rgba(27,48,52,0.44), rgba(255,255,255,0.04) 64%)",
+    motif: "Still Waters",
+    category: "Shepherd",
+    assetUrl: "/media/sermon-slides/photos/still-waters.jpg",
+  },
+  "scripture-lamp": {
+    label: "Scripture Lamp",
+    description: "Psalm 119:105, Bible reading, exposition, wisdom, and study.",
+    background: "linear-gradient(90deg, rgba(12,10,8,0.10), rgba(7,12,14,0.58) 70%)",
+    motif: "Lamp & Bible",
+    category: "Scripture",
+    assetUrl: "/media/sermon-slides/photos/scripture-lamp.jpg",
+  },
+  "heavens-declare": {
+    label: "Heavens Declare",
+    description: "Psalm 19, creation, glory, praise, and Creator-focused hymns.",
+    background: "linear-gradient(110deg, rgba(4,20,35,0.40), rgba(4,20,35,0.06) 66%)",
+    motif: "Night Sky",
+    category: "Creation",
+    assetUrl: "/media/sermon-slides/photos/heavens-declare.jpg",
+  },
   "nimrud-relief": {
     label: "Nimrud Assyrian Relief",
     description: "Bible-world context for Calah, Nimrud, and the Assyrian empire.",
@@ -2679,7 +2711,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
   },
 };
 
-const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
+const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Worship", "Scripture", "Creation", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
 
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";

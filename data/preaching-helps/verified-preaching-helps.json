@@ -13,8 +13,15 @@
     "sourceFile": "data/library/verified/the-art-of-illustration.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
-    "bibleReferences": ["1 Corinthians 2:1-5", "2 Timothy 4:2"],
-    "topics": ["preaching", "clarity", "substance"],
+    "bibleReferences": [
+      "1 Corinthians 2:1-5",
+      "2 Timothy 4:2"
+    ],
+    "topics": [
+      "preaching",
+      "clarity",
+      "substance"
+    ],
     "recommendedUse": "A preparation reminder that biblical substance must carry the sermon.",
     "reviewNote": "A preaching-craft observation, not a substitute for the requirements Scripture gives the preacher."
   },
@@ -32,8 +39,15 @@
     "sourceFile": "data/library/verified/the-art-of-illustration.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
-    "bibleReferences": ["Nehemiah 8:8", "Titus 2:1"],
-    "topics": ["illustrations", "preaching", "teaching"],
+    "bibleReferences": [
+      "Nehemiah 8:8",
+      "Titus 2:1"
+    ],
+    "topics": [
+      "illustrations",
+      "preaching",
+      "teaching"
+    ],
     "recommendedUse": "Use when evaluating whether a story serves the passage or distracts from it.",
     "reviewNote": "Apply the analogy as homiletic counsel while keeping Scripture authoritative."
   },
@@ -51,8 +65,15 @@
     "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
-    "bibleReferences": ["Proverbs 2:1-5", "2 Timothy 2:15"],
-    "topics": ["Bible study", "diligence", "discovery"],
+    "bibleReferences": [
+      "Proverbs 2:1-5",
+      "2 Timothy 2:15"
+    ],
+    "topics": [
+      "Bible study",
+      "diligence",
+      "discovery"
+    ],
     "recommendedUse": "A concise opening or closing thought for lessons on diligent Bible study.",
     "reviewNote": "Use as an attributed observation and establish the duty of study from Scripture."
   },
@@ -70,8 +91,15 @@
     "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
-    "bibleReferences": ["Ezra 7:10", "2 Timothy 3:16-17"],
-    "topics": ["Bible study", "service", "ministry"],
+    "bibleReferences": [
+      "Ezra 7:10",
+      "2 Timothy 3:16-17"
+    ],
+    "topics": [
+      "Bible study",
+      "service",
+      "ministry"
+    ],
     "recommendedUse": "Use with a charge to students, teachers, or ministry workers to know Scripture well.",
     "reviewNote": "God's use of a believer is not reduced to knowledge alone; connect study with faith, character, prayer, and obedience."
   },
@@ -89,8 +117,15 @@
     "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Isaac Watts died in 1748; the Project Gutenberg edition is public domain in the USA and the stanza is verified against the stored text.",
-    "bibleReferences": ["Galatians 2:20", "Romans 12:1"],
-    "topics": ["cross", "consecration", "gratitude"],
+    "bibleReferences": [
+      "Galatians 2:20",
+      "Romans 12:1"
+    ],
+    "topics": [
+      "cross",
+      "consecration",
+      "gratitude"
+    ],
     "recommendedUse": "Use as a poetic response after teaching Christ's sacrifice and the believer's consecration.",
     "reviewNote": "This is a hymn stanza. Do not present poetic language as if it were the wording of Scripture."
   },
@@ -108,8 +143,15 @@
     "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Isaac Watts died in 1748; the Project Gutenberg edition is public domain in the USA and the stanza is verified against the stored text.",
-    "bibleReferences": ["Revelation 21:4", "Revelation 22:5"],
-    "topics": ["heaven", "hope", "eternity"],
+    "bibleReferences": [
+      "Revelation 21:4",
+      "Revelation 22:5"
+    ],
+    "topics": [
+      "heaven",
+      "hope",
+      "eternity"
+    ],
     "recommendedUse": "Use with a funeral message or lesson on the believer's heavenly hope after reading the governing Bible passage.",
     "reviewNote": "This is devotional poetry. Build doctrine from Scripture and use the stanza as a response or illustration."
   },
@@ -127,8 +169,15 @@
     "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Isaac Watts died in 1748; the Project Gutenberg edition is public domain in the USA and the stanza is verified against the stored text.",
-    "bibleReferences": ["Galatians 6:14", "2 Corinthians 5:14-15"],
-    "topics": ["cross", "love", "surrender"],
+    "bibleReferences": [
+      "Galatians 6:14",
+      "2 Corinthians 5:14-15"
+    ],
+    "topics": [
+      "cross",
+      "love",
+      "surrender"
+    ],
     "recommendedUse": "Use as a concluding poetic response to a message on the cross or wholehearted surrender.",
     "reviewNote": "This is a hymn stanza. Keep its emotional force connected to the cited Bible passages."
   },
@@ -146,8 +195,16 @@
     "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
-    "bibleReferences": ["Romans 2:4", "Ephesians 6:4"],
-    "topics": ["grace", "love", "teaching", "discipline"],
+    "bibleReferences": [
+      "Romans 2:4",
+      "Ephesians 6:4"
+    ],
+    "topics": [
+      "grace",
+      "love",
+      "teaching",
+      "discipline"
+    ],
     "recommendedUse": "Use carefully in teaching about patient correction, gracious authority, or the influence of a praying teacher.",
     "reviewNote": "Moody reports this as a personal memory. It illustrates a point but does not prove a doctrine or establish every method of discipline."
   },
@@ -165,8 +222,15 @@
     "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
-    "bibleReferences": ["Psalm 119:18", "John 5:39"],
-    "topics": ["Bible study", "perseverance", "Christ"],
+    "bibleReferences": [
+      "Psalm 119:18",
+      "John 5:39"
+    ],
+    "topics": [
+      "Bible study",
+      "perseverance",
+      "Christ"
+    ],
     "recommendedUse": "Use to encourage repeated, prayerful reading instead of abandoning a difficult chapter too quickly.",
     "reviewNote": "The final sentence is Moody's broad Christ-centered application. Interpret every passage according to its actual context and canonical relationship to Christ."
   },
@@ -184,8 +248,16 @@
     "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
     "rightsStatus": "Verified Public Domain",
     "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
-    "bibleReferences": ["1 Corinthians 3:6-7", "Galatians 6:9"],
-    "topics": ["ministry", "discouragement", "faithfulness", "results"],
+    "bibleReferences": [
+      "1 Corinthians 3:6-7",
+      "Galatians 6:9"
+    ],
+    "topics": [
+      "ministry",
+      "discouragement",
+      "faithfulness",
+      "results"
+    ],
     "recommendedUse": "Use to encourage faithful ministry when visible results are small, followed by the cited Scripture in context.",
     "reviewNote": "Some chronology and response claims in the anecdote are sermonic observations rather than conclusions stated directly in Genesis. Use the story as encouragement, not as an exact historical count."
   },
@@ -240,5 +312,317 @@
     ],
     "recommendedUse": "Use to encourage hearers to examine teaching carefully by the Word of God.",
     "reviewNote": "Moody's conclusion is an attributed observation. Use Acts 17:11 and related KJV passages to establish the duty of biblical examination."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-read-before-judging-bible",
+    "type": "Quote",
+    "title": "Read before judging the Bible",
+    "author": "D. L. Moody",
+    "text": "No book in the world has been so misjudged as the Bible. Men judge it without reading it.",
+    "slideText": "No book in the world has been so misjudged as the Bible. Men judge it without reading it.",
+    "sourceLocator": "The Bible, 'How Funny You Talk'",
+    "bibleReferences": [
+      "John 5:39",
+      "Acts 17:11"
+    ],
+    "topics": [
+      "Bible study",
+      "discernment",
+      "reading"
+    ],
+    "recommendedUse": "Use to challenge hearers to examine Scripture carefully before repeating objections to it.",
+    "reviewNote": "This is Moody’s observation. Establish the authority and profitable use of Scripture from the cited KJV passages."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-overcome-by-written-word",
+    "type": "Quote",
+    "title": "Overcome by the written Word",
+    "author": "D. L. Moody",
+    "text": "The only way to overcome the great enemy of souls is by the written Word of God.",
+    "slideText": "The only way to overcome the great enemy of souls is by the written Word of God.",
+    "sourceLocator": "The Bible, 'How Funny You Talk'",
+    "bibleReferences": [
+      "Matthew 4:1-11",
+      "Ephesians 6:17"
+    ],
+    "topics": [
+      "Scripture",
+      "spiritual warfare",
+      "temptation"
+    ],
+    "recommendedUse": "Use with a lesson on Christ answering temptation with Scripture.",
+    "reviewNote": "Read the cited passages in context; the quotation summarizes Moody’s application."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-nation-exalts-word",
+    "type": "Quote",
+    "title": "A nation and the Word of God",
+    "author": "D. L. Moody",
+    "text": "Every nation that exalteth the Word of God is exalted, and every nation that casteth it down is cast down.",
+    "slideText": "Every nation that exalteth the Word of God is exalted, and every nation that casteth it down is cast down.",
+    "sourceLocator": "The Bible, 'How Funny You Talk'",
+    "bibleReferences": [
+      "Psalm 33:12",
+      "Proverbs 14:34"
+    ],
+    "topics": [
+      "nation",
+      "Scripture",
+      "righteousness"
+    ],
+    "recommendedUse": "Use as an attributed historical appeal in a message on national righteousness.",
+    "reviewNote": "Do not present this sentence as a direct Bible quotation; ground the teaching in the cited KJV texts."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-mark-and-wear-bibles",
+    "type": "Quote",
+    "title": "Mark and wear out the Bible",
+    "author": "D. L. Moody",
+    "text": "Study them and mark them, and don't be afraid of wearing them.",
+    "slideText": "Study them and mark them, and don't be afraid of wearing them.",
+    "sourceLocator": "Bible Study, 'How Moody was Blessed—Mark Your Bible'",
+    "bibleReferences": [
+      "Ezra 7:10",
+      "2 Timothy 2:15"
+    ],
+    "topics": [
+      "Bible study",
+      "marking",
+      "diligence"
+    ],
+    "recommendedUse": "Use as a short challenge to active, repeated Bible study.",
+    "reviewNote": "The pronoun refers to Bibles in the source paragraph; explain that context when using the short slide."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-store-by-bible",
+    "type": "Quote",
+    "title": "Set more store by the Bible",
+    "author": "D. L. Moody",
+    "text": "Set more and more store by the Bible. Then troubles in your Christian life will pass away like a morning cloud.",
+    "slideText": "Set more and more store by the Bible. Then troubles in your Christian life will pass away like a morning cloud.",
+    "sourceLocator": "The Bible, Gold",
+    "bibleReferences": [
+      "Psalm 119:92-93",
+      "Psalm 119:165"
+    ],
+    "topics": [
+      "Bible",
+      "trouble",
+      "comfort"
+    ],
+    "recommendedUse": "Use as an attributed devotional encouragement after reading a governing Bible passage.",
+    "reviewNote": "Moody uses figurative language; do not turn it into a promise that Bible reading removes every trial."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-bible-christian-joyful",
+    "type": "Quote",
+    "title": "Living on the Word",
+    "author": "D. L. Moody",
+    "text": "If you will show me a Bible Christian living on the Word of God, I will show you a joyful man.",
+    "slideText": "If you will show me a Bible Christian living on the Word of God, I will show you a joyful man.",
+    "sourceLocator": "The Bible, Gold",
+    "bibleReferences": [
+      "Jeremiah 15:16",
+      "Psalm 119:111"
+    ],
+    "topics": [
+      "joy",
+      "Bible",
+      "Christian life"
+    ],
+    "recommendedUse": "Use in a lesson on receiving God’s Word with delight.",
+    "reviewNote": "This is Moody’s pastoral observation; Scripture, not the quotation, defines biblical joy."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-win-through-faith",
+    "type": "Quote",
+    "title": "Win through faith",
+    "author": "D. L. Moody",
+    "text": "So, if you have God with you, and you go to work for Him, and you meet infidels and skeptics, just bear in mind that you can win through faith.",
+    "slideText": "So, if you have God with you, and you go to work for Him, and you meet infidels and skeptics, just bear in mind that you can win through faith.",
+    "sourceLocator": "Faith, 'How Moody's Faith Saved an Infidel'",
+    "bibleReferences": [
+      "Mark 2:5",
+      "Hebrews 11:6"
+    ],
+    "topics": [
+      "faith",
+      "witnessing",
+      "perseverance"
+    ],
+    "recommendedUse": "Use to encourage patient prayer and witness for unbelievers.",
+    "reviewNote": "Avoid promising a particular timetable or outcome; use the quotation to encourage faithful prayer and witness."
+  },
+  {
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "moody-work-with-one",
+    "type": "Quote",
+    "title": "Be willing to work with one",
+    "author": "D. L. Moody",
+    "text": "Be willing to work with one.",
+    "slideText": "Be willing to work with one.",
+    "sourceLocator": "Christian Work, 'The Faithful Aged Woman'",
+    "bibleReferences": [
+      "John 4:35-38",
+      "James 5:19-20"
+    ],
+    "topics": [
+      "personal ministry",
+      "faithfulness",
+      "teaching"
+    ],
+    "recommendedUse": "Use as a memorable closing challenge for teachers and personal workers.",
+    "reviewNote": "The statement concludes an anecdote; connect it to Scripture’s concern for individual souls."
+  },
+  {
+    "sourceTitle": "The Art of Illustration",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/42558",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/the-art-of-illustration.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "spurgeon-pleasantly-profitable-sermons",
+    "type": "Quote",
+    "title": "Pleasantly profitable sermons",
+    "author": "C. H. Spurgeon",
+    "text": "Pleasantly profitable let all our sermons be.",
+    "slideText": "Pleasantly profitable let all our sermons be.",
+    "sourceLocator": "Illustrations in Preaching, paragraph on windows and light",
+    "bibleReferences": [
+      "Nehemiah 8:8",
+      "Ecclesiastes 12:10"
+    ],
+    "topics": [
+      "preaching",
+      "clarity",
+      "profit"
+    ],
+    "recommendedUse": "Use as a preparation reminder to unite clarity, interest, and spiritual profit.",
+    "reviewNote": "This is homiletic counsel; the sermon’s governing standard remains faithful exposition of Scripture."
+  },
+  {
+    "sourceTitle": "The Art of Illustration",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/42558",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/the-art-of-illustration.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "spurgeon-truth-kings-daughter",
+    "type": "Quote",
+    "title": "Clothe truth fittingly",
+    "author": "C. H. Spurgeon",
+    "text": "Truth is a king's daughter, and her raiment should be of wrought gold;",
+    "slideText": "Truth is a king's daughter, and her raiment should be of wrought gold;",
+    "sourceLocator": "Illustrations in Preaching, paragraph on appropriate beauty of speech",
+    "bibleReferences": [
+      "Psalm 45:13",
+      "Colossians 4:6"
+    ],
+    "topics": [
+      "truth",
+      "speech",
+      "preaching"
+    ],
+    "recommendedUse": "Use when teaching that careful expression should serve truth rather than replace it.",
+    "reviewNote": "This is a metaphor and not a quotation of Psalm 45:13; explain the distinction."
+  },
+  {
+    "sourceTitle": "The Art of Illustration",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/42558",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/the-art-of-illustration.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "spurgeon-illustrations-quicken-attention",
+    "type": "Quote",
+    "title": "Illustrations quicken attention",
+    "author": "C. H. Spurgeon",
+    "text": "Illustrations tend to enliven an audience and quicken attention.",
+    "slideText": "Illustrations tend to enliven an audience and quicken attention.",
+    "sourceLocator": "Illustrations in Preaching, section heading on attention",
+    "bibleReferences": [
+      "Matthew 13:34",
+      "Mark 4:33"
+    ],
+    "topics": [
+      "illustrations",
+      "attention",
+      "teaching"
+    ],
+    "recommendedUse": "Use in teacher training when explaining the limited but useful role of illustration.",
+    "reviewNote": "Follow Christ’s actual teaching in context; this sentence is Spurgeon’s craft observation."
+  },
+  {
+    "sourceTitle": "The Art of Illustration",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/42558",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/the-art-of-illustration.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "id": "spurgeon-not-all-illustrations",
+    "type": "Quote",
+    "title": "Do not make the sermon all illustrations",
+    "author": "C. H. Spurgeon",
+    "text": "Illustrate, by all means, but do not let the sermon be all illustrations, or it will be only suitable for an assembly of simpletons.",
+    "slideText": "Illustrate, by all means, but do not let the sermon be all illustrations",
+    "sourceLocator": "Illustrations in Preaching, paragraph beginning 'Illustrate, by all means'",
+    "bibleReferences": [
+      "2 Timothy 4:2",
+      "Titus 2:1"
+    ],
+    "topics": [
+      "illustrations",
+      "doctrine",
+      "preaching"
+    ],
+    "recommendedUse": "Use in sermon preparation training to keep explanation and doctrine central.",
+    "reviewNote": "The full wording is forceful period rhetoric; the shorter slide preserves the practical counsel."
   }
 ]

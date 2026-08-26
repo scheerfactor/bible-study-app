@@ -572,5 +572,252 @@
     "musicRights": "Public Domain",
     "musicAttribution": "HUDSON by Ralph E. Hudson, 1885; public-domain MIDI distributed with the cited Timeless Truths record.",
     "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "jesus-paid-it-all",
+    "title": "Jesus Paid It All",
+    "lyricist": "Elvina M. Hall",
+    "lyricYear": 1865,
+    "tune": "All to Christ",
+    "themes": [
+      "Atonement",
+      "Salvation",
+      "Grace",
+      "Blood of Christ"
+    ],
+    "scriptureReferences": [
+      "Isaiah 1:18",
+      "1 Peter 1:18-19",
+      "Revelation 1:5-6"
+    ],
+    "stanzas": [
+      "I hear the Savior say,\n“Thy strength indeed is small;\nChild of weakness, watch and pray,\nFind in Me thine all in all.”",
+      "For nothing good have I\nWhereby Thy grace to claim;\nI’ll wash my garments white\nIn the blood of Calv’ry’s Lamb.",
+      "And now complete in Him,\nMy robe, His righteousness,\nClose sheltered ’neath His side,\nI am divinely blest.",
+      "Lord, now indeed I find\nThy pow’r, and Thine alone,\nCan change the *leopard’s spots [*leper’s]\nAnd melt the heart of stone.",
+      "When from my dying bed\nMy ransomed soul shall rise,\n“Jesus died my soul to save,”\nShall rend the vaulted skies.",
+      "And when before the throne\nI stand in Him complete,\nI’ll lay my trophies down,\nAll down at Jesus’ feet."
+    ],
+    "refrain": "Jesus paid it all,\nAll to Him I owe;\nSin had left a crimson stain,\nHe washed it white as snow.",
+    "textSourceUrl": "https://library.timelesstruths.org/music/Jesus_Paid_It_All/",
+    "textRights": "Public domain; exact 6-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "jesus-paid-it-all.mid",
+    "midiSha256": "0c4c4a47149e8d9592ed18da81656ebff9edd6fc6facbe004bdb78c6ed558189",
+    "rightsEvidenceFile": "jesus-paid-it-all-rights.html",
+    "rightsEvidenceSha256": "2d2b3470bd393bbcb0c93432a3f75cc4cd326433d645171efacde7fd9bc6d873",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/J/Jesus_Paid_It_All/Jesus_Paid_It_All.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ALL TO CHRIST by John T. Grape, 1868; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "take-my-life-and-let-it-be",
+    "title": "Take My Life and Let It Be",
+    "lyricist": "Frances R. Havergal",
+    "lyricYear": 1874,
+    "tune": "Hendon",
+    "themes": [
+      "Consecration",
+      "Submission",
+      "Stewardship",
+      "Service"
+    ],
+    "scriptureReferences": [
+      "Romans 12:1"
+    ],
+    "stanzas": [
+      "Take my life and let it be\nConsecrated, Lord, to Thee.\n*Take my moments and my days,\nLet them flow in endless praise.",
+      "Take my hands and let them move\nAt the impulse of Thy love.\nTake my feet and let them be\nSwift and beautiful for Thee.",
+      "Take my voice and let me sing,\nAlways, only for my King.\nTake my lips and let them be\nFilled with messages from Thee.",
+      "Take my silver and my gold,\nNot a mite would I withhold.\nTake my intellect and use\nEvery pow’r as Thou shalt choose.",
+      "Take my will and make it Thine,\nIt shall be no longer mine.\nTake my heart, it is Thine own,\nIt shall be Thy royal throne.",
+      "Take my love, my Lord, I pour\nAt Thy feet its treasure store.\nTake myself and I will be\nEver, only, all for Thee."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Take_My_Life_and_Let_It_Be/",
+    "textRights": "Public domain; exact 6-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "take-my-life.mid",
+    "midiSha256": "e2648bb235bad958ec54f1638939ee22a2f5ceb7cf8f7da4dda3ae04e215899a",
+    "rightsEvidenceFile": "take-my-life-rights.html",
+    "rightsEvidenceSha256": "39bb8f66e975f30ffebfb47621d6f0b018072e24a85c1e4467e602c5b3e6769a",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/Take_My_Life_and_Let_It_Be/Take_My_Life_and_Let_It_Be.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HENDON by Henri A. C. Malan, 1827, harmonized by Lowell Mason, 1841; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "sweet-hour-of-prayer",
+    "title": "Sweet Hour of Prayer",
+    "lyricist": "William W. Walford",
+    "lyricYear": 1845,
+    "tune": "Sweet Hour",
+    "themes": [
+      "Prayer",
+      "Trust",
+      "Comfort",
+      "Perseverance"
+    ],
+    "scriptureReferences": [
+      "1 Thessalonians 5:17",
+      "Revelation 8:4"
+    ],
+    "stanzas": [
+      "Sweet hour of prayer! sweet hour of prayer!\nThat calls me from a world of care,\nAnd bids me at my Father’s throne\nMake all my wants and wishes known.\nIn seasons of distress and grief,\nMy soul has often found relief,\nAnd oft escaped the tempter’s snare,\nBy thy return, sweet hour of prayer!",
+      "Sweet hour of prayer! sweet hour of prayer!\nThe joys I feel, the bliss I share,\nOf those whose anxious spirits burn\nWith strong desires for thy return!\nWith such I hasten to the place\nWhere God my Savior shows His face,\nAnd gladly take my station there,\nAnd wait for thee, sweet hour of prayer!",
+      "Sweet hour of prayer! sweet hour of prayer!\nThy wings shall my petition bear\nTo Him whose truth and faithfulness\nEngage the waiting soul to bless.\nAnd since He bids me seek His face,\nBelieve His Word and trust His grace,\nI’ll cast on Him my every care,\nAnd wait for thee, sweet hour of prayer!",
+      "Sweet hour of prayer! sweet hour of prayer!\nMay I thy consolation share,\nTill, from Mount Pisgah’s lofty height,\nI view my home and take my flight.\nThis robe of flesh I’ll drop, and rise\nTo seize the everlasting prize,\nAnd shout, while passing through the air,\n“Farewell, farewell, sweet hour of prayer!”"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Sweet_Hour_of_Prayer/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "sweet-hour-of-prayer.mid",
+    "midiSha256": "43844a9f96494490f9a5b252eda3cc6556a72038b9f5ebff4b17d7024e3af5a2",
+    "rightsEvidenceFile": "sweet-hour-of-prayer-rights.html",
+    "rightsEvidenceSha256": "489c60ff0e078b9dd6d3aeb0ec2a1b3fec806f074026624c66db67ec8e6b958f",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Sweet_Hour_of_Prayer/Sweet_Hour_of_Prayer.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "SWEET HOUR by William B. Bradbury, published 1861; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "my-faith-looks-up-to-thee",
+    "title": "My Faith Looks Up to Thee",
+    "lyricist": "Ray Palmer",
+    "lyricYear": 1830,
+    "tune": "Olivet (Mason)",
+    "themes": [
+      "Faith",
+      "Prayer",
+      "Guidance",
+      "Assurance"
+    ],
+    "scriptureReferences": [
+      "Hebrews 12:2",
+      "2 Corinthians 5:7",
+      "Galatians 2:20"
+    ],
+    "stanzas": [
+      "My faith looks up to Thee,\nThou Lamb of Calvary,\nSavior divine!\nNow hear me while I pray,\nTake all my guilt away,\nOh, let me from this day\nBe wholly Thine!",
+      "May Thy rich grace impart\nStrength to my fainting heart,\nMy zeal inspire!\nAs Thou hast died for me,\nOh, may my love to Thee\nPure, warm, and changeless be,\nA living fire!",
+      "While life’s dark maze I tread,\nAnd griefs around me spread,\nBe Thou my guide;\nBid darkness turn to day,\nWipe sorrow’s tears away,\nNor let me ever stray\nFrom Thee aside.",
+      "When ends life’s transient dream,\nWhen death’s cold, sullen stream\nShall o’er me roll;\nBlest Savior, then in love,\nFear and distrust remove;\nOh, bear me safe above,\nA ransomed soul!"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/My_Faith_Looks_Up_to_Thee/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "my-faith-looks-up.mid",
+    "midiSha256": "0d0b7891f164460936a157c9cfe154d0fc334736c449ceac124157a32f56597c",
+    "rightsEvidenceFile": "my-faith-looks-up-rights.html",
+    "rightsEvidenceSha256": "83311bce161a970532c1242f6195820d201205c7a24edb1300d185f009a69128",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/My_Faith_Looks_Up_to_Thee/My_Faith_Looks_Up_to_Thee.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "OLIVET by Lowell Mason, 1832; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "rejoice-the-lord-is-king",
+    "title": "Rejoice, the Lord Is King",
+    "lyricist": "Charles Wesley",
+    "lyricYear": 1744,
+    "tune": "Darwall's 148th",
+    "themes": [
+      "Joy",
+      "Kingship of Christ",
+      "Second Coming",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Philippians 4:4",
+      "Psalm 103:19"
+    ],
+    "stanzas": [
+      "Rejoice, the Lord is King!\nYour Lord and King adore;\nRejoice, give thanks, and sing,\nAnd triumph evermore;\nLift up your heart, lift up your voice;\nRejoice, again I say, rejoice!",
+      "Jesus, the Savior, reigns,\nThe God of truth and love;\nWhen He had purged our stains\nHe took His seat above;\nLift up your heart, lift up your voice;\nRejoice, again I say, rejoice!",
+      "His kingdom cannot fail,\nHe rules o’er earth and Heav’n,\nThe keys of death and hell\nAre to our Jesus giv’n;\nLift up your heart, lift up your voice;\nRejoice, again I say, rejoice!",
+      "Rejoice in glorious hope!\nJesus the Judge shall come,\nAnd take His servants up\nTo their eternal home;\nWe soon shall hear th’ archangel’s voice;\nThe trump of God shall sound, rejoice!"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Rejoice_the_Lord_Is_King/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "rejoice-the-lord-is-king.mid",
+    "midiSha256": "13afacfb9441cd55ad5797fd40115a46112da74c5f6311af28cd245019a80105",
+    "rightsEvidenceFile": "rejoice-the-lord-is-king-rights.html",
+    "rightsEvidenceSha256": "330119a31d693ce7afc5e353dbd034c64535c7df5927a55f6296f467504dc480",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Rejoice_the_Lord_Is_King/Rejoice_the_Lord_Is_King.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "DARWALL'S 148TH by John Darwall, published 1770; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "i-sing-the-mighty-power-of-god",
+    "title": "I Sing the Mighty Power of God",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1715,
+    "tune": "Ellacombe",
+    "themes": [
+      "Creation",
+      "Providence",
+      "Power of God",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Jeremiah 10:12-13"
+    ],
+    "stanzas": [
+      "I sing the mighty pow’r of God, that made the mountains rise,\nThat spread the flowing seas abroad, and built the lofty skies.\nI sing the wisdom that ordained the sun to rule the day;\nThe moon shines full at His command, and all the stars obey.",
+      "I sing the goodness of the Lord, who filled the earth with food,\nWho formed the creatures through the Word, and then pronounced them good.\nLord, how Thy wonders are displayed, where’er I turn my eye,\nIf I survey the ground I tread, or gaze upon the sky.",
+      "There’s not a plant or flow’r below, but makes Thy glories known,\nAnd clouds arise, and tempests blow, by order from Thy throne;\nWhile all that borrows life from Thee is ever in Thy care;\nAnd everywhere that we can be, Thou, God, art present there."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/I_Sing_the_Mighty_Power_of_God/",
+    "textRights": "Public domain; exact 3-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "i-sing-the-mighty-power.mid",
+    "midiSha256": "5a5cbc3f09e7fdb6b55d05ab3dd47a8cdfa8bd63f61b96a7329b9a077014e275",
+    "rightsEvidenceFile": "i-sing-the-mighty-power-rights.html",
+    "rightsEvidenceSha256": "4a1363f5f08d788a151a598910eaa6fbcb6a1d500e8d25e1d7defc9af65e34d8",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/I/I_Sing_the_Mighty_Power_of_God/I_Sing_the_Mighty_Power_of_God.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ELLACOMBE from Gesangbuch der H. W. K. Hofkapelle, 1784, arranged and harmonized by William H. Monk, 1868; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "my-jesus-i-love-thee",
+    "title": "My Jesus, I Love Thee",
+    "lyricist": "William R. Featherston",
+    "lyricYear": 1864,
+    "tune": "Gordon",
+    "themes": [
+      "Love for Christ",
+      "Devotion",
+      "Calvary",
+      "Heaven"
+    ],
+    "scriptureReferences": [
+      "1 John 4:19"
+    ],
+    "stanzas": [
+      "My Jesus, I love Thee, I know Thou art mine;\nFor Thee all the follies of sin I resign;\nMy gracious Redeemer, my Savior art Thou;\nIf ever I loved Thee, my Jesus, ’tis now.",
+      "I love Thee because Thou hast first loved me,\nAnd purchased my pardon on Calvary’s tree;\nI love Thee for wearing the thorns on Thy brow;\nIf ever I loved Thee, my Jesus, ’tis now.",
+      "I’ll love Thee in life, I will love Thee in death,\nAnd praise Thee as long as Thou lendest me breath;\nAnd say when the death dew lies cold on my brow,\nIf ever I loved Thee, my Jesus, ’tis now.",
+      "In mansions of glory and endless delight,\nI’ll ever adore Thee in heaven so bright;\nI’ll sing with the glittering crown on my brow,\nIf ever I loved Thee, my Jesus, ’tis now."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/My_Jesus_I_Love_Thee/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "my-jesus-i-love-thee.mid",
+    "midiSha256": "35564fa770ae96f2234dd4125a938d4aa84e9e86f5c4017c6bc397c2e0474127",
+    "rightsEvidenceFile": "my-jesus-i-love-thee-rights.html",
+    "rightsEvidenceSha256": "967366111fc85201e22b054e78ccc213ae0a9d4a2fda654f383959d83db9b477",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/My_Jesus_I_Love_Thee/My_Jesus_I_Love_Thee.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "GORDON by Adoniram J. Gordon, 1876; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
   }
 ]
