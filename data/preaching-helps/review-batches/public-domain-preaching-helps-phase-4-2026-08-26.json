@@ -1,0 +1,196 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-4-2026-08-26",
+  "reviewedAt": "2026-08-26",
+  "purpose": "Add eight source-exact public-domain quotations for Bible study and preaching preparation through a duplicate-safe batch importer.",
+  "defaults": {
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text."
+  },
+  "entries": [
+    {
+      "sourceTitle": "Moody's Anecdotes and Illustrations",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+      "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+      "id": "moody-read-and-take-god-at-word",
+      "type": "Quote",
+      "title": "Read and take God at His word",
+      "author": "D. L. Moody",
+      "text": "I cannot read other minds and other hearts; I cannot read the Bible and lay hold for others; but I can read for myself, and take God at his word.",
+      "slideText": "I can read for myself, and take God at his word.",
+      "sourceLocator": "Assurance, paragraph beginning 'One thing I know'",
+      "bibleReferences": [
+        "Romans 10:17",
+        "1 Thessalonians 2:13"
+      ],
+      "topics": [
+        "faith",
+        "Bible reading",
+        "personal responsibility"
+      ],
+      "recommendedUse": "Use in a lesson on personally hearing, believing, and receiving the Word of God.",
+      "reviewNote": "Moody's personal application should be read alongside the cited KJV passages and their contexts."
+    },
+    {
+      "sourceTitle": "Moody's Anecdotes and Illustrations",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+      "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+      "id": "moody-assurance-in-word",
+      "type": "Quote",
+      "title": "Assurance in the Word",
+      "author": "D. L. Moody",
+      "text": "There is no doubt about assurance in the Word of God.",
+      "slideText": "There is no doubt about assurance in the Word of God.",
+      "sourceLocator": "Assurance, 'I Don't Know'",
+      "bibleReferences": [
+        "1 John 5:11-13",
+        "John 5:24"
+      ],
+      "topics": [
+        "assurance",
+        "salvation",
+        "Scripture"
+      ],
+      "recommendedUse": "Use to introduce a Scripture-led study of biblical assurance.",
+      "reviewNote": "The quotation is a summary claim; establish the doctrine from the cited KJV passages rather than from the quotation alone."
+    },
+    {
+      "sourceTitle": "Moody's Anecdotes and Illustrations",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+      "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+      "id": "moody-reason-for-faith",
+      "type": "Quote",
+      "title": "Give a reason for the faith",
+      "author": "D. L. Moody",
+      "text": "I like a man to be able to give a reason for the faith that is in him.",
+      "slideText": "I like a man to be able to give a reason for the faith that is in him.",
+      "sourceLocator": "Belief, paragraph beginning 'I like a man'",
+      "bibleReferences": [
+        "1 Peter 3:15",
+        "2 Timothy 2:15"
+      ],
+      "topics": [
+        "apologetics",
+        "faith",
+        "readiness"
+      ],
+      "recommendedUse": "Use in teaching believers to know why they believe and to answer with meekness and fear.",
+      "reviewNote": "Pair the saying with the full wording and context of 1 Peter 3:15 KJV."
+    },
+    {
+      "sourceTitle": "Moody's Anecdotes and Illustrations",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+      "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+      "id": "moody-cling-close-to-bible",
+      "type": "Quote",
+      "title": "Cling close to the Bible",
+      "author": "D. L. Moody",
+      "text": "Oh, let us cling close to the Bible.",
+      "slideText": "Oh, let us cling close to the Bible.",
+      "sourceLocator": "The Bible, 'How Funny You Talk'",
+      "bibleReferences": [
+        "Psalm 119:105",
+        "2 Timothy 3:16-17"
+      ],
+      "topics": [
+        "Scripture",
+        "steadfastness",
+        "Bible reading"
+      ],
+      "recommendedUse": "Use as a brief exhortation before Bible reading or at the close of a lesson.",
+      "reviewNote": "The exhortation is concise; the cited KJV passages supply its biblical basis."
+    },
+    {
+      "sourceTitle": "Moody's Anecdotes and Illustrations",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+      "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+      "id": "moody-bible-depth",
+      "type": "Quote",
+      "title": "The depth of God's Book",
+      "author": "D. L. Moody",
+      "text": "If everybody could understand everything the Bible said it wouldn't be God's book; if Christians, if theologians, had studied it for forty, fifty, sixty years, and then only began to understand it, how could a man expect to understand it by one reading?",
+      "slideText": "how could a man expect to understand it by one reading?",
+      "sourceLocator": "Excuses, Gold",
+      "bibleReferences": [
+        "Psalm 119:18",
+        "2 Timothy 2:15"
+      ],
+      "topics": [
+        "Bible study",
+        "perseverance",
+        "understanding"
+      ],
+      "recommendedUse": "Use to encourage repeated, prayerful study rather than hasty conclusions.",
+      "reviewNote": "Difficulty alone does not prove divine origin; use the quotation as encouragement, not as an argument replacing Scripture."
+    },
+    {
+      "sourceTitle": "Moody's Anecdotes and Illustrations",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+      "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+      "id": "moody-faith-all-things-possible",
+      "type": "Quote",
+      "title": "Faith and possibility",
+      "author": "D. L. Moody",
+      "text": "My friends, if you have faith all things are possible.",
+      "slideText": "My friends, if you have faith all things are possible.",
+      "sourceLocator": "Faith, 'How Moody's Faith Saved an Infidel'",
+      "bibleReferences": [
+        "Mark 9:23",
+        "Mark 11:22-24"
+      ],
+      "topics": [
+        "faith",
+        "prayer",
+        "evangelism"
+      ],
+      "recommendedUse": "Use only while carefully explaining biblical faith and the will of God from the cited passages.",
+      "reviewNote": "Do not use this as a promise that every personal desire will occur; read the saying within Moody's evangelistic context and Scripture's teaching."
+    },
+    {
+      "sourceTitle": "The Art of Illustration",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/42558",
+      "sourceFile": "data/library/verified/the-art-of-illustration.txt",
+      "id": "fuller-reasons-and-similitudes",
+      "type": "Quote",
+      "title": "Pillars and windows of a sermon",
+      "author": "Thomas Fuller, quoted by C. H. Spurgeon",
+      "text": "Reasons are the pillars of the fabric of a sermon; but similitudes are the windows which give the best lights.",
+      "slideText": "Reasons are the pillars of the fabric of a sermon; but similitudes are the windows which give the best lights.",
+      "sourceLocator": "Illustrations in Preaching, opening paragraph",
+      "bibleReferences": [
+        "Nehemiah 8:8",
+        "Matthew 13:34"
+      ],
+      "topics": [
+        "preaching",
+        "illustration",
+        "clarity"
+      ],
+      "recommendedUse": "Use in preacher training to distinguish a sermon's reasoning from its illuminating comparisons.",
+      "reviewNote": "This is Fuller's metaphor as quoted by Spurgeon; Scripture governs both sermon substance and method."
+    },
+    {
+      "sourceTitle": "The Art of Illustration",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/42558",
+      "sourceFile": "data/library/verified/the-art-of-illustration.txt",
+      "id": "shute-plain-sermon-learning",
+      "type": "Quote",
+      "title": "Learning expressed plainly",
+      "author": "Joshua Shute, quoted by C. H. Spurgeon",
+      "text": "That sermon has most learning in it that has most plainness.",
+      "slideText": "That sermon has most learning in it that has most plainness.",
+      "sourceLocator": "Illustrations in Preaching, paragraph discussing obscure sermons",
+      "bibleReferences": [
+        "1 Corinthians 14:9",
+        "2 Corinthians 3:12"
+      ],
+      "topics": [
+        "preaching",
+        "clarity",
+        "plain speech"
+      ],
+      "recommendedUse": "Use in teaching preachers to make biblical truth understandable rather than obscure.",
+      "reviewNote": "Plainness must remain accurate and reverent; it is not permission to flatten difficult doctrines."
+    }
+  ]
+}

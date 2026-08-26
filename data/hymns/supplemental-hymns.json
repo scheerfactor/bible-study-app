@@ -819,5 +819,286 @@
     "musicRights": "Public Domain",
     "musicAttribution": "GORDON by Adoniram J. Gordon, 1876; public-domain MIDI distributed with the cited Timeless Truths record.",
     "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "leaning-on-the-everlasting-arms",
+    "title": "Leaning on the Everlasting Arms",
+    "lyricist": "Elisha A. Hoffman; refrain by Anthony J. Showalter",
+    "lyricYear": 1887,
+    "tune": "Showalter",
+    "themes": [
+      "Trust",
+      "Assurance",
+      "Peace",
+      "Pilgrimage"
+    ],
+    "scriptureReferences": [
+      "Deuteronomy 33:27",
+      "Song of Solomon 8:5"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Leaning_on_the_Everlasting_Arms/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/L/Leaning_on_the_Everlasting_Arms/Leaning_on_the_Everlasting_Arms.mid",
+    "musicAttribution": "SHOWALTER by Anthony J. Showalter, published 1887; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "What a fellowship, what a joy divine,\nLeaning on the everlasting arms;\nWhat a blessedness, what a peace is mine,\nLeaning on the everlasting arms.",
+      "Oh, how sweet to walk in this pilgrim way,\nLeaning on the everlasting arms;\nOh, how bright the path grows from day to day,\nLeaning on the everlasting arms.",
+      "What have I to dread, what have I to fear,\nLeaning on the everlasting arms?\nI have blessed peace with my Lord so near,\nLeaning on the everlasting arms."
+    ],
+    "refrain": "Leaning, leaning,\nSafe and secure from all alarms;\nLeaning, leaning,\nLeaning on the everlasting arms.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "leaning-on-the-everlasting-arms.mid",
+    "midiSha256": "b409d4ebc0eb30a50d6f4428ad5ee8190fc4457203d67966de632a3b225c45d6",
+    "rightsEvidenceFile": "leaning-on-the-everlasting-arms-rights.html",
+    "rightsEvidenceSha256": "b70e311ca9823a59fe5de79413d5fd6ec1b66ab69a1e621e57f6f4b5a457a7fa",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "trust-and-obey",
+    "title": "Trust and Obey",
+    "lyricist": "John H. Sammis",
+    "lyricYear": 1887,
+    "tune": "Trust and Obey",
+    "themes": [
+      "Trust",
+      "Obedience",
+      "Fellowship",
+      "Discipleship"
+    ],
+    "scriptureReferences": [
+      "Psalm 84:11-12",
+      "Isaiah 50:10"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Trust_and_Obey/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/Trust_and_Obey/Trust_and_Obey.mid",
+    "musicAttribution": "TRUST AND OBEY by Daniel B. Towner, 1887; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "When we walk with the Lord in the light of His Word,\nWhat a glory He sheds on our way!\nWhile we do His good will, He abides with us still,\nAnd with all who will trust and obey.",
+      "Not a shadow can rise, not a cloud in the skies,\nBut His smile quickly drives it away;\nNot a doubt or a fear, not a sigh or a tear,\nCan abide while we trust and obey.",
+      "Not a burden we bear, not a sorrow we share,\nBut our toil He doth richly repay;\nNot a grief or a loss, not a frown or a cross,\nBut is blessed if we trust and obey.",
+      "But we never can prove the delights of His love\nUntil all on the altar we lay;\nFor the favor He shows, for the joy He bestows,\nAre for them who will trust and obey.",
+      "Then in fellowship sweet we will sit at His feet,\nOr we’ll walk by His side in the way;\nWhat He says we will do, where He sends we will go;\nNever fear, only trust and obey."
+    ],
+    "refrain": "Trust and obey, for there’s no other way\nTo be happy in Jesus, but to trust and obey.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "trust-and-obey.mid",
+    "midiSha256": "44e89f4e26cb674fe6ac8b752b1e891e0a2b5241bd4eb813de7463f8b9576ee8",
+    "rightsEvidenceFile": "trust-and-obey-rights.html",
+    "rightsEvidenceSha256": "146ebb3eed23460c5d630ef6786f7f1ea1b5a4d97f9c0b48e9ce01e6a30bf026",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "wonderful-words-of-life",
+    "title": "Wonderful Words of Life",
+    "lyricist": "Philip P. Bliss",
+    "lyricYear": 1874,
+    "tune": "Words of Life",
+    "themes": [
+      "Bible",
+      "Gospel",
+      "Salvation",
+      "Teaching"
+    ],
+    "scriptureReferences": [
+      "John 6:63",
+      "John 6:68",
+      "Philippians 2:15-16"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Wonderful_Words_of_Life/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/Wonderful_Words_of_Life/Wonderful_Words_of_Life.mid",
+    "musicAttribution": "WORDS OF LIFE by Philip P. Bliss, 1874; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Sing them over again to me,\nWonderful words of life;\nLet me more of their beauty see,\nWonderful words of life.\nWords of life and beauty\nTeach me faith and duty;",
+      "Christ, the blessed One, gives to all\nWonderful words of life;\nSinner, list to the loving call,\nWonderful words of life.\nAll so freely given,\nWooing us to heaven;",
+      "Sweetly echo the Gospel call,\nWonderful words of life;\nOffer pardon and peace to all,\nWonderful words of life.\nJesus, only Savior,\nSanctify forever;"
+    ],
+    "refrain": "Beautiful words, wonderful words,\nWonderful words of life;\nBeautiful words, wonderful words,\nWonderful words of life.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "wonderful-words-of-life.mid",
+    "midiSha256": "a806cdd911377cad3e96d0650d69d1da5244b74d18ff52790045a306a1f8ea2d",
+    "rightsEvidenceFile": "wonderful-words-of-life-rights.html",
+    "rightsEvidenceSha256": "ef47053ee6423eeae69acc747f289d34658062e2e5ab577ddf72305e7a8ef33e",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "rescue-the-perishing",
+    "title": "Rescue the Perishing",
+    "lyricist": "Frances J. Crosby",
+    "lyricYear": 1869,
+    "tune": "Rescue",
+    "themes": [
+      "Evangelism",
+      "Missions",
+      "Compassion",
+      "Gospel"
+    ],
+    "scriptureReferences": [
+      "Jude 1:22-23"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Rescue_the_Perishing/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Rescue_the_Perishing/Rescue_the_Perishing.mid",
+    "musicAttribution": "RESCUE by William H. Doane, published 1870; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Rescue the perishing, care for the dying,\nSnatch them in pity from sin and the grave;\nWeep o’er the erring one, lift up the fallen,\nTell them of Jesus, the mighty to save.",
+      "Though they are slighting Him, still He is waiting,\nWaiting the penitent child to receive;\nPlead with them earnestly, plead with them gently;\nHe will forgive if they only believe.",
+      "Down in the human heart, crushed by the tempter,\nFeelings lie buried that grace can restore;\nTouched by a loving heart, wakened by kindness,\nChords that were broken will vibrate once more.",
+      "Rescue the perishing, duty demands it;\nStrength for thy labor the Lord will provide;\nBack to the narrow way patiently win them;\nTell the poor wand’rer a Savior has died."
+    ],
+    "refrain": "Rescue the perishing, care for the dying,\nJesus is merciful, Jesus will save.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "rescue-the-perishing.mid",
+    "midiSha256": "da1d0236c4fbbc9e0b80fa61225e46065ba9336eb786d303f89cf98bc8258e0b",
+    "rightsEvidenceFile": "rescue-the-perishing-rights.html",
+    "rightsEvidenceSha256": "41bdbe5136beeb28b650a6334d2cdec83bcac1374d07ed49341fb0c5c324b658",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "higher-ground",
+    "title": "Higher Ground",
+    "lyricist": "Johnson Oatman, Jr.",
+    "lyricYear": 1898,
+    "tune": "Higher Ground",
+    "themes": [
+      "Growth",
+      "Faith",
+      "Holiness",
+      "Heaven"
+    ],
+    "scriptureReferences": [
+      "Deuteronomy 32:13",
+      "Psalm 18:33",
+      "Isaiah 58:14",
+      "Micah 4:2"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Higher_Ground/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/Higher_Ground/Higher_Ground.mid",
+    "musicAttribution": "HIGHER GROUND by Charles H. Gabriel, 1902; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "I’m pressing on the upward way,\nNew heights I’m gaining every day;\nStill praying as I’m onward bound,\n“Lord, plant my feet on higher ground.”",
+      "My heart has no desire to stay\nWhere doubts arise and fears dismay;\nThough some may dwell where those abound,\nMy prayer, my aim, is higher ground.",
+      "I want to live above the world,\nThough Satan’s darts at me are hurled;\nFor faith has caught the joyful sound,\nThe song of saints on higher ground.",
+      "I want to scale the utmost height\nAnd catch a gleam of glory bright;\nBut still I’ll pray till heav’n I’ve found,\n“Lord, plant my feet on higher ground.”"
+    ],
+    "refrain": "Lord, lift me up and let me stand,\nBy faith, on Heaven’s tableland,\nA higher plane than I have found;\nLord, plant my feet on higher ground.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "higher-ground.mid",
+    "midiSha256": "5c25ce55018d7524df9d4cf7d010287b706004378d3b038bd53ed72b57b99d02",
+    "rightsEvidenceFile": "higher-ground-rights.html",
+    "rightsEvidenceSha256": "7398638990221a7099b53a6bf71f9b685e29c4a8d412c8069046938eda9afb20",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "i-surrender-all",
+    "title": "I Surrender All",
+    "lyricist": "Judson W. Van DeVenter",
+    "lyricYear": 1896,
+    "tune": "Surrender",
+    "themes": [
+      "Surrender",
+      "Consecration",
+      "Submission",
+      "Invitation"
+    ],
+    "scriptureReferences": [
+      "Luke 14:33",
+      "Matthew 19:27"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/I_Surrender_All/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/I/I_Surrender_All/I_Surrender_All.mid",
+    "musicAttribution": "SURRENDER by Winfield S. Weeden, 1896; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "All to Jesus I surrender,\nAll to Him I freely give;\nI will ever love and trust Him,\nIn His presence daily live.",
+      "All to Jesus I surrender,\nHumbly at His feet I bow;\nWorldly pleasures all forsaken,\nTake me, Jesus, take me now.",
+      "All to Jesus I surrender,\nMake me, Savior, wholly Thine;\nLet me feel the Holy Spirit,\nTruly know that Thou art mine.",
+      "All to Jesus I surrender,\nLord, I give myself to Thee;\nFill me with Thy love and power,\nLet Thy blessing fall on me.",
+      "All to Jesus I surrender,\nNow I feel the sacred flame;\nOh, the joy of full salvation!\nGlory, glory, to His Name!"
+    ],
+    "refrain": "I surrender all,\nI surrender all;\nAll to Thee, my blessed Savior,\nI surrender all.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "i-surrender-all.mid",
+    "midiSha256": "b975e521809c8da4501ebc87b65061f974422bfc27cbd348c00c9b723867ecb5",
+    "rightsEvidenceFile": "i-surrender-all-rights.html",
+    "rightsEvidenceSha256": "d6ff1af60850fb271c27a3d6477ec8aa19707c4290e3c4ceb2295a0a5a27bfd3",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "he-leadeth-me",
+    "title": "He Leadeth Me",
+    "lyricist": "Joseph H. Gilmore",
+    "lyricYear": 1862,
+    "tune": "Aughton",
+    "themes": [
+      "Guidance",
+      "Providence",
+      "Trust",
+      "Comfort"
+    ],
+    "scriptureReferences": [
+      "Psalm 23:1-3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/He_Leadeth_Me/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/He_Leadeth_Me/He_Leadeth_Me.mid",
+    "musicAttribution": "AUGHTON by William B. Bradbury, published 1864; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "He leadeth me, O blessed thought!\nO words with heav’nly comfort fraught!\nWhate’er I do, where’er I be\nStill ’tis God’s hand that leadeth me.",
+      "Sometimes ’mid scenes of deepest gloom,\nSometimes where Eden’s bowers bloom,\nBy waters still, o’er troubled sea,\nStill ’tis His hand that leadeth me.",
+      "Lord, I would place my hand in Thine,\nNor ever murmur nor repine;\nContent, whatever lot I see,\nSince ’tis my God that leadeth me.",
+      "And when my task on earth is done,\nWhen by Thy grace the vict’ry’s won,\nE’en death’s cold wave I will not flee,\nSince God through Jordan leadeth me."
+    ],
+    "refrain": "He leadeth me, He leadeth me,\nBy His own hand He leadeth me;\nHis faithful foll’wer I would be,\nFor by His hand He leadeth me.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "he-leadeth-me.mid",
+    "midiSha256": "4caa6a70b031b170e520c12284f90f4a30a138ef6867fe163e93718ee397addd",
+    "rightsEvidenceFile": "he-leadeth-me-rights.html",
+    "rightsEvidenceSha256": "e5cc11900ba0a706e33b0a4569635ed123c878343f93cba8d66f8b4ac109b3d0",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "more-about-jesus",
+    "title": "More About Jesus",
+    "lyricist": "Eliza E. Hewitt",
+    "lyricYear": 1887,
+    "tune": "Sweeney",
+    "themes": [
+      "Christ",
+      "Bible Study",
+      "Discipleship",
+      "Second Coming"
+    ],
+    "scriptureReferences": [
+      "1 Chronicles 16:10",
+      "John 17:3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/More_About_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/More_About_Jesus/More_About_Jesus.mid",
+    "musicAttribution": "SWEENEY by John R. Sweney, published 1887; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "More about Jesus would I know,\nMore of His grace to others show;\nMore of His saving fullness see,\nMore of His love who died for me.",
+      "More about Jesus let me learn,\nMore of His holy will discern;\nSpirit of God, my teacher be,\nShowing the things of Christ to me.",
+      "More about Jesus, in His Word,\nHolding communion with my Lord;\nHearing His voice in every line,\nMaking each faithful saying mine.",
+      "More about Jesus on His throne,\nRiches in glory all His own;\nMore of His kingdom’s sure increase;\nMore of His coming, Prince of Peace."
+    ],
+    "refrain": "More, more about Jesus,\nMore, more about Jesus;\nMore of His saving fullness see,\nMore of His love who died for me.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "more-about-jesus.mid",
+    "midiSha256": "d5e80a9381dfdefdd420485364ea29abb676797c33740674e72257820373f5fb",
+    "rightsEvidenceFile": "more-about-jesus-rights.html",
+    "rightsEvidenceSha256": "e456132ca9499072af0b9a69be32a1b46a640fcb063cd6169ca4f0ac36f341fd",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
   }
 ]

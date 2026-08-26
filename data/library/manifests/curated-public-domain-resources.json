@@ -102144,5 +102144,145 @@
     "checksum_sha256": "00e98105a80a74eb76a8a23a531134b5c87c14ff998e85e504dd8b2eac393bda",
     "file_size_bytes": 1799004,
     "word_count": 315643
+  },
+  {
+    "title": "The Seven Laws of Teaching",
+    "author": "John Milton Gregory",
+    "year": 1886,
+    "category": "Preaching & Teaching",
+    "collection": "Christian Education",
+    "source_url": "https://archive.org/download/sevenlawsofteach01greg/sevenlawsofteach01greg_djvu.txt",
+    "download_url": "https://archive.org/download/sevenlawsofteach01greg/sevenlawsofteach01greg_djvu.txt",
+    "source_license_url": "https://commons.wikimedia.org/wiki/File:The_seven_laws_of_teaching_(IA_sevenlawsofteach01greg).pdf",
+    "file_path": "data/library/verified/the-seven-laws-of-teaching-john-milton-gregory.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "First edition published in 1886; the matching Internet Archive scan and Wikimedia Commons source record identify the work as public domain in the United States.",
+    "notes": "Practical teaching principles for Sunday School, Christian school, discipleship, and lesson preparation. Read teaching philosophy under Scripture and spot-check OCR before quotation. Labels/warnings: Historical pedagogy;Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Practical teaching principles for Sunday School, Christian school, discipleship, and lesson preparation. Read teaching philosophy under Scripture and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Christian Education",
+      "Historical pedagogy",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical pedagogy",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Seven Laws of Teaching",
+      "author": "John Milton Gregory",
+      "category": "Preaching & Teaching",
+      "collection": "Christian Education",
+      "badge": "Christian Education",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 161,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "eb9295bfdb7826d09d2eb7466b40dac9dad7b40ce92104016a7106c03f16f646",
+    "file_size_bytes": 237852,
+    "word_count": 36164
+  },
+  {
+    "title": "How to Teach Religion: Principles and Methods",
+    "author": "George Herbert Betts",
+    "year": 1926,
+    "category": "Preaching & Teaching",
+    "collection": "Christian Education",
+    "source_url": "https://www.gutenberg.org/ebooks/15800",
+    "download_url": "https://www.gutenberg.org/ebooks/15800.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/how-to-teach-religion-principles-and-methods-george-herbert-betts.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg ebook 15800 identifies this edition as public domain in the USA.",
+    "notes": "Historical methods for preparing Bible lessons and teaching children. Evaluate every theological claim by the KJV text and the app's doctrine labels. Labels/warnings: Historical pedagogy;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical methods for preparing Bible lessons and teaching children. Evaluate every theological claim by the KJV text and the app's doctrine labels.",
+    "resource_labels": [
+      "Christian Education",
+      "Historical pedagogy",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical pedagogy",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How to Teach Religion: Principles and Methods",
+      "author": "George Herbert Betts",
+      "category": "Preaching & Teaching",
+      "collection": "Christian Education",
+      "badge": "Christian Education",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 276,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "cd3d5473afeae28e0776e1e91f473f2567b31d04a2013181c86c05f0d4a5fa54",
+    "file_size_bytes": 369335,
+    "word_count": 62125
+  },
+  {
+    "title": "Crayon and Character: Truth Made Clear Through Eye and Ear",
+    "author": "B. J. Griswold",
+    "year": 1913,
+    "category": "Preaching & Teaching",
+    "collection": "Christian Education",
+    "source_url": "https://www.gutenberg.org/ebooks/16305",
+    "download_url": "https://www.gutenberg.org/ebooks/16305.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/crayon-and-character-truth-made-clear-through-eye-and-ear-b-j-griswold.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg ebook 16305 identifies this edition as public domain in the USA.",
+    "notes": "Public-domain chalk-talk and object-lesson methods for teachers and preachers seeking visual ways to explain truth. Adapt methods carefully and establish doctrine from Scripture. Labels/warnings: Historical pedagogy;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain chalk-talk and object-lesson methods for teachers and preachers seeking visual ways to explain truth. Adapt methods carefully and establish doctrine from Scripture.",
+    "resource_labels": [
+      "Christian Education",
+      "Historical pedagogy",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical pedagogy",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Crayon and Character: Truth Made Clear Through Eye and Ear",
+      "author": "B. J. Griswold",
+      "category": "Preaching & Teaching",
+      "collection": "Christian Education",
+      "badge": "Christian Education",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 256,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f17635d7276e3d6869cf08b7099c28e2f5a546a1e079b9af118f5304a36a0835",
+    "file_size_bytes": 327315,
+    "word_count": 57501
   }
 ]

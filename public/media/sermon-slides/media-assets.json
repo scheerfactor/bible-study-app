@@ -264,5 +264,33 @@
     "bibleReferences": ["Psalm 19:1", "Genesis 1:16"],
     "recommendedUse": "Creation passages, glory and power of God, praise, providence, and creation-hymn slides; use light text on the left.",
     "optimized": "1600x900 JPEG stored locally; original generated background created for this app."
+  },
+  {
+    "file": "photos/pulpit-bible-title.jpg",
+    "slot": "pulpit-bible-title",
+    "category": "Preaching",
+    "source": "Original generated sermon-title background",
+    "source_url": "#original-generated-background-prompt-2026-08-26-pulpit-bible",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Preaching", "Scripture", "Exposition", "Proclamation"],
+    "bibleReferences": ["Nehemiah 8:4-8", "2 Timothy 4:2"],
+    "recommendedUse": "Sermon titles, exposition series, preaching points, invitations, and teaching slides; use light text in the left two-thirds.",
+    "optimized": "1600x900 JPEG stored locally; original generated background with a reserved sermon-title text zone."
+  },
+  {
+    "file": "photos/hymnal-piano-lyrics.jpg",
+    "slot": "hymnal-piano-lyrics",
+    "category": "Hymns",
+    "source": "Original generated hymn-lyrics background",
+    "source_url": "#original-generated-background-prompt-2026-08-26-hymnal-piano",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Hymns", "Worship", "Praise", "Music Ministry"],
+    "bibleReferences": ["Psalm 96:1-2", "Colossians 3:16"],
+    "recommendedUse": "Congregational hymn lyrics, worship sets, music ministry, pre-service slides, and offertory announcements; use dark text in the right two-thirds.",
+    "optimized": "1600x900 JPEG stored locally; original generated background with a reserved hymn-lyrics text zone."
   }
 ]

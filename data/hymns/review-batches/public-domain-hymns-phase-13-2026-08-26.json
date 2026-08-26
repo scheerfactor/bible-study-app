@@ -1,0 +1,176 @@
+{
+  "batchId": "public-domain-hymns-phase-13-2026-08-26",
+  "reviewedAt": "2026-08-26",
+  "sourceProvider": "Timeless Truths Free Online Library",
+  "purpose": "Add eight nonduplicate public-domain hymn texts with themed Scripture links and playable public-domain MIDI tunes through the repeatable source-verifying importer.",
+  "guardrails": [
+    "The importer rejects hymn ids and titles already present in the complete verified catalog.",
+    "The importer extracts the exact source stanzas and refrain without modern rewriting.",
+    "The retained page must explicitly mark both the hymn text and the selected tune Public Domain.",
+    "The exact MIDI and retained rights page are recorded with SHA-256 checksums.",
+    "Playback is synthesized from MIDI; no third-party performance recording is included."
+  ],
+  "entries": [
+    {
+      "id": "leaning-on-the-everlasting-arms",
+      "title": "Leaning on the Everlasting Arms",
+      "lyricist": "Elisha A. Hoffman; refrain by Anthony J. Showalter",
+      "lyricYear": 1887,
+      "tune": "Showalter",
+      "themes": [
+        "Trust",
+        "Assurance",
+        "Peace",
+        "Pilgrimage"
+      ],
+      "scriptureReferences": [
+        "Deuteronomy 33:27",
+        "Song of Solomon 8:5"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Leaning_on_the_Everlasting_Arms/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/L/Leaning_on_the_Everlasting_Arms/Leaning_on_the_Everlasting_Arms.mid",
+      "musicAttribution": "SHOWALTER by Anthony J. Showalter, published 1887; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "trust-and-obey",
+      "title": "Trust and Obey",
+      "lyricist": "John H. Sammis",
+      "lyricYear": 1887,
+      "tune": "Trust and Obey",
+      "themes": [
+        "Trust",
+        "Obedience",
+        "Fellowship",
+        "Discipleship"
+      ],
+      "scriptureReferences": [
+        "Psalm 84:11-12",
+        "Isaiah 50:10"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Trust_and_Obey/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/Trust_and_Obey/Trust_and_Obey.mid",
+      "musicAttribution": "TRUST AND OBEY by Daniel B. Towner, 1887; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "wonderful-words-of-life",
+      "title": "Wonderful Words of Life",
+      "lyricist": "Philip P. Bliss",
+      "lyricYear": 1874,
+      "tune": "Words of Life",
+      "themes": [
+        "Bible",
+        "Gospel",
+        "Salvation",
+        "Teaching"
+      ],
+      "scriptureReferences": [
+        "John 6:63",
+        "John 6:68",
+        "Philippians 2:15-16"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Wonderful_Words_of_Life/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/Wonderful_Words_of_Life/Wonderful_Words_of_Life.mid",
+      "musicAttribution": "WORDS OF LIFE by Philip P. Bliss, 1874; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "rescue-the-perishing",
+      "title": "Rescue the Perishing",
+      "lyricist": "Frances J. Crosby",
+      "lyricYear": 1869,
+      "tune": "Rescue",
+      "themes": [
+        "Evangelism",
+        "Missions",
+        "Compassion",
+        "Gospel"
+      ],
+      "scriptureReferences": [
+        "Jude 1:22-23"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Rescue_the_Perishing/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Rescue_the_Perishing/Rescue_the_Perishing.mid",
+      "musicAttribution": "RESCUE by William H. Doane, published 1870; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "higher-ground",
+      "title": "Higher Ground",
+      "lyricist": "Johnson Oatman, Jr.",
+      "lyricYear": 1898,
+      "tune": "Higher Ground",
+      "themes": [
+        "Growth",
+        "Faith",
+        "Holiness",
+        "Heaven"
+      ],
+      "scriptureReferences": [
+        "Deuteronomy 32:13",
+        "Psalm 18:33",
+        "Isaiah 58:14",
+        "Micah 4:2"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Higher_Ground/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/Higher_Ground/Higher_Ground.mid",
+      "musicAttribution": "HIGHER GROUND by Charles H. Gabriel, 1902; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "i-surrender-all",
+      "title": "I Surrender All",
+      "lyricist": "Judson W. Van DeVenter",
+      "lyricYear": 1896,
+      "tune": "Surrender",
+      "themes": [
+        "Surrender",
+        "Consecration",
+        "Submission",
+        "Invitation"
+      ],
+      "scriptureReferences": [
+        "Luke 14:33",
+        "Matthew 19:27"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/I_Surrender_All/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/I/I_Surrender_All/I_Surrender_All.mid",
+      "musicAttribution": "SURRENDER by Winfield S. Weeden, 1896; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "he-leadeth-me",
+      "title": "He Leadeth Me",
+      "lyricist": "Joseph H. Gilmore",
+      "lyricYear": 1862,
+      "tune": "Aughton",
+      "themes": [
+        "Guidance",
+        "Providence",
+        "Trust",
+        "Comfort"
+      ],
+      "scriptureReferences": [
+        "Psalm 23:1-3"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/He_Leadeth_Me/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/He_Leadeth_Me/He_Leadeth_Me.mid",
+      "musicAttribution": "AUGHTON by William B. Bradbury, published 1864; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "more-about-jesus",
+      "title": "More About Jesus",
+      "lyricist": "Eliza E. Hewitt",
+      "lyricYear": 1887,
+      "tune": "Sweeney",
+      "themes": [
+        "Christ",
+        "Bible Study",
+        "Discipleship",
+        "Second Coming"
+      ],
+      "scriptureReferences": [
+        "1 Chronicles 16:10",
+        "John 17:3"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/More_About_Jesus/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/More_About_Jesus/More_About_Jesus.mid",
+      "musicAttribution": "SWEENEY by John R. Sweney, published 1887; public-domain MIDI distributed with the cited Timeless Truths record."
+    }
+  ]
+}

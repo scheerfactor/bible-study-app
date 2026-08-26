@@ -8,6 +8,33 @@ const errors = [];
 const files = new Set();
 const slots = new Set();
 const referencePattern = /^(?:[1-3] )?[A-Z][A-Za-z' ]+ \d+:\d+(?:-\d+)?$/;
+const jpegStartOfFrameMarkers = new Set([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf]);
+
+function jpegDimensions(buffer) {
+  if (buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) return null;
+  let offset = 2;
+  while (offset + 8 < buffer.length) {
+    if (buffer[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+    while (buffer[offset] === 0xff) offset += 1;
+    const marker = buffer[offset];
+    offset += 1;
+    if (marker === 0xd8 || marker === 0xd9) continue;
+    if (offset + 2 > buffer.length) break;
+    const segmentLength = buffer.readUInt16BE(offset);
+    if (segmentLength < 2 || offset + segmentLength > buffer.length) break;
+    if (jpegStartOfFrameMarkers.has(marker)) {
+      return {
+        height: buffer.readUInt16BE(offset + 3),
+        width: buffer.readUInt16BE(offset + 5),
+      };
+    }
+    offset += segmentLength;
+  }
+  return null;
+}
 
 if (!Array.isArray(entries) || !entries.length) errors.push("Presentation media manifest must contain at least one entry.");
 
@@ -33,7 +60,14 @@ for (const [index, entry] of entries.entries()) {
   }
   if (!/public domain|cc0|original generated asset/i.test(entry.rightsStatus ?? "")) errors.push(`Unclear image rights: ${label}`);
   try {
-    await access(resolve(root, "public", "media", "sermon-slides", entry.file));
+    const imagePath = resolve(root, "public", "media", "sermon-slides", entry.file);
+    await access(imagePath);
+    const dimensions = jpegDimensions(await readFile(imagePath));
+    if (!dimensions) {
+      errors.push(`Presentation image is not a readable JPEG: ${entry.file}`);
+    } else if (dimensions.width < 1600 || dimensions.height < 900 || Math.abs(dimensions.width / dimensions.height - 16 / 9) > 0.01) {
+      errors.push(`Presentation image must be 16:9 and at least 1600x900: ${entry.file} (${dimensions.width}x${dimensions.height})`);
+    }
   } catch {
     errors.push(`Missing local presentation image: ${entry.file}`);
   }
