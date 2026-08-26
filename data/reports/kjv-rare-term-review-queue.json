@@ -1,828 +1,10 @@
 {
-  "generated_at": "2026-08-26T13:35:55.514Z",
+  "generated_at": "2026-08-26T13:40:02.722Z",
   "source_inventory": "data/reports/webster-missing-word-inventory.csv",
   "source_bible": "King James Bible, standard 1769 text",
   "purpose": "Human review queue only. Entries must not be published without source and identity review.",
   "limit": 50,
   "entries": [
-    {
-      "word": "avith",
-      "normalized_word": "avith",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "avith"
-      ],
-      "sample_references": [
-        "Genesis 36:35",
-        "1 Chronicles 1:46"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 36:35",
-          "count": 1,
-          "text": "And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city [was] Avith."
-        },
-        {
-          "reference": "1 Chronicles 1:46",
-          "count": 1,
-          "text": "And when Husham was dead, Hadad the son of Bedad, which smote Midian in the field of Moab, reigned in his stead: and the name of his city [was] Avith."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "BIRZAVITH"
-          ]
-        }
-      }
-    },
-    {
-      "word": "axletrees",
-      "normalized_word": "axletrees",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "axletrees",
-        "axletree"
-      ],
-      "sample_references": [
-        "1 Kings 7:32",
-        "1 Kings 7:33"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Kings 7:32",
-          "count": 1,
-          "text": "And under the borders [were] four wheels; and the axletrees of the wheels [were joined] to the base: and the height of a wheel [was] a cubit and half a cubit."
-        },
-        {
-          "reference": "1 Kings 7:33",
-          "count": 1,
-          "text": "And the work of the wheels [was] like the work of a chariot wheel: their axletrees, and their naves, and their felloes, and their spokes, [were] all molten."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "azaliah",
-      "normalized_word": "azaliah",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "azaliah"
-      ],
-      "sample_references": [
-        "2 Kings 22:3",
-        "2 Chronicles 34:8"
-      ],
-      "occurrences": [
-        {
-          "reference": "2 Kings 22:3",
-          "count": 1,
-          "text": "# And it came to pass in the eighteenth year of king Josiah, [that] the king sent Shaphan the son of Azaliah, the son of Meshullam, the scribe, to the house of the LORD, saying,"
-        },
-        {
-          "reference": "2 Chronicles 34:8",
-          "count": 1,
-          "text": "# Now in the eighteenth year of his reign, when he had purged the land, and the house, he sent Shaphan the son of Azaliah, and Maaseiah the governor of the city, and Joah the son of Joahaz the recorder, to repair the house of the LORD his God."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "azem",
-      "normalized_word": "azem",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "azem"
-      ],
-      "sample_references": [
-        "Joshua 15:29",
-        "Joshua 19:3"
-      ],
-      "occurrences": [
-        {
-          "reference": "Joshua 15:29",
-          "count": 1,
-          "text": "Baalah, and Iim, and Azem,"
-        },
-        {
-          "reference": "Joshua 19:3",
-          "count": 1,
-          "text": "And Hazar-shual, and Balah, and Azem,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Ephesians, Epistle to",
-            "No",
-            "Solomon",
-            "South",
-            "Trance"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "azor",
-      "normalized_word": "azor",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "azor"
-      ],
-      "sample_references": [
-        "Matthew 1:13",
-        "Matthew 1:14"
-      ],
-      "occurrences": [
-        {
-          "reference": "Matthew 1:13",
-          "count": 1,
-          "text": "And Zorobabel begat Abiud; and Abiud begat Eliakim; and Eliakim begat Azor;"
-        },
-        {
-          "reference": "Matthew 1:14",
-          "count": 1,
-          "text": "And Azor begat Sadoc; and Sadoc begat Achim; and Achim begat Eliud;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Absalom",
-            "Ananiah",
-            "Baal-hazor",
-            "Barber",
-            "Beard",
-            "Deborah",
-            "Egypt",
-            "Fire",
-            "Harosheth of the Gentiles",
-            "Hazor"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "EN-HAZOR",
-            "HAZOR",
-            "HAZOR-HADATTAH",
-            "RAZOR"
-          ]
-        }
-      }
-    },
-    {
-      "word": "azur",
-      "normalized_word": "azur",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "azur"
-      ],
-      "sample_references": [
-        "Jeremiah 28:1",
-        "Ezekiel 11:1"
-      ],
-      "occurrences": [
-        {
-          "reference": "Jeremiah 28:1",
-          "count": 1,
-          "text": "And it came to pass the same year, in the beginning of the reign of Zedekiah king of Judah, in the fourth year, [and] in the fifth month, [that] Hananiah the son of Azur the prophet, which [was] of Gibeon, spake unto me in the house of the LORD, in the presence of the priests and of all the people, saying,"
-        },
-        {
-          "reference": "Ezekiel 11:1",
-          "count": 1,
-          "text": "Moreover the spirit lifted me up, and brought me unto the east gate of the LORD'S house, which looketh eastward: and behold at the door of the gate five and twenty men; among whom I saw Jaazaniah the son of Azur, and Pelatiah the son of Benaiah, princes of the people."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Azur and Azzur",
-            "Jaaz-aniah"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "babel",
-      "normalized_word": "babel",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "babel"
-      ],
-      "sample_references": [
-        "Genesis 10:10",
-        "Genesis 11:9"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 10:10",
-          "count": 1,
-          "text": "And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar."
-        },
-        {
-          "reference": "Genesis 11:9",
-          "count": 1,
-          "text": "Therefore is the name of it called Babel; because the LORD did there confound the language of all the earth: and from thence did the LORD scatter them abroad upon the face of all the earth."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abihud",
-            "Adonikam",
-            "Anakim",
-            "Babel, tower of",
-            "Babylon",
-            "Berechiah",
-            "Bilgah",
-            "Bilshan",
-            "Bricks",
-            "Captivity"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "ZERUBBABEL",
-            "ZOROBABEL"
-          ]
-        }
-      }
-    },
-    {
-      "word": "bakbuk",
-      "normalized_word": "bakbuk",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "bakbuk"
-      ],
-      "sample_references": [
-        "Ezra 2:51",
-        "Nehemiah 7:53"
-      ],
-      "occurrences": [
-        {
-          "reference": "Ezra 2:51",
-          "count": 1,
-          "text": "The children of Bakbuk, the children of Hakupha, the children of Harhur,"
-        },
-        {
-          "reference": "Nehemiah 7:53",
-          "count": 1,
-          "text": "The children of Bakbuk, the children of Hakupha, the children of Harhur,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "BAKBUKIAH"
-          ]
-        }
-      }
-    },
-    {
-      "word": "bedad",
-      "normalized_word": "bedad",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "bedad"
-      ],
-      "sample_references": [
-        "Genesis 36:35",
-        "1 Chronicles 1:46"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 36:35",
-          "count": 1,
-          "text": "And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city [was] Avith."
-        },
-        {
-          "reference": "1 Chronicles 1:46",
-          "count": 1,
-          "text": "And when Husham was dead, Hadad the son of Bedad, which smote Midian in the field of Moab, reigned in his stead: and the name of his city [was] Avith."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Aaron"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "besai",
-      "normalized_word": "besai",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "besai"
-      ],
-      "sample_references": [
-        "Ezra 2:49",
-        "Nehemiah 7:52"
-      ],
-      "occurrences": [
-        {
-          "reference": "Ezra 2:49",
-          "count": 1,
-          "text": "The children of Uzza, the children of Paseah, the children of Besai,"
-        },
-        {
-          "reference": "Nehemiah 7:52",
-          "count": 1,
-          "text": "The children of Besai, the children of Meunim, the children of Nephishesim,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abimelech",
-            "Daniel, Book of",
-            "Dispersion",
-            "Gospels",
-            "Kingly office of Christ",
-            "Moabite",
-            "Nebuchadnezzar",
-            "Ophir",
-            "Pharaoh"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "bocheru",
-      "normalized_word": "bocheru",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "bocheru"
-      ],
-      "sample_references": [
-        "1 Chronicles 8:38",
-        "1 Chronicles 9:44"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 8:38",
-          "count": 1,
-          "text": "And Azel had six sons, whose names [are] these, Azrikam, Bocheru, and Ishmael, and Sheariah, and Obadiah, and Hanan. All these [were] the sons of Azel."
-        },
-        {
-          "reference": "1 Chronicles 9:44",
-          "count": 1,
-          "text": "And Azel had six sons, whose names [are] these, Azrikam, Bocheru, and Ishmael, and Sheariah, and Obadiah, and Hanan: these [were] the sons of Azel."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "brokenhearted",
-      "normalized_word": "brokenhearted",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "brokenhearted",
-        "brokenheart",
-        "brokenhearte"
-      ],
-      "sample_references": [
-        "Isaiah 61:1",
-        "Luke 4:18"
-      ],
-      "occurrences": [
-        {
-          "reference": "Isaiah 61:1",
-          "count": 1,
-          "text": "The Spirit of the Lord GOD [is] upon me; because the LORD hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to [them that are] bound;"
-        },
-        {
-          "reference": "Luke 4:18",
-          "count": 1,
-          "text": "The Spirit of the Lord [is] upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "buzite",
-      "normalized_word": "buzite",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "buzite"
-      ],
-      "sample_references": [
-        "Job 32:2",
-        "Job 32:6"
-      ],
-      "occurrences": [
-        {
-          "reference": "Job 32:2",
-          "count": 1,
-          "text": "Then was kindled the wrath of Elihu the son of Barachel the Buzite, of the kindred of Ram: against Job was his wrath kindled, because he justified himself rather than God."
-        },
-        {
-          "reference": "Job 32:6",
-          "count": 1,
-          "text": "And Elihu the son of Barachel the Buzite answered and said, I [am] young, and ye [are] very old; wherefore I was afraid, and durst not shew you mine opinion."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Barachel",
-            "Elihu"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "canaanitish",
-      "normalized_word": "canaanitish",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "canaanitish"
-      ],
-      "sample_references": [
-        "Genesis 46:10",
-        "Exodus 6:15"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 46:10",
-          "count": 1,
-          "text": "# And the sons of Simeon; Jemuel, and Jamin, and Ohad, and Jachin, and Zohar, and Shaul the son of a Canaanitish woman."
-        },
-        {
-          "reference": "Exodus 6:15",
-          "count": 1,
-          "text": "And the sons of Simeon; Jemuel, and Jamin, and Ohad, and Jachin, and Zohar, and Shaul the son of a Canaanitish woman: these [are] the families of Simeon."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Adoni-zedec",
-            "Adonibezek",
-            "Alliance",
-            "Aner",
-            "Asherah",
-            "Calf",
-            "Canaan, the language of",
-            "Canaanites",
-            "Chinnereth",
-            "Debir"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "carmelitess",
-      "normalized_word": "carmelitess",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "carmelitess",
-        "carmelites",
-        "carmelitese"
-      ],
-      "sample_references": [
-        "1 Samuel 27:3",
-        "1 Chronicles 3:1"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Samuel 27:3",
-          "count": 1,
-          "text": "And David dwelt with Achish at Gath, he and his men, every man with his household, [even] David with his two wives, Ahinoam the Jezreelitess, and Abigail the Carmelitess, Nabal's wife."
-        },
-        {
-          "reference": "1 Chronicles 3:1",
-          "count": 1,
-          "text": "Now these were the sons of David, which were born unto him in Hebron; the firstborn Amnon, of Ahinoam the Jezreelitess; the second Daniel, of Abigail the Carmelitess:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Daniel"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "chaldean",
-      "normalized_word": "chaldean",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "chaldean"
-      ],
-      "sample_references": [
-        "Ezra 5:12",
-        "Daniel 2:10"
-      ],
-      "occurrences": [
-        {
-          "reference": "Ezra 5:12",
-          "count": 1,
-          "text": "But after that our fathers had provoked the God of heaven unto wrath, he gave them into the hand of Nebuchadnezzar the king of Babylon, the Chaldean, who destroyed this house, and carried the people away into Babylon."
-        },
-        {
-          "reference": "Daniel 2:10",
-          "count": 1,
-          "text": "# The Chaldeans answered before the king, and said, There is not a man upon the earth that can shew the king's matter: therefore [there is] no king, lord, nor ruler, [that] asked such things at any magician, or astrologer, or Chaldean."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Arphaxad",
-            "Assyria",
-            "Astrologer",
-            "Babylon, kingdom of",
-            "Baruch",
-            "Belshazzar",
-            "Bitter",
-            "Captivity",
-            "Chaldea",
-            "Chaldees"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "CHALDEANS"
-          ]
-        }
-      }
-    },
-    {
-      "word": "chanaan",
-      "normalized_word": "chanaan",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "chanaan"
-      ],
-      "sample_references": [
-        "Acts 7:11",
-        "Acts 13:19"
-      ],
-      "occurrences": [
-        {
-          "reference": "Acts 7:11",
-          "count": 1,
-          "text": "Now there came a dearth over all the land of Egypt and Chanaan, and great affliction: and our fathers found no sustenance."
-        },
-        {
-          "reference": "Acts 13:19",
-          "count": 1,
-          "text": "And when he had destroyed seven nations in the land of Chanaan, he divided their land to them by lot."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "chesnut",
-      "normalized_word": "chesnut",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "chesnut"
-      ],
-      "sample_references": [
-        "Genesis 30:37",
-        "Ezekiel 31:8"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 30:37",
-          "count": 1,
-          "text": "# And Jacob took him rods of green poplar, and of the hazel and chesnut tree; and pilled white strakes in them, and made the white appear which [was] in the rods."
-        },
-        {
-          "reference": "Ezekiel 31:8",
-          "count": 1,
-          "text": "The cedars in the garden of God could not hide him: the fir trees were not like his boughs, and the chesnut trees were not like his branches; nor any tree in the garden of God was like unto him in his beauty."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Plane tree"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "chinneroth",
-      "normalized_word": "chinneroth",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "chinneroth"
-      ],
-      "sample_references": [
-        "Joshua 11:2",
-        "Joshua 12:3"
-      ],
-      "occurrences": [
-        {
-          "reference": "Joshua 11:2",
-          "count": 1,
-          "text": "And to the kings that [were] on the north of the mountains, and of the plains south of Chinneroth, and in the valley, and in the borders of Dor on the west,"
-        },
-        {
-          "reference": "Joshua 12:3",
-          "count": 1,
-          "text": "And from the plain to the sea of Chinneroth on the east, and unto the sea of the plain, [even] the salt sea on the east, the way to Beth-jeshimoth; and from the south, under Ashdoth-pisgah:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Chinnereth",
-            "Cinnereth",
-            "Gennesaret",
-            "Tiberias, Sea of"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "clifts",
-      "normalized_word": "clifts",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "clifts",
-        "clift",
-        "clifte"
-      ],
-      "sample_references": [
-        "Job 30:6",
-        "Isaiah 57:5"
-      ],
-      "occurrences": [
-        {
-          "reference": "Job 30:6",
-          "count": 1,
-          "text": "To dwell in the clifts of the valleys, [in] caves of the earth, and [in] the rocks."
-        },
-        {
-          "reference": "Isaiah 57:5",
-          "count": 1,
-          "text": "Enflaming yourselves with idols under every green tree, slaying the children in the valleys under the clifts of the rocks?"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
     {
       "word": "cuckow",
       "normalized_word": "cuckow",
@@ -1994,6 +1176,749 @@
           "reference": "1 Chronicles 7:3",
           "count": 2,
           "text": "And the sons of Uzzi; Izrahiah: and the sons of Izrahiah; Michael, and Obadiah, and Joel, Ishiah, five: all of them chief men."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jada",
+      "normalized_word": "jada",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jada"
+      ],
+      "sample_references": [
+        "1 Chronicles 2:28",
+        "1 Chronicles 2:32"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 2:28",
+          "count": 1,
+          "text": "And the sons of Onam were, Shammai, and Jada. And the sons of Shammai; Nadab, and Abishur."
+        },
+        {
+          "reference": "1 Chronicles 2:32",
+          "count": 1,
+          "text": "And the sons of Jada the brother of Shammai; Jether, and Jonathan: and Jether died without children."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jarha",
+      "normalized_word": "jarha",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jarha"
+      ],
+      "sample_references": [
+        "1 Chronicles 2:34",
+        "1 Chronicles 2:35"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 2:34",
+          "count": 1,
+          "text": "# Now Sheshan had no sons, but daughters. And Sheshan had a servant, an Egyptian, whose name [was] Jarha."
+        },
+        {
+          "reference": "1 Chronicles 2:35",
+          "count": 1,
+          "text": "And Sheshan gave his daughter to Jarha his servant to wife; and she bare him Attai."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jebusi",
+      "normalized_word": "jebusi",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jebusi"
+      ],
+      "sample_references": [
+        "Joshua 18:16",
+        "Joshua 18:28"
+      ],
+      "occurrences": [
+        {
+          "reference": "Joshua 18:16",
+          "count": 1,
+          "text": "And the border came down to the end of the mountain that [lieth] before the valley of the son of Hinnom, [and] which [is] in the valley of the giants on the north, and descended to the valley of Hinnom, to the side of Jebusi on the south, and descended to En-rogel,"
+        },
+        {
+          "reference": "Joshua 18:28",
+          "count": 1,
+          "text": "And Zelah, Eleph, and Jebusi, which [is] Jerusalem, Gibeath, [and] Kirjath; fourteen cities with their villages. This [is] the inheritance of the children of Benjamin according to their families."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Araunah",
+            "City",
+            "David",
+            "David, City of",
+            "Fenced cities",
+            "Jebusites",
+            "Jerusalem",
+            "Moriah",
+            "Old gate",
+            "Proselyte"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "JEBUSITES"
+          ]
+        }
+      }
+    },
+    {
+      "word": "jechonias",
+      "normalized_word": "jechonias",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jechonias",
+        "jechonia"
+      ],
+      "sample_references": [
+        "Matthew 1:11",
+        "Matthew 1:12"
+      ],
+      "occurrences": [
+        {
+          "reference": "Matthew 1:11",
+          "count": 1,
+          "text": "And Josias begat Jechonias and his brethren, about the time they were carried away to Babylon:"
+        },
+        {
+          "reference": "Matthew 1:12",
+          "count": 1,
+          "text": "And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jehieli",
+      "normalized_word": "jehieli",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jehieli"
+      ],
+      "sample_references": [
+        "1 Chronicles 26:21",
+        "1 Chronicles 26:22"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 26:21",
+          "count": 1,
+          "text": "[As concerning] the sons of Laadan; the sons of the Gershonite Laadan, chief fathers, [even] of Laadan the Gershonite, [were] Jehieli."
+        },
+        {
+          "reference": "1 Chronicles 26:22",
+          "count": 1,
+          "text": "The sons of Jehieli; Zetham, and Joel his brother, [which were] over the treasures of the house of the LORD."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jehoshabeath",
+      "normalized_word": "jehoshabeath",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jehoshabeath"
+      ],
+      "sample_references": [
+        "2 Chronicles 22:11",
+        "2 Chronicles 22:11"
+      ],
+      "occurrences": [
+        {
+          "reference": "2 Chronicles 22:11",
+          "count": 2,
+          "text": "But Jehoshabeath, the daughter of the king, took Joash the son of Ahaziah, and stole him from among the king's sons that were slain, and put him and his nurse in a bedchamber. So Jehoshabeath, the daughter of king Jehoram, the wife of Jehoiada the priest, (for she was the sister of Ahaziah,) hid him from Athaliah, so that she slew him not."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Jehoiada",
+            "Jehosheba"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jehoshua",
+      "normalized_word": "jehoshua",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jehoshua"
+      ],
+      "sample_references": [
+        "Numbers 13:16",
+        "1 Chronicles 7:27"
+      ],
+      "occurrences": [
+        {
+          "reference": "Numbers 13:16",
+          "count": 1,
+          "text": "These [are] the names of the men which Moses sent to spy out the land. And Moses called Oshea the son of Nun Jehoshua."
+        },
+        {
+          "reference": "1 Chronicles 7:27",
+          "count": 1,
+          "text": "Non his son, Jehoshua his son."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Jesus"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "JEHOSHUAH"
+          ]
+        }
+      }
+    },
+    {
+      "word": "jemuel",
+      "normalized_word": "jemuel",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jemuel"
+      ],
+      "sample_references": [
+        "Genesis 46:10",
+        "Exodus 6:15"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 46:10",
+          "count": 1,
+          "text": "# And the sons of Simeon; Jemuel, and Jamin, and Ohad, and Jachin, and Zohar, and Shaul the son of a Canaanitish woman."
+        },
+        {
+          "reference": "Exodus 6:15",
+          "count": 1,
+          "text": "And the sons of Simeon; Jemuel, and Jamin, and Ohad, and Jachin, and Zohar, and Shaul the son of a Canaanitish woman: these [are] the families of Simeon."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Nemuel"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jerahmeelites",
+      "normalized_word": "jerahmeelites",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jerahmeelites",
+        "jerahmeelite"
+      ],
+      "sample_references": [
+        "1 Samuel 27:10",
+        "1 Samuel 30:29"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Samuel 27:10",
+          "count": 1,
+          "text": "And Achish said, Whither have ye made a road to day? And David said, Against the south of Judah, and against the south of the Jerahmeelites, and against the south of the Kenites."
+        },
+        {
+          "reference": "1 Samuel 30:29",
+          "count": 1,
+          "text": "And to [them] which [were] in Rachal, and to [them] which [were] in the cities of the Jerahmeelites, and to [them] which [were] in the cities of the Kenites,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jered",
+      "normalized_word": "jered",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jered",
+        "jer",
+        "jere"
+      ],
+      "sample_references": [
+        "1 Chronicles 1:2",
+        "1 Chronicles 4:18"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 1:2",
+          "count": 1,
+          "text": "Kenan, Mahalaleel, Jered,"
+        },
+        {
+          "reference": "1 Chronicles 4:18",
+          "count": 1,
+          "text": "And his wife Jehudijah bare Jered the father of Gedor, and Heber the father of Socho, and Jekuthiel the father of Zanoah. And these [are] the sons of Bithiah the daughter of Pharaoh, which Mered took."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Jared"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jeremy",
+      "normalized_word": "jeremy",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jeremy"
+      ],
+      "sample_references": [
+        "Matthew 2:17",
+        "Matthew 27:9"
+      ],
+      "occurrences": [
+        {
+          "reference": "Matthew 2:17",
+          "count": 1,
+          "text": "Then was fulfilled that which was spoken by Jeremy the prophet, saying,"
+        },
+        {
+          "reference": "Matthew 27:9",
+          "count": 1,
+          "text": "Then was fulfilled that which was spoken by Jeremy the prophet, saying, And they took the thirty pieces of silver, the price of him that was valued, whom they of the children of Israel did value;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "jezaniah",
+      "normalized_word": "jezaniah",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "jezaniah"
+      ],
+      "sample_references": [
+        "Jeremiah 40:8",
+        "Jeremiah 42:1"
+      ],
+      "occurrences": [
+        {
+          "reference": "Jeremiah 40:8",
+          "count": 1,
+          "text": "Then they came to Gedaliah to Mizpah, even Ishmael the son of Nethaniah, and Johanan and Jonathan the sons of Kareah, and Seraiah the son of Tanhumeth, and the sons of Ephai the Netophathite, and Jezaniah the son of a Maachathite, they and their men."
+        },
+        {
+          "reference": "Jeremiah 42:1",
+          "count": 1,
+          "text": "Then all the captains of the forces, and Johanan the son of Kareah, and Jezaniah the son of Hoshaiah, and all the people from the least even unto the greatest, came near,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "joatham",
+      "normalized_word": "joatham",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "joatham"
+      ],
+      "sample_references": [
+        "Matthew 1:9",
+        "Matthew 1:9"
+      ],
+      "occurrences": [
+        {
+          "reference": "Matthew 1:9",
+          "count": 2,
+          "text": "And Ozias begat Joatham; and Joatham begat Achaz; and Achaz begat Ezekias;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "keros",
+      "normalized_word": "keros",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "keros",
+        "kero"
+      ],
+      "sample_references": [
+        "Ezra 2:44",
+        "Nehemiah 7:47"
+      ],
+      "occurrences": [
+        {
+          "reference": "Ezra 2:44",
+          "count": 1,
+          "text": "The children of Keros, the children of Siaha, the children of Padon,"
+        },
+        {
+          "reference": "Nehemiah 7:47",
+          "count": 1,
+          "text": "The children of Keros, the children of Sia, the children of Padon,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "kittim",
+      "normalized_word": "kittim",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "kittim"
+      ],
+      "sample_references": [
+        "Genesis 10:4",
+        "1 Chronicles 1:7"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 10:4",
+          "count": 1,
+          "text": "And the sons of Javan; Elishah, and Tarshish, Kittim, and Dodanim."
+        },
+        {
+          "reference": "1 Chronicles 1:7",
+          "count": 1,
+          "text": "And the sons of Javan; Elishah, and Tarshish, Kittim, and Dodanim."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Chittim"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "libnites",
+      "normalized_word": "libnites",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "libnites",
+        "libnite"
+      ],
+      "sample_references": [
+        "Numbers 3:21",
+        "Numbers 26:58"
+      ],
+      "occurrences": [
+        {
+          "reference": "Numbers 3:21",
+          "count": 1,
+          "text": "Of Gershon [was] the family of the Libnites, and the family of the Shimites: these [are] the families of the Gershonites."
+        },
+        {
+          "reference": "Numbers 26:58",
+          "count": 1,
+          "text": "These [are] the families of the Levites: the family of the Libnites, the family of the Hebronites, the family of the Mahlites, the family of the Mushites, the family of the Korathites. And Kohath begat Amram."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "licence",
+      "normalized_word": "licence",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "licence"
+      ],
+      "sample_references": [
+        "Acts 21:40",
+        "Acts 25:16"
+      ],
+      "occurrences": [
+        {
+          "reference": "Acts 21:40",
+          "count": 1,
+          "text": "And when he had given him licence, Paul stood on the stairs, and beckoned with the hand unto the people. And when there was made a great silence, he spake unto [them] in the Hebrew tongue, saying,"
+        },
+        {
+          "reference": "Acts 25:16",
+          "count": 1,
+          "text": "To whom I answered, It is not the manner of the Romans to deliver any man to die, before that he which is accused have the accusers face to face, and have licence to answer for himself concerning the crime laid against him."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "lunatick",
+      "normalized_word": "lunatick",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "lunatick"
+      ],
+      "sample_references": [
+        "Matthew 4:24",
+        "Matthew 17:15"
+      ],
+      "occurrences": [
+        {
+          "reference": "Matthew 4:24",
+          "count": 1,
+          "text": "And his fame went throughout all Syria: and they brought unto him all sick people that were taken with divers diseases and torments, and those which were possessed with devils, and those which were lunatick, and those that had the palsy; and he healed them."
+        },
+        {
+          "reference": "Matthew 17:15",
+          "count": 1,
+          "text": "Lord, have mercy on my son: for he is lunatick, and sore vexed: for ofttimes he falleth into the fire, and oft into the water."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "magdiel",
+      "normalized_word": "magdiel",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "magdiel"
+      ],
+      "sample_references": [
+        "Genesis 36:43",
+        "1 Chronicles 1:54"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 36:43",
+          "count": 1,
+          "text": "Duke Magdiel, duke Iram: these [be] the dukes of Edom, according to their habitations in the land of their possession: he [is] Esau the father of the Edomites."
+        },
+        {
+          "reference": "1 Chronicles 1:54",
+          "count": 1,
+          "text": "Duke Magdiel, duke Iram. These [are] the dukes of Edom."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "mahlites",
+      "normalized_word": "mahlites",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "mahlites",
+        "mahlite"
+      ],
+      "sample_references": [
+        "Numbers 3:33",
+        "Numbers 26:58"
+      ],
+      "occurrences": [
+        {
+          "reference": "Numbers 3:33",
+          "count": 1,
+          "text": "# Of Merari [was] the family of the Mahlites, and the family of the Mushites: these [are] the families of Merari."
+        },
+        {
+          "reference": "Numbers 26:58",
+          "count": 1,
+          "text": "These [are] the families of the Levites: the family of the Libnites, the family of the Hebronites, the family of the Mahlites, the family of the Mushites, the family of the Korathites. And Kohath begat Amram."
         }
       ],
       "existing_source_candidates": {
