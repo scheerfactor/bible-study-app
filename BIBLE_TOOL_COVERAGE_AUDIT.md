@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T12:52:36.596Z
+Generated: 2026-08-26T12:56:29.868Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,524/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.5%).
+- Combined word/topic lookup: 11,534/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.6%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,16 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| askelon | 3 | Judges 1:18; 1 Samuel 6:17; 2 Samuel 1:20 |
-| azmon | 3 | Numbers 34:4; Numbers 34:5; Joshua 15:4 |
-| azriel | 3 | 1 Chronicles 5:24; 1 Chronicles 27:19; Jeremiah 36:26 |
-| booz | 3 | Matthew 1:5; Matthew 1:5; Luke 3:32 |
-| eloth | 3 | 1 Kings 9:26; 2 Chronicles 8:17; 2 Chronicles 26:2 |
-| galilaean | 3 | Mark 14:70; Luke 22:59; Luke 23:6 |
-| gershonite | 3 | 1 Chronicles 26:21; 1 Chronicles 26:21; 1 Chronicles 29:8 |
-| grecia | 3 | Daniel 8:21; Daniel 10:20; Daniel 11:2 |
-| hagarites | 3 | 1 Chronicles 5:10; 1 Chronicles 5:19; 1 Chronicles 5:20 |
-| holon | 3 | Joshua 15:51; Joshua 21:15; Jeremiah 48:21 |
 | isshiah | 3 | 1 Chronicles 24:21; 1 Chronicles 24:25; 1 Chronicles 24:25 |
 | izharites | 3 | 1 Chronicles 24:22; 1 Chronicles 26:23; 1 Chronicles 26:29 |
 | jahazah | 3 | Joshua 13:18; Joshua 21:36; Jeremiah 48:21 |
@@ -101,6 +91,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | shubael | 3 | 1 Chronicles 24:20; 1 Chronicles 24:20; 1 Chronicles 25:20 |
 | simeonites | 3 | Numbers 25:14; Numbers 26:14; 1 Chronicles 27:16 |
 | snuffdishes | 3 | Exodus 25:38; Exodus 37:23; Numbers 4:9 |
+| tekoite | 3 | 2 Samuel 23:26; 1 Chronicles 11:28; 1 Chronicles 27:9 |
+| womenservants | 3 | Genesis 20:14; Genesis 32:5; Genesis 32:22 |
+| achaz | 2 | Matthew 1:9; Matthew 1:9 |
+| adna | 2 | Ezra 10:30; Nehemiah 12:15 |
+| adoram | 2 | 2 Samuel 20:24; 1 Kings 12:18 |
+| agar | 2 | Galatians 4:24; Galatians 4:25 |
+| amramites | 2 | Numbers 3:27; 1 Chronicles 26:23 |
+| amzi | 2 | 1 Chronicles 6:46; Nehemiah 11:12 |
+| anaiah | 2 | Nehemiah 8:4; Nehemiah 10:22 |
+| appaim | 2 | 1 Chronicles 2:30; 1 Chronicles 2:31 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
