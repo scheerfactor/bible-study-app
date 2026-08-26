@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T13:09:24.747Z
+Generated: 2026-08-26T13:35:52.669Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,554/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.8%).
+- Combined word/topic lookup: 11,575/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.9%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,26 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| tekoite | 3 | 2 Samuel 23:26; 1 Chronicles 11:28; 1 Chronicles 27:9 |
-| womenservants | 3 | Genesis 20:14; Genesis 32:5; Genesis 32:22 |
-| achaz | 2 | Matthew 1:9; Matthew 1:9 |
-| adna | 2 | Ezra 10:30; Nehemiah 12:15 |
-| adoram | 2 | 2 Samuel 20:24; 1 Kings 12:18 |
-| agar | 2 | Galatians 4:24; Galatians 4:25 |
-| amramites | 2 | Numbers 3:27; 1 Chronicles 26:23 |
-| amzi | 2 | 1 Chronicles 6:46; Nehemiah 11:12 |
-| anaiah | 2 | Nehemiah 8:4; Nehemiah 10:22 |
-| appaim | 2 | 1 Chronicles 2:30; 1 Chronicles 2:31 |
-| arphad | 2 | Isaiah 36:19; Isaiah 37:13 |
-| arvadite | 2 | Genesis 10:18; 1 Chronicles 1:16 |
-| asahiah | 2 | 2 Kings 22:12; 2 Kings 22:14 |
-| aser | 2 | Luke 2:36; Revelation 7:6 |
-| ashchenaz | 2 | 1 Chronicles 1:6; Jeremiah 51:27 |
-| ashur | 2 | 1 Chronicles 2:24; 1 Chronicles 4:5 |
-| asriel | 2 | Numbers 26:31; Joshua 17:2 |
-| assur | 2 | Ezra 4:2; Psalms 83:8 |
-| aul | 2 | Exodus 21:6; Deuteronomy 15:17 |
-| avites | 2 | Joshua 13:3; 2 Kings 17:31 |
 | avith | 2 | Genesis 36:35; 1 Chronicles 1:46 |
 | axletrees | 2 | 1 Kings 7:32; 1 Kings 7:33 |
 | azaliah | 2 | 2 Kings 22:3; 2 Chronicles 34:8 |
@@ -101,6 +81,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bakbuk | 2 | Ezra 2:51; Nehemiah 7:53 |
 | bedad | 2 | Genesis 36:35; 1 Chronicles 1:46 |
 | besai | 2 | Ezra 2:49; Nehemiah 7:52 |
+| bocheru | 2 | 1 Chronicles 8:38; 1 Chronicles 9:44 |
+| brokenhearted | 2 | Isaiah 61:1; Luke 4:18 |
+| buzite | 2 | Job 32:2; Job 32:6 |
+| canaanitish | 2 | Genesis 46:10; Exodus 6:15 |
+| carmelitess | 2 | 1 Samuel 27:3; 1 Chronicles 3:1 |
+| chaldean | 2 | Ezra 5:12; Daniel 2:10 |
+| chanaan | 2 | Acts 7:11; Acts 13:19 |
+| chesnut | 2 | Genesis 30:37; Ezekiel 31:8 |
+| chinneroth | 2 | Joshua 11:2; Joshua 12:3 |
+| clifts | 2 | Job 30:6; Isaiah 57:5 |
+| cuckow | 2 | Leviticus 11:16; Deuteronomy 14:15 |
+| cyrenian | 2 | Mark 15:21; Luke 23:26 |
+| diklah | 2 | Genesis 10:27; 1 Chronicles 1:21 |
+| ekronites | 2 | Joshua 13:3; 1 Samuel 5:10 |
+| eloi | 2 | Mark 15:34; Mark 15:34 |
+| ephlal | 2 | 1 Chronicles 2:37; 1 Chronicles 2:37 |
+| eri | 2 | Genesis 46:16; Numbers 26:16 |
+| eveningtide | 2 | 2 Samuel 11:2; Isaiah 17:14 |
+| ezbon | 2 | Genesis 46:16; 1 Chronicles 7:7 |
+| fatfleshed | 2 | Genesis 41:2; Genesis 41:18 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
