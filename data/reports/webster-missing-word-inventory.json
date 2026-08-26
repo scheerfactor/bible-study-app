@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T15:04:27.904Z",
+  "generated_at": "2026-08-26T15:14:38.053Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,258 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 3128,
-  "withoutSupplementalHelp": 777,
+  "withSupplementalHelp": 3149,
+  "withoutSupplementalHelp": 756,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "serjeants",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "serjeants",
-        "serjeant",
-        "serjeante"
-      ],
-      "sampleRefs": [
-        "Acts 16:35",
-        "Acts 16:38"
-      ]
-    },
-    {
-      "word": "shaalbim",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shaalbim"
-      ],
-      "sampleRefs": [
-        "Judges 1:35",
-        "1 Kings 4:9"
-      ]
-    },
-    {
-      "word": "shaalbonite",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shaalbonite"
-      ],
-      "sampleRefs": [
-        "2 Samuel 23:32",
-        "1 Chronicles 11:33"
-      ]
-    },
-    {
-      "word": "shaveh",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shaveh"
-      ],
-      "sampleRefs": [
-        "Genesis 14:5",
-        "Genesis 14:17"
-      ]
-    },
-    {
-      "word": "sheepcote",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "sheepcote"
-      ],
-      "sampleRefs": [
-        "2 Samuel 7:8",
-        "1 Chronicles 17:7"
-      ]
-    },
-    {
-      "word": "sheriffs",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "sheriffs",
-        "sheriff",
-        "sheriffe"
-      ],
-      "sampleRefs": [
-        "Daniel 3:2",
-        "Daniel 3:3"
-      ]
-    },
-    {
-      "word": "shilhi",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shilhi"
-      ],
-      "sampleRefs": [
-        "1 Kings 22:42",
-        "2 Chronicles 20:31"
-      ]
-    },
-    {
-      "word": "shillem",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shillem"
-      ],
-      "sampleRefs": [
-        "Genesis 46:24",
-        "Numbers 26:49"
-      ]
-    },
-    {
-      "word": "shobai",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shobai"
-      ],
-      "sampleRefs": [
-        "Ezra 2:42",
-        "Nehemiah 7:45"
-      ]
-    },
-    {
-      "word": "shochoh",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shochoh"
-      ],
-      "sampleRefs": [
-        "1 Samuel 17:1",
-        "1 Samuel 17:1"
-      ]
-    },
-    {
-      "word": "shuhamites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "shuhamites",
-        "shuhamite"
-      ],
-      "sampleRefs": [
-        "Numbers 26:42",
-        "Numbers 26:43"
-      ]
-    },
-    {
-      "word": "sibbechai",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "sibbechai"
-      ],
-      "sampleRefs": [
-        "2 Samuel 21:18",
-        "1 Chronicles 20:4"
-      ]
-    },
-    {
-      "word": "signified",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "signified",
-        "signifi"
-      ],
-      "sampleRefs": [
-        "Acts 11:28",
-        "Revelation 1:1"
-      ]
-    },
-    {
-      "word": "sixscore",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "sixscore"
-      ],
-      "sampleRefs": [
-        "1 Kings 9:14",
-        "Jonah 4:11"
-      ]
-    },
-    {
-      "word": "soberly",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "soberly"
-      ],
-      "sampleRefs": [
-        "Romans 12:3",
-        "Titus 2:12"
-      ]
-    },
-    {
-      "word": "sorely",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "sorely"
-      ],
-      "sampleRefs": [
-        "Genesis 49:23",
-        "Isaiah 23:5"
-      ]
-    },
-    {
-      "word": "speaker",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "speaker"
-      ],
-      "sampleRefs": [
-        "Psalms 140:11",
-        "Acts 14:12"
-      ]
-    },
-    {
-      "word": "spearmen",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "spearmen"
-      ],
-      "sampleRefs": [
-        "Psalms 68:30",
-        "Acts 23:23"
-      ]
-    },
-    {
-      "word": "special",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "special"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 7:6",
-        "Acts 19:11"
-      ]
-    },
-    {
-      "word": "stedfastness",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "stedfastness",
-        "stedfastnes",
-        "stedfastnese"
-      ],
-      "sampleRefs": [
-        "Colossians 2:5",
-        "2 Peter 3:17"
-      ]
-    },
     {
       "word": "stouthearted",
       "count": 2,
@@ -1192,6 +944,235 @@
       ],
       "sampleRefs": [
         "1 Chronicles 7:14"
+      ]
+    },
+    {
+      "word": "arbah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arbah"
+      ],
+      "sampleRefs": [
+        "Genesis 35:27"
+      ]
+    },
+    {
+      "word": "arbite",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arbite"
+      ],
+      "sampleRefs": [
+        "2 Samuel 23:35"
+      ]
+    },
+    {
+      "word": "ardites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ardites",
+        "ardite"
+      ],
+      "sampleRefs": [
+        "Numbers 26:40"
+      ]
+    },
+    {
+      "word": "arelites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arelites",
+        "arelite"
+      ],
+      "sampleRefs": [
+        "Numbers 26:17"
+      ]
+    },
+    {
+      "word": "arguments",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arguments",
+        "argument",
+        "argumente"
+      ],
+      "sampleRefs": [
+        "Job 23:4"
+      ]
+    },
+    {
+      "word": "aridai",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aridai"
+      ],
+      "sampleRefs": [
+        "Esther 9:9"
+      ]
+    },
+    {
+      "word": "aridatha",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aridatha"
+      ],
+      "sampleRefs": [
+        "Esther 9:8"
+      ]
+    },
+    {
+      "word": "arnan",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arnan"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 3:21"
+      ]
+    },
+    {
+      "word": "arod",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arod"
+      ],
+      "sampleRefs": [
+        "Numbers 26:17"
+      ]
+    },
+    {
+      "word": "arodi",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arodi"
+      ],
+      "sampleRefs": [
+        "Genesis 46:16"
+      ]
+    },
+    {
+      "word": "arodites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arodites",
+        "arodite"
+      ],
+      "sampleRefs": [
+        "Numbers 26:17"
+      ]
+    },
+    {
+      "word": "aroerite",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aroerite"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 11:44"
+      ]
+    },
+    {
+      "word": "arza",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "arza"
+      ],
+      "sampleRefs": [
+        "1 Kings 16:9"
+      ]
+    },
+    {
+      "word": "asareel",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asareel"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 4:16"
+      ]
+    },
+    {
+      "word": "asarelah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asarelah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 25:2"
+      ]
+    },
+    {
+      "word": "ashbea",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashbea"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 4:21"
+      ]
+    },
+    {
+      "word": "ashbelites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashbelites",
+        "ashbelite"
+      ],
+      "sampleRefs": [
+        "Numbers 26:38"
+      ]
+    },
+    {
+      "word": "ashdodites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashdodites",
+        "ashdodite"
+      ],
+      "sampleRefs": [
+        "Nehemiah 4:7"
+      ]
+    },
+    {
+      "word": "ashdothites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashdothites",
+        "ashdothite"
+      ],
+      "sampleRefs": [
+        "Joshua 13:3"
+      ]
+    },
+    {
+      "word": "asherites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asherites",
+        "asherite"
+      ],
+      "sampleRefs": [
+        "Judges 1:32"
       ]
     }
   ]

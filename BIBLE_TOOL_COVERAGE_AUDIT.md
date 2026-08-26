@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T15:04:27.904Z
+Generated: 2026-08-26T15:14:38.053Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,677/12,454 meaningful KJV words have Webster, Easton, or Nave help (93.8%).
+- Combined word/topic lookup: 11,698/12,454 meaningful KJV words have Webster, Easton, or Nave help (93.9%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,26 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| serjeants | 2 | Acts 16:35; Acts 16:38 |
-| shaalbim | 2 | Judges 1:35; 1 Kings 4:9 |
-| shaalbonite | 2 | 2 Samuel 23:32; 1 Chronicles 11:33 |
-| shaveh | 2 | Genesis 14:5; Genesis 14:17 |
-| sheepcote | 2 | 2 Samuel 7:8; 1 Chronicles 17:7 |
-| sheriffs | 2 | Daniel 3:2; Daniel 3:3 |
-| shilhi | 2 | 1 Kings 22:42; 2 Chronicles 20:31 |
-| shillem | 2 | Genesis 46:24; Numbers 26:49 |
-| shobai | 2 | Ezra 2:42; Nehemiah 7:45 |
-| shochoh | 2 | 1 Samuel 17:1; 1 Samuel 17:1 |
-| shuhamites | 2 | Numbers 26:42; Numbers 26:43 |
-| sibbechai | 2 | 2 Samuel 21:18; 1 Chronicles 20:4 |
-| signified | 2 | Acts 11:28; Revelation 1:1 |
-| sixscore | 2 | 1 Kings 9:14; Jonah 4:11 |
-| soberly | 2 | Romans 12:3; Titus 2:12 |
-| sorely | 2 | Genesis 49:23; Isaiah 23:5 |
-| speaker | 2 | Psalms 140:11; Acts 14:12 |
-| spearmen | 2 | Psalms 68:30; Acts 23:23 |
-| special | 2 | Deuteronomy 7:6; Acts 19:11 |
-| stedfastness | 2 | Colossians 2:5; 2 Peter 3:17 |
 | stouthearted | 2 | Psalms 76:5; Isaiah 46:12 |
 | stumblingstone | 2 | Romans 9:32; Romans 9:33 |
 | sufficiently | 2 | 2 Chronicles 30:3; Isaiah 23:18 |
@@ -101,6 +81,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | traveller | 2 | 2 Samuel 12:4; Job 31:32 |
 | unblameable | 2 | Colossians 1:22; 1 Thessalonians 3:13 |
 | unmoveable | 2 | Acts 27:41; 1 Corinthians 15:58 |
+| upholden | 2 | Job 4:4; Proverbs 20:28 |
+| uthai | 2 | 1 Chronicles 9:4; Ezra 8:14 |
+| uzzielites | 2 | Numbers 3:27; 1 Chronicles 26:23 |
+| warriors | 2 | 1 Kings 12:21; 2 Chronicles 11:1 |
+| washpot | 2 | Psalms 60:8; Psalms 108:9 |
+| watcher | 2 | Daniel 4:13; Daniel 4:23 |
+| watchers | 2 | Jeremiah 4:16; Daniel 4:17 |
+| watersprings | 2 | Psalms 107:33; Psalms 107:35 |
+| wayside | 2 | 1 Samuel 4:13; Psalms 140:5 |
+| weakeneth | 2 | Job 12:21; Jeremiah 38:4 |
+| wellpleasing | 2 | Philippians 4:18; Hebrews 13:21 |
+| zeboiim | 2 | Genesis 14:2; Genesis 14:8 |
+| ziphites | 2 | 1 Samuel 23:19; 1 Samuel 26:1 |
+| zoba | 2 | 2 Samuel 10:6; 2 Samuel 10:8 |
+| accomplishment | 1 | Acts 21:26 |
+| achar | 1 | 1 Chronicles 2:7 |
+| achsa | 1 | 1 Chronicles 2:49 |
+| acknowledgement | 1 | Colossians 2:2 |
+| actions | 1 | 1 Samuel 2:3 |
+| activity | 1 | Genesis 47:6 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
