@@ -1,0 +1,136 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-56-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n208_w3000.jpg",
+      "sha256": "aebc938a29a49a86a3111e6a76cf48c053487ad00d3bf7fc526e7dfb68f544ac"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n263_w3000.jpg",
+      "sha256": "4eef296594e28ddf9904402a0d083059eea84158435a4e2cd2ad8d8cafddd33c"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n644_w3000.jpg",
+      "sha256": "8a1e7702200a4407ca2cb3f06eb76a31466b2ad5c1644ce25d4245bb948fc0ab"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n894_w3000.jpg",
+      "sha256": "3ad6c4c4ca32b74e7ac114e71a3a69be155c5bc78db5d939274ff2f25fbb2c38"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n24_w3000.jpg",
+      "sha256": "8b4f2def1660df75fc3b6646355aca141488a8769994bb936ddd29bc324ab5b9"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n794_w3000.jpg",
+      "sha256": "f3cc795a12b6669eebdec36c90e1c56980f985024892ae740f53d50646342b98"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the six highest-frequency remaining Webster lookup targets in the KJV cleanup queue, deferring the corrupted NET-WORK headword for separate recovery review.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological notes, expanded part-of-speech abbreviations for readability, and supplied exact KJV wording and verse numbers where the printed entry cited Scripture only by chapter.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 0,
+    "verified_lookup_relationships_documented": 1,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 52
+  },
+  "promoted_headwords": [
+    "astonied",
+    "bestow",
+    "easy",
+    "helmet",
+    "kin",
+    "treacherous"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "easier",
+      "lookup_headword": "easy",
+      "kjv_occurrences": 8,
+      "relationship": "Comparative adjective form mapped to Webster's base headword"
+    }
+  ],
+  "entries": [
+    {
+      "word": "astonied",
+      "lookup_headword": "astonied",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 56262,
+      "source_line_end": 56263,
+      "exact_page_heading": "AST",
+      "exact_entry_heading": "ASTO'NIED",
+      "exact_source_match": true
+    },
+    {
+      "word": "bestow",
+      "lookup_headword": "bestow",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 73946,
+      "source_line_end": 73978,
+      "exact_page_heading": "BES",
+      "exact_entry_heading": "BESTOW",
+      "exact_source_match": true
+    },
+    {
+      "word": "easier",
+      "lookup_headword": "easy",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 198325,
+      "source_line_end": 198358,
+      "exact_page_heading": "EAS",
+      "exact_entry_heading": "E'ASY",
+      "exact_source_match": true
+    },
+    {
+      "word": "helmet",
+      "lookup_headword": "helmet",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 281053,
+      "source_line_end": 281067,
+      "exact_page_heading": "HEL",
+      "exact_entry_heading": "HELM'ET",
+      "exact_source_match": true
+    },
+    {
+      "word": "kin",
+      "lookup_headword": "kin",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 5462,
+      "source_line_end": 5500,
+      "exact_page_heading": "KIN",
+      "exact_entry_heading": "KIN",
+      "exact_source_match": true
+    },
+    {
+      "word": "treacherous",
+      "lookup_headword": "treacherous",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 263447,
+      "source_line_end": 263456,
+      "exact_page_heading": "TRE",
+      "exact_entry_heading": "TREACHEROUS",
+      "exact_source_match": true
+    }
+  ]
+}

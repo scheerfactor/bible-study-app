@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T17:30:58.502Z",
+    "generated_at": "2026-08-26T19:48:16.670Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61258,
+      "entries": 61264,
       "normalizedHeadwords": 51299,
       "meaningfulWordsWithDefinition": 8549,
       "meaningfulWordsWithoutDefinition": 3905,
@@ -1800,141 +1800,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "astonied",
-          "count": 10,
-          "sampleRefs": [
-            "Ezra 9:3",
-            "Ezra 9:4",
-            "Job 17:8",
-            "Job 18:20",
-            "Isaiah 52:14"
-          ],
-          "lookupCandidates": [
-            "astonied",
-            "astoni"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ASTO'NIED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "bestow",
-          "count": 9,
-          "sampleRefs": [
-            "Exodus 32:29",
-            "Deuteronomy 14:26",
-            "2 Chronicles 24:7",
-            "Ezra 7:20",
-            "Ezra 7:20"
-          ],
-          "lookupCandidates": [
-            "bestow"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BESTOW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "treacherous",
-          "count": 9,
-          "sampleRefs": [
-            "Isaiah 21:2",
-            "Isaiah 24:16",
-            "Isaiah 24:16",
-            "Jeremiah 3:7",
-            "Jeremiah 3:8"
-          ],
-          "lookupCandidates": [
-            "treacherous",
-            "treacherou"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TREACHEROUS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "easier",
-          "count": 8,
-          "sampleRefs": [
-            "Exodus 18:22",
-            "Matthew 9:5",
-            "Matthew 19:24",
-            "Mark 2:9",
-            "Mark 10:25"
-          ],
-          "lookupCandidates": [
-            "easier",
-            "easy"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "E'ASY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "helmet",
-          "count": 8,
-          "sampleRefs": [
-            "1 Samuel 17:5",
-            "1 Samuel 17:38",
-            "Isaiah 59:17",
-            "Ezekiel 23:24",
-            "Ezekiel 27:10"
-          ],
-          "lookupCandidates": [
-            "helmet"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HELM'ET",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "kin",
-          "count": 8,
-          "sampleRefs": [
-            "Leviticus 18:6",
-            "Leviticus 20:19",
-            "Leviticus 21:2",
-            "Leviticus 25:25",
-            "Leviticus 25:49"
-          ],
-          "lookupCandidates": [
-            "kin"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "KIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "network",
           "count": 7,
           "sampleRefs": [
@@ -3609,6 +3474,142 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DO'DO",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "downward",
+          "count": 5,
+          "sampleRefs": [
+            "2 Kings 19:30",
+            "Ecclesiastes 3:21",
+            "Isaiah 37:31",
+            "Ezekiel 1:27",
+            "Ezekiel 8:2"
+          ],
+          "lookupCandidates": [
+            "downward"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DOWN'WARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "drowned",
+          "count": 5,
+          "sampleRefs": [
+            "Exodus 15:4",
+            "Amos 8:8",
+            "Amos 9:5",
+            "Matthew 18:6",
+            "Hebrews 11:29"
+          ],
+          "lookupCandidates": [
+            "drowned",
+            "drown",
+            "drowne"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DROWNED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "emerald",
+          "count": 5,
+          "sampleRefs": [
+            "Exodus 28:18",
+            "Exodus 39:11",
+            "Ezekiel 28:13",
+            "Revelation 4:3",
+            "Revelation 21:19"
+          ],
+          "lookupCandidates": [
+            "emerald"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EM'ERALD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "engravings",
+          "count": 5,
+          "sampleRefs": [
+            "Exodus 28:11",
+            "Exodus 28:21",
+            "Exodus 28:36",
+            "Exodus 39:14",
+            "Exodus 39:30"
+          ],
+          "lookupCandidates": [
+            "engravings",
+            "engraving",
+            "engravinge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ENGRA'VING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "esteem",
+          "count": 5,
+          "sampleRefs": [
+            "Job 36:19",
+            "Psalms 119:128",
+            "Isaiah 53:4",
+            "Philippians 2:3",
+            "1 Thessalonians 5:13"
+          ],
+          "lookupCandidates": [
+            "esteem"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ESTEE'M",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "eventide",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 24:63",
+            "Joshua 7:6",
+            "Joshua 8:29",
+            "Mark 11:11",
+            "Acts 4:3"
+          ],
+          "lookupCandidates": [
+            "eventide"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "E'VEN-TIDE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8487,141 +8488,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "astonied",
-        "count": 10,
-        "sampleRefs": [
-          "Ezra 9:3",
-          "Ezra 9:4",
-          "Job 17:8",
-          "Job 18:20",
-          "Isaiah 52:14"
-        ],
-        "lookupCandidates": [
-          "astonied",
-          "astoni"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ASTO'NIED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "bestow",
-        "count": 9,
-        "sampleRefs": [
-          "Exodus 32:29",
-          "Deuteronomy 14:26",
-          "2 Chronicles 24:7",
-          "Ezra 7:20",
-          "Ezra 7:20"
-        ],
-        "lookupCandidates": [
-          "bestow"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BESTOW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "treacherous",
-        "count": 9,
-        "sampleRefs": [
-          "Isaiah 21:2",
-          "Isaiah 24:16",
-          "Isaiah 24:16",
-          "Jeremiah 3:7",
-          "Jeremiah 3:8"
-        ],
-        "lookupCandidates": [
-          "treacherous",
-          "treacherou"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TREACHEROUS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "easier",
-        "count": 8,
-        "sampleRefs": [
-          "Exodus 18:22",
-          "Matthew 9:5",
-          "Matthew 19:24",
-          "Mark 2:9",
-          "Mark 10:25"
-        ],
-        "lookupCandidates": [
-          "easier",
-          "easy"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "E'ASY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "helmet",
-        "count": 8,
-        "sampleRefs": [
-          "1 Samuel 17:5",
-          "1 Samuel 17:38",
-          "Isaiah 59:17",
-          "Ezekiel 23:24",
-          "Ezekiel 27:10"
-        ],
-        "lookupCandidates": [
-          "helmet"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HELM'ET",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "kin",
-        "count": 8,
-        "sampleRefs": [
-          "Leviticus 18:6",
-          "Leviticus 20:19",
-          "Leviticus 21:2",
-          "Leviticus 25:25",
-          "Leviticus 25:49"
-        ],
-        "lookupCandidates": [
-          "kin"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "KIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "network",
         "count": 7,
         "sampleRefs": [
@@ -10296,6 +10162,142 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DO'DO",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "downward",
+        "count": 5,
+        "sampleRefs": [
+          "2 Kings 19:30",
+          "Ecclesiastes 3:21",
+          "Isaiah 37:31",
+          "Ezekiel 1:27",
+          "Ezekiel 8:2"
+        ],
+        "lookupCandidates": [
+          "downward"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DOWN'WARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "drowned",
+        "count": 5,
+        "sampleRefs": [
+          "Exodus 15:4",
+          "Amos 8:8",
+          "Amos 9:5",
+          "Matthew 18:6",
+          "Hebrews 11:29"
+        ],
+        "lookupCandidates": [
+          "drowned",
+          "drown",
+          "drowne"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DROWNED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "emerald",
+        "count": 5,
+        "sampleRefs": [
+          "Exodus 28:18",
+          "Exodus 39:11",
+          "Ezekiel 28:13",
+          "Revelation 4:3",
+          "Revelation 21:19"
+        ],
+        "lookupCandidates": [
+          "emerald"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EM'ERALD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "engravings",
+        "count": 5,
+        "sampleRefs": [
+          "Exodus 28:11",
+          "Exodus 28:21",
+          "Exodus 28:36",
+          "Exodus 39:14",
+          "Exodus 39:30"
+        ],
+        "lookupCandidates": [
+          "engravings",
+          "engraving",
+          "engravinge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ENGRA'VING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "esteem",
+        "count": 5,
+        "sampleRefs": [
+          "Job 36:19",
+          "Psalms 119:128",
+          "Isaiah 53:4",
+          "Philippians 2:3",
+          "1 Thessalonians 5:13"
+        ],
+        "lookupCandidates": [
+          "esteem"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ESTEE'M",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "eventide",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 24:63",
+          "Joshua 7:6",
+          "Joshua 8:29",
+          "Mark 11:11",
+          "Acts 4:3"
+        ],
+        "lookupCandidates": [
+          "eventide"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "E'VEN-TIDE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
