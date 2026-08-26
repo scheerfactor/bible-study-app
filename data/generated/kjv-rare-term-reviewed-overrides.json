@@ -568,5 +568,105 @@
     "source_line_start": 1,
     "source_line_end": 1,
     "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "SHESHAN",
+    "normalized_headword": "sheshan",
+    "definition": "A descendant of Judah who had daughters but no sons and gave one daughter in marriage to his Egyptian servant Jarha.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Chronicles 2:31, 34-35",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "SIDONIANS",
+    "normalized_headword": "sidonians",
+    "definition": "SIDONIANS, plural noun. The people of Sidon, noted in the KJV among the inhabitants of the land and for skill in cutting timber.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Deuteronomy 3:9; Joshua 13:4, 6; Judges 3:3; 1 Kings 5:6",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "TAHPANHES",
+    "normalized_headword": "tahpanhes",
+    "definition": "A city in Egypt where a group from Judah came and where the word of the LORD came to Jeremiah.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Jeremiah 43:7-9; 44:1; 46:14",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "UPSIDE",
+    "normalized_headword": "upside",
+    "definition": "UPSIDE, noun used in the phrase upside down. Inverted, overturned, or thrown into disorder.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: 2 Kings 21:13; Psalms 146:9; Isaiah 24:1; 29:16; Acts 17:6",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "ABIAH",
+    "normalized_headword": "abiah",
+    "definition": "A name borne by several Israelites, including Samuel's son and Hezron's wife.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Samuel 8:2; 1 Chronicles 2:24; 6:28; 7:8",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ARAH",
+    "normalized_headword": "arah",
+    "definition": "A name borne by a son of Ulla and associated with a family recorded among those who returned from captivity.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Chronicles 7:39; Ezra 2:5; Nehemiah 6:18; 7:10",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ARIMATHAEA",
+    "normalized_headword": "arimathaea",
+    "definition": "A city of the Jews and the home of Joseph, the disciple who requested and took the body of Jesus for burial.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Matthew 27:57; Mark 15:43; Luke 23:51; John 19:38",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ASHAN",
+    "normalized_headword": "ashan",
+    "definition": "A city named in the inheritances of Judah and Simeon and later listed with its suburbs among the Levitical cities.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Joshua 15:42; 19:7; 1 Chronicles 4:32; 6:59",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ATTAI",
+    "normalized_headword": "attai",
+    "definition": "A name borne by several men in Chronicles, including a descendant of Sheshan and a man numbered among those who came to David.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: 1 Chronicles 2:35-36; 12:11; 2 Chronicles 11:20",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "AZGAD",
+    "normalized_headword": "azgad",
+    "definition": "A family name among those who returned from captivity and a name listed among the covenant signers in Nehemiah.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Ezra 2:12; 8:12; Nehemiah 7:17; 10:15",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
   }
 ]

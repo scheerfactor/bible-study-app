@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T11:52:05.409Z",
+  "generated_at": "2026-08-26T11:57:12.303Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,157 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 2943,
-  "withoutSupplementalHelp": 962,
+  "withSupplementalHelp": 2953,
+  "withoutSupplementalHelp": 952,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "sheshan",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "sheshan"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:31",
-        "1 Chronicles 2:31",
-        "1 Chronicles 2:34",
-        "1 Chronicles 2:34",
-        "1 Chronicles 2:35"
-      ]
-    },
-    {
-      "word": "sidonians",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "sidonians",
-        "sidonian",
-        "sidoniane"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 3:9",
-        "Joshua 13:4",
-        "Joshua 13:6",
-        "Judges 3:3",
-        "1 Kings 5:6"
-      ]
-    },
-    {
-      "word": "tahpanhes",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "tahpanhes",
-        "tahpanhe"
-      ],
-      "sampleRefs": [
-        "Jeremiah 43:7",
-        "Jeremiah 43:8",
-        "Jeremiah 43:9",
-        "Jeremiah 44:1",
-        "Jeremiah 46:14"
-      ]
-    },
-    {
-      "word": "upside",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "upside"
-      ],
-      "sampleRefs": [
-        "2 Kings 21:13",
-        "Psalms 146:9",
-        "Isaiah 24:1",
-        "Isaiah 29:16",
-        "Acts 17:6"
-      ]
-    },
-    {
-      "word": "abiah",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "abiah"
-      ],
-      "sampleRefs": [
-        "1 Samuel 8:2",
-        "1 Chronicles 2:24",
-        "1 Chronicles 6:28",
-        "1 Chronicles 7:8"
-      ]
-    },
-    {
-      "word": "arah",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "arah"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 7:39",
-        "Ezra 2:5",
-        "Nehemiah 6:18",
-        "Nehemiah 7:10"
-      ]
-    },
-    {
-      "word": "arimathaea",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "arimathaea"
-      ],
-      "sampleRefs": [
-        "Matthew 27:57",
-        "Mark 15:43",
-        "Luke 23:51",
-        "John 19:38"
-      ]
-    },
-    {
-      "word": "ashan",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "ashan"
-      ],
-      "sampleRefs": [
-        "Joshua 15:42",
-        "Joshua 19:7",
-        "1 Chronicles 4:32",
-        "1 Chronicles 6:59"
-      ]
-    },
-    {
-      "word": "attai",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "attai"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:35",
-        "1 Chronicles 2:36",
-        "1 Chronicles 12:11",
-        "2 Chronicles 11:20"
-      ]
-    },
-    {
-      "word": "azgad",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "azgad"
-      ],
-      "sampleRefs": [
-        "Ezra 2:12",
-        "Ezra 8:12",
-        "Nehemiah 7:17",
-        "Nehemiah 10:15"
-      ]
-    },
     {
       "word": "beerothite",
       "count": 4,
@@ -1336,6 +1189,129 @@
       "sampleRefs": [
         "Joshua 11:2",
         "Joshua 12:3"
+      ]
+    },
+    {
+      "word": "clifts",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "clifts",
+        "clift",
+        "clifte"
+      ],
+      "sampleRefs": [
+        "Job 30:6",
+        "Isaiah 57:5"
+      ]
+    },
+    {
+      "word": "cuckow",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "cuckow"
+      ],
+      "sampleRefs": [
+        "Leviticus 11:16",
+        "Deuteronomy 14:15"
+      ]
+    },
+    {
+      "word": "cyrenian",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "cyrenian"
+      ],
+      "sampleRefs": [
+        "Mark 15:21",
+        "Luke 23:26"
+      ]
+    },
+    {
+      "word": "diklah",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "diklah"
+      ],
+      "sampleRefs": [
+        "Genesis 10:27",
+        "1 Chronicles 1:21"
+      ]
+    },
+    {
+      "word": "ekronites",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "ekronites",
+        "ekronite"
+      ],
+      "sampleRefs": [
+        "Joshua 13:3",
+        "1 Samuel 5:10"
+      ]
+    },
+    {
+      "word": "eloi",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "eloi"
+      ],
+      "sampleRefs": [
+        "Mark 15:34",
+        "Mark 15:34"
+      ]
+    },
+    {
+      "word": "ephlal",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "ephlal"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:37",
+        "1 Chronicles 2:37"
+      ]
+    },
+    {
+      "word": "eri",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "eri"
+      ],
+      "sampleRefs": [
+        "Genesis 46:16",
+        "Numbers 26:16"
+      ]
+    },
+    {
+      "word": "eveningtide",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "eveningtide"
+      ],
+      "sampleRefs": [
+        "2 Samuel 11:2",
+        "Isaiah 17:14"
+      ]
+    },
+    {
+      "word": "ezbon",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "ezbon"
+      ],
+      "sampleRefs": [
+        "Genesis 46:16",
+        "1 Chronicles 7:7"
       ]
     }
   ]
