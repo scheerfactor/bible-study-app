@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T01:16:50.713Z",
+    "generated_at": "2026-08-26T01:34:36.728Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,19 +10,19 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61230,
-      "normalizedHeadwords": 51287,
-      "meaningfulWordsWithDefinition": 8416,
-      "meaningfulWordsWithoutDefinition": 4038,
+      "entries": 61236,
+      "normalizedHeadwords": 51293,
+      "meaningfulWordsWithDefinition": 8422,
+      "meaningfulWordsWithoutDefinition": 4032,
       "meaningfulDefinitionCoveragePercent": 67.6,
       "missingPriorityCounts": {
         "high": 231,
         "medium": 680,
-        "low": 1152,
+        "low": 1146,
         "single-use": 1975
       },
       "missingWithSupplementalHelp": 2912,
-      "missingWithoutSupplementalHelp": 1126,
+      "missingWithoutSupplementalHelp": 1120,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -3625,7 +3625,7 @@
       "rareTermEntries": 28,
       "meaningfulWordsWithEastonEntry": 4132,
       "meaningfulWordsWithNaveTopic": 4015,
-      "meaningfulWordsWithAnyStudyLookup": 11328,
+      "meaningfulWordsWithAnyStudyLookup": 11334,
       "combinedStudyLookupCoveragePercent": 91,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
