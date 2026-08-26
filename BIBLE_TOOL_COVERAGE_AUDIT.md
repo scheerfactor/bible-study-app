@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T16:22:10.854Z
+Generated: 2026-08-26T16:32:53.285Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -87,32 +87,32 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
-| fulfil | FULFILL' | 24 | ocr_full_import_needs_spot_review |
-| defence | DEFENSE | 22 | ocr_full_import_needs_spot_review |
-| jubile | JUBILEE | 22 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| intreated | ENTRE'AT | 18 | ocr_full_import_needs_spot_review |
-| shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
-| intreat | ENTRE'AT | 15 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
 | hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
 | bag | BAG | 11 | ocr_full_import_needs_spot_review |
-| dishonour | DISHONOR | 11 | ocr_full_import_needs_spot_review |
 | pollute | POLLU'TE | 11 | ocr_full_import_needs_spot_review |
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
-| rumour | RU'MOR | 10 | ocr_full_import_needs_spot_review |
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
-| defenced | DEFENSE | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
 | easier | E'ASY | 8 | ocr_full_import_needs_spot_review |
-| hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
 | network | NET' -WORK | 7 | ocr_full_import_needs_spot_review |
 | overwhelmed | OVERWHELM' | 7 | ocr_full_import_needs_spot_review |
 | thread | THREAD | 7 | ocr_full_import_needs_spot_review |
 | arabians | ARA'BIAN | 6 | ocr_full_import_needs_spot_review |
+| byword | BY'-WORD | 6 | ocr_full_import_needs_spot_review |
+| cankerworm | CANK'ER-WORM | 6 | ocr_full_import_needs_spot_review |
+| jared | JAR | 6 | ocr_full_import_needs_spot_review |
+| laden | LA'DEN | 6 | ocr_full_import_needs_spot_review |
+| lowly | LOWLY | 6 | ocr_full_import_needs_spot_review |
+| mandrakes | MAN'DRAKE | 6 | ocr_full_import_needs_spot_review |
+| mankind | MANKIND | 6 | ocr_full_import_needs_spot_review |
+| manners | MAN'NERS | 6 | ocr_full_import_needs_spot_review |
+| meditation | MEDITA'TION | 6 | ocr_full_import_needs_spot_review |
+| memory | MEM'ORY | 6 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
