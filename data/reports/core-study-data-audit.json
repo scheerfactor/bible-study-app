@@ -5,7 +5,7 @@
     "verses": 31102
   },
   "library": {
-    "verifiedResources": 2245
+    "verifiedResources": 2248
   },
   "commentary": {
     "publicRows": 12857,
@@ -14,10 +14,10 @@
     "authors": 72
   },
   "webster1828": {
-    "entries": 61264,
+    "entries": 61305,
     "baseEntries": 58428,
-    "reviewedOverrides": 2836,
-    "uniqueNormalizedHeadwords": 51495,
+    "reviewedOverrides": 2877,
+    "uniqueNormalizedHeadwords": 51499,
     "suspiciousOcrEntries": 1899,
     "normalizationChecks": [
       {

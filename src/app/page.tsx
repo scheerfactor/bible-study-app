@@ -49569,6 +49569,24 @@ function StudyDrawer({
                     </details>
                   )}
 
+                  <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                    <CompactActionButton
+                      icon={<FileText size={17} />}
+                      label="Add to sermon"
+                      onClick={() => onAddWordStudyToSermon(drawerWordExplorer)}
+                    />
+                    <CompactActionButton
+                      icon={<NotebookPen size={17} />}
+                      label="Add to note"
+                      onClick={() => onAddWordStudyToNote(drawerWordExplorer)}
+                    />
+                    <CompactActionButton
+                      icon={<BookOpen size={17} />}
+                      label="Add to lesson"
+                      onClick={() => onAddWordStudyToTeachingOutline(drawerWordExplorer)}
+                    />
+                  </div>
+
                   <button
                     className="mt-4 w-full rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
                     onClick={() => onActiveTabChange("occurrences")}

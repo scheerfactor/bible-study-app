@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T21:48:42.205Z",
+    "generated_at": "2026-08-26T22:35:04.445Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,8 +10,8 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61299,
-      "normalizedHeadwords": 51299,
+      "entries": 61305,
+      "normalizedHeadwords": 51300,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
       "meaningfulDefinitionCoveragePercent": 68.6,
@@ -1822,149 +1822,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "thunderings",
-          "count": 6,
-          "sampleRefs": [
-            "Exodus 9:28",
-            "Exodus 20:18",
-            "Revelation 4:5",
-            "Revelation 8:5",
-            "Revelation 11:19"
-          ],
-          "lookupCandidates": [
-            "thunderings",
-            "thundering",
-            "thunderinge"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "THUN'DERING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "tolerable",
-          "count": 6,
-          "sampleRefs": [
-            "Matthew 10:15",
-            "Matthew 11:22",
-            "Matthew 11:24",
-            "Mark 6:11",
-            "Luke 10:12"
-          ],
-          "lookupCandidates": [
-            "tolerable"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TOLERABLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "twins",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 25:24",
-            "Genesis 38:27",
-            "Solomon's Song 4:2",
-            "Solomon's Song 4:5",
-            "Solomon's Song 6:6"
-          ],
-          "lookupCandidates": [
-            "twins",
-            "twin",
-            "twine"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TWIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "unlearned",
-          "count": 6,
-          "sampleRefs": [
-            "Acts 4:13",
-            "1 Corinthians 14:16",
-            "1 Corinthians 14:23",
-            "1 Corinthians 14:24",
-            "2 Timothy 2:23"
-          ],
-          "lookupCandidates": [
-            "unlearned",
-            "unlearn",
-            "unlearne"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UNLEARN'ED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "urged",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 33:11",
-            "Judges 16:16",
-            "Judges 19:7",
-            "2 Kings 2:17",
-            "2 Kings 5:16"
-          ],
-          "lookupCandidates": [
-            "urged",
-            "urg",
-            "urge"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "URGED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "wayfaring",
-          "count": 6,
-          "sampleRefs": [
-            "Judges 19:17",
-            "2 Samuel 12:4",
-            "Isaiah 33:8",
-            "Isaiah 35:8",
-            "Jeremiah 9:2"
-          ],
-          "lookupCandidates": [
-            "wayfaring",
-            "wayfarer",
-            "wayfar",
-            "wayfare"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WA'YFARER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "wert",
           "count": 6,
           "sampleRefs": [
@@ -3614,6 +3471,142 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PU'RIM",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "purse",
+          "count": 5,
+          "sampleRefs": [
+            "Proverbs 1:14",
+            "Mark 6:8",
+            "Luke 10:4",
+            "Luke 22:35",
+            "Luke 22:36"
+          ],
+          "lookupCandidates": [
+            "purse"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PURSE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "rate",
+          "count": 5,
+          "sampleRefs": [
+            "Exodus 16:4",
+            "1 Kings 10:25",
+            "2 Kings 25:30",
+            "2 Chronicles 8:13",
+            "2 Chronicles 9:24"
+          ],
+          "lookupCandidates": [
+            "rate"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "RATE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "replenished",
+          "count": 5,
+          "sampleRefs": [
+            "Isaiah 2:6",
+            "Isaiah 23:2",
+            "Jeremiah 31:25",
+            "Ezekiel 26:2",
+            "Ezekiel 27:25"
+          ],
+          "lookupCandidates": [
+            "replenished",
+            "replenish",
+            "replenishe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REPLEN'ISH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "resorted",
+          "count": 5,
+          "sampleRefs": [
+            "2 Chronicles 11:13",
+            "Mark 2:13",
+            "John 10:41",
+            "John 18:2",
+            "Acts 16:13"
+          ],
+          "lookupCandidates": [
+            "resorted",
+            "resort",
+            "resorte"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "RESORT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "revenge",
+          "count": 5,
+          "sampleRefs": [
+            "Jeremiah 15:15",
+            "Jeremiah 20:10",
+            "Ezekiel 25:15",
+            "2 Corinthians 7:11",
+            "2 Corinthians 10:6"
+          ],
+          "lookupCandidates": [
+            "revenge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REVENGE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "rib",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 2:22",
+            "2 Samuel 2:23",
+            "2 Samuel 3:27",
+            "2 Samuel 4:6",
+            "2 Samuel 20:10"
+          ],
+          "lookupCandidates": [
+            "rib"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "RIB",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8514,149 +8507,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "thunderings",
-        "count": 6,
-        "sampleRefs": [
-          "Exodus 9:28",
-          "Exodus 20:18",
-          "Revelation 4:5",
-          "Revelation 8:5",
-          "Revelation 11:19"
-        ],
-        "lookupCandidates": [
-          "thunderings",
-          "thundering",
-          "thunderinge"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "THUN'DERING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "tolerable",
-        "count": 6,
-        "sampleRefs": [
-          "Matthew 10:15",
-          "Matthew 11:22",
-          "Matthew 11:24",
-          "Mark 6:11",
-          "Luke 10:12"
-        ],
-        "lookupCandidates": [
-          "tolerable"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TOLERABLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "twins",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 25:24",
-          "Genesis 38:27",
-          "Solomon's Song 4:2",
-          "Solomon's Song 4:5",
-          "Solomon's Song 6:6"
-        ],
-        "lookupCandidates": [
-          "twins",
-          "twin",
-          "twine"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TWIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "unlearned",
-        "count": 6,
-        "sampleRefs": [
-          "Acts 4:13",
-          "1 Corinthians 14:16",
-          "1 Corinthians 14:23",
-          "1 Corinthians 14:24",
-          "2 Timothy 2:23"
-        ],
-        "lookupCandidates": [
-          "unlearned",
-          "unlearn",
-          "unlearne"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UNLEARN'ED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "urged",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 33:11",
-          "Judges 16:16",
-          "Judges 19:7",
-          "2 Kings 2:17",
-          "2 Kings 5:16"
-        ],
-        "lookupCandidates": [
-          "urged",
-          "urg",
-          "urge"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "URGED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "wayfaring",
-        "count": 6,
-        "sampleRefs": [
-          "Judges 19:17",
-          "2 Samuel 12:4",
-          "Isaiah 33:8",
-          "Isaiah 35:8",
-          "Jeremiah 9:2"
-        ],
-        "lookupCandidates": [
-          "wayfaring",
-          "wayfarer",
-          "wayfar",
-          "wayfare"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WA'YFARER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "wert",
         "count": 6,
         "sampleRefs": [
@@ -10306,6 +10156,142 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PU'RIM",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "purse",
+        "count": 5,
+        "sampleRefs": [
+          "Proverbs 1:14",
+          "Mark 6:8",
+          "Luke 10:4",
+          "Luke 22:35",
+          "Luke 22:36"
+        ],
+        "lookupCandidates": [
+          "purse"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PURSE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "rate",
+        "count": 5,
+        "sampleRefs": [
+          "Exodus 16:4",
+          "1 Kings 10:25",
+          "2 Kings 25:30",
+          "2 Chronicles 8:13",
+          "2 Chronicles 9:24"
+        ],
+        "lookupCandidates": [
+          "rate"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "RATE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "replenished",
+        "count": 5,
+        "sampleRefs": [
+          "Isaiah 2:6",
+          "Isaiah 23:2",
+          "Jeremiah 31:25",
+          "Ezekiel 26:2",
+          "Ezekiel 27:25"
+        ],
+        "lookupCandidates": [
+          "replenished",
+          "replenish",
+          "replenishe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REPLEN'ISH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "resorted",
+        "count": 5,
+        "sampleRefs": [
+          "2 Chronicles 11:13",
+          "Mark 2:13",
+          "John 10:41",
+          "John 18:2",
+          "Acts 16:13"
+        ],
+        "lookupCandidates": [
+          "resorted",
+          "resort",
+          "resorte"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "RESORT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "revenge",
+        "count": 5,
+        "sampleRefs": [
+          "Jeremiah 15:15",
+          "Jeremiah 20:10",
+          "Ezekiel 25:15",
+          "2 Corinthians 7:11",
+          "2 Corinthians 10:6"
+        ],
+        "lookupCandidates": [
+          "revenge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REVENGE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "rib",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 2:22",
+          "2 Samuel 2:23",
+          "2 Samuel 3:27",
+          "2 Samuel 4:6",
+          "2 Samuel 20:10"
+        ],
+        "lookupCandidates": [
+          "rib"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "RIB",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
