@@ -1,0 +1,115 @@
+{
+  "batch_id": "kjv-rare-terms-phase-7-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "King James Bible, standard 1769 text",
+  "rights_basis": "The KJV Scripture text used for this review is public domain in the United States.",
+  "definition_method": "Original concise study aids written from the cited KJV passages. No copyrighted commentary wording was imported.",
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv",
+  "screening_summary": {
+    "reviewed_entries": 10,
+    "resolved_kjv_forms": 10,
+    "kjv_word_occurrences": 38
+  },
+  "entries": [
+    {
+      "headword": "PONTIUS",
+      "normalized_headword": "pontius",
+      "definition": "The name appearing with Pilate, the governor of Judaea before whom Christ Jesus witnessed a good confession.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Matthew 27:2; Luke 3:1; Acts 4:27; 1 Timothy 6:13",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["pontius"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "SAMLAH",
+      "normalized_headword": "samlah",
+      "definition": "A man of Masrekah who reigned as a king of Edom after Hadad.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Genesis 36:36-37; 1 Chronicles 1:47-48",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["samlah"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "SARA",
+      "normalized_headword": "sara",
+      "definition": "The KJV New Testament form of Sarah, Abraham's wife and the mother who received strength to conceive the promised son. See SARAH.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Romans 4:19; 9:9; Hebrews 11:11; 1 Peter 3:6",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["sara"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "SARDIUS",
+      "normalized_headword": "sardius",
+      "definition": "SARDIUS, noun. A precious stone named in the high priest's breastplate, among the stones of Ezekiel 28, and among the foundations of New Jerusalem.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Exodus 28:17; 39:10; Ezekiel 28:13; Revelation 21:20",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["sardius"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "SHOULDERPIECES",
+      "normalized_headword": "shoulderpieces",
+      "definition": "SHOULDERPIECES, plural noun. The parts of the ephod joined at its upper edges and used in fastening its chains and settings.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Exodus 28:7, 25; 39:4, 18",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["shoulderpieces"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "SHUTHELAH",
+      "normalized_headword": "shuthelah",
+      "definition": "A son or descendant of Ephraim and the family head from whom the Shuthalhites were named.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Numbers 26:35-36; 1 Chronicles 7:20-21",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["shuthelah"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "SILVANUS",
+      "normalized_headword": "silvanus",
+      "definition": "A Christian minister named with Paul and Timotheus in the epistle greetings and called a faithful brother by Peter.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 2 Corinthians 1:19; 1 Thessalonians 1:1; 2 Thessalonians 1:1; 1 Peter 5:12",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["silvanus"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "ULAM",
+      "normalized_headword": "ulam",
+      "definition": "A name borne by men in the genealogies of Manasseh and Benjamin; the sons of the Benjamite Ulam were mighty archers.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 1 Chronicles 7:16-17; 8:39-40",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["ulam"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "AMINADAB",
+      "normalized_headword": "aminadab",
+      "definition": "The KJV New Testament spelling of Amminadab, an ancestor named in the genealogy of Jesus Christ. See AMMINADAB.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Matthew 1:4; Luke 3:33",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["aminadab"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "ASHBEL",
+      "normalized_headword": "ashbel",
+      "definition": "A son of Benjamin and the family head from whom the Ashbelites were named.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Genesis 46:21; Numbers 26:38; 1 Chronicles 8:1",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["ashbel"],
+      "kjv_occurrences": 3
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T12:40:10.828Z
+Generated: 2026-08-26T12:52:36.596Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,514/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.5%).
+- Combined word/topic lookup: 11,524/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.5%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,16 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| pontius | 4 | Matthew 27:2; Luke 3:1; Acts 4:27; 1 Timothy 6:13 |
-| samlah | 4 | Genesis 36:36; Genesis 36:37; 1 Chronicles 1:47; 1 Chronicles 1:48 |
-| sara | 4 | Romans 4:19; Romans 9:9; Hebrews 11:11; 1 Peter 3:6 |
-| sardius | 4 | Exodus 28:17; Exodus 39:10; Ezekiel 28:13; Revelation 21:20 |
-| shoulderpieces | 4 | Exodus 28:7; Exodus 28:25; Exodus 39:4; Exodus 39:18 |
-| shuthelah | 4 | Numbers 26:35; Numbers 26:36; 1 Chronicles 7:20; 1 Chronicles 7:21 |
-| silvanus | 4 | 2 Corinthians 1:19; 1 Thessalonians 1:1; 2 Thessalonians 1:1; 1 Peter 5:12 |
-| ulam | 4 | 1 Chronicles 7:16; 1 Chronicles 7:17; 1 Chronicles 8:39; 1 Chronicles 8:40 |
-| aminadab | 3 | Matthew 1:4; Matthew 1:4; Luke 3:33 |
-| ashbel | 3 | Genesis 46:21; Numbers 26:38; 1 Chronicles 8:1 |
 | askelon | 3 | Judges 1:18; 1 Samuel 6:17; 2 Samuel 1:20 |
 | azmon | 3 | Numbers 34:4; Numbers 34:5; Joshua 15:4 |
 | azriel | 3 | 1 Chronicles 5:24; 1 Chronicles 27:19; Jeremiah 36:26 |
@@ -101,6 +91,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | manassites | 3 | Deuteronomy 4:43; Judges 12:4; 2 Kings 10:33 |
 | mattenai | 3 | Ezra 10:33; Ezra 10:37; Nehemiah 12:19 |
 | midianitish | 3 | Numbers 25:6; Numbers 25:14; Numbers 25:15 |
+| milcom | 3 | 1 Kings 11:5; 1 Kings 11:33; 2 Kings 23:13 |
+| naasson | 3 | Matthew 1:4; Matthew 1:4; Luke 3:32 |
+| neariah | 3 | 1 Chronicles 3:22; 1 Chronicles 3:23; 1 Chronicles 4:42 |
+| nebajoth | 3 | Genesis 25:13; Genesis 28:9; Genesis 36:3 |
+| obscurity | 3 | Isaiah 29:18; Isaiah 58:10; Isaiah 59:9 |
+| palestina | 3 | Exodus 15:14; Isaiah 14:29; Isaiah 14:31 |
+| reaiah | 3 | 1 Chronicles 4:2; Ezra 2:47; Nehemiah 7:50 |
+| shubael | 3 | 1 Chronicles 24:20; 1 Chronicles 24:20; 1 Chronicles 25:20 |
+| simeonites | 3 | Numbers 25:14; Numbers 26:14; 1 Chronicles 27:16 |
+| snuffdishes | 3 | Exodus 25:38; Exodus 37:23; Numbers 4:9 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
