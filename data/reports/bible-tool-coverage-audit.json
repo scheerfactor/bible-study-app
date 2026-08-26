@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T16:32:53.285Z",
+    "generated_at": "2026-08-26T16:42:28.831Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61250,
+      "entries": 61253,
       "normalizedHeadwords": 51299,
       "meaningfulWordsWithDefinition": 8549,
       "meaningfulWordsWithoutDefinition": 3905,
@@ -1800,96 +1800,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "plain",
-          "count": 75,
-          "sampleRefs": [
-            "Genesis 11:2",
-            "Genesis 12:6",
-            "Genesis 13:10",
-            "Genesis 13:11",
-            "Genesis 13:12"
-          ],
-          "lookupCandidates": [
-            "plain"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PLAIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "excellency",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 49:3",
-            "Genesis 49:3",
-            "Exodus 15:7",
-            "Deuteronomy 33:26",
-            "Deuteronomy 33:29"
-          ],
-          "lookupCandidates": [
-            "excellency"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "EX'CELLENCY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "robe",
-          "count": 26,
-          "sampleRefs": [
-            "Exodus 28:4",
-            "Exodus 28:31",
-            "Exodus 28:34",
-            "Exodus 29:5",
-            "Exodus 39:22"
-          ],
-          "lookupCandidates": [
-            "robe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ROBE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "plains",
-          "count": 25,
-          "sampleRefs": [
-            "Genesis 18:1",
-            "Numbers 22:1",
-            "Numbers 26:3",
-            "Numbers 26:63",
-            "Numbers 31:12"
-          ],
-          "lookupCandidates": [
-            "plains",
-            "plain",
-            "plaine"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PLAIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "centurion",
           "count": 21,
           "sampleRefs": [
@@ -1997,29 +1907,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "POLLU'TE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "robes",
-          "count": 11,
-          "sampleRefs": [
-            "2 Samuel 13:18",
-            "1 Kings 22:10",
-            "1 Kings 22:30",
-            "2 Chronicles 18:9",
-            "2 Chronicles 18:29"
-          ],
-          "lookupCandidates": [
-            "robes",
-            "robe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ROBE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3608,6 +3495,116 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "COURA'GEOUS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "crew",
+          "count": 5,
+          "sampleRefs": [
+            "Matthew 26:74",
+            "Mark 14:68",
+            "Mark 14:72",
+            "Luke 22:60",
+            "John 18:27"
+          ],
+          "lookupCandidates": [
+            "crew"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CREW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "crimson",
+          "count": 5,
+          "sampleRefs": [
+            "2 Chronicles 2:7",
+            "2 Chronicles 2:14",
+            "2 Chronicles 3:14",
+            "Isaiah 1:18",
+            "Jeremiah 4:30"
+          ],
+          "lookupCandidates": [
+            "crimson"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CRIM'SON",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "custody",
+          "count": 5,
+          "sampleRefs": [
+            "Numbers 3:36",
+            "Esther 2:3",
+            "Esther 2:8",
+            "Esther 2:8",
+            "Esther 2:14"
+          ],
+          "lookupCandidates": [
+            "custody"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CUS'TODY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "defraud",
+          "count": 5,
+          "sampleRefs": [
+            "Leviticus 19:13",
+            "Mark 10:19",
+            "1 Corinthians 6:8",
+            "1 Corinthians 7:5",
+            "1 Thessalonians 4:6"
+          ],
+          "lookupCandidates": [
+            "defraud"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DEFRAUD'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "delicate",
+          "count": 5,
+          "sampleRefs": [
+            "Deuteronomy 28:54",
+            "Deuteronomy 28:56",
+            "Isaiah 47:1",
+            "Jeremiah 6:2",
+            "Micah 1:16"
+          ],
+          "lookupCandidates": [
+            "delicate"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DEL'ICATE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8486,96 +8483,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "plain",
-        "count": 75,
-        "sampleRefs": [
-          "Genesis 11:2",
-          "Genesis 12:6",
-          "Genesis 13:10",
-          "Genesis 13:11",
-          "Genesis 13:12"
-        ],
-        "lookupCandidates": [
-          "plain"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PLAIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "excellency",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 49:3",
-          "Genesis 49:3",
-          "Exodus 15:7",
-          "Deuteronomy 33:26",
-          "Deuteronomy 33:29"
-        ],
-        "lookupCandidates": [
-          "excellency"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "EX'CELLENCY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "robe",
-        "count": 26,
-        "sampleRefs": [
-          "Exodus 28:4",
-          "Exodus 28:31",
-          "Exodus 28:34",
-          "Exodus 29:5",
-          "Exodus 39:22"
-        ],
-        "lookupCandidates": [
-          "robe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ROBE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "plains",
-        "count": 25,
-        "sampleRefs": [
-          "Genesis 18:1",
-          "Numbers 22:1",
-          "Numbers 26:3",
-          "Numbers 26:63",
-          "Numbers 31:12"
-        ],
-        "lookupCandidates": [
-          "plains",
-          "plain",
-          "plaine"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PLAIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "centurion",
         "count": 21,
         "sampleRefs": [
@@ -8683,29 +8590,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "POLLU'TE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "robes",
-        "count": 11,
-        "sampleRefs": [
-          "2 Samuel 13:18",
-          "1 Kings 22:10",
-          "1 Kings 22:30",
-          "2 Chronicles 18:9",
-          "2 Chronicles 18:29"
-        ],
-        "lookupCandidates": [
-          "robes",
-          "robe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ROBE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10294,6 +10178,116 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "COURA'GEOUS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "crew",
+        "count": 5,
+        "sampleRefs": [
+          "Matthew 26:74",
+          "Mark 14:68",
+          "Mark 14:72",
+          "Luke 22:60",
+          "John 18:27"
+        ],
+        "lookupCandidates": [
+          "crew"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CREW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "crimson",
+        "count": 5,
+        "sampleRefs": [
+          "2 Chronicles 2:7",
+          "2 Chronicles 2:14",
+          "2 Chronicles 3:14",
+          "Isaiah 1:18",
+          "Jeremiah 4:30"
+        ],
+        "lookupCandidates": [
+          "crimson"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CRIM'SON",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "custody",
+        "count": 5,
+        "sampleRefs": [
+          "Numbers 3:36",
+          "Esther 2:3",
+          "Esther 2:8",
+          "Esther 2:8",
+          "Esther 2:14"
+        ],
+        "lookupCandidates": [
+          "custody"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CUS'TODY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "defraud",
+        "count": 5,
+        "sampleRefs": [
+          "Leviticus 19:13",
+          "Mark 10:19",
+          "1 Corinthians 6:8",
+          "1 Corinthians 7:5",
+          "1 Thessalonians 4:6"
+        ],
+        "lookupCandidates": [
+          "defraud"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DEFRAUD'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "delicate",
+        "count": 5,
+        "sampleRefs": [
+          "Deuteronomy 28:54",
+          "Deuteronomy 28:56",
+          "Isaiah 47:1",
+          "Jeremiah 6:2",
+          "Micah 1:16"
+        ],
+        "lookupCandidates": [
+          "delicate"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DEL'ICATE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
