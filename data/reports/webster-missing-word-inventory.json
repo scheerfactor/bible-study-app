@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T15:14:38.053Z",
+  "generated_at": "2026-08-26T15:54:43.800Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,265 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 3149,
-  "withoutSupplementalHelp": 756,
+  "withSupplementalHelp": 3170,
+  "withoutSupplementalHelp": 735,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "stouthearted",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "stouthearted",
-        "stoutheart",
-        "stouthearte"
-      ],
-      "sampleRefs": [
-        "Psalms 76:5",
-        "Isaiah 46:12"
-      ]
-    },
-    {
-      "word": "stumblingstone",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "stumblingstone"
-      ],
-      "sampleRefs": [
-        "Romans 9:32",
-        "Romans 9:33"
-      ]
-    },
-    {
-      "word": "sufficiently",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "sufficiently"
-      ],
-      "sampleRefs": [
-        "2 Chronicles 30:3",
-        "Isaiah 23:18"
-      ]
-    },
-    {
-      "word": "swaddled",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "swaddled",
-        "swaddl",
-        "swaddle"
-      ],
-      "sampleRefs": [
-        "Lamentations 2:22",
-        "Ezekiel 16:4"
-      ]
-    },
-    {
-      "word": "thirtyfold",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "thirtyfold"
-      ],
-      "sampleRefs": [
-        "Matthew 13:8",
-        "Mark 4:20"
-      ]
-    },
-    {
-      "word": "threshingfloors",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "threshingfloors",
-        "threshingfloor",
-        "threshingfloore"
-      ],
-      "sampleRefs": [
-        "1 Samuel 23:1",
-        "Daniel 2:35"
-      ]
-    },
-    {
-      "word": "tou",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "tou"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 18:9",
-        "1 Chronicles 18:10"
-      ]
-    },
-    {
-      "word": "traveller",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "traveller"
-      ],
-      "sampleRefs": [
-        "2 Samuel 12:4",
-        "Job 31:32"
-      ]
-    },
-    {
-      "word": "unblameable",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "unblameable"
-      ],
-      "sampleRefs": [
-        "Colossians 1:22",
-        "1 Thessalonians 3:13"
-      ]
-    },
-    {
-      "word": "unmoveable",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "unmoveable"
-      ],
-      "sampleRefs": [
-        "Acts 27:41",
-        "1 Corinthians 15:58"
-      ]
-    },
-    {
-      "word": "upholden",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "upholden"
-      ],
-      "sampleRefs": [
-        "Job 4:4",
-        "Proverbs 20:28"
-      ]
-    },
-    {
-      "word": "uthai",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "uthai"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 9:4",
-        "Ezra 8:14"
-      ]
-    },
-    {
-      "word": "uzzielites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "uzzielites",
-        "uzzielite"
-      ],
-      "sampleRefs": [
-        "Numbers 3:27",
-        "1 Chronicles 26:23"
-      ]
-    },
-    {
-      "word": "warriors",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "warriors",
-        "warrior",
-        "warriore"
-      ],
-      "sampleRefs": [
-        "1 Kings 12:21",
-        "2 Chronicles 11:1"
-      ]
-    },
-    {
-      "word": "washpot",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "washpot"
-      ],
-      "sampleRefs": [
-        "Psalms 60:8",
-        "Psalms 108:9"
-      ]
-    },
-    {
-      "word": "watcher",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "watcher"
-      ],
-      "sampleRefs": [
-        "Daniel 4:13",
-        "Daniel 4:23"
-      ]
-    },
-    {
-      "word": "watchers",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "watchers",
-        "watcher",
-        "watchere"
-      ],
-      "sampleRefs": [
-        "Jeremiah 4:16",
-        "Daniel 4:17"
-      ]
-    },
-    {
-      "word": "watersprings",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "watersprings",
-        "waterspring",
-        "waterspringe"
-      ],
-      "sampleRefs": [
-        "Psalms 107:33",
-        "Psalms 107:35"
-      ]
-    },
-    {
-      "word": "wayside",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "wayside"
-      ],
-      "sampleRefs": [
-        "1 Samuel 4:13",
-        "Psalms 140:5"
-      ]
-    },
-    {
-      "word": "weakeneth",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "weakeneth",
-        "weaken",
-        "weakene"
-      ],
-      "sampleRefs": [
-        "Job 12:21",
-        "Jeremiah 38:4"
-      ]
-    },
     {
       "word": "wellpleasing",
       "count": 2,
@@ -1173,6 +918,228 @@
       ],
       "sampleRefs": [
         "Judges 1:32"
+      ]
+    },
+    {
+      "word": "ashriel",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashriel"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:14"
+      ]
+    },
+    {
+      "word": "ashterathite",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashterathite"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 11:44"
+      ]
+    },
+    {
+      "word": "ashteroth",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashteroth"
+      ],
+      "sampleRefs": [
+        "Genesis 14:5"
+      ]
+    },
+    {
+      "word": "ashvath",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ashvath"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:33"
+      ]
+    },
+    {
+      "word": "asiel",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asiel"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 4:35"
+      ]
+    },
+    {
+      "word": "asnah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asnah"
+      ],
+      "sampleRefs": [
+        "Ezra 2:50"
+      ]
+    },
+    {
+      "word": "asnappar",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asnappar"
+      ],
+      "sampleRefs": [
+        "Ezra 4:10"
+      ]
+    },
+    {
+      "word": "asrielites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asrielites",
+        "asrielite"
+      ],
+      "sampleRefs": [
+        "Numbers 26:31"
+      ]
+    },
+    {
+      "word": "astaroth",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "astaroth"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 1:4"
+      ]
+    },
+    {
+      "word": "asyncritus",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "asyncritus",
+        "asyncritu"
+      ],
+      "sampleRefs": [
+        "Romans 16:14"
+      ]
+    },
+    {
+      "word": "atarah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "atarah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:26"
+      ]
+    },
+    {
+      "word": "athach",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "athach"
+      ],
+      "sampleRefs": [
+        "1 Samuel 30:30"
+      ]
+    },
+    {
+      "word": "athaiah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "athaiah"
+      ],
+      "sampleRefs": [
+        "Nehemiah 11:4"
+      ]
+    },
+    {
+      "word": "atroth",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "atroth"
+      ],
+      "sampleRefs": [
+        "Numbers 32:35"
+      ]
+    },
+    {
+      "word": "attalia",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "attalia"
+      ],
+      "sampleRefs": [
+        "Acts 14:25"
+      ]
+    },
+    {
+      "word": "aunt",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aunt"
+      ],
+      "sampleRefs": [
+        "Leviticus 18:14"
+      ]
+    },
+    {
+      "word": "azaniah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "azaniah"
+      ],
+      "sampleRefs": [
+        "Nehemiah 10:9"
+      ]
+    },
+    {
+      "word": "azarael",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "azarael"
+      ],
+      "sampleRefs": [
+        "Nehemiah 12:36"
+      ]
+    },
+    {
+      "word": "azbuk",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "azbuk"
+      ],
+      "sampleRefs": [
+        "Nehemiah 3:16"
+      ]
+    },
+    {
+      "word": "aziel",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aziel"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 15:20"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T15:14:38.053Z
+Generated: 2026-08-26T15:54:43.800Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,698/12,454 meaningful KJV words have Webster, Easton, or Nave help (93.9%).
+- Combined word/topic lookup: 11,719/12,454 meaningful KJV words have Webster, Easton, or Nave help (94.1%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,26 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| stouthearted | 2 | Psalms 76:5; Isaiah 46:12 |
-| stumblingstone | 2 | Romans 9:32; Romans 9:33 |
-| sufficiently | 2 | 2 Chronicles 30:3; Isaiah 23:18 |
-| swaddled | 2 | Lamentations 2:22; Ezekiel 16:4 |
-| thirtyfold | 2 | Matthew 13:8; Mark 4:20 |
-| threshingfloors | 2 | 1 Samuel 23:1; Daniel 2:35 |
-| tou | 2 | 1 Chronicles 18:9; 1 Chronicles 18:10 |
-| traveller | 2 | 2 Samuel 12:4; Job 31:32 |
-| unblameable | 2 | Colossians 1:22; 1 Thessalonians 3:13 |
-| unmoveable | 2 | Acts 27:41; 1 Corinthians 15:58 |
-| upholden | 2 | Job 4:4; Proverbs 20:28 |
-| uthai | 2 | 1 Chronicles 9:4; Ezra 8:14 |
-| uzzielites | 2 | Numbers 3:27; 1 Chronicles 26:23 |
-| warriors | 2 | 1 Kings 12:21; 2 Chronicles 11:1 |
-| washpot | 2 | Psalms 60:8; Psalms 108:9 |
-| watcher | 2 | Daniel 4:13; Daniel 4:23 |
-| watchers | 2 | Jeremiah 4:16; Daniel 4:17 |
-| watersprings | 2 | Psalms 107:33; Psalms 107:35 |
-| wayside | 2 | 1 Samuel 4:13; Psalms 140:5 |
-| weakeneth | 2 | Job 12:21; Jeremiah 38:4 |
 | wellpleasing | 2 | Philippians 4:18; Hebrews 13:21 |
 | zeboiim | 2 | Genesis 14:2; Genesis 14:8 |
 | ziphites | 2 | 1 Samuel 23:19; 1 Samuel 26:1 |
@@ -101,6 +81,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | acknowledgement | 1 | Colossians 2:2 |
 | actions | 1 | 1 Samuel 2:3 |
 | activity | 1 | Genesis 47:6 |
+| adadah | 1 | Joshua 15:22 |
+| adalia | 1 | Esther 9:8 |
+| adami | 1 | Joshua 19:33 |
+| addan | 1 | Ezra 2:59 |
+| ader | 1 | 1 Chronicles 8:15 |
+| adithaim | 1 | Joshua 15:36 |
+| adlai | 1 | 1 Chronicles 27:29 |
+| admatha | 1 | Esther 1:14 |
+| ado | 1 | Mark 5:39 |
+| adoraim | 1 | 2 Chronicles 11:9 |
+| advisement | 1 | 1 Chronicles 12:19 |
+| affectionately | 1 | 1 Thessalonians 2:8 |
+| afternoon | 1 | Judges 19:8 |
+| aharah | 1 | 1 Chronicles 8:1 |
+| ahban | 1 | 1 Chronicles 2:29 |
+| aher | 1 | 1 Chronicles 7:12 |
+| ahiram | 1 | Numbers 26:38 |
+| ahiramites | 1 | Numbers 26:38 |
+| ahishahar | 1 | 1 Chronicles 7:10 |
+| ahumai | 1 | 1 Chronicles 4:2 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
