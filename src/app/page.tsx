@@ -2864,6 +2864,10 @@ const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
 };
 
 const SERMON_IMAGE_THEME_SUGGESTIONS = [
+  { terms: ["psalm 23", "still waters", "shepherd", "comfort", "peace"], slot: "still-waters" },
+  { terms: ["psalm 19", "creation", "creator", "heavens", "glory of god", "stars"], slot: "heavens-declare" },
+  { terms: ["psalm 119", "lamp", "wisdom", "bible study", "study the word"], slot: "scripture-lamp" },
+  { terms: ["colossians 3", "psalm 95", "hymn", "singing", "worship", "praise", "music"], slot: "worship-piano" },
   { terms: ["love", "believe", "salvation", "gospel", "cross"], slot: "cross" },
   { terms: ["grace", "truth", "light"], slot: "light-window" },
   { terms: ["prayer", "pray", "intercession"], slot: "prayer-hands" },

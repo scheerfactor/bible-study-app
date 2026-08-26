@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, ExternalLink, Feather, Landmark, Music2, Play, Presentation, Quote as QuoteIcon, Search, Square } from "lucide-react";
+import { BookOpen, ExternalLink, Feather, ImageIcon, Landmark, Music2, Play, Presentation, Quote as QuoteIcon, Search, Square } from "lucide-react";
 import hymnsData from "../../data/hymns/verified-hymns.json";
 import evidenceData from "../../data/archaeology/verified-evidence.json";
 import preachingData from "../../data/preaching-helps/verified-preaching-helps.json";
+import presentationMediaData from "../../public/media/sermon-slides/media-assets.json";
 
-type ResourceImageSlot = "church-window" | "open-bible" | "pulpit" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type ResourceImageSlot = "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 
 export type ResourcePresentationSeed = {
   title: string;
@@ -31,6 +32,28 @@ type Hymn = (typeof hymnsData)[number];
 type Evidence = (typeof evidenceData)[number];
 type PreachingHelp = (typeof preachingData)[number];
 type PreachingHelpFilter = "All" | "Quote" | "Poem" | "Illustration";
+type PresentationMedia = {
+  file: string;
+  slot: string;
+  category: string;
+  source: string;
+  source_url: string;
+  rightsStatus: string;
+  artist: string;
+  credit: string;
+  recommendedUse: string;
+  optimized: string;
+  themes?: string[];
+  bibleReferences?: string[];
+};
+
+const resourceImageSlots = new Set<ResourceImageSlot>([
+  "cross", "open-bible", "sunrise", "empty-tomb", "prayer-hands", "world-map", "field-harvest", "storm-judgment", "light-window", "pulpit", "communion-table", "baptism-water", "church-window", "quiet-study", "shepherd-field", "worship-piano", "still-waters", "scripture-lamp", "heavens-declare", "nimrud-relief", "nineveh-cavalry-relief", "babylon-lion-panel",
+]);
+
+const presentationMedia = (presentationMediaData as PresentationMedia[]).filter(
+  (entry): entry is PresentationMedia & { slot: ResourceImageSlot } => resourceImageSlots.has(entry.slot as ResourceImageSlot),
+);
 
 function referenceMatchesChapter(reference: string, context: ResourceDeskPassageContext) {
   const normalizedReference = reference.toLowerCase();
@@ -73,6 +96,33 @@ function passageMatchLabel(references: string[], score: number, context: Resourc
   return "Closest reviewed resource";
 }
 
+function presentationMediaUrl(entry: PresentationMedia) {
+  return `/media/sermon-slides/${entry.file}`;
+}
+
+function recommendedMediaForContent(references: string[], terms: string[], fallback: ResourceImageSlot) {
+  const normalizedReferences = references.map((reference) => reference.toLowerCase());
+  const ranked = presentationMedia
+    .map((entry, index) => {
+      const mediaReferences = entry.bibleReferences ?? [];
+      const referenceScore = mediaReferences.reduce((score, reference) => {
+        const normalized = reference.toLowerCase();
+        if (normalizedReferences.includes(normalized)) return score + 100;
+        const referenceChapter = normalized.replace(/:\d+(?:-\d+)?$/, "");
+        return normalizedReferences.some((candidate) => candidate.replace(/:\d+(?:-\d+)?$/, "") === referenceChapter) ? score + 60 : score;
+      }, 0);
+      const topicScore = passageTopicScore([
+        entry.category,
+        entry.recommendedUse,
+        ...(entry.themes ?? []),
+        ...mediaReferences,
+      ].join(" "), terms);
+      return { entry, index, score: referenceScore + topicScore };
+    })
+    .sort((left, right) => right.score - left.score || left.index - right.index);
+  return ranked[0]?.score > 0 ? ranked[0].entry : presentationMedia.find((entry) => entry.slot === fallback);
+}
+
 function midiFrequency(note: number) {
   return 440 * 2 ** ((note - 69) / 12);
 }
@@ -84,7 +134,7 @@ export default function BibleStudyResourceDesk({
   onCreatePresentation: (seed: ResourcePresentationSeed) => void;
   passageContext?: ResourceDeskPassageContext;
 }) {
-  const [mode, setMode] = useState<"hymns" | "evidence" | "preaching">("hymns");
+  const [mode, setMode] = useState<"hymns" | "evidence" | "preaching" | "media">("hymns");
   const [preachingHelpFilter, setPreachingHelpFilter] = useState<PreachingHelpFilter>("All");
   const [preachingHelpQuery, setPreachingHelpQuery] = useState("");
   const [playingHymnId, setPlayingHymnId] = useState<string | null>(null);
@@ -140,6 +190,21 @@ export default function BibleStudyResourceDesk({
       ...entry.bibleReferences,
     ].join(" "), passageContext.terms);
   });
+  const rankedMedia = rankedForPassage(presentationMedia, (entry) => {
+    if (!passageContext) return 0;
+    const references = entry.bibleReferences ?? [];
+    const referenceScore = references.reduce((score, reference) => {
+      if (referenceMatchesChapter(reference, passageContext)) return score + 100;
+      if (referenceMatchesBook(reference, passageContext)) return score + 30;
+      return score;
+    }, 0);
+    return referenceScore + passageTopicScore([
+      entry.category,
+      entry.recommendedUse,
+      ...(entry.themes ?? []),
+      ...references,
+    ].join(" "), passageContext.terms);
+  });
   const [selectedHymnId, setSelectedHymnId] = useState(rankedHymns[0]?.item.id ?? hymnsData[0].id);
   const selectedHymn = hymnsData.find((hymn) => hymn.id === selectedHymnId) ?? rankedHymns[0]?.item ?? hymnsData[0];
   const filteredPreachingHelps = rankedPreachingHelps.map((ranked) => ranked.item).filter((entry) => {
@@ -154,6 +219,7 @@ export default function BibleStudyResourceDesk({
   const recommendedHymn = rankedHymns[0];
   const recommendedPreachingHelp = rankedPreachingHelps[0];
   const recommendedEvidence = rankedEvidence[0];
+  const recommendedMedia = rankedMedia[0];
 
   function stopPlayback() {
     for (const oscillator of oscillatorsRef.current) {
@@ -204,23 +270,29 @@ export default function BibleStudyResourceDesk({
   }
 
   function addHymnPresentation(hymn: Hymn) {
+    const media = recommendedMediaForContent(
+      hymn.scriptureReferences,
+      [hymn.title, hymn.lyricist, ...hymn.stanzas, hymn.refrain ?? ""],
+      "worship-piano",
+    );
+    const imageSlot = media?.slot ?? "worship-piano";
     onCreatePresentation({
       title: hymn.title + " Hymn",
-      notes: hymn.lyricist + " · " + hymn.tune + " · " + hymn.textRights + " Music: " + hymn.musicRights + ".",
+      notes: hymn.lyricist + " · " + hymn.tune + " · " + hymn.textRights + " Music: " + hymn.musicRights + ". Background: " + (media?.category ?? "Worship") + ".",
       slides: [
         {
           type: "Title",
           title: hymn.title,
           subtitle: hymn.lyricist + " · Tune: " + hymn.tune,
           body: hymn.scriptureReferences.join(" · "),
-          imageSlot: "church-window",
+          imageSlot,
         },
         ...hymn.stanzas.map((stanza, index) => ({
           type: "Quote" as const,
           title: hymn.title + " · Stanza " + (index + 1),
           subtitle: hymn.lyricist,
           body: hymn.refrain ? stanza + "\n\nRefrain:\n" + hymn.refrain : stanza,
-          imageSlot: "church-window" as const,
+          imageSlot,
         })),
       ],
     });
@@ -258,7 +330,8 @@ export default function BibleStudyResourceDesk({
 
   function addPreachingHelpPresentation(entry: PreachingHelp) {
     const slideType = entry.type === "Illustration" ? "Illustration" : "Quote";
-    const imageSlot: ResourceImageSlot = entry.type === "Illustration" ? "pulpit" : entry.type === "Poem" ? "church-window" : "open-bible";
+    const fallback: ResourceImageSlot = entry.type === "Illustration" ? "pulpit" : entry.type === "Poem" ? "church-window" : "open-bible";
+    const imageSlot = recommendedMediaForContent(entry.bibleReferences, [entry.title, entry.text, entry.recommendedUse, ...entry.topics], fallback)?.slot ?? fallback;
     onCreatePresentation({
       title: entry.title,
       notes: `${entry.author}, ${entry.sourceTitle}, ${entry.sourceLocator}. ${entry.rightsStatus}. Source: ${entry.sourceUrl}\n\nReview: ${entry.reviewNote}`,
@@ -274,14 +347,30 @@ export default function BibleStudyResourceDesk({
     });
   }
 
+  function addMediaPresentation(entry: PresentationMedia & { slot: ResourceImageSlot }) {
+    const references = entry.bibleReferences ?? [];
+    const title = passageContext ? `${passageContext.book} ${passageContext.chapter} Background` : `${entry.category} Background`;
+    onCreatePresentation({
+      title,
+      notes: `${entry.rightsStatus}. ${entry.credit}. Source: ${entry.source_url}`,
+      slides: [{
+        type: "Title",
+        title: passageContext ? `${passageContext.book} ${passageContext.chapter}` : entry.category,
+        subtitle: entry.recommendedUse,
+        body: references.join(" · "),
+        imageSlot: entry.slot,
+      }],
+    });
+  }
+
   return (
     <section id="teaching-worship-desk" className="scroll-mt-28 border-y border-[var(--line)] bg-white/55 py-6">
       <div className="flex flex-col gap-4 px-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Teaching and worship desk</p>
-          <h2 className="mt-1 text-xl font-semibold text-[var(--ink)]">Hymns, Bible-world evidence, and preaching helps</h2>
+          <h2 className="mt-1 text-xl font-semibold text-[var(--ink)]">Hymns, evidence, preaching helps, and backgrounds</h2>
         </div>
-        <div className="grid grid-cols-3 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-1">
+        <div className="grid grid-cols-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-1 sm:grid-cols-4">
           <button className={"flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-semibold " + (mode === "hymns" ? "bg-[var(--green)] text-white" : "text-[var(--green)]")} onClick={() => setMode("hymns")} type="button">
             <Music2 size={17} /> Hymns
           </button>
@@ -291,19 +380,22 @@ export default function BibleStudyResourceDesk({
           <button className={"flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-semibold " + (mode === "preaching" ? "bg-[var(--green)] text-white" : "text-[var(--green)]")} onClick={() => setMode("preaching")} type="button">
             <Feather size={17} /> Helps
           </button>
+          <button className={"flex h-10 items-center justify-center gap-2 rounded-md px-3 text-sm font-semibold " + (mode === "media" ? "bg-[var(--green)] text-white" : "text-[var(--green)]")} onClick={() => setMode("media")} type="button">
+            <ImageIcon size={17} /> Backgrounds
+          </button>
         </div>
       </div>
 
-      {passageContext && recommendedHymn && recommendedPreachingHelp && recommendedEvidence && (
+      {passageContext && recommendedHymn && recommendedPreachingHelp && recommendedEvidence && recommendedMedia && (
         <div className="mt-5 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Best matches for this passage</p>
               <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{passageContext.book} {passageContext.chapter}</h3>
             </div>
-            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Reviewed resources only</span>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Reviewed and rights-tracked</span>
           </div>
-          <div className="mt-3 grid gap-2 lg:grid-cols-3">
+          <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-4">
             <button
               className="rounded-lg border border-[var(--line)] bg-white p-3 text-left"
               onClick={() => {
@@ -334,9 +426,19 @@ export default function BibleStudyResourceDesk({
               <span className="mt-2 block text-sm font-semibold text-[var(--green)]">{recommendedEvidence.item.title}</span>
               <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{passageMatchLabel(recommendedEvidence.item.bibleReferences, recommendedEvidence.score, passageContext)}</span>
             </button>
+            <button className="overflow-hidden rounded-lg border border-[var(--line)] bg-white text-left" onClick={() => setMode("media")} type="button">
+              <span className="relative block aspect-[16/7] bg-stone-200">
+                <Image alt="" className="object-cover" fill loading="eager" sizes="(max-width: 1280px) 50vw, 25vw" src={presentationMediaUrl(recommendedMedia.item)} />
+              </span>
+              <span className="block p-3">
+                <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]"><ImageIcon size={15} /> Background</span>
+                <span className="mt-2 block text-sm font-semibold text-[var(--green)]">{recommendedMedia.item.category}</span>
+                <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{passageMatchLabel(recommendedMedia.item.bibleReferences ?? [], recommendedMedia.score, passageContext)}</span>
+              </span>
+            </button>
           </div>
           <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
-            Matches use reviewed Scripture references, chapter themes, and repeated words. Read the KJV passage first, then confirm that each hymn, illustration, or historical item genuinely serves the text.
+            Matches use reviewed Scripture references, chapter themes, and repeated words. Read the KJV passage first, then confirm that each hymn, illustration, historical item, or background genuinely serves the text.
           </p>
         </div>
       )}
@@ -487,6 +589,40 @@ export default function BibleStudyResourceDesk({
           {filteredPreachingHelps.length === 0 && (
             <p className="mt-4 border-l-2 border-[var(--gold)] pl-3 text-sm text-[var(--muted)]">No reviewed preaching helps match that search.</p>
           )}
+        </div>
+      )}
+
+      {mode === "media" && (
+        <div className="mt-5">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Passage-matched presentation media</p>
+              <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Rights-tracked backgrounds ranked by KJV reference, theme, and repeated passage words.</p>
+            </div>
+            <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{rankedMedia.length} backgrounds</span>
+          </div>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {rankedMedia.map(({ item: entry }, index) => (
+              <article key={entry.slot} className="overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--paper)]">
+                <div className="relative aspect-video bg-stone-200">
+                  <Image alt={`${entry.category} presentation background`} className="object-cover" fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" src={presentationMediaUrl(entry)} />
+                  {passageContext && index === 0 && <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-[var(--green)] shadow-sm">Best match</span>}
+                </div>
+                <div className="p-4">
+                  <h3 className="text-base font-semibold text-[var(--ink)]">{entry.category}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{entry.recommendedUse}</p>
+                  {!!entry.bibleReferences?.length && <p className="mt-3 text-xs font-semibold text-[var(--green)]">{entry.bibleReferences.join(" · ")}</p>}
+                  {!!entry.themes?.length && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{entry.themes.join(" · ")}</p>}
+                  <div className="mt-4 flex flex-wrap items-center gap-2">
+                    <button className="flex h-10 items-center gap-2 rounded-lg bg-[var(--green)] px-3 text-sm font-semibold text-white" onClick={() => addMediaPresentation(entry)} type="button">
+                      <Presentation size={16} /> Start slide
+                    </button>
+                    <span className="text-xs font-semibold text-[var(--muted)]">{entry.rightsStatus}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       )}
     </section>
