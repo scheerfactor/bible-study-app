@@ -90,9 +90,46 @@ Father's Business Bible Study
 hello@fathersbusinessmasteryresources.com
 https://study.fathersbusinessmasteryresources.com/
 
+## CLC Publications / Vance Havner
+
+**To:** permissions@clcpublications.com
+**Subject:** Rights contact for a one-title Vance Havner digital Bible-study pilot
+
+Dear CLC Publications Permissions Team,
+
+My name is Stephen Scheer, and I am building Father's Business Bible Study, a KJV-centered
+application for Bible study, sermon and lesson preparation, and presentation. I value Vance
+Havner's preaching and devotional works and would like to ask whether CLC would consider a small
+digital-library pilot using one CLC-controlled Havner title that you select.
+
+Would you please direct me to the person who handles digital rights and commercial partnerships?
+The proposed pilot could allow a reader to purchase the licensed title in the app, unlock it only
+on that reader's account, search it, and find approved sections alongside the Bible passages they
+discuss. Any cover, description, excerpt, full text, quotation, audio, video, transcript,
+presentation use, or narration would be included only if CLC confirms that exact right in writing.
+
+Before launch, I would want a written agreement covering the title and edition, source files,
+territory, term, price, publisher and author share, reporting, customer support, refunds, updates,
+security, and takedown. I would also value CLC's counsel about what would make a Bible study
+application genuinely useful to Christian publishers, authors, pastors, teachers, and readers.
+
+I have not copied or published any Vance Havner or CLC book text, covers, descriptions, excerpts,
+audio, or video. The app currently records only factual link labels to official pages while broader
+use remains blocked. I would be glad to provide a short private demonstration and begin with one
+modest title rather than request broad catalog permission.
+
+Thank you for considering it.
+
+Stephen Scheer
+Father's Business Bible Study
+hello@fathersbusinessmasteryresources.com
+https://study.fathersbusinessmasteryresources.com/
+
 ## Verified Official Sources
 
 - Striving Together Publications catalog and official contact: https://strivingtogether.com/
 - Revival Fires Publishing description and official route: https://www.revivalfires.online/about.html
 - BIMI contact and resource center: https://www.bimi.org/content/abContact.php and https://www.bimi.org/posters/home.php
 - Baptist Mid-Missions contact, store, and commercial-use restriction: https://www.bmm.org/contact/, https://resources.bmm.org/, and https://resources.bmm.org/terms-conditions/
+- Vance Havner official site and free-book page: https://vancehavner.com/ and https://vancehavner.com/free-book/
+- CLC Vance Havner catalog, permissions route, and Holy Desperation title page: https://www.clcpublications.com/authors/vance-havner/, https://www.clcpublications.com/about/permissions-rights/, and https://www.clcpublications.com/shop/holy-desperation/

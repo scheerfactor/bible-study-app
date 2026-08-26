@@ -334,5 +334,125 @@
     "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
     "musicRights": "Public Domain",
     "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "how-firm-a-foundation",
+    "title": "How Firm a Foundation",
+    "lyricist": "Anonymous/Unknown",
+    "lyricYear": 1787,
+    "tune": "Foundation",
+    "scriptureReferences": [
+      "Isaiah 43:1-5",
+      "Hebrews 13:5-6"
+    ],
+    "stanzas": [
+      "How firm a foundation, ye saints of the Lord,\nIs laid for your faith in His excellent word!\nWhat more can He say than to you He hath said—\nTo you who for refuge to Jesus have fled?",
+      "“Fear not, I am with thee, oh, be not dismayed,\nFor I am thy God, and will still give thee aid;\nI’ll strengthen thee, help thee, and cause thee to stand,\nUpheld by My gracious, omnipotent hand.",
+      "“When through the deep waters I call thee to go,\nThe rivers of sorrow shall not overflow;\nFor I will be with thee thy trouble to bless,\nAnd sanctify to thee thy deepest distress.",
+      "“When through fiery trials thy pathway shall lie,\nMy grace, all-sufficient, shall be thy supply;\nThe flame shall not harm thee; I only design\nThy dross to consume and thy gold to refine.",
+      "“The soul that on Jesus doth lean for repose,\nI will not, I will not, desert to his foes;\nThat soul, though all hell should endeavor to shake,\nI’ll never, no never, no never forsake.”"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/How_Firm_a_Foundation/",
+    "textRights": "Public domain; exact five-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "how-firm-a-foundation.mid",
+    "midiSha256": "fa8cfae28266d40e85d17546171479ef7d3b69895d75ae065258dc4f6b09305a",
+    "rightsEvidenceFile": "how-firm-a-foundation-rights.html",
+    "rightsEvidenceSha256": "ffd31798f9816665166e57ff5911745f28e0e51233323bb0a936b9fa483ec3dd",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/How_Firm_a_Foundation/How_Firm_a_Foundation.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "FOUNDATION, American melody, published 1832; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "guide-me-o-thou-great-jehovah",
+    "title": "Guide Me, O Thou Great Jehovah",
+    "lyricist": "William Williams; translated by Peter Williams; altered",
+    "lyricYear": 1771,
+    "tune": "Cwm Rhondda",
+    "scriptureReferences": [
+      "Exodus 13:21",
+      "Psalm 48:14"
+    ],
+    "stanzas": [
+      "Guide me, O Thou great Jehovah,\nPilgrim through this barren land;\nI am weak, but Thou art mighty,\nHold me with Thy pow’rful hand.\nBread of heaven, Bread of heaven,\nFeed me till I want no more;\nFeed me till I want no more.",
+      "Open now the crystal fountain,\nWhence the healing stream doth flow;\nLet the fire and cloudy pillar\nLead me all my journey through.\nStrong Deliv’rer, strong Deliv’rer,\nBe Thou still my Strength and Shield;\nBe Thou still my Strength and Shield.",
+      "Lord, I trust Thy mighty power,\nWondrous are Thy works of old;\nThou deliver’st Thine from thralldom,\nWho for naught themselves had sold:\nThou didst conquer, Thou didst conquer\nSin and Satan and the grave,\nSin and Satan and the grave.",
+      "When I tread the verge of Jordan,\nBid my anxious fears subside;\nDeath of death and hell’s Destruction,\nLand me safe on Canaan’s side.\nSongs of praises, songs of praises,\nI will ever give to Thee;\nI will ever give to Thee."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Guide_Me_O_Thou_Great_Jehovah/",
+    "textRights": "Public domain; four-stanza text retained from the cited Timeless Truths record. The record's bracketed first-line variant 'Redeemer' is documented in the retained evidence; the primary reading 'Jehovah' is used here.",
+    "midiFile": "guide-me-o-thou-great-jehovah.mid",
+    "midiSha256": "49f47187d834f29725ecba8e82e838228335e32f0b85e7083b15ded1a43fa6f8",
+    "rightsEvidenceFile": "guide-me-o-thou-great-jehovah-rights.html",
+    "rightsEvidenceSha256": "4760c2b43fb663434ce4ab6bea3dd5df7818c9cb04ef04b1d6e94e51ceaac39d",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/G/Guide_Me_O_Thou_Great_Jehovah/Guide_Me_O_Thou_Great_Jehovah.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "CWM RHONDDA by John Hughes, 1907; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "jesus-i-my-cross-have-taken",
+    "title": "Jesus, I My Cross Have Taken",
+    "lyricist": "Henry F. Lyte",
+    "lyricYear": 1833,
+    "tune": "Ellesdie",
+    "scriptureReferences": [
+      "Matthew 16:24",
+      "Philippians 3:7-8"
+    ],
+    "stanzas": [
+      "Jesus, I my cross have taken, all to leave and follow Thee;\nDestitute, despised, forsaken, Thou from hence my all shall be.\nPerish every fond ambition, all I’ve sought or hoped or known;\nYet how rich is my condition! God and heav’n are still mine own.",
+      "Let the world despise and leave me, they have left my Savior, too;\nHuman hearts and looks deceive me; Thou art not, like them, untrue.\nAnd while Thou shalt smile upon me, God of wisdom, love and might,\nFoes may hate and friends disown me, show Thy face and all is bright.",
+      "Go, then, earthly fame and treasure! Come, disaster, scorn and pain!\nIn Thy service pain is pleasure; with Thy favor, loss is gain.\nI have called Thee, “Abba, Father”; I have set my heart on Thee:\nStorms may howl, and clouds may gather, all must work for good to me.",
+      "Man may trouble and distress me, ’twill but drive me to Thy breast;\nLife with trials hard may press me; heav’n will bring me sweeter rest.\nOh, ’tis not in grief to harm me, while Thy love is left to me;\nOh, ’twere not in joy to charm me, were that joy unmixed with Thee.",
+      "Take, my soul, thy full salvation; rise o’er sin, and fear, and care;\nJoy to find in every station something still to do or bear:\nThink what Spirit dwells within thee; what a Father’s smile is thine;\nWhat a Savior died to win thee, child of heav’n, shouldst thou repine?",
+      "Haste then on from grace to glory, armed by faith, and winged by prayer,\nHeav’n’s eternal day’s before thee, God’s own hand shall guide thee there.\nSoon shall close thy earthly mission, swift shall pass thy pilgrim days;\nHope soon change to glad fruition, faith to sight, and prayer to praise."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Jesus_I_My_Cross_Have_Taken/",
+    "textRights": "Public domain; exact six-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "jesus-i-my-cross-have-taken.mid",
+    "midiSha256": "20f63cbb74ede7de4f2f89b673a0475d827adbe0c09f7a1dc92989b53b35728f",
+    "rightsEvidenceFile": "jesus-i-my-cross-have-taken-rights.html",
+    "rightsEvidenceSha256": "eaafa2fc0fa2603614e445924860ebddf23228bec94382d19d530a89e675e192",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/J/Jesus_I_My_Cross_Have_Taken/Jesus_I_My_Cross_Have_Taken.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ELLESDIE, attributed to Wolfgang A. Mozart, published 1831, arranged by Hubert P. Main, 1872; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "i-need-thee-every-hour",
+    "title": "I Need Thee Every Hour",
+    "lyricist": "Annie S. Hawks; refrain by Robert Lowry",
+    "lyricYear": 1872,
+    "tune": "Need",
+    "scriptureReferences": [
+      "Hebrews 4:16",
+      "1 Thessalonians 5:17"
+    ],
+    "stanzas": [
+      "I need Thee every hour, most gracious Lord;\nNo tender voice like Thine can peace afford.",
+      "I need Thee every hour, stay Thou nearby;\nTemptations lose their pow’r when Thou art nigh.",
+      "I need Thee every hour, in joy or pain;\nCome quickly and abide, or life is vain.",
+      "I need Thee every hour; teach me Thy will;\nAnd Thy rich promises in me fulfill.",
+      "I need Thee every hour, most Holy One;\nOh, make me Thine indeed, Thou blessed Son."
+    ],
+    "refrain": "I need Thee, oh, I need Thee;\nEvery hour I need Thee;\nOh, bless me now, my Savior,\nI come to Thee.",
+    "textSourceUrl": "https://library.timelesstruths.org/music/I_Need_Thee_Every_Hour/",
+    "textRights": "Public domain; exact five-stanza text and refrain retained from the cited Timeless Truths record.",
+    "midiFile": "i-need-thee-every-hour.mid",
+    "midiSha256": "9bb58a6a95164047f225abcfaa329ecf30c03b2778d09a4e39ecd8facab9a9b4",
+    "rightsEvidenceFile": "i-need-thee-every-hour-rights.html",
+    "rightsEvidenceSha256": "16e4aa2b8c9d3df10e8973c4b766cc987b723ba4bb6982090fa996e3d19c37c0",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/I/I_Need_Thee_Every_Hour/I_Need_Thee_Every_Hour.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "NEED by Robert Lowry, 1872; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
   }
 ]

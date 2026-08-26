@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-25T23:33:42.050Z",
+  "generated_at": "2026-08-26T00:03:54.912Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 4053,
+  "total": 4043,
   "priorityCounts": {
     "high": 231,
     "medium": 680,
-    "low": 1166,
-    "single-use": 1976
+    "low": 1157,
+    "single-use": 1975
   },
   "withSupplementalHelp": 2912,
-  "withoutSupplementalHelp": 1141,
+  "withoutSupplementalHelp": 1131,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -1315,32 +1315,6 @@
       ]
     },
     {
-      "word": "suit",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "suit"
-      ],
-      "sampleRefs": [
-        "Judges 17:10",
-        "2 Samuel 15:4",
-        "Job 11:19"
-      ]
-    },
-    {
-      "word": "tanner",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "tanner"
-      ],
-      "sampleRefs": [
-        "Acts 9:43",
-        "Acts 10:6",
-        "Acts 10:32"
-      ]
-    },
-    {
       "word": "tekoite",
       "count": 3,
       "priority": "low",
@@ -1431,6 +1405,32 @@
       "sampleRefs": [
         "Matthew 1:9",
         "Matthew 1:9"
+      ]
+    },
+    {
+      "word": "additions",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "additions",
+        "addition",
+        "additione"
+      ],
+      "sampleRefs": [
+        "1 Kings 7:29",
+        "1 Kings 7:36"
+      ]
+    },
+    {
+      "word": "adna",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "adna"
+      ],
+      "sampleRefs": [
+        "Ezra 10:30",
+        "Nehemiah 12:15"
       ]
     }
   ]

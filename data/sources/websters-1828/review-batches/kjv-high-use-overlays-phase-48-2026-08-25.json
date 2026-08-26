@@ -1,0 +1,187 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-48-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive full-resolution page scans and OCR XML, with Webster's 1828 web transcription used as a locator and cross-check.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {
+      "headword": "inflammation",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n976_w2300.jpg",
+      "sha256": "658c56de8dd45f1d98ef3054390c2c6960c3c2fe8cc86b59d0617660bb9236e8"
+    },
+    {
+      "headword": "maliciousness",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n98_w2300.jpg",
+      "sha256": "d5a0ef7259533e1d60d46e6ad15d014c339bf92350ea4d9b04b82fa4b082a36b"
+    },
+    {
+      "headword": "scholar",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n528_w2300.jpg",
+      "sha256": "f698a39daedad3e6185dbe11d9983a3f31f9676d4792af2560edd673a76563d1"
+    },
+    {
+      "headword": "sensual",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n559_w2300.jpg",
+      "sha256": "cc1830879008e31b6c85909e3ea08cfe0a3ecb6a94e1debba07f0ee58c5282d2"
+    },
+    {
+      "headword": "suit",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n698_w2300.jpg",
+      "sha256": "b8e26502cdb218f5bbb45a94978758d16aa24ed804be0261ab7082beac243414"
+    },
+    {
+      "headword": "tanner",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n734_w2300.jpg",
+      "sha256": "f5846dc16224b993f5ea3b938a93fcc154dd8a6b8c552d420118f48ccc779631"
+    },
+    {
+      "headword": "tempter",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n743_w2300.jpg",
+      "sha256": "1b82b60ef5c272bc5bbe96b9e09f382e70b53705094d8c938f2149e577eafab6"
+    },
+    {
+      "headword": "terrestrial",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n748_w2300.jpg",
+      "sha256": "86fd2ec411f014bc1cc110ff069d6cd08bb592b9f6e8f9a7df1b02befad259bf"
+    },
+    {
+      "headword": "testator",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n749_w2300.jpg",
+      "sha256": "9ea2fde50fa93385f1065a5ad061a9b2c4b32a07e7a9a4079458f236ab9839e7"
+    }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Reviewed the next unresolved common KJV forms, excluding proper names and compounds that Webster did not print as independent headwords.",
+  "review_method": "Located each printed entry in the OCR XML, verified every word against its full-resolution page scan, joined line wraps, expanded abbreviated language labels, and retained historical wording and Scripture citations.",
+  "screening_summary": {
+    "reviewed_headwords": 9,
+    "net_new_reviewed_overlays": 9,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 9,
+    "kjv_occurrences_resolved": 20
+  },
+  "promoted_headwords": [
+    "inflammation",
+    "maliciousness",
+    "scholar",
+    "sensual",
+    "suit",
+    "tanner",
+    "tempter",
+    "terrestrial",
+    "testator"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "inflammation",
+      "lookup_headword": "inflammation",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/inflammation",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "Inflammation",
+      "exact_entry_heading": "INFLAMMA'TION",
+      "exact_source_match": true
+    },
+    {
+      "word": "maliciousness",
+      "lookup_headword": "maliciousness",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/maliciousness",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Maliciousness",
+      "exact_entry_heading": "MALI'CIOUSNESS",
+      "exact_source_match": true
+    },
+    {
+      "word": "scholar",
+      "lookup_headword": "scholar",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/scholar",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Scholar",
+      "exact_entry_heading": "SCHOL'AR",
+      "exact_source_match": true
+    },
+    {
+      "word": "sensual",
+      "lookup_headword": "sensual",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/sensual",
+      "source_line_start": 1,
+      "source_line_end": 9,
+      "exact_page_heading": "Sensual",
+      "exact_entry_heading": "SENSUAL",
+      "exact_source_match": true
+    },
+    {
+      "word": "suit",
+      "lookup_headword": "suit",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/suit",
+      "source_line_start": 1,
+      "source_line_end": 30,
+      "exact_page_heading": "Suit",
+      "exact_entry_heading": "SUIT",
+      "exact_source_match": true
+    },
+    {
+      "word": "tanner",
+      "lookup_headword": "tanner",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/tanner",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Tanner",
+      "exact_entry_heading": "TAN'NER",
+      "exact_source_match": true
+    },
+    {
+      "word": "tempter",
+      "lookup_headword": "tempter",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/tempter",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Tempter",
+      "exact_entry_heading": "TEMPT'ER",
+      "exact_source_match": true
+    },
+    {
+      "word": "terrestrial",
+      "lookup_headword": "terrestrial",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/terrestrial",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "Terrestrial",
+      "exact_entry_heading": "TERRES'TRIAL",
+      "exact_source_match": true
+    },
+    {
+      "word": "testator",
+      "lookup_headword": "testator",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/testator",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Testator",
+      "exact_entry_heading": "TESTA'TOR",
+      "exact_source_match": true
+    }
+  ]
+}

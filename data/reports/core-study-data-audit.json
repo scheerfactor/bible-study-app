@@ -14,11 +14,11 @@
     "authors": 72
   },
   "webster1828": {
-    "entries": 61216,
+    "entries": 61225,
     "baseEntries": 58428,
-    "reviewedOverrides": 2788,
-    "uniqueNormalizedHeadwords": 51468,
-    "suspiciousOcrEntries": 1898,
+    "reviewedOverrides": 2797,
+    "uniqueNormalizedHeadwords": 51477,
+    "suspiciousOcrEntries": 1899,
     "normalizationChecks": [
       {
         "word": "believeth",

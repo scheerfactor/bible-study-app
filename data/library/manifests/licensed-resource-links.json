@@ -3811,5 +3811,80 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/wholesome-words-linking-policy-review-2026-08-15.md",
     "recommendedUse": "Bible-teacher and radio-ministry biography discovery while all DeHaan text and media remain permission- or title-review gated",
     "notes": "Link-only record. No biography text, quotations, HTML eBooks, audio, portrait, or other site content is copied. Do not infer public-domain status from age; every DeHaan title and recording requires exact publication and rights evidence."
+  },
+  {
+    "id": "public-link-vance-havner-reflections-on-prophecy",
+    "title": "Havner's Reflections on Prophecy",
+    "author": "Vance Havner",
+    "publisherMinistry": "Vance Havner official site",
+    "category": "Prophecy",
+    "collection": "Vance Havner Official Links",
+    "sourceUrl": "https://vancehavner.com/free-book/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Official title page and rights boundary reviewed 2026-08-25; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text or excerpt hosting, copying, indexing, or search",
+      "Cover, photograph, graphic, or description reuse",
+      "Audio, video, transcript, embed, or download",
+      "AI/TTS narration, adaptation, or derivative content",
+      "Paid access, subscription inclusion, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/vance-havner-official-catalog-review-2026-08-25.md",
+    "recommendedUse": "Official-source discovery for prophecy study while every content use remains permission-gated",
+    "notes": "The official site describes this as a free book, but no redistribution license was found. The app links to the official page and copies no book text, file, excerpt, cover, photograph, quotation, or media."
+  },
+  {
+    "id": "public-link-vance-havner-holy-desperation",
+    "title": "Holy Desperation",
+    "author": "Vance Havner",
+    "publisherMinistry": "CLC Publications",
+    "category": "Christian Living",
+    "collection": "Vance Havner Official Links",
+    "sourceUrl": "https://www.clcpublications.com/shop/holy-desperation/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Official CLC title page and rights route reviewed 2026-08-25; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text or excerpt hosting, copying, indexing, or search",
+      "Cover, photograph, graphic, or publisher-description reuse",
+      "Audio, video, transcript, embed, or download",
+      "AI/TTS narration, adaptation, or derivative content",
+      "Paid access, subscription inclusion, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/vance-havner-official-catalog-review-2026-08-25.md",
+    "recommendedUse": "Official publisher discovery for Christian-living and revival-preaching study",
+    "notes": "CLC lists print ISBN 9781619583177 and eBook ISBN 9781619583184. This record is not a license or endorsement; no CLC or Havner content is copied into the app."
+  },
+  {
+    "id": "public-link-vance-havner-reflections-on-the-gospels",
+    "title": "Reflections on the Gospels",
+    "author": "Vance Havner",
+    "publisherMinistry": "CLC Publications",
+    "category": "Bible Study",
+    "collection": "Vance Havner Official Links",
+    "sourceUrl": "https://www.clcpublications.com/authors/vance-havner/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Official CLC author catalog and rights route reviewed 2026-08-25; link-only public listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text or excerpt hosting, copying, indexing, or search",
+      "Cover, photograph, graphic, or publisher-description reuse",
+      "Audio, video, transcript, embed, or download",
+      "AI/TTS narration, adaptation, or derivative content",
+      "Paid access, subscription inclusion, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/vance-havner-official-catalog-review-2026-08-25.md",
+    "recommendedUse": "Official publisher discovery for Gospel exposition and sermon preparation",
+    "notes": "CLC's reviewed author page lists ISBN 9780875087832. The direct product URL tested on 2026-08-25 returned 404, so this record intentionally uses the verified author catalog page. No book content or imagery is copied."
   }
 ]
