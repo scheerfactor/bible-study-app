@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T13:50:12.766Z
+Generated: 2026-08-26T14:11:09.540Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,636/12,454 meaningful KJV words have Webster, Easton, or Nave help (93.4%).
+- Combined word/topic lookup: 11,656/12,454 meaningful KJV words have Webster, Easton, or Nave help (93.6%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,26 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| jeremy | 2 | Matthew 2:17; Matthew 27:9 |
-| jezaniah | 2 | Jeremiah 40:8; Jeremiah 42:1 |
-| joatham | 2 | Matthew 1:9; Matthew 1:9 |
-| keros | 2 | Ezra 2:44; Nehemiah 7:47 |
-| kittim | 2 | Genesis 10:4; 1 Chronicles 1:7 |
-| libnites | 2 | Numbers 3:21; Numbers 26:58 |
-| licence | 2 | Acts 21:40; Acts 25:16 |
-| lunatick | 2 | Matthew 4:24; Matthew 17:15 |
-| magdiel | 2 | Genesis 36:43; 1 Chronicles 1:54 |
-| mahlites | 2 | Numbers 3:33; Numbers 26:58 |
-| manahethites | 2 | 1 Chronicles 2:52; 1 Chronicles 2:54 |
-| matred | 2 | Genesis 36:39; 1 Chronicles 1:50 |
-| messias | 2 | John 1:41; John 4:25 |
-| mijamin | 2 | 1 Chronicles 24:9; Nehemiah 10:7 |
-| morasthite | 2 | Jeremiah 26:18; Micah 1:1 |
-| mushites | 2 | Numbers 3:33; Numbers 26:58 |
-| nephthalim | 2 | Matthew 4:13; Matthew 4:15 |
-| netophathites | 2 | 1 Chronicles 2:54; 1 Chronicles 9:16 |
-| nimrim | 2 | Isaiah 15:6; Jeremiah 48:34 |
-| oshea | 2 | Numbers 13:8; Numbers 13:16 |
 | overpast | 2 | Psalms 57:1; Isaiah 26:20 |
 | pathrusim | 2 | Genesis 10:14; 1 Chronicles 1:12 |
 | phurah | 2 | Judges 7:10; Judges 7:11 |
@@ -101,6 +81,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | publickly | 2 | Acts 18:28; Acts 20:20 |
 | rabbath | 2 | Deuteronomy 3:11; Ezekiel 21:20 |
 | respite | 2 | Exodus 8:15; 1 Samuel 11:3 |
+| restorer | 2 | Ruth 4:15; Isaiah 58:12 |
+| restrain | 2 | Job 15:8; Psalms 76:10 |
+| revellings | 2 | Galatians 5:21; 1 Peter 4:3 |
+| ribai | 2 | 2 Samuel 23:29; 1 Chronicles 11:31 |
+| richly | 2 | Colossians 3:16; 1 Timothy 6:17 |
+| roboam | 2 | Matthew 1:7; Matthew 1:7 |
+| salchah | 2 | Deuteronomy 3:10; 1 Chronicles 5:11 |
+| sarid | 2 | Joshua 19:10; Joshua 19:12 |
+| scarcely | 2 | Romans 5:7; 1 Peter 4:18 |
+| securely | 2 | Proverbs 3:29; Micah 2:8 |
+| serjeants | 2 | Acts 16:35; Acts 16:38 |
+| shaalbim | 2 | Judges 1:35; 1 Kings 4:9 |
+| shaalbonite | 2 | 2 Samuel 23:32; 1 Chronicles 11:33 |
+| shaveh | 2 | Genesis 14:5; Genesis 14:17 |
+| sheepcote | 2 | 2 Samuel 7:8; 1 Chronicles 17:7 |
+| sheriffs | 2 | Daniel 3:2; Daniel 3:3 |
+| shilhi | 2 | 1 Kings 22:42; 2 Chronicles 20:31 |
+| shillem | 2 | Genesis 46:24; Numbers 26:49 |
+| shobai | 2 | Ezra 2:42; Nehemiah 7:45 |
+| shochoh | 2 | 1 Samuel 17:1; 1 Samuel 17:1 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

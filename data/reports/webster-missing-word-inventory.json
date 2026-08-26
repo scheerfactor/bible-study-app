@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T13:50:12.766Z",
+  "generated_at": "2026-08-26T14:11:09.540Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,259 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 3087,
-  "withoutSupplementalHelp": 818,
+  "withSupplementalHelp": 3107,
+  "withoutSupplementalHelp": 798,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "jeremy",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jeremy"
-      ],
-      "sampleRefs": [
-        "Matthew 2:17",
-        "Matthew 27:9"
-      ]
-    },
-    {
-      "word": "jezaniah",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jezaniah"
-      ],
-      "sampleRefs": [
-        "Jeremiah 40:8",
-        "Jeremiah 42:1"
-      ]
-    },
-    {
-      "word": "joatham",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "joatham"
-      ],
-      "sampleRefs": [
-        "Matthew 1:9",
-        "Matthew 1:9"
-      ]
-    },
-    {
-      "word": "keros",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "keros",
-        "kero"
-      ],
-      "sampleRefs": [
-        "Ezra 2:44",
-        "Nehemiah 7:47"
-      ]
-    },
-    {
-      "word": "kittim",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "kittim"
-      ],
-      "sampleRefs": [
-        "Genesis 10:4",
-        "1 Chronicles 1:7"
-      ]
-    },
-    {
-      "word": "libnites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "libnites",
-        "libnite"
-      ],
-      "sampleRefs": [
-        "Numbers 3:21",
-        "Numbers 26:58"
-      ]
-    },
-    {
-      "word": "licence",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "licence"
-      ],
-      "sampleRefs": [
-        "Acts 21:40",
-        "Acts 25:16"
-      ]
-    },
-    {
-      "word": "lunatick",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "lunatick"
-      ],
-      "sampleRefs": [
-        "Matthew 4:24",
-        "Matthew 17:15"
-      ]
-    },
-    {
-      "word": "magdiel",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "magdiel"
-      ],
-      "sampleRefs": [
-        "Genesis 36:43",
-        "1 Chronicles 1:54"
-      ]
-    },
-    {
-      "word": "mahlites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "mahlites",
-        "mahlite"
-      ],
-      "sampleRefs": [
-        "Numbers 3:33",
-        "Numbers 26:58"
-      ]
-    },
-    {
-      "word": "manahethites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "manahethites",
-        "manahethite"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:52",
-        "1 Chronicles 2:54"
-      ]
-    },
-    {
-      "word": "matred",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "matred",
-        "matr",
-        "matre"
-      ],
-      "sampleRefs": [
-        "Genesis 36:39",
-        "1 Chronicles 1:50"
-      ]
-    },
-    {
-      "word": "messias",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "messias",
-        "messia"
-      ],
-      "sampleRefs": [
-        "John 1:41",
-        "John 4:25"
-      ]
-    },
-    {
-      "word": "mijamin",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "mijamin"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 24:9",
-        "Nehemiah 10:7"
-      ]
-    },
-    {
-      "word": "morasthite",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "morasthite"
-      ],
-      "sampleRefs": [
-        "Jeremiah 26:18",
-        "Micah 1:1"
-      ]
-    },
-    {
-      "word": "mushites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "mushites",
-        "mushite"
-      ],
-      "sampleRefs": [
-        "Numbers 3:33",
-        "Numbers 26:58"
-      ]
-    },
-    {
-      "word": "nephthalim",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "nephthalim"
-      ],
-      "sampleRefs": [
-        "Matthew 4:13",
-        "Matthew 4:15"
-      ]
-    },
-    {
-      "word": "netophathites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "netophathites",
-        "netophathite"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:54",
-        "1 Chronicles 9:16"
-      ]
-    },
-    {
-      "word": "nimrim",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "nimrim"
-      ],
-      "sampleRefs": [
-        "Isaiah 15:6",
-        "Jeremiah 48:34"
-      ]
-    },
-    {
-      "word": "oshea",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "oshea"
-      ],
-      "sampleRefs": [
-        "Numbers 13:8",
-        "Numbers 13:16"
-      ]
-    },
     {
       "word": "overpast",
       "count": 2,
@@ -1240,6 +991,231 @@
       ],
       "sampleRefs": [
         "2 Chronicles 11:9"
+      ]
+    },
+    {
+      "word": "advisement",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "advisement"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 12:19"
+      ]
+    },
+    {
+      "word": "affectionately",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "affectionately"
+      ],
+      "sampleRefs": [
+        "1 Thessalonians 2:8"
+      ]
+    },
+    {
+      "word": "afternoon",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "afternoon"
+      ],
+      "sampleRefs": [
+        "Judges 19:8"
+      ]
+    },
+    {
+      "word": "aharah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aharah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 8:1"
+      ]
+    },
+    {
+      "word": "ahban",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ahban"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:29"
+      ]
+    },
+    {
+      "word": "aher",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aher"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:12"
+      ]
+    },
+    {
+      "word": "ahiram",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ahiram"
+      ],
+      "sampleRefs": [
+        "Numbers 26:38"
+      ]
+    },
+    {
+      "word": "ahiramites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ahiramites",
+        "ahiramite"
+      ],
+      "sampleRefs": [
+        "Numbers 26:38"
+      ]
+    },
+    {
+      "word": "ahishahar",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ahishahar"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:10"
+      ]
+    },
+    {
+      "word": "ahumai",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ahumai"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 4:2"
+      ]
+    },
+    {
+      "word": "ahuzam",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ahuzam"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 4:6"
+      ]
+    },
+    {
+      "word": "ahuzzath",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ahuzzath"
+      ],
+      "sampleRefs": [
+        "Genesis 26:26"
+      ]
+    },
+    {
+      "word": "aiath",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aiath"
+      ],
+      "sampleRefs": [
+        "Isaiah 10:28"
+      ]
+    },
+    {
+      "word": "aija",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aija"
+      ],
+      "sampleRefs": [
+        "Nehemiah 11:31"
+      ]
+    },
+    {
+      "word": "ajah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ajah"
+      ],
+      "sampleRefs": [
+        "Genesis 36:24"
+      ]
+    },
+    {
+      "word": "alameth",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "alameth",
+        "alam",
+        "alame"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:8"
+      ]
+    },
+    {
+      "word": "alammelech",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "alammelech"
+      ],
+      "sampleRefs": [
+        "Joshua 19:26"
+      ]
+    },
+    {
+      "word": "aliah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aliah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 1:51"
+      ]
+    },
+    {
+      "word": "alian",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "alian"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 1:40"
+      ]
+    },
+    {
+      "word": "almsdeeds",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "almsdeeds",
+        "almsdeed",
+        "almsdeede"
+      ],
+      "sampleRefs": [
+        "Acts 9:36"
       ]
     }
   ]
