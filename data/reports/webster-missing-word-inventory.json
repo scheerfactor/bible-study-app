@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T13:39:59.921Z",
+  "generated_at": "2026-08-26T13:43:51.031Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,255 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 3046,
-  "withoutSupplementalHelp": 859,
+  "withSupplementalHelp": 3067,
+  "withoutSupplementalHelp": 838,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "cuckow",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "cuckow"
-      ],
-      "sampleRefs": [
-        "Leviticus 11:16",
-        "Deuteronomy 14:15"
-      ]
-    },
-    {
-      "word": "cyrenian",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "cyrenian"
-      ],
-      "sampleRefs": [
-        "Mark 15:21",
-        "Luke 23:26"
-      ]
-    },
-    {
-      "word": "diklah",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "diklah"
-      ],
-      "sampleRefs": [
-        "Genesis 10:27",
-        "1 Chronicles 1:21"
-      ]
-    },
-    {
-      "word": "ekronites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "ekronites",
-        "ekronite"
-      ],
-      "sampleRefs": [
-        "Joshua 13:3",
-        "1 Samuel 5:10"
-      ]
-    },
-    {
-      "word": "eloi",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "eloi"
-      ],
-      "sampleRefs": [
-        "Mark 15:34",
-        "Mark 15:34"
-      ]
-    },
-    {
-      "word": "ephlal",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "ephlal"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:37",
-        "1 Chronicles 2:37"
-      ]
-    },
-    {
-      "word": "eri",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "eri"
-      ],
-      "sampleRefs": [
-        "Genesis 46:16",
-        "Numbers 26:16"
-      ]
-    },
-    {
-      "word": "eveningtide",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "eveningtide"
-      ],
-      "sampleRefs": [
-        "2 Samuel 11:2",
-        "Isaiah 17:14"
-      ]
-    },
-    {
-      "word": "ezbon",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "ezbon"
-      ],
-      "sampleRefs": [
-        "Genesis 46:16",
-        "1 Chronicles 7:7"
-      ]
-    },
-    {
-      "word": "fatfleshed",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "fatfleshed",
-        "fatflesh",
-        "fatfleshe"
-      ],
-      "sampleRefs": [
-        "Genesis 41:2",
-        "Genesis 41:18"
-      ]
-    },
-    {
-      "word": "gazez",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "gazez"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:46",
-        "1 Chronicles 2:46"
-      ]
-    },
-    {
-      "word": "geshuri",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "geshuri"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 3:14",
-        "Joshua 13:2"
-      ]
-    },
-    {
-      "word": "gether",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "gether"
-      ],
-      "sampleRefs": [
-        "Genesis 10:23",
-        "1 Chronicles 1:17"
-      ]
-    },
-    {
-      "word": "gibeonite",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "gibeonite"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 12:4",
-        "Nehemiah 3:7"
-      ]
-    },
-    {
-      "word": "giddalti",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "giddalti"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 25:4",
-        "1 Chronicles 25:29"
-      ]
-    },
-    {
-      "word": "gier",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "gier"
-      ],
-      "sampleRefs": [
-        "Leviticus 11:18",
-        "Deuteronomy 14:17"
-      ]
-    },
-    {
-      "word": "gilonite",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "gilonite"
-      ],
-      "sampleRefs": [
-        "2 Samuel 15:12",
-        "2 Samuel 23:34"
-      ]
-    },
-    {
-      "word": "grapegatherers",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "grapegatherers",
-        "grapegatherer",
-        "grapegatherere"
-      ],
-      "sampleRefs": [
-        "Jeremiah 49:9",
-        "Obadiah 1:5"
-      ]
-    },
-    {
-      "word": "habaiah",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "habaiah"
-      ],
-      "sampleRefs": [
-        "Ezra 2:61",
-        "Nehemiah 7:63"
-      ]
-    },
-    {
-      "word": "haggi",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "haggi"
-      ],
-      "sampleRefs": [
-        "Genesis 46:16",
-        "Numbers 26:15"
-      ]
-    },
     {
       "word": "hai",
       "count": 2,
@@ -1250,6 +1005,261 @@
       "sampleRefs": [
         "Colossians 2:5",
         "2 Peter 3:17"
+      ]
+    },
+    {
+      "word": "stouthearted",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "stouthearted",
+        "stoutheart",
+        "stouthearte"
+      ],
+      "sampleRefs": [
+        "Psalms 76:5",
+        "Isaiah 46:12"
+      ]
+    },
+    {
+      "word": "stumblingstone",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "stumblingstone"
+      ],
+      "sampleRefs": [
+        "Romans 9:32",
+        "Romans 9:33"
+      ]
+    },
+    {
+      "word": "sufficiently",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "sufficiently"
+      ],
+      "sampleRefs": [
+        "2 Chronicles 30:3",
+        "Isaiah 23:18"
+      ]
+    },
+    {
+      "word": "swaddled",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "swaddled",
+        "swaddl",
+        "swaddle"
+      ],
+      "sampleRefs": [
+        "Lamentations 2:22",
+        "Ezekiel 16:4"
+      ]
+    },
+    {
+      "word": "thirtyfold",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "thirtyfold"
+      ],
+      "sampleRefs": [
+        "Matthew 13:8",
+        "Mark 4:20"
+      ]
+    },
+    {
+      "word": "threshingfloors",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "threshingfloors",
+        "threshingfloor",
+        "threshingfloore"
+      ],
+      "sampleRefs": [
+        "1 Samuel 23:1",
+        "Daniel 2:35"
+      ]
+    },
+    {
+      "word": "tou",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "tou"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 18:9",
+        "1 Chronicles 18:10"
+      ]
+    },
+    {
+      "word": "traveller",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "traveller"
+      ],
+      "sampleRefs": [
+        "2 Samuel 12:4",
+        "Job 31:32"
+      ]
+    },
+    {
+      "word": "unblameable",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "unblameable"
+      ],
+      "sampleRefs": [
+        "Colossians 1:22",
+        "1 Thessalonians 3:13"
+      ]
+    },
+    {
+      "word": "unmoveable",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "unmoveable"
+      ],
+      "sampleRefs": [
+        "Acts 27:41",
+        "1 Corinthians 15:58"
+      ]
+    },
+    {
+      "word": "upholden",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "upholden"
+      ],
+      "sampleRefs": [
+        "Job 4:4",
+        "Proverbs 20:28"
+      ]
+    },
+    {
+      "word": "uthai",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "uthai"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 9:4",
+        "Ezra 8:14"
+      ]
+    },
+    {
+      "word": "uzzielites",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "uzzielites",
+        "uzzielite"
+      ],
+      "sampleRefs": [
+        "Numbers 3:27",
+        "1 Chronicles 26:23"
+      ]
+    },
+    {
+      "word": "warriors",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "warriors",
+        "warrior",
+        "warriore"
+      ],
+      "sampleRefs": [
+        "1 Kings 12:21",
+        "2 Chronicles 11:1"
+      ]
+    },
+    {
+      "word": "washpot",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "washpot"
+      ],
+      "sampleRefs": [
+        "Psalms 60:8",
+        "Psalms 108:9"
+      ]
+    },
+    {
+      "word": "watcher",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "watcher"
+      ],
+      "sampleRefs": [
+        "Daniel 4:13",
+        "Daniel 4:23"
+      ]
+    },
+    {
+      "word": "watchers",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "watchers",
+        "watcher",
+        "watchere"
+      ],
+      "sampleRefs": [
+        "Jeremiah 4:16",
+        "Daniel 4:17"
+      ]
+    },
+    {
+      "word": "watersprings",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "watersprings",
+        "waterspring",
+        "waterspringe"
+      ],
+      "sampleRefs": [
+        "Psalms 107:33",
+        "Psalms 107:35"
+      ]
+    },
+    {
+      "word": "wayside",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "wayside"
+      ],
+      "sampleRefs": [
+        "1 Samuel 4:13",
+        "Psalms 140:5"
+      ]
+    },
+    {
+      "word": "weakeneth",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "weakeneth",
+        "weaken",
+        "weakene"
+      ],
+      "sampleRefs": [
+        "Job 12:21",
+        "Jeremiah 38:4"
       ]
     }
   ]
