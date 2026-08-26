@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-26T02:08:55.823Z",
+  "generated_at": "2026-08-26T10:10:55.800Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
-  "total": 3975,
+  "total": 3905,
   "priorityCounts": {
     "high": 231,
     "medium": 680,
-    "low": 1089,
-    "single-use": 1975
+    "low": 1073,
+    "single-use": 1921
   },
   "withSupplementalHelp": 2912,
-  "withoutSupplementalHelp": 1063,
+  "withoutSupplementalHelp": 993,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
     {
@@ -1328,32 +1328,6 @@
       ]
     },
     {
-      "word": "trustedst",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "trustedst"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 28:52",
-        "Jeremiah 5:17",
-        "Jeremiah 12:5"
-      ]
-    },
-    {
-      "word": "unwashen",
-      "count": 3,
-      "priority": "low",
-      "lookupCandidates": [
-        "unwashen"
-      ],
-      "sampleRefs": [
-        "Matthew 15:20",
-        "Mark 7:2",
-        "Mark 7:5"
-      ]
-    },
-    {
       "word": "womenservants",
       "count": 3,
       "priority": "low",
@@ -1378,20 +1352,6 @@
       "sampleRefs": [
         "Matthew 1:9",
         "Matthew 1:9"
-      ]
-    },
-    {
-      "word": "additions",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "additions",
-        "addition",
-        "additione"
-      ],
-      "sampleRefs": [
-        "1 Kings 7:29",
-        "1 Kings 7:36"
       ]
     },
     {
@@ -1428,6 +1388,43 @@
       "sampleRefs": [
         "Galatians 4:24",
         "Galatians 4:25"
+      ]
+    },
+    {
+      "word": "amramites",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "amramites",
+        "amramite"
+      ],
+      "sampleRefs": [
+        "Numbers 3:27",
+        "1 Chronicles 26:23"
+      ]
+    },
+    {
+      "word": "amzi",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "amzi"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 6:46",
+        "Nehemiah 11:12"
+      ]
+    },
+    {
+      "word": "anaiah",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "anaiah"
+      ],
+      "sampleRefs": [
+        "Nehemiah 8:4",
+        "Nehemiah 10:22"
       ]
     }
   ]
