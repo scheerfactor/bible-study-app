@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T10:21:05.052Z
+Generated: 2026-08-26T10:29:22.227Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,471/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.1%).
+- Combined word/topic lookup: 11,482/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.2%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,16 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| abiezer | 7 | Joshua 17:2; Judges 6:34; Judges 8:2; 2 Samuel 23:27; 1 Chronicles 7:18 |
-| aijalon | 7 | Joshua 21:24; Judges 1:35; Judges 12:12; 1 Samuel 14:31; 1 Chronicles 6:69 |
-| shinar | 7 | Genesis 10:10; Genesis 11:2; Genesis 14:1; Genesis 14:9; Isaiah 11:11 |
-| asaiah | 6 | 1 Chronicles 4:36; 1 Chronicles 6:30; 1 Chronicles 9:5; 1 Chronicles 15:6; 1 Chronicles 15:11 |
-| azrikam | 6 | 1 Chronicles 3:23; 1 Chronicles 8:38; 1 Chronicles 9:14; 1 Chronicles 9:44; 2 Chronicles 28:7 |
-| malchijah | 6 | 1 Chronicles 9:12; 1 Chronicles 24:9; Ezra 10:25; Nehemiah 3:11; Nehemiah 10:3 |
-| tahath | 6 | Numbers 33:26; Numbers 33:27; 1 Chronicles 6:24; 1 Chronicles 6:37; 1 Chronicles 7:20 |
-| ahilud | 5 | 2 Samuel 8:16; 2 Samuel 20:24; 1 Kings 4:3; 1 Kings 4:12; 1 Chronicles 18:15 |
-| azareel | 5 | 1 Chronicles 12:6; 1 Chronicles 25:18; 1 Chronicles 27:22; Ezra 10:41; Nehemiah 11:13 |
-| ephraimites | 5 | Joshua 16:10; Judges 12:4; Judges 12:5; Judges 12:5; Judges 12:6 |
 | gomorrha | 5 | Matthew 10:15; Mark 6:11; Romans 9:29; 2 Peter 2:6; Jude 1:7 |
 | hararite | 5 | 2 Samuel 23:11; 2 Samuel 23:33; 2 Samuel 23:33; 1 Chronicles 11:34; 1 Chronicles 11:35 |
 | hushathite | 5 | 2 Samuel 21:18; 2 Samuel 23:27; 1 Chronicles 11:29; 1 Chronicles 20:4; 1 Chronicles 27:11 |
@@ -101,6 +91,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | ashan | 4 | Joshua 15:42; Joshua 19:7; 1 Chronicles 4:32; 1 Chronicles 6:59 |
 | attai | 4 | 1 Chronicles 2:35; 1 Chronicles 2:36; 1 Chronicles 12:11; 2 Chronicles 11:20 |
 | azgad | 4 | Ezra 2:12; Ezra 8:12; Nehemiah 7:17; Nehemiah 10:15 |
+| beerothite | 4 | 2 Samuel 4:2; 2 Samuel 4:5; 2 Samuel 4:9; 2 Samuel 23:37 |
+| danites | 4 | Judges 13:2; Judges 18:1; Judges 18:11; 1 Chronicles 12:35 |
+| giddel | 4 | Ezra 2:47; Ezra 2:56; Nehemiah 7:49; Nehemiah 7:58 |
+| gileadites | 4 | Numbers 26:29; Judges 12:4; Judges 12:5; 2 Kings 15:25 |
+| husham | 4 | Genesis 36:34; Genesis 36:35; 1 Chronicles 1:45; 1 Chronicles 1:46 |
+| hushim | 4 | Genesis 46:23; 1 Chronicles 7:12; 1 Chronicles 8:8; 1 Chronicles 8:11 |
+| kiriathaim | 4 | Genesis 14:5; Jeremiah 48:1; Jeremiah 48:23; Ezekiel 25:9 |
+| lod | 4 | 1 Chronicles 8:12; Ezra 2:33; Nehemiah 7:37; Nehemiah 11:35 |
+| maachathite | 4 | 2 Samuel 23:34; 2 Kings 25:23; 1 Chronicles 4:19; Jeremiah 40:8 |
+| maachathites | 4 | Joshua 12:5; Joshua 13:11; Joshua 13:13; Joshua 13:13 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

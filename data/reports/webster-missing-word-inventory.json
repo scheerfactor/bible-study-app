@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T10:21:05.052Z",
+  "generated_at": "2026-08-26T10:29:22.227Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,161 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 2922,
-  "withoutSupplementalHelp": 983,
+  "withSupplementalHelp": 2933,
+  "withoutSupplementalHelp": 972,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "abiezer",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "abiezer"
-      ],
-      "sampleRefs": [
-        "Joshua 17:2",
-        "Judges 6:34",
-        "Judges 8:2",
-        "2 Samuel 23:27",
-        "1 Chronicles 7:18"
-      ]
-    },
-    {
-      "word": "aijalon",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "aijalon"
-      ],
-      "sampleRefs": [
-        "Joshua 21:24",
-        "Judges 1:35",
-        "Judges 12:12",
-        "1 Samuel 14:31",
-        "1 Chronicles 6:69"
-      ]
-    },
-    {
-      "word": "shinar",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "shinar"
-      ],
-      "sampleRefs": [
-        "Genesis 10:10",
-        "Genesis 11:2",
-        "Genesis 14:1",
-        "Genesis 14:9",
-        "Isaiah 11:11"
-      ]
-    },
-    {
-      "word": "asaiah",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "asaiah"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 4:36",
-        "1 Chronicles 6:30",
-        "1 Chronicles 9:5",
-        "1 Chronicles 15:6",
-        "1 Chronicles 15:11"
-      ]
-    },
-    {
-      "word": "azrikam",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "azrikam"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 3:23",
-        "1 Chronicles 8:38",
-        "1 Chronicles 9:14",
-        "1 Chronicles 9:44",
-        "2 Chronicles 28:7"
-      ]
-    },
-    {
-      "word": "malchijah",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "malchijah"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 9:12",
-        "1 Chronicles 24:9",
-        "Ezra 10:25",
-        "Nehemiah 3:11",
-        "Nehemiah 10:3"
-      ]
-    },
-    {
-      "word": "tahath",
-      "count": 6,
-      "priority": "medium",
-      "lookupCandidates": [
-        "tahath"
-      ],
-      "sampleRefs": [
-        "Numbers 33:26",
-        "Numbers 33:27",
-        "1 Chronicles 6:24",
-        "1 Chronicles 6:37",
-        "1 Chronicles 7:20"
-      ]
-    },
-    {
-      "word": "ahilud",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "ahilud"
-      ],
-      "sampleRefs": [
-        "2 Samuel 8:16",
-        "2 Samuel 20:24",
-        "1 Kings 4:3",
-        "1 Kings 4:12",
-        "1 Chronicles 18:15"
-      ]
-    },
-    {
-      "word": "azareel",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "azareel"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 12:6",
-        "1 Chronicles 25:18",
-        "1 Chronicles 27:22",
-        "Ezra 10:41",
-        "Nehemiah 11:13"
-      ]
-    },
-    {
-      "word": "ephraimites",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "ephraimites",
-        "ephraimite"
-      ],
-      "sampleRefs": [
-        "Joshua 16:10",
-        "Judges 12:4",
-        "Judges 12:5",
-        "Judges 12:5",
-        "Judges 12:6"
-      ]
-    },
     {
       "word": "gomorrha",
       "count": 5,
@@ -1393,6 +1242,128 @@
       "sampleRefs": [
         "Exodus 21:6",
         "Deuteronomy 15:17"
+      ]
+    },
+    {
+      "word": "avites",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "avites",
+        "avite"
+      ],
+      "sampleRefs": [
+        "Joshua 13:3",
+        "2 Kings 17:31"
+      ]
+    },
+    {
+      "word": "avith",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "avith"
+      ],
+      "sampleRefs": [
+        "Genesis 36:35",
+        "1 Chronicles 1:46"
+      ]
+    },
+    {
+      "word": "axletrees",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "axletrees",
+        "axletree"
+      ],
+      "sampleRefs": [
+        "1 Kings 7:32",
+        "1 Kings 7:33"
+      ]
+    },
+    {
+      "word": "azaliah",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "azaliah"
+      ],
+      "sampleRefs": [
+        "2 Kings 22:3",
+        "2 Chronicles 34:8"
+      ]
+    },
+    {
+      "word": "azem",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "azem"
+      ],
+      "sampleRefs": [
+        "Joshua 15:29",
+        "Joshua 19:3"
+      ]
+    },
+    {
+      "word": "azor",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "azor"
+      ],
+      "sampleRefs": [
+        "Matthew 1:13",
+        "Matthew 1:14"
+      ]
+    },
+    {
+      "word": "azur",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "azur"
+      ],
+      "sampleRefs": [
+        "Jeremiah 28:1",
+        "Ezekiel 11:1"
+      ]
+    },
+    {
+      "word": "babel",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "babel"
+      ],
+      "sampleRefs": [
+        "Genesis 10:10",
+        "Genesis 11:9"
+      ]
+    },
+    {
+      "word": "bakbuk",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "bakbuk"
+      ],
+      "sampleRefs": [
+        "Ezra 2:51",
+        "Nehemiah 7:53"
+      ]
+    },
+    {
+      "word": "bedad",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "bedad"
+      ],
+      "sampleRefs": [
+        "Genesis 36:35",
+        "1 Chronicles 1:46"
       ]
     }
   ]

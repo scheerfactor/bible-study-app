@@ -1,0 +1,115 @@
+{
+  "batch_id": "kjv-rare-terms-phase-3-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "King James Bible, standard 1769 text",
+  "rights_basis": "The KJV Scripture text used for this review is public domain in the United States.",
+  "definition_method": "Original concise study aids written from the cited KJV passages. No copyrighted commentary wording was imported.",
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv",
+  "screening_summary": {
+    "reviewed_entries": 10,
+    "resolved_kjv_forms": 11,
+    "kjv_word_occurrences": 61
+  },
+  "entries": [
+    {
+      "headword": "ABIEZER",
+      "normalized_headword": "abiezer",
+      "definition": "A name used for a Manassite family associated with Gideon and for an Anethothite numbered among David's mighty men.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Joshua 17:2; Judges 6:34; 8:2; 2 Samuel 23:27; 1 Chronicles 7:18",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["abiezer"],
+      "kjv_occurrences": 7
+    },
+    {
+      "headword": "AIJALON",
+      "normalized_headword": "aijalon",
+      "definition": "A KJV place name used for locations connected with Dan, Zebulun, and the Levitical cities. The alternate spelling Ajalon also appears in the KJV.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Joshua 21:24; Judges 1:35; 12:12; 1 Samuel 14:31; Joshua 10:12",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["aijalon"],
+      "kjv_occurrences": 7
+    },
+    {
+      "headword": "SHINAR",
+      "normalized_headword": "shinar",
+      "definition": "The land in which Babel, Erech, Accad, and Calneh were named, and to which the vessels of the house of God were carried in Daniel's day.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Genesis 10:10; 11:2; 14:1; Daniel 1:2",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["shinar"],
+      "kjv_occurrences": 7
+    },
+    {
+      "headword": "ASAIAH",
+      "normalized_headword": "asaiah",
+      "definition": "A name borne by several Israelites, including a chief of the sons of Merari and a servant of King Josiah.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 1 Chronicles 4:36; 6:30; 9:5; 15:6, 11; 2 Chronicles 34:20",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["asaiah"],
+      "kjv_occurrences": 6
+    },
+    {
+      "headword": "AZRIKAM",
+      "normalized_headword": "azrikam",
+      "definition": "A name borne by several men, including a son of Neariah and the governor of the house who was slain by Zichri.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 1 Chronicles 3:23; 8:38; 9:14; 2 Chronicles 28:7; Nehemiah 11:15",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["azrikam"],
+      "kjv_occurrences": 6
+    },
+    {
+      "headword": "MALCHIJAH",
+      "normalized_headword": "malchijah",
+      "definition": "A name borne by several Israelites, including the head of a priestly course and a man who helped repair Jerusalem's wall.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 1 Chronicles 24:9; Ezra 10:25; Nehemiah 3:11; 10:3; 12:42",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["malchijah"],
+      "kjv_occurrences": 6
+    },
+    {
+      "headword": "TAHATH",
+      "normalized_headword": "tahath",
+      "definition": "The name of an Israelite wilderness encampment and of men named in the genealogies of Levi and Ephraim.",
+      "source_title": "KJV Bible Name and Place Guide",
+      "source_file": "KJV: Numbers 33:26-27; 1 Chronicles 6:24, 37; 7:20",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["tahath"],
+      "kjv_occurrences": 6
+    },
+    {
+      "headword": "AHILUD",
+      "normalized_headword": "ahilud",
+      "definition": "The father named with Jehoshaphat the recorder and with Baana, one of Solomon's officers.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 2 Samuel 8:16; 20:24; 1 Kings 4:3, 12; 1 Chronicles 18:15",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["ahilud"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "AZAREEL",
+      "normalized_headword": "azareel",
+      "definition": "A name borne by several men, including a Korhite who came to David, a musician, and a prince of the tribe of Dan.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 1 Chronicles 12:6; 25:18; 27:22; Ezra 10:41; Nehemiah 11:13",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["azareel"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "EPHRAIMITE",
+      "normalized_headword": "ephraimite",
+      "definition": "EPHRAIMITE, noun or adjective. A member or descendant of Ephraim; belonging to the tribe of Ephraim.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Joshua 16:10; Judges 12:4-6",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["ephraimite", "ephraimites"],
+      "kjv_occurrences": 6
+    }
+  ]
+}
