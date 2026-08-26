@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T13:43:51.031Z
+Generated: 2026-08-26T13:50:12.766Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,616/12,454 meaningful KJV words have Webster, Easton, or Nave help (93.3%).
+- Combined word/topic lookup: 11,636/12,454 meaningful KJV words have Webster, Easton, or Nave help (93.4%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,26 +71,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| hai | 2 | Genesis 12:8; Genesis 13:3 |
-| hamathite | 2 | Genesis 10:18; 1 Chronicles 1:16 |
-| henoch | 2 | 1 Chronicles 1:3; 1 Chronicles 1:33 |
-| hezronites | 2 | Numbers 26:6; Numbers 26:21 |
-| horims | 2 | Deuteronomy 2:12; Deuteronomy 2:22 |
-| hothir | 2 | 1 Chronicles 25:4; 1 Chronicles 25:28 |
-| hymenaeus | 2 | 1 Timothy 1:20; 2 Timothy 2:17 |
-| imlah | 2 | 1 Kings 22:8; 1 Kings 22:9 |
-| ishmaelites | 2 | Judges 8:24; Psalms 83:6 |
-| izrahiah | 2 | 1 Chronicles 7:3; 1 Chronicles 7:3 |
-| jada | 2 | 1 Chronicles 2:28; 1 Chronicles 2:32 |
-| jarha | 2 | 1 Chronicles 2:34; 1 Chronicles 2:35 |
-| jebusi | 2 | Joshua 18:16; Joshua 18:28 |
-| jechonias | 2 | Matthew 1:11; Matthew 1:12 |
-| jehieli | 2 | 1 Chronicles 26:21; 1 Chronicles 26:22 |
-| jehoshabeath | 2 | 2 Chronicles 22:11; 2 Chronicles 22:11 |
-| jehoshua | 2 | Numbers 13:16; 1 Chronicles 7:27 |
-| jemuel | 2 | Genesis 46:10; Exodus 6:15 |
-| jerahmeelites | 2 | 1 Samuel 27:10; 1 Samuel 30:29 |
-| jered | 2 | 1 Chronicles 1:2; 1 Chronicles 4:18 |
 | jeremy | 2 | Matthew 2:17; Matthew 27:9 |
 | jezaniah | 2 | Jeremiah 40:8; Jeremiah 42:1 |
 | joatham | 2 | Matthew 1:9; Matthew 1:9 |
@@ -101,6 +81,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | lunatick | 2 | Matthew 4:24; Matthew 17:15 |
 | magdiel | 2 | Genesis 36:43; 1 Chronicles 1:54 |
 | mahlites | 2 | Numbers 3:33; Numbers 26:58 |
+| manahethites | 2 | 1 Chronicles 2:52; 1 Chronicles 2:54 |
+| matred | 2 | Genesis 36:39; 1 Chronicles 1:50 |
+| messias | 2 | John 1:41; John 4:25 |
+| mijamin | 2 | 1 Chronicles 24:9; Nehemiah 10:7 |
+| morasthite | 2 | Jeremiah 26:18; Micah 1:1 |
+| mushites | 2 | Numbers 3:33; Numbers 26:58 |
+| nephthalim | 2 | Matthew 4:13; Matthew 4:15 |
+| netophathites | 2 | 1 Chronicles 2:54; 1 Chronicles 9:16 |
+| nimrim | 2 | Isaiah 15:6; Jeremiah 48:34 |
+| oshea | 2 | Numbers 13:8; Numbers 13:16 |
+| overpast | 2 | Psalms 57:1; Isaiah 26:20 |
+| pathrusim | 2 | Genesis 10:14; 1 Chronicles 1:12 |
+| phurah | 2 | Judges 7:10; Judges 7:11 |
+| pithon | 2 | 1 Chronicles 8:35; 1 Chronicles 9:41 |
+| pochereth | 2 | Ezra 2:57; Nehemiah 7:59 |
+| practised | 2 | 1 Samuel 23:9; Daniel 8:12 |
+| pransings | 2 | Judges 5:22; Judges 5:22 |
+| publickly | 2 | Acts 18:28; Acts 20:20 |
+| rabbath | 2 | Deuteronomy 3:11; Ezekiel 21:20 |
+| respite | 2 | Exodus 8:15; 1 Samuel 11:3 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

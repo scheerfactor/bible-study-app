@@ -1,795 +1,10 @@
 {
-  "generated_at": "2026-08-26T13:43:53.870Z",
+  "generated_at": "2026-08-26T13:50:15.579Z",
   "source_inventory": "data/reports/webster-missing-word-inventory.csv",
   "source_bible": "King James Bible, standard 1769 text",
   "purpose": "Human review queue only. Entries must not be published without source and identity review.",
   "limit": 50,
   "entries": [
-    {
-      "word": "hai",
-      "normalized_word": "hai",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "hai"
-      ],
-      "sample_references": [
-        "Genesis 12:8",
-        "Genesis 13:3"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 12:8",
-          "count": 1,
-          "text": "And he removed from thence unto a mountain on the east of Beth-el, and pitched his tent, [having] Beth-el on the west, and Hai on the east: and there he builded an altar unto the LORD, and called upon the name of the LORD."
-        },
-        {
-          "reference": "Genesis 13:3",
-          "count": 1,
-          "text": "And he went on his journeys from the south even to Beth-el, unto the place where his tent had been at the beginning, between Beth-el and Hai;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abarim",
-            "Abihail",
-            "Abijah",
-            "Abishai",
-            "Abner",
-            "Absalom",
-            "Achaia",
-            "Achaichus",
-            "Ahithophel",
-            "Ai"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "ABISHAI",
-            "AC H AI A",
-            "ACHAICUS",
-            "AHOLIHAII",
-            "AMASHAI",
-            "BEER-LAHAI-ROI",
-            "BEN-HAIL",
-            "BEROTHAI",
-            "BETH-DIBLATHAIM",
-            "BIBBBCHAI"
-          ]
-        }
-      }
-    },
-    {
-      "word": "hamathite",
-      "normalized_word": "hamathite",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "hamathite"
-      ],
-      "sample_references": [
-        "Genesis 10:18",
-        "1 Chronicles 1:16"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 10:18",
-          "count": 1,
-          "text": "And the Arvadite, and the Zemarite, and the Hamathite: and afterward were the families of the Canaanites spread abroad."
-        },
-        {
-          "reference": "1 Chronicles 1:16",
-          "count": 1,
-          "text": "And the Arvadite, and the Zemarite, and the Hamathite."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "henoch",
-      "normalized_word": "henoch",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "henoch"
-      ],
-      "sample_references": [
-        "1 Chronicles 1:3",
-        "1 Chronicles 1:33"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 1:3",
-          "count": 1,
-          "text": "Henoch, Methuselah, Lamech,"
-        },
-        {
-          "reference": "1 Chronicles 1:33",
-          "count": 1,
-          "text": "And the sons of Midian; Ephah, and Epher, and Henoch, and Abida, and Eldaah. All these [are] the sons of Keturah."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Enoch"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "hezronites",
-      "normalized_word": "hezronites",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "hezronites",
-        "hezronite"
-      ],
-      "sample_references": [
-        "Numbers 26:6",
-        "Numbers 26:21"
-      ],
-      "occurrences": [
-        {
-          "reference": "Numbers 26:6",
-          "count": 1,
-          "text": "Of Hezron, the family of the Hezronites: of Carmi, the family of the Carmites."
-        },
-        {
-          "reference": "Numbers 26:21",
-          "count": 1,
-          "text": "And the sons of Pharez were; of Hezron, the family of the Hezronites: of Hamul, the family of the Hamulites."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Elimelech"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "horims",
-      "normalized_word": "horims",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "horims",
-        "horim",
-        "horime"
-      ],
-      "sample_references": [
-        "Deuteronomy 2:12",
-        "Deuteronomy 2:22"
-      ],
-      "occurrences": [
-        {
-          "reference": "Deuteronomy 2:12",
-          "count": 1,
-          "text": "The Horims also dwelt in Seir beforetime; but the children of Esau succeeded them, when they had destroyed them from before them, and dwelt in their stead; as Israel did unto the land of his possession, which the LORD gave unto them."
-        },
-        {
-          "reference": "Deuteronomy 2:22",
-          "count": 1,
-          "text": "As he did to the children of Esau, which dwelt in Seir, when he destroyed the Horims from before them; and they succeeded them, and dwelt in their stead even unto this day:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "hothir",
-      "normalized_word": "hothir",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "hothir"
-      ],
-      "sample_references": [
-        "1 Chronicles 25:4",
-        "1 Chronicles 25:28"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 25:4",
-          "count": 1,
-          "text": "Of Heman: the sons of Heman; Bukkiah, Mattaniah, Uzziel, Shebuel, and Jerimoth, Hananiah, Hanani, Eliathah, Giddalti, and Romamti-ezer, Joshbekashah, Mallothi, Hothir, [and] Mahazioth:"
-        },
-        {
-          "reference": "1 Chronicles 25:28",
-          "count": 1,
-          "text": "The one and twentieth to Hothir, [he], his sons, and his brethren, [were] twelve:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "hymenaeus",
-      "normalized_word": "hymenaeus",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "hymenaeus",
-        "hymenaeu"
-      ],
-      "sample_references": [
-        "1 Timothy 1:20",
-        "2 Timothy 2:17"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Timothy 1:20",
-          "count": 1,
-          "text": "Of whom is Hymenaeus and Alexander; whom I have delivered unto Satan, that they may learn not to blaspheme."
-        },
-        {
-          "reference": "2 Timothy 2:17",
-          "count": 1,
-          "text": "And their word will eat as doth a canker: of whom is Hymenaeus and Philetus;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Alexander",
-            "Philetus"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "imlah",
-      "normalized_word": "imlah",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "imlah"
-      ],
-      "sample_references": [
-        "1 Kings 22:8",
-        "1 Kings 22:9"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Kings 22:8",
-          "count": 1,
-          "text": "And the king of Israel said unto Jehoshaphat, [There is] yet one man, Micaiah the son of Imlah, by whom we may enquire of the LORD: but I hate him; for he doth not prophesy good concerning me, but evil. And Jehoshaphat said, Let not the king say so."
-        },
-        {
-          "reference": "1 Kings 22:9",
-          "count": 1,
-          "text": "Then the king of Israel called an officer, and said, Hasten [hither] Micaiah the son of Imlah."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Micah",
-            "Micah, Book of",
-            "Micaiah"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "ishmaelites",
-      "normalized_word": "ishmaelites",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "ishmaelites",
-        "ishmaelite"
-      ],
-      "sample_references": [
-        "Judges 8:24",
-        "Psalms 83:6"
-      ],
-      "occurrences": [
-        {
-          "reference": "Judges 8:24",
-          "count": 1,
-          "text": "# And Gideon said unto them, I would desire a request of you, that ye would give me every man the earrings of his prey. (For they had golden earrings, because they [were] Ishmaelites.)"
-        },
-        {
-          "reference": "Psalms 83:6",
-          "count": 1,
-          "text": "The tabernacles of Edom, and the Ishmaelites; of Moab, and the Hagarenes;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Arabia",
-            "Hagarene",
-            "Ishmael",
-            "Ishmeelites",
-            "Judah",
-            "Potiphar",
-            "Robbery",
-            "Shibboleth"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "izrahiah",
-      "normalized_word": "izrahiah",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "izrahiah"
-      ],
-      "sample_references": [
-        "1 Chronicles 7:3",
-        "1 Chronicles 7:3"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 7:3",
-          "count": 2,
-          "text": "And the sons of Uzzi; Izrahiah: and the sons of Izrahiah; Michael, and Obadiah, and Joel, Ishiah, five: all of them chief men."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jada",
-      "normalized_word": "jada",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jada"
-      ],
-      "sample_references": [
-        "1 Chronicles 2:28",
-        "1 Chronicles 2:32"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 2:28",
-          "count": 1,
-          "text": "And the sons of Onam were, Shammai, and Jada. And the sons of Shammai; Nadab, and Abishur."
-        },
-        {
-          "reference": "1 Chronicles 2:32",
-          "count": 1,
-          "text": "And the sons of Jada the brother of Shammai; Jether, and Jonathan: and Jether died without children."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jarha",
-      "normalized_word": "jarha",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jarha"
-      ],
-      "sample_references": [
-        "1 Chronicles 2:34",
-        "1 Chronicles 2:35"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 2:34",
-          "count": 1,
-          "text": "# Now Sheshan had no sons, but daughters. And Sheshan had a servant, an Egyptian, whose name [was] Jarha."
-        },
-        {
-          "reference": "1 Chronicles 2:35",
-          "count": 1,
-          "text": "And Sheshan gave his daughter to Jarha his servant to wife; and she bare him Attai."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jebusi",
-      "normalized_word": "jebusi",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jebusi"
-      ],
-      "sample_references": [
-        "Joshua 18:16",
-        "Joshua 18:28"
-      ],
-      "occurrences": [
-        {
-          "reference": "Joshua 18:16",
-          "count": 1,
-          "text": "And the border came down to the end of the mountain that [lieth] before the valley of the son of Hinnom, [and] which [is] in the valley of the giants on the north, and descended to the valley of Hinnom, to the side of Jebusi on the south, and descended to En-rogel,"
-        },
-        {
-          "reference": "Joshua 18:28",
-          "count": 1,
-          "text": "And Zelah, Eleph, and Jebusi, which [is] Jerusalem, Gibeath, [and] Kirjath; fourteen cities with their villages. This [is] the inheritance of the children of Benjamin according to their families."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Araunah",
-            "City",
-            "David",
-            "David, City of",
-            "Fenced cities",
-            "Jebusites",
-            "Jerusalem",
-            "Moriah",
-            "Old gate",
-            "Proselyte"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "JEBUSITES"
-          ]
-        }
-      }
-    },
-    {
-      "word": "jechonias",
-      "normalized_word": "jechonias",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jechonias",
-        "jechonia"
-      ],
-      "sample_references": [
-        "Matthew 1:11",
-        "Matthew 1:12"
-      ],
-      "occurrences": [
-        {
-          "reference": "Matthew 1:11",
-          "count": 1,
-          "text": "And Josias begat Jechonias and his brethren, about the time they were carried away to Babylon:"
-        },
-        {
-          "reference": "Matthew 1:12",
-          "count": 1,
-          "text": "And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jehieli",
-      "normalized_word": "jehieli",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jehieli"
-      ],
-      "sample_references": [
-        "1 Chronicles 26:21",
-        "1 Chronicles 26:22"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 26:21",
-          "count": 1,
-          "text": "[As concerning] the sons of Laadan; the sons of the Gershonite Laadan, chief fathers, [even] of Laadan the Gershonite, [were] Jehieli."
-        },
-        {
-          "reference": "1 Chronicles 26:22",
-          "count": 1,
-          "text": "The sons of Jehieli; Zetham, and Joel his brother, [which were] over the treasures of the house of the LORD."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jehoshabeath",
-      "normalized_word": "jehoshabeath",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jehoshabeath"
-      ],
-      "sample_references": [
-        "2 Chronicles 22:11",
-        "2 Chronicles 22:11"
-      ],
-      "occurrences": [
-        {
-          "reference": "2 Chronicles 22:11",
-          "count": 2,
-          "text": "But Jehoshabeath, the daughter of the king, took Joash the son of Ahaziah, and stole him from among the king's sons that were slain, and put him and his nurse in a bedchamber. So Jehoshabeath, the daughter of king Jehoram, the wife of Jehoiada the priest, (for she was the sister of Ahaziah,) hid him from Athaliah, so that she slew him not."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Jehoiada",
-            "Jehosheba"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jehoshua",
-      "normalized_word": "jehoshua",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jehoshua"
-      ],
-      "sample_references": [
-        "Numbers 13:16",
-        "1 Chronicles 7:27"
-      ],
-      "occurrences": [
-        {
-          "reference": "Numbers 13:16",
-          "count": 1,
-          "text": "These [are] the names of the men which Moses sent to spy out the land. And Moses called Oshea the son of Nun Jehoshua."
-        },
-        {
-          "reference": "1 Chronicles 7:27",
-          "count": 1,
-          "text": "Non his son, Jehoshua his son."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Jesus"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "JEHOSHUAH"
-          ]
-        }
-      }
-    },
-    {
-      "word": "jemuel",
-      "normalized_word": "jemuel",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jemuel"
-      ],
-      "sample_references": [
-        "Genesis 46:10",
-        "Exodus 6:15"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 46:10",
-          "count": 1,
-          "text": "# And the sons of Simeon; Jemuel, and Jamin, and Ohad, and Jachin, and Zohar, and Shaul the son of a Canaanitish woman."
-        },
-        {
-          "reference": "Exodus 6:15",
-          "count": 1,
-          "text": "And the sons of Simeon; Jemuel, and Jamin, and Ohad, and Jachin, and Zohar, and Shaul the son of a Canaanitish woman: these [are] the families of Simeon."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Nemuel"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jerahmeelites",
-      "normalized_word": "jerahmeelites",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jerahmeelites",
-        "jerahmeelite"
-      ],
-      "sample_references": [
-        "1 Samuel 27:10",
-        "1 Samuel 30:29"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Samuel 27:10",
-          "count": 1,
-          "text": "And Achish said, Whither have ye made a road to day? And David said, Against the south of Judah, and against the south of the Jerahmeelites, and against the south of the Kenites."
-        },
-        {
-          "reference": "1 Samuel 30:29",
-          "count": 1,
-          "text": "And to [them] which [were] in Rachal, and to [them] which [were] in the cities of the Jerahmeelites, and to [them] which [were] in the cities of the Kenites,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "jered",
-      "normalized_word": "jered",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "jered",
-        "jer",
-        "jere"
-      ],
-      "sample_references": [
-        "1 Chronicles 1:2",
-        "1 Chronicles 4:18"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 1:2",
-          "count": 1,
-          "text": "Kenan, Mahalaleel, Jered,"
-        },
-        {
-          "reference": "1 Chronicles 4:18",
-          "count": 1,
-          "text": "And his wife Jehudijah bare Jered the father of Gedor, and Heber the father of Socho, and Jekuthiel the father of Zanoah. And these [are] the sons of Bithiah the daughter of Pharaoh, which Mered took."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Jared"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
     {
       "word": "jeremy",
       "normalized_word": "jeremy",
@@ -1918,6 +1133,794 @@
         "easton": {
           "exact": [],
           "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "restorer",
+      "normalized_word": "restorer",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "restorer"
+      ],
+      "sample_references": [
+        "Ruth 4:15",
+        "Isaiah 58:12"
+      ],
+      "occurrences": [
+        {
+          "reference": "Ruth 4:15",
+          "count": 1,
+          "text": "And he shall be unto thee a restorer of [thy] life, and a nourisher of thine old age: for thy daughter in law, which loveth thee, which is better to thee than seven sons, hath born him."
+        },
+        {
+          "reference": "Isaiah 58:12",
+          "count": 1,
+          "text": "And [they that shall be] of thee shall build the old waste places: thou shalt raise up the foundations of many generations; and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "restrain",
+      "normalized_word": "restrain",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "restrain"
+      ],
+      "sample_references": [
+        "Job 15:8",
+        "Psalms 76:10"
+      ],
+      "occurrences": [
+        {
+          "reference": "Job 15:8",
+          "count": 1,
+          "text": "Hast thou heard the secret of God? and dost thou restrain wisdom to thyself?"
+        },
+        {
+          "reference": "Psalms 76:10",
+          "count": 1,
+          "text": "Surely the wrath of man shall praise thee: the remainder of wrath shalt thou restrain."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Bit",
+            "Bridle",
+            "Concubine",
+            "Corinthians, First Epistle to the",
+            "Hook",
+            "Jezebel",
+            "Naked",
+            "Providence",
+            "Tabernacle"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "revellings",
+      "normalized_word": "revellings",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "revellings",
+        "revelling",
+        "revellinge"
+      ],
+      "sample_references": [
+        "Galatians 5:21",
+        "1 Peter 4:3"
+      ],
+      "occurrences": [
+        {
+          "reference": "Galatians 5:21",
+          "count": 1,
+          "text": "Envyings, murders, drunkenness, revellings, and such like: of the which I tell you before, as I have also told [you] in time past, that they which do such things shall not inherit the kingdom of God."
+        },
+        {
+          "reference": "1 Peter 4:3",
+          "count": 1,
+          "text": "For the time past of [our] life may suffice us to have wrought the will of the Gentiles, when we walked in lasciviousness, lusts, excess of wine, revellings, banquetings, and abominable idolatries:"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Entertain"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "ribai",
+      "normalized_word": "ribai",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "ribai"
+      ],
+      "sample_references": [
+        "2 Samuel 23:29",
+        "1 Chronicles 11:31"
+      ],
+      "occurrences": [
+        {
+          "reference": "2 Samuel 23:29",
+          "count": 1,
+          "text": "Heleb the son of Baanah, a Netophathite, Ittai the son of Ribai out of Gibeah of the children of Benjamin,"
+        },
+        {
+          "reference": "1 Chronicles 11:31",
+          "count": 1,
+          "text": "Ithai the son of Ribai of Gibeah, [that pertained] to the children of Benjamin, Benaiah the Pirathonite,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "JERIBAI"
+          ]
+        }
+      }
+    },
+    {
+      "word": "richly",
+      "normalized_word": "richly",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "richly"
+      ],
+      "sample_references": [
+        "Colossians 3:16",
+        "1 Timothy 6:17"
+      ],
+      "occurrences": [
+        {
+          "reference": "Colossians 3:16",
+          "count": 1,
+          "text": "Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord."
+        },
+        {
+          "reference": "1 Timothy 6:17",
+          "count": 1,
+          "text": "Charge them that are rich in this world, that they be not highminded, nor trust in uncertain riches, but in the living God, who giveth us richly all things to enjoy;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Agriculture",
+            "Dwell",
+            "Eden",
+            "Holy place"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "roboam",
+      "normalized_word": "roboam",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "roboam"
+      ],
+      "sample_references": [
+        "Matthew 1:7",
+        "Matthew 1:7"
+      ],
+      "occurrences": [
+        {
+          "reference": "Matthew 1:7",
+          "count": 2,
+          "text": "And Solomon begat Roboam; and Roboam begat Abia; and Abia begat Asa;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Abijah",
+            "Ahab",
+            "Ahijah",
+            "Amos",
+            "Aven",
+            "Cake",
+            "Calf",
+            "Israel, Kingdom of",
+            "Jehoahaz",
+            "Jehohanan"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "salchah",
+      "normalized_word": "salchah",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "salchah"
+      ],
+      "sample_references": [
+        "Deuteronomy 3:10",
+        "1 Chronicles 5:11"
+      ],
+      "occurrences": [
+        {
+          "reference": "Deuteronomy 3:10",
+          "count": 1,
+          "text": "All the cities of the plain, and all Gilead, and all Bashan, unto Salchah and Edrei, cities of the kingdom of Og in Bashan."
+        },
+        {
+          "reference": "1 Chronicles 5:11",
+          "count": 1,
+          "text": "# And the children of Gad dwelt over against them, in the land of Bashan unto Salchah:"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "sarid",
+      "normalized_word": "sarid",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "sarid"
+      ],
+      "sample_references": [
+        "Joshua 19:10",
+        "Joshua 19:12"
+      ],
+      "occurrences": [
+        {
+          "reference": "Joshua 19:10",
+          "count": 1,
+          "text": "# And the third lot came up for the children of Zebulun according to their families: and the border of their inheritance was unto Sarid:"
+        },
+        {
+          "reference": "Joshua 19:12",
+          "count": 1,
+          "text": "And turned from Sarid eastward toward the sunrising unto the border of Chisloth-tabor, and then goeth out to Daberath, and goeth up to Japhia,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Beth-haccerem"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "scarcely",
+      "normalized_word": "scarcely",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "scarcely"
+      ],
+      "sample_references": [
+        "Romans 5:7",
+        "1 Peter 4:18"
+      ],
+      "occurrences": [
+        {
+          "reference": "Romans 5:7",
+          "count": 1,
+          "text": "For scarcely for a righteous man will one die: yet peradventure for a good man some would even dare to die."
+        },
+        {
+          "reference": "1 Peter 4:18",
+          "count": 1,
+          "text": "And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Ananias",
+            "Gethsemane",
+            "Haggai",
+            "Israel, Kingdom of",
+            "Joppa",
+            "Maccabees, Books of the",
+            "Palace",
+            "Seraiah",
+            "Tyropoeon Valley"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "securely",
+      "normalized_word": "securely",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "securely"
+      ],
+      "sample_references": [
+        "Proverbs 3:29",
+        "Micah 2:8"
+      ],
+      "occurrences": [
+        {
+          "reference": "Proverbs 3:29",
+          "count": 1,
+          "text": "Devise not evil against thy neighbour, seeing he dwelleth securely by thee."
+        },
+        {
+          "reference": "Micah 2:8",
+          "count": 1,
+          "text": "Even of late my people is risen up as an enemy: ye pull off the robe with the garment from them that pass by securely as men averse from war."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "serjeants",
+      "normalized_word": "serjeants",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "serjeants",
+        "serjeant",
+        "serjeante"
+      ],
+      "sample_references": [
+        "Acts 16:35",
+        "Acts 16:38"
+      ],
+      "occurrences": [
+        {
+          "reference": "Acts 16:35",
+          "count": 1,
+          "text": "And when it was day, the magistrates sent the serjeants, saying, Let those men go."
+        },
+        {
+          "reference": "Acts 16:38",
+          "count": 1,
+          "text": "And the serjeants told these words unto the magistrates: and they feared, when they heard that they were Romans."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "shaalbim",
+      "normalized_word": "shaalbim",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "shaalbim"
+      ],
+      "sample_references": [
+        "Judges 1:35",
+        "1 Kings 4:9"
+      ],
+      "occurrences": [
+        {
+          "reference": "Judges 1:35",
+          "count": 1,
+          "text": "But the Amorites would dwell in mount Heres in Aijalon, and in Shaalbim: yet the hand of the house of Joseph prevailed, so that they became tributaries."
+        },
+        {
+          "reference": "1 Kings 4:9",
+          "count": 1,
+          "text": "The son of Dekar, in Makaz, and in Shaalbim, and Beth-shemesh, and Elon-beth-hanan:"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Shaalabbin"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "shaalbonite",
+      "normalized_word": "shaalbonite",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "shaalbonite"
+      ],
+      "sample_references": [
+        "2 Samuel 23:32",
+        "1 Chronicles 11:33"
+      ],
+      "occurrences": [
+        {
+          "reference": "2 Samuel 23:32",
+          "count": 1,
+          "text": "Eliahba the Shaalbonite, of the sons of Jashen, Jonathan,"
+        },
+        {
+          "reference": "1 Chronicles 11:33",
+          "count": 1,
+          "text": "Azmaveth the Baharumite, Eliahba the Shaalbonite,"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "shaveh",
+      "normalized_word": "shaveh",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "shaveh"
+      ],
+      "sample_references": [
+        "Genesis 14:5",
+        "Genesis 14:17"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 14:5",
+          "count": 1,
+          "text": "And in the fourteenth year came Chedorlaomer, and the kings that [were] with him, and smote the Rephaims in Ashteroth Karnaim, and the Zuzims in Ham, and the Emims in Shaveh Kiriathaim,"
+        },
+        {
+          "reference": "Genesis 14:17",
+          "count": 1,
+          "text": "# And the king of Sodom went out to meet him after his return from the slaughter of Chedorlaomer, and of the kings that [were] with him, at the valley of Shaveh, which [is] the king's dale."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Dale, the king's",
+            "Dance",
+            "King's dale",
+            "Makkedah",
+            "Nephilim",
+            "On",
+            "Shaveh-Kiriathaim",
+            "Shaveh, Valley of"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "SHAVEH KIRIATHAIM"
+          ]
+        }
+      }
+    },
+    {
+      "word": "sheepcote",
+      "normalized_word": "sheepcote",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "sheepcote"
+      ],
+      "sample_references": [
+        "2 Samuel 7:8",
+        "1 Chronicles 17:7"
+      ],
+      "occurrences": [
+        {
+          "reference": "2 Samuel 7:8",
+          "count": 1,
+          "text": "Now therefore so shalt thou say unto my servant David, Thus saith the LORD of hosts, I took thee from the sheepcote, from following the sheep, to be ruler over my people, over Israel:"
+        },
+        {
+          "reference": "1 Chronicles 17:7",
+          "count": 1,
+          "text": "Now therefore thus shalt thou say unto my servant David, Thus saith the LORD of hosts, I took thee from the sheepcote, [even] from following the sheep, that thou shouldest be ruler over my people Israel:"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "sheriffs",
+      "normalized_word": "sheriffs",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "sheriffs",
+        "sheriff",
+        "sheriffe"
+      ],
+      "sample_references": [
+        "Daniel 3:2",
+        "Daniel 3:3"
+      ],
+      "occurrences": [
+        {
+          "reference": "Daniel 3:2",
+          "count": 1,
+          "text": "Then Nebuchadnezzar the king sent to gather together the princes, the governors, and the captains, the judges, the treasurers, the counsellors, the sheriffs, and all the rulers of the provinces, to come to the dedication of the image which Nebuchadnezzar the king had set up."
+        },
+        {
+          "reference": "Daniel 3:3",
+          "count": 1,
+          "text": "Then the princes, the governors, and captains, the judges, the treasurers, the counsellors, the sheriffs, and all the rulers of the provinces, were gathered together unto the dedication of the image that Nebuchadnezzar the king had set up; and they stood before the image that Nebuchadnezzar had set up."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "shilhi",
+      "normalized_word": "shilhi",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "shilhi"
+      ],
+      "sample_references": [
+        "1 Kings 22:42",
+        "2 Chronicles 20:31"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Kings 22:42",
+          "count": 1,
+          "text": "Jehoshaphat [was] thirty and five years old when he began to reign; and he reigned twenty and five years in Jerusalem. And his mother's name [was] Azubah the daughter of Shilhi."
+        },
+        {
+          "reference": "2 Chronicles 20:31",
+          "count": 1,
+          "text": "# And Jehoshaphat reigned over Judah: [he was] thirty and five years old when he began to reign, and he reigned twenty and five years in Jerusalem. And his mother's name [was] Azubah the daughter of Shilhi."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Azubah",
+            "Shilhim"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "SHILHIM"
+          ]
+        }
+      }
+    },
+    {
+      "word": "shillem",
+      "normalized_word": "shillem",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "shillem"
+      ],
+      "sample_references": [
+        "Genesis 46:24",
+        "Numbers 26:49"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 46:24",
+          "count": 1,
+          "text": "# And the sons of Naphtali; Jahzeel, and Guni, and Jezer, and Shillem."
+        },
+        {
+          "reference": "Numbers 26:49",
+          "count": 1,
+          "text": "Of Jezer, the family of the Jezerites: of Shillem, the family of the Shillemites."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Berechiah",
+            "Meshillemoth"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "MESHILLEMOTH"
+          ]
+        }
+      }
+    },
+    {
+      "word": "shobai",
+      "normalized_word": "shobai",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "shobai"
+      ],
+      "sample_references": [
+        "Ezra 2:42",
+        "Nehemiah 7:45"
+      ],
+      "occurrences": [
+        {
+          "reference": "Ezra 2:42",
+          "count": 1,
+          "text": "# The children of the porters: the children of Shallum, the children of Ater, the children of Talmon, the children of Akkub, the children of Hatita, the children of Shobai, [in] all an hundred thirty and nine."
+        },
+        {
+          "reference": "Nehemiah 7:45",
+          "count": 1,
+          "text": "# The porters: the children of Shallum, the children of Ater, the children of Talmon, the children of Akkub, the children of Hatita, the children of Shobai, an hundred thirty and eight."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "shochoh",
+      "normalized_word": "shochoh",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "shochoh"
+      ],
+      "sample_references": [
+        "1 Samuel 17:1",
+        "1 Samuel 17:1"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Samuel 17:1",
+          "count": 2,
+          "text": "Now the Philistines gathered together their armies to battle, and were gathered together at Shochoh, which [belongeth] to Judah, and pitched between Shochoh and Azekah, in Ephes-dammim."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Elah",
+            "Ephes-dammim",
+            "Pas-dammim",
+            "Saul",
+            "Shocho",
+            "Socho"
+          ]
         },
         "nave": {
           "exact": [],

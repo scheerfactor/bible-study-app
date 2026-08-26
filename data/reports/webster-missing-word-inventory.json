@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T13:43:51.031Z",
+  "generated_at": "2026-08-26T13:50:12.766Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,259 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 3067,
-  "withoutSupplementalHelp": 838,
+  "withSupplementalHelp": 3087,
+  "withoutSupplementalHelp": 818,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "hai",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "hai"
-      ],
-      "sampleRefs": [
-        "Genesis 12:8",
-        "Genesis 13:3"
-      ]
-    },
-    {
-      "word": "hamathite",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "hamathite"
-      ],
-      "sampleRefs": [
-        "Genesis 10:18",
-        "1 Chronicles 1:16"
-      ]
-    },
-    {
-      "word": "henoch",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "henoch"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 1:3",
-        "1 Chronicles 1:33"
-      ]
-    },
-    {
-      "word": "hezronites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "hezronites",
-        "hezronite"
-      ],
-      "sampleRefs": [
-        "Numbers 26:6",
-        "Numbers 26:21"
-      ]
-    },
-    {
-      "word": "horims",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "horims",
-        "horim",
-        "horime"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 2:12",
-        "Deuteronomy 2:22"
-      ]
-    },
-    {
-      "word": "hothir",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "hothir"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 25:4",
-        "1 Chronicles 25:28"
-      ]
-    },
-    {
-      "word": "hymenaeus",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "hymenaeus",
-        "hymenaeu"
-      ],
-      "sampleRefs": [
-        "1 Timothy 1:20",
-        "2 Timothy 2:17"
-      ]
-    },
-    {
-      "word": "imlah",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "imlah"
-      ],
-      "sampleRefs": [
-        "1 Kings 22:8",
-        "1 Kings 22:9"
-      ]
-    },
-    {
-      "word": "ishmaelites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "ishmaelites",
-        "ishmaelite"
-      ],
-      "sampleRefs": [
-        "Judges 8:24",
-        "Psalms 83:6"
-      ]
-    },
-    {
-      "word": "izrahiah",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "izrahiah"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 7:3",
-        "1 Chronicles 7:3"
-      ]
-    },
-    {
-      "word": "jada",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jada"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:28",
-        "1 Chronicles 2:32"
-      ]
-    },
-    {
-      "word": "jarha",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jarha"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 2:34",
-        "1 Chronicles 2:35"
-      ]
-    },
-    {
-      "word": "jebusi",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jebusi"
-      ],
-      "sampleRefs": [
-        "Joshua 18:16",
-        "Joshua 18:28"
-      ]
-    },
-    {
-      "word": "jechonias",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jechonias",
-        "jechonia"
-      ],
-      "sampleRefs": [
-        "Matthew 1:11",
-        "Matthew 1:12"
-      ]
-    },
-    {
-      "word": "jehieli",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jehieli"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 26:21",
-        "1 Chronicles 26:22"
-      ]
-    },
-    {
-      "word": "jehoshabeath",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jehoshabeath"
-      ],
-      "sampleRefs": [
-        "2 Chronicles 22:11",
-        "2 Chronicles 22:11"
-      ]
-    },
-    {
-      "word": "jehoshua",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jehoshua"
-      ],
-      "sampleRefs": [
-        "Numbers 13:16",
-        "1 Chronicles 7:27"
-      ]
-    },
-    {
-      "word": "jemuel",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jemuel"
-      ],
-      "sampleRefs": [
-        "Genesis 46:10",
-        "Exodus 6:15"
-      ]
-    },
-    {
-      "word": "jerahmeelites",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jerahmeelites",
-        "jerahmeelite"
-      ],
-      "sampleRefs": [
-        "1 Samuel 27:10",
-        "1 Samuel 30:29"
-      ]
-    },
-    {
-      "word": "jered",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "jered",
-        "jer",
-        "jere"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 1:2",
-        "1 Chronicles 4:18"
-      ]
-    },
     {
       "word": "jeremy",
       "count": 2,
@@ -1260,6 +1011,235 @@
       "sampleRefs": [
         "Job 12:21",
         "Jeremiah 38:4"
+      ]
+    },
+    {
+      "word": "wellpleasing",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "wellpleasing",
+        "wellpleas",
+        "wellplease"
+      ],
+      "sampleRefs": [
+        "Philippians 4:18",
+        "Hebrews 13:21"
+      ]
+    },
+    {
+      "word": "zeboiim",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "zeboiim"
+      ],
+      "sampleRefs": [
+        "Genesis 14:2",
+        "Genesis 14:8"
+      ]
+    },
+    {
+      "word": "ziphites",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "ziphites",
+        "ziphite"
+      ],
+      "sampleRefs": [
+        "1 Samuel 23:19",
+        "1 Samuel 26:1"
+      ]
+    },
+    {
+      "word": "zoba",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "zoba"
+      ],
+      "sampleRefs": [
+        "2 Samuel 10:6",
+        "2 Samuel 10:8"
+      ]
+    },
+    {
+      "word": "accomplishment",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "accomplishment"
+      ],
+      "sampleRefs": [
+        "Acts 21:26"
+      ]
+    },
+    {
+      "word": "achar",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "achar"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:7"
+      ]
+    },
+    {
+      "word": "achsa",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "achsa"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:49"
+      ]
+    },
+    {
+      "word": "acknowledgement",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "acknowledgement"
+      ],
+      "sampleRefs": [
+        "Colossians 2:2"
+      ]
+    },
+    {
+      "word": "actions",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "actions",
+        "action",
+        "actione"
+      ],
+      "sampleRefs": [
+        "1 Samuel 2:3"
+      ]
+    },
+    {
+      "word": "activity",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "activity"
+      ],
+      "sampleRefs": [
+        "Genesis 47:6"
+      ]
+    },
+    {
+      "word": "adadah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "adadah"
+      ],
+      "sampleRefs": [
+        "Joshua 15:22"
+      ]
+    },
+    {
+      "word": "adalia",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "adalia"
+      ],
+      "sampleRefs": [
+        "Esther 9:8"
+      ]
+    },
+    {
+      "word": "adami",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "adami"
+      ],
+      "sampleRefs": [
+        "Joshua 19:33"
+      ]
+    },
+    {
+      "word": "addan",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "addan"
+      ],
+      "sampleRefs": [
+        "Ezra 2:59"
+      ]
+    },
+    {
+      "word": "ader",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ader"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 8:15"
+      ]
+    },
+    {
+      "word": "adithaim",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "adithaim"
+      ],
+      "sampleRefs": [
+        "Joshua 15:36"
+      ]
+    },
+    {
+      "word": "adlai",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "adlai"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 27:29"
+      ]
+    },
+    {
+      "word": "admatha",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "admatha"
+      ],
+      "sampleRefs": [
+        "Esther 1:14"
+      ]
+    },
+    {
+      "word": "ado",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ado"
+      ],
+      "sampleRefs": [
+        "Mark 5:39"
+      ]
+    },
+    {
+      "word": "adoraim",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "adoraim"
+      ],
+      "sampleRefs": [
+        "2 Chronicles 11:9"
       ]
     }
   ]
