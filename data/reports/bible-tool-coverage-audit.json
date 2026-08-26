@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T19:48:16.670Z",
+    "generated_at": "2026-08-26T19:54:56.944Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61264,
+      "entries": 61270,
       "normalizedHeadwords": 51299,
       "meaningfulWordsWithDefinition": 8549,
       "meaningfulWordsWithoutDefinition": 3905,
@@ -1800,142 +1800,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "network",
-          "count": 7,
-          "sampleRefs": [
-            "Exodus 27:4",
-            "Exodus 38:4",
-            "1 Kings 7:18",
-            "1 Kings 7:20",
-            "1 Kings 7:42"
-          ],
-          "lookupCandidates": [
-            "network"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "NET' -WORK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "overwhelmed",
-          "count": 7,
-          "sampleRefs": [
-            "Psalms 55:5",
-            "Psalms 61:2",
-            "Psalms 77:3",
-            "Psalms 78:53",
-            "Psalms 124:4"
-          ],
-          "lookupCandidates": [
-            "overwhelmed",
-            "overwhelm",
-            "overwhelme"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "OVERWHELM'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "thread",
-          "count": 7,
-          "sampleRefs": [
-            "Genesis 14:23",
-            "Genesis 38:28",
-            "Genesis 38:30",
-            "Joshua 2:18",
-            "Judges 16:9"
-          ],
-          "lookupCandidates": [
-            "thread"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "THREAD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "arabians",
-          "count": 6,
-          "sampleRefs": [
-            "2 Chronicles 17:11",
-            "2 Chronicles 21:16",
-            "2 Chronicles 22:1",
-            "2 Chronicles 26:7",
-            "Nehemiah 4:7"
-          ],
-          "lookupCandidates": [
-            "arabians",
-            "arabian",
-            "arabiane"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ARA'BIAN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "byword",
-          "count": 6,
-          "sampleRefs": [
-            "Deuteronomy 28:37",
-            "1 Kings 9:7",
-            "2 Chronicles 7:20",
-            "Job 17:6",
-            "Job 30:9"
-          ],
-          "lookupCandidates": [
-            "byword"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BY'-WORD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "cankerworm",
-          "count": 6,
-          "sampleRefs": [
-            "Joel 1:4",
-            "Joel 1:4",
-            "Joel 2:25",
-            "Nahum 3:15",
-            "Nahum 3:15"
-          ],
-          "lookupCandidates": [
-            "cankerworm"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CANK'ER-WORM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "jared",
           "count": 6,
           "sampleRefs": [
@@ -3610,6 +3474,141 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "E'VEN-TIDE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "evident",
+          "count": 5,
+          "sampleRefs": [
+            "Job 6:28",
+            "Galatians 3:11",
+            "Philippians 1:28",
+            "Hebrews 7:14",
+            "Hebrews 7:15"
+          ],
+          "lookupCandidates": [
+            "evident"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EVIDENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fables",
+          "count": 5,
+          "sampleRefs": [
+            "1 Timothy 1:4",
+            "1 Timothy 4:7",
+            "2 Timothy 4:4",
+            "Titus 1:14",
+            "2 Peter 1:16"
+          ],
+          "lookupCandidates": [
+            "fables",
+            "fable"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FA'BLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "felt",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 27:22",
+            "Exodus 10:21",
+            "Proverbs 23:35",
+            "Mark 5:29",
+            "Acts 28:5"
+          ],
+          "lookupCandidates": [
+            "felt"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FELT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fixed",
+          "count": 5,
+          "sampleRefs": [
+            "Psalms 57:7",
+            "Psalms 57:7",
+            "Psalms 108:1",
+            "Psalms 112:7",
+            "Luke 16:26"
+          ],
+          "lookupCandidates": [
+            "fixed",
+            "fix",
+            "fixe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FIX",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "flint",
+          "count": 5,
+          "sampleRefs": [
+            "Deuteronomy 8:15",
+            "Psalms 114:8",
+            "Isaiah 5:28",
+            "Isaiah 50:7",
+            "Ezekiel 3:9"
+          ],
+          "lookupCandidates": [
+            "flint"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FLINT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "folk",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 33:15",
+            "Proverbs 30:26",
+            "Jeremiah 51:58",
+            "Mark 6:5",
+            "John 5:3"
+          ],
+          "lookupCandidates": [
+            "folk"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FOLK",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8488,142 +8487,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "network",
-        "count": 7,
-        "sampleRefs": [
-          "Exodus 27:4",
-          "Exodus 38:4",
-          "1 Kings 7:18",
-          "1 Kings 7:20",
-          "1 Kings 7:42"
-        ],
-        "lookupCandidates": [
-          "network"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "NET' -WORK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "overwhelmed",
-        "count": 7,
-        "sampleRefs": [
-          "Psalms 55:5",
-          "Psalms 61:2",
-          "Psalms 77:3",
-          "Psalms 78:53",
-          "Psalms 124:4"
-        ],
-        "lookupCandidates": [
-          "overwhelmed",
-          "overwhelm",
-          "overwhelme"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "OVERWHELM'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "thread",
-        "count": 7,
-        "sampleRefs": [
-          "Genesis 14:23",
-          "Genesis 38:28",
-          "Genesis 38:30",
-          "Joshua 2:18",
-          "Judges 16:9"
-        ],
-        "lookupCandidates": [
-          "thread"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "THREAD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "arabians",
-        "count": 6,
-        "sampleRefs": [
-          "2 Chronicles 17:11",
-          "2 Chronicles 21:16",
-          "2 Chronicles 22:1",
-          "2 Chronicles 26:7",
-          "Nehemiah 4:7"
-        ],
-        "lookupCandidates": [
-          "arabians",
-          "arabian",
-          "arabiane"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ARA'BIAN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "byword",
-        "count": 6,
-        "sampleRefs": [
-          "Deuteronomy 28:37",
-          "1 Kings 9:7",
-          "2 Chronicles 7:20",
-          "Job 17:6",
-          "Job 30:9"
-        ],
-        "lookupCandidates": [
-          "byword"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BY'-WORD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "cankerworm",
-        "count": 6,
-        "sampleRefs": [
-          "Joel 1:4",
-          "Joel 1:4",
-          "Joel 2:25",
-          "Nahum 3:15",
-          "Nahum 3:15"
-        ],
-        "lookupCandidates": [
-          "cankerworm"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CANK'ER-WORM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "jared",
         "count": 6,
         "sampleRefs": [
@@ -10298,6 +10161,141 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "E'VEN-TIDE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "evident",
+        "count": 5,
+        "sampleRefs": [
+          "Job 6:28",
+          "Galatians 3:11",
+          "Philippians 1:28",
+          "Hebrews 7:14",
+          "Hebrews 7:15"
+        ],
+        "lookupCandidates": [
+          "evident"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EVIDENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fables",
+        "count": 5,
+        "sampleRefs": [
+          "1 Timothy 1:4",
+          "1 Timothy 4:7",
+          "2 Timothy 4:4",
+          "Titus 1:14",
+          "2 Peter 1:16"
+        ],
+        "lookupCandidates": [
+          "fables",
+          "fable"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FA'BLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "felt",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 27:22",
+          "Exodus 10:21",
+          "Proverbs 23:35",
+          "Mark 5:29",
+          "Acts 28:5"
+        ],
+        "lookupCandidates": [
+          "felt"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FELT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fixed",
+        "count": 5,
+        "sampleRefs": [
+          "Psalms 57:7",
+          "Psalms 57:7",
+          "Psalms 108:1",
+          "Psalms 112:7",
+          "Luke 16:26"
+        ],
+        "lookupCandidates": [
+          "fixed",
+          "fix",
+          "fixe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FIX",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "flint",
+        "count": 5,
+        "sampleRefs": [
+          "Deuteronomy 8:15",
+          "Psalms 114:8",
+          "Isaiah 5:28",
+          "Isaiah 50:7",
+          "Ezekiel 3:9"
+        ],
+        "lookupCandidates": [
+          "flint"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FLINT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "folk",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 33:15",
+          "Proverbs 30:26",
+          "Jeremiah 51:58",
+          "Mark 6:5",
+          "John 5:3"
+        ],
+        "lookupCandidates": [
+          "folk"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FOLK",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

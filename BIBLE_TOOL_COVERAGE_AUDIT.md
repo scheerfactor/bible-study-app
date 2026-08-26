@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T19:48:16.670Z
+Generated: 2026-08-26T19:54:56.944Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -83,12 +83,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
-| network | NET' -WORK | 7 | ocr_full_import_needs_spot_review |
-| overwhelmed | OVERWHELM' | 7 | ocr_full_import_needs_spot_review |
-| thread | THREAD | 7 | ocr_full_import_needs_spot_review |
-| arabians | ARA'BIAN | 6 | ocr_full_import_needs_spot_review |
-| byword | BY'-WORD | 6 | ocr_full_import_needs_spot_review |
-| cankerworm | CANK'ER-WORM | 6 | ocr_full_import_needs_spot_review |
 | jared | JAR | 6 | ocr_full_import_needs_spot_review |
 | laden | LA'DEN | 6 | ocr_full_import_needs_spot_review |
 | lowly | LOWLY | 6 | ocr_full_import_needs_spot_review |
@@ -113,6 +107,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | rid | RID | 6 | ocr_full_import_needs_spot_review |
 | romans | RO'MAN | 6 | ocr_full_import_needs_spot_review |
 | ropes | ROPE | 6 | ocr_full_import_needs_spot_review |
+| salmon | SALMON | 6 | ocr_full_import_needs_spot_review |
+| salutation | SALUTA'TION | 6 | ocr_full_import_needs_spot_review |
+| sevenfold | SEVENFOLD | 6 | ocr_full_import_needs_spot_review |
+| smooth | SMOOTH | 6 | ocr_full_import_needs_spot_review |
+| soothsayers | SOOTHSAYER | 6 | ocr_full_import_needs_spot_review |
+| stole | STOLE | 6 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

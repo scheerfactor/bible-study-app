@@ -1,0 +1,141 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-57-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n187_w3000.jpg",
+      "sha256": "30393227cc9a57d8509af1ee3c5191c8f2c3c1a4e43f17b0b13cfe66e530310b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n325_w3000.jpg",
+      "sha256": "016d38bd0ccb3a35a4de2e2bd0713e5ffb7411522bcfa9db4dee8625108cbfd0"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n337_w3000.jpg",
+      "sha256": "a31e47ebc952cded5e8928c800512af8c5e17650c2ff1fdfd9314b6b4afc2bc1"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n184_w3000.jpg",
+      "sha256": "3dbd9ad39e1ee918abf53640bd2b6f8ed3d6e5d3c7268d94a4eaf010028d0ae0"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n237_w3000.jpg",
+      "sha256": "995a1b766d651cef9c9ddc1842a096c561da8a2c3accfced811aee22673c3fe2"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n761_w3000.jpg",
+      "sha256": "f255c03b672555d0728570a1319ac848516cdecb378648852c561fe1309e9707"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the six highest-frequency remaining defensible Webster targets in the KJV cleanup queue. Deferred JARED because the automatic candidate was the unrelated headword JAR.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological notes, expanded part-of-speech abbreviations for readability, and recovered compound headwords without scan-introduced spacing.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 2,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 39
+  },
+  "promoted_headwords": [
+    "network",
+    "overwhelm",
+    "thread",
+    "arabian",
+    "byword",
+    "cankerworm"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "overwhelmed",
+      "lookup_headword": "overwhelm",
+      "kjv_occurrences": 7,
+      "relationship": "Past-tense and participial form mapped to Webster's verb headword"
+    },
+    {
+      "word": "arabians",
+      "lookup_headword": "arabian",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword"
+    }
+  ],
+  "entries": [
+    {
+      "word": "network",
+      "lookup_headword": "network",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 58719,
+      "source_line_end": 58723,
+      "exact_page_heading": "NEU",
+      "exact_entry_heading": "NET'WORK",
+      "exact_source_match": true
+    },
+    {
+      "word": "overwhelmed",
+      "lookup_headword": "overwhelm",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 76601,
+      "source_line_end": 76616,
+      "exact_page_heading": "OWE",
+      "exact_entry_heading": "OVERWHELM'",
+      "exact_source_match": true
+    },
+    {
+      "word": "thread",
+      "lookup_headword": "thread",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 252109,
+      "source_line_end": 252146,
+      "exact_page_heading": "THR",
+      "exact_entry_heading": "THREAD",
+      "exact_source_match": true
+    },
+    {
+      "word": "arabians",
+      "lookup_headword": "arabian",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 49739,
+      "source_line_end": 49745,
+      "exact_page_heading": "ARA",
+      "exact_entry_heading": "ARA'BIAN",
+      "exact_source_match": true
+    },
+    {
+      "word": "byword",
+      "lookup_headword": "byword",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 94344,
+      "source_line_end": 94349,
+      "exact_page_heading": "CAB",
+      "exact_entry_heading": "BY'-WORD",
+      "exact_source_match": true
+    },
+    {
+      "word": "cankerworm",
+      "lookup_headword": "cankerworm",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 98077,
+      "source_line_end": 98083,
+      "exact_page_heading": "CAN",
+      "exact_entry_heading": "CANK'ER-WORM",
+      "exact_source_match": true
+    }
+  ]
+}
