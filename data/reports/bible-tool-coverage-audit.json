@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T21:02:16.713Z",
+    "generated_at": "2026-08-26T21:27:10.097Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61281,
+      "entries": 61287,
       "normalizedHeadwords": 51299,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
@@ -1800,143 +1800,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "parcel",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 33:19",
-            "Joshua 24:32",
-            "Ruth 4:3",
-            "1 Chronicles 11:13",
-            "1 Chronicles 11:14"
-          ],
-          "lookupCandidates": [
-            "parcel"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "P'ARCEL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "perverseness",
-          "count": 6,
-          "sampleRefs": [
-            "Numbers 23:21",
-            "Proverbs 11:3",
-            "Proverbs 15:4",
-            "Isaiah 30:12",
-            "Isaiah 59:3"
-          ],
-          "lookupCandidates": [
-            "perverseness",
-            "perversenes",
-            "perversenese"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PERVERSENESS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pipes",
-          "count": 6,
-          "sampleRefs": [
-            "1 Kings 1:40",
-            "Jeremiah 48:36",
-            "Jeremiah 48:36",
-            "Ezekiel 28:13",
-            "Zechariah 4:2"
-          ],
-          "lookupCandidates": [
-            "pipes",
-            "pipe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PIPE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pisseth",
-          "count": 6,
-          "sampleRefs": [
-            "1 Samuel 25:22",
-            "1 Samuel 25:34",
-            "1 Kings 14:10",
-            "1 Kings 16:11",
-            "1 Kings 21:21"
-          ],
-          "lookupCandidates": [
-            "pisseth",
-            "piss",
-            "pisse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PISS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "rank",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 41:5",
-            "Genesis 41:7",
-            "Numbers 2:16",
-            "Numbers 2:24",
-            "1 Chronicles 12:33"
-          ],
-          "lookupCandidates": [
-            "rank"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RANK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "raven",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 8:7",
-            "Leviticus 11:15",
-            "Deuteronomy 14:14",
-            "Job 38:41",
-            "Solomon's Song 5:11"
-          ],
-          "lookupCandidates": [
-            "raven"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RAVEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "remainder",
           "count": 6,
           "sampleRefs": [
@@ -3613,6 +3476,143 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "INSURRECTION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "invaded",
+          "count": 5,
+          "sampleRefs": [
+            "1 Samuel 23:27",
+            "1 Samuel 27:8",
+            "1 Samuel 30:1",
+            "2 Kings 13:20",
+            "2 Chronicles 28:18"
+          ],
+          "lookupCandidates": [
+            "invaded",
+            "invad",
+            "invade"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "INVA'DED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "inventions",
+          "count": 5,
+          "sampleRefs": [
+            "Psalms 99:8",
+            "Psalms 106:29",
+            "Psalms 106:39",
+            "Proverbs 8:12",
+            "Ecclesiastes 7:29"
+          ],
+          "lookupCandidates": [
+            "inventions",
+            "invention",
+            "inventione"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "INVEN'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "invisible",
+          "count": 5,
+          "sampleRefs": [
+            "Romans 1:20",
+            "Colossians 1:15",
+            "Colossians 1:16",
+            "1 Timothy 1:17",
+            "Hebrews 11:27"
+          ],
+          "lookupCandidates": [
+            "invisible"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "INVIS'IBLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ledges",
+          "count": 5,
+          "sampleRefs": [
+            "1 Kings 7:28",
+            "1 Kings 7:29",
+            "1 Kings 7:29",
+            "1 Kings 7:35",
+            "1 Kings 7:36"
+          ],
+          "lookupCandidates": [
+            "ledges",
+            "ledge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LEDGE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "log",
+          "count": 5,
+          "sampleRefs": [
+            "Leviticus 14:10",
+            "Leviticus 14:12",
+            "Leviticus 14:15",
+            "Leviticus 14:21",
+            "Leviticus 14:24"
+          ],
+          "lookupCandidates": [
+            "log"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LOG",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "march",
+          "count": 5,
+          "sampleRefs": [
+            "Psalms 68:7",
+            "Jeremiah 46:22",
+            "Joel 2:7",
+            "Habakkuk 1:6",
+            "Habakkuk 3:12"
+          ],
+          "lookupCandidates": [
+            "march"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "M'ARCH",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8491,143 +8491,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "parcel",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 33:19",
-          "Joshua 24:32",
-          "Ruth 4:3",
-          "1 Chronicles 11:13",
-          "1 Chronicles 11:14"
-        ],
-        "lookupCandidates": [
-          "parcel"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "P'ARCEL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "perverseness",
-        "count": 6,
-        "sampleRefs": [
-          "Numbers 23:21",
-          "Proverbs 11:3",
-          "Proverbs 15:4",
-          "Isaiah 30:12",
-          "Isaiah 59:3"
-        ],
-        "lookupCandidates": [
-          "perverseness",
-          "perversenes",
-          "perversenese"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PERVERSENESS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pipes",
-        "count": 6,
-        "sampleRefs": [
-          "1 Kings 1:40",
-          "Jeremiah 48:36",
-          "Jeremiah 48:36",
-          "Ezekiel 28:13",
-          "Zechariah 4:2"
-        ],
-        "lookupCandidates": [
-          "pipes",
-          "pipe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PIPE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pisseth",
-        "count": 6,
-        "sampleRefs": [
-          "1 Samuel 25:22",
-          "1 Samuel 25:34",
-          "1 Kings 14:10",
-          "1 Kings 16:11",
-          "1 Kings 21:21"
-        ],
-        "lookupCandidates": [
-          "pisseth",
-          "piss",
-          "pisse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PISS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "rank",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 41:5",
-          "Genesis 41:7",
-          "Numbers 2:16",
-          "Numbers 2:24",
-          "1 Chronicles 12:33"
-        ],
-        "lookupCandidates": [
-          "rank"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RANK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "raven",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 8:7",
-          "Leviticus 11:15",
-          "Deuteronomy 14:14",
-          "Job 38:41",
-          "Solomon's Song 5:11"
-        ],
-        "lookupCandidates": [
-          "raven"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RAVEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "remainder",
         "count": 6,
         "sampleRefs": [
@@ -10304,6 +10167,143 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "INSURRECTION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "invaded",
+        "count": 5,
+        "sampleRefs": [
+          "1 Samuel 23:27",
+          "1 Samuel 27:8",
+          "1 Samuel 30:1",
+          "2 Kings 13:20",
+          "2 Chronicles 28:18"
+        ],
+        "lookupCandidates": [
+          "invaded",
+          "invad",
+          "invade"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "INVA'DED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "inventions",
+        "count": 5,
+        "sampleRefs": [
+          "Psalms 99:8",
+          "Psalms 106:29",
+          "Psalms 106:39",
+          "Proverbs 8:12",
+          "Ecclesiastes 7:29"
+        ],
+        "lookupCandidates": [
+          "inventions",
+          "invention",
+          "inventione"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "INVEN'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "invisible",
+        "count": 5,
+        "sampleRefs": [
+          "Romans 1:20",
+          "Colossians 1:15",
+          "Colossians 1:16",
+          "1 Timothy 1:17",
+          "Hebrews 11:27"
+        ],
+        "lookupCandidates": [
+          "invisible"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "INVIS'IBLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ledges",
+        "count": 5,
+        "sampleRefs": [
+          "1 Kings 7:28",
+          "1 Kings 7:29",
+          "1 Kings 7:29",
+          "1 Kings 7:35",
+          "1 Kings 7:36"
+        ],
+        "lookupCandidates": [
+          "ledges",
+          "ledge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LEDGE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "log",
+        "count": 5,
+        "sampleRefs": [
+          "Leviticus 14:10",
+          "Leviticus 14:12",
+          "Leviticus 14:15",
+          "Leviticus 14:21",
+          "Leviticus 14:24"
+        ],
+        "lookupCandidates": [
+          "log"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LOG",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "march",
+        "count": 5,
+        "sampleRefs": [
+          "Psalms 68:7",
+          "Jeremiah 46:22",
+          "Joel 2:7",
+          "Habakkuk 1:6",
+          "Habakkuk 3:12"
+        ],
+        "lookupCandidates": [
+          "march"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "M'ARCH",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

@@ -102334,5 +102334,55 @@
     "checksum_sha256": "e236a9eb530c4d8cc9792de5b6ce381eab2ec4cd8ebe0d3134e24301a7991254",
     "file_size_bytes": 2551514,
     "word_count": 401512
+  },
+  {
+    "title": "How to Enjoy the Bible, or, The \"Word,\" and \"the Words,\" How to Study Them",
+    "author": "E. W. Bullinger",
+    "year": 1910,
+    "category": "Bible study helps",
+    "collection": "Bible Study Methods",
+    "source_url": "https://archive.org/download/howtoenjoybibleo00bull/howtoenjoybibleo00bull_djvu.txt",
+    "download_url": "https://archive.org/download/howtoenjoybibleo00bull/howtoenjoybibleo00bull_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/how-to-enjoy-the-bible-or-the-word-and-the-words-how-to-study-them-e-w-bullinger.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "The exact Internet Archive/Open Library second edition was published in London by Eyre & Spottiswoode in 1910; the original edition is public domain in the United States. The source scan reports no copyright page.",
+    "notes": "A practical handbook on observing Scripture's wording, structure, context, and subject matter. Use its study methods as prompts while establishing every interpretation from the KJV text in context and reviewing Bullinger's theological conclusions carefully. Labels/warnings: Historical reference;Doctrinal caution;Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A practical handbook on observing Scripture's wording, structure, context, and subject matter. Use its study methods as prompts while establishing every interpretation from the KJV text in context and reviewing Bullinger's theological conclusions carefully.",
+    "resource_labels": [
+      "Bible Study Methods",
+      "Historical reference",
+      "Doctrinal caution",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Doctrinal caution",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How to Enjoy the Bible, or, The \"Word,\" and \"the Words,\" How to Study Them",
+      "author": "E. W. Bullinger",
+      "category": "Bible study helps",
+      "collection": "Bible Study Methods",
+      "badge": "Bible Study Methods",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 751,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "18f226f686529cf245041683492983e78ac2652b23208cbf25285b58604426e5",
+    "file_size_bytes": 1080629,
+    "word_count": 168884
   }
 ]
