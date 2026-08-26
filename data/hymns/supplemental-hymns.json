@@ -454,5 +454,123 @@
     "musicRights": "Public Domain",
     "musicAttribution": "NEED by Robert Lowry, 1872; public-domain MIDI distributed with the cited Timeless Truths record.",
     "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "when-i-survey-the-wondrous-cross",
+    "title": "When I Survey the Wondrous Cross",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "Hamburg",
+    "scriptureReferences": [
+      "Galatians 6:14",
+      "Philippians 3:7-8"
+    ],
+    "stanzas": [
+      "When I survey the wondrous cross\nOn which the Prince of glory died,\nMy richest gain I count but loss,\nAnd pour contempt on all my pride.",
+      "Forbid it, Lord, that I should boast,\nSave in the death of Christ my God!\nAll the vain things that charm me most,\nI sacrifice them to His blood.",
+      "See from His head, His hands, His feet,\nSorrow and love flow mingled down!\nDid e’er such love and sorrow meet,\nOr thorns compose so rich a crown?",
+      "Were the whole realm of nature mine,\nThat were a present far too small;\nLove so amazing, so divine,\nDemands my soul, my life, my all."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/When_I_Survey_the_Wondrous_Cross/",
+    "textRights": "Public domain; exact four-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "when-i-survey-the-wondrous-cross.mid",
+    "midiSha256": "e83c60388a0a6f68b23687c3a69f602416705504ae2996fa62ceda3bdd1982b3",
+    "rightsEvidenceFile": "when-i-survey-the-wondrous-cross-rights.html",
+    "rightsEvidenceSha256": "cc3c34dbd7aee0533c9948345b25084bbfdb962a2dd7ff415b6c68ebd77b7256",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/When_I_Survey_the_Wondrous_Cross/When_I_Survey_the_Wondrous_Cross.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HAMBURG by Lowell Mason, 1824; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "be-thou-my-vision",
+    "title": "Be Thou My Vision",
+    "lyricist": "Attributed to Dallan Forgaill; translated by Mary E. Byrne; arranged by Eleanor H. Hull",
+    "lyricYear": 1912,
+    "tune": "Slane",
+    "scriptureReferences": [
+      "Ephesians 1:17-18",
+      "Colossians 3:11"
+    ],
+    "stanzas": [
+      "Be Thou my Vision, O Lord of my heart;\nNaught be all else to me, save that Thou art;\nThou my best Thought, by day or by night,\nWaking or sleeping, Thy presence my light.",
+      "Be Thou my Wisdom, and Thou my true Word;\nI ever with Thee and Thou with me, Lord;\nThou my great Father, I Thy true son;\nThou in me dwelling, and I with Thee one.",
+      "Be Thou my battle Shield, Sword for the fight;\nBe Thou my Dignity, Thou my Delight;\nThou my soul’s Shelter, Thou my high Tow’r:\nRaise Thou me heav’nward, O Pow’r of my pow’r.",
+      "Riches I heed not, nor man’s empty praise,\nThou mine Inheritance, now and always:\nThou and Thou only, first in my heart,\nHigh King of Heaven, my Treasure Thou art.",
+      "High King of Heaven, my victory won,\nMay I reach Heaven’s joys, O bright Heav’n’s Sun!\nHeart of my own heart, whatever befall,\nStill be my Vision, O Ruler of all."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Be_Thou_My_Vision/",
+    "textRights": "Public domain; exact five-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "be-thou-my-vision.mid",
+    "midiSha256": "d1a843599b3414a5d8ac496f430d60f792b78eb8e8abfba2f6af16d76fcad9bd",
+    "rightsEvidenceFile": "be-thou-my-vision-rights.html",
+    "rightsEvidenceSha256": "8d94b8d9a273c06ac96195909fc58ebe604991f9c7ae829ea8928be4ada1ce82",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/B/Be_Thou_My_Vision/Be_Thou_My_Vision.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "SLANE, Irish melody; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "the-solid-rock",
+    "title": "The Solid Rock",
+    "lyricist": "Edward Mote",
+    "lyricYear": 1834,
+    "tune": "Solid Rock",
+    "scriptureReferences": [
+      "Matthew 7:24-27",
+      "1 Corinthians 3:11"
+    ],
+    "stanzas": [
+      "My hope is built on nothing less\nThan Jesus’ blood and righteousness;\nI dare not trust the sweetest frame,\nBut wholly lean on Jesus’ name.",
+      "When darkness veils His lovely face,\nI rest on His unchanging grace;\nIn every high and stormy gale,\nMy anchor holds within the veil.",
+      "His oath, His covenant, His blood\nSupport me in the whelming flood;\nWhen all around my soul gives way,\nHe then is all my hope and stay.",
+      "When He shall come with trumpet sound,\nOh, may I then in Him be found;\nDressed in His righteousness alone,\nFaultless to stand before the throne."
+    ],
+    "refrain": "On Christ, the solid Rock, I stand;\nAll other ground is sinking sand,\nAll other ground is sinking sand.",
+    "textSourceUrl": "https://library.timelesstruths.org/music/The_Solid_Rock/",
+    "textRights": "Public domain; exact four-stanza text and refrain retained from the cited Timeless Truths record.",
+    "midiFile": "the-solid-rock.mid",
+    "midiSha256": "3b457b6624f6913ae678b7da8496b60b92680c7077c19dafd6b989687a687566",
+    "rightsEvidenceFile": "the-solid-rock-rights.html",
+    "rightsEvidenceSha256": "2996815c409400cd19a8fce56ae1fa4c500430fcbacf478ba5968c8584416146",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/The_Solid_Rock/The_Solid_Rock.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "SOLID ROCK by William B. Bradbury, 1863; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "alas-and-did-my-savior-bleed",
+    "title": "Alas! and Did My Savior Bleed",
+    "lyricist": "Isaac Watts; refrain by Ralph E. Hudson",
+    "lyricYear": 1885,
+    "tune": "Hudson",
+    "scriptureReferences": [
+      "1 Timothy 2:5-6",
+      "Galatians 2:20"
+    ],
+    "stanzas": [
+      "Alas! and did my Savior bleed\nAnd did my Sov’reign die?\nWould He devote that sacred head\nFor such a worm as I?",
+      "Was it for crimes that I had done\nHe groaned upon the tree?\nAmazing pity! grace unknown!\nAnd love beyond degree!",
+      "Well might the sun in darkness hide\nAnd shut his glories in,\nWhen Christ, the mighty Maker died,\nFor man the creature’s sin.",
+      "Thus might I hide my blushing face\nWhile His dear cross appears,\nDissolve my heart in thankfulness,\nAnd melt my eyes to tears.",
+      "But drops of grief can ne’er repay\nThe debt of love I owe:\nHere, Lord, I give myself away,\n’Tis all that I can do."
+    ],
+    "refrain": "At the cross, at the cross where I first saw the light,\nAnd the burden of my heart rolled away,\nIt was there by faith I received my sight,\nAnd now I am happy all the day!",
+    "textSourceUrl": "https://library.timelesstruths.org/music/Alas_and_Did_My_Savior_Bleed/",
+    "textRights": "Public domain; exact five-stanza text and Hudson refrain retained from the cited Timeless Truths record.",
+    "midiFile": "alas-and-did-my-savior-bleed.mid",
+    "midiSha256": "f353bd7a15a8ff546b0d962a0965b2054c8106035d04bdea4ff588b7b585d2cc",
+    "rightsEvidenceFile": "alas-and-did-my-savior-bleed-rights.html",
+    "rightsEvidenceSha256": "418aec849213ad5a1ac816b5819d3182abb5a13194033856194e491337a79601",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/A/Alas_and_Did_My_Savior_Bleed/Alas_and_Did_My_Savior_Bleed.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HUDSON by Ralph E. Hudson, 1885; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
   }
 ]
