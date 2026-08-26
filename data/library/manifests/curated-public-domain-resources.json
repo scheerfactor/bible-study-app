@@ -102384,5 +102384,55 @@
     "checksum_sha256": "18f226f686529cf245041683492983e78ac2652b23208cbf25285b58604426e5",
     "file_size_bytes": 1080629,
     "word_count": 168884
+  },
+  {
+    "title": "Sketches of Jewish Social Life in the Days of Christ",
+    "author": "Alfred Edersheim",
+    "year": 1881,
+    "category": "Bible study helps",
+    "collection": "Bible Background",
+    "source_url": "https://archive.org/download/SketchesOfJewishSocialLife/SketchesOfJewishSocialLife_djvu.txt",
+    "download_url": "https://archive.org/download/SketchesOfJewishSocialLife/SketchesOfJewishSocialLife_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sketches-of-jewish-social-life-in-the-days-of-christ-alfred-edersheim.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "The exact Internet Archive scan is an 1881 New York edition published by James Pott & Co. with an 1881 copyright notice for Ira Bradley & Co.; the edition is public domain in the United States because its copyright term expired. Internet Archive marks the item as public domain.",
+    "notes": "Historical background on the land, society, homes, worship, education, trades, customs, and daily life surrounding the New Testament. Use it to illuminate cultural setting while establishing doctrine and interpretation from the KJV text in context. Labels/warnings: Historical reference;Doctrinal caution;Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical background on the land, society, homes, worship, education, trades, customs, and daily life surrounding the New Testament. Use it to illuminate cultural setting while establishing doctrine and interpretation from the KJV text in context.",
+    "resource_labels": [
+      "Bible Background",
+      "Historical reference",
+      "Doctrinal caution",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Doctrinal caution",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sketches of Jewish Social Life in the Days of Christ",
+      "author": "Alfred Edersheim",
+      "category": "Bible study helps",
+      "collection": "Bible Background",
+      "badge": "Bible Background",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 517,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "900da38a7ac464a6b237e846d61bf155721c7804ff05cf95bb28957bf3a9c201",
+    "file_size_bytes": 666026,
+    "word_count": 116375
   }
 ]

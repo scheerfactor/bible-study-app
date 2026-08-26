@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T21:27:10.097Z",
+    "generated_at": "2026-08-26T21:38:40.509Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61287,
+      "entries": 61293,
       "normalizedHeadwords": 51299,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
@@ -1800,143 +1800,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "remainder",
-          "count": 6,
-          "sampleRefs": [
-            "Exodus 29:34",
-            "Leviticus 6:16",
-            "Leviticus 7:16",
-            "Leviticus 7:17",
-            "2 Samuel 14:7"
-          ],
-          "lookupCandidates": [
-            "remainder"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REMA INDER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "renew",
-          "count": 6,
-          "sampleRefs": [
-            "1 Samuel 11:14",
-            "Psalms 51:10",
-            "Isaiah 40:31",
-            "Isaiah 41:1",
-            "Lamentations 5:21"
-          ],
-          "lookupCandidates": [
-            "renew"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RENEW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "renewed",
-          "count": 6,
-          "sampleRefs": [
-            "2 Chronicles 15:8",
-            "Job 29:20",
-            "Psalms 103:5",
-            "2 Corinthians 4:16",
-            "Ephesians 4:23"
-          ],
-          "lookupCandidates": [
-            "renewed",
-            "renew",
-            "renewe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RENEWED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "rid",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 37:22",
-            "Exodus 6:6",
-            "Leviticus 26:6",
-            "Psalms 82:4",
-            "Psalms 144:7"
-          ],
-          "lookupCandidates": [
-            "rid"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RID",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "romans",
-          "count": 6,
-          "sampleRefs": [
-            "John 11:48",
-            "Acts 16:21",
-            "Acts 16:37",
-            "Acts 16:38",
-            "Acts 25:16"
-          ],
-          "lookupCandidates": [
-            "romans",
-            "roman",
-            "romane"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RO'MAN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ropes",
-          "count": 6,
-          "sampleRefs": [
-            "Judges 16:11",
-            "Judges 16:12",
-            "2 Samuel 17:13",
-            "1 Kings 20:31",
-            "1 Kings 20:32"
-          ],
-          "lookupCandidates": [
-            "ropes",
-            "rope"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ROPE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "salmon",
           "count": 6,
           "sampleRefs": [
@@ -3613,6 +3476,138 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "M'ARCH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "marrow",
+          "count": 5,
+          "sampleRefs": [
+            "Job 21:24",
+            "Psalms 63:5",
+            "Proverbs 3:8",
+            "Isaiah 25:6",
+            "Hebrews 4:12"
+          ],
+          "lookupCandidates": [
+            "marrow"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MAR'ROW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "mildew",
+          "count": 5,
+          "sampleRefs": [
+            "Deuteronomy 28:22",
+            "1 Kings 8:37",
+            "2 Chronicles 6:28",
+            "Amos 4:9",
+            "Haggai 2:17"
+          ],
+          "lookupCandidates": [
+            "mildew"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MILDEW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "notable",
+          "count": 5,
+          "sampleRefs": [
+            "Daniel 8:5",
+            "Daniel 8:8",
+            "Matthew 27:16",
+            "Acts 2:20",
+            "Acts 4:16"
+          ],
+          "lookupCandidates": [
+            "notable"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "NOT' ABLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "occupation",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 46:33",
+            "Genesis 47:3",
+            "Jonah 1:8",
+            "Acts 18:3",
+            "Acts 19:25"
+          ],
+          "lookupCandidates": [
+            "occupation"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OCCUPA'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "opportunity",
+          "count": 5,
+          "sampleRefs": [
+            "Matthew 26:16",
+            "Luke 22:6",
+            "Galatians 6:10",
+            "Philippians 4:10",
+            "Hebrews 11:15"
+          ],
+          "lookupCandidates": [
+            "opportunity"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OPPORTU'NITY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pence",
+          "count": 5,
+          "sampleRefs": [
+            "Matthew 18:28",
+            "Mark 14:5",
+            "Luke 7:41",
+            "Luke 10:35",
+            "John 12:5"
+          ],
+          "lookupCandidates": [
+            "pence"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PENCE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8491,143 +8486,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "remainder",
-        "count": 6,
-        "sampleRefs": [
-          "Exodus 29:34",
-          "Leviticus 6:16",
-          "Leviticus 7:16",
-          "Leviticus 7:17",
-          "2 Samuel 14:7"
-        ],
-        "lookupCandidates": [
-          "remainder"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REMA INDER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "renew",
-        "count": 6,
-        "sampleRefs": [
-          "1 Samuel 11:14",
-          "Psalms 51:10",
-          "Isaiah 40:31",
-          "Isaiah 41:1",
-          "Lamentations 5:21"
-        ],
-        "lookupCandidates": [
-          "renew"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RENEW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "renewed",
-        "count": 6,
-        "sampleRefs": [
-          "2 Chronicles 15:8",
-          "Job 29:20",
-          "Psalms 103:5",
-          "2 Corinthians 4:16",
-          "Ephesians 4:23"
-        ],
-        "lookupCandidates": [
-          "renewed",
-          "renew",
-          "renewe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RENEWED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "rid",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 37:22",
-          "Exodus 6:6",
-          "Leviticus 26:6",
-          "Psalms 82:4",
-          "Psalms 144:7"
-        ],
-        "lookupCandidates": [
-          "rid"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RID",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "romans",
-        "count": 6,
-        "sampleRefs": [
-          "John 11:48",
-          "Acts 16:21",
-          "Acts 16:37",
-          "Acts 16:38",
-          "Acts 25:16"
-        ],
-        "lookupCandidates": [
-          "romans",
-          "roman",
-          "romane"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RO'MAN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ropes",
-        "count": 6,
-        "sampleRefs": [
-          "Judges 16:11",
-          "Judges 16:12",
-          "2 Samuel 17:13",
-          "1 Kings 20:31",
-          "1 Kings 20:32"
-        ],
-        "lookupCandidates": [
-          "ropes",
-          "rope"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ROPE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "salmon",
         "count": 6,
         "sampleRefs": [
@@ -10304,6 +10162,138 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "M'ARCH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "marrow",
+        "count": 5,
+        "sampleRefs": [
+          "Job 21:24",
+          "Psalms 63:5",
+          "Proverbs 3:8",
+          "Isaiah 25:6",
+          "Hebrews 4:12"
+        ],
+        "lookupCandidates": [
+          "marrow"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MAR'ROW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "mildew",
+        "count": 5,
+        "sampleRefs": [
+          "Deuteronomy 28:22",
+          "1 Kings 8:37",
+          "2 Chronicles 6:28",
+          "Amos 4:9",
+          "Haggai 2:17"
+        ],
+        "lookupCandidates": [
+          "mildew"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MILDEW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "notable",
+        "count": 5,
+        "sampleRefs": [
+          "Daniel 8:5",
+          "Daniel 8:8",
+          "Matthew 27:16",
+          "Acts 2:20",
+          "Acts 4:16"
+        ],
+        "lookupCandidates": [
+          "notable"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "NOT' ABLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "occupation",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 46:33",
+          "Genesis 47:3",
+          "Jonah 1:8",
+          "Acts 18:3",
+          "Acts 19:25"
+        ],
+        "lookupCandidates": [
+          "occupation"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OCCUPA'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "opportunity",
+        "count": 5,
+        "sampleRefs": [
+          "Matthew 26:16",
+          "Luke 22:6",
+          "Galatians 6:10",
+          "Philippians 4:10",
+          "Hebrews 11:15"
+        ],
+        "lookupCandidates": [
+          "opportunity"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OPPORTU'NITY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pence",
+        "count": 5,
+        "sampleRefs": [
+          "Matthew 18:28",
+          "Mark 14:5",
+          "Luke 7:41",
+          "Luke 10:35",
+          "John 12:5"
+        ],
+        "lookupCandidates": [
+          "pence"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PENCE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

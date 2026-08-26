@@ -1,0 +1,137 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-61-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n450_w3000.jpg",
+      "sha256": "220328d1bd73dbcb3ba741e70e420231bbc7c0e98a8a4866b897db63b77fd6e6"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n451_w3000.jpg",
+      "sha256": "4e36cf62b9e1cc1ff150040b63486948695ab6560651378b93017bca268e01ad"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n455_w3000.jpg",
+      "sha256": "c4484621692dc4f4f38563c2da3b3584408aa1fb4d5809e6cffc1a1dd068a512"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n482_w3000.jpg",
+      "sha256": "48c1ab9dee63b151e3d9100a35e5fd385bd814a5404e6abf4c3282f216c02edc"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n492_w3000.jpg",
+      "sha256": "057313bcf4a40a65f8f28b0b6a9cb67fd62e7309ceb943a8ec33089cd7c46e10"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n494_w3000.jpg",
+      "sha256": "9d257f90a68549b94c4fb7bf6d6449d1e02b07754a900f104bb03d0089bd6e0d"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six highest-frequency remaining defensible Webster targets in the KJV cleanup queue.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological and literary examples, preserved RENEWED as Webster's separate participial entry, and recorded the exact KJV plural relationships for ROMANS and ROPES.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 2,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 36
+  },
+  "promoted_headwords": [
+    "remainder",
+    "renew",
+    "renewed",
+    "rid",
+    "roman",
+    "rope"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "romans",
+      "lookup_headword": "roman",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword; the entry includes Webster's specific sense for members of the church at Rome"
+    },
+    {
+      "word": "ropes",
+      "lookup_headword": "rope",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword; the complete noun entry is retained for the KJV lookup"
+    }
+  ],
+  "entries": [
+    {
+      "word": "remainder",
+      "lookup_headword": "remainder",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 147670,
+      "source_line_end": 147730,
+      "exact_page_heading": "REM",
+      "exact_entry_heading": "REMA'INDER",
+      "exact_source_match": true
+    },
+    {
+      "word": "renew",
+      "lookup_headword": "renew",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 149074,
+      "source_line_end": 149119,
+      "exact_page_heading": "REN",
+      "exact_entry_heading": "RENEW'",
+      "exact_source_match": true
+    },
+    {
+      "word": "renewed",
+      "lookup_headword": "renewed",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 149134,
+      "source_line_end": 149136,
+      "exact_page_heading": "REN",
+      "exact_entry_heading": "RENEW'ED",
+      "exact_source_match": true
+    },
+    {
+      "word": "rid",
+      "lookup_headword": "rid",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 157930,
+      "source_line_end": 157976,
+      "exact_page_heading": "RID",
+      "exact_entry_heading": "RID",
+      "exact_source_match": true
+    },
+    {
+      "word": "romans",
+      "lookup_headword": "roman",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 161470,
+      "source_line_end": 161498,
+      "exact_page_heading": "ROM",
+      "exact_entry_heading": "RO'MAN",
+      "exact_source_match": true
+    },
+    {
+      "word": "ropes",
+      "lookup_headword": "rope",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 162099,
+      "source_line_end": 162131,
+      "exact_page_heading": "ROP",
+      "exact_entry_heading": "ROPE",
+      "exact_source_match": true
+    }
+  ]
+}
