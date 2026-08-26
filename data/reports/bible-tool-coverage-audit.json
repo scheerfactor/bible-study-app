@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T11:57:12.303Z",
+    "generated_at": "2026-08-26T12:40:10.828Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -21,8 +21,8 @@
         "low": 1073,
         "single-use": 1921
       },
-      "missingWithSupplementalHelp": 2953,
-      "missingWithoutSupplementalHelp": 952,
+      "missingWithSupplementalHelp": 2965,
+      "missingWithoutSupplementalHelp": 940,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -3622,246 +3622,12 @@
     "bibleDictionariesAndTopics": {
       "eastonEntries": 3883,
       "naveTopics": 4674,
-      "rareTermEntries": 67,
+      "rareTermEntries": 77,
       "meaningfulWordsWithEastonEntry": 4139,
       "meaningfulWordsWithNaveTopic": 4027,
-      "meaningfulWordsWithAnyStudyLookup": 11502,
-      "combinedStudyLookupCoveragePercent": 92.4,
+      "meaningfulWordsWithAnyStudyLookup": 11514,
+      "combinedStudyLookupCoveragePercent": 92.5,
       "topUsedWordsWithoutAnyStudyLookup": [
-        {
-          "word": "beerothite",
-          "count": 4,
-          "sampleRefs": [
-            "2 Samuel 4:2",
-            "2 Samuel 4:5",
-            "2 Samuel 4:9",
-            "2 Samuel 23:37"
-          ],
-          "lookupCandidates": [
-            "beerothite"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "danites",
-          "count": 4,
-          "sampleRefs": [
-            "Judges 13:2",
-            "Judges 18:1",
-            "Judges 18:11",
-            "1 Chronicles 12:35"
-          ],
-          "lookupCandidates": [
-            "danites",
-            "danite"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "giddel",
-          "count": 4,
-          "sampleRefs": [
-            "Ezra 2:47",
-            "Ezra 2:56",
-            "Nehemiah 7:49",
-            "Nehemiah 7:58"
-          ],
-          "lookupCandidates": [
-            "giddel"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "gileadites",
-          "count": 4,
-          "sampleRefs": [
-            "Numbers 26:29",
-            "Judges 12:4",
-            "Judges 12:5",
-            "2 Kings 15:25"
-          ],
-          "lookupCandidates": [
-            "gileadites",
-            "gileadite"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "husham",
-          "count": 4,
-          "sampleRefs": [
-            "Genesis 36:34",
-            "Genesis 36:35",
-            "1 Chronicles 1:45",
-            "1 Chronicles 1:46"
-          ],
-          "lookupCandidates": [
-            "husham"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "hushim",
-          "count": 4,
-          "sampleRefs": [
-            "Genesis 46:23",
-            "1 Chronicles 7:12",
-            "1 Chronicles 8:8",
-            "1 Chronicles 8:11"
-          ],
-          "lookupCandidates": [
-            "hushim"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "kiriathaim",
-          "count": 4,
-          "sampleRefs": [
-            "Genesis 14:5",
-            "Jeremiah 48:1",
-            "Jeremiah 48:23",
-            "Ezekiel 25:9"
-          ],
-          "lookupCandidates": [
-            "kiriathaim"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "lod",
-          "count": 4,
-          "sampleRefs": [
-            "1 Chronicles 8:12",
-            "Ezra 2:33",
-            "Nehemiah 7:37",
-            "Nehemiah 11:35"
-          ],
-          "lookupCandidates": [
-            "lod"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "maachathite",
-          "count": 4,
-          "sampleRefs": [
-            "2 Samuel 23:34",
-            "2 Kings 25:23",
-            "1 Chronicles 4:19",
-            "Jeremiah 40:8"
-          ],
-          "lookupCandidates": [
-            "maachathite"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "maachathites",
-          "count": 4,
-          "sampleRefs": [
-            "Joshua 12:5",
-            "Joshua 13:11",
-            "Joshua 13:13",
-            "Joshua 13:13"
-          ],
-          "lookupCandidates": [
-            "maachathites",
-            "maachathite"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "michah",
-          "count": 4,
-          "sampleRefs": [
-            "1 Chronicles 23:20",
-            "1 Chronicles 24:24",
-            "1 Chronicles 24:24",
-            "1 Chronicles 24:25"
-          ],
-          "lookupCandidates": [
-            "michah"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
         {
           "word": "pontius",
           "count": 4,
@@ -5232,6 +4998,221 @@
           ],
           "lookupCandidates": [
             "bedad"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "besai",
+          "count": 2,
+          "sampleRefs": [
+            "Ezra 2:49",
+            "Nehemiah 7:52"
+          ],
+          "lookupCandidates": [
+            "besai"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "bocheru",
+          "count": 2,
+          "sampleRefs": [
+            "1 Chronicles 8:38",
+            "1 Chronicles 9:44"
+          ],
+          "lookupCandidates": [
+            "bocheru"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "brokenhearted",
+          "count": 2,
+          "sampleRefs": [
+            "Isaiah 61:1",
+            "Luke 4:18"
+          ],
+          "lookupCandidates": [
+            "brokenhearted",
+            "brokenheart",
+            "brokenhearte"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "buzite",
+          "count": 2,
+          "sampleRefs": [
+            "Job 32:2",
+            "Job 32:6"
+          ],
+          "lookupCandidates": [
+            "buzite"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "canaanitish",
+          "count": 2,
+          "sampleRefs": [
+            "Genesis 46:10",
+            "Exodus 6:15"
+          ],
+          "lookupCandidates": [
+            "canaanitish"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "carmelitess",
+          "count": 2,
+          "sampleRefs": [
+            "1 Samuel 27:3",
+            "1 Chronicles 3:1"
+          ],
+          "lookupCandidates": [
+            "carmelitess",
+            "carmelites",
+            "carmelitese"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "chaldean",
+          "count": 2,
+          "sampleRefs": [
+            "Ezra 5:12",
+            "Daniel 2:10"
+          ],
+          "lookupCandidates": [
+            "chaldean"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "chanaan",
+          "count": 2,
+          "sampleRefs": [
+            "Acts 7:11",
+            "Acts 13:19"
+          ],
+          "lookupCandidates": [
+            "chanaan"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "chesnut",
+          "count": 2,
+          "sampleRefs": [
+            "Genesis 30:37",
+            "Ezekiel 31:8"
+          ],
+          "lookupCandidates": [
+            "chesnut"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "chinneroth",
+          "count": 2,
+          "sampleRefs": [
+            "Joshua 11:2",
+            "Joshua 12:3"
+          ],
+          "lookupCandidates": [
+            "chinneroth"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "clifts",
+          "count": 2,
+          "sampleRefs": [
+            "Job 30:6",
+            "Isaiah 57:5"
+          ],
+          "lookupCandidates": [
+            "clifts",
+            "clift",
+            "clifte"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -11928,240 +11909,6 @@
     ],
     "topMissingAnyStudyLookup": [
       {
-        "word": "beerothite",
-        "count": 4,
-        "sampleRefs": [
-          "2 Samuel 4:2",
-          "2 Samuel 4:5",
-          "2 Samuel 4:9",
-          "2 Samuel 23:37"
-        ],
-        "lookupCandidates": [
-          "beerothite"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "danites",
-        "count": 4,
-        "sampleRefs": [
-          "Judges 13:2",
-          "Judges 18:1",
-          "Judges 18:11",
-          "1 Chronicles 12:35"
-        ],
-        "lookupCandidates": [
-          "danites",
-          "danite"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "giddel",
-        "count": 4,
-        "sampleRefs": [
-          "Ezra 2:47",
-          "Ezra 2:56",
-          "Nehemiah 7:49",
-          "Nehemiah 7:58"
-        ],
-        "lookupCandidates": [
-          "giddel"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "gileadites",
-        "count": 4,
-        "sampleRefs": [
-          "Numbers 26:29",
-          "Judges 12:4",
-          "Judges 12:5",
-          "2 Kings 15:25"
-        ],
-        "lookupCandidates": [
-          "gileadites",
-          "gileadite"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "husham",
-        "count": 4,
-        "sampleRefs": [
-          "Genesis 36:34",
-          "Genesis 36:35",
-          "1 Chronicles 1:45",
-          "1 Chronicles 1:46"
-        ],
-        "lookupCandidates": [
-          "husham"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "hushim",
-        "count": 4,
-        "sampleRefs": [
-          "Genesis 46:23",
-          "1 Chronicles 7:12",
-          "1 Chronicles 8:8",
-          "1 Chronicles 8:11"
-        ],
-        "lookupCandidates": [
-          "hushim"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "kiriathaim",
-        "count": 4,
-        "sampleRefs": [
-          "Genesis 14:5",
-          "Jeremiah 48:1",
-          "Jeremiah 48:23",
-          "Ezekiel 25:9"
-        ],
-        "lookupCandidates": [
-          "kiriathaim"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "lod",
-        "count": 4,
-        "sampleRefs": [
-          "1 Chronicles 8:12",
-          "Ezra 2:33",
-          "Nehemiah 7:37",
-          "Nehemiah 11:35"
-        ],
-        "lookupCandidates": [
-          "lod"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "maachathite",
-        "count": 4,
-        "sampleRefs": [
-          "2 Samuel 23:34",
-          "2 Kings 25:23",
-          "1 Chronicles 4:19",
-          "Jeremiah 40:8"
-        ],
-        "lookupCandidates": [
-          "maachathite"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "maachathites",
-        "count": 4,
-        "sampleRefs": [
-          "Joshua 12:5",
-          "Joshua 13:11",
-          "Joshua 13:13",
-          "Joshua 13:13"
-        ],
-        "lookupCandidates": [
-          "maachathites",
-          "maachathite"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "michah",
-        "count": 4,
-        "sampleRefs": [
-          "1 Chronicles 23:20",
-          "1 Chronicles 24:24",
-          "1 Chronicles 24:24",
-          "1 Chronicles 24:25"
-        ],
-        "lookupCandidates": [
-          "michah"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "pontius",
         "count": 4,
         "sampleRefs": [
@@ -13531,6 +13278,221 @@
         ],
         "lookupCandidates": [
           "bedad"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "besai",
+        "count": 2,
+        "sampleRefs": [
+          "Ezra 2:49",
+          "Nehemiah 7:52"
+        ],
+        "lookupCandidates": [
+          "besai"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "bocheru",
+        "count": 2,
+        "sampleRefs": [
+          "1 Chronicles 8:38",
+          "1 Chronicles 9:44"
+        ],
+        "lookupCandidates": [
+          "bocheru"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "brokenhearted",
+        "count": 2,
+        "sampleRefs": [
+          "Isaiah 61:1",
+          "Luke 4:18"
+        ],
+        "lookupCandidates": [
+          "brokenhearted",
+          "brokenheart",
+          "brokenhearte"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "buzite",
+        "count": 2,
+        "sampleRefs": [
+          "Job 32:2",
+          "Job 32:6"
+        ],
+        "lookupCandidates": [
+          "buzite"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "canaanitish",
+        "count": 2,
+        "sampleRefs": [
+          "Genesis 46:10",
+          "Exodus 6:15"
+        ],
+        "lookupCandidates": [
+          "canaanitish"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "carmelitess",
+        "count": 2,
+        "sampleRefs": [
+          "1 Samuel 27:3",
+          "1 Chronicles 3:1"
+        ],
+        "lookupCandidates": [
+          "carmelitess",
+          "carmelites",
+          "carmelitese"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "chaldean",
+        "count": 2,
+        "sampleRefs": [
+          "Ezra 5:12",
+          "Daniel 2:10"
+        ],
+        "lookupCandidates": [
+          "chaldean"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "chanaan",
+        "count": 2,
+        "sampleRefs": [
+          "Acts 7:11",
+          "Acts 13:19"
+        ],
+        "lookupCandidates": [
+          "chanaan"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "chesnut",
+        "count": 2,
+        "sampleRefs": [
+          "Genesis 30:37",
+          "Ezekiel 31:8"
+        ],
+        "lookupCandidates": [
+          "chesnut"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "chinneroth",
+        "count": 2,
+        "sampleRefs": [
+          "Joshua 11:2",
+          "Joshua 12:3"
+        ],
+        "lookupCandidates": [
+          "chinneroth"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "clifts",
+        "count": 2,
+        "sampleRefs": [
+          "Job 30:6",
+          "Isaiah 57:5"
+        ],
+        "lookupCandidates": [
+          "clifts",
+          "clift",
+          "clifte"
         ],
         "hasDefinition": false,
         "hasEaston": false,

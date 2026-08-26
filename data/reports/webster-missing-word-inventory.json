@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T11:57:12.303Z",
+  "generated_at": "2026-08-26T12:40:10.828Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,167 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 2953,
-  "withoutSupplementalHelp": 952,
+  "withSupplementalHelp": 2965,
+  "withoutSupplementalHelp": 940,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "beerothite",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "beerothite"
-      ],
-      "sampleRefs": [
-        "2 Samuel 4:2",
-        "2 Samuel 4:5",
-        "2 Samuel 4:9",
-        "2 Samuel 23:37"
-      ]
-    },
-    {
-      "word": "danites",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "danites",
-        "danite"
-      ],
-      "sampleRefs": [
-        "Judges 13:2",
-        "Judges 18:1",
-        "Judges 18:11",
-        "1 Chronicles 12:35"
-      ]
-    },
-    {
-      "word": "giddel",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "giddel"
-      ],
-      "sampleRefs": [
-        "Ezra 2:47",
-        "Ezra 2:56",
-        "Nehemiah 7:49",
-        "Nehemiah 7:58"
-      ]
-    },
-    {
-      "word": "gileadites",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "gileadites",
-        "gileadite"
-      ],
-      "sampleRefs": [
-        "Numbers 26:29",
-        "Judges 12:4",
-        "Judges 12:5",
-        "2 Kings 15:25"
-      ]
-    },
-    {
-      "word": "husham",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "husham"
-      ],
-      "sampleRefs": [
-        "Genesis 36:34",
-        "Genesis 36:35",
-        "1 Chronicles 1:45",
-        "1 Chronicles 1:46"
-      ]
-    },
-    {
-      "word": "hushim",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "hushim"
-      ],
-      "sampleRefs": [
-        "Genesis 46:23",
-        "1 Chronicles 7:12",
-        "1 Chronicles 8:8",
-        "1 Chronicles 8:11"
-      ]
-    },
-    {
-      "word": "kiriathaim",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "kiriathaim"
-      ],
-      "sampleRefs": [
-        "Genesis 14:5",
-        "Jeremiah 48:1",
-        "Jeremiah 48:23",
-        "Ezekiel 25:9"
-      ]
-    },
-    {
-      "word": "lod",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "lod"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 8:12",
-        "Ezra 2:33",
-        "Nehemiah 7:37",
-        "Nehemiah 11:35"
-      ]
-    },
-    {
-      "word": "maachathite",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "maachathite"
-      ],
-      "sampleRefs": [
-        "2 Samuel 23:34",
-        "2 Kings 25:23",
-        "1 Chronicles 4:19",
-        "Jeremiah 40:8"
-      ]
-    },
-    {
-      "word": "maachathites",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "maachathites",
-        "maachathite"
-      ],
-      "sampleRefs": [
-        "Joshua 12:5",
-        "Joshua 13:11",
-        "Joshua 13:13",
-        "Joshua 13:13"
-      ]
-    },
-    {
-      "word": "michah",
-      "count": 4,
-      "priority": "low",
-      "lookupCandidates": [
-        "michah"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 23:20",
-        "1 Chronicles 24:24",
-        "1 Chronicles 24:24",
-        "1 Chronicles 24:25"
-      ]
-    },
     {
       "word": "pontius",
       "count": 4,
@@ -1312,6 +1155,142 @@
       "sampleRefs": [
         "Genesis 46:16",
         "1 Chronicles 7:7"
+      ]
+    },
+    {
+      "word": "fatfleshed",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "fatfleshed",
+        "fatflesh",
+        "fatfleshe"
+      ],
+      "sampleRefs": [
+        "Genesis 41:2",
+        "Genesis 41:18"
+      ]
+    },
+    {
+      "word": "gazez",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "gazez"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:46",
+        "1 Chronicles 2:46"
+      ]
+    },
+    {
+      "word": "geshuri",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "geshuri"
+      ],
+      "sampleRefs": [
+        "Deuteronomy 3:14",
+        "Joshua 13:2"
+      ]
+    },
+    {
+      "word": "gether",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "gether"
+      ],
+      "sampleRefs": [
+        "Genesis 10:23",
+        "1 Chronicles 1:17"
+      ]
+    },
+    {
+      "word": "gibeonite",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "gibeonite"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 12:4",
+        "Nehemiah 3:7"
+      ]
+    },
+    {
+      "word": "giddalti",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "giddalti"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 25:4",
+        "1 Chronicles 25:29"
+      ]
+    },
+    {
+      "word": "gier",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "gier"
+      ],
+      "sampleRefs": [
+        "Leviticus 11:18",
+        "Deuteronomy 14:17"
+      ]
+    },
+    {
+      "word": "gilonite",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "gilonite"
+      ],
+      "sampleRefs": [
+        "2 Samuel 15:12",
+        "2 Samuel 23:34"
+      ]
+    },
+    {
+      "word": "grapegatherers",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "grapegatherers",
+        "grapegatherer",
+        "grapegatherere"
+      ],
+      "sampleRefs": [
+        "Jeremiah 49:9",
+        "Obadiah 1:5"
+      ]
+    },
+    {
+      "word": "habaiah",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "habaiah"
+      ],
+      "sampleRefs": [
+        "Ezra 2:61",
+        "Nehemiah 7:63"
+      ]
+    },
+    {
+      "word": "haggi",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "haggi"
+      ],
+      "sampleRefs": [
+        "Genesis 46:16",
+        "Numbers 26:15"
       ]
     }
   ]
