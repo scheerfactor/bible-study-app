@@ -8,6 +8,8 @@
     "rightsStatus": "Public domain / CC0",
     "artist": "See Wikimedia Commons source page",
     "credit": "See Wikimedia Commons source page",
+    "themes": ["Gospel", "Salvation", "Sacrifice", "Grace"],
+    "bibleReferences": ["Isaiah 53:5-6", "John 19:17-18", "1 Peter 2:24"],
     "recommendedUse": "Gospel, salvation, sacrifice, grace, invitation, and closing slides.",
     "optimized": "1600x900 progressive JPEG stored locally with a soft presentation vignette."
   },
@@ -20,6 +22,8 @@
     "rightsStatus": "Public domain / CC0",
     "artist": "See Wikimedia Commons source page",
     "credit": "See Wikimedia Commons source page",
+    "themes": ["Scripture", "Bible Study", "Teaching", "Truth"],
+    "bibleReferences": ["Psalm 119:18", "Acts 17:11", "2 Timothy 3:16-17"],
     "recommendedUse": "Scripture reading, exposition, Bible study, teaching, and lesson slides.",
     "optimized": "1600x900 progressive JPEG stored locally with a soft presentation vignette."
   },
@@ -32,6 +36,8 @@
     "rightsStatus": "Public domain",
     "artist": "Albrecht D\u00fcrer",
     "credit": "Google Arts & Culture",
+    "themes": ["Prayer", "Intercession", "Devotion", "Dependence"],
+    "bibleReferences": ["Jeremiah 33:3", "Matthew 6:6", "1 Thessalonians 5:17"],
     "recommendedUse": "Prayer meeting, intercession, devotion, altar, and quiet worship slides.",
     "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
@@ -44,6 +50,8 @@
     "rightsStatus": "Public domain / CC0",
     "artist": "See Wikimedia Commons source page",
     "credit": "See Wikimedia Commons source page",
+    "themes": ["Missions", "Evangelism", "Nations", "Witness"],
+    "bibleReferences": ["Matthew 28:19-20", "Mark 16:15", "Acts 1:8"],
     "recommendedUse": "Missions, evangelism, nations, outreach, and missionary emphasis slides.",
     "optimized": "1600x900 progressive JPEG stored locally with a soft presentation vignette."
   },
@@ -56,6 +64,8 @@
     "rightsStatus": "Public domain",
     "artist": "Bill Ingalls",
     "credit": "https://www.flickr.com/photos/nasahqphoto/16604583049/\nhttp://apod.nasa.gov/apod/ap150314.html",
+    "themes": ["Resurrection", "Hope", "Victory", "New Life"],
+    "bibleReferences": ["Matthew 28:5-6", "1 Corinthians 15:20-22", "1 Peter 1:3"],
     "recommendedUse": "Resurrection, hope, victory, and new-life slides.",
     "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
@@ -68,6 +78,8 @@
     "rightsStatus": "Original generated asset",
     "artist": "OpenAI image generation",
     "credit": "Created for Father's Business Bible Study",
+    "themes": ["Resurrection", "Empty Tomb", "Victory", "Gospel"],
+    "bibleReferences": ["Luke 24:5-6", "John 20:6-8", "1 Corinthians 15:4"],
     "recommendedUse": "Resurrection, victory, Gospel accounts, and empty-tomb emphasis slides.",
     "optimized": "1600x900 progressive JPEG stored locally; original generated background created for this app."
   },
@@ -80,6 +92,8 @@
     "rightsStatus": "Public domain",
     "artist": "USDAgov",
     "credit": "20210628-NRCS-BJOC-001",
+    "themes": ["Harvest", "Soulwinning", "Service", "Missions"],
+    "bibleReferences": ["Psalm 126:5-6", "Matthew 9:37-38", "John 4:35"],
     "recommendedUse": "Harvest, soulwinning, service, missions, and labor-in-the-field slides.",
     "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
@@ -92,6 +106,8 @@
     "rightsStatus": "Public domain",
     "artist": "Joshua Tree National Park",
     "credit": "Storm clouds over the Oasis of Mara",
+    "themes": ["Judgment", "Warning", "Repentance", "Prophecy"],
+    "bibleReferences": ["Amos 4:12", "Hebrews 9:27", "Revelation 20:11-12"],
     "recommendedUse": "Judgment, warning passages, repentance, prophecy, and solemn teaching slides.",
     "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
@@ -104,6 +120,8 @@
     "rightsStatus": "Public domain",
     "artist": "Rizzuto, Angelo, 1906-1967, photographer",
     "credit": "https://www.loc.gov/pictures/item/2020636826/",
+    "themes": ["Grace", "Guidance", "Light", "Assurance"],
+    "bibleReferences": ["Ephesians 2:8-9", "2 Corinthians 12:9", "Titus 2:11-12"],
     "recommendedUse": "Grace, guidance, light, assurance, and gospel encouragement slides.",
     "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
@@ -116,6 +134,8 @@
     "rightsStatus": "Original generated asset",
     "artist": "OpenAI image generation",
     "credit": "Created for Father's Business Bible Study",
+    "themes": ["Baptism", "Obedience", "Discipleship", "New Life"],
+    "bibleReferences": ["Matthew 28:19-20", "Acts 8:36-38", "Romans 6:4"],
     "recommendedUse": "Baptism, testimony, obedience, discipleship, and new-life slides.",
     "optimized": "1600x900 progressive JPEG stored locally; original generated background created for this app."
   },
@@ -128,6 +148,8 @@
     "rightsStatus": "Original generated asset",
     "artist": "OpenAI image generation",
     "credit": "Created for Father's Business Bible Study",
+    "themes": ["Church", "Fellowship", "Worship", "Teaching"],
+    "bibleReferences": ["Acts 2:41-42", "1 Timothy 3:15", "Hebrews 10:24-25"],
     "recommendedUse": "Church service, worship, announcements, prayer meeting, and teaching slides.",
     "optimized": "1600x900 progressive JPEG stored locally; original generated background created for this app."
   },
@@ -140,6 +162,8 @@
     "rightsStatus": "Original generated asset",
     "artist": "OpenAI image generation",
     "credit": "Created for Father's Business Bible Study",
+    "themes": ["Teaching", "Study", "Discipleship", "Preparation"],
+    "bibleReferences": ["Nehemiah 8:8", "2 Timothy 2:2", "2 Timothy 2:15"],
     "recommendedUse": "Sunday school, lesson prep, Bible teaching, sermon planning, and classroom teaching slides.",
     "optimized": "1600x900 progressive JPEG stored locally; original generated background created for this app."
   },
@@ -152,6 +176,8 @@
     "rightsStatus": "Original generated asset",
     "artist": "OpenAI image generation",
     "credit": "Created for Father's Business Bible Study",
+    "themes": ["Shepherd", "Pastoral Care", "Guidance", "Comfort"],
+    "bibleReferences": ["Psalm 23:1-4", "John 10:11", "1 Peter 5:2-3"],
     "recommendedUse": "Pastoral care, Psalm passages, guidance, comfort, and discipleship slides.",
     "optimized": "1600x900 progressive JPEG stored locally; original generated background created for this app."
   },
@@ -164,6 +190,8 @@
     "rightsStatus": "Original generated asset",
     "artist": "OpenAI image generation",
     "credit": "Created for Father's Business Bible Study",
+    "themes": ["Preaching", "Exposition", "Proclamation", "Ministry"],
+    "bibleReferences": ["Nehemiah 8:4-8", "1 Corinthians 1:21", "2 Timothy 4:2"],
     "recommendedUse": "Preaching, pulpit ministry, sermon series, invitation, and church service slides.",
     "optimized": "1600x900 progressive JPEG stored locally; original generated background created for this app."
   },
@@ -176,6 +204,8 @@
     "rightsStatus": "Original generated asset",
     "artist": "OpenAI image generation",
     "credit": "Created for Father's Business Bible Study",
+    "themes": ["Lord's Supper", "Remembrance", "Communion", "Worship"],
+    "bibleReferences": ["Luke 22:19-20", "1 Corinthians 11:23-26"],
     "recommendedUse": "Lord's supper, remembrance, worship, reverent reflection, and church service slides.",
     "optimized": "1600x900 progressive JPEG stored locally; original generated background created for this app."
   },
