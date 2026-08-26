@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T19:54:56.944Z",
+    "generated_at": "2026-08-26T20:51:34.808Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,18 +10,18 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61270,
+      "entries": 61275,
       "normalizedHeadwords": 51299,
-      "meaningfulWordsWithDefinition": 8549,
-      "meaningfulWordsWithoutDefinition": 3905,
+      "meaningfulWordsWithDefinition": 8548,
+      "meaningfulWordsWithoutDefinition": 3906,
       "meaningfulDefinitionCoveragePercent": 68.6,
       "missingPriorityCounts": {
         "high": 231,
-        "medium": 680,
+        "medium": 681,
         "low": 1073,
         "single-use": 1921
       },
-      "missingWithSupplementalHelp": 3905,
+      "missingWithSupplementalHelp": 3906,
       "missingWithoutSupplementalHelp": 0,
       "topUsedWordsNeedingDefinition": [
         {
@@ -1800,143 +1800,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "jared",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 5:15",
-            "Genesis 5:16",
-            "Genesis 5:18",
-            "Genesis 5:19",
-            "Genesis 5:20"
-          ],
-          "lookupCandidates": [
-            "jared",
-            "jar",
-            "jare"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "JAR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "laden",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 45:23",
-            "Genesis 45:23",
-            "1 Samuel 16:20",
-            "Isaiah 1:4",
-            "Matthew 11:28"
-          ],
-          "lookupCandidates": [
-            "laden"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LA'DEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "lowly",
-          "count": 6,
-          "sampleRefs": [
-            "Psalms 138:6",
-            "Proverbs 3:34",
-            "Proverbs 11:2",
-            "Proverbs 16:19",
-            "Zechariah 9:9"
-          ],
-          "lookupCandidates": [
-            "lowly"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LOWLY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "mandrakes",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 30:14",
-            "Genesis 30:14",
-            "Genesis 30:15",
-            "Genesis 30:15",
-            "Genesis 30:16"
-          ],
-          "lookupCandidates": [
-            "mandrakes",
-            "mandrake"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MAN'DRAKE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "mankind",
-          "count": 6,
-          "sampleRefs": [
-            "Leviticus 18:22",
-            "Leviticus 20:13",
-            "Job 12:10",
-            "1 Corinthians 6:9",
-            "1 Timothy 1:10"
-          ],
-          "lookupCandidates": [
-            "mankind"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MANKIND",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "manners",
-          "count": 6,
-          "sampleRefs": [
-            "Leviticus 20:23",
-            "2 Kings 17:34",
-            "Ezekiel 11:12",
-            "Acts 13:18",
-            "1 Corinthians 15:33"
-          ],
-          "lookupCandidates": [
-            "manners",
-            "manner",
-            "mannere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MAN'NERS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "meditation",
           "count": 6,
           "sampleRefs": [
@@ -3609,6 +3472,142 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FOLK",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "forepart",
+          "count": 5,
+          "sampleRefs": [
+            "Exodus 28:27",
+            "Exodus 39:20",
+            "1 Kings 6:20",
+            "Ezekiel 42:7",
+            "Acts 27:41"
+          ],
+          "lookupCandidates": [
+            "forepart"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FO'REPART",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "founder",
+          "count": 5,
+          "sampleRefs": [
+            "Judges 17:4",
+            "Jeremiah 6:29",
+            "Jeremiah 10:9",
+            "Jeremiah 10:14",
+            "Jeremiah 51:17"
+          ],
+          "lookupCandidates": [
+            "founder"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FOUND'ER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "garnished",
+          "count": 5,
+          "sampleRefs": [
+            "2 Chronicles 3:6",
+            "Job 26:13",
+            "Matthew 12:44",
+            "Luke 11:25",
+            "Revelation 21:19"
+          ],
+          "lookupCandidates": [
+            "garnished",
+            "garnish",
+            "garnishe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GARNISH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "goddess",
+          "count": 5,
+          "sampleRefs": [
+            "1 Kings 11:5",
+            "1 Kings 11:33",
+            "Acts 19:27",
+            "Acts 19:35",
+            "Acts 19:37"
+          ],
+          "lookupCandidates": [
+            "goddess",
+            "goddes",
+            "goddese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GOD'DESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "gourd",
+          "count": 5,
+          "sampleRefs": [
+            "Jonah 4:6",
+            "Jonah 4:6",
+            "Jonah 4:7",
+            "Jonah 4:9",
+            "Jonah 4:10"
+          ],
+          "lookupCandidates": [
+            "gourd"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GOURD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "grope",
+          "count": 5,
+          "sampleRefs": [
+            "Deuteronomy 28:29",
+            "Job 5:14",
+            "Job 12:25",
+            "Isaiah 59:10",
+            "Isaiah 59:10"
+          ],
+          "lookupCandidates": [
+            "grope"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GROPE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8487,143 +8486,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "jared",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 5:15",
-          "Genesis 5:16",
-          "Genesis 5:18",
-          "Genesis 5:19",
-          "Genesis 5:20"
-        ],
-        "lookupCandidates": [
-          "jared",
-          "jar",
-          "jare"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "JAR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "laden",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 45:23",
-          "Genesis 45:23",
-          "1 Samuel 16:20",
-          "Isaiah 1:4",
-          "Matthew 11:28"
-        ],
-        "lookupCandidates": [
-          "laden"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LA'DEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "lowly",
-        "count": 6,
-        "sampleRefs": [
-          "Psalms 138:6",
-          "Proverbs 3:34",
-          "Proverbs 11:2",
-          "Proverbs 16:19",
-          "Zechariah 9:9"
-        ],
-        "lookupCandidates": [
-          "lowly"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LOWLY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "mandrakes",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 30:14",
-          "Genesis 30:14",
-          "Genesis 30:15",
-          "Genesis 30:15",
-          "Genesis 30:16"
-        ],
-        "lookupCandidates": [
-          "mandrakes",
-          "mandrake"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MAN'DRAKE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "mankind",
-        "count": 6,
-        "sampleRefs": [
-          "Leviticus 18:22",
-          "Leviticus 20:13",
-          "Job 12:10",
-          "1 Corinthians 6:9",
-          "1 Timothy 1:10"
-        ],
-        "lookupCandidates": [
-          "mankind"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MANKIND",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "manners",
-        "count": 6,
-        "sampleRefs": [
-          "Leviticus 20:23",
-          "2 Kings 17:34",
-          "Ezekiel 11:12",
-          "Acts 13:18",
-          "1 Corinthians 15:33"
-        ],
-        "lookupCandidates": [
-          "manners",
-          "manner",
-          "mannere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MAN'NERS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "meditation",
         "count": 6,
         "sampleRefs": [
@@ -10296,6 +10158,142 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FOLK",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "forepart",
+        "count": 5,
+        "sampleRefs": [
+          "Exodus 28:27",
+          "Exodus 39:20",
+          "1 Kings 6:20",
+          "Ezekiel 42:7",
+          "Acts 27:41"
+        ],
+        "lookupCandidates": [
+          "forepart"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FO'REPART",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "founder",
+        "count": 5,
+        "sampleRefs": [
+          "Judges 17:4",
+          "Jeremiah 6:29",
+          "Jeremiah 10:9",
+          "Jeremiah 10:14",
+          "Jeremiah 51:17"
+        ],
+        "lookupCandidates": [
+          "founder"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FOUND'ER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "garnished",
+        "count": 5,
+        "sampleRefs": [
+          "2 Chronicles 3:6",
+          "Job 26:13",
+          "Matthew 12:44",
+          "Luke 11:25",
+          "Revelation 21:19"
+        ],
+        "lookupCandidates": [
+          "garnished",
+          "garnish",
+          "garnishe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GARNISH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "goddess",
+        "count": 5,
+        "sampleRefs": [
+          "1 Kings 11:5",
+          "1 Kings 11:33",
+          "Acts 19:27",
+          "Acts 19:35",
+          "Acts 19:37"
+        ],
+        "lookupCandidates": [
+          "goddess",
+          "goddes",
+          "goddese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GOD'DESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "gourd",
+        "count": 5,
+        "sampleRefs": [
+          "Jonah 4:6",
+          "Jonah 4:6",
+          "Jonah 4:7",
+          "Jonah 4:9",
+          "Jonah 4:10"
+        ],
+        "lookupCandidates": [
+          "gourd"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GOURD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "grope",
+        "count": 5,
+        "sampleRefs": [
+          "Deuteronomy 28:29",
+          "Job 5:14",
+          "Job 12:25",
+          "Isaiah 59:10",
+          "Isaiah 59:10"
+        ],
+        "lookupCandidates": [
+          "grope"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GROPE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

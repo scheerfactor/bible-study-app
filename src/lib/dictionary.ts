@@ -259,6 +259,10 @@ function dictionaryLookupCandidates(value: string) {
   if (!cleaned) return [];
 
   const candidates = [normalizeDictionaryWord(cleaned), cleaned];
+  const reviewedAlias = dictionaryAliases[cleaned];
+  if (reviewedAlias && cleanDictionaryWord(reviewedAlias) === cleaned) {
+    return uniqueValues(candidates);
+  }
   const suffixRules: Array<[RegExp, string]> = [
     [/eth$/, ""],
     [/est$/, ""],
