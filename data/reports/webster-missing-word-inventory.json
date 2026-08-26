@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T10:29:22.227Z",
+  "generated_at": "2026-08-26T11:52:05.409Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,162 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 2933,
-  "withoutSupplementalHelp": 972,
+  "withSupplementalHelp": 2943,
+  "withoutSupplementalHelp": 962,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "gomorrha",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "gomorrha"
-      ],
-      "sampleRefs": [
-        "Matthew 10:15",
-        "Mark 6:11",
-        "Romans 9:29",
-        "2 Peter 2:6",
-        "Jude 1:7"
-      ]
-    },
-    {
-      "word": "hararite",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "hararite"
-      ],
-      "sampleRefs": [
-        "2 Samuel 23:11",
-        "2 Samuel 23:33",
-        "2 Samuel 23:33",
-        "1 Chronicles 11:34",
-        "1 Chronicles 11:35"
-      ]
-    },
-    {
-      "word": "hushathite",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "hushathite"
-      ],
-      "sampleRefs": [
-        "2 Samuel 21:18",
-        "2 Samuel 23:27",
-        "1 Chronicles 11:29",
-        "1 Chronicles 20:4",
-        "1 Chronicles 27:11"
-      ]
-    },
-    {
-      "word": "jezreelitess",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "jezreelitess",
-        "jezreelites",
-        "jezreelitese"
-      ],
-      "sampleRefs": [
-        "1 Samuel 27:3",
-        "1 Samuel 30:5",
-        "2 Samuel 2:2",
-        "2 Samuel 3:2",
-        "1 Chronicles 3:1"
-      ]
-    },
-    {
-      "word": "jozadak",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "jozadak"
-      ],
-      "sampleRefs": [
-        "Ezra 3:2",
-        "Ezra 3:8",
-        "Ezra 5:2",
-        "Ezra 10:18",
-        "Nehemiah 12:26"
-      ]
-    },
-    {
-      "word": "noe",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "noe"
-      ],
-      "sampleRefs": [
-        "Matthew 24:37",
-        "Matthew 24:38",
-        "Luke 3:36",
-        "Luke 17:26",
-        "Luke 17:27"
-      ]
-    },
-    {
-      "word": "parosh",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "parosh"
-      ],
-      "sampleRefs": [
-        "Ezra 2:3",
-        "Ezra 10:25",
-        "Nehemiah 3:25",
-        "Nehemiah 7:8",
-        "Nehemiah 10:14"
-      ]
-    },
-    {
-      "word": "perizzite",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "perizzite"
-      ],
-      "sampleRefs": [
-        "Genesis 13:7",
-        "Exodus 33:2",
-        "Exodus 34:11",
-        "Joshua 9:1",
-        "Joshua 11:3"
-      ]
-    },
-    {
-      "word": "reu",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "reu"
-      ],
-      "sampleRefs": [
-        "Genesis 11:18",
-        "Genesis 11:19",
-        "Genesis 11:20",
-        "Genesis 11:21",
-        "1 Chronicles 1:25"
-      ]
-    },
-    {
-      "word": "shelumiel",
-      "count": 5,
-      "priority": "medium",
-      "lookupCandidates": [
-        "shelumiel"
-      ],
-      "sampleRefs": [
-        "Numbers 1:6",
-        "Numbers 2:12",
-        "Numbers 7:36",
-        "Numbers 7:41",
-        "Numbers 10:19"
-      ]
-    },
     {
       "word": "sheshan",
       "count": 5,
@@ -1364,6 +1212,130 @@
       "sampleRefs": [
         "Genesis 36:35",
         "1 Chronicles 1:46"
+      ]
+    },
+    {
+      "word": "besai",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "besai"
+      ],
+      "sampleRefs": [
+        "Ezra 2:49",
+        "Nehemiah 7:52"
+      ]
+    },
+    {
+      "word": "bocheru",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "bocheru"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 8:38",
+        "1 Chronicles 9:44"
+      ]
+    },
+    {
+      "word": "brokenhearted",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "brokenhearted",
+        "brokenheart",
+        "brokenhearte"
+      ],
+      "sampleRefs": [
+        "Isaiah 61:1",
+        "Luke 4:18"
+      ]
+    },
+    {
+      "word": "buzite",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "buzite"
+      ],
+      "sampleRefs": [
+        "Job 32:2",
+        "Job 32:6"
+      ]
+    },
+    {
+      "word": "canaanitish",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "canaanitish"
+      ],
+      "sampleRefs": [
+        "Genesis 46:10",
+        "Exodus 6:15"
+      ]
+    },
+    {
+      "word": "carmelitess",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "carmelitess",
+        "carmelites",
+        "carmelitese"
+      ],
+      "sampleRefs": [
+        "1 Samuel 27:3",
+        "1 Chronicles 3:1"
+      ]
+    },
+    {
+      "word": "chaldean",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "chaldean"
+      ],
+      "sampleRefs": [
+        "Ezra 5:12",
+        "Daniel 2:10"
+      ]
+    },
+    {
+      "word": "chanaan",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "chanaan"
+      ],
+      "sampleRefs": [
+        "Acts 7:11",
+        "Acts 13:19"
+      ]
+    },
+    {
+      "word": "chesnut",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "chesnut"
+      ],
+      "sampleRefs": [
+        "Genesis 30:37",
+        "Ezekiel 31:8"
+      ]
+    },
+    {
+      "word": "chinneroth",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "chinneroth"
+      ],
+      "sampleRefs": [
+        "Joshua 11:2",
+        "Joshua 12:3"
       ]
     }
   ]
