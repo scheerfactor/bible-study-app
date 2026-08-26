@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
+import path from "node:path";
 import verses1769 from "es-kjv/json/verses-1769.js";
 
 const entriesPath = "data/generated/kjv-rare-term-reviewed-overrides.json";
@@ -8,7 +9,13 @@ const allowedReviewStatuses = new Set([
   "reviewed_kjv_form",
   "reviewed_scripture_profile",
   "reviewed_overlay",
+  "verified_strongs_mapping",
 ]);
+
+function normalizeStrongNumber(value) {
+  const match = String(value ?? "").match(/^([GH])0*(\d+)$/i);
+  return match ? `${match[1].toUpperCase()}${Number(match[2])}` : String(value ?? "");
+}
 
 function normalize(value) {
   return String(value ?? "").toLowerCase().replace(/[^a-z]/g, "");
@@ -99,6 +106,29 @@ if (batchPath) {
   let occurrenceCount = 0;
   const seenBatchHeadwords = new Set();
   const seenForms = new Set();
+  const strongsEntries = new Map();
+  const mappingEvidence = new Set();
+
+  if ((batch.entries ?? []).some((entry) => entry.review_status === "verified_strongs_mapping")) {
+    const lexiconIndex = JSON.parse(await readFile("data/strongs/lexicon-batches/index.json", "utf8"));
+    for (const file of lexiconIndex.files ?? []) {
+      const rows = JSON.parse(await readFile(file, "utf8"));
+      if (!Array.isArray(rows)) continue;
+      for (const row of rows) strongsEntries.set(normalizeStrongNumber(row.strongs_number), row);
+    }
+
+    const targetWords = new Set((batch.entries ?? []).map((entry) => normalize(entry.normalized_headword || entry.headword)));
+    for (const file of await readdir("data/strongs/mappings-by-chapter")) {
+      if (!file.endsWith(".json")) continue;
+      const rows = JSON.parse(await readFile(path.join("data/strongs/mappings-by-chapter", file), "utf8"));
+      if (!Array.isArray(rows)) continue;
+      for (const row of rows) {
+        const word = normalize(row.normalized_kjv_word || row.kjv_word);
+        if (row.review_status !== "Verified" || !targetWords.has(word)) continue;
+        mappingEvidence.add(`${word}|${row.verse_ref}|${normalizeStrongNumber(row.strongs_number)}`);
+      }
+    }
+  }
 
   for (const batchEntry of batch.entries ?? []) {
     const headword = normalize(batchEntry.normalized_headword || batchEntry.headword);
@@ -112,6 +142,26 @@ if (batchPath) {
     }
     for (const field of ["definition", "source_title", "source_file", "review_status"]) {
       if (stored[field] !== batchEntry[field]) errors.push(`${headword}.${field} does not match the reviewed entry.`);
+    }
+    if (batchEntry.review_status === "verified_strongs_mapping") {
+      const strongsNumber = normalizeStrongNumber(batchEntry.strongs_number);
+      const strongsEntry = strongsEntries.get(strongsNumber);
+      if (!strongsEntry) {
+        errors.push(`${headword}.strongs_number does not resolve to a verified lexicon entry.`);
+      } else {
+        if (strongsEntry.review_status !== "Verified") errors.push(`${headword}.strongs_number is not verified.`);
+        if (stored.definition !== strongsEntry.plain_definition) errors.push(`${headword}.definition does not match the Strong's source.`);
+        if (stored.source_title !== strongsEntry.source_title) errors.push(`${headword}.source_title does not match the Strong's source.`);
+        if (stored.source_file !== strongsEntry.source_url) errors.push(`${headword}.source_file does not match the Strong's source.`);
+      }
+      if (!Array.isArray(batchEntry.mapping_references) || !batchEntry.mapping_references.length) {
+        errors.push(`${headword}.mapping_references must be a non-empty array.`);
+      }
+      for (const reference of batchEntry.mapping_references ?? []) {
+        if (!mappingEvidence.has(`${headword}|${reference}|${strongsNumber}`)) {
+          errors.push(`${headword} lacks verified ${strongsNumber} mapping evidence at ${reference}.`);
+        }
+      }
     }
     if (!Array.isArray(batchEntry.kjv_forms) || !batchEntry.kjv_forms.length) {
       errors.push(`${headword}.kjv_forms must be a non-empty array.`);

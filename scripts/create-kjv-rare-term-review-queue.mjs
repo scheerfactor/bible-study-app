@@ -8,8 +8,8 @@ const limitArg = process.argv.find((value) => value.startsWith("--limit="));
 const outputPath = outputArg?.slice("--output=".length) || "data/reports/kjv-rare-term-review-queue.json";
 const limit = Number(limitArg?.slice("--limit=".length) || 25);
 
-if (!Number.isInteger(limit) || limit < 1 || limit > 200) {
-  console.error("--limit must be an integer from 1 to 200.");
+if (!Number.isInteger(limit) || limit < 1 || limit > 2000) {
+  console.error("--limit must be an integer from 1 to 2000.");
   process.exit(1);
 }
 
@@ -81,28 +81,34 @@ const rows = inventoryText
   .filter((row) => row.length === 6 && !row[5])
   .slice(0, limit);
 
-const entries = rows.map(([word, kjvCount, priority, lookupCandidates, sampleReferences]) => {
-  const escapedWord = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const pattern = new RegExp(`\\b${escapedWord}\\b`, "gi");
-  const occurrences = [];
-  let measuredCount = 0;
-
-  for (const [reference, text] of Object.entries(verses1769)) {
-    const matches = String(text).match(pattern) ?? [];
-    if (!matches.length) continue;
-    measuredCount += matches.length;
-    occurrences.push({ reference, count: matches.length, text });
+const targetWords = new Set(rows.map(([word]) => normalize(word)));
+const occurrenceIndex = new Map([...targetWords].map((word) => [word, { count: 0, occurrences: [] }]));
+for (const [reference, text] of Object.entries(verses1769)) {
+  const verseCounts = new Map();
+  for (const rawWord of String(text).match(/[A-Za-z]+(?:-[A-Za-z]+)*/g) ?? []) {
+    const word = normalize(rawWord);
+    if (!targetWords.has(word)) continue;
+    verseCounts.set(word, (verseCounts.get(word) ?? 0) + 1);
   }
+  for (const [word, count] of verseCounts) {
+    const indexed = occurrenceIndex.get(word);
+    indexed.count += count;
+    indexed.occurrences.push({ reference, count, text });
+  }
+}
+
+const entries = rows.map(([word, kjvCount, priority, lookupCandidates, sampleReferences]) => {
+  const indexed = occurrenceIndex.get(normalize(word));
 
   return {
     word,
     normalized_word: normalize(word),
     kjv_count: Number(kjvCount),
-    measured_kjv_count: measuredCount,
+    measured_kjv_count: indexed.count,
     priority,
     lookup_candidates: lookupCandidates.split("; ").filter(Boolean),
     sample_references: sampleReferences.split("; ").filter(Boolean),
-    occurrences,
+    occurrences: indexed.occurrences,
     existing_source_candidates: {
       easton: relatedHeadings(eastonEntries, "headword", "definition", word),
       nave: relatedHeadings(naveTopics, "topic", "content", word),
