@@ -1,0 +1,131 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-62-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n514_w3000.jpg",
+      "sha256": "a55414608da8d70d2d6b4050e489f790b6884ccfd7b3236e3705ca4e3792f152"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n568_w3000.jpg",
+      "sha256": "775a261b108842aa529f8814cae2a400186c666a4babf01fbc26a3a48414939d"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n612_w3000.jpg",
+      "sha256": "b9cfbac9865d4dded38fafcf0e48dba5faa4707e0326f6b342fb25d27a694070"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n624_w3000.jpg",
+      "sha256": "8759446051bcdd0e2887c977d8e0c0badb44f7f8d4d51386711a5db6c0d76722"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n672_w3000.jpg",
+      "sha256": "8ccd048335bd4d7375b8a58148e8d1a1a54b78300bfb3425706fcc902688af5c"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n731_w3000.jpg",
+      "sha256": "1ec231c50d64eaf696a4d69a085c3cb716cc56cbeb5a94ca33c76fe5f361e77d"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six highest-frequency remaining defensible Webster targets in the KJV cleanup queue after deferring salmon because its KJV occurrences require a proper-name and common-noun context review.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological and literary examples, normalized the visibly sequential SMOOTH verb senses after OCR corrupted their printed numbers, preserved STOLE's preterit-of-steal note before its unrelated noun senses, and recorded the exact KJV plural relationship for SOOTHSAYERS.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 1,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 36
+  },
+  "promoted_headwords": [
+    "salutation",
+    "sevenfold",
+    "smooth",
+    "soothsayer",
+    "stole",
+    "talebearer"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "soothsayers",
+      "lookup_headword": "soothsayer",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword; the complete noun definition is retained for the KJV lookup"
+    }
+  ],
+  "entries": [
+    {
+      "word": "salutation",
+      "lookup_headword": "salutation",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 168824,
+      "source_line_end": 168838,
+      "exact_page_heading": "SAL",
+      "exact_entry_heading": "SALUTA'TION",
+      "exact_source_match": true
+    },
+    {
+      "word": "sevenfold",
+      "lookup_headword": "sevenfold",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 186791,
+      "source_line_end": 186801,
+      "exact_page_heading": "SEV",
+      "exact_entry_heading": "SEV'ENFOLD",
+      "exact_source_match": true
+    },
+    {
+      "word": "smooth",
+      "lookup_headword": "smooth",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 201767,
+      "source_line_end": 201842,
+      "exact_page_heading": "SMO",
+      "exact_entry_heading": "SMOOTH",
+      "exact_source_match": true
+    },
+    {
+      "word": "soothsayers",
+      "lookup_headword": "soothsayer",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 206084,
+      "source_line_end": 206087,
+      "exact_page_heading": "SOO",
+      "exact_entry_heading": "SOOTH'SAYER",
+      "exact_source_match": true
+    },
+    {
+      "word": "stole",
+      "lookup_headword": "stole",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 222087,
+      "source_line_end": 222097,
+      "exact_page_heading": "STO",
+      "exact_entry_heading": "STOLE",
+      "exact_source_match": true
+    },
+    {
+      "word": "talebearer",
+      "lookup_headword": "talebearer",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 242222,
+      "source_line_end": 242229,
+      "exact_page_heading": "TAL",
+      "exact_entry_heading": "TA'LEBEARER",
+      "exact_source_match": true
+    }
+  ]
+}

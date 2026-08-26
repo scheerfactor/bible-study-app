@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T21:38:40.509Z",
+    "generated_at": "2026-08-26T21:48:42.205Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61293,
+      "entries": 61299,
       "normalizedHeadwords": 51299,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
@@ -1822,140 +1822,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "salutation",
-          "count": 6,
-          "sampleRefs": [
-            "Luke 1:29",
-            "Luke 1:41",
-            "Luke 1:44",
-            "1 Corinthians 16:21",
-            "Colossians 4:18"
-          ],
-          "lookupCandidates": [
-            "salutation"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SALUTA'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "sevenfold",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 4:15",
-            "Genesis 4:24",
-            "Genesis 4:24",
-            "Psalms 79:12",
-            "Proverbs 6:31"
-          ],
-          "lookupCandidates": [
-            "sevenfold"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SEVENFOLD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "smooth",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 27:11",
-            "Genesis 27:16",
-            "1 Samuel 17:40",
-            "Isaiah 30:10",
-            "Isaiah 57:6"
-          ],
-          "lookupCandidates": [
-            "smooth"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SMOOTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "soothsayers",
-          "count": 6,
-          "sampleRefs": [
-            "Isaiah 2:6",
-            "Daniel 2:27",
-            "Daniel 4:7",
-            "Daniel 5:7",
-            "Daniel 5:11"
-          ],
-          "lookupCandidates": [
-            "soothsayers",
-            "soothsayer",
-            "soothsayere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SOOTHSAYER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "stole",
-          "count": 6,
-          "sampleRefs": [
-            "Genesis 31:20",
-            "2 Samuel 15:6",
-            "2 Kings 11:2",
-            "2 Chronicles 22:11",
-            "Matthew 28:13"
-          ],
-          "lookupCandidates": [
-            "stole"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "STOLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "talebearer",
-          "count": 6,
-          "sampleRefs": [
-            "Leviticus 19:16",
-            "Proverbs 11:13",
-            "Proverbs 18:8",
-            "Proverbs 20:19",
-            "Proverbs 26:20"
-          ],
-          "lookupCandidates": [
-            "talebearer"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TALEBEARER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "thunderings",
           "count": 6,
           "sampleRefs": [
@@ -3608,6 +3474,146 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PENCE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "perplexed",
+          "count": 5,
+          "sampleRefs": [
+            "Esther 3:15",
+            "Joel 1:18",
+            "Luke 9:7",
+            "Luke 24:4",
+            "2 Corinthians 4:8"
+          ],
+          "lookupCandidates": [
+            "perplexed",
+            "perplex",
+            "perplexe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PERPLEX'ED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "presidents",
+          "count": 5,
+          "sampleRefs": [
+            "Daniel 6:2",
+            "Daniel 6:3",
+            "Daniel 6:4",
+            "Daniel 6:6",
+            "Daniel 6:7"
+          ],
+          "lookupCandidates": [
+            "presidents",
+            "president",
+            "presidente"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PRES'IDENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "process",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 4:3",
+            "Genesis 38:12",
+            "Exodus 2:23",
+            "Judges 11:4",
+            "2 Chronicles 21:19"
+          ],
+          "lookupCandidates": [
+            "process",
+            "proces",
+            "procese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PROCESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "promote",
+          "count": 5,
+          "sampleRefs": [
+            "Numbers 22:17",
+            "Numbers 22:37",
+            "Numbers 24:11",
+            "Esther 3:1",
+            "Proverbs 4:8"
+          ],
+          "lookupCandidates": [
+            "promote"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PROMO'TE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "promoted",
+          "count": 5,
+          "sampleRefs": [
+            "Judges 9:9",
+            "Judges 9:11",
+            "Judges 9:13",
+            "Esther 5:11",
+            "Daniel 3:30"
+          ],
+          "lookupCandidates": [
+            "promoted",
+            "promot",
+            "promote"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PROMO'TE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "purim",
+          "count": 5,
+          "sampleRefs": [
+            "Esther 9:26",
+            "Esther 9:28",
+            "Esther 9:29",
+            "Esther 9:31",
+            "Esther 9:32"
+          ],
+          "lookupCandidates": [
+            "purim"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PU'RIM",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8508,140 +8514,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "salutation",
-        "count": 6,
-        "sampleRefs": [
-          "Luke 1:29",
-          "Luke 1:41",
-          "Luke 1:44",
-          "1 Corinthians 16:21",
-          "Colossians 4:18"
-        ],
-        "lookupCandidates": [
-          "salutation"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SALUTA'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "sevenfold",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 4:15",
-          "Genesis 4:24",
-          "Genesis 4:24",
-          "Psalms 79:12",
-          "Proverbs 6:31"
-        ],
-        "lookupCandidates": [
-          "sevenfold"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SEVENFOLD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "smooth",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 27:11",
-          "Genesis 27:16",
-          "1 Samuel 17:40",
-          "Isaiah 30:10",
-          "Isaiah 57:6"
-        ],
-        "lookupCandidates": [
-          "smooth"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SMOOTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "soothsayers",
-        "count": 6,
-        "sampleRefs": [
-          "Isaiah 2:6",
-          "Daniel 2:27",
-          "Daniel 4:7",
-          "Daniel 5:7",
-          "Daniel 5:11"
-        ],
-        "lookupCandidates": [
-          "soothsayers",
-          "soothsayer",
-          "soothsayere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SOOTHSAYER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "stole",
-        "count": 6,
-        "sampleRefs": [
-          "Genesis 31:20",
-          "2 Samuel 15:6",
-          "2 Kings 11:2",
-          "2 Chronicles 22:11",
-          "Matthew 28:13"
-        ],
-        "lookupCandidates": [
-          "stole"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "STOLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "talebearer",
-        "count": 6,
-        "sampleRefs": [
-          "Leviticus 19:16",
-          "Proverbs 11:13",
-          "Proverbs 18:8",
-          "Proverbs 20:19",
-          "Proverbs 26:20"
-        ],
-        "lookupCandidates": [
-          "talebearer"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TALEBEARER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "thunderings",
         "count": 6,
         "sampleRefs": [
@@ -10294,6 +10166,146 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PENCE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "perplexed",
+        "count": 5,
+        "sampleRefs": [
+          "Esther 3:15",
+          "Joel 1:18",
+          "Luke 9:7",
+          "Luke 24:4",
+          "2 Corinthians 4:8"
+        ],
+        "lookupCandidates": [
+          "perplexed",
+          "perplex",
+          "perplexe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PERPLEX'ED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "presidents",
+        "count": 5,
+        "sampleRefs": [
+          "Daniel 6:2",
+          "Daniel 6:3",
+          "Daniel 6:4",
+          "Daniel 6:6",
+          "Daniel 6:7"
+        ],
+        "lookupCandidates": [
+          "presidents",
+          "president",
+          "presidente"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PRES'IDENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "process",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 4:3",
+          "Genesis 38:12",
+          "Exodus 2:23",
+          "Judges 11:4",
+          "2 Chronicles 21:19"
+        ],
+        "lookupCandidates": [
+          "process",
+          "proces",
+          "procese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PROCESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "promote",
+        "count": 5,
+        "sampleRefs": [
+          "Numbers 22:17",
+          "Numbers 22:37",
+          "Numbers 24:11",
+          "Esther 3:1",
+          "Proverbs 4:8"
+        ],
+        "lookupCandidates": [
+          "promote"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PROMO'TE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "promoted",
+        "count": 5,
+        "sampleRefs": [
+          "Judges 9:9",
+          "Judges 9:11",
+          "Judges 9:13",
+          "Esther 5:11",
+          "Daniel 3:30"
+        ],
+        "lookupCandidates": [
+          "promoted",
+          "promot",
+          "promote"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PROMO'TE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "purim",
+        "count": 5,
+        "sampleRefs": [
+          "Esther 9:26",
+          "Esther 9:28",
+          "Esther 9:29",
+          "Esther 9:31",
+          "Esther 9:32"
+        ],
+        "lookupCandidates": [
+          "purim"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PU'RIM",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
