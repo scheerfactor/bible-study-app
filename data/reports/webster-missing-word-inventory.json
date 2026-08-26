@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T10:10:55.800Z",
+  "generated_at": "2026-08-26T10:21:05.052Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,132 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 2912,
-  "withoutSupplementalHelp": 993,
+  "withSupplementalHelp": 2922,
+  "withoutSupplementalHelp": 983,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "iscariot",
-      "count": 11,
-      "priority": "medium",
-      "lookupCandidates": [
-        "iscariot"
-      ],
-      "sampleRefs": [
-        "Matthew 10:4",
-        "Matthew 26:14",
-        "Mark 3:19",
-        "Mark 14:10",
-        "Luke 6:16"
-      ]
-    },
-    {
-      "word": "jazer",
-      "count": 11,
-      "priority": "medium",
-      "lookupCandidates": [
-        "jazer"
-      ],
-      "sampleRefs": [
-        "Numbers 32:1",
-        "Numbers 32:3",
-        "Joshua 13:25",
-        "Joshua 21:39",
-        "2 Samuel 24:5"
-      ]
-    },
-    {
-      "word": "milcah",
-      "count": 11,
-      "priority": "medium",
-      "lookupCandidates": [
-        "milcah"
-      ],
-      "sampleRefs": [
-        "Genesis 11:29",
-        "Genesis 11:29",
-        "Genesis 22:20",
-        "Genesis 22:23",
-        "Genesis 24:15"
-      ]
-    },
-    {
-      "word": "inasmuch",
-      "count": 9,
-      "priority": "medium",
-      "lookupCandidates": [
-        "inasmuch"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 19:6",
-        "Ruth 3:10",
-        "Matthew 25:40",
-        "Matthew 25:45",
-        "Romans 11:13"
-      ]
-    },
-    {
-      "word": "shelomith",
-      "count": 9,
-      "priority": "medium",
-      "lookupCandidates": [
-        "shelomith"
-      ],
-      "sampleRefs": [
-        "Leviticus 24:11",
-        "1 Chronicles 3:19",
-        "1 Chronicles 23:9",
-        "1 Chronicles 23:18",
-        "1 Chronicles 26:25"
-      ]
-    },
-    {
-      "word": "aphek",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "aphek"
-      ],
-      "sampleRefs": [
-        "Joshua 12:18",
-        "Joshua 13:4",
-        "Joshua 19:30",
-        "1 Samuel 4:1",
-        "1 Samuel 29:1"
-      ]
-    },
-    {
-      "word": "housetops",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "housetops",
-        "housetop",
-        "housetope"
-      ],
-      "sampleRefs": [
-        "2 Kings 19:26",
-        "Psalms 129:6",
-        "Isaiah 22:1",
-        "Isaiah 37:27",
-        "Jeremiah 48:38"
-      ]
-    },
-    {
-      "word": "uri",
-      "count": 8,
-      "priority": "medium",
-      "lookupCandidates": [
-        "uri"
-      ],
-      "sampleRefs": [
-        "Exodus 31:2",
-        "Exodus 35:30",
-        "Exodus 38:22",
-        "1 Kings 4:19",
-        "1 Chronicles 2:20"
-      ]
-    },
     {
       "word": "abiezer",
       "count": 7,
@@ -163,36 +41,6 @@
         "Judges 12:12",
         "1 Samuel 14:31",
         "1 Chronicles 6:69"
-      ]
-    },
-    {
-      "word": "housetop",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "housetop"
-      ],
-      "sampleRefs": [
-        "Proverbs 21:9",
-        "Proverbs 25:24",
-        "Matthew 24:17",
-        "Mark 13:15",
-        "Luke 5:19"
-      ]
-    },
-    {
-      "word": "hundredfold",
-      "count": 7,
-      "priority": "medium",
-      "lookupCandidates": [
-        "hundredfold"
-      ],
-      "sampleRefs": [
-        "Genesis 26:12",
-        "2 Samuel 24:3",
-        "Matthew 13:8",
-        "Matthew 13:23",
-        "Matthew 19:29"
       ]
     },
     {
@@ -1425,6 +1273,126 @@
       "sampleRefs": [
         "Nehemiah 8:4",
         "Nehemiah 10:22"
+      ]
+    },
+    {
+      "word": "appaim",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "appaim"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:30",
+        "1 Chronicles 2:31"
+      ]
+    },
+    {
+      "word": "arphad",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "arphad"
+      ],
+      "sampleRefs": [
+        "Isaiah 36:19",
+        "Isaiah 37:13"
+      ]
+    },
+    {
+      "word": "arvadite",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "arvadite"
+      ],
+      "sampleRefs": [
+        "Genesis 10:18",
+        "1 Chronicles 1:16"
+      ]
+    },
+    {
+      "word": "asahiah",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "asahiah"
+      ],
+      "sampleRefs": [
+        "2 Kings 22:12",
+        "2 Kings 22:14"
+      ]
+    },
+    {
+      "word": "aser",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "aser"
+      ],
+      "sampleRefs": [
+        "Luke 2:36",
+        "Revelation 7:6"
+      ]
+    },
+    {
+      "word": "ashchenaz",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "ashchenaz"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 1:6",
+        "Jeremiah 51:27"
+      ]
+    },
+    {
+      "word": "ashur",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "ashur"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 2:24",
+        "1 Chronicles 4:5"
+      ]
+    },
+    {
+      "word": "asriel",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "asriel"
+      ],
+      "sampleRefs": [
+        "Numbers 26:31",
+        "Joshua 17:2"
+      ]
+    },
+    {
+      "word": "assur",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "assur"
+      ],
+      "sampleRefs": [
+        "Ezra 4:2",
+        "Psalms 83:8"
+      ]
+    },
+    {
+      "word": "aul",
+      "count": 2,
+      "priority": "low",
+      "lookupCandidates": [
+        "aul"
+      ],
+      "sampleRefs": [
+        "Exodus 21:6",
+        "Deuteronomy 15:17"
       ]
     }
   ]

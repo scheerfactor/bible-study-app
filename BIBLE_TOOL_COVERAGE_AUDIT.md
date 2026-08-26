@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T10:10:55.800Z
+Generated: 2026-08-26T10:21:05.052Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,7 +9,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 8,549/12,454 meaningful KJV words have a lookup candidate (68.6%).
-- Combined word/topic lookup: 11,461/12,454 meaningful KJV words have Webster, Easton, or Nave help (92%).
+- Combined word/topic lookup: 11,471/12,454 meaningful KJV words have Webster, Easton, or Nave help (92.1%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,18 +71,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| iscariot | 11 | Matthew 10:4; Matthew 26:14; Mark 3:19; Mark 14:10; Luke 6:16 |
-| jazer | 11 | Numbers 32:1; Numbers 32:3; Joshua 13:25; Joshua 21:39; 2 Samuel 24:5 |
-| milcah | 11 | Genesis 11:29; Genesis 11:29; Genesis 22:20; Genesis 22:23; Genesis 24:15 |
-| inasmuch | 9 | Deuteronomy 19:6; Ruth 3:10; Matthew 25:40; Matthew 25:45; Romans 11:13 |
-| shelomith | 9 | Leviticus 24:11; 1 Chronicles 3:19; 1 Chronicles 23:9; 1 Chronicles 23:18; 1 Chronicles 26:25 |
-| aphek | 8 | Joshua 12:18; Joshua 13:4; Joshua 19:30; 1 Samuel 4:1; 1 Samuel 29:1 |
-| housetops | 8 | 2 Kings 19:26; Psalms 129:6; Isaiah 22:1; Isaiah 37:27; Jeremiah 48:38 |
-| uri | 8 | Exodus 31:2; Exodus 35:30; Exodus 38:22; 1 Kings 4:19; 1 Chronicles 2:20 |
 | abiezer | 7 | Joshua 17:2; Judges 6:34; Judges 8:2; 2 Samuel 23:27; 1 Chronicles 7:18 |
 | aijalon | 7 | Joshua 21:24; Judges 1:35; Judges 12:12; 1 Samuel 14:31; 1 Chronicles 6:69 |
-| housetop | 7 | Proverbs 21:9; Proverbs 25:24; Matthew 24:17; Mark 13:15; Luke 5:19 |
-| hundredfold | 7 | Genesis 26:12; 2 Samuel 24:3; Matthew 13:8; Matthew 13:23; Matthew 19:29 |
 | shinar | 7 | Genesis 10:10; Genesis 11:2; Genesis 14:1; Genesis 14:9; Isaiah 11:11 |
 | asaiah | 6 | 1 Chronicles 4:36; 1 Chronicles 6:30; 1 Chronicles 9:5; 1 Chronicles 15:6; 1 Chronicles 15:11 |
 | azrikam | 6 | 1 Chronicles 3:23; 1 Chronicles 8:38; 1 Chronicles 9:14; 1 Chronicles 9:44; 2 Chronicles 28:7 |
@@ -101,6 +91,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | perizzite | 5 | Genesis 13:7; Exodus 33:2; Exodus 34:11; Joshua 9:1; Joshua 11:3 |
 | reu | 5 | Genesis 11:18; Genesis 11:19; Genesis 11:20; Genesis 11:21; 1 Chronicles 1:25 |
 | shelumiel | 5 | Numbers 1:6; Numbers 2:12; Numbers 7:36; Numbers 7:41; Numbers 10:19 |
+| sheshan | 5 | 1 Chronicles 2:31; 1 Chronicles 2:31; 1 Chronicles 2:34; 1 Chronicles 2:34; 1 Chronicles 2:35 |
+| sidonians | 5 | Deuteronomy 3:9; Joshua 13:4; Joshua 13:6; Judges 3:3; 1 Kings 5:6 |
+| tahpanhes | 5 | Jeremiah 43:7; Jeremiah 43:8; Jeremiah 43:9; Jeremiah 44:1; Jeremiah 46:14 |
+| upside | 5 | 2 Kings 21:13; Psalms 146:9; Isaiah 24:1; Isaiah 29:16; Acts 17:6 |
+| abiah | 4 | 1 Samuel 8:2; 1 Chronicles 2:24; 1 Chronicles 6:28; 1 Chronicles 7:8 |
+| arah | 4 | 1 Chronicles 7:39; Ezra 2:5; Nehemiah 6:18; Nehemiah 7:10 |
+| arimathaea | 4 | Matthew 27:57; Mark 15:43; Luke 23:51; John 19:38 |
+| ashan | 4 | Joshua 15:42; Joshua 19:7; 1 Chronicles 4:32; 1 Chronicles 6:59 |
+| attai | 4 | 1 Chronicles 2:35; 1 Chronicles 2:36; 1 Chronicles 12:11; 2 Chronicles 11:20 |
+| azgad | 4 | Ezra 2:12; Ezra 8:12; Nehemiah 7:17; Nehemiah 10:15 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
