@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T20:51:34.808Z",
+    "generated_at": "2026-08-26T21:02:16.713Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61275,
+      "entries": 61281,
       "normalizedHeadwords": 51299,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
@@ -1800,138 +1800,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "meditation",
-          "count": 6,
-          "sampleRefs": [
-            "Psalms 5:1",
-            "Psalms 19:14",
-            "Psalms 49:3",
-            "Psalms 104:34",
-            "Psalms 119:97"
-          ],
-          "lookupCandidates": [
-            "meditation"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MEDITA'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "memory",
-          "count": 6,
-          "sampleRefs": [
-            "Psalms 109:15",
-            "Psalms 145:7",
-            "Proverbs 10:7",
-            "Ecclesiastes 9:5",
-            "Isaiah 26:14"
-          ],
-          "lookupCandidates": [
-            "memory"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MEM'ORY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "mete",
-          "count": 6,
-          "sampleRefs": [
-            "Exodus 16:18",
-            "Psalms 60:6",
-            "Psalms 108:7",
-            "Matthew 7:2",
-            "Mark 4:24"
-          ],
-          "lookupCandidates": [
-            "mete"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "METE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "mortal",
-          "count": 6,
-          "sampleRefs": [
-            "Job 4:17",
-            "Romans 6:12",
-            "Romans 8:11",
-            "1 Corinthians 15:53",
-            "1 Corinthians 15:54"
-          ],
-          "lookupCandidates": [
-            "mortal"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MOR'TAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "myrtle",
-          "count": 6,
-          "sampleRefs": [
-            "Nehemiah 8:15",
-            "Isaiah 41:19",
-            "Isaiah 55:13",
-            "Zechariah 1:8",
-            "Zechariah 1:10"
-          ],
-          "lookupCandidates": [
-            "myrtle"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MYR'TLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "needful",
-          "count": 6,
-          "sampleRefs": [
-            "Ezra 7:20",
-            "Luke 10:42",
-            "Acts 15:5",
-            "Philippians 1:24",
-            "James 2:16"
-          ],
-          "lookupCandidates": [
-            "needful"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "NEE'DFUL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "parcel",
           "count": 6,
           "sampleRefs": [
@@ -3608,6 +3476,143 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "GROPE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hailstones",
+          "count": 5,
+          "sampleRefs": [
+            "Joshua 10:11",
+            "Isaiah 30:30",
+            "Ezekiel 13:11",
+            "Ezekiel 13:13",
+            "Ezekiel 38:22"
+          ],
+          "lookupCandidates": [
+            "hailstones",
+            "hailstone"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HA'ILSTONE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "haughtiness",
+          "count": 5,
+          "sampleRefs": [
+            "Isaiah 2:11",
+            "Isaiah 2:17",
+            "Isaiah 13:11",
+            "Isaiah 16:6",
+            "Jeremiah 48:29"
+          ],
+          "lookupCandidates": [
+            "haughtiness",
+            "haughtines",
+            "haughtinese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HAUGHTINESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "haven",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 49:13",
+            "Genesis 49:13",
+            "Psalms 107:30",
+            "Acts 27:12",
+            "Acts 27:12"
+          ],
+          "lookupCandidates": [
+            "haven"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HA'VEN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "idolaters",
+          "count": 5,
+          "sampleRefs": [
+            "1 Corinthians 5:10",
+            "1 Corinthians 6:9",
+            "1 Corinthians 10:7",
+            "Revelation 21:8",
+            "Revelation 22:15"
+          ],
+          "lookupCandidates": [
+            "idolaters",
+            "idolater",
+            "idolatere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "IDOL'ATER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "inn",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 42:27",
+            "Genesis 43:21",
+            "Exodus 4:24",
+            "Luke 2:7",
+            "Luke 10:34"
+          ],
+          "lookupCandidates": [
+            "inn"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "INN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "insurrection",
+          "count": 5,
+          "sampleRefs": [
+            "Ezra 4:19",
+            "Psalms 64:2",
+            "Mark 15:7",
+            "Mark 15:7",
+            "Acts 18:12"
+          ],
+          "lookupCandidates": [
+            "insurrection"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "INSURRECTION",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8486,138 +8491,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "meditation",
-        "count": 6,
-        "sampleRefs": [
-          "Psalms 5:1",
-          "Psalms 19:14",
-          "Psalms 49:3",
-          "Psalms 104:34",
-          "Psalms 119:97"
-        ],
-        "lookupCandidates": [
-          "meditation"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MEDITA'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "memory",
-        "count": 6,
-        "sampleRefs": [
-          "Psalms 109:15",
-          "Psalms 145:7",
-          "Proverbs 10:7",
-          "Ecclesiastes 9:5",
-          "Isaiah 26:14"
-        ],
-        "lookupCandidates": [
-          "memory"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MEM'ORY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "mete",
-        "count": 6,
-        "sampleRefs": [
-          "Exodus 16:18",
-          "Psalms 60:6",
-          "Psalms 108:7",
-          "Matthew 7:2",
-          "Mark 4:24"
-        ],
-        "lookupCandidates": [
-          "mete"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "METE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "mortal",
-        "count": 6,
-        "sampleRefs": [
-          "Job 4:17",
-          "Romans 6:12",
-          "Romans 8:11",
-          "1 Corinthians 15:53",
-          "1 Corinthians 15:54"
-        ],
-        "lookupCandidates": [
-          "mortal"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MOR'TAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "myrtle",
-        "count": 6,
-        "sampleRefs": [
-          "Nehemiah 8:15",
-          "Isaiah 41:19",
-          "Isaiah 55:13",
-          "Zechariah 1:8",
-          "Zechariah 1:10"
-        ],
-        "lookupCandidates": [
-          "myrtle"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MYR'TLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "needful",
-        "count": 6,
-        "sampleRefs": [
-          "Ezra 7:20",
-          "Luke 10:42",
-          "Acts 15:5",
-          "Philippians 1:24",
-          "James 2:16"
-        ],
-        "lookupCandidates": [
-          "needful"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "NEE'DFUL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "parcel",
         "count": 6,
         "sampleRefs": [
@@ -10294,6 +10167,143 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "GROPE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hailstones",
+        "count": 5,
+        "sampleRefs": [
+          "Joshua 10:11",
+          "Isaiah 30:30",
+          "Ezekiel 13:11",
+          "Ezekiel 13:13",
+          "Ezekiel 38:22"
+        ],
+        "lookupCandidates": [
+          "hailstones",
+          "hailstone"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HA'ILSTONE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "haughtiness",
+        "count": 5,
+        "sampleRefs": [
+          "Isaiah 2:11",
+          "Isaiah 2:17",
+          "Isaiah 13:11",
+          "Isaiah 16:6",
+          "Jeremiah 48:29"
+        ],
+        "lookupCandidates": [
+          "haughtiness",
+          "haughtines",
+          "haughtinese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HAUGHTINESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "haven",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 49:13",
+          "Genesis 49:13",
+          "Psalms 107:30",
+          "Acts 27:12",
+          "Acts 27:12"
+        ],
+        "lookupCandidates": [
+          "haven"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HA'VEN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "idolaters",
+        "count": 5,
+        "sampleRefs": [
+          "1 Corinthians 5:10",
+          "1 Corinthians 6:9",
+          "1 Corinthians 10:7",
+          "Revelation 21:8",
+          "Revelation 22:15"
+        ],
+        "lookupCandidates": [
+          "idolaters",
+          "idolater",
+          "idolatere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "IDOL'ATER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "inn",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 42:27",
+          "Genesis 43:21",
+          "Exodus 4:24",
+          "Luke 2:7",
+          "Luke 10:34"
+        ],
+        "lookupCandidates": [
+          "inn"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "INN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "insurrection",
+        "count": 5,
+        "sampleRefs": [
+          "Ezra 4:19",
+          "Psalms 64:2",
+          "Mark 15:7",
+          "Mark 15:7",
+          "Acts 18:12"
+        ],
+        "lookupCandidates": [
+          "insurrection"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "INSURRECTION",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

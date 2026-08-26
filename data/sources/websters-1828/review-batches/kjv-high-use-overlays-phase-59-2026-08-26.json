@@ -1,0 +1,124 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-59-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n122_w3000.jpg",
+      "sha256": "cc3fe20ede0ce986da7ad4110331610666af8a9dc70f018a05c5ce1e48347496"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n125_w3000.jpg",
+      "sha256": "5b61cf7355d63a792ce75ad3ba44e97b22ae2ae8e42a1512b8f3ad49034d4a26"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n130_w3000.jpg",
+      "sha256": "a47d763891ab718542120b7d77ee5299f95d3c39da533517cd2a22fb9930a011"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n158_w3000.jpg",
+      "sha256": "6c431083b3be986c296ce0badafaa6e39e4d4fb3c5a4b0d68278c1dea03e08f5"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n172_w3000.jpg",
+      "sha256": "4dae93a0b0b15cd9fa48e3d5486857ff83b57afccd40c5db38fa6ce914bd0ed2"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n180_w3000.jpg",
+      "sha256": "c4d351ea2292d0ec6f956c6f554725d632e0cf1b1aa1bfa4c11a254352f295ce"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six highest-frequency remaining defensible Webster targets in the KJV cleanup queue.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological and literary examples, expanded abbreviations for readability, and supplied exact KJV wording for the retained Scripture example.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 36
+  },
+  "promoted_headwords": [
+    "meditation",
+    "memory",
+    "mete",
+    "mortal",
+    "myrtle",
+    "needful"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "meditation",
+      "lookup_headword": "meditation",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 38191,
+      "source_line_end": 38198,
+      "exact_page_heading": "MED",
+      "exact_entry_heading": "MEDITA'TION",
+      "exact_source_match": true
+    },
+    {
+      "word": "memory",
+      "lookup_headword": "memory",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 39251,
+      "source_line_end": 39293,
+      "exact_page_heading": "MEM",
+      "exact_entry_heading": "MEM'ORY",
+      "exact_source_match": true
+    },
+    {
+      "word": "mete",
+      "lookup_headword": "mete",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 40952,
+      "source_line_end": 40966,
+      "exact_page_heading": "MET",
+      "exact_entry_heading": "METE",
+      "exact_source_match": true
+    },
+    {
+      "word": "mortal",
+      "lookup_headword": "mortal",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 50123,
+      "source_line_end": 50177,
+      "exact_page_heading": "MOR",
+      "exact_entry_heading": "MOR'TAL",
+      "exact_source_match": true
+    },
+    {
+      "word": "myrtle",
+      "lookup_headword": "myrtle",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 54926,
+      "source_line_end": 54934,
+      "exact_page_heading": "MYR",
+      "exact_entry_heading": "MYR'TLE",
+      "exact_source_match": true
+    },
+    {
+      "word": "needful",
+      "lookup_headword": "needful",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 57522,
+      "source_line_end": 57527,
+      "exact_page_heading": "NEE",
+      "exact_entry_heading": "NEE'DFUL",
+      "exact_source_match": true
+    }
+  ]
+}

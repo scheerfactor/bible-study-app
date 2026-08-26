@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T20:51:34.808Z
+Generated: 2026-08-26T21:02:16.713Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -83,12 +83,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
-| meditation | MEDITA'TION | 6 | ocr_full_import_needs_spot_review |
-| memory | MEM'ORY | 6 | ocr_full_import_needs_spot_review |
-| mete | METE | 6 | ocr_full_import_needs_spot_review |
-| mortal | MOR'TAL | 6 | ocr_full_import_needs_spot_review |
-| myrtle | MYR'TLE | 6 | ocr_full_import_needs_spot_review |
-| needful | NEE'DFUL | 6 | ocr_full_import_needs_spot_review |
 | parcel | P'ARCEL | 6 | ocr_full_import_needs_spot_review |
 | perverseness | PERVERSENESS | 6 | ocr_full_import_needs_spot_review |
 | pipes | PIPE | 6 | ocr_full_import_needs_spot_review |
@@ -113,6 +107,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | twins | TWIN | 6 | ocr_full_import_needs_spot_review |
 | unlearned | UNLEARN'ED | 6 | ocr_full_import_needs_spot_review |
 | urged | URGED | 6 | ocr_full_import_needs_spot_review |
+| wayfaring | WA'YFARER | 6 | ocr_full_import_needs_spot_review |
+| wert | BE | 6 | ocr_full_import_needs_spot_review |
+| wish | WISH | 6 | ocr_full_import_needs_spot_review |
+| abolished | ABOL'ISH | 5 | ocr_full_import_needs_spot_review |
+| alien | A'LIEN | 5 | ocr_full_import_needs_spot_review |
+| aloes | ALOES | 5 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

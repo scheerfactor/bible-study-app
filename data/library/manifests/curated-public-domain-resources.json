@@ -102284,5 +102284,55 @@
     "checksum_sha256": "f17635d7276e3d6869cf08b7099c28e2f5a546a1e079b9af118f5304a36a0835",
     "file_size_bytes": 327315,
     "word_count": 57501
+  },
+  {
+    "title": "Figures of Speech Used in the Bible: Explained and Illustrated",
+    "author": "E. W. Bullinger",
+    "year": 1898,
+    "category": "Bible study helps",
+    "collection": "Bible Interpretation",
+    "source_url": "https://archive.org/download/figuresofspeechu00bull/figuresofspeechu00bull_djvu.txt",
+    "download_url": "https://archive.org/download/figuresofspeechu00bull/figuresofspeechu00bull_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/figures-of-speech-used-in-the-bible-explained-and-illustrated-e-w-bullinger.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "The exact Internet Archive/Open Library edition was published by Eyre & Spottiswoode and E. & J. B. Young & Co. in 1898; the original edition is public domain in the United States.",
+    "notes": "A large reference guide to literary figures used in Scripture. Use it to identify possible figures and compare passages, while establishing interpretation from the KJV text in context and reviewing Bullinger's theological conclusions carefully. Labels/warnings: Historical reference;Doctrinal caution;Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A large reference guide to literary figures used in Scripture. Use it to identify possible figures and compare passages, while establishing interpretation from the KJV text in context and reviewing Bullinger's theological conclusions carefully.",
+    "resource_labels": [
+      "Bible Interpretation",
+      "Historical reference",
+      "Doctrinal caution",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Doctrinal caution",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Figures of Speech Used in the Bible: Explained and Illustrated",
+      "author": "E. W. Bullinger",
+      "category": "Bible study helps",
+      "collection": "Bible Interpretation",
+      "badge": "Bible Interpretation",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1784,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e236a9eb530c4d8cc9792de5b6ce381eab2ec4cd8ebe0d3134e24301a7991254",
+    "file_size_bytes": 2551514,
+    "word_count": 401512
   }
 ]
