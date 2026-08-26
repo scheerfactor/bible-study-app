@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-26T14:11:09.540Z",
+    "generated_at": "2026-08-26T15:04:27.904Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -21,8 +21,8 @@
         "low": 1073,
         "single-use": 1921
       },
-      "missingWithSupplementalHelp": 3107,
-      "missingWithoutSupplementalHelp": 798,
+      "missingWithSupplementalHelp": 3128,
+      "missingWithoutSupplementalHelp": 777,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -3622,400 +3622,12 @@
     "bibleDictionariesAndTopics": {
       "eastonEntries": 3883,
       "naveTopics": 4674,
-      "rareTermEntries": 217,
+      "rareTermEntries": 237,
       "meaningfulWordsWithEastonEntry": 4139,
       "meaningfulWordsWithNaveTopic": 4027,
-      "meaningfulWordsWithAnyStudyLookup": 11656,
-      "combinedStudyLookupCoveragePercent": 93.6,
+      "meaningfulWordsWithAnyStudyLookup": 11677,
+      "combinedStudyLookupCoveragePercent": 93.8,
       "topUsedWordsWithoutAnyStudyLookup": [
-        {
-          "word": "overpast",
-          "count": 2,
-          "sampleRefs": [
-            "Psalms 57:1",
-            "Isaiah 26:20"
-          ],
-          "lookupCandidates": [
-            "overpast"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "pathrusim",
-          "count": 2,
-          "sampleRefs": [
-            "Genesis 10:14",
-            "1 Chronicles 1:12"
-          ],
-          "lookupCandidates": [
-            "pathrusim"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "phurah",
-          "count": 2,
-          "sampleRefs": [
-            "Judges 7:10",
-            "Judges 7:11"
-          ],
-          "lookupCandidates": [
-            "phurah"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "pithon",
-          "count": 2,
-          "sampleRefs": [
-            "1 Chronicles 8:35",
-            "1 Chronicles 9:41"
-          ],
-          "lookupCandidates": [
-            "pithon"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "pochereth",
-          "count": 2,
-          "sampleRefs": [
-            "Ezra 2:57",
-            "Nehemiah 7:59"
-          ],
-          "lookupCandidates": [
-            "pochereth",
-            "pocher",
-            "pochere"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "practised",
-          "count": 2,
-          "sampleRefs": [
-            "1 Samuel 23:9",
-            "Daniel 8:12"
-          ],
-          "lookupCandidates": [
-            "practised",
-            "practis",
-            "practise"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "pransings",
-          "count": 2,
-          "sampleRefs": [
-            "Judges 5:22",
-            "Judges 5:22"
-          ],
-          "lookupCandidates": [
-            "pransings",
-            "pransing",
-            "pransinge"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "publickly",
-          "count": 2,
-          "sampleRefs": [
-            "Acts 18:28",
-            "Acts 20:20"
-          ],
-          "lookupCandidates": [
-            "publickly"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "rabbath",
-          "count": 2,
-          "sampleRefs": [
-            "Deuteronomy 3:11",
-            "Ezekiel 21:20"
-          ],
-          "lookupCandidates": [
-            "rabbath"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "respite",
-          "count": 2,
-          "sampleRefs": [
-            "Exodus 8:15",
-            "1 Samuel 11:3"
-          ],
-          "lookupCandidates": [
-            "respite"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "restorer",
-          "count": 2,
-          "sampleRefs": [
-            "Ruth 4:15",
-            "Isaiah 58:12"
-          ],
-          "lookupCandidates": [
-            "restorer"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "restrain",
-          "count": 2,
-          "sampleRefs": [
-            "Job 15:8",
-            "Psalms 76:10"
-          ],
-          "lookupCandidates": [
-            "restrain"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "revellings",
-          "count": 2,
-          "sampleRefs": [
-            "Galatians 5:21",
-            "1 Peter 4:3"
-          ],
-          "lookupCandidates": [
-            "revellings",
-            "revelling",
-            "revellinge"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "ribai",
-          "count": 2,
-          "sampleRefs": [
-            "2 Samuel 23:29",
-            "1 Chronicles 11:31"
-          ],
-          "lookupCandidates": [
-            "ribai"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "richly",
-          "count": 2,
-          "sampleRefs": [
-            "Colossians 3:16",
-            "1 Timothy 6:17"
-          ],
-          "lookupCandidates": [
-            "richly"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "roboam",
-          "count": 2,
-          "sampleRefs": [
-            "Matthew 1:7",
-            "Matthew 1:7"
-          ],
-          "lookupCandidates": [
-            "roboam"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "salchah",
-          "count": 2,
-          "sampleRefs": [
-            "Deuteronomy 3:10",
-            "1 Chronicles 5:11"
-          ],
-          "lookupCandidates": [
-            "salchah"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "sarid",
-          "count": 2,
-          "sampleRefs": [
-            "Joshua 19:10",
-            "Joshua 19:12"
-          ],
-          "lookupCandidates": [
-            "sarid"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "scarcely",
-          "count": 2,
-          "sampleRefs": [
-            "Romans 5:7",
-            "1 Peter 4:18"
-          ],
-          "lookupCandidates": [
-            "scarcely"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "securely",
-          "count": 2,
-          "sampleRefs": [
-            "Proverbs 3:29",
-            "Micah 2:8"
-          ],
-          "lookupCandidates": [
-            "securely"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
         {
           "word": "serjeants",
           "count": 2,
@@ -5158,6 +4770,371 @@
           ],
           "lookupCandidates": [
             "adoraim"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "advisement",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 12:19"
+          ],
+          "lookupCandidates": [
+            "advisement"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "affectionately",
+          "count": 1,
+          "sampleRefs": [
+            "1 Thessalonians 2:8"
+          ],
+          "lookupCandidates": [
+            "affectionately"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "afternoon",
+          "count": 1,
+          "sampleRefs": [
+            "Judges 19:8"
+          ],
+          "lookupCandidates": [
+            "afternoon"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "aharah",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 8:1"
+          ],
+          "lookupCandidates": [
+            "aharah"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ahban",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 2:29"
+          ],
+          "lookupCandidates": [
+            "ahban"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "aher",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 7:12"
+          ],
+          "lookupCandidates": [
+            "aher"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ahiram",
+          "count": 1,
+          "sampleRefs": [
+            "Numbers 26:38"
+          ],
+          "lookupCandidates": [
+            "ahiram"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ahiramites",
+          "count": 1,
+          "sampleRefs": [
+            "Numbers 26:38"
+          ],
+          "lookupCandidates": [
+            "ahiramites",
+            "ahiramite"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ahishahar",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 7:10"
+          ],
+          "lookupCandidates": [
+            "ahishahar"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ahumai",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 4:2"
+          ],
+          "lookupCandidates": [
+            "ahumai"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ahuzam",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 4:6"
+          ],
+          "lookupCandidates": [
+            "ahuzam"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ahuzzath",
+          "count": 1,
+          "sampleRefs": [
+            "Genesis 26:26"
+          ],
+          "lookupCandidates": [
+            "ahuzzath"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "aiath",
+          "count": 1,
+          "sampleRefs": [
+            "Isaiah 10:28"
+          ],
+          "lookupCandidates": [
+            "aiath"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "aija",
+          "count": 1,
+          "sampleRefs": [
+            "Nehemiah 11:31"
+          ],
+          "lookupCandidates": [
+            "aija"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "ajah",
+          "count": 1,
+          "sampleRefs": [
+            "Genesis 36:24"
+          ],
+          "lookupCandidates": [
+            "ajah"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "alameth",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 7:8"
+          ],
+          "lookupCandidates": [
+            "alameth",
+            "alam",
+            "alame"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "alammelech",
+          "count": 1,
+          "sampleRefs": [
+            "Joshua 19:26"
+          ],
+          "lookupCandidates": [
+            "alammelech"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "aliah",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 1:51"
+          ],
+          "lookupCandidates": [
+            "aliah"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "alian",
+          "count": 1,
+          "sampleRefs": [
+            "1 Chronicles 1:40"
+          ],
+          "lookupCandidates": [
+            "alian"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "almsdeeds",
+          "count": 1,
+          "sampleRefs": [
+            "Acts 9:36"
+          ],
+          "lookupCandidates": [
+            "almsdeeds",
+            "almsdeed",
+            "almsdeede"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -11854,394 +11831,6 @@
     ],
     "topMissingAnyStudyLookup": [
       {
-        "word": "overpast",
-        "count": 2,
-        "sampleRefs": [
-          "Psalms 57:1",
-          "Isaiah 26:20"
-        ],
-        "lookupCandidates": [
-          "overpast"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "pathrusim",
-        "count": 2,
-        "sampleRefs": [
-          "Genesis 10:14",
-          "1 Chronicles 1:12"
-        ],
-        "lookupCandidates": [
-          "pathrusim"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "phurah",
-        "count": 2,
-        "sampleRefs": [
-          "Judges 7:10",
-          "Judges 7:11"
-        ],
-        "lookupCandidates": [
-          "phurah"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "pithon",
-        "count": 2,
-        "sampleRefs": [
-          "1 Chronicles 8:35",
-          "1 Chronicles 9:41"
-        ],
-        "lookupCandidates": [
-          "pithon"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "pochereth",
-        "count": 2,
-        "sampleRefs": [
-          "Ezra 2:57",
-          "Nehemiah 7:59"
-        ],
-        "lookupCandidates": [
-          "pochereth",
-          "pocher",
-          "pochere"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "practised",
-        "count": 2,
-        "sampleRefs": [
-          "1 Samuel 23:9",
-          "Daniel 8:12"
-        ],
-        "lookupCandidates": [
-          "practised",
-          "practis",
-          "practise"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "pransings",
-        "count": 2,
-        "sampleRefs": [
-          "Judges 5:22",
-          "Judges 5:22"
-        ],
-        "lookupCandidates": [
-          "pransings",
-          "pransing",
-          "pransinge"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "publickly",
-        "count": 2,
-        "sampleRefs": [
-          "Acts 18:28",
-          "Acts 20:20"
-        ],
-        "lookupCandidates": [
-          "publickly"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "rabbath",
-        "count": 2,
-        "sampleRefs": [
-          "Deuteronomy 3:11",
-          "Ezekiel 21:20"
-        ],
-        "lookupCandidates": [
-          "rabbath"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "respite",
-        "count": 2,
-        "sampleRefs": [
-          "Exodus 8:15",
-          "1 Samuel 11:3"
-        ],
-        "lookupCandidates": [
-          "respite"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "restorer",
-        "count": 2,
-        "sampleRefs": [
-          "Ruth 4:15",
-          "Isaiah 58:12"
-        ],
-        "lookupCandidates": [
-          "restorer"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "restrain",
-        "count": 2,
-        "sampleRefs": [
-          "Job 15:8",
-          "Psalms 76:10"
-        ],
-        "lookupCandidates": [
-          "restrain"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "revellings",
-        "count": 2,
-        "sampleRefs": [
-          "Galatians 5:21",
-          "1 Peter 4:3"
-        ],
-        "lookupCandidates": [
-          "revellings",
-          "revelling",
-          "revellinge"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "ribai",
-        "count": 2,
-        "sampleRefs": [
-          "2 Samuel 23:29",
-          "1 Chronicles 11:31"
-        ],
-        "lookupCandidates": [
-          "ribai"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "richly",
-        "count": 2,
-        "sampleRefs": [
-          "Colossians 3:16",
-          "1 Timothy 6:17"
-        ],
-        "lookupCandidates": [
-          "richly"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "roboam",
-        "count": 2,
-        "sampleRefs": [
-          "Matthew 1:7",
-          "Matthew 1:7"
-        ],
-        "lookupCandidates": [
-          "roboam"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "salchah",
-        "count": 2,
-        "sampleRefs": [
-          "Deuteronomy 3:10",
-          "1 Chronicles 5:11"
-        ],
-        "lookupCandidates": [
-          "salchah"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "sarid",
-        "count": 2,
-        "sampleRefs": [
-          "Joshua 19:10",
-          "Joshua 19:12"
-        ],
-        "lookupCandidates": [
-          "sarid"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "scarcely",
-        "count": 2,
-        "sampleRefs": [
-          "Romans 5:7",
-          "1 Peter 4:18"
-        ],
-        "lookupCandidates": [
-          "scarcely"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "securely",
-        "count": 2,
-        "sampleRefs": [
-          "Proverbs 3:29",
-          "Micah 2:8"
-        ],
-        "lookupCandidates": [
-          "securely"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "serjeants",
         "count": 2,
         "sampleRefs": [
@@ -13383,6 +12972,371 @@
         ],
         "lookupCandidates": [
           "adoraim"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "advisement",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 12:19"
+        ],
+        "lookupCandidates": [
+          "advisement"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "affectionately",
+        "count": 1,
+        "sampleRefs": [
+          "1 Thessalonians 2:8"
+        ],
+        "lookupCandidates": [
+          "affectionately"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "afternoon",
+        "count": 1,
+        "sampleRefs": [
+          "Judges 19:8"
+        ],
+        "lookupCandidates": [
+          "afternoon"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "aharah",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 8:1"
+        ],
+        "lookupCandidates": [
+          "aharah"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ahban",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 2:29"
+        ],
+        "lookupCandidates": [
+          "ahban"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "aher",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 7:12"
+        ],
+        "lookupCandidates": [
+          "aher"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ahiram",
+        "count": 1,
+        "sampleRefs": [
+          "Numbers 26:38"
+        ],
+        "lookupCandidates": [
+          "ahiram"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ahiramites",
+        "count": 1,
+        "sampleRefs": [
+          "Numbers 26:38"
+        ],
+        "lookupCandidates": [
+          "ahiramites",
+          "ahiramite"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ahishahar",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 7:10"
+        ],
+        "lookupCandidates": [
+          "ahishahar"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ahumai",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 4:2"
+        ],
+        "lookupCandidates": [
+          "ahumai"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ahuzam",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 4:6"
+        ],
+        "lookupCandidates": [
+          "ahuzam"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ahuzzath",
+        "count": 1,
+        "sampleRefs": [
+          "Genesis 26:26"
+        ],
+        "lookupCandidates": [
+          "ahuzzath"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "aiath",
+        "count": 1,
+        "sampleRefs": [
+          "Isaiah 10:28"
+        ],
+        "lookupCandidates": [
+          "aiath"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "aija",
+        "count": 1,
+        "sampleRefs": [
+          "Nehemiah 11:31"
+        ],
+        "lookupCandidates": [
+          "aija"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "ajah",
+        "count": 1,
+        "sampleRefs": [
+          "Genesis 36:24"
+        ],
+        "lookupCandidates": [
+          "ajah"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "alameth",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 7:8"
+        ],
+        "lookupCandidates": [
+          "alameth",
+          "alam",
+          "alame"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "alammelech",
+        "count": 1,
+        "sampleRefs": [
+          "Joshua 19:26"
+        ],
+        "lookupCandidates": [
+          "alammelech"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "aliah",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 1:51"
+        ],
+        "lookupCandidates": [
+          "aliah"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "alian",
+        "count": 1,
+        "sampleRefs": [
+          "1 Chronicles 1:40"
+        ],
+        "lookupCandidates": [
+          "alian"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "almsdeeds",
+        "count": 1,
+        "sampleRefs": [
+          "Acts 9:36"
+        ],
+        "lookupCandidates": [
+          "almsdeeds",
+          "almsdeed",
+          "almsdeede"
         ],
         "hasDefinition": false,
         "hasEaston": false,

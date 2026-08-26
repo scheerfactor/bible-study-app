@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T14:11:09.540Z",
+  "generated_at": "2026-08-26T15:04:27.904Z",
   "source": "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
   "scope": "Meaningful KJV word forms of three or more letters after common stop-word filtering",
   "total": 3905,
@@ -9,258 +9,10 @@
     "low": 1073,
     "single-use": 1921
   },
-  "withSupplementalHelp": 3107,
-  "withoutSupplementalHelp": 798,
+  "withSupplementalHelp": 3128,
+  "withoutSupplementalHelp": 777,
   "completeInventoryCsv": "data/reports/webster-missing-word-inventory.csv",
   "topWordsWithoutSupplementalHelp": [
-    {
-      "word": "overpast",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "overpast"
-      ],
-      "sampleRefs": [
-        "Psalms 57:1",
-        "Isaiah 26:20"
-      ]
-    },
-    {
-      "word": "pathrusim",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "pathrusim"
-      ],
-      "sampleRefs": [
-        "Genesis 10:14",
-        "1 Chronicles 1:12"
-      ]
-    },
-    {
-      "word": "phurah",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "phurah"
-      ],
-      "sampleRefs": [
-        "Judges 7:10",
-        "Judges 7:11"
-      ]
-    },
-    {
-      "word": "pithon",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "pithon"
-      ],
-      "sampleRefs": [
-        "1 Chronicles 8:35",
-        "1 Chronicles 9:41"
-      ]
-    },
-    {
-      "word": "pochereth",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "pochereth",
-        "pocher",
-        "pochere"
-      ],
-      "sampleRefs": [
-        "Ezra 2:57",
-        "Nehemiah 7:59"
-      ]
-    },
-    {
-      "word": "practised",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "practised",
-        "practis",
-        "practise"
-      ],
-      "sampleRefs": [
-        "1 Samuel 23:9",
-        "Daniel 8:12"
-      ]
-    },
-    {
-      "word": "pransings",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "pransings",
-        "pransing",
-        "pransinge"
-      ],
-      "sampleRefs": [
-        "Judges 5:22",
-        "Judges 5:22"
-      ]
-    },
-    {
-      "word": "publickly",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "publickly"
-      ],
-      "sampleRefs": [
-        "Acts 18:28",
-        "Acts 20:20"
-      ]
-    },
-    {
-      "word": "rabbath",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "rabbath"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 3:11",
-        "Ezekiel 21:20"
-      ]
-    },
-    {
-      "word": "respite",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "respite"
-      ],
-      "sampleRefs": [
-        "Exodus 8:15",
-        "1 Samuel 11:3"
-      ]
-    },
-    {
-      "word": "restorer",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "restorer"
-      ],
-      "sampleRefs": [
-        "Ruth 4:15",
-        "Isaiah 58:12"
-      ]
-    },
-    {
-      "word": "restrain",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "restrain"
-      ],
-      "sampleRefs": [
-        "Job 15:8",
-        "Psalms 76:10"
-      ]
-    },
-    {
-      "word": "revellings",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "revellings",
-        "revelling",
-        "revellinge"
-      ],
-      "sampleRefs": [
-        "Galatians 5:21",
-        "1 Peter 4:3"
-      ]
-    },
-    {
-      "word": "ribai",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "ribai"
-      ],
-      "sampleRefs": [
-        "2 Samuel 23:29",
-        "1 Chronicles 11:31"
-      ]
-    },
-    {
-      "word": "richly",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "richly"
-      ],
-      "sampleRefs": [
-        "Colossians 3:16",
-        "1 Timothy 6:17"
-      ]
-    },
-    {
-      "word": "roboam",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "roboam"
-      ],
-      "sampleRefs": [
-        "Matthew 1:7",
-        "Matthew 1:7"
-      ]
-    },
-    {
-      "word": "salchah",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "salchah"
-      ],
-      "sampleRefs": [
-        "Deuteronomy 3:10",
-        "1 Chronicles 5:11"
-      ]
-    },
-    {
-      "word": "sarid",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "sarid"
-      ],
-      "sampleRefs": [
-        "Joshua 19:10",
-        "Joshua 19:12"
-      ]
-    },
-    {
-      "word": "scarcely",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "scarcely"
-      ],
-      "sampleRefs": [
-        "Romans 5:7",
-        "1 Peter 4:18"
-      ]
-    },
-    {
-      "word": "securely",
-      "count": 2,
-      "priority": "low",
-      "lookupCandidates": [
-        "securely"
-      ],
-      "sampleRefs": [
-        "Proverbs 3:29",
-        "Micah 2:8"
-      ]
-    },
     {
       "word": "serjeants",
       "count": 2,
@@ -1216,6 +968,230 @@
       ],
       "sampleRefs": [
         "Acts 9:36"
+      ]
+    },
+    {
+      "word": "aloth",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aloth"
+      ],
+      "sampleRefs": [
+        "1 Kings 4:16"
+      ]
+    },
+    {
+      "word": "alvah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "alvah"
+      ],
+      "sampleRefs": [
+        "Genesis 36:40"
+      ]
+    },
+    {
+      "word": "alvan",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "alvan"
+      ],
+      "sampleRefs": [
+        "Genesis 36:23"
+      ]
+    },
+    {
+      "word": "amad",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "amad"
+      ],
+      "sampleRefs": [
+        "Joshua 19:26"
+      ]
+    },
+    {
+      "word": "amal",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "amal"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:35"
+      ]
+    },
+    {
+      "word": "amam",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "amam"
+      ],
+      "sampleRefs": [
+        "Joshua 15:26"
+      ]
+    },
+    {
+      "word": "ambassage",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ambassage"
+      ],
+      "sampleRefs": [
+        "Luke 14:32"
+      ]
+    },
+    {
+      "word": "ami",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ami"
+      ],
+      "sampleRefs": [
+        "Ezra 2:57"
+      ]
+    },
+    {
+      "word": "anaharath",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "anaharath"
+      ],
+      "sampleRefs": [
+        "Joshua 19:19"
+      ]
+    },
+    {
+      "word": "ancle",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ancle"
+      ],
+      "sampleRefs": [
+        "Acts 3:7"
+      ]
+    },
+    {
+      "word": "ancles",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "ancles",
+        "ancle"
+      ],
+      "sampleRefs": [
+        "Ezekiel 47:3"
+      ]
+    },
+    {
+      "word": "anethothite",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "anethothite"
+      ],
+      "sampleRefs": [
+        "2 Samuel 23:27"
+      ]
+    },
+    {
+      "word": "anetothite",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "anetothite"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 27:12"
+      ]
+    },
+    {
+      "word": "answerable",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "answerable"
+      ],
+      "sampleRefs": [
+        "Exodus 38:18"
+      ]
+    },
+    {
+      "word": "antothijah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "antothijah"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 8:24"
+      ]
+    },
+    {
+      "word": "anub",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "anub"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 4:8"
+      ]
+    },
+    {
+      "word": "apharsathchites",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "apharsathchites",
+        "apharsathchite"
+      ],
+      "sampleRefs": [
+        "Ezra 4:9"
+      ]
+    },
+    {
+      "word": "aphekah",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aphekah"
+      ],
+      "sampleRefs": [
+        "Joshua 15:53"
+      ]
+    },
+    {
+      "word": "appii",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "appii"
+      ],
+      "sampleRefs": [
+        "Acts 28:15"
+      ]
+    },
+    {
+      "word": "aramitess",
+      "count": 1,
+      "priority": "single-use",
+      "lookupCandidates": [
+        "aramitess",
+        "aramites",
+        "aramitese"
+      ],
+      "sampleRefs": [
+        "1 Chronicles 7:14"
       ]
     }
   ]

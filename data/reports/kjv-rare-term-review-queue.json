@@ -1,790 +1,10 @@
 {
-  "generated_at": "2026-08-26T14:11:12.397Z",
+  "generated_at": "2026-08-26T15:04:30.747Z",
   "source_inventory": "data/reports/webster-missing-word-inventory.csv",
   "source_bible": "King James Bible, standard 1769 text",
   "purpose": "Human review queue only. Entries must not be published without source and identity review.",
   "limit": 50,
   "entries": [
-    {
-      "word": "overpast",
-      "normalized_word": "overpast",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "overpast"
-      ],
-      "sample_references": [
-        "Psalms 57:1",
-        "Isaiah 26:20"
-      ],
-      "occurrences": [
-        {
-          "reference": "Psalms 57:1",
-          "count": 1,
-          "text": "Be merciful unto me, O God, be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until [these] calamities be overpast."
-        },
-        {
-          "reference": "Isaiah 26:20",
-          "count": 1,
-          "text": "# Come, my people, enter thou into thy chambers, and shut thy doors about thee: hide thyself as it were for a little moment, until the indignation be overpast."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "pathrusim",
-      "normalized_word": "pathrusim",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "pathrusim"
-      ],
-      "sample_references": [
-        "Genesis 10:14",
-        "1 Chronicles 1:12"
-      ],
-      "occurrences": [
-        {
-          "reference": "Genesis 10:14",
-          "count": 1,
-          "text": "And Pathrusim, and Casluhim, (out of whom came Philistim,) and Caphtorim."
-        },
-        {
-          "reference": "1 Chronicles 1:12",
-          "count": 1,
-          "text": "And Pathrusim, and Casluhim, (of whom came the Philistines,) and Caphthorim."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "phurah",
-      "normalized_word": "phurah",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "phurah"
-      ],
-      "sample_references": [
-        "Judges 7:10",
-        "Judges 7:11"
-      ],
-      "occurrences": [
-        {
-          "reference": "Judges 7:10",
-          "count": 1,
-          "text": "But if thou fear to go down, go thou with Phurah thy servant down to the host:"
-        },
-        {
-          "reference": "Judges 7:11",
-          "count": 1,
-          "text": "And thou shalt hear what they say; and afterward shall thine hands be strengthened to go down unto the host. Then went he down with Phurah his servant unto the outside of the armed men that [were] in the host."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "pithon",
-      "normalized_word": "pithon",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "pithon"
-      ],
-      "sample_references": [
-        "1 Chronicles 8:35",
-        "1 Chronicles 9:41"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Chronicles 8:35",
-          "count": 1,
-          "text": "And the sons of Micah [were], Pithon, and Melech, and Tarea, and Ahaz."
-        },
-        {
-          "reference": "1 Chronicles 9:41",
-          "count": 1,
-          "text": "And the sons of Micah [were], Pithon, and Melech, and Tahrea, [and Ahaz]."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Witchcraft"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "pochereth",
-      "normalized_word": "pochereth",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "pochereth",
-        "pocher",
-        "pochere"
-      ],
-      "sample_references": [
-        "Ezra 2:57",
-        "Nehemiah 7:59"
-      ],
-      "occurrences": [
-        {
-          "reference": "Ezra 2:57",
-          "count": 1,
-          "text": "The children of Shephatiah, the children of Hattil, the children of Pochereth of Zebaim, the children of Ami."
-        },
-        {
-          "reference": "Nehemiah 7:59",
-          "count": 1,
-          "text": "The children of Shephatiah, the children of Hattil, the children of Pochereth of Zebaim, the children of Amon."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Zebaim"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "practised",
-      "normalized_word": "practised",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "practised",
-        "practis",
-        "practise"
-      ],
-      "sample_references": [
-        "1 Samuel 23:9",
-        "Daniel 8:12"
-      ],
-      "occurrences": [
-        {
-          "reference": "1 Samuel 23:9",
-          "count": 1,
-          "text": "# And David knew that Saul secretly practised mischief against him; and he said to Abiathar the priest, Bring hither the ephod."
-        },
-        {
-          "reference": "Daniel 8:12",
-          "count": 1,
-          "text": "And an host was given [him] against the daily [sacrifice] by reason of transgression, and it cast down the truth to the ground; and it practised, and prospered."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abimelech",
-            "Ablution",
-            "Baptism, John's",
-            "Behead",
-            "Carve",
-            "Chamber",
-            "Circumcision",
-            "Curious arts",
-            "Dance",
-            "Embalming"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "pransings",
-      "normalized_word": "pransings",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "pransings",
-        "pransing",
-        "pransinge"
-      ],
-      "sample_references": [
-        "Judges 5:22",
-        "Judges 5:22"
-      ],
-      "occurrences": [
-        {
-          "reference": "Judges 5:22",
-          "count": 2,
-          "text": "Then were the horsehoofs broken by the means of the pransings, the pransings of their mighty ones."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "publickly",
-      "normalized_word": "publickly",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "publickly"
-      ],
-      "sample_references": [
-        "Acts 18:28",
-        "Acts 20:20"
-      ],
-      "occurrences": [
-        {
-          "reference": "Acts 18:28",
-          "count": 1,
-          "text": "For he mightily convinced the Jews, [and that] publickly, shewing by the scriptures that Jesus was Christ."
-        },
-        {
-          "reference": "Acts 20:20",
-          "count": 1,
-          "text": "[And] how I kept back nothing that was profitable [unto you], but have shewed you, and have taught you publickly, and from house to house,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "rabbath",
-      "normalized_word": "rabbath",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "rabbath"
-      ],
-      "sample_references": [
-        "Deuteronomy 3:11",
-        "Ezekiel 21:20"
-      ],
-      "occurrences": [
-        {
-          "reference": "Deuteronomy 3:11",
-          "count": 1,
-          "text": "For only Og king of Bashan remained of the remnant of giants; behold, his bedstead [was] a bedstead of iron; [is] it not in Rabbath of the children of Ammon? nine cubits [was] the length thereof, and four cubits the breadth of it, after the cubit of a man."
-        },
-        {
-          "reference": "Ezekiel 21:20",
-          "count": 1,
-          "text": "Appoint a way, that the sword may come to Rabbath of the Ammonites, and to Judah in Jerusalem the defenced."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Decapolis",
-            "Kir-haraseth",
-            "Rabbah",
-            "Zamzummims"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "respite",
-      "normalized_word": "respite",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "respite"
-      ],
-      "sample_references": [
-        "Exodus 8:15",
-        "1 Samuel 11:3"
-      ],
-      "occurrences": [
-        {
-          "reference": "Exodus 8:15",
-          "count": 1,
-          "text": "But when Pharaoh saw that there was respite, he hardened his heart, and hearkened not unto them; as the LORD had said."
-        },
-        {
-          "reference": "1 Samuel 11:3",
-          "count": 1,
-          "text": "And the elders of Jabesh said unto him, Give us seven days' respite, that we may send messengers unto all the coasts of Israel: and then, if [there be] no man to save us, we will come out to thee."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "restorer",
-      "normalized_word": "restorer",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "restorer"
-      ],
-      "sample_references": [
-        "Ruth 4:15",
-        "Isaiah 58:12"
-      ],
-      "occurrences": [
-        {
-          "reference": "Ruth 4:15",
-          "count": 1,
-          "text": "And he shall be unto thee a restorer of [thy] life, and a nourisher of thine old age: for thy daughter in law, which loveth thee, which is better to thee than seven sons, hath born him."
-        },
-        {
-          "reference": "Isaiah 58:12",
-          "count": 1,
-          "text": "And [they that shall be] of thee shall build the old waste places: thou shalt raise up the foundations of many generations; and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "restrain",
-      "normalized_word": "restrain",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "restrain"
-      ],
-      "sample_references": [
-        "Job 15:8",
-        "Psalms 76:10"
-      ],
-      "occurrences": [
-        {
-          "reference": "Job 15:8",
-          "count": 1,
-          "text": "Hast thou heard the secret of God? and dost thou restrain wisdom to thyself?"
-        },
-        {
-          "reference": "Psalms 76:10",
-          "count": 1,
-          "text": "Surely the wrath of man shall praise thee: the remainder of wrath shalt thou restrain."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Bit",
-            "Bridle",
-            "Concubine",
-            "Corinthians, First Epistle to the",
-            "Hook",
-            "Jezebel",
-            "Naked",
-            "Providence",
-            "Tabernacle"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "revellings",
-      "normalized_word": "revellings",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "revellings",
-        "revelling",
-        "revellinge"
-      ],
-      "sample_references": [
-        "Galatians 5:21",
-        "1 Peter 4:3"
-      ],
-      "occurrences": [
-        {
-          "reference": "Galatians 5:21",
-          "count": 1,
-          "text": "Envyings, murders, drunkenness, revellings, and such like: of the which I tell you before, as I have also told [you] in time past, that they which do such things shall not inherit the kingdom of God."
-        },
-        {
-          "reference": "1 Peter 4:3",
-          "count": 1,
-          "text": "For the time past of [our] life may suffice us to have wrought the will of the Gentiles, when we walked in lasciviousness, lusts, excess of wine, revellings, banquetings, and abominable idolatries:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Entertain"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "ribai",
-      "normalized_word": "ribai",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "ribai"
-      ],
-      "sample_references": [
-        "2 Samuel 23:29",
-        "1 Chronicles 11:31"
-      ],
-      "occurrences": [
-        {
-          "reference": "2 Samuel 23:29",
-          "count": 1,
-          "text": "Heleb the son of Baanah, a Netophathite, Ittai the son of Ribai out of Gibeah of the children of Benjamin,"
-        },
-        {
-          "reference": "1 Chronicles 11:31",
-          "count": 1,
-          "text": "Ithai the son of Ribai of Gibeah, [that pertained] to the children of Benjamin, Benaiah the Pirathonite,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": [
-            "JERIBAI"
-          ]
-        }
-      }
-    },
-    {
-      "word": "richly",
-      "normalized_word": "richly",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "richly"
-      ],
-      "sample_references": [
-        "Colossians 3:16",
-        "1 Timothy 6:17"
-      ],
-      "occurrences": [
-        {
-          "reference": "Colossians 3:16",
-          "count": 1,
-          "text": "Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord."
-        },
-        {
-          "reference": "1 Timothy 6:17",
-          "count": 1,
-          "text": "Charge them that are rich in this world, that they be not highminded, nor trust in uncertain riches, but in the living God, who giveth us richly all things to enjoy;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Agriculture",
-            "Dwell",
-            "Eden",
-            "Holy place"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "roboam",
-      "normalized_word": "roboam",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "roboam"
-      ],
-      "sample_references": [
-        "Matthew 1:7",
-        "Matthew 1:7"
-      ],
-      "occurrences": [
-        {
-          "reference": "Matthew 1:7",
-          "count": 2,
-          "text": "And Solomon begat Roboam; and Roboam begat Abia; and Abia begat Asa;"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Abijah",
-            "Ahab",
-            "Ahijah",
-            "Amos",
-            "Aven",
-            "Cake",
-            "Calf",
-            "Israel, Kingdom of",
-            "Jehoahaz",
-            "Jehohanan"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "salchah",
-      "normalized_word": "salchah",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "salchah"
-      ],
-      "sample_references": [
-        "Deuteronomy 3:10",
-        "1 Chronicles 5:11"
-      ],
-      "occurrences": [
-        {
-          "reference": "Deuteronomy 3:10",
-          "count": 1,
-          "text": "All the cities of the plain, and all Gilead, and all Bashan, unto Salchah and Edrei, cities of the kingdom of Og in Bashan."
-        },
-        {
-          "reference": "1 Chronicles 5:11",
-          "count": 1,
-          "text": "# And the children of Gad dwelt over against them, in the land of Bashan unto Salchah:"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "sarid",
-      "normalized_word": "sarid",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "sarid"
-      ],
-      "sample_references": [
-        "Joshua 19:10",
-        "Joshua 19:12"
-      ],
-      "occurrences": [
-        {
-          "reference": "Joshua 19:10",
-          "count": 1,
-          "text": "# And the third lot came up for the children of Zebulun according to their families: and the border of their inheritance was unto Sarid:"
-        },
-        {
-          "reference": "Joshua 19:12",
-          "count": 1,
-          "text": "And turned from Sarid eastward toward the sunrising unto the border of Chisloth-tabor, and then goeth out to Daberath, and goeth up to Japhia,"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Beth-haccerem"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "scarcely",
-      "normalized_word": "scarcely",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "scarcely"
-      ],
-      "sample_references": [
-        "Romans 5:7",
-        "1 Peter 4:18"
-      ],
-      "occurrences": [
-        {
-          "reference": "Romans 5:7",
-          "count": 1,
-          "text": "For scarcely for a righteous man will one die: yet peradventure for a good man some would even dare to die."
-        },
-        {
-          "reference": "1 Peter 4:18",
-          "count": 1,
-          "text": "And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?"
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": [
-            "Ananias",
-            "Gethsemane",
-            "Haggai",
-            "Israel, Kingdom of",
-            "Joppa",
-            "Maccabees, Books of the",
-            "Palace",
-            "Seraiah",
-            "Tyropoeon Valley"
-          ]
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
-    {
-      "word": "securely",
-      "normalized_word": "securely",
-      "kjv_count": 2,
-      "measured_kjv_count": 2,
-      "priority": "low",
-      "lookup_candidates": [
-        "securely"
-      ],
-      "sample_references": [
-        "Proverbs 3:29",
-        "Micah 2:8"
-      ],
-      "occurrences": [
-        {
-          "reference": "Proverbs 3:29",
-          "count": 1,
-          "text": "Devise not evil against thy neighbour, seeing he dwelleth securely by thee."
-        },
-        {
-          "reference": "Micah 2:8",
-          "count": 1,
-          "text": "Even of late my people is risen up as an enemy: ye pull off the robe with the garment from them that pass by securely as men averse from war."
-        }
-      ],
-      "existing_source_candidates": {
-        "easton": {
-          "exact": [],
-          "related": []
-        },
-        "nave": {
-          "exact": [],
-          "related": []
-        }
-      }
-    },
     {
       "word": "serjeants",
       "normalized_word": "serjeants",
@@ -1961,6 +1181,802 @@
         "easton": {
           "exact": [],
           "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "upholden",
+      "normalized_word": "upholden",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "upholden"
+      ],
+      "sample_references": [
+        "Job 4:4",
+        "Proverbs 20:28"
+      ],
+      "occurrences": [
+        {
+          "reference": "Job 4:4",
+          "count": 1,
+          "text": "Thy words have upholden him that was falling, and thou hast strengthened the feeble knees."
+        },
+        {
+          "reference": "Proverbs 20:28",
+          "count": 1,
+          "text": "Mercy and truth preserve the king: and his throne is upholden by mercy."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "uthai",
+      "normalized_word": "uthai",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "uthai"
+      ],
+      "sample_references": [
+        "1 Chronicles 9:4",
+        "Ezra 8:14"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 9:4",
+          "count": 1,
+          "text": "Uthai the son of Ammihud, the son of Omri, the son of Imri, the son of Bani, of the children of Pharez the son of Judah."
+        },
+        {
+          "reference": "Ezra 8:14",
+          "count": 1,
+          "text": "Of the sons also of Bigvai; Uthai, and Zabbud, and with them seventy males."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Ammihud",
+            "Hazor",
+            "Magdala",
+            "Ramath-mizpeh"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "uzzielites",
+      "normalized_word": "uzzielites",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "uzzielites",
+        "uzzielite"
+      ],
+      "sample_references": [
+        "Numbers 3:27",
+        "1 Chronicles 26:23"
+      ],
+      "occurrences": [
+        {
+          "reference": "Numbers 3:27",
+          "count": 1,
+          "text": "# And of Kohath [was] the family of the Amramites, and the family of the Izeharites, and the family of the Hebronites, and the family of the Uzzielites: these [are] the families of the Kohathites."
+        },
+        {
+          "reference": "1 Chronicles 26:23",
+          "count": 1,
+          "text": "Of the Amramites, [and] the Izharites, the Hebronites, [and] the Uzzielites:"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "warriors",
+      "normalized_word": "warriors",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "warriors",
+        "warrior",
+        "warriore"
+      ],
+      "sample_references": [
+        "1 Kings 12:21",
+        "2 Chronicles 11:1"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Kings 12:21",
+          "count": 1,
+          "text": "# And when Rehoboam was come to Jerusalem, he assembled all the house of Judah, with the tribe of Benjamin, an hundred and fourscore thousand chosen men, which were warriors, to fight against the house of Israel, to bring the kingdom again to Rehoboam the son of Solomon."
+        },
+        {
+          "reference": "2 Chronicles 11:1",
+          "count": 1,
+          "text": "And when Rehoboam was come to Jerusalem, he gathered of the house of Judah and Benjamin an hundred and fourscore thousand chosen [men], which were warriors, to fight against Israel, that he might bring the kingdom again to Rehoboam."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Aaron",
+            "Abieezer",
+            "Abiel",
+            "Achish",
+            "Adina",
+            "Arbathite",
+            "Army",
+            "Aroer",
+            "Azmaveth",
+            "Bani"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "washpot",
+      "normalized_word": "washpot",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "washpot"
+      ],
+      "sample_references": [
+        "Psalms 60:8",
+        "Psalms 108:9"
+      ],
+      "occurrences": [
+        {
+          "reference": "Psalms 60:8",
+          "count": 1,
+          "text": "Moab [is] my washpot; over Edom will I cast out my shoe: Philistia, triumph thou because of me."
+        },
+        {
+          "reference": "Psalms 108:9",
+          "count": 1,
+          "text": "Moab [is] my washpot; over Edom will I cast out my shoe; over Philistia will I triumph."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "watcher",
+      "normalized_word": "watcher",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "watcher"
+      ],
+      "sample_references": [
+        "Daniel 4:13",
+        "Daniel 4:23"
+      ],
+      "occurrences": [
+        {
+          "reference": "Daniel 4:13",
+          "count": 1,
+          "text": "I saw in the visions of my head upon my bed, and, behold, a watcher and an holy one came down from heaven;"
+        },
+        {
+          "reference": "Daniel 4:23",
+          "count": 1,
+          "text": "And whereas the king saw a watcher and an holy one coming down from heaven, and saying, Hew the tree down, and destroy it; yet leave the stump of the roots thereof in the earth, even with a band of iron and brass, in the tender grass of the field; and let it be wet with the dew of heaven, and [let] his portion [be] with the beasts of the field, till seven times pass over him;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Arcturus",
+            "Cucumbers",
+            "Ramathaim-zophim",
+            "Zophim, Field of"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "watchers",
+      "normalized_word": "watchers",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "watchers",
+        "watcher",
+        "watchere"
+      ],
+      "sample_references": [
+        "Jeremiah 4:16",
+        "Daniel 4:17"
+      ],
+      "occurrences": [
+        {
+          "reference": "Jeremiah 4:16",
+          "count": 1,
+          "text": "Make ye mention to the nations; behold, publish against Jerusalem, [that] watchers come from a far country, and give out their voice against the cities of Judah."
+        },
+        {
+          "reference": "Daniel 4:17",
+          "count": 1,
+          "text": "This matter [is] by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that the most High ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it the basest of men."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Cucumbers",
+            "Ramathaim-zophim",
+            "Zophim, Field of"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "watersprings",
+      "normalized_word": "watersprings",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "watersprings",
+        "waterspring",
+        "waterspringe"
+      ],
+      "sample_references": [
+        "Psalms 107:33",
+        "Psalms 107:35"
+      ],
+      "occurrences": [
+        {
+          "reference": "Psalms 107:33",
+          "count": 1,
+          "text": "He turneth rivers into a wilderness, and the watersprings into dry ground;"
+        },
+        {
+          "reference": "Psalms 107:35",
+          "count": 1,
+          "text": "He turneth the wilderness into a standing water, and dry ground into watersprings."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "wayside",
+      "normalized_word": "wayside",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "wayside"
+      ],
+      "sample_references": [
+        "1 Samuel 4:13",
+        "Psalms 140:5"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Samuel 4:13",
+          "count": 1,
+          "text": "And when he came, lo, Eli sat upon a seat by the wayside watching: for his heart trembled for the ark of God. And when the man came into the city, and told [it], all the city cried out."
+        },
+        {
+          "reference": "Psalms 140:5",
+          "count": 1,
+          "text": "The proud have hid a snare for me, and cords; they have spread a net by the wayside; they have set gins for me. Selah."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Bethlehem",
+            "Eli",
+            "Harlot"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "weakeneth",
+      "normalized_word": "weakeneth",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "weakeneth",
+        "weaken",
+        "weakene"
+      ],
+      "sample_references": [
+        "Job 12:21",
+        "Jeremiah 38:4"
+      ],
+      "occurrences": [
+        {
+          "reference": "Job 12:21",
+          "count": 1,
+          "text": "He poureth contempt upon princes, and weakeneth the strength of the mighty."
+        },
+        {
+          "reference": "Jeremiah 38:4",
+          "count": 1,
+          "text": "Therefore the princes said unto the king, We beseech thee, let this man be put to death: for thus he weakeneth the hands of the men of war that remain in this city, and the hands of all the people, in speaking such words unto them: for this man seeketh not the welfare of this people, but the hurt."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": []
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "wellpleasing",
+      "normalized_word": "wellpleasing",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "wellpleasing",
+        "wellpleas",
+        "wellplease"
+      ],
+      "sample_references": [
+        "Philippians 4:18",
+        "Hebrews 13:21"
+      ],
+      "occurrences": [
+        {
+          "reference": "Philippians 4:18",
+          "count": 1,
+          "text": "But I have all, and abound: I am full, having received of Epaphroditus the things [which were sent] from you, an odour of a sweet smell, a sacrifice acceptable, wellpleasing to God."
+        },
+        {
+          "reference": "Hebrews 13:21",
+          "count": 1,
+          "text": "Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight, through Jesus Christ; to whom [be] glory for ever and ever. Amen."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Humility"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "zeboiim",
+      "normalized_word": "zeboiim",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "zeboiim"
+      ],
+      "sample_references": [
+        "Genesis 14:2",
+        "Genesis 14:8"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 14:2",
+          "count": 1,
+          "text": "[That these] made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar."
+        },
+        {
+          "reference": "Genesis 14:8",
+          "count": 1,
+          "text": "And there went out the king of Sodom, and the king of Gomorrah, and the king of Admah, and the king of Zeboiim, and the king of Bela (the same [is] Zoar;) and they joined battle with them in the vale of Siddim;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Shemeber"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "ziphites",
+      "normalized_word": "ziphites",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "ziphites",
+        "ziphite"
+      ],
+      "sample_references": [
+        "1 Samuel 23:19",
+        "1 Samuel 26:1"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Samuel 23:19",
+          "count": 1,
+          "text": "# Then came up the Ziphites to Saul to Gibeah, saying, Doth not David hide himself with us in strong holds in the wood, in the hill of Hachilah, which [is] on the south of Jeshimon?"
+        },
+        {
+          "reference": "1 Samuel 26:1",
+          "count": 1,
+          "text": "And the Ziphites came unto Saul to Gibeah, saying, Doth not David hide himself in the hill of Hachilah, [which is] before Jeshimon?"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Hachilah"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "zoba",
+      "normalized_word": "zoba",
+      "kjv_count": 2,
+      "measured_kjv_count": 2,
+      "priority": "low",
+      "lookup_candidates": [
+        "zoba"
+      ],
+      "sample_references": [
+        "2 Samuel 10:6",
+        "2 Samuel 10:8"
+      ],
+      "occurrences": [
+        {
+          "reference": "2 Samuel 10:6",
+          "count": 1,
+          "text": "# And when the children of Ammon saw that they stank before David, the children of Ammon sent and hired the Syrians of Beth-rehob, and the Syrians of Zoba, twenty thousand footmen, and of king Maacah a thousand men, and of Ish-tob twelve thousand men."
+        },
+        {
+          "reference": "2 Samuel 10:8",
+          "count": 1,
+          "text": "And the children of Ammon came out, and put the battle in array at the entering in of the gate: and the Syrians of Zoba, and of Rehob, and Ish-tob, and Maacah, [were] by themselves in the field."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Aram-zobah",
+            "Betah",
+            "Chariot",
+            "Eliada",
+            "Hadadezer",
+            "Hamath",
+            "Hamath-zobah",
+            "Igal",
+            "Laver",
+            "Rezon"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "HAMATH-ZOBAH",
+            "ZOBAH"
+          ]
+        }
+      }
+    },
+    {
+      "word": "accomplishment",
+      "normalized_word": "accomplishment",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "accomplishment"
+      ],
+      "sample_references": [
+        "Acts 21:26"
+      ],
+      "occurrences": [
+        {
+          "reference": "Acts 21:26",
+          "count": 1,
+          "text": "Then Paul took the men, and the next day purifying himself with them entered into the temple, to signify the accomplishment of the days of purification, until that an offering should be offered for every one of them."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Covenant"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "achar",
+      "normalized_word": "achar",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "achar"
+      ],
+      "sample_references": [
+        "1 Chronicles 2:7"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 2:7",
+          "count": 1,
+          "text": "And the sons of Carmi; Achar, the troubler of Israel, who transgressed in the thing accursed."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Abel-meholah",
+            "Abez",
+            "Accuser",
+            "Achan",
+            "Altar",
+            "Anem",
+            "Aphik",
+            "Ass",
+            "Baasha",
+            "Beth-shemesh"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "ISSACHAR",
+            "JOZ ACH AR",
+            "MAGNA CHARTA"
+          ]
+        }
+      }
+    },
+    {
+      "word": "achsa",
+      "normalized_word": "achsa",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "achsa"
+      ],
+      "sample_references": [
+        "1 Chronicles 2:49"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Chronicles 2:49",
+          "count": 1,
+          "text": "She bare also Shaaph the father of Madmannah, Sheva the father of Machbenah, and the father of Gibea: and the daughter of Caleb [was] Achsa."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Achsah",
+            "Debir",
+            "Othniel"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "ACHSAH"
+          ]
+        }
+      }
+    },
+    {
+      "word": "acknowledgement",
+      "normalized_word": "acknowledgement",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "acknowledgement"
+      ],
+      "sample_references": [
+        "Colossians 2:2"
+      ],
+      "occurrences": [
+        {
+          "reference": "Colossians 2:2",
+          "count": 1,
+          "text": "That their hearts might be comforted, being knit together in love, and unto all riches of the full assurance of understanding, to the acknowledgement of the mystery of God, and of the Father, and of Christ;"
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "First-fruits"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": []
+        }
+      }
+    },
+    {
+      "word": "actions",
+      "normalized_word": "actions",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "actions",
+        "action",
+        "actione"
+      ],
+      "sample_references": [
+        "1 Samuel 2:3"
+      ],
+      "occurrences": [
+        {
+          "reference": "1 Samuel 2:3",
+          "count": 1,
+          "text": "Talk no more so exceeding proudly; let [not] arrogancy come out of your mouth: for the LORD [is] a God of knowledge, and by him actions are weighed."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Chronicles",
+            "Daemoniac",
+            "Darkness",
+            "Ephesians, Epistle to",
+            "Ezekiel, Book of",
+            "Fall of man",
+            "Incarnation",
+            "Judgment, The final",
+            "Man",
+            "Matthew, Gospel according to"
+          ]
+        },
+        "nave": {
+          "exact": [],
+          "related": [
+            "ACTIONS AT LAW"
+          ]
+        }
+      }
+    },
+    {
+      "word": "activity",
+      "normalized_word": "activity",
+      "kjv_count": 1,
+      "measured_kjv_count": 1,
+      "priority": "single-use",
+      "lookup_candidates": [
+        "activity"
+      ],
+      "sample_references": [
+        "Genesis 47:6"
+      ],
+      "occurrences": [
+        {
+          "reference": "Genesis 47:6",
+          "count": 1,
+          "text": "The land of Egypt [is] before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowest [any] men of activity among them, then make them rulers over my cattle."
+        }
+      ],
+      "existing_source_candidates": {
+        "easton": {
+          "exact": [],
+          "related": [
+            "Archippus",
+            "Canaanites",
+            "Cyprus",
+            "Damascus",
+            "Heart",
+            "Hind",
+            "Jesus",
+            "John, Gospel of",
+            "Jonathan",
+            "Lust"
+          ]
         },
         "nave": {
           "exact": [],
