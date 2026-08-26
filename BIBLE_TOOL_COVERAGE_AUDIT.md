@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T16:42:28.831Z
+Generated: 2026-08-26T17:30:58.502Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -83,11 +83,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
-| centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
-| hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
-| bag | BAG | 11 | ocr_full_import_needs_spot_review |
-| pollute | POLLU'TE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
@@ -113,6 +108,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | myrtle | MYR'TLE | 6 | ocr_full_import_needs_spot_review |
 | needful | NEE'DFUL | 6 | ocr_full_import_needs_spot_review |
 | parcel | P'ARCEL | 6 | ocr_full_import_needs_spot_review |
+| perverseness | PERVERSENESS | 6 | ocr_full_import_needs_spot_review |
+| pipes | PIPE | 6 | ocr_full_import_needs_spot_review |
+| pisseth | PISS | 6 | ocr_full_import_needs_spot_review |
+| rank | RANK | 6 | ocr_full_import_needs_spot_review |
+| raven | RAVEN | 6 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

@@ -1,0 +1,112 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-55-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n227_w3000.jpg",
+      "sha256": "1e8856a4b0fb5846e8a0aa5a6a5628214097b5bf744236e14b41bf75c60fe3a7"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n362_w3000.jpg",
+      "sha256": "3e68f506371bf5a5869d7a5641b662c61eb99892785a39b39937d7de8cb5ad0b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n931_w3000.jpg",
+      "sha256": "0a9dc2cef57134af7e9491220353da3b9f86747d19d6f722de9d76509d361a0d"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n319_w3000.jpg",
+      "sha256": "4cb9e0cfb7c9666a812b2420d124e70f78b22b3fa0d30e48a276caa97424689d"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n881_w3000.jpg",
+      "sha256": "2d661261e4ecffc8a062054a30894794f19d6406b69751181b1a76247e6106f2"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the five highest-frequency remaining Webster headwords in the KJV cleanup queue.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological notes, expanded part-of-speech abbreviations for readability, and supplied exact KJV wording and verse numbers where the printed entry cited Scripture only by chapter.",
+  "screening_summary": {
+    "reviewed_headwords": 5,
+    "net_new_reviewed_overlays": 5,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 5,
+    "kjv_occurrences_resolved": 69
+  },
+  "promoted_headwords": [
+    "centurion",
+    "vexation",
+    "hyssop",
+    "bag",
+    "pollute"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "centurion",
+      "lookup_headword": "centurion",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 106029,
+      "source_line_end": 106035,
+      "exact_page_heading": "CENTURION",
+      "exact_entry_heading": "CENTU'RION",
+      "exact_source_match": true
+    },
+    {
+      "word": "vexation",
+      "lookup_headword": "vexation",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 293301,
+      "source_line_end": 293326,
+      "exact_page_heading": "VEXATION",
+      "exact_entry_heading": "VEXA'TION",
+      "exact_source_match": true
+    },
+    {
+      "word": "hyssop",
+      "lookup_headword": "hyssop",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 293247,
+      "source_line_end": 293258,
+      "exact_page_heading": "HYSSOP",
+      "exact_entry_heading": "HYSSOP",
+      "exact_source_match": true
+    },
+    {
+      "word": "bag",
+      "lookup_headword": "bag",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 62332,
+      "source_line_end": 62368,
+      "exact_page_heading": "BAG",
+      "exact_entry_heading": "BAG",
+      "exact_source_match": true
+    },
+    {
+      "word": "pollute",
+      "lookup_headword": "pollute",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 104054,
+      "source_line_end": 104095,
+      "exact_page_heading": "POLLUTE",
+      "exact_entry_heading": "POLLU'TE",
+      "exact_source_match": true
+    }
+  ]
+}
