@@ -186,6 +186,10 @@ https://study.fathersbusinessmasteryresources.com/
 
 ## Send controls
 
+- Follow `PERMISSION_REQUEST_GUIDE.md`: the first message should name one exact resource, describe
+  one exact proposed use in plain language, and ask whether the recipient is open to discussing it.
+- Keep the initial message under 150 words whenever practical. Save technical, commercial, and
+  contract details for a second-stage conversation after the recipient expresses interest.
 - Recheck Inbox, Spam, and Sent before contacting any organization already in an earlier outreach file.
 - Send only one new message at a time and record the exact recipient, timestamp, subject, and body.
 - Do not attach copyrighted samples from the prospect's own catalog.
