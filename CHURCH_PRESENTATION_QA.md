@@ -76,6 +76,9 @@ For the first live use, treat the app as a preaching and slide-support tool, not
 - Open the sermon and presentation on the iPad you plan to use.
 - Confirm landscape and portrait both remain readable.
 - Confirm tap targets are large enough from the pulpit.
+- Confirm Presenter, Controller, and Presentation views show `Screen awake`.
+- Background and restore each live-view tab, then confirm `Screen awake` returns.
+- If the device reports `Keep Awake unavailable`, set iPad Auto-Lock to Never before the service.
 - Confirm the screen does not dim or lock during a 30-minute test.
 - Confirm the sermon manuscript can be read without horizontal scrolling.
 - Confirm slides can be advanced from the iPad if the phone controller is unavailable.

@@ -51,6 +51,7 @@ import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
+import { type ScreenWakeLockStatus, useScreenWakeLock } from "@/hooks/useScreenWakeLock";
 import reviewedKjvDictionaryAliases from "../../data/generated/kjv-dictionary-reviewed-aliases.json";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
@@ -51721,6 +51722,34 @@ function SermonManagerCard({
   );
 }
 
+function PresentationWakeLockBadge({
+  status,
+  onRetry,
+  dark = false,
+}: {
+  status: ScreenWakeLockStatus;
+  onRetry: () => void;
+  dark?: boolean;
+}) {
+  if (status === "idle") return null;
+  const label = status === "active"
+    ? "Screen awake"
+    : status === "requesting"
+      ? "Keeping screen awake…"
+      : status === "unsupported"
+        ? "Keep Awake unavailable — set Auto-Lock to Never"
+        : "Keep Awake paused — tap to retry";
+  const className = dark
+    ? "rounded-full bg-white/10 px-3 py-2 text-white/80"
+    : "inline-flex min-h-8 items-center rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]";
+
+  if (status === "blocked") {
+    return <button aria-live="polite" className={className} onClick={onRetry} type="button">{label}</button>;
+  }
+
+  return <span aria-live="polite" className={className}>{label}</span>;
+}
+
 function PresentationWorkspaceScreen({
   view,
   presentations,
@@ -51776,6 +51805,8 @@ function PresentationWorkspaceScreen({
   const [remoteMode, setRemoteMode] = useState<PresentationRemoteMode>("local");
   const [remoteMessage, setRemoteMessage] = useState(supabase && user?.id ? "Secure shared sessions are available for your signed-in devices." : supabase ? "Sign in on each device for secure shared control. Local presentation remains available." : "Supabase is not configured here, so remote control is local-only.");
   const [controllerClientId] = useState(() => loadPresentationControllerId());
+  const livePresentationView = view === "presenter" || view === "controller" || view === "presentation";
+  const { status: wakeLockStatus, request: requestWakeLock } = useScreenWakeLock(livePresentationView);
   const slides = draft.slides ?? [];
   const activeSlide = slides.find((slide) => slide.id === selectedSlideId) ?? slides[0] ?? null;
   const remoteActive = Boolean(remoteState?.sessionId && remoteSessionId && remoteState.sessionId === remoteSessionId);
@@ -52386,6 +52417,7 @@ function PresentationWorkspaceScreen({
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-black/80 px-4 py-3 text-sm font-semibold backdrop-blur">
             <button className="rounded-full bg-white/10 px-4 py-2" onClick={() => onViewChange("deck")} type="button">Exit Presenter</button>
             <div className="flex flex-wrap items-center gap-3 text-white/75">
+              <PresentationWakeLockBadge dark onRetry={() => void requestWakeLock()} status={wakeLockStatus} />
               {remoteSessionId && <span>Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
               <span>{formatSermonTimer(elapsedSeconds)} elapsed</span>
               <span>{formatSermonTimer(remainingSeconds)} left</span>
@@ -52444,6 +52476,7 @@ function PresentationWorkspaceScreen({
       <div className="fixed inset-0 z-50 bg-black text-white">
         <div className="absolute left-4 top-4 z-10 flex flex-wrap gap-2 text-xs font-semibold">
           <button className="rounded-full bg-white/10 px-3 py-2 text-white/80" onClick={() => onViewChange("deck")} type="button">Exit</button>
+          <PresentationWakeLockBadge dark onRetry={() => void requestWakeLock()} status={wakeLockStatus} />
           {remoteSessionId && <span className="rounded-full bg-white/10 px-3 py-2 text-white/70">Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
         </div>
         {!remoteActive && (
@@ -52483,6 +52516,7 @@ function PresentationWorkspaceScreen({
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{sessionTitle || "Presentation Controller"}</h1>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{remoteMessage}</p>
               {controllerStatusText && <p className="mt-2 inline-flex rounded-full bg-[var(--highlight)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">Status: {controllerStatusText}</p>}
+              <div className="mt-2"><PresentationWakeLockBadge onRetry={() => void requestWakeLock()} status={wakeLockStatus} /></div>
             </div>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("deck")} type="button">Back to Deck</button>
           </div>

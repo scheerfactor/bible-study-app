@@ -20,6 +20,7 @@ Works now:
 - First slide, last slide, restart timer, and emergency end controls
 - Session expiry using `expires_at`
 - Display connection status using `display_last_seen_at`
+- Screen Wake Lock in Presenter, Controller, and Presentation views, with foreground reacquisition and a visible device-settings fallback
 
 The app tries Supabase first when it is configured and the `presentation_sessions` tables exist. If Supabase is unavailable, it falls back to local browser storage so presentations can still be tested.
 
@@ -117,3 +118,4 @@ Future:
 8. Confirm Presentation View updates without refresh.
 9. Refresh the Presentation View and confirm it rejoins the same session from the URL.
 10. Confirm Presenter View still shows current slide, next slide, notes, elapsed time, remaining time, and progress.
+11. Confirm each live view shows `Screen awake`; background and restore the iPad tab, then confirm the indicator returns after wake lock is reacquired.
