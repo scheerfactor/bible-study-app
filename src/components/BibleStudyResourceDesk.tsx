@@ -8,7 +8,7 @@ import evidenceData from "../../data/archaeology/verified-evidence.json";
 import preachingData from "../../data/preaching-helps/verified-preaching-helps.json";
 import presentationMediaData from "../../public/media/sermon-slides/media-assets.json";
 
-type ResourceImageSlot = "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type ResourceImageSlot = "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 
 export type ResourcePresentationSeed = {
   title: string;
@@ -48,7 +48,7 @@ type PresentationMedia = {
 };
 
 const resourceImageSlots = new Set<ResourceImageSlot>([
-  "cross", "open-bible", "sunrise", "empty-tomb", "prayer-hands", "world-map", "field-harvest", "storm-judgment", "light-window", "pulpit", "communion-table", "baptism-water", "church-window", "quiet-study", "shepherd-field", "worship-piano", "still-waters", "scripture-lamp", "heavens-declare", "nimrud-relief", "nineveh-cavalry-relief", "babylon-lion-panel",
+  "cross", "open-bible", "sunrise", "empty-tomb", "prayer-hands", "world-map", "field-harvest", "storm-judgment", "light-window", "pulpit", "communion-table", "baptism-water", "church-window", "quiet-study", "shepherd-field", "worship-piano", "still-waters", "scripture-lamp", "heavens-declare", "sinai-wilderness", "ancient-jerusalem", "mediterranean-passage", "nimrud-relief", "nineveh-cavalry-relief", "babylon-lion-panel",
 ]);
 
 const presentationMedia = (presentationMediaData as PresentationMedia[]).filter(

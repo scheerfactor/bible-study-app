@@ -95,6 +95,10 @@ async function fetchRequired(url) {
   return Buffer.from(await response.arrayBuffer());
 }
 
+function normalizedEvidenceBuffer(buffer) {
+  return Buffer.from(buffer.toString("utf8").replace(/\r\n/g, "\n").replace(/[ \t]+$/gm, ""));
+}
+
 const knownIds = new Set(verified.map((hymn) => hymn.id));
 const knownTitles = new Set(verified.map((hymn) => hymn.title.toLowerCase()));
 const batchIds = new Set();
@@ -126,10 +130,11 @@ for (const entry of manifest.entries) {
     throw new Error(`${entry.id}: Scripture references required`);
   }
 
-  const [rightsBuffer, midiBuffer] = await Promise.all([
+  const [rawRightsBuffer, midiBuffer] = await Promise.all([
     fetchRequired(entry.textSourceUrl),
     fetchRequired(entry.musicSourceUrl),
   ]);
+  const rightsBuffer = normalizedEvidenceBuffer(rawRightsBuffer);
   const rightsHtml = rightsBuffer.toString("utf8");
   const rightsMarkerCount = rightsHtml.split(publicDomainMarker).length - 1;
   if (rightsMarkerCount < 2) {

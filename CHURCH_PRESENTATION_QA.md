@@ -71,6 +71,16 @@ For the first live use, treat the app as a preaching and slide-support tool, not
 - Approval status should be visible without hunting.
 - Blank Screen and Emergency End should not be easy to hit accidentally.
 - No horizontal scrolling at 390x844.
+- At 834x1194, add a hymn with a long rights-source URL, open Controller View, and confirm presenter notes wrap without horizontal scrolling.
+
+## Reviewed Content Finder
+
+1. Search the 49-hymn catalog by title, lyricist, tune, lyric phrase, and Scripture reference.
+2. Add one hymn and confirm its title plus every stanza appears as a deck slide with source and music-rights notes.
+3. Search the 26-quote catalog by wording, author, topic, source, and Scripture reference.
+4. Add one quote and confirm its author, source work, locator, rights basis, and review note remain attached.
+5. Add `Psalm 23:1-3` from KJV Verse and confirm the exact KJV corpus text appears with the Still Waters background.
+6. Test both desktop and iPad widths with no horizontal scrolling.
 
 ## iPad And Pulpit Checks
 

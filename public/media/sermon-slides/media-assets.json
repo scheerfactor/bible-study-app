@@ -292,5 +292,47 @@
     "bibleReferences": ["Psalm 96:1-2", "Colossians 3:16"],
     "recommendedUse": "Congregational hymn lyrics, worship sets, music ministry, pre-service slides, and offertory announcements; use dark text in the right two-thirds.",
     "optimized": "1600x900 JPEG stored locally; original generated background with a reserved hymn-lyrics text zone."
+  },
+  {
+    "file": "photos/sinai-wilderness.jpg",
+    "slot": "sinai-wilderness",
+    "category": "Wilderness",
+    "source": "Original generated Bible-book presentation background",
+    "source_url": "#original-generated-background-prompt-2026-08-27-sinai-wilderness",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Exodus", "Wilderness", "Covenant", "Guidance"],
+    "bibleReferences": ["Exodus 13:21-22", "Deuteronomy 8:2"],
+    "recommendedUse": "Exodus through Deuteronomy, wilderness journeys, covenant, testing, tabernacle, and guidance slides; use light text on the left.",
+    "optimized": "1600x900 JPEG stored locally; original generated background with a dark left-side Scripture text zone."
+  },
+  {
+    "file": "photos/ancient-jerusalem.jpg",
+    "slot": "ancient-jerusalem",
+    "category": "Jerusalem",
+    "source": "Original generated Bible-book presentation background",
+    "source_url": "#original-generated-background-prompt-2026-08-27-ancient-jerusalem",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Jerusalem", "Temple", "Kings", "Return"],
+    "bibleReferences": ["Psalm 122:1-2", "Nehemiah 2:17"],
+    "recommendedUse": "Kings, Chronicles, Ezra, Nehemiah, Jerusalem Psalms, prophets, and Gospel settings; use light text on the left.",
+    "optimized": "1600x900 JPEG stored locally; original generated background with a dark left-side Scripture text zone."
+  },
+  {
+    "file": "photos/mediterranean-passage.jpg",
+    "slot": "mediterranean-passage",
+    "category": "Sea",
+    "source": "Original generated Bible-book presentation background",
+    "source_url": "#original-generated-background-prompt-2026-08-27-mediterranean-passage",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Sea", "Providence", "Missions", "Journeys"],
+    "bibleReferences": ["Jonah 1:4", "Acts 27:23-25"],
+    "recommendedUse": "Jonah, Gospel sea crossings, storms, missions, and Paul's journeys; use light text on the left.",
+    "optimized": "1600x900 JPEG stored locally; original generated background with a dark left-side Scripture text zone."
   }
 ]

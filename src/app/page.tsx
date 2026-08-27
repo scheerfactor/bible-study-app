@@ -49,6 +49,7 @@ import { brandMark } from "@/lib/site-metadata";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
+import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import { type ScreenWakeLockStatus, useScreenWakeLock } from "@/hooks/useScreenWakeLock";
@@ -237,14 +238,14 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
 type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
-type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion" | "Worship" | "Scripture" | "Creation" | "Archaeology";
+type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion" | "Worship" | "Scripture" | "Creation" | "Wilderness" | "Jerusalem" | "Sea" | "Archaeology";
 type PresentationWorkspaceView = "manager" | "deck" | "presenter" | "controller" | "presentation";
 type PresentationStatus = "Draft" | "Ready" | "Archived";
 
@@ -2686,6 +2687,30 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Creation",
     assetUrl: "/media/sermon-slides/photos/heavens-declare.jpg",
   },
+  "sinai-wilderness": {
+    label: "Sinai Wilderness",
+    description: "Exodus, wilderness journeys, covenant, testing, and God's guidance.",
+    background: "linear-gradient(90deg, rgba(3,13,24,0.62), rgba(3,13,24,0.04) 68%)",
+    motif: "Wilderness",
+    category: "Wilderness",
+    assetUrl: "/media/sermon-slides/photos/sinai-wilderness.jpg",
+  },
+  "ancient-jerusalem": {
+    label: "Ancient Jerusalem",
+    description: "Jerusalem, temple history, the kings, return, prophets, Psalms, and Gospel settings.",
+    background: "linear-gradient(90deg, rgba(5,14,24,0.64), rgba(5,14,24,0.04) 66%)",
+    motif: "Jerusalem",
+    category: "Jerusalem",
+    assetUrl: "/media/sermon-slides/photos/ancient-jerusalem.jpg",
+  },
+  "mediterranean-passage": {
+    label: "Mediterranean Passage",
+    description: "Jonah, sea passages, Gospel crossings, storms, missions, and Paul's journeys.",
+    background: "linear-gradient(90deg, rgba(2,13,24,0.66), rgba(2,13,24,0.04) 68%)",
+    motif: "Sea Passage",
+    category: "Sea",
+    assetUrl: "/media/sermon-slides/photos/mediterranean-passage.jpg",
+  },
   "nimrud-relief": {
     label: "Nimrud Assyrian Relief",
     description: "Bible-world context for Calah, Nimrud, and the Assyrian empire.",
@@ -2712,7 +2737,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
   },
 };
 
-const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Worship", "Scripture", "Creation", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
+const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Worship", "Scripture", "Creation", "Wilderness", "Jerusalem", "Sea", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
 
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";
@@ -2865,6 +2890,9 @@ const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
 };
 
 const SERMON_IMAGE_THEME_SUGGESTIONS = [
+  { terms: ["exodus", "wilderness", "sinai", "tabernacle", "moses"], slot: "sinai-wilderness" },
+  { terms: ["jerusalem", "zion", "temple", "nehemiah", "ezra"], slot: "ancient-jerusalem" },
+  { terms: ["jonah", "sea", "ship", "storm", "sail", "paul's journey"], slot: "mediterranean-passage" },
   { terms: ["psalm 23", "still waters", "shepherd", "comfort", "peace"], slot: "still-waters" },
   { terms: ["psalm 19", "creation", "creator", "heavens", "glory of god", "stars"], slot: "heavens-declare" },
   { terms: ["psalm 119", "lamp", "wisdom", "bible study", "study the word"], slot: "scripture-lamp" },
@@ -11042,21 +11070,21 @@ const WHOLE_BIBLE_VOLUME_BOOKS = [
 
 const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId> = {
   Genesis: "heavens-declare",
-  Exodus: "cross",
-  Leviticus: "communion-table",
-  Numbers: "world-map",
-  Deuteronomy: "scripture-lamp",
+  Exodus: "sinai-wilderness",
+  Leviticus: "sinai-wilderness",
+  Numbers: "sinai-wilderness",
+  Deuteronomy: "sinai-wilderness",
   Joshua: "field-harvest",
   Judges: "storm-judgment",
   Ruth: "field-harvest",
   "1 Samuel": "shepherd-field",
   "2 Samuel": "pulpit",
-  "1 Kings": "storm-judgment",
-  "2 Kings": "nineveh-cavalry-relief",
-  "1 Chronicles": "church-window",
-  "2 Chronicles": "church-window",
-  Ezra: "babylon-lion-panel",
-  Nehemiah: "quiet-study",
+  "1 Kings": "ancient-jerusalem",
+  "2 Kings": "ancient-jerusalem",
+  "1 Chronicles": "ancient-jerusalem",
+  "2 Chronicles": "ancient-jerusalem",
+  Ezra: "ancient-jerusalem",
+  Nehemiah: "ancient-jerusalem",
   Esther: "light-window",
   Job: "storm-judgment",
   Psalms: "still-waters",
@@ -11072,7 +11100,7 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Joel: "field-harvest",
   Amos: "field-harvest",
   Obadiah: "storm-judgment",
-  Jonah: "world-map",
+  Jonah: "mediterranean-passage",
   Micah: "shepherd-field",
   Nahum: "nineveh-cavalry-relief",
   Habakkuk: "prayer-hands",
@@ -11081,10 +11109,10 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Zechariah: "pulpit",
   Malachi: "sunrise",
   Matthew: "cross",
-  Mark: "pulpit",
-  Luke: "light-window",
+  Mark: "mediterranean-passage",
+  Luke: "ancient-jerusalem",
   John: "light-window",
-  Acts: "world-map",
+  Acts: "mediterranean-passage",
   Romans: "cross",
   "1 Corinthians": "church-window",
   "2 Corinthians": "light-window",
@@ -15442,6 +15470,11 @@ function sermonContentLines(text: string, limit = 8) {
 
 function suggestedSermonImageSlot(entry: Pick<SermonEntry, "title" | "passage" | "theme" | "points" | "applications">): SermonSlideImageSlotId {
   const haystack = [entry.title, entry.passage, entry.theme, entry.points, entry.applications].join(" ").toLowerCase();
+  return (SERMON_IMAGE_THEME_SUGGESTIONS.find((suggestion) => suggestion.terms.some((term) => haystack.includes(term)))?.slot ?? "open-bible") as SermonSlideImageSlotId;
+}
+
+function suggestedSermonImageSlotForText(text: string): SermonSlideImageSlotId {
+  const haystack = text.toLowerCase();
   return (SERMON_IMAGE_THEME_SUGGESTIONS.find((suggestion) => suggestion.terms.some((term) => haystack.includes(term)))?.slot ?? "open-bible") as SermonSlideImageSlotId;
 }
 
@@ -20129,11 +20162,12 @@ export default function Home() {
 	    const rangeMatch = cleanPassage.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
 	    if (rangeMatch) {
 	      const [, targetBook, chapterText, startText, endText] = rangeMatch;
+	      const normalizedTargetBook = normalizeQuickPassageBook(targetBook, books) ?? targetBook.trim();
 	      const targetChapter = Number(chapterText);
 	      const startVerse = Number(startText);
 	      const endVerse = Number(endText || startText);
 	      return allVerses
-	        .filter((verse) => verse.book.toLowerCase() === targetBook.toLowerCase().trim() && verse.chapter === targetChapter && verse.verse >= startVerse && verse.verse <= endVerse)
+	        .filter((verse) => verse.book === normalizedTargetBook && verse.chapter === targetChapter && verse.verse >= startVerse && verse.verse <= endVerse)
 	        .map((verse) => `${verse.ref} ${verse.text}`)
 	        .join("\n");
 	    }
@@ -24840,6 +24874,7 @@ export default function Home() {
                 onExportPlan={exportPresentationPlan}
                 onExportPowerPoint={exportPresentationPowerPoint}
                 onExportPdfPreview={exportPresentationPdfPreview}
+                onResolveScriptureText={sermonScriptureTextForPassage}
               />
             )}
 
@@ -51769,6 +51804,7 @@ function PresentationWorkspaceScreen({
   onExportPlan,
   onExportPowerPoint,
   onExportPdfPreview,
+  onResolveScriptureText,
 }: {
   view: PresentationWorkspaceView;
   presentations: PresentationEntry[];
@@ -51788,6 +51824,7 @@ function PresentationWorkspaceScreen({
   onExportPlan: () => void;
   onExportPowerPoint: () => void;
   onExportPdfPreview: () => void;
+  onResolveScriptureText: (passage: string) => string;
 }) {
   const activePresentations = presentations.filter((entry) => !entry.archived && entry.status !== "Archived");
   const archivedPresentations = presentations.filter((entry) => entry.archived || entry.status === "Archived");
@@ -51974,6 +52011,56 @@ function PresentationWorkspaceScreen({
     });
     onDraftChange({ slides: [...slides, slide] });
     setSelectedSlideId(slide.id);
+  }
+
+  function addReviewedContentSlides(seeds: PresentationContentSlideSeed[]) {
+    const nextSlides = seeds.map((seed) => {
+      const imageSlot = suggestedSermonImageSlotForText(`${seed.imageHint} ${seed.title} ${seed.subtitle} ${seed.body ?? ""} ${seed.bibleText ?? ""}`);
+      return createSermonSlide(seed.type, {
+        ...slidePresetPatch(draft.themeId),
+        title: seed.title,
+        subtitle: seed.subtitle,
+        body: seed.body ?? "",
+        bibleText: seed.bibleText ?? "",
+        speakerNotes: seed.speakerNotes,
+        imageSlot,
+        imageTheme: SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
+        layout: seed.type === "Scripture" ? "Scripture Focus" : "Centered",
+      });
+    });
+    onDraftChange({ slides: [...slides, ...nextSlides] });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+    setRemoteMessage(`Added ${nextSlides.length} reviewed slide${nextSlides.length === 1 ? "" : "s"}.`);
+  }
+
+  function addKjvPassageSlide(passage: string) {
+    const scriptureText = onResolveScriptureText(passage);
+    if (!scriptureText || scriptureText.startsWith("No KJV")) {
+      setRemoteMessage(`No verified KJV text was found for ${passage}. Check the reference and try again.`);
+      return;
+    }
+    const detectedBook = WHOLE_BIBLE_VOLUME_BOOKS
+      .slice()
+      .sort((left, right) => right.length - left.length)
+      .find((bookName) => new RegExp(`^${bookName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(passage));
+    const imageSlot = detectedBook
+      ? BIBLE_BOOK_PRESENTATION_BACKGROUNDS[detectedBook] ?? "open-bible"
+      : suggestedSermonImageSlotForText(`${passage} ${scriptureText}`);
+    const chunks = chunkScriptureText(formatScriptureSlideText(scriptureText, "Reference + Text"), 480);
+    const nextSlides = chunks.map((chunk, index) => createSermonSlide("Scripture", {
+      ...slidePresetPatch(draft.themeId),
+      title: chunks.length > 1 ? `${passage} (${index + 1})` : passage,
+      subtitle: "King James Version",
+      bibleText: chunk,
+      speakerNotes: "Read the KJV text clearly and confirm the displayed range before presenting.",
+      imageSlot,
+      imageTheme: `${detectedBook ? `${detectedBook} · ` : ""}${SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label}`,
+      layout: "Scripture Focus",
+      verseDisplay: "Reference + Text",
+    }));
+    onDraftChange({ slides: [...slides, ...nextSlides] });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+    setRemoteMessage(`Added ${chunks.length} KJV Scripture slide${chunks.length === 1 ? "" : "s"} with a matched background.`);
   }
 
   function duplicateSlide(id: string) {
@@ -52526,8 +52613,8 @@ function PresentationWorkspaceScreen({
           </div>
         </section>
 
-        <section className="grid gap-4 lg:grid-cols-[1fr_0.8fr]">
-          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <section className="grid min-w-0 gap-4 lg:grid-cols-[1fr_0.8fr]">
+          <article className="min-w-0 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Current Slide</p>
@@ -52550,8 +52637,8 @@ function PresentationWorkspaceScreen({
             </div>
           </article>
 
-          <aside className="space-y-4">
-            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <aside className="min-w-0 space-y-4">
+            <article className="min-w-0 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold text-[var(--ink)]">Presenter Tools</p>
               <div className="mt-3 grid grid-cols-2 gap-2">
                 <MiniStat label="Elapsed" value={formatSermonTimer(elapsedSeconds)} />
@@ -52565,11 +52652,11 @@ function PresentationWorkspaceScreen({
               </div>
               <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Notes</p>
-                <p className="mt-1 whitespace-pre-wrap text-sm leading-6 text-[var(--scripture-ink)]">{currentSlide?.speakerNotes || sessionNotes || "No notes for this slide yet."}</p>
+                <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-6 text-[var(--scripture-ink)] [overflow-wrap:anywhere]">{currentSlide?.speakerNotes || sessionNotes || "No notes for this slide yet."}</p>
               </div>
             </article>
 
-            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <article className="min-w-0 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold text-[var(--ink)]">Jump to Slide</p>
               <div className="mt-3 grid max-h-80 gap-2 overflow-y-auto pr-1">
                 {sessionSlides.map((slide, index) => (
@@ -52781,6 +52868,10 @@ function PresentationWorkspaceScreen({
                 <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--ink)]" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="Join session ID" value={joinSessionId} />
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => void joinPresentationSession()} type="button">Join Presentation</button>
               </div>
+            </div>
+
+            <div className="mt-5">
+              <PresentationContentFinder onAddScripture={addKjvPassageSlide} onAddSlides={addReviewedContentSlides} />
             </div>
 
             <div className="mt-5">
