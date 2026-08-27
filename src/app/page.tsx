@@ -18222,7 +18222,8 @@ export default function Home() {
     const shouldLoadStarterCommentary =
       tab === "themes" ||
       tab === "bookIntro" ||
-      tab === "sermons";
+      tab === "sermons" ||
+      tab === "presentations";
     const shouldLoadCompleteCommentary =
       tab === "fullStudy" ||
       tab === "passageGuide" ||
@@ -24860,6 +24861,8 @@ export default function Home() {
                 presentations={presentationEntries}
                 draft={presentationDraft}
                 sermons={sermonEntries}
+                books={libraryResources}
+                commentary={commentaryEntries}
                 supabase={supabase}
                 user={user}
                 initialSessionId={presentationInitialSessionId}
@@ -51790,6 +51793,8 @@ function PresentationWorkspaceScreen({
   presentations,
   draft,
   sermons,
+  books,
+  commentary,
   supabase,
   user,
   initialSessionId,
@@ -51810,6 +51815,8 @@ function PresentationWorkspaceScreen({
   presentations: PresentationEntry[];
   draft: PresentationEntry;
   sermons: SermonEntry[];
+  books: LibraryResource[];
+  commentary: CommentaryEntry[];
   supabase: SupabaseClient | null;
   user: User | null;
   initialSessionId: string;
@@ -52871,7 +52878,7 @@ function PresentationWorkspaceScreen({
             </div>
 
             <div className="mt-5">
-              <PresentationContentFinder onAddScripture={addKjvPassageSlide} onAddSlides={addReviewedContentSlides} />
+              <PresentationContentFinder books={books} commentary={commentary} onAddScripture={addKjvPassageSlide} onAddSlides={addReviewedContentSlides} />
             </div>
 
             <div className="mt-5">

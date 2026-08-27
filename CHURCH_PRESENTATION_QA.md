@@ -79,8 +79,11 @@ For the first live use, treat the app as a preaching and slide-support tool, not
 2. Add one hymn and confirm its title plus every stanza appears as a deck slide with source and music-rights notes.
 3. Search the 26-quote catalog by wording, author, topic, source, and Scripture reference.
 4. Add one quote and confirm its author, source work, locator, rights basis, and review note remain attached.
-5. Add `Psalm 23:1-3` from KJV Verse and confirm the exact KJV corpus text appears with the Still Waters background.
-6. Test both desktop and iPad widths with no horizontal scrolling.
+5. Search Books by title, author, category, recommended use, and perspective; add one and confirm the slide is explicitly labeled as a catalog summary in speaker notes with its rights and doctrinal-review record.
+6. Search Commentary by reference, book, author, source, and wording; add one and confirm the excerpt is attributed, identifies its public-domain basis, links its source, and tells the presenter to compare it with the KJV text.
+7. For an entry longer than 420 characters, confirm the slide uses a readable shortened excerpt and the speaker notes say to consult the full source for context.
+8. Add `Psalm 23:1-3` from KJV Verse and confirm the exact KJV corpus text appears with the Still Waters background.
+9. Test all five finder tabs at desktop and iPad widths with no horizontal scrolling.
 
 ## iPad And Pulpit Checks
 
