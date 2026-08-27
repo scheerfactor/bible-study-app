@@ -1,0 +1,89 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-73-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n129_w3000.jpg", "sha256": "1b17cea65a449c5c588fd9270e35b2f17f4c56af3e6e609d4e0ccd7095e4b79a" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n194_w3000.jpg", "sha256": "3e8bd7e61287010956fd25a0e96ec55e603449ec5e22a91fc36c5ce38287ced8" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n483_w3000.jpg", "sha256": "93276e78d2c293e55a7d580cf0c0e617cbecbd4eb10fda8eee2cfc69a8e7793a" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n617_w3000.jpg", "sha256": "61357dddecbba2e1bf209804f2281206f3dd70162d8ca3d2e68d728b279e9346" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n178_w3000.jpg", "sha256": "34cb33fe78e82396fe77bb1d0a262cb00bcf588c5a1ea51ce7097c0e86aab06c" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n522_w3000.jpg", "sha256": "165ab9b44fae9e62c75ffb8f3f91135807fdd3bd9cc7bd0ccb7d7228fa37b40a" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n582_w3000.jpg", "sha256": "ee7654af532aa976bb5c2198809248b2908ce5a774f720fe8ebab6e034da523c" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n597_w3000.jpg", "sha256": "b396973dab4d722311b3f3964cd990914ff0a5296526bb64333888e02e2ac3e8" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n625_w3000.jpg", "sha256": "ad2aba192dab072804a212dd1a2d10aff4ca54536ddab1152516de10c5cdf8c8" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n630_w3000.jpg", "sha256": "b67f0e6e182b18a8d5bca9d60247295f2a08e5c569d28692ea14f43753f0cd5a" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n736_w3000.jpg", "sha256": "7a323f2082c8305574737e4037c3587cca1cd69987e0dd419c2db088a1c207be" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n941_w3000.jpg", "sha256": "ca7571b247887e2e36cfa7bad333500b2b29bd9dddd3d6becad53b635dcba7de" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected ordinary high- and medium-value KJV study vocabulary from the remaining missing inventory after excluding personal names, place names, entries already covered by reviewed overlays, and unsupported OCR candidates.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, source names, and Scripture book names for display, and recorded KJV spelling and plural relationships rather than inventing headwords Webster did not print. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed sense.",
+  "screening_summary": {
+    "reviewed_headwords": 12,
+    "net_new_reviewed_overlays": 12,
+    "verified_lookup_relationships_added": 12,
+    "missing_kjv_forms_resolved": 20,
+    "kjv_occurrences_resolved": 134
+  },
+  "deferred_candidates": [
+    { "word": "selah", "reason": "No standalone SELAH headword appears in Webster's 1828 alphabetical sequence; retain Bible-dictionary and topical help rather than inventing a Webster overlay." },
+    { "word": "ephah", "reason": "The word appears inside other Webster definitions but not as a standalone EPHAH headword; retain Bible-dictionary help rather than inventing a Webster overlay." }
+  ],
+  "promoted_headwords": [
+    "affection",
+    "armory",
+    "cornet",
+    "doer",
+    "navy",
+    "scab",
+    "shittah",
+    "sincerity",
+    "sorcerer",
+    "sower",
+    "taskmaster",
+    "worshiper"
+  ],
+  "verified_lookup_relationships": [
+    { "word": "affections", "lookup_headword": "affection", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular AFFECTION" },
+    { "word": "armoury", "lookup_headword": "armory", "kjv_occurrences": 3, "relationship": "KJV spelling mapped to Webster's printed spelling ARMORY" },
+    { "word": "axes", "lookup_headword": "ax", "kjv_occurrences": 7, "relationship": "Plural noun form mapped to Webster's singular AX" },
+    { "word": "cornets", "lookup_headword": "cornet", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular CORNET" },
+    { "word": "doers", "lookup_headword": "doer", "kjv_occurrences": 7, "relationship": "Plural noun form mapped to Webster's singular DOER" },
+    { "word": "saviours", "lookup_headword": "savior", "kjv_occurrences": 2, "relationship": "KJV plural spelling mapped to Webster's printed SAVIOR" },
+    { "word": "shittim", "lookup_headword": "shittah", "kjv_occurrences": 32, "relationship": "Webster's joint SHITTAH, SHITTIM entry indexed under its first printed headword" },
+    { "word": "sorcerers", "lookup_headword": "sorcerer", "kjv_occurrences": 6, "relationship": "Plural noun form mapped to Webster's singular SORCERER" },
+    { "word": "taskmasters", "lookup_headword": "taskmaster", "kjv_occurrences": 6, "relationship": "Plural noun form mapped to Webster's singular TASKMASTER" },
+    { "word": "veil", "lookup_headword": "vail", "kjv_occurrences": 7, "relationship": "KJV spelling mapped to Webster's reviewed VAIL entry" },
+    { "word": "worshipper", "lookup_headword": "worshiper", "kjv_occurrences": 2, "relationship": "KJV doubled-consonant spelling mapped to Webster's WORSHIPER" },
+    { "word": "worshippers", "lookup_headword": "worshiper", "kjv_occurrences": 7, "relationship": "KJV doubled-consonant plural mapped to Webster's singular WORSHIPER" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "affection", "kjv_occurrences": 6, "resolution": "Direct lookup resolved from the reviewed AFFECTION headword" },
+    { "word": "cornet", "kjv_occurrences": 7, "resolution": "Direct lookup resolved from the reviewed CORNET headword" },
+    { "word": "doer", "kjv_occurrences": 8, "resolution": "Direct lookup resolved from the reviewed DOER headword" },
+    { "word": "navy", "kjv_occurrences": 6, "resolution": "Direct lookup resolved from the reviewed NAVY headword" },
+    { "word": "scab", "kjv_occurrences": 7, "resolution": "Direct lookup resolved from the reviewed SCAB headword" },
+    { "word": "sincerity", "kjv_occurrences": 7, "resolution": "Direct lookup resolved from the reviewed SINCERITY headword" },
+    { "word": "sorcerer", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SORCERER headword" },
+    { "word": "sower", "kjv_occurrences": 8, "resolution": "Direct lookup resolved from the reviewed SOWER headword" }
+  ],
+  "entries": [
+    { "word": "affection", "lookup_headword": "affection", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 31129, "source_line_end": 31162, "exact_page_heading": "AFF", "exact_entry_heading": "AFFEC'TION", "exact_source_match": true },
+    { "word": "armoury", "lookup_headword": "armory", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 52027, "source_line_end": 52036, "exact_page_heading": "ARM", "exact_entry_heading": "ARMORY", "exact_source_match": true },
+    { "word": "cornet", "lookup_headword": "cornet", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 145537, "source_line_end": 145572, "exact_page_heading": "COR", "exact_entry_heading": "CORN'ET", "exact_source_match": true },
+    { "word": "doer", "lookup_headword": "doer", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 189508, "source_line_end": 189515, "exact_page_heading": "DOG", "exact_entry_heading": "DO'ER", "exact_source_match": true },
+    { "word": "navy", "lookup_headword": "navy", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 56808, "source_line_end": 56824, "exact_page_heading": "NEA", "exact_entry_heading": "NA'VY", "exact_source_match": true },
+    { "word": "scab", "lookup_headword": "scab", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 171610, "source_line_end": 171623, "exact_page_heading": "SCA", "exact_entry_heading": "SCAB", "exact_source_match": true },
+    { "word": "shittim", "lookup_headword": "shittah", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 191332, "source_line_end": 191337, "exact_page_heading": "SHI", "exact_entry_heading": "SHIT'TAH, SHIT'TIM", "exact_source_match": true },
+    { "word": "sincerity", "lookup_headword": "sincerity", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 196291, "source_line_end": 196302, "exact_page_heading": "SIN", "exact_entry_heading": "SINCER'ITY", "exact_source_match": true },
+    { "word": "sorcerer", "lookup_headword": "sorcerer", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 206331, "source_line_end": 206337, "exact_page_heading": "SOR", "exact_entry_heading": "SOR'CERER", "exact_source_match": true },
+    { "word": "sower", "lookup_headword": "sower", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 207889, "source_line_end": 207899, "exact_page_heading": "SPA", "exact_entry_heading": "SOW'ER", "exact_source_match": true },
+    { "word": "taskmasters", "lookup_headword": "taskmaster", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 243940, "source_line_end": 243950, "exact_page_heading": "TAS", "exact_entry_heading": "TASKMASTER", "exact_source_match": true },
+    { "word": "worshippers", "lookup_headword": "worshiper", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 313432, "source_line_end": 313434, "exact_page_heading": "WOR", "exact_entry_heading": "WORSHIPER", "exact_source_match": true }
+  ]
+}
