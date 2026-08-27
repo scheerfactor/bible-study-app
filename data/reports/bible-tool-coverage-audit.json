@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-27T01:49:53.638Z",
+    "generated_at": "2026-08-27T02:21:24.396Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61311,
+      "entries": 61317,
       "normalizedHeadwords": 51300,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
@@ -1868,120 +1868,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "beforehand",
-          "count": 5,
-          "sampleRefs": [
-            "Mark 13:11",
-            "2 Corinthians 9:5",
-            "1 Timothy 5:24",
-            "1 Timothy 5:25",
-            "1 Peter 1:11"
-          ],
-          "lookupCandidates": [
-            "beforehand"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BEFOREHAND",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "beguiled",
-          "count": 5,
-          "sampleRefs": [
-            "Genesis 3:13",
-            "Genesis 29:25",
-            "Numbers 25:18",
-            "Joshua 9:22",
-            "2 Corinthians 11:3"
-          ],
-          "lookupCandidates": [
-            "beguiled",
-            "beguil",
-            "beguile"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BEGUI'LE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "benefit",
-          "count": 5,
-          "sampleRefs": [
-            "2 Chronicles 32:25",
-            "Jeremiah 18:10",
-            "2 Corinthians 1:15",
-            "1 Timothy 6:2",
-            "Philemon 1:14"
-          ],
-          "lookupCandidates": [
-            "benefit"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BEN'EFIT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "bulwarks",
-          "count": 5,
-          "sampleRefs": [
-            "Deuteronomy 20:20",
-            "2 Chronicles 26:15",
-            "Psalms 48:13",
-            "Ecclesiastes 9:14",
-            "Isaiah 26:1"
-          ],
-          "lookupCandidates": [
-            "bulwarks",
-            "bulwark",
-            "bulwarke"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BUL'WARK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "burdensome",
-          "count": 5,
-          "sampleRefs": [
-            "Zechariah 12:3",
-            "2 Corinthians 11:9",
-            "2 Corinthians 12:13",
-            "2 Corinthians 12:14",
-            "1 Thessalonians 2:6"
-          ],
-          "lookupCandidates": [
-            "burdensome"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BURDENSOME",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "carmelite",
           "count": 5,
           "sampleRefs": [
@@ -2001,28 +1887,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CARMELITE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "certify",
-          "count": 5,
-          "sampleRefs": [
-            "2 Samuel 15:28",
-            "Ezra 4:16",
-            "Ezra 5:10",
-            "Ezra 7:24",
-            "Galatians 1:11"
-          ],
-          "lookupCandidates": [
-            "certify"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CER'TIFY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3604,6 +3468,146 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STEEP",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stories",
+          "count": 5,
+          "sampleRefs": [
+            "Genesis 6:16",
+            "Ezekiel 41:16",
+            "Ezekiel 42:3",
+            "Ezekiel 42:6",
+            "Amos 9:6"
+          ],
+          "lookupCandidates": [
+            "stories",
+            "story",
+            "storye",
+            "storie"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STORY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "supply",
+          "count": 5,
+          "sampleRefs": [
+            "2 Corinthians 8:14",
+            "2 Corinthians 8:14",
+            "Philippians 1:19",
+            "Philippians 2:30",
+            "Philippians 4:19"
+          ],
+          "lookupCandidates": [
+            "supply"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SUPPLY'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "sweetness",
+          "count": 5,
+          "sampleRefs": [
+            "Judges 9:11",
+            "Judges 14:14",
+            "Proverbs 16:21",
+            "Proverbs 27:9",
+            "Ezekiel 3:3"
+          ],
+          "lookupCandidates": [
+            "sweetness",
+            "sweetnes",
+            "sweetnese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SWEE'TNESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "tall",
+          "count": 5,
+          "sampleRefs": [
+            "Deuteronomy 2:10",
+            "Deuteronomy 2:21",
+            "Deuteronomy 9:2",
+            "2 Kings 19:23",
+            "Isaiah 37:24"
+          ],
+          "lookupCandidates": [
+            "tall"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TALL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "tarsus",
+          "count": 5,
+          "sampleRefs": [
+            "Acts 9:11",
+            "Acts 9:30",
+            "Acts 11:25",
+            "Acts 21:39",
+            "Acts 22:3"
+          ],
+          "lookupCandidates": [
+            "tarsus",
+            "tarsu"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "T'ARSUS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "tendeth",
+          "count": 5,
+          "sampleRefs": [
+            "Proverbs 10:16",
+            "Proverbs 11:19",
+            "Proverbs 11:24",
+            "Proverbs 14:23",
+            "Proverbs 19:23"
+          ],
+          "lookupCandidates": [
+            "tendeth",
+            "tend",
+            "tende"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TEND",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8550,120 +8554,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "beforehand",
-        "count": 5,
-        "sampleRefs": [
-          "Mark 13:11",
-          "2 Corinthians 9:5",
-          "1 Timothy 5:24",
-          "1 Timothy 5:25",
-          "1 Peter 1:11"
-        ],
-        "lookupCandidates": [
-          "beforehand"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BEFOREHAND",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "beguiled",
-        "count": 5,
-        "sampleRefs": [
-          "Genesis 3:13",
-          "Genesis 29:25",
-          "Numbers 25:18",
-          "Joshua 9:22",
-          "2 Corinthians 11:3"
-        ],
-        "lookupCandidates": [
-          "beguiled",
-          "beguil",
-          "beguile"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BEGUI'LE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "benefit",
-        "count": 5,
-        "sampleRefs": [
-          "2 Chronicles 32:25",
-          "Jeremiah 18:10",
-          "2 Corinthians 1:15",
-          "1 Timothy 6:2",
-          "Philemon 1:14"
-        ],
-        "lookupCandidates": [
-          "benefit"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BEN'EFIT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "bulwarks",
-        "count": 5,
-        "sampleRefs": [
-          "Deuteronomy 20:20",
-          "2 Chronicles 26:15",
-          "Psalms 48:13",
-          "Ecclesiastes 9:14",
-          "Isaiah 26:1"
-        ],
-        "lookupCandidates": [
-          "bulwarks",
-          "bulwark",
-          "bulwarke"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BUL'WARK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "burdensome",
-        "count": 5,
-        "sampleRefs": [
-          "Zechariah 12:3",
-          "2 Corinthians 11:9",
-          "2 Corinthians 12:13",
-          "2 Corinthians 12:14",
-          "1 Thessalonians 2:6"
-        ],
-        "lookupCandidates": [
-          "burdensome"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BURDENSOME",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "carmelite",
         "count": 5,
         "sampleRefs": [
@@ -8683,28 +8573,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CARMELITE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "certify",
-        "count": 5,
-        "sampleRefs": [
-          "2 Samuel 15:28",
-          "Ezra 4:16",
-          "Ezra 5:10",
-          "Ezra 7:24",
-          "Galatians 1:11"
-        ],
-        "lookupCandidates": [
-          "certify"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CER'TIFY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10286,6 +10154,146 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STEEP",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stories",
+        "count": 5,
+        "sampleRefs": [
+          "Genesis 6:16",
+          "Ezekiel 41:16",
+          "Ezekiel 42:3",
+          "Ezekiel 42:6",
+          "Amos 9:6"
+        ],
+        "lookupCandidates": [
+          "stories",
+          "story",
+          "storye",
+          "storie"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STORY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "supply",
+        "count": 5,
+        "sampleRefs": [
+          "2 Corinthians 8:14",
+          "2 Corinthians 8:14",
+          "Philippians 1:19",
+          "Philippians 2:30",
+          "Philippians 4:19"
+        ],
+        "lookupCandidates": [
+          "supply"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SUPPLY'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "sweetness",
+        "count": 5,
+        "sampleRefs": [
+          "Judges 9:11",
+          "Judges 14:14",
+          "Proverbs 16:21",
+          "Proverbs 27:9",
+          "Ezekiel 3:3"
+        ],
+        "lookupCandidates": [
+          "sweetness",
+          "sweetnes",
+          "sweetnese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SWEE'TNESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "tall",
+        "count": 5,
+        "sampleRefs": [
+          "Deuteronomy 2:10",
+          "Deuteronomy 2:21",
+          "Deuteronomy 9:2",
+          "2 Kings 19:23",
+          "Isaiah 37:24"
+        ],
+        "lookupCandidates": [
+          "tall"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TALL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "tarsus",
+        "count": 5,
+        "sampleRefs": [
+          "Acts 9:11",
+          "Acts 9:30",
+          "Acts 11:25",
+          "Acts 21:39",
+          "Acts 22:3"
+        ],
+        "lookupCandidates": [
+          "tarsus",
+          "tarsu"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "T'ARSUS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "tendeth",
+        "count": 5,
+        "sampleRefs": [
+          "Proverbs 10:16",
+          "Proverbs 11:19",
+          "Proverbs 11:24",
+          "Proverbs 14:23",
+          "Proverbs 19:23"
+        ],
+        "lookupCandidates": [
+          "tendeth",
+          "tend",
+          "tende"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TEND",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

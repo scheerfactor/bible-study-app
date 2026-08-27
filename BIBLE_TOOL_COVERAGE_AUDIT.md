@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-27T01:49:53.638Z
+Generated: 2026-08-27T02:21:24.396Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -86,13 +86,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | salmon | SALMON | 6 | ocr_full_import_needs_spot_review |
 | wert | BE | 6 | ocr_full_import_needs_spot_review |
 | aloes | ALOES | 5 | ocr_full_import_needs_spot_review |
-| beforehand | BEFOREHAND | 5 | ocr_full_import_needs_spot_review |
-| beguiled | BEGUI'LE | 5 | ocr_full_import_needs_spot_review |
-| benefit | BEN'EFIT | 5 | ocr_full_import_needs_spot_review |
-| bulwarks | BUL'WARK | 5 | ocr_full_import_needs_spot_review |
-| burdensome | BURDENSOME | 5 | ocr_full_import_needs_spot_review |
 | carmelite | CARMELITE | 5 | ocr_full_import_needs_spot_review |
-| certify | CER'TIFY | 5 | ocr_full_import_needs_spot_review |
 | clearly | CLE'ARLY | 5 | ocr_full_import_needs_spot_review |
 | comeliness | COMELINESS | 5 | ocr_full_import_needs_spot_review |
 | compel | COMPEL' | 5 | ocr_full_import_needs_spot_review |
@@ -113,6 +107,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | drowned | DROWNED | 5 | ocr_full_import_needs_spot_review |
 | emerald | EM'ERALD | 5 | ocr_full_import_needs_spot_review |
 | engravings | ENGRA'VING | 5 | ocr_full_import_needs_spot_review |
+| esteem | ESTEE'M | 5 | ocr_full_import_needs_spot_review |
+| eventide | E'VEN-TIDE | 5 | ocr_full_import_needs_spot_review |
+| evident | EVIDENT | 5 | ocr_full_import_needs_spot_review |
+| fables | FA'BLE | 5 | ocr_full_import_needs_spot_review |
+| felt | FELT | 5 | ocr_full_import_needs_spot_review |
+| fixed | FIX | 5 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

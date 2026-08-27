@@ -11039,6 +11039,75 @@ const WHOLE_BIBLE_VOLUME_BOOKS = [
   "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation",
 ];
 
+const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId> = {
+  Genesis: "heavens-declare",
+  Exodus: "cross",
+  Leviticus: "communion-table",
+  Numbers: "world-map",
+  Deuteronomy: "scripture-lamp",
+  Joshua: "field-harvest",
+  Judges: "storm-judgment",
+  Ruth: "field-harvest",
+  "1 Samuel": "shepherd-field",
+  "2 Samuel": "pulpit",
+  "1 Kings": "storm-judgment",
+  "2 Kings": "nineveh-cavalry-relief",
+  "1 Chronicles": "church-window",
+  "2 Chronicles": "church-window",
+  Ezra: "babylon-lion-panel",
+  Nehemiah: "quiet-study",
+  Esther: "light-window",
+  Job: "storm-judgment",
+  Psalms: "still-waters",
+  Proverbs: "scripture-lamp",
+  Ecclesiastes: "quiet-study",
+  "Song of Solomon": "field-harvest",
+  Isaiah: "heavens-declare",
+  Jeremiah: "storm-judgment",
+  Lamentations: "prayer-hands",
+  Ezekiel: "babylon-lion-panel",
+  Daniel: "babylon-lion-panel",
+  Hosea: "cross",
+  Joel: "field-harvest",
+  Amos: "field-harvest",
+  Obadiah: "storm-judgment",
+  Jonah: "world-map",
+  Micah: "shepherd-field",
+  Nahum: "nineveh-cavalry-relief",
+  Habakkuk: "prayer-hands",
+  Zephaniah: "storm-judgment",
+  Haggai: "church-window",
+  Zechariah: "pulpit",
+  Malachi: "sunrise",
+  Matthew: "cross",
+  Mark: "pulpit",
+  Luke: "light-window",
+  John: "light-window",
+  Acts: "world-map",
+  Romans: "cross",
+  "1 Corinthians": "church-window",
+  "2 Corinthians": "light-window",
+  Galatians: "cross",
+  Ephesians: "church-window",
+  Philippians: "sunrise",
+  Colossians: "open-bible",
+  "1 Thessalonians": "sunrise",
+  "2 Thessalonians": "storm-judgment",
+  "1 Timothy": "pulpit",
+  "2 Timothy": "scripture-lamp",
+  Titus: "pulpit",
+  Philemon: "light-window",
+  Hebrews: "communion-table",
+  James: "scripture-lamp",
+  "1 Peter": "storm-judgment",
+  "2 Peter": "heavens-declare",
+  "1 John": "light-window",
+  "2 John": "light-window",
+  "3 John": "light-window",
+  Jude: "storm-judgment",
+  Revelation: "heavens-declare",
+};
+
 const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
   {
     resourceSlug: "john-gill-s-commentary-on-the-whole-bible-john-gill",
@@ -15377,6 +15446,13 @@ function suggestedSermonImageSlot(entry: Pick<SermonEntry, "title" | "passage" |
 
 function suggestedSermonImageTheme(entry: Pick<SermonEntry, "title" | "passage" | "theme" | "points" | "applications">) {
   return SERMON_SLIDE_IMAGE_SLOTS[suggestedSermonImageSlot(entry)].label;
+}
+
+function detectedBibleBookForSlide(slide: Pick<SermonSlide, "title" | "subtitle" | "body" | "bibleText">) {
+  const haystack = [slide.title, slide.subtitle, slide.body, slide.bibleText].join(" ");
+  return [...WHOLE_BIBLE_VOLUME_BOOKS]
+    .sort((left, right) => right.length - left.length)
+    .find((bookName) => new RegExp(`(^|[^A-Za-z])${bookName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?=\\s+\\d|[^A-Za-z]|$)`, "i").test(haystack)) ?? "";
 }
 
 function slidePresetPatch(themeId: SermonSlideThemeId): Partial<SermonSlide> {
@@ -53000,6 +53076,9 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
 
 function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: (patch: Partial<SermonSlide>) => void }) {
   const [mediaCategory, setMediaCategory] = useState<"All" | SermonSlideMediaCategory>("All");
+  const detectedBibleBook = detectedBibleBookForSlide(slide);
+  const [backgroundBook, setBackgroundBook] = useState("");
+  const selectedBackgroundBook = backgroundBook || detectedBibleBook;
   const filteredImageSlots = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).filter(([, slot]) => mediaCategory === "All" || slot.category === mediaCategory);
   const previewLightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light";
   const readability = sermonSlideReadability(slide, previewLightStyle);
@@ -53107,6 +53186,47 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
             </label>
           ))}
         </div>
+      </div>
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Bible Book Background</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+              Choose any of the 66 Bible books to apply a fast, rights-safe visual matched to its subject and setting.
+            </p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--muted)]">66 books ready</span>
+        </div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Bible Book
+            <select
+              className="mt-1 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={selectedBackgroundBook}
+              onChange={(event) => setBackgroundBook(event.target.value)}
+            >
+              <option value="">Select a Bible book</option>
+              {WHOLE_BIBLE_VOLUME_BOOKS.map((bookName) => <option key={`slide-background-book-${bookName}`} value={bookName}>{bookName}</option>)}
+            </select>
+          </label>
+          <button
+            className="self-end rounded-2xl bg-[var(--green)] px-4 py-3 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+            disabled={!selectedBackgroundBook}
+            onClick={() => {
+              if (!selectedBackgroundBook) return;
+              const imageSlot = BIBLE_BOOK_PRESENTATION_BACKGROUNDS[selectedBackgroundBook] ?? "open-bible";
+              onChange({ imageSlot, imageTheme: `${selectedBackgroundBook} · ${SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label}` });
+            }}
+            type="button"
+          >
+            Apply Book Background
+          </button>
+        </div>
+        {detectedBibleBook && (
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+            Detected from this slide: <span className="font-semibold text-[var(--ink)]">{detectedBibleBook}</span>. Suggested image: {SERMON_SLIDE_IMAGE_SLOTS[BIBLE_BOOK_PRESENTATION_BACKGROUNDS[detectedBibleBook]].label}.
+          </p>
+        )}
       </div>
       <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
