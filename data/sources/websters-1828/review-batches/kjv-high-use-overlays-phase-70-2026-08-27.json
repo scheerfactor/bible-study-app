@@ -1,0 +1,263 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-70-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n172_w3000.jpg",
+      "sha256": "482730a870f44361c271a7fb1401a017154b9e1b41342b78fb45058df80160c5"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n347_w3000.jpg",
+      "sha256": "d62a6f996e04b566ce6f7b687d21fc15d285b73ddff792ffeec86190c57b5fb7"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n390_w3000.jpg",
+      "sha256": "62d08ee449fd9cdd5d14019d09e01376c16e08032dfaee60b07fe04ab3c74e38"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n450_w3000.jpg",
+      "sha256": "5d3058589aebf49bc22323426539059521c5206f692d8a58c1cb1a3fff10806a"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n518_w3000.jpg",
+      "sha256": "dcc1bae878a79242be0837b3318f0f344ed6ee6b5e672c4c7e5635f4dd660f62"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n758_w3000.jpg",
+      "sha256": "3ace3d78f21cfd544d58027914d038cf9615f546460599d15894b122e7fd3f5f"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n771_w3000.jpg",
+      "sha256": "c3273e95ec72f481a59738ed4061af6866d2df72a93ee1d999c62a754e74d900"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n52_w3000.jpg",
+      "sha256": "b6161108fc2138e8ac8d9cd1a427f152fd371ec950764206d963d1fbe9c08ed2"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n632_w3000.jpg",
+      "sha256": "c7ce2711ff997400e24ba12601c5a108d41e407a67b76f7140f7912ef7e099b4"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n933_w3000.jpg",
+      "sha256": "7af875faae36ea1ccdc284d72ee15fecab58d0dce9e738341912efd1cace32b6"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected ten four- or five-occurrence KJV forms with direct verse-study value across doctrine, trades, tabernacle utensils, plants, birds, waterworks, and false worship, while continuing to defer personal and place names whose common dictionary senses would not help the passage.",
+  "review_method": "Compared every retained sense with the original printed page images, corrected clear OCR substitutions and broken words, retained Webster's wording and sense order, expanded abbreviated parts of speech, language names, and Scripture book names for display, and recorded spelling and plural relationships rather than inventing headwords Webster did not print.",
+  "screening_summary": {
+    "reviewed_headwords": 10,
+    "net_new_reviewed_overlays": 10,
+    "verified_lookup_relationships_added": 7,
+    "missing_kjv_forms_resolved": 15,
+    "kjv_occurrences_resolved": 58
+  },
+  "deferred_candidates": [],
+  "promoted_headwords": [
+    "anti-christ",
+    "carpenter",
+    "cinnamon",
+    "conduit",
+    "cumin",
+    "firepan",
+    "fleshhook",
+    "lentil",
+    "sparrow",
+    "witchcraft"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "antichrist",
+      "lookup_headword": "anti-christ",
+      "kjv_occurrences": 4,
+      "relationship": "Unhyphenated KJV form mapped to Webster's printed compound ANTI-CHRIST"
+    },
+    {
+      "word": "cummin",
+      "lookup_headword": "cumin",
+      "kjv_occurrences": 4,
+      "relationship": "KJV spelling mapped to Webster's printed spelling CUMIN"
+    },
+    {
+      "word": "firepans",
+      "lookup_headword": "firepan",
+      "kjv_occurrences": 4,
+      "relationship": "Plural noun form mapped to Webster's singular headword FIREPAN"
+    },
+    {
+      "word": "fleshhooks",
+      "lookup_headword": "fleshhook",
+      "kjv_occurrences": 5,
+      "relationship": "Plural noun form mapped to Webster's singular headword FLESHHOOK"
+    },
+    {
+      "word": "lentiles",
+      "lookup_headword": "lentil",
+      "kjv_occurrences": 4,
+      "relationship": "KJV plural spelling mapped to Webster's singular headword LENTIL"
+    },
+    {
+      "word": "sparrows",
+      "lookup_headword": "sparrow",
+      "kjv_occurrences": 4,
+      "relationship": "Plural noun form mapped to Webster's singular headword SPARROW"
+    },
+    {
+      "word": "witchcrafts",
+      "lookup_headword": "witchcraft",
+      "kjv_occurrences": 4,
+      "relationship": "Plural noun form mapped to Webster's singular headword WITCHCRAFT"
+    }
+  ],
+  "additional_resolved_forms": [
+    {
+      "word": "carpenters",
+      "kjv_occurrences": 9,
+      "resolution": "Regular plural resolved from the reviewed CARPENTER headword"
+    },
+    {
+      "word": "witchcraft",
+      "kjv_occurrences": 3,
+      "resolution": "Direct singular lookup resolved from the reviewed WITCHCRAFT headword"
+    },
+    {
+      "word": "fleshhook",
+      "kjv_occurrences": 2,
+      "resolution": "Direct singular lookup resolved from the reviewed FLESHHOOK headword"
+    },
+    {
+      "word": "sparrow",
+      "kjv_occurrences": 2,
+      "resolution": "Direct singular lookup resolved from the reviewed SPARROW headword"
+    },
+    {
+      "word": "antichrists",
+      "kjv_occurrences": 1,
+      "resolution": "Regular plural resolved through the verified ANTICHRIST to ANTI-CHRIST relationship"
+    }
+  ],
+  "entries": [
+    {
+      "word": "antichrist",
+      "lookup_headword": "anti-christ",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 44901,
+      "source_line_end": 44913,
+      "exact_page_heading": "ANT",
+      "exact_entry_heading": "AN'TI-CHRIST",
+      "exact_source_match": true
+    },
+    {
+      "word": "carpenter",
+      "lookup_headword": "carpenter",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 101194,
+      "source_line_end": 101216,
+      "exact_page_heading": "CAR",
+      "exact_entry_heading": "CAR'PENTER",
+      "exact_source_match": true
+    },
+    {
+      "word": "cinnamon",
+      "lookup_headword": "cinnamon",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 115135,
+      "source_line_end": 115152,
+      "exact_page_heading": "CIN",
+      "exact_entry_heading": "CIN'NAMON",
+      "exact_source_match": true
+    },
+    {
+      "word": "conduit",
+      "lookup_headword": "conduit",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 134528,
+      "source_line_end": 134553,
+      "exact_page_heading": "CON",
+      "exact_entry_heading": "CON'DUIT",
+      "exact_source_match": true
+    },
+    {
+      "word": "cummin",
+      "lookup_headword": "cumin",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 156958,
+      "source_line_end": 156966,
+      "exact_page_heading": "CUM",
+      "exact_entry_heading": "CUM'IN",
+      "exact_source_match": true
+    },
+    {
+      "word": "firepans",
+      "lookup_headword": "firepan",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 235775,
+      "source_line_end": 235776,
+      "exact_page_heading": "FIR",
+      "exact_entry_heading": "FI'REPAN",
+      "exact_source_match": true
+    },
+    {
+      "word": "fleshhooks",
+      "lookup_headword": "fleshhook",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 239957,
+      "source_line_end": 239958,
+      "exact_page_heading": "FLE",
+      "exact_entry_heading": "FLESH'HOOK",
+      "exact_source_match": true
+    },
+    {
+      "word": "lentiles",
+      "lookup_headword": "lentil",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 14760,
+      "source_line_end": 14766,
+      "exact_page_heading": "LEP",
+      "exact_entry_heading": "LENTIL",
+      "exact_source_match": true
+    },
+    {
+      "word": "sparrows",
+      "lookup_headword": "sparrow",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 208638,
+      "source_line_end": 208645,
+      "exact_page_heading": "SPA",
+      "exact_entry_heading": "SPAR'ROW",
+      "exact_source_match": true
+    },
+    {
+      "word": "witchcrafts",
+      "lookup_headword": "witchcraft",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 310857,
+      "source_line_end": 310863,
+      "exact_page_heading": "WIT",
+      "exact_entry_heading": "WITCH'CRAFT",
+      "exact_source_match": true
+    }
+  ]
+}
