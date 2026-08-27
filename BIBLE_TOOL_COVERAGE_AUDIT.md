@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-26T22:35:04.445Z
+Generated: 2026-08-27T01:49:53.638Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -85,16 +85,10 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | --- | --- | ---: | --- |
 | salmon | SALMON | 6 | ocr_full_import_needs_spot_review |
 | wert | BE | 6 | ocr_full_import_needs_spot_review |
-| wish | WISH | 6 | ocr_full_import_needs_spot_review |
-| abolished | ABOL'ISH | 5 | ocr_full_import_needs_spot_review |
-| alien | A'LIEN | 5 | ocr_full_import_needs_spot_review |
 | aloes | ALOES | 5 | ocr_full_import_needs_spot_review |
-| avoid | AVOID' | 5 | ocr_full_import_needs_spot_review |
-| aware | AWA'RE | 5 | ocr_full_import_needs_spot_review |
 | beforehand | BEFOREHAND | 5 | ocr_full_import_needs_spot_review |
 | beguiled | BEGUI'LE | 5 | ocr_full_import_needs_spot_review |
 | benefit | BEN'EFIT | 5 | ocr_full_import_needs_spot_review |
-| betimes | BETI'MES | 5 | ocr_full_import_needs_spot_review |
 | bulwarks | BUL'WARK | 5 | ocr_full_import_needs_spot_review |
 | burdensome | BURDENSOME | 5 | ocr_full_import_needs_spot_review |
 | carmelite | CARMELITE | 5 | ocr_full_import_needs_spot_review |
@@ -113,6 +107,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | deputy | DEP'UTY | 5 | ocr_full_import_needs_spot_review |
 | disallowed | DISALLOWED | 5 | ocr_full_import_needs_spot_review |
 | disguised | DISGUI'SE | 5 | ocr_full_import_needs_spot_review |
+| distribute | DISTRIB'UTE | 5 | ocr_full_import_needs_spot_review |
+| dodo | DO'DO | 5 | ocr_full_import_needs_spot_review |
+| downward | DOWN'WARD | 5 | ocr_full_import_needs_spot_review |
+| drowned | DROWNED | 5 | ocr_full_import_needs_spot_review |
+| emerald | EM'ERALD | 5 | ocr_full_import_needs_spot_review |
+| engravings | ENGRA'VING | 5 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
