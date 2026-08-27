@@ -1,0 +1,234 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-69-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n467_w3000.jpg",
+      "sha256": "27682394e24dde1b1ef52cc3981f9df4eb67c98ca381d44307333f34443895f3"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n513_w3000.jpg",
+      "sha256": "df110a235c1cacfea5cb21df505e45154226b1ae4785ed07616397ec466f8ecd"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n252_w3000.jpg",
+      "sha256": "3947ee374290613a173d49651a835d53b4978145b6ebd5b87e069a95b1e05141"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n257_w3000.jpg",
+      "sha256": "d306d8a3fb05c1de8efd5d987b3a29485c222817040c3a52508491d66062bce2"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n258_w3000.jpg",
+      "sha256": "d518d1425230a0334206fd899e79874a22bb65a000dbabd29965ae82f54726e5"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n449_w3000.jpg",
+      "sha256": "3c224e271936b9ef160300949132361fce87dda9cd0599ad2bdb5091de317901"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n545_w3000.jpg",
+      "sha256": "a673b3dd76bac1954e4f3bd6a12b0a7c49147cd163a78988831242c2beece4dc"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n674_w3000.jpg",
+      "sha256": "4bea0fa1558cdabb3aa4c4e755614ce8f1d0267535d94b3493d318399dcce28c"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n704_w3000.jpg",
+      "sha256": "fee6a99fea4b0c6660e663b9611d82dfe24fe9fbc2b23d8466d3d72921825efb"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n863_w3000.jpg",
+      "sha256": "84f609b7d83baaf300fa228efcca248d74cce16c54bb631bcb54b2ec8f509b6a"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected ten ordinary five-occurrence KJV forms from the medium-priority queue after excluding personal names, place names, and entries whose common dictionary sense could mislead a Bible-context lookup.",
+  "review_method": "Compared every retained sense or phrase with the original printed page images, corrected clear OCR substitutions and broken words, retained Webster's wording and sense order, expanded abbreviated parts of speech and Scripture book names for display, and recorded spelling, plural, and phrase relationships rather than inventing headwords Webster did not print.",
+  "screening_summary": {
+    "reviewed_headwords": 10,
+    "net_new_reviewed_overlays": 10,
+    "verified_lookup_relationships_added": 4,
+    "missing_kjv_forms_resolved": 12,
+    "kjv_occurrences_resolved": 55
+  },
+  "deferred_candidates": [
+    {
+      "word": "salmon",
+      "kjv_occurrences": 6,
+      "reason": "The KJV form names a person; Webster's common-noun entry defines the fish and would mislead a verse-context lookup."
+    },
+    {
+      "word": "aloes",
+      "kjv_occurrences": 5,
+      "reason": "Webster's common entry primarily describes the aloe plant and medicinal juice, while the KJV passages concern an aromatic substance or aloes-wood."
+    },
+    {
+      "word": "carmelite",
+      "kjv_occurrences": 5,
+      "reason": "The KJV gentilic identifies a person from Carmel, while Webster's common entry describes a member of the Carmelite religious order."
+    }
+  ],
+  "promoted_headwords": [
+    "consumption",
+    "cruelty",
+    "parlor",
+    "passage",
+    "passenger",
+    "religion",
+    "sedition",
+    "stork",
+    "superscription",
+    "upside down"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "parlour",
+      "lookup_headword": "parlor",
+      "kjv_occurrences": 5,
+      "relationship": "British spelling mapped to Webster's American spelling PARLOR"
+    },
+    {
+      "word": "passages",
+      "lookup_headword": "passage",
+      "kjv_occurrences": 5,
+      "relationship": "Plural noun form mapped to Webster's singular headword PASSAGE"
+    },
+    {
+      "word": "passengers",
+      "lookup_headword": "passenger",
+      "kjv_occurrences": 5,
+      "relationship": "Plural noun form mapped to Webster's singular headword PASSENGER"
+    },
+    {
+      "word": "upside",
+      "lookup_headword": "upside down",
+      "kjv_occurrences": 5,
+      "relationship": "KJV token mapped to Webster's complete phrase UPSIDE DOWN, which is the form printed and defined"
+    }
+  ],
+  "entries": [
+    {
+      "word": "consumption",
+      "lookup_headword": "consumption",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 140294,
+      "source_line_end": 140318,
+      "exact_page_heading": "CON",
+      "exact_entry_heading": "CONSUMP'TION",
+      "exact_source_match": true
+    },
+    {
+      "word": "cruelty",
+      "lookup_headword": "cruelty",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 155164,
+      "source_line_end": 155181,
+      "exact_page_heading": "CRU",
+      "exact_entry_heading": "CRU'ELTY",
+      "exact_source_match": true
+    },
+    {
+      "word": "parlour",
+      "lookup_headword": "parlor",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 81609,
+      "source_line_end": 81624,
+      "exact_page_heading": "PAR",
+      "exact_entry_heading": "PAR'LOR",
+      "exact_source_match": true
+    },
+    {
+      "word": "passages",
+      "lookup_headword": "passage",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 83404,
+      "source_line_end": 83488,
+      "exact_page_heading": "PAS",
+      "exact_entry_heading": "PASS'AGE",
+      "exact_source_match": true
+    },
+    {
+      "word": "passengers",
+      "lookup_headword": "passenger",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 83506,
+      "source_line_end": 83513,
+      "exact_page_heading": "PAS",
+      "exact_entry_heading": "PAS'SENGER",
+      "exact_source_match": true
+    },
+    {
+      "word": "religion",
+      "lookup_headword": "religion",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 147176,
+      "source_line_end": 147239,
+      "exact_page_heading": "REL",
+      "exact_entry_heading": "RELIG'ION",
+      "exact_source_match": true
+    },
+    {
+      "word": "sedition",
+      "lookup_headword": "sedition",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 179067,
+      "source_line_end": 179090,
+      "exact_page_heading": "SED",
+      "exact_entry_heading": "SEDI'TION",
+      "exact_source_match": true
+    },
+    {
+      "word": "stork",
+      "lookup_headword": "stork",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 222980,
+      "source_line_end": 222982,
+      "exact_page_heading": "STO",
+      "exact_entry_heading": "STORK",
+      "exact_source_match": true
+    },
+    {
+      "word": "superscription",
+      "lookup_headword": "superscription",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 233052,
+      "source_line_end": 233064,
+      "exact_page_heading": "SUP",
+      "exact_entry_heading": "SUPERSCRIP'TION",
+      "exact_source_match": true
+    },
+    {
+      "word": "upside",
+      "lookup_headword": "upside down",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 287292,
+      "source_line_end": 287294,
+      "exact_page_heading": "UPW",
+      "exact_entry_heading": "Upside down",
+      "exact_source_match": true
+    }
+  ]
+}
