@@ -21,29 +21,31 @@ Works now:
 - Session expiry using `expires_at`
 - Display connection status using `display_last_seen_at`
 - Screen Wake Lock in Presenter, Controller, and Presentation views, with foreground reacquisition and a visible device-settings fallback
+- Prepared authenticated `apply_presentation_session_action` RPC for atomic slide control, approval, locking, heartbeat, and event logging
 
 The app tries Supabase first when it is configured and the `presentation_sessions` tables exist. If Supabase is unavailable, it falls back to local browser storage so presentations can still be tested.
 
-## Important Limitation
+## Important Deployment Gate
 
-The current approval workflow is beta-safe app logic and session metadata. The next production hardening step is stricter server-side enforcement with owner/controller permissions, preferably through RPC or Edge Functions so unapproved controllers cannot bypass the UI.
+The RPC and its least-privilege grants are prepared in the repository but are not live until migration `20260827164153_authorize_presentation_actions_with_rpc.sql` is deployed and verified. Until then, the app explicitly falls back to local browser control instead of treating direct shared writes as secure.
 
 ## Current Shared Architecture
 
 1. `presentation_sessions` stores the active slide deck, current slide index, blank-screen state, active/ended state, short session code, owner, controller approval mode, controller list, display heartbeat, and expiry.
 2. `presentation_session_events` logs controller actions such as start, join, display join, next, previous, first, last, blank, unblank, jump, refresh, approve controller, lock/unlock controller, restart timer, expire, and end.
-3. Display and controller views subscribe to `presentation_sessions` updates through Supabase Realtime.
-4. Local storage mirrors the same session state as a fallback.
+3. `apply_presentation_session_action` binds the presenter and controllers to their Supabase auth sessions, validates approval and lock state, updates the live row atomically, and writes the matching audit event.
+4. Display and controller views subscribe to `presentation_sessions` updates through Supabase Realtime.
+5. Local storage mirrors the same session state as a fallback.
 
 ## Future Production Hardening
 
 Recommended next step:
 
-1. Move controller actions into server-side RPC or Edge Functions.
-2. Enforce presenter ownership and approved controller IDs server-side.
-3. Add controller approval and revocation audit logs.
-4. Add explicit session cleanup job for stale sessions.
-5. Add connection status: connected, reconnecting, offline, and controller locked.
+1. Deploy and verify the prepared RPC migration on a non-production Supabase branch, then production.
+2. Run separate-auth-session presenter, projector, and controller tests against the deployed RPC.
+3. Add explicit session cleanup for stale sessions.
+4. Add connection status: connected, reconnecting, offline, and controller locked.
+5. Design a separate limited guest-controller token flow only if church testing proves it is needed.
 
 ## Session Data Model
 
@@ -56,6 +58,7 @@ Fields:
 - is_blank
 - is_active
 - presenter_user_id
+- presenter_auth_session_id
 - control_mode
 - controller_lock
 - controllers

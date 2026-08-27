@@ -15,6 +15,7 @@ For the first live use, treat the app as a preaching and slide-support tool, not
 - Phone or tablet opens Controller View.
 - Supabase environment variables are configured.
 - `presentation_sessions` includes Phase 4 columns: `control_mode`, `controller_lock`, `controllers`, `display_last_seen_at`, and `expires_at`.
+- Migration `20260827164153_authorize_presentation_actions_with_rpc.sql` is deployed and the authenticated presentation RPC passes its security audit.
 - The deck has been exported to PowerPoint and opened on the church presentation computer.
 - The presenter has sermon notes exported or printed.
 - The church Wi-Fi, projector resolution, and browser zoom have been checked before people arrive.
@@ -99,8 +100,8 @@ The app is ready to replace Proclaim for a simple service only when all are true
 
 ## Known Beta Limitations
 
-- Approval is enforced by app workflow and session metadata.
-- Production-grade enforcement should move controller actions to RPC or Edge Functions.
+- The server-authorized control RPC remains unavailable until its prepared migration is deployed and verified.
+- Shared control currently requires the same signed-in account on every device; limited guest controllers are not enabled.
 - Session cleanup is expiry-based in the app; a scheduled cleanup job is still recommended.
 - Remote control should be tested on the church network before service.
 - For a first Sunday use, prefer exported PowerPoint plus app notes over app-only presentation.

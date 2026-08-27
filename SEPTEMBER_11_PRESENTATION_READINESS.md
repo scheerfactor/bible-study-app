@@ -85,14 +85,14 @@ To build the actual September 11 deck, replace the rehearsal content after the p
 
 ## Remote Control Security Boundary
 
-The prepared database migration now removes anonymous reads and writes and restricts shared sessions to the signed-in presenter account. It must be deployed and verified before the secure cross-device workflow is live. The September 11 plan uses that one trusted account on every device.
+The prepared database migrations remove anonymous reads and writes, restrict shared sessions to the signed-in presenter account, and route live mutations through an auth-session-bound RPC. They must be deployed and verified before the secure cross-device workflow is live. The September 11 plan uses that one trusted account on every device.
 
 Before unrelated guest devices can receive limited controller access:
 
-1. Move slide-control actions behind a server-side RPC or Edge Function.
-2. Enforce presenter ownership and approved controller identity on the server.
-3. Keep private sermon notes and speaker notes out of guest-accessible payloads.
-4. Add controller action auditing and scheduled expired-session cleanup.
+1. Deploy and verify the prepared presentation RPC migration.
+2. Keep private sermon notes and speaker notes out of any future guest-accessible payloads.
+3. Add scheduled expired-session cleanup.
+4. Design limited guest-controller credentials only after the same-account workflow passes church rehearsal.
 
 Until guest authorization is complete, do not share session access with people who are not signed in to Stephen's account. For September 11, the safe launch path is the same-account web workflow plus a verified PowerPoint or PDF fallback.
 
