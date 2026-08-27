@@ -356,5 +356,22 @@
   "fleshhooks": "fleshhook",
   "lentiles": "lentil",
   "sparrows": "sparrow",
-  "witchcrafts": "witchcraft"
+  "witchcrafts": "witchcraft",
+  "armourbearer": "armor-bearer",
+  "sceptre": "scepter",
+  "sceptres": "scepter",
+  "winepress": "wine-press",
+  "winepresses": "wine-press",
+  "colour": "color",
+  "colours": "color",
+  "coloured": "color",
+  "counsellor": "counselor",
+  "counsellors": "counselor",
+  "archers": "archer",
+  "watchmen": "watchman",
+  "pigeons": "pigeon",
+  "almonds": "almond",
+  "magicians": "magician",
+  "mitre": "miter",
+  "bracelets": "bracelet"
 }
