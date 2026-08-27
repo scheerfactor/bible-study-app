@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-27T10:34:25.681Z",
+    "generated_at": "2026-08-27T12:17:31.856Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61323,
+      "entries": 61324,
       "normalizedHeadwords": 51300,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
@@ -1822,29 +1822,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "wert",
-          "count": 6,
-          "sampleRefs": [
-            "Job 8:6",
-            "Solomon's Song 8:1",
-            "Romans 11:17",
-            "Romans 11:24",
-            "Romans 11:24"
-          ],
-          "lookupCandidates": [
-            "wert",
-            "be"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "aloes",
           "count": 5,
           "sampleRefs": [
@@ -3604,6 +3581,28 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "UNSEARCHABLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "utterance",
+          "count": 5,
+          "sampleRefs": [
+            "Acts 2:4",
+            "1 Corinthians 1:5",
+            "2 Corinthians 8:7",
+            "Ephesians 6:19",
+            "Colossians 4:3"
+          ],
+          "lookupCandidates": [
+            "utterance"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "UT'TER ANCE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8504,29 +8503,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "wert",
-        "count": 6,
-        "sampleRefs": [
-          "Job 8:6",
-          "Solomon's Song 8:1",
-          "Romans 11:17",
-          "Romans 11:24",
-          "Romans 11:24"
-        ],
-        "lookupCandidates": [
-          "wert",
-          "be"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "aloes",
         "count": 5,
         "sampleRefs": [
@@ -10286,6 +10262,28 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "UNSEARCHABLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "utterance",
+        "count": 5,
+        "sampleRefs": [
+          "Acts 2:4",
+          "1 Corinthians 1:5",
+          "2 Corinthians 8:7",
+          "Ephesians 6:19",
+          "Colossians 4:3"
+        ],
+        "lookupCandidates": [
+          "utterance"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "UT'TER ANCE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

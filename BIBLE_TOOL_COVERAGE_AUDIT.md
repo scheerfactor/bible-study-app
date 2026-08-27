@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-27T10:34:25.681Z
+Generated: 2026-08-27T12:17:31.856Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -84,7 +84,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
 | salmon | SALMON | 6 | ocr_full_import_needs_spot_review |
-| wert | BE | 6 | ocr_full_import_needs_spot_review |
 | aloes | ALOES | 5 | ocr_full_import_needs_spot_review |
 | carmelite | CARMELITE | 5 | ocr_full_import_needs_spot_review |
 | crew | CREW | 5 | ocr_full_import_needs_spot_review |
@@ -113,6 +112,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | founder | FOUND'ER | 5 | ocr_full_import_needs_spot_review |
 | garnished | GARNISH | 5 | ocr_full_import_needs_spot_review |
 | goddess | GOD'DESS | 5 | ocr_full_import_needs_spot_review |
+| gourd | GOURD | 5 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

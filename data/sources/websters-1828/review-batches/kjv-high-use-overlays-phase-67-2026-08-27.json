@@ -1,0 +1,69 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-67-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page image.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n244_w3000.jpg",
+      "sha256": "376efee1acac98c4d0765615484f13c903282d4780647ec456178e4a06b3c092"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Completed the dedicated review reserved in phases 64 through 66 for the six-occurrence KJV form WERT. The previously reviewed inflectional alias to BE was retained only after the complete substantive-verb entry was checked against the printed page.",
+  "review_method": "Compared all five numbered senses, the auxiliary-verb paragraph, and the LET BE phrase against the original printed page. Corrected clear OCR substitutions and broken words, expanded abbreviated parts of speech and Scripture book names for display, retained Webster's wording and sense order, and omitted only non-definitional literary attribution lines and difficult-to-render historical script forms in the etymology.",
+  "screening_summary": {
+    "reviewed_headwords": 1,
+    "net_new_reviewed_overlays": 1,
+    "verified_lookup_relationships_added": 0,
+    "verified_lookup_relationships_reconfirmed": 1,
+    "missing_kjv_forms_resolved": 1,
+    "kjv_occurrences_resolved": 6
+  },
+  "deferred_candidates": [
+    {
+      "word": "salmon",
+      "kjv_occurrences": 6,
+      "reason": "The KJV form names a person or place; Webster's common-noun entry defines the fish and would mislead a verse-context lookup."
+    },
+    {
+      "word": "aloes",
+      "kjv_occurrences": 5,
+      "reason": "Webster's parsed common entry primarily describes the aloe plant and medicinal juice, while the KJV passages concern an aromatic substance or aloes-wood."
+    },
+    {
+      "word": "carmelite",
+      "kjv_occurrences": 5,
+      "reason": "The KJV gentilic identifies a person from Carmel, while Webster's common entry may describe a member of the Carmelite religious order."
+    }
+  ],
+  "promoted_headwords": [
+    "be"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "wert",
+      "lookup_headword": "be",
+      "kjv_occurrences": 6,
+      "relationship": "Archaic second-person singular past form mapped to Webster's substantive verb BE; Webster explicitly notes that BE is a defective verb supplied by forms including WAS and WERE"
+    }
+  ],
+  "entries": [
+    {
+      "word": "wert",
+      "lookup_headword": "be",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 67854,
+      "source_line_end": 67908,
+      "exact_page_heading": "BE",
+      "exact_entry_heading": "BE",
+      "exact_source_match": true
+    }
+  ]
+}
