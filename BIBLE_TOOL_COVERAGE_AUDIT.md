@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-08-27T12:17:31.856Z
+Generated: 2026-08-27T13:39:54.696Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -86,12 +86,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | salmon | SALMON | 6 | ocr_full_import_needs_spot_review |
 | aloes | ALOES | 5 | ocr_full_import_needs_spot_review |
 | carmelite | CARMELITE | 5 | ocr_full_import_needs_spot_review |
-| crew | CREW | 5 | ocr_full_import_needs_spot_review |
-| crimson | CRIM'SON | 5 | ocr_full_import_needs_spot_review |
-| custody | CUS'TODY | 5 | ocr_full_import_needs_spot_review |
-| defraud | DEFRAUD' | 5 | ocr_full_import_needs_spot_review |
-| delicate | DEL'ICATE | 5 | ocr_full_import_needs_spot_review |
-| deputy | DEP'UTY | 5 | ocr_full_import_needs_spot_review |
 | disallowed | DISALLOWED | 5 | ocr_full_import_needs_spot_review |
 | disguised | DISGUI'SE | 5 | ocr_full_import_needs_spot_review |
 | distribute | DISTRIB'UTE | 5 | ocr_full_import_needs_spot_review |
@@ -113,6 +107,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | garnished | GARNISH | 5 | ocr_full_import_needs_spot_review |
 | goddess | GOD'DESS | 5 | ocr_full_import_needs_spot_review |
 | gourd | GOURD | 5 | ocr_full_import_needs_spot_review |
+| grope | GROPE | 5 | ocr_full_import_needs_spot_review |
+| hailstones | HA'ILSTONE | 5 | ocr_full_import_needs_spot_review |
+| haughtiness | HAUGHTINESS | 5 | ocr_full_import_needs_spot_review |
+| haven | HA'VEN | 5 | ocr_full_import_needs_spot_review |
+| idolaters | IDOL'ATER | 5 | ocr_full_import_needs_spot_review |
+| inn | INN | 5 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-27T12:17:31.856Z",
+    "generated_at": "2026-08-27T13:39:54.696Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61324,
+      "entries": 61330,
       "normalizedHeadwords": 51300,
       "meaningfulWordsWithDefinition": 8548,
       "meaningfulWordsWithoutDefinition": 3906,
@@ -1867,138 +1867,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "crew",
-          "count": 5,
-          "sampleRefs": [
-            "Matthew 26:74",
-            "Mark 14:68",
-            "Mark 14:72",
-            "Luke 22:60",
-            "John 18:27"
-          ],
-          "lookupCandidates": [
-            "crew"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CREW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "crimson",
-          "count": 5,
-          "sampleRefs": [
-            "2 Chronicles 2:7",
-            "2 Chronicles 2:14",
-            "2 Chronicles 3:14",
-            "Isaiah 1:18",
-            "Jeremiah 4:30"
-          ],
-          "lookupCandidates": [
-            "crimson"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CRIM'SON",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "custody",
-          "count": 5,
-          "sampleRefs": [
-            "Numbers 3:36",
-            "Esther 2:3",
-            "Esther 2:8",
-            "Esther 2:8",
-            "Esther 2:14"
-          ],
-          "lookupCandidates": [
-            "custody"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CUS'TODY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "defraud",
-          "count": 5,
-          "sampleRefs": [
-            "Leviticus 19:13",
-            "Mark 10:19",
-            "1 Corinthians 6:8",
-            "1 Corinthians 7:5",
-            "1 Thessalonians 4:6"
-          ],
-          "lookupCandidates": [
-            "defraud"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DEFRAUD'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "delicate",
-          "count": 5,
-          "sampleRefs": [
-            "Deuteronomy 28:54",
-            "Deuteronomy 28:56",
-            "Isaiah 47:1",
-            "Jeremiah 6:2",
-            "Micah 1:16"
-          ],
-          "lookupCandidates": [
-            "delicate"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DEL'ICATE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "deputy",
-          "count": 5,
-          "sampleRefs": [
-            "1 Kings 22:47",
-            "Acts 13:7",
-            "Acts 13:8",
-            "Acts 13:12",
-            "Acts 18:12"
-          ],
-          "lookupCandidates": [
-            "deputy"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DEP'UTY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "disallowed",
           "count": 5,
           "sampleRefs": [
@@ -3603,6 +3471,138 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "UT'TER ANCE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "vapour",
+          "count": 5,
+          "sampleRefs": [
+            "Job 36:27",
+            "Job 36:33",
+            "Psalms 148:8",
+            "Acts 2:19",
+            "James 4:14"
+          ],
+          "lookupCandidates": [
+            "vapour",
+            "vapor"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "VA'POR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "warfare",
+          "count": 5,
+          "sampleRefs": [
+            "1 Samuel 28:1",
+            "Isaiah 40:2",
+            "1 Corinthians 9:7",
+            "2 Corinthians 10:4",
+            "1 Timothy 1:18"
+          ],
+          "lookupCandidates": [
+            "warfare"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WAR'FARE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "wrest",
+          "count": 5,
+          "sampleRefs": [
+            "Exodus 23:2",
+            "Exodus 23:6",
+            "Deuteronomy 16:19",
+            "Psalms 56:5",
+            "2 Peter 3:16"
+          ],
+          "lookupCandidates": [
+            "wrest"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WREST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "abase",
+          "count": 4,
+          "sampleRefs": [
+            "Job 40:11",
+            "Isaiah 31:4",
+            "Ezekiel 21:26",
+            "Daniel 4:37"
+          ],
+          "lookupCandidates": [
+            "abase"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ABA'SE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "adorned",
+          "count": 4,
+          "sampleRefs": [
+            "Jeremiah 31:4",
+            "Luke 21:5",
+            "1 Peter 3:5",
+            "Revelation 21:2"
+          ],
+          "lookupCandidates": [
+            "adorned",
+            "adorn",
+            "adorne"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ADORN'ED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "alpha",
+          "count": 4,
+          "sampleRefs": [
+            "Revelation 1:8",
+            "Revelation 1:11",
+            "Revelation 21:6",
+            "Revelation 22:13"
+          ],
+          "lookupCandidates": [
+            "alpha"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "AL'PHA",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -8548,138 +8548,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "crew",
-        "count": 5,
-        "sampleRefs": [
-          "Matthew 26:74",
-          "Mark 14:68",
-          "Mark 14:72",
-          "Luke 22:60",
-          "John 18:27"
-        ],
-        "lookupCandidates": [
-          "crew"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CREW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "crimson",
-        "count": 5,
-        "sampleRefs": [
-          "2 Chronicles 2:7",
-          "2 Chronicles 2:14",
-          "2 Chronicles 3:14",
-          "Isaiah 1:18",
-          "Jeremiah 4:30"
-        ],
-        "lookupCandidates": [
-          "crimson"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CRIM'SON",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "custody",
-        "count": 5,
-        "sampleRefs": [
-          "Numbers 3:36",
-          "Esther 2:3",
-          "Esther 2:8",
-          "Esther 2:8",
-          "Esther 2:14"
-        ],
-        "lookupCandidates": [
-          "custody"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CUS'TODY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "defraud",
-        "count": 5,
-        "sampleRefs": [
-          "Leviticus 19:13",
-          "Mark 10:19",
-          "1 Corinthians 6:8",
-          "1 Corinthians 7:5",
-          "1 Thessalonians 4:6"
-        ],
-        "lookupCandidates": [
-          "defraud"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DEFRAUD'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "delicate",
-        "count": 5,
-        "sampleRefs": [
-          "Deuteronomy 28:54",
-          "Deuteronomy 28:56",
-          "Isaiah 47:1",
-          "Jeremiah 6:2",
-          "Micah 1:16"
-        ],
-        "lookupCandidates": [
-          "delicate"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DEL'ICATE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "deputy",
-        "count": 5,
-        "sampleRefs": [
-          "1 Kings 22:47",
-          "Acts 13:7",
-          "Acts 13:8",
-          "Acts 13:12",
-          "Acts 18:12"
-        ],
-        "lookupCandidates": [
-          "deputy"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DEP'UTY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "disallowed",
         "count": 5,
         "sampleRefs": [
@@ -10284,6 +10152,138 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "UT'TER ANCE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "vapour",
+        "count": 5,
+        "sampleRefs": [
+          "Job 36:27",
+          "Job 36:33",
+          "Psalms 148:8",
+          "Acts 2:19",
+          "James 4:14"
+        ],
+        "lookupCandidates": [
+          "vapour",
+          "vapor"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "VA'POR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "warfare",
+        "count": 5,
+        "sampleRefs": [
+          "1 Samuel 28:1",
+          "Isaiah 40:2",
+          "1 Corinthians 9:7",
+          "2 Corinthians 10:4",
+          "1 Timothy 1:18"
+        ],
+        "lookupCandidates": [
+          "warfare"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WAR'FARE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "wrest",
+        "count": 5,
+        "sampleRefs": [
+          "Exodus 23:2",
+          "Exodus 23:6",
+          "Deuteronomy 16:19",
+          "Psalms 56:5",
+          "2 Peter 3:16"
+        ],
+        "lookupCandidates": [
+          "wrest"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WREST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "abase",
+        "count": 4,
+        "sampleRefs": [
+          "Job 40:11",
+          "Isaiah 31:4",
+          "Ezekiel 21:26",
+          "Daniel 4:37"
+        ],
+        "lookupCandidates": [
+          "abase"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ABA'SE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "adorned",
+        "count": 4,
+        "sampleRefs": [
+          "Jeremiah 31:4",
+          "Luke 21:5",
+          "1 Peter 3:5",
+          "Revelation 21:2"
+        ],
+        "lookupCandidates": [
+          "adorned",
+          "adorn",
+          "adorne"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ADORN'ED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "alpha",
+        "count": 4,
+        "sampleRefs": [
+          "Revelation 1:8",
+          "Revelation 1:11",
+          "Revelation 21:6",
+          "Revelation 22:13"
+        ],
+        "lookupCandidates": [
+          "alpha"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "AL'PHA",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
