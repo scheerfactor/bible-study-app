@@ -37736,6 +37736,7 @@ function LibraryScreen({
     const listening = listeningProgress[activeResource.slug];
     return (
       <LibraryReader
+        key={activeResource.slug}
         resource={activeResource}
         text={activeText}
         loading={loading}
@@ -44966,6 +44967,12 @@ function LibraryReader({
   onAddToStudyPlaylist: () => void;
   canUseAdminDrafts: boolean;
 }) {
+  const [readerLookupTerm, setReaderLookupTerm] = useState("");
+  const [readerLookupEntry, setReaderLookupEntry] = useState<DictionaryEntry | null>(null);
+  const [readerLookupStrongResults, setReaderLookupStrongResults] = useState<StrongSearchResult[]>([]);
+  const [readerLookupStatus, setReaderLookupStatus] = useState<"idle" | "loading" | "ready" | "missing" | "error">("idle");
+  const [readerLookupMessage, setReaderLookupMessage] = useState("");
+  const readerLookupRequestRef = useRef(0);
   const speechActive = speechState.targetId === `resource-${resource.slug}` && speechState.playing;
   const uploadedAudiobookSegments = uploadedAudiobookPilotsForResource(resource, canUseAdminDrafts);
   const audiobookPilotPlan = audiobookPilotPlanForResource(resource, canUseAdminDrafts);
@@ -45018,6 +45025,70 @@ function LibraryReader({
     if (activeChunkIndex === null) return;
     readerChunkRefs.current[activeChunkIndex]?.scrollIntoView({ block: "center", behavior: "smooth" });
   }, [activeChunkIndex]);
+
+  function selectedReaderWord() {
+    if (typeof window === "undefined") return "";
+    const selection = window.getSelection()?.toString().trim() ?? "";
+    const words = selection.match(/[A-Za-z]+(?:['’][A-Za-z]+)?/g) ?? [];
+    return words.length === 1 ? words[0] : "";
+  }
+
+  async function lookUpReaderWord(source: "typed" | "selection") {
+    const requestedTerm = source === "selection" ? selectedReaderWord() : readerLookupTerm.trim();
+    const words = requestedTerm.match(/[A-Za-z]+(?:['’][A-Za-z]+)?/g) ?? [];
+
+    if (words.length !== 1) {
+      setReaderLookupStatus("error");
+      setReaderLookupMessage(
+        source === "selection"
+          ? "Select one word in the book, then choose Define selected word."
+          : "Enter one word to define.",
+      );
+      return;
+    }
+
+    const word = words[0];
+    const requestId = readerLookupRequestRef.current + 1;
+    readerLookupRequestRef.current = requestId;
+    setReaderLookupTerm(word);
+    setReaderLookupEntry(null);
+    setReaderLookupStrongResults([]);
+    setReaderLookupStatus("loading");
+    setReaderLookupMessage(`Looking up ${word}...`);
+
+    try {
+      const [dictionaryResponse, strongResponse] = await Promise.all([
+        fetch(`/api/dictionary/${encodeURIComponent(word)}`),
+        fetch(`/api/strongs?query=${encodeURIComponent(word)}&limit=4`),
+      ]);
+      if (readerLookupRequestRef.current !== requestId) return;
+
+      const dictionaryData = dictionaryResponse.ok
+        ? ((await dictionaryResponse.json()) as DictionaryLookupResponse)
+        : null;
+      const strongData = strongResponse.ok
+        ? ((await strongResponse.json()) as { entries?: StrongSearchResult[] })
+        : null;
+      if (readerLookupRequestRef.current !== requestId) return;
+
+      const dictionaryEntry = dictionaryData ? dictionaryEntryFromLookupResponse(dictionaryData) : null;
+      const strongResults = strongData?.entries ?? [];
+      setReaderLookupEntry(dictionaryEntry);
+      setReaderLookupStrongResults(strongResults);
+      setReaderLookupStatus(dictionaryEntry || strongResults.length ? "ready" : "missing");
+      setReaderLookupMessage(
+        dictionaryEntry
+          ? "Definition found."
+          : strongResults.length
+            ? "No Webster entry was found, but related Strong's search results are available."
+            : "No reviewed dictionary or Strong's search result matched that word.",
+      );
+    } catch {
+      if (readerLookupRequestRef.current !== requestId) return;
+      setReaderLookupStatus("error");
+      setReaderLookupMessage("Word lookup is not available right now. Please try again.");
+    }
+  }
 
   return (
     <div className={`flex h-[calc(100vh-96px)] flex-col overflow-x-hidden md:h-[calc(100vh-48px)] ${readerThemeClass}`}>
@@ -45411,6 +45482,90 @@ function LibraryReader({
             </button>
           ))}
         </div>
+        <section className="mt-3 border-t border-[var(--line)] pt-3" aria-labelledby="reader-word-lookup-title">
+          <div className="flex flex-wrap items-start justify-between gap-2">
+            <div>
+              <p id="reader-word-lookup-title" className="text-sm font-semibold text-[var(--ink)]">Define a word in this book</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                Select one word in the reader or type it below. Your place in the book stays open.
+              </p>
+            </div>
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+              onClick={() => void lookUpReaderWord("selection")}
+              type="button"
+            >
+              <BookMarked size={16} />
+              Define selected word
+            </button>
+          </div>
+          <form
+            className="mt-3 grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto]"
+            onSubmit={(event) => {
+              event.preventDefault();
+              void lookUpReaderWord("typed");
+            }}
+          >
+            <input
+              aria-label="Word to define"
+              autoCapitalize="none"
+              className="h-10 min-w-0 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 text-sm text-[var(--ink)] outline-none placeholder:text-stone-400"
+              placeholder="Type one word, such as providence"
+              value={readerLookupTerm}
+              onChange={(event) => setReaderLookupTerm(event.target.value)}
+            />
+            <button
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 text-sm font-semibold text-white disabled:cursor-wait disabled:opacity-70"
+              disabled={readerLookupStatus === "loading"}
+              type="submit"
+            >
+              <Search size={16} />
+              {readerLookupStatus === "loading" ? "Looking up" : "Define"}
+            </button>
+          </form>
+          {readerLookupStatus !== "idle" && (
+            <div className="mt-3" aria-live="polite">
+              <p className={`text-sm font-semibold ${readerLookupStatus === "error" || readerLookupStatus === "missing" ? "text-amber-800" : "text-[var(--green)]"}`}>
+                {readerLookupMessage}
+              </p>
+              {readerLookupEntry?.sourceEntries?.map((entry, index) => (
+                <div className="mt-3 border-t border-[var(--line)] pt-3" key={`${entry.sourceTitle}-${entry.headword}-${index}`}>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="font-serif text-lg font-semibold text-[var(--ink)]">{entry.headword}</p>
+                    {entry.reviewStatus && (
+                      <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[11px] font-semibold uppercase text-[var(--muted)]">
+                        {entry.reviewStatus.replaceAll("_", " ")}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entry.sourceTitle}</p>
+                  <p className="mt-2 whitespace-pre-line font-serif text-base leading-7 text-[var(--scripture-ink)]">{entry.definition}</p>
+                </div>
+              ))}
+              {readerLookupStrongResults.length > 0 && (
+                <div className="mt-3 border-t border-[var(--line)] pt-3">
+                  <p className="text-sm font-semibold text-[var(--ink)]">Related Strong&apos;s search</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                    Research aid only. An author&apos;s English word does not prove that a particular Hebrew or Greek sense was intended.
+                  </p>
+                  <div className="mt-2 divide-y divide-[var(--line)]">
+                    {readerLookupStrongResults.map((entry) => (
+                      <div className="py-2" key={`reader-strong-${entry.strongs_number}`}>
+                        <p className="text-sm font-semibold text-[var(--green)]">
+                          {entry.strongs_number} · {entry.language} · {entry.transliteration || entry.original_word}
+                        </p>
+                        <p className="mt-1 text-sm leading-6 text-[var(--scripture-ink)]">{entry.plain_definition}</p>
+                        {entry.key_verses.length > 0 && (
+                          <p className="mt-1 text-xs font-semibold text-[var(--muted)]">Key verses: {entry.key_verses.slice(0, 3).join(", ")}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </section>
         <VoiceControlPanel
           allVoices={allSpeechVoices}
           visibleVoices={speechVoices}
