@@ -10,18 +10,18 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61403,
-      "normalizedHeadwords": 51364,
-      "meaningfulWordsWithDefinition": 8660,
-      "meaningfulWordsWithoutDefinition": 3794,
-      "meaningfulDefinitionCoveragePercent": 69.5,
+      "entries": 61415,
+      "normalizedHeadwords": 51374,
+      "meaningfulWordsWithDefinition": 8675,
+      "meaningfulWordsWithoutDefinition": 3779,
+      "meaningfulDefinitionCoveragePercent": 69.7,
       "missingPriorityCounts": {
         "high": 223,
         "medium": 627,
-        "low": 1034,
-        "single-use": 1910
+        "low": 1022,
+        "single-use": 1907
       },
-      "missingWithSupplementalHelp": 3794,
+      "missingWithSupplementalHelp": 3779,
       "missingWithoutSupplementalHelp": 0,
       "topUsedWordsNeedingDefinition": [
         {
@@ -3611,7 +3611,7 @@
       "eastonEntries": 3883,
       "naveTopics": 4674,
       "rareTermEntries": 1012,
-      "meaningfulWordsWithEastonEntry": 4139,
+      "meaningfulWordsWithEastonEntry": 4140,
       "meaningfulWordsWithNaveTopic": 4030,
       "meaningfulWordsWithAnyStudyLookup": 12454,
       "combinedStudyLookupCoveragePercent": 100,

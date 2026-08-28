@@ -1,0 +1,71 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-75-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n343_w3000.jpg", "sha256": "bb82908137e3eb455efe37530b90259e9fc81efe5af253e6d525948651cc9f91" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n57_w3000.jpg", "sha256": "6a82951963910d3003b85dcf0e68fd131280eccb147208c63b634f83eb379f59" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n87_w3000.jpg", "sha256": "f6a58ffeac4134d87379a11df8cbda6545564c402f56ea91c57f65117024b7a4" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n468_w3000.jpg", "sha256": "5be23078a4df91352cb11f83d6bb0889cf0865f0f6698148424b8704e3b8d64b" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n470_w3000.jpg", "sha256": "1e0cb42264b2612c80f07cb217627002d528d70e00bca7329a8d1bdec3ebc421" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n529_w3000.jpg", "sha256": "14df4bc03a0b55d931b52cadf5f8bb08e0d0b1f976289e60dee7318b5575a699" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n544_w3000.jpg", "sha256": "7deb75263ad2e96236da033457c868a98462e10784a0241ded38782719f8289a" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n633_w3000.jpg", "sha256": "eaac801e6734590f0b672dd1e419525a9a2047c59dfab867980a0bb2b374e449" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n734_w3000.jpg", "sha256": "f5846dc16224b993f5ea3b938a93fcc154dd8a6b8c552d420118f48ccc779631" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n794_w3000.jpg", "sha256": "f3cc795a12b6669eebdec36c90e1c56980f985024892ae740f53d50646342b98" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n904_w3000.jpg", "sha256": "a002b3034d5a77fb20e13b97226f11ba17dbf27de575d772d5c5ef46159b4912" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected ordinary KJV study vocabulary from the remaining low-use inventory after the medium tier had become predominantly names and places, excluding unsupported compounds and forms without printed Webster entries.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, source names, and Scripture book names for display, and recorded historical spelling relationships rather than inventing headwords Webster did not print. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed collocation.",
+  "screening_summary": {
+    "reviewed_headwords": 12,
+    "net_new_reviewed_overlays": 12,
+    "verified_lookup_relationships_added": 5,
+    "missing_kjv_forms_resolved": 15,
+    "kjv_occurrences_resolved": 28
+  },
+  "deferred_candidates": [
+    { "word": "calamus", "reason": "The reviewed CAL alphabetical sequence uses calamus inside etymologies and botanical descriptions but does not print a standalone CALAMUS headword." },
+    { "word": "overpast", "reason": "No standalone OVERPAST headword was found in the reviewed alphabetical sequence; retain supplemental KJV help rather than inventing an entry." },
+    { "word": "winebibber", "reason": "No standalone WINEBIBBER headword was found in the reviewed alphabetical sequence; retain supplemental help rather than constructing a compound from separate words." }
+  ],
+  "promoted_headwords": ["carbuncle", "license", "lunatic", "respit", "restorer", "restrain", "schoolmaster", "securely", "special", "tapestry", "traveler", "warrior"],
+  "verified_lookup_relationships": [
+    { "word": "licence", "lookup_headword": "license", "kjv_occurrences": 2, "relationship": "KJV British spelling mapped to Webster's LICENSE" },
+    { "word": "lunatick", "lookup_headword": "lunatic", "kjv_occurrences": 2, "relationship": "KJV historical -ick spelling mapped to Webster's LUNATIC" },
+    { "word": "respite", "lookup_headword": "respit", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's printed RESPIT headword" },
+    { "word": "traveller", "lookup_headword": "traveler", "kjv_occurrences": 2, "relationship": "KJV double-l spelling mapped to Webster's TRAVELER" },
+    { "word": "warriors", "lookup_headword": "warrior", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular WARRIOR" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "carbuncle", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed CARBUNCLE headword" },
+    { "word": "restorer", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed RESTORER headword" },
+    { "word": "restrain", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed RESTRAIN headword" },
+    { "word": "schoolmaster", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SCHOOLMASTER headword" },
+    { "word": "securely", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SECURELY headword" },
+    { "word": "special", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SPECIAL headword" },
+    { "word": "tapestry", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed TAPESTRY headword" },
+    { "word": "carbuncles", "kjv_occurrences": 1, "resolution": "Plural form resolved by the reviewed CARBUNCLE headword" },
+    { "word": "restrainest", "kjv_occurrences": 1, "resolution": "KJV verb form resolved by the reviewed RESTRAIN headword" },
+    { "word": "warrior", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed WARRIOR headword" }
+  ],
+  "entries": [
+    { "word": "carbuncle", "lookup_headword": "carbuncle", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 100095, "source_line_end": 100121, "exact_page_heading": "CAR", "exact_entry_heading": "C'ARBUNCLE", "exact_source_match": true },
+    { "word": "licence", "lookup_headword": "license", "base_entries": 2, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 16504, "source_line_end": 16525, "exact_page_heading": "LIC", "exact_entry_heading": "LI'CENSE", "exact_source_match": true },
+    { "word": "lunatick", "lookup_headword": "lunatic", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 26745, "source_line_end": 26752, "exact_page_heading": "LUN", "exact_entry_heading": "LU'NATIC", "exact_source_match": true },
+    { "word": "respite", "lookup_headword": "respit", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 153335, "source_line_end": 153355, "exact_page_heading": "RES", "exact_entry_heading": "RES'PIT", "exact_source_match": true },
+    { "word": "restorer", "lookup_headword": "restorer", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 154068, "source_line_end": 154070, "exact_page_heading": "RES", "exact_entry_heading": "RESTO'RER", "exact_source_match": true },
+    { "word": "restrain", "lookup_headword": "restrain", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 154077, "source_line_end": 154122, "exact_page_heading": "RES", "exact_entry_heading": "RESTRA'IN", "exact_source_match": true },
+    { "word": "schoolmaster", "lookup_headword": "schoolmaster", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 173615, "source_line_end": 173630, "exact_page_heading": "SCI", "exact_entry_heading": "SCHOOL'MASTER", "exact_source_match": true },
+    { "word": "securely", "lookup_headword": "securely", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 178885, "source_line_end": 178895, "exact_page_heading": "SEC", "exact_entry_heading": "SECU'RELY", "exact_source_match": true },
+    { "word": "special", "lookup_headword": "special", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 209106, "source_line_end": 209144, "exact_page_heading": "SPE", "exact_entry_heading": "SPE'CIAL", "exact_source_match": true },
+    { "word": "tapestry", "lookup_headword": "tapestry", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 243330, "source_line_end": 243344, "exact_page_heading": "TAP", "exact_entry_heading": "TA'PESTRY", "exact_source_match": true },
+    { "word": "traveller", "lookup_headword": "traveler", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 263222, "source_line_end": 263231, "exact_page_heading": "TRA", "exact_entry_heading": "TRAV'ELER", "exact_source_match": true },
+    { "word": "warriors", "lookup_headword": "warrior", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 300944, "source_line_end": 300951, "exact_page_heading": "WAR", "exact_entry_heading": "WAR'RIOR", "exact_source_match": true }
+  ]
+}
