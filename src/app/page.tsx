@@ -1686,6 +1686,8 @@ type BibleAudioPlaylist = {
   completedItemIds?: string[];
   completedAt?: string | null;
   lastItemIndex?: number;
+  lastItemProgress?: number;
+  lastPlayedAt?: string;
 };
 
 type TodayResumeItem = {
@@ -20463,8 +20465,13 @@ export default function Home() {
       setBibleListeningProgress(loadBibleListeningProgress());
       setBibleBookMastery(loadBibleBookMastery());
       const loadedPlaylists = loadBiblePlaylists();
+      const resumePlaylist = loadedPlaylists.reduce<BibleAudioPlaylist | null>((latest, candidate) => {
+        if (!latest) return candidate;
+        return (candidate.lastPlayedAt ?? "") > (latest.lastPlayedAt ?? "") ? candidate : latest;
+      }, null);
       setBiblePlaylists(loadedPlaylists);
-      setActiveStudyPlaylistId(loadedPlaylists[0]?.id ?? null);
+      setActiveStudyPlaylistId(resumePlaylist?.id ?? null);
+      setStudyPlaylistCurrentIndex(resumePlaylist?.lastItemIndex ?? 0);
       setScriptureMemory(loadScriptureMemory());
       setPrayerEntries(loadPrayerEntries());
       setJournalEntries(loadJournalEntries());
@@ -22730,7 +22737,8 @@ export default function Home() {
 
   function selectStudyPlaylist(playlistId: string) {
     setActiveStudyPlaylistId(playlistId);
-    setStudyPlaylistCurrentIndex(0);
+    const selectedPlaylist = biblePlaylists.find((playlist) => playlist.id === playlistId);
+    setStudyPlaylistCurrentIndex(selectedPlaylist?.lastItemIndex ?? 0);
   }
 
   function createBiblePlaylist() {
@@ -22988,7 +22996,7 @@ export default function Home() {
     setSyncMessage("Study playlist cleared.");
   }
 
-  function updateStudyPlaylistProgress(playlistId: string, itemIndex: number, completedItemId?: string) {
+  function updateStudyPlaylistProgress(playlistId: string, itemIndex: number, itemProgress = 0, completedItemId?: string) {
     setBiblePlaylists((current) => {
       const next = current.map((playlist) => {
         if (playlist.id !== playlistId) return playlist;
@@ -22996,7 +23004,14 @@ export default function Home() {
           ? Array.from(new Set([...(playlist.completedItemIds ?? []), completedItemId]))
           : playlist.completedItemIds ?? [];
         const completedAt = playlist.items.length && completedItemIds.length >= playlist.items.length ? new Date().toISOString() : playlist.completedAt ?? null;
-        return { ...playlist, lastItemIndex: itemIndex, completedItemIds, completedAt };
+        return {
+          ...playlist,
+          lastItemIndex: itemIndex,
+          lastItemProgress: Math.min(100, Math.max(0, itemProgress)),
+          lastPlayedAt: new Date().toISOString(),
+          completedItemIds,
+          completedAt,
+        };
       });
       saveBiblePlaylists(next);
       return next;
@@ -23077,30 +23092,58 @@ export default function Home() {
     };
   }
 
-  function playBiblePlaylist(playlist: BibleAudioPlaylist, startIndex = 0, playSingleItem = false) {
+  function playBiblePlaylist(playlist: BibleAudioPlaylist, startIndex = 0, playSingleItem = false, resumeSavedPosition = false) {
     void (async () => {
       const chunks: string[] = [];
       const verseRefs: Array<string | null> = [];
       const itemLabels: Array<string | null> = [];
+      const chunkMeta: Array<{ itemIndex: number; itemId: string; originalChunkIndex: number; itemChunkCount: number }> = [];
       const safeIndex = Math.min(Math.max(0, startIndex), Math.max(0, playlist.items.length - 1));
       const itemsToPlay = playSingleItem ? playlist.items.slice(safeIndex, safeIndex + 1) : playlist.items.slice(safeIndex);
 
-      for (const item of itemsToPlay) {
+      for (const [relativeItemIndex, item] of itemsToPlay.entries()) {
         const speechParts = await chunksForBiblePlaylistItem(item);
-        chunks.push(...speechParts.chunks);
-        verseRefs.push(...speechParts.verseRefs);
-        itemLabels.push(...speechParts.chunks.map(() => item.label));
+        const itemIndex = safeIndex + relativeItemIndex;
+        const savedProgress = resumeSavedPosition && relativeItemIndex === 0
+          ? Math.min(99, Math.max(0, playlist.lastItemProgress ?? 0))
+          : 0;
+        const firstChunkIndex = Math.min(
+          Math.max(0, speechParts.chunks.length - 1),
+          Math.floor((savedProgress / 100) * speechParts.chunks.length),
+        );
+        speechParts.chunks.slice(firstChunkIndex).forEach((chunk, relativeChunkIndex) => {
+          const originalChunkIndex = firstChunkIndex + relativeChunkIndex;
+          chunks.push(chunk);
+          verseRefs.push(speechParts.verseRefs[originalChunkIndex] ?? null);
+          itemLabels.push(item.label);
+          chunkMeta.push({ itemIndex, itemId: item.id, originalChunkIndex, itemChunkCount: speechParts.chunks.length });
+        });
       }
 
       setActiveStudyPlaylistId(playlist.id);
       setStudyPlaylistCurrentIndex(safeIndex);
-      updateStudyPlaylistProgress(playlist.id, safeIndex);
+      updateStudyPlaylistProgress(playlist.id, safeIndex, resumeSavedPosition ? playlist.lastItemProgress ?? 0 : 0);
       startSpeech(
         `playlist-${playlist.id}`,
         playSingleItem ? `${playlist.name}: ${playlist.items[safeIndex]?.label ?? "item"}` : playlist.name,
         chunks.join(" "),
         0,
-        undefined,
+        (progress) => {
+          const completedChunkCount = Math.min(chunks.length, Math.round((progress / 100) * chunks.length));
+          const completedMeta = chunkMeta[completedChunkCount - 1];
+          if (!completedMeta) return;
+          const nextMeta = chunkMeta[completedChunkCount];
+          const completedItemProgress = ((completedMeta.originalChunkIndex + 1) / Math.max(1, completedMeta.itemChunkCount)) * 100;
+          const completedItemId = completedItemProgress >= 99.5 ? completedMeta.itemId : undefined;
+          const currentMeta = nextMeta ?? completedMeta;
+          const currentProgress = nextMeta && nextMeta.itemIndex !== completedMeta.itemIndex
+            ? (nextMeta.originalChunkIndex / Math.max(1, nextMeta.itemChunkCount)) * 100
+            : nextMeta
+              ? completedItemProgress
+              : 100;
+          setStudyPlaylistCurrentIndex(currentMeta.itemIndex);
+          updateStudyPlaylistProgress(playlist.id, currentMeta.itemIndex, currentProgress, completedItemId);
+        },
         {
           chunks,
           verseRefs,
@@ -23108,8 +23151,12 @@ export default function Home() {
           currentItemLabel: playlist.items[safeIndex]?.label ?? playlist.name,
           nextItemLabel: playlist.items[safeIndex + 1]?.label ?? null,
           onComplete: () => {
-            const completedItem = playlist.items[safeIndex];
-            if (completedItem) updateStudyPlaylistProgress(playlist.id, safeIndex, completedItem.id);
+            const completedIndex = playSingleItem ? safeIndex : playlist.items.length - 1;
+            const completedItem = playlist.items[completedIndex];
+            if (completedItem) {
+              setStudyPlaylistCurrentIndex(completedIndex);
+              updateStudyPlaylistProgress(playlist.id, completedIndex, 100, completedItem.id);
+            }
             if (playSingleItem && repeatStudyPlaylistItem) {
               playBiblePlaylist(playlist, safeIndex, true);
               return;
@@ -29292,7 +29339,7 @@ function BibleReader({
   onMovePlaylistItem: (playlistId: string, itemId: string, direction: -1 | 1) => void;
   onMarkPlaylistItemComplete: (playlistId: string, itemId: string) => void;
   onClearPlaylist: (playlistId: string) => void;
-  onPlayPlaylist: (playlist: BibleAudioPlaylist, startIndex?: number, playSingleItem?: boolean) => void;
+  onPlayPlaylist: (playlist: BibleAudioPlaylist, startIndex?: number, playSingleItem?: boolean, resumeSavedPosition?: boolean) => void;
   onPlayPlaylistItem: (playlist: BibleAudioPlaylist, itemIndex: number) => void;
   onSkipPlaylistItem: (direction: -1 | 1) => void;
   onRepeatPlaylistChange: (repeat: boolean) => void;
@@ -29493,9 +29540,19 @@ function BibleReader({
   };
   const currentPlaylistItem = activePlaylist?.items[activePlaylistItemIndex] ?? activePlaylist?.items[0] ?? null;
   const activePlaylistSeconds = activePlaylist?.items.reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
-  const activePlaylistRemainingSeconds = activePlaylist?.items
-    .slice(Math.min(activePlaylistItemIndex, Math.max(0, activePlaylist.items.length - 1)))
-    .reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
+  const activePlaylistRemainingSeconds = activePlaylist
+    ? activePlaylist.items.reduce((total, item, index) => {
+        if (index < activePlaylistItemIndex) return total;
+        const itemSeconds = estimatePlaylistItemSeconds(item);
+        if (index === activePlaylistItemIndex) {
+          const currentProgress = activePlaylist.lastItemIndex === activePlaylistItemIndex
+            ? Math.min(100, Math.max(0, activePlaylist.lastItemProgress ?? 0))
+            : 0;
+          return total + itemSeconds * (1 - currentProgress / 100);
+        }
+        return total + itemSeconds;
+      }, 0)
+    : 0;
   const activeCompletedItemIds = new Set(activePlaylist?.completedItemIds ?? []);
   const completedPlaylists = playlists.filter((playlist) => playlist.completedAt);
   const enabledWordHighlightSets = useMemo(() => wordHighlightSets.filter((set) => set.enabled), [wordHighlightSets]);
@@ -30904,9 +30961,13 @@ function BibleReader({
                     <Play size={15} />
                     Play All
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onPlayPlaylist(activePlaylist, activePlaylist.lastItemIndex ?? activePlaylistItemIndex, false)} type="button">
+                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onPlayPlaylist(activePlaylist, activePlaylist.lastItemIndex ?? activePlaylistItemIndex, false, true)} type="button">
                     <Headphones size={15} />
-                    Resume
+                    {(activePlaylist.lastItemProgress ?? 0) >= 99.5
+                      ? `Replay ${currentPlaylistItem?.label ?? "playlist"}`
+                      : activePlaylist.lastItemProgress
+                        ? `Resume ${currentPlaylistItem?.label ?? "playlist"} at ${Math.round(activePlaylist.lastItemProgress)}%`
+                        : `Resume ${currentPlaylistItem?.label ?? "playlist"}`}
                   </button>
                   <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
                     <Square size={15} />
