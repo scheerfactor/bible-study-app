@@ -37,6 +37,13 @@ for (const check of forbiddenRouteChecks) {
 
 const requiredAppChecks = [
   "Private Premium Narration Pilot",
+  "Narration Quality Trial",
+  "PREMIUM_NARRATION_TEST_SAMPLES",
+  "Pronunciation",
+  "Naturalness",
+  "Reverence",
+  "Phone clarity",
+  "Export review JSON",
   "Check readiness",
   "rightsConfirmed",
   "voiceConsentConfirmed",

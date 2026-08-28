@@ -39748,12 +39748,95 @@ type PremiumNarrationConfiguration = {
   customVoiceEligibilityRequired: boolean;
 };
 
+type PremiumNarrationTestSample = {
+  id: string;
+  label: string;
+  reference: string;
+  focus: string;
+  text: string;
+};
+
+type PremiumNarrationReview = {
+  id: string;
+  createdAt: string;
+  provider: string;
+  model: string;
+  voiceLabel: string;
+  voiceType: "built-in" | "custom";
+  sampleReference: string;
+  characters: number;
+  generationMs: number;
+  scores: {
+    pronunciation: number;
+    naturalness: number;
+    reverence: number;
+    phoneClarity: number;
+  };
+  notes: string;
+};
+
 const PREMIUM_NARRATION_STARTER_VOICES: PremiumNarrationVoiceOption[] = [
   { key: "marin", label: "Marin", type: "built-in" },
   { key: "cedar", label: "Cedar", type: "built-in" },
   { key: "onyx", label: "Onyx", type: "built-in" },
   { key: "sage", label: "Sage", type: "built-in" },
 ];
+const PREMIUM_NARRATION_REVIEWS_KEY = "fathers-business-premium-narration-reviews";
+const PREMIUM_NARRATION_TEST_SAMPLES: PremiumNarrationTestSample[] = [
+  {
+    id: "john-3-16",
+    label: "Gospel clarity",
+    reference: "John 3:16",
+    focus: "Warmth, pacing, and exact KJV wording",
+    text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+  },
+  {
+    id: "psalm-23-1-4",
+    label: "Pastoral reading",
+    reference: "Psalms 23:1-4",
+    focus: "Reverence, pauses, and long-form comfort",
+    text: "The LORD is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake. Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.",
+  },
+  {
+    id: "romans-8-28",
+    label: "Teaching cadence",
+    reference: "Romans 8:28",
+    focus: "Sentence emphasis and doctrinal clarity",
+    text: "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.",
+  },
+  {
+    id: "bible-names",
+    label: "Bible names",
+    reference: "2 Samuel 9:13; Daniel 3:1; Isaiah 8:1",
+    focus: "Mephibosheth, Nebuchadnezzar, and Maher-shalal-hash-baz",
+    text: "So Mephibosheth dwelt in Jerusalem: for he did eat continually at the king's table; and was lame on both his feet. Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon. Moreover the LORD said unto me, Take thee a great roll, and write in it with a man's pen concerning Maher-shalal-hash-baz.",
+  },
+];
+
+function PremiumNarrationScore({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  onChange: (value: number) => void;
+}) {
+  return (
+    <label className="rounded-2xl border border-[var(--line)] bg-white p-3 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+      {label}
+      <select
+        aria-label={`${label} score`}
+        className="mt-2 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+        onChange={(event) => onChange(Number(event.target.value))}
+        value={value}
+      >
+        <option value={0}>Not scored</option>
+        {[1, 2, 3, 4, 5].map((score) => <option key={`${label}-score-${score}`} value={score}>{score} / 5</option>)}
+      </select>
+    </label>
+  );
+}
 
 function PremiumNarrationPilot() {
   const [adminToken, setAdminToken] = useState("");
@@ -39768,13 +39851,35 @@ function PremiumNarrationPilot() {
   const [audioUrl, setAudioUrl] = useState("");
   const [checking, setChecking] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const [selectedTestId, setSelectedTestId] = useState(PREMIUM_NARRATION_TEST_SAMPLES[0].id);
+  const [generatedPreview, setGeneratedPreview] = useState<{
+    provider: string;
+    model: string;
+    voiceLabel: string;
+    voiceType: "built-in" | "custom";
+    sampleReference: string;
+    characters: number;
+    generationMs: number;
+  } | null>(null);
+  const [reviewScores, setReviewScores] = useState({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
+  const [reviewNotes, setReviewNotes] = useState("");
+  const [reviews, setReviews] = useState<PremiumNarrationReview[]>(() => loadAcquisitionStorage(PREMIUM_NARRATION_REVIEWS_KEY, []));
   const voices = configuration?.voices.length ? configuration.voices : PREMIUM_NARRATION_STARTER_VOICES;
   const selectedVoice = voices.find((voice) => voice.key === voiceKey) ?? voices[0];
   const maxCharacters = configuration?.maxCharacters ?? 800;
+  const selectedTest = PREMIUM_NARRATION_TEST_SAMPLES.find((sample) => sample.id === selectedTestId);
 
   useEffect(() => () => {
     if (audioUrl) URL.revokeObjectURL(audioUrl);
   }, [audioUrl]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(PREMIUM_NARRATION_REVIEWS_KEY, JSON.stringify(reviews));
+    } catch {
+      // Private local review history is optional; the pilot remains usable if storage is unavailable.
+    }
+  }, [reviews]);
 
   async function checkPremiumNarrationReadiness() {
     setChecking(true);
@@ -39808,6 +39913,7 @@ function PremiumNarrationPilot() {
     if (!configuration?.configured || !selectedVoice) return;
     setGenerating(true);
     setPilotStatus("Generating one private, uncached audio preview...");
+    const startedAt = performance.now();
     try {
       const response = await fetch("/api/audio/premium-preview", {
         method: "POST",
@@ -39830,13 +39936,58 @@ function PremiumNarrationPilot() {
         return;
       }
       const blob = await response.blob();
+      const generationMs = Math.round(performance.now() - startedAt);
       setAudioUrl(URL.createObjectURL(blob));
-      setPilotStatus(`${selectedVoice.label} preview ready · ${previewText.length.toLocaleString()} characters · private and not stored by the app.`);
+      setGeneratedPreview({
+        provider: configuration.provider,
+        model: configuration.model,
+        voiceLabel: selectedVoice.label,
+        voiceType: selectedVoice.type,
+        sampleReference: selectedTest?.reference ?? "Custom preview",
+        characters: previewText.length,
+        generationMs,
+      });
+      setReviewScores({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
+      setReviewNotes("");
+      setPilotStatus(`${selectedVoice.label} preview ready in ${(generationMs / 1000).toFixed(1)} seconds · ${previewText.length.toLocaleString()} characters · private and not stored by the app.`);
     } catch {
       setPilotStatus("The premium voice provider could not be reached.");
     } finally {
       setGenerating(false);
     }
+  }
+
+  function selectNarrationTest(sample: PremiumNarrationTestSample) {
+    setSelectedTestId(sample.id);
+    setPreviewText(sample.text);
+    setGeneratedPreview(null);
+    setAudioUrl("");
+    setPilotStatus(`${sample.reference} loaded for ${sample.focus.toLowerCase()}.`);
+  }
+
+  function saveNarrationReview() {
+    if (!generatedPreview || Object.values(reviewScores).some((score) => score < 1)) {
+      setPilotStatus("Score pronunciation, naturalness, reverence, and phone clarity before saving this review.");
+      return;
+    }
+    const review: PremiumNarrationReview = {
+      id: `premium-narration-review-${Date.now()}`,
+      createdAt: new Date().toISOString(),
+      ...generatedPreview,
+      scores: reviewScores,
+      notes: reviewNotes.trim(),
+    };
+    setReviews((current) => [review, ...current].slice(0, 100));
+    setPilotStatus(`${generatedPreview.voiceLabel} quality review saved privately on this browser.`);
+  }
+
+  function exportNarrationReviews() {
+    downloadTextFile(
+      `fathers-business-premium-narration-reviews-${new Date().toISOString().slice(0, 10)}.json`,
+      JSON.stringify({ app: "Father's Business Bible Study", kind: "premium_narration_quality_reviews", exportedAt: new Date().toISOString(), reviews }, null, 2),
+      "application/json",
+    );
+    setPilotStatus(`Exported ${reviews.length} private narration quality review${reviews.length === 1 ? "" : "s"}.`);
   }
 
   const canGenerate = Boolean(
@@ -39891,6 +40042,31 @@ function PremiumNarrationPilot() {
 
       <p className="mt-3 rounded-2xl bg-[var(--paper)] p-3 text-xs font-semibold leading-5 text-[var(--muted)]" role="status">{pilotStatus}</p>
 
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Narration Quality Trial</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Use the same verified KJV samples for every voice so quality comparisons remain fair.</p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{reviews.length} saved reviews</span>
+        </div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+          {PREMIUM_NARRATION_TEST_SAMPLES.map((sample) => (
+            <button
+              aria-pressed={selectedTest?.id === sample.id}
+              className={`rounded-2xl border p-3 text-left ${selectedTest?.id === sample.id ? "border-[var(--green)] bg-white shadow-sm" : "border-[var(--line)] bg-white/70"}`}
+              key={`premium-narration-test-${sample.id}`}
+              onClick={() => selectNarrationTest(sample)}
+              type="button"
+            >
+              <span className="block text-sm font-semibold text-[var(--ink)]">{sample.label}</span>
+              <span className="mt-1 block text-xs font-semibold text-[var(--green)]">{sample.reference}</span>
+              <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{sample.focus}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
           Premium voice
@@ -39923,7 +40099,10 @@ function PremiumNarrationPilot() {
         <textarea
           className="mt-2 min-h-32 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 normal-case tracking-normal text-[var(--ink)] outline-none"
           maxLength={maxCharacters}
-          onChange={(event) => setPreviewText(event.target.value)}
+          onChange={(event) => {
+            setPreviewText(event.target.value);
+            setSelectedTestId("custom");
+          }}
           value={previewText}
         />
       </label>
@@ -39960,10 +40139,67 @@ function PremiumNarrationPilot() {
 
       {audioUrl && (
         <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">AI-generated private preview</p>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">AI-generated private preview</p>
+            {generatedPreview && <span className="text-xs font-semibold text-[var(--green)]">Generated in {(generatedPreview.generationMs / 1000).toFixed(1)} seconds</span>}
+          </div>
           <audio className="mt-3 w-full" controls preload="metadata" src={audioUrl}>
             Your browser does not support audio playback.
           </audio>
+        </div>
+      )}
+
+      {generatedPreview && (
+        <div className="mt-4 rounded-2xl border-2 border-[var(--green)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Quality Scorecard</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Listen on desktop and iPhone with ordinary work-day headphones before scoring.</p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--ink)]">{generatedPreview.voiceLabel} · {generatedPreview.sampleReference}</span>
+          </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+            <PremiumNarrationScore label="Pronunciation" value={reviewScores.pronunciation} onChange={(pronunciation) => setReviewScores((current) => ({ ...current, pronunciation }))} />
+            <PremiumNarrationScore label="Naturalness" value={reviewScores.naturalness} onChange={(naturalness) => setReviewScores((current) => ({ ...current, naturalness }))} />
+            <PremiumNarrationScore label="Reverence" value={reviewScores.reverence} onChange={(reverence) => setReviewScores((current) => ({ ...current, reverence }))} />
+            <PremiumNarrationScore label="Phone clarity" value={reviewScores.phoneClarity} onChange={(phoneClarity) => setReviewScores((current) => ({ ...current, phoneClarity }))} />
+          </div>
+          <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Pronunciation or listening notes
+            <textarea
+              className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-sm leading-6 normal-case tracking-normal text-[var(--ink)] outline-none"
+              onChange={(event) => setReviewNotes(event.target.value)}
+              placeholder="Record mispronounced names, awkward pauses, harsh sibilance, or distractions heard on the phone."
+              value={reviewNotes}
+            />
+          </label>
+          <button className="mt-3 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={saveNarrationReview} type="button">Save private quality review</button>
+        </div>
+      )}
+
+      {reviews.length > 0 && (
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Recent Voice Comparisons</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Private browser-only results; export before changing devices or clearing browser data.</p>
+            </div>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={exportNarrationReviews} type="button">Export review JSON</button>
+          </div>
+          <div className="mt-3 grid gap-2">
+            {reviews.slice(0, 5).map((review) => {
+              const average = Object.values(review.scores).reduce((total, score) => total + score, 0) / 4;
+              return (
+                <article className="grid gap-2 rounded-2xl bg-[var(--paper)] p-3 sm:grid-cols-[1fr_auto]" key={review.id}>
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--ink)]">{review.voiceLabel} · {review.sampleReference}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · {(review.generationMs / 1000).toFixed(1)}s generation · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
+                  </div>
+                  <span className="self-start rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{average.toFixed(1)} / 5</span>
+                </article>
+              );
+            })}
+          </div>
         </div>
       )}
     </section>
