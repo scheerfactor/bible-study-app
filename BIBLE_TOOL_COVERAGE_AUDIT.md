@@ -8,7 +8,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 8,640/12,454 meaningful KJV words have a lookup candidate (69.4%).
+- Webster 1828: 8,660/12,454 meaningful KJV words have a lookup candidate (69.5%).
 - Combined word/topic lookup: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed KJV word-guide help (100%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
@@ -240,4 +240,3 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Do not mark Strong's verse mapping complete until every book has reviewed mapping rows.
 - Do not import broad TSK or Strong's dumps without source, license, attribution, and parser validation.
 - Keep Nave topic records as discovery/search aids until topic text has been spot-reviewed.
-

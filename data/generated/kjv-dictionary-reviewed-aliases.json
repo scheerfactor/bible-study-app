@@ -391,5 +391,8 @@
   "taskmasters": "taskmaster",
   "veil": "vail",
   "worshipper": "worshiper",
-  "worshippers": "worshiper"
+  "worshippers": "worshiper",
+  "artificers": "artificer",
+  "slanders": "slander",
+  "watchers": "watcher"
 }

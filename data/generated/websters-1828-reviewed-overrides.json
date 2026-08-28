@@ -29628,5 +29628,125 @@
     "source_line_start": 313432,
     "source_line_end": 313434,
     "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "ARTIFI'CER",
+    "normalized_headword": "artificer",
+    "definition": "ARTIFI'CER, noun [Latin artifex, from ars, and facio.] 1. An artist; a mechanic or manufacturer; one whose occupation requires skill or knowledge of a particular kind; as a silversmith, or saddler. 2. One who makes or contrives; an inventor; as an artificer of fraud or lies. Milton. 3. A cunning, or artful fellow. [Not used.] Ben Jonson.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+    "source_line_start": 53323,
+    "source_line_end": 53336,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "BAN'ISHMENT",
+    "normalized_headword": "banishment",
+    "definition": "BAN'ISHMENT, noun 1. The act of a prince or government, compelling a citizen to leave his country, either for a limited time or forever, as for some crime. 2. A voluntary forsaking of one's country upon oath, called abjuration. [This practice has now ceased in Great Britain.] 3. The state of being banished; exile. 4. The act of driving away or dispelling; as the banishment of care from the mind.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+    "source_line_start": 64053,
+    "source_line_end": 64068,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "CONCEP'TION",
+    "normalized_headword": "conception",
+    "definition": "CONCEP'TION, noun [Latin conceptio, from concipio. See Conceive. Italian concezione; Spanish concepcion; French conception.] 1. The act of conceiving; the first formation of the embryo or fetus of an animal. I will greatly multiply thy sorrow and thy conception. Genesis iii. 2. The state of being conceived. Joy had the like conception in our eyes. Shak.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+    "source_line_start": 132392,
+    "source_line_end": 132406,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "CORIAN'DER",
+    "normalized_headword": "coriander",
+    "definition": "CORIAN'DER, noun A genus of plants of two species. The seeds of one species, the sativum, have a strong smell, and in medicine are considered as stomachic and carminative.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+    "source_line_start": 145186,
+    "source_line_end": 145192,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "HERD'MAN, HERDS-MAN",
+    "normalized_headword": "herdman",
+    "definition": "HERD'MAN, HERDS-MAN, noun A keeper of herds; one employed in tending herds of cattle. 2. Formerly, the owner of a herd. Sidney.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+    "source_line_start": 282188,
+    "source_line_end": 282192,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "MAN'GER",
+    "normalized_headword": "manger",
+    "definition": "MAN'GER, noun [French mangeoire, from manger, to eat, Latin mando.] 1. A trough or box in which fodder is laid for cattle, or the place in which horses and cattle are fed.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 31323,
+    "source_line_end": 31331,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "OBSCU'RENESS, OBSCU'RITY",
+    "normalized_headword": "obscurity",
+    "definition": "OBSCU'RENESS, OBSCU'RITY, noun [Latin obscuritas.] Darkness; want of light. We wait for light, but behold obscurity. Isaiah lix. 2. A state of retirement from the world; a state of being unnoticed; privacy. You are not for obscurity designed. Dryden. 3. Darkness of meaning; unintelligibleness; as the obscurity of writings or of a particular passage. 4. Illegibleness; as the obscurity of letters or of an inscription. 5. A state of being unknown to fame; humble condition; as the obscurity of birth or parentage.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 65507,
+    "source_line_end": 65531,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "REFI'NER",
+    "normalized_headword": "refiner",
+    "definition": "REFI'NER, noun 1. One that refines metals or other things. Bacon. 2. An improver in purity and elegance; as a refiner of language. Swift. 3. An inventor of superfluous subtilties; one who is over nice in discrimination, in argument, reasoning, philosophy, &c.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 143875,
+    "source_line_end": 143883,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SLAN'DER",
+    "normalized_headword": "slander",
+    "definition": "SLAN'DER, noun [Norman esclaunder; French esclandre; Russian klenu, klianu, to slander; Swedish klandra, to accuse or blame.] 1. A false tale or report maliciously uttered, and tending to injure the reputation of another by lessening him in the esteem of his fellow citizens, by exposing him to impeachment and punishment, or by impairing his means of living; defamation. Blackstone. Slander, that worst of poisons, ever finds an easy entrance to ignoble minds. Hervey. 2. Disgrace; reproach; disreputation; ill name. Shak.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 198820,
+    "source_line_end": 198839,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SPI'DER",
+    "normalized_headword": "spider",
+    "definition": "SPI'DER, noun [I know not from what source this word is derived.] The common name of the insects of the genus Aranea, remarkable for spinning webs for taking their prey and forming a convenient habitation, and for the deposit of their food. The spider's touch, how exquisitely fine! Pope.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 210592,
+    "source_line_end": 210603,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "U'NITY",
+    "normalized_headword": "unity",
+    "definition": "U'NITY, noun [Latin unitas.] The state of being one; oneness. Unity may consist of a simple substance or existing being, as the soul; but usually it consists in a close junction of particles or parts, constituting a body detached from other bodies. Unity is a thing undivided itself, but separate from every other thing. School Philosophy. 2. Concord; conjunction; as a unity of proofs. Shak. 3. Agreement; uniformity; as unity of doctrine; unity of worship in a church. Hooker. 4. In christian theology, oneness of sentiment, affection or behavior. How good and how pleasant it is for brethren to dwell together in unity! Psalms cxxxiii.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 280343,
+    "source_line_end": 280364,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WATCH'ER",
+    "normalized_headword": "watcher",
+    "definition": "WATCH'ER, noun One who sits up or continues awake; particularly, one who attends upon the sick during the night. 2. A diligent observer; as an attentive watcher of the works of nature. [Not in use.] More.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 301663,
+    "source_line_end": 301668,
+    "review_status": "reviewed_overlay"
   }
 ]
