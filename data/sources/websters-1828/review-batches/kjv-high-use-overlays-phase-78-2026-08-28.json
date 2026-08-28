@@ -1,0 +1,68 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-78-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n490_w3000.jpg", "sha256": "8a6bed7769380145f23423c9499b3b3dc14e0f83b44ad65c15862a06c18fb7de" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n829_w3000.jpg", "sha256": "d7c6997cd12658f89d3290e7c1e47ef5d06ce5b88dedb673e0b73f7f4115fe24" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n150_w3000.jpg", "sha256": "39c7411ab21b84ab8e41c10ae71a42d8e39657db00ac43ff5734b1d219ed92cf" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n334_w3000.jpg", "sha256": "e9a17226a3d6662605661638cfd50f9df023f538e1cef3e96ca537fe4849d89f" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n382_w3000.jpg", "sha256": "eccb4b072696ef6d8d8cf5844e841ea135140e692896a89b9d8cd0cfbc670352" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n481_w3000.jpg", "sha256": "94c19ffecd4ea4cd9e00773929bb41f3974d8369e389932a12040c0d957c65ca" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n617_w3000.jpg", "sha256": "32ae28db55dfcf620b9fd93a7e61b922c2902dd6a98b383542332fb957750d1d" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n626_w3000.jpg", "sha256": "960e3e6d7fd6014a0c8275ed7f538e9f57b46776ae9cf7c869407960a7452ee5" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n662_w3000.jpg", "sha256": "38584b7d0ddc46266d97855797d5a3fe69aa3de7aa59572fb02c917f20995f9d" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n697_w3000.jpg", "sha256": "9db1d529d4e97cef4e0953a0c82d4d478486eafa72f482de9faf7cd91b4825fd" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n713_w3000.jpg", "sha256": "5714ac5d99b98c48529a212b94ecaa188575e850844481b35ecb8f4d197710a4" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n847_w3000.jpg", "sha256": "a2de8ff877c8133d6b3ffd793230871de432821e7ef44889696f3cda1205fb6f" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected repeated ordinary KJV vocabulary and historical spellings from the remaining inventory, excluding personal and geographic names and limiting the batch to entries with clear standalone 1828 headwords.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, source names, and Scripture book names for display, and recorded plural or historical-spelling lookup relationships rather than inventing duplicate headwords. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed technical sense.",
+  "screening_summary": {
+    "reviewed_headwords": 12,
+    "net_new_reviewed_overlays": 10,
+    "upgraded_existing_reviewed_overlays": 2,
+    "verified_lookup_relationships_added": 7,
+    "missing_kjv_forms_resolved": 14,
+    "kjv_occurrences_resolved": 32,
+    "total_kjv_occurrences_with_reviewed_lookup": 32
+  },
+  "promoted_headwords": ["couch", "gier-eagle", "moldy", "practiced", "publicly", "richly", "soberly", "sorely", "steadfastness", "sufficiently", "swan", "unmovable"],
+  "verified_lookup_relationships": [
+    { "word": "couches", "lookup_headword": "couch", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular COUCH" },
+    { "word": "gier", "lookup_headword": "gier-eagle", "kjv_occurrences": 2, "relationship": "KJV shortened form mapped to Webster's GIER-EAGLE headword" },
+    { "word": "mouldy", "lookup_headword": "moldy", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's MOLDY headword" },
+    { "word": "practised", "lookup_headword": "practiced", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's PRACTICED headword" },
+    { "word": "publickly", "lookup_headword": "publicly", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's PUBLICLY headword" },
+    { "word": "stedfastness", "lookup_headword": "steadfastness", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's dual STEADFASTNESS / STEDFASTNESS headword" },
+    { "word": "unmoveable", "lookup_headword": "unmovable", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's UNMOVABLE headword" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "couch", "kjv_occurrences": 7, "resolution": "Direct lookup resolved from the reviewed COUCH headword" },
+    { "word": "coucheth", "kjv_occurrences": 1, "resolution": "Inflected verb form resolved from the reviewed COUCH headword" },
+    { "word": "richly", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed RICHLY headword" },
+    { "word": "soberly", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SOBERLY headword" },
+    { "word": "sorely", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SORELY headword" },
+    { "word": "sufficiently", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SUFFICIENTLY headword" },
+    { "word": "swan", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SWAN headword" }
+  ],
+  "entries": [
+    { "word": "couch", "lookup_headword": "couch", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 147618, "source_line_end": 147745, "exact_page_heading": "COU", "exact_entry_heading": "COUCH", "exact_source_match": true },
+    { "word": "gier", "lookup_headword": "gier-eagle", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 259226, "source_line_end": 259228, "exact_page_heading": "GID / GIF", "exact_entry_heading": "GIE'R-EAGLE", "exact_source_match": true },
+    { "word": "mouldy", "lookup_headword": "moldy", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 47629, "source_line_end": 47630, "exact_page_heading": "MOL", "exact_entry_heading": "MOLDY", "exact_source_match": true },
+    { "word": "practised", "lookup_headword": "practiced", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 109021, "source_line_end": 109022, "exact_page_heading": "PRA", "exact_entry_heading": "PRAC'TICED", "exact_source_match": true },
+    { "word": "publickly", "lookup_headword": "publicly", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 124815, "source_line_end": 124824, "exact_page_heading": "PUB", "exact_entry_heading": "PUB'LICLY", "exact_source_match": true },
+    { "word": "richly", "lookup_headword": "richly", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 157821, "source_line_end": 157837, "exact_page_heading": "RIC", "exact_entry_heading": "RICH'LY", "exact_source_match": true },
+    { "word": "soberly", "lookup_headword": "soberly", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 203460, "source_line_end": 203467, "exact_page_heading": "SOB / SOC", "exact_entry_heading": "SO'BERLY", "exact_source_match": true },
+    { "word": "sorely", "lookup_headword": "sorely", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 206492, "source_line_end": 206498, "exact_page_heading": "SOR", "exact_entry_heading": "SO'RELY", "exact_source_match": true },
+    { "word": "stedfastness", "lookup_headword": "steadfastness", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 218829, "source_line_end": 218836, "exact_page_heading": "STE", "exact_entry_heading": "STEADFASTNESS / STED'FASTNESS", "exact_source_match": true },
+    { "word": "sufficiently", "lookup_headword": "sufficiently", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 230775, "source_line_end": 230780, "exact_page_heading": "SUF", "exact_entry_heading": "SUFFI'CIENTLY", "exact_source_match": true },
+    { "word": "swan", "lookup_headword": "swan", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 236344, "source_line_end": 236351, "exact_page_heading": "SWA", "exact_entry_heading": "SWAN", "exact_source_match": true },
+    { "word": "unmoveable", "lookup_headword": "unmovable", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 281593, "source_line_end": 281596, "exact_page_heading": "UNM", "exact_entry_heading": "UNMOVABLE", "exact_source_match": true }
+  ]
+}
