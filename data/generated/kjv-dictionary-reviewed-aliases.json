@@ -399,5 +399,10 @@
   "lunatick": "lunatic",
   "respite": "respit",
   "traveller": "traveler",
-  "warriors": "warrior"
+  "warriors": "warrior",
+  "engines": "engine",
+  "firebrands": "firebrand",
+  "marketplaces": "marketplace",
+  "minstrels": "minstrel",
+  "targets": "target"
 }

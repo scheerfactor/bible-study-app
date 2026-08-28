@@ -1,0 +1,70 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-76-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n539_w3000.jpg", "sha256": "c826615cb996e8dffddf4212474d47a5e0ec993828b2459ee9b886406f0c7ff5" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n574_w3000.jpg", "sha256": "80a2920b111b4b73216702b2322798b5e6e84bee0d042ca325938f375e739623" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n674_w3000.jpg", "sha256": "a58f242b813102efe76c2ee8bb8ce0d9fe6f8c7136d80487f7c4b35667d14537" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n758_w3000.jpg", "sha256": "3ace3d78f21cfd544d58027914d038cf9615f546460599d15894b122e7fd3f5f" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n865_w3000.jpg", "sha256": "599a55b008d8d2ea375ae84402ed2a8f628ebd5692f3d50a78d1463f2bac9fde" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n900_w3000.jpg", "sha256": "0ae9faa6fc0c535942b58dee2d4d5a43dd17059080d8c82d639ccc6a5c27dcdd" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n107_w3000.jpg", "sha256": "4bb5319493df05118e8863242419189cd159d414c7dfa3e6c688ea24fdc92499" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n139_w3000.jpg", "sha256": "9b7a37ef40776edac4f3125afd382861718d194059ca3d20e404ae1a0163faba" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n267_w3000.jpg", "sha256": "c459f844015150ceee780e49743d6c43c5041548d38e6f33d9486d5f38e10648" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n389_w3000.jpg", "sha256": "fd35a8cc12fae6baa60f7fe614810ea75d4624ed013beae913ccc4199e41f577" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n529_w3000.jpg", "sha256": "14df4bc03a0b55d931b52cadf5f8bb08e0d0b1f976289e60dee7318b5575a699" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n735_w3000.jpg", "sha256": "f116bce92cf08b37e9dbca9356dfbed17675b08f2ce4a1fbca25a36412ceffeb" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected concrete and study-relevant KJV vocabulary from the remaining low-use inventory, prioritizing words with repeated occurrences and clear printed Webster headwords.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, source names, and Scripture book names for display, and recorded plural lookup relationships rather than inventing duplicate headwords. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed technical sense.",
+  "screening_summary": {
+    "reviewed_headwords": 12,
+    "net_new_reviewed_overlays": 12,
+    "verified_lookup_relationships_added": 5,
+    "missing_kjv_forms_resolved": 16,
+    "kjv_occurrences_resolved": 35,
+    "total_kjv_occurrences_with_reviewed_lookup": 37
+  },
+  "promoted_headwords": ["decision", "dial", "engine", "firebrand", "guilt", "heron", "marketplace", "minstrel", "pelican", "purity", "science", "target"],
+  "verified_lookup_relationships": [
+    { "word": "engines", "lookup_headword": "engine", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular ENGINE" },
+    { "word": "firebrands", "lookup_headword": "firebrand", "kjv_occurrences": 3, "relationship": "Plural noun form mapped to Webster's singular FIREBRAND" },
+    { "word": "marketplaces", "lookup_headword": "marketplace", "kjv_occurrences": 1, "relationship": "Plural noun form mapped to Webster's singular MARKET-PLACE" },
+    { "word": "minstrels", "lookup_headword": "minstrel", "kjv_occurrences": 1, "relationship": "Plural noun form mapped to Webster's singular MINSTREL" },
+    { "word": "targets", "lookup_headword": "target", "kjv_occurrences": 3, "relationship": "Plural noun form mapped to Webster's singular TARGET" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "decision", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed DECISION headword" },
+    { "word": "dial", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed DIAL headword" },
+    { "word": "engine", "kjv_occurrences": 2, "resolution": "Existing singular lookup upgraded to the reviewed ENGINE headword" },
+    { "word": "firebrand", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed FIREBRAND headword" },
+    { "word": "guilt", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed GUILT headword" },
+    { "word": "heron", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed HERON headword" },
+    { "word": "marketplace", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed MARKET-PLACE headword" },
+    { "word": "minstrel", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed MINSTREL headword" },
+    { "word": "pelican", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed PELICAN headword" },
+    { "word": "purity", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed PURITY headword" },
+    { "word": "science", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SCIENCE headword" },
+    { "word": "target", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed TARGET headword" }
+  ],
+  "entries": [
+    { "word": "decision", "lookup_headword": "decision", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 163905, "source_line_end": 163926, "exact_page_heading": "DEC", "exact_entry_heading": "DECI'SION", "exact_source_match": true },
+    { "word": "dial", "lookup_headword": "dial", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 175269, "source_line_end": 175284, "exact_page_heading": "DIA", "exact_entry_heading": "DI'AL", "exact_source_match": true },
+    { "word": "engines", "lookup_headword": "engine", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 207953, "source_line_end": 207978, "exact_page_heading": "ENG", "exact_entry_heading": "EN'GINE", "exact_source_match": true },
+    { "word": "firebrands", "lookup_headword": "firebrand", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 235690, "source_line_end": 235695, "exact_page_heading": "FIR", "exact_entry_heading": "FI'REBRAND", "exact_source_match": true },
+    { "word": "guilt", "lookup_headword": "guilt", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 271161, "source_line_end": 271299, "exact_page_heading": "GUI", "exact_entry_heading": "GUILT", "exact_source_match": true },
+    { "word": "heron", "lookup_headword": "heron", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 282747, "source_line_end": 282748, "exact_page_heading": "HER", "exact_entry_heading": "HER'ON", "exact_source_match": true },
+    { "word": "marketplaces", "lookup_headword": "marketplace", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 33242, "source_line_end": 33245, "exact_page_heading": "MAR", "exact_entry_heading": "M'ARKET-PLACE", "exact_source_match": true },
+    { "word": "minstrels", "lookup_headword": "minstrel", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 43791, "source_line_end": 43809, "exact_page_heading": "MIN", "exact_entry_heading": "MIN'STREL", "exact_source_match": true },
+    { "word": "pelican", "lookup_headword": "pelican", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 86744, "source_line_end": 86755, "exact_page_heading": "PEL", "exact_entry_heading": "PEL'ICAN", "exact_source_match": true },
+    { "word": "purity", "lookup_headword": "purity", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 127047, "source_line_end": 127082, "exact_page_heading": "PUR", "exact_entry_heading": "PU'RITY", "exact_source_match": true },
+    { "word": "science", "lookup_headword": "science", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 173687, "source_line_end": 173743, "exact_page_heading": "SCI", "exact_entry_heading": "SCI'ENCE", "exact_source_match": true },
+    { "word": "targets", "lookup_headword": "target", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 243559, "source_line_end": 243574, "exact_page_heading": "TAR", "exact_entry_heading": "T'ARGET", "exact_source_match": true }
+  ]
+}
