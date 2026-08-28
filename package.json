@@ -14,6 +14,7 @@
     "audit:feedback": "node scripts/audit-feedback-delivery.mjs",
     "audit:feedback:live": "node scripts/audit-feedback-delivery.mjs --live",
     "audit:public-access": "node scripts/audit-public-access.mjs",
+    "audit:premium-narration": "node scripts/audit-premium-narration-contract.mjs",
     "audit:presentation-security": "node scripts/audit-presentation-security-contract.mjs",
     "audit:release": "node scripts/audit-release-deployment.mjs",
     "audit:release:live": "node scripts/audit-release-deployment.mjs --live",

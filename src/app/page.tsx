@@ -39733,12 +39733,250 @@ function audioScenarioEstimate(users: number, provider: PremiumAudioProviderPlan
   };
 }
 
+type PremiumNarrationVoiceOption = {
+  key: string;
+  label: string;
+  type: "built-in" | "custom";
+};
+
+type PremiumNarrationConfiguration = {
+  configured: boolean;
+  provider: string;
+  model: string;
+  maxCharacters: number;
+  voices: PremiumNarrationVoiceOption[];
+  customVoiceEligibilityRequired: boolean;
+};
+
+const PREMIUM_NARRATION_STARTER_VOICES: PremiumNarrationVoiceOption[] = [
+  { key: "marin", label: "Marin", type: "built-in" },
+  { key: "cedar", label: "Cedar", type: "built-in" },
+  { key: "onyx", label: "Onyx", type: "built-in" },
+  { key: "sage", label: "Sage", type: "built-in" },
+];
+
+function PremiumNarrationPilot() {
+  const [adminToken, setAdminToken] = useState("");
+  const [configuration, setConfiguration] = useState<PremiumNarrationConfiguration | null>(null);
+  const [voiceKey, setVoiceKey] = useState("marin");
+  const [previewText, setPreviewText] = useState("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
+  const [rightsBasis, setRightsBasis] = useState<"Public Domain" | "Owned by ministry" | "Written permission">("Public Domain");
+  const [rightsConfirmed, setRightsConfirmed] = useState(false);
+  const [voiceConsentConfirmed, setVoiceConsentConfirmed] = useState(false);
+  const [aiDisclosureConfirmed, setAiDisclosureConfirmed] = useState(false);
+  const [pilotStatus, setPilotStatus] = useState("Check server readiness before generating a private preview.");
+  const [audioUrl, setAudioUrl] = useState("");
+  const [checking, setChecking] = useState(false);
+  const [generating, setGenerating] = useState(false);
+  const voices = configuration?.voices.length ? configuration.voices : PREMIUM_NARRATION_STARTER_VOICES;
+  const selectedVoice = voices.find((voice) => voice.key === voiceKey) ?? voices[0];
+  const maxCharacters = configuration?.maxCharacters ?? 800;
+
+  useEffect(() => () => {
+    if (audioUrl) URL.revokeObjectURL(audioUrl);
+  }, [audioUrl]);
+
+  async function checkPremiumNarrationReadiness() {
+    setChecking(true);
+    setPilotStatus("Checking private premium narration configuration...");
+    try {
+      const response = await fetch("/api/audio/premium-preview", {
+        headers: { "x-admin-premium-voice-token": adminToken.trim() },
+        cache: "no-store",
+      });
+      const body = await response.json() as PremiumNarrationConfiguration & { error?: string };
+      if (!response.ok) {
+        setConfiguration(null);
+        setPilotStatus(body.error || "Premium narration configuration could not be checked.");
+        return;
+      }
+      setConfiguration(body);
+      const nextVoice = body.voices.some((voice) => voice.key === voiceKey) ? voiceKey : body.voices[0]?.key;
+      if (nextVoice) setVoiceKey(nextVoice);
+      setPilotStatus(body.configured
+        ? `${body.provider} ${body.model} is ready for private previews. No generated audio is stored by this pilot.`
+        : "Admin token accepted. Add the server-side OpenAI API key before generating audio.");
+    } catch {
+      setConfiguration(null);
+      setPilotStatus("The private premium narration route could not be reached.");
+    } finally {
+      setChecking(false);
+    }
+  }
+
+  async function generatePremiumNarrationPreview() {
+    if (!configuration?.configured || !selectedVoice) return;
+    setGenerating(true);
+    setPilotStatus("Generating one private, uncached audio preview...");
+    try {
+      const response = await fetch("/api/audio/premium-preview", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-premium-voice-token": adminToken.trim(),
+        },
+        body: JSON.stringify({
+          text: previewText,
+          voiceKey: selectedVoice.key,
+          rightsBasis,
+          rightsConfirmed,
+          voiceConsentConfirmed,
+          aiDisclosureConfirmed,
+        }),
+      });
+      if (!response.ok) {
+        const body = await response.json() as { error?: string };
+        setPilotStatus(body.error || "The premium narration preview could not be generated.");
+        return;
+      }
+      const blob = await response.blob();
+      setAudioUrl(URL.createObjectURL(blob));
+      setPilotStatus(`${selectedVoice.label} preview ready · ${previewText.length.toLocaleString()} characters · private and not stored by the app.`);
+    } catch {
+      setPilotStatus("The premium voice provider could not be reached.");
+    } finally {
+      setGenerating(false);
+    }
+  }
+
+  const canGenerate = Boolean(
+    configuration?.configured &&
+    adminToken.trim() &&
+    previewText.trim() &&
+    previewText.length <= maxCharacters &&
+    rightsConfirmed &&
+    aiDisclosureConfirmed &&
+    (selectedVoice?.type !== "custom" || voiceConsentConfirmed),
+  );
+
+  return (
+    <section className="rounded-2xl border-2 border-[var(--green)] bg-white p-4 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold text-[var(--green)]">Private Premium Narration Pilot</p>
+          <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Test short, rights-safe narration before long-form audio</h3>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            This admin-only pilot sends one short passage to the configured server-side provider. Keys and custom voice IDs never enter browser code, previews are not cached, and browser/device speech remains the public default.
+          </p>
+        </div>
+        <span className={`rounded-full px-3 py-2 text-xs font-semibold ${configuration?.configured ? "bg-emerald-50 text-emerald-800" : "bg-amber-50 text-amber-800"}`}>
+          {configuration?.configured ? "Provider ready" : "Private setup required"}
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_auto]">
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Admin premium-voice token
+          <input
+            autoComplete="off"
+            className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            onChange={(event) => {
+              setAdminToken(event.target.value);
+              setConfiguration(null);
+            }}
+            placeholder="Kept in memory for this page only"
+            type="password"
+            value={adminToken}
+          />
+        </label>
+        <button
+          className="self-end rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={!adminToken.trim() || checking}
+          onClick={() => void checkPremiumNarrationReadiness()}
+          type="button"
+        >
+          {checking ? "Checking..." : "Check readiness"}
+        </button>
+      </div>
+
+      <p className="mt-3 rounded-2xl bg-[var(--paper)] p-3 text-xs font-semibold leading-5 text-[var(--muted)]" role="status">{pilotStatus}</p>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Premium voice
+          <select
+            className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            onChange={(event) => setVoiceKey(event.target.value)}
+            value={selectedVoice?.key ?? ""}
+          >
+            {voices.map((voice) => (
+              <option key={`premium-preview-voice-${voice.key}`} value={voice.key}>{voice.label} · {voice.type === "custom" ? "owned custom voice" : "provider voice"}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Text rights basis
+          <select
+            className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            onChange={(event) => setRightsBasis(event.target.value as typeof rightsBasis)}
+            value={rightsBasis}
+          >
+            <option>Public Domain</option>
+            <option>Owned by ministry</option>
+            <option>Written permission</option>
+          </select>
+        </label>
+      </div>
+
+      <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+        Short preview text
+        <textarea
+          className="mt-2 min-h-32 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 normal-case tracking-normal text-[var(--ink)] outline-none"
+          maxLength={maxCharacters}
+          onChange={(event) => setPreviewText(event.target.value)}
+          value={previewText}
+        />
+      </label>
+      <p className="mt-1 text-right text-xs font-semibold text-[var(--muted)]">{previewText.length.toLocaleString()} / {maxCharacters.toLocaleString()} characters</p>
+
+      <div className="mt-4 grid gap-2">
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={rightsConfirmed} className="mt-1" onChange={(event) => setRightsConfirmed(event.target.checked)} type="checkbox" />
+          I verified that this exact text is public domain, ministry-owned, or covered by written narration permission.
+        </label>
+        {selectedVoice?.type === "custom" && (
+          <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+            <input checked={voiceConsentConfirmed} className="mt-1" onChange={(event) => setVoiceConsentConfirmed(event.target.checked)} type="checkbox" />
+            The speaker owns this voice and the provider has an approved consent recording for this custom voice ID.
+          </label>
+        )}
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={aiDisclosureConfirmed} className="mt-1" onChange={(event) => setAiDisclosureConfirmed(event.target.checked)} type="checkbox" />
+          I will identify this as AI-generated narration and will not present it as a human recording.
+        </label>
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <button
+          className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={!canGenerate || generating}
+          onClick={() => void generatePremiumNarrationPreview()}
+          type="button"
+        >
+          {generating ? "Generating private preview..." : "Generate private preview"}
+        </button>
+        <span className="text-xs font-semibold text-[var(--muted)]">One request · maximum {maxCharacters.toLocaleString()} characters · no app storage</span>
+      </div>
+
+      {audioUrl && (
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">AI-generated private preview</p>
+          <audio className="mt-3 w-full" controls preload="metadata" src={audioUrl}>
+            Your browser does not support audio playback.
+          </audio>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function PremiumAudioFeasibilityCenter() {
   const comparisonRows = PREMIUM_AUDIO_PROVIDER_PLANS;
   const paidComparisonRows = comparisonRows.filter((provider) => provider.costPerGeneratedHour > 0 && provider.id !== "human-narration").slice(0, 4);
 
   return (
     <div className="mt-5 space-y-4">
+      <PremiumNarrationPilot />
       <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>

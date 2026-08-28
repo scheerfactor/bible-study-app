@@ -19,7 +19,8 @@ The current beta should continue using browser/device speech synthesis. Premium 
 
 ### Phase 2: Premium Voice Pilot
 
-- Add one premium provider behind an admin/tester-only feature flag.
+- The app now includes an OpenAI premium preview route inside the private Library Acquisition Center. It requires a separate server-side admin token, keeps provider keys and custom voice IDs off the client, limits every request to a short configured character count, requires rights and disclosure confirmation, and does not store preview audio.
+- Configure eligible owned custom voices as server-side alias/ID pairs only after the provider has accepted a speaker consent recording.
 - Start with short-form generation only: selected verses, commentary excerpts, sermon notes, and short devotional readings.
 - Cache generated audio in storage so the same text is not regenerated repeatedly.
 - Track cost per generated minute and per active listener.

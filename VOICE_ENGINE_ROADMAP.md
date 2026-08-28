@@ -90,8 +90,8 @@ These should be designed before any paid voice API is enabled, because they affe
 ### Next
 
 - Add Supabase sync for voice preferences.
-- Add a server-side premium voice test route behind admin-only access.
-- Test one provider with short, rights-safe public-domain text.
+- Configure the implemented server-side OpenAI premium voice route for an administrator-only test.
+- Test the private pilot with short, rights-safe public-domain text; custom voice IDs remain server-side and require recorded speaker consent.
 - Track cost per minute and user-perceived quality.
 
 ### Later
