@@ -308,6 +308,8 @@ create table if not exists public.user_study_playlists (
   completed_item_ids text[] not null default '{}'::text[],
   completed_at timestamptz,
   last_item_index integer not null default 0 check (last_item_index >= 0),
+  last_item_progress numeric not null default 0 check (last_item_progress >= 0 and last_item_progress <= 100),
+  last_played_at timestamptz,
   repeat_playlist boolean not null default false,
   repeat_item boolean not null default false,
   created_at timestamptz not null default now(),
@@ -317,6 +319,27 @@ create table if not exists public.user_study_playlists (
 
 create index if not exists user_study_playlists_user_updated_idx
   on public.user_study_playlists (user_id, updated_at desc);
+
+create or replace function public.keep_newest_study_playlist_update()
+returns trigger
+language plpgsql
+security invoker
+set search_path = ''
+as $$
+begin
+  if old.updated_at > new.updated_at then
+    return old;
+  end if;
+  return new;
+end;
+$$;
+
+revoke all on function public.keep_newest_study_playlist_update() from public;
+
+drop trigger if exists keep_newest_study_playlist_update on public.user_study_playlists;
+create trigger keep_newest_study_playlist_update
+  before update on public.user_study_playlists
+  for each row execute function public.keep_newest_study_playlist_update();
 
 create table if not exists public.user_study_playlist_items (
   id text not null,

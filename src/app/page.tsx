@@ -1688,6 +1688,7 @@ type BibleAudioPlaylist = {
   lastItemIndex?: number;
   lastItemProgress?: number;
   lastPlayedAt?: string;
+  updatedAt?: string;
 };
 
 type TodayResumeItem = {
@@ -17345,13 +17346,20 @@ function normalizeBiblePlaylist(playlist: BibleAudioPlaylist): BibleAudioPlaylis
     completedItemIds: Array.isArray(playlist.completedItemIds) ? playlist.completedItemIds : [],
     completedAt: playlist.completedAt ?? null,
     lastItemIndex: Math.max(0, Number(playlist.lastItemIndex ?? 0)),
+    lastItemProgress: Math.min(100, Math.max(0, Number(playlist.lastItemProgress ?? 0))),
+    updatedAt: playlist.updatedAt ?? playlist.lastPlayedAt ?? playlist.completedAt ?? playlist.createdAt,
   };
 }
 
 function mergeBiblePlaylists(localPlaylists: BibleAudioPlaylist[], remotePlaylists: BibleAudioPlaylist[]) {
   const next = new Map<string, BibleAudioPlaylist>();
   for (const playlist of localPlaylists.map(normalizeBiblePlaylist)) next.set(playlist.id, playlist);
-  for (const playlist of remotePlaylists.map(normalizeBiblePlaylist)) next.set(playlist.id, playlist);
+  for (const playlist of remotePlaylists.map(normalizeBiblePlaylist)) {
+    const localPlaylist = next.get(playlist.id);
+    if (!localPlaylist || (playlist.updatedAt ?? "") >= (localPlaylist.updatedAt ?? "")) {
+      next.set(playlist.id, playlist);
+    }
+  }
   return Array.from(next.values());
 }
 
@@ -20835,7 +20843,7 @@ export default function Home() {
       supabase.from("user_bible_listening_progress").select("target_id, label, book, chapter, verse_ref, progress, updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }).limit(1).maybeSingle(),
       supabase.from("user_bible_mastery").select("book, read_chapters, listened_chapters, updated_at").eq("user_id", user.id),
       supabase.from("user_scripture_memory").select("id, verse_ref, verse_text, progress, repetitions, last_reviewed_at, created_at, updated_at").eq("user_id", user.id),
-      supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, created_at, updated_at").eq("user_id", user.id),
+      supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, last_item_progress, last_played_at, created_at, updated_at").eq("user_id", user.id),
       supabase.from("user_study_playlist_items").select("id, playlist_id, item_type, label, book, chapter, chapter_end, verse_start, verse_end, resource_title, resource_slug, position").eq("user_id", user.id).order("position", { ascending: true }),
       supabase.from("user_library_favorites").select("resource_slug, is_favorite, updated_at").eq("user_id", user.id),
     ]).then(([
@@ -21025,11 +21033,19 @@ export default function Home() {
         completedItemIds: row.completed_item_ids ?? [],
         completedAt: row.completed_at,
         lastItemIndex: Number(row.last_item_index ?? 0),
+        lastItemProgress: Number(row.last_item_progress ?? 0),
+        lastPlayedAt: row.last_played_at ?? undefined,
+        updatedAt: row.updated_at,
       }));
       const mergedPlaylists = mergeBiblePlaylists(loadBiblePlaylists(), remotePlaylists);
       setBiblePlaylists(mergedPlaylists);
       saveBiblePlaylists(mergedPlaylists);
-      setActiveStudyPlaylistId((current) => current ?? mergedPlaylists[0]?.id ?? null);
+      const resumePlaylist = mergedPlaylists.reduce<BibleAudioPlaylist | null>((latest, candidate) => {
+        if (!latest) return candidate;
+        return (candidate.lastPlayedAt ?? "") > (latest.lastPlayedAt ?? "") ? candidate : latest;
+      }, null);
+      setActiveStudyPlaylistId(resumePlaylist?.id ?? null);
+      setStudyPlaylistCurrentIndex(resumePlaylist?.lastItemIndex ?? 0);
 
       setSyncMessage(favoriteLibraryResult.error
         ? "Signed in. Study data synced; Library favorites remain on this device until the updated schema is applied."
@@ -21230,18 +21246,31 @@ export default function Home() {
         completed_item_ids: playlist.completedItemIds ?? [],
         completed_at: playlist.completedAt ?? null,
         last_item_index: playlist.lastItemIndex ?? 0,
+        last_item_progress: playlist.lastItemProgress ?? 0,
+        last_played_at: playlist.lastPlayedAt ?? null,
         repeat_playlist: repeatStudyPlaylist,
         repeat_item: repeatStudyPlaylistItem,
         created_at: playlist.createdAt,
-        updated_at: newestTimestamp(playlist.completedAt, playlist.createdAt),
+        updated_at: playlist.updatedAt ?? newestTimestamp(playlist.lastPlayedAt, playlist.completedAt, playlist.createdAt),
       }));
-      const { error: playlistError } = await supabase
+      const { data: syncedPlaylistRows, error: playlistError } = await supabase
         .from("user_study_playlists")
-        .upsert(playlistRows, { onConflict: "user_id,id" });
+        .upsert(playlistRows, { onConflict: "user_id,id" })
+        .select("id, updated_at");
       collectError("study playlists", playlistError);
 
+      const localPlaylistRows = new Map(playlistRows.map((row) => [row.id, row]));
+      const acceptedPlaylistIds = new Set(
+        (syncedPlaylistRows ?? [])
+          .filter((row) => {
+            const localRow = localPlaylistRows.get(row.id);
+            return localRow && new Date(row.updated_at).getTime() === new Date(localRow.updated_at).getTime();
+          })
+          .map((row) => row.id),
+      );
+
       const playlistItems = biblePlaylists.flatMap((playlist) =>
-        playlist.items.map((item, index) => ({
+        acceptedPlaylistIds.has(playlist.id) ? playlist.items.map((item, index) => ({
           user_id: userId,
           id: item.id,
           playlist_id: playlist.id,
@@ -21255,16 +21284,19 @@ export default function Home() {
           resource_title: item.resourceTitle ?? null,
           resource_slug: item.resourceSlug ?? null,
           position: index,
-        })),
+        })) : [],
       );
 
-      const { error: deleteItemsError } = await supabase
-        .from("user_study_playlist_items")
-        .delete()
-        .eq("user_id", userId);
-      collectError("playlist item cleanup", deleteItemsError);
+      if (!playlistError && acceptedPlaylistIds.size) {
+        const { error: deleteItemsError } = await supabase
+          .from("user_study_playlist_items")
+          .delete()
+          .eq("user_id", userId)
+          .in("playlist_id", Array.from(acceptedPlaylistIds));
+        collectError("playlist item cleanup", deleteItemsError);
+      }
 
-      if (playlistItems.length) {
+      if (!playlistError && playlistItems.length) {
         const { error: itemError } = await supabase
           .from("user_study_playlist_items")
           .insert(playlistItems);
@@ -22726,8 +22758,9 @@ export default function Home() {
         setSyncMessage(`${item.label} is already in this study playlist.`);
         return source;
       }
+      const updatedAt = new Date().toISOString();
       const next = source.map((playlist, playlistIndex) =>
-        playlistIndex === index ? { ...playlist, items: [...playlist.items, item] } : playlist,
+        playlistIndex === index ? { ...playlist, items: [...playlist.items, item], updatedAt } : playlist,
       );
       setActiveStudyPlaylistId(next[index]?.id ?? null);
       return saveNextBiblePlaylists(next);
@@ -22742,6 +22775,7 @@ export default function Home() {
   }
 
   function createBiblePlaylist() {
+    const createdAt = new Date().toISOString();
     const trimmed = playlistName.trim() || `${book} ${chapter} Listening`;
     const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
     const safeEnd = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeEnd));
@@ -22750,7 +22784,8 @@ export default function Home() {
     const nextPlaylist: BibleAudioPlaylist = {
       id: makeId("playlist"),
       name: trimmed,
-      createdAt: new Date().toISOString(),
+      createdAt,
+      updatedAt: createdAt,
       items: [
         {
           id: makeId("playlist_item"),
@@ -22800,10 +22835,12 @@ export default function Home() {
 
     const firstChapter = chaptersToUse[0];
     const lastChapter = chaptersToUse.at(-1) ?? firstChapter;
+    const createdAt = new Date().toISOString();
     const playlist: BibleAudioPlaylist = {
       id: makeId("playlist"),
       name: `${targetBook} ${firstChapter}${lastChapter !== firstChapter ? `-${lastChapter}` : ""} Commentary Companion`,
-      createdAt: new Date().toISOString(),
+      createdAt,
+      updatedAt: createdAt,
       items: chaptersToUse.flatMap((chapterNumber) => [
         {
           id: makeId("playlist_item"),
@@ -22833,7 +22870,7 @@ export default function Home() {
 
   function createSermonStudyPlaylist(template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage) {
     const existing = biblePlaylists.find((playlist) => playlist.name.toLowerCase() === template.title.toLowerCase());
-    const playlist = addStudyPlaylistLibraryResources(
+    const preparedPlaylist = addStudyPlaylistLibraryResources(
       addStudyPlaylistCommentarySources(
         addStudyPlaylistTemplateMetadata(
           existing ?? biblePlaylistFromStudyTemplate(template, sermonPassage),
@@ -22843,6 +22880,7 @@ export default function Home() {
       ),
       libraryResources,
     );
+    const playlist = { ...preparedPlaylist, updatedAt: new Date().toISOString() };
 
     setBiblePlaylists((current) => saveNextBiblePlaylists(
       existing
@@ -22907,6 +22945,7 @@ export default function Home() {
     const resource = libraryResources.find((candidate) => candidate.slug === slug);
     if (!resource) return;
 
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) =>
         playlist.id === playlistId
@@ -22922,6 +22961,7 @@ export default function Home() {
                     }
                   : item,
               ),
+              updatedAt,
             }
           : playlist,
       );
@@ -22935,6 +22975,7 @@ export default function Home() {
   }
 
   function removeBiblePlaylistItem(playlistId: string, itemId: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) =>
         playlist.id === playlistId
@@ -22944,6 +22985,8 @@ export default function Home() {
               completedItemIds: (playlist.completedItemIds ?? []).filter((id) => id !== itemId),
               completedAt: null,
               lastItemIndex: Math.min(playlist.lastItemIndex ?? 0, Math.max(0, playlist.items.length - 2)),
+              lastItemProgress: 0,
+              updatedAt,
             }
           : playlist,
       );
@@ -22953,6 +22996,7 @@ export default function Home() {
   }
 
   function moveBiblePlaylistItem(playlistId: string, itemId: string, direction: -1 | 1) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) => {
         if (playlist.id !== playlistId) return playlist;
@@ -22961,7 +23005,7 @@ export default function Home() {
         if (index < 0 || nextIndex < 0 || nextIndex >= playlist.items.length) return playlist;
         const items = [...playlist.items];
         [items[index], items[nextIndex]] = [items[nextIndex], items[index]];
-        return { ...playlist, items };
+        return { ...playlist, items, updatedAt };
       });
       saveBiblePlaylists(next);
       return next;
@@ -22969,12 +23013,13 @@ export default function Home() {
   }
 
   function markBiblePlaylistItemComplete(playlistId: string, itemId: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) => {
         if (playlist.id !== playlistId) return playlist;
         const completedItemIds = Array.from(new Set([...(playlist.completedItemIds ?? []), itemId]));
         const completedAt = playlist.items.length && completedItemIds.length >= playlist.items.length ? new Date().toISOString() : null;
-        return { ...playlist, completedItemIds, completedAt };
+        return { ...playlist, completedItemIds, completedAt, updatedAt };
       });
       saveBiblePlaylists(next);
       return next;
@@ -22983,10 +23028,11 @@ export default function Home() {
   }
 
   function clearBiblePlaylist(playlistId: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) =>
         playlist.id === playlistId
-          ? { ...playlist, items: [], completedItemIds: [], completedAt: null, lastItemIndex: 0 }
+          ? { ...playlist, items: [], completedItemIds: [], completedAt: null, lastItemIndex: 0, lastItemProgress: 0, updatedAt }
           : playlist,
       );
       saveBiblePlaylists(next);
@@ -22997,6 +23043,7 @@ export default function Home() {
   }
 
   function updateStudyPlaylistProgress(playlistId: string, itemIndex: number, itemProgress = 0, completedItemId?: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) => {
         if (playlist.id !== playlistId) return playlist;
@@ -23008,7 +23055,8 @@ export default function Home() {
           ...playlist,
           lastItemIndex: itemIndex,
           lastItemProgress: Math.min(100, Math.max(0, itemProgress)),
-          lastPlayedAt: new Date().toISOString(),
+          lastPlayedAt: updatedAt,
+          updatedAt,
           completedItemIds,
           completedAt,
         };
