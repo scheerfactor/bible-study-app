@@ -45853,6 +45853,9 @@ function LibraryShelfBrowser({
   onToggleFavorite: (resource: LibraryResource) => void;
 }) {
   const [selectedSlug, setSelectedSlug] = useState(resources[0]?.slug ?? "");
+  const [hoveredSlug, setHoveredSlug] = useState("");
+  const [pullingSlug, setPullingSlug] = useState("");
+  const pullTimerRef = useRef<number | null>(null);
   const [failedCoverSlug, setFailedCoverSlug] = useState<string | null>(null);
   const selectedResource = resources.find((resource) => resource.slug === selectedSlug) ?? resources[0] ?? null;
   const selectedProgress = selectedResource ? progressState[selectedResource.slug]?.progress ?? 0 : 0;
@@ -45900,6 +45903,21 @@ function LibraryShelfBrowser({
   }, [resources]);
   const displayShelfGroups = [...personalShelfGroups, ...shelfGroups];
 
+  useEffect(() => () => {
+    if (pullTimerRef.current) window.clearTimeout(pullTimerRef.current);
+  }, []);
+
+  function pullBookFromShelf(resource: LibraryResource) {
+    if (pullTimerRef.current) window.clearTimeout(pullTimerRef.current);
+    setHoveredSlug(resource.slug);
+    setPullingSlug(resource.slug);
+    pullTimerRef.current = window.setTimeout(() => {
+      setSelectedSlug(resource.slug);
+      setPullingSlug("");
+      pullTimerRef.current = null;
+    }, 240);
+  }
+
   if (!selectedResource) {
     return (
       <section className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-6 text-center">
@@ -45928,27 +45946,36 @@ function LibraryShelfBrowser({
       <div className="grid border-b border-[#b9b4a8] bg-[#d6d1c5] md:grid-cols-2">
         <div className="relative flex min-h-[300px] items-center justify-center border-b border-[#b9b4a8] bg-[#f5f1e8] p-6 shadow-[inset_-18px_0_24px_-24px_rgba(41,53,47,0.65)] md:border-b-0 md:border-r">
           <div className="absolute inset-y-5 right-0 w-px bg-[#b9b4a8]" />
-          {showCover ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              alt={`Cover of ${selectedResource.title}`}
-              className="aspect-[3/4] max-h-[250px] w-auto max-w-[185px] border border-black/15 object-cover shadow-xl"
-              loading="lazy"
-              onError={() => setFailedCoverSlug(selectedResource.slug)}
-              src={selectedResource.cover_image_url ?? ""}
-            />
-          ) : (
-            <div
-              className="flex aspect-[3/4] max-h-[250px] w-[175px] flex-col justify-between border-2 p-5 shadow-xl"
-              style={{ backgroundColor: selectedPalette.background, borderColor: selectedPalette.border, color: selectedPalette.text }}
-            >
-              <span className="border-b pb-3 text-[0.65rem] font-semibold uppercase tracking-[0.14em]" style={{ borderColor: selectedPalette.accent }}>
-                {libraryCategoryLabel(selectedResource.category)}
+          <button
+            key={`reading-table-book-${selectedResource.slug}`}
+            aria-label={`Open ${selectedResource.title} by ${selectedResource.author} in the reader`}
+            className="library-book-open group relative cursor-pointer rounded-sm text-left outline-none focus-visible:ring-4 focus-visible:ring-[var(--gold)]/60"
+            onClick={() => onOpenReader(selectedResource.slug)}
+            type="button"
+          >
+            {showCover ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                alt={`Cover of ${selectedResource.title}`}
+                className="aspect-[3/4] max-h-[250px] w-auto max-w-[185px] border border-black/15 object-cover shadow-xl transition group-hover:-translate-y-1 group-hover:shadow-2xl"
+                loading="lazy"
+                onError={() => setFailedCoverSlug(selectedResource.slug)}
+                src={selectedResource.cover_image_url ?? ""}
+              />
+            ) : (
+              <span
+                className="flex aspect-[3/4] max-h-[250px] w-[175px] flex-col justify-between border-2 p-5 shadow-xl transition group-hover:-translate-y-1 group-hover:shadow-2xl"
+                style={{ backgroundColor: selectedPalette.background, borderColor: selectedPalette.border, color: selectedPalette.text }}
+              >
+                <span className="border-b pb-3 text-[0.65rem] font-semibold uppercase tracking-[0.14em]" style={{ borderColor: selectedPalette.accent }}>
+                  {libraryCategoryLabel(selectedResource.category)}
+                </span>
+                <span className="text-xl font-semibold leading-6">{selectedResource.work_title ?? selectedResource.title}</span>
+                <span className="border-t pt-3 text-xs font-semibold" style={{ borderColor: selectedPalette.accent }}>{selectedResource.author}</span>
               </span>
-              <span className="text-xl font-semibold leading-6">{selectedResource.work_title ?? selectedResource.title}</span>
-              <span className="border-t pt-3 text-xs font-semibold" style={{ borderColor: selectedPalette.accent }}>{selectedResource.author}</span>
-            </div>
-          )}
+            )}
+            <span className="pointer-events-none absolute inset-x-2 bottom-2 translate-y-2 rounded-full bg-black/75 px-2 py-1 text-center text-[0.65rem] font-semibold text-white opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">Open book</span>
+          </button>
         </div>
 
         <div className="relative min-h-[300px] bg-[#faf7ef] p-6 shadow-[inset_18px_0_24px_-24px_rgba(41,53,47,0.65)] md:p-8">
@@ -46014,6 +46041,19 @@ function LibraryShelfBrowser({
               <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#35443d]">{shelf.title}</h3>
               <span className="text-xs font-semibold text-[#657169]">{shelf.total} {shelf.total === 1 ? "book" : "books"}</span>
             </div>
+            {(() => {
+              const indicatedResource = shelf.resources.find((resource) => resource.slug === hoveredSlug)
+                ?? shelf.resources.find((resource) => resource.slug === selectedResource.slug);
+              return (
+                <p className="mb-2 min-h-10 rounded-xl border border-[#c4beb1] bg-[#f6f1e7] px-3 py-2 text-xs leading-5 text-[#526159]" id={`shelf-guide-${shelfIndex}`} aria-live="polite">
+                  {indicatedResource ? (
+                    <>Your hand is on <span className="font-semibold text-[#263b31] underline decoration-[#b18a3d] decoration-2 underline-offset-2">{indicatedResource.work_title ?? indicatedResource.title}</span> by {indicatedResource.author}. Click to pull it from the shelf.</>
+                  ) : (
+                    <>Move your pointer over a spine—or tab to it—to identify the book before pulling it from the shelf.</>
+                  )}
+                </p>
+              );
+            })()}
             <div className="overflow-x-auto border border-[#18251f] bg-[#24322c] px-4 pt-4 shadow-inner [scrollbar-width:thin]">
               <div className="flex min-w-max items-end gap-1.5">
                 {shelf.resources.map((resource, index) => {
@@ -46023,9 +46063,14 @@ function LibraryShelfBrowser({
                     <button
                       key={`physical-book-${shelf.title}-${resource.slug}`}
                       aria-label={`Select ${resource.title} by ${resource.author}`}
+                      aria-describedby={`shelf-guide-${shelfIndex}`}
                       aria-pressed={selected}
-                      className={`relative h-44 w-12 shrink-0 border-2 shadow-md transition sm:w-14 ${selected ? "-translate-y-2 ring-2 ring-[#d8bd74] ring-offset-2 ring-offset-[#24322c]" : "hover:-translate-y-1"}`}
-                      onClick={() => setSelectedSlug(resource.slug)}
+                      className={`group relative h-44 w-12 shrink-0 cursor-pointer border-2 shadow-md transition-all duration-300 outline-none sm:w-14 ${pullingSlug === resource.slug ? "z-10 -translate-y-8 scale-105 shadow-2xl" : selected ? "-translate-y-2 ring-2 ring-[#d8bd74] ring-offset-2 ring-offset-[#24322c]" : "hover:-translate-y-2 focus-visible:-translate-y-2 focus-visible:ring-2 focus-visible:ring-[#d8bd74]"}`}
+                      onBlur={() => setHoveredSlug((current) => current === resource.slug ? "" : current)}
+                      onClick={() => pullBookFromShelf(resource)}
+                      onFocus={() => setHoveredSlug(resource.slug)}
+                      onMouseEnter={() => setHoveredSlug(resource.slug)}
+                      onMouseLeave={() => setHoveredSlug((current) => current === resource.slug ? "" : current)}
                       style={{ backgroundColor: palette.background, borderColor: palette.border, color: palette.text }}
                       title={`${resource.title} — ${resource.author}`}
                       type="button"
@@ -53202,10 +53247,19 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
 
 function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: (patch: Partial<SermonSlide>) => void }) {
   const [mediaCategory, setMediaCategory] = useState<"All" | SermonSlideMediaCategory>("All");
+  const [mediaSearch, setMediaSearch] = useState("");
   const detectedBibleBook = detectedBibleBookForSlide(slide);
   const [backgroundBook, setBackgroundBook] = useState("");
   const selectedBackgroundBook = backgroundBook || detectedBibleBook;
-  const filteredImageSlots = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).filter(([, slot]) => mediaCategory === "All" || slot.category === mediaCategory);
+  const normalizedMediaSearch = mediaSearch.trim().toLowerCase();
+  const filteredImageSlots = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).filter(([id, slot]) => {
+    if (mediaCategory !== "All" && slot.category !== mediaCategory) return false;
+    if (!normalizedMediaSearch) return true;
+    return [id, slot.label, slot.description, slot.motif, slot.category, sermonSlideMediaKind(id as SermonSlideImageSlotId)]
+      .join(" ")
+      .toLowerCase()
+      .includes(normalizedMediaSearch);
+  });
   const previewLightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light";
   const readability = sermonSlideReadability(slide, previewLightStyle);
   return (
@@ -53356,9 +53410,23 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
       </div>
       <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Curated Background Picker</p>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Media Background Finder</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Search the local, rights-documented collection by subject, setting, or visual idea.</p>
+          </div>
           <p className="text-xs font-semibold text-[var(--muted)]">{SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot]?.label ?? "Open Bible"}</p>
         </div>
+        <label className="relative mt-3 block">
+          <Search className="pointer-events-none absolute left-3 top-3 text-[var(--muted)]" size={17} />
+          <input
+            aria-label="Search media backgrounds"
+            className="h-11 w-full rounded-xl border border-[var(--line)] bg-white pl-10 pr-3 text-sm text-[var(--ink)] outline-none"
+            onChange={(event) => setMediaSearch(event.target.value)}
+            placeholder="Try cross, prayer, Jerusalem, sea, harvest, or Scripture"
+            type="search"
+            value={mediaSearch}
+          />
+        </label>
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
           {SERMON_SLIDE_MEDIA_CATEGORIES.map((category) => (
             <button
@@ -53371,6 +53439,7 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
             </button>
           ))}
         </div>
+        <p className="mt-2 text-xs font-semibold text-[var(--muted)]">{filteredImageSlots.length} matching background{filteredImageSlots.length === 1 ? "" : "s"} · rights notes stay visible before selection</p>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           {filteredImageSlots.map(([id, slot]) => (
             <button
@@ -53390,6 +53459,9 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
               </span>
             </button>
           ))}
+          {!filteredImageSlots.length && (
+            <p className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-4 text-sm leading-6 text-[var(--muted)] sm:col-span-2">No curated background matches that search and category. Clear the search or choose All.</p>
+          )}
         </div>
       </div>
       <div className="mt-4 grid gap-3">

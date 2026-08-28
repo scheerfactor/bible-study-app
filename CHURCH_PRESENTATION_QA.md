@@ -85,6 +85,15 @@ For the first live use, treat the app as a preaching and slide-support tool, not
 8. Add `Psalm 23:1-3` from KJV Verse and confirm the exact KJV corpus text appears with the Still Waters background.
 9. Test all five finder tabs at desktop and iPad widths with no horizontal scrolling.
 
+## Media Background Finder
+
+1. Add or select a slide, then search backgrounds by label, subject, setting, motif, and category.
+2. Search `Jerusalem` and confirm Ancient Jerusalem is the single result with its rights note visible.
+3. Select the result and confirm both the slide preview and selected-background label update.
+4. Combine a category with a search, then confirm the result count reflects both filters.
+5. Search an unavailable idea and confirm the empty state recommends clearing the search or choosing All.
+6. At 834x1194, confirm the search field, category strip, results, and slide editor do not create page-level horizontal scrolling.
+
 ## iPad And Pulpit Checks
 
 - Open the sermon and presentation on the iPad you plan to use.
