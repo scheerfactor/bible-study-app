@@ -39768,6 +39768,7 @@ type PremiumNarrationReview = {
   characters: number;
   generationMs: number;
   source?: "provider" | "cache";
+  listeningDevice?: "desktop" | "iphone";
   scores: {
     pronunciation: number;
     naturalness: number;
@@ -39775,6 +39776,21 @@ type PremiumNarrationReview = {
     phoneClarity: number;
   };
   notes: string;
+};
+
+type PremiumNarrationAcceptance = {
+  key: string;
+  provider: string;
+  model: string;
+  voiceLabel: string;
+  voiceType: "built-in" | "custom";
+  qualifyingReviews: number;
+  sampleCount: number;
+  deviceCount: number;
+  averageScore: number;
+  minimumScore: number;
+  readyForApproval: boolean;
+  blockers: string[];
 };
 
 type PremiumNarrationUsageEvent = {
@@ -39801,6 +39817,8 @@ const PREMIUM_NARRATION_REVIEWS_KEY = "fathers-business-premium-narration-review
 const PREMIUM_NARRATION_USAGE_KEY = "fathers-business-premium-narration-usage";
 const PREMIUM_NARRATION_AUDIO_CACHE = "fathers-business-premium-narration-v1";
 const PREMIUM_NARRATION_INSTRUCTIONS_VERSION = "exact-reverent-v1";
+const PREMIUM_NARRATION_MINIMUM_SCORE = 4;
+const PREMIUM_NARRATION_MINIMUM_AVERAGE = 4.25;
 const PREMIUM_NARRATION_TEST_SAMPLES: PremiumNarrationTestSample[] = [
   {
     id: "john-3-16",
@@ -39831,6 +39849,51 @@ const PREMIUM_NARRATION_TEST_SAMPLES: PremiumNarrationTestSample[] = [
     text: "So Mephibosheth dwelt in Jerusalem: for he did eat continually at the king's table; and was lame on both his feet. Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon. Moreover the LORD said unto me, Take thee a great roll, and write in it with a man's pen concerning Maher-shalal-hash-baz.",
   },
 ];
+
+function premiumNarrationAcceptance(reviews: PremiumNarrationReview[]): PremiumNarrationAcceptance[] {
+  const standardReferences = new Set(PREMIUM_NARRATION_TEST_SAMPLES.map((sample) => sample.reference));
+  const grouped = new Map<string, { review: PremiumNarrationReview; latest: Map<string, PremiumNarrationReview> }>();
+
+  for (const review of reviews) {
+    const key = [review.provider, review.model, review.voiceType, review.voiceLabel].join("|");
+    const group = grouped.get(key) ?? { review, latest: new Map<string, PremiumNarrationReview>() };
+    if (review.listeningDevice && standardReferences.has(review.sampleReference)) {
+      const evidenceKey = `${review.sampleReference}|${review.listeningDevice}`;
+      if (!group.latest.has(evidenceKey)) group.latest.set(evidenceKey, review);
+    }
+    grouped.set(key, group);
+  }
+
+  return Array.from(grouped.entries()).map(([key, group]) => {
+    const evidence = Array.from(group.latest.values());
+    const samples = new Set(evidence.map((review) => review.sampleReference));
+    const devices = new Set(evidence.map((review) => review.listeningDevice));
+    const scores = evidence.flatMap((review) => Object.values(review.scores));
+    const averageScore = scores.length ? scores.reduce((total, score) => total + score, 0) / scores.length : 0;
+    const minimumScore = scores.length ? Math.min(...scores) : 0;
+    const blockers: string[] = [];
+    const missingSamples = PREMIUM_NARRATION_TEST_SAMPLES.length - samples.size;
+    if (missingSamples > 0) blockers.push(`${missingSamples} KJV sample${missingSamples === 1 ? "" : "s"} remaining`);
+    if (!devices.has("desktop")) blockers.push("desktop review required");
+    if (!devices.has("iphone")) blockers.push("iPhone review required");
+    if (scores.length && minimumScore < PREMIUM_NARRATION_MINIMUM_SCORE) blockers.push(`minimum score is ${minimumScore.toFixed(1)}`);
+    if (scores.length && averageScore < PREMIUM_NARRATION_MINIMUM_AVERAGE) blockers.push(`average is ${averageScore.toFixed(2)}`);
+    return {
+      key,
+      provider: group.review.provider,
+      model: group.review.model,
+      voiceLabel: group.review.voiceLabel,
+      voiceType: group.review.voiceType,
+      qualifyingReviews: evidence.length,
+      sampleCount: samples.size,
+      deviceCount: devices.size,
+      averageScore,
+      minimumScore,
+      readyForApproval: blockers.length === 0,
+      blockers,
+    };
+  }).sort((left, right) => Number(right.readyForApproval) - Number(left.readyForApproval) || right.averageScore - left.averageScore);
+}
 
 async function premiumNarrationCacheUrl(configuration: PremiumNarrationConfiguration, voiceKey: string, text: string, rightsBasis: string) {
   const cacheIdentity = JSON.stringify({
@@ -39898,6 +39961,7 @@ function PremiumNarrationPilot() {
     source: "provider" | "cache";
   } | null>(null);
   const [reviewScores, setReviewScores] = useState({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
+  const [listeningDevice, setListeningDevice] = useState<"" | "desktop" | "iphone">("");
   const [reviewNotes, setReviewNotes] = useState("");
   const [reviews, setReviews] = useState<PremiumNarrationReview[]>(() => loadAcquisitionStorage(PREMIUM_NARRATION_REVIEWS_KEY, []));
   const [usageEvents, setUsageEvents] = useState<PremiumNarrationUsageEvent[]>(() => loadAcquisitionStorage(PREMIUM_NARRATION_USAGE_KEY, []));
@@ -39905,6 +39969,7 @@ function PremiumNarrationPilot() {
   const selectedVoice = voices.find((voice) => voice.key === voiceKey) ?? voices[0];
   const maxCharacters = configuration?.maxCharacters ?? 800;
   const selectedTest = PREMIUM_NARRATION_TEST_SAMPLES.find((sample) => sample.id === selectedTestId);
+  const voiceAcceptance = premiumNarrationAcceptance(reviews);
 
   useEffect(() => () => {
     if (audioUrl) URL.revokeObjectURL(audioUrl);
@@ -40067,6 +40132,10 @@ function PremiumNarrationPilot() {
   }
 
   function saveNarrationReview() {
+    if (!listeningDevice) {
+      setPilotStatus("Choose the device actually used for this listening review before saving.");
+      return;
+    }
     if (!generatedPreview || Object.values(reviewScores).some((score) => score < 1)) {
       setPilotStatus("Score pronunciation, naturalness, reverence, and phone clarity before saving this review.");
       return;
@@ -40075,6 +40144,7 @@ function PremiumNarrationPilot() {
       id: `premium-narration-review-${Date.now()}`,
       createdAt: new Date().toISOString(),
       ...generatedPreview,
+      listeningDevice,
       scores: reviewScores,
       notes: reviewNotes.trim(),
     };
@@ -40085,7 +40155,7 @@ function PremiumNarrationPilot() {
   function exportNarrationReviews() {
     downloadTextFile(
       `fathers-business-premium-narration-reviews-${new Date().toISOString().slice(0, 10)}.json`,
-      JSON.stringify({ app: "Father's Business Bible Study", kind: "premium_narration_pilot_export", exportedAt: new Date().toISOString(), reviews, usageEvents }, null, 2),
+      JSON.stringify({ app: "Father's Business Bible Study", kind: "premium_narration_pilot_export", exportedAt: new Date().toISOString(), acceptanceRules: { standardKjvSamples: PREMIUM_NARRATION_TEST_SAMPLES.map((sample) => sample.reference), requiredDevices: ["desktop", "iphone"], minimumScore: PREMIUM_NARRATION_MINIMUM_SCORE, minimumAverage: PREMIUM_NARRATION_MINIMUM_AVERAGE }, voiceAcceptance, reviews, usageEvents }, null, 2),
       "application/json",
     );
     setPilotStatus(`Exported ${reviews.length} quality review${reviews.length === 1 ? "" : "s"} and ${usageEvents.length} usage event${usageEvents.length === 1 ? "" : "s"}.`);
@@ -40299,6 +40369,18 @@ function PremiumNarrationPilot() {
             <PremiumNarrationScore label="Phone clarity" value={reviewScores.phoneClarity} onChange={(phoneClarity) => setReviewScores((current) => ({ ...current, phoneClarity }))} />
           </div>
           <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Device actually used for this review
+            <select
+              className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              onChange={(event) => setListeningDevice(event.target.value as typeof listeningDevice)}
+              value={listeningDevice}
+            >
+              <option value="">Choose the listening device</option>
+              <option value="desktop">Desktop browser and headphones</option>
+              <option value="iphone">Physical iPhone browser and headphones</option>
+            </select>
+          </label>
+          <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
             Pronunciation or listening notes
             <textarea
               className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-sm leading-6 normal-case tracking-normal text-[var(--ink)] outline-none"
@@ -40310,6 +40392,40 @@ function PremiumNarrationPilot() {
           <button className="mt-3 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={saveNarrationReview} type="button">Save private quality review</button>
         </div>
       )}
+
+      <div className="mt-4 rounded-2xl border-2 border-[var(--green)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Voice Acceptance Gate</p>
+            <p className="mt-1 max-w-3xl text-xs leading-5 text-[var(--muted)]">A voice is ready for human launch approval only after all four standard KJV samples have device-identified evidence from desktop and physical iPhone listening, every score is at least {PREMIUM_NARRATION_MINIMUM_SCORE}, and the overall average is at least {PREMIUM_NARRATION_MINIMUM_AVERAGE.toFixed(2)}.</p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{voiceAcceptance.filter((candidate) => candidate.readyForApproval).length} ready</span>
+        </div>
+        {voiceAcceptance.length === 0 ? (
+          <p className="mt-3 rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">Generate a standard sample, listen on the named physical device, and save the first scored review to begin acceptance testing.</p>
+        ) : (
+          <div className="mt-3 grid gap-3 lg:grid-cols-2">
+            {voiceAcceptance.map((candidate) => (
+              <article className="rounded-2xl border border-[var(--line)] bg-white p-4" key={candidate.key}>
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--ink)]">{candidate.voiceLabel}</p>
+                    <p className="mt-1 text-xs text-[var(--muted)]">{candidate.provider} · {candidate.model} · {candidate.voiceType === "custom" ? "consented custom voice" : "provider voice"}</p>
+                  </div>
+                  <span className={`rounded-full px-3 py-2 text-xs font-semibold ${candidate.readyForApproval ? "bg-emerald-100 text-emerald-900" : "bg-amber-100 text-amber-900"}`}>{candidate.readyForApproval ? "Ready for approval" : "Testing incomplete"}</span>
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-4">
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">KJV samples</span><strong className="text-[var(--ink)]">{candidate.sampleCount} / {PREMIUM_NARRATION_TEST_SAMPLES.length}</strong></div>
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">Devices</span><strong className="text-[var(--ink)]">{candidate.deviceCount} / 2</strong></div>
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">Average</span><strong className="text-[var(--ink)]">{candidate.averageScore ? candidate.averageScore.toFixed(2) : "—"}</strong></div>
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">Minimum</span><strong className="text-[var(--ink)]">{candidate.minimumScore ? candidate.minimumScore.toFixed(1) : "—"}</strong></div>
+                </div>
+                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{candidate.readyForApproval ? `${candidate.qualifyingReviews} current device/sample reviews meet the evidence gate. Export before making the production voice decision.` : candidate.blockers.join(" · ")}</p>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
 
       {reviews.length > 0 && (
         <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
@@ -40327,7 +40443,7 @@ function PremiumNarrationPilot() {
                 <article className="grid gap-2 rounded-2xl bg-[var(--paper)] p-3 sm:grid-cols-[1fr_auto]" key={review.id}>
                   <div>
                     <p className="text-sm font-semibold text-[var(--ink)]">{review.voiceLabel} · {review.sampleReference}</p>
-                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · {review.source === "cache" ? "browser cache" : `${(review.generationMs / 1000).toFixed(1)}s generation`} · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · {review.listeningDevice === "iphone" ? "physical iPhone" : review.listeningDevice === "desktop" ? "desktop" : "device not recorded"} · {review.source === "cache" ? "browser cache" : `${(review.generationMs / 1000).toFixed(1)}s generation`} · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
                   </div>
                   <span className="self-start rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{average.toFixed(1)} / 5</span>
                 </article>

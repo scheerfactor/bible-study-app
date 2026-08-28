@@ -54,6 +54,12 @@ const requiredAppChecks = [
   "Clear private audio cache",
   "Private Usage &amp; Cost Ledger",
   "usageEvents",
+  "Voice Acceptance Gate",
+  "Device actually used for this review",
+  "Physical iPhone browser and headphones",
+  "PREMIUM_NARRATION_MINIMUM_SCORE",
+  "PREMIUM_NARRATION_MINIMUM_AVERAGE",
+  "voiceAcceptance",
 ];
 
 for (const check of requiredAppChecks) {
@@ -63,3 +69,4 @@ for (const check of requiredAppChecks) {
 console.log("PASS premium narration API: server-only credentials, bounded requests, production endpoint lock, and no-store audio.");
 console.log("PASS premium narration UI: admin readiness, text rights, custom voice consent, and AI disclosure gates are present.");
 console.log("PASS premium narration cost controls: private browser cache, clear-cache control, and local usage ledger are present.");
+console.log("PASS premium narration acceptance: standard KJV coverage, physical-device evidence, and score thresholds are enforced.");
