@@ -9,6 +9,7 @@ const app = await readFile(path.join(root, "src", "app", "page.tsx"), "utf8");
 const requiredRouteChecks = [
   'env("PREMIUM_TTS_ADMIN_TOKEN")',
   'env("OPENAI_API_KEY")',
+  "PREMIUM_TTS_COST_PER_MILLION_CHARACTERS",
   'request.headers.get("x-admin-premium-voice-token")',
   "timingSafeEqual",
   "HARD_MAX_CHARACTERS",
@@ -48,7 +49,11 @@ const requiredAppChecks = [
   "rightsConfirmed",
   "voiceConsentConfirmed",
   "aiDisclosureConfirmed",
-  "private and not stored by the app",
+  "PREMIUM_NARRATION_AUDIO_CACHE",
+  "Reuse identical previews",
+  "Clear private audio cache",
+  "Private Usage &amp; Cost Ledger",
+  "usageEvents",
 ];
 
 for (const check of requiredAppChecks) {
@@ -57,3 +62,4 @@ for (const check of requiredAppChecks) {
 
 console.log("PASS premium narration API: server-only credentials, bounded requests, production endpoint lock, and no-store audio.");
 console.log("PASS premium narration UI: admin readiness, text rights, custom voice consent, and AI disclosure gates are present.");
+console.log("PASS premium narration cost controls: private browser cache, clear-cache control, and local usage ledger are present.");

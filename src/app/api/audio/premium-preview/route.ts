@@ -51,6 +51,11 @@ function configuredMaxCharacters() {
   return Math.min(Math.floor(configured), HARD_MAX_CHARACTERS);
 }
 
+function configuredCostPerMillionCharacters() {
+  const configured = Number(process.env.PREMIUM_TTS_COST_PER_MILLION_CHARACTERS);
+  return Number.isFinite(configured) && configured > 0 ? configured : null;
+}
+
 function customVoices() {
   const configured = env("PREMIUM_TTS_CUSTOM_VOICES");
   if (!configured) return new Map<string, string>();
@@ -91,6 +96,7 @@ export async function GET(request: NextRequest) {
     provider: "OpenAI",
     model: env("PREMIUM_TTS_MODEL") || "gpt-4o-mini-tts",
     maxCharacters: configuredMaxCharacters(),
+    costPerMillionCharacters: configuredCostPerMillionCharacters(),
     voices: safeVoiceOptions(),
     customVoiceEligibilityRequired: customVoices().size > 0,
   }, { headers: { "Cache-Control": "no-store" } });

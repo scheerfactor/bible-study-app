@@ -39744,6 +39744,7 @@ type PremiumNarrationConfiguration = {
   provider: string;
   model: string;
   maxCharacters: number;
+  costPerMillionCharacters: number | null;
   voices: PremiumNarrationVoiceOption[];
   customVoiceEligibilityRequired: boolean;
 };
@@ -39766,6 +39767,7 @@ type PremiumNarrationReview = {
   sampleReference: string;
   characters: number;
   generationMs: number;
+  source?: "provider" | "cache";
   scores: {
     pronunciation: number;
     naturalness: number;
@@ -39775,6 +39777,20 @@ type PremiumNarrationReview = {
   notes: string;
 };
 
+type PremiumNarrationUsageEvent = {
+  id: string;
+  createdAt: string;
+  provider: string;
+  model: string;
+  voiceLabel: string;
+  voiceType: "built-in" | "custom";
+  sampleReference: string;
+  characters: number;
+  source: "provider" | "cache";
+  generationMs: number;
+  estimatedCostUsd: number | null;
+};
+
 const PREMIUM_NARRATION_STARTER_VOICES: PremiumNarrationVoiceOption[] = [
   { key: "marin", label: "Marin", type: "built-in" },
   { key: "cedar", label: "Cedar", type: "built-in" },
@@ -39782,6 +39798,9 @@ const PREMIUM_NARRATION_STARTER_VOICES: PremiumNarrationVoiceOption[] = [
   { key: "sage", label: "Sage", type: "built-in" },
 ];
 const PREMIUM_NARRATION_REVIEWS_KEY = "fathers-business-premium-narration-reviews";
+const PREMIUM_NARRATION_USAGE_KEY = "fathers-business-premium-narration-usage";
+const PREMIUM_NARRATION_AUDIO_CACHE = "fathers-business-premium-narration-v1";
+const PREMIUM_NARRATION_INSTRUCTIONS_VERSION = "exact-reverent-v1";
 const PREMIUM_NARRATION_TEST_SAMPLES: PremiumNarrationTestSample[] = [
   {
     id: "john-3-16",
@@ -39812,6 +39831,20 @@ const PREMIUM_NARRATION_TEST_SAMPLES: PremiumNarrationTestSample[] = [
     text: "So Mephibosheth dwelt in Jerusalem: for he did eat continually at the king's table; and was lame on both his feet. Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon. Moreover the LORD said unto me, Take thee a great roll, and write in it with a man's pen concerning Maher-shalal-hash-baz.",
   },
 ];
+
+async function premiumNarrationCacheUrl(configuration: PremiumNarrationConfiguration, voiceKey: string, text: string, rightsBasis: string) {
+  const cacheIdentity = JSON.stringify({
+    provider: configuration.provider,
+    model: configuration.model,
+    voiceKey,
+    text,
+    rightsBasis,
+    instructions: PREMIUM_NARRATION_INSTRUCTIONS_VERSION,
+  });
+  const digest = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(cacheIdentity));
+  const fingerprint = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  return `${window.location.origin}/__private-premium-narration-cache/${fingerprint}`;
+}
 
 function PremiumNarrationScore({
   label,
@@ -39851,6 +39884,8 @@ function PremiumNarrationPilot() {
   const [audioUrl, setAudioUrl] = useState("");
   const [checking, setChecking] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const [cachePreviewLocally, setCachePreviewLocally] = useState(true);
+  const [forceRegenerate, setForceRegenerate] = useState(false);
   const [selectedTestId, setSelectedTestId] = useState(PREMIUM_NARRATION_TEST_SAMPLES[0].id);
   const [generatedPreview, setGeneratedPreview] = useState<{
     provider: string;
@@ -39860,10 +39895,12 @@ function PremiumNarrationPilot() {
     sampleReference: string;
     characters: number;
     generationMs: number;
+    source: "provider" | "cache";
   } | null>(null);
   const [reviewScores, setReviewScores] = useState({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
   const [reviewNotes, setReviewNotes] = useState("");
   const [reviews, setReviews] = useState<PremiumNarrationReview[]>(() => loadAcquisitionStorage(PREMIUM_NARRATION_REVIEWS_KEY, []));
+  const [usageEvents, setUsageEvents] = useState<PremiumNarrationUsageEvent[]>(() => loadAcquisitionStorage(PREMIUM_NARRATION_USAGE_KEY, []));
   const voices = configuration?.voices.length ? configuration.voices : PREMIUM_NARRATION_STARTER_VOICES;
   const selectedVoice = voices.find((voice) => voice.key === voiceKey) ?? voices[0];
   const maxCharacters = configuration?.maxCharacters ?? 800;
@@ -39880,6 +39917,14 @@ function PremiumNarrationPilot() {
       // Private local review history is optional; the pilot remains usable if storage is unavailable.
     }
   }, [reviews]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(PREMIUM_NARRATION_USAGE_KEY, JSON.stringify(usageEvents));
+    } catch {
+      // The usage ledger is optional and contains no provider credentials or custom voice IDs.
+    }
+  }, [usageEvents]);
 
   async function checkPremiumNarrationReadiness() {
     setChecking(true);
@@ -39899,7 +39944,7 @@ function PremiumNarrationPilot() {
       const nextVoice = body.voices.some((voice) => voice.key === voiceKey) ? voiceKey : body.voices[0]?.key;
       if (nextVoice) setVoiceKey(nextVoice);
       setPilotStatus(body.configured
-        ? `${body.provider} ${body.model} is ready for private previews. No generated audio is stored by this pilot.`
+        ? `${body.provider} ${body.model} is ready. The server stores no audio; identical previews can be reused from this private browser.`
         : "Admin token accepted. Add the server-side OpenAI API key before generating audio.");
     } catch {
       setConfiguration(null);
@@ -39912,9 +39957,48 @@ function PremiumNarrationPilot() {
   async function generatePremiumNarrationPreview() {
     if (!configuration?.configured || !selectedVoice) return;
     setGenerating(true);
-    setPilotStatus("Generating one private, uncached audio preview...");
+    setPilotStatus(forceRegenerate ? "Generating a fresh private audio preview..." : "Checking this private browser before calling the provider...");
     const startedAt = performance.now();
     try {
+      let cacheUrl = "";
+      let cache: Cache | null = null;
+      if (cachePreviewLocally && "caches" in window) {
+        try {
+          cacheUrl = await premiumNarrationCacheUrl(configuration, selectedVoice.key, previewText, rightsBasis);
+          cache = await window.caches.open(PREMIUM_NARRATION_AUDIO_CACHE);
+          if (!forceRegenerate) {
+            const cachedResponse = await cache.match(cacheUrl);
+            if (cachedResponse) {
+              const blob = await cachedResponse.blob();
+              setAudioUrl(URL.createObjectURL(blob));
+              const cachedPreview = {
+                provider: configuration.provider,
+                model: configuration.model,
+                voiceLabel: selectedVoice.label,
+                voiceType: selectedVoice.type,
+                sampleReference: selectedTest?.reference ?? "Custom preview",
+                characters: previewText.length,
+                generationMs: 0,
+                source: "cache" as const,
+              };
+              setGeneratedPreview(cachedPreview);
+              setUsageEvents((current) => [{
+                id: `premium-narration-usage-${Date.now()}`,
+                createdAt: new Date().toISOString(),
+                ...cachedPreview,
+                estimatedCostUsd: 0,
+              }, ...current].slice(0, 250));
+              setReviewScores({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
+              setReviewNotes("");
+              setPilotStatus(`${selectedVoice.label} reused from this private browser · ${previewText.length.toLocaleString()} characters · no provider call.`);
+              return;
+            }
+          }
+        } catch {
+          cache = null;
+          setPilotStatus("Private browser caching is unavailable; generating one provider preview instead...");
+        }
+      }
       const response = await fetch("/api/audio/premium-preview", {
         method: "POST",
         headers: {
@@ -39937,8 +40021,15 @@ function PremiumNarrationPilot() {
       }
       const blob = await response.blob();
       const generationMs = Math.round(performance.now() - startedAt);
+      if (cache && cacheUrl) {
+        try {
+          await cache.put(cacheUrl, new Response(blob, { headers: { "Content-Type": blob.type || "audio/mpeg" } }));
+        } catch {
+          // Playback and the usage ledger still work when browser cache storage is unavailable.
+        }
+      }
       setAudioUrl(URL.createObjectURL(blob));
-      setGeneratedPreview({
+      const providerPreview = {
         provider: configuration.provider,
         model: configuration.model,
         voiceLabel: selectedVoice.label,
@@ -39946,10 +40037,20 @@ function PremiumNarrationPilot() {
         sampleReference: selectedTest?.reference ?? "Custom preview",
         characters: previewText.length,
         generationMs,
-      });
+        source: "provider" as const,
+      };
+      setGeneratedPreview(providerPreview);
+      setUsageEvents((current) => [{
+        id: `premium-narration-usage-${Date.now()}`,
+        createdAt: new Date().toISOString(),
+        ...providerPreview,
+        estimatedCostUsd: configuration.costPerMillionCharacters === null
+          ? null
+          : (previewText.length / 1_000_000) * configuration.costPerMillionCharacters,
+      }, ...current].slice(0, 250));
       setReviewScores({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
       setReviewNotes("");
-      setPilotStatus(`${selectedVoice.label} preview ready in ${(generationMs / 1000).toFixed(1)} seconds · ${previewText.length.toLocaleString()} characters · private and not stored by the app.`);
+      setPilotStatus(`${selectedVoice.label} provider preview ready in ${(generationMs / 1000).toFixed(1)} seconds · ${previewText.length.toLocaleString()} characters${cache ? " · saved only in this private browser" : " · not stored"}.`);
     } catch {
       setPilotStatus("The premium voice provider could not be reached.");
     } finally {
@@ -39984,11 +40085,33 @@ function PremiumNarrationPilot() {
   function exportNarrationReviews() {
     downloadTextFile(
       `fathers-business-premium-narration-reviews-${new Date().toISOString().slice(0, 10)}.json`,
-      JSON.stringify({ app: "Father's Business Bible Study", kind: "premium_narration_quality_reviews", exportedAt: new Date().toISOString(), reviews }, null, 2),
+      JSON.stringify({ app: "Father's Business Bible Study", kind: "premium_narration_pilot_export", exportedAt: new Date().toISOString(), reviews, usageEvents }, null, 2),
       "application/json",
     );
-    setPilotStatus(`Exported ${reviews.length} private narration quality review${reviews.length === 1 ? "" : "s"}.`);
+    setPilotStatus(`Exported ${reviews.length} quality review${reviews.length === 1 ? "" : "s"} and ${usageEvents.length} usage event${usageEvents.length === 1 ? "" : "s"}.`);
   }
+
+  async function clearNarrationAudioCache() {
+    if (!("caches" in window)) {
+      setPilotStatus("Private browser audio caching is unavailable on this device.");
+      return;
+    }
+    try {
+      await window.caches.delete(PREMIUM_NARRATION_AUDIO_CACHE);
+      setPilotStatus("Private browser audio cache cleared. Reviews and the usage ledger were kept.");
+    } catch {
+      setPilotStatus("The private browser audio cache could not be cleared.");
+    }
+  }
+
+  const providerUsageEvents = usageEvents.filter((event) => event.source === "provider");
+  const cachedUsageEvents = usageEvents.filter((event) => event.source === "cache");
+  const providerCharacters = providerUsageEvents.reduce((total, event) => total + event.characters, 0);
+  const savedCharacters = cachedUsageEvents.reduce((total, event) => total + event.characters, 0);
+  const estimatedSpend = providerUsageEvents.reduce((total, event) => total + (event.estimatedCostUsd ?? 0), 0);
+  const estimatedSavings = configuration?.costPerMillionCharacters == null
+    ? null
+    : (savedCharacters / 1_000_000) * configuration.costPerMillionCharacters;
 
   const canGenerate = Boolean(
     configuration?.configured &&
@@ -40007,7 +40130,7 @@ function PremiumNarrationPilot() {
           <p className="text-sm font-semibold text-[var(--green)]">Private Premium Narration Pilot</p>
           <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Test short, rights-safe narration before long-form audio</h3>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            This admin-only pilot sends one short passage to the configured server-side provider. Keys and custom voice IDs never enter browser code, previews are not cached, and browser/device speech remains the public default.
+            This admin-only pilot sends one short passage to the configured server-side provider. Keys and custom voice IDs never enter browser code, the server stores no audio, and an optional private browser cache prevents duplicate paid calls.
           </p>
         </div>
         <span className={`rounded-full px-3 py-2 text-xs font-semibold ${configuration?.configured ? "bg-emerald-50 text-emerald-800" : "bg-amber-50 text-amber-800"}`}>
@@ -40125,6 +40248,17 @@ function PremiumNarrationPilot() {
         </label>
       </div>
 
+      <div className="mt-4 grid gap-2 md:grid-cols-2">
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-emerald-50 p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={cachePreviewLocally} className="mt-1" onChange={(event) => setCachePreviewLocally(event.target.checked)} type="checkbox" />
+          Reuse identical previews from this private browser to avoid another paid provider call. Clear the cache before using a shared device.
+        </label>
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={forceRegenerate} className="mt-1" onChange={(event) => setForceRegenerate(event.target.checked)} type="checkbox" />
+          Ignore a cached copy for a fresh provider and latency test.
+        </label>
+      </div>
+
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <button
           className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
@@ -40134,14 +40268,14 @@ function PremiumNarrationPilot() {
         >
           {generating ? "Generating private preview..." : "Generate private preview"}
         </button>
-        <span className="text-xs font-semibold text-[var(--muted)]">One request · maximum {maxCharacters.toLocaleString()} characters · no app storage</span>
+        <span className="text-xs font-semibold text-[var(--muted)]">Maximum {maxCharacters.toLocaleString()} characters · no server audio storage</span>
       </div>
 
       {audioUrl && (
         <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">AI-generated private preview</p>
-            {generatedPreview && <span className="text-xs font-semibold text-[var(--green)]">Generated in {(generatedPreview.generationMs / 1000).toFixed(1)} seconds</span>}
+            {generatedPreview && <span className="text-xs font-semibold text-[var(--green)]">{generatedPreview.source === "cache" ? "Reused from private browser cache" : `Generated in ${(generatedPreview.generationMs / 1000).toFixed(1)} seconds`}</span>}
           </div>
           <audio className="mt-3 w-full" controls preload="metadata" src={audioUrl}>
             Your browser does not support audio playback.
@@ -40193,7 +40327,7 @@ function PremiumNarrationPilot() {
                 <article className="grid gap-2 rounded-2xl bg-[var(--paper)] p-3 sm:grid-cols-[1fr_auto]" key={review.id}>
                   <div>
                     <p className="text-sm font-semibold text-[var(--ink)]">{review.voiceLabel} · {review.sampleReference}</p>
-                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · {(review.generationMs / 1000).toFixed(1)}s generation · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · {review.source === "cache" ? "browser cache" : `${(review.generationMs / 1000).toFixed(1)}s generation`} · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
                   </div>
                   <span className="self-start rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{average.toFixed(1)} / 5</span>
                 </article>
@@ -40202,6 +40336,23 @@ function PremiumNarrationPilot() {
           </div>
         </div>
       )}
+
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Private Usage &amp; Cost Ledger</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Browser-only estimates; no text, audio, token, or voice ID is sent to a ledger service.</p>
+          </div>
+          <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => void clearNarrationAudioCache()} type="button">Clear private audio cache</button>
+        </div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Provider calls</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{providerUsageEvents.length}</p><p className="text-xs text-[var(--muted)]">{providerCharacters.toLocaleString()} characters</p></div>
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Cache reuses</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{cachedUsageEvents.length}</p><p className="text-xs text-[var(--muted)]">{savedCharacters.toLocaleString()} characters saved</p></div>
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Estimated spend</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{configuration?.costPerMillionCharacters == null ? "Rate not set" : `$${estimatedSpend.toFixed(4)}`}</p><p className="text-xs text-[var(--muted)]">Provider calls only</p></div>
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Estimated avoided cost</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{estimatedSavings === null ? "Rate not set" : `$${estimatedSavings.toFixed(4)}`}</p><p className="text-xs text-[var(--muted)]">At configured current rate</p></div>
+        </div>
+        {usageEvents.length > 0 && <p className="mt-3 text-xs leading-5 text-[var(--muted)]">Latest: {usageEvents[0].voiceLabel} · {usageEvents[0].sampleReference} · {usageEvents[0].source === "cache" ? "cache reuse" : "provider call"} · {usageEvents[0].characters.toLocaleString()} characters</p>}
+      </div>
     </section>
   );
 }

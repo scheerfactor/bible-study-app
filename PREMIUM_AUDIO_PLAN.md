@@ -19,12 +19,14 @@ The current beta should continue using browser/device speech synthesis. Premium 
 
 ### Phase 2: Premium Voice Pilot
 
-- The app now includes an OpenAI premium preview route inside the private Library Acquisition Center. It requires a separate server-side admin token, keeps provider keys and custom voice IDs off the client, limits every request to a short configured character count, requires rights and disclosure confirmation, and does not store preview audio.
+- The app now includes an OpenAI premium preview route inside the private Library Acquisition Center. It requires a separate server-side admin token, keeps provider keys and custom voice IDs off the client, limits every request to a short configured character count, requires rights and disclosure confirmation, and does not store preview audio on the server.
 - Configure eligible owned custom voices as server-side alias/ID pairs only after the provider has accepted a speaker consent recording.
 - Compare voices with the built-in KJV quality trial: Gospel clarity, pastoral reading, teaching cadence, and difficult Bible names. Record generation time plus pronunciation, naturalness, reverence, and phone clarity before selecting a provider or voice.
 - Start with short-form generation only: selected verses, commentary excerpts, sermon notes, and short devotional readings.
-- Cache generated audio in storage so the same text is not regenerated repeatedly.
-- Track cost per generated minute and per active listener.
+- The pilot can reuse identical audio from an opt-in private browser cache keyed by provider, model, voice alias, exact text, rights basis, and instruction version. A force-regenerate control bypasses the cache for fresh quality and latency tests.
+- The private browser ledger distinguishes provider calls from cache reuses and estimates spend and avoided cost only when the current provider rate is configured. The app does not guess a rate.
+- Clear the private audio cache before using a shared device. Reviews and the usage ledger export separately; clearing browser data removes all three.
+- Add durable shared storage only after retention, access-control, deletion, and rights metadata requirements are approved.
 
 ### Phase 3: Long-Form Audio
 
@@ -48,7 +50,7 @@ The current beta should continue using browser/device speech synthesis. Premium 
 - Feature flag every paid provider.
 - Estimate generated minutes before generation.
 - Confirm user intent before generating long passages.
-- Cache by text checksum, voice, speed, and provider.
+- Cache by text checksum, voice, instructions, and provider; never include credentials in the cache key.
 - Store provider, voice, cost estimate, source text, and generation date.
 - Add admin dashboard for total generated minutes and estimated spend.
 - Never generate copyrighted books, commentary, sermons, or audio without rights.
