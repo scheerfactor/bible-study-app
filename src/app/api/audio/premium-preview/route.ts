@@ -1,4 +1,4 @@
-import { timingSafeEqual } from "node:crypto";
+import { createHash, timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "nodejs";
@@ -20,6 +20,11 @@ type VoiceOption = {
   type: "built-in" | "custom";
 };
 
+type PronunciationGuideEntry = {
+  term: string;
+  pronunciation: string;
+};
+
 const BUILT_IN_VOICES: VoiceOption[] = [
   { key: "marin", label: "Marin", type: "built-in" },
   { key: "cedar", label: "Cedar", type: "built-in" },
@@ -29,6 +34,7 @@ const BUILT_IN_VOICES: VoiceOption[] = [
 const RIGHTS_BASES = new Set<RightsBasis>(["Public Domain", "Owned by ministry", "Written permission"]);
 const DEFAULT_MAX_CHARACTERS = 800;
 const HARD_MAX_CHARACTERS = 2000;
+const MAX_PRONUNCIATION_GUIDE_ENTRIES = 32;
 
 function env(name: string) {
   return process.env[name]?.trim() ?? "";
@@ -54,6 +60,36 @@ function configuredMaxCharacters() {
 function configuredCostPerMillionCharacters() {
   const configured = Number(process.env.PREMIUM_TTS_COST_PER_MILLION_CHARACTERS);
   return Number.isFinite(configured) && configured > 0 ? configured : null;
+}
+
+function pronunciationGuide(): PronunciationGuideEntry[] {
+  const configured = env("PREMIUM_TTS_PRONUNCIATION_GUIDE");
+  if (!configured) return [];
+  return configured
+    .split(";")
+    .map((entry) => {
+      const separator = entry.indexOf("=");
+      if (separator < 1) return null;
+      const term = entry.slice(0, separator).trim();
+      const pronunciation = entry.slice(separator + 1).trim();
+      if (!/^[A-Za-z][A-Za-z' -]{1,48}$/.test(term) || !/^[A-Za-z][A-Za-z' .-]{1,80}$/.test(pronunciation)) return null;
+      return { term, pronunciation };
+    })
+    .filter((entry): entry is PronunciationGuideEntry => Boolean(entry))
+    .slice(0, MAX_PRONUNCIATION_GUIDE_ENTRIES);
+}
+
+function pronunciationGuideFingerprint(entries = pronunciationGuide()) {
+  if (!entries.length) return "none";
+  return createHash("sha256").update(JSON.stringify(entries)).digest("hex").slice(0, 12);
+}
+
+function narrationInstructions(text: string, entries = pronunciationGuide()) {
+  const relevantEntries = entries.filter((entry) => text.toLowerCase().includes(entry.term.toLowerCase()));
+  const exactTextRule = "Read the supplied text exactly as written in a natural, reverent, warm teaching voice. Do not add, remove, paraphrase, or explain any words.";
+  if (!relevantEntries.length) return exactTextRule;
+  const guides = relevantEntries.map((entry) => `${entry.term}: ${entry.pronunciation}`).join("; ");
+  return `${exactTextRule} Use these pronunciation guides only when the named word appears: ${guides}. The guides are silent instructions and must not be spoken.`;
 }
 
 function customVoices() {
@@ -91,6 +127,7 @@ export async function GET(request: NextRequest) {
   const authError = requiredAdminToken(request);
   if (authError) return authError;
 
+  const guide = pronunciationGuide();
   return NextResponse.json({
     configured: Boolean(env("OPENAI_API_KEY")),
     provider: "OpenAI",
@@ -99,6 +136,8 @@ export async function GET(request: NextRequest) {
     costPerMillionCharacters: configuredCostPerMillionCharacters(),
     voices: safeVoiceOptions(),
     customVoiceEligibilityRequired: customVoices().size > 0,
+    pronunciationGuideEntries: guide.length,
+    pronunciationGuideFingerprint: pronunciationGuideFingerprint(guide),
   }, { headers: { "Cache-Control": "no-store" } });
 }
 
@@ -134,6 +173,7 @@ export async function POST(request: NextRequest) {
   }
 
   const model = env("PREMIUM_TTS_MODEL") || "gpt-4o-mini-tts";
+  const guide = pronunciationGuide();
   let upstream: Response;
   try {
     const endpoint = process.env.NODE_ENV === "production"
@@ -149,7 +189,7 @@ export async function POST(request: NextRequest) {
         model,
         voice: customVoiceId ? { id: customVoiceId } : builtInVoice?.key,
         input: text,
-        instructions: "Read the supplied text exactly as written in a natural, reverent, warm teaching voice. Do not add, remove, paraphrase, or explain any words.",
+        instructions: narrationInstructions(text, guide),
         response_format: "mp3",
       }),
       cache: "no-store",
@@ -172,6 +212,7 @@ export async function POST(request: NextRequest) {
       "X-Narration-Provider": "OpenAI",
       "X-Narration-Voice-Type": customVoiceId ? "custom-consented" : "built-in",
       "X-Rights-Basis": rightsBasis,
+      "X-Pronunciation-Guide": pronunciationGuideFingerprint(guide),
     },
   });
 }

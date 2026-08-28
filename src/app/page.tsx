@@ -39747,6 +39747,8 @@ type PremiumNarrationConfiguration = {
   costPerMillionCharacters: number | null;
   voices: PremiumNarrationVoiceOption[];
   customVoiceEligibilityRequired: boolean;
+  pronunciationGuideEntries: number;
+  pronunciationGuideFingerprint: string;
 };
 
 type PremiumNarrationTestSample = {
@@ -39769,6 +39771,7 @@ type PremiumNarrationReview = {
   generationMs: number;
   source?: "provider" | "cache";
   listeningDevice?: "desktop" | "iphone";
+  pronunciationGuideFingerprint?: string;
   scores: {
     pronunciation: number;
     naturalness: number;
@@ -39784,6 +39787,7 @@ type PremiumNarrationAcceptance = {
   model: string;
   voiceLabel: string;
   voiceType: "built-in" | "custom";
+  pronunciationGuideFingerprint: string;
   qualifyingReviews: number;
   sampleCount: number;
   deviceCount: number;
@@ -39855,7 +39859,8 @@ function premiumNarrationAcceptance(reviews: PremiumNarrationReview[]): PremiumN
   const grouped = new Map<string, { review: PremiumNarrationReview; latest: Map<string, PremiumNarrationReview> }>();
 
   for (const review of reviews) {
-    const key = [review.provider, review.model, review.voiceType, review.voiceLabel].join("|");
+    const guideFingerprint = review.pronunciationGuideFingerprint ?? "legacy";
+    const key = [review.provider, review.model, review.voiceType, review.voiceLabel, guideFingerprint].join("|");
     const group = grouped.get(key) ?? { review, latest: new Map<string, PremiumNarrationReview>() };
     if (review.listeningDevice && standardReferences.has(review.sampleReference)) {
       const evidenceKey = `${review.sampleReference}|${review.listeningDevice}`;
@@ -39884,6 +39889,7 @@ function premiumNarrationAcceptance(reviews: PremiumNarrationReview[]): PremiumN
       model: group.review.model,
       voiceLabel: group.review.voiceLabel,
       voiceType: group.review.voiceType,
+      pronunciationGuideFingerprint: group.review.pronunciationGuideFingerprint ?? "legacy",
       qualifyingReviews: evidence.length,
       sampleCount: samples.size,
       deviceCount: devices.size,
@@ -39903,6 +39909,7 @@ async function premiumNarrationCacheUrl(configuration: PremiumNarrationConfigura
     text,
     rightsBasis,
     instructions: PREMIUM_NARRATION_INSTRUCTIONS_VERSION,
+    pronunciationGuide: configuration.pronunciationGuideFingerprint,
   });
   const digest = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(cacheIdentity));
   const fingerprint = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
@@ -39959,6 +39966,7 @@ function PremiumNarrationPilot() {
     characters: number;
     generationMs: number;
     source: "provider" | "cache";
+    pronunciationGuideFingerprint: string;
   } | null>(null);
   const [reviewScores, setReviewScores] = useState({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
   const [listeningDevice, setListeningDevice] = useState<"" | "desktop" | "iphone">("");
@@ -40009,7 +40017,7 @@ function PremiumNarrationPilot() {
       const nextVoice = body.voices.some((voice) => voice.key === voiceKey) ? voiceKey : body.voices[0]?.key;
       if (nextVoice) setVoiceKey(nextVoice);
       setPilotStatus(body.configured
-        ? `${body.provider} ${body.model} is ready. The server stores no audio; identical previews can be reused from this private browser.`
+        ? `${body.provider} ${body.model} is ready with ${body.pronunciationGuideEntries} server-side pronunciation guide${body.pronunciationGuideEntries === 1 ? "" : "s"} (${body.pronunciationGuideFingerprint}). The server stores no audio.`
         : "Admin token accepted. Add the server-side OpenAI API key before generating audio.");
     } catch {
       setConfiguration(null);
@@ -40045,6 +40053,7 @@ function PremiumNarrationPilot() {
                 characters: previewText.length,
                 generationMs: 0,
                 source: "cache" as const,
+                pronunciationGuideFingerprint: configuration.pronunciationGuideFingerprint,
               };
               setGeneratedPreview(cachedPreview);
               setUsageEvents((current) => [{
@@ -40103,6 +40112,7 @@ function PremiumNarrationPilot() {
         characters: previewText.length,
         generationMs,
         source: "provider" as const,
+        pronunciationGuideFingerprint: configuration.pronunciationGuideFingerprint,
       };
       setGeneratedPreview(providerPreview);
       setUsageEvents((current) => [{
@@ -40410,7 +40420,7 @@ function PremiumNarrationPilot() {
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
                     <p className="text-sm font-semibold text-[var(--ink)]">{candidate.voiceLabel}</p>
-                    <p className="mt-1 text-xs text-[var(--muted)]">{candidate.provider} · {candidate.model} · {candidate.voiceType === "custom" ? "consented custom voice" : "provider voice"}</p>
+                    <p className="mt-1 text-xs text-[var(--muted)]">{candidate.provider} · {candidate.model} · {candidate.voiceType === "custom" ? "consented custom voice" : "provider voice"} · guide {candidate.pronunciationGuideFingerprint}</p>
                   </div>
                   <span className={`rounded-full px-3 py-2 text-xs font-semibold ${candidate.readyForApproval ? "bg-emerald-100 text-emerald-900" : "bg-amber-100 text-amber-900"}`}>{candidate.readyForApproval ? "Ready for approval" : "Testing incomplete"}</span>
                 </div>
@@ -40443,7 +40453,7 @@ function PremiumNarrationPilot() {
                 <article className="grid gap-2 rounded-2xl bg-[var(--paper)] p-3 sm:grid-cols-[1fr_auto]" key={review.id}>
                   <div>
                     <p className="text-sm font-semibold text-[var(--ink)]">{review.voiceLabel} · {review.sampleReference}</p>
-                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · {review.listeningDevice === "iphone" ? "physical iPhone" : review.listeningDevice === "desktop" ? "desktop" : "device not recorded"} · {review.source === "cache" ? "browser cache" : `${(review.generationMs / 1000).toFixed(1)}s generation`} · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · guide {review.pronunciationGuideFingerprint ?? "legacy"} · {review.listeningDevice === "iphone" ? "physical iPhone" : review.listeningDevice === "desktop" ? "desktop" : "device not recorded"} · {review.source === "cache" ? "browser cache" : `${(review.generationMs / 1000).toFixed(1)}s generation`} · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
                   </div>
                   <span className="self-start rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{average.toFixed(1)} / 5</span>
                 </article>

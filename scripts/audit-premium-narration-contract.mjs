@@ -13,6 +13,12 @@ const requiredRouteChecks = [
   'request.headers.get("x-admin-premium-voice-token")',
   "timingSafeEqual",
   "HARD_MAX_CHARACTERS",
+  "MAX_PRONUNCIATION_GUIDE_ENTRIES",
+  'env("PREMIUM_TTS_PRONUNCIATION_GUIDE")',
+  'createHash("sha256")',
+  "narrationInstructions(text, guide)",
+  "Use these pronunciation guides only",
+  '"X-Pronunciation-Guide"',
   "if (!body.rightsConfirmed)",
   "if (!body.aiDisclosureConfirmed)",
   "if (customVoiceId && !body.voiceConsentConfirmed)",
@@ -60,6 +66,7 @@ const requiredAppChecks = [
   "PREMIUM_NARRATION_MINIMUM_SCORE",
   "PREMIUM_NARRATION_MINIMUM_AVERAGE",
   "voiceAcceptance",
+  "pronunciationGuideFingerprint",
 ];
 
 for (const check of requiredAppChecks) {
@@ -70,3 +77,4 @@ console.log("PASS premium narration API: server-only credentials, bounded reques
 console.log("PASS premium narration UI: admin readiness, text rights, custom voice consent, and AI disclosure gates are present.");
 console.log("PASS premium narration cost controls: private browser cache, clear-cache control, and local usage ledger are present.");
 console.log("PASS premium narration acceptance: standard KJV coverage, physical-device evidence, and score thresholds are enforced.");
+console.log("PASS premium narration pronunciation: bounded server-only guides fingerprint cache and acceptance evidence.");
