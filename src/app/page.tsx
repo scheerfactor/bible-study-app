@@ -36849,6 +36849,26 @@ function isAppleSpeechVoice(voice: SpeechSynthesisVoice) {
   return speechVoiceCategory(voice).startsWith("Apple") || voice.voiceURI.toLowerCase().includes("apple");
 }
 
+function speechVoiceQualityRank(voice: SpeechSynthesisVoice) {
+  const value = `${voice.name} ${voice.voiceURI}`.toLowerCase();
+  if (value.includes("premium")) return 0;
+  if (value.includes("enhanced")) return 1;
+  if (value.includes("siri") || value.includes("natural") || value.includes("neural")) return 2;
+  if (isAppleSpeechVoice(voice) && voice.localService && !isNoveltySpeechVoice(voice)) return 3;
+  if (voice.localService && !isNoveltySpeechVoice(voice)) return 4;
+  return 5;
+}
+
+function speechVoiceQualityLabel(voice: SpeechSynthesisVoice) {
+  const rank = speechVoiceQualityRank(voice);
+  if (rank === 0) return "Premium installed voice";
+  if (rank === 1) return "Enhanced installed voice";
+  if (rank === 2) return "High-quality voice";
+  if (rank === 3) return "Apple installed voice";
+  if (rank === 4) return "Standard device voice";
+  return "Browser voice";
+}
+
 function voiceProfileById(profileId: VoiceProfileId) {
   return VOICE_PROFILES.find((profile) => profile.id === profileId) ?? VOICE_PROFILES[0];
 }
@@ -36873,11 +36893,22 @@ function profileVoiceRank(voice: SpeechSynthesisVoice, profileId: VoiceProfileId
 }
 
 function isRecommendedSpeechVoice(voice: SpeechSynthesisVoice, profileId: VoiceProfileId) {
-  return profileVoiceRank(voice, profileId) <= 2 && !isNoveltySpeechVoice(voice);
+  return (speechVoiceQualityRank(voice) <= 2 || profileVoiceRank(voice, profileId) <= 2) && !isNoveltySpeechVoice(voice);
 }
 
 function voiceDisplayName(voice: SpeechSynthesisVoice) {
-  return `${voice.name} · ${speechVoiceCategory(voice)}`;
+  return `${voice.name} · ${speechVoiceQualityLabel(voice)}`;
+}
+
+function bestSpeechVoiceForProfile(voices: SpeechSynthesisVoice[], profileId: VoiceProfileId) {
+  return [...voices]
+    .filter((voice) => !isNoveltySpeechVoice(voice))
+    .sort((a, b) =>
+      speechVoiceQualityRank(a) - speechVoiceQualityRank(b) ||
+      profileVoiceRank(a, profileId) - profileVoiceRank(b, profileId) ||
+      Number(b.localService) - Number(a.localService) ||
+      a.name.localeCompare(b.name),
+    )[0] ?? null;
 }
 
 function browserVoiceEnvironmentLabel() {
@@ -36929,6 +36960,8 @@ function sortSpeechVoices(voices: SpeechSynthesisVoice[], settings: VoiceSetting
       Number(!settings.maleFavoriteVoiceURIs.includes(a.voiceURI)) - Number(!settings.maleFavoriteVoiceURIs.includes(b.voiceURI)) ||
       Number(!settings.femaleFavoriteVoiceURIs.includes(a.voiceURI)) - Number(!settings.femaleFavoriteVoiceURIs.includes(b.voiceURI));
     if (favoriteDifference) return favoriteDifference;
+    const qualityDifference = speechVoiceQualityRank(a) - speechVoiceQualityRank(b);
+    if (qualityDifference) return qualityDifference;
     const profileDifference = profileVoiceRank(a, settings.activeProfile) - profileVoiceRank(b, settings.activeProfile);
     if (profileDifference) return profileDifference;
     const noveltyDifference = Number(isNoveltySpeechVoice(a)) - Number(isNoveltySpeechVoice(b));
@@ -45669,12 +45702,17 @@ function VoiceControlPanel({
   const activeProfileSavedVoiceURI = voiceSettings.profileVoiceURIs[voiceSettings.activeProfile] || voiceSettings.selectedVoiceURI;
   const missingSavedVoice = Boolean(activeProfileSavedVoiceURI && !allVoices.some((voice) => voice.voiceURI === activeProfileSavedVoiceURI));
   const profileRate = voiceSettings.profileRates[voiceSettings.activeProfile] ?? activeProfile.suggestedRate;
+  const bestAvailableVoice = bestSpeechVoiceForProfile(visibleVoices, voiceSettings.activeProfile);
+  const selectedVoiceQuality = selectedVoice ? speechVoiceQualityLabel(selectedVoice) : "No device voice detected";
+  const bestVoiceAlreadySelected = Boolean(bestAvailableVoice && bestAvailableVoice.voiceURI === selectedVoice?.voiceURI);
   const diagnostics = useMemo(() => {
     const appleVoices = allVoices.filter(isAppleSpeechVoice).length;
     const deviceVoices = allVoices.filter((voice) => voice.localService).length;
     const browserVoices = allVoices.filter((voice) => !voice.localService).length;
     const noveltyVoices = allVoices.filter(isNoveltySpeechVoice).length;
-    return { appleVoices, deviceVoices, browserVoices, noveltyVoices };
+    const premiumVoices = allVoices.filter((voice) => speechVoiceQualityRank(voice) === 0).length;
+    const enhancedVoices = allVoices.filter((voice) => speechVoiceQualityRank(voice) === 1).length;
+    return { appleVoices, deviceVoices, browserVoices, noveltyVoices, premiumVoices, enhancedVoices };
   }, [allVoices]);
   const favoriteActive = selectedVoice ? voiceSettings.favoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
   const maleFavoriteActive = selectedVoice ? voiceSettings.maleFavoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
@@ -45716,6 +45754,26 @@ function VoiceControlPanel({
             ))}
           </div>
           <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{activeProfile.description}</p>
+        </div>
+
+        <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--ink)]">Best quality on this device</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                {bestAvailableVoice ? `${bestAvailableVoice.name} · ${speechVoiceQualityLabel(bestAvailableVoice)} · matched for ${activeProfile.label}` : "No English device voice is currently exposed by this browser."}
+              </p>
+            </div>
+            <button
+              className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={!bestAvailableVoice || bestVoiceAlreadySelected}
+              onClick={() => bestAvailableVoice && onSpeechVoiceChange(bestAvailableVoice.voiceURI)}
+              type="button"
+            >
+              {bestVoiceAlreadySelected ? "Best voice selected" : "Use best available"}
+            </button>
+          </div>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">On iPhone or iPad, install an Enhanced or Premium English system voice, reopen the browser, then use this button. Browser speech cannot create or clone a voice; owned custom narration requires a private server-side provider, explicit speaker consent, cost limits, and rights-safe audio storage.</p>
         </div>
 
         <div className="grid gap-2 md:grid-cols-[1.3fr_1fr]">
@@ -45781,14 +45839,16 @@ function VoiceControlPanel({
           </button>
         </div>
 
-        <div className="grid gap-2 md:grid-cols-4">
+        <div className="grid gap-2 md:grid-cols-3 xl:grid-cols-6">
           <StatusCard label="Browser" status={browserVoiceEnvironmentLabel()} good={hasSpeechSynthesis} />
           <StatusCard label="Browser voice" status={`${diagnostics.browserVoices} available`} good={hasSpeechSynthesis} />
           <StatusCard label="Apple voice" status={`${diagnostics.appleVoices} detected`} good={diagnostics.appleVoices > 0} />
           <StatusCard label="Device voice" status={`${diagnostics.deviceVoices} local`} good={diagnostics.deviceVoices > 0} />
+          <StatusCard label="Premium voice" status={`${diagnostics.premiumVoices} installed`} good={diagnostics.premiumVoices > 0} />
+          <StatusCard label="Enhanced voice" status={`${diagnostics.enhancedVoices} installed`} good={diagnostics.enhancedVoices > 0} />
         </div>
         <div className="grid gap-2 md:grid-cols-2">
-          <StatusCard label="Selected voice" status={selectedVoiceName} good={Boolean(selectedVoice)} />
+          <StatusCard label="Selected voice quality" status={selectedVoiceQuality} good={Boolean(selectedVoice && speechVoiceQualityRank(selectedVoice) <= 2)} />
           <StatusCard label="Saved voice" status={missingSavedVoice ? "Saved voice not available on this browser/device" : "Available"} good={!missingSavedVoice} />
         </div>
         <StatusCard label="Premium voice availability" status="Future licensed option, not connected in beta" good={false} />

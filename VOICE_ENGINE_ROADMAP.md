@@ -79,7 +79,9 @@ These should be designed before any paid voice API is enabled, because they affe
 
 ### Now
 
-- Improve browser voice selection.
+- Automatically rank Premium, Enhanced, Siri/natural/neural, Apple installed, standard device, and browser voices in that order.
+- Show the selected voice quality and provide one-tap selection of the best available voice for each listening profile.
+- Explain the iPhone/iPad installed-voice requirement and keep browser/device speech honest about its quality limits.
 - Save favorite voices.
 - Add male/female favorites.
 - Add voice profiles.
