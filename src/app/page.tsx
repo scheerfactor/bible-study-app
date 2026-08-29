@@ -2350,6 +2350,13 @@ const LICENSED_RESOURCE_LINKS = licensedResourceLinksData as LicensedResourceLin
 
 const PERMISSION_REQUEST_TEMPLATES: PermissionRequestTemplate[] = [
   {
+    id: "solve-family-problems-three-message-pilot",
+    title: "S. M. Davis three-message pilot",
+    purpose: "A narrow, unsent follow-up asking only about official ministry links or official-player embeds for three named messages.",
+    subject: "Three-message official-player pilot for Father's Business Bible Study",
+    body: "Hello Solve Family Problems team,\n\nThank you again for allowing Father's Business Bible Study to use website-available titles, graphics, and descriptions with attribution and official links. I would like to ask about one small, free pilot using these three messages:\n\n1. 10 Reasons Why Pastors Lose Their Families\n2. The Wise Use of Parental Authority\n3. Anger the Destroyer\n\nFor each title, would you permit the app to link to the official product page and, only if you prefer and provide it, display a Solve Family Problems-controlled audio or video player inside the free public beta? The ministry would remain clearly attributed and users could open the official source page.\n\nThis request does not include copying or rehosting files, downloads, transcripts, excerpts beyond the approved website description, AI or text-to-speech narration, presentation export, paid access, resale, or a claim of endorsement. If an embedded official player is not desired, we will keep the existing official links only.\n\nIf this limited pilot is acceptable, could you identify which of the three titles may use an official player, provide the approved player or embed URL, and state any attribution or placement requirements?\n\nThank you,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
     id: "full-digital-library",
     title: "Full digital library permission",
     purpose: "Request permission to display the full work inside the Bible Study App.",
