@@ -137,6 +137,7 @@ type PriorityMinistryPartner = {
   permissionStatus: string;
   nextAction: string;
   boundary: string;
+  pilotItems: string[];
 };
 type StoragePlanningRow = {
   id: string;
@@ -2222,6 +2223,11 @@ const PRIORITY_MINISTRY_PARTNERS: PriorityMinistryPartner[] = [
     permissionStatus: "Positive interest · written scope still pending",
     nextAction: "Review the existing conversation, then request named books and one sermon or video pilot with each use confirmed separately.",
     boundary: "Do not list, quote, host, embed, recommend, sell, or narrate his material until the approved titles and uses are confirmed in writing.",
+    pilotItems: [
+      "Marriage Makers/Marriage Breakers — candidate book; official product page still to verify",
+      "Romans: Salvation A–Z — candidate book; doctrinal and title-level rights review needed",
+      "Ruth: Diamonds in the Darkness — candidate book; official product page still to verify",
+    ],
   },
   {
     id: "sm-davis",
@@ -2231,6 +2237,11 @@ const PRIORITY_MINISTRY_PARTNERS: PriorityMinistryPartner[] = [
     permissionStatus: "Website metadata granted · media rights not granted",
     nextAction: "Choose up to three sermon or video titles for a small official-link or official-player pilot and request that scope in writing.",
     boundary: "Current permission covers website titles, graphics, descriptions, attribution, and official links only—not books, files, audio, video, transcripts, TTS, or paid access.",
+    pilotItems: [
+      "10 Reasons Why Pastors Lose Their Families — pastoral-family pilot",
+      "The Wise Use of Parental Authority — parenting and servant-leadership pilot",
+      "Anger the Destroyer — family conflict and discipleship pilot",
+    ],
   },
 ];
 
@@ -42365,6 +42376,16 @@ function LibraryAcquisitionCenter({
                   <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-2">
                     <p className="text-xs font-semibold text-[var(--ink)]">{partner.permissionStatus}</p>
                     <p className="mt-1 text-xs leading-5 text-[var(--muted)]"><strong>Next:</strong> {partner.nextAction}</p>
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Narrow pilot shortlist</p>
+                    <ul className="mt-2 space-y-2">
+                      {partner.pilotItems.map((item) => (
+                        <li key={`${partner.id}-${item}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Boundary:</strong> {partner.boundary}</p>
                 </section>
