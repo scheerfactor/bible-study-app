@@ -1,0 +1,40 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-89-2026-08-29",
+  "reviewed_at": "2026-08-29",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n681_w3000.jpg", "sha256": "24f77a41a4578084954b7465410493dcbc98043a94ef649f21f29f07a584c650" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n821_w3000.jpg", "sha256": "2fda1689776c1a6c4b6a8ed08113a3eddf37953d141bd3d083a8b35acbe75ed8" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n835_w3000.jpg", "sha256": "6aa556b0a9e8671e66724beb2c0286cdf91a0441e56c67a455579d0417c8d913" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next unresolved single-use KJV forms in the G-I inventory, retaining only printed Webster headwords or defensible spelling, inflection, and closed-compound lookup relationships.",
+  "review_method": "Compared each retained entry with the original printed page image, corrected OCR breaks, preserved Webster's wording and printed sense order, expanded abbreviated parts of speech and Scripture book names for display, and recorded KJV spellings, plurals, comparatives, superlatives, and closed compounds as lookup relationships rather than inventing headwords Webster did not print.",
+  "screening_summary": {
+    "reviewed_headwords": 3,
+    "net_new_reviewed_overlays": 3,
+    "verified_lookup_relationships_added": 7,
+    "missing_kjv_forms_resolved": 7,
+    "kjv_occurrences_resolved": 7
+  },
+  "deferred_candidates": [],
+  "promoted_headwords": ["entreaty", "gatherer", "gleaning"],
+  "verified_lookup_relationships": [
+    { "word": "goodlier", "lookup_headword": "goodly", "kjv_occurrences": 1, "relationship": "Comparative adjective form mapped to Webster's GOODLY" },
+    { "word": "grapegatherer", "lookup_headword": "gatherer", "kjv_occurrences": 1, "relationship": "KJV closed compound mapped to Webster's GATHERER; GRAPE remains separately available" },
+    { "word": "grapegleanings", "lookup_headword": "gleaning", "kjv_occurrences": 1, "relationship": "KJV closed compound and plural mapped to Webster's singular GLEANING; GRAPE remains separately available" },
+    { "word": "hottest", "lookup_headword": "hot", "kjv_occurrences": 1, "relationship": "Superlative adjective form mapped to Webster's HOT" },
+    { "word": "instructer", "lookup_headword": "instructor", "kjv_occurrences": 1, "relationship": "KJV historical -er spelling mapped to Webster's INSTRUCTOR" },
+    { "word": "intreaties", "lookup_headword": "entreaty", "kjv_occurrences": 1, "relationship": "KJV historical in-/en- spelling and plural mapped to Webster's singular ENTREATY" },
+    { "word": "intreaty", "lookup_headword": "entreaty", "kjv_occurrences": 1, "relationship": "KJV historical in-/en- spelling mapped to Webster's ENTREATY" }
+  ],
+  "additional_resolved_forms": [],
+  "entries": [
+    { "word": "grapegatherer", "lookup_headword": "gatherer", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 256519, "source_line_end": 256521, "exact_page_heading": "GAT", "exact_entry_heading": "GATH'ERER", "exact_source_match": true },
+    { "word": "grapegleanings", "lookup_headword": "gleaning", "base_entries": 2, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 261174, "source_line_end": 261181, "exact_page_heading": "GLE", "exact_entry_heading": "GLE'ANING", "exact_source_match": true },
+    { "word": "intreaty", "lookup_headword": "entreaty", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 210259, "source_line_end": 210266, "exact_page_heading": "ENU", "exact_entry_heading": "ENTRE'ATY", "exact_source_match": true }
+  ]
+}
