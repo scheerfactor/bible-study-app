@@ -31418,5 +31418,45 @@
     "source_line_start": 1,
     "source_line_end": 5,
     "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "RA'ISER",
+    "normalized_headword": "raiser",
+    "definition": "RA'ISER, noun One who raises; that which raises; one that builds; one that levies or collects; one that begins, produces or propagates. Bacon. Taylor.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/raiser",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "REG'ARDING",
+    "normalized_headword": "regarding",
+    "definition": "REG'ARDING, participle present tense 1. Noticing; considering with care; attending to; observing; esteeming; caring for. 2. Respecting; concerning; relating to.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Home?word=regarding",
+    "source_line_start": 1,
+    "source_line_end": 2,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "REPROVER",
+    "normalized_headword": "reprover",
+    "definition": "REPROVER, noun One that reproves; he or that which blames. Conscience is a bold reprover. South.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 151153,
+    "source_line_end": 151156,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "RETI'RED",
+    "normalized_headword": "retired",
+    "definition": "RETI'RED, adjective 1. Secluded from much society or from public notice; private. He lives a retired life; he has a retired situation. 2. Secret; private; as retired speculations. 3. Withdrawn. Locke.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Home?word=retired",
+    "source_line_start": 1,
+    "source_line_end": 3,
+    "review_status": "reviewed_overlay"
   }
 ]

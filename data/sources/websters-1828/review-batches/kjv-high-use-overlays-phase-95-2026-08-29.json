@@ -1,0 +1,85 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-95-2026-08-29",
+  "reviewed_at": "2026-08-29",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Cleaned public-domain transcriptions cross-checked against the corresponding Internet Archive OCR sequence.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    { "url": "https://webstersdictionary1828.com/Dictionary/raiser" },
+    { "url": "https://webstersdictionary1828.com/Home?word=regarding" },
+    { "url": "https://webstersdictionary1828.com/Home?word=retired" }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Confirmed that no Q word remained without supplemental help, then selected the first four KJV-used R headwords whose base Webster entries still carried high-severity OCR flags.",
+  "review_method": "Compared each cleaned transcription with its complete Internet Archive OCR context, repaired only visible scan substitutions, broken words, shifted sense numbers, and a two-column merge, preserved Webster's wording and cited authors, and expanded abbreviated parts of speech for display.",
+  "screening_summary": {
+    "q_words_without_supplemental_help": 0,
+    "reviewed_headwords": 4,
+    "net_new_reviewed_overlays": 4,
+    "base_high_severity_ocr_entries_replaced": 4,
+    "kjv_occurrences_resolved": 7
+  },
+  "promoted_headwords": ["raiser", "regarding", "reprover", "retired"],
+  "entries": [
+    {
+      "word": "raiser",
+      "kjv_occurrences": 1,
+      "sample_references": ["Daniel 11:20"],
+      "lookup_headword": "raiser",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/raiser",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "ocr_source_line_start": 134408,
+      "ocr_source_line_end": 134411,
+      "exact_entry_heading": "RA'ISER",
+      "exact_source_match": true
+    },
+    {
+      "word": "regarding",
+      "kjv_occurrences": 2,
+      "sample_references": ["Job 4:20", "Philippians 2:30"],
+      "lookup_headword": "regarding",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Home?word=regarding",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "ocr_source_line_start": 145052,
+      "ocr_source_line_end": 145056,
+      "exact_entry_heading": "REG'ARDING",
+      "exact_source_match": true
+    },
+    {
+      "word": "reprover",
+      "kjv_occurrences": 2,
+      "sample_references": ["Proverbs 25:12", "Ezekiel 3:26"],
+      "lookup_headword": "reprover",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 151153,
+      "source_line_end": 151156,
+      "ocr_source_line_start": 151153,
+      "ocr_source_line_end": 151156,
+      "exact_entry_heading": "REPROVER",
+      "exact_source_match": true
+    },
+    {
+      "word": "retired",
+      "kjv_occurrences": 2,
+      "sample_references": ["Judges 20:39", "2 Samuel 20:22"],
+      "lookup_headword": "retired",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Home?word=retired",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "ocr_source_line_start": 154840,
+      "ocr_source_line_end": 154845,
+      "exact_entry_heading": "RETI'RED",
+      "exact_source_match": true
+    }
+  ]
+}
