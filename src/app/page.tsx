@@ -122,7 +122,7 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
-type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "contentHealth" | "ocrQueue";
+type AcquisitionAdminTab = "dashboard" | "outreach" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "contentHealth" | "ocrQueue";
 type AdminAcquisitionRecordType = "author" | "book" | "rights_holder" | "licensed_rights" | "media_intake" | "audiobook_pilot";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
@@ -2348,6 +2348,60 @@ const EMPTY_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [];
 const DEFAULT_MEDIA_INTAKE_RECORDS = mediaIntakeSeedData as MediaIntakeRecord[];
 const DEFAULT_AUDIOBOOK_PILOTS = audiobookPilotSeedData as AudiobookPilot[];
 const LICENSED_RESOURCE_LINKS = licensedResourceLinksData as LicensedResourceLink[];
+
+const PARTNER_OUTREACH_COPY = [
+  {
+    id: "founder-story",
+    label: "Founder story",
+    title: "Why Father's Business Bible Study exists",
+    audience: "Facebook About section, launch page, or a spoken introduction",
+    body: "For years I found myself moving from one app to another—one for reading the Bible, another for commentaries, another for books, another for sermons, and still another for preparing a lesson or presentation. I wanted one faithful, easy-to-use place where the Bible remains central and the tools around it truly work together. That is why I began Father's Business Bible Study: to help pastors, missionaries, teachers, students, churches, and serious Bible readers move from reading to understanding, from understanding to preparation, and from preparation to faithful service without losing their work or their place along the way. The app is still growing, and I want to build it carefully with input from the people who will actually use it.",
+  },
+  {
+    id: "vision-statement",
+    label: "Vision statement",
+    title: "We live on a vision",
+    audience: "Website, Facebook page, partner packet, and presentations",
+    body: "We live on a vision: to bring faithful Bible reading, serious study, trusted books, preaching and teaching preparation, hymns, audio, and presentation tools into one Scripture-first home. We want to make Bible study easier to begin, easier to continue, and easier to carry into ministry while honoring the words of Scripture, the work of faithful authors and ministries, and the rights of every resource owner.",
+  },
+  {
+    id: "facebook-introduction",
+    label: "Facebook introduction",
+    title: "A Bible study home is being built",
+    audience: "First Facebook page post; review before publishing",
+    body: "Father's Business Bible Study is being built for pastors, missionaries, teachers, Bible college students, churches, and anyone who wants to study the Bible seriously without piecing together a dozen disconnected tools. The goal is one Scripture-first place for KJV Bible reading, passage guides, commentaries, books, sermon and lesson preparation, hymns, audio, presentations, notes, and more. We are building carefully, respecting source and publishing rights, and listening to the people who will use it. Follow the journey, tell us what would help your Bible study or ministry most, and watch as the library and tools continue to grow.",
+  },
+  {
+    id: "publisher-first-contact",
+    label: "Publisher or ministry request",
+    title: "A small, permission-first partnership conversation",
+    audience: "Monday or Tuesday email to a publisher, author, pastor, or ministry",
+    body: "Subject: A permission-first Bible study partnership conversation\n\nHello [NAME],\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began building it because I was tired of moving between separate apps for Bible reading, books, commentaries, audio, sermon preparation, and presentations. My goal is to bring those workflows together carefully while honoring authors, publishers, ministries, and their rights.\n\nI would value your advice about whether [MINISTRY / PUBLISHER] and a small number of your resources might be a good fit. I am not asking to copy or publish anything without written permission. A first step could be as narrow as one to three titles using whichever approach you prefer:\n\n1. An attributed listing that sends readers to your official page or store.\n2. A limited in-app sample or official-player embed that you approve.\n3. A licensed reading, audio, or sales arrangement with terms agreed in writing.\n\nI want this to be easy for you: we can begin with a small pilot, use your approved descriptions and artwork, preserve your pricing and attribution, provide a clear contact for corrections or removal, and avoid any use you have not specifically approved.\n\nWould you be willing to have a short conversation, suggest the best person to contact, or tell me what information you would need to consider a pilot? I would also welcome your advice about other like-minded authors or ministries that may be a good fit.\n\nThank you for your time and for your work,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+] as const;
+
+const PARTNER_OUTREACH_RHYTHM = [
+  { day: "Monday", action: "Choose and research", detail: "Select no more than three like-minded contacts. Confirm the right person, official website, resource ownership, and the smallest useful pilot." },
+  { day: "Tuesday", action: "Personalize and send", detail: "Use the first-contact draft, mention one specific work you value, ask for advice, and request only the rights needed for the small pilot." },
+  { day: "Wednesday–Friday", action: "Record and build", detail: "Log the contact and requested rights in the Rights tab. Keep building resources that are already cleared; do not chase a reply during sermon-preparation days." },
+  { day: "10 business days later", action: "One gracious follow-up", detail: "Reply in the same email thread. If there is no answer after a second reasonable follow-up, pause the request instead of pressuring the ministry." },
+] as const;
+
+const PAIN_FREE_PARTNER_PROMISES = [
+  "Begin with one to three named resources, not an entire catalog.",
+  "Offer official-link-only, approved embed, or written license lanes.",
+  "Use only approved titles, descriptions, artwork, excerpts, and media.",
+  "Keep attribution, source links, price, territory, and access terms visible.",
+  "Document sales, royalty, reporting, update, and removal terms before launch.",
+  "Provide one responsible contact and honor corrections or removal promptly.",
+] as const;
+
+const OUTREACH_ROADMAP_LANES = [
+  { status: "Do now", title: "Story and partnership foundation", detail: "Review the founder story and vision, prepare the Facebook page, and begin three permission-first conversations each week." },
+  { status: "Plan next", title: "Radio pilots", detail: "Define separate hymn, Bible-reading, and preaching pilots only after streaming, recording, performance, and ministry permissions are documented." },
+  { status: "Plan next", title: "Preaching helps", detail: "Expand searchable quotes, illustrations, sermon writing, and presentation workflows using public-domain or specifically licensed material." },
+  { status: "Invite counsel", title: "Ministry advisory circle", detail: "Ask a small group of like-minded pastors, missionaries, teachers, students, and Bible colleges to test the app and advise on doctrine, usefulness, and priorities." },
+] as const;
 
 const PERMISSION_REQUEST_TEMPLATES: PermissionRequestTemplate[] = [
   {
@@ -41992,6 +42046,7 @@ function LibraryAcquisitionCenter({
   onClose: () => void;
 }) {
   const [activeTab, setActiveTab] = useState<AcquisitionAdminTab>("dashboard");
+  const [outreachCopied, setOutreachCopied] = useState("");
   const [adminRecordStatus, setAdminRecordStatus] = useState("Loading private admin records...");
   const [adminRecordsLoaded, setAdminRecordsLoaded] = useState(false);
   const adminRecordsHydratingRef = useRef(false);
@@ -42154,6 +42209,7 @@ function LibraryAcquisitionCenter({
 
   const tabs: Array<{ id: AcquisitionAdminTab; label: string }> = [
     { id: "dashboard", label: "Dashboard" },
+    { id: "outreach", label: "Outreach Kit" },
     { id: "authors", label: "Authors" },
     { id: "books", label: "Books" },
     { id: "copyright", label: "Copyright Checker" },
@@ -42170,6 +42226,16 @@ function LibraryAcquisitionCenter({
 
   function updateCheckerInput(field: keyof CopyrightCheckerInput, value: string) {
     setCheckerInput((current) => ({ ...current, [field]: value }));
+  }
+
+  async function copyOutreachItem(id: string, body: string) {
+    try {
+      if (!navigator.clipboard) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(body);
+      setOutreachCopied(id);
+    } catch {
+      setOutreachCopied("unavailable");
+    }
   }
 
   function addQueueBook() {
@@ -42443,6 +42509,89 @@ function LibraryAcquisitionCenter({
                   </div>
                   <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Boundary:</strong> {partner.boundary}</p>
                 </section>
+              ))}
+            </div>
+          </article>
+        </div>
+      )}
+
+      {activeTab === "outreach" && (
+        <div className="mt-5 space-y-4">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Founder and partner foundation</p>
+            <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Tell the story clearly, then ask for one small step</h3>
+            <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
+              These are working drafts, not published statements or sent messages. Review every name, doctrinal statement, resource, and requested right before using them outside the app.
+            </p>
+          </article>
+
+          <div className="grid gap-3 lg:grid-cols-2">
+            {PARTNER_OUTREACH_COPY.map((item) => (
+              <article key={`outreach-copy-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">{item.label}</p>
+                    <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{item.title}</h3>
+                  </div>
+                  <button
+                    className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => { void copyOutreachItem(item.id, item.body); }}
+                    type="button"
+                  >
+                    Copy draft
+                  </button>
+                </div>
+                <p className="mt-2 text-xs font-semibold text-[var(--muted)]">Use for: {item.audience}</p>
+                <p className="mt-3 max-h-64 overflow-y-auto whitespace-pre-line rounded-2xl bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">{item.body}</p>
+                {outreachCopied === item.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Draft copied.</p>}
+              </article>
+            ))}
+          </div>
+
+          {outreachCopied === "unavailable" && (
+            <p className="rounded-2xl bg-amber-50 p-3 text-xs font-semibold text-amber-800">
+              Clipboard access is unavailable here. Select and copy the visible draft manually.
+            </p>
+          )}
+
+          <div className="grid gap-4 xl:grid-cols-[1fr_1fr]">
+            <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">A steady Monday–Tuesday rhythm</p>
+              <div className="mt-3 space-y-2">
+                {PARTNER_OUTREACH_RHYTHM.map((step) => (
+                  <div key={`outreach-rhythm-${step.day}`} className="rounded-2xl bg-[var(--paper)] p-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{step.day}</span>
+                      <p className="text-sm font-semibold text-[var(--ink)]">{step.action}</p>
+                    </div>
+                    <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{step.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+
+            <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Make partnership painless</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">A clear small pilot is easier to approve, administer, and end if it is not a fit.</p>
+              <ul className="mt-3 space-y-2">
+                {PAIN_FREE_PARTNER_PROMISES.map((promise) => (
+                  <li key={`partner-promise-${promise}`} className="rounded-2xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                    {promise}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Do, plan, and invite counsel</p>
+            <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {OUTREACH_ROADMAP_LANES.map((lane) => (
+                <div key={`outreach-lane-${lane.title}`} className="rounded-2xl bg-white p-3">
+                  <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{lane.status}</span>
+                  <p className="mt-3 text-sm font-semibold text-[var(--ink)]">{lane.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{lane.detail}</p>
+                </div>
               ))}
             </div>
           </article>
