@@ -31048,5 +31048,45 @@
     "source_line_start": 261174,
     "source_line_end": 261181,
     "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "L'ANCET",
+    "normalized_headword": "lancet",
+    "definition": "L'ANCET, noun [French lancette, from lance.] A surgical instrument, sharp-pointed and two-edged; used in venesection, and in opening tumors, abscesses, &c. 2. A pointed window.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 8536,
+    "source_line_end": 8541,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "LA'TELY",
+    "normalized_headword": "lately",
+    "definition": "LA'TELY, adverb Not long ago; recently. We called on a gentleman who has lately arrived from Italy.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 10834,
+    "source_line_end": 10836,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "LIGN-AL'OES",
+    "normalized_headword": "lign-aloes",
+    "definition": "LIGN-AL'OES, noun [Latin lignum, wood, and aloes.] Aloes-wood. Numbers 24.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 18072,
+    "source_line_end": 18074,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "LIN'EAGE",
+    "normalized_headword": "lineage",
+    "definition": "LIN'EAGE, noun [French lignage, from ligne, line.] Race; progeny; descendants in a line from a common progenitor.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+    "source_line_start": 18980,
+    "source_line_end": 18984,
+    "review_status": "reviewed_overlay"
   }
 ]
