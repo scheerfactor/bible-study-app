@@ -42,8 +42,12 @@ for (const [index, review] of (radio.reviewedTracks ?? []).entries()) {
     if (record.rightsStatus !== "Public Domain - USA") errors.push(`${label}: uploaded track must be Public Domain - USA`);
     if (!String(record.publicUrl ?? "").startsWith("https://")) errors.push(`${label}: uploaded track requires an HTTPS publicUrl`);
   } else {
-    if (record.rightsStatus !== "Approved") errors.push(`${label}: intake track must have Approved rights`);
-    if (!String(record.requiredAttribution ?? "").trim()) errors.push(`${label}: approved intake track requires attribution`);
+    if (!["Approved", "Public Domain"].includes(record.rightsStatus)) {
+      errors.push(`${label}: intake track must have Approved or Public Domain rights`);
+    }
+    if (record.rightsStatus === "Approved" && !String(record.requiredAttribution ?? "").trim()) {
+      errors.push(`${label}: approved intake track requires attribution`);
+    }
     if (!String(record.sourceUrl ?? "").startsWith("https://")) errors.push(`${label}: intake track requires an HTTPS sourceUrl`);
   }
   if (!String(record.rightsEvidence ?? "").trim()) errors.push(`${label}: source record requires rightsEvidence`);
@@ -57,7 +61,10 @@ for (const [index, station] of (radio.stations ?? []).entries()) {
   }
   if (stationIds.has(station.id)) errors.push(`${label}: duplicate id ${station.id}`);
   stationIds.add(station.id);
-  if (!Array.isArray(station.trackIds) || station.trackIds.length < 2) errors.push(`${label}: trackIds must contain at least two tracks`);
+  const minimumTracks = station.id === "kjv-genesis-pilot" ? 1 : 2;
+  if (!Array.isArray(station.trackIds) || station.trackIds.length < minimumTracks) {
+    errors.push(`${label}: trackIds must contain at least ${minimumTracks} track${minimumTracks === 1 ? "" : "s"}`);
+  }
   if (new Set(station.trackIds).size !== station.trackIds.length) errors.push(`${label}: trackIds contains duplicates`);
   for (const trackId of station.trackIds ?? []) {
     if (!reviewById.has(trackId)) errors.push(`${label}: ${trackId} is not in reviewedTracks`);
@@ -70,6 +77,7 @@ const unusedReviews = [...reviewById.keys()].filter(
 if (unusedReviews.length) errors.push(`reviewed tracks are not assigned to a station: ${unusedReviews.join(", ")}`);
 
 const bibleStation = (radio.stations ?? []).find((station) => station.id === "kjv-bible");
+const genesisPilot = (radio.stations ?? []).find((station) => station.id === "kjv-genesis-pilot");
 let chapterReadyFileCount = 0;
 const expectedJohnTrackIds = [
   "kjv-john-librivox-001-john-1-4",
@@ -119,6 +127,34 @@ if (!bibleStation) {
   chapterReadyFileCount = chapterReadyFiles.length;
 }
 
+const expectedGenesisTrackId = "bible-kjv-complete-librivox-001-genesis-1-14";
+if (!genesisPilot) {
+  errors.push("Genesis Bible Radio Pilot station is missing");
+} else {
+  if (JSON.stringify(genesisPilot.trackIds) !== JSON.stringify([expectedGenesisTrackId])) {
+    errors.push("Genesis Bible Radio Pilot must contain only the reviewed Genesis 1-14 range file");
+  }
+  if (genesisPilot.coverage !== "Genesis 1-14") errors.push("Genesis Bible Radio Pilot coverage must be Genesis 1-14");
+  if (!String(genesisPilot.listeningMode ?? "").toLowerCase().includes("range-file pilot")) {
+    errors.push("Genesis Bible Radio Pilot must identify its range-file listening mode");
+  }
+  if (!String(genesisPilot.markerStatus ?? "").toLowerCase().includes("remain unavailable")) {
+    errors.push("Genesis Bible Radio Pilot must keep chapter navigation unavailable pending manual marker review");
+  }
+  const genesisRecord = intakeById.get(expectedGenesisTrackId);
+  if (!genesisRecord) {
+    errors.push("Genesis Bible Radio Pilot source record is missing");
+  } else {
+    if (genesisRecord.kind !== "Bible Audio" || genesisRecord.rightsStatus !== "Public Domain") {
+      errors.push("Genesis Bible Radio Pilot must use its public-domain Bible Audio record");
+    }
+    if (genesisRecord.passage !== "Genesis 1-14") errors.push("Genesis Bible Radio Pilot source passage must be Genesis 1-14");
+    if (!String(genesisRecord.notes ?? "").toLowerCase().includes("do not expose chapter seeking")) {
+      errors.push("Genesis Bible Radio Pilot source must retain its chapter-navigation release gate");
+    }
+  }
+}
+
 if (errors.length) {
   console.error(`Radio station validation failed with ${errors.length} error(s):`);
   errors.forEach((error) => console.error(`- ${error}`));
@@ -128,7 +164,13 @@ if (errors.length) {
 console.log("Radio station validation passed.");
 console.log(`Stations: ${radio.stations.length}`);
 console.log(`Reviewed tracks: ${radio.reviewedTracks.length}`);
-console.log(`Public-domain tracks: ${radio.reviewedTracks.filter((review) => review.sourceManifest === "uploaded-public-domain-audio-pilots").length}`);
-console.log(`Permission-approved tracks: ${radio.reviewedTracks.filter((review) => review.sourceManifest === "media-intake-candidates").length}`);
+console.log(`Public-domain tracks: ${radio.reviewedTracks.filter((review) => {
+  if (review.sourceManifest === "uploaded-public-domain-audio-pilots") return true;
+  return intakeById.get(review.mediaRecordId)?.rightsStatus === "Public Domain";
+}).length}`);
+console.log(`Permission-approved tracks: ${radio.reviewedTracks.filter((review) => {
+  return review.sourceManifest === "media-intake-candidates"
+    && intakeById.get(review.mediaRecordId)?.rightsStatus === "Approved";
+}).length}`);
 console.log(`KJV Bible Radio coverage: ${bibleStation?.coverage ?? "missing"} across ${bibleStation?.trackIds?.length ?? 0} sequential range files`);
 console.log(`KJV Bible Radio chapter-ready files: ${chapterReadyFileCount} of ${bibleStation?.trackIds?.length ?? 0}`);

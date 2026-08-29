@@ -136,7 +136,7 @@ function normalizedTrack(review: RadioReview): RadioTrack | null {
     durationLabel: record.duration,
     audioUrl: record.sourceUrl,
     sourceUrl: record.sourcePageUrl ?? record.sourceUrl,
-    rightsLabel: "Free public use with attribution",
+    rightsLabel: record.rightsStatus === "Public Domain" ? "Public domain in the USA" : "Free public use with attribution",
     rightsEvidence: record.rightsEvidence,
     attribution: record.requiredAttribution ?? record.creator,
     chapterMarkers: [],

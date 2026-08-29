@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewedAt": "2026-08-15",
+  "reviewedAt": "2026-08-29",
   "launchStatus": "Public beta approved",
   "stations": [
     {
@@ -33,6 +33,18 @@
         "kjv-john-librivox-003-john-9-12",
         "kjv-john-librivox-004-john-13-17",
         "kjv-john-librivox-005-john-18-21"
+      ]
+    },
+    {
+      "id": "kjv-genesis-pilot",
+      "title": "Genesis Bible Radio Pilot",
+      "shortLabel": "Genesis Pilot",
+      "description": "A rights-cleared King James Bible listening pilot from the beginning of Genesis.",
+      "coverage": "Genesis 1-14",
+      "listeningMode": "Single verified range-file pilot",
+      "markerStatus": "Range playback is verified. Chapter buttons remain unavailable until every Genesis 1-14 marker is manually verified.",
+      "trackIds": [
+        "bible-kjv-complete-librivox-001-genesis-1-14"
       ]
     },
     {
@@ -90,6 +102,12 @@
       "mediaRecordId": "kjv-john-librivox-005-john-18-21",
       "sourceManifest": "uploaded-public-domain-audio-pilots",
       "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
+    },
+    {
+      "mediaRecordId": "bible-kjv-complete-librivox-001-genesis-1-14",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Public beta range pilot approved",
       "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
     },
     {
