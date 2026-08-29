@@ -36731,8 +36731,9 @@ function canonicalLibraryAuthor(author: string) {
   return normalizedLibraryText(author);
 }
 
-function libraryWorkKey(resource: Pick<LibraryResource, "title" | "author">) {
-  return `${canonicalLibraryTitle(resource.title)}::${canonicalLibraryAuthor(resource.author)}`;
+function libraryWorkKey(resource: Pick<LibraryResource, "title" | "author" | "bible_books">) {
+  const bibleScope = [...(resource.bible_books ?? [])].sort().join("|");
+  return `${canonicalLibraryTitle(resource.title)}::${canonicalLibraryAuthor(resource.author)}::${bibleScope}`;
 }
 
 function strongerLibraryResource(current: LibraryResource, candidate: LibraryResource) {
