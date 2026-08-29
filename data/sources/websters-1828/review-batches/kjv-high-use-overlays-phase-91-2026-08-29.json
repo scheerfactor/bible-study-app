@@ -1,0 +1,56 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-91-2026-08-29",
+  "reviewed_at": "2026-08-29",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n93_w3000.jpg", "sha256": "71fd6e69ce94885353be3950fc1fa28b337e0e349b9f4fbb99098aa80b13d323" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n141_w3000.jpg", "sha256": "5cb88191a9a1183fc88bdd309f159bfaea0298ae1bedf1246640060765e8ad48" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n146_w3000.jpg", "sha256": "b5c6e7a3b98930a86d7d7fc132c2db2d8a89ce520a933cf67d272a11ed06301c" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n163_w3000.jpg", "sha256": "aad36621c939c2d0771223bc5b39e2f8a7c0313ce8656ef8bbc603c8e44c0dad" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n169_w3000.jpg", "sha256": "7bcf27cf68a15f2d5dae646c67b9709d4d5cdd97c3d804d8625cba6a4644d1b1" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n170_w3000.jpg", "sha256": "a45b40fb66f86f8feb7cad1a22bde1927a38d4703f4559146fe1d7618dff3d23" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected ordinary KJV study vocabulary from the unresolved M inventory, excluding biblical names already supported by Easton or Nave and compounds without a defensible complete Webster target.",
+  "review_method": "Compared every retained entry with the original printed page image, corrected OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, and Scripture book names for display, and recorded KJV spellings and inflections as lookup relationships rather than inventing headwords Webster did not print.",
+  "screening_summary": {
+    "reviewed_headwords": 8,
+    "net_new_reviewed_overlays": 8,
+    "verified_lookup_relationships_added": 6,
+    "missing_kjv_forms_resolved": 10,
+    "kjv_occurrences_resolved": 10
+  },
+  "deferred_candidates": [
+    { "word": "masterbuilder", "reason": "No standalone MASTER-BUILDER headword was found in the reviewed alphabetical sequence; retain the existing passage-specific rare-term help because BUILDER alone does not preserve the full compound." },
+    { "word": "menstealers", "reason": "No standalone MEN-STEALER headword was found in the reviewed alphabetical sequence; retain the existing passage-specific rare-term help because STEALER alone is less specific." },
+    { "word": "merryhearted", "reason": "No standalone MERRY-HEARTED headword was found in the reviewed alphabetical sequence; retain the existing passage-specific rare-term help because MERRY alone is incomplete." }
+  ],
+  "promoted_headwords": ["magnifical", "magnificence", "miscarrying", "mix", "movable", "mover", "mow", "musician"],
+  "verified_lookup_relationships": [
+    { "word": "mightiest", "lookup_headword": "mighty", "kjv_occurrences": 1, "relationship": "KJV superlative adjective form mapped to Webster's MIGHTY" },
+    { "word": "mixt", "lookup_headword": "mix", "kjv_occurrences": 1, "relationship": "KJV historical participle spelling mapped to Webster's MIX entry, which explicitly gives mixed or mixt" },
+    { "word": "moveable", "lookup_headword": "movable", "kjv_occurrences": 1, "relationship": "KJV historical spelling mapped to Webster's MOVABLE" },
+    { "word": "mown", "lookup_headword": "mow", "kjv_occurrences": 1, "relationship": "KJV participle mapped to Webster's MOW entry, which explicitly gives mowed or mown" },
+    { "word": "multipliedst", "lookup_headword": "multiply", "kjv_occurrences": 1, "relationship": "KJV second-person past-tense form mapped to Webster's MULTIPLY" },
+    { "word": "musicians", "lookup_headword": "musician", "kjv_occurrences": 1, "relationship": "Plural noun form mapped to Webster's singular MUSICIAN" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "magnifical", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed MAGNIFICAL headword" },
+    { "word": "magnificence", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed MAGNIFICENCE headword" },
+    { "word": "miscarrying", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed MISCARRYING headword" },
+    { "word": "mover", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed MOVER headword" }
+  ],
+  "entries": [
+    { "word": "magnifical", "lookup_headword": "magnifical", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 28683, "source_line_end": 28688, "exact_page_heading": "MAG", "exact_entry_heading": "MAGNIF'IC, MAGNIF'ICAL", "exact_source_match": true },
+    { "word": "magnificence", "lookup_headword": "magnificence", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 28692, "source_line_end": 28697, "exact_page_heading": "MAG", "exact_entry_heading": "MAGNIF'ICENCE", "exact_source_match": true },
+    { "word": "miscarrying", "lookup_headword": "miscarrying", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 44393, "source_line_end": 44395, "exact_page_heading": "MIS", "exact_entry_heading": "MISCAR'RYING", "exact_source_match": true },
+    { "word": "mixt", "lookup_headword": "mix", "base_entries": 2, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 46381, "source_line_end": 46410, "exact_page_heading": "MIX", "exact_entry_heading": "MIX", "exact_source_match": true },
+    { "word": "moveable", "lookup_headword": "movable", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 51715, "source_line_end": 51727, "exact_page_heading": "MOV", "exact_entry_heading": "MOVABLE", "exact_source_match": true },
+    { "word": "mover", "lookup_headword": "mover", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 51899, "source_line_end": 51909, "exact_page_heading": "MOV", "exact_entry_heading": "MO'VER", "exact_source_match": true },
+    { "word": "mown", "lookup_headword": "mow", "base_entries": 5, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 51949, "source_line_end": 51970, "exact_page_heading": "MOW", "exact_entry_heading": "MOW", "exact_source_match": true },
+    { "word": "musicians", "lookup_headword": "musician", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 54072, "source_line_end": 54079, "exact_page_heading": "MUS", "exact_entry_heading": "MUSI'CIAN", "exact_source_match": true }
+  ]
+}
