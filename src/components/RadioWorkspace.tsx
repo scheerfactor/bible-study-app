@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  CheckCircle2,
   ExternalLink,
   Headphones,
   Pause,
@@ -148,8 +149,10 @@ const reviewedTracks = manifest.reviewedTracks
 const tracksById = new Map(reviewedTracks.map((track) => [track.id, track]));
 const RADIO_PROGRESS_KEY = "fathers-business-radio-progress-v1";
 const RADIO_LAST_STATION_KEY = "fathers-business-radio-last-station-v1";
+const RADIO_COMPLETION_KEY = "fathers-business-radio-completion-v1";
 
 type RadioProgress = Record<string, { trackId: string; currentTime: number }>;
+type RadioCompletion = Record<string, string[]>;
 
 function formatTime(seconds: number) {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -168,6 +171,7 @@ export default function RadioWorkspace() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [playbackMessage, setPlaybackMessage] = useState("");
+  const [completionByStation, setCompletionByStation] = useState<RadioCompletion>({});
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const savedProgressRef = useRef<RadioProgress>({});
   const pendingResumeSecondsRef = useRef<number | null>(null);
@@ -183,20 +187,25 @@ export default function RadioWorkspace() {
   const chapterMarkers = currentTrack?.chapterMarkers ?? [];
   const verifiedMarkerCount = chapterMarkers.filter((marker) => marker.status === "Verified").length;
   const chapterNavigationReady = chapterMarkers.length > 0 && verifiedMarkerCount === chapterMarkers.length;
+  const completedTrackIdSet = useMemo(() => new Set(completionByStation[station.id] ?? []), [completionByStation, station.id]);
+  const completedQueueCount = queue.filter((track) => completedTrackIdSet.has(track.id)).length;
+  const playlistProgress = queue.length ? Math.round((completedQueueCount / queue.length) * 100) : 0;
 
   useEffect(() => {
     let cancelled = false;
     try {
       const saved = JSON.parse(window.localStorage.getItem(RADIO_PROGRESS_KEY) ?? "{}") as RadioProgress;
+      const savedCompletion = JSON.parse(window.localStorage.getItem(RADIO_COMPLETION_KEY) ?? "{}") as RadioCompletion;
       savedProgressRef.current = saved;
       const savedStationId = window.localStorage.getItem(RADIO_LAST_STATION_KEY);
       const savedStation = manifest.stations.find((candidate) => candidate.id === savedStationId && saved[candidate.id]);
-      if (!savedStation) return;
-      const position = saved[savedStation.id];
-      const savedIndex = savedStation.trackIds.indexOf(position.trackId);
-      pendingResumeSecondsRef.current = Math.max(0, position.currentTime || 0);
       queueMicrotask(() => {
         if (cancelled) return;
+        setCompletionByStation(savedCompletion);
+        if (!savedStation) return;
+        const position = saved[savedStation.id];
+        const savedIndex = savedStation.trackIds.indexOf(position.trackId);
+        pendingResumeSecondsRef.current = Math.max(0, position.currentTime || 0);
         setStationId(savedStation.id);
         setActiveIndex(savedIndex >= 0 ? savedIndex : 0);
         if (position.currentTime > 5) setPlaybackMessage(`Ready to resume at ${formatTime(position.currentTime)}.`);
@@ -241,6 +250,23 @@ export default function RadioWorkspace() {
     } catch {
       // Radio playback remains usable when browser storage is unavailable.
     }
+  }
+
+  function markTrackComplete(nextStationId: string, trackId: string) {
+    setCompletionByStation((current) => {
+      const stationCompletion = current[nextStationId] ?? [];
+      if (stationCompletion.includes(trackId)) return current;
+      const nextCompletion = {
+        ...current,
+        [nextStationId]: [...stationCompletion, trackId],
+      };
+      try {
+        window.localStorage.setItem(RADIO_COMPLETION_KEY, JSON.stringify(nextCompletion));
+      } catch {
+        // Completion tracking is optional when browser storage is unavailable.
+      }
+      return nextCompletion;
+    });
   }
 
   function changeStation(nextStationId: string) {
@@ -301,6 +327,25 @@ export default function RadioWorkspace() {
     if (nextTrack) saveProgress(station.id, nextTrack.id, 0);
     setPlayRequested(true);
     setActiveIndex(nextIndex);
+  }
+
+  function handleTrackEnded() {
+    if (!currentTrack) return;
+    markTrackComplete(station.id, currentTrack.id);
+    saveProgress(station.id, currentTrack.id, duration || currentTime);
+    if (sequentialStation && activeIndex === queue.length - 1) {
+      setPlayRequested(false);
+      setPlaying(false);
+      setPlaybackMessage(`${station.coverage ?? station.title} listening complete.`);
+      return;
+    }
+    moveTrack(1);
+  }
+
+  function completeCurrentTrack() {
+    if (!currentTrack) return;
+    markTrackComplete(station.id, currentTrack.id);
+    setPlaybackMessage(`${currentTrack.segmentTitle} marked complete.`);
   }
 
   function seek(nextTime: number) {
@@ -393,7 +438,7 @@ export default function RadioWorkspace() {
                 ref={audioRef}
                 preload="metadata"
                 src={currentTrack.audioUrl}
-                onEnded={() => moveTrack(1)}
+                onEnded={handleTrackEnded}
                 onPause={() => setPlaying(false)}
                 onPlay={() => setPlaying(true)}
                 onLoadedMetadata={(event) => {
@@ -514,6 +559,36 @@ export default function RadioWorkspace() {
             </div>
             <span className="text-xs font-semibold text-[var(--muted)]">{queue.length} programs</span>
           </div>
+          {sequentialStation && (
+            <div className="mt-3 rounded-lg border border-[var(--line)] bg-white p-3">
+              <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-semibold text-[var(--muted)]">
+                <div>
+                  <span className="block">Playlist progress</span>
+                  <span className="mt-1 block">{completedQueueCount} of {queue.length} programs completed</span>
+                </div>
+                {currentTrack && (
+                  <button
+                    className="min-h-9 rounded-full border border-[var(--line)] px-3 text-xs font-semibold text-[var(--green)] disabled:cursor-default disabled:text-[var(--muted)]"
+                    disabled={completedTrackIdSet.has(currentTrack.id)}
+                    onClick={completeCurrentTrack}
+                    type="button"
+                  >
+                    {completedTrackIdSet.has(currentTrack.id) ? "Completed" : "Mark current complete"}
+                  </button>
+                )}
+              </div>
+              <div
+                aria-label={`${station.title} playlist progress`}
+                aria-valuemax={queue.length}
+                aria-valuemin={0}
+                aria-valuenow={completedQueueCount}
+                className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--paper)]"
+                role="progressbar"
+              >
+                <span className="block h-full rounded-full bg-[var(--green)] transition-[width]" style={{ width: `${playlistProgress}%` }} />
+              </div>
+            </div>
+          )}
           <div className="mt-3 max-h-[610px] space-y-2 overflow-y-auto pr-1">
             {queue.map((track, index) => (
               <button
@@ -523,7 +598,7 @@ export default function RadioWorkspace() {
                 type="button"
               >
                 <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${index === activeIndex ? "bg-[var(--green)] text-white" : "bg-[var(--paper)] text-[var(--green)]"}`}>
-                  {index === activeIndex && playing ? <Pause size={17} /> : <Play size={17} />}
+                  {completedTrackIdSet.has(track.id) ? <CheckCircle2 aria-label="Completed" size={18} /> : index === activeIndex && playing ? <Pause size={17} /> : <Play size={17} />}
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate text-sm font-semibold text-[var(--ink)]">{track.title}</span>
