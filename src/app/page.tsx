@@ -24840,6 +24840,7 @@ export default function Home() {
                 commentaryEntries={chapterCommentaryEntries}
                 keyVerses={chapterKeyVerses}
                 recommendedResources={activeChapterResourceRecommendations}
+                licensedPassageResources={licensedResourceLinksForChapter(LICENSED_RESOURCE_LINKS, book, chapter)}
                 libraryResources={libraryResources}
                 bookIntroduction={activeBookIntroduction}
                 activeThemes={activeChapterThemes}
@@ -36476,6 +36477,22 @@ function licensedResourceLinkMatchesAllTerms(resource: LicensedResourceLink, ter
     .toLowerCase();
 
   return terms.every((term) => haystack.includes(term));
+}
+
+const SINGLE_CHAPTER_BIBLE_BOOKS = new Set(["Obadiah", "Philemon", "2 John", "3 John", "Jude"]);
+
+function licensedResourceLinksForChapter(resources: LicensedResourceLink[], book: string, chapter: number) {
+  const normalizedBook = book.trim().toLowerCase();
+  const chapterPrefix = `${normalizedBook} ${chapter}`;
+
+  return resources.filter((resource) => resource.passage?.split(";").some((passagePart) => {
+    const normalizedPassage = passagePart.trim().toLowerCase();
+    if (chapter === 1 && SINGLE_CHAPTER_BIBLE_BOOKS.has(book)) {
+      return normalizedPassage === normalizedBook || normalizedPassage.startsWith(`${normalizedBook} `);
+    }
+
+    return normalizedPassage === chapterPrefix || normalizedPassage.startsWith(`${chapterPrefix}:`);
+  }));
 }
 
 function libraryResourceMatchesDiscoveryFilter(resource: LibraryResource, filter: string) {
@@ -48363,6 +48380,7 @@ function PassageGuideScreen({
   commentaryEntries,
   keyVerses,
   recommendedResources,
+  licensedPassageResources,
   libraryResources,
   bookIntroduction,
   activeThemes,
@@ -48391,6 +48409,7 @@ function PassageGuideScreen({
   commentaryEntries: CommentaryEntry[];
   keyVerses: string[];
   recommendedResources: ChapterResourceRecommendation[];
+  licensedPassageResources: LicensedResourceLink[];
   libraryResources: LibraryResource[];
   bookIntroduction: BookIntroduction | null;
   activeThemes: StudyTheme[];
@@ -48499,7 +48518,11 @@ function PassageGuideScreen({
     { label: "People", value: connections.people.length, ready: connections.people.length > 0 },
     { label: "Places", value: connections.places.length, ready: connections.places.length > 0 },
     { label: "Timeline", value: connections.timeline.length, ready: connections.timeline.length > 0 },
-    { label: "Resources", value: recommendedResources.length, ready: recommendedResources.length > 0 },
+    {
+      label: "Resources",
+      value: recommendedResources.length + licensedPassageResources.length,
+      ready: recommendedResources.length + licensedPassageResources.length > 0,
+    },
   ];
   const guideCoverageReadyCount = guideCoverageItems.filter((item) => item.ready).length;
   const guideCoveragePercent = Math.round((guideCoverageReadyCount / guideCoverageItems.length) * 100);
@@ -48512,6 +48535,7 @@ function PassageGuideScreen({
     ["passage-prepare", "Prepare"],
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
+    ["passage-official-resources", "Official Resources"],
     ["passage-best-resources", "Best Resources"],
     ["passage-themes", "Themes"],
     ["passage-topical-bible", "Topical"],
@@ -48723,9 +48747,14 @@ function PassageGuideScreen({
             <p className="mt-1 text-sm font-semibold text-[var(--green)]">{crossReferences.length} reviewed</p>
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Let Scripture interpret Scripture.</p>
           </a>
-          <a className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" href="#passage-resources">
+          <a
+            className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+            href={licensedPassageResources.length ? "#passage-official-resources" : "#passage-resources"}
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">5. Resources</p>
-            <p className="mt-1 text-sm font-semibold text-[var(--green)]">{startHereResources.length || recommendedResources.length} ready</p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">
+              {startHereResources.length + licensedPassageResources.length || recommendedResources.length} ready
+            </p>
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Open only the best helps for this chapter.</p>
           </a>
         </div>
@@ -48770,6 +48799,23 @@ function PassageGuideScreen({
             </article>
           ))}
         </div>
+      </StudySection>
+
+      <StudySection id="passage-official-resources" title="Passage-Linked Official Resources">
+        <p className="text-sm leading-6 text-[var(--muted)]">
+          Reviewed resources matched to {passage}. These open the ministry or publisher&apos;s official page; source content is not copied into the app.
+        </p>
+        {licensedPassageResources.length ? (
+          <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {licensedPassageResources.map((resource) => (
+              <LicensedResourceLinkCard key={`passage-official-resource-${resource.id}`} resource={resource} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-3 rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-6 text-[var(--muted)]">
+            No reviewed official resource is linked to this chapter yet. New links appear here only after source and rights review.
+          </p>
+        )}
       </StudySection>
 
       <StudySection id="passage-themes" title="Theme Explorer">
