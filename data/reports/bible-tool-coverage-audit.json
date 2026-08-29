@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-29T18:30:23.699Z",
+    "generated_at": "2026-08-29T18:43:31.551Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,18 +10,18 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61547,
-      "normalizedHeadwords": 51490,
-      "meaningfulWordsWithDefinition": 8843,
-      "meaningfulWordsWithoutDefinition": 3611,
-      "meaningfulDefinitionCoveragePercent": 71,
+      "entries": 61552,
+      "normalizedHeadwords": 51494,
+      "meaningfulWordsWithDefinition": 8850,
+      "meaningfulWordsWithoutDefinition": 3604,
+      "meaningfulDefinitionCoveragePercent": 71.1,
       "missingPriorityCounts": {
         "high": 223,
         "medium": 624,
         "low": 960,
-        "single-use": 1804
+        "single-use": 1797
       },
-      "missingWithSupplementalHelp": 3611,
+      "missingWithSupplementalHelp": 3604,
       "missingWithoutSupplementalHelp": 0,
       "topUsedWordsNeedingDefinition": [
         {

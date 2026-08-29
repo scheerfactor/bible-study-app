@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-08-29T18:32:09.912Z
+Generated: 2026-08-29T18:44:13.568Z
 
 ## Summary
 
@@ -9,7 +9,7 @@ Generated: 2026-08-29T18:32:09.912Z
 - Public commentary rows: 12857.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 72.
-- Webster 1828 entries: 61547 (51689 normalized headwords; 3119 reviewed overlay).
+- Webster 1828 entries: 61552 (51693 normalized headwords; 3124 reviewed overlay).
 - Strong's lexicon entries: 14296; reviewed KJV word mappings: 729289 rows from 66 batch files across 66 books and 1189 chapters (broad import).
 - Public TSK rows: 6994; staged TSK rows: 50; source verses covered: 2563; chapters covered: 1189; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
