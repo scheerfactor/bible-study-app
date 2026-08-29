@@ -21,6 +21,9 @@ type RadioStation = {
   title: string;
   shortLabel: string;
   description: string;
+  coverage?: string;
+  listeningMode?: string;
+  markerStatus?: string;
   trackIds: string[];
 };
 
@@ -130,6 +133,10 @@ const reviewedTracks = manifest.reviewedTracks
   .map(normalizedTrack)
   .filter((track): track is RadioTrack => Boolean(track));
 const tracksById = new Map(reviewedTracks.map((track) => [track.id, track]));
+const RADIO_PROGRESS_KEY = "fathers-business-radio-progress-v1";
+const RADIO_LAST_STATION_KEY = "fathers-business-radio-last-station-v1";
+
+type RadioProgress = Record<string, { trackId: string; currentTime: number }>;
 
 function formatTime(seconds: number) {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -149,6 +156,9 @@ export default function RadioWorkspace() {
   const [duration, setDuration] = useState(0);
   const [playbackMessage, setPlaybackMessage] = useState("");
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const savedProgressRef = useRef<RadioProgress>({});
+  const pendingResumeSecondsRef = useRef<number | null>(null);
+  const lastSavedSecondRef = useRef(-1);
 
   const station = manifest.stations.find((candidate) => candidate.id === stationId) ?? manifest.stations[0];
   const queue = useMemo(
@@ -156,6 +166,32 @@ export default function RadioWorkspace() {
     [station],
   );
   const currentTrack = queue[activeIndex] ?? queue[0] ?? null;
+  const sequentialStation = station.listeningMode?.toLowerCase().includes("sequential") ?? false;
+
+  useEffect(() => {
+    let cancelled = false;
+    try {
+      const saved = JSON.parse(window.localStorage.getItem(RADIO_PROGRESS_KEY) ?? "{}") as RadioProgress;
+      savedProgressRef.current = saved;
+      const savedStationId = window.localStorage.getItem(RADIO_LAST_STATION_KEY);
+      const savedStation = manifest.stations.find((candidate) => candidate.id === savedStationId && saved[candidate.id]);
+      if (!savedStation) return;
+      const position = saved[savedStation.id];
+      const savedIndex = savedStation.trackIds.indexOf(position.trackId);
+      pendingResumeSecondsRef.current = Math.max(0, position.currentTime || 0);
+      queueMicrotask(() => {
+        if (cancelled) return;
+        setStationId(savedStation.id);
+        setActiveIndex(savedIndex >= 0 ? savedIndex : 0);
+        if (position.currentTime > 5) setPlaybackMessage(`Ready to resume at ${formatTime(position.currentTime)}.`);
+      });
+    } catch {
+      savedProgressRef.current = {};
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -177,19 +213,40 @@ export default function RadioWorkspace() {
     if (audioRef.current) audioRef.current.volume = volume;
   }, [volume]);
 
+  function saveProgress(nextStationId: string, trackId: string, nextTime: number) {
+    const nextProgress = {
+      ...savedProgressRef.current,
+      [nextStationId]: { trackId, currentTime: Math.max(0, nextTime) },
+    };
+    savedProgressRef.current = nextProgress;
+    try {
+      window.localStorage.setItem(RADIO_PROGRESS_KEY, JSON.stringify(nextProgress));
+      window.localStorage.setItem(RADIO_LAST_STATION_KEY, nextStationId);
+    } catch {
+      // Radio playback remains usable when browser storage is unavailable.
+    }
+  }
+
   function changeStation(nextStationId: string) {
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
     audioRef.current?.pause();
-    setStationId(nextStationId);
-    setActiveIndex(0);
+    const nextStation = manifest.stations.find((candidate) => candidate.id === nextStationId) ?? manifest.stations[0];
+    const savedPosition = savedProgressRef.current[nextStationId];
+    const savedIndex = savedPosition ? nextStation.trackIds.indexOf(savedPosition.trackId) : -1;
+    pendingResumeSecondsRef.current = savedPosition?.currentTime ?? 0;
+    setStationId(nextStation.id);
+    setActiveIndex(savedIndex >= 0 ? savedIndex : 0);
     setPlaying(false);
     setPlayRequested(false);
-    setPlaybackMessage("");
+    if (nextStation.listeningMode?.toLowerCase().includes("sequential")) setShuffle(false);
+    setPlaybackMessage(savedPosition?.currentTime > 5 ? `Ready to resume at ${formatTime(savedPosition.currentTime)}.` : "");
   }
 
   async function togglePlayback() {
     const audio = audioRef.current;
     if (!audio || !currentTrack) return;
     if (playing) {
+      saveProgress(station.id, currentTrack.id, audio.currentTime);
       audio.pause();
       setPlaying(false);
       return;
@@ -209,15 +266,23 @@ export default function RadioWorkspace() {
       void togglePlayback();
       return;
     }
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
+    const nextTrack = queue[index];
+    pendingResumeSecondsRef.current = 0;
+    if (nextTrack) saveProgress(station.id, nextTrack.id, 0);
     setPlayRequested(true);
     setActiveIndex(index);
   }
 
   function moveTrack(direction: -1 | 1) {
     if (!queue.length) return;
-    const nextIndex = shuffle
-      ? Math.floor(Math.random() * queue.length)
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
+    const nextIndex = shuffle && !sequentialStation
+      ? (activeIndex * 7 + 3 + queue.length) % queue.length
       : (activeIndex + direction + queue.length) % queue.length;
+    const nextTrack = queue[nextIndex];
+    pendingResumeSecondsRef.current = 0;
+    if (nextTrack) saveProgress(station.id, nextTrack.id, 0);
     setPlayRequested(true);
     setActiveIndex(nextIndex);
   }
@@ -269,6 +334,17 @@ export default function RadioWorkspace() {
             <span className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase text-white/75">{station.title}</span>
             <Headphones size={20} className="text-[var(--gold-soft)]" />
           </div>
+          {(station.coverage || station.listeningMode) && (
+            <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-white/75">
+              {station.coverage && <span className="rounded-full bg-white/10 px-3 py-1.5">Coverage: {station.coverage}</span>}
+              {station.listeningMode && <span className="rounded-full bg-white/10 px-3 py-1.5">{station.listeningMode}</span>}
+            </div>
+          )}
+          {station.markerStatus && (
+            <p className="mt-3 rounded-lg border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-3 py-2 text-xs leading-5 text-[var(--gold-soft)]">
+              {station.markerStatus}
+            </p>
+          )}
 
           {currentTrack ? (
             <>
@@ -286,8 +362,25 @@ export default function RadioWorkspace() {
                 onEnded={() => moveTrack(1)}
                 onPause={() => setPlaying(false)}
                 onPlay={() => setPlaying(true)}
-                onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)}
-                onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
+                onLoadedMetadata={(event) => {
+                  const loadedDuration = event.currentTarget.duration || 0;
+                  setDuration(loadedDuration);
+                  const resumeSeconds = pendingResumeSecondsRef.current ?? 0;
+                  if (resumeSeconds > 0 && resumeSeconds < loadedDuration - 2) {
+                    event.currentTarget.currentTime = resumeSeconds;
+                    setCurrentTime(resumeSeconds);
+                  }
+                  pendingResumeSecondsRef.current = null;
+                }}
+                onTimeUpdate={(event) => {
+                  const nextTime = event.currentTarget.currentTime;
+                  setCurrentTime(nextTime);
+                  const nextSecond = Math.floor(nextTime);
+                  if (nextSecond > 0 && nextSecond % 5 === 0 && nextSecond !== lastSavedSecondRef.current) {
+                    lastSavedSecondRef.current = nextSecond;
+                    saveProgress(station.id, currentTrack.id, nextTime);
+                  }
+                }}
               />
 
               <div className="mt-6">
@@ -309,10 +402,11 @@ export default function RadioWorkspace() {
 
               <div className="mt-4 flex items-center justify-center gap-3">
                 <button
-                  aria-label="Shuffle"
-                  className={`flex h-10 w-10 items-center justify-center rounded-full ${shuffle ? "bg-[var(--gold)] text-[var(--ink)]" : "bg-white/10 text-white"}`}
+                  aria-label={sequentialStation ? "Shuffle unavailable for sequential Bible listening" : "Shuffle"}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full ${sequentialStation ? "cursor-not-allowed bg-white/5 text-white/30" : shuffle ? "bg-[var(--gold)] text-[var(--ink)]" : "bg-white/10 text-white"}`}
+                  disabled={sequentialStation}
                   onClick={() => setShuffle((value) => !value)}
-                  title="Shuffle"
+                  title={sequentialStation ? "Sequential Bible listening keeps canonical order" : "Shuffle"}
                   type="button"
                 >
                   <Shuffle size={18} />
