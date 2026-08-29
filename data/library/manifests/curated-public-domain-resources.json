@@ -7990,6 +7990,10 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/42753",
+    "bible_books": [
+      "1 Thessalonians",
+      "2 Thessalonians"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/42753.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistles-to-the-thessalonians-denney-james-and-nicoll-w-robertson-william-robertson-.txt",
@@ -8034,6 +8038,9 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/41850",
+    "bible_books": [
+      "2 Corinthians"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/41850.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-second-epistle-to-the-corinthians-denney-james-and-nicoll-w-robertson-william-robert.txt",
@@ -8248,6 +8255,9 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/42354",
+    "bible_books": [
+      "1 Corinthians"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/42354.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-first-epistle-to-the-corinthians-dods-marcus-and-nicoll-w-robertson-william-robertso.txt",
@@ -8292,6 +8302,9 @@
     "year": 2010,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "bible_books": [
+      "John"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/33151.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-gospel-of-st-john-vol-i-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt",
@@ -8336,6 +8349,9 @@
     "year": 2010,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/33288",
+    "bible_books": [
+      "John"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/33288.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-gospel-of-st-john-vol-ii-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt",
@@ -9759,6 +9775,9 @@
     "year": 2010,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/32968",
+    "bible_books": [
+      "Hebrews"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/32968.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-hebrews-edwards-thomas-charles-and-nicoll-w-robertson-william-roberts.txt",
@@ -11295,6 +11314,9 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/42645",
+    "bible_books": [
+      "Galatians"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/42645.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-galatians-findlay-george-g-george-gillanders.txt",
@@ -14013,6 +14035,9 @@
     "year": 2012,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/39196",
+    "bible_books": [
+      "Ephesians"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/39196.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-ephesians-george-g-findlay.txt",
@@ -14375,6 +14400,9 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/42258",
+    "bible_books": [
+      "Acts"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/42258.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-acts-of-the-apostles-vol-1-george-thomas-stokes.txt",
@@ -14419,6 +14447,9 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/42303",
+    "bible_books": [
+      "Acts"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/42303.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-acts-of-the-apostles-vol-2-george-thomas-stokes.txt",
@@ -15752,6 +15783,9 @@
     "year": 2012,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/39856",
+    "bible_books": [
+      "Luke"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/39856.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/expositor-s-bible-the-gospel-of-st-luke-henry-burton.txt",
@@ -19154,6 +19188,9 @@
     "year": 2012,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/40811",
+    "bible_books": [
+      "Matthew"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/40811.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/expositor-s-bible-the-gospel-of-matthew-john-monro-gibson.txt",
@@ -21130,6 +21167,10 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/42273",
+    "bible_books": [
+      "1 Peter",
+      "2 Peter"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/42273.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistles-of-st-peter-lumby-j-rawson-joseph-rawson-and-nicoll-w-robertson-william-rob.txt",
@@ -22548,6 +22589,10 @@
     "year": 2011,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/37345",
+    "bible_books": [
+      "Colossians",
+      "Philemon"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/37345.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistles-of-st-paul-to-the-colossians-and-philemon.txt",
@@ -26773,6 +26818,10 @@
     "year": 2014,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/47337",
+    "bible_books": [
+      "James",
+      "Jude"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/47337.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-general-epistles-of-st-james-and-st-jude-plummer-alfred-and-nicoll-w-robertson-willi.txt",
@@ -26817,6 +26866,11 @@
     "year": 2012,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/39628",
+    "bible_books": [
+      "1 Timothy",
+      "2 Timothy",
+      "Titus"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/39628.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-pastoral-epistles-plummer-alfred-and-nicoll-w-robertson-william-robertson-sir.txt",
@@ -27643,6 +27697,9 @@
     "year": 2012,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/39788",
+    "bible_books": [
+      "Philippians"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/39788.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-philippians-rainy-robert.txt",
