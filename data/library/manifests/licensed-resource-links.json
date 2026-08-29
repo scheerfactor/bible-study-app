@@ -2530,7 +2530,7 @@
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/knowing_gods_will.php",
     "permissionStatus": "Public Policy - Official Links Only",
-    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
+    "reviewStatus": "Official title, author, edition, and distribution boundary reviewed 2026-08-28; full content and doctrinal review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
@@ -2546,9 +2546,9 @@
       "PowerPoint or presentation export",
       "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
-    "recommendedUse": "Guidance and Christian living",
-    "notes": "Practical Christian living candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-practical-study-title-review-2026-08-28.md",
+    "recommendedUse": "Christian-living and decision-making candidate after full doctrinal review",
+    "notes": "Official-link-only record. The official ebook identifies David W. Cloud, a 2021 edition, and a no-other-website distribution boundary. No ebook text, cover, quotation, or media is copied. Do not mark as recommended until its full Scripture handling and counsel are reviewed."
   },
   {
     "id": "licensed-way-of-life-life-and-songs-of-charles-weigle",
@@ -2813,14 +2813,14 @@
   },
   {
     "id": "licensed-way-of-life-seekers-bible-study",
-    "title": "Seeker's Bible Study",
+    "title": "The Seeker's Bible Study",
     "author": "David Cloud",
     "publisherMinistry": "Way of Life Literature",
     "category": "Evangelism",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/seekers_bible_study.php",
     "permissionStatus": "Public Policy - Official Links Only",
-    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
+    "reviewStatus": "Official title page, stated audience, format, and rights boundary reviewed 2026-08-28; full Gospel and doctrinal review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
@@ -2836,9 +2836,9 @@
       "PowerPoint or presentation export",
       "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
-    "recommendedUse": "Evangelism and Bible study",
-    "notes": "Possible outreach study resource; review before placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-practical-study-title-review-2026-08-28.md",
+    "recommendedUse": "One-to-one evangelism and Gospel-study candidate after full doctrinal review",
+    "notes": "Official-link-only record. The publisher describes a multi-week study for unbelievers covering the Gospel, repentance, and faith. No description, lesson, question, map, teacher note, ebook file, cover, quotation, or media is copied. Complete a full Gospel-clarity and Scripture-wording review before recommendation."
   },
   {
     "id": "licensed-way-of-life-slaverys-ugly-history",
@@ -3052,7 +3052,7 @@
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/memory_verse_journal.php",
     "permissionStatus": "Public Policy - Official Links Only",
-    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
+    "reviewStatus": "Official title page, author attribution, formats, and rights boundary reviewed 2026-08-28; verse-list and doctrinal review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
@@ -3068,9 +3068,9 @@
       "PowerPoint or presentation export",
       "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
-    "recommendedUse": "Memory and discipleship",
-    "notes": "Useful memory-work candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-practical-study-title-review-2026-08-28.md",
+    "recommendedUse": "Scripture-memory and meditation candidate for individuals, families, classes, and churches",
+    "notes": "Official-link-only record. The free files remain on Way of Life's site, and the paid printed edition remains separate. No worksheet, verse list, publisher description, ebook file, cover, quotation, or media is copied. Verify the complete verse list uses KJV wording before recommendation."
   },
   {
     "id": "licensed-way-of-life-united-nations-and-the-new-age",
