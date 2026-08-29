@@ -36487,8 +36487,11 @@ function licensedResourceLinksForChapter(resources: LicensedResourceLink[], book
 
   return resources.filter((resource) => resource.passage?.split(";").some((passagePart) => {
     const normalizedPassage = passagePart.trim().toLowerCase();
+    if (normalizedPassage === normalizedBook) {
+      return true;
+    }
     if (chapter === 1 && SINGLE_CHAPTER_BIBLE_BOOKS.has(book)) {
-      return normalizedPassage === normalizedBook || normalizedPassage.startsWith(`${normalizedBook} `);
+      return normalizedPassage.startsWith(`${normalizedBook} `);
     }
 
     return normalizedPassage === chapterPrefix || normalizedPassage.startsWith(`${chapterPrefix}:`);
