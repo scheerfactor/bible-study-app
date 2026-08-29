@@ -7,7 +7,7 @@ This audit looks for scan/OCR patterns in the structured Webster 1828 data. It d
 ## Summary
 
 - Webster base entries: 58,428
-- Reviewed overlays: 3,040
+- Reviewed overlays: 3,050
 - Entries with any quality flag: 22,443
 - Entries with high/medium quality flags: 4,255
 - High/medium flags without a reviewed overlay: 3,335

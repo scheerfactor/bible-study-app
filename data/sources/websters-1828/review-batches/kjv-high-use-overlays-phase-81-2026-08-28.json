@@ -1,0 +1,62 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-81-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n132_w1000.jpg", "sha256": "ce8dd84b7315521359285b9620aac74d1953cc1010ac552244ec6b69d91af6c0" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n149_w1000.jpg", "sha256": "e9700a37d1fef0d3e43a38af9fea5412fb3855fe38791dff7688fe78793941dd" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n167_w1000.jpg", "sha256": "e6ea7e8bb571902d0696371816b536df725ca4d84064f527fc2801d86a240803" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n216_w1000.jpg", "sha256": "3e0148ff23aba861dd429ab96c73a0fed2fdce152a1a730e281a661050367f2c" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n223_w1000.jpg", "sha256": "1af999ca4d3918af702c52a4a2de378b369ab0f76a6d18caf97e344607b2e4a2" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n669_w1000.jpg", "sha256": "2ee8c556ccea706097e7d4835c920b50dac84515051046903fe9df740e71e6dc" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n578_w1000.jpg", "sha256": "7709279774d5c3a95c60e155defa740e2450ef3a6bbf287299eb7560418bc4ac" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n700_w1000.jpg", "sha256": "ca2e743798ad074715351e5d2bf259ad279fb498f79157011722b220ccc1ed4a" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n730_w1000.jpg", "sha256": "f1f4a46ee3c115dd9affaa09611dde51c85e6b4474d02d492ba4c8c53d089112" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n850_w1000.jpg", "sha256": "3692a5f1cadb4d5f62a9095416f05f3f4da907d11246101ad40e5635aa8df4b9" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected remaining ordinary KJV words, historical spellings, closed compounds, and plurals whose Webster entries were absent from app lookup because of source OCR damage or spelling form differences; excluded names and entries without a clear standalone 1828 headword.",
+  "review_method": "Compared every retained definition with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, and source names for display, and recorded spelling, plurality, or compound lookup relationships rather than inventing duplicate headwords.",
+  "screening_summary": {
+    "reviewed_headwords": 10,
+    "net_new_reviewed_overlays": 10,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 6,
+    "missing_kjv_forms_resolved": 12,
+    "kjv_occurrences_resolved": 13,
+    "total_kjv_occurrences_with_reviewed_lookup": 13
+  },
+  "promoted_headwords": ["after-noon", "alms-deed", "ankle", "aunt", "axle-tree", "enchanter", "sheep-master", "sumptuously", "taker", "unprepared"],
+  "verified_lookup_relationships": [
+    { "word": "afternoon", "lookup_headword": "after-noon", "kjv_occurrences": 1, "relationship": "KJV closed compound mapped to Webster's hyphenated AFTER-NOON headword" },
+    { "word": "almsdeeds", "lookup_headword": "alms-deed", "kjv_occurrences": 1, "relationship": "KJV closed plural compound mapped to Webster's singular ALMS-DEED headword" },
+    { "word": "ancle", "lookup_headword": "ankle", "kjv_occurrences": 1, "relationship": "KJV historical spelling mapped to Webster's ANKLE headword" },
+    { "word": "ancles", "lookup_headword": "ankle", "kjv_occurrences": 1, "relationship": "KJV historical spelling and plural form mapped to Webster's ANKLE headword" },
+    { "word": "axletrees", "lookup_headword": "axle-tree", "kjv_occurrences": 2, "relationship": "KJV closed plural compound mapped to Webster's singular AXLE-TREE headword" },
+    { "word": "sheepmaster", "lookup_headword": "sheep-master", "kjv_occurrences": 1, "relationship": "KJV closed compound mapped to Webster's hyphenated SHEEP-MASTER headword" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "aunt", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed AUNT headword" },
+    { "word": "enchanter", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed ENCHANTER headword" },
+    { "word": "enchanters", "kjv_occurrences": 1, "resolution": "Plural lookup resolved from the reviewed ENCHANTER headword" },
+    { "word": "sumptuously", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed SUMPTUOUSLY headword" },
+    { "word": "taker", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed TAKER headword" },
+    { "word": "unprepared", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed UNPREPARED headword" }
+  ],
+  "entries": [
+    { "word": "afternoon", "lookup_headword": "after-noon", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 32144, "source_line_end": 32147, "exact_page_heading": "AFT", "exact_entry_heading": "'AFTER-NOON'", "exact_source_match": true },
+    { "word": "almsdeeds", "lookup_headword": "alms-deed", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 37459, "source_line_end": 37461, "exact_page_heading": "ALM", "exact_entry_heading": "'ALMS-DEED", "exact_source_match": true },
+    { "word": "ancle", "lookup_headword": "ankle", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 43147, "source_line_end": 43150, "exact_page_heading": "ANI", "exact_entry_heading": "ANK'LE", "exact_source_match": true },
+    { "word": "aunt", "lookup_headword": "aunt", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 59072, "source_line_end": 59076, "exact_page_heading": "AUR", "exact_entry_heading": "AUNT", "exact_source_match": true },
+    { "word": "axletrees", "lookup_headword": "axle-tree", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 61213, "source_line_end": 61219, "exact_page_heading": "AXI", "exact_entry_heading": "AX'LE-TREE", "exact_source_match": true },
+    { "word": "enchanter", "lookup_headword": "enchanter", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 206429, "source_line_end": 206442, "exact_page_heading": "ENC", "exact_entry_heading": "ENCH'ANTER", "exact_source_match": true },
+    { "word": "sheepmaster", "lookup_headword": "sheep-master", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 190057, "source_line_end": 190060, "exact_page_heading": "SHE", "exact_entry_heading": "SHEE'P-M'ASTER", "exact_source_match": true },
+    { "word": "sumptuously", "lookup_headword": "sumptuously", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 231879, "source_line_end": 231883, "exact_page_heading": "SUM", "exact_entry_heading": "SUMP'TUOUSLY", "exact_source_match": true },
+    { "word": "taker", "lookup_headword": "taker", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 242104, "source_line_end": 242109, "exact_page_heading": "TAK", "exact_entry_heading": "TA'KER", "exact_source_match": true },
+    { "word": "unprepared", "lookup_headword": "unprepared", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 282573, "source_line_end": 282582, "exact_page_heading": "UNP", "exact_entry_heading": "UNPREPA'RED", "exact_source_match": true }
+  ]
+}

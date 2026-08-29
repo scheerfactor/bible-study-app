@@ -10,18 +10,18 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61468,
-      "normalizedHeadwords": 51418,
-      "meaningfulWordsWithDefinition": 8745,
-      "meaningfulWordsWithoutDefinition": 3709,
-      "meaningfulDefinitionCoveragePercent": 70.2,
+      "entries": 61478,
+      "normalizedHeadwords": 51428,
+      "meaningfulWordsWithDefinition": 8757,
+      "meaningfulWordsWithoutDefinition": 3697,
+      "meaningfulDefinitionCoveragePercent": 70.3,
       "missingPriorityCounts": {
         "high": 223,
         "medium": 624,
-        "low": 962,
-        "single-use": 1900
+        "low": 961,
+        "single-use": 1889
       },
-      "missingWithSupplementalHelp": 3709,
+      "missingWithSupplementalHelp": 3697,
       "missingWithoutSupplementalHelp": 0,
       "topUsedWordsNeedingDefinition": [
         {
