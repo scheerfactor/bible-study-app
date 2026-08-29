@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-08-29T18:43:31.551Z",
+    "generated_at": "2026-08-29T19:24:39.493Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,18 +10,18 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61552,
-      "normalizedHeadwords": 51494,
-      "meaningfulWordsWithDefinition": 8850,
-      "meaningfulWordsWithoutDefinition": 3604,
-      "meaningfulDefinitionCoveragePercent": 71.1,
+      "entries": 61570,
+      "normalizedHeadwords": 51509,
+      "meaningfulWordsWithDefinition": 8871,
+      "meaningfulWordsWithoutDefinition": 3583,
+      "meaningfulDefinitionCoveragePercent": 71.2,
       "missingPriorityCounts": {
         "high": 223,
         "medium": 624,
         "low": 960,
-        "single-use": 1797
+        "single-use": 1776
       },
-      "missingWithSupplementalHelp": 3604,
+      "missingWithSupplementalHelp": 3583,
       "missingWithoutSupplementalHelp": 0,
       "topUsedWordsNeedingDefinition": [
         {
@@ -3610,8 +3610,8 @@
       "eastonEntries": 3883,
       "naveTopics": 4674,
       "rareTermEntries": 1012,
-      "meaningfulWordsWithEastonEntry": 4143,
-      "meaningfulWordsWithNaveTopic": 4035,
+      "meaningfulWordsWithEastonEntry": 4144,
+      "meaningfulWordsWithNaveTopic": 4036,
       "meaningfulWordsWithAnyStudyLookup": 12454,
       "combinedStudyLookupCoveragePercent": 100,
       "topUsedWordsWithoutAnyStudyLookup": []
@@ -4755,7 +4755,7 @@
     "nave": {
       "topics": 4674,
       "topicsWithReferences": 3862,
-      "exactMeaningfulBibleWordTopics": 4035,
+      "exactMeaningfulBibleWordTopics": 4036,
       "exactMeaningfulBibleWordTopicPercent": 32.4,
       "suspiciousTopicCount": 814,
       "topUsedWordsWithoutExactTopic": [
