@@ -47163,7 +47163,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       ministry: "Way of Life Literature",
       count: wayOfLifeCount,
       focus: "KJV, Baptist, church issues, and discernment resources",
-      scope: "Shareable/free items are listed with source links; paid Store items stay permission-needed.",
+      scope: "Free ebooks remain at the publisher: the app links to Way of Life and does not host or redistribute ebook files. Paid Store items stay permission-needed.",
     },
     {
       ministry: "Northstar Ministries",
@@ -47345,8 +47345,12 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
   const isOfficialAudio = resource.resourceFormat === "Official Audio Link";
   const isOfficialLinkOnly = resource.permissionStatus === "Public Policy - Official Links Only";
+  const isFreeAtPublisherOnly =
+    resource.publisherMinistry === "Way of Life Literature" && resource.approvedPublicUse.includes("Free-resource listing");
   const linkLabel = isOfficialAudio
     ? "Listen on TTB"
+    : isFreeAtPublisherOnly
+      ? "Open free book at publisher"
     : resource.publisherMinistry === "Wholesome Words"
       ? "Browse source page"
     : resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems"
@@ -47354,6 +47358,8 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
       : "Open official page";
   const scopeLabel = isOfficialAudio
     ? "Official audio"
+    : isFreeAtPublisherOnly
+      ? "Free at publisher · link only"
     : isOfficialLinkOnly
       ? "Official links only"
       : resource.publisherMinistry === "Solve Family Problems"
@@ -47385,16 +47391,28 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
       <div className="mt-3 flex flex-wrap gap-2">
         {resource.approvedPublicUse.map((item) => (
           <span key={`${resource.id}-approved-${item}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
-            {item}
+            {isFreeAtPublisherOnly && item === "Free-resource listing" ? "Free at publisher—not hosted here" : item}
           </span>
         ))}
       </div>
       <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
         <p className="text-xs font-semibold text-[var(--ink)]">
-          {isOfficialAudio ? "Official stream - no audio copied" : isOfficialLinkOnly ? "Link only - no source content copied" : "No full text or audio hosted"}
+          {isOfficialAudio
+            ? "Official stream - no audio copied"
+            : isFreeAtPublisherOnly
+              ? "Free at the publisher - not hosted here"
+              : isOfficialLinkOnly
+                ? "Link only - no source content copied"
+                : "No full text or audio hosted"}
         </p>
         <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-          {resource.reviewStatus}. {isOfficialAudio ? "Playback opens the exact TTB-hosted file." : isOfficialLinkOnly ? "The source page opens in a separate browser tab." : "Use the official page until title review and any broader license is complete."}
+          {resource.reviewStatus}. {isOfficialAudio
+            ? "Playback opens the exact TTB-hosted file."
+            : isFreeAtPublisherOnly
+              ? "Read or download from the official Way of Life page. The app does not store or distribute the ebook file."
+              : isOfficialLinkOnly
+                ? "The source page opens in a separate browser tab."
+                : "Use the official page until title review and any broader license is complete."}
         </p>
       </div>
       <div className="mt-auto pt-4">
