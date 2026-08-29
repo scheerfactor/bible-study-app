@@ -11807,6 +11807,9 @@
     "year": 2011,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/37120",
+    "bible_books": [
+      "Mark"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/37120.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-gospel-according-to-st-mark-g-a-chadwick.txt",
@@ -25609,6 +25612,9 @@
     "year": 2013,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/42251",
+    "bible_books": [
+      "Revelation"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/42251.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-revelation-milligan-william-and-nicoll-w-robertson-william-robertson-sir.txt",
@@ -26161,6 +26167,9 @@
     "year": 2015,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/48858",
+    "bible_books": [
+      "Romans"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/48858.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-of-st-paul-to-the-romans-moule-h-c-g-handley-carr-glyn-and-nicoll-w-robertso.txt",
@@ -31017,6 +31026,9 @@
     "year": 2005,
     "category": "Bible study helps",
     "source_url": "https://www.gutenberg.org/ebooks/15185",
+    "bible_books": [
+      "John"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/15185.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/quiet-talks-on-john-s-gospel-s-d-gordon.txt",
@@ -46005,6 +46017,11 @@
     "year": 2012,
     "category": "Commentaries",
     "source_url": "https://www.gutenberg.org/ebooks/40775",
+    "bible_books": [
+      "1 John",
+      "2 John",
+      "3 John"
+    ],
     "download_url": "https://www.gutenberg.org/ebooks/40775.txt.utf-8",
     "source_license_url": "https://www.gutenberg.org/policy/license.html",
     "file_path": "data/library/verified/expositor-s-bible-the-epistles-of-st-john-william-alexander.txt",

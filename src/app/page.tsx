@@ -1025,6 +1025,7 @@ type LibraryResource = {
   recommended_use: string;
   resource_labels: string[];
   resource_warnings: string[];
+  bible_books?: string[];
   source_url: string;
   download_url?: string | null;
   source_license_url: string;
@@ -32549,8 +32550,12 @@ function passageTeachingIllustrationPrompts({
   return Array.from(new Set(prompts)).slice(0, 5);
 }
 
-function relatedLibraryResourcesForPassage(recommendations: ChapterResourceRecommendation[], libraryResources: LibraryResource[]) {
-  return recommendations
+function relatedLibraryResourcesForPassage(
+  recommendations: ChapterResourceRecommendation[],
+  libraryResources: LibraryResource[],
+  book: string,
+) {
+  const recommendedResources = recommendations
     .map((recommendation) => {
       const resource = recommendation.resourceSlug
         ? libraryResources.find((candidate) => candidate.slug === recommendation.resourceSlug)
@@ -32558,6 +32563,26 @@ function relatedLibraryResourcesForPassage(recommendations: ChapterResourceRecom
       return resource ? { recommendation, resource } : null;
     })
     .filter((item): item is { recommendation: ChapterResourceRecommendation; resource: LibraryResource } => Boolean(item));
+
+  const bookResources = libraryResources
+    .filter((resource) => resource.bible_books?.includes(book))
+    .map((resource) => ({
+      recommendation: {
+        id: `book-linked-${resource.slug}`,
+        kind: "Library Resource" as const,
+        title: resource.title,
+        author: resource.author,
+        status: "available" as const,
+        note: resource.recommended_use,
+        resourceSlug: resource.slug,
+        warning: resource.resource_warnings.join(" · ") || undefined,
+      },
+      resource,
+    }));
+
+  return Array.from(
+    new Map([...recommendedResources, ...bookResources].map((item) => [item.resource.slug, item])).values(),
+  );
 }
 
 function bestChapterResources(recommendations: ChapterResourceRecommendation[], commentaryEntries: CommentaryEntry[]): BestChapterResources {
@@ -36697,12 +36722,14 @@ function groupLibraryWorks(resources: LibraryResource[]) {
   return Array.from(byWork.entries()).map(([workKey, editions]) => {
     const sortedEditions = sortLibraryEditions(editions);
     const preferred = sortedEditions.reduce(strongerLibraryResource, sortedEditions[0]);
+    const bibleBooks = Array.from(new Set(sortedEditions.flatMap((edition) => edition.bible_books ?? [])));
     return {
       ...preferred,
       work_key: workKey,
       work_title: preferredLibraryWorkTitle(sortedEditions),
       edition_count: sortedEditions.length,
       edition_group: sortedEditions,
+      bible_books: bibleBooks,
     };
   });
 }
@@ -48507,7 +48534,7 @@ function PassageGuideScreen({
     available: availableCommentaryAuthors.has(author),
     entries: commentaryEntries.filter((entry) => entry.author === author).length,
   }));
-  const relatedBooks = relatedLibraryResourcesForPassage(recommendedResources, libraryResources);
+  const relatedBooks = relatedLibraryResourcesForPassage(recommendedResources, libraryResources, book);
   const { entries: passageTopicEntries, status: passageTopicStatus } = useNaveTopicResults([
     ...activeThemes.map((theme) => theme.title),
     ...connections.themes,

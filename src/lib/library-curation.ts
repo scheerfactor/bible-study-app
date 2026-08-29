@@ -27,6 +27,7 @@ export type LibraryManifestEntry = {
   recommended_use?: string;
   resource_labels?: string[];
   resource_warnings?: string[];
+  bible_books?: string[];
   word_count?: number;
   file_size_bytes?: number;
   checksum_sha256?: string;
@@ -198,6 +199,7 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     recommended_use: recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
+    bible_books: entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
