@@ -1,8 +1,26 @@
 const LIVE_BETA_URL = "https://study.fathersbusinessmasteryresources.com/";
+
+function argument(name) {
+  const prefix = `--${name}=`;
+  const inline = process.argv.find((value) => value.startsWith(prefix));
+  if (inline) return inline.slice(prefix.length);
+
+  const index = process.argv.indexOf(`--${name}`);
+  return index === -1 ? undefined : process.argv[index + 1];
+}
+
 const useLiveBeta = process.argv.includes("--live");
+const explicitBaseUrl = argument("base-url") ?? process.env.STUDY_API_AUDIT_BASE_URL;
+
+if (useLiveBeta && explicitBaseUrl) {
+  throw new Error("Use either --live or --base-url/STUDY_API_AUDIT_BASE_URL, not both.");
+}
+
 const baseUrl = new URL(
-  process.env.STUDY_API_AUDIT_BASE_URL ?? (useLiveBeta ? LIVE_BETA_URL : "http://127.0.0.1:3000/"),
+  explicitBaseUrl ?? (useLiveBeta ? LIVE_BETA_URL : "http://127.0.0.1:3000/"),
 );
+
+console.log(`Checking study APIs at ${baseUrl.origin}.`);
 
 function strongMappingProbe(reference) {
   return {
