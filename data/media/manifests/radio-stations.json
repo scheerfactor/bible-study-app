@@ -26,7 +26,7 @@
       "description": "Sequential King James Bible listening through the complete Gospel of John pilot.",
       "coverage": "John 1-21",
       "listeningMode": "Sequential full-book pilot",
-      "markerStatus": "Five range files are playback-verified; chapter markers remain estimated and are not used for public chapter seeking.",
+      "markerStatus": "Five range files are playback-verified. Chapter buttons appear only after every marker in that range file is manually verified.",
       "trackIds": [
         "kjv-john-librivox-001-john-1-4",
         "kjv-john-librivox-002-john-5-8",

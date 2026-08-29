@@ -70,6 +70,7 @@ const unusedReviews = [...reviewById.keys()].filter(
 if (unusedReviews.length) errors.push(`reviewed tracks are not assigned to a station: ${unusedReviews.join(", ")}`);
 
 const bibleStation = (radio.stations ?? []).find((station) => station.id === "kjv-bible");
+let chapterReadyFileCount = 0;
 const expectedJohnTrackIds = [
   "kjv-john-librivox-001-john-1-4",
   "kjv-john-librivox-002-john-5-8",
@@ -88,8 +89,8 @@ if (!bibleStation) {
   if (!String(bibleStation.listeningMode ?? "").toLowerCase().includes("sequential")) {
     errors.push("KJV Bible Radio must identify its sequential listening mode");
   }
-  if (!String(bibleStation.markerStatus ?? "").toLowerCase().includes("estimated")) {
-    errors.push("KJV Bible Radio must keep the estimated chapter-marker limitation visible");
+  if (!String(bibleStation.markerStatus ?? "").toLowerCase().includes("only after every marker")) {
+    errors.push("KJV Bible Radio must keep its file-level chapter-navigation release gate visible");
   }
 
   const bibleRecords = expectedJohnTrackIds
@@ -105,9 +106,17 @@ if (!bibleStation) {
   if (bibleRecords.some((record) => record.kind !== "Bible Audio" || record.rightsStatus !== "Public Domain - USA")) {
     errors.push("KJV Bible Radio must use public-domain Bible Audio records only");
   }
-  if (bibleRecords.flatMap((record) => record.chapterMarkers ?? []).some((marker) => marker.status !== "Estimated")) {
-    errors.push("KJV Bible Radio chapter markers must remain Estimated until manually verified");
+  const chapterReadyFiles = bibleRecords.filter(
+    (record) => (record.chapterMarkers ?? []).length > 0 && record.chapterMarkers.every((marker) => marker.status === "Verified"),
+  );
+  const partiallyVerifiedFiles = bibleRecords.filter((record) => {
+    const statuses = new Set((record.chapterMarkers ?? []).map((marker) => marker.status));
+    return statuses.has("Estimated") && statuses.has("Verified");
+  });
+  if (partiallyVerifiedFiles.some((record) => record.visibility === "Public after review")) {
+    errors.push("KJV Bible Radio cannot expose chapter navigation for a partially verified range file");
   }
+  chapterReadyFileCount = chapterReadyFiles.length;
 }
 
 if (errors.length) {
@@ -122,3 +131,4 @@ console.log(`Reviewed tracks: ${radio.reviewedTracks.length}`);
 console.log(`Public-domain tracks: ${radio.reviewedTracks.filter((review) => review.sourceManifest === "uploaded-public-domain-audio-pilots").length}`);
 console.log(`Permission-approved tracks: ${radio.reviewedTracks.filter((review) => review.sourceManifest === "media-intake-candidates").length}`);
 console.log(`KJV Bible Radio coverage: ${bibleStation?.coverage ?? "missing"} across ${bibleStation?.trackIds?.length ?? 0} sequential range files`);
+console.log(`KJV Bible Radio chapter-ready files: ${chapterReadyFileCount} of ${bibleStation?.trackIds?.length ?? 0}`);

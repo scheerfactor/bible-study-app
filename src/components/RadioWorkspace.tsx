@@ -47,6 +47,16 @@ type UploadedAudioRecord = {
   publicUrl: string;
   contentType: string;
   duration?: string;
+  chapterMarkers?: ChapterMarker[];
+};
+
+type ChapterMarker = {
+  book: string;
+  chapter: number;
+  startSeconds: number;
+  endSeconds: number;
+  status: "Estimated" | "Verified";
+  method: string;
 };
 
 type IntakeAudioRecord = {
@@ -78,6 +88,7 @@ type RadioTrack = {
   rightsLabel: string;
   rightsEvidence: string;
   attribution: string;
+  chapterMarkers: ChapterMarker[];
 };
 
 const manifest = radioData as {
@@ -107,6 +118,7 @@ function normalizedTrack(review: RadioReview): RadioTrack | null {
       rightsLabel: "Public domain in the USA",
       rightsEvidence: record.rightsEvidence,
       attribution: `${record.creator}. Recording source: LibriVox.`,
+      chapterMarkers: record.chapterMarkers ?? [],
     };
   }
 
@@ -126,6 +138,7 @@ function normalizedTrack(review: RadioReview): RadioTrack | null {
     rightsLabel: "Free public use with attribution",
     rightsEvidence: record.rightsEvidence,
     attribution: record.requiredAttribution ?? record.creator,
+    chapterMarkers: [],
   };
 }
 
@@ -167,6 +180,9 @@ export default function RadioWorkspace() {
   );
   const currentTrack = queue[activeIndex] ?? queue[0] ?? null;
   const sequentialStation = station.listeningMode?.toLowerCase().includes("sequential") ?? false;
+  const chapterMarkers = currentTrack?.chapterMarkers ?? [];
+  const verifiedMarkerCount = chapterMarkers.filter((marker) => marker.status === "Verified").length;
+  const chapterNavigationReady = chapterMarkers.length > 0 && verifiedMarkerCount === chapterMarkers.length;
 
   useEffect(() => {
     let cancelled = false;
@@ -294,6 +310,24 @@ export default function RadioWorkspace() {
     setCurrentTime(nextTime);
   }
 
+  async function playChapter(marker: ChapterMarker) {
+    const audio = audioRef.current;
+    if (!audio || !currentTrack || !chapterNavigationReady) return;
+    pendingResumeSecondsRef.current = null;
+    audio.currentTime = marker.startSeconds;
+    setCurrentTime(marker.startSeconds);
+    saveProgress(station.id, currentTrack.id, marker.startSeconds);
+    setPlayRequested(true);
+    try {
+      await audio.play();
+      setPlaying(true);
+      setPlaybackMessage(`Playing ${marker.book} ${marker.chapter}.`);
+    } catch {
+      setPlaying(false);
+      setPlaybackMessage("Chapter playback needs one more tap in this browser.");
+    }
+  }
+
   return (
     <div className="mx-auto w-full max-w-6xl p-4 md:p-8">
       <header className="border-b border-[var(--line)] pb-5">
@@ -399,6 +433,35 @@ export default function RadioWorkspace() {
                   <span>{duration ? formatTime(duration) : currentTrack.durationLabel}</span>
                 </div>
               </div>
+
+              {chapterMarkers.length > 0 && (
+                <div className="mt-4 rounded-lg border border-white/10 bg-white/5 p-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Chapter selection</p>
+                    <span className="text-xs font-semibold text-white/55">
+                      {verifiedMarkerCount} of {chapterMarkers.length} markers verified
+                    </span>
+                  </div>
+                  {chapterNavigationReady ? (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {chapterMarkers.map((marker) => (
+                        <button
+                          key={`${currentTrack.id}-${marker.book}-${marker.chapter}`}
+                          className="min-h-10 rounded-full bg-white/10 px-4 text-sm font-semibold text-white hover:bg-[var(--gold)] hover:text-[var(--ink)]"
+                          onClick={() => void playChapter(marker)}
+                          type="button"
+                        >
+                          {marker.book} {marker.chapter}
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-xs leading-5 text-[var(--gold-soft)]">
+                      Chapter buttons stay locked until every marker in this recording is manually verified by ear.
+                    </p>
+                  )}
+                </div>
+              )}
 
               <div className="mt-4 flex items-center justify-center gap-3">
                 <button
