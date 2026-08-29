@@ -101,7 +101,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - `npm run audit:public-access` while the production build is running
 - `npm run audit:release` while the production build is running
 - `npm run audit:study-apis` while the production build is running
-- `npm run audit:release:live` after deployment and before sharing the beta URL
+- `npm run audit:release:live` after deployment and before sharing the beta URL; it must confirm the current
+  header logo asset, founding-beta launch target, and supporter-interest path as well as authentication and storage
 - `npm run audit:study-apis:live` after deployment and before sharing the beta URL
 - `npm run lint`
 - `npm run build`

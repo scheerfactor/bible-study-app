@@ -384,6 +384,7 @@ alter table public.beta_feedback add constraint beta_feedback_category_check
     category in (
       'Bug report',
       'Suggestion',
+      'Founding supporter interest',
       'Resource issue',
       'Commentary issue',
       'Audio issue',
@@ -1248,6 +1249,7 @@ create policy "Anyone can create beta feedback"
     and category in (
       'Bug report',
       'Suggestion',
+      'Founding supporter interest',
       'Resource issue',
       'Commentary issue',
       'Audio issue',

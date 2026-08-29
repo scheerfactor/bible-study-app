@@ -132,7 +132,7 @@ export default function FeedbackPage() {
             Report a problem, suggest an improvement, or begin a conversation about an author, ministry, or publisher resource.
           </p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            {["Bug report", "Resource issue", "Author / publisher partnership", "Publisher product feedback"].map((item) => (
+            {["Bug report", "Resource issue", "Founding supporter interest", "Author / publisher partnership", "Publisher product feedback"].map((item) => (
               <button
                 key={`feedback-shortcut-${item}`}
                 className={`rounded-2xl border px-3 py-2 text-left text-xs font-semibold ${
@@ -163,6 +163,23 @@ export default function FeedbackPage() {
               <li>What attribution, preview, reporting, pricing, correction, and removal controls would you require?</li>
               <li>Which search, notes, highlights, quotations, offline reading, audio, or presentation uses should be allowed or restricted?</li>
               <li>What would make this app genuinely useful enough for you to recommend to pastors, teachers, and students?</li>
+            </ol>
+          </section>
+        )}
+
+        {category === "Founding supporter interest" && (
+          <section className="mt-4 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <h2 className="text-xl font-semibold text-[var(--ink)]">Founding-supporter questions</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              Answer any that help us understand real interest. This is feedback only—not a pledge, payment, or
+              promise of early access.
+            </p>
+            <ol className="mt-4 space-y-2 pl-5 text-sm leading-6 text-[var(--muted)]">
+              <li>Which would you use first: KJV study, books and commentaries, listening, sermon preparation, or presentations?</li>
+              <li>What one missing feature or resource would make the beta most useful to you?</li>
+              <li>Would you use it personally, weekly in ministry, or with a church, school, or missions work?</li>
+              <li>Which future licensed resources or services could be worth paying for while the KJV and public-domain core remain free?</li>
+              <li>Would you test the founding beta and share specific feedback?</li>
             </ol>
           </section>
         )}
