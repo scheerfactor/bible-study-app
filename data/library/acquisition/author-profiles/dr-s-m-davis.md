@@ -52,7 +52,7 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| TBD | Family and preaching | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
+| The Wise Use of Parental Authority | Family / parenting teaching message | Not verified | Website metadata and official link only | Doctrinal review required | Public discovery card may use approved website metadata; CD, DVD, MP4, audio, video, transcript, embed, TTS, and paid access remain unapproved. |
 
 ### Discovery Focus
 

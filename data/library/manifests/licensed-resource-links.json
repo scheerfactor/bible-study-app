@@ -3530,6 +3530,34 @@
     "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed MP4/video, MP3/audio, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
   },
   {
+    "id": "licensed-solve-family-problems-wise-use-of-parental-authority",
+    "title": "The Wise Use of Parental Authority",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Family",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://www.solvefamilyproblems.org/product-p/parental-authority.htm",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official product page reviewed 2026-08-28; metadata-only listing approved; title-level doctrinal review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text or PDF hosting",
+      "CD or audio hosting, streaming, or download",
+      "DVD, MP4, or video hosting, player embed, streaming, or download",
+      "Transcript, excerpt beyond the approved website description, or derivative study notes",
+      "AI/TTS narration or voice generation",
+      "Presentation export, paid access, subscription inclusion, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Parenting; servant leadership; family discipleship; official purchase and resource-discovery link",
+    "notes": "The official product page lists CD, DVD, and MP4 download formats, but the current permission covers only website titles, graphics, descriptions, attribution, and official links. The app does not host, embed, stream, transcribe, narrate, or sell this message. Public recommendation remains subject to title-level doctrinal review."
+  },
+  {
     "id": "licensed-thru-the-bible-audio-study",
     "title": "THRU the BIBLE Audio Study",
     "author": "Dr. J. Vernon McGee",
