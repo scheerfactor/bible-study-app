@@ -3886,5 +3886,33 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/vance-havner-official-catalog-review-2026-08-25.md",
     "recommendedUse": "Official publisher discovery for Gospel exposition and sermon preparation",
     "notes": "CLC's reviewed author page lists ISBN 9780875087832. The direct product URL tested on 2026-08-25 returned 404, so this record intentionally uses the verified author catalog page. No book content or imagery is copied."
+  },
+  {
+    "id": "licensed-way-of-life-power-of-the-ancient-sling",
+    "title": "The Power of the Ancient Sling",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Bible Archaeology",
+    "collection": "Way of Life Literature Shareable Reports",
+    "sourceUrl": "https://www.wayoflife.org/reports/the_power_of_the_ancient_sling.html",
+    "passage": "1 Samuel 17:40, 50; Judges 20:16; 2 Kings 3:25; 2 Chronicles 26:14",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Official report, Bible references, attribution, and sharing boundary reviewed 2026-08-28; link-only app listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Passage-indexed discovery"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text report or paid-book content inside the app before item-specific editorial review",
+      "Site image, illustration, or third-party quotation reuse",
+      "Audio or video hosting, transcript, embed, or download",
+      "AI/TTS narration, adaptation, or derivative study content",
+      "Presentation-image or copyrighted-text export",
+      "Paid access, subscription inclusion, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-ancient-sling-report-review-2026-08-28.md",
+    "recommendedUse": "Passage-linked archaeology and historical-background discovery for David and Goliath and other biblical slingers",
+    "notes": "Way of Life's displayed policy permits credited posting of parts or entire reports, but this first app record deliberately links only. The report is excerpted from a Store book and includes an image and third-party quotations, so none of that content is copied. No KJV verse text is reproduced by this record."
   }
 ]
