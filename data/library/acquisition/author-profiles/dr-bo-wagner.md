@@ -54,6 +54,12 @@ Review:
 | --- | --- | --- | --- | --- | --- |
 | TBD | Preaching and Baptist doctrine | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
 
+### Discovery Focus
+
+- Identify the exact book or books Stephen has read or started reading before requesting title-level rights.
+- Prioritize practical counsel for young preachers, pastoral ministry, Baptist doctrine, and sermon preparation.
+- Review one named sermon or teaching-video pilot only after the official source and media rightsholder are verified.
+
 ## Audio / Video Availability
 
 | Media type | Availability | Rights / permission status | Notes |

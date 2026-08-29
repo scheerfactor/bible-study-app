@@ -129,6 +129,15 @@ type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Revi
 type RightsPermissionStatus = "Public Domain" | "Permission Needed" | "Contacted" | "Negotiating" | "Approved" | "Denied" | "Personal Use Only" | "Do Not Import";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
+type PriorityMinistryPartner = {
+  id: string;
+  name: string;
+  ministry: string;
+  focus: string;
+  permissionStatus: string;
+  nextAction: string;
+  boundary: string;
+};
 type StoragePlanningRow = {
   id: string;
   label: string;
@@ -2203,6 +2212,27 @@ const PRESENTATION_ENTRIES_KEY = "fathers-business-presentation-workspace-entrie
 const PRESENTATION_REMOTE_KEY_PREFIX = "fathers-business-presentation-remote-session:";
 const PRESENTATION_CONTROLLER_ID_KEY = "fathers-business-presentation-controller-id";
 const PRESENTATION_SESSION_DURATION_HOURS = 4;
+
+const PRIORITY_MINISTRY_PARTNERS: PriorityMinistryPartner[] = [
+  {
+    id: "bo-wagner",
+    name: "Dr. Bo Wagner",
+    ministry: "Word of His Mouth / Cornerstone Baptist Church",
+    focus: "Books and counsel for young preachers, Baptist doctrine, sermons, and teaching media.",
+    permissionStatus: "Positive interest · written scope still pending",
+    nextAction: "Review the existing conversation, then request named books and one sermon or video pilot with each use confirmed separately.",
+    boundary: "Do not list, quote, host, embed, recommend, sell, or narrate his material until the approved titles and uses are confirmed in writing.",
+  },
+  {
+    id: "sm-davis",
+    name: "Dr. S. M. Davis",
+    ministry: "Solve Family Problems",
+    focus: "Family and pastoral books, sermon audio, teaching series, and video resources.",
+    permissionStatus: "Website metadata granted · media rights not granted",
+    nextAction: "Choose up to three sermon or video titles for a small official-link or official-player pilot and request that scope in writing.",
+    boundary: "Current permission covers website titles, graphics, descriptions, attribution, and official links only—not books, files, audio, video, transcripts, TTS, or paid access.",
+  },
+];
 
 const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
   selectedVoiceURI: "",
@@ -42308,6 +42338,39 @@ function LibraryAcquisitionCenter({
               </p>
             </article>
           </div>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-[var(--green)]">Priority ministry partners</p>
+                <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">Keep promising relationships moving without outrunning permission</h3>
+              </div>
+              <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {PRIORITY_MINISTRY_PARTNERS.length} active opportunities
+              </span>
+            </div>
+            <div className="mt-4 grid gap-3 lg:grid-cols-2">
+              {PRIORITY_MINISTRY_PARTNERS.map((partner) => (
+                <section key={`priority-partner-${partner.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <h4 className="text-base font-semibold text-[var(--ink)]">{partner.name}</h4>
+                      <p className="mt-1 text-xs font-semibold text-[var(--green)]">{partner.ministry}</p>
+                    </div>
+                    <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
+                      Rights-first
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{partner.focus}</p>
+                  <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-2">
+                    <p className="text-xs font-semibold text-[var(--ink)]">{partner.permissionStatus}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]"><strong>Next:</strong> {partner.nextAction}</p>
+                  </div>
+                  <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Boundary:</strong> {partner.boundary}</p>
+                </section>
+              ))}
+            </div>
+          </article>
         </div>
       )}
 

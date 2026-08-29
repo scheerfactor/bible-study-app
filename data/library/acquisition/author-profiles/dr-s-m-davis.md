@@ -54,6 +54,12 @@ Review:
 | --- | --- | --- | --- | --- | --- |
 | TBD | Family and preaching | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
 
+### Discovery Focus
+
+- Identify the exact books Stephen has read or started reading and review them individually.
+- Prioritize sermons and videos that serve pastors, young preachers, families, and practical Christian living.
+- Select no more than three named media items for the first official-link or official-player permission request.
+
 ## Audio / Video Availability
 
 | Media type | Availability | Rights / permission status | Notes |
