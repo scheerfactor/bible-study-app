@@ -150,9 +150,11 @@ const tracksById = new Map(reviewedTracks.map((track) => [track.id, track]));
 const RADIO_PROGRESS_KEY = "fathers-business-radio-progress-v1";
 const RADIO_LAST_STATION_KEY = "fathers-business-radio-last-station-v1";
 const RADIO_COMPLETION_KEY = "fathers-business-radio-completion-v1";
+const RADIO_PLAYLISTS_KEY = "fathers-business-radio-playlists-v1";
 
 type RadioProgress = Record<string, { trackId: string; currentTime: number }>;
 type RadioCompletion = Record<string, string[]>;
+type PersonalPlaylist = { id: string; name: string; trackIds: string[] };
 
 function formatTime(seconds: number) {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -172,6 +174,10 @@ export default function RadioWorkspace() {
   const [duration, setDuration] = useState(0);
   const [playbackMessage, setPlaybackMessage] = useState("");
   const [completionByStation, setCompletionByStation] = useState<RadioCompletion>({});
+  const [personalPlaylists, setPersonalPlaylists] = useState<PersonalPlaylist[]>([]);
+  const [selectedPlaylistId, setSelectedPlaylistId] = useState("");
+  const [playlistName, setPlaylistName] = useState("");
+  const [playlistMessage, setPlaylistMessage] = useState("");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const savedProgressRef = useRef<RadioProgress>({});
   const pendingResumeSecondsRef = useRef<number | null>(null);
@@ -190,18 +196,35 @@ export default function RadioWorkspace() {
   const completedTrackIdSet = useMemo(() => new Set(completionByStation[station.id] ?? []), [completionByStation, station.id]);
   const completedQueueCount = queue.filter((track) => completedTrackIdSet.has(track.id)).length;
   const playlistProgress = queue.length ? Math.round((completedQueueCount / queue.length) * 100) : 0;
+  const selectedPlaylist = personalPlaylists.find((playlist) => playlist.id === selectedPlaylistId) ?? personalPlaylists[0] ?? null;
+  const selectedPlaylistTracks = (selectedPlaylist?.trackIds ?? [])
+    .map((trackId) => tracksById.get(trackId))
+    .filter((track): track is RadioTrack => Boolean(track));
 
   useEffect(() => {
     let cancelled = false;
     try {
       const saved = JSON.parse(window.localStorage.getItem(RADIO_PROGRESS_KEY) ?? "{}") as RadioProgress;
       const savedCompletion = JSON.parse(window.localStorage.getItem(RADIO_COMPLETION_KEY) ?? "{}") as RadioCompletion;
+      const savedPlaylistValue = JSON.parse(window.localStorage.getItem(RADIO_PLAYLISTS_KEY) ?? "[]") as unknown;
+      const savedPlaylists = Array.isArray(savedPlaylistValue)
+        ? savedPlaylistValue.filter(
+          (playlist): playlist is PersonalPlaylist =>
+            Boolean(playlist) &&
+            typeof playlist.id === "string" &&
+            typeof playlist.name === "string" &&
+            Array.isArray(playlist.trackIds) &&
+            playlist.trackIds.every((trackId: unknown) => typeof trackId === "string"),
+        )
+        : [];
       savedProgressRef.current = saved;
       const savedStationId = window.localStorage.getItem(RADIO_LAST_STATION_KEY);
       const savedStation = manifest.stations.find((candidate) => candidate.id === savedStationId && saved[candidate.id]);
       queueMicrotask(() => {
         if (cancelled) return;
         setCompletionByStation(savedCompletion);
+        setPersonalPlaylists(savedPlaylists);
+        setSelectedPlaylistId(savedPlaylists[0]?.id ?? "");
         if (!savedStation) return;
         const position = saved[savedStation.id];
         const savedIndex = savedStation.trackIds.indexOf(position.trackId);
@@ -267,6 +290,68 @@ export default function RadioWorkspace() {
       }
       return nextCompletion;
     });
+  }
+
+  function savePersonalPlaylists(nextPlaylists: PersonalPlaylist[]) {
+    setPersonalPlaylists(nextPlaylists);
+    try {
+      window.localStorage.setItem(RADIO_PLAYLISTS_KEY, JSON.stringify(nextPlaylists));
+      return true;
+    } catch {
+      setPlaylistMessage("This browser could not save the playlist locally.");
+      return false;
+    }
+  }
+
+  function createPersonalPlaylist() {
+    const name = playlistName.trim().replace(/\s+/g, " ");
+    if (!name) {
+      setPlaylistMessage("Enter a playlist name first.");
+      return;
+    }
+    if (personalPlaylists.some((playlist) => playlist.name.toLowerCase() === name.toLowerCase())) {
+      setPlaylistMessage("A playlist with that name already exists.");
+      return;
+    }
+    const nextPlaylist = { id: `playlist-${Date.now()}`, name, trackIds: [] };
+    const saved = savePersonalPlaylists([...personalPlaylists, nextPlaylist]);
+    setSelectedPlaylistId(nextPlaylist.id);
+    setPlaylistName("");
+    if (saved) setPlaylistMessage(`${name} created.`);
+  }
+
+  function addCurrentTrackToPlaylist() {
+    if (!selectedPlaylist || !currentTrack) return;
+    if (selectedPlaylist.trackIds.includes(currentTrack.id)) {
+      setPlaylistMessage(`${currentTrack.segmentTitle} is already in ${selectedPlaylist.name}.`);
+      return;
+    }
+    const saved = savePersonalPlaylists(
+      personalPlaylists.map((playlist) =>
+        playlist.id === selectedPlaylist.id ? { ...playlist, trackIds: [...playlist.trackIds, currentTrack.id] } : playlist,
+      ),
+    );
+    if (saved) setPlaylistMessage(`${currentTrack.segmentTitle} added to ${selectedPlaylist.name}.`);
+  }
+
+  function playSavedTrack(trackId: string) {
+    const targetStation = manifest.stations.find((candidate) => candidate.id !== "mix" && candidate.trackIds.includes(trackId))
+      ?? manifest.stations.find((candidate) => candidate.trackIds.includes(trackId));
+    if (!targetStation) {
+      setPlaylistMessage("That program is no longer available in the reviewed catalog.");
+      return;
+    }
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
+    audioRef.current?.pause();
+    const nextIndex = targetStation.trackIds.indexOf(trackId);
+    pendingResumeSecondsRef.current = 0;
+    setStationId(targetStation.id);
+    setActiveIndex(nextIndex);
+    setPlaying(false);
+    setPlayRequested(true);
+    if (targetStation.listeningMode?.toLowerCase().includes("sequential")) setShuffle(false);
+    saveProgress(targetStation.id, trackId, 0);
+    setPlaylistMessage(`Opening ${tracksById.get(trackId)?.segmentTitle ?? "saved program"}.`);
   }
 
   function changeStation(nextStationId: string) {
@@ -610,6 +695,92 @@ export default function RadioWorkspace() {
           </div>
         </section>
       </div>
+
+      <section aria-labelledby="personal-playlists-heading" className="mt-5 rounded-lg border border-[var(--line)] bg-white p-4 shadow-sm">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--green)]">Listen your way</p>
+            <h2 className="mt-1 text-xl font-semibold text-[var(--ink)]" id="personal-playlists-heading">My listening playlists</h2>
+            <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Create named collections for Bible listening, sermon preparation, hymns, or teaching.</p>
+          </div>
+          <span className="text-xs font-semibold text-[var(--muted)]">Saved locally in this browser</span>
+        </div>
+
+        <form
+          className="mt-4 flex flex-col gap-2 sm:flex-row"
+          onSubmit={(event) => {
+            event.preventDefault();
+            createPersonalPlaylist();
+          }}
+        >
+          <label className="min-w-0 flex-1">
+            <span className="sr-only">New playlist name</span>
+            <input
+              aria-label="New playlist name"
+              className="min-h-11 w-full rounded-lg border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]"
+              maxLength={60}
+              onChange={(event) => setPlaylistName(event.target.value)}
+              placeholder="Example: Sunday sermon preparation"
+              value={playlistName}
+            />
+          </label>
+          <button className="min-h-11 rounded-lg bg-[var(--green)] px-4 text-sm font-semibold text-white" type="submit">Create playlist</button>
+        </form>
+
+        {personalPlaylists.length ? (
+          <div className="mt-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end">
+              <label className="min-w-0 flex-1 text-xs font-semibold text-[var(--muted)]">
+                Saved playlist
+                <select
+                  aria-label="Saved playlist"
+                  className="mt-1 min-h-11 w-full rounded-lg border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]"
+                  onChange={(event) => {
+                    setSelectedPlaylistId(event.target.value);
+                    setPlaylistMessage("");
+                  }}
+                  value={selectedPlaylist?.id ?? ""}
+                >
+                  {personalPlaylists.map((playlist) => <option key={playlist.id} value={playlist.id}>{playlist.name}</option>)}
+                </select>
+              </label>
+              <button
+                className="min-h-11 rounded-lg border border-[var(--green)] px-4 text-sm font-semibold text-[var(--green)] disabled:cursor-default disabled:border-[var(--line)] disabled:text-[var(--muted)]"
+                disabled={!currentTrack || Boolean(selectedPlaylist?.trackIds.includes(currentTrack.id))}
+                onClick={addCurrentTrackToPlaylist}
+                type="button"
+              >
+                {currentTrack && selectedPlaylist?.trackIds.includes(currentTrack.id) ? "Current program saved" : "Add current program"}
+              </button>
+            </div>
+
+            {playlistMessage && <p aria-live="polite" className="mt-3 text-sm font-semibold text-[var(--green)]">{playlistMessage}</p>}
+
+            {selectedPlaylistTracks.length ? (
+              <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {selectedPlaylistTracks.map((track) => (
+                  <button
+                    key={`${selectedPlaylist?.id}-${track.id}`}
+                    className="flex min-h-16 items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                    onClick={() => playSavedTrack(track.id)}
+                    type="button"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--green)] text-white"><Play size={16} /></span>
+                    <span className="min-w-0">
+                      <span className="block truncate text-sm font-semibold text-[var(--ink)]">{track.segmentTitle}</span>
+                      <span className="mt-1 block truncate text-xs text-[var(--muted)]">{track.title}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-3 rounded-lg bg-[var(--paper)] p-3 text-sm text-[var(--muted)]">This playlist is empty. Choose a program above, then add the current program.</p>
+            )}
+          </div>
+        ) : (
+          <p className="mt-4 rounded-lg bg-[var(--paper)] p-3 text-sm text-[var(--muted)]">No personal playlists yet. Create one to begin collecting programs.</p>
+        )}
+      </section>
 
       <footer className="mt-5 border-t border-[var(--line)] pt-4 text-xs leading-5 text-[var(--muted)]">
         Public beta catalog reviewed {manifest.reviewedAt}. Rights evidence and official source attribution remain attached to every program.
