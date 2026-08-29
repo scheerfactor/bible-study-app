@@ -1,6 +1,6 @@
 # Bible Dictionary Resource Indexes
 
-Generated: 2026-06-29T22:40:30.446Z
+Generated: 2026-08-29T12:29:13.280Z
 
 This build creates source-backed lookup indexes for the public-domain Bible reference tools already in the app.
 

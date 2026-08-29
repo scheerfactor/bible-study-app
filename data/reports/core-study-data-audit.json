@@ -14,10 +14,10 @@
     "authors": 72
   },
   "webster1828": {
-    "entries": 61521,
+    "entries": 61530,
     "baseEntries": 58428,
-    "reviewedOverrides": 3093,
-    "uniqueNormalizedHeadwords": 51670,
+    "reviewedOverrides": 3102,
+    "uniqueNormalizedHeadwords": 51679,
     "suspiciousOcrEntries": 1901,
     "normalizationChecks": [
       {
