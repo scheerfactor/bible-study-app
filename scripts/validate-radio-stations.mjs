@@ -152,6 +152,36 @@ if (!genesisPilot) {
     if (!String(genesisRecord.notes ?? "").toLowerCase().includes("do not expose chapter seeking")) {
       errors.push("Genesis Bible Radio Pilot source must retain its chapter-navigation release gate");
     }
+    const genesisMarkers = genesisRecord.chapterMarkers ?? [];
+    if (genesisMarkers.length !== 14) {
+      errors.push("Genesis Bible Radio Pilot must keep 14 candidate chapter markers");
+    } else {
+      for (const [index, marker] of genesisMarkers.entries()) {
+        if (marker.book !== "Genesis" || marker.chapter !== index + 1) {
+          errors.push(`Genesis Bible Radio Pilot marker ${index + 1} must identify Genesis ${index + 1}`);
+        }
+        if (!["Estimated", "Verified"].includes(marker.status)) {
+          errors.push(`Genesis Bible Radio Pilot marker ${index + 1} must be Estimated or Verified`);
+        }
+        const method = String(marker.method ?? "").toLowerCase();
+        if (marker.status === "Estimated" && !method.includes("manual by-ear review")) {
+          errors.push(`Genesis Bible Radio Pilot estimated marker ${index + 1} must retain its manual review requirement`);
+        }
+        if (marker.status === "Verified" && !method.includes("verified by ear")) {
+          errors.push(`Genesis Bible Radio Pilot verified marker ${index + 1} must record by-ear verification`);
+        }
+        if (index === 0 && marker.startSeconds !== 0) {
+          errors.push("Genesis Bible Radio Pilot first marker must preserve the file introduction from 0 seconds");
+        }
+        const previousMarker = genesisMarkers[index - 1];
+        if (previousMarker && Math.abs(previousMarker.endSeconds - marker.startSeconds) > 0.01) {
+          errors.push(`Genesis Bible Radio Pilot marker ${index + 1} must continue from the prior marker`);
+        }
+      }
+      if (Math.abs(genesisMarkers.at(-1).endSeconds - genesisRecord.durationSeconds) > 0.01) {
+        errors.push("Genesis Bible Radio Pilot markers must end at the verified file duration");
+      }
+    }
   }
 }
 

@@ -73,6 +73,7 @@ type IntakeAudioRecord = {
   rightsStatus: string;
   rightsEvidence: string;
   requiredAttribution?: string;
+  chapterMarkers?: ChapterMarker[];
 };
 
 type RadioTrack = {
@@ -139,7 +140,7 @@ function normalizedTrack(review: RadioReview): RadioTrack | null {
     rightsLabel: record.rightsStatus === "Public Domain" ? "Public domain in the USA" : "Free public use with attribution",
     rightsEvidence: record.rightsEvidence,
     attribution: record.requiredAttribution ?? record.creator,
-    chapterMarkers: [],
+    chapterMarkers: record.chapterMarkers ?? [],
   };
 }
 

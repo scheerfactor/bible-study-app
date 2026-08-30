@@ -804,7 +804,121 @@
     "coverPath": "media/covers/bible-audio/bible-kjv-complete.webp",
     "visibility": "Public after review",
     "notes": "Direct 128 kbps MP3 source and range playback verified 2026-08-29. This is one continuous range file, not chapter-level audio; do not expose chapter seeking until every chapter marker is manually verified.",
-    "nextAction": "Manually verify Genesis 1-14 chapter boundaries before enabling chapter buttons."
+    "nextAction": "Manually verify the 14 prepared Genesis chapter boundaries by ear before enabling chapter buttons.",
+    "chapterMarkers": [
+      {
+        "book": "Genesis",
+        "chapter": 1,
+        "startSeconds": 0,
+        "endSeconds": 398.9,
+        "status": "Estimated",
+        "method": "Candidate file start preserves the LibriVox introduction; the Genesis 1 announcement was independently detected at 30.2 seconds. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 2,
+        "startSeconds": 398.9,
+        "endSeconds": 661.1,
+        "status": "Estimated",
+        "method": "Candidate Chapter 2 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 3,
+        "startSeconds": 661.1,
+        "endSeconds": 966.7,
+        "status": "Estimated",
+        "method": "Candidate Chapter 3 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 4,
+        "startSeconds": 966.7,
+        "endSeconds": 1264.1,
+        "status": "Estimated",
+        "method": "Candidate Chapter 4 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 5,
+        "startSeconds": 1264.1,
+        "endSeconds": 1494.1,
+        "status": "Estimated",
+        "method": "Candidate Chapter 5 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 6,
+        "startSeconds": 1494.1,
+        "endSeconds": 1755.6,
+        "status": "Estimated",
+        "method": "Candidate Chapter 6 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 7,
+        "startSeconds": 1755.6,
+        "endSeconds": 2012.2,
+        "status": "Estimated",
+        "method": "Candidate Chapter 7 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 8,
+        "startSeconds": 2012.2,
+        "endSeconds": 2266.7,
+        "status": "Estimated",
+        "method": "Candidate Chapter 8 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 9,
+        "startSeconds": 2266.7,
+        "endSeconds": 2559.1,
+        "status": "Estimated",
+        "method": "Candidate Chapter 9 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 10,
+        "startSeconds": 2559.1,
+        "endSeconds": 2810.9,
+        "status": "Estimated",
+        "method": "Candidate Chapter 10 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 11,
+        "startSeconds": 2810.9,
+        "endSeconds": 3093.3,
+        "status": "Estimated",
+        "method": "Candidate Chapter 11 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 12,
+        "startSeconds": 3093.3,
+        "endSeconds": 3341.4,
+        "status": "Estimated",
+        "method": "Candidate Chapter 12 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 13,
+        "startSeconds": 3341.4,
+        "endSeconds": 3537.1,
+        "status": "Estimated",
+        "method": "Candidate Chapter 13 announcement boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes on 2026-08-29. Manual by-ear review is still required."
+      },
+      {
+        "book": "Genesis",
+        "chapter": 14,
+        "startSeconds": 3537.1,
+        "endSeconds": 3834.4,
+        "status": "Estimated",
+        "method": "Candidate Genesis 14 first-verse boundary corroborated by the exact KJV transition and independent tiny.en/base.en transcription passes; no spoken chapter heading was detected. Manual by-ear review is still required."
+      }
+    ]
   },
   {
     "id": "bible-kjv-complete-bible-audio-candidate",

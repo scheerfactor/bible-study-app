@@ -42,7 +42,7 @@
       "description": "A rights-cleared King James Bible listening pilot from the beginning of Genesis.",
       "coverage": "Genesis 1-14",
       "listeningMode": "Single verified range-file pilot",
-      "markerStatus": "Range playback is verified. Chapter buttons remain unavailable until every Genesis 1-14 marker is manually verified.",
+      "markerStatus": "Fourteen candidate chapter boundaries are prepared. Chapter buttons remain unavailable until every Genesis 1-14 marker is manually verified by ear.",
       "trackIds": [
         "bible-kjv-complete-librivox-001-genesis-1-14"
       ]

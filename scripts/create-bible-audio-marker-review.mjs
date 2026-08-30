@@ -31,13 +31,15 @@ const allMarkers = markerPilots.flatMap((pilot) => pilot.chapterMarkers.map((mar
 const estimatedMarkers = allMarkers.filter(({ marker }) => marker.status === "Estimated");
 const verifiedMarkers = allMarkers.filter(({ marker }) => marker.status === "Verified");
 const publicVisibilityViolations = markerPilots.filter(
-  (pilot) => pilot.visibility === "Public after review" && pilot.chapterMarkers.some((marker) => marker.status !== "Verified"),
+  (pilot) => pilot.visibility === "Public after review"
+    && pilot.chapterMarkers.some((marker) => marker.status !== "Verified")
+    && !String(pilot.notes ?? "").toLowerCase().includes("do not expose chapter seeking"),
 );
 
 const lines = [
   "# Bible Audio Marker Review",
   "",
-  "This report tracks uploaded Bible audio chapter markers before public release.",
+  "This report tracks Bible audio chapter markers before chapter-level release.",
   "",
   "## Summary",
   "",
@@ -67,7 +69,7 @@ const lines = [
   "Example:",
   "",
   "```bash",
-  "npm run media:update-marker -- --book John --chapter 1 --start 0 --end 452 --status Verified --method \"Manually verified by ear on YYYY-MM-DD.\" --sync-adjacent",
+  "npm run media:update-marker -- --manifest data/media/manifests/media-intake-candidates.json --book Genesis --chapter 2 --start 399 --end 661 --status Verified --method \"Manually verified by ear on YYYY-MM-DD.\" --sync-adjacent",
   "```",
   "",
   "## Files",
@@ -75,16 +77,19 @@ const lines = [
 ];
 
 for (const pilot of markerPilots) {
-  lines.push(`### ${pilot.segmentTitle}`);
+  const workTitle = pilot.workTitle ?? pilot.title;
+  const segmentTitle = pilot.segmentTitle ?? pilot.passage ?? workTitle;
+  const playbackUrl = pilot.publicUrl ?? pilot.sourceFileUrl ?? pilot.sourceUrl;
+  lines.push(`### ${segmentTitle}`);
   lines.push("");
-  lines.push(`- Work: ${pilot.workTitle}`);
+  lines.push(`- Work: ${workTitle}`);
   lines.push(`- Creator: ${pilot.creator}`);
   lines.push(`- Duration: ${pilot.duration}`);
   lines.push(`- Visibility: ${pilot.visibility}`);
   lines.push(`- Intake status: ${pilot.intakeStatus}`);
-  lines.push(`- Source: ${pilot.sourceUrl}`);
-  lines.push(`- Source file: ${pilot.sourceFileUrl}`);
-  lines.push(`- R2 URL: ${pilot.publicUrl}`);
+  lines.push(`- Source: ${pilot.sourcePageUrl ?? pilot.sourceUrl}`);
+  lines.push(`- Playback file: ${pilot.sourceFileUrl ?? pilot.sourceUrl}`);
+  if (pilot.publicUrl) lines.push(`- R2 URL: ${pilot.publicUrl}`);
   lines.push("");
   lines.push("| Done | Chapter | Start | End | Status | Open review point | Review checkpoint |");
   lines.push("| --- | --- | ---: | ---: | --- | --- | --- |");
@@ -93,7 +98,7 @@ for (const pilot of markerPilots) {
     const reviewStart = Math.max(0, marker.startSeconds - 10);
     const checkpoint = marker.startSeconds === 0 ? "Confirm file begins with this chapter/range opening." : `Listen from ${secondsToClock(reviewStart)} and confirm boundary.`;
     lines.push(
-      `| [ ] | ${marker.book} ${marker.chapter} | ${secondsToClock(marker.startSeconds)} | ${secondsToClock(marker.endSeconds)} | ${marker.status} | ${timestampLink(pilot.publicUrl, reviewStart, `Open at ${secondsToClock(reviewStart)}`)} | ${checkpoint} |`,
+      `| [ ] | ${marker.book} ${marker.chapter} | ${secondsToClock(marker.startSeconds)} | ${secondsToClock(marker.endSeconds)} | ${marker.status} | ${timestampLink(playbackUrl, reviewStart, `Open at ${secondsToClock(reviewStart)}`)} | ${checkpoint} |`,
     );
   }
 

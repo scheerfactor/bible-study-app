@@ -81,12 +81,12 @@ if (args["list-estimated"]) {
     for (const marker of pilot.chapterMarkers ?? []) {
       if (marker.status === "Estimated") {
         rows.push({
-          file: pilot.segmentTitle,
+          file: pilot.segmentTitle ?? pilot.passage ?? pilot.title,
           chapter: `${marker.book} ${marker.chapter}`,
           start: secondsToClock(marker.startSeconds),
           end: secondsToClock(marker.endSeconds),
           reviewFrom: secondsToClock(Math.max(0, marker.startSeconds - 10)),
-          url: `${pilot.publicUrl}#t=${Math.max(0, Math.round(marker.startSeconds - 10))}`,
+          url: `${pilot.publicUrl ?? pilot.sourceFileUrl ?? pilot.sourceUrl}#t=${Math.max(0, Math.round(marker.startSeconds - 10))}`,
         });
       }
     }
@@ -111,8 +111,8 @@ if (!allowedStatuses.has(status)) throw new Error(`--status must be Estimated or
 if (targetChapter < 1) throw new Error("--chapter must be a positive integer.");
 if (startSeconds < 0) throw new Error("--start must be non-negative.");
 if (endSeconds <= startSeconds) throw new Error("--end must be greater than --start.");
-if (status === "Verified" && !method.toLowerCase().includes("verified")) {
-  throw new Error('--method for Verified markers must explicitly include "verified".');
+if (status === "Verified" && !method.toLowerCase().includes("verified by ear")) {
+  throw new Error('--method for Verified markers must explicitly include "verified by ear".');
 }
 
 let targetPilot = null;
@@ -132,7 +132,7 @@ if (!targetPilot || !targetMarker) throw new Error(`No marker found for ${target
 
 const durationSeconds = durationToSeconds(targetPilot.duration);
 if (durationSeconds !== null && endSeconds > durationSeconds + 1) {
-  throw new Error(`--end exceeds ${targetPilot.segmentTitle} duration (${targetPilot.duration}).`);
+  throw new Error(`--end exceeds ${targetPilot.segmentTitle ?? targetPilot.passage ?? targetPilot.title} duration (${targetPilot.duration}).`);
 }
 
 const previousMarker = targetPilot.chapterMarkers[markerIndex - 1];
@@ -184,7 +184,7 @@ targetMarker.method = method;
 
 console.log("Bible audio marker update");
 console.table({
-  file: targetPilot.segmentTitle,
+  file: targetPilot.segmentTitle ?? targetPilot.passage ?? targetPilot.title,
   chapter: `${targetBook} ${targetChapter}`,
   before: `${secondsToClock(before.startSeconds)}-${secondsToClock(before.endSeconds)} (${before.status})`,
   after: `${secondsToClock(startSeconds)}-${secondsToClock(endSeconds)} (${status})`,
