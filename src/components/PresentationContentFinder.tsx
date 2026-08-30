@@ -1,7 +1,7 @@
 "use client";
 
 import { BookOpen, Library, MessageSquareText, Music2, Plus, Quote, Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import hymnData from "../../data/hymns/presentation-hymns.json";
 import preachingHelpData from "../../data/preaching-helps/verified-preaching-helps.json";
 
@@ -66,16 +66,73 @@ export default function PresentationContentFinder({
   commentary,
   onAddSlides,
   onAddScripture,
+  loadCommentaryCatalog,
+  loadCommentaryChapter,
 }: {
   books: PresentationBookResource[];
   commentary: PresentationCommentaryResource[];
   onAddSlides: (slides: PresentationContentSlideSeed[]) => void;
   onAddScripture: (passage: string) => void;
+  loadCommentaryCatalog: (signal: AbortSignal) => Promise<{ books: { book: string; chapters: number[] }[] }>;
+  loadCommentaryChapter: (signal: AbortSignal, book: string, chapter: number) => Promise<PresentationCommentaryResource[]>;
 }) {
   const [mode, setMode] = useState<FinderMode>("hymns");
   const [query, setQuery] = useState("");
   const [passage, setPassage] = useState("");
+  const [chapterBooks, setChapterBooks] = useState<{ book: string; chapters: number[] }[]>([]);
+  const [catalogError, setCatalogError] = useState(false);
+  const [catalogAttempt, setCatalogAttempt] = useState(0);
+  const [lookupBook, setLookupBook] = useState("John");
+  const [lookupChapter, setLookupChapter] = useState(3);
+  const [chapterResult, setChapterResult] = useState<{ reference: string; entries: PresentationCommentaryResource[]; status: "loading" | "ready" | "error" } | null>(null);
+  const chapterRequest = useRef<AbortController | null>(null);
+  const chapters = chapterBooks.find((item) => item.book === lookupBook)?.chapters ?? [];
   const normalizedQuery = query.trim().toLowerCase();
+
+  useEffect(() => {
+    if (mode !== "commentary" || chapterBooks.length) return;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    let active = true;
+    void loadCommentaryCatalog(controller.signal).then((catalog) => {
+      if (!active) return;
+      if (!catalog.books.length) throw new Error("Empty commentary catalog");
+      setChapterBooks(catalog.books);
+      setCatalogError(false);
+    }).catch(() => {
+      if (active) setCatalogError(true);
+    }).finally(() => clearTimeout(timeout));
+    return () => { active = false; clearTimeout(timeout); controller.abort(); };
+  }, [mode, chapterBooks.length, catalogAttempt, loadCommentaryCatalog]);
+
+  useEffect(() => () => { chapterRequest.current?.abort(); chapterRequest.current = null; }, []);
+
+  async function findChapterCommentary() {
+    if (!chapters.includes(lookupChapter)) return;
+    chapterRequest.current?.abort();
+    const controller = new AbortController();
+    chapterRequest.current = controller;
+    const reference = `${lookupBook} ${lookupChapter}`;
+    setQuery("");
+    setChapterResult({ reference, entries: [], status: "loading" });
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const entries = await loadCommentaryChapter(controller.signal, lookupBook, lookupChapter);
+      if (chapterRequest.current !== controller) return;
+      setChapterResult({ reference, entries, status: "ready" });
+    } catch {
+      if (chapterRequest.current === controller) setChapterResult({ reference, entries: [], status: "error" });
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  function returnToLoadedNotes() {
+    chapterRequest.current?.abort();
+    chapterRequest.current = null;
+    setChapterResult(null);
+    setQuery("");
+  }
 
   const hymns = useMemo(() => hymnData.filter((hymn) => includesQuery([
     hymn.title,
@@ -108,7 +165,7 @@ export default function PresentationContentFinder({
       book.perspective_notes,
     ], normalizedQuery)), [books, normalizedQuery]);
 
-  const matchingCommentary = useMemo(() => commentary
+  const matchingCommentary = useMemo(() => (chapterResult?.entries ?? commentary)
     .filter((entry) => Boolean(entry.entry_text.trim()) && /public domain/i.test(entry.public_domain_status))
     .filter((entry) => includesQuery([
       entry.reference,
@@ -119,7 +176,7 @@ export default function PresentationContentFinder({
       entry.source_title,
       entry.entry_text,
       entry.recommended_use,
-    ], normalizedQuery)), [commentary, normalizedQuery]);
+    ], normalizedQuery)), [commentary, chapterResult, normalizedQuery]);
 
   function addHymn(hymn: Hymn) {
     const rightsNote = `${hymn.textRights} Music: ${hymn.musicRights}. Sources: ${hymn.textSourceUrl} · ${hymn.musicSourceUrl}`;
@@ -226,6 +283,35 @@ export default function PresentationContentFinder({
         ))}
       </div>
 
+      {mode === "commentary" && (
+        <section aria-label="Commentary chapter lookup" className="mt-3 rounded-xl border border-[var(--line)] bg-white p-3">
+          <p className="text-sm font-semibold text-[var(--ink)]">Find commentary for a chapter</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Load one chapter from the full index, then search its notes and add an attributed excerpt to your deck.</p>
+          {!chapterBooks.length ? (
+            catalogError ? <div role="alert" className="mt-2 text-sm"><p>The chapter index could not be loaded.</p><button type="button" className="min-h-11 font-semibold text-[var(--green)]" onClick={() => { setCatalogError(false); setCatalogAttempt((attempt) => attempt + 1); }}>Retry chapter index</button></div>
+              : <p role="status" className="mt-2 text-xs">Loading chapter index…</p>
+          ) : (
+            <form className="mt-3 grid gap-2 sm:grid-cols-[minmax(0,1fr)_6rem]" onSubmit={(event) => { event.preventDefault(); void findChapterCommentary(); }}>
+              <label className="text-xs font-semibold text-[var(--muted)]">Commentary book
+                <select className="mt-1 h-11 w-full rounded-lg border border-[var(--line)] bg-white px-2 text-sm text-[var(--ink)]" value={lookupBook} onChange={(event) => { setLookupBook(event.target.value); setLookupChapter(chapterBooks.find((item) => item.book === event.target.value)?.chapters[0] ?? 1); }}>
+                  {chapterBooks.map((item) => <option key={item.book} value={item.book}>{item.book}</option>)}
+                </select>
+              </label>
+              <label className="text-xs font-semibold text-[var(--muted)]">Chapter
+                <select className="mt-1 h-11 w-full rounded-lg border border-[var(--line)] bg-white px-2 text-sm text-[var(--ink)]" value={lookupChapter} onChange={(event) => setLookupChapter(Number(event.target.value))}>
+                  {chapters.map((chapter) => <option key={chapter} value={chapter}>{chapter}</option>)}
+                </select>
+              </label>
+              <button type="submit" disabled={!chapters.includes(lookupChapter)} className="min-h-11 rounded-lg bg-[var(--green)] px-3 text-xs font-semibold text-white disabled:opacity-50 sm:col-span-2">Load chapter notes</button>
+            </form>
+          )}
+          <div role="status" aria-live="polite" className="mt-2 text-xs leading-5 text-[var(--muted)]">
+            {chapterResult?.status === "loading" ? `Loading ${chapterResult.reference} commentary…` : chapterResult?.status === "error" ? `Could not load ${chapterResult.reference}. Check your connection and use Load chapter notes to retry.` : chapterResult ? `Searching ${chapterResult.reference} only. Source attribution is retained on added slides.` : "Searching notes already loaded in this session—not the full commentary collection."}
+          </div>
+          {chapterResult && <button type="button" className="min-h-11 text-xs font-semibold text-[var(--green)]" onClick={returnToLoadedNotes}>Back to loaded notes</button>}
+        </section>
+      )}
+
       {mode === "scripture" ? (
         <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
           <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
@@ -243,7 +329,7 @@ export default function PresentationContentFinder({
             <Search className="pointer-events-none absolute left-3 top-3 text-[var(--muted)]" size={17} />
             <input aria-label={`Search ${mode}`} className="h-11 w-full rounded-xl border border-[var(--line)] bg-white pl-10 pr-3 text-sm text-[var(--ink)] outline-none" onChange={(event) => setQuery(event.target.value)} placeholder={mode === "hymns" ? "Search title, author, tune, lyric, or Scripture" : mode === "books" ? "Search title, author, category, use, or perspective" : mode === "commentary" ? "Search reference, book, author, source, or words" : "Search words, author, topic, source, or Scripture"} value={query} />
           </label>
-          <p className="mt-2 text-xs text-[var(--muted)]">{resultCount} reviewed result{resultCount === 1 ? "" : "s"}{resultCount > MAX_VISIBLE_RESULTS ? ` · showing first ${MAX_VISIBLE_RESULTS}` : ""}</p>
+          {!(mode === "commentary" && chapterResult && chapterResult.status !== "ready") && <p className="mt-2 text-xs text-[var(--muted)]">{resultCount} reviewed result{resultCount === 1 ? "" : "s"}{resultCount > MAX_VISIBLE_RESULTS ? ` · showing first ${MAX_VISIBLE_RESULTS}` : ""}</p>}
           <div className="mt-3 max-h-96 space-y-2 overflow-y-auto pr-1">
             {mode === "hymns" && hymns.map((hymn) => (
               <article key={hymn.id} className="rounded-xl border border-[var(--line)] bg-white p-3">
@@ -286,7 +372,7 @@ export default function PresentationContentFinder({
                 </article>
               );
             })}
-            {!resultCount && <p className="rounded-xl border border-dashed border-[var(--line)] bg-white p-4 text-sm text-[var(--muted)]">No reviewed content matches that search yet.</p>}
+            {!resultCount && !(mode === "commentary" && chapterResult && chapterResult.status !== "ready") && <p className="rounded-xl border border-dashed border-[var(--line)] bg-white p-4 text-sm text-[var(--muted)]">{mode === "commentary" && chapterResult ? `No reviewed notes match in ${chapterResult.reference}. Try another search or chapter.` : "No reviewed content matches that search yet."}</p>}
           </div>
         </>
       )}

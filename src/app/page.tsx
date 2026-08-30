@@ -54178,7 +54178,7 @@ function PresentationWorkspaceScreen({
             </div>
 
             <div className="mt-5">
-              <PresentationContentFinder books={books} commentary={commentary} onAddScripture={addKjvPassageSlide} onAddSlides={addReviewedContentSlides} />
+              <PresentationContentFinder books={books} commentary={commentary} onAddScripture={addKjvPassageSlide} onAddSlides={addReviewedContentSlides} loadCommentaryCatalog={fetchDeferredCommentaryCatalog} loadCommentaryChapter={fetchDeferredCommentaryChapterEntries} />
             </div>
 
             <div className="mt-5">
