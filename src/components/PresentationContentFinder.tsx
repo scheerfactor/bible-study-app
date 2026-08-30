@@ -4,6 +4,8 @@ import { BookOpen, Library, MessageSquareText, Music2, Plus, Quote, Search } fro
 import { useEffect, useMemo, useRef, useState } from "react";
 import hymnData from "../../data/hymns/presentation-hymns.json";
 import preachingHelpData from "../../data/preaching-helps/verified-preaching-helps.json";
+import CommentaryExcerptPicker from "./CommentaryExcerptPicker";
+import { validateCommentaryExcerpt } from "../lib/commentary-excerpt";
 
 export type PresentationContentSlideSeed = {
   type: "Title" | "Scripture" | "Quote";
@@ -79,6 +81,7 @@ export default function PresentationContentFinder({
   const [mode, setMode] = useState<FinderMode>("hymns");
   const [query, setQuery] = useState("");
   const [passage, setPassage] = useState("");
+  const [excerptEntry, setExcerptEntry] = useState<PresentationCommentaryResource | null>(null);
   const [chapterBooks, setChapterBooks] = useState<{ book: string; chapters: number[] }[]>([]);
   const [catalogError, setCatalogError] = useState(false);
   const [catalogAttempt, setCatalogAttempt] = useState(0);
@@ -109,6 +112,7 @@ export default function PresentationContentFinder({
 
   async function findChapterCommentary() {
     if (!chapters.includes(lookupChapter)) return;
+    setExcerptEntry(null);
     chapterRequest.current?.abort();
     const controller = new AbortController();
     chapterRequest.current = controller;
@@ -128,6 +132,7 @@ export default function PresentationContentFinder({
   }
 
   function returnToLoadedNotes() {
+    setExcerptEntry(null);
     chapterRequest.current?.abort();
     chapterRequest.current = null;
     setChapterResult(null);
@@ -231,9 +236,11 @@ export default function PresentationContentFinder({
     }]);
   }
 
-  function addCommentary(entry: PresentationCommentaryResource) {
+  function addCommentary(entry: PresentationCommentaryResource, selectedExcerpt?: string) {
     const reference = entry.reference || `${entry.book} ${entry.chapter}:${entry.verse_start}${entry.verse_end > entry.verse_start ? `-${entry.verse_end}` : ""}`;
-    const excerpt = excerptForSlide(entry.entry_text);
+    const selected = selectedExcerpt === undefined ? null : validateCommentaryExcerpt(entry.entry_text, selectedExcerpt);
+    if (selected?.error) return;
+    const excerpt = selected?.text ?? excerptForSlide(entry.entry_text);
     onAddSlides([{
       type: "Quote",
       title: reference,
@@ -243,6 +250,7 @@ export default function PresentationContentFinder({
         `Commentary excerpt from ${entry.source_title || entry.resource_title} by ${entry.author}.`,
         `${entry.public_domain_status}. ${entry.rights_basis || "Verify the linked source record before redistribution."}`,
         entry.recommended_use ? `Recommended use: ${entry.recommended_use}` : "",
+        selected ? `User-selected exact excerpt, characters ${selected.start + 1}-${selected.start + selected.text.length} of the loaded source entry (first matching occurrence). No wording rewritten.` : "",
         excerpt.length < entry.entry_text.trim().length ? "Excerpt shortened for slide readability; consult the source for full context." : "",
         "Commentary is secondary material; compare every statement with the KJV text.",
         `Source: ${entry.source_url}`,
@@ -312,6 +320,8 @@ export default function PresentationContentFinder({
         </section>
       )}
 
+      {mode === "commentary" && excerptEntry && <CommentaryExcerptPicker key={excerptEntry.id} text={excerptEntry.entry_text} author={excerptEntry.author} reference={excerptEntry.reference || `${excerptEntry.book} ${excerptEntry.chapter}`} onClose={() => setExcerptEntry(null)} onAdd={(excerpt) => { addCommentary(excerptEntry, excerpt); setExcerptEntry(null); }} />}
+
       {mode === "scripture" ? (
         <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
           <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
@@ -369,6 +379,7 @@ export default function PresentationContentFinder({
                   <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">{excerptForSlide(entry.entry_text)}</p>
                   <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{entry.public_domain_status} · Compare with the KJV text</p>
                   <button className="mt-3 inline-flex min-h-10 items-center gap-2 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white" onClick={() => addCommentary(entry)} type="button"><Plus size={15} /> Add commentary slide</button>
+                  <button className="mt-2 flex min-h-11 items-center rounded-xl border border-[var(--line)] px-3 text-xs font-semibold text-[var(--green)]" onClick={() => setExcerptEntry(entry)} type="button">Choose exact excerpt</button>
                 </article>
               );
             })}
