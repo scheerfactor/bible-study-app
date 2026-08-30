@@ -22,12 +22,12 @@
   {
     "id": "permission-john-phillips",
     "author": "John Phillips",
-    "publisherMinistry": "Kregel Publications / rights holder to verify",
-    "contactInfo": "Rights and permissions contact to research before outreach.",
-    "resourceTitle": "John Phillips commentary and preaching resources",
-    "requestedRights": "Digital library listing, searchable metadata, in-app reading, optional device text-to-speech, and future premium/license access.",
+    "publisherMinistry": "Kregel Publications (book inquiry); John Phillips Ministries International (sermon inquiry); authority for each use to confirm",
+    "contactInfo": "permissions@kregel.com; johnphillipsministries@gmail.com — official routes checked 2026-08-30",
+    "resourceTitle": "Exploring Romans (ISBN 9780825434945); The Gospel According to Paul (sermon video)",
+    "requestedRights": "Separate one-title inquiries: book metadata, cover and approved sample; sermon metadata, official link and optional authorized playback. Full text, transcripts, TTS, slide exports, download and paid access require distinct grants.",
     "status": "Not contacted",
-    "notes": "Modern copyrighted works. Do not import or expose text without written permission or a license agreement."
+    "notes": "Title-specific drafts prepared, not sent. A general Kregel inquiry was sent 2026-07-03; check its mailbox thread before following up. Ministry video source: https://drjohnphillips.com/english/resources/video/. Free download availability is not an app redistribution grant. No public content, extracted audio, transcript, narration or paid use approved. See data/library/acquisition/author-profiles/john-phillips.md."
   },
   {
     "id": "permission-kregel-publications",
