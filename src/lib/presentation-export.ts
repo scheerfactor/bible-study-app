@@ -7,6 +7,45 @@ export function powerPointBodyText(value: string) {
   return value.replace(/\s+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
+export function splitPresentationBodyText(value: string, maxLength: number) {
+  const normalized = powerPointBodyText(value);
+  if (!normalized || normalized.length <= maxLength) return [normalized];
+  const units = normalized.match(/[^.!?\n]+(?:[.!?]+[\"'’”)]*)?|\n+/g) ?? [normalized];
+  const chunks: string[] = [];
+  let current = "";
+  const commit = () => {
+    const clean = current.trim();
+    if (clean) chunks.push(clean);
+    current = "";
+  };
+  const appendWords = (text: string) => {
+    for (const word of text.trim().split(/\s+/).filter(Boolean)) {
+      const candidate = current ? `${current} ${word}` : word;
+      if (candidate.length > maxLength && current) commit();
+      current = current ? `${current} ${word}` : word;
+    }
+  };
+  for (const unit of units) {
+    if (/^\n+$/.test(unit)) {
+      if (current && !current.endsWith("\n")) current += "\n";
+      continue;
+    }
+    const clean = unit.trim();
+    const separator = current && !current.endsWith("\n") ? " " : "";
+    if (`${current}${separator}${clean}`.length <= maxLength) {
+      current = `${current}${separator}${clean}`;
+    } else if (clean.length <= maxLength) {
+      commit();
+      current = clean;
+    } else {
+      commit();
+      appendWords(clean);
+    }
+  }
+  commit();
+  return chunks.length ? chunks : [normalized];
+}
+
 export function powerPointTextIssues(slides: readonly PowerPointSlideText[]) {
   return slides.flatMap((slide, index) => {
     const length = powerPointBodyText(slide.bibleText || slide.body).length;

@@ -51,7 +51,7 @@ import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
 import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
-import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, type PresentationExportMode } from "@/lib/presentation-export";
+import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, splitPresentationBodyText, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import { type ScreenWakeLockStatus, useScreenWakeLock } from "@/hooks/useScreenWakeLock";
@@ -53816,6 +53816,33 @@ function PresentationWorkspaceScreen({
     setRemoteMessage(`Split Scripture into ${chunks.length} readable slides.`);
   }
 
+  function splitActiveBodySlide() {
+    if (!activeSlide || activeSlide.type === "Scripture" || !activeSlide.body.trim()) return;
+    const chunkSize = activeSlide.fontScale === "Large" ? 360 : activeSlide.fontScale === "Compact" ? 620 : 480;
+    const chunks = splitPresentationBodyText(activeSlide.body, chunkSize);
+    if (chunks.length <= 1) {
+      setRemoteMessage("That slide is already short enough.");
+      return;
+    }
+    const index = slides.findIndex((slide) => slide.id === activeSlide.id);
+    const baseTitle = activeSlide.title.replace(/\s+\(\d+\)$/g, "");
+    const nextSlides = chunks.map((chunk, chunkIndex) => normalizeSermonSlide({
+      ...activeSlide,
+      id: chunkIndex === 0 ? activeSlide.id : makeId("slide"),
+      title: `${baseTitle} (${chunkIndex + 1})`,
+      body: chunk,
+      speakerNotes: activeSlide.speakerNotes,
+    }, chunkIndex));
+    const replacementIds = nextSlides.map((slide) => slide.id);
+    const nextGroups = draft.groups.map((group) => ({
+      ...group,
+      slideIds: group.slideIds.flatMap((slideId) => slideId === activeSlide.id ? replacementIds : [slideId]),
+    }));
+    onDraftChange({ slides: [...slides.slice(0, index), ...nextSlides, ...slides.slice(index + 1)], groups: nextGroups });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+    setRemoteMessage(`Split ${activeSlide.type.toLowerCase()} text into ${chunks.length} readable slides. Every part keeps the original source notes and group placement.`);
+  }
+
   if (view === "presenter") {
     return (
       <div className="fixed inset-0 z-50 bg-black text-white">
@@ -54277,6 +54304,17 @@ function PresentationWorkspaceScreen({
                           <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Split longer passages into clean slides, then use Verse Display for reference-only, text-only, or reference plus text.</p>
                         </div>
                         <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={splitActiveScriptureSlide} type="button">Split Long Passage</button>
+                      </div>
+                    </div>
+                  )}
+                  {activeSlide.type !== "Scripture" && activeSlide.body.trim() && (
+                    <div className="my-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                          <p className="text-sm font-semibold text-[var(--ink)]">Teaching and Quote Slide Improvements</p>
+                          <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Split long text without rewriting it. Every new slide keeps this slide’s source notes, background, formatting, and group placement.</p>
+                        </div>
+                        <button className="min-h-11 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={splitActiveBodySlide} type="button">Split Long Text</button>
                       </div>
                     </div>
                   )}

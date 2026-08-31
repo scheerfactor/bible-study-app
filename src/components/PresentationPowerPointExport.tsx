@@ -22,7 +22,7 @@ export default function PresentationPowerPointExport({ disabled, slides, onRevie
     <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Slides-only omits speaker notes and private presentation-note metadata. Visible slide text and author labels remain. Keep the presenter copy for full source/rights notes; review visible slide content before sharing.</p>
     {issues.length > 0 && <div role="status" className="mt-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950">
       <p className="font-semibold">Split long text before exporting</p>
-      <p className="mt-1">Nothing has been shortened or removed. Keep every word by dividing the text across slides. Scripture slides also have a Split Long Passage button in the editor.</p>
+      <p className="mt-1">Nothing has been shortened or removed. Review the affected slide, then use Split Long Passage for Scripture or Split Long Text for teaching and quotation slides.</p>
       <ul className="mt-2 space-y-2">
         {issues.map((issue) => <li key={issue.number} className="break-words">
           <span>Slide {issue.number}: {issue.title} — {issue.length.toLocaleString("en-US")} / {POWERPOINT_BODY_LIMIT.toLocaleString("en-US")} characters. </span>
