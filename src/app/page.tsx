@@ -51,7 +51,7 @@ import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
 import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
-import { presentationExportOptions, type PresentationExportMode } from "@/lib/presentation-export";
+import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import { type ScreenWakeLockStatus, useScreenWakeLock } from "@/hooks/useScreenWakeLock";
@@ -20343,6 +20343,8 @@ export default function Home() {
 	      setSyncMessage("Generate slides before exporting PowerPoint.");
 	      return;
 	    }
+	    const warning = powerPointTextWarning(slides);
+	    if (warning) { setSyncMessage(warning); return; }
 	    const filename = `${sermonExportSlug(sermonDraft.title || sermonDraft.passage || "sermon-slides")}-slides.pptx`;
 	    try {
 	      await exportSlideDeckPowerPoint({
@@ -20534,6 +20536,8 @@ export default function Home() {
       return;
     }
     const options = presentationExportOptions(mode, sermonExportSlug(presentationDraft.title || "presentation"), presentationDraft.notes);
+    const warning = powerPointTextWarning(presentationDraft.slides);
+    if (warning) { setSyncMessage(warning); return; }
     try {
       await exportSlideDeckPowerPoint({
         slides: presentationDraft.slides,
@@ -31336,8 +31340,8 @@ function pptxFontSize(slide: SermonSlide, kind: "title" | "body") {
   return 23;
 }
 
-function pptxCleanText(value: string, maxLength = 900) {
-  return value.replace(/\s+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim().slice(0, maxLength);
+function pptxCleanText(value: string) {
+  return powerPointBodyText(value);
 }
 
 async function exportSlideDeckPowerPoint({
@@ -31356,6 +31360,8 @@ async function exportSlideDeckPowerPoint({
   includeSpeakerNotes?: boolean;
 }) {
   // Do not pass untrusted image bytes to PptxGenJS until image-size has a patched release.
+  const warning = powerPointTextWarning(slides);
+  if (warning) throw new Error(warning);
   const { default: PptxGenJS } = await import("pptxgenjs");
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE";
@@ -31394,7 +31400,7 @@ async function exportSlideDeckPowerPoint({
       slide.addText(sermonSlide.subtitle, { x: 1, y: titleY - 0.48, w: 11.333, h: 0.28, fontFace: "Aptos", fontSize: 10, bold: true, color: accent, align, margin: 0 });
     }
     slide.addText(sermonSlide.title || `${index + 1}. ${sermonSlide.type}`, { x: 1, y: titleY, w: 11.333, h: sermonSlide.type === "Title" ? 1.0 : 0.72, fontFace: "Aptos Display", fontSize: pptxFontSize(sermonSlide, "title"), bold: true, color: foreground, align, fit: "shrink", margin: 0.05 });
-    const bodyText = pptxCleanText(sermonSlide.bibleText || sermonSlide.body, 1400);
+    const bodyText = pptxCleanText(sermonSlide.bibleText || sermonSlide.body);
     if (bodyText) {
       slide.addText(bodyText, { x: 1.05, y: sermonSlide.type === "Title" ? 2.75 : titleY + 1.0, w: 11.2, h: sermonSlide.type === "Title" ? 2.7 : 4.1, fontFace: sermonSlide.bibleText ? "Georgia" : "Aptos", fontSize: pptxFontSize(sermonSlide, "body"), color: sermonSlide.bibleText ? foreground : muted, align, valign: "middle", fit: "shrink", breakLine: false, margin: 0.08 });
     }
@@ -53781,6 +53787,16 @@ function PresentationWorkspaceScreen({
     publishRemoteState({ controllerLocked: !controllerLocked }, controllerLocked ? "unlock_controller" : "lock_controller");
   }
 
+  function reviewExportSlide(id: string) {
+    setSelectedSlideId(id);
+    onViewChange("deck");
+    requestAnimationFrame(() => {
+      const editor = document.getElementById("presentation-slide-editor");
+      editor?.scrollIntoView({ block: "start" });
+      editor?.focus({ preventScroll: true });
+    });
+  }
+
   function splitActiveScriptureSlide() {
     if (!activeSlide || activeSlide.type !== "Scripture" || !activeSlide.bibleText.trim()) return;
     const chunks = chunkScriptureText(activeSlide.bibleText, activeSlide.fontScale === "Large" ? 360 : activeSlide.fontScale === "Compact" ? 620 : 480);
@@ -54074,7 +54090,7 @@ function PresentationWorkspaceScreen({
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
               <p className="text-sm font-semibold text-[var(--ink)]">Export foundation</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Export the current presentation as PowerPoint, download the Markdown plan, or open a print-ready view for Save as PDF.</p>
-              <PresentationPowerPointExport disabled={!draft.slides.length} onExport={onExportPowerPoint} />
+              <PresentationPowerPointExport disabled={!draft.slides.length} slides={slides} onReview={reviewExportSlide} onExport={onExportPowerPoint} />
               <div className="mt-3 flex flex-wrap gap-2">
                 <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onExportPlan} type="button">
                   <Download size={16} />
@@ -54264,7 +54280,9 @@ function PresentationWorkspaceScreen({
                       </div>
                     </div>
                   )}
-                  <SermonSlideEditor slide={activeSlide} onChange={(patch) => updateSlide(activeSlide.id, patch)} />
+                  <div id="presentation-slide-editor" tabIndex={-1} aria-label="Presentation slide editor">
+                    <SermonSlideEditor slide={activeSlide} onChange={(patch) => updateSlide(activeSlide.id, patch)} />
+                  </div>
                 </>
               ) : (
                 <EmptyState title="Select a slide" body="Choose a slide from the deck manager to preview and edit it." />
@@ -54287,7 +54305,7 @@ function PresentationWorkspaceScreen({
             <div className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold text-[var(--ink)]">Export Foundation</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">PowerPoint export works now. PDF uses a print-ready 16:9 preview so you can choose Save as PDF from the print dialog.</p>
-              <PresentationPowerPointExport disabled={!slides.length} onExport={onExportPowerPoint} />
+              <PresentationPowerPointExport disabled={!slides.length} slides={slides} onReview={reviewExportSlide} onExport={onExportPowerPoint} />
               <div className="mt-3 flex flex-wrap gap-2">
                 <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onExportPlan} type="button">Download Markdown Plan</button>
                 <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!slides.length} onClick={onExportPdfPreview} type="button">Print / Save PDF</button>
