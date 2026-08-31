@@ -50,6 +50,8 @@ import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
+import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
+import { presentationExportOptions, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import { type ScreenWakeLockStatus, useScreenWakeLock } from "@/hooks/useScreenWakeLock";
@@ -20526,25 +20528,23 @@ export default function Home() {
     setSyncMessage("Presentation plan downloaded.");
   }
 
-  async function exportPresentationPowerPoint() {
+  async function exportPresentationPowerPoint(mode: PresentationExportMode = "slides-only") {
     if (!presentationDraft.slides.length) {
       setSyncMessage("Add or attach slides before exporting PowerPoint.");
       return;
     }
-    const filename = `${sermonExportSlug(presentationDraft.title || "presentation")}-slides.pptx`;
+    const options = presentationExportOptions(mode, sermonExportSlug(presentationDraft.title || "presentation"), presentationDraft.notes);
     try {
       await exportSlideDeckPowerPoint({
         slides: presentationDraft.slides,
         themeId: presentationDraft.themeId,
         title: presentationDraft.title || "Presentation",
-        subject: presentationDraft.notes || "Church presentation slides",
-        filename,
+        ...options,
       });
-      setSyncMessage("Presentation PowerPoint exported.");
+      setSyncMessage(options.includeSpeakerNotes ? "Presenter PowerPoint exported with private notes. Keep this copy private." : "Slides-only PowerPoint exported without speaker notes or private presentation-note metadata.");
     } catch (error) {
       console.error(error);
-      downloadTextFile(`${sermonExportSlug(presentationDraft.title || "presentation")}-slide-plan-fallback.md`, presentationExportMarkdown(presentationDraft), "text/markdown;charset=utf-8");
-      setSyncMessage("PowerPoint export failed, so a Markdown slide plan fallback was downloaded.");
+      setSyncMessage("PowerPoint export failed. Please retry. No alternate file containing private notes was downloaded.");
     }
   }
 
@@ -31346,12 +31346,14 @@ async function exportSlideDeckPowerPoint({
   title,
   subject,
   filename,
+  includeSpeakerNotes = true,
 }: {
   slides: SermonSlide[];
   themeId: SermonSlideThemeId;
   title: string;
   subject: string;
   filename: string;
+  includeSpeakerNotes?: boolean;
 }) {
   // Do not pass untrusted image bytes to PptxGenJS until image-size has a patched release.
   const { default: PptxGenJS } = await import("pptxgenjs");
@@ -31399,7 +31401,7 @@ async function exportSlideDeckPowerPoint({
     if (sermonSlide.showFooterBranding) {
       slide.addText("Father's Business Bible Study", { x: 1, y: 7.05, w: 5, h: 0.22, fontFace: "Aptos", fontSize: 7, bold: true, color: muted, margin: 0 });
     }
-    if (sermonSlide.speakerNotes) {
+    if (includeSpeakerNotes && sermonSlide.speakerNotes) {
       slide.addNotes(sermonSlide.speakerNotes);
     }
   });
@@ -53129,7 +53131,7 @@ function PresentationWorkspaceScreen({
   onArchiveEntry: (id: string) => void;
   onDuplicateEntry: (entry: PresentationEntry) => void;
   onExportPlan: () => void;
-  onExportPowerPoint: () => void;
+  onExportPowerPoint: (mode: PresentationExportMode) => Promise<void>;
   onExportPdfPreview: () => void;
   onResolveScriptureText: (passage: string) => string;
 }) {
@@ -54072,11 +54074,8 @@ function PresentationWorkspaceScreen({
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
               <p className="text-sm font-semibold text-[var(--ink)]">Export foundation</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Export the current presentation as PowerPoint, download the Markdown plan, or open a print-ready view for Save as PDF.</p>
+              <PresentationPowerPointExport disabled={!draft.slides.length} onExport={onExportPowerPoint} />
               <div className="mt-3 flex flex-wrap gap-2">
-                <button className="inline-flex items-center gap-2 rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!draft.slides.length} onClick={onExportPowerPoint} type="button">
-                  <Download size={16} />
-                  Download PowerPoint
-                </button>
                 <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onExportPlan} type="button">
                   <Download size={16} />
                   Markdown Plan
@@ -54288,9 +54287,9 @@ function PresentationWorkspaceScreen({
             <div className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold text-[var(--ink)]">Export Foundation</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">PowerPoint export works now. PDF uses a print-ready 16:9 preview so you can choose Save as PDF from the print dialog.</p>
+              <PresentationPowerPointExport disabled={!slides.length} onExport={onExportPowerPoint} />
               <div className="mt-3 flex flex-wrap gap-2">
                 <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onExportPlan} type="button">Download Markdown Plan</button>
-                <button className="rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!slides.length} onClick={onExportPowerPoint} type="button">Download PowerPoint</button>
                 <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!slides.length} onClick={onExportPdfPreview} type="button">Print / Save PDF</button>
               </div>
             </div>
