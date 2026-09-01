@@ -140,6 +140,8 @@ type PriorityMinistryPartner = {
   nextAction: string;
   boundary: string;
   pilotItems: string[];
+  officialUrl?: string;
+  contactUrl?: string;
 };
 type StoragePlanningRow = {
   id: string;
@@ -2219,6 +2221,38 @@ const PRESENTATION_SESSION_DURATION_HOURS = 4;
 
 const PRIORITY_MINISTRY_PARTNERS: PriorityMinistryPartner[] = [
   {
+    id: "thru-the-bible",
+    name: "Dr. J. Vernon McGee",
+    ministry: "Thru the Bible",
+    focus: "Whole-Bible teaching audio, Sunday sermons, free study materials, and a separate conversation about official Store titles.",
+    permissionStatus: "Copyrighted · free sharing allowed under TTB's published conditions",
+    nextAction: "Keep copied or streamed TTB teaching in a clearly free lane with exact attribution. Contact TTB separately before offering Store books for sale, bundling resources with paid access, or changing the approved presentation.",
+    boundary: "This material is not public domain. TTB permits free distribution when wording is unaltered (or excerpts are identified), no fee is charged, Dr. J. Vernon McGee and Thru the Bible are credited, the required copyright statement is shown, and web copies link to TTB.",
+    pilotItems: [
+      "Complete five-year Bible study audio — free, attributed listening lane",
+      "Sunday Sermons — official links or freely distributed audio under the published policy",
+      "Printed commentary and Store titles — ask about an authorized sales, referral, or fulfillment arrangement",
+    ],
+    officialUrl: "https://ttb.org/resources/free-downloads",
+    contactUrl: "https://ttb.org/about/contact-us",
+  },
+  {
+    id: "way-of-life-literature",
+    name: "David Cloud",
+    ministry: "Way of Life Literature",
+    focus: "KJV, Baptist, church, apologetics, preaching, history, audio, video, and publishing resources.",
+    permissionStatus: "Copyrighted · official-link lane active · broader sales permission needed",
+    nextAction: "Keep free ebooks on Way of Life's own website, then ask about an authorized storefront pilot for one to three paid titles and the exact terms for descriptions, covers, checkout, fulfillment, and revenue reporting.",
+    boundary: "Way of Life's policy says free ebooks may be given to others but may not be posted or distributed from other websites. Store books, paid ebooks, the Fundamental Baptist Digital Library, and paid presentations stay link-only or permission-needed.",
+    pilotItems: [
+      "Free ebooks — official Way of Life links only; do not host the files",
+      "Shareable reports, audio sermons, and videos — item-level review, credit, and official source link",
+      "One to three paid Store titles — request a written sales or referral pilot before listing for purchase",
+    ],
+    officialUrl: "https://www.wayoflife.org/sharing/",
+    contactUrl: "mailto:support@wayoflife.org",
+  },
+  {
     id: "bo-wagner",
     name: "Dr. Bo Wagner",
     ministry: "Word of His Mouth / Cornerstone Baptist Church",
@@ -2379,6 +2413,13 @@ const PARTNER_OUTREACH_COPY = [
     title: "A small, permission-first partnership conversation",
     audience: "Monday or Tuesday email to a publisher, author, pastor, or ministry",
     body: "Subject: A permission-first Bible study partnership conversation\n\nHello [NAME],\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began building it because I was tired of moving between separate apps for Bible reading, books, commentaries, audio, sermon preparation, and presentations. My goal is to bring those workflows together carefully while honoring authors, publishers, ministries, and their rights.\n\nI would value your advice about whether [MINISTRY / PUBLISHER] and a small number of your resources might be a good fit. I am not asking to copy or publish anything without written permission. A first step could be as narrow as one to three titles using whichever approach you prefer:\n\n1. An attributed listing that sends readers to your official page or store.\n2. A limited in-app sample or official-player embed that you approve.\n3. A licensed reading, audio, or sales arrangement with terms agreed in writing.\n\nI want this to be easy for you: we can begin with a small pilot, use your approved descriptions and artwork, preserve your pricing and attribution, provide a clear contact for corrections or removal, and avoid any use you have not specifically approved.\n\nWould you be willing to have a short conversation, suggest the best person to contact, or tell me what information you would need to consider a pilot? I would also welcome your advice about other like-minded authors or ministries that may be a good fit.\n\nThank you for your time and for your work,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "publisher-store-pilot",
+    label: "Book sales request",
+    title: "A one-to-three-title authorized Store pilot",
+    audience: "Publisher, author, or ministry after the first conversation; review before sending",
+    body: "Subject: Small authorized book-sales pilot for Father's Business Bible Study\n\nHello [NAME],\n\nThank you for considering Father's Business Bible Study. I would like to explore a small, permission-first pilot for these one to three titles: [TITLE 1], [TITLE 2], and [TITLE 3].\n\nThe app is being built for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. The goal is to help a reader discover a trusted resource while studying Scripture and then purchase it through a process that you approve.\n\nWould you prefer one of these arrangements?\n\n1. An official product link that sends the reader to your store.\n2. A referral or affiliate arrangement using your checkout and fulfillment.\n3. An authorized reseller arrangement with agreed pricing, inventory, fulfillment, returns, reporting, and payment terms.\n4. A separately licensed digital edition with the exact reading, search, note, audio, territory, term, and paid-access rights stated in writing.\n\nBefore anything is listed for sale, I would like to confirm the approved title, description, cover image, price display, checkout owner, fulfillment responsibility, customer support contact, territory, reporting schedule, revenue or royalty terms, correction/removal process, and whether the listing may appear beside Bible-study recommendations. Nothing would be hosted, copied, sold, or described beyond the scope you approve.\n\nWhat would be the easiest pilot for you, and who is the best person to discuss it with? I would also value your advice about other like-minded authors or publishers who may be a good fit.\n\nThank you,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
   },
 ] as const;
 
@@ -42562,6 +42603,20 @@ function LibraryAcquisitionCenter({
                     </ul>
                   </div>
                   <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Boundary:</strong> {partner.boundary}</p>
+                  {(partner.officialUrl || partner.contactUrl) && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {partner.officialUrl && (
+                        <a className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" href={partner.officialUrl} rel="noreferrer" target="_blank">
+                          Review official policy
+                        </a>
+                      )}
+                      {partner.contactUrl && (
+                        <a className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white" href={partner.contactUrl} rel="noreferrer" target={partner.contactUrl.startsWith("mailto:") ? undefined : "_blank"}>
+                          Open official contact
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </section>
               ))}
             </div>
