@@ -31344,6 +31344,44 @@ function pptxCleanText(value: string) {
   return powerPointBodyText(value);
 }
 
+async function pptxBundledBackgroundAssets(slides: SermonSlide[], includeSourceNotes: boolean) {
+  const urls = Array.from(new Set(slides.map((slide) => SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot]?.assetUrl).filter((url): url is string => Boolean(url))));
+  const manifestByFile = new Map<string, { source?: string; source_url?: string; rightsStatus?: string; artist?: string; credit?: string }>();
+  if (includeSourceNotes && urls.length) {
+    const manifestResponse = await fetch("/media/sermon-slides/media-assets.json");
+    if (!manifestResponse.ok) throw new Error("The bundled background rights manifest could not be loaded. No PowerPoint was downloaded.");
+    const manifest = await manifestResponse.json() as Array<{ file?: string; source?: string; source_url?: string; rightsStatus?: string; artist?: string; credit?: string }>;
+    manifest.forEach((entry) => { if (entry.file) manifestByFile.set(entry.file, entry); });
+  }
+  const assets = new Map<string, { data: string; sourceNote: string }>();
+  await Promise.all(urls.map(async (assetUrl) => {
+    if (!/^\/media\/sermon-slides\/(?:photos|archaeology)\/[a-z0-9-]+\.jpg$/i.test(assetUrl)) {
+      throw new Error("An unapproved presentation background was rejected. No PowerPoint was downloaded.");
+    }
+    const response = await fetch(assetUrl);
+    if (!response.ok) throw new Error(`The selected background (${assetUrl}) could not be loaded. No PowerPoint was downloaded.`);
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    if (bytes.length < 4 || bytes.length > 8_000_000 || bytes[0] !== 0xff || bytes[1] !== 0xd8 || bytes[2] !== 0xff) {
+      throw new Error("A bundled presentation background failed JPEG validation. No PowerPoint was downloaded.");
+    }
+    let binary = "";
+    for (let offset = 0; offset < bytes.length; offset += 0x8000) binary += String.fromCharCode(...bytes.subarray(offset, offset + 0x8000));
+    const file = assetUrl.replace("/media/sermon-slides/", "");
+    const entry = manifestByFile.get(file);
+    if (includeSourceNotes && !entry) throw new Error(`The rights record for ${file} is missing. No PowerPoint was downloaded.`);
+    const sourceNote = entry ? [
+      "[Sources]",
+      `Background: ${entry.source || file}`,
+      entry.source_url ? `Source: ${entry.source_url}` : "",
+      entry.rightsStatus ? `Rights: ${entry.rightsStatus}` : "",
+      entry.artist ? `Artist: ${entry.artist}` : "",
+      entry.credit ? `Credit: ${entry.credit}` : "",
+    ].filter(Boolean).join("\n") : "";
+    assets.set(assetUrl, { data: `data:image/jpeg;base64,${btoa(binary)}`, sourceNote });
+  }));
+  return assets;
+}
+
 async function exportSlideDeckPowerPoint({
   slides,
   themeId,
@@ -31362,6 +31400,7 @@ async function exportSlideDeckPowerPoint({
   // Do not pass untrusted image bytes to PptxGenJS until image-size has a patched release.
   const warning = powerPointTextWarning(slides);
   if (warning) throw new Error(warning);
+  const backgroundAssets = await pptxBundledBackgroundAssets(slides, includeSpeakerNotes);
   const { default: PptxGenJS } = await import("pptxgenjs");
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE";
@@ -31383,7 +31422,12 @@ async function exportSlideDeckPowerPoint({
     const accent = pptxHex(theme.accent);
     const slide = pptx.addSlide();
     slide.background = { color: backgroundColor };
-    slide.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 7.5, fill: { color: backgroundColor }, line: { color: backgroundColor } });
+    const backgroundAssetUrl = SERMON_SLIDE_IMAGE_SLOTS[sermonSlide.imageSlot]?.assetUrl;
+    const backgroundAsset = backgroundAssetUrl ? backgroundAssets.get(backgroundAssetUrl) : undefined;
+    if (backgroundAsset) {
+      slide.addImage({ data: backgroundAsset.data, x: 0, y: 0, w: 13.333, h: 7.5, sizing: { type: "cover", x: 0, y: 0, w: 13.333, h: 7.5 }, altText: `${SERMON_SLIDE_IMAGE_SLOTS[sermonSlide.imageSlot]?.label ?? sermonSlide.imageTheme} presentation background` });
+    }
+    slide.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 7.5, fill: { color: backgroundColor, transparency: backgroundAsset ? lightStyle ? 22 : 42 : 0 }, line: { color: backgroundColor, transparency: 100 } });
 
     if (sermonSlide.imageSlot !== "none" && sermonSlide.showImageMotif) {
       slide.addShape(pptx.ShapeType.arc, { x: 9.4, y: 0.4, w: 2.5, h: 2.5, line: { color: accent, transparency: 70 } });
@@ -31407,8 +31451,9 @@ async function exportSlideDeckPowerPoint({
     if (sermonSlide.showFooterBranding) {
       slide.addText("Father's Business Bible Study", { x: 1, y: 7.05, w: 5, h: 0.22, fontFace: "Aptos", fontSize: 7, bold: true, color: muted, margin: 0 });
     }
-    if (includeSpeakerNotes && sermonSlide.speakerNotes) {
-      slide.addNotes(sermonSlide.speakerNotes);
+    if (includeSpeakerNotes) {
+      const notes = [sermonSlide.speakerNotes, backgroundAsset?.sourceNote].filter(Boolean).join("\n\n");
+      if (notes) slide.addNotes(notes);
     }
   });
 

@@ -19,7 +19,7 @@ export default function PresentationPowerPointExport({ disabled, slides, onRevie
   }
   return <div className="mt-3 rounded-xl border border-[var(--line)] p-3">
     <p className="text-sm font-semibold">Choose your PowerPoint copy</p>
-    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Slides-only omits speaker notes and private presentation-note metadata. Visible slide text and author labels remain. Keep the presenter copy for full source/rights notes; review visible slide content before sharing.</p>
+    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Selected rights-documented media backgrounds are embedded in both copies. Slides-only omits speaker notes and private presentation-note metadata; visible slide text and author labels remain. Keep the presenter copy for full source/rights notes, and review visible content before sharing.</p>
     {issues.length > 0 && <div role="status" className="mt-3 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950">
       <p className="font-semibold">Split long text before exporting</p>
       <p className="mt-1">Nothing has been shortened or removed. Review the affected slide, then use Split Long Passage for Scripture or Split Long Text for teaching and quotation slides.</p>

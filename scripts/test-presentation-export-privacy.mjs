@@ -10,11 +10,11 @@ import JSZip from "jszip";
 const require = createRequire(import.meta.url);
 const page = await readFile(new URL("../src/app/page.tsx", import.meta.url), "utf8");
 const ast = ts.createSourceFile("page.tsx", page, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
-const names = ["pptxHex", "pptxFontSize", "pptxCleanText", "exportSlideDeckPowerPoint"];
+const names = ["pptxHex", "pptxFontSize", "pptxCleanText", "pptxBundledBackgroundAssets", "exportSlideDeckPowerPoint"];
 const functions = ast.statements.filter((node) => ts.isFunctionDeclaration(node) && names.includes(node.name?.text)).map((node) => node.getText(ast));
 assert.equal(functions.length, names.length);
 const optionsSource = await readFile(new URL("../src/lib/presentation-export.ts", import.meta.url), "utf8");
-const input = `${optionsSource}\nconst SERMON_SLIDE_THEMES = { "classic-pulpit": {background:"#203A31",foreground:"#FFFFFF",muted:"#DDEEDD",accent:"#AA9955"} }; const SERMON_SLIDE_IMAGE_SLOTS = {};\n${functions.join("\n")}\nexport {exportSlideDeckPowerPoint};`;
+const input = `${optionsSource}\nconst SERMON_SLIDE_THEMES = { "classic-pulpit": {background:"#203A31",foreground:"#FFFFFF",muted:"#DDEEDD",accent:"#AA9955"} }; const SERMON_SLIDE_IMAGE_SLOTS = {none:{label:"None",assetUrl:null},cross:{label:"Cross",assetUrl:"/media/sermon-slides/photos/cross.jpg"}};\n${functions.join("\n")}\nexport {exportSlideDeckPowerPoint};`;
 const compiled = ts.transpileModule(input, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText.replace('import("pptxgenjs")', `import(${JSON.stringify(pathToFileURL(require.resolve("pptxgenjs")).href)})`);
 const { exportSlideDeckPowerPoint: exportDeck, presentationExportOptions: options, powerPointTextIssues: issues, powerPointBodyText: clean, splitPresentationBodyText: splitBody } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString("base64")}`);
 const output = await mkdtemp(path.join(tmpdir(), "presentation-privacy-"));
@@ -63,6 +63,38 @@ assert.ok(proseChunks.length > 1);
 assert.ok(proseChunks.every((chunk) => chunk.length <= 48));
 assert.equal(proseChunks.join(" ").replace(/\s+/g, " "), clean(prose).replace(/\s+/g, " "), "Teaching split changed words or punctuation");
 assert.deepEqual(splitBody(" Short text. ", 48), ["Short text."]);
+const jpegBytes = await readFile(new URL("../public/media/sermon-slides/photos/cross.jpg", import.meta.url));
+const originalFetch = globalThis.fetch;
+globalThis.fetch = async (url) => {
+  if (url === "/media/sermon-slides/media-assets.json") return new Response(JSON.stringify([{file:"photos/cross.jpg",source:"QA background source",source_url:"https://example.org/background",rightsStatus:"Public domain",artist:"QA artist",credit:"QA credit"}]), {status:200,headers:{"content-type":"application/json"}});
+  if (url === "/media/sermon-slides/photos/cross.jpg") return new Response(jpegBytes, {status:200,headers:{"content-type":"image/jpeg"}});
+  return new Response("missing", {status:404});
+};
+try {
+  for (const mode of ["slides-only", "presenter"]) {
+    const backgroundFile = path.join(output, `background-${mode}.pptx`);
+    await exportDeck({slides:[{...slides[1],imageSlot:"cross",showImageMotif:true,speakerNotes:"PRIVATE_BACKGROUND_NOTE"}],themeId:"classic-pulpit",title:"Background",...options(mode,"background","PRIVATE_BACKGROUND_METADATA"),filename:backgroundFile});
+    const backgroundZip = await JSZip.loadAsync(await readFile(backgroundFile));
+    assert.ok(Object.keys(backgroundZip.files).some((name) => /^ppt\/media\/image[-\d]+\.jpeg$/.test(name)), `${mode}: background image not embedded`);
+    const allXml = (await Promise.all(Object.values(backgroundZip.files).filter((entry) => entry.name.endsWith(".xml")).map((entry) => entry.async("string")))).join("\n");
+    for (const marker of ["QA background source", "https://example.org/background", "Public domain", "QA artist", "QA credit"]) assert.equal(allXml.includes(marker), mode === "presenter", `${mode}: rights metadata ${marker}`);
+    assert.ok(!(await backgroundZip.file("ppt/slides/slide1.xml").async("string")).includes("QA background source"), `${mode}: source metadata became visible slide text`);
+  }
+  globalThis.fetch = async (url) => url === "/media/sermon-slides/media-assets.json"
+    ? new Response("[]", {status:200,headers:{"content-type":"application/json"}})
+    : new Response(jpegBytes, {status:200,headers:{"content-type":"image/jpeg"}});
+  const missingRightsFile = path.join(output, "missing-rights.pptx");
+  await assert.rejects(exportDeck({slides:[{...slides[1],imageSlot:"cross"}],themeId:"classic-pulpit",title:"Missing rights",...options("presenter","missing-rights",""),filename:missingRightsFile}), /rights record/);
+  assert.ok(!(await readdir(output)).includes("missing-rights.pptx"), "Missing rights record still wrote a file");
+  globalThis.fetch = async (url) => url === "/media/sermon-slides/media-assets.json"
+    ? new Response(JSON.stringify([{file:"photos/cross.jpg"}]), {status:200,headers:{"content-type":"application/json"}})
+    : new Response("not a jpeg", {status:200,headers:{"content-type":"image/jpeg"}});
+  const invalidImageFile = path.join(output, "invalid-image.pptx");
+  await assert.rejects(exportDeck({slides:[{...slides[1],imageSlot:"cross"}],themeId:"classic-pulpit",title:"Invalid image",...options("presenter","invalid-image",""),filename:invalidImageFile}), /JPEG validation/);
+  assert.ok(!(await readdir(output)).includes("invalid-image.pptx"), "Invalid image still wrote a file");
+} finally {
+  globalThis.fetch = originalFetch;
+}
 assert.equal(options("unknown", "test", "PRIVATE").includeSpeakerNotes, false, "Unknown mode should fail closed");
 const presentationHandler = page.slice(page.indexOf("async function exportPresentationPowerPoint"), page.indexOf("function exportPresentationPdfPreview"));
 assert.ok(presentationHandler.includes('= "slides-only"'));
