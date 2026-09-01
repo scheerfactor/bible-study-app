@@ -26125,7 +26125,34 @@ function JournalScreen({
   onExportEndChange: (value: string) => void;
 }) {
   const definitionPreview = wordsToDefinitionList(draft.wordsToDefine, reviewedDictionaryEntries);
-  const recentEntries = entries.slice(0, 6);
+  const [journalQuery, setJournalQuery] = useState("");
+  const [journalSourceFilter, setJournalSourceFilter] = useState<"All" | JournalSourceType>("All");
+  const normalizedJournalQuery = journalQuery.trim().toLowerCase();
+  const visibleJournalEntries = entries.filter((entry) => {
+    if (journalSourceFilter !== "All" && entry.sourceType !== journalSourceFilter) return false;
+    if (!normalizedJournalQuery) return true;
+    const searchableText = [
+      entry.date,
+      entry.bibleReadingPassage,
+      entry.proverbOfTheDay,
+      entry.selectedVerseRefs,
+      entry.prayerFocus,
+      entry.readingPlanStatus,
+      entry.versePassage,
+      entry.wordsToDefine,
+      entry.strongsConnection,
+      entry.verseSays,
+      entry.verseMeans,
+      entry.verseApplies,
+      entry.prayerResponse,
+      entry.obedienceStep,
+      entry.memoryVerse,
+      entry.teachingThought,
+      entry.sourceType,
+      entry.sourceLabel,
+    ].join(" ").toLowerCase();
+    return searchableText.includes(normalizedJournalQuery);
+  });
   const readyPlans = readingPlans.filter((plan) => plan.status === "Ready");
   const plannedPlans = readingPlans.filter((plan) => plan.status === "Planned");
 
@@ -26413,18 +26440,52 @@ function JournalScreen({
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Saved Entries</p>
-            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Recent Scripture Journal</h2>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Searchable Scripture Journal</h2>
           </div>
-          <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{entries.length} saved</span>
+          <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{visibleJournalEntries.length} of {entries.length} shown</span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-[minmax(0,1fr)_220px_auto]">
+          <label className="text-sm font-semibold text-[var(--muted)]">
+            Search saved journal
+            <input
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-base text-[var(--ink)] outline-none"
+              placeholder="Search Scripture, prayer, answer, topic, or teaching thought"
+              type="search"
+              value={journalQuery}
+              onChange={(event) => setJournalQuery(event.target.value)}
+            />
+          </label>
+          <label className="text-sm font-semibold text-[var(--muted)]">
+            Source
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+              value={journalSourceFilter}
+              onChange={(event) => setJournalSourceFilter(event.target.value as "All" | JournalSourceType)}
+            >
+              <option value="All">All sources</option>
+              {JOURNAL_SOURCE_TYPES.map((source) => <option key={`journal-archive-source-${source}`} value={source}>{source}</option>)}
+            </select>
+          </label>
+          <button
+            className="self-end rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-sm font-semibold text-[var(--green)]"
+            onClick={() => {
+              setJournalSourceFilter("Prayer Entry");
+              setJournalQuery("Answered prayer testimony");
+            }}
+            type="button"
+          >
+            Answered testimonies
+          </button>
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
-          {recentEntries.length ? recentEntries.map((entry) => (
+          {visibleJournalEntries.length ? visibleJournalEntries.map((entry) => (
             <article key={entry.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-sm font-semibold text-[var(--green)]">{entry.date}</p>
                   <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{entry.selectedVerseRefs || entry.bibleReadingPassage || "Scripture Journal Entry"}</h3>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.sourceType}</p>
+                  {entry.sourceLabel && <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entry.sourceLabel}</p>}
                 </div>
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenEntry(entry)} type="button">
                   Open
@@ -26444,7 +26505,9 @@ function JournalScreen({
             </article>
           )) : (
             <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-6 text-center text-sm leading-6 text-[var(--muted)] md:col-span-2">
-              No journal entries yet. Start today&apos;s entry to connect Bible reading, prayer, study, and application.
+              {entries.length
+                ? "No saved entries match this search and source filter."
+                : "No journal entries yet. Start today's entry to connect Bible reading, prayer, study, and application."}
             </p>
           )}
         </div>
