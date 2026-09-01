@@ -1445,5 +1445,181 @@
     "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
     "musicRights": "Public Domain",
     "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "bringing-in-the-sheaves",
+    "title": "Bringing in the Sheaves",
+    "lyricist": "Knowles Shaw",
+    "lyricYear": 1874,
+    "tune": "Bringing in the Sheaves",
+    "themes": [
+      "Sowing",
+      "Reaping",
+      "Service",
+      "Joy"
+    ],
+    "scriptureReferences": [
+      "Psalm 126:5-6",
+      "Galatians 6:9"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Bringing_in_the_Sheaves/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/B/Bringing_in_the_Sheaves/Bringing_in_the_Sheaves.mid",
+    "musicAttribution": "BRINGING IN THE SHEAVES by George A. Minor, 1880; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Sowing in the morning, sowing seeds of kindness,\nSowing in the noontide and the dewy eve;\nWaiting for the harvest, and the time of reaping,\nWe shall come rejoicing, bringing in the sheaves.",
+      "Sowing in the sunshine, sowing in the shadows,\nFearing neither clouds nor winter’s chilling breeze;\nBy and by the harvest, and the labor ended,\nWe shall come rejoicing, bringing in the sheaves.",
+      "Going forth with weeping, sowing for the Master,\nThough the loss sustained our spirit often grieves;\nWhen our weeping’s over, He will bid us welcome,\nWe shall come rejoicing, bringing in the sheaves."
+    ],
+    "refrain": "Bringing in the sheaves, bringing in the sheaves,\nWe shall come rejoicing, bringing in the sheaves;\nBringing in the sheaves, bringing in the sheaves,\nWe shall come rejoicing, bringing in the sheaves.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "bringing-in-the-sheaves.mid",
+    "midiSha256": "6c15d7bcdbab058b7c4d1130c71b381e970b6cd58590f9732161eadb8f26ef15",
+    "rightsEvidenceFile": "bringing-in-the-sheaves-rights.html",
+    "rightsEvidenceSha256": "360c646920d84ad9ed2be1629ec78e4ea8b7da2758af9765bdcaf3d0df4c1544",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "there-shall-be-showers-of-blessing",
+    "title": "There Shall Be Showers of Blessing",
+    "lyricist": "Daniel W. Whittle",
+    "lyricYear": 1883,
+    "tune": "Showers of Blessing",
+    "themes": [
+      "Prayer",
+      "Faith",
+      "Encouragement",
+      "Revival"
+    ],
+    "scriptureReferences": [
+      "Ezekiel 34:26",
+      "Psalm 115:12",
+      "Genesis 32:26"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/There_Shall_Be_Showers_of_Blessing/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/There_Shall_Be_Showers_of_Blessing/There_Shall_Be_Showers_of_Blessing.mid",
+    "musicAttribution": "SHOWERS OF BLESSING by James McGranahan, 1883; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "There shall be showers of blessing:\nThis is the promise of love;\nThere shall be seasons refreshing,\nSent from the Savior above.",
+      "There shall be showers of blessing,\nPrecious reviving again;\nOver the hills and the valleys,\nSound of abundance of rain.",
+      "There shall be showers of blessing;\nSend them upon us, O Lord;\nGrant to us now a refreshing,\nCome, and now honor Thy Word.",
+      "There shall be showers of blessing:\nOh, that today they might fall,\nNow as to God we’re confessing,\nNow as on Jesus we call!",
+      "There shall be showers of blessing,\nIf we but trust and obey;\nThere shall be seasons refreshing,\nIf we let God have His way."
+    ],
+    "refrain": "Showers of blessing,\nShowers of blessing we need:\nMercy-drops round us are falling,\nBut for the showers we plead.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "there-shall-be-showers-of-blessing.mid",
+    "midiSha256": "1a5d69872a88950bff9f1e5d8d7cf40fd1e6ba87dd046dec54894681f07c7c5e",
+    "rightsEvidenceFile": "there-shall-be-showers-of-blessing-rights.html",
+    "rightsEvidenceSha256": "51b6820bffa2a975a357e9eb70aa8539101185f2bcc46838c55e7601acfc80f2",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "he-hideth-my-soul",
+    "title": "He Hideth My Soul",
+    "lyricist": "Frances J. Crosby",
+    "lyricYear": 1890,
+    "tune": "He Hideth My Soul",
+    "themes": [
+      "Refuge",
+      "Jesus",
+      "Assurance",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Exodus 33:22",
+      "Psalm 32:7"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/He_Hideth_My_Soul/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/He_Hideth_My_Soul/He_Hideth_My_Soul.mid",
+    "musicAttribution": "HE HIDETH MY SOUL by William J. Kirkpatrick, circa 1890; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "A wonderful Savior is Jesus my Lord,\nA wonderful Savior to me;\nHe hideth my soul in the cleft of the rock,\nWhere rivers of pleasure I see.",
+      "A wonderful Savior is Jesus my Lord,\nHe taketh my burden away,\nHe holdeth me up and I shall not be moved,\nHe giveth me strength as my day.",
+      "With numberless blessings each moment He crowns,\nAnd filled with His fullness divine,\nI sing in my rapture, oh, glory to God!\nFor such a Redeemer as mine.",
+      "When clothed with His brightness transported I rise\nTo meet Him in clouds of the sky,\nHis perfect salvation, His wonderful love,\nI’ll shout with the millions on high."
+    ],
+    "refrain": "He hideth my soul in the cleft of the rock,\nThat shadows a dry, thirsty land;\nHe hideth my life in the depths of His love,\nAnd covers me there with His hand,\nAnd covers me there with His hand.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "he-hideth-my-soul.mid",
+    "midiSha256": "f24278592a5b0a2e6eb1d1212dddb796b01853542be05e1498a8acc7220326e7",
+    "rightsEvidenceFile": "he-hideth-my-soul-rights.html",
+    "rightsEvidenceSha256": "c66b5532cf864fa3089814b04cd8b2a5d46dbbbc34020c43e57cdc3c169f71b0",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "count-your-blessings",
+    "title": "Count Your Blessings",
+    "lyricist": "Johnson Oatman, Jr.",
+    "lyricYear": 1897,
+    "tune": "Blessings",
+    "themes": [
+      "Thanksgiving",
+      "Praise",
+      "Encouragement"
+    ],
+    "scriptureReferences": [
+      "Psalm 40:5",
+      "1 Thessalonians 5:18",
+      "Ephesians 1:3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Count_Your_Blessings/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/C/Count_Your_Blessings/Count_Your_Blessings.mid",
+    "musicAttribution": "BLESSINGS by Edwin O. Excell, 1897; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "When upon life’s billows you are tempest-tossed,\nWhen you are discouraged, thinking all is lost,\nCount your many blessings, name them one by one,\nAnd it will surprise you what the Lord has done.",
+      "Are you ever burdened with a load of care?\nDoes the cross seem heavy you are called to bear?\nCount your many blessings, every doubt will fly,\nAnd you will keep singing as the days go by.",
+      "When you look at others with their lands and gold,\nThink that Christ has promised you His wealth untold;\nCount your many blessings—*money cannot buy [*wealth can never buy]\nYour reward in heaven, nor your home on high.",
+      "So, amid the conflict whether great or small,\nDo not be discouraged, God is over all;\nCount your many blessings, angels will attend,\nHelp and comfort give you to your journey’s end."
+    ],
+    "refrain": "Count your blessings, name them one by one,\nCount your blessings, see what God has done!\nCount your blessings, name them one by one,\n*Count your many blessings, see what God has done.\n[*And it will surprise you what the Lord has done.]",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "count-your-blessings.mid",
+    "midiSha256": "202b556a3e12a5d2039247cb490b36ef3927f91766de1d779ca0c81e05363b14",
+    "rightsEvidenceFile": "count-your-blessings-rights.html",
+    "rightsEvidenceSha256": "cfc2c7bcee04e57407452e01a9500621f5289cac4e44eaa4036bd6a3edde4efe",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "stand-up-stand-up-for-jesus",
+    "title": "Stand Up, Stand Up for Jesus",
+    "lyricist": "George Duffield, Jr.",
+    "lyricYear": 1858,
+    "tune": "Webb",
+    "themes": [
+      "Christian Duty",
+      "Spiritual Warfare",
+      "Prayer",
+      "Victory"
+    ],
+    "scriptureReferences": [
+      "Ephesians 6:11-18",
+      "2 Timothy 2:3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Stand_Up_Stand_Up_for_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Stand_Up_Stand_Up_for_Jesus/Stand_Up_Stand_Up_for_Jesus.mid",
+    "musicAttribution": "WEBB by George J. Webb, 1830; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Stand up, stand up for Jesus! ye soldiers of the cross;\nLift high His royal banner, it must not suffer loss:\nFrom vict’ry unto vict’ry, His army shall He lead,\nTill every foe is vanquished, and Christ is Lord indeed.",
+      "Stand up, stand up for Jesus! The trumpet call obey:\nForth to the mighty conflict, in this His glorious day;\nYe that are men now serve Him against unnumbered foes;\nLet courage rise with danger, and strength to strength oppose.",
+      "Stand up, stand up for Jesus! Stand in His strength alone,\nThe arm of flesh will fail you, ye dare not trust your own;\nPut on the gospel armor, and watching unto prayer,\nWhere calls the voice of duty, be never wanting there.",
+      "Stand up, stand up for Jesus! the strife will not be long;\nThis day the noise of battle, the next the victor’s song;\nTo him that overcometh a crown of life shall be;\nHe with the King of glory shall reign eternally."
+    ],
+    "refrain": null,
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "stand-up-stand-up-for-jesus.mid",
+    "midiSha256": "8bc31a3ec946766caa468509cb46af23342ce7ba78fd75189516ba51c3dc1374",
+    "rightsEvidenceFile": "stand-up-stand-up-for-jesus-rights.html",
+    "rightsEvidenceSha256": "14108a19ddbbc4028f5e28fe0971f15df5cb372e112ae5020b39847407576d61",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
   }
 ]

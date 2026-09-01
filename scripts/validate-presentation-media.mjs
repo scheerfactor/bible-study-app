@@ -36,6 +36,19 @@ function jpegDimensions(buffer) {
   return null;
 }
 
+function pngDimensions(buffer) {
+  const signature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+  if (buffer.length < 24 || !buffer.subarray(0, 8).equals(signature) || buffer.toString("ascii", 12, 16) !== "IHDR") return null;
+  return {
+    width: buffer.readUInt32BE(16),
+    height: buffer.readUInt32BE(20),
+  };
+}
+
+function presentationImageDimensions(buffer) {
+  return jpegDimensions(buffer) ?? pngDimensions(buffer);
+}
+
 if (!Array.isArray(entries) || !entries.length) errors.push("Presentation media manifest must contain at least one entry.");
 
 for (const [index, entry] of entries.entries()) {
@@ -62,9 +75,9 @@ for (const [index, entry] of entries.entries()) {
   try {
     const imagePath = resolve(root, "public", "media", "sermon-slides", entry.file);
     await access(imagePath);
-    const dimensions = jpegDimensions(await readFile(imagePath));
+    const dimensions = presentationImageDimensions(await readFile(imagePath));
     if (!dimensions) {
-      errors.push(`Presentation image is not a readable JPEG: ${entry.file}`);
+      errors.push(`Presentation image is not a readable JPEG or PNG: ${entry.file}`);
     } else if (dimensions.width < 1600 || dimensions.height < 900 || Math.abs(dimensions.width / dimensions.height - 16 / 9) > 0.01) {
       errors.push(`Presentation image must be 16:9 and at least 1600x900: ${entry.file} (${dimensions.width}x${dimensions.height})`);
     }

@@ -252,7 +252,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -2884,6 +2884,30 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Creation",
     assetUrl: "/media/sermon-slides/photos/heavens-declare.jpg",
   },
+  "genesis-creation-dawn": {
+    label: "Genesis Creation Dawn",
+    description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
+    background: "linear-gradient(90deg, rgba(2,12,25,0.72), rgba(2,12,25,0.10) 72%)",
+    motif: "Creation Dawn",
+    category: "Creation",
+    assetUrl: "/media/sermon-slides/generated/genesis-creation-dawn-v1.png",
+  },
+  "psalms-still-waters-generated": {
+    label: "Psalms Still Waters",
+    description: "Psalms, prayer, comfort, peace, guidance, and devotional verses.",
+    background: "linear-gradient(90deg, rgba(5,24,28,0.70), rgba(5,24,28,0.08) 72%)",
+    motif: "Still Waters",
+    category: "Shepherd",
+    assetUrl: "/media/sermon-slides/generated/psalms-still-waters-v1.png",
+  },
+  "gospels-empty-tomb-dawn": {
+    label: "Gospel Empty Tomb Dawn",
+    description: "Gospel accounts, resurrection, salvation, hope, and new life.",
+    background: "linear-gradient(90deg, rgba(7,13,18,0.74), rgba(7,13,18,0.06) 72%)",
+    motif: "Empty Tomb Dawn",
+    category: "Empty Tomb",
+    assetUrl: "/media/sermon-slides/generated/gospels-empty-tomb-dawn-v1.png",
+  },
   "sinai-wilderness": {
     label: "Sinai Wilderness",
     description: "Exodus, wilderness journeys, covenant, testing, and God's guidance.",
@@ -3087,11 +3111,14 @@ const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
 };
 
 const SERMON_IMAGE_THEME_SUGGESTIONS = [
+  { terms: ["genesis", "in the beginning", "creation", "creator"], slot: "genesis-creation-dawn" },
+  { terms: ["psalms", "psalm 23", "still waters", "comfort", "peace"], slot: "psalms-still-waters-generated" },
+  { terms: ["matthew 28", "mark 16", "luke 24", "john 20", "resurrection", "risen", "empty tomb"], slot: "gospels-empty-tomb-dawn" },
   { terms: ["exodus", "wilderness", "sinai", "tabernacle", "moses"], slot: "sinai-wilderness" },
   { terms: ["jerusalem", "zion", "temple", "nehemiah", "ezra"], slot: "ancient-jerusalem" },
   { terms: ["jonah", "sea", "ship", "storm", "sail", "paul's journey"], slot: "mediterranean-passage" },
-  { terms: ["psalm 23", "still waters", "shepherd", "comfort", "peace"], slot: "still-waters" },
-  { terms: ["psalm 19", "creation", "creator", "heavens", "glory of god", "stars"], slot: "heavens-declare" },
+  { terms: ["shepherd", "pastoral care"], slot: "still-waters" },
+  { terms: ["psalm 19", "heavens", "glory of god", "stars"], slot: "heavens-declare" },
   { terms: ["psalm 119", "lamp", "wisdom", "bible study", "study the word"], slot: "scripture-lamp" },
   { terms: ["colossians 3", "psalm 95", "hymn", "singing", "worship", "praise", "music"], slot: "worship-piano" },
   { terms: ["love", "believe", "salvation", "gospel", "cross"], slot: "cross" },
@@ -3100,7 +3127,7 @@ const SERMON_IMAGE_THEME_SUGGESTIONS = [
   { terms: ["missions", "missionary", "world", "nations"], slot: "world-map" },
   { terms: ["harvest", "field", "sow"], slot: "field-harvest" },
   { terms: ["judgment", "wrath", "condemned", "sin"], slot: "storm-judgment" },
-  { terms: ["resurrection", "risen", "life", "empty tomb"], slot: "empty-tomb" },
+  { terms: ["new life", "victory over death"], slot: "empty-tomb" },
   { terms: ["scripture", "word", "bible"], slot: "open-bible" },
 ];
 
@@ -11266,7 +11293,7 @@ const WHOLE_BIBLE_VOLUME_BOOKS = [
 ];
 
 const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId> = {
-  Genesis: "heavens-declare",
+  Genesis: "genesis-creation-dawn",
   Exodus: "sinai-wilderness",
   Leviticus: "sinai-wilderness",
   Numbers: "sinai-wilderness",
@@ -11284,7 +11311,7 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Nehemiah: "ancient-jerusalem",
   Esther: "light-window",
   Job: "storm-judgment",
-  Psalms: "still-waters",
+  Psalms: "psalms-still-waters-generated",
   Proverbs: "scripture-lamp",
   Ecclesiastes: "quiet-study",
   "Song of Solomon": "field-harvest",
@@ -11305,10 +11332,10 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Haggai: "church-window",
   Zechariah: "pulpit",
   Malachi: "sunrise",
-  Matthew: "cross",
-  Mark: "mediterranean-passage",
-  Luke: "ancient-jerusalem",
-  John: "light-window",
+  Matthew: "gospels-empty-tomb-dawn",
+  Mark: "gospels-empty-tomb-dawn",
+  Luke: "gospels-empty-tomb-dawn",
+  John: "gospels-empty-tomb-dawn",
   Acts: "mediterranean-passage",
   Romans: "cross",
   "1 Corinthians": "church-window",

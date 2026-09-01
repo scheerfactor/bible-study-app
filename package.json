@@ -93,6 +93,7 @@
     "storage:upload:strongs-shards": "node scripts/upload-strongs-chapter-shards-with-wrangler.mjs",
     "hymns:prepare": "node scripts/prepare-hymns.mjs",
     "hymns:import:timeless-truths": "node scripts/import-timeless-truths-hymn-batch.mjs",
+    "hymns:add-reviewed-batch": "node scripts/add-reviewed-hymn-batch.mjs",
     "validate:hymns": "node scripts/validate-hymns.mjs",
     "preaching-helps:import": "node scripts/import-preaching-help-batch.mjs",
     "validate:preaching-helps": "node scripts/validate-preaching-helps.mjs",
