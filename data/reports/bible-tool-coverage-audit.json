@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-09-01T08:39:52.214Z",
+    "generated_at": "2026-09-01T23:19:38.333Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 61602,
+      "entries": 61606,
       "normalizedHeadwords": 51509,
       "meaningfulWordsWithDefinition": 8871,
       "meaningfulWordsWithoutDefinition": 3583,
@@ -3158,31 +3158,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "stories",
-          "count": 5,
-          "sampleRefs": [
-            "Genesis 6:16",
-            "Ezekiel 41:16",
-            "Ezekiel 42:3",
-            "Ezekiel 42:6",
-            "Amos 9:6"
-          ],
-          "lookupCandidates": [
-            "stories",
-            "story",
-            "storye",
-            "storie"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "STORY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "supply",
           "count": 5,
           "sampleRefs": [
@@ -3602,6 +3577,27 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "AL'TER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "appetite",
+          "count": 4,
+          "sampleRefs": [
+            "Job 38:39",
+            "Proverbs 23:2",
+            "Ecclesiastes 6:7",
+            "Isaiah 29:8"
+          ],
+          "lookupCandidates": [
+            "appetite"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "AP'PETITE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -9838,31 +9834,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "stories",
-        "count": 5,
-        "sampleRefs": [
-          "Genesis 6:16",
-          "Ezekiel 41:16",
-          "Ezekiel 42:3",
-          "Ezekiel 42:6",
-          "Amos 9:6"
-        ],
-        "lookupCandidates": [
-          "stories",
-          "story",
-          "storye",
-          "storie"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "STORY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "supply",
         "count": 5,
         "sampleRefs": [
@@ -10282,6 +10253,27 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "AL'TER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "appetite",
+        "count": 4,
+        "sampleRefs": [
+          "Job 38:39",
+          "Proverbs 23:2",
+          "Ecclesiastes 6:7",
+          "Isaiah 29:8"
+        ],
+        "lookupCandidates": [
+          "appetite"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "AP'PETITE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

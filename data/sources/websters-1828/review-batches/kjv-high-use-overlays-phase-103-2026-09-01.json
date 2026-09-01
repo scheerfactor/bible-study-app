@@ -1,0 +1,88 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-103-2026-09-01",
+  "reviewed_at": "2026-09-01",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain; only its historical definitions and examples are transcribed, not website editorial material.",
+  "transcription_source": "Internet Archive volume 2 printed page scans and OCR, cross-checked against clean online Webster transcriptions; original OCR is retained unchanged.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n669.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n672.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n673.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n675.jpg" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/sting" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/stomach" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/stool" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/story" }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next four exact KJV-used S headwords in alphabetical order from the unreviewed high/medium OCR queue. This is a targeted OCR queue, not a claim that all Webster entries have been reviewed.",
+  "review_method": "Visually checked every sense against the printed page scans and used clean online transcriptions only as secondary aids. Corrected OCR substitutions, scan breaks, page headers, punctuation, and numbering; retained historical examples, usage labels, and author citations. Expanded parts of speech and normalized whitespace for display. Source spans are one-based lines in the hash-verified OCR file.",
+  "review_scope": "All definitions and examples: two STING transitive senses and five noun senses; six STOMACH noun senses, two transitive senses, and its intransitive definition; three STOOL noun senses, stool of repentance, and its intransitive definition; six STORY noun senses and two transitive senses. Readable etymology is retained while uncertain non-Latin characters are conservatively transliterated rather than guessed.",
+  "screening_summary": {
+    "reviewed_headwords": 4,
+    "net_new_reviewed_overlays": 4,
+    "base_high_severity_ocr_entries_replaced": 4,
+    "kjv_occurrences_resolved": 6,
+    "exact_kjv_s_headwords_in_high_medium_queue_before": 8,
+    "exact_kjv_s_headwords_in_high_medium_queue_after": 4
+  },
+  "promoted_headwords": ["sting", "stomach", "stool", "story"],
+  "entries": [
+    {
+      "word": "sting",
+      "kjv_occurrences": 2,
+      "sample_references": ["1 Corinthians 15:55", "1 Corinthians 15:56"],
+      "lookup_headword": "sting",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 221271,
+      "source_line_end": 221323,
+      "exact_entry_heading": "STING",
+      "exact_source_match": true,
+      "review_note": "Scan n669 confirms the full etymologies, two transitive senses, five noun senses, Stang is obsolete, poisonous matter, Dryden, Pope, and the source's chapter-only 1 Cor. xv citation. Corrected the base OCR's Slang, slyngan, sleeken, steng, slander slings, missing noun number 2, and damaged final quotation; excluded STINGER and following entries."
+    },
+    {
+      "word": "stomach",
+      "kjv_occurrences": 1,
+      "sample_references": ["1 Timothy 5:23"],
+      "lookup_headword": "stomach",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 222118,
+      "source_line_end": 222179,
+      "exact_entry_heading": "STOM'ACH",
+      "exact_source_match": true,
+      "review_note": "Scan n672 confirms six noun senses, the usage note, two transitive senses, the intransitive definition, and all citations. It resolves roast beef, He which hath, Sullenness, the Locke quotation, L'Estrange, New England, and both usage labels; excluded STOMACHED and later entries."
+    },
+    {
+      "word": "stool",
+      "kjv_occurrences": 1,
+      "sample_references": ["2 Kings 4:10"],
+      "lookup_headword": "stool",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 222512,
+      "source_line_end": 222540,
+      "exact_entry_heading": "STOOL",
+      "exact_source_match": true,
+      "review_note": "Scan n673 confirms the etymology, three noun senses, Watts, Edwards, W. Ind., stool of repentance, Johnson, and the agricultural verb. Corrected the base OCR's stoet, preslnl, con-sisting, seat/set, ilischarge, tlie, seal, jjcrsons, and adultery damage; excluded STOOL-BALL and later entries."
+    },
+    {
+      "word": "story",
+      "kjv_occurrences": 2,
+      "sample_references": ["2 Chronicles 13:22", "2 Chronicles 24:27"],
+      "lookup_headword": "story",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 223080,
+      "source_line_end": 223131,
+      "exact_entry_heading": "STO'RY",
+      "exact_source_match": true,
+      "review_note": "Scan n675 confirms six noun senses, two transitive senses, the United States, France, and England floor convention, and the Temple, Addison, Shak., Wilkins, and Bentley citations. Corrected damaged numbering, replacement marks, ancient story, five stories, next the ground, historical relation, his own hearing, Rhodes, and passive participle; excluded STORY-TELLER and following entries."
+    }
+  ]
+}
