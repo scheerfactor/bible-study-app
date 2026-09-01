@@ -42721,7 +42721,7 @@ function LibraryAcquisitionCenter({
                 <p className="text-sm font-semibold text-[var(--green)]">First outreach approval batch</p>
                 <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Three exact messages, verified and waiting for founder review</h3>
                 <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
-                  These messages have not been sent. Review the recipient, request, doctrinal fit, and complete wording before any external contact. Copying a draft does not open an email or send a message.
+                  These messages have not been sent. Review the recipient, request, doctrinal fit, and complete wording before any external contact. Opening a draft prefills your mail app but never sends the message for you.
                 </p>
               </div>
               <span className="rounded-full bg-amber-100 px-3 py-2 text-xs font-semibold text-amber-900">0 of 3 sent</span>
@@ -42745,13 +42745,22 @@ function LibraryAcquisitionCenter({
                     <p className="font-semibold text-[var(--ink)]">Subject: {item.subject}</p>
                     <p className="mt-2">{item.body}</p>
                   </div>
-                  <button
-                    className="mt-3 w-full rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
-                    onClick={() => { void copyOutreachItem(item.id, `Subject: ${item.subject}\n\n${item.body}`); }}
-                    type="button"
-                  >
-                    Copy complete message
-                  </button>
+                  <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
+                    <a
+                      className="rounded-full bg-[var(--green)] px-3 py-2 text-center text-xs font-semibold text-white"
+                      href={`mailto:${item.recipient}?subject=${encodeURIComponent(item.subject)}&body=${encodeURIComponent(item.body)}`}
+                    >
+                      Open email draft
+                    </a>
+                    <button
+                      className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                      onClick={() => { void copyOutreachItem(item.id, `Subject: ${item.subject}\n\n${item.body}`); }}
+                      type="button"
+                    >
+                      Copy complete message
+                    </button>
+                  </div>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Your mail app will open with the verified recipient, subject, and message. Review it there, then you decide whether to send.</p>
                   {outreachCopied === item.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Complete message copied. It is still not sent.</p>}
                 </section>
               ))}

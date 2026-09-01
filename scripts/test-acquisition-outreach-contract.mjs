@@ -31,7 +31,10 @@ const requiredSignals = [
   "no book or media file would be copied, hosted, sold, narrated, or placed behind paid access",
   "Three exact messages, verified and waiting for founder review",
   "0 of 3 sent",
-  "Copying a draft does not open an email or send a message.",
+  "Opening a draft prefills your mail app but never sends the message for you.",
+  'href={`mailto:${item.recipient}?subject=${encodeURIComponent(item.subject)}&body=${encodeURIComponent(item.body)}`}',
+  "Open email draft",
+  "Review it there, then you decide whether to send.",
 ];
 
 const missing = requiredSignals.filter((signal) => !source.includes(signal));
