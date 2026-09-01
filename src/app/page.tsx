@@ -2423,6 +2423,54 @@ const PARTNER_OUTREACH_COPY = [
   },
 ] as const;
 
+const OUTREACH_APPROVAL_BATCH = [
+  {
+    id: "ttb-first-contact",
+    priority: "1",
+    ministry: "Thru the Bible",
+    recipientName: "Thru the Bible ministry team",
+    recipient: "info@ttb.org",
+    channel: "Official ministry email",
+    status: "Ready for Stephen's review · not sent",
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://ttb.org/resources/free-downloads",
+    contactUrl: "https://ttb.org/about/contact-us",
+    pilot: "A free, attributed listening lane for the five-year Bible study and Sunday Sermons, plus a separate conversation about official Store links or a referral arrangement for print resources.",
+    subject: "A free Thru the Bible listening pilot and Store-link conversation",
+    body: "Hello Thru the Bible ministry team,\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began building it because I was tired of moving between separate apps for Bible reading, commentaries, books, audio, sermon preparation, and presentations.\n\nDr. J. Vernon McGee's whole-Bible teaching would be a valuable help to our users. I have reviewed Thru the Bible's published free-resource and copyright guidance, and I understand that these resources are copyrighted rather than public domain. I also understand that permitted copies must remain completely free, preserve the wording or clearly identify excerpts, credit Dr. McGee and Thru the Bible, include the required copyright statement, and link back to TTB.\n\nI would like your advice on a small first pilot: a clearly free, attributed listening lane for the five-year Bible study and selected Sunday Sermons, using TTB's official files or links and keeping this material outside every paid feature. Would you be willing to confirm the preferred file or player source, exact attribution and copyright wording, and whether chapter or book playlists inside a free app are consistent with your published policy?\n\nSeparately, would TTB be open to an official Store-link or referral conversation for printed books or study resources? I would not copy, host, sell, bundle, or charge for anything beyond the scope you approve.\n\nI would value your advice and the name of the best person to work with.\n\nThank you for carrying the whole Word to the whole world,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "way-of-life-first-contact",
+    priority: "2",
+    ministry: "Way of Life Literature",
+    recipientName: "Way of Life Literature support and publishing team",
+    recipient: "support@wayoflife.org",
+    channel: "Official publishing support email",
+    status: "Ready for Stephen's review · not sent",
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.wayoflife.org/sharing/",
+    contactUrl: "mailto:support@wayoflife.org",
+    pilot: "Official links for free resources, plus an authorized sales or referral pilot for Bible Times and Ancient Kingdoms, Things Hard to Be Understood, and the Way of Life Encyclopedia.",
+    subject: "A permission-first Way of Life book pilot for Father's Business Bible Study",
+    body: "Hello Way of Life Literature team,\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. The goal is to bring Bible reading, trusted books, commentaries, audio, sermon preparation, and presentations into one careful workflow.\n\nI have read your sharing policy and the notice inside your free ebooks. I understand that free does not mean public domain, and that Way of Life free ebooks must remain on your website rather than being hosted or distributed from another site. In Father's Business Bible Study, those resources would remain official links unless you give different written permission.\n\nI would like to ask whether you would consider a small authorized sales or referral pilot for these three resources:\n\n1. Bible Times and Ancient Kingdoms\n2. Things Hard to Be Understood\n3. Way of Life Encyclopedia of the Bible and Christianity\n\nWould you prefer that the app send readers to your official product pages, use a referral arrangement through your checkout, or discuss another authorized method? I would use only descriptions and cover images you approve, preserve your prices and attribution, and leave fulfillment, customer service, and downloadable files with Way of Life unless we agree otherwise in writing. Nothing would be copied, hosted, sold, narrated, or placed behind paid access beyond the scope you approve.\n\nI would also welcome your advice about the app, other Way of Life materials that might be a better first fit, and other like-minded authors or publishers you believe I should contact.\n\nThank you for your time and ministry,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "bo-wagner-first-contact",
+    priority: "3",
+    ministry: "Dr. Bo Wagner / Cornerstone Baptist Church",
+    recipientName: "Pastor Bo Wagner",
+    recipient: "2knowhim@cbc-web.org",
+    channel: "Official church-listed pastor email",
+    status: "Ready for Stephen's review · not sent",
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.cbc-web.org/about-cbc/",
+    contactUrl: "mailto:2knowhim@cbc-web.org",
+    pilot: "One to three author-selected books using official product links first, with a later written conversation about samples, digital reading, audio, or sales rights.",
+    subject: "Would you advise a small Bo Wagner book pilot for Father's Business Bible Study?",
+    body: "Hello Pastor Wagner,\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app intended to help pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began it because I wanted one faithful place where Bible reading, trusted books, preaching help, audio, sermon preparation, and presentations work together.\n\nI have appreciated your counsel for preachers and would value your advice about whether a few of your books might be a good fit. I am not asking to copy or publish anything without written permission. The easiest first step could be one to three titles that you select, presented with your approved descriptions and official purchase links.\n\nIf that proves useful, we could later discuss whether you would want to authorize any sample pages, searchable excerpts, in-app digital reading, narration, or a sales arrangement. Each use would remain separate and would require your written approval; no book or media file would be copied, hosted, sold, narrated, or placed behind paid access merely because it was listed.\n\nWould you be willing to recommend the best one to three books for young preachers, pastors, or Bible students, tell me the official product pages to use, and advise me about other like-minded authors or publishers I should contact?\n\nThank you for your ministry and consideration,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+] as const;
+
 const PARTNER_OUTREACH_RHYTHM = [
   { day: "Monday", action: "Choose and research", detail: "Select no more than three like-minded contacts. Confirm the right person, official website, resource ownership, and the smallest useful pilot." },
   { day: "Tuesday", action: "Personalize and send", detail: "Use the first-contact draft, mention one specific work you value, ask for advice, and request only the rights needed for the small pilot." },
@@ -42632,6 +42680,49 @@ function LibraryAcquisitionCenter({
             <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
               These are working drafts, not published statements or sent messages. Review every name, doctrinal statement, resource, and requested right before using them outside the app.
             </p>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-[var(--green)]">First outreach approval batch</p>
+                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Three exact messages, verified and waiting for founder review</h3>
+                <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
+                  These messages have not been sent. Review the recipient, request, doctrinal fit, and complete wording before any external contact. Copying a draft does not open an email or send a message.
+                </p>
+              </div>
+              <span className="rounded-full bg-amber-100 px-3 py-2 text-xs font-semibold text-amber-900">0 of 3 sent</span>
+            </div>
+            <div className="mt-4 grid gap-3 xl:grid-cols-3">
+              {OUTREACH_APPROVAL_BATCH.map((item) => (
+                <section key={`approval-batch-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">Priority {item.priority}</span>
+                    <span className="text-xs font-semibold text-amber-800">Not sent</span>
+                  </div>
+                  <h4 className="mt-3 text-lg font-semibold text-[var(--ink)]">{item.ministry}</h4>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">To: {item.recipientName} · {item.recipient}</p>
+                  <p className="mt-1 text-xs text-[var(--muted)]">{item.channel} · verified {item.verifiedAt}</p>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]"><strong className="text-[var(--ink)]">Small pilot:</strong> {item.pilot}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <a className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" href={item.officialUrl} rel="noreferrer" target="_blank">Verify official source</a>
+                    <a className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" href={item.contactUrl} rel="noreferrer" target="_blank">Review contact channel</a>
+                  </div>
+                  <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-line rounded-2xl bg-white p-3 text-xs leading-5 text-[var(--muted)]">
+                    <p className="font-semibold text-[var(--ink)]">Subject: {item.subject}</p>
+                    <p className="mt-2">{item.body}</p>
+                  </div>
+                  <button
+                    className="mt-3 w-full rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+                    onClick={() => { void copyOutreachItem(item.id, `Subject: ${item.subject}\n\n${item.body}`); }}
+                    type="button"
+                  >
+                    Copy complete message
+                  </button>
+                  {outreachCopied === item.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Complete message copied. It is still not sent.</p>}
+                </section>
+              ))}
+            </div>
           </article>
 
           <div className="grid gap-3 lg:grid-cols-2">
