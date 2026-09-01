@@ -19528,12 +19528,29 @@ export default function Home() {
 
   function startJournalFromPrayer(entry?: PrayerEntry) {
     const focus = entry ?? todaysPrayerFocus[0] ?? activePrayerEntries[0];
+    const isAnswered = focus?.answerStatus === "Answered";
+    const scriptureReference = focus?.bibleVerse || focus?.promiseVerse || focus?.missionaryVerse || dailyJournalDefaults.selectedVerseRefs;
+    const answerSummary = focus?.praiseReport || focus?.notes || "Record how the Lord answered and what should be remembered.";
     startJournalDraft("Prayer Entry", {
       prayerFocus: focus ? `${focus.name}: ${focus.request}` : dailyJournalDefaults.prayerFocus,
-      selectedVerseRefs: focus?.bibleVerse || focus?.promiseVerse || focus?.missionaryVerse || dailyJournalDefaults.selectedVerseRefs,
+      selectedVerseRefs: scriptureReference,
       versePassage: focus?.studyNote || dailyJournalDefaults.versePassage,
-      prayerResponse: focus ? `Pray for ${focus.name}: ${focus.request}` : "",
-      sourceLabel: focus?.name ?? "Prayer focus",
+      verseSays: focus ? `Original request: ${focus.request}` : "",
+      verseApplies: isAnswered ? `Praise report: ${answerSummary}` : "",
+      prayerResponse: focus
+        ? isAnswered
+          ? `Thank the Lord for His answer concerning ${focus.name}: ${answerSummary}`
+          : `Pray for ${focus.name}: ${focus.request}`
+        : "",
+      obedienceStep: focus
+        ? isAnswered
+          ? "Remember the Lord's help, give Him thanks, and share this testimony wisely."
+          : "Continue faithfully in prayer and watch with thanksgiving."
+        : "",
+      teachingThought: focus
+        ? `${isAnswered ? "Answered prayer testimony" : "Prayer journal"}${focus.answeredAt ? ` · answered ${formatShortDate(focus.answeredAt)}` : ""}${scriptureReference ? ` · Scripture: ${scriptureReference}` : ""}`
+        : "",
+      sourceLabel: focus ? `${focus.name}${isAnswered ? " · Answered prayer" : " · Prayer request"}` : "Prayer focus",
     });
   }
 
@@ -24745,6 +24762,7 @@ export default function Home() {
                 onAddEntry={addPrayerEntry}
                 onUpdateEntry={updatePrayerEntry}
                 onMarkPrayed={markPrayerPrayedToday}
+                onJournalEntry={startJournalFromPrayer}
                 onDeleteEntry={deletePrayerEntry}
               />
             )}
@@ -26509,6 +26527,7 @@ function PrayerScreen({
   onAddEntry,
   onUpdateEntry,
   onMarkPrayed,
+  onJournalEntry,
   onDeleteEntry,
 }: {
   entries: PrayerEntry[];
@@ -26521,6 +26540,7 @@ function PrayerScreen({
   onAddEntry: () => void;
   onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
   onMarkPrayed: (id: string) => void;
+  onJournalEntry: (entry: PrayerEntry) => void;
   onDeleteEntry: (id: string) => void;
 }) {
   const categoryCounts = PRAYER_CATEGORIES.map((category) => ({
@@ -26639,6 +26659,7 @@ function PrayerScreen({
                 compact
                 onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
+                onJournalEntry={onJournalEntry}
                 onDeleteEntry={onDeleteEntry}
               />
             )) : (
@@ -26890,6 +26911,7 @@ function PrayerScreen({
                 entry={entry}
                 onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
+                onJournalEntry={onJournalEntry}
                 onDeleteEntry={onDeleteEntry}
               />
             )) : (
@@ -26911,6 +26933,7 @@ function PrayerScreen({
                 compact
                 onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
+                onJournalEntry={onJournalEntry}
                 onDeleteEntry={onDeleteEntry}
               />
             )) : (
@@ -26981,12 +27004,14 @@ function PrayerEntryCard({
   compact = false,
   onMarkPrayed,
   onUpdateEntry,
+  onJournalEntry,
   onDeleteEntry,
 }: {
   entry: PrayerEntry;
   compact?: boolean;
   onMarkPrayed: (id: string) => void;
   onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
+  onJournalEntry: (entry: PrayerEntry) => void;
   onDeleteEntry: (id: string) => void;
 }) {
   const isAnswered = entry.answerStatus === "Answered";
@@ -27050,6 +27075,14 @@ function PrayerEntryCard({
           type="button"
         >
           {entry.answerStatus === "Waiting" ? "Resume" : "Waiting"}
+        </button>
+        <button
+          className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+          onClick={() => onJournalEntry(entry)}
+          type="button"
+        >
+          <NotebookPen size={13} />
+          {isAnswered ? "Journal answer" : "Journal prayer"}
         </button>
         <button
           className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"

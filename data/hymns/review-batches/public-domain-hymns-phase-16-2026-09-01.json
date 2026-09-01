@@ -1,0 +1,71 @@
+{
+  "batchId": "public-domain-hymns-phase-16-2026-09-01",
+  "reviewedAt": "2026-09-01",
+  "sourceProvider": "Timeless Truths Free Online Library",
+  "purpose": "Add three gospel-centered, public-domain hymns with independently retained text, tune, and rights evidence.",
+  "guardrails": [
+    "Import only when the source page marks both words and tune Public Domain.",
+    "Retain the exact source page and MIDI checksums with every record.",
+    "Keep Scripture references as topical indexes; KJV Scripture remains primary."
+  ],
+  "entries": [
+    {
+      "id": "blessed-be-the-name",
+      "title": "Blessed Be the Name",
+      "lyricist": "William H. Clark",
+      "lyricYear": 1888,
+      "tune": "Blessed Name",
+      "themes": [
+        "Praise",
+        "Jesus",
+        "Redemption"
+      ],
+      "scriptureReferences": [
+        "Job 1:21",
+        "Psalm 72:17-19",
+        "Philippians 2:10"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Blessed_Be_the_Name/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/B/Blessed_Be_the_Name/Blessed_Be_the_Name.mid",
+      "musicAttribution": "BLESSED NAME, attributed to William H. Havergal and arranged by Ralph E. Hudson and William J. Kirkpatrick, 1887-1888; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "at-calvary",
+      "title": "At Calvary",
+      "lyricist": "William R. Newell",
+      "lyricYear": 1895,
+      "tune": "At Calvary",
+      "themes": [
+        "Atonement",
+        "Salvation",
+        "Grace"
+      ],
+      "scriptureReferences": [
+        "Luke 23:33",
+        "Galatians 6:14"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/At_Calvary/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/A/At_Calvary/At_Calvary.mid",
+      "musicAttribution": "AT CALVARY by Daniel B. Towner, 1895; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "nothing-but-the-blood",
+      "title": "Nothing but the Blood",
+      "lyricist": "Robert Lowry",
+      "lyricYear": 1876,
+      "tune": "Plainfield",
+      "themes": [
+        "Blood",
+        "Atonement",
+        "Salvation"
+      ],
+      "scriptureReferences": [
+        "Hebrews 9:22",
+        "1 John 1:7"
+      ],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Nothing_but_the_Blood/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/N/Nothing_but_the_Blood/Nothing_but_the_Blood.mid",
+      "musicAttribution": "PLAINFIELD by Robert Lowry, published 1876; public-domain MIDI distributed with the cited Timeless Truths record."
+    }
+  ]
+}
