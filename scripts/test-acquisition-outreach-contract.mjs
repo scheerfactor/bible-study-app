@@ -29,8 +29,15 @@ const requiredSignals = [
   'id: "bo-wagner-first-contact"',
   'recipient: "2knowhim@cbc-web.org"',
   "no book or media file would be copied, hosted, sold, narrated, or placed behind paid access",
-  "Three verified conversations are already in progress",
-  "3 of 3 contacted",
+  'id: "kregel-john-phillips-follow-up"',
+  'recipient: "kregelbooks@kregel.com"',
+  'id: "moody-ironside-permissions-request"',
+  "Full Assurance one-title request submitted September 1, 2026",
+  'id: "ravenhill-rightsholder-routing"',
+  'recipient: "sermonindex@gmail.com"',
+  "no permission presumed",
+  "Six verified conversations are already in progress",
+  "6 of 6 contacted",
   "Do not open a new message or repeat the request",
   "Continue only in existing thread",
   "Do not resend it.",
@@ -42,4 +49,4 @@ if (missing.length) {
   process.exit(1);
 }
 
-console.log("Acquisition outreach contract passed: named partners, official contacts, free-use boundaries, authorized Store choices, and three active nonduplicate conversations are present.");
+console.log("Acquisition outreach contract passed: named partners, official contacts, free-use boundaries, authorized Store choices, and six active nonduplicate conversations are present.");

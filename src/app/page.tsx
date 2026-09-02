@@ -2472,6 +2472,54 @@ const OUTREACH_APPROVAL_BATCH = [
     subject: "Would you advise a small Bo Wagner book pilot for Father's Business Bible Study?",
     body: "Hello Pastor Wagner,\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app intended to help pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began it because I wanted one faithful place where Bible reading, trusted books, preaching help, audio, sermon preparation, and presentations work together.\n\nI have appreciated your counsel for preachers and would value your advice about whether a few of your books might be a good fit. I am not asking to copy or publish anything without written permission. The easiest first step could be one to three titles that you select, presented with your approved descriptions and official purchase links.\n\nIf that proves useful, we could later discuss whether you would want to authorize any sample pages, searchable excerpts, in-app digital reading, narration, or a sales arrangement. Each use would remain separate and would require your written approval; no book or media file would be copied, hosted, sold, narrated, or placed behind paid access merely because it was listed.\n\nWould you be willing to recommend the best one to three books for young preachers, pastors, or Bible students, tell me the official product pages to use, and advise me about other like-minded authors or publishers I should contact?\n\nThank you for your ministry and consideration,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
   },
+  {
+    id: "kregel-john-phillips-follow-up",
+    priority: "4",
+    ministry: "Kregel Publications / John Phillips",
+    recipientName: "Kregel publishing team",
+    recipient: "kregelbooks@kregel.com",
+    channel: "Follow-up in the original July 3 email thread",
+    status: "Focused John Phillips follow-up sent September 1, 2026 · awaiting reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.kregel.com/",
+    contactUrl: "mailto:kregelbooks@kregel.com",
+    pilot: "One John Phillips title using an official product listing first, followed only by separately negotiated sample, digital-access, or sales terms.",
+    subject: "Re: Rights and permissions question for one Bible study title",
+    body: "Hello Kregel team,\n\nI am following up on my July 3 inquiry about Father's Business Bible Study. The app is being developed as a safer, easier, KJV-centered workspace for Bible reading and study, sermon and lesson preparation, a curated library, audio, and church presentation.\n\nI would like to begin with one small John Phillips pilot rather than ask for a large catalog. Would you please direct me to the person who handles digital licensing or sales partnerships for:\n\n- an official product listing and purchase link;\n- approved cover art, description, and a short sample, if permitted; and\n- possible paid in-app access later under a written license or revenue-sharing agreement?\n\nI will not upload, sell, or distribute copyrighted book content without written permission and agreed terms. I would also value any advice about making the process simple for Kregel and its authors.\n\nThank you for your time,\n\nStephen Scheer\nFather's Business Bible Study\nhttps://study.fathersbusinessmasteryresources.com/\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "moody-ironside-permissions-request",
+    priority: "5",
+    ministry: "Moody Publishers / H. A. Ironside",
+    recipientName: "Moody Publishers permissions team",
+    recipient: "Official permissions form",
+    channel: "Moody Publishers official Microsoft Forms request",
+    status: "Full Assurance one-title request submitted September 1, 2026 · awaiting reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.moodypublishers.com/full-assurance",
+    contactUrl: "https://www.moodypublishers.com/faqs?selected=4",
+    pilot: "Full Assurance by H. A. Ironside as a one-title official listing, with any sample or paid digital access limited to Moody's written authorization.",
+    subject: "Commercial digital-sales and licensing partnership inquiry for a one-title in-app pilot",
+    body: "Father's Business Bible Study is a safer, easier, KJV-centered web app for Bible reading and study, sermon and lesson preparation, a curated library, audio, and church presentation. This is intentionally a one-title pilot inquiry.\n\nAt first, we would like to display an official product listing and purchase link for Full Assurance, using only approved metadata, cover art, and any sample Moody specifically authorizes. We would also like to speak with the correct digital licensing or sales-partnership contact about possible paid in-app access later under a written license or revenue-sharing agreement.\n\nWe will not upload, sell, reproduce, or distribute Moody's copyrighted edition or content without written permission and agreed terms. Please route this inquiry to the appropriate person if this form is not the correct department. Any advice on making the process simple for Moody and its authors would be appreciated.",
+  },
+  {
+    id: "ravenhill-rightsholder-routing",
+    priority: "6",
+    ministry: "Leonard Ravenhill rights routing",
+    recipientName: "SermonIndex team",
+    recipient: "sermonindex@gmail.com",
+    channel: "Rights-routing inquiry only; no permission presumed",
+    status: "Rightsholder-routing inquiry sent September 1, 2026 · awaiting reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.sermonindex.net/",
+    contactUrl: "mailto:sermonindex@gmail.com",
+    pilot: "Identify the actual Ravenhill estate, ministry, publisher, or media rightsholder before requesting any book listing, stream, artwork, or licensed access.",
+    subject: "Who controls Leonard Ravenhill book and audio rights?",
+    body: "Hello SermonIndex team,\n\nMy name is Stephen Scheer. I am building Father's Business Bible Study, a safer, easier, KJV-centered web app for Bible study, sermon and lesson preparation, a curated library, audio, and church presentation.\n\nI am not assuming that SermonIndex owns Leonard Ravenhill's book or audio rights. I am writing only because you host a substantial Ravenhill sermon collection and may know the correct rightsholder. The Voice of Life Ministries email currently published on Ravenhill.org bounced when I contacted it.\n\nCould you please identify or route me to the estate, ministry, publisher, or other party authorized to discuss:\n\n- linking to or streaming officially authorized Ravenhill sermons;\n- approved metadata, descriptions, and artwork;\n- possible book listings and official purchase links; and\n- any future licensed digital access?\n\nWe will not copy, host, sell, or distribute copyrighted Ravenhill material without written authorization from the actual rightsholder. Any direction you can provide would be greatly appreciated.\n\nThank you,\n\nStephen Scheer\nFather's Business Bible Study\nhttps://study.fathersbusinessmasteryresources.com/\nhello@fathersbusinessmasteryresources.com",
+  },
 ] as const;
 
 const PARTNER_OUTREACH_RHYTHM = [
@@ -42812,19 +42860,19 @@ function LibraryAcquisitionCenter({
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-[var(--green)]">Active outreach conversations</p>
-                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Three verified conversations are already in progress</h3>
+                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Six verified conversations are already in progress</h3>
                 <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
                   The initial messages and one careful follow-up have already been sent. Do not open a new message or repeat the request; wait for a written reply in the existing thread and record any exact permission granted.
                 </p>
               </div>
-              <span className="rounded-full bg-emerald-100 px-3 py-2 text-xs font-semibold text-emerald-900">3 of 3 contacted</span>
+              <span className="rounded-full bg-emerald-100 px-3 py-2 text-xs font-semibold text-emerald-900">6 of 6 contacted</span>
             </div>
             <div className="mt-4 grid gap-3 xl:grid-cols-3">
               {OUTREACH_APPROVAL_BATCH.map((item) => (
                 <section key={`approval-batch-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
                   <div className="flex items-center justify-between gap-2">
                     <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">Priority {item.priority}</span>
-                    <span className="text-xs font-semibold text-emerald-800">Sent · awaiting reply</span>
+                    <span className="text-xs font-semibold text-emerald-800">Contacted · awaiting reply</span>
                   </div>
                   <h4 className="mt-3 text-lg font-semibold text-[var(--ink)]">{item.ministry}</h4>
                   <p className="mt-1 text-xs font-semibold text-[var(--muted)]">To: {item.recipientName} · {item.recipient}</p>
