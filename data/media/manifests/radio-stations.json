@@ -74,6 +74,22 @@
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
       ]
+    },
+    {
+      "id": "classic-books",
+      "title": "Classic Books & Bible History Radio",
+      "shortLabel": "Classic Books",
+      "description": "Public-domain Spurgeon prayer readings and H. A. Ironside Bible-history chapters.",
+      "trackIds": [
+        "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
+        "spurgeon-prayers-librivox-009-009-prayer-a-prayer-for-holiness",
+        "spurgeon-prayers-librivox-018-018-prayer-to-be-like-christ",
+        "spurgeon-prayers-librivox-028-028-sermon-the-golden-key-of-prayer",
+        "ironside-four-hundred-silent-years-librivox-001-000-preface",
+        "ironside-four-hundred-silent-years-librivox-002-001-the-jews-under-priestly-rule",
+        "ironside-four-hundred-silent-years-librivox-003-002-the-days-of-the-maccabees",
+        "ironside-four-hundred-silent-years-librivox-006-005-the-literature-of-the-jews"
+      ]
     }
   ],
   "reviewedTracks": [
@@ -184,6 +200,54 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-009-009-prayer-a-prayer-for-holiness",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-018-018-prayer-to-be-like-christ",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-028-028-sermon-the-golden-key-of-prayer",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-001-000-preface",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-002-001-the-jews-under-priestly-rule",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-003-002-the-days-of-the-maccabees",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-006-005-the-literature-of-the-jews",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
     }
   ]
 }

@@ -2431,7 +2431,8 @@ const OUTREACH_APPROVAL_BATCH = [
     recipientName: "Thru the Bible ministry team",
     recipient: "info@ttb.org",
     channel: "Official ministry email",
-    status: "Ready for Stephen's review · not sent",
+    status: "Follow-up sent August 15, 2026 · awaiting written reply",
+    sent: true,
     verifiedAt: "September 1, 2026",
     officialUrl: "https://ttb.org/resources/free-downloads",
     contactUrl: "https://ttb.org/about/contact-us",
@@ -2446,7 +2447,8 @@ const OUTREACH_APPROVAL_BATCH = [
     recipientName: "Way of Life Literature support and publishing team",
     recipient: "support@wayoflife.org",
     channel: "Official publishing support email",
-    status: "Ready for Stephen's review · not sent",
+    status: "Specific follow-up sent August 15, 2026 · awaiting written reply",
+    sent: true,
     verifiedAt: "September 1, 2026",
     officialUrl: "https://www.wayoflife.org/sharing/",
     contactUrl: "mailto:support@wayoflife.org",
@@ -2461,7 +2463,8 @@ const OUTREACH_APPROVAL_BATCH = [
     recipientName: "Pastor Bo Wagner",
     recipient: "2knowhim@cbc-web.org",
     channel: "Official church-listed pastor email",
-    status: "Ready for Stephen's review · not sent",
+    status: "Follow-up sent August 14, 2026 · awaiting written confirmation",
+    sent: true,
     verifiedAt: "September 1, 2026",
     officialUrl: "https://www.cbc-web.org/about-cbc/",
     contactUrl: "mailto:2knowhim@cbc-web.org",
@@ -42808,20 +42811,20 @@ function LibraryAcquisitionCenter({
           <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <p className="text-sm font-semibold text-[var(--green)]">First outreach approval batch</p>
-                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Three exact messages, verified and waiting for founder review</h3>
+                <p className="text-sm font-semibold text-[var(--green)]">Active outreach conversations</p>
+                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Three verified conversations are already in progress</h3>
                 <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
-                  These messages have not been sent. Review the recipient, request, doctrinal fit, and complete wording before any external contact. Opening a draft prefills your mail app but never sends the message for you.
+                  The initial messages and one careful follow-up have already been sent. Do not open a new message or repeat the request; wait for a written reply in the existing thread and record any exact permission granted.
                 </p>
               </div>
-              <span className="rounded-full bg-amber-100 px-3 py-2 text-xs font-semibold text-amber-900">0 of 3 sent</span>
+              <span className="rounded-full bg-emerald-100 px-3 py-2 text-xs font-semibold text-emerald-900">3 of 3 contacted</span>
             </div>
             <div className="mt-4 grid gap-3 xl:grid-cols-3">
               {OUTREACH_APPROVAL_BATCH.map((item) => (
                 <section key={`approval-batch-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
                   <div className="flex items-center justify-between gap-2">
                     <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">Priority {item.priority}</span>
-                    <span className="text-xs font-semibold text-amber-800">Not sent</span>
+                    <span className="text-xs font-semibold text-emerald-800">Sent · awaiting reply</span>
                   </div>
                   <h4 className="mt-3 text-lg font-semibold text-[var(--ink)]">{item.ministry}</h4>
                   <p className="mt-1 text-xs font-semibold text-[var(--muted)]">To: {item.recipientName} · {item.recipient}</p>
@@ -42836,12 +42839,9 @@ function LibraryAcquisitionCenter({
                     <p className="mt-2">{item.body}</p>
                   </div>
                   <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
-                    <a
-                      className="rounded-full bg-[var(--green)] px-3 py-2 text-center text-xs font-semibold text-white"
-                      href={`mailto:${item.recipient}?subject=${encodeURIComponent(item.subject)}&body=${encodeURIComponent(item.body)}`}
-                    >
-                      Open email draft
-                    </a>
+                    <span className="rounded-full bg-emerald-100 px-3 py-2 text-center text-xs font-semibold text-emerald-900">
+                      Continue only in existing thread
+                    </span>
                     <button
                       className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
                       onClick={() => { void copyOutreachItem(item.id, `Subject: ${item.subject}\n\n${item.body}`); }}
@@ -42850,8 +42850,8 @@ function LibraryAcquisitionCenter({
                       Copy complete message
                     </button>
                   </div>
-                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Your mail app will open with the verified recipient, subject, and message. Review it there, then you decide whether to send.</p>
-                  {outreachCopied === item.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Complete message copied. It is still not sent.</p>}
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Status: {item.status}. Preserve the original subject when a reply arrives or a later follow-up is approved.</p>
+                  {outreachCopied === item.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Original message copied for reference. Do not resend it.</p>}
                 </section>
               ))}
             </div>

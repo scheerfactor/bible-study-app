@@ -832,5 +832,187 @@
     ],
     "recommendedUse": "Use in teaching preachers to make biblical truth understandable rather than obscure.",
     "reviewNote": "Plainness must remain accurate and reverent; it is not permission to flatten difficult doctrines."
+  },
+  {
+    "id": "ironside-living-christ-occupation",
+    "type": "Quote",
+    "title": "Occupation with Christ",
+    "author": "H. A. Ironside",
+    "text": "The only secret of living Christ is occupation with Christ.",
+    "slideText": "The only secret of living Christ is occupation with Christ.",
+    "sourceTitle": "Holiness, the False and the True",
+    "sourceLocator": "Chapter 13, page 135",
+    "sourceUrl": "https://archive.org/download/holinessfalsetru00iron/holinessfalsetru00iron_djvu.txt",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/holiness-the-false-and-the-true-h-a-ironside.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The stored 1900 edition predates the 2026 U.S. public-domain cutoff; the excerpt was checked against the locally stored Internet Archive OCR.",
+    "bibleReferences": [
+      "Philippians 1:21",
+      "Colossians 3:1-4"
+    ],
+    "topics": [
+      "Christ",
+      "Christian living",
+      "devotion"
+    ],
+    "recommendedUse": "Use to introduce a lesson on living with the mind and affections fixed upon Christ.",
+    "reviewNote": "Read the cited KJV passages in context; the quotation summarizes Ironside's application and does not replace Scripture."
+  },
+  {
+    "id": "ironside-feeding-on-written-word",
+    "type": "Quote",
+    "title": "Feeding on the written Word",
+    "author": "H. A. Ironside",
+    "text": "He who feeds upon its sacred pages is feeding on Christ, for the Word written but declares the Word eternal.",
+    "slideText": "He who feeds upon its sacred pages is feeding on Christ",
+    "sourceTitle": "Holiness, the False and the True",
+    "sourceLocator": "Chapter 13, page 135",
+    "sourceUrl": "https://archive.org/download/holinessfalsetru00iron/holinessfalsetru00iron_djvu.txt",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/holiness-the-false-and-the-true-h-a-ironside.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The stored 1900 edition predates the 2026 U.S. public-domain cutoff; the excerpt was checked against the locally stored Internet Archive OCR.",
+    "bibleReferences": [
+      "John 5:39",
+      "Luke 24:27"
+    ],
+    "topics": [
+      "Christ",
+      "Bible reading",
+      "Scripture"
+    ],
+    "recommendedUse": "Use in a study showing how Scripture bears witness to Christ.",
+    "reviewNote": "Use the quotation with the cited KJV passages and preserve the distinction between Christ and the written Scriptures that testify of Him."
+  },
+  {
+    "id": "ironside-not-mere-intellect",
+    "type": "Quote",
+    "title": "More than intellectual reading",
+    "author": "H. A. Ironside",
+    "text": "To read the Word in a mere intellectual manner will not minister Christ to the soul.",
+    "slideText": "To read the Word in a mere intellectual manner will not minister Christ to the soul.",
+    "sourceTitle": "Holiness, the False and the True",
+    "sourceLocator": "Chapter 13, page 136",
+    "sourceUrl": "https://archive.org/download/holinessfalsetru00iron/holinessfalsetru00iron_djvu.txt",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/holiness-the-false-and-the-true-h-a-ironside.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The stored 1900 edition predates the 2026 U.S. public-domain cutoff; the excerpt was checked against the locally stored Internet Archive OCR.",
+    "bibleReferences": [
+      "1 Corinthians 2:12-14",
+      "James 1:22"
+    ],
+    "topics": [
+      "Bible study",
+      "obedience",
+      "spiritual understanding"
+    ],
+    "recommendedUse": "Use to distinguish information-gathering from believing, obedient reception of Scripture.",
+    "reviewNote": "Do not use this to disparage careful study; Ironside's point is that study must be joined to faith and spiritual response."
+  },
+  {
+    "id": "ironside-prayerful-meditation",
+    "type": "Quote",
+    "title": "Prayerful meditation",
+    "author": "H. A. Ironside",
+    "text": "But prayerful meditation on the inspired pages will nourish the soul in divine affections.",
+    "slideText": "But prayerful meditation on the inspired pages will nourish the soul in divine affections.",
+    "sourceTitle": "Holiness, the False and the True",
+    "sourceLocator": "Chapter 13, page 136",
+    "sourceUrl": "https://archive.org/download/holinessfalsetru00iron/holinessfalsetru00iron_djvu.txt",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/holiness-the-false-and-the-true-h-a-ironside.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The stored 1900 edition predates the 2026 U.S. public-domain cutoff; the excerpt was checked against the locally stored Internet Archive OCR.",
+    "bibleReferences": [
+      "Psalm 1:1-3",
+      "Psalm 119:18"
+    ],
+    "topics": [
+      "meditation",
+      "prayer",
+      "Bible reading"
+    ],
+    "recommendedUse": "Use when teaching a prayerful approach to reading and meditating upon Scripture.",
+    "reviewNote": "Anchor the practice in the cited KJV passages rather than treating the quotation as a formula."
+  },
+  {
+    "id": "spurgeon-practice-before-perfection",
+    "type": "Illustration",
+    "title": "Practice before perfection",
+    "author": "C. H. Spurgeon",
+    "text": "Yet he teaches me that I must practise if I would be perfect ; must exercise myself unto godliness if I would be skilful ; must, in fact, make myself familiar with the word of God, with holy living, and saintly dying.",
+    "slideText": "I must practise if I would be perfect ; must exercise myself unto godliness if I would be skilful",
+    "sourceTitle": "Feathers for Arrows",
+    "sourceLocator": "Practice—Necessary to Perfection, page 168",
+    "sourceUrl": "https://archive.org/download/feathersforarro00spurgoog/feathersforarro00spurgoog_djvu.txt",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The 1870 work is public domain in the United States; the excerpt was checked against the locally stored Internet Archive OCR.",
+    "bibleReferences": [
+      "1 Timothy 4:7-8",
+      "2 Timothy 2:15"
+    ],
+    "topics": [
+      "practice",
+      "godliness",
+      "Bible study"
+    ],
+    "recommendedUse": "Use the irritating flute practice as a picture of disciplined growth in Scripture and godliness.",
+    "reviewNote": "The illustration supports disciplined practice; salvation and sanctification must still be taught from Scripture."
+  },
+  {
+    "id": "spurgeon-tell-the-lord-so",
+    "type": "Illustration",
+    "title": "Tell the Lord so",
+    "author": "C. H. Spurgeon",
+    "text": "Mr. F. replied in a whisper, \" Tell the Lord so.\"",
+    "slideText": "Tell the Lord so.",
+    "sourceTitle": "Feathers for Arrows",
+    "sourceLocator": "Prayer—for Help to Pray, page 170",
+    "sourceUrl": "https://archive.org/download/feathersforarro00spurgoog/feathersforarro00spurgoog_djvu.txt",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The 1870 work is public domain in the United States; the excerpt was checked against the locally stored Internet Archive OCR.",
+    "bibleReferences": [
+      "Romans 8:26",
+      "Luke 11:1"
+    ],
+    "topics": [
+      "prayer",
+      "weakness",
+      "honesty"
+    ],
+    "recommendedUse": "Use Andrew Fuller's quiet counsel to illustrate honest dependence upon God when words fail in prayer.",
+    "reviewNote": "Retell the surrounding anecdote from the source when context is needed and establish prayer from the cited KJV passages."
+  },
+  {
+    "id": "spurgeon-prayer-bell-rope",
+    "type": "Illustration",
+    "title": "The bell rope of prayer",
+    "author": "C. H. Spurgeon",
+    "text": "Prayer pulls the rope below and the great bell rings above in the ears of God.",
+    "slideText": "Prayer pulls the rope below and the great bell rings above in the ears of God.",
+    "sourceTitle": "Feathers for Arrows",
+    "sourceLocator": "Prayer—Simile of, page 171",
+    "sourceUrl": "https://archive.org/download/feathersforarro00spurgoog/feathersforarro00spurgoog_djvu.txt",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The 1870 work is public domain in the United States; the excerpt was checked against the locally stored Internet Archive OCR.",
+    "bibleReferences": [
+      "Luke 18:1",
+      "1 Thessalonians 5:17"
+    ],
+    "topics": [
+      "prayer",
+      "persistence",
+      "faith"
+    ],
+    "recommendedUse": "Use the bell-rope picture to introduce persistent prayer.",
+    "reviewNote": "This is a metaphor, not a mechanical promise; explain prayer according to the full teaching of the cited KJV passages."
   }
 ]

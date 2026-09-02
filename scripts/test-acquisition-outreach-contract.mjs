@@ -29,12 +29,11 @@ const requiredSignals = [
   'id: "bo-wagner-first-contact"',
   'recipient: "2knowhim@cbc-web.org"',
   "no book or media file would be copied, hosted, sold, narrated, or placed behind paid access",
-  "Three exact messages, verified and waiting for founder review",
-  "0 of 3 sent",
-  "Opening a draft prefills your mail app but never sends the message for you.",
-  'href={`mailto:${item.recipient}?subject=${encodeURIComponent(item.subject)}&body=${encodeURIComponent(item.body)}`}',
-  "Open email draft",
-  "Review it there, then you decide whether to send.",
+  "Three verified conversations are already in progress",
+  "3 of 3 contacted",
+  "Do not open a new message or repeat the request",
+  "Continue only in existing thread",
+  "Do not resend it.",
 ];
 
 const missing = requiredSignals.filter((signal) => !source.includes(signal));
@@ -43,4 +42,4 @@ if (missing.length) {
   process.exit(1);
 }
 
-console.log("Acquisition outreach contract passed: named partners, official contacts, free-use boundaries, authorized Store choices, and three unsent approval-ready messages are present.");
+console.log("Acquisition outreach contract passed: named partners, official contacts, free-use boundaries, authorized Store choices, and three active nonduplicate conversations are present.");

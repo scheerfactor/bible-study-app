@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, Library, MessageSquareText, Music2, Plus, Quote, Search } from "lucide-react";
+import { BookOpen, Library, Lightbulb, MessageSquareText, Music2, Plus, Quote, Search } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import hymnData from "../../data/hymns/presentation-hymns.json";
 import preachingHelpData from "../../data/preaching-helps/verified-preaching-helps.json";
@@ -8,7 +8,7 @@ import CommentaryExcerptPicker from "./CommentaryExcerptPicker";
 import { validateCommentaryExcerpt } from "../lib/commentary-excerpt";
 
 export type PresentationContentSlideSeed = {
-  type: "Title" | "Scripture" | "Quote";
+  type: "Title" | "Scripture" | "Quote" | "Illustration";
   title: string;
   subtitle: string;
   body?: string;
@@ -19,7 +19,7 @@ export type PresentationContentSlideSeed = {
 
 type Hymn = (typeof hymnData)[number];
 type PreachingHelp = (typeof preachingHelpData)[number];
-type FinderMode = "hymns" | "quotes" | "books" | "commentary" | "scripture";
+type FinderMode = "hymns" | "quotes" | "illustrations" | "books" | "commentary" | "scripture";
 
 export type PresentationBookResource = {
   slug: string;
@@ -158,6 +158,17 @@ export default function PresentationContentFinder({
       item.topics.join(" "),
     ], normalizedQuery)), [normalizedQuery]);
 
+  const illustrations = useMemo(() => (preachingHelpData as PreachingHelp[])
+    .filter((item) => item.type === "Illustration")
+    .filter((item) => includesQuery([
+      item.title,
+      item.author,
+      item.text,
+      item.sourceTitle,
+      item.bibleReferences.join(" "),
+      item.topics.join(" "),
+    ], normalizedQuery)), [normalizedQuery]);
+
   const matchingBooks = useMemo(() => books
     .filter((book) => !/rejected|do not import/i.test(`${book.doctrinal_review_status} ${book.rights_status}`))
     .filter((book) => includesQuery([
@@ -205,9 +216,9 @@ export default function PresentationContentFinder({
     ]);
   }
 
-  function addQuote(item: PreachingHelp) {
+  function addPreachingHelp(item: PreachingHelp) {
     onAddSlides([{
-      type: "Quote",
+      type: item.type === "Illustration" ? "Illustration" : "Quote",
       title: item.title,
       subtitle: `${item.author} · ${item.sourceTitle}`,
       body: item.slideText,
@@ -263,24 +274,27 @@ export default function PresentationContentFinder({
     ? hymns.length
     : mode === "quotes"
       ? quotes.length
-      : mode === "books"
-        ? matchingBooks.length
-        : matchingCommentary.length;
+      : mode === "illustrations"
+        ? illustrations.length
+        : mode === "books"
+          ? matchingBooks.length
+          : matchingCommentary.length;
 
   return (
     <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-[var(--ink)]">Reviewed Content Finder</p>
-          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Search reviewed hymns, quotations, books, and commentary—or add an exact KJV passage without leaving the deck.</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Search reviewed hymns, quotations, illustrations, books, and commentary—or add an exact KJV passage without leaving the deck.</p>
         </div>
-        <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{hymnData.length} hymns · {(preachingHelpData as PreachingHelp[]).filter((item) => item.type === "Quote").length} quotes · {books.length} books · {commentary.length} notes</span>
+        <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{hymnData.length} hymns · {(preachingHelpData as PreachingHelp[]).filter((item) => item.type === "Quote").length} quotes · {(preachingHelpData as PreachingHelp[]).filter((item) => item.type === "Illustration").length} illustrations · {books.length} books · {commentary.length} notes</span>
       </div>
 
-      <div className="mt-3 grid grid-cols-2 rounded-xl border border-[var(--line)] bg-white p-1 sm:grid-cols-5">
+      <div className="mt-3 grid grid-cols-2 rounded-xl border border-[var(--line)] bg-white p-1 sm:grid-cols-3 xl:grid-cols-6">
         {([
           ["hymns", "Hymns", Music2],
           ["quotes", "Quotes", Quote],
+          ["illustrations", "Illustrations", Lightbulb],
           ["books", "Books", Library],
           ["commentary", "Commentary", MessageSquareText],
           ["scripture", "KJV Verse", BookOpen],
@@ -358,7 +372,15 @@ export default function PresentationContentFinder({
                 <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
                 <p className="mt-1 text-xs text-[var(--muted)]">{item.author} · {item.sourceTitle} · {item.bibleReferences.join(" · ")}</p>
                 <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">“{item.slideText}”</p>
-                <button className="mt-3 inline-flex min-h-10 items-center gap-2 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white" onClick={() => addQuote(item)} type="button"><Plus size={15} /> Add quote slide</button>
+                <button className="mt-3 inline-flex min-h-10 items-center gap-2 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white" onClick={() => addPreachingHelp(item)} type="button"><Plus size={15} /> Add quote slide</button>
+              </article>
+            ))}
+            {mode === "illustrations" && illustrations.map((item) => (
+              <article key={item.id} className="rounded-xl border border-[var(--line)] bg-white p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
+                <p className="mt-1 text-xs text-[var(--muted)]">{item.author} · {item.sourceTitle} · {item.bibleReferences.join(" · ")}</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{item.slideText}</p>
+                <button className="mt-3 inline-flex min-h-10 items-center gap-2 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white" onClick={() => addPreachingHelp(item)} type="button"><Plus size={15} /> Add illustration slide</button>
               </article>
             ))}
             {mode === "books" && matchingBooks.slice(0, MAX_VISIBLE_RESULTS).map((book) => (
