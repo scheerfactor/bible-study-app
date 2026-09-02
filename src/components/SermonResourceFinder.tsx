@@ -85,6 +85,7 @@ type FinderResult = {
   searchText: string;
   addition: SermonResourceAddition;
   slide: SermonResourceSlideSeed;
+  hymn?: Hymn;
 };
 
 const preachingHelps = verifiedPreachingHelpsData as PreachingHelp[];
@@ -131,6 +132,7 @@ export default function SermonResourceFinder({
   const [query, setQuery] = useState(initialQuery);
   const [addedId, setAddedId] = useState("");
   const [slideAddedId, setSlideAddedId] = useState("");
+  const [hymnSections, setHymnSections] = useState<Record<string, string>>({});
 
   const results = useMemo(() => {
     const helpResults: FinderResult[] = preachingHelps.map((entry) => {
@@ -187,6 +189,7 @@ export default function SermonResourceFinder({
           body: entry.refrain || firstStanza,
           speakerNotes: `Scripture connections: ${references || "None listed"}\nText source: ${entry.textSourceUrl}\nText rights: ${entry.textRights}\nMusic source: ${entry.musicSourceUrl}\nMusic rights: ${entry.musicRights}`,
         },
+        hymn: entry,
       };
     });
 
@@ -243,13 +246,41 @@ export default function SermonResourceFinder({
       .slice(0, MAX_VISIBLE_RESULTS);
   }, [books, commentary, mode, query]);
 
+  function selectedHymnSection(result: FinderResult) {
+    if (!result.hymn) return null;
+    const selected = hymnSections[result.id] ?? (result.hymn.refrain ? "refrain" : "stanza-0");
+    if (selected === "refrain" && result.hymn.refrain) return { label: "Refrain", text: result.hymn.refrain };
+    const stanzaIndex = Number.parseInt(selected.replace("stanza-", ""), 10) || 0;
+    return { label: `Stanza ${stanzaIndex + 1}`, text: result.hymn.stanzas[stanzaIndex] ?? result.hymn.stanzas[0] ?? "" };
+  }
+
+  function resolvedAddition(result: FinderResult): SermonResourceAddition {
+    const selected = selectedHymnSection(result);
+    if (!selected || !result.hymn) return result.addition;
+    const references = result.hymn.scriptureReferences.join(" · ");
+    return {
+      ...result.addition,
+      body: `${result.hymn.title}\n${result.hymn.lyricist} · Tune: ${result.hymn.tune}\nSelected section: ${selected.label}\nScripture connections: ${references || "None listed"}\n\n${selected.text}\n\nText rights: ${result.hymn.textRights}\nMusic rights: ${result.hymn.musicRights}\nSource: ${result.hymn.textSourceUrl}`,
+    };
+  }
+
+  function resolvedSlide(result: FinderResult): SermonResourceSlideSeed {
+    const selected = selectedHymnSection(result);
+    if (!selected) return result.slide;
+    return {
+      ...result.slide,
+      body: selected.text,
+      speakerNotes: `Selected section: ${selected.label}\n${result.slide.speakerNotes}`,
+    };
+  }
+
   function addResult(result: FinderResult) {
-    onAdd(result.addition);
+    onAdd(resolvedAddition(result));
     setAddedId(result.id);
   }
 
   function addResultToPresentation(result: FinderResult) {
-    onAddToPresentation(result.slide);
+    onAddToPresentation(resolvedSlide(result));
     setSlideAddedId(result.id);
   }
 
@@ -307,7 +338,21 @@ export default function SermonResourceFinder({
               <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-[var(--green)]">Reviewed</span>
             </div>
             {result.detail && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{result.detail}</p>}
-            <p className="mt-3 line-clamp-5 whitespace-pre-line text-sm leading-6 text-[var(--ink)]">{result.preview}</p>
+            {result.hymn && (
+              <label className="mt-3 block text-xs font-semibold text-[var(--muted)]">
+                Choose stanza or refrain
+                <select
+                  aria-label={`Choose section for ${result.title}`}
+                  className="mt-2 min-h-11 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+                  onChange={(event) => setHymnSections((current) => ({ ...current, [result.id]: event.target.value }))}
+                  value={hymnSections[result.id] ?? (result.hymn.refrain ? "refrain" : "stanza-0")}
+                >
+                  {result.hymn.refrain && <option value="refrain">Refrain</option>}
+                  {result.hymn.stanzas.map((_, index) => <option key={`${result.id}-stanza-${index + 1}`} value={`stanza-${index}`}>Stanza {index + 1}</option>)}
+                </select>
+              </label>
+            )}
+            <p className="mt-3 line-clamp-5 whitespace-pre-line text-sm leading-6 text-[var(--ink)]">{selectedHymnSection(result)?.text ?? result.preview}</p>
             <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Rights:</strong> {result.rights}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               <button className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white" onClick={() => addResult(result)} type="button">

@@ -250,7 +250,7 @@ type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
 type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "presenting";
 type SermonQuickStartId = "expository" | "topical" | "evangelistic" | "doctrinal" | "devotional";
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
-type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Countdown" | "Announcement" | "Question" | "Closing / Invitation";
+type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Hymn" | "Application" | "Countdown" | "Announcement" | "Question" | "Closing / Invitation";
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
@@ -2649,7 +2649,7 @@ const SERMON_SECTION_LABELS: Record<SermonSectionKey, string> = {
 
 const SERMON_SECTION_FIELDS: SermonSectionKey[] = ["outline", "introduction", "points", "illustrations", "applications", "conclusion", "invitation"];
 
-const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Application", "Countdown", "Announcement", "Question", "Closing / Invitation"];
+const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Hymn", "Application", "Countdown", "Announcement", "Question", "Closing / Invitation"];
 const PRESENTATION_SERVICE_PRESETS: Array<{
   id: string;
   label: string;
@@ -15896,6 +15896,18 @@ function sermonSlideTemplatePatch(type: SermonSlideType): Partial<SermonSlide> {
       accentStyle: "Panel",
       imageTheme: "Quiet Study",
       imageSlot: "quiet-study",
+      backgroundIntensity: "Balanced",
+    };
+  }
+  if (type === "Hymn") {
+    return {
+      layout: "Centered",
+      fontScale: "Large",
+      titleScale: "Medium",
+      textPlacement: "Center",
+      accentStyle: "Panel",
+      imageTheme: "Piano & Hymnal",
+      imageSlot: "worship-piano",
       backgroundIntensity: "Balanced",
     };
   }
@@ -52475,7 +52487,9 @@ function SermonWorkspaceScreen({
       ? "Quote"
       : seed.resourceKind === "illustrations"
         ? "Illustration"
-        : "Main Point";
+        : seed.resourceKind === "hymns"
+          ? "Hymn"
+          : "Main Point";
     const visual = seed.resourceKind === "quotes"
       ? { imageSlot: "parchment" as SermonSlideImageSlotId, layout: "Minimal" as SermonSlideLayout }
       : seed.resourceKind === "illustrations"
@@ -53095,7 +53109,7 @@ function SermonWorkspaceScreen({
 	              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
 	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Add Slide Template</p>
 	                <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-	                  {(["Scripture", "Main Point", "Quote", "Illustration", "Application", "Closing / Invitation"] as SermonSlideType[]).map((type) => (
+	                  {(["Scripture", "Main Point", "Quote", "Illustration", "Hymn", "Application", "Closing / Invitation"] as SermonSlideType[]).map((type) => (
 	                    <button
 	                      key={`add-slide-template-${type}`}
 	                      className="shrink-0 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
