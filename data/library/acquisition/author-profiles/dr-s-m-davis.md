@@ -52,7 +52,21 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| TBD | Family and preaching | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
+| The Wise Use of Parental Authority | Family / parenting teaching message | Not verified | Website metadata and official link only | Doctrinal review required | Public discovery card may use approved website metadata; CD, DVD, MP4, audio, video, transcript, embed, TTS, and paid access remain unapproved. |
+
+### Discovery Focus
+
+- Identify the exact books Stephen has read or started reading and review them individually.
+- Prioritize sermons and videos that serve pastors, young preachers, families, and practical Christian living.
+- Select no more than three named media items for the first official-link or official-player permission request.
+
+Current private pilot shortlist (media use not yet approved):
+
+1. *10 Reasons Why Pastors Lose Their Families*
+2. *The Wise Use of Parental Authority*
+3. *Anger the Destroyer*
+
+The official catalog identifies these resources and offers audio or video formats. Existing permission does not authorize the app to host, embed, stream, transcribe, narrate, sell, or place those media files behind paid access.
 
 ## Audio / Video Availability
 

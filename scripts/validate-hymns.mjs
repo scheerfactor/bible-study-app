@@ -7,6 +7,9 @@ const hymns = JSON.parse(await readFile(resolve(root, "data", "hymns", "verified
 const supplementalHymns = JSON.parse(
   await readFile(resolve(root, "data", "hymns", "supplemental-hymns.json"), "utf8"),
 );
+const presentationHymns = JSON.parse(
+  await readFile(resolve(root, "data", "hymns", "presentation-hymns.json"), "utf8"),
+);
 const errors = [];
 const ids = new Set();
 const titles = new Set();
@@ -60,6 +63,18 @@ for (const hymn of hymns) {
 const expectedHymnCount = 11 + supplementalHymns.length;
 if (hymns.length !== expectedHymnCount) {
   errors.push(`Expected exactly ${expectedHymnCount} reviewed hymns in the verified set.`);
+}
+if (presentationHymns.length !== hymns.length) {
+  errors.push(`Presentation hymn index has ${presentationHymns.length} entries; expected ${hymns.length}.`);
+}
+for (const [index, hymn] of hymns.entries()) {
+  const presentationHymn = presentationHymns[index];
+  if (!presentationHymn || presentationHymn.id !== hymn.id || presentationHymn.title !== hymn.title) {
+    errors.push(`Presentation hymn index is out of order or missing ${hymn.id}.`);
+  }
+  if (presentationHymn && ("notes" in presentationHymn || "durationSeconds" in presentationHymn)) {
+    errors.push(`Presentation hymn index must not include playback note data: ${hymn.id}.`);
+  }
 }
 if (errors.length) {
   console.error(errors.join("\n"));

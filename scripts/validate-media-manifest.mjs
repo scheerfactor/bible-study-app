@@ -167,8 +167,13 @@ records.forEach((record, index) => {
 
     if (record.passageIndexed === true) {
       for (const field of ["passage", "passageEvidenceUrl"]) requireField(record, index, field);
-      if (!String(record.passageEvidenceUrl).startsWith("https://ttb.org/") && !String(record.passageEvidenceUrl).startsWith("https://www.ttb.org/")) {
-        errors.push(`record ${index + 1}: passage-indexed TTB sermon must cite an official TTB passage source`);
+      const passageEvidenceUrl = String(record.passageEvidenceUrl);
+      if (
+        !passageEvidenceUrl.startsWith("https://ttb.org/")
+        && !passageEvidenceUrl.startsWith("https://www.ttb.org/")
+        && !passageEvidenceUrl.startsWith("https://cmp.thruthebible.io/")
+      ) {
+        errors.push(`record ${index + 1}: passage-indexed TTB sermon must cite an official TTB page or feed`);
       }
     }
   }

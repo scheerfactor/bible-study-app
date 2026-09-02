@@ -54,6 +54,20 @@ Review:
 | --- | --- | --- | --- | --- | --- |
 | TBD | Preaching and Baptist doctrine | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
 
+### Discovery Focus
+
+- Identify the exact book or books Stephen has read or started reading before requesting title-level rights.
+- Prioritize practical counsel for young preachers, pastoral ministry, Baptist doctrine, and sermon preparation.
+- Review one named sermon or teaching-video pilot only after the official source and media rightsholder are verified.
+
+Current private shortlist (not approved for public listing):
+
+1. *Marriage Makers/Marriage Breakers*
+2. *Romans: Salvation A-Z*
+3. *Ruth: Diamonds in the Darkness*
+
+These titles appear in an author-attributed publication list, but an exact official Word of His Mouth product page and current rights holder must be verified for each title before outreach or public use.
+
 ## Audio / Video Availability
 
 | Media type | Availability | Rights / permission status | Notes |

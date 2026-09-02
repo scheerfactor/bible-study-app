@@ -33,6 +33,7 @@
     "category": "Commentaries",
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/the-majesty-of-the-psalms-ebook/",
+    "passage": "Psalms",
     "permissionStatus": "Permission Granted - Scoped",
     "reviewStatus": "Approved for official link listing; excerpt review still required",
     "approvedPublicUse": [
@@ -183,6 +184,7 @@
     "category": "Commentaries",
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/the-proverbs/",
+    "passage": "Proverbs",
     "permissionStatus": "Permission Granted - Scoped",
     "reviewStatus": "Approved for official link listing; excerpt review still required",
     "approvedPublicUse": [
@@ -2117,14 +2119,14 @@
   },
   {
     "id": "licensed-way-of-life-deceptive-dangers-of-logos",
-    "title": "Deceptive Dangers of Logos",
-    "author": "David Cloud",
+    "title": "The Deceptive Dangers of Logos Bible Software",
+    "author": "Brian Snider",
     "publisherMinistry": "Way of Life Literature",
     "category": "Discernment",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/deceptive-dangers-of-logos.php",
     "permissionStatus": "Public Policy - Official Links Only",
-    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
+    "reviewStatus": "Official title page and rights boundary reviewed 2026-08-28; full content and doctrinal review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
@@ -2140,9 +2142,9 @@
       "PowerPoint or presentation export",
       "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
-    "recommendedUse": "Bible software and resource discernment",
-    "notes": "Sensitive competitor/resource topic; keep review notes clear. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-deceptive-dangers-of-logos-review-2026-08-28.md",
+    "recommendedUse": "Independent Bible-software discernment resource for careful source and doctrinal review",
+    "notes": "Official-link-only record. This third-party title is not a Father's Business marketing claim or endorsement, and its arguments have not been adopted as the app's position. No description, ebook text, cover, quotation, or media is copied. The source must remain linked to Way of Life; broader use requires written permission."
   },
   {
     "id": "licensed-way-of-life-directory-of-contemporary-worship-musicians",
@@ -2530,7 +2532,7 @@
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/knowing_gods_will.php",
     "permissionStatus": "Public Policy - Official Links Only",
-    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
+    "reviewStatus": "Official title, author, edition, and distribution boundary reviewed 2026-08-28; full content and doctrinal review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
@@ -2546,9 +2548,9 @@
       "PowerPoint or presentation export",
       "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
-    "recommendedUse": "Guidance and Christian living",
-    "notes": "Practical Christian living candidate. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-practical-study-title-review-2026-08-28.md",
+    "recommendedUse": "Christian-living and decision-making candidate after full doctrinal review",
+    "notes": "Official-link-only record. The official ebook identifies David W. Cloud, a 2021 edition, and a no-other-website distribution boundary. No ebook text, cover, quotation, or media is copied. Do not mark as recommended until its full Scripture handling and counsel are reviewed."
   },
   {
     "id": "licensed-way-of-life-life-and-songs-of-charles-weigle",
@@ -2813,14 +2815,14 @@
   },
   {
     "id": "licensed-way-of-life-seekers-bible-study",
-    "title": "Seeker's Bible Study",
+    "title": "The Seeker's Bible Study",
     "author": "David Cloud",
     "publisherMinistry": "Way of Life Literature",
     "category": "Evangelism",
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/seekers_bible_study.php",
     "permissionStatus": "Public Policy - Official Links Only",
-    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
+    "reviewStatus": "Official title page, stated audience, format, and rights boundary reviewed 2026-08-28; full Gospel and doctrinal review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
@@ -2836,9 +2838,9 @@
       "PowerPoint or presentation export",
       "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
-    "recommendedUse": "Evangelism and Bible study",
-    "notes": "Possible outreach study resource; review before placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-practical-study-title-review-2026-08-28.md",
+    "recommendedUse": "One-to-one evangelism and Gospel-study candidate after full doctrinal review",
+    "notes": "Official-link-only record. The publisher describes a multi-week study for unbelievers covering the Gospel, repentance, and faith. No description, lesson, question, map, teacher note, ebook file, cover, quotation, or media is copied. Complete a full Gospel-clarity and Scripture-wording review before recommendation."
   },
   {
     "id": "licensed-way-of-life-slaverys-ugly-history",
@@ -3052,7 +3054,7 @@
     "collection": "Way of Life Literature Shareable Resources",
     "sourceUrl": "https://www.wayoflife.org/free_ebooks/memory_verse_journal.php",
     "permissionStatus": "Public Policy - Official Links Only",
-    "reviewStatus": "Public-policy official-link listing only; title-level review still required",
+    "reviewStatus": "Official title page, author attribution, formats, and rights boundary reviewed 2026-08-28; verse-list and doctrinal review pending",
     "approvedPublicUse": [
       "Official link",
       "Citation",
@@ -3068,9 +3070,9 @@
       "PowerPoint or presentation export",
       "Paid access, resale, or subscription inclusion"
     ],
-    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-review-2026-08-14.md",
-    "recommendedUse": "Memory and discipleship",
-    "notes": "Useful memory-work candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-practical-study-title-review-2026-08-28.md",
+    "recommendedUse": "Scripture-memory and meditation candidate for individuals, families, classes, and churches",
+    "notes": "Official-link-only record. The free files remain on Way of Life's site, and the paid printed edition remains separate. No worksheet, verse list, publisher description, ebook file, cover, quotation, or media is copied. Verify the complete verse list uses KJV wording before recommendation."
   },
   {
     "id": "licensed-way-of-life-united-nations-and-the-new-age",
@@ -3530,6 +3532,34 @@
     "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed MP4/video, MP3/audio, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
   },
   {
+    "id": "licensed-solve-family-problems-wise-use-of-parental-authority",
+    "title": "The Wise Use of Parental Authority",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Family",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://www.solvefamilyproblems.org/product-p/parental-authority.htm",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official product page reviewed 2026-08-28; metadata-only listing approved; title-level doctrinal review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text or PDF hosting",
+      "CD or audio hosting, streaming, or download",
+      "DVD, MP4, or video hosting, player embed, streaming, or download",
+      "Transcript, excerpt beyond the approved website description, or derivative study notes",
+      "AI/TTS narration or voice generation",
+      "Presentation export, paid access, subscription inclusion, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Parenting; servant leadership; family discipleship; official purchase and resource-discovery link",
+    "notes": "The official product page lists CD, DVD, and MP4 download formats, but the current permission covers only website titles, graphics, descriptions, attribution, and official links. The app does not host, embed, stream, transcribe, narrate, or sell this message. Public recommendation remains subject to title-level doctrinal review."
+  },
+  {
     "id": "licensed-thru-the-bible-audio-study",
     "title": "THRU the BIBLE Audio Study",
     "author": "Dr. J. Vernon McGee",
@@ -3886,5 +3916,33 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/vance-havner-official-catalog-review-2026-08-25.md",
     "recommendedUse": "Official publisher discovery for Gospel exposition and sermon preparation",
     "notes": "CLC's reviewed author page lists ISBN 9780875087832. The direct product URL tested on 2026-08-25 returned 404, so this record intentionally uses the verified author catalog page. No book content or imagery is copied."
+  },
+  {
+    "id": "licensed-way-of-life-power-of-the-ancient-sling",
+    "title": "The Power of the Ancient Sling",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Bible Archaeology",
+    "collection": "Way of Life Literature Shareable Reports",
+    "sourceUrl": "https://www.wayoflife.org/reports/the_power_of_the_ancient_sling.html",
+    "passage": "1 Samuel 17:40, 50; Judges 20:16; 2 Kings 3:25; 2 Chronicles 26:14",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Official report, Bible references, attribution, and sharing boundary reviewed 2026-08-28; link-only app listing",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Passage-indexed discovery"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text report or paid-book content inside the app before item-specific editorial review",
+      "Site image, illustration, or third-party quotation reuse",
+      "Audio or video hosting, transcript, embed, or download",
+      "AI/TTS narration, adaptation, or derivative study content",
+      "Presentation-image or copyrighted-text export",
+      "Paid access, subscription inclusion, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-ancient-sling-report-review-2026-08-28.md",
+    "recommendedUse": "Passage-linked archaeology and historical-background discovery for David and Goliath and other biblical slingers",
+    "notes": "Way of Life's displayed policy permits credited posting of parts or entire reports, but this first app record deliberately links only. The report is excerpted from a Store book and includes an image and third-party quotations, so none of that content is copied. No KJV verse text is reproduced by this record."
   }
 ]

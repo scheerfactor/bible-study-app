@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewedAt": "2026-08-15",
+  "reviewedAt": "2026-09-01",
   "launchStatus": "Public beta approved",
   "stations": [
     {
@@ -23,10 +23,28 @@
       "id": "kjv-bible",
       "title": "KJV Bible Radio",
       "shortLabel": "KJV Bible",
-      "description": "Continuous King James Bible listening from the Gospel of John.",
+      "description": "Sequential King James Bible listening through the complete Gospel of John pilot.",
+      "coverage": "John 1-21",
+      "listeningMode": "Sequential full-book pilot",
+      "markerStatus": "Five range files are playback-verified. Chapter buttons appear only after every marker in that range file is manually verified.",
       "trackIds": [
         "kjv-john-librivox-001-john-1-4",
-        "kjv-john-librivox-004-john-13-17"
+        "kjv-john-librivox-002-john-5-8",
+        "kjv-john-librivox-003-john-9-12",
+        "kjv-john-librivox-004-john-13-17",
+        "kjv-john-librivox-005-john-18-21"
+      ]
+    },
+    {
+      "id": "kjv-genesis-pilot",
+      "title": "Genesis Bible Radio Pilot",
+      "shortLabel": "Genesis Pilot",
+      "description": "A rights-cleared King James Bible listening pilot from the beginning of Genesis.",
+      "coverage": "Genesis 1-14",
+      "listeningMode": "Single verified range-file pilot",
+      "markerStatus": "Fourteen candidate chapter boundaries are prepared. Chapter buttons remain unavailable until every Genesis 1-14 marker is manually verified by ear.",
+      "trackIds": [
+        "bible-kjv-complete-librivox-001-genesis-1-14"
       ]
     },
     {
@@ -49,9 +67,28 @@
         "ttb-official-sunday-sermons-free-distribution-pilot",
         "ttb-the-potter-and-the-clay-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
+        "ttb-on-eagles-wings-official-audio",
+        "ttb-watch-for-the-lord-official-audio",
+        "ttb-mount-of-olives-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
+      ]
+    },
+    {
+      "id": "classic-books",
+      "title": "Classic Books & Bible History Radio",
+      "shortLabel": "Classic Books",
+      "description": "Public-domain Spurgeon prayer readings and H. A. Ironside Bible-history chapters.",
+      "trackIds": [
+        "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
+        "spurgeon-prayers-librivox-009-009-prayer-a-prayer-for-holiness",
+        "spurgeon-prayers-librivox-018-018-prayer-to-be-like-christ",
+        "spurgeon-prayers-librivox-028-028-sermon-the-golden-key-of-prayer",
+        "ironside-four-hundred-silent-years-librivox-001-000-preface",
+        "ironside-four-hundred-silent-years-librivox-002-001-the-jews-under-priestly-rule",
+        "ironside-four-hundred-silent-years-librivox-003-002-the-days-of-the-maccabees",
+        "ironside-four-hundred-silent-years-librivox-006-005-the-literature-of-the-jews"
       ]
     }
   ],
@@ -63,10 +100,34 @@
       "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
     },
     {
+      "mediaRecordId": "kjv-john-librivox-002-john-5-8",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
+    },
+    {
+      "mediaRecordId": "kjv-john-librivox-003-john-9-12",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
+    },
+    {
       "mediaRecordId": "kjv-john-librivox-004-john-13-17",
       "sourceManifest": "uploaded-public-domain-audio-pilots",
       "approvalStatus": "Public beta approved",
       "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "kjv-john-librivox-005-john-18-21",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
+    },
+    {
+      "mediaRecordId": "bible-kjv-complete-librivox-001-genesis-1-14",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Public beta range pilot approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
     },
     {
       "mediaRecordId": "essentials-of-prayer-librivox-000-preface",
@@ -121,6 +182,72 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "ttb-on-eagles-wings-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ttb-watch-for-the-lord-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ttb-mount-of-olives-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-009-009-prayer-a-prayer-for-holiness",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-018-018-prayer-to-be-like-christ",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-028-028-sermon-the-golden-key-of-prayer",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-001-000-preface",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-002-001-the-jews-under-priestly-rule",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-003-002-the-days-of-the-maccabees",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-006-005-the-literature-of-the-jews",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
     }
   ]
 }

@@ -28,6 +28,16 @@ export const allowedCategories = new Set([
   "Fiction/classics",
 ]);
 
+export const allowedBibleBooks = new Set([
+  "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel",
+  "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job", "Psalms", "Proverbs",
+  "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos",
+  "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi", "Matthew",
+  "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians",
+  "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James",
+  "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation",
+]);
+
 const trustedDownloadHosts = new Set([
   "www.gutenberg.org",
   "archive.org",
@@ -191,6 +201,19 @@ export function validateLibraryEntry(entry, index) {
 
   if (!allowedCategories.has(entry.category)) {
     errors.push(`entry ${index + 1}: unsupported category "${entry.category}"`);
+  }
+
+  if (entry.bible_books !== undefined) {
+    if (!Array.isArray(entry.bible_books) || entry.bible_books.length === 0) {
+      errors.push(`entry ${index + 1}: bible_books must be a non-empty array when provided`);
+    } else {
+      for (const book of entry.bible_books) {
+        if (!allowedBibleBooks.has(book)) errors.push(`entry ${index + 1}: unsupported bible_books value "${book}"`);
+      }
+      if (new Set(entry.bible_books).size !== entry.bible_books.length) {
+        errors.push(`entry ${index + 1}: bible_books must not contain duplicates`);
+      }
+    }
   }
 
   if (!publicLibraryAccessStatuses.has(entry.public_domain_status)) {

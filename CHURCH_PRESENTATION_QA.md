@@ -15,6 +15,7 @@ For the first live use, treat the app as a preaching and slide-support tool, not
 - Phone or tablet opens Controller View.
 - Supabase environment variables are configured.
 - `presentation_sessions` includes Phase 4 columns: `control_mode`, `controller_lock`, `controllers`, `display_last_seen_at`, and `expires_at`.
+- Migration `20260827164153_authorize_presentation_actions_with_rpc.sql` is deployed and the authenticated presentation RPC passes its security audit.
 - The deck has been exported to PowerPoint and opened on the church presentation computer.
 - The presenter has sermon notes exported or printed.
 - The church Wi-Fi, projector resolution, and browser zoom have been checked before people arrive.
@@ -70,12 +71,37 @@ For the first live use, treat the app as a preaching and slide-support tool, not
 - Approval status should be visible without hunting.
 - Blank Screen and Emergency End should not be easy to hit accidentally.
 - No horizontal scrolling at 390x844.
+- At 834x1194, add a hymn with a long rights-source URL, open Controller View, and confirm presenter notes wrap without horizontal scrolling.
+
+## Reviewed Content Finder
+
+1. Search the 49-hymn catalog by title, lyricist, tune, lyric phrase, and Scripture reference.
+2. Add one hymn and confirm its title plus every stanza appears as a deck slide with source and music-rights notes.
+3. Search the 26-quote catalog by wording, author, topic, source, and Scripture reference.
+4. Add one quote and confirm its author, source work, locator, rights basis, and review note remain attached.
+5. Search Books by title, author, category, recommended use, and perspective; add one and confirm the slide is explicitly labeled as a catalog summary in speaker notes with its rights and doctrinal-review record.
+6. Search Commentary by reference, book, author, source, and wording; add one and confirm the excerpt is attributed, identifies its public-domain basis, links its source, and tells the presenter to compare it with the KJV text.
+7. For an entry longer than 420 characters, confirm the slide uses a readable shortened excerpt and the speaker notes say to consult the full source for context.
+8. Add `Psalm 23:1-3` from KJV Verse and confirm the exact KJV corpus text appears with the Still Waters background.
+9. Test all five finder tabs at desktop and iPad widths with no horizontal scrolling.
+
+## Media Background Finder
+
+1. Add or select a slide, then search backgrounds by label, subject, setting, motif, and category.
+2. Search `Jerusalem` and confirm Ancient Jerusalem is the single result with its rights note visible.
+3. Select the result and confirm both the slide preview and selected-background label update.
+4. Combine a category with a search, then confirm the result count reflects both filters.
+5. Search an unavailable idea and confirm the empty state recommends clearing the search or choosing All.
+6. At 834x1194, confirm the search field, category strip, results, and slide editor do not create page-level horizontal scrolling.
 
 ## iPad And Pulpit Checks
 
 - Open the sermon and presentation on the iPad you plan to use.
 - Confirm landscape and portrait both remain readable.
 - Confirm tap targets are large enough from the pulpit.
+- Confirm Presenter, Controller, and Presentation views show `Screen awake`.
+- Background and restore each live-view tab, then confirm `Screen awake` returns.
+- If the device reports `Keep Awake unavailable`, set iPad Auto-Lock to Never before the service.
 - Confirm the screen does not dim or lock during a 30-minute test.
 - Confirm the sermon manuscript can be read without horizontal scrolling.
 - Confirm slides can be advanced from the iPad if the phone controller is unavailable.
@@ -96,8 +122,8 @@ The app is ready to replace Proclaim for a simple service only when all are true
 
 ## Known Beta Limitations
 
-- Approval is enforced by app workflow and session metadata.
-- Production-grade enforcement should move controller actions to RPC or Edge Functions.
+- The server-authorized control RPC remains unavailable until its prepared migration is deployed and verified.
+- Shared control currently requires the same signed-in account on every device; limited guest controllers are not enabled.
 - Session cleanup is expiry-based in the app; a scheduled cleanup job is still recommended.
 - Remote control should be tested on the church network before service.
 - For a first Sunday use, prefer exported PowerPoint plus app notes over app-only presentation.

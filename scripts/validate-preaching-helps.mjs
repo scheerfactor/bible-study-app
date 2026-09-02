@@ -5,6 +5,7 @@ const projectRoot = process.cwd();
 const manifestPath = path.join(projectRoot, "data/preaching-helps/verified-preaching-helps.json");
 const entries = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const allowedTypes = new Set(["Quote", "Poem", "Illustration"]);
+const blockedAuthors = ["c. s. lewis", "c.s. lewis"];
 const seenIds = new Set();
 const errors = [];
 
@@ -47,6 +48,9 @@ for (const entry of entries) {
   seenIds.add(entry.id);
 
   if (!allowedTypes.has(entry.type)) errors.push(`${entry.id}: unsupported type ${entry.type}`);
+  if (blockedAuthors.some((author) => normalize(entry.author ?? "").toLowerCase().includes(author))) {
+    errors.push(`${entry.id}: blocked author requested by catalog owner`);
+  }
   if (entry.rightsStatus !== "Verified Public Domain") errors.push(`${entry.id}: rights status is not verified public domain`);
   if (!entry.sourceUrl?.startsWith("https://")) errors.push(`${entry.id}: sourceUrl must use HTTPS`);
   if (!entry.sourceLicenseUrl?.startsWith("https://")) errors.push(`${entry.id}: sourceLicenseUrl must use HTTPS`);

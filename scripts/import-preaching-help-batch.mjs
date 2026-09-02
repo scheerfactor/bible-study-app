@@ -13,6 +13,7 @@ const targetPath = path.join(root, "data/preaching-helps/verified-preaching-help
 const manifest = JSON.parse(fs.readFileSync(path.resolve(root, manifestArg.slice("--manifest=".length)), "utf8"));
 const existing = JSON.parse(fs.readFileSync(targetPath, "utf8"));
 const allowedTypes = new Set(["Quote", "Poem", "Illustration"]);
+const blockedAuthors = ["c. s. lewis", "c.s. lewis"];
 
 function normalize(value) {
   return value.replace(/\s+/g, " ").trim();
@@ -37,6 +38,9 @@ for (const candidate of manifest.entries) {
     }
   }
   if (!allowedTypes.has(entry.type)) throw new Error(entry.id + ": unsupported type " + entry.type);
+  if (blockedAuthors.some((author) => normalize(entry.author).toLowerCase().includes(author))) {
+    throw new Error(entry.id + ": blocked author requested by catalog owner");
+  }
   if (entry.rightsStatus !== "Verified Public Domain") throw new Error(entry.id + ": rights must be verified public domain");
   if (!Array.isArray(entry.bibleReferences) || entry.bibleReferences.length === 0) {
     throw new Error(entry.id + ": Bible references required");

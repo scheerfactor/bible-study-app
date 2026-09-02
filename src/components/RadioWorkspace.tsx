@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  CheckCircle2,
   ExternalLink,
   Headphones,
   Pause,
@@ -21,6 +22,9 @@ type RadioStation = {
   title: string;
   shortLabel: string;
   description: string;
+  coverage?: string;
+  listeningMode?: string;
+  markerStatus?: string;
   trackIds: string[];
 };
 
@@ -44,6 +48,16 @@ type UploadedAudioRecord = {
   publicUrl: string;
   contentType: string;
   duration?: string;
+  chapterMarkers?: ChapterMarker[];
+};
+
+type ChapterMarker = {
+  book: string;
+  chapter: number;
+  startSeconds: number;
+  endSeconds: number;
+  status: "Estimated" | "Verified";
+  method: string;
 };
 
 type IntakeAudioRecord = {
@@ -59,6 +73,7 @@ type IntakeAudioRecord = {
   rightsStatus: string;
   rightsEvidence: string;
   requiredAttribution?: string;
+  chapterMarkers?: ChapterMarker[];
 };
 
 type RadioTrack = {
@@ -75,6 +90,7 @@ type RadioTrack = {
   rightsLabel: string;
   rightsEvidence: string;
   attribution: string;
+  chapterMarkers: ChapterMarker[];
 };
 
 const manifest = radioData as {
@@ -104,6 +120,7 @@ function normalizedTrack(review: RadioReview): RadioTrack | null {
       rightsLabel: "Public domain in the USA",
       rightsEvidence: record.rightsEvidence,
       attribution: `${record.creator}. Recording source: LibriVox.`,
+      chapterMarkers: record.chapterMarkers ?? [],
     };
   }
 
@@ -120,9 +137,10 @@ function normalizedTrack(review: RadioReview): RadioTrack | null {
     durationLabel: record.duration,
     audioUrl: record.sourceUrl,
     sourceUrl: record.sourcePageUrl ?? record.sourceUrl,
-    rightsLabel: "Free public use with attribution",
+    rightsLabel: record.rightsStatus === "Public Domain" ? "Public domain in the USA" : "Free public use with attribution",
     rightsEvidence: record.rightsEvidence,
     attribution: record.requiredAttribution ?? record.creator,
+    chapterMarkers: record.chapterMarkers ?? [],
   };
 }
 
@@ -130,6 +148,14 @@ const reviewedTracks = manifest.reviewedTracks
   .map(normalizedTrack)
   .filter((track): track is RadioTrack => Boolean(track));
 const tracksById = new Map(reviewedTracks.map((track) => [track.id, track]));
+const RADIO_PROGRESS_KEY = "fathers-business-radio-progress-v1";
+const RADIO_LAST_STATION_KEY = "fathers-business-radio-last-station-v1";
+const RADIO_COMPLETION_KEY = "fathers-business-radio-completion-v1";
+const RADIO_PLAYLISTS_KEY = "fathers-business-radio-playlists-v1";
+
+type RadioProgress = Record<string, { trackId: string; currentTime: number }>;
+type RadioCompletion = Record<string, string[]>;
+type PersonalPlaylist = { id: string; name: string; trackIds: string[] };
 
 function formatTime(seconds: number) {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -148,7 +174,15 @@ export default function RadioWorkspace() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [playbackMessage, setPlaybackMessage] = useState("");
+  const [completionByStation, setCompletionByStation] = useState<RadioCompletion>({});
+  const [personalPlaylists, setPersonalPlaylists] = useState<PersonalPlaylist[]>([]);
+  const [selectedPlaylistId, setSelectedPlaylistId] = useState("");
+  const [playlistName, setPlaylistName] = useState("");
+  const [playlistMessage, setPlaylistMessage] = useState("");
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const savedProgressRef = useRef<RadioProgress>({});
+  const pendingResumeSecondsRef = useRef<number | null>(null);
+  const lastSavedSecondRef = useRef(-1);
 
   const station = manifest.stations.find((candidate) => candidate.id === stationId) ?? manifest.stations[0];
   const queue = useMemo(
@@ -156,6 +190,57 @@ export default function RadioWorkspace() {
     [station],
   );
   const currentTrack = queue[activeIndex] ?? queue[0] ?? null;
+  const sequentialStation = station.listeningMode?.toLowerCase().includes("sequential") ?? false;
+  const chapterMarkers = currentTrack?.chapterMarkers ?? [];
+  const verifiedMarkerCount = chapterMarkers.filter((marker) => marker.status === "Verified").length;
+  const chapterNavigationReady = chapterMarkers.length > 0 && verifiedMarkerCount === chapterMarkers.length;
+  const completedTrackIdSet = useMemo(() => new Set(completionByStation[station.id] ?? []), [completionByStation, station.id]);
+  const completedQueueCount = queue.filter((track) => completedTrackIdSet.has(track.id)).length;
+  const playlistProgress = queue.length ? Math.round((completedQueueCount / queue.length) * 100) : 0;
+  const selectedPlaylist = personalPlaylists.find((playlist) => playlist.id === selectedPlaylistId) ?? personalPlaylists[0] ?? null;
+  const selectedPlaylistTracks = (selectedPlaylist?.trackIds ?? [])
+    .map((trackId) => tracksById.get(trackId))
+    .filter((track): track is RadioTrack => Boolean(track));
+
+  useEffect(() => {
+    let cancelled = false;
+    try {
+      const saved = JSON.parse(window.localStorage.getItem(RADIO_PROGRESS_KEY) ?? "{}") as RadioProgress;
+      const savedCompletion = JSON.parse(window.localStorage.getItem(RADIO_COMPLETION_KEY) ?? "{}") as RadioCompletion;
+      const savedPlaylistValue = JSON.parse(window.localStorage.getItem(RADIO_PLAYLISTS_KEY) ?? "[]") as unknown;
+      const savedPlaylists = Array.isArray(savedPlaylistValue)
+        ? savedPlaylistValue.filter(
+          (playlist): playlist is PersonalPlaylist =>
+            Boolean(playlist) &&
+            typeof playlist.id === "string" &&
+            typeof playlist.name === "string" &&
+            Array.isArray(playlist.trackIds) &&
+            playlist.trackIds.every((trackId: unknown) => typeof trackId === "string"),
+        )
+        : [];
+      savedProgressRef.current = saved;
+      const savedStationId = window.localStorage.getItem(RADIO_LAST_STATION_KEY);
+      const savedStation = manifest.stations.find((candidate) => candidate.id === savedStationId && saved[candidate.id]);
+      queueMicrotask(() => {
+        if (cancelled) return;
+        setCompletionByStation(savedCompletion);
+        setPersonalPlaylists(savedPlaylists);
+        setSelectedPlaylistId(savedPlaylists[0]?.id ?? "");
+        if (!savedStation) return;
+        const position = saved[savedStation.id];
+        const savedIndex = savedStation.trackIds.indexOf(position.trackId);
+        pendingResumeSecondsRef.current = Math.max(0, position.currentTime || 0);
+        setStationId(savedStation.id);
+        setActiveIndex(savedIndex >= 0 ? savedIndex : 0);
+        if (position.currentTime > 5) setPlaybackMessage(`Ready to resume at ${formatTime(position.currentTime)}.`);
+      });
+    } catch {
+      savedProgressRef.current = {};
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -177,19 +262,119 @@ export default function RadioWorkspace() {
     if (audioRef.current) audioRef.current.volume = volume;
   }, [volume]);
 
-  function changeStation(nextStationId: string) {
+  function saveProgress(nextStationId: string, trackId: string, nextTime: number) {
+    const nextProgress = {
+      ...savedProgressRef.current,
+      [nextStationId]: { trackId, currentTime: Math.max(0, nextTime) },
+    };
+    savedProgressRef.current = nextProgress;
+    try {
+      window.localStorage.setItem(RADIO_PROGRESS_KEY, JSON.stringify(nextProgress));
+      window.localStorage.setItem(RADIO_LAST_STATION_KEY, nextStationId);
+    } catch {
+      // Radio playback remains usable when browser storage is unavailable.
+    }
+  }
+
+  function markTrackComplete(nextStationId: string, trackId: string) {
+    setCompletionByStation((current) => {
+      const stationCompletion = current[nextStationId] ?? [];
+      if (stationCompletion.includes(trackId)) return current;
+      const nextCompletion = {
+        ...current,
+        [nextStationId]: [...stationCompletion, trackId],
+      };
+      try {
+        window.localStorage.setItem(RADIO_COMPLETION_KEY, JSON.stringify(nextCompletion));
+      } catch {
+        // Completion tracking is optional when browser storage is unavailable.
+      }
+      return nextCompletion;
+    });
+  }
+
+  function savePersonalPlaylists(nextPlaylists: PersonalPlaylist[]) {
+    setPersonalPlaylists(nextPlaylists);
+    try {
+      window.localStorage.setItem(RADIO_PLAYLISTS_KEY, JSON.stringify(nextPlaylists));
+      return true;
+    } catch {
+      setPlaylistMessage("This browser could not save the playlist locally.");
+      return false;
+    }
+  }
+
+  function createPersonalPlaylist() {
+    const name = playlistName.trim().replace(/\s+/g, " ");
+    if (!name) {
+      setPlaylistMessage("Enter a playlist name first.");
+      return;
+    }
+    if (personalPlaylists.some((playlist) => playlist.name.toLowerCase() === name.toLowerCase())) {
+      setPlaylistMessage("A playlist with that name already exists.");
+      return;
+    }
+    const nextPlaylist = { id: `playlist-${Date.now()}`, name, trackIds: [] };
+    const saved = savePersonalPlaylists([...personalPlaylists, nextPlaylist]);
+    setSelectedPlaylistId(nextPlaylist.id);
+    setPlaylistName("");
+    if (saved) setPlaylistMessage(`${name} created.`);
+  }
+
+  function addCurrentTrackToPlaylist() {
+    if (!selectedPlaylist || !currentTrack) return;
+    if (selectedPlaylist.trackIds.includes(currentTrack.id)) {
+      setPlaylistMessage(`${currentTrack.segmentTitle} is already in ${selectedPlaylist.name}.`);
+      return;
+    }
+    const saved = savePersonalPlaylists(
+      personalPlaylists.map((playlist) =>
+        playlist.id === selectedPlaylist.id ? { ...playlist, trackIds: [...playlist.trackIds, currentTrack.id] } : playlist,
+      ),
+    );
+    if (saved) setPlaylistMessage(`${currentTrack.segmentTitle} added to ${selectedPlaylist.name}.`);
+  }
+
+  function playSavedTrack(trackId: string) {
+    const targetStation = manifest.stations.find((candidate) => candidate.id !== "mix" && candidate.trackIds.includes(trackId))
+      ?? manifest.stations.find((candidate) => candidate.trackIds.includes(trackId));
+    if (!targetStation) {
+      setPlaylistMessage("That program is no longer available in the reviewed catalog.");
+      return;
+    }
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
     audioRef.current?.pause();
-    setStationId(nextStationId);
-    setActiveIndex(0);
+    const nextIndex = targetStation.trackIds.indexOf(trackId);
+    pendingResumeSecondsRef.current = 0;
+    setStationId(targetStation.id);
+    setActiveIndex(nextIndex);
+    setPlaying(false);
+    setPlayRequested(true);
+    if (targetStation.listeningMode?.toLowerCase().includes("sequential")) setShuffle(false);
+    saveProgress(targetStation.id, trackId, 0);
+    setPlaylistMessage(`Opening ${tracksById.get(trackId)?.segmentTitle ?? "saved program"}.`);
+  }
+
+  function changeStation(nextStationId: string) {
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
+    audioRef.current?.pause();
+    const nextStation = manifest.stations.find((candidate) => candidate.id === nextStationId) ?? manifest.stations[0];
+    const savedPosition = savedProgressRef.current[nextStationId];
+    const savedIndex = savedPosition ? nextStation.trackIds.indexOf(savedPosition.trackId) : -1;
+    pendingResumeSecondsRef.current = savedPosition?.currentTime ?? 0;
+    setStationId(nextStation.id);
+    setActiveIndex(savedIndex >= 0 ? savedIndex : 0);
     setPlaying(false);
     setPlayRequested(false);
-    setPlaybackMessage("");
+    if (nextStation.listeningMode?.toLowerCase().includes("sequential")) setShuffle(false);
+    setPlaybackMessage(savedPosition?.currentTime > 5 ? `Ready to resume at ${formatTime(savedPosition.currentTime)}.` : "");
   }
 
   async function togglePlayback() {
     const audio = audioRef.current;
     if (!audio || !currentTrack) return;
     if (playing) {
+      saveProgress(station.id, currentTrack.id, audio.currentTime);
       audio.pause();
       setPlaying(false);
       return;
@@ -209,17 +394,44 @@ export default function RadioWorkspace() {
       void togglePlayback();
       return;
     }
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
+    const nextTrack = queue[index];
+    pendingResumeSecondsRef.current = 0;
+    if (nextTrack) saveProgress(station.id, nextTrack.id, 0);
     setPlayRequested(true);
     setActiveIndex(index);
   }
 
   function moveTrack(direction: -1 | 1) {
     if (!queue.length) return;
-    const nextIndex = shuffle
-      ? Math.floor(Math.random() * queue.length)
+    if (currentTrack) saveProgress(station.id, currentTrack.id, audioRef.current?.currentTime ?? currentTime);
+    const nextIndex = shuffle && !sequentialStation
+      ? (activeIndex * 7 + 3 + queue.length) % queue.length
       : (activeIndex + direction + queue.length) % queue.length;
+    const nextTrack = queue[nextIndex];
+    pendingResumeSecondsRef.current = 0;
+    if (nextTrack) saveProgress(station.id, nextTrack.id, 0);
     setPlayRequested(true);
     setActiveIndex(nextIndex);
+  }
+
+  function handleTrackEnded() {
+    if (!currentTrack) return;
+    markTrackComplete(station.id, currentTrack.id);
+    saveProgress(station.id, currentTrack.id, duration || currentTime);
+    if (sequentialStation && activeIndex === queue.length - 1) {
+      setPlayRequested(false);
+      setPlaying(false);
+      setPlaybackMessage(`${station.coverage ?? station.title} listening complete.`);
+      return;
+    }
+    moveTrack(1);
+  }
+
+  function completeCurrentTrack() {
+    if (!currentTrack) return;
+    markTrackComplete(station.id, currentTrack.id);
+    setPlaybackMessage(`${currentTrack.segmentTitle} marked complete.`);
   }
 
   function seek(nextTime: number) {
@@ -227,6 +439,24 @@ export default function RadioWorkspace() {
     if (!audio) return;
     audio.currentTime = nextTime;
     setCurrentTime(nextTime);
+  }
+
+  async function playChapter(marker: ChapterMarker) {
+    const audio = audioRef.current;
+    if (!audio || !currentTrack || !chapterNavigationReady) return;
+    pendingResumeSecondsRef.current = null;
+    audio.currentTime = marker.startSeconds;
+    setCurrentTime(marker.startSeconds);
+    saveProgress(station.id, currentTrack.id, marker.startSeconds);
+    setPlayRequested(true);
+    try {
+      await audio.play();
+      setPlaying(true);
+      setPlaybackMessage(`Playing ${marker.book} ${marker.chapter}.`);
+    } catch {
+      setPlaying(false);
+      setPlaybackMessage("Chapter playback needs one more tap in this browser.");
+    }
   }
 
   return (
@@ -269,6 +499,17 @@ export default function RadioWorkspace() {
             <span className="rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase text-white/75">{station.title}</span>
             <Headphones size={20} className="text-[var(--gold-soft)]" />
           </div>
+          {(station.coverage || station.listeningMode) && (
+            <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-white/75">
+              {station.coverage && <span className="rounded-full bg-white/10 px-3 py-1.5">Coverage: {station.coverage}</span>}
+              {station.listeningMode && <span className="rounded-full bg-white/10 px-3 py-1.5">{station.listeningMode}</span>}
+            </div>
+          )}
+          {station.markerStatus && (
+            <p className="mt-3 rounded-lg border border-[var(--gold)]/30 bg-[var(--gold)]/10 px-3 py-2 text-xs leading-5 text-[var(--gold-soft)]">
+              {station.markerStatus}
+            </p>
+          )}
 
           {currentTrack ? (
             <>
@@ -283,11 +524,28 @@ export default function RadioWorkspace() {
                 ref={audioRef}
                 preload="metadata"
                 src={currentTrack.audioUrl}
-                onEnded={() => moveTrack(1)}
+                onEnded={handleTrackEnded}
                 onPause={() => setPlaying(false)}
                 onPlay={() => setPlaying(true)}
-                onLoadedMetadata={(event) => setDuration(event.currentTarget.duration || 0)}
-                onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
+                onLoadedMetadata={(event) => {
+                  const loadedDuration = event.currentTarget.duration || 0;
+                  setDuration(loadedDuration);
+                  const resumeSeconds = pendingResumeSecondsRef.current ?? 0;
+                  if (resumeSeconds > 0 && resumeSeconds < loadedDuration - 2) {
+                    event.currentTarget.currentTime = resumeSeconds;
+                    setCurrentTime(resumeSeconds);
+                  }
+                  pendingResumeSecondsRef.current = null;
+                }}
+                onTimeUpdate={(event) => {
+                  const nextTime = event.currentTarget.currentTime;
+                  setCurrentTime(nextTime);
+                  const nextSecond = Math.floor(nextTime);
+                  if (nextSecond > 0 && nextSecond % 5 === 0 && nextSecond !== lastSavedSecondRef.current) {
+                    lastSavedSecondRef.current = nextSecond;
+                    saveProgress(station.id, currentTrack.id, nextTime);
+                  }
+                }}
               />
 
               <div className="mt-6">
@@ -307,12 +565,42 @@ export default function RadioWorkspace() {
                 </div>
               </div>
 
+              {chapterMarkers.length > 0 && (
+                <div className="mt-4 rounded-lg border border-white/10 bg-white/5 p-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Chapter selection</p>
+                    <span className="text-xs font-semibold text-white/55">
+                      {verifiedMarkerCount} of {chapterMarkers.length} markers verified
+                    </span>
+                  </div>
+                  {chapterNavigationReady ? (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {chapterMarkers.map((marker) => (
+                        <button
+                          key={`${currentTrack.id}-${marker.book}-${marker.chapter}`}
+                          className="min-h-10 rounded-full bg-white/10 px-4 text-sm font-semibold text-white hover:bg-[var(--gold)] hover:text-[var(--ink)]"
+                          onClick={() => void playChapter(marker)}
+                          type="button"
+                        >
+                          {marker.book} {marker.chapter}
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-xs leading-5 text-[var(--gold-soft)]">
+                      Chapter buttons stay locked until every marker in this recording is manually verified by ear.
+                    </p>
+                  )}
+                </div>
+              )}
+
               <div className="mt-4 flex items-center justify-center gap-3">
                 <button
-                  aria-label="Shuffle"
-                  className={`flex h-10 w-10 items-center justify-center rounded-full ${shuffle ? "bg-[var(--gold)] text-[var(--ink)]" : "bg-white/10 text-white"}`}
+                  aria-label={sequentialStation ? "Shuffle unavailable for sequential Bible listening" : "Shuffle"}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full ${sequentialStation ? "cursor-not-allowed bg-white/5 text-white/30" : shuffle ? "bg-[var(--gold)] text-[var(--ink)]" : "bg-white/10 text-white"}`}
+                  disabled={sequentialStation}
                   onClick={() => setShuffle((value) => !value)}
-                  title="Shuffle"
+                  title={sequentialStation ? "Sequential Bible listening keeps canonical order" : "Shuffle"}
                   type="button"
                 >
                   <Shuffle size={18} />
@@ -357,6 +645,36 @@ export default function RadioWorkspace() {
             </div>
             <span className="text-xs font-semibold text-[var(--muted)]">{queue.length} programs</span>
           </div>
+          {sequentialStation && (
+            <div className="mt-3 rounded-lg border border-[var(--line)] bg-white p-3">
+              <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-semibold text-[var(--muted)]">
+                <div>
+                  <span className="block">Playlist progress</span>
+                  <span className="mt-1 block">{completedQueueCount} of {queue.length} programs completed</span>
+                </div>
+                {currentTrack && (
+                  <button
+                    className="min-h-9 rounded-full border border-[var(--line)] px-3 text-xs font-semibold text-[var(--green)] disabled:cursor-default disabled:text-[var(--muted)]"
+                    disabled={completedTrackIdSet.has(currentTrack.id)}
+                    onClick={completeCurrentTrack}
+                    type="button"
+                  >
+                    {completedTrackIdSet.has(currentTrack.id) ? "Completed" : "Mark current complete"}
+                  </button>
+                )}
+              </div>
+              <div
+                aria-label={`${station.title} playlist progress`}
+                aria-valuemax={queue.length}
+                aria-valuemin={0}
+                aria-valuenow={completedQueueCount}
+                className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--paper)]"
+                role="progressbar"
+              >
+                <span className="block h-full rounded-full bg-[var(--green)] transition-[width]" style={{ width: `${playlistProgress}%` }} />
+              </div>
+            </div>
+          )}
           <div className="mt-3 max-h-[610px] space-y-2 overflow-y-auto pr-1">
             {queue.map((track, index) => (
               <button
@@ -366,7 +684,7 @@ export default function RadioWorkspace() {
                 type="button"
               >
                 <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${index === activeIndex ? "bg-[var(--green)] text-white" : "bg-[var(--paper)] text-[var(--green)]"}`}>
-                  {index === activeIndex && playing ? <Pause size={17} /> : <Play size={17} />}
+                  {completedTrackIdSet.has(track.id) ? <CheckCircle2 aria-label="Completed" size={18} /> : index === activeIndex && playing ? <Pause size={17} /> : <Play size={17} />}
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block truncate text-sm font-semibold text-[var(--ink)]">{track.title}</span>
@@ -378,6 +696,92 @@ export default function RadioWorkspace() {
           </div>
         </section>
       </div>
+
+      <section aria-labelledby="personal-playlists-heading" className="mt-5 rounded-lg border border-[var(--line)] bg-white p-4 shadow-sm">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--green)]">Listen your way</p>
+            <h2 className="mt-1 text-xl font-semibold text-[var(--ink)]" id="personal-playlists-heading">My listening playlists</h2>
+            <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Create named collections for Bible listening, sermon preparation, hymns, or teaching.</p>
+          </div>
+          <span className="text-xs font-semibold text-[var(--muted)]">Saved locally in this browser</span>
+        </div>
+
+        <form
+          className="mt-4 flex flex-col gap-2 sm:flex-row"
+          onSubmit={(event) => {
+            event.preventDefault();
+            createPersonalPlaylist();
+          }}
+        >
+          <label className="min-w-0 flex-1">
+            <span className="sr-only">New playlist name</span>
+            <input
+              aria-label="New playlist name"
+              className="min-h-11 w-full rounded-lg border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]"
+              maxLength={60}
+              onChange={(event) => setPlaylistName(event.target.value)}
+              placeholder="Example: Sunday sermon preparation"
+              value={playlistName}
+            />
+          </label>
+          <button className="min-h-11 rounded-lg bg-[var(--green)] px-4 text-sm font-semibold text-white" type="submit">Create playlist</button>
+        </form>
+
+        {personalPlaylists.length ? (
+          <div className="mt-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end">
+              <label className="min-w-0 flex-1 text-xs font-semibold text-[var(--muted)]">
+                Saved playlist
+                <select
+                  aria-label="Saved playlist"
+                  className="mt-1 min-h-11 w-full rounded-lg border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]"
+                  onChange={(event) => {
+                    setSelectedPlaylistId(event.target.value);
+                    setPlaylistMessage("");
+                  }}
+                  value={selectedPlaylist?.id ?? ""}
+                >
+                  {personalPlaylists.map((playlist) => <option key={playlist.id} value={playlist.id}>{playlist.name}</option>)}
+                </select>
+              </label>
+              <button
+                className="min-h-11 rounded-lg border border-[var(--green)] px-4 text-sm font-semibold text-[var(--green)] disabled:cursor-default disabled:border-[var(--line)] disabled:text-[var(--muted)]"
+                disabled={!currentTrack || Boolean(selectedPlaylist?.trackIds.includes(currentTrack.id))}
+                onClick={addCurrentTrackToPlaylist}
+                type="button"
+              >
+                {currentTrack && selectedPlaylist?.trackIds.includes(currentTrack.id) ? "Current program saved" : "Add current program"}
+              </button>
+            </div>
+
+            {playlistMessage && <p aria-live="polite" className="mt-3 text-sm font-semibold text-[var(--green)]">{playlistMessage}</p>}
+
+            {selectedPlaylistTracks.length ? (
+              <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {selectedPlaylistTracks.map((track) => (
+                  <button
+                    key={`${selectedPlaylist?.id}-${track.id}`}
+                    className="flex min-h-16 items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                    onClick={() => playSavedTrack(track.id)}
+                    type="button"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--green)] text-white"><Play size={16} /></span>
+                    <span className="min-w-0">
+                      <span className="block truncate text-sm font-semibold text-[var(--ink)]">{track.segmentTitle}</span>
+                      <span className="mt-1 block truncate text-xs text-[var(--muted)]">{track.title}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-3 rounded-lg bg-[var(--paper)] p-3 text-sm text-[var(--muted)]">This playlist is empty. Choose a program above, then add the current program.</p>
+            )}
+          </div>
+        ) : (
+          <p className="mt-4 rounded-lg bg-[var(--paper)] p-3 text-sm text-[var(--muted)]">No personal playlists yet. Create one to begin collecting programs.</p>
+        )}
+      </section>
 
       <footer className="mt-5 border-t border-[var(--line)] pt-4 text-xs leading-5 text-[var(--muted)]">
         Public beta catalog reviewed {manifest.reviewedAt}. Rights evidence and official source attribution remain attached to every program.

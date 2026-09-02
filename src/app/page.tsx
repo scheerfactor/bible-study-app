@@ -49,8 +49,12 @@ import { brandMark } from "@/lib/site-metadata";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
+import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
+import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
+import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, splitPresentationBodyText, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import RadioWorkspace from "@/components/RadioWorkspace";
+import { type ScreenWakeLockStatus, useScreenWakeLock } from "@/hooks/useScreenWakeLock";
 import reviewedKjvDictionaryAliases from "../../data/generated/kjv-dictionary-reviewed-aliases.json";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
@@ -120,13 +124,25 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
-type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "contentHealth" | "ocrQueue";
+type AcquisitionAdminTab = "dashboard" | "outreach" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "contentHealth" | "ocrQueue";
 type AdminAcquisitionRecordType = "author" | "book" | "rights_holder" | "licensed_rights" | "media_intake" | "audiobook_pilot";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
 type RightsPermissionStatus = "Public Domain" | "Permission Needed" | "Contacted" | "Negotiating" | "Approved" | "Denied" | "Personal Use Only" | "Do Not Import";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
+type PriorityMinistryPartner = {
+  id: string;
+  name: string;
+  ministry: string;
+  focus: string;
+  permissionStatus: string;
+  nextAction: string;
+  boundary: string;
+  pilotItems: string[];
+  officialUrl?: string;
+  contactUrl?: string;
+};
 type StoragePlanningRow = {
   id: string;
   label: string;
@@ -236,14 +252,14 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
 type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
-type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion" | "Worship" | "Scripture" | "Creation" | "Archaeology";
+type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion" | "Worship" | "Scripture" | "Creation" | "Wilderness" | "Jerusalem" | "Sea" | "Archaeology";
 type PresentationWorkspaceView = "manager" | "deck" | "presenter" | "controller" | "presentation";
 type PresentationStatus = "Draft" | "Ready" | "Archived";
 
@@ -1013,6 +1029,7 @@ type LibraryResource = {
   recommended_use: string;
   resource_labels: string[];
   resource_warnings: string[];
+  bible_books?: string[];
   source_url: string;
   download_url?: string | null;
   source_license_url: string;
@@ -1684,6 +1701,9 @@ type BibleAudioPlaylist = {
   completedItemIds?: string[];
   completedAt?: string | null;
   lastItemIndex?: number;
+  lastItemProgress?: number;
+  lastPlayedAt?: string;
+  updatedAt?: string;
 };
 
 type TodayResumeItem = {
@@ -2199,6 +2219,69 @@ const PRESENTATION_REMOTE_KEY_PREFIX = "fathers-business-presentation-remote-ses
 const PRESENTATION_CONTROLLER_ID_KEY = "fathers-business-presentation-controller-id";
 const PRESENTATION_SESSION_DURATION_HOURS = 4;
 
+const PRIORITY_MINISTRY_PARTNERS: PriorityMinistryPartner[] = [
+  {
+    id: "thru-the-bible",
+    name: "Dr. J. Vernon McGee",
+    ministry: "Thru the Bible",
+    focus: "Whole-Bible teaching audio, Sunday sermons, free study materials, and a separate conversation about official Store titles.",
+    permissionStatus: "Copyrighted · free sharing allowed under TTB's published conditions",
+    nextAction: "Keep copied or streamed TTB teaching in a clearly free lane with exact attribution. Contact TTB separately before offering Store books for sale, bundling resources with paid access, or changing the approved presentation.",
+    boundary: "This material is not public domain. TTB permits free distribution when wording is unaltered (or excerpts are identified), no fee is charged, Dr. J. Vernon McGee and Thru the Bible are credited, the required copyright statement is shown, and web copies link to TTB.",
+    pilotItems: [
+      "Complete five-year Bible study audio — free, attributed listening lane",
+      "Sunday Sermons — official links or freely distributed audio under the published policy",
+      "Printed commentary and Store titles — ask about an authorized sales, referral, or fulfillment arrangement",
+    ],
+    officialUrl: "https://ttb.org/resources/free-downloads",
+    contactUrl: "https://ttb.org/about/contact-us",
+  },
+  {
+    id: "way-of-life-literature",
+    name: "David Cloud",
+    ministry: "Way of Life Literature",
+    focus: "KJV, Baptist, church, apologetics, preaching, history, audio, video, and publishing resources.",
+    permissionStatus: "Copyrighted · official-link lane active · broader sales permission needed",
+    nextAction: "Keep free ebooks on Way of Life's own website, then ask about an authorized storefront pilot for one to three paid titles and the exact terms for descriptions, covers, checkout, fulfillment, and revenue reporting.",
+    boundary: "Way of Life's policy says free ebooks may be given to others but may not be posted or distributed from other websites. Store books, paid ebooks, the Fundamental Baptist Digital Library, and paid presentations stay link-only or permission-needed.",
+    pilotItems: [
+      "Free ebooks — official Way of Life links only; do not host the files",
+      "Shareable reports, audio sermons, and videos — item-level review, credit, and official source link",
+      "One to three paid Store titles — request a written sales or referral pilot before listing for purchase",
+    ],
+    officialUrl: "https://www.wayoflife.org/sharing/",
+    contactUrl: "mailto:support@wayoflife.org",
+  },
+  {
+    id: "bo-wagner",
+    name: "Dr. Bo Wagner",
+    ministry: "Word of His Mouth / Cornerstone Baptist Church",
+    focus: "Books and counsel for young preachers, Baptist doctrine, sermons, and teaching media.",
+    permissionStatus: "Positive interest · written scope still pending",
+    nextAction: "Review the existing conversation, then request named books and one sermon or video pilot with each use confirmed separately.",
+    boundary: "Do not list, quote, host, embed, recommend, sell, or narrate his material until the approved titles and uses are confirmed in writing.",
+    pilotItems: [
+      "Marriage Makers/Marriage Breakers — candidate book; official product page still to verify",
+      "Romans: Salvation A–Z — candidate book; doctrinal and title-level rights review needed",
+      "Ruth: Diamonds in the Darkness — candidate book; official product page still to verify",
+    ],
+  },
+  {
+    id: "sm-davis",
+    name: "Dr. S. M. Davis",
+    ministry: "Solve Family Problems",
+    focus: "Family and pastoral books, sermon audio, teaching series, and video resources.",
+    permissionStatus: "Website metadata granted · media rights not granted",
+    nextAction: "Choose up to three sermon or video titles for a small official-link or official-player pilot and request that scope in writing.",
+    boundary: "Current permission covers website titles, graphics, descriptions, attribution, and official links only—not books, files, audio, video, transcripts, TTS, or paid access.",
+    pilotItems: [
+      "10 Reasons Why Pastors Lose Their Families — pastoral-family pilot",
+      "The Wise Use of Parental Authority — parenting and servant-leadership pilot",
+      "Anger the Destroyer — family conflict and discipleship pilot",
+    ],
+  },
+];
+
 const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
   selectedVoiceURI: "",
   favoriteVoiceURIs: [],
@@ -2302,7 +2385,174 @@ const DEFAULT_MEDIA_INTAKE_RECORDS = mediaIntakeSeedData as MediaIntakeRecord[];
 const DEFAULT_AUDIOBOOK_PILOTS = audiobookPilotSeedData as AudiobookPilot[];
 const LICENSED_RESOURCE_LINKS = licensedResourceLinksData as LicensedResourceLink[];
 
+const PARTNER_OUTREACH_COPY = [
+  {
+    id: "founder-story",
+    label: "Founder story",
+    title: "Why Father's Business Bible Study exists",
+    audience: "Facebook About section, launch page, or a spoken introduction",
+    body: "For years I found myself moving from one app to another—one for reading the Bible, another for commentaries, another for books, another for sermons, and still another for preparing a lesson or presentation. I wanted one faithful, easy-to-use place where the Bible remains central and the tools around it truly work together. That is why I began Father's Business Bible Study: to help pastors, missionaries, teachers, students, churches, and serious Bible readers move from reading to understanding, from understanding to preparation, and from preparation to faithful service without losing their work or their place along the way. The app is still growing, and I want to build it carefully with input from the people who will actually use it.",
+  },
+  {
+    id: "vision-statement",
+    label: "Vision statement",
+    title: "We live on a vision",
+    audience: "Website, Facebook page, partner packet, and presentations",
+    body: "We live on a vision: to bring faithful Bible reading, serious study, trusted books, preaching and teaching preparation, hymns, audio, and presentation tools into one Scripture-first home. We want to make Bible study easier to begin, easier to continue, and easier to carry into ministry while honoring the words of Scripture, the work of faithful authors and ministries, and the rights of every resource owner.",
+  },
+  {
+    id: "facebook-introduction",
+    label: "Facebook introduction",
+    title: "A Bible study home is being built",
+    audience: "First Facebook page post; review before publishing",
+    body: "Father's Business Bible Study is being built for pastors, missionaries, teachers, Bible college students, churches, and anyone who wants to study the Bible seriously without piecing together a dozen disconnected tools. The goal is one Scripture-first place for KJV Bible reading, passage guides, commentaries, books, sermon and lesson preparation, hymns, audio, presentations, notes, and more. We are building carefully, respecting source and publishing rights, and listening to the people who will use it. Follow the journey, tell us what would help your Bible study or ministry most, and watch as the library and tools continue to grow.",
+  },
+  {
+    id: "publisher-first-contact",
+    label: "Publisher or ministry request",
+    title: "A small, permission-first partnership conversation",
+    audience: "Monday or Tuesday email to a publisher, author, pastor, or ministry",
+    body: "Subject: A permission-first Bible study partnership conversation\n\nHello [NAME],\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began building it because I was tired of moving between separate apps for Bible reading, books, commentaries, audio, sermon preparation, and presentations. My goal is to bring those workflows together carefully while honoring authors, publishers, ministries, and their rights.\n\nI would value your advice about whether [MINISTRY / PUBLISHER] and a small number of your resources might be a good fit. I am not asking to copy or publish anything without written permission. A first step could be as narrow as one to three titles using whichever approach you prefer:\n\n1. An attributed listing that sends readers to your official page or store.\n2. A limited in-app sample or official-player embed that you approve.\n3. A licensed reading, audio, or sales arrangement with terms agreed in writing.\n\nI want this to be easy for you: we can begin with a small pilot, use your approved descriptions and artwork, preserve your pricing and attribution, provide a clear contact for corrections or removal, and avoid any use you have not specifically approved.\n\nWould you be willing to have a short conversation, suggest the best person to contact, or tell me what information you would need to consider a pilot? I would also welcome your advice about other like-minded authors or ministries that may be a good fit.\n\nThank you for your time and for your work,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "publisher-store-pilot",
+    label: "Book sales request",
+    title: "A one-to-three-title authorized Store pilot",
+    audience: "Publisher, author, or ministry after the first conversation; review before sending",
+    body: "Subject: Small authorized book-sales pilot for Father's Business Bible Study\n\nHello [NAME],\n\nThank you for considering Father's Business Bible Study. I would like to explore a small, permission-first pilot for these one to three titles: [TITLE 1], [TITLE 2], and [TITLE 3].\n\nThe app is being built for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. The goal is to help a reader discover a trusted resource while studying Scripture and then purchase it through a process that you approve.\n\nWould you prefer one of these arrangements?\n\n1. An official product link that sends the reader to your store.\n2. A referral or affiliate arrangement using your checkout and fulfillment.\n3. An authorized reseller arrangement with agreed pricing, inventory, fulfillment, returns, reporting, and payment terms.\n4. A separately licensed digital edition with the exact reading, search, note, audio, territory, term, and paid-access rights stated in writing.\n\nBefore anything is listed for sale, I would like to confirm the approved title, description, cover image, price display, checkout owner, fulfillment responsibility, customer support contact, territory, reporting schedule, revenue or royalty terms, correction/removal process, and whether the listing may appear beside Bible-study recommendations. Nothing would be hosted, copied, sold, or described beyond the scope you approve.\n\nWhat would be the easiest pilot for you, and who is the best person to discuss it with? I would also value your advice about other like-minded authors or publishers who may be a good fit.\n\nThank you,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+] as const;
+
+const OUTREACH_APPROVAL_BATCH = [
+  {
+    id: "ttb-first-contact",
+    priority: "1",
+    ministry: "Thru the Bible",
+    recipientName: "Thru the Bible ministry team",
+    recipient: "info@ttb.org",
+    channel: "Official ministry email",
+    status: "Follow-up sent August 15, 2026 · awaiting written reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://ttb.org/resources/free-downloads",
+    contactUrl: "https://ttb.org/about/contact-us",
+    pilot: "A free, attributed listening lane for the five-year Bible study and Sunday Sermons, plus a separate conversation about official Store links or a referral arrangement for print resources.",
+    subject: "A free Thru the Bible listening pilot and Store-link conversation",
+    body: "Hello Thru the Bible ministry team,\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began building it because I was tired of moving between separate apps for Bible reading, commentaries, books, audio, sermon preparation, and presentations.\n\nDr. J. Vernon McGee's whole-Bible teaching would be a valuable help to our users. I have reviewed Thru the Bible's published free-resource and copyright guidance, and I understand that these resources are copyrighted rather than public domain. I also understand that permitted copies must remain completely free, preserve the wording or clearly identify excerpts, credit Dr. McGee and Thru the Bible, include the required copyright statement, and link back to TTB.\n\nI would like your advice on a small first pilot: a clearly free, attributed listening lane for the five-year Bible study and selected Sunday Sermons, using TTB's official files or links and keeping this material outside every paid feature. Would you be willing to confirm the preferred file or player source, exact attribution and copyright wording, and whether chapter or book playlists inside a free app are consistent with your published policy?\n\nSeparately, would TTB be open to an official Store-link or referral conversation for printed books or study resources? I would not copy, host, sell, bundle, or charge for anything beyond the scope you approve.\n\nI would value your advice and the name of the best person to work with.\n\nThank you for carrying the whole Word to the whole world,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "way-of-life-first-contact",
+    priority: "2",
+    ministry: "Way of Life Literature",
+    recipientName: "Way of Life Literature support and publishing team",
+    recipient: "support@wayoflife.org",
+    channel: "Official publishing support email",
+    status: "Specific follow-up sent August 15, 2026 · awaiting written reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.wayoflife.org/sharing/",
+    contactUrl: "mailto:support@wayoflife.org",
+    pilot: "Official links for free resources, plus an authorized sales or referral pilot for Bible Times and Ancient Kingdoms, Things Hard to Be Understood, and the Way of Life Encyclopedia.",
+    subject: "A permission-first Way of Life book pilot for Father's Business Bible Study",
+    body: "Hello Way of Life Literature team,\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app for pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. The goal is to bring Bible reading, trusted books, commentaries, audio, sermon preparation, and presentations into one careful workflow.\n\nI have read your sharing policy and the notice inside your free ebooks. I understand that free does not mean public domain, and that Way of Life free ebooks must remain on your website rather than being hosted or distributed from another site. In Father's Business Bible Study, those resources would remain official links unless you give different written permission.\n\nI would like to ask whether you would consider a small authorized sales or referral pilot for these three resources:\n\n1. Bible Times and Ancient Kingdoms\n2. Things Hard to Be Understood\n3. Way of Life Encyclopedia of the Bible and Christianity\n\nWould you prefer that the app send readers to your official product pages, use a referral arrangement through your checkout, or discuss another authorized method? I would use only descriptions and cover images you approve, preserve your prices and attribution, and leave fulfillment, customer service, and downloadable files with Way of Life unless we agree otherwise in writing. Nothing would be copied, hosted, sold, narrated, or placed behind paid access beyond the scope you approve.\n\nI would also welcome your advice about the app, other Way of Life materials that might be a better first fit, and other like-minded authors or publishers you believe I should contact.\n\nThank you for your time and ministry,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "bo-wagner-first-contact",
+    priority: "3",
+    ministry: "Dr. Bo Wagner / Cornerstone Baptist Church",
+    recipientName: "Pastor Bo Wagner",
+    recipient: "2knowhim@cbc-web.org",
+    channel: "Official church-listed pastor email",
+    status: "Follow-up sent August 14, 2026 · awaiting written confirmation",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.cbc-web.org/about-cbc/",
+    contactUrl: "mailto:2knowhim@cbc-web.org",
+    pilot: "One to three author-selected books using official product links first, with a later written conversation about samples, digital reading, audio, or sales rights.",
+    subject: "Would you advise a small Bo Wagner book pilot for Father's Business Bible Study?",
+    body: "Hello Pastor Wagner,\n\nMy name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first web app intended to help pastors, missionaries, teachers, Bible college students, churches, and serious Bible readers. I began it because I wanted one faithful place where Bible reading, trusted books, preaching help, audio, sermon preparation, and presentations work together.\n\nI have appreciated your counsel for preachers and would value your advice about whether a few of your books might be a good fit. I am not asking to copy or publish anything without written permission. The easiest first step could be one to three titles that you select, presented with your approved descriptions and official purchase links.\n\nIf that proves useful, we could later discuss whether you would want to authorize any sample pages, searchable excerpts, in-app digital reading, narration, or a sales arrangement. Each use would remain separate and would require your written approval; no book or media file would be copied, hosted, sold, narrated, or placed behind paid access merely because it was listed.\n\nWould you be willing to recommend the best one to three books for young preachers, pastors, or Bible students, tell me the official product pages to use, and advise me about other like-minded authors or publishers I should contact?\n\nThank you for your ministry and consideration,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "kregel-john-phillips-follow-up",
+    priority: "4",
+    ministry: "Kregel Publications / John Phillips",
+    recipientName: "Kregel publishing team",
+    recipient: "kregelbooks@kregel.com",
+    channel: "Follow-up in the original July 3 email thread",
+    status: "Focused John Phillips follow-up sent September 1, 2026 · awaiting reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.kregel.com/",
+    contactUrl: "mailto:kregelbooks@kregel.com",
+    pilot: "One John Phillips title using an official product listing first, followed only by separately negotiated sample, digital-access, or sales terms.",
+    subject: "Re: Rights and permissions question for one Bible study title",
+    body: "Hello Kregel team,\n\nI am following up on my July 3 inquiry about Father's Business Bible Study. The app is being developed as a safer, easier, KJV-centered workspace for Bible reading and study, sermon and lesson preparation, a curated library, audio, and church presentation.\n\nI would like to begin with one small John Phillips pilot rather than ask for a large catalog. Would you please direct me to the person who handles digital licensing or sales partnerships for:\n\n- an official product listing and purchase link;\n- approved cover art, description, and a short sample, if permitted; and\n- possible paid in-app access later under a written license or revenue-sharing agreement?\n\nI will not upload, sell, or distribute copyrighted book content without written permission and agreed terms. I would also value any advice about making the process simple for Kregel and its authors.\n\nThank you for your time,\n\nStephen Scheer\nFather's Business Bible Study\nhttps://study.fathersbusinessmasteryresources.com/\nhello@fathersbusinessmasteryresources.com",
+  },
+  {
+    id: "moody-ironside-permissions-request",
+    priority: "5",
+    ministry: "Moody Publishers / H. A. Ironside",
+    recipientName: "Moody Publishers permissions team",
+    recipient: "Official permissions form",
+    channel: "Moody Publishers official Microsoft Forms request",
+    status: "Full Assurance one-title request submitted September 1, 2026 · awaiting reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.moodypublishers.com/full-assurance",
+    contactUrl: "https://www.moodypublishers.com/faqs?selected=4",
+    pilot: "Full Assurance by H. A. Ironside as a one-title official listing, with any sample or paid digital access limited to Moody's written authorization.",
+    subject: "Commercial digital-sales and licensing partnership inquiry for a one-title in-app pilot",
+    body: "Father's Business Bible Study is a safer, easier, KJV-centered web app for Bible reading and study, sermon and lesson preparation, a curated library, audio, and church presentation. This is intentionally a one-title pilot inquiry.\n\nAt first, we would like to display an official product listing and purchase link for Full Assurance, using only approved metadata, cover art, and any sample Moody specifically authorizes. We would also like to speak with the correct digital licensing or sales-partnership contact about possible paid in-app access later under a written license or revenue-sharing agreement.\n\nWe will not upload, sell, reproduce, or distribute Moody's copyrighted edition or content without written permission and agreed terms. Please route this inquiry to the appropriate person if this form is not the correct department. Any advice on making the process simple for Moody and its authors would be appreciated.",
+  },
+  {
+    id: "ravenhill-rightsholder-routing",
+    priority: "6",
+    ministry: "Leonard Ravenhill rights routing",
+    recipientName: "SermonIndex team",
+    recipient: "sermonindex@gmail.com",
+    channel: "Rights-routing inquiry only; no permission presumed",
+    status: "Rightsholder-routing inquiry sent September 1, 2026 · awaiting reply",
+    sent: true,
+    verifiedAt: "September 1, 2026",
+    officialUrl: "https://www.sermonindex.net/",
+    contactUrl: "mailto:sermonindex@gmail.com",
+    pilot: "Identify the actual Ravenhill estate, ministry, publisher, or media rightsholder before requesting any book listing, stream, artwork, or licensed access.",
+    subject: "Who controls Leonard Ravenhill book and audio rights?",
+    body: "Hello SermonIndex team,\n\nMy name is Stephen Scheer. I am building Father's Business Bible Study, a safer, easier, KJV-centered web app for Bible study, sermon and lesson preparation, a curated library, audio, and church presentation.\n\nI am not assuming that SermonIndex owns Leonard Ravenhill's book or audio rights. I am writing only because you host a substantial Ravenhill sermon collection and may know the correct rightsholder. The Voice of Life Ministries email currently published on Ravenhill.org bounced when I contacted it.\n\nCould you please identify or route me to the estate, ministry, publisher, or other party authorized to discuss:\n\n- linking to or streaming officially authorized Ravenhill sermons;\n- approved metadata, descriptions, and artwork;\n- possible book listings and official purchase links; and\n- any future licensed digital access?\n\nWe will not copy, host, sell, or distribute copyrighted Ravenhill material without written authorization from the actual rightsholder. Any direction you can provide would be greatly appreciated.\n\nThank you,\n\nStephen Scheer\nFather's Business Bible Study\nhttps://study.fathersbusinessmasteryresources.com/\nhello@fathersbusinessmasteryresources.com",
+  },
+] as const;
+
+const PARTNER_OUTREACH_RHYTHM = [
+  { day: "Monday", action: "Choose and research", detail: "Select no more than three like-minded contacts. Confirm the right person, official website, resource ownership, and the smallest useful pilot." },
+  { day: "Tuesday", action: "Personalize and send", detail: "Use the first-contact draft, mention one specific work you value, ask for advice, and request only the rights needed for the small pilot." },
+  { day: "Wednesday–Friday", action: "Record and build", detail: "Log the contact and requested rights in the Rights tab. Keep building resources that are already cleared; do not chase a reply during sermon-preparation days." },
+  { day: "10 business days later", action: "One gracious follow-up", detail: "Reply in the same email thread. If there is no answer after a second reasonable follow-up, pause the request instead of pressuring the ministry." },
+] as const;
+
+const PAIN_FREE_PARTNER_PROMISES = [
+  "Begin with one to three named resources, not an entire catalog.",
+  "Offer official-link-only, approved embed, or written license lanes.",
+  "Use only approved titles, descriptions, artwork, excerpts, and media.",
+  "Keep attribution, source links, price, territory, and access terms visible.",
+  "Document sales, royalty, reporting, update, and removal terms before launch.",
+  "Provide one responsible contact and honor corrections or removal promptly.",
+] as const;
+
+const OUTREACH_ROADMAP_LANES = [
+  { status: "Do now", title: "Story and partnership foundation", detail: "Review the founder story and vision, prepare the Facebook page, and begin three permission-first conversations each week." },
+  { status: "Plan next", title: "Radio pilots", detail: "Define separate hymn, Bible-reading, and preaching pilots only after streaming, recording, performance, and ministry permissions are documented." },
+  { status: "Plan next", title: "Preaching helps", detail: "Expand searchable quotes, illustrations, sermon writing, and presentation workflows using public-domain or specifically licensed material." },
+  { status: "Invite counsel", title: "Ministry advisory circle", detail: "Ask a small group of like-minded pastors, missionaries, teachers, students, and Bible colleges to test the app and advise on doctrine, usefulness, and priorities." },
+] as const;
+
 const PERMISSION_REQUEST_TEMPLATES: PermissionRequestTemplate[] = [
+  {
+    id: "solve-family-problems-three-message-pilot",
+    title: "S. M. Davis three-message pilot",
+    purpose: "A narrow, unsent follow-up asking only about official ministry links or official-player embeds for three named messages.",
+    subject: "Three-message official-player pilot for Father's Business Bible Study",
+    body: "Hello Solve Family Problems team,\n\nThank you again for allowing Father's Business Bible Study to use website-available titles, graphics, and descriptions with attribution and official links. I would like to ask about one small, free pilot using these three messages:\n\n1. 10 Reasons Why Pastors Lose Their Families\n2. The Wise Use of Parental Authority\n3. Anger the Destroyer\n\nFor each title, would you permit the app to link to the official product page and, only if you prefer and provide it, display a Solve Family Problems-controlled audio or video player inside the free public beta? The ministry would remain clearly attributed and users could open the official source page.\n\nThis request does not include copying or rehosting files, downloads, transcripts, excerpts beyond the approved website description, AI or text-to-speech narration, presentation export, paid access, resale, or a claim of endorsement. If an embedded official player is not desired, we will keep the existing official links only.\n\nIf this limited pilot is acceptable, could you identify which of the three titles may use an official player, provide the approved player or embed URL, and state any attribution or placement requirements?\n\nThank you,\nStephen Scheer\nFather's Business Bible Study\nhello@fathersbusinessmasteryresources.com",
+  },
   {
     id: "full-digital-library",
     title: "Full digital library permission",
@@ -2685,6 +2935,54 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Creation",
     assetUrl: "/media/sermon-slides/photos/heavens-declare.jpg",
   },
+  "genesis-creation-dawn": {
+    label: "Genesis Creation Dawn",
+    description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
+    background: "linear-gradient(90deg, rgba(2,12,25,0.72), rgba(2,12,25,0.10) 72%)",
+    motif: "Creation Dawn",
+    category: "Creation",
+    assetUrl: "/media/sermon-slides/generated/genesis-creation-dawn-v1.png",
+  },
+  "psalms-still-waters-generated": {
+    label: "Psalms Still Waters",
+    description: "Psalms, prayer, comfort, peace, guidance, and devotional verses.",
+    background: "linear-gradient(90deg, rgba(5,24,28,0.70), rgba(5,24,28,0.08) 72%)",
+    motif: "Still Waters",
+    category: "Shepherd",
+    assetUrl: "/media/sermon-slides/generated/psalms-still-waters-v1.png",
+  },
+  "gospels-empty-tomb-dawn": {
+    label: "Gospel Empty Tomb Dawn",
+    description: "Gospel accounts, resurrection, salvation, hope, and new life.",
+    background: "linear-gradient(90deg, rgba(7,13,18,0.74), rgba(7,13,18,0.06) 72%)",
+    motif: "Empty Tomb Dawn",
+    category: "Empty Tomb",
+    assetUrl: "/media/sermon-slides/generated/gospels-empty-tomb-dawn-v1.png",
+  },
+  "sinai-wilderness": {
+    label: "Sinai Wilderness",
+    description: "Exodus, wilderness journeys, covenant, testing, and God's guidance.",
+    background: "linear-gradient(90deg, rgba(3,13,24,0.62), rgba(3,13,24,0.04) 68%)",
+    motif: "Wilderness",
+    category: "Wilderness",
+    assetUrl: "/media/sermon-slides/photos/sinai-wilderness.jpg",
+  },
+  "ancient-jerusalem": {
+    label: "Ancient Jerusalem",
+    description: "Jerusalem, temple history, the kings, return, prophets, Psalms, and Gospel settings.",
+    background: "linear-gradient(90deg, rgba(5,14,24,0.64), rgba(5,14,24,0.04) 66%)",
+    motif: "Jerusalem",
+    category: "Jerusalem",
+    assetUrl: "/media/sermon-slides/photos/ancient-jerusalem.jpg",
+  },
+  "mediterranean-passage": {
+    label: "Mediterranean Passage",
+    description: "Jonah, sea passages, Gospel crossings, storms, missions, and Paul's journeys.",
+    background: "linear-gradient(90deg, rgba(2,13,24,0.66), rgba(2,13,24,0.04) 68%)",
+    motif: "Sea Passage",
+    category: "Sea",
+    assetUrl: "/media/sermon-slides/photos/mediterranean-passage.jpg",
+  },
   "nimrud-relief": {
     label: "Nimrud Assyrian Relief",
     description: "Bible-world context for Calah, Nimrud, and the Assyrian empire.",
@@ -2711,7 +3009,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
   },
 };
 
-const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Worship", "Scripture", "Creation", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
+const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Worship", "Scripture", "Creation", "Wilderness", "Jerusalem", "Sea", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
 
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";
@@ -2864,8 +3162,14 @@ const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
 };
 
 const SERMON_IMAGE_THEME_SUGGESTIONS = [
-  { terms: ["psalm 23", "still waters", "shepherd", "comfort", "peace"], slot: "still-waters" },
-  { terms: ["psalm 19", "creation", "creator", "heavens", "glory of god", "stars"], slot: "heavens-declare" },
+  { terms: ["genesis", "in the beginning", "creation", "creator"], slot: "genesis-creation-dawn" },
+  { terms: ["psalms", "psalm 23", "still waters", "comfort", "peace"], slot: "psalms-still-waters-generated" },
+  { terms: ["matthew 28", "mark 16", "luke 24", "john 20", "resurrection", "risen", "empty tomb"], slot: "gospels-empty-tomb-dawn" },
+  { terms: ["exodus", "wilderness", "sinai", "tabernacle", "moses"], slot: "sinai-wilderness" },
+  { terms: ["jerusalem", "zion", "temple", "nehemiah", "ezra"], slot: "ancient-jerusalem" },
+  { terms: ["jonah", "sea", "ship", "storm", "sail", "paul's journey"], slot: "mediterranean-passage" },
+  { terms: ["shepherd", "pastoral care"], slot: "still-waters" },
+  { terms: ["psalm 19", "heavens", "glory of god", "stars"], slot: "heavens-declare" },
   { terms: ["psalm 119", "lamp", "wisdom", "bible study", "study the word"], slot: "scripture-lamp" },
   { terms: ["colossians 3", "psalm 95", "hymn", "singing", "worship", "praise", "music"], slot: "worship-piano" },
   { terms: ["love", "believe", "salvation", "gospel", "cross"], slot: "cross" },
@@ -2874,7 +3178,7 @@ const SERMON_IMAGE_THEME_SUGGESTIONS = [
   { terms: ["missions", "missionary", "world", "nations"], slot: "world-map" },
   { terms: ["harvest", "field", "sow"], slot: "field-harvest" },
   { terms: ["judgment", "wrath", "condemned", "sin"], slot: "storm-judgment" },
-  { terms: ["resurrection", "risen", "life", "empty tomb"], slot: "empty-tomb" },
+  { terms: ["new life", "victory over death"], slot: "empty-tomb" },
   { terms: ["scripture", "word", "bible"], slot: "open-bible" },
 ];
 
@@ -11040,25 +11344,25 @@ const WHOLE_BIBLE_VOLUME_BOOKS = [
 ];
 
 const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId> = {
-  Genesis: "heavens-declare",
-  Exodus: "cross",
-  Leviticus: "communion-table",
-  Numbers: "world-map",
-  Deuteronomy: "scripture-lamp",
+  Genesis: "genesis-creation-dawn",
+  Exodus: "sinai-wilderness",
+  Leviticus: "sinai-wilderness",
+  Numbers: "sinai-wilderness",
+  Deuteronomy: "sinai-wilderness",
   Joshua: "field-harvest",
   Judges: "storm-judgment",
   Ruth: "field-harvest",
   "1 Samuel": "shepherd-field",
   "2 Samuel": "pulpit",
-  "1 Kings": "storm-judgment",
-  "2 Kings": "nineveh-cavalry-relief",
-  "1 Chronicles": "church-window",
-  "2 Chronicles": "church-window",
-  Ezra: "babylon-lion-panel",
-  Nehemiah: "quiet-study",
+  "1 Kings": "ancient-jerusalem",
+  "2 Kings": "ancient-jerusalem",
+  "1 Chronicles": "ancient-jerusalem",
+  "2 Chronicles": "ancient-jerusalem",
+  Ezra: "ancient-jerusalem",
+  Nehemiah: "ancient-jerusalem",
   Esther: "light-window",
   Job: "storm-judgment",
-  Psalms: "still-waters",
+  Psalms: "psalms-still-waters-generated",
   Proverbs: "scripture-lamp",
   Ecclesiastes: "quiet-study",
   "Song of Solomon": "field-harvest",
@@ -11071,7 +11375,7 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Joel: "field-harvest",
   Amos: "field-harvest",
   Obadiah: "storm-judgment",
-  Jonah: "world-map",
+  Jonah: "mediterranean-passage",
   Micah: "shepherd-field",
   Nahum: "nineveh-cavalry-relief",
   Habakkuk: "prayer-hands",
@@ -11079,11 +11383,11 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Haggai: "church-window",
   Zechariah: "pulpit",
   Malachi: "sunrise",
-  Matthew: "cross",
-  Mark: "pulpit",
-  Luke: "light-window",
-  John: "light-window",
-  Acts: "world-map",
+  Matthew: "gospels-empty-tomb-dawn",
+  Mark: "gospels-empty-tomb-dawn",
+  Luke: "gospels-empty-tomb-dawn",
+  John: "gospels-empty-tomb-dawn",
+  Acts: "mediterranean-passage",
   Romans: "cross",
   "1 Corinthians": "church-window",
   "2 Corinthians": "light-window",
@@ -15444,6 +15748,11 @@ function suggestedSermonImageSlot(entry: Pick<SermonEntry, "title" | "passage" |
   return (SERMON_IMAGE_THEME_SUGGESTIONS.find((suggestion) => suggestion.terms.some((term) => haystack.includes(term)))?.slot ?? "open-bible") as SermonSlideImageSlotId;
 }
 
+function suggestedSermonImageSlotForText(text: string): SermonSlideImageSlotId {
+  const haystack = text.toLowerCase();
+  return (SERMON_IMAGE_THEME_SUGGESTIONS.find((suggestion) => suggestion.terms.some((term) => haystack.includes(term)))?.slot ?? "open-bible") as SermonSlideImageSlotId;
+}
+
 function suggestedSermonImageTheme(entry: Pick<SermonEntry, "title" | "passage" | "theme" | "points" | "applications">) {
   return SERMON_SLIDE_IMAGE_SLOTS[suggestedSermonImageSlot(entry)].label;
 }
@@ -17309,13 +17618,20 @@ function normalizeBiblePlaylist(playlist: BibleAudioPlaylist): BibleAudioPlaylis
     completedItemIds: Array.isArray(playlist.completedItemIds) ? playlist.completedItemIds : [],
     completedAt: playlist.completedAt ?? null,
     lastItemIndex: Math.max(0, Number(playlist.lastItemIndex ?? 0)),
+    lastItemProgress: Math.min(100, Math.max(0, Number(playlist.lastItemProgress ?? 0))),
+    updatedAt: playlist.updatedAt ?? playlist.lastPlayedAt ?? playlist.completedAt ?? playlist.createdAt,
   };
 }
 
 function mergeBiblePlaylists(localPlaylists: BibleAudioPlaylist[], remotePlaylists: BibleAudioPlaylist[]) {
   const next = new Map<string, BibleAudioPlaylist>();
   for (const playlist of localPlaylists.map(normalizeBiblePlaylist)) next.set(playlist.id, playlist);
-  for (const playlist of remotePlaylists.map(normalizeBiblePlaylist)) next.set(playlist.id, playlist);
+  for (const playlist of remotePlaylists.map(normalizeBiblePlaylist)) {
+    const localPlaylist = next.get(playlist.id);
+    if (!localPlaylist || (playlist.updatedAt ?? "") >= (localPlaylist.updatedAt ?? "")) {
+      next.set(playlist.id, playlist);
+    }
+  }
   return Array.from(next.values());
 }
 
@@ -18188,7 +18504,8 @@ export default function Home() {
     const shouldLoadStarterCommentary =
       tab === "themes" ||
       tab === "bookIntro" ||
-      tab === "sermons";
+      tab === "sermons" ||
+      tab === "presentations";
     const shouldLoadCompleteCommentary =
       tab === "fullStudy" ||
       tab === "passageGuide" ||
@@ -19289,12 +19606,29 @@ export default function Home() {
 
   function startJournalFromPrayer(entry?: PrayerEntry) {
     const focus = entry ?? todaysPrayerFocus[0] ?? activePrayerEntries[0];
+    const isAnswered = focus?.answerStatus === "Answered";
+    const scriptureReference = focus?.bibleVerse || focus?.promiseVerse || focus?.missionaryVerse || dailyJournalDefaults.selectedVerseRefs;
+    const answerSummary = focus?.praiseReport || focus?.notes || "Record how the Lord answered and what should be remembered.";
     startJournalDraft("Prayer Entry", {
       prayerFocus: focus ? `${focus.name}: ${focus.request}` : dailyJournalDefaults.prayerFocus,
-      selectedVerseRefs: focus?.bibleVerse || focus?.promiseVerse || focus?.missionaryVerse || dailyJournalDefaults.selectedVerseRefs,
+      selectedVerseRefs: scriptureReference,
       versePassage: focus?.studyNote || dailyJournalDefaults.versePassage,
-      prayerResponse: focus ? `Pray for ${focus.name}: ${focus.request}` : "",
-      sourceLabel: focus?.name ?? "Prayer focus",
+      verseSays: focus ? `Original request: ${focus.request}` : "",
+      verseApplies: isAnswered ? `Praise report: ${answerSummary}` : "",
+      prayerResponse: focus
+        ? isAnswered
+          ? `Thank the Lord for His answer concerning ${focus.name}: ${answerSummary}`
+          : `Pray for ${focus.name}: ${focus.request}`
+        : "",
+      obedienceStep: focus
+        ? isAnswered
+          ? "Remember the Lord's help, give Him thanks, and share this testimony wisely."
+          : "Continue faithfully in prayer and watch with thanksgiving."
+        : "",
+      teachingThought: focus
+        ? `${isAnswered ? "Answered prayer testimony" : "Prayer journal"}${focus.answeredAt ? ` · answered ${formatShortDate(focus.answeredAt)}` : ""}${scriptureReference ? ` · Scripture: ${scriptureReference}` : ""}`
+        : "",
+      sourceLabel: focus ? `${focus.name}${isAnswered ? " · Answered prayer" : " · Prayer request"}` : "Prayer focus",
     });
   }
 
@@ -20128,11 +20462,12 @@ export default function Home() {
 	    const rangeMatch = cleanPassage.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
 	    if (rangeMatch) {
 	      const [, targetBook, chapterText, startText, endText] = rangeMatch;
+	      const normalizedTargetBook = normalizeQuickPassageBook(targetBook, books) ?? targetBook.trim();
 	      const targetChapter = Number(chapterText);
 	      const startVerse = Number(startText);
 	      const endVerse = Number(endText || startText);
 	      return allVerses
-	        .filter((verse) => verse.book.toLowerCase() === targetBook.toLowerCase().trim() && verse.chapter === targetChapter && verse.verse >= startVerse && verse.verse <= endVerse)
+	        .filter((verse) => verse.book === normalizedTargetBook && verse.chapter === targetChapter && verse.verse >= startVerse && verse.verse <= endVerse)
 	        .map((verse) => `${verse.ref} ${verse.text}`)
 	        .join("\n");
 	    }
@@ -20192,6 +20527,8 @@ export default function Home() {
 	      setSyncMessage("Generate slides before exporting PowerPoint.");
 	      return;
 	    }
+	    const warning = powerPointTextWarning(slides);
+	    if (warning) { setSyncMessage(warning); return; }
 	    const filename = `${sermonExportSlug(sermonDraft.title || sermonDraft.passage || "sermon-slides")}-slides.pptx`;
 	    try {
 	      await exportSlideDeckPowerPoint({
@@ -20377,25 +20714,25 @@ export default function Home() {
     setSyncMessage("Presentation plan downloaded.");
   }
 
-  async function exportPresentationPowerPoint() {
+  async function exportPresentationPowerPoint(mode: PresentationExportMode = "slides-only") {
     if (!presentationDraft.slides.length) {
       setSyncMessage("Add or attach slides before exporting PowerPoint.");
       return;
     }
-    const filename = `${sermonExportSlug(presentationDraft.title || "presentation")}-slides.pptx`;
+    const options = presentationExportOptions(mode, sermonExportSlug(presentationDraft.title || "presentation"), presentationDraft.notes);
+    const warning = powerPointTextWarning(presentationDraft.slides);
+    if (warning) { setSyncMessage(warning); return; }
     try {
       await exportSlideDeckPowerPoint({
         slides: presentationDraft.slides,
         themeId: presentationDraft.themeId,
         title: presentationDraft.title || "Presentation",
-        subject: presentationDraft.notes || "Church presentation slides",
-        filename,
+        ...options,
       });
-      setSyncMessage("Presentation PowerPoint exported.");
+      setSyncMessage(options.includeSpeakerNotes ? "Presenter PowerPoint exported with private notes. Keep this copy private." : "Slides-only PowerPoint exported without speaker notes or private presentation-note metadata.");
     } catch (error) {
       console.error(error);
-      downloadTextFile(`${sermonExportSlug(presentationDraft.title || "presentation")}-slide-plan-fallback.md`, presentationExportMarkdown(presentationDraft), "text/markdown;charset=utf-8");
-      setSyncMessage("PowerPoint export failed, so a Markdown slide plan fallback was downloaded.");
+      setSyncMessage("PowerPoint export failed. Please retry. No alternate file containing private notes was downloaded.");
     }
   }
 
@@ -20427,8 +20764,13 @@ export default function Home() {
       setBibleListeningProgress(loadBibleListeningProgress());
       setBibleBookMastery(loadBibleBookMastery());
       const loadedPlaylists = loadBiblePlaylists();
+      const resumePlaylist = loadedPlaylists.reduce<BibleAudioPlaylist | null>((latest, candidate) => {
+        if (!latest) return candidate;
+        return (candidate.lastPlayedAt ?? "") > (latest.lastPlayedAt ?? "") ? candidate : latest;
+      }, null);
       setBiblePlaylists(loadedPlaylists);
-      setActiveStudyPlaylistId(loadedPlaylists[0]?.id ?? null);
+      setActiveStudyPlaylistId(resumePlaylist?.id ?? null);
+      setStudyPlaylistCurrentIndex(resumePlaylist?.lastItemIndex ?? 0);
       setScriptureMemory(loadScriptureMemory());
       setPrayerEntries(loadPrayerEntries());
       setJournalEntries(loadJournalEntries());
@@ -20792,7 +21134,7 @@ export default function Home() {
       supabase.from("user_bible_listening_progress").select("target_id, label, book, chapter, verse_ref, progress, updated_at").eq("user_id", user.id).order("updated_at", { ascending: false }).limit(1).maybeSingle(),
       supabase.from("user_bible_mastery").select("book, read_chapters, listened_chapters, updated_at").eq("user_id", user.id),
       supabase.from("user_scripture_memory").select("id, verse_ref, verse_text, progress, repetitions, last_reviewed_at, created_at, updated_at").eq("user_id", user.id),
-      supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, created_at, updated_at").eq("user_id", user.id),
+      supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, last_item_progress, last_played_at, created_at, updated_at").eq("user_id", user.id),
       supabase.from("user_study_playlist_items").select("id, playlist_id, item_type, label, book, chapter, chapter_end, verse_start, verse_end, resource_title, resource_slug, position").eq("user_id", user.id).order("position", { ascending: true }),
       supabase.from("user_library_favorites").select("resource_slug, is_favorite, updated_at").eq("user_id", user.id),
     ]).then(([
@@ -20982,11 +21324,19 @@ export default function Home() {
         completedItemIds: row.completed_item_ids ?? [],
         completedAt: row.completed_at,
         lastItemIndex: Number(row.last_item_index ?? 0),
+        lastItemProgress: Number(row.last_item_progress ?? 0),
+        lastPlayedAt: row.last_played_at ?? undefined,
+        updatedAt: row.updated_at,
       }));
       const mergedPlaylists = mergeBiblePlaylists(loadBiblePlaylists(), remotePlaylists);
       setBiblePlaylists(mergedPlaylists);
       saveBiblePlaylists(mergedPlaylists);
-      setActiveStudyPlaylistId((current) => current ?? mergedPlaylists[0]?.id ?? null);
+      const resumePlaylist = mergedPlaylists.reduce<BibleAudioPlaylist | null>((latest, candidate) => {
+        if (!latest) return candidate;
+        return (candidate.lastPlayedAt ?? "") > (latest.lastPlayedAt ?? "") ? candidate : latest;
+      }, null);
+      setActiveStudyPlaylistId(resumePlaylist?.id ?? null);
+      setStudyPlaylistCurrentIndex(resumePlaylist?.lastItemIndex ?? 0);
 
       setSyncMessage(favoriteLibraryResult.error
         ? "Signed in. Study data synced; Library favorites remain on this device until the updated schema is applied."
@@ -21187,18 +21537,31 @@ export default function Home() {
         completed_item_ids: playlist.completedItemIds ?? [],
         completed_at: playlist.completedAt ?? null,
         last_item_index: playlist.lastItemIndex ?? 0,
+        last_item_progress: playlist.lastItemProgress ?? 0,
+        last_played_at: playlist.lastPlayedAt ?? null,
         repeat_playlist: repeatStudyPlaylist,
         repeat_item: repeatStudyPlaylistItem,
         created_at: playlist.createdAt,
-        updated_at: newestTimestamp(playlist.completedAt, playlist.createdAt),
+        updated_at: playlist.updatedAt ?? newestTimestamp(playlist.lastPlayedAt, playlist.completedAt, playlist.createdAt),
       }));
-      const { error: playlistError } = await supabase
+      const { data: syncedPlaylistRows, error: playlistError } = await supabase
         .from("user_study_playlists")
-        .upsert(playlistRows, { onConflict: "user_id,id" });
+        .upsert(playlistRows, { onConflict: "user_id,id" })
+        .select("id, updated_at");
       collectError("study playlists", playlistError);
 
+      const localPlaylistRows = new Map(playlistRows.map((row) => [row.id, row]));
+      const acceptedPlaylistIds = new Set(
+        (syncedPlaylistRows ?? [])
+          .filter((row) => {
+            const localRow = localPlaylistRows.get(row.id);
+            return localRow && new Date(row.updated_at).getTime() === new Date(localRow.updated_at).getTime();
+          })
+          .map((row) => row.id),
+      );
+
       const playlistItems = biblePlaylists.flatMap((playlist) =>
-        playlist.items.map((item, index) => ({
+        acceptedPlaylistIds.has(playlist.id) ? playlist.items.map((item, index) => ({
           user_id: userId,
           id: item.id,
           playlist_id: playlist.id,
@@ -21212,16 +21575,19 @@ export default function Home() {
           resource_title: item.resourceTitle ?? null,
           resource_slug: item.resourceSlug ?? null,
           position: index,
-        })),
+        })) : [],
       );
 
-      const { error: deleteItemsError } = await supabase
-        .from("user_study_playlist_items")
-        .delete()
-        .eq("user_id", userId);
-      collectError("playlist item cleanup", deleteItemsError);
+      if (!playlistError && acceptedPlaylistIds.size) {
+        const { error: deleteItemsError } = await supabase
+          .from("user_study_playlist_items")
+          .delete()
+          .eq("user_id", userId)
+          .in("playlist_id", Array.from(acceptedPlaylistIds));
+        collectError("playlist item cleanup", deleteItemsError);
+      }
 
-      if (playlistItems.length) {
+      if (!playlistError && playlistItems.length) {
         const { error: itemError } = await supabase
           .from("user_study_playlist_items")
           .insert(playlistItems);
@@ -22683,8 +23049,9 @@ export default function Home() {
         setSyncMessage(`${item.label} is already in this study playlist.`);
         return source;
       }
+      const updatedAt = new Date().toISOString();
       const next = source.map((playlist, playlistIndex) =>
-        playlistIndex === index ? { ...playlist, items: [...playlist.items, item] } : playlist,
+        playlistIndex === index ? { ...playlist, items: [...playlist.items, item], updatedAt } : playlist,
       );
       setActiveStudyPlaylistId(next[index]?.id ?? null);
       return saveNextBiblePlaylists(next);
@@ -22694,10 +23061,12 @@ export default function Home() {
 
   function selectStudyPlaylist(playlistId: string) {
     setActiveStudyPlaylistId(playlistId);
-    setStudyPlaylistCurrentIndex(0);
+    const selectedPlaylist = biblePlaylists.find((playlist) => playlist.id === playlistId);
+    setStudyPlaylistCurrentIndex(selectedPlaylist?.lastItemIndex ?? 0);
   }
 
   function createBiblePlaylist() {
+    const createdAt = new Date().toISOString();
     const trimmed = playlistName.trim() || `${book} ${chapter} Listening`;
     const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
     const safeEnd = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeEnd));
@@ -22706,7 +23075,8 @@ export default function Home() {
     const nextPlaylist: BibleAudioPlaylist = {
       id: makeId("playlist"),
       name: trimmed,
-      createdAt: new Date().toISOString(),
+      createdAt,
+      updatedAt: createdAt,
       items: [
         {
           id: makeId("playlist_item"),
@@ -22756,10 +23126,12 @@ export default function Home() {
 
     const firstChapter = chaptersToUse[0];
     const lastChapter = chaptersToUse.at(-1) ?? firstChapter;
+    const createdAt = new Date().toISOString();
     const playlist: BibleAudioPlaylist = {
       id: makeId("playlist"),
       name: `${targetBook} ${firstChapter}${lastChapter !== firstChapter ? `-${lastChapter}` : ""} Commentary Companion`,
-      createdAt: new Date().toISOString(),
+      createdAt,
+      updatedAt: createdAt,
       items: chaptersToUse.flatMap((chapterNumber) => [
         {
           id: makeId("playlist_item"),
@@ -22789,7 +23161,7 @@ export default function Home() {
 
   function createSermonStudyPlaylist(template: StudyPlaylistTemplate, sermonPassage?: StudyPlaylistPassage) {
     const existing = biblePlaylists.find((playlist) => playlist.name.toLowerCase() === template.title.toLowerCase());
-    const playlist = addStudyPlaylistLibraryResources(
+    const preparedPlaylist = addStudyPlaylistLibraryResources(
       addStudyPlaylistCommentarySources(
         addStudyPlaylistTemplateMetadata(
           existing ?? biblePlaylistFromStudyTemplate(template, sermonPassage),
@@ -22799,6 +23171,7 @@ export default function Home() {
       ),
       libraryResources,
     );
+    const playlist = { ...preparedPlaylist, updatedAt: new Date().toISOString() };
 
     setBiblePlaylists((current) => saveNextBiblePlaylists(
       existing
@@ -22863,6 +23236,7 @@ export default function Home() {
     const resource = libraryResources.find((candidate) => candidate.slug === slug);
     if (!resource) return;
 
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) =>
         playlist.id === playlistId
@@ -22878,6 +23252,7 @@ export default function Home() {
                     }
                   : item,
               ),
+              updatedAt,
             }
           : playlist,
       );
@@ -22891,6 +23266,7 @@ export default function Home() {
   }
 
   function removeBiblePlaylistItem(playlistId: string, itemId: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) =>
         playlist.id === playlistId
@@ -22900,6 +23276,8 @@ export default function Home() {
               completedItemIds: (playlist.completedItemIds ?? []).filter((id) => id !== itemId),
               completedAt: null,
               lastItemIndex: Math.min(playlist.lastItemIndex ?? 0, Math.max(0, playlist.items.length - 2)),
+              lastItemProgress: 0,
+              updatedAt,
             }
           : playlist,
       );
@@ -22909,6 +23287,7 @@ export default function Home() {
   }
 
   function moveBiblePlaylistItem(playlistId: string, itemId: string, direction: -1 | 1) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) => {
         if (playlist.id !== playlistId) return playlist;
@@ -22917,7 +23296,7 @@ export default function Home() {
         if (index < 0 || nextIndex < 0 || nextIndex >= playlist.items.length) return playlist;
         const items = [...playlist.items];
         [items[index], items[nextIndex]] = [items[nextIndex], items[index]];
-        return { ...playlist, items };
+        return { ...playlist, items, updatedAt };
       });
       saveBiblePlaylists(next);
       return next;
@@ -22925,12 +23304,13 @@ export default function Home() {
   }
 
   function markBiblePlaylistItemComplete(playlistId: string, itemId: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) => {
         if (playlist.id !== playlistId) return playlist;
         const completedItemIds = Array.from(new Set([...(playlist.completedItemIds ?? []), itemId]));
         const completedAt = playlist.items.length && completedItemIds.length >= playlist.items.length ? new Date().toISOString() : null;
-        return { ...playlist, completedItemIds, completedAt };
+        return { ...playlist, completedItemIds, completedAt, updatedAt };
       });
       saveBiblePlaylists(next);
       return next;
@@ -22939,10 +23319,11 @@ export default function Home() {
   }
 
   function clearBiblePlaylist(playlistId: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) =>
         playlist.id === playlistId
-          ? { ...playlist, items: [], completedItemIds: [], completedAt: null, lastItemIndex: 0 }
+          ? { ...playlist, items: [], completedItemIds: [], completedAt: null, lastItemIndex: 0, lastItemProgress: 0, updatedAt }
           : playlist,
       );
       saveBiblePlaylists(next);
@@ -22952,7 +23333,8 @@ export default function Home() {
     setSyncMessage("Study playlist cleared.");
   }
 
-  function updateStudyPlaylistProgress(playlistId: string, itemIndex: number, completedItemId?: string) {
+  function updateStudyPlaylistProgress(playlistId: string, itemIndex: number, itemProgress = 0, completedItemId?: string) {
+    const updatedAt = new Date().toISOString();
     setBiblePlaylists((current) => {
       const next = current.map((playlist) => {
         if (playlist.id !== playlistId) return playlist;
@@ -22960,7 +23342,15 @@ export default function Home() {
           ? Array.from(new Set([...(playlist.completedItemIds ?? []), completedItemId]))
           : playlist.completedItemIds ?? [];
         const completedAt = playlist.items.length && completedItemIds.length >= playlist.items.length ? new Date().toISOString() : playlist.completedAt ?? null;
-        return { ...playlist, lastItemIndex: itemIndex, completedItemIds, completedAt };
+        return {
+          ...playlist,
+          lastItemIndex: itemIndex,
+          lastItemProgress: Math.min(100, Math.max(0, itemProgress)),
+          lastPlayedAt: updatedAt,
+          updatedAt,
+          completedItemIds,
+          completedAt,
+        };
       });
       saveBiblePlaylists(next);
       return next;
@@ -23041,30 +23431,58 @@ export default function Home() {
     };
   }
 
-  function playBiblePlaylist(playlist: BibleAudioPlaylist, startIndex = 0, playSingleItem = false) {
+  function playBiblePlaylist(playlist: BibleAudioPlaylist, startIndex = 0, playSingleItem = false, resumeSavedPosition = false) {
     void (async () => {
       const chunks: string[] = [];
       const verseRefs: Array<string | null> = [];
       const itemLabels: Array<string | null> = [];
+      const chunkMeta: Array<{ itemIndex: number; itemId: string; originalChunkIndex: number; itemChunkCount: number }> = [];
       const safeIndex = Math.min(Math.max(0, startIndex), Math.max(0, playlist.items.length - 1));
       const itemsToPlay = playSingleItem ? playlist.items.slice(safeIndex, safeIndex + 1) : playlist.items.slice(safeIndex);
 
-      for (const item of itemsToPlay) {
+      for (const [relativeItemIndex, item] of itemsToPlay.entries()) {
         const speechParts = await chunksForBiblePlaylistItem(item);
-        chunks.push(...speechParts.chunks);
-        verseRefs.push(...speechParts.verseRefs);
-        itemLabels.push(...speechParts.chunks.map(() => item.label));
+        const itemIndex = safeIndex + relativeItemIndex;
+        const savedProgress = resumeSavedPosition && relativeItemIndex === 0
+          ? Math.min(99, Math.max(0, playlist.lastItemProgress ?? 0))
+          : 0;
+        const firstChunkIndex = Math.min(
+          Math.max(0, speechParts.chunks.length - 1),
+          Math.floor((savedProgress / 100) * speechParts.chunks.length),
+        );
+        speechParts.chunks.slice(firstChunkIndex).forEach((chunk, relativeChunkIndex) => {
+          const originalChunkIndex = firstChunkIndex + relativeChunkIndex;
+          chunks.push(chunk);
+          verseRefs.push(speechParts.verseRefs[originalChunkIndex] ?? null);
+          itemLabels.push(item.label);
+          chunkMeta.push({ itemIndex, itemId: item.id, originalChunkIndex, itemChunkCount: speechParts.chunks.length });
+        });
       }
 
       setActiveStudyPlaylistId(playlist.id);
       setStudyPlaylistCurrentIndex(safeIndex);
-      updateStudyPlaylistProgress(playlist.id, safeIndex);
+      updateStudyPlaylistProgress(playlist.id, safeIndex, resumeSavedPosition ? playlist.lastItemProgress ?? 0 : 0);
       startSpeech(
         `playlist-${playlist.id}`,
         playSingleItem ? `${playlist.name}: ${playlist.items[safeIndex]?.label ?? "item"}` : playlist.name,
         chunks.join(" "),
         0,
-        undefined,
+        (progress) => {
+          const completedChunkCount = Math.min(chunks.length, Math.round((progress / 100) * chunks.length));
+          const completedMeta = chunkMeta[completedChunkCount - 1];
+          if (!completedMeta) return;
+          const nextMeta = chunkMeta[completedChunkCount];
+          const completedItemProgress = ((completedMeta.originalChunkIndex + 1) / Math.max(1, completedMeta.itemChunkCount)) * 100;
+          const completedItemId = completedItemProgress >= 99.5 ? completedMeta.itemId : undefined;
+          const currentMeta = nextMeta ?? completedMeta;
+          const currentProgress = nextMeta && nextMeta.itemIndex !== completedMeta.itemIndex
+            ? (nextMeta.originalChunkIndex / Math.max(1, nextMeta.itemChunkCount)) * 100
+            : nextMeta
+              ? completedItemProgress
+              : 100;
+          setStudyPlaylistCurrentIndex(currentMeta.itemIndex);
+          updateStudyPlaylistProgress(playlist.id, currentMeta.itemIndex, currentProgress, completedItemId);
+        },
         {
           chunks,
           verseRefs,
@@ -23072,8 +23490,12 @@ export default function Home() {
           currentItemLabel: playlist.items[safeIndex]?.label ?? playlist.name,
           nextItemLabel: playlist.items[safeIndex + 1]?.label ?? null,
           onComplete: () => {
-            const completedItem = playlist.items[safeIndex];
-            if (completedItem) updateStudyPlaylistProgress(playlist.id, safeIndex, completedItem.id);
+            const completedIndex = playSingleItem ? safeIndex : playlist.items.length - 1;
+            const completedItem = playlist.items[completedIndex];
+            if (completedItem) {
+              setStudyPlaylistCurrentIndex(completedIndex);
+              updateStudyPlaylistProgress(playlist.id, completedIndex, 100, completedItem.id);
+            }
             if (playSingleItem && repeatStudyPlaylistItem) {
               playBiblePlaylist(playlist, safeIndex, true);
               return;
@@ -24418,6 +24840,7 @@ export default function Home() {
                 onAddEntry={addPrayerEntry}
                 onUpdateEntry={updatePrayerEntry}
                 onMarkPrayed={markPrayerPrayedToday}
+                onJournalEntry={startJournalFromPrayer}
                 onDeleteEntry={deletePrayerEntry}
               />
             )}
@@ -24661,6 +25084,7 @@ export default function Home() {
                 commentaryEntries={chapterCommentaryEntries}
                 keyVerses={chapterKeyVerses}
                 recommendedResources={activeChapterResourceRecommendations}
+                licensedPassageResources={licensedResourceLinksForChapter(LICENSED_RESOURCE_LINKS, book, chapter)}
                 libraryResources={libraryResources}
                 bookIntroduction={activeBookIntroduction}
                 activeThemes={activeChapterThemes}
@@ -24825,6 +25249,8 @@ export default function Home() {
                 presentations={presentationEntries}
                 draft={presentationDraft}
                 sermons={sermonEntries}
+                books={libraryResources}
+                commentary={commentaryEntries}
                 supabase={supabase}
                 user={user}
                 initialSessionId={presentationInitialSessionId}
@@ -24839,6 +25265,7 @@ export default function Home() {
                 onExportPlan={exportPresentationPlan}
                 onExportPowerPoint={exportPresentationPowerPoint}
                 onExportPdfPreview={exportPresentationPdfPreview}
+                onResolveScriptureText={sermonScriptureTextForPassage}
               />
             )}
 
@@ -25776,7 +26203,34 @@ function JournalScreen({
   onExportEndChange: (value: string) => void;
 }) {
   const definitionPreview = wordsToDefinitionList(draft.wordsToDefine, reviewedDictionaryEntries);
-  const recentEntries = entries.slice(0, 6);
+  const [journalQuery, setJournalQuery] = useState("");
+  const [journalSourceFilter, setJournalSourceFilter] = useState<"All" | JournalSourceType>("All");
+  const normalizedJournalQuery = journalQuery.trim().toLowerCase();
+  const visibleJournalEntries = entries.filter((entry) => {
+    if (journalSourceFilter !== "All" && entry.sourceType !== journalSourceFilter) return false;
+    if (!normalizedJournalQuery) return true;
+    const searchableText = [
+      entry.date,
+      entry.bibleReadingPassage,
+      entry.proverbOfTheDay,
+      entry.selectedVerseRefs,
+      entry.prayerFocus,
+      entry.readingPlanStatus,
+      entry.versePassage,
+      entry.wordsToDefine,
+      entry.strongsConnection,
+      entry.verseSays,
+      entry.verseMeans,
+      entry.verseApplies,
+      entry.prayerResponse,
+      entry.obedienceStep,
+      entry.memoryVerse,
+      entry.teachingThought,
+      entry.sourceType,
+      entry.sourceLabel,
+    ].join(" ").toLowerCase();
+    return searchableText.includes(normalizedJournalQuery);
+  });
   const readyPlans = readingPlans.filter((plan) => plan.status === "Ready");
   const plannedPlans = readingPlans.filter((plan) => plan.status === "Planned");
 
@@ -26064,18 +26518,52 @@ function JournalScreen({
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Saved Entries</p>
-            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Recent Scripture Journal</h2>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Searchable Scripture Journal</h2>
           </div>
-          <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{entries.length} saved</span>
+          <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{visibleJournalEntries.length} of {entries.length} shown</span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-[minmax(0,1fr)_220px_auto]">
+          <label className="text-sm font-semibold text-[var(--muted)]">
+            Search saved journal
+            <input
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-base text-[var(--ink)] outline-none"
+              placeholder="Search Scripture, prayer, answer, topic, or teaching thought"
+              type="search"
+              value={journalQuery}
+              onChange={(event) => setJournalQuery(event.target.value)}
+            />
+          </label>
+          <label className="text-sm font-semibold text-[var(--muted)]">
+            Source
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+              value={journalSourceFilter}
+              onChange={(event) => setJournalSourceFilter(event.target.value as "All" | JournalSourceType)}
+            >
+              <option value="All">All sources</option>
+              {JOURNAL_SOURCE_TYPES.map((source) => <option key={`journal-archive-source-${source}`} value={source}>{source}</option>)}
+            </select>
+          </label>
+          <button
+            className="self-end rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-sm font-semibold text-[var(--green)]"
+            onClick={() => {
+              setJournalSourceFilter("Prayer Entry");
+              setJournalQuery("Answered prayer testimony");
+            }}
+            type="button"
+          >
+            Answered testimonies
+          </button>
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
-          {recentEntries.length ? recentEntries.map((entry) => (
+          {visibleJournalEntries.length ? visibleJournalEntries.map((entry) => (
             <article key={entry.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-sm font-semibold text-[var(--green)]">{entry.date}</p>
                   <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{entry.selectedVerseRefs || entry.bibleReadingPassage || "Scripture Journal Entry"}</h3>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.sourceType}</p>
+                  {entry.sourceLabel && <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entry.sourceLabel}</p>}
                 </div>
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenEntry(entry)} type="button">
                   Open
@@ -26095,7 +26583,9 @@ function JournalScreen({
             </article>
           )) : (
             <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-6 text-center text-sm leading-6 text-[var(--muted)] md:col-span-2">
-              No journal entries yet. Start today&apos;s entry to connect Bible reading, prayer, study, and application.
+              {entries.length
+                ? "No saved entries match this search and source filter."
+                : "No journal entries yet. Start today's entry to connect Bible reading, prayer, study, and application."}
             </p>
           )}
         </div>
@@ -26178,6 +26668,7 @@ function PrayerScreen({
   onAddEntry,
   onUpdateEntry,
   onMarkPrayed,
+  onJournalEntry,
   onDeleteEntry,
 }: {
   entries: PrayerEntry[];
@@ -26190,6 +26681,7 @@ function PrayerScreen({
   onAddEntry: () => void;
   onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
   onMarkPrayed: (id: string) => void;
+  onJournalEntry: (entry: PrayerEntry) => void;
   onDeleteEntry: (id: string) => void;
 }) {
   const categoryCounts = PRAYER_CATEGORIES.map((category) => ({
@@ -26308,6 +26800,7 @@ function PrayerScreen({
                 compact
                 onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
+                onJournalEntry={onJournalEntry}
                 onDeleteEntry={onDeleteEntry}
               />
             )) : (
@@ -26559,6 +27052,7 @@ function PrayerScreen({
                 entry={entry}
                 onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
+                onJournalEntry={onJournalEntry}
                 onDeleteEntry={onDeleteEntry}
               />
             )) : (
@@ -26580,6 +27074,7 @@ function PrayerScreen({
                 compact
                 onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
+                onJournalEntry={onJournalEntry}
                 onDeleteEntry={onDeleteEntry}
               />
             )) : (
@@ -26650,12 +27145,14 @@ function PrayerEntryCard({
   compact = false,
   onMarkPrayed,
   onUpdateEntry,
+  onJournalEntry,
   onDeleteEntry,
 }: {
   entry: PrayerEntry;
   compact?: boolean;
   onMarkPrayed: (id: string) => void;
   onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
+  onJournalEntry: (entry: PrayerEntry) => void;
   onDeleteEntry: (id: string) => void;
 }) {
   const isAnswered = entry.answerStatus === "Answered";
@@ -26719,6 +27216,14 @@ function PrayerEntryCard({
           type="button"
         >
           {entry.answerStatus === "Waiting" ? "Resume" : "Waiting"}
+        </button>
+        <button
+          className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+          onClick={() => onJournalEntry(entry)}
+          type="button"
+        >
+          <NotebookPen size={13} />
+          {isAnswered ? "Journal answer" : "Journal prayer"}
         </button>
         <button
           className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
@@ -29253,7 +29758,7 @@ function BibleReader({
   onMovePlaylistItem: (playlistId: string, itemId: string, direction: -1 | 1) => void;
   onMarkPlaylistItemComplete: (playlistId: string, itemId: string) => void;
   onClearPlaylist: (playlistId: string) => void;
-  onPlayPlaylist: (playlist: BibleAudioPlaylist, startIndex?: number, playSingleItem?: boolean) => void;
+  onPlayPlaylist: (playlist: BibleAudioPlaylist, startIndex?: number, playSingleItem?: boolean, resumeSavedPosition?: boolean) => void;
   onPlayPlaylistItem: (playlist: BibleAudioPlaylist, itemIndex: number) => void;
   onSkipPlaylistItem: (direction: -1 | 1) => void;
   onRepeatPlaylistChange: (repeat: boolean) => void;
@@ -29454,9 +29959,19 @@ function BibleReader({
   };
   const currentPlaylistItem = activePlaylist?.items[activePlaylistItemIndex] ?? activePlaylist?.items[0] ?? null;
   const activePlaylistSeconds = activePlaylist?.items.reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
-  const activePlaylistRemainingSeconds = activePlaylist?.items
-    .slice(Math.min(activePlaylistItemIndex, Math.max(0, activePlaylist.items.length - 1)))
-    .reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
+  const activePlaylistRemainingSeconds = activePlaylist
+    ? activePlaylist.items.reduce((total, item, index) => {
+        if (index < activePlaylistItemIndex) return total;
+        const itemSeconds = estimatePlaylistItemSeconds(item);
+        if (index === activePlaylistItemIndex) {
+          const currentProgress = activePlaylist.lastItemIndex === activePlaylistItemIndex
+            ? Math.min(100, Math.max(0, activePlaylist.lastItemProgress ?? 0))
+            : 0;
+          return total + itemSeconds * (1 - currentProgress / 100);
+        }
+        return total + itemSeconds;
+      }, 0)
+    : 0;
   const activeCompletedItemIds = new Set(activePlaylist?.completedItemIds ?? []);
   const completedPlaylists = playlists.filter((playlist) => playlist.completedAt);
   const enabledWordHighlightSets = useMemo(() => wordHighlightSets.filter((set) => set.enabled), [wordHighlightSets]);
@@ -30865,9 +31380,13 @@ function BibleReader({
                     <Play size={15} />
                     Play All
                   </button>
-                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onPlayPlaylist(activePlaylist, activePlaylist.lastItemIndex ?? activePlaylistItemIndex, false)} type="button">
+                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onPlayPlaylist(activePlaylist, activePlaylist.lastItemIndex ?? activePlaylistItemIndex, false, true)} type="button">
                     <Headphones size={15} />
-                    Resume
+                    {(activePlaylist.lastItemProgress ?? 0) >= 99.5
+                      ? `Replay ${currentPlaylistItem?.label ?? "playlist"}`
+                      : activePlaylist.lastItemProgress
+                        ? `Resume ${currentPlaylistItem?.label ?? "playlist"} at ${Math.round(activePlaylist.lastItemProgress)}%`
+                        : `Resume ${currentPlaylistItem?.label ?? "playlist"}`}
                   </button>
                   <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
                     <Square size={15} />
@@ -31084,8 +31603,46 @@ function pptxFontSize(slide: SermonSlide, kind: "title" | "body") {
   return 23;
 }
 
-function pptxCleanText(value: string, maxLength = 900) {
-  return value.replace(/\s+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim().slice(0, maxLength);
+function pptxCleanText(value: string) {
+  return powerPointBodyText(value);
+}
+
+async function pptxBundledBackgroundAssets(slides: SermonSlide[], includeSourceNotes: boolean) {
+  const urls = Array.from(new Set(slides.map((slide) => SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot]?.assetUrl).filter((url): url is string => Boolean(url))));
+  const manifestByFile = new Map<string, { source?: string; source_url?: string; rightsStatus?: string; artist?: string; credit?: string }>();
+  if (includeSourceNotes && urls.length) {
+    const manifestResponse = await fetch("/media/sermon-slides/media-assets.json");
+    if (!manifestResponse.ok) throw new Error("The bundled background rights manifest could not be loaded. No PowerPoint was downloaded.");
+    const manifest = await manifestResponse.json() as Array<{ file?: string; source?: string; source_url?: string; rightsStatus?: string; artist?: string; credit?: string }>;
+    manifest.forEach((entry) => { if (entry.file) manifestByFile.set(entry.file, entry); });
+  }
+  const assets = new Map<string, { data: string; sourceNote: string }>();
+  await Promise.all(urls.map(async (assetUrl) => {
+    if (!/^\/media\/sermon-slides\/(?:photos|archaeology)\/[a-z0-9-]+\.jpg$/i.test(assetUrl)) {
+      throw new Error("An unapproved presentation background was rejected. No PowerPoint was downloaded.");
+    }
+    const response = await fetch(assetUrl);
+    if (!response.ok) throw new Error(`The selected background (${assetUrl}) could not be loaded. No PowerPoint was downloaded.`);
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    if (bytes.length < 4 || bytes.length > 8_000_000 || bytes[0] !== 0xff || bytes[1] !== 0xd8 || bytes[2] !== 0xff) {
+      throw new Error("A bundled presentation background failed JPEG validation. No PowerPoint was downloaded.");
+    }
+    let binary = "";
+    for (let offset = 0; offset < bytes.length; offset += 0x8000) binary += String.fromCharCode(...bytes.subarray(offset, offset + 0x8000));
+    const file = assetUrl.replace("/media/sermon-slides/", "");
+    const entry = manifestByFile.get(file);
+    if (includeSourceNotes && !entry) throw new Error(`The rights record for ${file} is missing. No PowerPoint was downloaded.`);
+    const sourceNote = entry ? [
+      "[Sources]",
+      `Background: ${entry.source || file}`,
+      entry.source_url ? `Source: ${entry.source_url}` : "",
+      entry.rightsStatus ? `Rights: ${entry.rightsStatus}` : "",
+      entry.artist ? `Artist: ${entry.artist}` : "",
+      entry.credit ? `Credit: ${entry.credit}` : "",
+    ].filter(Boolean).join("\n") : "";
+    assets.set(assetUrl, { data: `data:image/jpeg;base64,${btoa(binary)}`, sourceNote });
+  }));
+  return assets;
 }
 
 async function exportSlideDeckPowerPoint({
@@ -31094,14 +31651,19 @@ async function exportSlideDeckPowerPoint({
   title,
   subject,
   filename,
+  includeSpeakerNotes = true,
 }: {
   slides: SermonSlide[];
   themeId: SermonSlideThemeId;
   title: string;
   subject: string;
   filename: string;
+  includeSpeakerNotes?: boolean;
 }) {
   // Do not pass untrusted image bytes to PptxGenJS until image-size has a patched release.
+  const warning = powerPointTextWarning(slides);
+  if (warning) throw new Error(warning);
+  const backgroundAssets = await pptxBundledBackgroundAssets(slides, includeSpeakerNotes);
   const { default: PptxGenJS } = await import("pptxgenjs");
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE";
@@ -31123,7 +31685,12 @@ async function exportSlideDeckPowerPoint({
     const accent = pptxHex(theme.accent);
     const slide = pptx.addSlide();
     slide.background = { color: backgroundColor };
-    slide.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 7.5, fill: { color: backgroundColor }, line: { color: backgroundColor } });
+    const backgroundAssetUrl = SERMON_SLIDE_IMAGE_SLOTS[sermonSlide.imageSlot]?.assetUrl;
+    const backgroundAsset = backgroundAssetUrl ? backgroundAssets.get(backgroundAssetUrl) : undefined;
+    if (backgroundAsset) {
+      slide.addImage({ data: backgroundAsset.data, x: 0, y: 0, w: 13.333, h: 7.5, sizing: { type: "cover", x: 0, y: 0, w: 13.333, h: 7.5 }, altText: `${SERMON_SLIDE_IMAGE_SLOTS[sermonSlide.imageSlot]?.label ?? sermonSlide.imageTheme} presentation background` });
+    }
+    slide.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 7.5, fill: { color: backgroundColor, transparency: backgroundAsset ? lightStyle ? 22 : 42 : 0 }, line: { color: backgroundColor, transparency: 100 } });
 
     if (sermonSlide.imageSlot !== "none" && sermonSlide.showImageMotif) {
       slide.addShape(pptx.ShapeType.arc, { x: 9.4, y: 0.4, w: 2.5, h: 2.5, line: { color: accent, transparency: 70 } });
@@ -31140,15 +31707,16 @@ async function exportSlideDeckPowerPoint({
       slide.addText(sermonSlide.subtitle, { x: 1, y: titleY - 0.48, w: 11.333, h: 0.28, fontFace: "Aptos", fontSize: 10, bold: true, color: accent, align, margin: 0 });
     }
     slide.addText(sermonSlide.title || `${index + 1}. ${sermonSlide.type}`, { x: 1, y: titleY, w: 11.333, h: sermonSlide.type === "Title" ? 1.0 : 0.72, fontFace: "Aptos Display", fontSize: pptxFontSize(sermonSlide, "title"), bold: true, color: foreground, align, fit: "shrink", margin: 0.05 });
-    const bodyText = pptxCleanText(sermonSlide.bibleText || sermonSlide.body, 1400);
+    const bodyText = pptxCleanText(sermonSlide.bibleText || sermonSlide.body);
     if (bodyText) {
       slide.addText(bodyText, { x: 1.05, y: sermonSlide.type === "Title" ? 2.75 : titleY + 1.0, w: 11.2, h: sermonSlide.type === "Title" ? 2.7 : 4.1, fontFace: sermonSlide.bibleText ? "Georgia" : "Aptos", fontSize: pptxFontSize(sermonSlide, "body"), color: sermonSlide.bibleText ? foreground : muted, align, valign: "middle", fit: "shrink", breakLine: false, margin: 0.08 });
     }
     if (sermonSlide.showFooterBranding) {
       slide.addText("Father's Business Bible Study", { x: 1, y: 7.05, w: 5, h: 0.22, fontFace: "Aptos", fontSize: 7, bold: true, color: muted, margin: 0 });
     }
-    if (sermonSlide.speakerNotes) {
-      slide.addNotes(sermonSlide.speakerNotes);
+    if (includeSpeakerNotes) {
+      const notes = [sermonSlide.speakerNotes, backgroundAsset?.sourceNote].filter(Boolean).join("\n\n");
+      if (notes) slide.addNotes(notes);
     }
   });
 
@@ -32352,8 +32920,12 @@ function passageTeachingIllustrationPrompts({
   return Array.from(new Set(prompts)).slice(0, 5);
 }
 
-function relatedLibraryResourcesForPassage(recommendations: ChapterResourceRecommendation[], libraryResources: LibraryResource[]) {
-  return recommendations
+function relatedLibraryResourcesForPassage(
+  recommendations: ChapterResourceRecommendation[],
+  libraryResources: LibraryResource[],
+  book: string,
+) {
+  const recommendedResources = recommendations
     .map((recommendation) => {
       const resource = recommendation.resourceSlug
         ? libraryResources.find((candidate) => candidate.slug === recommendation.resourceSlug)
@@ -32361,6 +32933,26 @@ function relatedLibraryResourcesForPassage(recommendations: ChapterResourceRecom
       return resource ? { recommendation, resource } : null;
     })
     .filter((item): item is { recommendation: ChapterResourceRecommendation; resource: LibraryResource } => Boolean(item));
+
+  const bookResources = libraryResources
+    .filter((resource) => resource.bible_books?.includes(book))
+    .map((resource) => ({
+      recommendation: {
+        id: `book-linked-${resource.slug}`,
+        kind: "Library Resource" as const,
+        title: resource.title,
+        author: resource.author,
+        status: "available" as const,
+        note: resource.recommended_use,
+        resourceSlug: resource.slug,
+        warning: resource.resource_warnings.join(" · ") || undefined,
+      },
+      resource,
+    }));
+
+  return Array.from(
+    new Map([...recommendedResources, ...bookResources].map((item) => [item.resource.slug, item])).values(),
+  );
 }
 
 function bestChapterResources(recommendations: ChapterResourceRecommendation[], commentaryEntries: CommentaryEntry[]): BestChapterResources {
@@ -36282,6 +36874,25 @@ function licensedResourceLinkMatchesAllTerms(resource: LicensedResourceLink, ter
   return terms.every((term) => haystack.includes(term));
 }
 
+const SINGLE_CHAPTER_BIBLE_BOOKS = new Set(["Obadiah", "Philemon", "2 John", "3 John", "Jude"]);
+
+function licensedResourceLinksForChapter(resources: LicensedResourceLink[], book: string, chapter: number) {
+  const normalizedBook = book.trim().toLowerCase();
+  const chapterPrefix = `${normalizedBook} ${chapter}`;
+
+  return resources.filter((resource) => resource.passage?.split(";").some((passagePart) => {
+    const normalizedPassage = passagePart.trim().toLowerCase();
+    if (normalizedPassage === normalizedBook) {
+      return true;
+    }
+    if (chapter === 1 && SINGLE_CHAPTER_BIBLE_BOOKS.has(book)) {
+      return normalizedPassage.startsWith(`${normalizedBook} `);
+    }
+
+    return normalizedPassage === chapterPrefix || normalizedPassage.startsWith(`${chapterPrefix}:`);
+  }));
+}
+
 function libraryResourceMatchesDiscoveryFilter(resource: LibraryResource, filter: string) {
   if (filter === "All") return true;
   if (filter === "Books") {
@@ -36436,8 +37047,9 @@ function canonicalLibraryAuthor(author: string) {
   return normalizedLibraryText(author);
 }
 
-function libraryWorkKey(resource: Pick<LibraryResource, "title" | "author">) {
-  return `${canonicalLibraryTitle(resource.title)}::${canonicalLibraryAuthor(resource.author)}`;
+function libraryWorkKey(resource: Pick<LibraryResource, "title" | "author" | "bible_books">) {
+  const bibleScope = [...(resource.bible_books ?? [])].sort().join("|");
+  return `${canonicalLibraryTitle(resource.title)}::${canonicalLibraryAuthor(resource.author)}::${bibleScope}`;
 }
 
 function strongerLibraryResource(current: LibraryResource, candidate: LibraryResource) {
@@ -36481,12 +37093,14 @@ function groupLibraryWorks(resources: LibraryResource[]) {
   return Array.from(byWork.entries()).map(([workKey, editions]) => {
     const sortedEditions = sortLibraryEditions(editions);
     const preferred = sortedEditions.reduce(strongerLibraryResource, sortedEditions[0]);
+    const bibleBooks = Array.from(new Set(sortedEditions.flatMap((edition) => edition.bible_books ?? [])));
     return {
       ...preferred,
       work_key: workKey,
       work_title: preferredLibraryWorkTitle(sortedEditions),
       edition_count: sortedEditions.length,
       edition_group: sortedEditions,
+      bible_books: bibleBooks,
     };
   });
 }
@@ -36810,6 +37424,26 @@ function isAppleSpeechVoice(voice: SpeechSynthesisVoice) {
   return speechVoiceCategory(voice).startsWith("Apple") || voice.voiceURI.toLowerCase().includes("apple");
 }
 
+function speechVoiceQualityRank(voice: SpeechSynthesisVoice) {
+  const value = `${voice.name} ${voice.voiceURI}`.toLowerCase();
+  if (value.includes("premium")) return 0;
+  if (value.includes("enhanced")) return 1;
+  if (value.includes("siri") || value.includes("natural") || value.includes("neural")) return 2;
+  if (isAppleSpeechVoice(voice) && voice.localService && !isNoveltySpeechVoice(voice)) return 3;
+  if (voice.localService && !isNoveltySpeechVoice(voice)) return 4;
+  return 5;
+}
+
+function speechVoiceQualityLabel(voice: SpeechSynthesisVoice) {
+  const rank = speechVoiceQualityRank(voice);
+  if (rank === 0) return "Premium installed voice";
+  if (rank === 1) return "Enhanced installed voice";
+  if (rank === 2) return "High-quality voice";
+  if (rank === 3) return "Apple installed voice";
+  if (rank === 4) return "Standard device voice";
+  return "Browser voice";
+}
+
 function voiceProfileById(profileId: VoiceProfileId) {
   return VOICE_PROFILES.find((profile) => profile.id === profileId) ?? VOICE_PROFILES[0];
 }
@@ -36834,11 +37468,22 @@ function profileVoiceRank(voice: SpeechSynthesisVoice, profileId: VoiceProfileId
 }
 
 function isRecommendedSpeechVoice(voice: SpeechSynthesisVoice, profileId: VoiceProfileId) {
-  return profileVoiceRank(voice, profileId) <= 2 && !isNoveltySpeechVoice(voice);
+  return (speechVoiceQualityRank(voice) <= 2 || profileVoiceRank(voice, profileId) <= 2) && !isNoveltySpeechVoice(voice);
 }
 
 function voiceDisplayName(voice: SpeechSynthesisVoice) {
-  return `${voice.name} · ${speechVoiceCategory(voice)}`;
+  return `${voice.name} · ${speechVoiceQualityLabel(voice)}`;
+}
+
+function bestSpeechVoiceForProfile(voices: SpeechSynthesisVoice[], profileId: VoiceProfileId) {
+  return [...voices]
+    .filter((voice) => !isNoveltySpeechVoice(voice))
+    .sort((a, b) =>
+      speechVoiceQualityRank(a) - speechVoiceQualityRank(b) ||
+      profileVoiceRank(a, profileId) - profileVoiceRank(b, profileId) ||
+      Number(b.localService) - Number(a.localService) ||
+      a.name.localeCompare(b.name),
+    )[0] ?? null;
 }
 
 function browserVoiceEnvironmentLabel() {
@@ -36890,6 +37535,8 @@ function sortSpeechVoices(voices: SpeechSynthesisVoice[], settings: VoiceSetting
       Number(!settings.maleFavoriteVoiceURIs.includes(a.voiceURI)) - Number(!settings.maleFavoriteVoiceURIs.includes(b.voiceURI)) ||
       Number(!settings.femaleFavoriteVoiceURIs.includes(a.voiceURI)) - Number(!settings.femaleFavoriteVoiceURIs.includes(b.voiceURI));
     if (favoriteDifference) return favoriteDifference;
+    const qualityDifference = speechVoiceQualityRank(a) - speechVoiceQualityRank(b);
+    if (qualityDifference) return qualityDifference;
     const profileDifference = profileVoiceRank(a, settings.activeProfile) - profileVoiceRank(b, settings.activeProfile);
     if (profileDifference) return profileDifference;
     const noveltyDifference = Number(isNoveltySpeechVoice(a)) - Number(isNoveltySpeechVoice(b));
@@ -39662,12 +40309,763 @@ function audioScenarioEstimate(users: number, provider: PremiumAudioProviderPlan
   };
 }
 
+type PremiumNarrationVoiceOption = {
+  key: string;
+  label: string;
+  type: "built-in" | "custom";
+};
+
+type PremiumNarrationConfiguration = {
+  configured: boolean;
+  provider: string;
+  model: string;
+  maxCharacters: number;
+  costPerMillionCharacters: number | null;
+  voices: PremiumNarrationVoiceOption[];
+  customVoiceEligibilityRequired: boolean;
+  pronunciationGuideEntries: number;
+  pronunciationGuideFingerprint: string;
+};
+
+type PremiumNarrationTestSample = {
+  id: string;
+  label: string;
+  reference: string;
+  focus: string;
+  text: string;
+};
+
+type PremiumNarrationReview = {
+  id: string;
+  createdAt: string;
+  provider: string;
+  model: string;
+  voiceLabel: string;
+  voiceType: "built-in" | "custom";
+  sampleReference: string;
+  characters: number;
+  generationMs: number;
+  source?: "provider" | "cache";
+  listeningDevice?: "desktop" | "iphone";
+  pronunciationGuideFingerprint?: string;
+  scores: {
+    pronunciation: number;
+    naturalness: number;
+    reverence: number;
+    phoneClarity: number;
+  };
+  notes: string;
+};
+
+type PremiumNarrationAcceptance = {
+  key: string;
+  provider: string;
+  model: string;
+  voiceLabel: string;
+  voiceType: "built-in" | "custom";
+  pronunciationGuideFingerprint: string;
+  qualifyingReviews: number;
+  sampleCount: number;
+  deviceCount: number;
+  averageScore: number;
+  minimumScore: number;
+  readyForApproval: boolean;
+  blockers: string[];
+};
+
+type PremiumNarrationUsageEvent = {
+  id: string;
+  createdAt: string;
+  provider: string;
+  model: string;
+  voiceLabel: string;
+  voiceType: "built-in" | "custom";
+  sampleReference: string;
+  characters: number;
+  source: "provider" | "cache";
+  generationMs: number;
+  estimatedCostUsd: number | null;
+};
+
+const PREMIUM_NARRATION_STARTER_VOICES: PremiumNarrationVoiceOption[] = [
+  { key: "marin", label: "Marin", type: "built-in" },
+  { key: "cedar", label: "Cedar", type: "built-in" },
+  { key: "onyx", label: "Onyx", type: "built-in" },
+  { key: "sage", label: "Sage", type: "built-in" },
+];
+const PREMIUM_NARRATION_REVIEWS_KEY = "fathers-business-premium-narration-reviews";
+const PREMIUM_NARRATION_USAGE_KEY = "fathers-business-premium-narration-usage";
+const PREMIUM_NARRATION_AUDIO_CACHE = "fathers-business-premium-narration-v1";
+const PREMIUM_NARRATION_INSTRUCTIONS_VERSION = "exact-reverent-v1";
+const PREMIUM_NARRATION_MINIMUM_SCORE = 4;
+const PREMIUM_NARRATION_MINIMUM_AVERAGE = 4.25;
+const PREMIUM_NARRATION_TEST_SAMPLES: PremiumNarrationTestSample[] = [
+  {
+    id: "john-3-16",
+    label: "Gospel clarity",
+    reference: "John 3:16",
+    focus: "Warmth, pacing, and exact KJV wording",
+    text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+  },
+  {
+    id: "psalm-23-1-4",
+    label: "Pastoral reading",
+    reference: "Psalms 23:1-4",
+    focus: "Reverence, pauses, and long-form comfort",
+    text: "The LORD is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake. Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.",
+  },
+  {
+    id: "romans-8-28",
+    label: "Teaching cadence",
+    reference: "Romans 8:28",
+    focus: "Sentence emphasis and doctrinal clarity",
+    text: "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.",
+  },
+  {
+    id: "bible-names",
+    label: "Bible names",
+    reference: "2 Samuel 9:13; Daniel 3:1; Isaiah 8:1",
+    focus: "Mephibosheth, Nebuchadnezzar, and Maher-shalal-hash-baz",
+    text: "So Mephibosheth dwelt in Jerusalem: for he did eat continually at the king's table; and was lame on both his feet. Nebuchadnezzar the king made an image of gold, whose height was threescore cubits, and the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon. Moreover the LORD said unto me, Take thee a great roll, and write in it with a man's pen concerning Maher-shalal-hash-baz.",
+  },
+];
+
+function premiumNarrationAcceptance(reviews: PremiumNarrationReview[]): PremiumNarrationAcceptance[] {
+  const standardReferences = new Set(PREMIUM_NARRATION_TEST_SAMPLES.map((sample) => sample.reference));
+  const grouped = new Map<string, { review: PremiumNarrationReview; latest: Map<string, PremiumNarrationReview> }>();
+
+  for (const review of reviews) {
+    const guideFingerprint = review.pronunciationGuideFingerprint ?? "legacy";
+    const key = [review.provider, review.model, review.voiceType, review.voiceLabel, guideFingerprint].join("|");
+    const group = grouped.get(key) ?? { review, latest: new Map<string, PremiumNarrationReview>() };
+    if (review.listeningDevice && standardReferences.has(review.sampleReference)) {
+      const evidenceKey = `${review.sampleReference}|${review.listeningDevice}`;
+      if (!group.latest.has(evidenceKey)) group.latest.set(evidenceKey, review);
+    }
+    grouped.set(key, group);
+  }
+
+  return Array.from(grouped.entries()).map(([key, group]) => {
+    const evidence = Array.from(group.latest.values());
+    const samples = new Set(evidence.map((review) => review.sampleReference));
+    const devices = new Set(evidence.map((review) => review.listeningDevice));
+    const scores = evidence.flatMap((review) => Object.values(review.scores));
+    const averageScore = scores.length ? scores.reduce((total, score) => total + score, 0) / scores.length : 0;
+    const minimumScore = scores.length ? Math.min(...scores) : 0;
+    const blockers: string[] = [];
+    const missingSamples = PREMIUM_NARRATION_TEST_SAMPLES.length - samples.size;
+    if (missingSamples > 0) blockers.push(`${missingSamples} KJV sample${missingSamples === 1 ? "" : "s"} remaining`);
+    if (!devices.has("desktop")) blockers.push("desktop review required");
+    if (!devices.has("iphone")) blockers.push("iPhone review required");
+    if (scores.length && minimumScore < PREMIUM_NARRATION_MINIMUM_SCORE) blockers.push(`minimum score is ${minimumScore.toFixed(1)}`);
+    if (scores.length && averageScore < PREMIUM_NARRATION_MINIMUM_AVERAGE) blockers.push(`average is ${averageScore.toFixed(2)}`);
+    return {
+      key,
+      provider: group.review.provider,
+      model: group.review.model,
+      voiceLabel: group.review.voiceLabel,
+      voiceType: group.review.voiceType,
+      pronunciationGuideFingerprint: group.review.pronunciationGuideFingerprint ?? "legacy",
+      qualifyingReviews: evidence.length,
+      sampleCount: samples.size,
+      deviceCount: devices.size,
+      averageScore,
+      minimumScore,
+      readyForApproval: blockers.length === 0,
+      blockers,
+    };
+  }).sort((left, right) => Number(right.readyForApproval) - Number(left.readyForApproval) || right.averageScore - left.averageScore);
+}
+
+async function premiumNarrationCacheUrl(configuration: PremiumNarrationConfiguration, voiceKey: string, text: string, rightsBasis: string) {
+  const cacheIdentity = JSON.stringify({
+    provider: configuration.provider,
+    model: configuration.model,
+    voiceKey,
+    text,
+    rightsBasis,
+    instructions: PREMIUM_NARRATION_INSTRUCTIONS_VERSION,
+    pronunciationGuide: configuration.pronunciationGuideFingerprint,
+  });
+  const digest = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(cacheIdentity));
+  const fingerprint = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  return `${window.location.origin}/__private-premium-narration-cache/${fingerprint}`;
+}
+
+function PremiumNarrationScore({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  onChange: (value: number) => void;
+}) {
+  return (
+    <label className="rounded-2xl border border-[var(--line)] bg-white p-3 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+      {label}
+      <select
+        aria-label={`${label} score`}
+        className="mt-2 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+        onChange={(event) => onChange(Number(event.target.value))}
+        value={value}
+      >
+        <option value={0}>Not scored</option>
+        {[1, 2, 3, 4, 5].map((score) => <option key={`${label}-score-${score}`} value={score}>{score} / 5</option>)}
+      </select>
+    </label>
+  );
+}
+
+function PremiumNarrationPilot() {
+  const [adminToken, setAdminToken] = useState("");
+  const [configuration, setConfiguration] = useState<PremiumNarrationConfiguration | null>(null);
+  const [voiceKey, setVoiceKey] = useState("marin");
+  const [previewText, setPreviewText] = useState("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
+  const [rightsBasis, setRightsBasis] = useState<"Public Domain" | "Owned by ministry" | "Written permission">("Public Domain");
+  const [rightsConfirmed, setRightsConfirmed] = useState(false);
+  const [voiceConsentConfirmed, setVoiceConsentConfirmed] = useState(false);
+  const [aiDisclosureConfirmed, setAiDisclosureConfirmed] = useState(false);
+  const [pilotStatus, setPilotStatus] = useState("Check server readiness before generating a private preview.");
+  const [audioUrl, setAudioUrl] = useState("");
+  const [checking, setChecking] = useState(false);
+  const [generating, setGenerating] = useState(false);
+  const [cachePreviewLocally, setCachePreviewLocally] = useState(true);
+  const [forceRegenerate, setForceRegenerate] = useState(false);
+  const [selectedTestId, setSelectedTestId] = useState(PREMIUM_NARRATION_TEST_SAMPLES[0].id);
+  const [generatedPreview, setGeneratedPreview] = useState<{
+    provider: string;
+    model: string;
+    voiceLabel: string;
+    voiceType: "built-in" | "custom";
+    sampleReference: string;
+    characters: number;
+    generationMs: number;
+    source: "provider" | "cache";
+    pronunciationGuideFingerprint: string;
+  } | null>(null);
+  const [reviewScores, setReviewScores] = useState({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
+  const [listeningDevice, setListeningDevice] = useState<"" | "desktop" | "iphone">("");
+  const [reviewNotes, setReviewNotes] = useState("");
+  const [reviews, setReviews] = useState<PremiumNarrationReview[]>(() => loadAcquisitionStorage(PREMIUM_NARRATION_REVIEWS_KEY, []));
+  const [usageEvents, setUsageEvents] = useState<PremiumNarrationUsageEvent[]>(() => loadAcquisitionStorage(PREMIUM_NARRATION_USAGE_KEY, []));
+  const voices = configuration?.voices.length ? configuration.voices : PREMIUM_NARRATION_STARTER_VOICES;
+  const selectedVoice = voices.find((voice) => voice.key === voiceKey) ?? voices[0];
+  const maxCharacters = configuration?.maxCharacters ?? 800;
+  const selectedTest = PREMIUM_NARRATION_TEST_SAMPLES.find((sample) => sample.id === selectedTestId);
+  const voiceAcceptance = premiumNarrationAcceptance(reviews);
+
+  useEffect(() => () => {
+    if (audioUrl) URL.revokeObjectURL(audioUrl);
+  }, [audioUrl]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(PREMIUM_NARRATION_REVIEWS_KEY, JSON.stringify(reviews));
+    } catch {
+      // Private local review history is optional; the pilot remains usable if storage is unavailable.
+    }
+  }, [reviews]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(PREMIUM_NARRATION_USAGE_KEY, JSON.stringify(usageEvents));
+    } catch {
+      // The usage ledger is optional and contains no provider credentials or custom voice IDs.
+    }
+  }, [usageEvents]);
+
+  async function checkPremiumNarrationReadiness() {
+    setChecking(true);
+    setPilotStatus("Checking private premium narration configuration...");
+    try {
+      const response = await fetch("/api/audio/premium-preview", {
+        headers: { "x-admin-premium-voice-token": adminToken.trim() },
+        cache: "no-store",
+      });
+      const body = await response.json() as PremiumNarrationConfiguration & { error?: string };
+      if (!response.ok) {
+        setConfiguration(null);
+        setPilotStatus(body.error || "Premium narration configuration could not be checked.");
+        return;
+      }
+      setConfiguration(body);
+      const nextVoice = body.voices.some((voice) => voice.key === voiceKey) ? voiceKey : body.voices[0]?.key;
+      if (nextVoice) setVoiceKey(nextVoice);
+      setPilotStatus(body.configured
+        ? `${body.provider} ${body.model} is ready with ${body.pronunciationGuideEntries} server-side pronunciation guide${body.pronunciationGuideEntries === 1 ? "" : "s"} (${body.pronunciationGuideFingerprint}). The server stores no audio.`
+        : "Admin token accepted. Add the server-side OpenAI API key before generating audio.");
+    } catch {
+      setConfiguration(null);
+      setPilotStatus("The private premium narration route could not be reached.");
+    } finally {
+      setChecking(false);
+    }
+  }
+
+  async function generatePremiumNarrationPreview() {
+    if (!configuration?.configured || !selectedVoice) return;
+    setGenerating(true);
+    setPilotStatus(forceRegenerate ? "Generating a fresh private audio preview..." : "Checking this private browser before calling the provider...");
+    const startedAt = performance.now();
+    try {
+      let cacheUrl = "";
+      let cache: Cache | null = null;
+      if (cachePreviewLocally && "caches" in window) {
+        try {
+          cacheUrl = await premiumNarrationCacheUrl(configuration, selectedVoice.key, previewText, rightsBasis);
+          cache = await window.caches.open(PREMIUM_NARRATION_AUDIO_CACHE);
+          if (!forceRegenerate) {
+            const cachedResponse = await cache.match(cacheUrl);
+            if (cachedResponse) {
+              const blob = await cachedResponse.blob();
+              setAudioUrl(URL.createObjectURL(blob));
+              const cachedPreview = {
+                provider: configuration.provider,
+                model: configuration.model,
+                voiceLabel: selectedVoice.label,
+                voiceType: selectedVoice.type,
+                sampleReference: selectedTest?.reference ?? "Custom preview",
+                characters: previewText.length,
+                generationMs: 0,
+                source: "cache" as const,
+                pronunciationGuideFingerprint: configuration.pronunciationGuideFingerprint,
+              };
+              setGeneratedPreview(cachedPreview);
+              setUsageEvents((current) => [{
+                id: `premium-narration-usage-${Date.now()}`,
+                createdAt: new Date().toISOString(),
+                ...cachedPreview,
+                estimatedCostUsd: 0,
+              }, ...current].slice(0, 250));
+              setReviewScores({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
+              setReviewNotes("");
+              setPilotStatus(`${selectedVoice.label} reused from this private browser · ${previewText.length.toLocaleString()} characters · no provider call.`);
+              return;
+            }
+          }
+        } catch {
+          cache = null;
+          setPilotStatus("Private browser caching is unavailable; generating one provider preview instead...");
+        }
+      }
+      const response = await fetch("/api/audio/premium-preview", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-premium-voice-token": adminToken.trim(),
+        },
+        body: JSON.stringify({
+          text: previewText,
+          voiceKey: selectedVoice.key,
+          rightsBasis,
+          rightsConfirmed,
+          voiceConsentConfirmed,
+          aiDisclosureConfirmed,
+        }),
+      });
+      if (!response.ok) {
+        const body = await response.json() as { error?: string };
+        setPilotStatus(body.error || "The premium narration preview could not be generated.");
+        return;
+      }
+      const blob = await response.blob();
+      const generationMs = Math.round(performance.now() - startedAt);
+      if (cache && cacheUrl) {
+        try {
+          await cache.put(cacheUrl, new Response(blob, { headers: { "Content-Type": blob.type || "audio/mpeg" } }));
+        } catch {
+          // Playback and the usage ledger still work when browser cache storage is unavailable.
+        }
+      }
+      setAudioUrl(URL.createObjectURL(blob));
+      const providerPreview = {
+        provider: configuration.provider,
+        model: configuration.model,
+        voiceLabel: selectedVoice.label,
+        voiceType: selectedVoice.type,
+        sampleReference: selectedTest?.reference ?? "Custom preview",
+        characters: previewText.length,
+        generationMs,
+        source: "provider" as const,
+        pronunciationGuideFingerprint: configuration.pronunciationGuideFingerprint,
+      };
+      setGeneratedPreview(providerPreview);
+      setUsageEvents((current) => [{
+        id: `premium-narration-usage-${Date.now()}`,
+        createdAt: new Date().toISOString(),
+        ...providerPreview,
+        estimatedCostUsd: configuration.costPerMillionCharacters === null
+          ? null
+          : (previewText.length / 1_000_000) * configuration.costPerMillionCharacters,
+      }, ...current].slice(0, 250));
+      setReviewScores({ pronunciation: 0, naturalness: 0, reverence: 0, phoneClarity: 0 });
+      setReviewNotes("");
+      setPilotStatus(`${selectedVoice.label} provider preview ready in ${(generationMs / 1000).toFixed(1)} seconds · ${previewText.length.toLocaleString()} characters${cache ? " · saved only in this private browser" : " · not stored"}.`);
+    } catch {
+      setPilotStatus("The premium voice provider could not be reached.");
+    } finally {
+      setGenerating(false);
+    }
+  }
+
+  function selectNarrationTest(sample: PremiumNarrationTestSample) {
+    setSelectedTestId(sample.id);
+    setPreviewText(sample.text);
+    setGeneratedPreview(null);
+    setAudioUrl("");
+    setPilotStatus(`${sample.reference} loaded for ${sample.focus.toLowerCase()}.`);
+  }
+
+  function saveNarrationReview() {
+    if (!listeningDevice) {
+      setPilotStatus("Choose the device actually used for this listening review before saving.");
+      return;
+    }
+    if (!generatedPreview || Object.values(reviewScores).some((score) => score < 1)) {
+      setPilotStatus("Score pronunciation, naturalness, reverence, and phone clarity before saving this review.");
+      return;
+    }
+    const review: PremiumNarrationReview = {
+      id: `premium-narration-review-${Date.now()}`,
+      createdAt: new Date().toISOString(),
+      ...generatedPreview,
+      listeningDevice,
+      scores: reviewScores,
+      notes: reviewNotes.trim(),
+    };
+    setReviews((current) => [review, ...current].slice(0, 100));
+    setPilotStatus(`${generatedPreview.voiceLabel} quality review saved privately on this browser.`);
+  }
+
+  function exportNarrationReviews() {
+    downloadTextFile(
+      `fathers-business-premium-narration-reviews-${new Date().toISOString().slice(0, 10)}.json`,
+      JSON.stringify({ app: "Father's Business Bible Study", kind: "premium_narration_pilot_export", exportedAt: new Date().toISOString(), acceptanceRules: { standardKjvSamples: PREMIUM_NARRATION_TEST_SAMPLES.map((sample) => sample.reference), requiredDevices: ["desktop", "iphone"], minimumScore: PREMIUM_NARRATION_MINIMUM_SCORE, minimumAverage: PREMIUM_NARRATION_MINIMUM_AVERAGE }, voiceAcceptance, reviews, usageEvents }, null, 2),
+      "application/json",
+    );
+    setPilotStatus(`Exported ${reviews.length} quality review${reviews.length === 1 ? "" : "s"} and ${usageEvents.length} usage event${usageEvents.length === 1 ? "" : "s"}.`);
+  }
+
+  async function clearNarrationAudioCache() {
+    if (!("caches" in window)) {
+      setPilotStatus("Private browser audio caching is unavailable on this device.");
+      return;
+    }
+    try {
+      await window.caches.delete(PREMIUM_NARRATION_AUDIO_CACHE);
+      setPilotStatus("Private browser audio cache cleared. Reviews and the usage ledger were kept.");
+    } catch {
+      setPilotStatus("The private browser audio cache could not be cleared.");
+    }
+  }
+
+  const providerUsageEvents = usageEvents.filter((event) => event.source === "provider");
+  const cachedUsageEvents = usageEvents.filter((event) => event.source === "cache");
+  const providerCharacters = providerUsageEvents.reduce((total, event) => total + event.characters, 0);
+  const savedCharacters = cachedUsageEvents.reduce((total, event) => total + event.characters, 0);
+  const estimatedSpend = providerUsageEvents.reduce((total, event) => total + (event.estimatedCostUsd ?? 0), 0);
+  const estimatedSavings = configuration?.costPerMillionCharacters == null
+    ? null
+    : (savedCharacters / 1_000_000) * configuration.costPerMillionCharacters;
+
+  const canGenerate = Boolean(
+    configuration?.configured &&
+    adminToken.trim() &&
+    previewText.trim() &&
+    previewText.length <= maxCharacters &&
+    rightsConfirmed &&
+    aiDisclosureConfirmed &&
+    (selectedVoice?.type !== "custom" || voiceConsentConfirmed),
+  );
+
+  return (
+    <section className="rounded-2xl border-2 border-[var(--green)] bg-white p-4 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold text-[var(--green)]">Private Premium Narration Pilot</p>
+          <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Test short, rights-safe narration before long-form audio</h3>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            This admin-only pilot sends one short passage to the configured server-side provider. Keys and custom voice IDs never enter browser code, the server stores no audio, and an optional private browser cache prevents duplicate paid calls.
+          </p>
+        </div>
+        <span className={`rounded-full px-3 py-2 text-xs font-semibold ${configuration?.configured ? "bg-emerald-50 text-emerald-800" : "bg-amber-50 text-amber-800"}`}>
+          {configuration?.configured ? "Provider ready" : "Private setup required"}
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_auto]">
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Admin premium-voice token
+          <input
+            autoComplete="off"
+            className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            onChange={(event) => {
+              setAdminToken(event.target.value);
+              setConfiguration(null);
+            }}
+            placeholder="Kept in memory for this page only"
+            type="password"
+            value={adminToken}
+          />
+        </label>
+        <button
+          className="self-end rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={!adminToken.trim() || checking}
+          onClick={() => void checkPremiumNarrationReadiness()}
+          type="button"
+        >
+          {checking ? "Checking..." : "Check readiness"}
+        </button>
+      </div>
+
+      <p className="mt-3 rounded-2xl bg-[var(--paper)] p-3 text-xs font-semibold leading-5 text-[var(--muted)]" role="status">{pilotStatus}</p>
+
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Narration Quality Trial</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Use the same verified KJV samples for every voice so quality comparisons remain fair.</p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{reviews.length} saved reviews</span>
+        </div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+          {PREMIUM_NARRATION_TEST_SAMPLES.map((sample) => (
+            <button
+              aria-pressed={selectedTest?.id === sample.id}
+              className={`rounded-2xl border p-3 text-left ${selectedTest?.id === sample.id ? "border-[var(--green)] bg-white shadow-sm" : "border-[var(--line)] bg-white/70"}`}
+              key={`premium-narration-test-${sample.id}`}
+              onClick={() => selectNarrationTest(sample)}
+              type="button"
+            >
+              <span className="block text-sm font-semibold text-[var(--ink)]">{sample.label}</span>
+              <span className="mt-1 block text-xs font-semibold text-[var(--green)]">{sample.reference}</span>
+              <span className="mt-1 block text-xs leading-5 text-[var(--muted)]">{sample.focus}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Premium voice
+          <select
+            className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            onChange={(event) => setVoiceKey(event.target.value)}
+            value={selectedVoice?.key ?? ""}
+          >
+            {voices.map((voice) => (
+              <option key={`premium-preview-voice-${voice.key}`} value={voice.key}>{voice.label} · {voice.type === "custom" ? "owned custom voice" : "provider voice"}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Text rights basis
+          <select
+            className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            onChange={(event) => setRightsBasis(event.target.value as typeof rightsBasis)}
+            value={rightsBasis}
+          >
+            <option>Public Domain</option>
+            <option>Owned by ministry</option>
+            <option>Written permission</option>
+          </select>
+        </label>
+      </div>
+
+      <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+        Short preview text
+        <textarea
+          className="mt-2 min-h-32 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 normal-case tracking-normal text-[var(--ink)] outline-none"
+          maxLength={maxCharacters}
+          onChange={(event) => {
+            setPreviewText(event.target.value);
+            setSelectedTestId("custom");
+          }}
+          value={previewText}
+        />
+      </label>
+      <p className="mt-1 text-right text-xs font-semibold text-[var(--muted)]">{previewText.length.toLocaleString()} / {maxCharacters.toLocaleString()} characters</p>
+
+      <div className="mt-4 grid gap-2">
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={rightsConfirmed} className="mt-1" onChange={(event) => setRightsConfirmed(event.target.checked)} type="checkbox" />
+          I verified that this exact text is public domain, ministry-owned, or covered by written narration permission.
+        </label>
+        {selectedVoice?.type === "custom" && (
+          <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+            <input checked={voiceConsentConfirmed} className="mt-1" onChange={(event) => setVoiceConsentConfirmed(event.target.checked)} type="checkbox" />
+            The speaker owns this voice and the provider has an approved consent recording for this custom voice ID.
+          </label>
+        )}
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={aiDisclosureConfirmed} className="mt-1" onChange={(event) => setAiDisclosureConfirmed(event.target.checked)} type="checkbox" />
+          I will identify this as AI-generated narration and will not present it as a human recording.
+        </label>
+      </div>
+
+      <div className="mt-4 grid gap-2 md:grid-cols-2">
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-emerald-50 p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={cachePreviewLocally} className="mt-1" onChange={(event) => setCachePreviewLocally(event.target.checked)} type="checkbox" />
+          Reuse identical previews from this private browser to avoid another paid provider call. Clear the cache before using a shared device.
+        </label>
+        <label className="flex items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+          <input checked={forceRegenerate} className="mt-1" onChange={(event) => setForceRegenerate(event.target.checked)} type="checkbox" />
+          Ignore a cached copy for a fresh provider and latency test.
+        </label>
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <button
+          className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={!canGenerate || generating}
+          onClick={() => void generatePremiumNarrationPreview()}
+          type="button"
+        >
+          {generating ? "Generating private preview..." : "Generate private preview"}
+        </button>
+        <span className="text-xs font-semibold text-[var(--muted)]">Maximum {maxCharacters.toLocaleString()} characters · no server audio storage</span>
+      </div>
+
+      {audioUrl && (
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">AI-generated private preview</p>
+            {generatedPreview && <span className="text-xs font-semibold text-[var(--green)]">{generatedPreview.source === "cache" ? "Reused from private browser cache" : `Generated in ${(generatedPreview.generationMs / 1000).toFixed(1)} seconds`}</span>}
+          </div>
+          <audio className="mt-3 w-full" controls preload="metadata" src={audioUrl}>
+            Your browser does not support audio playback.
+          </audio>
+        </div>
+      )}
+
+      {generatedPreview && (
+        <div className="mt-4 rounded-2xl border-2 border-[var(--green)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Quality Scorecard</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Listen on desktop and iPhone with ordinary work-day headphones before scoring.</p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--ink)]">{generatedPreview.voiceLabel} · {generatedPreview.sampleReference}</span>
+          </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+            <PremiumNarrationScore label="Pronunciation" value={reviewScores.pronunciation} onChange={(pronunciation) => setReviewScores((current) => ({ ...current, pronunciation }))} />
+            <PremiumNarrationScore label="Naturalness" value={reviewScores.naturalness} onChange={(naturalness) => setReviewScores((current) => ({ ...current, naturalness }))} />
+            <PremiumNarrationScore label="Reverence" value={reviewScores.reverence} onChange={(reverence) => setReviewScores((current) => ({ ...current, reverence }))} />
+            <PremiumNarrationScore label="Phone clarity" value={reviewScores.phoneClarity} onChange={(phoneClarity) => setReviewScores((current) => ({ ...current, phoneClarity }))} />
+          </div>
+          <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Device actually used for this review
+            <select
+              className="mt-2 h-11 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              onChange={(event) => setListeningDevice(event.target.value as typeof listeningDevice)}
+              value={listeningDevice}
+            >
+              <option value="">Choose the listening device</option>
+              <option value="desktop">Desktop browser and headphones</option>
+              <option value="iphone">Physical iPhone browser and headphones</option>
+            </select>
+          </label>
+          <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Pronunciation or listening notes
+            <textarea
+              className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-sm leading-6 normal-case tracking-normal text-[var(--ink)] outline-none"
+              onChange={(event) => setReviewNotes(event.target.value)}
+              placeholder="Record mispronounced names, awkward pauses, harsh sibilance, or distractions heard on the phone."
+              value={reviewNotes}
+            />
+          </label>
+          <button className="mt-3 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={saveNarrationReview} type="button">Save private quality review</button>
+        </div>
+      )}
+
+      <div className="mt-4 rounded-2xl border-2 border-[var(--green)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Voice Acceptance Gate</p>
+            <p className="mt-1 max-w-3xl text-xs leading-5 text-[var(--muted)]">A voice is ready for human launch approval only after all four standard KJV samples have device-identified evidence from desktop and physical iPhone listening, every score is at least {PREMIUM_NARRATION_MINIMUM_SCORE}, and the overall average is at least {PREMIUM_NARRATION_MINIMUM_AVERAGE.toFixed(2)}.</p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{voiceAcceptance.filter((candidate) => candidate.readyForApproval).length} ready</span>
+        </div>
+        {voiceAcceptance.length === 0 ? (
+          <p className="mt-3 rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">Generate a standard sample, listen on the named physical device, and save the first scored review to begin acceptance testing.</p>
+        ) : (
+          <div className="mt-3 grid gap-3 lg:grid-cols-2">
+            {voiceAcceptance.map((candidate) => (
+              <article className="rounded-2xl border border-[var(--line)] bg-white p-4" key={candidate.key}>
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--ink)]">{candidate.voiceLabel}</p>
+                    <p className="mt-1 text-xs text-[var(--muted)]">{candidate.provider} · {candidate.model} · {candidate.voiceType === "custom" ? "consented custom voice" : "provider voice"} · guide {candidate.pronunciationGuideFingerprint}</p>
+                  </div>
+                  <span className={`rounded-full px-3 py-2 text-xs font-semibold ${candidate.readyForApproval ? "bg-emerald-100 text-emerald-900" : "bg-amber-100 text-amber-900"}`}>{candidate.readyForApproval ? "Ready for approval" : "Testing incomplete"}</span>
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-4">
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">KJV samples</span><strong className="text-[var(--ink)]">{candidate.sampleCount} / {PREMIUM_NARRATION_TEST_SAMPLES.length}</strong></div>
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">Devices</span><strong className="text-[var(--ink)]">{candidate.deviceCount} / 2</strong></div>
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">Average</span><strong className="text-[var(--ink)]">{candidate.averageScore ? candidate.averageScore.toFixed(2) : "—"}</strong></div>
+                  <div className="rounded-xl bg-[var(--paper)] p-2"><span className="block text-[var(--muted)]">Minimum</span><strong className="text-[var(--ink)]">{candidate.minimumScore ? candidate.minimumScore.toFixed(1) : "—"}</strong></div>
+                </div>
+                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{candidate.readyForApproval ? `${candidate.qualifyingReviews} current device/sample reviews meet the evidence gate. Export before making the production voice decision.` : candidate.blockers.join(" · ")}</p>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {reviews.length > 0 && (
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Recent Voice Comparisons</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Private browser-only results; export before changing devices or clearing browser data.</p>
+            </div>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={exportNarrationReviews} type="button">Export review JSON</button>
+          </div>
+          <div className="mt-3 grid gap-2">
+            {reviews.slice(0, 5).map((review) => {
+              const average = Object.values(review.scores).reduce((total, score) => total + score, 0) / 4;
+              return (
+                <article className="grid gap-2 rounded-2xl bg-[var(--paper)] p-3 sm:grid-cols-[1fr_auto]" key={review.id}>
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--ink)]">{review.voiceLabel} · {review.sampleReference}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{review.model} · guide {review.pronunciationGuideFingerprint ?? "legacy"} · {review.listeningDevice === "iphone" ? "physical iPhone" : review.listeningDevice === "desktop" ? "desktop" : "device not recorded"} · {review.source === "cache" ? "browser cache" : `${(review.generationMs / 1000).toFixed(1)}s generation`} · {review.characters} characters{review.notes ? ` · ${review.notes}` : ""}</p>
+                  </div>
+                  <span className="self-start rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{average.toFixed(1)} / 5</span>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Private Usage &amp; Cost Ledger</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Browser-only estimates; no text, audio, token, or voice ID is sent to a ledger service.</p>
+          </div>
+          <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => void clearNarrationAudioCache()} type="button">Clear private audio cache</button>
+        </div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Provider calls</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{providerUsageEvents.length}</p><p className="text-xs text-[var(--muted)]">{providerCharacters.toLocaleString()} characters</p></div>
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Cache reuses</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{cachedUsageEvents.length}</p><p className="text-xs text-[var(--muted)]">{savedCharacters.toLocaleString()} characters saved</p></div>
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Estimated spend</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{configuration?.costPerMillionCharacters == null ? "Rate not set" : `$${estimatedSpend.toFixed(4)}`}</p><p className="text-xs text-[var(--muted)]">Provider calls only</p></div>
+          <div className="rounded-2xl bg-[var(--paper)] p-3"><p className="text-xs font-semibold text-[var(--muted)]">Estimated avoided cost</p><p className="mt-1 text-xl font-semibold text-[var(--ink)]">{estimatedSavings === null ? "Rate not set" : `$${estimatedSavings.toFixed(4)}`}</p><p className="text-xs text-[var(--muted)]">At configured current rate</p></div>
+        </div>
+        {usageEvents.length > 0 && <p className="mt-3 text-xs leading-5 text-[var(--muted)]">Latest: {usageEvents[0].voiceLabel} · {usageEvents[0].sampleReference} · {usageEvents[0].source === "cache" ? "cache reuse" : "provider call"} · {usageEvents[0].characters.toLocaleString()} characters</p>}
+      </div>
+    </section>
+  );
+}
+
 function PremiumAudioFeasibilityCenter() {
   const comparisonRows = PREMIUM_AUDIO_PROVIDER_PLANS;
   const paidComparisonRows = comparisonRows.filter((provider) => provider.costPerGeneratedHour > 0 && provider.id !== "human-narration").slice(0, 4);
 
   return (
     <div className="mt-5 space-y-4">
+      <PremiumNarrationPilot />
       <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
@@ -40966,6 +42364,7 @@ function LibraryAcquisitionCenter({
   onClose: () => void;
 }) {
   const [activeTab, setActiveTab] = useState<AcquisitionAdminTab>("dashboard");
+  const [outreachCopied, setOutreachCopied] = useState("");
   const [adminRecordStatus, setAdminRecordStatus] = useState("Loading private admin records...");
   const [adminRecordsLoaded, setAdminRecordsLoaded] = useState(false);
   const adminRecordsHydratingRef = useRef(false);
@@ -41128,6 +42527,7 @@ function LibraryAcquisitionCenter({
 
   const tabs: Array<{ id: AcquisitionAdminTab; label: string }> = [
     { id: "dashboard", label: "Dashboard" },
+    { id: "outreach", label: "Outreach Kit" },
     { id: "authors", label: "Authors" },
     { id: "books", label: "Books" },
     { id: "copyright", label: "Copyright Checker" },
@@ -41144,6 +42544,16 @@ function LibraryAcquisitionCenter({
 
   function updateCheckerInput(field: keyof CopyrightCheckerInput, value: string) {
     setCheckerInput((current) => ({ ...current, [field]: value }));
+  }
+
+  async function copyOutreachItem(id: string, body: string) {
+    try {
+      if (!navigator.clipboard) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(body);
+      setOutreachCopied(id);
+    } catch {
+      setOutreachCopied("unavailable");
+    }
   }
 
   function addQueueBook() {
@@ -41377,6 +42787,195 @@ function LibraryAcquisitionCenter({
               </p>
             </article>
           </div>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-[var(--green)]">Priority ministry partners</p>
+                <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">Keep promising relationships moving without outrunning permission</h3>
+              </div>
+              <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {PRIORITY_MINISTRY_PARTNERS.length} active opportunities
+              </span>
+            </div>
+            <div className="mt-4 grid gap-3 lg:grid-cols-2">
+              {PRIORITY_MINISTRY_PARTNERS.map((partner) => (
+                <section key={`priority-partner-${partner.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <h4 className="text-base font-semibold text-[var(--ink)]">{partner.name}</h4>
+                      <p className="mt-1 text-xs font-semibold text-[var(--green)]">{partner.ministry}</p>
+                    </div>
+                    <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
+                      Rights-first
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{partner.focus}</p>
+                  <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-2">
+                    <p className="text-xs font-semibold text-[var(--ink)]">{partner.permissionStatus}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]"><strong>Next:</strong> {partner.nextAction}</p>
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Narrow pilot shortlist</p>
+                    <ul className="mt-2 space-y-2">
+                      {partner.pilotItems.map((item) => (
+                        <li key={`${partner.id}-${item}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Boundary:</strong> {partner.boundary}</p>
+                  {(partner.officialUrl || partner.contactUrl) && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {partner.officialUrl && (
+                        <a className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" href={partner.officialUrl} rel="noreferrer" target="_blank">
+                          Review official policy
+                        </a>
+                      )}
+                      {partner.contactUrl && (
+                        <a className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white" href={partner.contactUrl} rel="noreferrer" target={partner.contactUrl.startsWith("mailto:") ? undefined : "_blank"}>
+                          Open official contact
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </section>
+              ))}
+            </div>
+          </article>
+        </div>
+      )}
+
+      {activeTab === "outreach" && (
+        <div className="mt-5 space-y-4">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Founder and partner foundation</p>
+            <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Tell the story clearly, then ask for one small step</h3>
+            <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
+              These are working drafts, not published statements or sent messages. Review every name, doctrinal statement, resource, and requested right before using them outside the app.
+            </p>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-[var(--green)]">Active outreach conversations</p>
+                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Six verified conversations are already in progress</h3>
+                <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
+                  The initial messages and one careful follow-up have already been sent. Do not open a new message or repeat the request; wait for a written reply in the existing thread and record any exact permission granted.
+                </p>
+              </div>
+              <span className="rounded-full bg-emerald-100 px-3 py-2 text-xs font-semibold text-emerald-900">6 of 6 contacted</span>
+            </div>
+            <div className="mt-4 grid gap-3 xl:grid-cols-3">
+              {OUTREACH_APPROVAL_BATCH.map((item) => (
+                <section key={`approval-batch-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">Priority {item.priority}</span>
+                    <span className="text-xs font-semibold text-emerald-800">Contacted · awaiting reply</span>
+                  </div>
+                  <h4 className="mt-3 text-lg font-semibold text-[var(--ink)]">{item.ministry}</h4>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">To: {item.recipientName} · {item.recipient}</p>
+                  <p className="mt-1 text-xs text-[var(--muted)]">{item.channel} · verified {item.verifiedAt}</p>
+                  <p className="mt-3 text-sm leading-6 text-[var(--muted)]"><strong className="text-[var(--ink)]">Small pilot:</strong> {item.pilot}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <a className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" href={item.officialUrl} rel="noreferrer" target="_blank">Verify official source</a>
+                    <a className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" href={item.contactUrl} rel="noreferrer" target="_blank">Review contact channel</a>
+                  </div>
+                  <div className="mt-3 max-h-72 overflow-y-auto whitespace-pre-line rounded-2xl bg-white p-3 text-xs leading-5 text-[var(--muted)]">
+                    <p className="font-semibold text-[var(--ink)]">Subject: {item.subject}</p>
+                    <p className="mt-2">{item.body}</p>
+                  </div>
+                  <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
+                    <span className="rounded-full bg-emerald-100 px-3 py-2 text-center text-xs font-semibold text-emerald-900">
+                      Continue only in existing thread
+                    </span>
+                    <button
+                      className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                      onClick={() => { void copyOutreachItem(item.id, `Subject: ${item.subject}\n\n${item.body}`); }}
+                      type="button"
+                    >
+                      Copy complete message
+                    </button>
+                  </div>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Status: {item.status}. Preserve the original subject when a reply arrives or a later follow-up is approved.</p>
+                  {outreachCopied === item.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Original message copied for reference. Do not resend it.</p>}
+                </section>
+              ))}
+            </div>
+          </article>
+
+          <div className="grid gap-3 lg:grid-cols-2">
+            {PARTNER_OUTREACH_COPY.map((item) => (
+              <article key={`outreach-copy-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">{item.label}</p>
+                    <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{item.title}</h3>
+                  </div>
+                  <button
+                    className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => { void copyOutreachItem(item.id, item.body); }}
+                    type="button"
+                  >
+                    Copy draft
+                  </button>
+                </div>
+                <p className="mt-2 text-xs font-semibold text-[var(--muted)]">Use for: {item.audience}</p>
+                <p className="mt-3 max-h-64 overflow-y-auto whitespace-pre-line rounded-2xl bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">{item.body}</p>
+                {outreachCopied === item.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Draft copied.</p>}
+              </article>
+            ))}
+          </div>
+
+          {outreachCopied === "unavailable" && (
+            <p className="rounded-2xl bg-amber-50 p-3 text-xs font-semibold text-amber-800">
+              Clipboard access is unavailable here. Select and copy the visible draft manually.
+            </p>
+          )}
+
+          <div className="grid gap-4 xl:grid-cols-[1fr_1fr]">
+            <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">A steady Monday–Tuesday rhythm</p>
+              <div className="mt-3 space-y-2">
+                {PARTNER_OUTREACH_RHYTHM.map((step) => (
+                  <div key={`outreach-rhythm-${step.day}`} className="rounded-2xl bg-[var(--paper)] p-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{step.day}</span>
+                      <p className="text-sm font-semibold text-[var(--ink)]">{step.action}</p>
+                    </div>
+                    <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{step.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+
+            <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Make partnership painless</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">A clear small pilot is easier to approve, administer, and end if it is not a fit.</p>
+              <ul className="mt-3 space-y-2">
+                {PAIN_FREE_PARTNER_PROMISES.map((promise) => (
+                  <li key={`partner-promise-${promise}`} className="rounded-2xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                    {promise}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Do, plan, and invite counsel</p>
+            <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {OUTREACH_ROADMAP_LANES.map((lane) => (
+                <div key={`outreach-lane-${lane.title}`} className="rounded-2xl bg-white p-3">
+                  <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{lane.status}</span>
+                  <p className="mt-3 text-sm font-semibold text-[var(--ink)]">{lane.title}</p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{lane.detail}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       )}
 
@@ -45785,12 +47384,17 @@ function VoiceControlPanel({
   const activeProfileSavedVoiceURI = voiceSettings.profileVoiceURIs[voiceSettings.activeProfile] || voiceSettings.selectedVoiceURI;
   const missingSavedVoice = Boolean(activeProfileSavedVoiceURI && !allVoices.some((voice) => voice.voiceURI === activeProfileSavedVoiceURI));
   const profileRate = voiceSettings.profileRates[voiceSettings.activeProfile] ?? activeProfile.suggestedRate;
+  const bestAvailableVoice = bestSpeechVoiceForProfile(visibleVoices, voiceSettings.activeProfile);
+  const selectedVoiceQuality = selectedVoice ? speechVoiceQualityLabel(selectedVoice) : "No device voice detected";
+  const bestVoiceAlreadySelected = Boolean(bestAvailableVoice && bestAvailableVoice.voiceURI === selectedVoice?.voiceURI);
   const diagnostics = useMemo(() => {
     const appleVoices = allVoices.filter(isAppleSpeechVoice).length;
     const deviceVoices = allVoices.filter((voice) => voice.localService).length;
     const browserVoices = allVoices.filter((voice) => !voice.localService).length;
     const noveltyVoices = allVoices.filter(isNoveltySpeechVoice).length;
-    return { appleVoices, deviceVoices, browserVoices, noveltyVoices };
+    const premiumVoices = allVoices.filter((voice) => speechVoiceQualityRank(voice) === 0).length;
+    const enhancedVoices = allVoices.filter((voice) => speechVoiceQualityRank(voice) === 1).length;
+    return { appleVoices, deviceVoices, browserVoices, noveltyVoices, premiumVoices, enhancedVoices };
   }, [allVoices]);
   const favoriteActive = selectedVoice ? voiceSettings.favoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
   const maleFavoriteActive = selectedVoice ? voiceSettings.maleFavoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
@@ -45832,6 +47436,26 @@ function VoiceControlPanel({
             ))}
           </div>
           <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{activeProfile.description}</p>
+        </div>
+
+        <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--ink)]">Best quality on this device</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                {bestAvailableVoice ? `${bestAvailableVoice.name} · ${speechVoiceQualityLabel(bestAvailableVoice)} · matched for ${activeProfile.label}` : "No English device voice is currently exposed by this browser."}
+              </p>
+            </div>
+            <button
+              className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={!bestAvailableVoice || bestVoiceAlreadySelected}
+              onClick={() => bestAvailableVoice && onSpeechVoiceChange(bestAvailableVoice.voiceURI)}
+              type="button"
+            >
+              {bestVoiceAlreadySelected ? "Best voice selected" : "Use best available"}
+            </button>
+          </div>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">On iPhone or iPad, install an Enhanced or Premium English system voice, reopen the browser, then use this button. Browser speech cannot create or clone a voice; owned custom narration requires a private server-side provider, explicit speaker consent, cost limits, and rights-safe audio storage.</p>
         </div>
 
         <div className="grid gap-2 md:grid-cols-[1.3fr_1fr]">
@@ -45897,14 +47521,16 @@ function VoiceControlPanel({
           </button>
         </div>
 
-        <div className="grid gap-2 md:grid-cols-4">
+        <div className="grid gap-2 md:grid-cols-3 xl:grid-cols-6">
           <StatusCard label="Browser" status={browserVoiceEnvironmentLabel()} good={hasSpeechSynthesis} />
           <StatusCard label="Browser voice" status={`${diagnostics.browserVoices} available`} good={hasSpeechSynthesis} />
           <StatusCard label="Apple voice" status={`${diagnostics.appleVoices} detected`} good={diagnostics.appleVoices > 0} />
           <StatusCard label="Device voice" status={`${diagnostics.deviceVoices} local`} good={diagnostics.deviceVoices > 0} />
+          <StatusCard label="Premium voice" status={`${diagnostics.premiumVoices} installed`} good={diagnostics.premiumVoices > 0} />
+          <StatusCard label="Enhanced voice" status={`${diagnostics.enhancedVoices} installed`} good={diagnostics.enhancedVoices > 0} />
         </div>
         <div className="grid gap-2 md:grid-cols-2">
-          <StatusCard label="Selected voice" status={selectedVoiceName} good={Boolean(selectedVoice)} />
+          <StatusCard label="Selected voice quality" status={selectedVoiceQuality} good={Boolean(selectedVoice && speechVoiceQualityRank(selectedVoice) <= 2)} />
           <StatusCard label="Saved voice" status={missingSavedVoice ? "Saved voice not available on this browser/device" : "Available"} good={!missingSavedVoice} />
         </div>
         <StatusCard label="Premium voice availability" status="Future licensed option, not connected in beta" good={false} />
@@ -45969,6 +47595,9 @@ function LibraryShelfBrowser({
   onToggleFavorite: (resource: LibraryResource) => void;
 }) {
   const [selectedSlug, setSelectedSlug] = useState(resources[0]?.slug ?? "");
+  const [hoveredSlug, setHoveredSlug] = useState("");
+  const [pullingSlug, setPullingSlug] = useState("");
+  const pullTimerRef = useRef<number | null>(null);
   const [failedCoverSlug, setFailedCoverSlug] = useState<string | null>(null);
   const selectedResource = resources.find((resource) => resource.slug === selectedSlug) ?? resources[0] ?? null;
   const selectedProgress = selectedResource ? progressState[selectedResource.slug]?.progress ?? 0 : 0;
@@ -46016,6 +47645,21 @@ function LibraryShelfBrowser({
   }, [resources]);
   const displayShelfGroups = [...personalShelfGroups, ...shelfGroups];
 
+  useEffect(() => () => {
+    if (pullTimerRef.current) window.clearTimeout(pullTimerRef.current);
+  }, []);
+
+  function pullBookFromShelf(resource: LibraryResource) {
+    if (pullTimerRef.current) window.clearTimeout(pullTimerRef.current);
+    setHoveredSlug(resource.slug);
+    setPullingSlug(resource.slug);
+    pullTimerRef.current = window.setTimeout(() => {
+      setSelectedSlug(resource.slug);
+      setPullingSlug("");
+      pullTimerRef.current = null;
+    }, 240);
+  }
+
   if (!selectedResource) {
     return (
       <section className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-6 text-center">
@@ -46044,27 +47688,36 @@ function LibraryShelfBrowser({
       <div className="grid border-b border-[#b9b4a8] bg-[#d6d1c5] md:grid-cols-2">
         <div className="relative flex min-h-[300px] items-center justify-center border-b border-[#b9b4a8] bg-[#f5f1e8] p-6 shadow-[inset_-18px_0_24px_-24px_rgba(41,53,47,0.65)] md:border-b-0 md:border-r">
           <div className="absolute inset-y-5 right-0 w-px bg-[#b9b4a8]" />
-          {showCover ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              alt={`Cover of ${selectedResource.title}`}
-              className="aspect-[3/4] max-h-[250px] w-auto max-w-[185px] border border-black/15 object-cover shadow-xl"
-              loading="lazy"
-              onError={() => setFailedCoverSlug(selectedResource.slug)}
-              src={selectedResource.cover_image_url ?? ""}
-            />
-          ) : (
-            <div
-              className="flex aspect-[3/4] max-h-[250px] w-[175px] flex-col justify-between border-2 p-5 shadow-xl"
-              style={{ backgroundColor: selectedPalette.background, borderColor: selectedPalette.border, color: selectedPalette.text }}
-            >
-              <span className="border-b pb-3 text-[0.65rem] font-semibold uppercase tracking-[0.14em]" style={{ borderColor: selectedPalette.accent }}>
-                {libraryCategoryLabel(selectedResource.category)}
+          <button
+            key={`reading-table-book-${selectedResource.slug}`}
+            aria-label={`Open ${selectedResource.title} by ${selectedResource.author} in the reader`}
+            className="library-book-open group relative cursor-pointer rounded-sm text-left outline-none focus-visible:ring-4 focus-visible:ring-[var(--gold)]/60"
+            onClick={() => onOpenReader(selectedResource.slug)}
+            type="button"
+          >
+            {showCover ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                alt={`Cover of ${selectedResource.title}`}
+                className="aspect-[3/4] max-h-[250px] w-auto max-w-[185px] border border-black/15 object-cover shadow-xl transition group-hover:-translate-y-1 group-hover:shadow-2xl"
+                loading="lazy"
+                onError={() => setFailedCoverSlug(selectedResource.slug)}
+                src={selectedResource.cover_image_url ?? ""}
+              />
+            ) : (
+              <span
+                className="flex aspect-[3/4] max-h-[250px] w-[175px] flex-col justify-between border-2 p-5 shadow-xl transition group-hover:-translate-y-1 group-hover:shadow-2xl"
+                style={{ backgroundColor: selectedPalette.background, borderColor: selectedPalette.border, color: selectedPalette.text }}
+              >
+                <span className="border-b pb-3 text-[0.65rem] font-semibold uppercase tracking-[0.14em]" style={{ borderColor: selectedPalette.accent }}>
+                  {libraryCategoryLabel(selectedResource.category)}
+                </span>
+                <span className="text-xl font-semibold leading-6">{selectedResource.work_title ?? selectedResource.title}</span>
+                <span className="border-t pt-3 text-xs font-semibold" style={{ borderColor: selectedPalette.accent }}>{selectedResource.author}</span>
               </span>
-              <span className="text-xl font-semibold leading-6">{selectedResource.work_title ?? selectedResource.title}</span>
-              <span className="border-t pt-3 text-xs font-semibold" style={{ borderColor: selectedPalette.accent }}>{selectedResource.author}</span>
-            </div>
-          )}
+            )}
+            <span className="pointer-events-none absolute inset-x-2 bottom-2 translate-y-2 rounded-full bg-black/75 px-2 py-1 text-center text-[0.65rem] font-semibold text-white opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">Open book</span>
+          </button>
         </div>
 
         <div className="relative min-h-[300px] bg-[#faf7ef] p-6 shadow-[inset_18px_0_24px_-24px_rgba(41,53,47,0.65)] md:p-8">
@@ -46130,6 +47783,19 @@ function LibraryShelfBrowser({
               <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-[#35443d]">{shelf.title}</h3>
               <span className="text-xs font-semibold text-[#657169]">{shelf.total} {shelf.total === 1 ? "book" : "books"}</span>
             </div>
+            {(() => {
+              const indicatedResource = shelf.resources.find((resource) => resource.slug === hoveredSlug)
+                ?? shelf.resources.find((resource) => resource.slug === selectedResource.slug);
+              return (
+                <p className="mb-2 min-h-10 rounded-xl border border-[#c4beb1] bg-[#f6f1e7] px-3 py-2 text-xs leading-5 text-[#526159]" id={`shelf-guide-${shelfIndex}`} aria-live="polite">
+                  {indicatedResource ? (
+                    <>Your hand is on <span className="font-semibold text-[#263b31] underline decoration-[#b18a3d] decoration-2 underline-offset-2">{indicatedResource.work_title ?? indicatedResource.title}</span> by {indicatedResource.author}. Click to pull it from the shelf.</>
+                  ) : (
+                    <>Move your pointer over a spine—or tab to it—to identify the book before pulling it from the shelf.</>
+                  )}
+                </p>
+              );
+            })()}
             <div className="overflow-x-auto border border-[#18251f] bg-[#24322c] px-4 pt-4 shadow-inner [scrollbar-width:thin]">
               <div className="flex min-w-max items-end gap-1.5">
                 {shelf.resources.map((resource, index) => {
@@ -46139,9 +47805,14 @@ function LibraryShelfBrowser({
                     <button
                       key={`physical-book-${shelf.title}-${resource.slug}`}
                       aria-label={`Select ${resource.title} by ${resource.author}`}
+                      aria-describedby={`shelf-guide-${shelfIndex}`}
                       aria-pressed={selected}
-                      className={`relative h-44 w-12 shrink-0 border-2 shadow-md transition sm:w-14 ${selected ? "-translate-y-2 ring-2 ring-[#d8bd74] ring-offset-2 ring-offset-[#24322c]" : "hover:-translate-y-1"}`}
-                      onClick={() => setSelectedSlug(resource.slug)}
+                      className={`group relative h-44 w-12 shrink-0 cursor-pointer border-2 shadow-md transition-all duration-300 outline-none sm:w-14 ${pullingSlug === resource.slug ? "z-10 -translate-y-8 scale-105 shadow-2xl" : selected ? "-translate-y-2 ring-2 ring-[#d8bd74] ring-offset-2 ring-offset-[#24322c]" : "hover:-translate-y-2 focus-visible:-translate-y-2 focus-visible:ring-2 focus-visible:ring-[#d8bd74]"}`}
+                      onBlur={() => setHoveredSlug((current) => current === resource.slug ? "" : current)}
+                      onClick={() => pullBookFromShelf(resource)}
+                      onFocus={() => setHoveredSlug(resource.slug)}
+                      onMouseEnter={() => setHoveredSlug(resource.slug)}
+                      onMouseLeave={() => setHoveredSlug((current) => current === resource.slug ? "" : current)}
                       style={{ backgroundColor: palette.background, borderColor: palette.border, color: palette.text }}
                       title={`${resource.title} — ${resource.author}`}
                       type="button"
@@ -46223,7 +47894,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       ministry: "Way of Life Literature",
       count: wayOfLifeCount,
       focus: "KJV, Baptist, church issues, and discernment resources",
-      scope: "Shareable/free items are listed with source links; paid Store items stay permission-needed.",
+      scope: "Free ebooks remain at the publisher: the app links to Way of Life and does not host or redistribute ebook files. Paid Store items stay permission-needed.",
     },
     {
       ministry: "Northstar Ministries",
@@ -46405,8 +48076,12 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
   const isOfficialAudio = resource.resourceFormat === "Official Audio Link";
   const isOfficialLinkOnly = resource.permissionStatus === "Public Policy - Official Links Only";
+  const isFreeAtPublisherOnly =
+    resource.publisherMinistry === "Way of Life Literature" && resource.approvedPublicUse.includes("Free-resource listing");
   const linkLabel = isOfficialAudio
     ? "Listen on TTB"
+    : isFreeAtPublisherOnly
+      ? "Open free book at publisher"
     : resource.publisherMinistry === "Wholesome Words"
       ? "Browse source page"
     : resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems"
@@ -46414,6 +48089,8 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
       : "Open official page";
   const scopeLabel = isOfficialAudio
     ? "Official audio"
+    : isFreeAtPublisherOnly
+      ? "Free at publisher · link only"
     : isOfficialLinkOnly
       ? "Official links only"
       : resource.publisherMinistry === "Solve Family Problems"
@@ -46445,16 +48122,28 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
       <div className="mt-3 flex flex-wrap gap-2">
         {resource.approvedPublicUse.map((item) => (
           <span key={`${resource.id}-approved-${item}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
-            {item}
+            {isFreeAtPublisherOnly && item === "Free-resource listing" ? "Free at publisher—not hosted here" : item}
           </span>
         ))}
       </div>
       <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
         <p className="text-xs font-semibold text-[var(--ink)]">
-          {isOfficialAudio ? "Official stream - no audio copied" : isOfficialLinkOnly ? "Link only - no source content copied" : "No full text or audio hosted"}
+          {isOfficialAudio
+            ? "Official stream - no audio copied"
+            : isFreeAtPublisherOnly
+              ? "Free at the publisher - not hosted here"
+              : isOfficialLinkOnly
+                ? "Link only - no source content copied"
+                : "No full text or audio hosted"}
         </p>
         <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-          {resource.reviewStatus}. {isOfficialAudio ? "Playback opens the exact TTB-hosted file." : isOfficialLinkOnly ? "The source page opens in a separate browser tab." : "Use the official page until title review and any broader license is complete."}
+          {resource.reviewStatus}. {isOfficialAudio
+            ? "Playback opens the exact TTB-hosted file."
+            : isFreeAtPublisherOnly
+              ? "Read or download from the official Way of Life page. The app does not store or distribute the ebook file."
+              : isOfficialLinkOnly
+                ? "The source page opens in a separate browser tab."
+                : "Use the official page until title review and any broader license is complete."}
         </p>
       </div>
       <div className="mt-auto pt-4">
@@ -47405,6 +49094,7 @@ function PassageGuideScreen({
   commentaryEntries,
   keyVerses,
   recommendedResources,
+  licensedPassageResources,
   libraryResources,
   bookIntroduction,
   activeThemes,
@@ -47433,6 +49123,7 @@ function PassageGuideScreen({
   commentaryEntries: CommentaryEntry[];
   keyVerses: string[];
   recommendedResources: ChapterResourceRecommendation[];
+  licensedPassageResources: LicensedResourceLink[];
   libraryResources: LibraryResource[];
   bookIntroduction: BookIntroduction | null;
   activeThemes: StudyTheme[];
@@ -47527,7 +49218,7 @@ function PassageGuideScreen({
     available: availableCommentaryAuthors.has(author),
     entries: commentaryEntries.filter((entry) => entry.author === author).length,
   }));
-  const relatedBooks = relatedLibraryResourcesForPassage(recommendedResources, libraryResources);
+  const relatedBooks = relatedLibraryResourcesForPassage(recommendedResources, libraryResources, book);
   const { entries: passageTopicEntries, status: passageTopicStatus } = useNaveTopicResults([
     ...activeThemes.map((theme) => theme.title),
     ...connections.themes,
@@ -47541,7 +49232,11 @@ function PassageGuideScreen({
     { label: "People", value: connections.people.length, ready: connections.people.length > 0 },
     { label: "Places", value: connections.places.length, ready: connections.places.length > 0 },
     { label: "Timeline", value: connections.timeline.length, ready: connections.timeline.length > 0 },
-    { label: "Resources", value: recommendedResources.length, ready: recommendedResources.length > 0 },
+    {
+      label: "Resources",
+      value: recommendedResources.length + licensedPassageResources.length,
+      ready: recommendedResources.length + licensedPassageResources.length > 0,
+    },
   ];
   const guideCoverageReadyCount = guideCoverageItems.filter((item) => item.ready).length;
   const guideCoveragePercent = Math.round((guideCoverageReadyCount / guideCoverageItems.length) * 100);
@@ -47554,6 +49249,7 @@ function PassageGuideScreen({
     ["passage-prepare", "Prepare"],
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
+    ["passage-official-resources", "Official Resources"],
     ["passage-best-resources", "Best Resources"],
     ["passage-themes", "Themes"],
     ["passage-topical-bible", "Topical"],
@@ -47765,9 +49461,14 @@ function PassageGuideScreen({
             <p className="mt-1 text-sm font-semibold text-[var(--green)]">{crossReferences.length} reviewed</p>
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Let Scripture interpret Scripture.</p>
           </a>
-          <a className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" href="#passage-resources">
+          <a
+            className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+            href={licensedPassageResources.length ? "#passage-official-resources" : "#passage-resources"}
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">5. Resources</p>
-            <p className="mt-1 text-sm font-semibold text-[var(--green)]">{startHereResources.length || recommendedResources.length} ready</p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">
+              {startHereResources.length + licensedPassageResources.length || recommendedResources.length} ready
+            </p>
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Open only the best helps for this chapter.</p>
           </a>
         </div>
@@ -47812,6 +49513,23 @@ function PassageGuideScreen({
             </article>
           ))}
         </div>
+      </StudySection>
+
+      <StudySection id="passage-official-resources" title="Passage-Linked Official Resources">
+        <p className="text-sm leading-6 text-[var(--muted)]">
+          Reviewed resources matched to {passage}. These open the ministry or publisher&apos;s official page; source content is not copied into the app.
+        </p>
+        {licensedPassageResources.length ? (
+          <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {licensedPassageResources.map((resource) => (
+              <LicensedResourceLinkCard key={`passage-official-resource-${resource.id}`} resource={resource} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-3 rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-6 text-[var(--muted)]">
+            No reviewed official resource is linked to this chapter yet. New links appear here only after source and rights review.
+          </p>
+        )}
       </StudySection>
 
       <StudySection id="passage-themes" title="Theme Explorer">
@@ -51876,11 +53594,41 @@ function SermonManagerCard({
   );
 }
 
+function PresentationWakeLockBadge({
+  status,
+  onRetry,
+  dark = false,
+}: {
+  status: ScreenWakeLockStatus;
+  onRetry: () => void;
+  dark?: boolean;
+}) {
+  if (status === "idle") return null;
+  const label = status === "active"
+    ? "Screen awake"
+    : status === "requesting"
+      ? "Keeping screen awake…"
+      : status === "unsupported"
+        ? "Keep Awake unavailable — set Auto-Lock to Never"
+        : "Keep Awake paused — tap to retry";
+  const className = dark
+    ? "rounded-full bg-white/10 px-3 py-2 text-white/80"
+    : "inline-flex min-h-8 items-center rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]";
+
+  if (status === "blocked") {
+    return <button aria-live="polite" className={className} onClick={onRetry} type="button">{label}</button>;
+  }
+
+  return <span aria-live="polite" className={className}>{label}</span>;
+}
+
 function PresentationWorkspaceScreen({
   view,
   presentations,
   draft,
   sermons,
+  books,
+  commentary,
   supabase,
   user,
   initialSessionId,
@@ -51895,11 +53643,14 @@ function PresentationWorkspaceScreen({
   onExportPlan,
   onExportPowerPoint,
   onExportPdfPreview,
+  onResolveScriptureText,
 }: {
   view: PresentationWorkspaceView;
   presentations: PresentationEntry[];
   draft: PresentationEntry;
   sermons: SermonEntry[];
+  books: LibraryResource[];
+  commentary: CommentaryEntry[];
   supabase: SupabaseClient | null;
   user: User | null;
   initialSessionId: string;
@@ -51912,8 +53663,9 @@ function PresentationWorkspaceScreen({
   onArchiveEntry: (id: string) => void;
   onDuplicateEntry: (entry: PresentationEntry) => void;
   onExportPlan: () => void;
-  onExportPowerPoint: () => void;
+  onExportPowerPoint: (mode: PresentationExportMode) => Promise<void>;
   onExportPdfPreview: () => void;
+  onResolveScriptureText: (passage: string) => string;
 }) {
   const activePresentations = presentations.filter((entry) => !entry.archived && entry.status !== "Archived");
   const archivedPresentations = presentations.filter((entry) => entry.archived || entry.status === "Archived");
@@ -51931,6 +53683,8 @@ function PresentationWorkspaceScreen({
   const [remoteMode, setRemoteMode] = useState<PresentationRemoteMode>("local");
   const [remoteMessage, setRemoteMessage] = useState(supabase && user?.id ? "Secure shared sessions are available for your signed-in devices." : supabase ? "Sign in on each device for secure shared control. Local presentation remains available." : "Supabase is not configured here, so remote control is local-only.");
   const [controllerClientId] = useState(() => loadPresentationControllerId());
+  const livePresentationView = view === "presenter" || view === "controller" || view === "presentation";
+  const { status: wakeLockStatus, request: requestWakeLock } = useScreenWakeLock(livePresentationView);
   const slides = draft.slides ?? [];
   const activeSlide = slides.find((slide) => slide.id === selectedSlideId) ?? slides[0] ?? null;
   const remoteActive = Boolean(remoteState?.sessionId && remoteSessionId && remoteState.sessionId === remoteSessionId);
@@ -52065,11 +53819,14 @@ function PresentationWorkspaceScreen({
   useEffect(() => {
     if (!supabase || !user?.id || view !== "presentation" || !remoteActive || !remoteSessionId || sessionEnded) return;
     const heartbeat = window.setInterval(() => {
-      const now = new Date().toISOString();
       void supabase
-        .from("presentation_sessions")
-        .update({ display_last_seen_at: now, updated_at: now })
-        .eq("session_id", remoteSessionId);
+        .rpc("apply_presentation_session_action", {
+          p_session_id: remoteSessionId,
+          p_event_type: "display_heartbeat",
+          p_state: {},
+          p_controller_id: null,
+          p_target_controller_id: null,
+        });
     }, 15000);
     return () => window.clearInterval(heartbeat);
   }, [remoteActive, remoteSessionId, sessionEnded, supabase, user?.id, view]);
@@ -52095,6 +53852,56 @@ function PresentationWorkspaceScreen({
     });
     onDraftChange({ slides: [...slides, slide] });
     setSelectedSlideId(slide.id);
+  }
+
+  function addReviewedContentSlides(seeds: PresentationContentSlideSeed[]) {
+    const nextSlides = seeds.map((seed) => {
+      const imageSlot = suggestedSermonImageSlotForText(`${seed.imageHint} ${seed.title} ${seed.subtitle} ${seed.body ?? ""} ${seed.bibleText ?? ""}`);
+      return createSermonSlide(seed.type, {
+        ...slidePresetPatch(draft.themeId),
+        title: seed.title,
+        subtitle: seed.subtitle,
+        body: seed.body ?? "",
+        bibleText: seed.bibleText ?? "",
+        speakerNotes: seed.speakerNotes,
+        imageSlot,
+        imageTheme: SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
+        layout: seed.type === "Scripture" ? "Scripture Focus" : "Centered",
+      });
+    });
+    onDraftChange({ slides: [...slides, ...nextSlides] });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+    setRemoteMessage(`Added ${nextSlides.length} reviewed slide${nextSlides.length === 1 ? "" : "s"}.`);
+  }
+
+  function addKjvPassageSlide(passage: string) {
+    const scriptureText = onResolveScriptureText(passage);
+    if (!scriptureText || scriptureText.startsWith("No KJV")) {
+      setRemoteMessage(`No verified KJV text was found for ${passage}. Check the reference and try again.`);
+      return;
+    }
+    const detectedBook = WHOLE_BIBLE_VOLUME_BOOKS
+      .slice()
+      .sort((left, right) => right.length - left.length)
+      .find((bookName) => new RegExp(`^${bookName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(passage));
+    const imageSlot = detectedBook
+      ? BIBLE_BOOK_PRESENTATION_BACKGROUNDS[detectedBook] ?? "open-bible"
+      : suggestedSermonImageSlotForText(`${passage} ${scriptureText}`);
+    const chunks = chunkScriptureText(formatScriptureSlideText(scriptureText, "Reference + Text"), 480);
+    const nextSlides = chunks.map((chunk, index) => createSermonSlide("Scripture", {
+      ...slidePresetPatch(draft.themeId),
+      title: chunks.length > 1 ? `${passage} (${index + 1})` : passage,
+      subtitle: "King James Version",
+      bibleText: chunk,
+      speakerNotes: "Read the KJV text clearly and confirm the displayed range before presenting.",
+      imageSlot,
+      imageTheme: `${detectedBook ? `${detectedBook} · ` : ""}${SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label}`,
+      layout: "Scripture Focus",
+      verseDisplay: "Reference + Text",
+    }));
+    onDraftChange({ slides: [...slides, ...nextSlides] });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+    setRemoteMessage(`Added ${chunks.length} KJV Scripture slide${chunks.length === 1 ? "" : "s"} with a matched background.`);
   }
 
   function duplicateSlide(id: string) {
@@ -52214,7 +54021,7 @@ function PresentationWorkspaceScreen({
     };
   }
 
-  async function syncSupabasePresentationSession(state: PresentationRemoteState, eventType: string) {
+  async function syncSupabasePresentationSession(state: PresentationRemoteState, eventType: string, targetControllerId: string | null = null) {
     if (!supabase || !user?.id) {
       setRemoteMode("local");
       if (supabase) setRemoteMessage("Sign in on each device for secure shared control. This presentation is local to this browser.");
@@ -52230,39 +54037,49 @@ function PresentationWorkspaceScreen({
       return false;
     }
 
-    const row = presentationSessionRowFromState(state, user.id);
-    const { error } = await supabase
-      .from("presentation_sessions")
-      .upsert(row, { onConflict: "session_id" });
+    const { data, error } = await supabase.rpc("apply_presentation_session_action", {
+      p_session_id: state.sessionId,
+      p_event_type: eventType,
+      p_state: presentationSessionRowFromState(state, user.id),
+      p_controller_id: view === "controller" ? controllerClientId : null,
+      p_target_controller_id: targetControllerId,
+    });
 
     if (error) {
-      setRemoteMode("local");
-      setRemoteMessage("Shared Supabase session could not sync. Local fallback is still active.");
+      if (error.code === "PGRST202" || error.code === "42883") {
+        setRemoteMode("local");
+        setRemoteMessage("Secure shared control is not deployed yet. Local fallback is still active.");
+        return false;
+      }
+      const { data: authoritativeRow } = await supabase
+        .from("presentation_sessions")
+        .select("session_id, presentation_id, current_slide_index, is_blank, is_active, presenter_user_id, control_mode, controller_lock, controllers, last_controller_id, display_last_seen_at, expires_at, title, theme_id, slides, target_minutes, notes, created_at, updated_at")
+        .eq("session_id", state.sessionId)
+        .maybeSingle();
+      if (authoritativeRow) {
+        const authoritativeState = presentationStateFromSessionRow(authoritativeRow as PresentationSessionRow);
+        savePresentationRemoteState(authoritativeState);
+        setRemoteState(authoritativeState);
+        setPresenterSlideIndex(authoritativeState.slideIndex);
+      }
+      setRemoteMode("supabase");
+      setRemoteMessage("The shared action was rejected by presentation security. The live session was restored.");
       return false;
     }
 
-    const { error: eventError } = await supabase.from("presentation_session_events").insert({
-      session_id: state.sessionId,
-      event_type: eventType,
-      slide_index: state.slideIndex,
-      is_blank: state.blank,
-      created_by: user.id,
-      payload: {
-        presentation_id: state.presentationId,
-        title: state.title,
-        is_active: !state.ended,
-      },
-    });
-    if (eventError) {
-      setRemoteMessage("Session updated, but the event log could not be saved.");
+    if (data) {
+      const authoritativeState = presentationStateFromSessionRow(data as PresentationSessionRow);
+      savePresentationRemoteState(authoritativeState);
+      setRemoteState(authoritativeState);
+      setPresenterSlideIndex(authoritativeState.slideIndex);
     }
 
     setRemoteMode("supabase");
-    setRemoteMessage(`Shared session ${state.sessionId} synced through Supabase.`);
+    setRemoteMessage(`Shared session ${state.sessionId} updated through secure control.`);
     return true;
   }
 
-  function publishRemoteState(patch: Partial<PresentationRemoteState>, eventType = "jump") {
+  function publishRemoteState(patch: Partial<PresentationRemoteState>, eventType = "jump", targetControllerId: string | null = null) {
     const sessionId = remoteSessionId || remoteState?.sessionId || createPresentationSessionId();
     const nextState = buildRemoteState(sessionId, patch);
     if (view === "controller" && !canControlSession && eventType !== "join") {
@@ -52274,7 +54091,7 @@ function PresentationWorkspaceScreen({
     setRemoteState(nextState);
     setPresenterSlideIndex(nextState.slideIndex);
     setRemoteMessage(`${remoteMode === "supabase" ? "Shared" : "Local"} session ${nextState.sessionId} updated.`);
-    void syncSupabasePresentationSession(nextState, eventType);
+    void syncSupabasePresentationSession(nextState, eventType, targetControllerId);
     return nextState;
   }
 
@@ -52330,10 +54147,6 @@ function PresentationWorkspaceScreen({
         const nextState = presentationStateFromSessionRow(data as PresentationSessionRow);
         if (isPresentationSessionExpired(nextState)) {
           setRemoteMessage("That presentation session has expired or ended.");
-          await supabase
-            .from("presentation_sessions")
-            .update({ is_active: false, updated_at: new Date().toISOString() })
-            .eq("session_id", nextState.sessionId);
           return;
         }
         const now = new Date().toISOString();
@@ -52363,22 +54176,7 @@ function PresentationWorkspaceScreen({
         if (typeof window !== "undefined" && view === "presentation") {
           window.location.hash = `presentation-session-${joinedState.sessionId}`;
         }
-        await supabase
-          .from("presentation_sessions")
-          .update({
-            controllers: joinedState.controllers,
-            display_last_seen_at: joinedState.displayLastSeenAt || null,
-            updated_at: now,
-          })
-          .eq("session_id", joinedState.sessionId);
-        await supabase.from("presentation_session_events").insert({
-          session_id: joinedState.sessionId,
-          event_type: view === "presentation" ? "display_join" : "join",
-          slide_index: joinedState.slideIndex,
-          is_blank: joinedState.blank,
-          created_by: user.id,
-          payload: { source: "presentation_workspace", controller_id: view === "controller" ? controllerClientId : null, status: joinStatus },
-        });
+        await syncSupabasePresentationSession(joinedState, view === "presentation" ? "display_join" : "join");
         return;
       }
 
@@ -52424,13 +54222,13 @@ function PresentationWorkspaceScreen({
     setRemoteMessage(view === "controller" && localJoinStatus === "waiting" ? `Joined session ${localJoinedState.sessionId}. Waiting for presenter approval.` : `Joined session ${localJoinedState.sessionId}.`);
   }
 
-  function goToRemoteSlide(index: number) {
+  function goToRemoteSlide(index: number, action: "step" | "jump" = "step") {
     if (!canControlSession) {
       setRemoteMessage("Controller is waiting for approval, locked, or the session has expired.");
       return;
     }
     const boundedIndex = Math.min(Math.max(0, index), Math.max(0, sessionSlides.length - 1));
-    const eventType = boundedIndex > presenterSlideIndex ? "next" : boundedIndex < presenterSlideIndex ? "previous" : "jump";
+    const eventType = action === "jump" ? "jump" : boundedIndex > presenterSlideIndex ? "next" : boundedIndex < presenterSlideIndex ? "previous" : "jump";
     setPresenterSlideIndex(boundedIndex);
     if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: boundedIndex, ended: false, blank: false, lastControllerId: view === "controller" ? controllerClientId : remoteState?.lastControllerId ?? "" }, eventType);
   }
@@ -52493,7 +54291,7 @@ function PresentationWorkspaceScreen({
     const nextControllers = sessionControllers.map((controller) =>
       controller.id === controllerId ? { ...controller, status: "approved" as const, approvedAt: now, lastSeenAt: now } : controller,
     );
-    publishRemoteState({ controllers: nextControllers }, "approve_controller");
+    publishRemoteState({ controllers: nextControllers }, "approve_controller", controllerId);
   }
 
   function blockController(controllerId: string) {
@@ -52504,7 +54302,7 @@ function PresentationWorkspaceScreen({
     const nextControllers = sessionControllers.map((controller) =>
       controller.id === controllerId ? { ...controller, status: "blocked" as const, lastSeenAt: new Date().toISOString() } : controller,
     );
-    publishRemoteState({ controllers: nextControllers }, "lock_controller");
+    publishRemoteState({ controllers: nextControllers }, "lock_controller", controllerId);
   }
 
   function toggleControllerLock() {
@@ -52513,6 +54311,16 @@ function PresentationWorkspaceScreen({
       return;
     }
     publishRemoteState({ controllerLocked: !controllerLocked }, controllerLocked ? "unlock_controller" : "lock_controller");
+  }
+
+  function reviewExportSlide(id: string) {
+    setSelectedSlideId(id);
+    onViewChange("deck");
+    requestAnimationFrame(() => {
+      const editor = document.getElementById("presentation-slide-editor");
+      editor?.scrollIntoView({ block: "start" });
+      editor?.focus({ preventScroll: true });
+    });
   }
 
   function splitActiveScriptureSlide() {
@@ -52534,6 +54342,33 @@ function PresentationWorkspaceScreen({
     setRemoteMessage(`Split Scripture into ${chunks.length} readable slides.`);
   }
 
+  function splitActiveBodySlide() {
+    if (!activeSlide || activeSlide.type === "Scripture" || !activeSlide.body.trim()) return;
+    const chunkSize = activeSlide.fontScale === "Large" ? 360 : activeSlide.fontScale === "Compact" ? 620 : 480;
+    const chunks = splitPresentationBodyText(activeSlide.body, chunkSize);
+    if (chunks.length <= 1) {
+      setRemoteMessage("That slide is already short enough.");
+      return;
+    }
+    const index = slides.findIndex((slide) => slide.id === activeSlide.id);
+    const baseTitle = activeSlide.title.replace(/\s+\(\d+\)$/g, "");
+    const nextSlides = chunks.map((chunk, chunkIndex) => normalizeSermonSlide({
+      ...activeSlide,
+      id: chunkIndex === 0 ? activeSlide.id : makeId("slide"),
+      title: `${baseTitle} (${chunkIndex + 1})`,
+      body: chunk,
+      speakerNotes: activeSlide.speakerNotes,
+    }, chunkIndex));
+    const replacementIds = nextSlides.map((slide) => slide.id);
+    const nextGroups = draft.groups.map((group) => ({
+      ...group,
+      slideIds: group.slideIds.flatMap((slideId) => slideId === activeSlide.id ? replacementIds : [slideId]),
+    }));
+    onDraftChange({ slides: [...slides.slice(0, index), ...nextSlides, ...slides.slice(index + 1)], groups: nextGroups });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+    setRemoteMessage(`Split ${activeSlide.type.toLowerCase()} text into ${chunks.length} readable slides. Every part keeps the original source notes and group placement.`);
+  }
+
   if (view === "presenter") {
     return (
       <div className="fixed inset-0 z-50 bg-black text-white">
@@ -52541,6 +54376,7 @@ function PresentationWorkspaceScreen({
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-black/80 px-4 py-3 text-sm font-semibold backdrop-blur">
             <button className="rounded-full bg-white/10 px-4 py-2" onClick={() => onViewChange("deck")} type="button">Exit Presenter</button>
             <div className="flex flex-wrap items-center gap-3 text-white/75">
+              <PresentationWakeLockBadge dark onRetry={() => void requestWakeLock()} status={wakeLockStatus} />
               {remoteSessionId && <span>Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
               <span>{formatSermonTimer(elapsedSeconds)} elapsed</span>
               <span>{formatSermonTimer(remainingSeconds)} left</span>
@@ -52599,6 +54435,7 @@ function PresentationWorkspaceScreen({
       <div className="fixed inset-0 z-50 bg-black text-white">
         <div className="absolute left-4 top-4 z-10 flex flex-wrap gap-2 text-xs font-semibold">
           <button className="rounded-full bg-white/10 px-3 py-2 text-white/80" onClick={() => onViewChange("deck")} type="button">Exit</button>
+          <PresentationWakeLockBadge dark onRetry={() => void requestWakeLock()} status={wakeLockStatus} />
           {remoteSessionId && <span className="rounded-full bg-white/10 px-3 py-2 text-white/70">Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
         </div>
         {!remoteActive && (
@@ -52638,6 +54475,7 @@ function PresentationWorkspaceScreen({
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{sessionTitle || "Presentation Controller"}</h1>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{remoteMessage}</p>
               {controllerStatusText && <p className="mt-2 inline-flex rounded-full bg-[var(--highlight)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">Status: {controllerStatusText}</p>}
+              <div className="mt-2"><PresentationWakeLockBadge onRetry={() => void requestWakeLock()} status={wakeLockStatus} /></div>
             </div>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("deck")} type="button">Back to Deck</button>
           </div>
@@ -52653,8 +54491,8 @@ function PresentationWorkspaceScreen({
           </div>
         </section>
 
-        <section className="grid gap-4 lg:grid-cols-[1fr_0.8fr]">
-          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <section className="grid min-w-0 gap-4 lg:grid-cols-[1fr_0.8fr]">
+          <article className="min-w-0 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Current Slide</p>
@@ -52677,8 +54515,8 @@ function PresentationWorkspaceScreen({
             </div>
           </article>
 
-          <aside className="space-y-4">
-            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <aside className="min-w-0 space-y-4">
+            <article className="min-w-0 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold text-[var(--ink)]">Presenter Tools</p>
               <div className="mt-3 grid grid-cols-2 gap-2">
                 <MiniStat label="Elapsed" value={formatSermonTimer(elapsedSeconds)} />
@@ -52692,15 +54530,15 @@ function PresentationWorkspaceScreen({
               </div>
               <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Notes</p>
-                <p className="mt-1 whitespace-pre-wrap text-sm leading-6 text-[var(--scripture-ink)]">{currentSlide?.speakerNotes || sessionNotes || "No notes for this slide yet."}</p>
+                <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-6 text-[var(--scripture-ink)] [overflow-wrap:anywhere]">{currentSlide?.speakerNotes || sessionNotes || "No notes for this slide yet."}</p>
               </div>
             </article>
 
-            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <article className="min-w-0 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold text-[var(--ink)]">Jump to Slide</p>
               <div className="mt-3 grid max-h-80 gap-2 overflow-y-auto pr-1">
                 {sessionSlides.map((slide, index) => (
-                  <button key={`controller-jump-${slide.id}`} className={`rounded-2xl border px-3 py-2 text-left text-sm font-semibold disabled:opacity-40 ${index === presenterSlideIndex ? "border-[var(--gold)] bg-[var(--highlight)] text-[var(--green)]" : "border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`} disabled={!canControlSession} onClick={() => goToRemoteSlide(index)} type="button">
+                  <button key={`controller-jump-${slide.id}`} className={`rounded-2xl border px-3 py-2 text-left text-sm font-semibold disabled:opacity-40 ${index === presenterSlideIndex ? "border-[var(--gold)] bg-[var(--highlight)] text-[var(--green)]" : "border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`} disabled={!canControlSession} onClick={() => goToRemoteSlide(index, "jump")} type="button">
                     {index + 1}. {slide.title || slide.type}
                   </button>
                 ))}
@@ -52805,11 +54643,8 @@ function PresentationWorkspaceScreen({
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
               <p className="text-sm font-semibold text-[var(--ink)]">Export foundation</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Export the current presentation as PowerPoint, download the Markdown plan, or open a print-ready view for Save as PDF.</p>
+              <PresentationPowerPointExport disabled={!draft.slides.length} slides={slides} onReview={reviewExportSlide} onExport={onExportPowerPoint} />
               <div className="mt-3 flex flex-wrap gap-2">
-                <button className="inline-flex items-center gap-2 rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!draft.slides.length} onClick={onExportPowerPoint} type="button">
-                  <Download size={16} />
-                  Download PowerPoint
-                </button>
                 <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onExportPlan} type="button">
                   <Download size={16} />
                   Markdown Plan
@@ -52911,6 +54746,10 @@ function PresentationWorkspaceScreen({
             </div>
 
             <div className="mt-5">
+              <PresentationContentFinder books={books} commentary={commentary} onAddScripture={addKjvPassageSlide} onAddSlides={addReviewedContentSlides} loadCommentaryCatalog={fetchDeferredCommentaryCatalog} loadCommentaryChapter={fetchDeferredCommentaryChapterEntries} />
+            </div>
+
+            <div className="mt-5">
               <p className="text-sm font-semibold text-[var(--ink)]">Curated real image backgrounds</p>
               <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Public-domain, CC0, and original generated backgrounds are stored locally for speed. No copyrighted photos or external image search are used.</p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -52994,7 +54833,20 @@ function PresentationWorkspaceScreen({
                       </div>
                     </div>
                   )}
-                  <SermonSlideEditor slide={activeSlide} onChange={(patch) => updateSlide(activeSlide.id, patch)} />
+                  {activeSlide.type !== "Scripture" && activeSlide.body.trim() && (
+                    <div className="my-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                          <p className="text-sm font-semibold text-[var(--ink)]">Teaching and Quote Slide Improvements</p>
+                          <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Split long text without rewriting it. Every new slide keeps this slide’s source notes, background, formatting, and group placement.</p>
+                        </div>
+                        <button className="min-h-11 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={splitActiveBodySlide} type="button">Split Long Text</button>
+                      </div>
+                    </div>
+                  )}
+                  <div id="presentation-slide-editor" tabIndex={-1} aria-label="Presentation slide editor">
+                    <SermonSlideEditor slide={activeSlide} onChange={(patch) => updateSlide(activeSlide.id, patch)} />
+                  </div>
                 </>
               ) : (
                 <EmptyState title="Select a slide" body="Choose a slide from the deck manager to preview and edit it." />
@@ -53017,9 +54869,9 @@ function PresentationWorkspaceScreen({
             <div className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold text-[var(--ink)]">Export Foundation</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">PowerPoint export works now. PDF uses a print-ready 16:9 preview so you can choose Save as PDF from the print dialog.</p>
+              <PresentationPowerPointExport disabled={!slides.length} slides={slides} onReview={reviewExportSlide} onExport={onExportPowerPoint} />
               <div className="mt-3 flex flex-wrap gap-2">
                 <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onExportPlan} type="button">Download Markdown Plan</button>
-                <button className="rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!slides.length} onClick={onExportPowerPoint} type="button">Download PowerPoint</button>
                 <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!slides.length} onClick={onExportPdfPreview} type="button">Print / Save PDF</button>
               </div>
             </div>
@@ -53231,10 +55083,19 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
 
 function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: (patch: Partial<SermonSlide>) => void }) {
   const [mediaCategory, setMediaCategory] = useState<"All" | SermonSlideMediaCategory>("All");
+  const [mediaSearch, setMediaSearch] = useState("");
   const detectedBibleBook = detectedBibleBookForSlide(slide);
   const [backgroundBook, setBackgroundBook] = useState("");
   const selectedBackgroundBook = backgroundBook || detectedBibleBook;
-  const filteredImageSlots = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).filter(([, slot]) => mediaCategory === "All" || slot.category === mediaCategory);
+  const normalizedMediaSearch = mediaSearch.trim().toLowerCase();
+  const filteredImageSlots = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).filter(([id, slot]) => {
+    if (mediaCategory !== "All" && slot.category !== mediaCategory) return false;
+    if (!normalizedMediaSearch) return true;
+    return [id, slot.label, slot.description, slot.motif, slot.category, sermonSlideMediaKind(id as SermonSlideImageSlotId)]
+      .join(" ")
+      .toLowerCase()
+      .includes(normalizedMediaSearch);
+  });
   const previewLightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light";
   const readability = sermonSlideReadability(slide, previewLightStyle);
   return (
@@ -53385,9 +55246,23 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
       </div>
       <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Curated Background Picker</p>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Media Background Finder</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Search the local, rights-documented collection by subject, setting, or visual idea.</p>
+          </div>
           <p className="text-xs font-semibold text-[var(--muted)]">{SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot]?.label ?? "Open Bible"}</p>
         </div>
+        <label className="relative mt-3 block">
+          <Search className="pointer-events-none absolute left-3 top-3 text-[var(--muted)]" size={17} />
+          <input
+            aria-label="Search media backgrounds"
+            className="h-11 w-full rounded-xl border border-[var(--line)] bg-white pl-10 pr-3 text-sm text-[var(--ink)] outline-none"
+            onChange={(event) => setMediaSearch(event.target.value)}
+            placeholder="Try cross, prayer, Jerusalem, sea, harvest, or Scripture"
+            type="search"
+            value={mediaSearch}
+          />
+        </label>
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
           {SERMON_SLIDE_MEDIA_CATEGORIES.map((category) => (
             <button
@@ -53400,6 +55275,7 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
             </button>
           ))}
         </div>
+        <p className="mt-2 text-xs font-semibold text-[var(--muted)]">{filteredImageSlots.length} matching background{filteredImageSlots.length === 1 ? "" : "s"} · rights notes stay visible before selection</p>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           {filteredImageSlots.map(([id, slot]) => (
             <button
@@ -53419,6 +55295,9 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
               </span>
             </button>
           ))}
+          {!filteredImageSlots.length && (
+            <p className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-4 text-sm leading-6 text-[var(--muted)] sm:col-span-2">No curated background matches that search and category. Clear the search or choose All.</p>
+          )}
         </div>
       </div>
       <div className="mt-4 grid gap-3">

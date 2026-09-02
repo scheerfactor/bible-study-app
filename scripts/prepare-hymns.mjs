@@ -413,8 +413,19 @@ async function main() {
   }
 
   const outputPath = resolve(root, "data", "hymns", "verified-hymns.json");
+  const presentationIndexPath = resolve(root, "data", "hymns", "presentation-hymns.json");
   await writeFile(outputPath, JSON.stringify(prepared, null, 2) + "\n");
+  await writeFile(
+    presentationIndexPath,
+    JSON.stringify(prepared.map((hymn) => {
+      const presentationHymn = { ...hymn };
+      delete presentationHymn.notes;
+      delete presentationHymn.durationSeconds;
+      return presentationHymn;
+    }), null, 2) + "\n",
+  );
   console.log("Prepared " + prepared.length + " hymns at " + outputPath);
+  console.log("Prepared lightweight presentation index at " + presentationIndexPath);
 }
 
 await main();

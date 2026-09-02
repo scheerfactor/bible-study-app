@@ -1,0 +1,49 @@
+{
+  "batchId": "public-domain-hymns-phase-15-2026-09-01",
+  "reviewedAt": "2026-09-01",
+  "sourceProvider": "Timeless Truths Free Online Library",
+  "purpose": "Add three Christ-centered, public-domain hymns with independently retained text, tune, and rights evidence.",
+  "guardrails": [
+    "Import only when the source page marks both words and tune Public Domain.",
+    "Retain the exact source page and MIDI checksums with every record.",
+    "Keep Scripture references as topical indexes; KJV Scripture remains primary."
+  ],
+  "entries": [
+    {
+      "id": "to-god-be-the-glory",
+      "title": "To God Be the Glory",
+      "lyricist": "Frances J. Crosby",
+      "lyricYear": 1875,
+      "tune": "To God Be the Glory",
+      "themes": ["Praise", "Redemption", "Gospel"],
+      "scriptureReferences": ["Psalm 126:3", "Galatians 1:3-5"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/To_God_Be_the_Glory_Crosby/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/To_God_Be_the_Glory_Crosby/To_God_Be_the_Glory_Crosby.mid",
+      "musicAttribution": "TO GOD BE THE GLORY by William H. Doane, published 1875; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "redeemed-how-i-love-to-proclaim-it",
+      "title": "Redeemed, How I Love to Proclaim It!",
+      "lyricist": "Frances J. Crosby",
+      "lyricYear": 1882,
+      "tune": "Redeemed",
+      "themes": ["Redemption", "Salvation", "Testimony"],
+      "scriptureReferences": ["Psalm 107:2", "Revelation 5:9"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Redeemed_How_I_Love_to_Proclaim_It/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Redeemed_How_I_Love_to_Proclaim_It/Redeemed_How_I_Love_to_Proclaim_It.mid",
+      "musicAttribution": "REDEEMED by William J. Kirkpatrick, published 1882; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "safe-in-the-arms-of-jesus",
+      "title": "Safe in the Arms of Jesus",
+      "lyricist": "Frances J. Crosby",
+      "lyricYear": 1868,
+      "tune": "Safe in the Arms of Jesus",
+      "themes": ["Refuge", "Comfort", "Jesus"],
+      "scriptureReferences": ["Deuteronomy 33:27", "Psalm 46:1"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Safe_in_the_Arms_of_Jesus/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Safe_in_the_Arms_of_Jesus/Safe_in_the_Arms_of_Jesus.mid",
+      "musicAttribution": "SAFE IN THE ARMS OF JESUS by William H. Doane, published 1868; public-domain MIDI distributed with the cited Timeless Truths record."
+    }
+  ]
+}

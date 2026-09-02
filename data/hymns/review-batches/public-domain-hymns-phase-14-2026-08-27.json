@@ -1,0 +1,64 @@
+{
+  "batchId": "public-domain-hymns-phase-14-2026-08-27",
+  "reviewedAt": "2026-08-27",
+  "sourceProvider": "Timeless Truths Free Online Library",
+  "purpose": "Add four doctrinally sound, nonduplicate public-domain hymn texts with Scripture links and playable public-domain MIDI tunes through the repeatable source-verifying importer.",
+  "guardrails": [
+    "The importer rejects hymn ids and titles already present in the complete verified catalog.",
+    "The importer extracts the exact source stanzas and refrain without modern rewriting.",
+    "The retained page must explicitly mark both the hymn text and the selected tune Public Domain.",
+    "The exact MIDI and retained rights page are recorded with SHA-256 checksums.",
+    "Playback is synthesized from MIDI; no third-party performance recording is included.",
+    "Each hymn was reviewed for a clear biblical subject and linked to the cited KJV passage before intake."
+  ],
+  "entries": [
+    {
+      "id": "a-mighty-fortress-is-our-god",
+      "title": "A Mighty Fortress Is Our God",
+      "lyricist": "Martin Luther; translated by Frederick H. Hedge",
+      "lyricYear": 1529,
+      "tune": "Ein' Feste Burg",
+      "themes": ["Assurance", "Trust", "Spiritual Warfare"],
+      "scriptureReferences": ["Psalm 46:1"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/A_Mighty_Fortress_Is_Our_God/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/A/A_Mighty_Fortress_Is_Our_God/A_Mighty_Fortress_Is_Our_God.mid",
+      "musicAttribution": "EIN' FESTE BURG by Martin Luther, circa 1529; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "jesus-saves",
+      "title": "Jesus Saves",
+      "lyricist": "Priscilla J. Owens",
+      "lyricYear": 1882,
+      "tune": "Jesus Saves",
+      "themes": ["Salvation", "Gospel", "Evangelism", "Missions"],
+      "scriptureReferences": ["John 12:47", "Matthew 1:21"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Jesus_Saves/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/J/Jesus_Saves/Jesus_Saves.mid",
+      "musicAttribution": "JESUS SAVES by William J. Kirkpatrick, published 1882; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "standing-on-the-promises",
+      "title": "Standing on the Promises",
+      "lyricist": "Russell K. Carter",
+      "lyricYear": 1886,
+      "tune": "Standing on the Promises",
+      "themes": ["Promise", "Faith", "Assurance", "Bible"],
+      "scriptureReferences": ["2 Peter 1:2-4", "Hebrews 10:23"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Standing_on_the_Promises/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Standing_on_the_Promises/Standing_on_the_Promises.mid",
+      "musicAttribution": "STANDING ON THE PROMISES by Russell K. Carter, published 1886; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "tell-me-the-story-of-jesus",
+      "title": "Tell Me the Story of Jesus",
+      "lyricist": "Frances J. Crosby; stanza 4 by Leslie C. Busbee",
+      "lyricYear": 1880,
+      "tune": "Story of Jesus",
+      "themes": ["Gospel", "Jesus Christ", "Incarnation", "Atonement"],
+      "scriptureReferences": ["John 1:14", "1 Timothy 2:5-6"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Tell_Me_the_Story_of_Jesus/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/Tell_Me_the_Story_of_Jesus/Tell_Me_the_Story_of_Jesus.mid",
+      "musicAttribution": "STORY OF JESUS by John R. Sweney, 1880; public-domain MIDI distributed with the cited Timeless Truths record."
+    }
+  ]
+}
