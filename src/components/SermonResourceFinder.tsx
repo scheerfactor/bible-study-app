@@ -37,6 +37,11 @@ type Hymn = {
   musicRights: string;
 };
 
+type HymnSequenceSelection = {
+  stanzaIndexes: number[];
+  includeRefrain: boolean;
+};
+
 export type SermonResourceBook = {
   slug: string;
   title: string;
@@ -126,13 +131,13 @@ export default function SermonResourceFinder({
   books: SermonResourceBook[];
   commentary: SermonResourceCommentary[];
   onAdd: (addition: SermonResourceAddition) => void;
-  onAddToPresentation: (slide: SermonResourceSlideSeed) => void;
+  onAddToPresentation: (slides: SermonResourceSlideSeed[]) => void;
 }) {
   const [mode, setMode] = useState<FinderMode>("all");
   const [query, setQuery] = useState(initialQuery);
   const [addedId, setAddedId] = useState("");
   const [slideAddedId, setSlideAddedId] = useState("");
-  const [hymnSections, setHymnSections] = useState<Record<string, string>>({});
+  const [hymnSequences, setHymnSequences] = useState<Record<string, HymnSequenceSelection>>({});
 
   const results = useMemo(() => {
     const helpResults: FinderResult[] = preachingHelps.map((entry) => {
@@ -246,32 +251,67 @@ export default function SermonResourceFinder({
       .slice(0, MAX_VISIBLE_RESULTS);
   }, [books, commentary, mode, query]);
 
-  function selectedHymnSection(result: FinderResult) {
-    if (!result.hymn) return null;
-    const selected = hymnSections[result.id] ?? (result.hymn.refrain ? "refrain" : "stanza-0");
-    if (selected === "refrain" && result.hymn.refrain) return { label: "Refrain", text: result.hymn.refrain };
-    const stanzaIndex = Number.parseInt(selected.replace("stanza-", ""), 10) || 0;
-    return { label: `Stanza ${stanzaIndex + 1}`, text: result.hymn.stanzas[stanzaIndex] ?? result.hymn.stanzas[0] ?? "" };
+  function hymnSelection(result: FinderResult): HymnSequenceSelection {
+    return hymnSequences[result.id] ?? {
+      stanzaIndexes: result.hymn?.stanzas.length ? [0] : [],
+      includeRefrain: Boolean(result.hymn?.refrain),
+    };
+  }
+
+  function selectedHymnSequence(result: FinderResult) {
+    if (!result.hymn) return [];
+    const selection = hymnSelection(result);
+    const sections = selection.stanzaIndexes
+      .filter((index) => result.hymn?.stanzas[index])
+      .sort((left, right) => left - right)
+      .flatMap((index) => {
+        const stanza = { label: `Stanza ${index + 1}`, text: result.hymn?.stanzas[index] ?? "" };
+        return selection.includeRefrain && result.hymn?.refrain
+          ? [stanza, { label: "Refrain", text: result.hymn.refrain }]
+          : [stanza];
+      });
+    if (!sections.length && selection.includeRefrain && result.hymn.refrain) {
+      return [{ label: "Refrain", text: result.hymn.refrain }];
+    }
+    return sections;
+  }
+
+  function toggleHymnStanza(result: FinderResult, stanzaIndex: number) {
+    const selection = hymnSelection(result);
+    const stanzaIndexes = selection.stanzaIndexes.includes(stanzaIndex)
+      ? selection.stanzaIndexes.filter((index) => index !== stanzaIndex)
+      : [...selection.stanzaIndexes, stanzaIndex].sort((left, right) => left - right);
+    setHymnSequences((current) => ({ ...current, [result.id]: { ...selection, stanzaIndexes } }));
+  }
+
+  function toggleHymnRefrain(result: FinderResult) {
+    const selection = hymnSelection(result);
+    setHymnSequences((current) => ({
+      ...current,
+      [result.id]: { ...selection, includeRefrain: !selection.includeRefrain },
+    }));
   }
 
   function resolvedAddition(result: FinderResult): SermonResourceAddition {
-    const selected = selectedHymnSection(result);
-    if (!selected || !result.hymn) return result.addition;
+    const sequence = selectedHymnSequence(result);
+    if (!sequence.length || !result.hymn) return result.addition;
     const references = result.hymn.scriptureReferences.join(" · ");
+    const sequenceText = sequence.map((section) => `${section.label}\n${section.text}`).join("\n\n");
     return {
       ...result.addition,
-      body: `${result.hymn.title}\n${result.hymn.lyricist} · Tune: ${result.hymn.tune}\nSelected section: ${selected.label}\nScripture connections: ${references || "None listed"}\n\n${selected.text}\n\nText rights: ${result.hymn.textRights}\nMusic rights: ${result.hymn.musicRights}\nSource: ${result.hymn.textSourceUrl}`,
+      body: `${result.hymn.title}\n${result.hymn.lyricist} · Tune: ${result.hymn.tune}\nSelected sequence: ${sequence.map((section) => section.label).join(" → ")}\nScripture connections: ${references || "None listed"}\n\n${sequenceText}\n\nText rights: ${result.hymn.textRights}\nMusic rights: ${result.hymn.musicRights}\nSource: ${result.hymn.textSourceUrl}`,
     };
   }
 
-  function resolvedSlide(result: FinderResult): SermonResourceSlideSeed {
-    const selected = selectedHymnSection(result);
-    if (!selected) return result.slide;
-    return {
+  function resolvedSlides(result: FinderResult): SermonResourceSlideSeed[] {
+    const sequence = selectedHymnSequence(result);
+    if (!sequence.length) return result.hymn ? [] : [result.slide];
+    return sequence.map((section, index) => ({
       ...result.slide,
-      body: selected.text,
-      speakerNotes: `Selected section: ${selected.label}\n${result.slide.speakerNotes}`,
-    };
+      subtitle: `${result.slide.subtitle} · ${section.label}`,
+      body: section.text,
+      speakerNotes: `Hymn sequence: ${index + 1} of ${sequence.length}\nSelected section: ${section.label}\n${result.slide.speakerNotes}`,
+    }));
   }
 
   function addResult(result: FinderResult) {
@@ -280,7 +320,9 @@ export default function SermonResourceFinder({
   }
 
   function addResultToPresentation(result: FinderResult) {
-    onAddToPresentation(resolvedSlide(result));
+    const slides = resolvedSlides(result);
+    if (!slides.length) return;
+    onAddToPresentation(slides);
     setSlideAddedId(result.id);
   }
 
@@ -339,32 +381,52 @@ export default function SermonResourceFinder({
             </div>
             {result.detail && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{result.detail}</p>}
             {result.hymn && (
-              <label className="mt-3 block text-xs font-semibold text-[var(--muted)]">
-                Choose stanza or refrain
-                <select
-                  aria-label={`Choose section for ${result.title}`}
-                  className="mt-2 min-h-11 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--ink)] outline-none"
-                  onChange={(event) => setHymnSections((current) => ({ ...current, [result.id]: event.target.value }))}
-                  value={hymnSections[result.id] ?? (result.hymn.refrain ? "refrain" : "stanza-0")}
-                >
-                  {result.hymn.refrain && <option value="refrain">Refrain</option>}
-                  {result.hymn.stanzas.map((_, index) => <option key={`${result.id}-stanza-${index + 1}`} value={`stanza-${index}`}>Stanza {index + 1}</option>)}
-                </select>
-              </label>
+              <fieldset className="mt-3 rounded-xl border border-[var(--line)] bg-white p-3">
+                <legend className="px-1 text-xs font-semibold text-[var(--muted)]">Build hymn slide sequence</legend>
+                <div className="mt-1 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {result.hymn.stanzas.map((_, index) => (
+                    <label key={`${result.id}-stanza-${index + 1}`} className="flex min-h-10 items-center gap-2 rounded-lg bg-[var(--paper)] px-3 text-xs font-semibold text-[var(--ink)]">
+                      <input
+                        aria-label={`${result.title} Stanza ${index + 1}`}
+                        checked={hymnSelection(result).stanzaIndexes.includes(index)}
+                        onChange={() => toggleHymnStanza(result, index)}
+                        type="checkbox"
+                      />
+                      Stanza {index + 1}
+                    </label>
+                  ))}
+                </div>
+                {result.hymn.refrain && (
+                  <label className="mt-2 flex min-h-10 items-center gap-2 rounded-lg bg-[var(--paper)] px-3 text-xs font-semibold text-[var(--ink)]">
+                    <input
+                      aria-label={`${result.title} repeat refrain after each stanza`}
+                      checked={hymnSelection(result).includeRefrain}
+                      onChange={() => toggleHymnRefrain(result)}
+                      type="checkbox"
+                    />
+                    Repeat refrain after each selected stanza
+                  </label>
+                )}
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                  {selectedHymnSequence(result).length
+                    ? `${selectedHymnSequence(result).length} ordered slide${selectedHymnSequence(result).length === 1 ? "" : "s"}: ${selectedHymnSequence(result).map((section) => section.label).join(" → ")}`
+                    : "Choose at least one stanza or the refrain."}
+                </p>
+              </fieldset>
             )}
-            <p className="mt-3 line-clamp-5 whitespace-pre-line text-sm leading-6 text-[var(--ink)]">{selectedHymnSection(result)?.text ?? result.preview}</p>
+            <p className="mt-3 line-clamp-5 whitespace-pre-line text-sm leading-6 text-[var(--ink)]">{selectedHymnSequence(result)[0]?.text ?? result.preview}</p>
             <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Rights:</strong> {result.rights}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               <button className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white" onClick={() => addResult(result)} type="button">
                 <Plus aria-hidden="true" size={15} /> Add to sermon
               </button>
-              <button className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[var(--green)] bg-white px-3 text-xs font-semibold text-[var(--green)]" onClick={() => addResultToPresentation(result)} type="button">
-                Send to presentation
+              <button disabled={Boolean(result.hymn) && !selectedHymnSequence(result).length} className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[var(--green)] bg-white px-3 text-xs font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-50" onClick={() => addResultToPresentation(result)} type="button">
+                {result.hymn ? `Create ${selectedHymnSequence(result).length} hymn slide${selectedHymnSequence(result).length === 1 ? "" : "s"}` : "Send to presentation"}
               </button>
               {result.sourceUrl && <a className="inline-flex min-h-10 items-center rounded-xl border border-[var(--line)] bg-white px-3 text-xs font-semibold text-[var(--green)]" href={result.sourceUrl} rel="noreferrer" target="_blank">Review source</a>}
             </div>
             {addedId === result.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-[var(--green)]">Added with source and rights notes.</p>}
-            {slideAddedId === result.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-[var(--green)]">Added to presentation slides with source and rights notes.</p>}
+            {slideAddedId === result.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-[var(--green)]">Added the ordered hymn sequence to presentation slides with source and rights notes.</p>}
           </section>
         ))}
         {!results.length && <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4 text-sm text-[var(--muted)]">No reviewed resources match yet. Try a passage, doctrine, author, hymn title, or sermon subject.</p>}

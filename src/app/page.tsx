@@ -52482,15 +52482,16 @@ function SermonWorkspaceScreen({
     });
   }
 
-  function addReviewedResourceToPresentation(seed: SermonResourceSlideSeed) {
-    const slideType: SermonSlideType = seed.resourceKind === "quotes"
+  function addReviewedResourceToPresentation(seeds: SermonResourceSlideSeed[]) {
+    const nextSlides = seeds.map((seed) => {
+      const slideType: SermonSlideType = seed.resourceKind === "quotes"
       ? "Quote"
       : seed.resourceKind === "illustrations"
         ? "Illustration"
         : seed.resourceKind === "hymns"
           ? "Hymn"
           : "Main Point";
-    const visual = seed.resourceKind === "quotes"
+      const visual = seed.resourceKind === "quotes"
       ? { imageSlot: "parchment" as SermonSlideImageSlotId, layout: "Minimal" as SermonSlideLayout }
       : seed.resourceKind === "illustrations"
         ? { imageSlot: "light-window" as SermonSlideImageSlotId, layout: "Image Left" as SermonSlideLayout }
@@ -52499,18 +52500,20 @@ function SermonWorkspaceScreen({
           : seed.resourceKind === "books"
             ? { imageSlot: "quiet-study" as SermonSlideImageSlotId, layout: "Image Left" as SermonSlideLayout }
             : { imageSlot: "open-bible" as SermonSlideImageSlotId, layout: "Teaching Point" as SermonSlideLayout };
-    const nextSlide = createSermonSlide(slideType, {
-      ...slidePresetPatch(draft.slideTheme),
-      title: seed.title,
-      subtitle: seed.subtitle,
-      body: seed.body,
-      speakerNotes: seed.speakerNotes,
-      imageSlot: visual.imageSlot,
-      imageTheme: SERMON_SLIDE_IMAGE_SLOTS[visual.imageSlot].label,
-      layout: visual.layout,
+      return createSermonSlide(slideType, {
+        ...slidePresetPatch(draft.slideTheme),
+        title: seed.title,
+        subtitle: seed.subtitle,
+        body: seed.body,
+        speakerNotes: seed.speakerNotes,
+        imageSlot: visual.imageSlot,
+        imageTheme: SERMON_SLIDE_IMAGE_SLOTS[visual.imageSlot].label,
+        layout: visual.layout,
+      });
     });
-    onDraftChange({ slides: [...sermonSlides, nextSlide] });
-    setSelectedSlideId(nextSlide.id);
+    if (!nextSlides.length) return;
+    onDraftChange({ slides: [...sermonSlides, ...nextSlides] });
+    setSelectedSlideId(nextSlides[nextSlides.length - 1].id);
   }
 
 	  function applyQuickStart() {
