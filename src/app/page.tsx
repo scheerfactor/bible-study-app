@@ -50,6 +50,7 @@ import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
+import SermonResourceFinder, { type SermonResourceAddition } from "@/components/SermonResourceFinder";
 import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
 import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, splitPresentationBodyText, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
@@ -52461,6 +52462,13 @@ function SermonWorkspaceScreen({
 	    });
 	  }
 
+  function addReviewedResourceToSermon(addition: SermonResourceAddition) {
+    const existing = draft[addition.target];
+    onDraftChange({
+      [addition.target]: [existing, `## ${addition.heading}\n${addition.body}`].filter(Boolean).join("\n\n"),
+    });
+  }
+
 	  function applyQuickStart() {
 	    onDraftChange(sermonQuickStartPatch(draft, quickStartId));
 	  }
@@ -53440,7 +53448,34 @@ function SermonWorkspaceScreen({
                 ))}
               </div>
               <SermonTextArea label="Imported study notes" value={draft.importedStudyNotes} onChange={(value) => onDraftChange({ importedStudyNotes: value })} />
+              <SermonTextArea label="Reviewed quotes" value={draft.quotes} onChange={(value) => onDraftChange({ quotes: value })} placeholder="Quotes added from the reviewed resource finder appear here with source and rights notes." />
             </article>
+
+            <SermonResourceFinder
+              key={`sermon-resource-finder-${draft.id}`}
+              initialQuery={[draft.passage, draft.theme].filter(Boolean).join(" ")}
+              books={libraryResources.map((entry) => ({
+                slug: entry.slug,
+                title: entry.title,
+                author: entry.author,
+                category: entry.category,
+                collection: entry.collection,
+                description: entry.description,
+                recommendedUse: entry.recommended_use,
+                rightsStatus: entry.rights_status,
+                sourceUrl: entry.source_url,
+              }))}
+              commentary={commentaryEntries.map((entry) => ({
+                id: entry.id,
+                reference: entry.reference || `${entry.book} ${entry.chapter}:${entry.verse_start}${entry.verse_end !== entry.verse_start ? `-${entry.verse_end}` : ""}`,
+                author: entry.author,
+                resourceTitle: entry.resource_title,
+                text: entry.entry_text,
+                rightsStatus: entry.public_domain_status,
+                sourceUrl: entry.source_url,
+              }))}
+              onAdd={addReviewedResourceToSermon}
+            />
 
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Smart Sermon Assistant</p>
