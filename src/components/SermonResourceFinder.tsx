@@ -1,7 +1,7 @@
 "use client";
 
-import { BookOpen, FileText, Lightbulb, Music2, Plus, Quote, Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { BookOpen, FileText, Lightbulb, LoaderCircle, Music2, Play, Plus, Quote, Search, Square } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import verifiedPreachingHelpsData from "../../data/preaching-helps/verified-preaching-helps.json";
 import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
 
@@ -40,6 +40,12 @@ type Hymn = {
 type HymnSequenceSelection = {
   stanzaIndexes: number[];
   includeRefrain: boolean;
+};
+
+type HymnPreview = {
+  id: string;
+  durationSeconds: number;
+  notes: Array<{ time: number; duration: number; midi: number; velocity: number }>;
 };
 
 export type SermonResourceBook = {
@@ -104,6 +110,10 @@ function matchesQuery(searchText: string, query: string) {
   return terms.every((term) => haystack.includes(term));
 }
 
+function midiFrequency(note: number) {
+  return 440 * 2 ** ((note - 69) / 12);
+}
+
 function resultIcon(mode: FinderResult["mode"]) {
   if (mode === "quotes") return <Quote aria-hidden="true" size={17} />;
   if (mode === "illustrations") return <Lightbulb aria-hidden="true" size={17} />;
@@ -138,6 +148,12 @@ export default function SermonResourceFinder({
   const [addedId, setAddedId] = useState("");
   const [slideAddedId, setSlideAddedId] = useState("");
   const [hymnSequences, setHymnSequences] = useState<Record<string, HymnSequenceSelection>>({});
+  const [playingHymnId, setPlayingHymnId] = useState<string | null>(null);
+  const [loadingHymnId, setLoadingHymnId] = useState<string | null>(null);
+  const [previewError, setPreviewError] = useState<{ hymnId: string; message: string } | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const oscillatorsRef = useRef<OscillatorNode[]>([]);
+  const playbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const results = useMemo(() => {
     const helpResults: FinderResult[] = preachingHelps.map((entry) => {
@@ -250,6 +266,70 @@ export default function SermonResourceFinder({
       .filter((entry) => (mode === "all" || entry.mode === mode) && matchesQuery(entry.searchText, query))
       .slice(0, MAX_VISIBLE_RESULTS);
   }, [books, commentary, mode, query]);
+
+  function stopTunePreview() {
+    for (const oscillator of oscillatorsRef.current) {
+      try {
+        oscillator.stop();
+      } catch {
+        // The verified preview may already have reached its scheduled ending.
+      }
+    }
+    oscillatorsRef.current = [];
+    if (playbackTimerRef.current) clearTimeout(playbackTimerRef.current);
+    playbackTimerRef.current = null;
+    setPlayingHymnId(null);
+  }
+
+  useEffect(() => stopTunePreview, []);
+
+  async function playTunePreview(hymn: Hymn) {
+    if (playingHymnId === hymn.id) {
+      stopTunePreview();
+      return;
+    }
+    stopTunePreview();
+    setLoadingHymnId(hymn.id);
+    setPreviewError(null);
+    try {
+      const response = await fetch(`/api/hymns/${encodeURIComponent(hymn.id)}/preview`);
+      const preview = await response.json() as HymnPreview & { error?: string };
+      if (!response.ok || !preview.notes?.length) throw new Error(preview.error || "Tune preview is unavailable.");
+
+      const context = audioContextRef.current ?? new AudioContext();
+      audioContextRef.current = context;
+      await context.resume();
+      const startAt = context.currentTime + 0.08;
+      const master = context.createGain();
+      master.gain.value = 0.5;
+      master.connect(context.destination);
+      oscillatorsRef.current = preview.notes.map((note) => {
+        const oscillator = context.createOscillator();
+        const envelope = context.createGain();
+        const noteStart = startAt + note.time;
+        const noteEnd = noteStart + note.duration;
+        oscillator.type = "triangle";
+        oscillator.frequency.value = midiFrequency(note.midi);
+        envelope.gain.setValueAtTime(0.0001, noteStart);
+        envelope.gain.exponentialRampToValueAtTime(Math.max(0.018, note.velocity * 0.075), noteStart + 0.018);
+        envelope.gain.exponentialRampToValueAtTime(0.0001, noteEnd + 0.18);
+        oscillator.connect(envelope);
+        envelope.connect(master);
+        oscillator.start(noteStart);
+        oscillator.stop(noteEnd + 0.2);
+        return oscillator;
+      });
+      setPlayingHymnId(hymn.id);
+      playbackTimerRef.current = setTimeout(stopTunePreview, (preview.durationSeconds + 0.5) * 1000);
+    } catch (error) {
+      setPreviewError({
+        hymnId: hymn.id,
+        message: error instanceof Error ? error.message : "Tune preview is unavailable.",
+      });
+    } finally {
+      setLoadingHymnId(null);
+    }
+  }
 
   function hymnSelection(result: FinderResult): HymnSequenceSelection {
     return hymnSequences[result.id] ?? {
@@ -383,6 +463,26 @@ export default function SermonResourceFinder({
             {result.hymn && (
               <fieldset className="mt-3 rounded-xl border border-[var(--line)] bg-white p-3">
                 <legend className="px-1 text-xs font-semibold text-[var(--muted)]">Build hymn slide sequence</legend>
+                <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[var(--line)] pb-3">
+                  <div>
+                    <p className="text-xs font-semibold text-[var(--ink)]">Tune: {result.hymn.tune}</p>
+                    <p className="mt-1 text-[11px] text-[var(--muted)]">Short piano preview from the reviewed arrangement</p>
+                  </div>
+                  <button
+                    aria-label={`${playingHymnId === result.hymn.id ? "Stop" : "Play"} tune preview for ${result.title}`}
+                    className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--green)] px-3 text-xs font-semibold text-white disabled:cursor-wait disabled:opacity-60"
+                    disabled={loadingHymnId === result.hymn.id}
+                    onClick={() => void playTunePreview(result.hymn!)}
+                    type="button"
+                  >
+                    {loadingHymnId === result.hymn.id
+                      ? <LoaderCircle aria-hidden="true" className="animate-spin" size={15} />
+                      : playingHymnId === result.hymn.id
+                        ? <Square aria-hidden="true" size={14} />
+                        : <Play aria-hidden="true" size={15} />}
+                    {loadingHymnId === result.hymn.id ? "Loading" : playingHymnId === result.hymn.id ? "Stop preview" : "Play tune"}
+                  </button>
+                </div>
                 <div className="mt-1 grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {result.hymn.stanzas.map((_, index) => (
                     <label key={`${result.id}-stanza-${index + 1}`} className="flex min-h-10 items-center gap-2 rounded-lg bg-[var(--paper)] px-3 text-xs font-semibold text-[var(--ink)]">
@@ -412,6 +512,7 @@ export default function SermonResourceFinder({
                     ? `${selectedHymnSequence(result).length} ordered slide${selectedHymnSequence(result).length === 1 ? "" : "s"}: ${selectedHymnSequence(result).map((section) => section.label).join(" → ")}`
                     : "Choose at least one stanza or the refrain."}
                 </p>
+                {previewError?.hymnId === result.hymn.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-red-700">{previewError.message}</p>}
               </fieldset>
             )}
             <p className="mt-3 line-clamp-5 whitespace-pre-line text-sm leading-6 text-[var(--ink)]">{selectedHymnSequence(result)[0]?.text ?? result.preview}</p>
