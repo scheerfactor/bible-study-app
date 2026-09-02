@@ -53079,7 +53079,7 @@ function SermonWorkspaceScreen({
 	      ) : view === "slides" ? (
 	        <div className="grid min-w-0 gap-5 xl:grid-cols-[0.85fr_1.15fr]">
 	          <section className="min-w-0 space-y-4">
-	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	            <article className="min-w-0 rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon & Bible Study Slide Builder</p>
 	              <h2 className="mt-2 break-words text-2xl font-semibold text-[var(--ink)]">Slide builder for {draft.title || "this sermon"}</h2>
 	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
@@ -53298,8 +53298,8 @@ function SermonWorkspaceScreen({
 	                {activeSlide ? <SermonSlideCanvas slide={activeSlide} themeId={draft.slideTheme} /> : <EmptyState title="No slide selected" body="Generate a slide outline or add a slide manually." />}
 	              </div>
 	              {activeSlide && (
-	                <div className="mt-4 grid gap-3 lg:grid-cols-2">
-	                  <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+	                <div className="mt-4 grid min-w-0 gap-3 lg:grid-cols-2">
+	                  <div className="min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
 	                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Next Slide</p>
 	                    {sermonSlides[activeSlideIndex + 1] ? (
 	                      <>
@@ -53310,9 +53310,9 @@ function SermonWorkspaceScreen({
 	                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">End of deck.</p>
 	                    )}
 	                  </div>
-	                  <div className="min-h-28 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+	                  <div className="min-h-28 min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
 	                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Presenter Notes</p>
-	                    <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{activeSlide.speakerNotes || "No presenter notes yet."}</p>
+	                    <p className="mt-2 whitespace-pre-line text-sm leading-7 text-[var(--muted)] [overflow-wrap:anywhere]">{activeSlide.speakerNotes || "No presenter notes yet."}</p>
 	                  </div>
 	                </div>
 	              )}

@@ -1,0 +1,74 @@
+{
+  "batchId": "public-domain-hymns-phase-18-2026-09-01",
+  "reviewedAt": "2026-09-01",
+  "sourceProvider": "Timeless Truths Free Online Library",
+  "purpose": "Add five gospel-centered, Scripture-connected public-domain hymns with verified playable music through the guarded hymn pipeline.",
+  "guardrails": [
+    "Import only when the source page marks both words and tune Public Domain.",
+    "Require a direct Scripture connection and a clear grace, redemption, faith, revival, or praise theme.",
+    "Retain the exact source page and MIDI checksums with every record.",
+    "Keep Scripture references as topical indexes; KJV Scripture remains primary."
+  ],
+  "entries": [
+    {
+      "id": "grace-greater-than-our-sin",
+      "title": "Grace Greater than Our Sin",
+      "lyricist": "Julia H. Johnston",
+      "lyricYear": 1910,
+      "tune": "Moody",
+      "themes": ["Grace", "Invitation", "Salvation", "Cross"],
+      "scriptureReferences": ["Romans 5:20-21"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Grace_Greater_than_Our_Sin/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/G/Grace_Greater_than_Our_Sin/Grace_Greater_than_Our_Sin.mid",
+      "musicAttribution": "MOODY by Daniel B. Towner, 1910; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "my-redeemer",
+      "title": "I Will Sing of My Redeemer",
+      "lyricist": "Philip P. Bliss",
+      "lyricYear": 1876,
+      "tune": "My Redeemer",
+      "themes": ["Redemption", "Jesus", "Praise", "Cross"],
+      "scriptureReferences": ["Galatians 3:13", "Ephesians 1:7"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/My_Redeemer/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/My_Redeemer/My_Redeemer.mid",
+      "musicAttribution": "MY REDEEMER by James McGranahan, 1877; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "faith-is-the-victory",
+      "title": "Faith Is the Victory",
+      "lyricist": "John H. Yates",
+      "lyricYear": 1891,
+      "tune": "Sankey",
+      "themes": ["Faith", "Victory", "Spiritual Warfare", "Perseverance"],
+      "scriptureReferences": ["1 John 5:4", "Ephesians 6:11-18"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Faith_Is_the_Victory/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/F/Faith_Is_the_Victory/Faith_Is_the_Victory.mid",
+      "musicAttribution": "SANKEY by Ira D. Sankey, 1891; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "revive-us-again",
+      "title": "Revive Us Again",
+      "lyricist": "William P. Mackay",
+      "lyricYear": 1863,
+      "tune": "Revive Us Again",
+      "themes": ["Revival", "Praise", "Prayer", "Supplication"],
+      "scriptureReferences": ["Psalm 85:6", "1 Chronicles 29:11"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Revive_Us_Again/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Revive_Us_Again/Revive_Us_Again.mid",
+      "musicAttribution": "REVIVE US AGAIN by John J. Husband, 1815; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "wonderful-grace-of-jesus",
+      "title": "Wonderful Grace of Jesus",
+      "lyricist": "Haldor Lillenas",
+      "lyricYear": 1918,
+      "tune": "Wonderful Grace",
+      "themes": ["Grace", "Jesus", "Praise", "Salvation"],
+      "scriptureReferences": ["1 Timothy 1:14", "2 Corinthians 9:8", "Revelation 22:21"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Wonderful_Grace_of_Jesus/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/Wonderful_Grace_of_Jesus/Wonderful_Grace_of_Jesus.mid",
+      "musicAttribution": "WONDERFUL GRACE by Haldor Lillenas, 1918; public-domain MIDI distributed with the cited Timeless Truths record."
+    }
+  ]
+}

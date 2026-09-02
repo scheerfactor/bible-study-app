@@ -1943,5 +1943,180 @@
     "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
     "musicRights": "Public Domain",
     "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "grace-greater-than-our-sin",
+    "title": "Grace Greater than Our Sin",
+    "lyricist": "Julia H. Johnston",
+    "lyricYear": 1910,
+    "tune": "Moody",
+    "themes": [
+      "Grace",
+      "Invitation",
+      "Salvation",
+      "Cross"
+    ],
+    "scriptureReferences": [
+      "Romans 5:20-21"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Grace_Greater_than_Our_Sin/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/G/Grace_Greater_than_Our_Sin/Grace_Greater_than_Our_Sin.mid",
+    "musicAttribution": "MOODY by Daniel B. Towner, 1910; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Marvelous grace of our loving Lord,\nGrace that exceeds our sin and our guilt!\nYonder on Calvary’s mount outpoured,\nThere where the blood of the Lamb was spilled.",
+      "Sin and despair, like the sea waves cold,\nThreaten the soul with infinite loss;\nGrace that is greater, yes, grace untold,\nPoints to the refuge, the mighty cross.",
+      "Dark is the stain that we cannot hide;\nWhat can we do to wash it away?\nLook! There is flowing a crimson tide,\nBrighter than snow you may be today.",
+      "Marvelous, infinite, matchless grace,\nFreely bestowed on all who believe!\nYou that are longing to see His face,\nWill you this moment His grace receive?"
+    ],
+    "refrain": "Grace, grace, God’s grace,\nGrace that will pardon and cleanse within;\nGrace, grace, God’s grace,\nGrace that is greater than all our sin!",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "grace-greater-than-our-sin.mid",
+    "midiSha256": "083a60bcfa7f4a53b5aecd5cb987334e7f64e0550a8d68b23b784975fa93bba5",
+    "rightsEvidenceFile": "grace-greater-than-our-sin-rights.html",
+    "rightsEvidenceSha256": "a7c73700f91c4f3868948f037ea68fe2e2e1d23eea8f27fd0665a1c72e0fc6e8",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "my-redeemer",
+    "title": "I Will Sing of My Redeemer",
+    "lyricist": "Philip P. Bliss",
+    "lyricYear": 1876,
+    "tune": "My Redeemer",
+    "themes": [
+      "Redemption",
+      "Jesus",
+      "Praise",
+      "Cross"
+    ],
+    "scriptureReferences": [
+      "Galatians 3:13",
+      "Ephesians 1:7"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/My_Redeemer/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/My_Redeemer/My_Redeemer.mid",
+    "musicAttribution": "MY REDEEMER by James McGranahan, 1877; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "I will sing of my Redeemer,\nAnd His wondrous love to me;\nOn the cruel cross He suffered,\nFrom the curse to set me free.",
+      "I will tell the wondrous story,\nHow my lost estate to save,\nIn His boundless love and mercy,\nHe the ransom freely gave.",
+      "I will praise my dear Redeemer,\nHis triumphant pow’r I’ll tell,\nHow the victory He giveth\nOver sin, and death, and hell.",
+      "I will sing of my Redeemer,\nAnd His heav’nly love to me;\nHe from death to life hath brought me,\nSon of God with Him to be."
+    ],
+    "refrain": "Sing, oh, sing of my Redeemer,\nWith His blood He purchased me;\nOn the cross He sealed my pardon,\nPaid the debt, and made me free.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "my-redeemer.mid",
+    "midiSha256": "79e313c11233d22a05803e2466b8be4b78b9d94e7ad4a6124e19d0232c19d099",
+    "rightsEvidenceFile": "my-redeemer-rights.html",
+    "rightsEvidenceSha256": "e86b9dc19d33b4738d085e458aca66a8c30fe63b7515f3422830c1fc1d8612d7",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "faith-is-the-victory",
+    "title": "Faith Is the Victory",
+    "lyricist": "John H. Yates",
+    "lyricYear": 1891,
+    "tune": "Sankey",
+    "themes": [
+      "Faith",
+      "Victory",
+      "Spiritual Warfare",
+      "Perseverance"
+    ],
+    "scriptureReferences": [
+      "1 John 5:4",
+      "Ephesians 6:11-18"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Faith_Is_the_Victory/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/F/Faith_Is_the_Victory/Faith_Is_the_Victory.mid",
+    "musicAttribution": "SANKEY by Ira D. Sankey, 1891; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Encamped along the hills of light,\nYe Christian soldiers, rise,\nAnd press the battle ere the night\nShall veil the glowing skies.\nAgainst the foe in vales below\nLet all our strength be hurled;\nFaith is the victory, we know,\nThat overcomes the world.",
+      "His banner over us is love,\nOur sword the Word of God;\nWe tread the road the saints above\nWith shouts of triumph trod.\nBy faith, they like a whirlwind’s breath,\nSwept on o’er every field;\nThe faith by which they conquered death\nIs still our shining shield.",
+      "On every hand the foe we find\nDrawn up in dread array;\nLet tents of ease be left behind,\nAnd onward to the fray.\nSalvation’s helmet on each head,\nWith truth all girt about,\nThe earth shall tremble ’neath our tread,\nAnd echo with our shout.",
+      "To him that overcomes the foe,\nWhite raiment shall be giv’n;\nBefore the angels he shall know\nHis name confessed in heav’n.\nThen onward from the hills of light,\nOur hearts with love aflame,\nWe’ll vanquish all the hosts of night,\nIn Jesus’ conqu’ring name."
+    ],
+    "refrain": "Faith is the victory!\nFaith is the victory!\nOh, glorious victory,\nThat overcomes the world.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "faith-is-the-victory.mid",
+    "midiSha256": "dec0427e49c0c7e2fb6bbd6c8ba200ac8fca6cf55147501df290dba361dac46f",
+    "rightsEvidenceFile": "faith-is-the-victory-rights.html",
+    "rightsEvidenceSha256": "1cad56826287afb189dc9a0c6069dd38a3908043dacd900a624c82762c0a3859",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "revive-us-again",
+    "title": "Revive Us Again",
+    "lyricist": "William P. Mackay",
+    "lyricYear": 1863,
+    "tune": "Revive Us Again",
+    "themes": [
+      "Revival",
+      "Praise",
+      "Prayer",
+      "Supplication"
+    ],
+    "scriptureReferences": [
+      "Psalm 85:6",
+      "1 Chronicles 29:11"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Revive_Us_Again/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Revive_Us_Again/Revive_Us_Again.mid",
+    "musicAttribution": "REVIVE US AGAIN by John J. Husband, 1815; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "We praise Thee, O God!\nFor the Son of Thy love,\nFor Jesus Who died,\nAnd is now gone above.",
+      "We praise Thee, O God!\nFor Thy Spirit of light,\nWho hath shown us our Savior,\nAnd scattered our night.",
+      "All glory and praise\nTo the Lamb that was slain,\nWho hath borne all our sins,\nAnd hath cleansed every stain.",
+      "All glory and praise\nTo the God of all grace,\nWho hast brought us, and sought us,\nAnd guided our ways.",
+      "Revive us again;\nFill each heart with Thy love;\nMay each soul be rekindled\nWith fire from above."
+    ],
+    "refrain": "Hallelujah! Thine the glory.\nHallelujah! Amen.\nHallelujah! Thine the glory.\nRevive us again.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "revive-us-again.mid",
+    "midiSha256": "ad21e7d26c327c408a3bcce15453261318b01e31d3461dbf1f38a7fb4c12f428",
+    "rightsEvidenceFile": "revive-us-again-rights.html",
+    "rightsEvidenceSha256": "5abbe08c0491078821be913e22fe0e7116ca589486d8643138bf7e25f678eb70",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "wonderful-grace-of-jesus",
+    "title": "Wonderful Grace of Jesus",
+    "lyricist": "Haldor Lillenas",
+    "lyricYear": 1918,
+    "tune": "Wonderful Grace",
+    "themes": [
+      "Grace",
+      "Jesus",
+      "Praise",
+      "Salvation"
+    ],
+    "scriptureReferences": [
+      "1 Timothy 1:14",
+      "2 Corinthians 9:8",
+      "Revelation 22:21"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Wonderful_Grace_of_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/Wonderful_Grace_of_Jesus/Wonderful_Grace_of_Jesus.mid",
+    "musicAttribution": "WONDERFUL GRACE by Haldor Lillenas, 1918; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Wonderful grace of Jesus,\nGreater than all my sin;\nHow shall my tongue describe it,\nWhere shall its praise begin?\nTaking away my burden,\nSetting my spirit free;\nFor the wonderful grace of Jesus reaches me.",
+      "Wonderful grace of Jesus,\nReaching to all the lost,\nBy it I have been pardoned,\nSaved to the uttermost;\nChains have been torn asunder,\nGiving me liberty;\nFor the wonderful grace of Jesus reaches me.",
+      "Wonderful grace of Jesus,\nReaching the most defiled,\nBy its transforming power,\nMaking him God’s dear child,\nPurchasing peace and heaven\nFor all eternity—\nAnd the wonderful grace of Jesus reaches me."
+    ],
+    "refrain": "Wonderful the matchless grace of Jesus,\nDeeper than the mighty rolling sea;\nHigher than the mountain, sparkling like a fountain,\nAll-sufficient grace for even me!\nBroader than the scope of my transgressions,\nGreater far than all my sin and shame;\nOh, magnify the precious Name of Jesus,\nPraise His Name!",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "wonderful-grace-of-jesus.mid",
+    "midiSha256": "ef028b2fd442b2465501d8a2e8a8cb4adab39ceb67251b9c69b2cbdd16334479",
+    "rightsEvidenceFile": "wonderful-grace-of-jesus-rights.html",
+    "rightsEvidenceSha256": "68c735388aa1635ebee762e64b5f72984d2a745f3b82c323eaf5742e2398af68",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
   }
 ]
