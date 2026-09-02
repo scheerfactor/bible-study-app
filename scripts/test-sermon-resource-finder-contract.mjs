@@ -11,17 +11,21 @@ const componentSignals = [
   'Search reviewed resources in one place',
   'Search passage, subject, title, author, hymn, or words',
   'Add to sermon',
+  'Send to presentation',
   'Added with source and rights notes.',
+  'Added to presentation slides with source and rights notes.',
   'Review source',
   'target: "importedStudyNotes"',
 ];
 
 const pageSignals = [
-  'import SermonResourceFinder, { type SermonResourceAddition }',
+  'import SermonResourceFinder, { type SermonResourceAddition, type SermonResourceSlideSeed }',
   'function addReviewedResourceToSermon(addition: SermonResourceAddition)',
+  'function addReviewedResourceToPresentation(seed: SermonResourceSlideSeed)',
   '<SermonResourceFinder',
   'key={`sermon-resource-finder-${draft.id}`}',
   'onAdd={addReviewedResourceToSermon}',
+  'onAddToPresentation={addReviewedResourceToPresentation}',
   'label="Reviewed quotes"',
 ];
 
@@ -35,4 +39,4 @@ if (missing.length) {
   process.exit(1);
 }
 
-console.log("Sermon Resource Finder contract passed: verified quotes, illustrations, hymns, books, and commentary are searchable and retain source/rights notes when added.");
+console.log("Sermon Resource Finder contract passed: verified quotes, illustrations, hymns, books, and commentary retain source/rights notes when added to a sermon or presentation.");

@@ -50,7 +50,7 @@ import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
-import SermonResourceFinder, { type SermonResourceAddition } from "@/components/SermonResourceFinder";
+import SermonResourceFinder, { type SermonResourceAddition, type SermonResourceSlideSeed } from "@/components/SermonResourceFinder";
 import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
 import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, splitPresentationBodyText, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
@@ -52469,6 +52469,35 @@ function SermonWorkspaceScreen({
     });
   }
 
+  function addReviewedResourceToPresentation(seed: SermonResourceSlideSeed) {
+    const slideType: SermonSlideType = seed.resourceKind === "quotes"
+      ? "Quote"
+      : seed.resourceKind === "illustrations"
+        ? "Illustration"
+        : "Main Point";
+    const visual = seed.resourceKind === "quotes"
+      ? { imageSlot: "parchment" as SermonSlideImageSlotId, layout: "Minimal" as SermonSlideLayout }
+      : seed.resourceKind === "illustrations"
+        ? { imageSlot: "light-window" as SermonSlideImageSlotId, layout: "Image Left" as SermonSlideLayout }
+        : seed.resourceKind === "hymns"
+          ? { imageSlot: "worship-piano" as SermonSlideImageSlotId, layout: "Centered" as SermonSlideLayout }
+          : seed.resourceKind === "books"
+            ? { imageSlot: "quiet-study" as SermonSlideImageSlotId, layout: "Image Left" as SermonSlideLayout }
+            : { imageSlot: "open-bible" as SermonSlideImageSlotId, layout: "Teaching Point" as SermonSlideLayout };
+    const nextSlide = createSermonSlide(slideType, {
+      ...slidePresetPatch(draft.slideTheme),
+      title: seed.title,
+      subtitle: seed.subtitle,
+      body: seed.body,
+      speakerNotes: seed.speakerNotes,
+      imageSlot: visual.imageSlot,
+      imageTheme: SERMON_SLIDE_IMAGE_SLOTS[visual.imageSlot].label,
+      layout: visual.layout,
+    });
+    onDraftChange({ slides: [...sermonSlides, nextSlide] });
+    setSelectedSlideId(nextSlide.id);
+  }
+
 	  function applyQuickStart() {
 	    onDraftChange(sermonQuickStartPatch(draft, quickStartId));
 	  }
@@ -53475,6 +53504,7 @@ function SermonWorkspaceScreen({
                 sourceUrl: entry.source_url,
               }))}
               onAdd={addReviewedResourceToSermon}
+              onAddToPresentation={addReviewedResourceToPresentation}
             />
 
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">

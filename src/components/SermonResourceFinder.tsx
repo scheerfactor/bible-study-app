@@ -65,6 +65,14 @@ export type SermonResourceAddition = {
   body: string;
 };
 
+export type SermonResourceSlideSeed = {
+  resourceKind: Exclude<FinderMode, "all">;
+  title: string;
+  subtitle: string;
+  body: string;
+  speakerNotes: string;
+};
+
 type FinderResult = {
   id: string;
   mode: Exclude<FinderMode, "all">;
@@ -76,6 +84,7 @@ type FinderResult = {
   sourceUrl: string;
   searchText: string;
   addition: SermonResourceAddition;
+  slide: SermonResourceSlideSeed;
 };
 
 const preachingHelps = verifiedPreachingHelpsData as PreachingHelp[];
@@ -110,15 +119,18 @@ export default function SermonResourceFinder({
   books,
   commentary,
   onAdd,
+  onAddToPresentation,
 }: {
   initialQuery: string;
   books: SermonResourceBook[];
   commentary: SermonResourceCommentary[];
   onAdd: (addition: SermonResourceAddition) => void;
+  onAddToPresentation: (slide: SermonResourceSlideSeed) => void;
 }) {
   const [mode, setMode] = useState<FinderMode>("all");
   const [query, setQuery] = useState(initialQuery);
   const [addedId, setAddedId] = useState("");
+  const [slideAddedId, setSlideAddedId] = useState("");
 
   const results = useMemo(() => {
     const helpResults: FinderResult[] = preachingHelps.map((entry) => {
@@ -139,6 +151,13 @@ export default function SermonResourceFinder({
           target: resultMode === "illustrations" ? "illustrations" : "quotes",
           heading: `${modeLabel(resultMode)} — ${entry.title}`,
           body: `${entry.text}\n\n— ${entry.author}\nSource: ${sourceLine}\nScripture connections: ${references || "None listed"}\nRights: ${entry.rightsStatus}`,
+        },
+        slide: {
+          resourceKind: resultMode,
+          title: entry.title,
+          subtitle: entry.author,
+          body: entry.text,
+          speakerNotes: `Source: ${sourceLine}\nSource URL: ${entry.sourceUrl}\nScripture connections: ${references || "None listed"}\nRights: ${entry.rightsStatus}\nRecommended use: ${entry.recommendedUse}`,
         },
       };
     });
@@ -161,6 +180,13 @@ export default function SermonResourceFinder({
           heading: `Hymn connection — ${entry.title}`,
           body: `${entry.title}\n${entry.lyricist} · Tune: ${entry.tune}\nScripture connections: ${references || "None listed"}\n\n${entry.refrain || firstStanza}\n\nText rights: ${entry.textRights}\nMusic rights: ${entry.musicRights}\nSource: ${entry.textSourceUrl}`,
         },
+        slide: {
+          resourceKind: "hymns",
+          title: entry.title,
+          subtitle: `${entry.lyricist} · ${entry.tune}`,
+          body: entry.refrain || firstStanza,
+          speakerNotes: `Scripture connections: ${references || "None listed"}\nText source: ${entry.textSourceUrl}\nText rights: ${entry.textRights}\nMusic source: ${entry.musicSourceUrl}\nMusic rights: ${entry.musicRights}`,
+        },
       };
     });
 
@@ -179,6 +205,13 @@ export default function SermonResourceFinder({
         heading: `Book connection — ${entry.title}`,
         body: `${entry.title} — ${entry.author}\n${entry.description || entry.recommendedUse}\nRecommended use: ${entry.recommendedUse}\nRights: ${entry.rightsStatus}\nSource: ${entry.sourceUrl}`,
       },
+      slide: {
+        resourceKind: "books",
+        title: entry.title,
+        subtitle: entry.author,
+        body: entry.description || entry.recommendedUse,
+        speakerNotes: `Recommended use: ${entry.recommendedUse}\nSource URL: ${entry.sourceUrl}\nRights: ${entry.rightsStatus}`,
+      },
     }));
 
     const commentaryResults: FinderResult[] = commentary.map((entry) => ({
@@ -196,6 +229,13 @@ export default function SermonResourceFinder({
         heading: `Commentary connection — ${entry.reference}`,
         body: `${entry.reference}\n${entry.text}\n\n— ${entry.author}, ${entry.resourceTitle}\nRights: ${entry.rightsStatus}\nSource: ${entry.sourceUrl}`,
       },
+      slide: {
+        resourceKind: "commentary",
+        title: entry.reference,
+        subtitle: `${entry.author} · ${entry.resourceTitle}`,
+        body: entry.text,
+        speakerNotes: `Keep Scripture primary.\nSource URL: ${entry.sourceUrl}\nRights: ${entry.rightsStatus}`,
+      },
     }));
 
     return [...helpResults, ...hymnResults, ...bookResults, ...commentaryResults]
@@ -206,6 +246,11 @@ export default function SermonResourceFinder({
   function addResult(result: FinderResult) {
     onAdd(result.addition);
     setAddedId(result.id);
+  }
+
+  function addResultToPresentation(result: FinderResult) {
+    onAddToPresentation(result.slide);
+    setSlideAddedId(result.id);
   }
 
   const tabs: Array<{ id: FinderMode; label: string }> = [
@@ -222,7 +267,7 @@ export default function SermonResourceFinder({
       <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Resource Finder</p>
       <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Search reviewed resources in one place</h2>
       <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-        Find source-checked quotes, illustrations, hymns, books, and commentary. Every result keeps its author, source, and rights status when added to the sermon.
+        Find source-checked quotes, illustrations, hymns, books, and commentary. Add a resource to the sermon or send it directly to the presentation slides without losing its author, source, or rights status.
       </p>
 
       <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-6">
@@ -268,9 +313,13 @@ export default function SermonResourceFinder({
               <button className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white" onClick={() => addResult(result)} type="button">
                 <Plus aria-hidden="true" size={15} /> Add to sermon
               </button>
+              <button className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[var(--green)] bg-white px-3 text-xs font-semibold text-[var(--green)]" onClick={() => addResultToPresentation(result)} type="button">
+                Send to presentation
+              </button>
               {result.sourceUrl && <a className="inline-flex min-h-10 items-center rounded-xl border border-[var(--line)] bg-white px-3 text-xs font-semibold text-[var(--green)]" href={result.sourceUrl} rel="noreferrer" target="_blank">Review source</a>}
             </div>
             {addedId === result.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-[var(--green)]">Added with source and rights notes.</p>}
+            {slideAddedId === result.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-[var(--green)]">Added to presentation slides with source and rights notes.</p>}
           </section>
         ))}
         {!results.length && <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4 text-sm text-[var(--muted)]">No reviewed resources match yet. Try a passage, doctrine, author, hymn title, or sermon subject.</p>}
