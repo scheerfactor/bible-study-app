@@ -2,6 +2,17 @@
 
 import { ArrowDown, ArrowUp, BookOpen, FileText, Lightbulb, ListMusic, LoaderCircle, Music2, Play, Plus, Quote, Search, Square, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  MAX_SERVICE_SET_HYMNS,
+  defaultHymnPreparation,
+  loadHymnPreparations,
+  loadHymnServiceSet,
+  storeHymnPreparations,
+  storeHymnServiceSet,
+  type HymnPreparation,
+  type HymnPreviewTempo,
+  type HymnPreviewVoice,
+} from "@/lib/hymn-preparation-storage";
 import verifiedPreachingHelpsData from "../../data/preaching-helps/verified-preaching-helps.json";
 import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
 
@@ -47,14 +58,6 @@ type HymnPreview = {
   voice: "melody" | "full";
   durationSeconds: number;
   notes: Array<{ time: number; duration: number; midi: number; velocity: number }>;
-};
-
-type HymnPreviewVoice = "melody" | "full";
-type HymnPreviewTempo = "slow" | "normal";
-
-type HymnPreparation = HymnSequenceSelection & {
-  previewVoice: HymnPreviewVoice;
-  previewTempo: HymnPreviewTempo;
 };
 
 export type SermonResourceBook = {
@@ -110,70 +113,11 @@ type FinderResult = {
 
 const preachingHelps = verifiedPreachingHelpsData as PreachingHelp[];
 const hymns = presentationHymnsData as Hymn[];
+const hymnPreparationCatalog = hymns.map((hymn) => ({ id: hymn.id, stanzaCount: hymn.stanzas.length, hasRefrain: Boolean(hymn.refrain) }));
 const MAX_VISIBLE_RESULTS = 18;
-const MAX_SERVICE_SET_HYMNS = 30;
-const HYMN_PREPARATIONS_STORAGE_KEY = "fathers-business-hymn-preparations-v1";
-const HYMN_SERVICE_SET_STORAGE_KEY = "fathers-business-hymn-service-set-v1";
 
-function defaultHymnPreparation(hymn: Hymn): HymnPreparation {
-  return {
-    previewVoice: "melody",
-    previewTempo: "normal",
-    stanzaIndexes: hymn.stanzas.length ? [0] : [],
-    includeRefrain: Boolean(hymn.refrain),
-  };
-}
-
-function loadHymnPreparations(): Record<string, HymnPreparation> {
-  if (typeof window === "undefined") return {};
-  try {
-    const stored = JSON.parse(window.localStorage.getItem(HYMN_PREPARATIONS_STORAGE_KEY) ?? "{}") as Record<string, Partial<HymnPreparation>>;
-    return Object.fromEntries(hymns.flatMap((hymn) => {
-      const preparation = stored[hymn.id];
-      if (!preparation) return [];
-      const stanzaIndexes = Array.isArray(preparation.stanzaIndexes)
-        ? [...new Set(preparation.stanzaIndexes.filter((index) => Number.isInteger(index) && index >= 0 && index < hymn.stanzas.length))].sort((left, right) => left - right)
-        : defaultHymnPreparation(hymn).stanzaIndexes;
-      return [[hymn.id, {
-        previewVoice: preparation.previewVoice === "full" ? "full" : "melody",
-        previewTempo: preparation.previewTempo === "slow" ? "slow" : "normal",
-        stanzaIndexes,
-        includeRefrain: Boolean(hymn.refrain && preparation.includeRefrain),
-      } satisfies HymnPreparation]];
-    }));
-  } catch {
-    return {};
-  }
-}
-
-function storeHymnPreparations(preparations: Record<string, HymnPreparation>) {
-  if (typeof window === "undefined") return;
-  if (Object.keys(preparations).length) {
-    window.localStorage.setItem(HYMN_PREPARATIONS_STORAGE_KEY, JSON.stringify(preparations));
-  } else {
-    window.localStorage.removeItem(HYMN_PREPARATIONS_STORAGE_KEY);
-  }
-}
-
-function loadHymnServiceSet(): string[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const stored = JSON.parse(window.localStorage.getItem(HYMN_SERVICE_SET_STORAGE_KEY) ?? "[]") as unknown;
-    if (!Array.isArray(stored)) return [];
-    const knownHymnIds = new Set(hymns.map((hymn) => hymn.id));
-    return [...new Set(stored.filter((id): id is string => typeof id === "string" && knownHymnIds.has(id)))].slice(0, MAX_SERVICE_SET_HYMNS);
-  } catch {
-    return [];
-  }
-}
-
-function storeHymnServiceSet(hymnIds: string[]) {
-  if (typeof window === "undefined") return;
-  if (hymnIds.length) {
-    window.localStorage.setItem(HYMN_SERVICE_SET_STORAGE_KEY, JSON.stringify(hymnIds));
-  } else {
-    window.localStorage.removeItem(HYMN_SERVICE_SET_STORAGE_KEY);
-  }
+function hymnPreparationCatalogEntry(hymn: Hymn) {
+  return { id: hymn.id, stanzaCount: hymn.stanzas.length, hasRefrain: Boolean(hymn.refrain) };
 }
 
 function matchesQuery(searchText: string, query: string) {
@@ -362,20 +306,20 @@ export default function SermonResourceFinder({
 
   useEffect(() => {
     const hydrationTimer = window.setTimeout(() => {
-      setHymnPreparations(loadHymnPreparations());
-      setServiceSetHymnIds(loadHymnServiceSet());
+      setHymnPreparations(loadHymnPreparations(hymnPreparationCatalog));
+      setServiceSetHymnIds(loadHymnServiceSet(hymnPreparationCatalog));
     }, 0);
     return () => window.clearTimeout(hydrationTimer);
   }, []);
 
   function hymnPreparation(hymn: Hymn): HymnPreparation {
-    return hymnPreparations[hymn.id] ?? defaultHymnPreparation(hymn);
+    return hymnPreparations[hymn.id] ?? defaultHymnPreparation(hymnPreparationCatalogEntry(hymn));
   }
 
   function updateHymnPreparation(hymn: Hymn, update: (current: HymnPreparation) => HymnPreparation) {
     const next = {
       ...hymnPreparations,
-      [hymn.id]: update(hymnPreparations[hymn.id] ?? defaultHymnPreparation(hymn)),
+      [hymn.id]: update(hymnPreparations[hymn.id] ?? defaultHymnPreparation(hymnPreparationCatalogEntry(hymn))),
     };
     storeHymnPreparations(next);
     setHymnPreparations(next);

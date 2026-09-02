@@ -48,6 +48,15 @@ import Image from "next/image";
 import { brandMark } from "@/lib/site-metadata";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
+import {
+  loadHymnPreparations,
+  loadHymnServiceSet,
+  normalizeHymnPreparations,
+  normalizeHymnServiceSet,
+  storeHymnPreparations,
+  storeHymnServiceSet,
+  type HymnPreparation,
+} from "@/lib/hymn-preparation-storage";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
 import SermonResourceFinder, { type SermonResourceAddition, type SermonResourceSlideSeed } from "@/components/SermonResourceFinder";
@@ -111,7 +120,14 @@ import mediaIntakeSeedData from "../../data/media/manifests/media-intake-candida
 import licensedResourceLinksData from "../../data/library/manifests/licensed-resource-links.json";
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
 import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
+import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
+
+const ministryHymnPreparationCatalog = (presentationHymnsData as Array<{ id: string; stanzas: string[]; refrain: string | null }>).map((hymn) => ({
+  id: hymn.id,
+  stanzaCount: hymn.stanzas.length,
+  hasRefrain: Boolean(hymn.refrain),
+}));
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "radio" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -520,6 +536,8 @@ type MinistryWorkspaceBackupData = {
   churchThemes: SavedChurchTheme[];
   activeSermon: SermonEntry | null;
   activePresentation: PresentationEntry | null;
+  hymnPreparations: Record<string, HymnPreparation>;
+  hymnServiceSet: string[];
 };
 
 type MinistryWorkspaceBackupV1 = {
@@ -15660,6 +15678,8 @@ function parseMinistryWorkspaceBackup(text: string): MinistryWorkspaceBackupData
     churchThemes: normalizeBackupArray(data.churchThemes, (entry) => normalizeSavedChurchTheme(entry as Partial<SavedChurchTheme>)),
     activeSermon,
     activePresentation,
+    hymnPreparations: normalizeHymnPreparations(data.hymnPreparations, ministryHymnPreparationCatalog),
+    hymnServiceSet: normalizeHymnServiceSet(data.hymnServiceSet, ministryHymnPreparationCatalog),
   };
 }
 
@@ -23941,6 +23961,8 @@ export default function Home() {
   }
 
   function exportMinistryWorkspaceBackup() {
+    const hymnPreparations = loadHymnPreparations(ministryHymnPreparationCatalog);
+    const hymnServiceSet = loadHymnServiceSet(ministryHymnPreparationCatalog);
     const payload: MinistryWorkspaceBackupV1 = {
       app: "Father's Business Bible Study",
       kind: "ministry_workspace_backup",
@@ -23953,6 +23975,8 @@ export default function Home() {
         churchThemes: loadSavedChurchThemes(),
         activeSermon: normalizeSermonEntry(sermonDraft),
         activePresentation: normalizePresentationEntry(presentationDraft),
+        hymnPreparations,
+        hymnServiceSet,
       },
     };
     downloadTextFile(
@@ -23960,7 +23984,7 @@ export default function Home() {
       JSON.stringify(payload, null, 2),
       "application/json;charset=utf-8",
     );
-    setSyncMessage(`Ministry backup downloaded with ${sermonEntries.length} sermons or lessons and ${presentationEntries.length} presentations.`);
+    setSyncMessage(`Ministry backup downloaded with ${sermonEntries.length} sermons or lessons, ${presentationEntries.length} presentations, ${Object.keys(hymnPreparations).length} prepared hymns, and ${hymnServiceSet.length} service-set hymns.`);
   }
 
   async function importMinistryWorkspaceBackup(file: File): Promise<SavedChurchTheme[] | null> {
@@ -23976,6 +24000,10 @@ export default function Home() {
       const mergedSeries = mergeNewestRecords(sermonSeries, imported.sermonSeries, (entry) => entry.updatedAt);
       const mergedPresentations = mergeNewestRecords(presentationEntries, incomingPresentations, (entry) => entry.updatedAt);
       const mergedChurchThemes = mergeNewestRecords(loadSavedChurchThemes(), imported.churchThemes, (entry) => entry.createdAt);
+      const localHymnPreparations = loadHymnPreparations(ministryHymnPreparationCatalog);
+      const localHymnServiceSet = loadHymnServiceSet(ministryHymnPreparationCatalog);
+      const mergedHymnPreparations = { ...imported.hymnPreparations, ...localHymnPreparations };
+      const restoredHymnServiceSet = localHymnServiceSet.length ? localHymnServiceSet : imported.hymnServiceSet;
 
       setSermonEntries(mergedSermons);
       setSermonSeries(mergedSeries);
@@ -23984,6 +24012,8 @@ export default function Home() {
       saveSermonSeries(mergedSeries);
       savePresentationEntries(mergedPresentations);
       saveSavedChurchThemes(mergedChurchThemes);
+      storeHymnPreparations(mergedHymnPreparations);
+      storeHymnServiceSet(restoredHymnServiceSet);
 
       if (imported.activeSermon) {
         setSermonDraft(mergedSermons.find((entry) => entry.id === imported.activeSermon?.id) ?? imported.activeSermon);
@@ -23993,7 +24023,7 @@ export default function Home() {
       }
 
       setSyncMessage(
-        `Ministry backup restored: ${imported.sermons.length} saved sermons or lessons, ${imported.sermonSeries.length} series, ${imported.presentations.length} presentations, and ${imported.churchThemes.length} themes reviewed. Newer work was kept.`,
+        `Ministry backup restored: ${imported.sermons.length} saved sermons or lessons, ${imported.sermonSeries.length} series, ${imported.presentations.length} presentations, ${imported.churchThemes.length} themes, and ${imported.hymnServiceSet.length} service-set hymns reviewed. Existing local hymn preparation and newer work were kept.`,
       );
       return mergedChurchThemes;
     } catch (error) {
