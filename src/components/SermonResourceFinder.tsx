@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, FileText, Lightbulb, LoaderCircle, Music2, Play, Plus, Quote, Search, Square } from "lucide-react";
+import { ArrowDown, ArrowUp, BookOpen, FileText, Lightbulb, ListMusic, LoaderCircle, Music2, Play, Plus, Quote, Search, Square, Trash2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import verifiedPreachingHelpsData from "../../data/preaching-helps/verified-preaching-helps.json";
 import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
@@ -111,7 +111,9 @@ type FinderResult = {
 const preachingHelps = verifiedPreachingHelpsData as PreachingHelp[];
 const hymns = presentationHymnsData as Hymn[];
 const MAX_VISIBLE_RESULTS = 18;
+const MAX_SERVICE_SET_HYMNS = 30;
 const HYMN_PREPARATIONS_STORAGE_KEY = "fathers-business-hymn-preparations-v1";
+const HYMN_SERVICE_SET_STORAGE_KEY = "fathers-business-hymn-service-set-v1";
 
 function defaultHymnPreparation(hymn: Hymn): HymnPreparation {
   return {
@@ -153,6 +155,27 @@ function storeHymnPreparations(preparations: Record<string, HymnPreparation>) {
   }
 }
 
+function loadHymnServiceSet(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const stored = JSON.parse(window.localStorage.getItem(HYMN_SERVICE_SET_STORAGE_KEY) ?? "[]") as unknown;
+    if (!Array.isArray(stored)) return [];
+    const knownHymnIds = new Set(hymns.map((hymn) => hymn.id));
+    return [...new Set(stored.filter((id): id is string => typeof id === "string" && knownHymnIds.has(id)))].slice(0, MAX_SERVICE_SET_HYMNS);
+  } catch {
+    return [];
+  }
+}
+
+function storeHymnServiceSet(hymnIds: string[]) {
+  if (typeof window === "undefined") return;
+  if (hymnIds.length) {
+    window.localStorage.setItem(HYMN_SERVICE_SET_STORAGE_KEY, JSON.stringify(hymnIds));
+  } else {
+    window.localStorage.removeItem(HYMN_SERVICE_SET_STORAGE_KEY);
+  }
+}
+
 function matchesQuery(searchText: string, query: string) {
   const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   if (!terms.length) return true;
@@ -180,6 +203,35 @@ function modeLabel(mode: FinderResult["mode"]) {
   return "Commentary";
 }
 
+function hymnFinderResult(entry: Hymn): FinderResult {
+  const references = entry.scriptureReferences.join(" · ");
+  const firstStanza = entry.stanzas[0] ?? "";
+  return {
+    id: `hymn-${entry.id}`,
+    mode: "hymns",
+    title: entry.title,
+    byline: `${entry.lyricist} · ${entry.tune}`,
+    detail: references,
+    preview: entry.refrain || firstStanza,
+    rights: `${entry.textRights} Music: ${entry.musicRights}`,
+    sourceUrl: entry.textSourceUrl,
+    searchText: [entry.title, entry.lyricist, entry.tune, references, entry.stanzas.join(" "), entry.refrain ?? ""].join(" "),
+    addition: {
+      target: "importedStudyNotes",
+      heading: `Hymn connection — ${entry.title}`,
+      body: `${entry.title}\n${entry.lyricist} · Tune: ${entry.tune}\nScripture connections: ${references || "None listed"}\n\n${entry.refrain || firstStanza}\n\nText rights: ${entry.textRights}\nMusic rights: ${entry.musicRights}\nSource: ${entry.textSourceUrl}`,
+    },
+    slide: {
+      resourceKind: "hymns",
+      title: entry.title,
+      subtitle: `${entry.lyricist} · ${entry.tune}`,
+      body: entry.refrain || firstStanza,
+      speakerNotes: `Scripture connections: ${references || "None listed"}\nText source: ${entry.textSourceUrl}\nText rights: ${entry.textRights}\nMusic source: ${entry.musicSourceUrl}\nMusic rights: ${entry.musicRights}`,
+    },
+    hymn: entry,
+  };
+}
+
 export default function SermonResourceFinder({
   initialQuery,
   books,
@@ -198,6 +250,8 @@ export default function SermonResourceFinder({
   const [addedId, setAddedId] = useState("");
   const [slideAddedId, setSlideAddedId] = useState("");
   const [hymnPreparations, setHymnPreparations] = useState<Record<string, HymnPreparation>>({});
+  const [serviceSetHymnIds, setServiceSetHymnIds] = useState<string[]>([]);
+  const [serviceSetAdded, setServiceSetAdded] = useState(false);
   const [playingHymnId, setPlayingHymnId] = useState<string | null>(null);
   const [loadingHymnId, setLoadingHymnId] = useState<string | null>(null);
   const [previewError, setPreviewError] = useState<{ hymnId: string; message: string } | null>(null);
@@ -235,34 +289,7 @@ export default function SermonResourceFinder({
       };
     });
 
-    const hymnResults: FinderResult[] = hymns.map((entry) => {
-      const references = entry.scriptureReferences.join(" · ");
-      const firstStanza = entry.stanzas[0] ?? "";
-      return {
-        id: `hymn-${entry.id}`,
-        mode: "hymns",
-        title: entry.title,
-        byline: `${entry.lyricist} · ${entry.tune}`,
-        detail: references,
-        preview: entry.refrain || firstStanza,
-        rights: `${entry.textRights} Music: ${entry.musicRights}`,
-        sourceUrl: entry.textSourceUrl,
-        searchText: [entry.title, entry.lyricist, entry.tune, references, entry.stanzas.join(" "), entry.refrain ?? ""].join(" "),
-        addition: {
-          target: "importedStudyNotes",
-          heading: `Hymn connection — ${entry.title}`,
-          body: `${entry.title}\n${entry.lyricist} · Tune: ${entry.tune}\nScripture connections: ${references || "None listed"}\n\n${entry.refrain || firstStanza}\n\nText rights: ${entry.textRights}\nMusic rights: ${entry.musicRights}\nSource: ${entry.textSourceUrl}`,
-        },
-        slide: {
-          resourceKind: "hymns",
-          title: entry.title,
-          subtitle: `${entry.lyricist} · ${entry.tune}`,
-          body: entry.refrain || firstStanza,
-          speakerNotes: `Scripture connections: ${references || "None listed"}\nText source: ${entry.textSourceUrl}\nText rights: ${entry.textRights}\nMusic source: ${entry.musicSourceUrl}\nMusic rights: ${entry.musicRights}`,
-        },
-        hymn: entry,
-      };
-    });
+    const hymnResults = hymns.map(hymnFinderResult);
 
     const bookResults: FinderResult[] = books.map((entry) => ({
       id: `book-${entry.slug}`,
@@ -334,7 +361,10 @@ export default function SermonResourceFinder({
   useEffect(() => stopTunePreview, []);
 
   useEffect(() => {
-    const hydrationTimer = window.setTimeout(() => setHymnPreparations(loadHymnPreparations()), 0);
+    const hydrationTimer = window.setTimeout(() => {
+      setHymnPreparations(loadHymnPreparations());
+      setServiceSetHymnIds(loadHymnServiceSet());
+    }, 0);
     return () => window.clearTimeout(hydrationTimer);
   }, []);
 
@@ -478,6 +508,42 @@ export default function SermonResourceFinder({
     setSlideAddedId(result.id);
   }
 
+  function saveServiceSet(hymnIds: string[]) {
+    storeHymnServiceSet(hymnIds);
+    setServiceSetHymnIds(hymnIds);
+    setServiceSetAdded(false);
+  }
+
+  function addHymnToServiceSet(hymnId: string) {
+    if (serviceSetHymnIds.includes(hymnId) || serviceSetHymnIds.length >= MAX_SERVICE_SET_HYMNS) return;
+    saveServiceSet([...serviceSetHymnIds, hymnId]);
+  }
+
+  function moveServiceSetHymn(index: number, direction: -1 | 1) {
+    const targetIndex = index + direction;
+    if (targetIndex < 0 || targetIndex >= serviceSetHymnIds.length) return;
+    const next = [...serviceSetHymnIds];
+    [next[index], next[targetIndex]] = [next[targetIndex], next[index]];
+    saveServiceSet(next);
+  }
+
+  function removeHymnFromServiceSet(hymnId: string) {
+    saveServiceSet(serviceSetHymnIds.filter((id) => id !== hymnId));
+  }
+
+  const serviceSetResults = serviceSetHymnIds.flatMap((hymnId) => {
+    const hymn = hymns.find((candidate) => candidate.id === hymnId);
+    return hymn ? [hymnFinderResult(hymn)] : [];
+  });
+  const serviceSetSlideCount = serviceSetResults.reduce((count, result) => count + resolvedSlides(result).length, 0);
+  const serviceSetReady = Boolean(serviceSetResults.length) && serviceSetResults.every((result) => resolvedSlides(result).length > 0);
+
+  function addServiceSetToPresentation() {
+    if (!serviceSetReady) return;
+    onAddToPresentation(serviceSetResults.flatMap(resolvedSlides));
+    setServiceSetAdded(true);
+  }
+
   const tabs: Array<{ id: FinderMode; label: string }> = [
     { id: "all", label: "All" },
     { id: "quotes", label: "Quotes" },
@@ -507,6 +573,49 @@ export default function SermonResourceFinder({
           </button>
         ))}
       </div>
+
+      <section className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]"><ListMusic aria-hidden="true" size={17} /> Saved service hymn set</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Build one ordered set for the service. Each hymn keeps its saved stanza, refrain, voice, and tempo preparation on this device.</p>
+          </div>
+          <button
+            className="min-h-10 rounded-xl bg-[var(--green)] px-3 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+            disabled={!serviceSetReady}
+            onClick={addServiceSetToPresentation}
+            type="button"
+          >
+            Create {serviceSetSlideCount} service slide{serviceSetSlideCount === 1 ? "" : "s"}
+          </button>
+        </div>
+        {serviceSetResults.length ? (
+          <ol className="mt-3 space-y-2">
+            {serviceSetResults.map((result, index) => {
+              const sequence = selectedHymnSequence(result);
+              return (
+                <li key={`service-set-${result.id}`} className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--line)] bg-white p-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--warm)] text-xs font-bold text-[var(--green)]">{index + 1}</span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-semibold text-[var(--ink)]">{result.title}</p>
+                    <p className="mt-1 text-[11px] leading-5 text-[var(--muted)]">
+                      {sequence.length ? `${sequence.length} slides · ${sequence.map((section) => section.label).join(" → ")}` : "Choose a stanza or refrain below before creating slides."}
+                    </p>
+                  </div>
+                  <div className="flex shrink-0 gap-1">
+                    <button aria-label={`Move ${result.title} up in service set`} className="flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-[var(--line)] bg-white text-[var(--green)] disabled:opacity-30" disabled={index === 0} onClick={() => moveServiceSetHymn(index, -1)} type="button"><ArrowUp aria-hidden="true" size={15} /></button>
+                    <button aria-label={`Move ${result.title} down in service set`} className="flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-[var(--line)] bg-white text-[var(--green)] disabled:opacity-30" disabled={index === serviceSetResults.length - 1} onClick={() => moveServiceSetHymn(index, 1)} type="button"><ArrowDown aria-hidden="true" size={15} /></button>
+                    <button aria-label={`Remove ${result.title} from service set`} className="flex min-h-9 min-w-9 items-center justify-center rounded-lg border border-[var(--line)] bg-white text-red-700" onClick={() => removeHymnFromServiceSet(result.hymn!.id)} type="button"><Trash2 aria-hidden="true" size={15} /></button>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        ) : (
+          <p className="mt-3 rounded-xl border border-dashed border-[var(--line)] bg-white p-3 text-xs leading-5 text-[var(--muted)]">No hymns in the service set yet. Find a reviewed hymn below, prepare its stanzas, and choose “Add to service set.”</p>
+        )}
+        {serviceSetAdded && <p aria-live="polite" className="mt-2 text-xs font-semibold text-[var(--green)]">Added the complete service hymn set to presentation slides in order.</p>}
+      </section>
 
       <label className="relative mt-4 block">
         <span className="sr-only">Search sermon resources</span>
@@ -651,6 +760,16 @@ export default function SermonResourceFinder({
               <button disabled={Boolean(result.hymn) && !selectedHymnSequence(result).length} className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[var(--green)] bg-white px-3 text-xs font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-50" onClick={() => addResultToPresentation(result)} type="button">
                 {result.hymn ? `Create ${selectedHymnSequence(result).length} hymn slide${selectedHymnSequence(result).length === 1 ? "" : "s"}` : "Send to presentation"}
               </button>
+              {result.hymn && (
+                <button
+                  className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-[var(--line)] bg-white px-3 text-xs font-semibold text-[var(--green)] disabled:opacity-60"
+                  disabled={serviceSetHymnIds.includes(result.hymn.id) || serviceSetHymnIds.length >= MAX_SERVICE_SET_HYMNS}
+                  onClick={() => addHymnToServiceSet(result.hymn!.id)}
+                  type="button"
+                >
+                  <ListMusic aria-hidden="true" size={15} /> {serviceSetHymnIds.includes(result.hymn.id) ? "In service set" : serviceSetHymnIds.length >= MAX_SERVICE_SET_HYMNS ? "Service set full" : "Add to service set"}
+                </button>
+              )}
               {result.sourceUrl && <a className="inline-flex min-h-10 items-center rounded-xl border border-[var(--line)] bg-white px-3 text-xs font-semibold text-[var(--green)]" href={result.sourceUrl} rel="noreferrer" target="_blank">Review source</a>}
             </div>
             {addedId === result.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-[var(--green)]">Added with source and rights notes.</p>}
