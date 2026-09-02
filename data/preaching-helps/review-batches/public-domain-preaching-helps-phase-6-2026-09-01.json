@@ -1,0 +1,112 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-6-2026-09-01",
+  "reviewedAt": "2026-09-01",
+  "purpose": "Add compact, source-exact R. A. Torrey quotations and illustrations from the verified 1907 public-domain edition of Anecdotes and Illustrations.",
+  "defaults": {
+    "author": "R. A. Torrey",
+    "sourceTitle": "Anecdotes and Illustrations",
+    "sourceUrl": "https://archive.org/details/anecdotesillustr00torr",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/anecdotes-and-illustrations-torrey-r-a-reuben-archer-1856-1928.txt",
+    "rightsStatus": "Verified Public Domain",
+    "rightsBasis": "The 1907 edition predates the 2026 U.S. public-domain cutoff; Internet Archive identifies the item as not in copyright, and each compact excerpt was matched against the stored edition."
+  },
+  "entries": [
+    {
+      "id": "torrey-deacons-fishing-for-souls",
+      "type": "Illustration",
+      "title": "Fishing for souls",
+      "text": "It is a good thing to have deacons that go fishing on Sunday — fishing for souls.",
+      "slideText": "fishing for souls.",
+      "sourceLocator": "A Deacon Who Went Fishing on Sunday, page 7",
+      "bibleReferences": ["Matthew 4:19", "Proverbs 11:30"],
+      "topics": ["evangelism", "deacons", "soul-winning"],
+      "recommendedUse": "Use the wordplay as a brief opening for a lesson on personal evangelism and bringing people under the preaching of the Gospel.",
+      "reviewNote": "The title is playful; establish the duty and manner of evangelism from the cited KJV passages."
+    },
+    {
+      "id": "torrey-no-greater-joy-soul-winning",
+      "type": "Quote",
+      "title": "The joy of bringing others to Christ",
+      "text": "There is no joy like the joy of saving men and it is possible for every child of God, no matter how humble nor how ungifted, to have this joy.",
+      "slideText": "There is no joy like the joy of saving men",
+      "sourceLocator": "No Greater Joy, page 23",
+      "bibleReferences": ["Psalm 126:5-6", "Luke 15:10"],
+      "topics": ["joy", "evangelism", "witnessing"],
+      "recommendedUse": "Use as an attributed encouragement to ordinary believers who fear they are not gifted enough to witness.",
+      "reviewNote": "Torrey's phrase 'saving men' describes participation in Gospel witness; salvation belongs to the Lord."
+    },
+    {
+      "id": "torrey-rotten-eggs-to-conviction",
+      "type": "Illustration",
+      "title": "The angry father and the rotten eggs",
+      "text": "He got a basket of rotten eggs, and went up on the top of an adjoining building to throw the eggs at us as we held the meeting.",
+      "slideText": "a basket of rotten eggs",
+      "sourceLocator": "An Angry Father Converted, page 27",
+      "bibleReferences": ["Acts 9:1-6", "John 16:8"],
+      "topics": ["conviction", "conversion", "opposition"],
+      "recommendedUse": "Retell briefly when preaching that an opponent is not beyond the reach of God's Word and conviction.",
+      "reviewNote": "This is Torrey's reported experience. Do not promise that every opponent will respond in the same way."
+    },
+    {
+      "id": "torrey-first-sober-christmas",
+      "type": "Quote",
+      "title": "The first sober Christmas",
+      "text": "This is the first sober Christmas that I have spent in ten years. Jesus Christ has saved me.",
+      "slideText": "This is the first sober Christmas that I have spent in ten years.",
+      "sourceLocator": "First Sober Christmas in Ten Years, page 37",
+      "bibleReferences": ["2 Corinthians 5:17", "1 Corinthians 6:11"],
+      "topics": ["changed life", "deliverance", "testimony"],
+      "recommendedUse": "Use as a short historical testimony of a changed life after reading the governing Scripture.",
+      "reviewNote": "This testimony must not be used as a universal timetable for deliverance or as a substitute for pastoral and medical care."
+    },
+    {
+      "id": "torrey-give-back-my-tears",
+      "type": "Illustration",
+      "title": "Give me back my tears",
+      "text": "He saw that his power was gone and he went to God and prayed, \" Oh, God, give me back my tears,\"",
+      "slideText": "Oh, God, give me back my tears",
+      "sourceLocator": "Give Me Back My Tears, page 54",
+      "bibleReferences": ["Psalm 126:5-6", "Romans 9:2-3"],
+      "topics": ["compassion", "prayer", "soul-winning"],
+      "recommendedUse": "Use Colonel Clarke's prayer as a picture of recovering compassion for people rather than merely improving delivery.",
+      "reviewNote": "Emotion alone is not spiritual power; keep the illustration under the cited KJV passages and the work of God."
+    },
+    {
+      "id": "torrey-conquered-by-compassion",
+      "type": "Illustration",
+      "title": "Conquered by compassion",
+      "text": "I saw a tear rolling down his cheeks.",
+      "slideText": "I saw a tear rolling down his cheeks.",
+      "sourceLocator": "Conquered By Compassion, pages 55-56",
+      "bibleReferences": ["Jude 22", "Luke 19:41"],
+      "topics": ["compassion", "witnessing", "prayer"],
+      "recommendedUse": "Use to show how sincere compassion may reach a hardened hearer when argument alone has not.",
+      "reviewNote": "This is a reported testimony, not a technique or guarantee. Keep Christ and Scripture central."
+    },
+    {
+      "id": "torrey-five-cents-generosity",
+      "type": "Illustration",
+      "title": "Five cents given in need",
+      "text": "I thought of my seven cents in my pocket, all the money I had, but I went to the front end of the car and dropped five cents in the box and relieved the young woman's embarrassment. I felt no poorer.",
+      "slideText": "I felt no poorer.",
+      "sourceLocator": "Big Interest, page 57",
+      "bibleReferences": ["Proverbs 19:17", "2 Corinthians 9:7-8"],
+      "topics": ["generosity", "faith", "kindness"],
+      "recommendedUse": "Use as a brief picture of noticing another person's need and giving without public display.",
+      "reviewNote": "Do not turn the later gift in Torrey's story into a guaranteed financial-return formula; teach giving from the cited KJV passages."
+    },
+    {
+      "id": "torrey-have-a-tract-courage",
+      "type": "Illustration",
+      "title": "Have a tract",
+      "text": "The young farmer boy was not phased in the least. \" Oh,\" he said smiling, \" I have seen one of those before. Have a tract.\"",
+      "slideText": "I have seen one of those before. Have a tract.",
+      "sourceLocator": "I Have Seen One of Those Before, page 58",
+      "bibleReferences": ["Acts 4:29", "2 Timothy 1:7-8"],
+      "topics": ["courage", "witnessing", "tracts"],
+      "recommendedUse": "Use carefully as a historical picture of calm courage in witness.",
+      "reviewNote": "Do not encourage reckless confrontation; teach boldness together with wisdom, lawfulness, and care for safety."
+    }
+  ]
+}

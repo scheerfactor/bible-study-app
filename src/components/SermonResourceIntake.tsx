@@ -66,7 +66,8 @@ export default function SermonResourceIntake() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    setCandidates(loadCandidates());
+    const timer = window.setTimeout(() => setCandidates(loadCandidates()), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   const duplicate = useMemo(() => {
