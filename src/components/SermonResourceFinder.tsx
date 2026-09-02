@@ -52,6 +52,11 @@ type HymnPreview = {
 type HymnPreviewVoice = "melody" | "full";
 type HymnPreviewTempo = "slow" | "normal";
 
+type HymnPreparation = HymnSequenceSelection & {
+  previewVoice: HymnPreviewVoice;
+  previewTempo: HymnPreviewTempo;
+};
+
 export type SermonResourceBook = {
   slug: string;
   title: string;
@@ -106,6 +111,47 @@ type FinderResult = {
 const preachingHelps = verifiedPreachingHelpsData as PreachingHelp[];
 const hymns = presentationHymnsData as Hymn[];
 const MAX_VISIBLE_RESULTS = 18;
+const HYMN_PREPARATIONS_STORAGE_KEY = "fathers-business-hymn-preparations-v1";
+
+function defaultHymnPreparation(hymn: Hymn): HymnPreparation {
+  return {
+    previewVoice: "melody",
+    previewTempo: "normal",
+    stanzaIndexes: hymn.stanzas.length ? [0] : [],
+    includeRefrain: Boolean(hymn.refrain),
+  };
+}
+
+function loadHymnPreparations(): Record<string, HymnPreparation> {
+  if (typeof window === "undefined") return {};
+  try {
+    const stored = JSON.parse(window.localStorage.getItem(HYMN_PREPARATIONS_STORAGE_KEY) ?? "{}") as Record<string, Partial<HymnPreparation>>;
+    return Object.fromEntries(hymns.flatMap((hymn) => {
+      const preparation = stored[hymn.id];
+      if (!preparation) return [];
+      const stanzaIndexes = Array.isArray(preparation.stanzaIndexes)
+        ? [...new Set(preparation.stanzaIndexes.filter((index) => Number.isInteger(index) && index >= 0 && index < hymn.stanzas.length))].sort((left, right) => left - right)
+        : defaultHymnPreparation(hymn).stanzaIndexes;
+      return [[hymn.id, {
+        previewVoice: preparation.previewVoice === "full" ? "full" : "melody",
+        previewTempo: preparation.previewTempo === "slow" ? "slow" : "normal",
+        stanzaIndexes,
+        includeRefrain: Boolean(hymn.refrain && preparation.includeRefrain),
+      } satisfies HymnPreparation]];
+    }));
+  } catch {
+    return {};
+  }
+}
+
+function storeHymnPreparations(preparations: Record<string, HymnPreparation>) {
+  if (typeof window === "undefined") return;
+  if (Object.keys(preparations).length) {
+    window.localStorage.setItem(HYMN_PREPARATIONS_STORAGE_KEY, JSON.stringify(preparations));
+  } else {
+    window.localStorage.removeItem(HYMN_PREPARATIONS_STORAGE_KEY);
+  }
+}
 
 function matchesQuery(searchText: string, query: string) {
   const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -151,12 +197,10 @@ export default function SermonResourceFinder({
   const [query, setQuery] = useState(initialQuery);
   const [addedId, setAddedId] = useState("");
   const [slideAddedId, setSlideAddedId] = useState("");
-  const [hymnSequences, setHymnSequences] = useState<Record<string, HymnSequenceSelection>>({});
+  const [hymnPreparations, setHymnPreparations] = useState<Record<string, HymnPreparation>>({});
   const [playingHymnId, setPlayingHymnId] = useState<string | null>(null);
   const [loadingHymnId, setLoadingHymnId] = useState<string | null>(null);
   const [previewError, setPreviewError] = useState<{ hymnId: string; message: string } | null>(null);
-  const [previewVoices, setPreviewVoices] = useState<Record<string, HymnPreviewVoice>>({});
-  const [previewTempos, setPreviewTempos] = useState<Record<string, HymnPreviewTempo>>({});
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorsRef = useRef<OscillatorNode[]>([]);
   const playbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -289,6 +333,32 @@ export default function SermonResourceFinder({
 
   useEffect(() => stopTunePreview, []);
 
+  useEffect(() => {
+    const hydrationTimer = window.setTimeout(() => setHymnPreparations(loadHymnPreparations()), 0);
+    return () => window.clearTimeout(hydrationTimer);
+  }, []);
+
+  function hymnPreparation(hymn: Hymn): HymnPreparation {
+    return hymnPreparations[hymn.id] ?? defaultHymnPreparation(hymn);
+  }
+
+  function updateHymnPreparation(hymn: Hymn, update: (current: HymnPreparation) => HymnPreparation) {
+    const next = {
+      ...hymnPreparations,
+      [hymn.id]: update(hymnPreparations[hymn.id] ?? defaultHymnPreparation(hymn)),
+    };
+    storeHymnPreparations(next);
+    setHymnPreparations(next);
+  }
+
+  function resetHymnPreparation(hymn: Hymn) {
+    stopTunePreview();
+    const next = { ...hymnPreparations };
+    delete next[hymn.id];
+    storeHymnPreparations(next);
+    setHymnPreparations(next);
+  }
+
   async function playTunePreview(hymn: Hymn) {
     if (playingHymnId === hymn.id) {
       stopTunePreview();
@@ -298,8 +368,7 @@ export default function SermonResourceFinder({
     setLoadingHymnId(hymn.id);
     setPreviewError(null);
     try {
-      const voice = previewVoices[hymn.id] ?? "melody";
-      const tempo = previewTempos[hymn.id] ?? "normal";
+      const { previewVoice: voice, previewTempo: tempo } = hymnPreparation(hymn);
       const tempoRate = tempo === "slow" ? 0.75 : 1;
       const response = await fetch(`/api/hymns/${encodeURIComponent(hymn.id)}/preview?voice=${voice}`);
       const preview = await response.json() as HymnPreview & { error?: string };
@@ -341,10 +410,7 @@ export default function SermonResourceFinder({
   }
 
   function hymnSelection(result: FinderResult): HymnSequenceSelection {
-    return hymnSequences[result.id] ?? {
-      stanzaIndexes: result.hymn?.stanzas.length ? [0] : [],
-      includeRefrain: Boolean(result.hymn?.refrain),
-    };
+    return result.hymn ? hymnPreparation(result.hymn) : { stanzaIndexes: [], includeRefrain: false };
   }
 
   function selectedHymnSequence(result: FinderResult) {
@@ -370,15 +436,12 @@ export default function SermonResourceFinder({
     const stanzaIndexes = selection.stanzaIndexes.includes(stanzaIndex)
       ? selection.stanzaIndexes.filter((index) => index !== stanzaIndex)
       : [...selection.stanzaIndexes, stanzaIndex].sort((left, right) => left - right);
-    setHymnSequences((current) => ({ ...current, [result.id]: { ...selection, stanzaIndexes } }));
+    updateHymnPreparation(result.hymn!, (current) => ({ ...current, stanzaIndexes }));
   }
 
   function toggleHymnRefrain(result: FinderResult) {
     const selection = hymnSelection(result);
-    setHymnSequences((current) => ({
-      ...current,
-      [result.id]: { ...selection, includeRefrain: !selection.includeRefrain },
-    }));
+    updateHymnPreparation(result.hymn!, (current) => ({ ...current, includeRefrain: !selection.includeRefrain }));
   }
 
   function resolvedAddition(result: FinderResult): SermonResourceAddition {
@@ -500,9 +563,12 @@ export default function SermonResourceFinder({
                       className="mt-1 min-h-10 w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-2 text-xs font-semibold text-[var(--ink)]"
                       onChange={(event) => {
                         stopTunePreview();
-                        setPreviewVoices((current) => ({ ...current, [result.hymn!.id]: event.target.value as HymnPreviewVoice }));
+                        updateHymnPreparation(result.hymn!, (current) => ({
+                          ...current,
+                          previewVoice: event.target.value as HymnPreviewVoice,
+                        }));
                       }}
-                      value={previewVoices[result.hymn.id] ?? "melody"}
+                      value={hymnPreparation(result.hymn).previewVoice}
                     >
                       <option value="melody">Melody (highest voice)</option>
                       <option value="full">Full arrangement</option>
@@ -515,9 +581,12 @@ export default function SermonResourceFinder({
                       className="mt-1 min-h-10 w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-2 text-xs font-semibold text-[var(--ink)]"
                       onChange={(event) => {
                         stopTunePreview();
-                        setPreviewTempos((current) => ({ ...current, [result.hymn!.id]: event.target.value as HymnPreviewTempo }));
+                        updateHymnPreparation(result.hymn!, (current) => ({
+                          ...current,
+                          previewTempo: event.target.value as HymnPreviewTempo,
+                        }));
                       }}
-                      value={previewTempos[result.hymn.id] ?? "normal"}
+                      value={hymnPreparation(result.hymn).previewTempo}
                     >
                       <option value="slow">Slow practice</option>
                       <option value="normal">Normal</option>
@@ -553,6 +622,23 @@ export default function SermonResourceFinder({
                     ? `${selectedHymnSequence(result).length} ordered slide${selectedHymnSequence(result).length === 1 ? "" : "s"}: ${selectedHymnSequence(result).map((section) => section.label).join(" → ")}`
                     : "Choose at least one stanza or the refrain."}
                 </p>
+                <div className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-[var(--line)] pt-2">
+                  <p aria-live="polite" className="text-[11px] leading-5 text-[var(--muted)]">
+                    {hymnPreparations[result.hymn.id]
+                      ? "Preparation saved on this device."
+                      : "Voice, tempo, and slide sequence save automatically."}
+                  </p>
+                  {hymnPreparations[result.hymn.id] && (
+                    <button
+                      aria-label={`Reset saved preparation for ${result.title}`}
+                      className="min-h-9 rounded-lg border border-[var(--line)] bg-white px-3 text-[11px] font-semibold text-[var(--green)]"
+                      onClick={() => resetHymnPreparation(result.hymn!)}
+                      type="button"
+                    >
+                      Reset saved setup
+                    </button>
+                  )}
+                </div>
                 {previewError?.hymnId === result.hymn.id && <p aria-live="polite" className="mt-2 text-xs font-semibold text-red-700">{previewError.message}</p>}
               </fieldset>
             )}
