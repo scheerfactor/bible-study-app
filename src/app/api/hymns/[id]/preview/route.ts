@@ -18,25 +18,38 @@ type VerifiedHymn = {
 const verifiedHymns = verifiedHymnsData as VerifiedHymn[];
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
   const hymn = verifiedHymns.find((entry) => entry.id === id);
+  const requestedVoice = new URL(request.url).searchParams.get("voice") ?? "melody";
 
   if (!hymn) {
     return Response.json({ error: "Reviewed hymn preview not found." }, { status: 404 });
   }
+  if (requestedVoice !== "melody" && requestedVoice !== "full") {
+    return Response.json({ error: "Preview voice must be melody or full." }, { status: 400 });
+  }
 
-  const notes = hymn.notes
+  const previewNotes = hymn.notes
     .filter((note) => note.time < PREVIEW_SECONDS)
     .map((note) => ({ ...note, duration: Math.min(note.duration, PREVIEW_SECONDS - note.time) }));
+  const notes = requestedVoice === "full"
+    ? previewNotes
+    : [...previewNotes.reduce((highestByStart, note) => {
+        const current = highestByStart.get(note.time);
+        if (!current || note.midi > current.midi) highestByStart.set(note.time, note);
+        return highestByStart;
+      }, new Map<number, (typeof previewNotes)[number]>()).values()]
+        .sort((left, right) => left.time - right.time || left.midi - right.midi);
 
   return Response.json(
     {
       id: hymn.id,
       title: hymn.title,
       tune: hymn.tune,
+      voice: requestedVoice,
       durationSeconds: PREVIEW_SECONDS,
       notes,
       musicRights: hymn.musicRights,

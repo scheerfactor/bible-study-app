@@ -44,9 +44,13 @@ type HymnSequenceSelection = {
 
 type HymnPreview = {
   id: string;
+  voice: "melody" | "full";
   durationSeconds: number;
   notes: Array<{ time: number; duration: number; midi: number; velocity: number }>;
 };
+
+type HymnPreviewVoice = "melody" | "full";
+type HymnPreviewTempo = "slow" | "normal";
 
 export type SermonResourceBook = {
   slug: string;
@@ -151,6 +155,8 @@ export default function SermonResourceFinder({
   const [playingHymnId, setPlayingHymnId] = useState<string | null>(null);
   const [loadingHymnId, setLoadingHymnId] = useState<string | null>(null);
   const [previewError, setPreviewError] = useState<{ hymnId: string; message: string } | null>(null);
+  const [previewVoices, setPreviewVoices] = useState<Record<string, HymnPreviewVoice>>({});
+  const [previewTempos, setPreviewTempos] = useState<Record<string, HymnPreviewTempo>>({});
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorsRef = useRef<OscillatorNode[]>([]);
   const playbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -292,7 +298,10 @@ export default function SermonResourceFinder({
     setLoadingHymnId(hymn.id);
     setPreviewError(null);
     try {
-      const response = await fetch(`/api/hymns/${encodeURIComponent(hymn.id)}/preview`);
+      const voice = previewVoices[hymn.id] ?? "melody";
+      const tempo = previewTempos[hymn.id] ?? "normal";
+      const tempoRate = tempo === "slow" ? 0.75 : 1;
+      const response = await fetch(`/api/hymns/${encodeURIComponent(hymn.id)}/preview?voice=${voice}`);
       const preview = await response.json() as HymnPreview & { error?: string };
       if (!response.ok || !preview.notes?.length) throw new Error(preview.error || "Tune preview is unavailable.");
 
@@ -306,8 +315,8 @@ export default function SermonResourceFinder({
       oscillatorsRef.current = preview.notes.map((note) => {
         const oscillator = context.createOscillator();
         const envelope = context.createGain();
-        const noteStart = startAt + note.time;
-        const noteEnd = noteStart + note.duration;
+        const noteStart = startAt + note.time / tempoRate;
+        const noteEnd = noteStart + note.duration / tempoRate;
         oscillator.type = "triangle";
         oscillator.frequency.value = midiFrequency(note.midi);
         envelope.gain.setValueAtTime(0.0001, noteStart);
@@ -320,7 +329,7 @@ export default function SermonResourceFinder({
         return oscillator;
       });
       setPlayingHymnId(hymn.id);
-      playbackTimerRef.current = setTimeout(stopTunePreview, (preview.durationSeconds + 0.5) * 1000);
+      playbackTimerRef.current = setTimeout(stopTunePreview, (preview.durationSeconds / tempoRate + 0.5) * 1000);
     } catch (error) {
       setPreviewError({
         hymnId: hymn.id,
@@ -482,6 +491,38 @@ export default function SermonResourceFinder({
                         : <Play aria-hidden="true" size={15} />}
                     {loadingHymnId === result.hymn.id ? "Loading" : playingHymnId === result.hymn.id ? "Stop preview" : "Play tune"}
                   </button>
+                </div>
+                <div className="mb-3 grid grid-cols-2 gap-2">
+                  <label className="text-[11px] font-semibold text-[var(--muted)]">
+                    Preview voice
+                    <select
+                      aria-label={`Preview voice for ${result.title}`}
+                      className="mt-1 min-h-10 w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-2 text-xs font-semibold text-[var(--ink)]"
+                      onChange={(event) => {
+                        stopTunePreview();
+                        setPreviewVoices((current) => ({ ...current, [result.hymn!.id]: event.target.value as HymnPreviewVoice }));
+                      }}
+                      value={previewVoices[result.hymn.id] ?? "melody"}
+                    >
+                      <option value="melody">Melody (highest voice)</option>
+                      <option value="full">Full arrangement</option>
+                    </select>
+                  </label>
+                  <label className="text-[11px] font-semibold text-[var(--muted)]">
+                    Preview tempo
+                    <select
+                      aria-label={`Preview tempo for ${result.title}`}
+                      className="mt-1 min-h-10 w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-2 text-xs font-semibold text-[var(--ink)]"
+                      onChange={(event) => {
+                        stopTunePreview();
+                        setPreviewTempos((current) => ({ ...current, [result.hymn!.id]: event.target.value as HymnPreviewTempo }));
+                      }}
+                      value={previewTempos[result.hymn.id] ?? "normal"}
+                    >
+                      <option value="slow">Slow practice</option>
+                      <option value="normal">Normal</option>
+                    </select>
+                  </label>
                 </div>
                 <div className="mt-1 grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {result.hymn.stanzas.map((_, index) => (
