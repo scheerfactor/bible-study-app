@@ -51,6 +51,7 @@ import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
 import SermonResourceFinder, { type SermonResourceAddition, type SermonResourceSlideSeed } from "@/components/SermonResourceFinder";
+import SermonResourceIntake from "@/components/SermonResourceIntake";
 import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
 import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, splitPresentationBodyText, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
@@ -53506,6 +53507,8 @@ function SermonWorkspaceScreen({
               onAdd={addReviewedResourceToSermon}
               onAddToPresentation={addReviewedResourceToPresentation}
             />
+
+            <SermonResourceIntake />
 
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Smart Sermon Assistant</p>
