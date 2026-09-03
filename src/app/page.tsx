@@ -18482,6 +18482,7 @@ export default function Home() {
   const deferredCommentaryLoadingFilesRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadedChaptersRef = useRef<Set<string>>(new Set());
   const deferredCommentaryLoadingChaptersRef = useRef<Set<string>>(new Set());
+  const hiddenAdminRequestRef = useRef(false);
   const addDeferredCommentaryEntries = useCallback((entries: CommentaryEntry[]) => {
     setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, entries));
   }, []);
@@ -18516,6 +18517,7 @@ export default function Home() {
     let cancelled = false;
     queueMicrotask(() => {
       if (cancelled) return;
+      hiddenAdminRequestRef.current = false;
       const url = new URL(window.location.href);
       url.hash = "";
       url.searchParams.delete("open");
@@ -18682,9 +18684,17 @@ export default function Home() {
     function openHiddenAdminAreas() {
       const normalizedHash = normalizedLocationHash();
       const params = new URLSearchParams(window.location.search);
-      const shouldShowLibraryAcquisition =
+      const hasLibraryAcquisitionDeepLink =
         ["#admin-import", "#library-acquisition"].includes(normalizedHash) ||
         params.get("open") === "library-acquisition";
+      if (hasLibraryAcquisitionDeepLink) {
+        hiddenAdminRequestRef.current = true;
+        const publicUrl = new URL(window.location.href);
+        publicUrl.hash = "";
+        publicUrl.searchParams.delete("open");
+        window.history.replaceState(null, "", `${publicUrl.pathname}${publicUrl.search}`);
+      }
+      const shouldShowLibraryAcquisition = hasLibraryAcquisitionDeepLink || hiddenAdminRequestRef.current;
       setShowLibraryAcquisitionAdmin(shouldShowLibraryAcquisition);
       if (shouldShowLibraryAcquisition) {
         setLibraryView("home");
@@ -24517,6 +24527,7 @@ export default function Home() {
                   commentaryEntries={commentaryEntries}
                   onSignOut={signOut}
                   onClose={() => {
+                    hiddenAdminRequestRef.current = false;
                     window.history.replaceState(null, "", window.location.pathname + window.location.search);
                     setShowLibraryAcquisitionAdmin(false);
                   }}
