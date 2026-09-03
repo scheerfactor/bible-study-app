@@ -70,7 +70,7 @@ Review:
 | Permission status | Permission Granted - Noncommercial With Source Attribution |
 | Approved use | Leonard Ravenhill material used for non-profitable purposes with the source quoted |
 | Commercial use | Not granted; paid access, resale, affiliate revenue, sponsorship, advertising-linked use, and other profit-generating use remain blocked |
-| Follow-up needed | Recommended before bulk hosting full books or audio if source or delivery method is unclear |
+| Follow-up | Hosting-versus-links clarification sent 2026-09-03; awaiting reply |
 
 Notes:
 
@@ -78,7 +78,7 @@ Notes:
 - Keep Ravenhill material in a permanently free, noncommercial lane and outside subscriptions, purchases, sponsorships, affiliate links, advertising, and other profit-generating features.
 - Ask separately before any future commercial use.
 - Prefer verified official or first-party source material; do not treat an unverified third-party copy as cleared merely because the underlying material has permission.
-- Seek clarification before bulk-hosting complete books or audio when the delivery source or scope is uncertain.
+- A hosting-versus-links clarification was sent on 2026-09-03. Keep the current pilot link-only until David replies.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
 
 ## Review Score

@@ -13,6 +13,7 @@
 | Referral source | Greg Gordon, SermonIndex.net, reply received 2026-09-01 |
 | Reply status | Written permission received 2026-09-03 |
 | Reply sender | David Ravenhill (direct reply in the same email thread) |
+| Clarification sent | 2026-09-03 at 6:51 PM EDT; Private Email confirmed successful delivery |
 
 ## Exact Request Scope
 
@@ -42,9 +43,10 @@ The permission applies to Leonard Ravenhill material, but a specific file may ca
 or uncertain provenance. Verify the source and delivery chain before importing any book, sermon, recording,
 transcript, photograph, artwork, or video. Do not use an unverified third-party copy as the master source.
 
-## Follow-Up
+## Follow-Up Sent
 
-A brief thank-you and clarification may be sent in the same thread before bulk-hosting complete books or audio.
-Ask whether verified complete books, sermons, and audio may be hosted free inside the app, or whether David
-prefers official links or streams. No further permission outreach is needed before preparing an item-level,
-noncommercial pilot from verified sources.
+A thank-you and clarification was sent in the same thread on 2026-09-03. It confirmed that Ravenhill material
+will remain free, source-attributed, and outside every paid or profit-generating feature. It asked whether
+verified complete books, sermon audio, and transcripts may be hosted free inside the app, or whether David
+prefers official or verified source links and streams only. Until he replies, continue the link-only pilot and
+do not host complete books, audio files, or transcripts.

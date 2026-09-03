@@ -2535,7 +2535,7 @@ const OUTREACH_APPROVAL_BATCH = [
     recipientName: "David Ravenhill",
     recipient: "davidravenhill@gmail.com",
     channel: "Direct family permission · noncommercial use only · source attribution required",
-    status: "Written permission received September 3, 2026 · approved for noncommercial use with source attribution",
+    status: "Written permission received September 3, 2026 · noncommercial use with source attribution · hosting clarification sent September 3, 2026",
     sent: true,
     verifiedAt: "September 3, 2026",
     officialUrl: "https://www.ravenhill.org/",

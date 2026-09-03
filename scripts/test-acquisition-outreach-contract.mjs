@@ -36,6 +36,7 @@ const requiredSignals = [
   'id: "ravenhill-rightsholder-routing"',
   'recipient: "davidravenhill@gmail.com"',
   "Written permission received September 3, 2026",
+  "hosting clarification sent September 3, 2026",
   "Greg Gordon at SermonIndex kindly directed me to you",
   "noncommercial use only",
   "source attribution required",
