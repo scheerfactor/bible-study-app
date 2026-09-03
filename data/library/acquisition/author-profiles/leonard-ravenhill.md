@@ -14,7 +14,7 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | VoiceOfLifeMinistries@gmail.com (bounced - no such user); alternate to verify: sermonindex@gmail.com |
+| Permission/contact info | David Ravenhill, davidravenhill@gmail.com, referred by Greg Gordon at SermonIndex on 2026-09-01 |
 | Website | https://www.ravenhill.org/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
@@ -65,10 +65,10 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | VoiceOfLifeMinistries@gmail.com (bounced - no such user); alternate to verify: sermonindex@gmail.com |
+| Known contact | David Ravenhill, davidravenhill@gmail.com, referred by Greg Gordon at SermonIndex |
 | Website | https://www.ravenhill.org/ |
-| Permission status | Bounced - Alternate Contact Needed |
-| Requested use | Limited listing/link/excerpt/audio-video inquiry |
+| Permission status | Direct Permission Inquiry Sent - Awaiting Written Reply |
+| Requested use | Rights identification; official links/streams; approved metadata/artwork; purchase links; short excerpts; possible licensed digital reading/audio |
 | Follow-up needed | Yes |
 
 Notes:
@@ -102,7 +102,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Modern copyrighted works require permission. Contact route identified from Ravenhill.org ordering/media page on 2026-07-04, but Gmail reported the account does not exist. OnePlace lists SermonIndex as contact for SermonIndex Classics - Leonard Ravenhill; verify whether they can answer listing/embed/audio questions and whether separate estate/publisher permission is needed. No permission granted yet.
+> Modern copyrighted works require permission. The address published by Ravenhill.org bounced on 2026-07-04. A rights-routing request was sent to SermonIndex on 2026-09-01. Greg Gordon replied that day and directed the request to David Ravenhill at davidravenhill@gmail.com. A direct, permission-first inquiry was sent on 2026-09-03. No permission has been granted. Do not list, copy, host, stream, embed, excerpt, transcribe, narrate, sell, or distribute any Leonard Ravenhill resource until a written reply identifies the exact rightsholder and exact permitted uses.
 
 ## Final Recommendation
 
