@@ -39,9 +39,11 @@ Also add a row to `data/library/acquisition/permission-reply-review-log.csv` wit
 
 ## Follow-Up Timing
 
-- 7-10 days: one friendly follow-up
-- 21 days: mark as needs follow-up or no response
-- 45 days: keep as permission needed and do not import
+- 10-14 business days: send one friendly follow-up after rechecking Inbox, Spam, and Sent
+- About 14 calendar days later: optionally send one final close-the-loop note when the opportunity is especially valuable
+- 45 days after the original request: close as no response, keep the resource permission-needed, and do not import
+
+Do not restart the sequence with another introduction or broaden the request because the first message was unanswered. Silence is not permission.
 
 Prepared follow-up drafts live in:
 

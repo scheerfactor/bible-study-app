@@ -102655,5 +102655,53 @@
     "checksum_sha256": "67e3601f7d51187a536b55b20be591b522cc0e92f9719c070d5509ab384ee7e1",
     "file_size_bytes": 861860,
     "word_count": 131894
+  },
+  {
+    "title": "A Century of Baptist Foreign Missions: An Outline Sketch",
+    "author": "Sophie Bronson Titterington",
+    "year": 1850,
+    "category": "Missions",
+    "collection": "Historic Baptist Missions",
+    "source_url": "https://archive.org/download/centuryofbaptis00titt/centuryofbaptis00titt_djvu.txt",
+    "download_url": "https://archive.org/download/centuryofbaptis00titt/centuryofbaptis00titt_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-century-of-baptist-foreign-missions-an-outline-sketch-sophie-bronson-titterington.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/centuryofbaptis00titt/centuryofbaptis00titt_djvu.txt.",
+    "notes": "Public-domain 1891 Baptist missions survey for missionary history, missions teaching, biographical research, and sermon preparation. The Library of Congress identifies this edition as public domain and free to use and reuse; spot-check OCR against the scan before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical missions account.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1891 Baptist missions survey for missionary history, missions teaching, biographical research, and sermon preparation. The Library of Congress identifies this edition as public domain and free to use and reuse; spot-check OCR against the scan before quotation.",
+    "resource_labels": [
+      "Historic Baptist Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical missions account"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical missions account"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Century of Baptist Foreign Missions: An Outline Sketch",
+      "author": "Sophie Bronson Titterington",
+      "category": "Missions",
+      "collection": "Historic Baptist Missions",
+      "badge": "Historic Baptist Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 297,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3bf78303acb679205429daf5031eeaec184e3f8f4415104fe4357b67921da080",
+    "file_size_bytes": 458671,
+    "word_count": 66786
   }
 ]

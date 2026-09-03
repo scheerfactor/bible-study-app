@@ -1,0 +1,44 @@
+{
+  "source_csv": "data/library/acquisition/century-of-baptist-foreign-missions-public-domain-2026-09-03.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 1,
+  "total_attempted": 1,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "A Century of Baptist Foreign Missions: An Outline Sketch",
+      "file": "a-century-of-baptist-foreign-missions-an-outline-sketch-sophie-bronson-titterington.txt",
+      "bytes": 458671,
+      "words": 66786,
+      "reading_time_minutes": 297
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "A Century of Baptist Foreign Missions: An Outline Sketch",
+      "author": "Sophie Bronson Titterington",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-century-of-baptist-foreign-missions-an-outline-sketch-sophie-bronson-titterington.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
