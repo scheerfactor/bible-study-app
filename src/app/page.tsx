@@ -48168,10 +48168,13 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
   const isOfficialAudio = resource.resourceFormat === "Official Audio Link";
   const isOfficialLinkOnly = resource.permissionStatus === "Public Policy - Official Links Only";
+  const isVerifiedSermonSource = resource.collection === "Leonard Ravenhill — Free Noncommercial Listening";
   const isFreeAtPublisherOnly =
     resource.publisherMinistry === "Way of Life Literature" && resource.approvedPublicUse.includes("Free-resource listing");
   const linkLabel = isOfficialAudio
     ? "Listen on TTB"
+    : isVerifiedSermonSource
+      ? "Listen at verified source"
     : isFreeAtPublisherOnly
       ? "Open free book at publisher"
     : resource.publisherMinistry === "Wholesome Words"
@@ -48181,6 +48184,8 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
       : "Open official page";
   const scopeLabel = isOfficialAudio
     ? "Official audio"
+    : isVerifiedSermonSource
+      ? "Free · noncommercial"
     : isFreeAtPublisherOnly
       ? "Free at publisher · link only"
     : isOfficialLinkOnly
@@ -48194,7 +48199,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">
-            {isOfficialLinkOnly ? "Reviewed source link" : "Official ministry link"}
+            {isOfficialLinkOnly || isVerifiedSermonSource ? "Reviewed source link" : "Official ministry link"}
           </p>
           <h3 className="mt-2 text-lg font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
@@ -48222,6 +48227,8 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
         <p className="text-xs font-semibold text-[var(--ink)]">
           {isOfficialAudio
             ? "Official stream - no audio copied"
+            : isVerifiedSermonSource
+              ? "Verified-source link - no audio or transcript copied"
             : isFreeAtPublisherOnly
               ? "Free at the publisher - not hosted here"
               : isOfficialLinkOnly
@@ -48231,6 +48238,8 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
         <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
           {resource.reviewStatus}. {isOfficialAudio
             ? "Playback opens the exact TTB-hosted file."
+            : isVerifiedSermonSource
+              ? "Listening opens at SermonIndex; Ravenhill material remains free and outside every paid feature."
             : isFreeAtPublisherOnly
               ? "Read or download from the official Way of Life page. The app does not store or distribute the ebook file."
               : isOfficialLinkOnly

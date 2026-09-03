@@ -3944,5 +3944,86 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-ancient-sling-report-review-2026-08-28.md",
     "recommendedUse": "Passage-linked archaeology and historical-background discovery for David and Goliath and other biblical slingers",
     "notes": "Way of Life's displayed policy permits credited posting of parts or entire reports, but this first app record deliberately links only. The report is excerpted from a Store book and includes an image and third-party quotations, so none of that content is copied. No KJV verse text is reproduced by this record."
+  },
+  {
+    "id": "licensed-ravenhill-a-burning-heart",
+    "title": "A Burning Heart",
+    "author": "Leonard Ravenhill",
+    "publisherMinistry": "SermonIndex.net",
+    "category": "Audio Sermons",
+    "collection": "Leonard Ravenhill — Free Noncommercial Listening",
+    "sourceUrl": "https://www.sermonindex.net/speakers/leonard-ravenhill/audio-sermon-a-burning-heart/",
+    "duration": "1:26:38",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "SermonIndex source page and direct family permission reviewed 2026-09-03; link-only pilot pending full sermon content review",
+    "approvedPublicUse": [
+      "Verified source link",
+      "Source attribution",
+      "Free noncommercial discovery"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting, copying, indexing, or search",
+      "Audio file hosting, rebroadcast, download, or radio rotation",
+      "Photograph, graphic, or source-description reuse",
+      "AI/TTS narration, adaptation, or derivative content",
+      "Paid access, subscription inclusion, advertising, sponsorship, affiliate revenue, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/leonard-ravenhill-direct-permission-request-2026-09-03.md",
+    "recommendedUse": "Free listening discovery for revival, holiness, evangelism, and sermon preparation",
+    "notes": "By Leonard Ravenhill. Source: SermonIndex.net. David Ravenhill granted noncommercial use with source attribution on 2026-09-03. This first pilot links to the verified source page and copies no audio, transcript, description, or image. Keep permanently outside every paid or profit-generating feature."
+  },
+  {
+    "id": "licensed-ravenhill-the-beauty-of-holiness",
+    "title": "The Beauty of Holiness",
+    "author": "Leonard Ravenhill",
+    "publisherMinistry": "SermonIndex.net",
+    "category": "Audio Sermons",
+    "collection": "Leonard Ravenhill — Free Noncommercial Listening",
+    "sourceUrl": "https://www.sermonindex.net/speakers/leonard-ravenhill/audio-sermon-the-beauty-of-holiness/",
+    "duration": "1:13:51",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "SermonIndex source page and direct family permission reviewed 2026-09-03; link-only pilot pending full sermon content review",
+    "approvedPublicUse": [
+      "Verified source link",
+      "Source attribution",
+      "Free noncommercial discovery"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting, copying, indexing, or search",
+      "Audio file hosting, rebroadcast, download, or radio rotation",
+      "Photograph, graphic, or source-description reuse",
+      "AI/TTS narration, adaptation, or derivative content",
+      "Paid access, subscription inclusion, advertising, sponsorship, affiliate revenue, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/leonard-ravenhill-direct-permission-request-2026-09-03.md",
+    "recommendedUse": "Free listening discovery for holiness, worship, prayer, and personal revival study",
+    "notes": "By Leonard Ravenhill. Source: SermonIndex.net. David Ravenhill granted noncommercial use with source attribution on 2026-09-03. This first pilot links to the verified source page and copies no audio, transcript, description, or image. Keep permanently outside every paid or profit-generating feature."
+  },
+  {
+    "id": "licensed-ravenhill-die-wait-and-get-alone",
+    "title": "Die, Wait, and Get Alone",
+    "author": "Leonard Ravenhill",
+    "publisherMinistry": "SermonIndex.net",
+    "category": "Audio Sermons",
+    "collection": "Leonard Ravenhill — Free Noncommercial Listening",
+    "sourceUrl": "https://www.sermonindex.net/speakers/leonard-ravenhill/audio-sermon-die-wait-and-get-alone/",
+    "duration": "1:12:16",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "SermonIndex source page and direct family permission reviewed 2026-09-03; link-only pilot pending full sermon content review",
+    "approvedPublicUse": [
+      "Verified source link",
+      "Source attribution",
+      "Free noncommercial discovery"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text transcript hosting, copying, indexing, or search",
+      "Audio file hosting, rebroadcast, download, or radio rotation",
+      "Photograph, graphic, or source-description reuse",
+      "AI/TTS narration, adaptation, or derivative content",
+      "Paid access, subscription inclusion, advertising, sponsorship, affiliate revenue, or resale"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/leonard-ravenhill-direct-permission-request-2026-09-03.md",
+    "recommendedUse": "Free listening discovery for surrender, prayer, knowing God, and Christian living study",
+    "notes": "By Leonard Ravenhill. Source: SermonIndex.net. David Ravenhill granted noncommercial use with source attribution on 2026-09-03. This first pilot links to the verified source page and copies no audio, transcript, description, or image. Keep permanently outside every paid or profit-generating feature."
   }
 ]
