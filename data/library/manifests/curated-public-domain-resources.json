@@ -102607,5 +102607,53 @@
     "checksum_sha256": "900da38a7ac464a6b237e846d61bf155721c7804ff05cf95bb28957bf3a9c201",
     "file_size_bytes": 666026,
     "word_count": 116375
+  },
+  {
+    "title": "Sermons by Richard Fuller Preached During His Ministry with the Seventh and Eutaw Place Baptist Churches 1847-1876 First Series",
+    "author": "Richard Fuller",
+    "year": 1877,
+    "category": "Preaching & Teaching",
+    "collection": "Historic Baptist Preaching",
+    "source_url": "https://archive.org/download/sermonsbyrichard00full/sermonsbyrichard00full_djvu.txt",
+    "download_url": "https://archive.org/download/sermonsbyrichard00full/sermonsbyrichard00full_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermons-by-richard-fuller-preached-during-his-ministry-with-the-seventh-and-eutaw-place-baptist-churches-1847-.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sermonsbyrichard00full/sermonsbyrichard00full_djvu.txt.",
+    "notes": "Public-domain Baptist sermon collection for preaching study, sermon structure, evangelistic emphasis, and pastoral ministry. This 1877 first-series edition is identified by the Library of Congress as public domain and free to reuse; spot-check OCR against the scan before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical Baptist sermons.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist sermon collection for preaching study, sermon structure, evangelistic emphasis, and pastoral ministry. This 1877 first-series edition is identified by the Library of Congress as public domain and free to reuse; spot-check OCR against the scan before quotation.",
+    "resource_labels": [
+      "Historic Baptist Preaching",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical Baptist sermons"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical Baptist sermons"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons by Richard Fuller Preached During His Ministry with the Seventh and Eutaw Place Baptist Churches 1847-1876 First Series",
+      "author": "Richard Fuller",
+      "category": "Preaching & Teaching",
+      "collection": "Historic Baptist Preaching",
+      "badge": "Historic Baptist Preaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 586,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "67e3601f7d51187a536b55b20be591b522cc0e92f9719c070d5509ab384ee7e1",
+    "file_size_bytes": 861860,
+    "word_count": 131894
   }
 ]
