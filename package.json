@@ -74,6 +74,7 @@
     "validate:media": "node scripts/validate-media-manifest.mjs",
     "validate:presentation-media": "node scripts/validate-presentation-media.mjs",
     "validate:radio": "node scripts/validate-radio-stations.mjs",
+    "audit:ravenhill-radio-links": "node scripts/test-ravenhill-radio-links-contract.mjs",
     "media:marker-review": "node scripts/create-bible-audio-marker-review.mjs",
     "media:update-marker": "node scripts/update-bible-audio-marker.mjs",
     "audit:study-data": "node scripts/audit-core-study-data.mjs",

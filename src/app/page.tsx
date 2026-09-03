@@ -25359,7 +25359,13 @@ export default function Home() {
               />
             )}
 
-            {tab === "radio" && <RadioWorkspace />}
+            {tab === "radio" && (
+              <RadioWorkspace
+                externalSermons={LICENSED_RESOURCE_LINKS.filter(
+                  (resource) => resource.collection === "Leonard Ravenhill — Free Noncommercial Listening",
+                )}
+              />
+            )}
 
             {tab === "settings" && (
               <SettingsScreen
@@ -47981,6 +47987,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
   const solveFamilyProblemsCount = resources.filter((resource) => resource.publisherMinistry === "Solve Family Problems").length;
   const thruTheBibleCount = resources.filter((resource) => resource.publisherMinistry === "Thru the Bible").length;
   const wholesomeWordsCount = resources.filter((resource) => resource.publisherMinistry === "Wholesome Words").length;
+  const sermonIndexCount = resources.filter((resource) => resource.publisherMinistry === "SermonIndex.net").length;
   const ministrySourceSummaries = [
     {
       ministry: "Way of Life Literature",
@@ -48012,6 +48019,12 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       focus: "Christian biography, missions, hymn writers, preachers, evangelists, and Bible teachers",
       scope: "Full-window links are permitted; site text, images, audio, and other electronic reuse require item-level written permission.",
     },
+    {
+      ministry: "SermonIndex.net",
+      count: sermonIndexCount,
+      focus: "Leonard Ravenhill revival, holiness, prayer, and preaching audio",
+      scope: "Direct family permission allows noncommercial, source-attributed use. This first pilot opens verified SermonIndex pages; no audio or transcript is copied while hosting preference is being clarified.",
+    },
   ].filter((item) => item.count > 0);
   const activeMinistrySummary = ministrySourceSummaries.find((item) => item.ministry === activeMinistry);
 
@@ -48024,13 +48037,14 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
             These records point users to reviewed source pages under documented permission or linking policies. Public-domain books stay separate from link-only resources.
           </p>
-          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-7">
             <MiniStat label="Total links" value={String(resources.length)} />
             <MiniStat label="Way of Life" value={String(wayOfLifeCount)} />
             <MiniStat label="Northstar" value={String(northstarCount)} />
             <MiniStat label="S. M. Davis" value={String(solveFamilyProblemsCount)} />
             <MiniStat label="Thru the Bible" value={String(thruTheBibleCount)} />
             <MiniStat label="Biographies" value={String(wholesomeWordsCount)} />
+            <MiniStat label="Ravenhill" value={String(sermonIndexCount)} />
           </div>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
