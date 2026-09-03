@@ -36,13 +36,15 @@ Silence grants no rights. After one follow-up and one optional final close-the-l
 
 ## 1. Baptist Authors
 
-Status: `Draft - not sent`
+Status: `Submitted 2026-09-03 at 7:42 PM EDT - awaiting written reply`
 
 Official route: `https://baptistauthors.com/publish/`
 
 Selected resource: *For the Truth's Sake* by Albert S. Gregg
 
 Official product page: `https://baptistauthors.com/product/for-the-truths-sake/`
+
+Submission evidence: `data/library/acquisition/permission-evidence/baptist-authors-form-submission-2026-09-03.md`
 
 Subject: `One-title Bible study app pilot question`
 
