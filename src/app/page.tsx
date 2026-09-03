@@ -2534,13 +2534,13 @@ const OUTREACH_APPROVAL_BATCH = [
     ministry: "Leonard Ravenhill / David Ravenhill",
     recipientName: "David Ravenhill",
     recipient: "davidravenhill@gmail.com",
-    channel: "Direct family rights inquiry after a verified SermonIndex referral; no permission presumed",
-    status: "Direct permission inquiry sent September 3, 2026 · awaiting written reply",
+    channel: "Direct family permission · noncommercial use only · source attribution required",
+    status: "Written permission received September 3, 2026 · approved for noncommercial use with source attribution",
     sent: true,
     verifiedAt: "September 3, 2026",
     officialUrl: "https://www.ravenhill.org/",
     contactUrl: "mailto:davidravenhill@gmail.com",
-    pilot: "Ask which Leonard Ravenhill resources David Ravenhill controls or may represent, then consider official links, approved metadata and artwork, book-purchase links, short excerpts, or licensed reading/audio access only as separately authorized.",
+    pilot: "Build a free, clearly attributed Leonard Ravenhill pilot from verified source material. Keep every Ravenhill item outside paid, sponsored, affiliate, resale, or other profit-generating access; record an item-level source before publication and seek separate written permission for any commercial use.",
     subject: "Permission inquiry for Leonard Ravenhill resources",
     body: "Hello Brother Ravenhill,\n\nMy name is Stephen Scheer, and I am building Father’s Business Bible Study, a safer, easier, KJV-centered web app for pastors, missionaries, teachers, Bible college students, churches, and serious students of God’s Word.\n\nGreg Gordon at SermonIndex kindly directed me to you regarding Leonard Ravenhill’s books, sermons, and audio.\n\nThe app brings Bible reading, commentaries, trusted books, audio, sermon preparation, notes, prayer, journaling, and church presentations into one Scripture-first workspace. I would be grateful for your advice concerning which Leonard Ravenhill resources you control or are authorized to represent.\n\nI would like to discuss a small, permission-first pilot that might include:\n\n- Officially authorized links or streaming access to selected sermons\n- Approved titles, descriptions, photographs, and artwork\n- Listings that direct readers to official book-purchase pages\n- Short searchable excerpts, only if specifically authorized\n- Possible licensed digital reading or audio access under agreed written terms\n\nI will not copy, host, sell, transcribe, narrate, or distribute copyrighted material without clear written authorization. Each type of use can be considered separately, and anything included would carry the attribution, source links, limitations, and removal process you request.\n\nWould you be willing to tell me what resources may be considered, who controls the relevant rights, and what information you would need from me? I would also greatly value any advice you have about building this resource faithfully.\n\nThank you for your time and for your family’s ministry.\n\nStephen Scheer\nFather’s Business Bible Study\nhttps://study.fathersbusinessmasteryresources.com/\nhello@fathersbusinessmasteryresources.com",
   },
@@ -42951,9 +42951,9 @@ function LibraryAcquisitionCenter({
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-[var(--green)]">Active outreach conversations</p>
-                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Six verified conversations are already in progress</h3>
+                <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Six verified conversations are in progress; one permission is now granted</h3>
                 <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--muted)]">
-                  The initial messages and one careful follow-up have already been sent. Do not open a new message or repeat the request; wait for a written reply in the existing thread and record any exact permission granted.
+                  The initial messages and careful follow-ups have already been sent. Do not open a new message or repeat a request. Continue in the existing thread, record exact permission language, and preserve every commercial, attribution, source, and delivery restriction.
                 </p>
               </div>
               <span className="rounded-full bg-emerald-100 px-3 py-2 text-xs font-semibold text-emerald-900">6 of 6 contacted</span>
@@ -42963,7 +42963,9 @@ function LibraryAcquisitionCenter({
                 <section key={`approval-batch-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
                   <div className="flex items-center justify-between gap-2">
                     <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">Priority {item.priority}</span>
-                    <span className="text-xs font-semibold text-emerald-800">Contacted · awaiting reply</span>
+                    <span className="text-xs font-semibold text-emerald-800">
+                      {item.status.startsWith("Written permission received") ? "Permission received · limited scope" : "Contacted · awaiting reply"}
+                    </span>
                   </div>
                   <h4 className="mt-3 text-lg font-semibold text-[var(--ink)]">{item.ministry}</h4>
                   <p className="mt-1 text-xs font-semibold text-[var(--muted)]">To: {item.recipientName} · {item.recipient}</p>

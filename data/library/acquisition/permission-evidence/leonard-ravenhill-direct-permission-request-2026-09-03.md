@@ -11,7 +11,8 @@
 | Route | Namecheap Private Email |
 | Mailbox confirmation | Private Email displayed “Message has been successfully sent” |
 | Referral source | Greg Gordon, SermonIndex.net, reply received 2026-09-01 |
-| Reply status | Awaiting written reply |
+| Reply status | Written permission received 2026-09-03 |
+| Reply sender | David Ravenhill (direct reply in the same email thread) |
 
 ## Exact Request Scope
 
@@ -24,15 +25,26 @@ represent and invited advice about a small, permission-first pilot. The possible
 - short searchable excerpts, only if specifically authorized
 - possible licensed digital reading or audio access under agreed written terms
 
+## Written Permission Received
+
+David Ravenhill replied on 2026-09-03 and wrote that Stephen is welcome to use his father's material,
+“provided it is not for profitable purposes and you quote the source.” He also offered further help by phone;
+the contact details remain in the original mailbox rather than this repository.
+
 ## Rights Boundary
 
-Sending this request grants no rights. No Leonard Ravenhill book, sermon, recording, transcript, excerpt,
-photograph, artwork, stream, narration, or product listing is approved for the public app. Keep every resource
-blocked until a written reply identifies the exact rightsholder, title or recording, permitted use, attribution,
-commercial boundary, and removal or revocation process.
+Record this as permission for noncommercial use with source attribution. It is not a public-domain declaration
+and it does not grant profitable or commercial use. Keep all Leonard Ravenhill material outside paid access,
+resale, affiliate revenue, sponsorship, advertising-linked use, or any other profit-generating feature. Record
+the source for every item and preserve an attribution line in the user experience.
+
+The permission applies to Leonard Ravenhill material, but a specific file may carry separate third-party rights
+or uncertain provenance. Verify the source and delivery chain before importing any book, sermon, recording,
+transcript, photograph, artwork, or video. Do not use an unverified third-party copy as the master source.
 
 ## Follow-Up
 
-Wait for a written reply. If none arrives, send at most one brief follow-up in the same thread after ten business
-days. Do not contact a broader set of Ravenhill-related parties or import content merely because sermons are
-available freely elsewhere.
+A brief thank-you and clarification may be sent in the same thread before bulk-hosting complete books or audio.
+Ask whether verified complete books, sermons, and audio may be hosted free inside the app, or whether David
+prefers official links or streams. No further permission outreach is needed before preparing an item-level,
+noncommercial pilot from verified sources.
