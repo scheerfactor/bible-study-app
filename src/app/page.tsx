@@ -61,6 +61,7 @@ import BibleStudyResourceDesk, { type ResourceDeskPassageContext, type ResourceP
 import PresentationContentFinder, { type PresentationContentSlideSeed } from "@/components/PresentationContentFinder";
 import SermonResourceFinder, { type SermonResourceAddition, type SermonResourceSlideSeed } from "@/components/SermonResourceFinder";
 import SermonResourceIntake from "@/components/SermonResourceIntake";
+import PreachingSchedule, { type PreachingScheduleDraft } from "@/components/PreachingSchedule";
 import PresentationPowerPointExport from "@/components/PresentationPowerPointExport";
 import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, splitPresentationBodyText, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
@@ -263,7 +264,7 @@ type JournalSourceType = "Today" | "Bible Verse" | "Passage Guide" | "Study Draw
 type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Testament in 90 Days" | "Romans Study" | "Amos Study" | "Hosea Study" | "Prayer Study" | "Evangelism Study" | "Fear of the Lord Study";
 type SermonKind = "Sermon" | "Lesson";
 type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
-type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "presenting";
+type SermonWorkspaceView = "manager" | "schedule" | "builder" | "slides" | "preaching" | "presenting";
 type SermonQuickStartId = "expository" | "topical" | "evangelistic" | "doctrinal" | "devotional";
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
 type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Hymn" | "Application" | "Countdown" | "Announcement" | "Question" | "Closing / Invitation";
@@ -477,6 +478,9 @@ type SermonEntry = {
   slideTheme: SermonSlideThemeId;
   createdAt: string;
   updatedAt: string;
+  scheduledFor: string;
+  service: string;
+  specialDay: string;
   preachedAt: string;
   archived: boolean;
 };
@@ -2651,6 +2655,9 @@ const EMPTY_SERMON_ENTRY: SermonEntry = {
   slideTheme: "classic-pulpit",
   createdAt: "",
   updatedAt: "",
+  scheduledFor: "",
+  service: "",
+  specialDay: "",
   preachedAt: "",
   archived: false,
 };
@@ -14906,7 +14913,10 @@ function savePrayerEntries(entries: PrayerEntry[]) {
 
 function formatShortDate(value?: string) {
   if (!value) return "Not set";
-  const date = new Date(value);
+  const dateOnlyMatch = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const date = dateOnlyMatch
+    ? new Date(Number(dateOnlyMatch[1]), Number(dateOnlyMatch[2]) - 1, Number(dateOnlyMatch[3]))
+    : new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   return date.toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" });
 }
@@ -15244,6 +15254,9 @@ function sermonDraftHasUserContent(entry: SermonEntry) {
     entry.slides.length > 0 ||
     entry.seriesId !== "" ||
     entry.status !== "Draft" ||
+    entry.scheduledFor !== "" ||
+    entry.service !== "" ||
+    entry.specialDay !== "" ||
     entry.preachedAt !== "" ||
     entry.archived
   );
@@ -16986,6 +16999,9 @@ function sermonExportMarkdown(entry: SermonEntry, series: SermonSeries | null) {
     `- Theme: ${entry.theme || "Not set"}`,
     `- Series: ${series?.title ?? "None"}`,
     `- Status: ${entry.status}`,
+    `- Scheduled: ${entry.scheduledFor ? formatShortDate(entry.scheduledFor) : "Not set"}`,
+    `- Service: ${entry.service || "Not set"}`,
+    `- Special day: ${entry.specialDay || "None"}`,
     `- Target time: ${entry.targetMinutes} minutes`,
     `- Estimated length: ${length.minutes} minutes (${length.words} words)`,
     "",
@@ -19853,6 +19869,22 @@ export default function Home() {
     setSyncMessage(`${kind} draft started.`);
   }
 
+  function createScheduledSermonDraft(plan: PreachingScheduleDraft) {
+    const entry: SermonEntry = {
+      ...createEmptySermon(plan.kind, plan.passage || `${book} ${chapter}`),
+      title: plan.title,
+      passage: plan.passage || `${book} ${chapter}`,
+      theme: plan.theme,
+      scheduledFor: plan.scheduledFor,
+      service: plan.service,
+      specialDay: plan.specialDay,
+    };
+    setSermonDraft(entry);
+    setSermonWorkspaceView("builder");
+    setTab("sermons");
+    setSyncMessage(`${plan.kind} planned for ${formatShortDate(plan.scheduledFor)}. Save it when the details are ready.`);
+  }
+
   function loadJohn3SampleSermon() {
     const entry = createJohn3SampleSermon();
     setSermonDraft(entry);
@@ -19926,6 +19958,8 @@ export default function Home() {
       id: makeId(entry.kind === "Sermon" ? "sermon" : "lesson"),
       title: `${entry.title || entry.kind} Copy`,
       status: "Draft",
+      scheduledFor: "",
+      specialDay: "",
       preachedAt: "",
       archived: false,
       createdAt: now,
@@ -25262,6 +25296,7 @@ export default function Home() {
                 syncMessage={syncMessage}
                 onViewChange={setSermonWorkspaceView}
                 onCreateDraft={createSermonDraft}
+                onCreateScheduledDraft={createScheduledSermonDraft}
                 onLoadSampleSermon={loadJohn3SampleSermon}
                 onOpenEntry={openSermonEntry}
                 onDraftChange={updateSermonDraft}
@@ -52316,6 +52351,7 @@ function SermonWorkspaceScreen({
   syncMessage,
   onViewChange,
   onCreateDraft,
+  onCreateScheduledDraft,
   onLoadSampleSermon,
   onOpenEntry,
   onDraftChange,
@@ -52367,6 +52403,7 @@ function SermonWorkspaceScreen({
   syncMessage: string;
   onViewChange: (view: SermonWorkspaceView) => void;
   onCreateDraft: (kind: SermonKind) => void;
+  onCreateScheduledDraft: (plan: PreachingScheduleDraft) => void;
   onLoadSampleSermon: () => void;
   onOpenEntry: (entry: SermonEntry) => void;
   onDraftChange: (patch: Partial<SermonEntry>) => void;
@@ -52458,6 +52495,9 @@ function SermonWorkspaceScreen({
       entry.kind,
       entry.createdAt,
       entry.updatedAt,
+      entry.scheduledFor,
+      entry.service,
+      entry.specialDay,
       entry.preachedAt ?? "",
       formatShortDate(entry.createdAt),
       formatShortDate(entry.updatedAt),
@@ -53000,14 +53040,14 @@ function SermonWorkspaceScreen({
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <div className="flex flex-wrap gap-2">
-	          {(["manager", "builder", "slides"] as SermonWorkspaceView[]).map((item) => (
+	          {(["manager", "schedule", "builder", "slides"] as SermonWorkspaceView[]).map((item) => (
             <button
               key={`sermon-view-${item}`}
               className={`rounded-full px-4 py-2 text-sm font-semibold ${view === item ? "bg-[var(--ink)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`}
               onClick={() => onViewChange(item)}
               type="button"
             >
-	              {item === "manager" ? "Manager" : item === "builder" ? "Builder" : "Slides"}
+	              {item === "manager" ? "Manager" : item === "schedule" ? "Schedule" : item === "builder" ? "Builder" : "Slides"}
             </button>
           ))}
           <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Back to Bible</button>
@@ -53134,6 +53174,25 @@ function SermonWorkspaceScreen({
             </article>
           </section>
 	        </div>
+	      ) : view === "schedule" ? (
+	        <PreachingSchedule
+	          messages={sermons.map((entry) => ({
+	            id: entry.id,
+	            kind: entry.kind,
+	            title: entry.title,
+	            passage: entry.passage,
+	            theme: entry.theme,
+	            scheduledFor: entry.scheduledFor,
+	            service: entry.service,
+	            specialDay: entry.specialDay,
+	            status: entry.status,
+	          })).filter((entry) => Boolean(entry.scheduledFor))}
+	          onCreate={onCreateScheduledDraft}
+	          onOpen={(id) => {
+	            const entry = sermons.find((item) => item.id === id);
+	            if (entry) onOpenEntry(entry);
+	          }}
+	        />
 	      ) : view === "slides" ? (
 	        <div className="grid min-w-0 gap-5 xl:grid-cols-[0.85fr_1.15fr]">
 	          <section className="min-w-0 space-y-4">
@@ -53422,6 +53481,12 @@ function SermonWorkspaceScreen({
                 <SermonField label="Passage" value={draft.passage} onChange={(value) => onDraftChange({ passage: value })} placeholder="John 3:16" />
                 <SermonField label="Theme" value={draft.theme} onChange={(value) => onDraftChange({ theme: value })} placeholder="The New Birth" />
                 <label className="text-sm font-semibold text-[var(--muted)]">
+                  Scheduled date
+                  <input className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)] outline-none" type="date" value={draft.scheduledFor} onChange={(event) => onDraftChange({ scheduledFor: event.target.value })} />
+                </label>
+                <SermonField label="Service" value={draft.service} onChange={(value) => onDraftChange({ service: value })} placeholder="Sunday Morning" />
+                <SermonField label="Special day" value={draft.specialDay} onChange={(value) => onDraftChange({ specialDay: value })} placeholder="Missions Sunday, Homecoming..." />
+                <label className="text-sm font-semibold text-[var(--muted)]">
                   Target time
                   <div className="mt-2 flex h-11 items-center rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3">
                     <input
@@ -53699,6 +53764,7 @@ function SermonManagerCard({
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.kind} - {entry.status}</p>
           <h3 className="mt-1 text-lg font-semibold text-[var(--green)]">{entry.title}</h3>
           <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{entry.passage} {series ? `- ${series.title}` : ""}</p>
+          {entry.scheduledFor && <p className="mt-1 text-sm font-semibold text-[var(--ink)]">{formatShortDate(entry.scheduledFor)} · {entry.service || "Service not set"}{entry.specialDay ? ` · ${entry.specialDay}` : ""}</p>}
           <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             {estimate.minutes} min estimate · target {entry.targetMinutes || 30} min · updated {formatShortDate(entry.updatedAt)}
           </p>
