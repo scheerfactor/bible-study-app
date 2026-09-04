@@ -1694,5 +1694,27 @@
     "visibility": "Private admin draft",
     "notes": "Exact title, Matthew 24-25 passage, official enclosure, content type, duration, bytes, ETag, and SHA-256 verified from TTB sources on 2026-09-01. Official stream only; no audio is committed or rehosted.",
     "nextAction": "Keep the official stream free, unaltered, attributed, linked to TTB, and outside every paid feature."
+  },
+  {
+    "id": "favorite-hymns-01-librivox-audio-candidate",
+    "kind": "Audiobook",
+    "title": "Favorite Hymns 01 audio collection",
+    "creator": "Various hymn writers / read by BookAngel7",
+    "passage": "",
+    "series": "Hymns and Worship",
+    "duration": "01:51:48",
+    "sourceUrl": "https://librivox.org/favorite-hymns-01-by-various/",
+    "sourcePageUrl": "https://archive.org/details/favoritehymns01_1606_librivox",
+    "rightsEvidence": "The LibriVox catalog identifies this as a collection of 30 public-domain hymns and states that LibriVox recordings are public domain in the USA. The matching Internet Archive item applies the Creative Commons Public Domain Mark 1.0 to the recording.",
+    "rightsEvidenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "rightsStatus": "Public Domain",
+    "intakeStatus": "Ready For Storage",
+    "storageBucket": "fathers-business-bible-study-public",
+    "storagePath": "audio/hymns/librivox/favorite-hymns-01/",
+    "transcriptPath": "transcripts/hymns/librivox/favorite-hymns-01/",
+    "coverPath": "media/covers/hymns/favorite-hymns-01-librivox.webp",
+    "visibility": "Private admin draft",
+    "notes": "Cataloged by LibriVox on 2016-06-15. This record documents the public-domain recording and source collection; keep it private until each hymn's lyric, tune, arrangement, reader, duration, filename, and transcript are mapped and checked individually. Do not infer rights for any substitute recording or modern arrangement.",
+    "nextAction": "Create a track-level manifest from the official LibriVox section table, verify each component and source filename, then upload the verified files to R2 before enabling public playback."
   }
 ]
