@@ -103129,5 +103129,60 @@
     "checksum_sha256": "458003353062792db9ea02981b3b0eb3036a016cf296b94a2efbb74fb3a98f4d",
     "file_size_bytes": 3277273,
     "word_count": 490162
+  },
+  {
+    "title": "Five Sermons",
+    "author": "Henry Benjamin Whipple",
+    "year": 1890,
+    "category": "Preaching & Teaching",
+    "collection": "Historical Sermons Collection",
+    "source_url": "https://www.gutenberg.org/ebooks/8731",
+    "download_url": "https://www.gutenberg.org/ebooks/8731.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/five-sermons-henry-benjamin-whipple.txt",
+    "publication_date": "1890",
+    "edition_note": "1890 edition; five sermons and addresses delivered from July 1888 through October 1889.",
+    "source_accessed_at": "2026-09-03",
+    "rights_evidence_url": "https://www.gutenberg.org/ebooks/8731",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg identifies eBook 8731 as public domain in the United States. Exact catalog record: https://www.gutenberg.org/ebooks/8731. Exact UTF-8 source inferred by the guarded importer: https://www.gutenberg.org/ebooks/8731.txt.utf-8. Project Gutenberg license: https://www.gutenberg.org/policy/license.html. Catalog metadata and TLS-protected source text were reviewed 2026-09-03 without bypassing certificate checks.",
+    "notes": "Public-domain 1890 collection for historical sermon research, missions context, preaching illustrations, and comparative study. Use with doctrinal discernment, keep the KJV primary, and verify every Scripture quotation against the KJV before reuse. Labels/warnings: Historical Episcopal sermons; sacramental and ecclesiological claims are not Baptist doctrine; OCR quotations are not approved as KJV text.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1890 collection for historical sermon research, missions context, preaching illustrations, and comparative study. Use with doctrinal discernment, keep the KJV primary, and verify every Scripture quotation against the KJV before reuse.",
+    "resource_labels": [
+      "Historical Sermons Collection",
+      "Historical Episcopal sermons",
+      "sacramental and ecclesiological claims are not Baptist doctrine",
+      "OCR quotations are not approved as KJV text"
+    ],
+    "resource_warnings": [
+      "Historical Episcopal sermons",
+      "sacramental and ecclesiological claims are not Baptist doctrine",
+      "OCR quotations are not approved as KJV text"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Five Sermons",
+      "author": "Henry Benjamin Whipple",
+      "category": "Preaching & Teaching",
+      "collection": "Historical Sermons Collection",
+      "badge": "Historical Sermons Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 83,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "ocr_quality_label": "Readable transcription; Scripture review required",
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "The opening Psalm 44:1 quotation omits the KJV word 'in' before 'their days'. Do not reuse source Scripture as KJV Bible text; verify every quotation against the KJV before reuse.",
+    "checksum_sha256": "527b4a64e6001fa64b420d0b01562290848045927c6f7a836035a86591929bf9",
+    "file_size_bytes": 106027,
+    "word_count": 18641
   }
 ]
