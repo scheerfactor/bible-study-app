@@ -502,5 +502,47 @@
     "bibleReferences": ["Matthew 5:14-16", "Philippians 2:15", "Isaiah 60:1"],
     "recommendedUse": "Christian witness, light, testimony, missions, church faithfulness, and Sermon-on-the-Mount slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with an expansive dark-blue left-side sermon-title zone."
+  },
+  {
+    "file": "generated/prayer-at-predawn-window-v1.png",
+    "slot": "prayer-at-predawn-window",
+    "category": "Prayer",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-prayer-at-predawn-window",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Prayer", "Devotion", "Seeking God", "Morning"],
+    "bibleReferences": ["Mark 1:35", "Psalm 5:3", "Philippians 4:6"],
+    "recommendedUse": "Private prayer, morning devotion, seeking God, intercession, and quiet-time slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/loaves-and-fishes-shore-v1.png",
+    "slot": "loaves-and-fishes-shore",
+    "category": "Provision",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-loaves-and-fishes-shore",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Provision", "Compassion", "Faith", "Thanksgiving"],
+    "bibleReferences": ["Matthew 14:17-21", "John 6:9-13", "Philippians 4:19"],
+    "recommendedUse": "Feeding-the-multitude passages, divine provision, compassion, gratitude, stewardship, and faith slides; use dark text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a bright, calm right-side sermon-title zone."
+  },
+  {
+    "file": "generated/samaritan-well-and-jar-v1.png",
+    "slot": "samaritan-well-and-jar",
+    "category": "Living Water",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-samaritan-well-and-jar",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Living Water", "Salvation", "Witness", "Thirst"],
+    "bibleReferences": ["John 4:6-14", "Isaiah 55:1", "Revelation 22:17"],
+    "recommendedUse": "Woman-at-the-well, living water, salvation invitation, spiritual thirst, and personal-witness slides; use dark text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a warm, softly defocused left-side sermon-title zone."
   }
 ]

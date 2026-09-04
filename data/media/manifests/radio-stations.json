@@ -17,6 +17,7 @@
         "ttb-contrary-winds-troubled-waters-official-audio",
         "ttb-some-seed-official-audio",
         "ttb-from-prison-to-palace-official-audio",
+        "ttb-to-tell-the-truth-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
         "kjv-john-librivox-004-john-13-17",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -82,6 +83,9 @@
         "ttb-israel-faces-sunset-official-audio",
         "ttb-from-prison-to-palace-official-audio",
         "ttb-chickens-come-home-to-roost-official-audio",
+        "ttb-to-tell-the-truth-official-audio",
+        "ttb-camels-are-coming-official-audio",
+        "ttb-greatest-tongues-movement-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -266,6 +270,24 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-to-tell-the-truth-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-camels-are-coming-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-greatest-tongues-movement-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter remains editorially inferred"
     },
     {
       "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
