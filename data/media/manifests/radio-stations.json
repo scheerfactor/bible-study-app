@@ -106,6 +106,9 @@
         "ttb-curtain-prophecy-near-east-official-audio",
         "ttb-coming-of-lord-is-near-official-audio",
         "ttb-church-through-great-tribulation-official-audio",
+        "ttb-grace-three-time-zones-official-audio",
+        "ttb-shepherd-and-sheep-official-audio",
+        "ttb-psalm-old-shepherd-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -398,6 +401,24 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Tribulation interpretation and governing passages require review"
+    },
+    {
+      "mediaRecordId": "ttb-grace-three-time-zones-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-shepherd-and-sheep-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; complete governing passage range requires review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-psalm-old-shepherd-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalm 23 identified by the official title and description"
     },
     {
       "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",

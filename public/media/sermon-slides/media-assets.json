@@ -754,5 +754,47 @@
     "bibleReferences": ["1 Kings 17:2-6", "Matthew 6:31-33", "Philippians 4:19"],
     "recommendedUse": "Elijah, brook Cherith, ravens, divine provision, solitude, obedience, and trusting God slides; use dark text on the right.",
     "optimized": "1672x941 PNG stored locally; original generated background with a softly luminous ravine and sky as a right-side sermon-title zone."
+  },
+  {
+    "file": "generated/miriam-red-sea-worship-v1.png",
+    "slot": "miriam-red-sea-worship",
+    "category": "Worship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-miriam-red-sea-worship",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Praise", "Deliverance", "Song", "Thanksgiving"],
+    "bibleReferences": ["Exodus 15:1-21", "Psalm 106:9-12", "Isaiah 12:5"],
+    "recommendedUse": "Miriam, Red Sea deliverance, congregational praise, thanksgiving, hymns, and victory-in-the-Lord slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad deep-teal left-side sermon-title zone."
+  },
+  {
+    "file": "generated/david-harp-under-stars-v1.png",
+    "slot": "david-harp-under-stars",
+    "category": "Worship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-david-harp-under-stars",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Psalms", "Worship", "Shepherd", "Meditation"],
+    "bibleReferences": ["1 Samuel 16:11-23", "Psalm 8:3-4", "Psalm 19:1"],
+    "recommendedUse": "David, Psalms, harp, worship, creation, shepherding, meditation, and devotional slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a spacious starry right-side sermon-title zone."
+  },
+  {
+    "file": "generated/early-believers-singing-v1.png",
+    "slot": "early-believers-singing",
+    "category": "Church",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-early-believers-singing",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Fellowship", "Singing", "Church", "Encouragement"],
+    "bibleReferences": ["Acts 2:42-47", "Ephesians 5:19", "Colossians 3:16"],
+    "recommendedUse": "Early church, congregational singing, fellowship, mutual encouragement, house-church, and hymn-history slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad warm plaster-wall left-side sermon-title zone."
   }
 ]
