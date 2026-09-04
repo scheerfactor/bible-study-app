@@ -102797,5 +102797,51 @@
     "checksum_sha256": "304347eb4d86017b748cd156dfb31203521612bc84d2f291f6fa301261184a0a",
     "file_size_bytes": 823401,
     "word_count": 119483
+  },
+  {
+    "title": "Borden of Yale '09: The Life That Counts",
+    "author": "Mrs. Howard Taylor",
+    "year": 1926,
+    "category": "Biographies",
+    "collection": "Missions Biography Collection",
+    "source_url": "https://archive.org/download/bordenofyale09th00tayl/bordenofyale09th00tayl_djvu.txt",
+    "download_url": "https://archive.org/download/bordenofyale09th00tayl/bordenofyale09th00tayl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/borden-of-yale-09-the-life-that-counts-mrs-howard-taylor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bordenofyale09th00tayl/bordenofyale09th00tayl_djvu.txt.",
+    "notes": "Public-domain 1926 biography of William Whiting Borden for missions study, Christian surrender, discipleship, preaching illustrations, and student ministry. Use as historical biography; verify factual quotations against the scan and all Scripture wording against the KJV Bible. Labels/warnings: Historical missionary biography; verify OCR quotations and Scripture wording against the scan and KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1926 biography of William Whiting Borden for missions study, Christian surrender, discipleship, preaching illustrations, and student ministry. Use as historical biography; verify factual quotations against the scan and all Scripture wording against the KJV Bible.",
+    "resource_labels": [
+      "Missions Biography Collection",
+      "Historical missionary biography",
+      "verify OCR quotations and Scripture wording against the scan and KJV"
+    ],
+    "resource_warnings": [
+      "Historical missionary biography",
+      "verify OCR quotations and Scripture wording against the scan and KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Borden of Yale '09: The Life That Counts",
+      "author": "Mrs. Howard Taylor",
+      "category": "Biographies",
+      "collection": "Missions Biography Collection",
+      "badge": "Missions Biography Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 433,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "daef54dd7593a1a7a6de4ebdb3fd65b837599bf0947d472ff4ce5c1210d65258",
+    "file_size_bytes": 529864,
+    "word_count": 97534
   }
 ]
