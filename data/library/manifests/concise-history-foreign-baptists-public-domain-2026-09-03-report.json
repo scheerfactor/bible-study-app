@@ -1,0 +1,44 @@
+{
+  "source_csv": "data/library/acquisition/concise-history-foreign-baptists-public-domain-2026-09-03.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 1,
+  "total_attempted": 1,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "A Concise History of Foreign Baptists",
+      "file": "a-concise-history-of-foreign-baptists-george-herbert-orchard.txt",
+      "bytes": 823401,
+      "words": 119483,
+      "reading_time_minutes": 531
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "A Concise History of Foreign Baptists",
+      "author": "George Herbert Orchard",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-concise-history-of-foreign-baptists-george-herbert-orchard.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

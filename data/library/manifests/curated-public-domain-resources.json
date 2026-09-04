@@ -102751,5 +102751,51 @@
     "checksum_sha256": "a761acc0fc5884a1a2eef87f8a41611633d7d263ef18706063074c178e89800d",
     "file_size_bytes": 3462202,
     "word_count": 572243
+  },
+  {
+    "title": "A Concise History of Foreign Baptists",
+    "author": "George Herbert Orchard",
+    "year": 1838,
+    "category": "Baptist History",
+    "collection": "Baptist History Collection",
+    "source_url": "https://archive.org/download/concisehistoryof00orch/concisehistoryof00orch_djvu.txt",
+    "download_url": "https://archive.org/download/concisehistoryof00orch/concisehistoryof00orch_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-concise-history-of-foreign-baptists-george-herbert-orchard.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/concisehistoryof00orch/concisehistoryof00orch_djvu.txt.",
+    "notes": "Public-domain 1838 Baptist history for researching early Baptist communities, believers' baptism, persecution, and denominational history. Use as a historical perspective rather than a final authority; compare claims with primary sources and test doctrine by the KJV Bible. Labels/warnings: Historical denominational account; verify historical claims and OCR before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1838 Baptist history for researching early Baptist communities, believers' baptism, persecution, and denominational history. Use as a historical perspective rather than a final authority; compare claims with primary sources and test doctrine by the KJV Bible.",
+    "resource_labels": [
+      "Baptist History Collection",
+      "Historical denominational account",
+      "verify historical claims and OCR before quotation"
+    ],
+    "resource_warnings": [
+      "Historical denominational account",
+      "verify historical claims and OCR before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Concise History of Foreign Baptists",
+      "author": "George Herbert Orchard",
+      "category": "Baptist History",
+      "collection": "Baptist History Collection",
+      "badge": "Baptist History Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 531,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "304347eb4d86017b748cd156dfb31203521612bc84d2f291f6fa301261184a0a",
+    "file_size_bytes": 823401,
+    "word_count": 119483
   }
 ]
