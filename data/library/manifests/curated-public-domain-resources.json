@@ -103073,5 +103073,61 @@
     "checksum_sha256": "fc3353f56df3e8e3a2e5ae8b08d98a3e113f4f1db93959d30649515be9dedc58",
     "file_size_bytes": 553273,
     "word_count": 89380
+  },
+  {
+    "title": "The Theocratic Kingdom of Our Lord Jesus, the Christ, Volume 3",
+    "author": "George Nathaniel Henry Peters",
+    "year": 1884,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Prophecy and Eschatology Collection",
+    "source_url": "https://archive.org/download/theocratickingdo03pete/theocratickingdo03pete_djvu.txt",
+    "download_url": "https://archive.org/download/theocratickingdo03pete/theocratickingdo03pete_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-theocratic-kingdom-of-our-lord-jesus-the-christ-volume-3-george-nathaniel-henry-peters.txt",
+    "publisher": "Funk & Wagnalls",
+    "publication_date": "1884",
+    "edition_note": "Volume III; New York and London first-edition scan, 1884.",
+    "source_accessed_at": "2026-09-03",
+    "rights_evidence_url": "https://archive.org/details/theocratickingdo03pete",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "United States public-domain 1884 edition. Exact OCR source: https://archive.org/download/theocratickingdo03pete/theocratickingdo03pete_djvu.txt. Catalog and scan record: https://archive.org/details/theocratickingdo03pete. Internet Archive terms: https://archive.org/about/terms.php. HTTPS source response and content length were verified 2026-09-03 without bypassing TLS checks.",
+    "notes": "Public-domain 1884 third volume of Peters's three-volume study of the promised kingdom, containing propositions 175-206 and indexes. Useful for historical premillennial research, doctrinal comparison, and sermon preparation; test every conclusion by the KJV Bible and verify any quotation against both the source scan and the KJV before reuse. Labels/warnings: Historical non-dispensational premillennial interpretation; distinguish commentary from Scripture; OCR quotations are not approved as KJV text.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1884 third volume of Peters's three-volume study of the promised kingdom, containing propositions 175-206 and indexes. Useful for historical premillennial research, doctrinal comparison, and sermon preparation; test every conclusion by the KJV Bible and verify any quotation against both the source scan and the KJV before reuse.",
+    "resource_labels": [
+      "Prophecy and Eschatology Collection",
+      "Historical non-dispensational premillennial interpretation",
+      "distinguish commentary from Scripture",
+      "OCR quotations are not approved as KJV text"
+    ],
+    "resource_warnings": [
+      "Historical non-dispensational premillennial interpretation",
+      "distinguish commentary from Scripture",
+      "OCR quotations are not approved as KJV text"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Theocratic Kingdom of Our Lord Jesus, the Christ, Volume 3",
+      "author": "George Nathaniel Henry Peters",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Prophecy and Eschatology Collection",
+      "badge": "Prophecy and Eschatology Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2178,
+    "text_processing": "source_text_preserved",
+    "ocr_quality_label": "Needs OCR review",
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Title-page and epigraph spot-check found material OCR corruption. Proverbs 2:3-5 is mis-cited in the OCR as Proverbs 2:4-6 and includes character errors such as 'scekest'. Do not reuse OCR Scripture as Bible text; verify every quotation against the KJV and the page scan.",
+    "checksum_sha256": "458003353062792db9ea02981b3b0eb3036a016cf296b94a2efbb74fb3a98f4d",
+    "file_size_bytes": 3277273,
+    "word_count": 490162
   }
 ]

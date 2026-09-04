@@ -12,7 +12,10 @@ export type LibraryManifestEntry = {
   content_storage_status?: string;
   file_format?: string;
   publisher?: string;
+  publication_date?: string;
   edition_note?: string;
+  source_accessed_at?: string;
+  rights_evidence_url?: string;
   free_access_notice?: string;
   rights_notice?: string;
   attribution_statement?: string;
@@ -207,7 +210,10 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     content_storage_status: entry.content_storage_status ?? null,
     file_format: entry.file_format ?? null,
     publisher: entry.publisher ?? null,
+    publication_date: entry.publication_date ?? null,
     edition_note: entry.edition_note ?? null,
+    source_accessed_at: entry.source_accessed_at ?? null,
+    rights_evidence_url: entry.rights_evidence_url ?? null,
     free_access_notice: entry.free_access_notice ?? null,
     rights_notice: entry.rights_notice ?? null,
     attribution_statement: entry.attribution_statement ?? null,
