@@ -586,5 +586,47 @@
     "bibleReferences": ["Mark 12:41-44", "Luke 21:1-4", "2 Corinthians 9:7"],
     "recommendedUse": "Widow's-mites passages, sacrificial giving, stewardship, faith, generosity, and heart-motive slides; use dark text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with exactly two visible coins and a softly defocused bright left-side sermon-title zone."
+  },
+  {
+    "file": "generated/chief-cornerstone-v1.png",
+    "slot": "chief-cornerstone",
+    "category": "Foundation",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-chief-cornerstone",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Cornerstone", "Foundation", "Christ", "Church"],
+    "bibleReferences": ["Psalm 118:22", "Ephesians 2:20-22", "1 Peter 2:6-7"],
+    "recommendedUse": "Chief-cornerstone passages, Christ as foundation, church, doctrine, building, and stability slides; use dark text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a softly detailed bright left-side sermon-title zone."
+  },
+  {
+    "file": "generated/fisherman-mending-nets-v1.png",
+    "slot": "fisherman-mending-nets",
+    "category": "Calling",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-fisherman-mending-nets",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Calling", "Service", "Preparation", "Evangelism"],
+    "bibleReferences": ["Matthew 4:18-22", "Mark 1:19-20", "Luke 5:4-11"],
+    "recommendedUse": "Calling of the disciples, preparation, patient service, evangelism, vocation, and discipleship slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with broad calm blue water as a right-side sermon-title zone."
+  },
+  {
+    "file": "generated/broken-chains-open-door-v1.png",
+    "slot": "broken-chains-open-door",
+    "category": "Deliverance",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-broken-chains-open-door",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Deliverance", "Freedom", "Salvation", "Prison"],
+    "bibleReferences": ["Acts 12:6-11", "Acts 16:25-26", "John 8:36"],
+    "recommendedUse": "Prison deliverance, freedom in Christ, salvation, answered prayer, and release-from-bondage slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a deep shadowed left-side sermon-title zone."
   }
 ]

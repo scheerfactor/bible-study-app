@@ -19,6 +19,7 @@
         "ttb-from-prison-to-palace-official-audio",
         "ttb-to-tell-the-truth-official-audio",
         "ttb-man-who-never-died-official-audio",
+        "ttb-god-created-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
         "kjv-john-librivox-004-john-13-17",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -90,6 +91,9 @@
         "ttb-new-world-official-audio",
         "ttb-bird-watching-official-audio",
         "ttb-man-who-never-died-official-audio",
+        "ttb-cain-and-abel-official-audio",
+        "ttb-god-created-official-audio",
+        "ttb-what-is-doctrine-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -310,6 +314,24 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-cain-and-abel-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-god-created-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-what-is-doctrine-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
     },
     {
       "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
