@@ -922,5 +922,47 @@
     "bibleReferences": ["Mark 16:15", "Psalm 40:3", "Romans 10:14-15"],
     "recommendedUse": "Outdoor evangelism, gospel meetings, revival history, congregational singing, invitation, and community-outreach slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated historical background with an expansive deep-blue dusk-sky left-side sermon-title zone."
+  },
+  {
+    "file": "generated/fortress-watchmen-signal-torch-v1.png",
+    "slot": "fortress-watchmen-signal-torch",
+    "category": "Watchfulness",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-fortress-watchmen-signal-torch",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Watchfulness", "Courage", "Spiritual Warfare", "Faithfulness"],
+    "bibleReferences": ["2 Timothy 2:3-4", "1 Corinthians 16:13", "Revelation 3:11"],
+    "recommendedUse": "Watchfulness, courage, spiritual warfare, holding the fort, perseverance, and faithfulness slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated ancient-fortress background with a broad dark sky and valley left-side sermon-title zone."
+  },
+  {
+    "file": "generated/traveler-at-crossroads-v1.png",
+    "slot": "traveler-at-crossroads",
+    "category": "Decision",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-traveler-at-crossroads",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Decision", "Invitation", "Narrow Way", "Obedience"],
+    "bibleReferences": ["Matthew 7:13-14", "Acts 26:28", "Hebrews 3:15"],
+    "recommendedUse": "Decision, invitation, the narrow way, obedience, choosing a path, and gospel-response slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated nineteenth-century crossroads background with a spacious shadowed right-side sermon-title zone."
+  },
+  {
+    "file": "generated/messenger-brings-scroll-village-v1.png",
+    "slot": "messenger-brings-scroll-village",
+    "category": "Evangelism",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-messenger-brings-scroll-village",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Gospel Messenger", "Missions", "Word of Life", "Witness"],
+    "bibleReferences": ["Romans 10:14-15", "John 6:63", "Philippians 2:16"],
+    "recommendedUse": "Gospel messengers, missions, carrying the Word, Christian witness, evangelism, and proclamation slides; use dark text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated first-century village background with a broad bright dawn-sky left-side sermon-title zone."
   }
 ]

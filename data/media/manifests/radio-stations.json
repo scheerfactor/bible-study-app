@@ -118,6 +118,9 @@
         "ttb-major-motivation-missions-official-audio",
         "ttb-authority-for-missions-official-audio",
         "ttb-faith-plus-nothing-salvation-official-audio",
+        "ttb-why-gospel-not-preached-today-official-audio",
+        "ttb-call-commission-isaiah-official-audio",
+        "ttb-when-jesus-chose-disciples-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -482,6 +485,24 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Galatians is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-why-gospel-not-preached-today-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; no governing biblical passage is identified, so indexing remains disabled pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-call-commission-isaiah-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Isaiah is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-when-jesus-chose-disciples-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; no specific Gospel passage is identified, so indexing remains disabled pending review by ear"
     },
     {
       "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
