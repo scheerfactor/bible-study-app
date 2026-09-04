@@ -712,5 +712,47 @@
     "bibleReferences": ["Acts 16:22-34", "Psalm 42:8", "James 5:13"],
     "recommendedUse": "Paul-and-Silas, midnight prayer, hymns, worship in suffering, deliverance, and prison-ministry slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a broad dark stone-wall left-side sermon-title zone."
+  },
+  {
+    "file": "generated/daniel-lions-den-v1.png",
+    "slot": "daniel-lions-den",
+    "category": "Courage",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-daniel-lions-den",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Prayer", "Courage", "Faithfulness", "Deliverance"],
+    "bibleReferences": ["Daniel 6:10-23", "Hebrews 11:33", "Psalm 57:4"],
+    "recommendedUse": "Daniel, lions' den, faithful prayer, courage under pressure, divine deliverance, and integrity slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad shadowed cave right-side sermon-title zone."
+  },
+  {
+    "file": "generated/nehemiah-inspects-walls-v1.png",
+    "slot": "nehemiah-inspects-walls",
+    "category": "Leadership",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-nehemiah-inspects-walls",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Leadership", "Assessment", "Rebuilding", "Resolve"],
+    "bibleReferences": ["Nehemiah 2:11-18", "Nehemiah 4:6", "Nehemiah 6:15-16"],
+    "recommendedUse": "Nehemiah, inspecting the walls, leadership, planning, rebuilding, spiritual renewal, and perseverance slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with expansive moonlit sky and ruins as a left-side sermon-title zone."
+  },
+  {
+    "file": "generated/elijah-brook-cherith-v1.png",
+    "slot": "elijah-brook-cherith",
+    "category": "Provision",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-elijah-brook-cherith",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Provision", "Trust", "Solitude", "Obedience"],
+    "bibleReferences": ["1 Kings 17:2-6", "Matthew 6:31-33", "Philippians 4:19"],
+    "recommendedUse": "Elijah, brook Cherith, ravens, divine provision, solitude, obedience, and trusting God slides; use dark text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a softly luminous ravine and sky as a right-side sermon-title zone."
   }
 ]

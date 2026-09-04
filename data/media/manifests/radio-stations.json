@@ -22,6 +22,7 @@
         "ttb-god-created-official-audio",
         "ttb-stranger-of-galilee-official-audio",
         "ttb-millennium-what-where-when-how-who-official-audio",
+        "ttb-coming-of-lord-is-near-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
         "kjv-john-librivox-004-john-13-17",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -102,6 +103,9 @@
         "ttb-millennium-what-where-when-how-who-official-audio",
         "ttb-time-of-armageddon-official-audio",
         "ttb-next-happening-program-of-god-official-audio",
+        "ttb-curtain-prophecy-near-east-official-audio",
+        "ttb-coming-of-lord-is-near-official-audio",
+        "ttb-church-through-great-tribulation-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -376,6 +380,24 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-curtain-prophecy-near-east-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; dated geopolitical context and governing passages require review"
+    },
+    {
+      "mediaRecordId": "ttb-coming-of-lord-is-near-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; prophetic timing and governing passages require review"
+    },
+    {
+      "mediaRecordId": "ttb-church-through-great-tribulation-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Tribulation interpretation and governing passages require review"
     },
     {
       "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
