@@ -115,6 +115,9 @@
         "ttb-abounding-grace-official-audio",
         "ttb-storms-new-creation-official-audio",
         "ttb-pilgrims-progress-official-audio",
+        "ttb-major-motivation-missions-official-audio",
+        "ttb-authority-for-missions-official-audio",
+        "ttb-faith-plus-nothing-salvation-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -461,6 +464,24 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalms 120–134 identified explicitly by the official feed"
+    },
+    {
+      "mediaRecordId": "ttb-major-motivation-missions-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Jonah is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-authority-for-missions-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalms are identified generally but the governing references remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-faith-plus-nothing-salvation-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Galatians is identified but the governing chapter remains unindexed pending review by ear"
     },
     {
       "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",

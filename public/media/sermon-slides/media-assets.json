@@ -880,5 +880,47 @@
     "bibleReferences": ["Isaiah 32:2", "Psalm 61:2-4", "Psalm 91:1"],
     "recommendedUse": "Refuge, rest, God's protection, pilgrimage, weariness, desert seasons, and shelter-under-His-shadow slides; use dark text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with expansive softly lit desert and sky as a left-side sermon-title zone."
+  },
+  {
+    "file": "generated/victorian-gospel-song-leader-v1.png",
+    "slot": "victorian-gospel-song-leader",
+    "category": "Hymn History",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-victorian-gospel-song-leader",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Gospel Songs", "Congregational Singing", "Evangelism", "Hymn History"],
+    "bibleReferences": ["Psalm 96:1-3", "Ephesians 5:19", "Colossians 3:16"],
+    "recommendedUse": "Ira Sankey, gospel-song history, congregational singing, evangelistic meetings, music ministry, and hymn-leading slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated historical background with a broad shadowed wood-wall right-side sermon-title zone."
+  },
+  {
+    "file": "generated/family-hymn-singing-parlor-v1.png",
+    "slot": "family-hymn-singing-parlor",
+    "category": "Family Worship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-family-hymn-singing-parlor",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Family Worship", "Hymns", "Children", "Christian Home"],
+    "bibleReferences": ["Deuteronomy 6:6-7", "Psalm 78:4", "Colossians 3:16"],
+    "recommendedUse": "Family worship, parents teaching children, hymns in the home, Christian memory, discipleship, and devotional-practice slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated historical background with a spacious muted plaster-wall left-side sermon-title zone."
+  },
+  {
+    "file": "generated/outdoor-gospel-tent-singing-v1.png",
+    "slot": "outdoor-gospel-tent-singing",
+    "category": "Evangelism",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-outdoor-gospel-tent-singing",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Evangelism", "Gospel Meetings", "Congregational Singing", "Invitation"],
+    "bibleReferences": ["Mark 16:15", "Psalm 40:3", "Romans 10:14-15"],
+    "recommendedUse": "Outdoor evangelism, gospel meetings, revival history, congregational singing, invitation, and community-outreach slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated historical background with an expansive deep-blue dusk-sky left-side sermon-title zone."
   }
 ]
