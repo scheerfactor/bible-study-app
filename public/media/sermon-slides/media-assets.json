@@ -544,5 +544,47 @@
     "bibleReferences": ["John 4:6-14", "Isaiah 55:1", "Revelation 22:17"],
     "recommendedUse": "Woman-at-the-well, living water, salvation invitation, spiritual thirst, and personal-witness slides; use dark text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a warm, softly defocused left-side sermon-title zone."
+  },
+  {
+    "file": "generated/armour-of-god-still-life-v1.png",
+    "slot": "armour-of-god-still-life",
+    "category": "Spiritual Warfare",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-armour-of-god-still-life",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Armour of God", "Spiritual Warfare", "Readiness", "Faithfulness"],
+    "bibleReferences": ["Ephesians 6:10-18", "Romans 13:12", "1 Thessalonians 5:8"],
+    "recommendedUse": "Armour-of-God, spiritual warfare, steadfastness, readiness, truth, faith, and prayer slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a dark stone right-side sermon-title zone."
+  },
+  {
+    "file": "generated/open-city-gate-dawn-v1.png",
+    "slot": "open-city-gate-dawn",
+    "category": "Opportunity",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-open-city-gate-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Open Door", "Opportunity", "Missions", "Guidance"],
+    "bibleReferences": ["1 Corinthians 16:9", "2 Corinthians 2:12", "Revelation 3:8"],
+    "recommendedUse": "Open-door passages, Gospel opportunity, missions, calling, guidance, and new-season slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/widows-two-mites-v1.png",
+    "slot": "widows-two-mites",
+    "category": "Stewardship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-widows-two-mites",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Stewardship", "Sacrifice", "Giving", "Faith"],
+    "bibleReferences": ["Mark 12:41-44", "Luke 21:1-4", "2 Corinthians 9:7"],
+    "recommendedUse": "Widow's-mites passages, sacrificial giving, stewardship, faith, generosity, and heart-motive slides; use dark text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with exactly two visible coins and a softly defocused bright left-side sermon-title zone."
   }
 ]

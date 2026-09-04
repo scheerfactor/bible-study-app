@@ -2054,5 +2054,213 @@
     ],
     "recommendedUse": "Use as an attributed prompt about how biblical charity governs ordinary conduct toward others.",
     "reviewNote": "Courtesy is an application, not a substitute for the biblical doctrine of charity. Let the cited KJV passages govern the point."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-awake-run-heavenly-race",
+    "type": "Poem",
+    "title": "Run the heavenly race",
+    "text": "Awake, our souls, away, our fears,\nLet every trembling thought be gone;\nAwake and run the heavenly race,\nAnd put a cheerful courage on.",
+    "slideText": "Awake and run the heavenly race,\nAnd put a cheerful courage on.",
+    "sourceLocator": "Book 1, Hymn 48, stanza 1",
+    "bibleReferences": [
+      "Isaiah 40:28-31",
+      "Hebrews 12:1-2"
+    ],
+    "topics": [
+      "Christian race",
+      "courage",
+      "perseverance"
+    ],
+    "recommendedUse": "Use as an attributed opening stanza for messages about perseverance, courage, and running the Christian race.",
+    "reviewNote": "This is hymn poetry, not Scripture. Define the race and its strength from the cited KJV passages."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-beauties-in-my-saviour",
+    "type": "Poem",
+    "title": "Beauties in my Saviour",
+    "text": "When strangers stand and hear me tell\nWhat beauties in my Saviour dwell;\nWhere he is gone, they fain would know,\nThat they may seek and love him too.",
+    "slideText": "What beauties in my Saviour dwell",
+    "sourceLocator": "Book 1, Hymn 76, stanza 1",
+    "bibleReferences": [
+      "Song of Solomon 5:16",
+      "John 12:32"
+    ],
+    "topics": [
+      "Christ",
+      "witness",
+      "love"
+    ],
+    "recommendedUse": "Use as an attributed poetic invitation to speak of Christ winsomely and direct hearers to Him.",
+    "reviewNote": "The Song of Solomon connection is Watts's devotional application. Establish every claim about Christ from clear KJV passages."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-why-mourn-departing-friends",
+    "type": "Poem",
+    "title": "Why do we mourn departing friends",
+    "text": "Why do we mourn departing friends\nOr shake at death's alarms?\n'Tis but the voice that Jesus sends\nTo call them to his arms.",
+    "slideText": "Why do we mourn departing friends\nOr shake at death's alarms?",
+    "sourceLocator": "Book 2, Hymn 3, stanza 1",
+    "bibleReferences": [
+      "1 Thessalonians 4:13-18",
+      "Philippians 1:21-23"
+    ],
+    "topics": [
+      "bereavement",
+      "death",
+      "hope"
+    ],
+    "recommendedUse": "Use carefully as an attributed funeral or memorial stanza after establishing the believer's hope from Scripture.",
+    "reviewNote": "Apply only to those whose profession gives biblical grounds for Christian hope. Do not let poetic consolation replace the KJV text or sensitive pastoral care."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-saints-ascend-the-skies",
+    "type": "Poem",
+    "title": "At the great rising day",
+    "text": "Then let the last loud trumpet sound,\nAnd bid our kindred rise,\nAwake, ye nations under ground,\nYe saints, ascend the skies.",
+    "slideText": "Then let the last loud trumpet sound,\nAnd bid our kindred rise",
+    "sourceLocator": "Book 2, Hymn 3, stanza 6",
+    "bibleReferences": [
+      "1 Corinthians 15:51-52",
+      "1 Thessalonians 4:16-17"
+    ],
+    "topics": [
+      "resurrection",
+      "trumpet",
+      "hope"
+    ],
+    "recommendedUse": "Use as an attributed resurrection stanza in funeral, Second Coming, or Easter preaching.",
+    "reviewNote": "The stanza compresses prophetic imagery. Explain the resurrection and Christ's return from the cited KJV passages."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-alas-saviour-bleed",
+    "type": "Poem",
+    "title": "Alas! and did my Saviour bleed",
+    "text": "Alas! and did my Saviour bleed,\nAnd did my Sovereign die?\nWould he devote that sacred head\nFor such a worm as I?",
+    "slideText": "Alas! and did my Saviour bleed,\nAnd did my Sovereign die?",
+    "sourceLocator": "Book 2, Hymn 9, stanza 1",
+    "bibleReferences": [
+      "Isaiah 53:5",
+      "Romans 5:8"
+    ],
+    "topics": [
+      "cross",
+      "atonement",
+      "humility"
+    ],
+    "recommendedUse": "Use as an attributed cross-centered stanza for Good Friday, Communion, or Gospel preaching.",
+    "reviewNote": "The self-description is poetic humility. Present human dignity, sin, and Christ's atoning death from the cited KJV texts."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-amazing-pity-grace-unknown",
+    "type": "Poem",
+    "title": "Amazing pity! grace unknown!",
+    "text": "Was it for crimes that I had done\nHe groan'd upon the tree?\nAmazing pity! grace unknown!\nAnd love beyond degree!",
+    "slideText": "Amazing pity! grace unknown!\nAnd love beyond degree!",
+    "sourceLocator": "Book 2, Hymn 9, stanza 3",
+    "bibleReferences": [
+      "1 Peter 2:24",
+      "Galatians 2:20"
+    ],
+    "topics": [
+      "cross",
+      "grace",
+      "love"
+    ],
+    "recommendedUse": "Use as an attributed response stanza after explaining Christ's substitutionary death from Scripture.",
+    "reviewNote": "This is poetic meditation. The nature and sufficiency of the atonement must be established from the governing KJV passages."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-god-my-life-my-love",
+    "type": "Poem",
+    "title": "My God, my life, my love",
+    "text": "My God, my life, my love,\nTo thee, to thee I call,\nI cannot live if thou remove,\nFor thou art all in all.",
+    "slideText": "My God, my life, my love,\nTo thee, to thee I call",
+    "sourceLocator": "Book 2, Hymn 93, stanza 1",
+    "bibleReferences": [
+      "Psalm 73:25",
+      "Colossians 3:11"
+    ],
+    "topics": [
+      "God's presence",
+      "devotion",
+      "worship"
+    ],
+    "recommendedUse": "Use as an attributed devotional stanza in messages about desiring God and resting in His presence.",
+    "reviewNote": "This is personal devotional language. Keep the application rooted in the cited KJV passages and the believer's union with Christ."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Isaac Watts",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "id": "watts-wings-of-faith-to-rise",
+    "type": "Poem",
+    "title": "The wings of faith",
+    "text": "Give me the wings of faith to rise\nWithin the veil, and see\nThe saints above, how great their joys,\nHow bright their glories be.",
+    "slideText": "Give me the wings of faith to rise\nWithin the veil, and see",
+    "sourceLocator": "Book 2, Hymn 140, stanza 1",
+    "bibleReferences": [
+      "Hebrews 12:1-2",
+      "Revelation 7:9-17"
+    ],
+    "topics": [
+      "faith",
+      "heaven",
+      "witnesses"
+    ],
+    "recommendedUse": "Use as an attributed poetic transition when preaching about faithful witnesses and the believer's heavenly hope.",
+    "reviewNote": "The imagery is poetic. Avoid speculation about the intermediate state and teach from the cited KJV passages."
   }
 ]
