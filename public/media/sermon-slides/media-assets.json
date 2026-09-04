@@ -838,5 +838,47 @@
     "bibleReferences": ["Psalm 27:1", "Psalm 43:3", "John 8:12"],
     "recommendedUse": "Guidance, assurance, hope in storms, spiritual light, perseverance, and evangelistic invitation slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a broad dark storm-sky and sea left-side sermon-title zone."
+  },
+  {
+    "file": "generated/widow-offering-at-temple-v1.png",
+    "slot": "widow-offering-at-temple",
+    "category": "Stewardship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-widow-offering-at-temple",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Giving", "Stewardship", "Sacrifice", "Faithfulness"],
+    "bibleReferences": ["Mark 12:41-44", "Luke 21:1-4", "2 Corinthians 9:7"],
+    "recommendedUse": "Widow's offering at the temple, sacrificial giving, stewardship, faithfulness, generosity, and heart-motivation slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad shadowed stone left-side sermon-title zone."
+  },
+  {
+    "file": "generated/mary-listening-at-jesus-feet-v1.png",
+    "slot": "mary-listening-at-jesus-feet",
+    "category": "Devotion",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-mary-listening-at-jesus-feet",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Devotion", "Listening", "Priorities", "Discipleship"],
+    "bibleReferences": ["Luke 10:38-42", "Psalm 27:4", "John 10:27"],
+    "recommendedUse": "Mary and Martha, listening to Christ, devotional priorities, discipleship, quiet time, and the one-needful-thing slides; use dark text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a spacious warm plaster-wall right-side sermon-title zone."
+  },
+  {
+    "file": "generated/traveler-under-rock-shadow-v1.png",
+    "slot": "traveler-under-rock-shadow",
+    "category": "Refuge",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-traveler-under-rock-shadow",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Refuge", "Rest", "Protection", "Pilgrimage"],
+    "bibleReferences": ["Isaiah 32:2", "Psalm 61:2-4", "Psalm 91:1"],
+    "recommendedUse": "Refuge, rest, God's protection, pilgrimage, weariness, desert seasons, and shelter-under-His-shadow slides; use dark text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with expansive softly lit desert and sky as a left-side sermon-title zone."
   }
 ]
