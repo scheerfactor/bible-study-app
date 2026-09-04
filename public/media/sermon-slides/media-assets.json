@@ -670,5 +670,47 @@
     "bibleReferences": ["John 13:4-17", "Mark 10:45", "Philippians 2:5-8"],
     "recommendedUse": "Foot-washing, servant leadership, humility, love, Christ's example, and ministry slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a shadowed stone-wall left-side sermon-title zone."
+  },
+  {
+    "file": "generated/burning-bush-calling-v1.png",
+    "slot": "burning-bush-calling",
+    "category": "Calling",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-burning-bush-calling",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Calling", "Holiness", "Reverence", "Obedience"],
+    "bibleReferences": ["Exodus 3:1-12", "Exodus 4:10-12", "Acts 7:30-35"],
+    "recommendedUse": "Burning-bush, divine calling, holy ground, reverence, obedience, and Moses slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a deep blue wilderness left-side sermon-title zone."
+  },
+  {
+    "file": "generated/ruth-gleaning-barley-v1.png",
+    "slot": "ruth-gleaning-barley",
+    "category": "Providence",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-ruth-gleaning-barley",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Providence", "Faithfulness", "Redemption", "Harvest"],
+    "bibleReferences": ["Ruth 2:2-12", "Ruth 4:13-17", "Matthew 1:5"],
+    "recommendedUse": "Ruth, gleaning, providence, faithful work, kindness, redemption, harvest, and biblical-women slides; use dark text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a softly defocused golden field and sky as a right-side sermon-title zone."
+  },
+  {
+    "file": "generated/paul-silas-prison-praise-v1.png",
+    "slot": "paul-silas-prison-praise",
+    "category": "Worship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-paul-silas-prison-praise",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Prayer", "Praise", "Suffering", "Deliverance"],
+    "bibleReferences": ["Acts 16:22-34", "Psalm 42:8", "James 5:13"],
+    "recommendedUse": "Paul-and-Silas, midnight prayer, hymns, worship in suffering, deliverance, and prison-ministry slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad dark stone-wall left-side sermon-title zone."
   }
 ]

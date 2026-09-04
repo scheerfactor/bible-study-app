@@ -21,6 +21,7 @@
         "ttb-man-who-never-died-official-audio",
         "ttb-god-created-official-audio",
         "ttb-stranger-of-galilee-official-audio",
+        "ttb-millennium-what-where-when-how-who-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
         "kjv-john-librivox-004-john-13-17",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -98,6 +99,9 @@
         "ttb-stranger-of-galilee-official-audio",
         "ttb-new-jerusalem-eternal-home-official-audio",
         "ttb-what-and-where-is-heaven-official-audio",
+        "ttb-millennium-what-where-when-how-who-official-audio",
+        "ttb-time-of-armageddon-official-audio",
+        "ttb-next-happening-program-of-god-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -351,6 +355,24 @@
     },
     {
       "mediaRecordId": "ttb-what-and-where-is-heaven-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-millennium-what-where-when-how-who-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Revelation 20 and Isaiah are named by the official description"
+    },
+    {
+      "mediaRecordId": "ttb-time-of-armageddon-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-next-happening-program-of-god-official-audio",
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
