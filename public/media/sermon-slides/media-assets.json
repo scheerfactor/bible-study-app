@@ -628,5 +628,47 @@
     "bibleReferences": ["Acts 12:6-11", "Acts 16:25-26", "John 8:36"],
     "recommendedUse": "Prison deliverance, freedom in Christ, salvation, answered prayer, and release-from-bondage slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a deep shadowed left-side sermon-title zone."
+  },
+  {
+    "file": "generated/prodigal-returning-home-v1.png",
+    "slot": "prodigal-returning-home",
+    "category": "Restoration",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-prodigal-returning-home",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Repentance", "Grace", "Restoration", "Fatherhood"],
+    "bibleReferences": ["Luke 15:17-24", "Psalm 51:17", "1 John 1:9"],
+    "recommendedUse": "Prodigal-son, repentance, grace, restoration, forgiveness, and fatherhood slides; use dark text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a softly luminous left-side sermon-title zone."
+  },
+  {
+    "file": "generated/tiny-mustard-seed-v1.png",
+    "slot": "tiny-mustard-seed",
+    "category": "Faith",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-tiny-mustard-seed",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Faith", "Kingdom", "Growth", "Small Beginnings"],
+    "bibleReferences": ["Matthew 13:31-32", "Matthew 17:20", "Zechariah 4:10"],
+    "recommendedUse": "Mustard-seed, faith, kingdom growth, small beginnings, and spiritual-growth slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a tiny, botanically plausible seed and a deep green right-side sermon-title zone."
+  },
+  {
+    "file": "generated/foot-washing-service-v1.png",
+    "slot": "foot-washing-service",
+    "category": "Service",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-foot-washing-service",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Humility", "Service", "Love", "Example"],
+    "bibleReferences": ["John 13:4-17", "Mark 10:45", "Philippians 2:5-8"],
+    "recommendedUse": "Foot-washing, servant leadership, humility, love, Christ's example, and ministry slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a shadowed stone-wall left-side sermon-title zone."
   }
 ]

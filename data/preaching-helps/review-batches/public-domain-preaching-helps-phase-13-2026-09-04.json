@@ -1,0 +1,112 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-13-2026-09-04",
+  "reviewedAt": "2026-09-04",
+  "purpose": "Add eight source-exact Horatius Bonar excerpts for discipleship, devotion, and sermon application.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Horatius Bonar",
+    "sourceTitle": "Follow the Lamb; or, Counsels to Converts",
+    "sourceUrl": "https://archive.org/details/followlamborcoun0000bona",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/follow-the-lamb-or-counsels-to-converts-horatius-bonar.txt",
+    "rightsBasis": "This 1875 edition is public domain; each excerpt is verified against the stored OCR and should be checked against the scan before publication."
+  },
+  "entries": [
+    {
+      "id": "bonar-great-thing-to-be-christian",
+      "type": "Quote",
+      "title": "A great thing to be a Christian",
+      "text": "It is a great thing to be a Christian. The very name is a noble one, beyond all the noble names of earth.",
+      "slideText": "It is a great thing to be a Christian.",
+      "sourceLocator": "Page 7",
+      "bibleReferences": ["Acts 11:26", "1 Peter 4:16"],
+      "topics": ["Christian identity", "witness", "discipleship"],
+      "recommendedUse": "Use as an attributed opening line before explaining the believer's identity and responsibility from Scripture.",
+      "reviewNote": "Bonar's language is devotional exhortation. Define Christian identity from the cited KJV passages rather than from social status or human merit."
+    },
+    {
+      "id": "bonar-living-epistles",
+      "type": "Quote",
+      "title": "Be His living epistles",
+      "text": "Let men know what a Lord and Master you serve. Be His witnesses; be His mirrors; be His living epistles.",
+      "slideText": "Be His witnesses; be His mirrors; be His living epistles.",
+      "sourceLocator": "Page 8",
+      "bibleReferences": ["2 Corinthians 3:2-3", "Acts 1:8"],
+      "topics": ["witness", "testimony", "Christian living"],
+      "recommendedUse": "Use as an attributed application after teaching that a believer's conduct should commend Christ to others.",
+      "reviewNote": "The mirror metaphor is Bonar's illustration. Let the cited KJV texts govern the doctrine of witness and living epistles."
+    },
+    {
+      "id": "bonar-let-your-life-tell",
+      "type": "Quote",
+      "title": "Let your life tell",
+      "text": "Let your life tell your fellow-men what He is, and what He is to you.",
+      "slideText": "Let your life tell your fellow-men what He is, and what He is to you.",
+      "sourceLocator": "Page 8",
+      "bibleReferences": ["Matthew 5:16", "Philippians 2:15-16"],
+      "topics": ["testimony", "light", "Christian living"],
+      "recommendedUse": "Use as an attributed application for a message about visible faith and a consistent Christian testimony.",
+      "reviewNote": "A godly life accompanies but does not replace verbal Gospel witness. Explain both from the cited KJV passages."
+    },
+    {
+      "id": "bonar-continuous-following",
+      "type": "Quote",
+      "title": "Continuous following",
+      "text": "Your whole life is to be one continuous following of the Lord.",
+      "slideText": "Your whole life is to be one continuous following of the Lord.",
+      "sourceLocator": "Page 10",
+      "bibleReferences": ["John 12:26", "Luke 9:23"],
+      "topics": ["discipleship", "following Christ", "perseverance"],
+      "recommendedUse": "Use as an attributed summary line in discipleship preaching about daily, lifelong following of Christ.",
+      "reviewNote": "This is pastoral application, not a definition of justification. Keep salvation by grace distinct from the believer's obedient walk."
+    },
+    {
+      "id": "bonar-act-out-professions",
+      "type": "Quote",
+      "title": "Act out your professions",
+      "text": "Remember what you are, and what God expects at your hand. Act out your own professions, your own faith, your own prayers.",
+      "slideText": "Act out your own professions, your own faith, your own prayers.",
+      "sourceLocator": "Page 14",
+      "bibleReferences": ["James 1:22", "Titus 2:7-8"],
+      "topics": ["obedience", "integrity", "application"],
+      "recommendedUse": "Use as an attributed challenge to move from profession and prayer into obedient action.",
+      "reviewNote": "Avoid turning the exhortation into works-righteousness. Present obedience as the fruit of faith under the cited KJV texts."
+    },
+    {
+      "id": "bonar-life-is-a-book",
+      "type": "Quote",
+      "title": "Your life is a book",
+      "text": "Your life is a book; it may be a volume of larger or smaller size; and conversion is but the title-page or the preface.",
+      "slideText": "Your life is a book; it may be a volume of larger or smaller size",
+      "sourceLocator": "Page 15",
+      "bibleReferences": ["2 Corinthians 3:2-3", "Ephesians 2:10"],
+      "topics": ["conversion", "sanctification", "life illustration"],
+      "recommendedUse": "Use as an attributed illustration of conversion beginning a life of growth and service.",
+      "reviewNote": "This is an analogy, not a claim that a believer authors salvation. Emphasize God's workmanship and the Spirit's work from Scripture."
+    },
+    {
+      "id": "bonar-written-for-eternity",
+      "type": "Quote",
+      "title": "Written for eternity",
+      "text": "It is a book written for eternity ; see that it be written well.",
+      "slideText": "It is a book written for eternity ; see that it be written well.",
+      "sourceLocator": "Page 15",
+      "bibleReferences": ["2 Corinthians 5:10", "1 Corinthians 3:13-15"],
+      "topics": ["eternity", "accountability", "stewardship"],
+      "recommendedUse": "Use as an attributed companion to Bonar's life-as-a-book illustration when preaching eternal accountability.",
+      "reviewNote": "The unusual space before the semicolon follows the stored OCR. Check the page scan before public quotation and distinguish reward from salvation."
+    },
+    {
+      "id": "bonar-grace-is-your-strength",
+      "type": "Quote",
+      "title": "Grace is your strength",
+      "text": "This grace of God is your strength, as it is your joy; and it is only by abiding in it that you can really live the life of the redeemed.",
+      "slideText": "This grace of God is your strength, as it is your joy",
+      "sourceLocator": "Page 16",
+      "bibleReferences": ["2 Timothy 2:1", "Titus 2:11-12"],
+      "topics": ["grace", "strength", "Christian living"],
+      "recommendedUse": "Use as an attributed application in preaching about grace as the believer's strength for godly living.",
+      "reviewNote": "Explain grace from the cited KJV passages. Do not use the quotation to blur justification, sanctification, or the need for obedience."
+    }
+  ]
+}
