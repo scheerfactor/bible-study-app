@@ -102843,5 +102843,51 @@
     "checksum_sha256": "daef54dd7593a1a7a6de4ebdb3fd65b837599bf0947d472ff4ce5c1210d65258",
     "file_size_bytes": 529864,
     "word_count": 97534
+  },
+  {
+    "title": "The Thousand Years in Both Testaments",
+    "author": "Nathaniel West",
+    "year": 1880,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Prophecy and Eschatology Collection",
+    "source_url": "https://archive.org/download/thousandyearsinb00west/thousandyearsinb00west_djvu.txt",
+    "download_url": "https://archive.org/download/thousandyearsinb00west/thousandyearsinb00west_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-thousand-years-in-both-testaments-nathaniel-west.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/thousandyearsinb00west/thousandyearsinb00west_djvu.txt.",
+    "notes": "Public-domain 1880 study of the millennium, prophecy, Israel, the nations, the church, and the kingdom across both Testaments. Useful for historical premillennial research and sermon preparation; compare every conclusion with the KJV Bible and verify quotations against the scan. Labels/warnings: Historical premillennial interpretation; distinguish commentary from Scripture and verify OCR quotations against the KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1880 study of the millennium, prophecy, Israel, the nations, the church, and the kingdom across both Testaments. Useful for historical premillennial research and sermon preparation; compare every conclusion with the KJV Bible and verify quotations against the scan.",
+    "resource_labels": [
+      "Prophecy and Eschatology Collection",
+      "Historical premillennial interpretation",
+      "distinguish commentary from Scripture and verify OCR quotations against the KJV"
+    ],
+    "resource_warnings": [
+      "Historical premillennial interpretation",
+      "distinguish commentary from Scripture and verify OCR quotations against the KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Thousand Years in Both Testaments",
+      "author": "Nathaniel West",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Prophecy and Eschatology Collection",
+      "badge": "Prophecy and Eschatology Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 777,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5881a0831252c646a99b28c38c0a7dd9b1e5a66e54108a0e99eda9d33f8fef23",
+    "file_size_bytes": 1053925,
+    "word_count": 174771
   }
 ]
