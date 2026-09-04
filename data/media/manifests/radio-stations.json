@@ -16,6 +16,7 @@
         "all-of-grace-librivox-001-to-you",
         "ttb-contrary-winds-troubled-waters-official-audio",
         "ttb-some-seed-official-audio",
+        "ttb-from-prison-to-palace-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
         "kjv-john-librivox-004-john-13-17",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -78,6 +79,9 @@
         "ttb-some-seed-official-audio",
         "ttb-john-baptist-and-prophet-official-audio",
         "ttb-gospel-in-genealogy-official-audio",
+        "ttb-israel-faces-sunset-official-audio",
+        "ttb-from-prison-to-palace-official-audio",
+        "ttb-chickens-come-home-to-roost-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -241,6 +245,24 @@
     },
     {
       "mediaRecordId": "ttb-gospel-in-genealogy-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-israel-faces-sunset-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-from-prison-to-palace-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-chickens-come-home-to-roost-official-audio",
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"

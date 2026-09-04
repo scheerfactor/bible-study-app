@@ -460,5 +460,47 @@
     "bibleReferences": ["Matthew 7:13-14", "Psalm 16:11", "Hebrews 12:1-2"],
     "recommendedUse": "Narrow-way passages, Christian pilgrimage, perseverance, choices, hope, and discipleship slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a deep-blue left-side sermon-title zone."
+  },
+  {
+    "file": "generated/sower-at-sunrise-v1.png",
+    "slot": "sower-at-sunrise",
+    "category": "Sowing",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-sower-at-sunrise",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Sowing", "Word of God", "Evangelism", "Harvest"],
+    "bibleReferences": ["Matthew 13:3-9", "Mark 4:14", "Galatians 6:7-9"],
+    "recommendedUse": "Parable-of-the-sower, evangelism, discipleship, stewardship, patience, and harvest slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/fruitful-vineyard-v1.png",
+    "slot": "fruitful-vineyard",
+    "category": "Abiding",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-fruitful-vineyard",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Abiding", "Fruitfulness", "Growth", "Stewardship"],
+    "bibleReferences": ["John 15:1-8", "Psalm 1:3", "Galatians 5:22-23"],
+    "recommendedUse": "Abiding in Christ, spiritual fruit, growth, stewardship, vineyard parables, and discipleship slides; use dark text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a softly defocused bright right-side text zone."
+  },
+  {
+    "file": "generated/city-on-hill-blue-hour-v1.png",
+    "slot": "city-on-hill-blue-hour",
+    "category": "Witness",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-city-on-hill-blue-hour",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Witness", "Light", "Testimony", "Faithfulness"],
+    "bibleReferences": ["Matthew 5:14-16", "Philippians 2:15", "Isaiah 60:1"],
+    "recommendedUse": "Christian witness, light, testimony, missions, church faithfulness, and Sermon-on-the-Mount slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with an expansive dark-blue left-side sermon-title zone."
   }
 ]

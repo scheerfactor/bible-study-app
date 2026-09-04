@@ -1638,5 +1638,213 @@
     ],
     "recommendedUse": "Retell as an analogy for a sermon whose divisions, appeals, and illustrations grow organically from one governing biblical truth.",
     "reviewNote": "Use the image to teach coherent preparation, not to make architecture or artistry the measure of faithful preaching."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "watts-survey-wondrous-cross",
+    "type": "Poem",
+    "title": "When I survey the wondrous cross",
+    "author": "Isaac Watts",
+    "text": "When I survey the wondrous cross\nOn which the Prince of Glory dy'd,\nMy richest gain I count but loss,\nAnd pour contempt on all my pride.",
+    "slideText": "When I survey the wondrous cross\nOn which the Prince of Glory dy'd",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceLocator": "Book 3, Hymn 7, stanza 1",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "bibleReferences": [
+      "Galatians 6:14",
+      "Philippians 3:7-8"
+    ],
+    "topics": [
+      "cross",
+      "humility",
+      "worship"
+    ],
+    "recommendedUse": "Use as an attributed hymn stanza for a sermon opening, Communion meditation, or response centered on Christ's cross.",
+    "reviewNote": "This is hymn poetry, not Scripture. Explain the cross and Christian boasting from the cited KJV passages."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "watts-firm-as-earth-gospel-stands",
+    "type": "Poem",
+    "title": "Firm as the earth thy gospel stands",
+    "author": "Isaac Watts",
+    "text": "Firm as the earth thy gospel stands,\nMy Lord, my hope, my trust;\nIf I am found in Jesus' hands,\nMy soul can ne'er be lost.",
+    "slideText": "Firm as the earth thy gospel stands,\nMy Lord, my hope, my trust",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceLocator": "Book 1, Hymn 138, stanza 1",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "bibleReferences": [
+      "John 10:28-29",
+      "Romans 8:38-39"
+    ],
+    "topics": [
+      "assurance",
+      "Gospel",
+      "security"
+    ],
+    "recommendedUse": "Use as an attributed hymn stanza after careful exposition of Christ's keeping power and the believer's assurance.",
+    "reviewNote": "This is poetic application. Establish assurance from the cited KJV passages and avoid using a hymn as the doctrinal authority."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "watts-hope-anchor-firm-strong",
+    "type": "Poem",
+    "title": "Hope is my anchor",
+    "author": "Isaac Watts",
+    "text": "Amidst temptations sharp and long\nMy soul to this dear refuge flies:\nHope is my anchor firm and strong,\nWhile tempests blow, and billows rise.",
+    "slideText": "Hope is my anchor firm and strong,\nWhile tempests blow, and billows rise.",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceLocator": "Book 1, Hymn 139, stanza 3",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "bibleReferences": [
+      "Hebrews 6:17-19",
+      "Psalm 46:1"
+    ],
+    "topics": [
+      "hope",
+      "temptation",
+      "refuge"
+    ],
+    "recommendedUse": "Use as an attributed poetic transition in messages about hope, storms, temptation, or God's unchanging promise.",
+    "reviewNote": "The anchor language is poetic. Define biblical hope from the governing KJV passage."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "watts-faith-works-by-love",
+    "type": "Poem",
+    "title": "Faith that works by love",
+    "author": "Isaac Watts",
+    "text": "'Tis faith that changes all the heart;\n'Tis faith that works by love;\nThat bids all sinful joys depart,\nAnd lifts the thoughts above.",
+    "slideText": "'Tis faith that changes all the heart;\n'Tis faith that works by love",
+    "sourceTitle": "Hymns and Spiritual Songs",
+    "sourceLocator": "Book 1, Hymn 140, stanza 3",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the stanza is verified against the stored text.",
+    "bibleReferences": [
+      "Galatians 5:6",
+      "James 2:17-18"
+    ],
+    "topics": [
+      "faith",
+      "love",
+      "transformation"
+    ],
+    "recommendedUse": "Use as an attributed stanza in teaching that distinguishes living faith from empty profession.",
+    "reviewNote": "This is a hymn writer's summary. Explain saving faith, fruit, and works carefully from the cited KJV passages."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "moody-one-book-at-a-time",
+    "type": "Quote",
+    "title": "Study one Bible book at a time",
+    "author": "D. L. Moody",
+    "text": "I have found it a good plan to take up one book at a time. It is a good deal better to study one book at a time than to run through the Bible. If we study one book and get its key, it will, perhaps, open up others.",
+    "slideText": "I have found it a good plan to take up one book at a time.",
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceLocator": "One Book at a time",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "bibleReferences": [
+      "2 Timothy 2:15",
+      "Acts 17:11"
+    ],
+    "topics": [
+      "Bible study",
+      "method",
+      "understanding"
+    ],
+    "recommendedUse": "Use as practical encouragement for sustained book-by-book Bible study rather than isolated proof-texting.",
+    "reviewNote": "This is study advice, not a binding method. Read every book in its context and compare Scripture with Scripture using the KJV."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "moody-bible-better-than-world",
+    "type": "Quote",
+    "title": "Something better than the world",
+    "author": "D. L. Moody",
+    "text": "The world will have no charm for him; he will get the world under his feet, because in this book he will find something better than the world can give him.",
+    "slideText": "in this book he will find something better than the world can give him.",
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceLocator": "The Blood, Gold observation on Bible study",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsBasis": "Project Gutenberg identifies this edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "bibleReferences": [
+      "Psalm 119:72",
+      "1 John 2:15-17"
+    ],
+    "topics": [
+      "Bible study",
+      "worldliness",
+      "treasure"
+    ],
+    "recommendedUse": "Use as an attributed encouragement to prize God's Word above the passing attractions of the world.",
+    "reviewNote": "Avoid implying that Bible reading automatically produces maturity; connect knowledge with faith and obedience under the KJV passages."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "moody-mother-place-in-lifeboat",
+    "type": "Illustration",
+    "title": "A mother gives her place",
+    "author": "D. L. Moody",
+    "text": "She seized her boy, gave him one last hug, kissed him, and dropped him over into the boat. \"My boy,\" she said, \"if you live to see your father, tell him that I died in your place.\"",
+    "slideText": "tell him that I died in your place.",
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceLocator": "A Mother Dies that her Boy may Live",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsBasis": "Project Gutenberg identifies this 1899 edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "bibleReferences": [
+      "John 15:13",
+      "Romans 5:7-8"
+    ],
+    "topics": [
+      "sacrifice",
+      "substitution",
+      "love"
+    ],
+    "recommendedUse": "Retell briefly as an emotional human analogy for costly love, then make clear that Christ's saving work is unique and is established by Scripture.",
+    "reviewNote": "The story's independent historical details are not established here. Label it as Moody's reported illustration, avoid sensationalism, and never make analogy proof of substitutionary atonement."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "id": "moody-bought-back-the-farm",
+    "type": "Illustration",
+    "title": "The son who bought back the farm",
+    "author": "D. L. Moody",
+    "text": "He has toiled hard and earned money, and bought back the land; he has taken his mother out of the poor-house, and now he is taking her to church.",
+    "slideText": "He has toiled hard and earned money, and bought back the land",
+    "sourceTitle": "Moody's Anecdotes and Illustrations",
+    "sourceLocator": "A Man Drinks up a Farm",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/19830",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "rightsBasis": "Project Gutenberg identifies this 1899 edition as public domain in the USA; the excerpt is verified against the stored text.",
+    "bibleReferences": [
+      "1 Peter 1:18-19",
+      "Ephesians 1:7"
+    ],
+    "topics": [
+      "redemption",
+      "restoration",
+      "cost"
+    ],
+    "recommendedUse": "Use as a human-scale picture of buying back what was lost before explaining redemption directly from the KJV passage.",
+    "reviewNote": "The anecdote is an analogy, not evidence or a complete model of redemption. Do not stigmatize people struggling with addiction or poverty."
   }
 ]
