@@ -102889,5 +102889,51 @@
     "checksum_sha256": "5881a0831252c646a99b28c38c0a7dd9b1e5a66e54108a0e99eda9d33f8fef23",
     "file_size_bytes": 1053925,
     "word_count": 174771
+  },
+  {
+    "title": "The Theocratic Kingdom of Our Lord Jesus, the Christ, Volume 1",
+    "author": "George Nathaniel Henry Peters",
+    "year": 1884,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Prophecy and Eschatology Collection",
+    "source_url": "https://archive.org/download/theocratickingdo01pete/theocratickingdo01pete_djvu.txt",
+    "download_url": "https://archive.org/download/theocratickingdo01pete/theocratickingdo01pete_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-theocratic-kingdom-of-our-lord-jesus-the-christ-volume-1-george-nathaniel-henry-peters.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/theocratickingdo01pete/theocratickingdo01pete_djvu.txt.",
+    "notes": "Public-domain 1884 first volume of Peters's three-volume study of the promised kingdom, containing propositions 1-106. Useful for historical premillennial research, doctrinal comparison, and sermon preparation; test every conclusion by the KJV Bible and verify quotations against the scan. Labels/warnings: Historical non-dispensational premillennial interpretation; distinguish commentary from Scripture and verify OCR quotations against the KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1884 first volume of Peters's three-volume study of the promised kingdom, containing propositions 1-106. Useful for historical premillennial research, doctrinal comparison, and sermon preparation; test every conclusion by the KJV Bible and verify quotations against the scan.",
+    "resource_labels": [
+      "Prophecy and Eschatology Collection",
+      "Historical non-dispensational premillennial interpretation",
+      "distinguish commentary from Scripture and verify OCR quotations against the KJV"
+    ],
+    "resource_warnings": [
+      "Historical non-dispensational premillennial interpretation",
+      "distinguish commentary from Scripture and verify OCR quotations against the KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Theocratic Kingdom of Our Lord Jesus, the Christ, Volume 1",
+      "author": "George Nathaniel Henry Peters",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Prophecy and Eschatology Collection",
+      "badge": "Prophecy and Eschatology Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2123,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "cb586200152abe8d8f20db5ae5219b973d9d4d1f11a09b5da21f3fe9cb65cc74",
+    "file_size_bytes": 3253132,
+    "word_count": 477719
   }
 ]
