@@ -964,5 +964,47 @@
     "bibleReferences": ["Romans 10:14-15", "John 6:63", "Philippians 2:16"],
     "recommendedUse": "Gospel messengers, missions, carrying the Word, Christian witness, evangelism, and proclamation slides; use dark text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated first-century village background with a broad bright dawn-sky left-side sermon-title zone."
+  },
+  {
+    "file": "generated/lamplighter-send-the-light-v1.png",
+    "slot": "lamplighter-send-the-light",
+    "category": "Gospel Light",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-lamplighter-send-the-light",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Gospel Light", "Missions", "Witness", "Hope"],
+    "bibleReferences": ["Matthew 5:14-16", "John 8:12", "Philippians 2:15"],
+    "recommendedUse": "Gospel light, missions, Christian witness, Send the Light hymn history, hope in darkness, and outreach slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated nineteenth-century lamplighter background with a broad deep-blue left-side sermon-title zone."
+  },
+  {
+    "file": "generated/outdoor-congregation-hymnbooks-v1.png",
+    "slot": "outdoor-congregation-hymnbooks",
+    "category": "Congregational Singing",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-outdoor-congregation-hymnbooks",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Congregational Singing", "Gospel Meetings", "Unity", "Praise"],
+    "bibleReferences": ["Psalm 96:1-3", "Ephesians 5:19", "Colossians 3:16"],
+    "recommendedUse": "Congregational singing, gospel meetings, hymn history, unity in praise, outdoor services, and music-ministry slides; use dark text over the bright right-side sky.",
+    "optimized": "1672x941 PNG stored locally; original generated historical outdoor-meeting background with a broad glowing right-side sky sermon-title zone."
+  },
+  {
+    "file": "generated/traveler-at-open-chapel-door-v1.png",
+    "slot": "traveler-at-open-chapel-door",
+    "category": "Invitation",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-traveler-at-open-chapel-door",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Invitation", "Welcome", "Refuge", "Decision"],
+    "bibleReferences": ["Matthew 11:28", "Luke 14:23", "Revelation 3:20"],
+    "recommendedUse": "Invitation, welcome, refuge from storms, gospel decision, the open door, and The Slighted Stranger poetry slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated rainy country-chapel background with a broad dark right-side sermon-title zone."
   }
 ]
