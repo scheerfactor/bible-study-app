@@ -1,0 +1,149 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-baptist-history-prophecy-phase-51.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 20,
+  "total_attempted": 8,
+  "imported": 8,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "A History of New England with Particular Reference to the Baptists, Volume 1",
+      "file": "a-history-of-new-england-with-particular-reference-to-the-baptists-volume-1-isaac-backus.txt",
+      "bytes": 1247759,
+      "words": 189768,
+      "reading_time_minutes": 843
+    },
+    {
+      "title": "A Church History of New England, Volume 2",
+      "file": "a-church-history-of-new-england-volume-2-isaac-backus.txt",
+      "bytes": 915590,
+      "words": 138526,
+      "reading_time_minutes": 616
+    },
+    {
+      "title": "A Church History of New England, Volume 3",
+      "file": "a-church-history-of-new-england-volume-3-isaac-backus.txt",
+      "bytes": 740080,
+      "words": 113095,
+      "reading_time_minutes": 503
+    },
+    {
+      "title": "A History of the Rise and Progress of the Baptists in Virginia",
+      "file": "a-history-of-the-rise-and-progress-of-the-baptists-in-virginia-robert-b-semple-revised-and-extended-by-g-w-bea.txt",
+      "bytes": 1068283,
+      "words": 156748,
+      "reading_time_minutes": 697
+    },
+    {
+      "title": "The Divine Right of Infant Baptism Examined and Disproved",
+      "file": "the-divine-right-of-infant-baptism-examined-and-disproved-john-gill.txt",
+      "bytes": 200436,
+      "words": 38417,
+      "reading_time_minutes": 171
+    },
+    {
+      "title": "The Papacy: Its History, Dogmas, Genius, and Prospects",
+      "file": "the-papacy-its-history-dogmas-genius-and-prospects-j-a-wylie.txt",
+      "bytes": 1380755,
+      "words": 207835,
+      "reading_time_minutes": 924
+    },
+    {
+      "title": "The Great Prophecies Concerning the Gentiles, the Jews, and the Church of God",
+      "file": "the-great-prophecies-concerning-the-gentiles-the-jews-and-the-church-of-god-g-h-pember.txt",
+      "bytes": 937520,
+      "words": 143194,
+      "reading_time_minutes": 636
+    },
+    {
+      "title": "The History of Romanism",
+      "file": "the-history-of-romanism-john-dowling.txt",
+      "bytes": 2901881,
+      "words": 429973,
+      "reading_time_minutes": 1911
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "A History of New England with Particular Reference to the Baptists, Volume 1",
+      "author": "Isaac Backus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-new-england-with-particular-reference-to-the-baptists-volume-1-isaac-backus.txt"
+    },
+    {
+      "row": 3,
+      "title": "A Church History of New England, Volume 2",
+      "author": "Isaac Backus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-church-history-of-new-england-volume-2-isaac-backus.txt"
+    },
+    {
+      "row": 4,
+      "title": "A Church History of New England, Volume 3",
+      "author": "Isaac Backus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-church-history-of-new-england-volume-3-isaac-backus.txt"
+    },
+    {
+      "row": 5,
+      "title": "A History of the Rise and Progress of the Baptists in Virginia",
+      "author": "Robert B. Semple; revised and extended by G. W. Beale",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-the-rise-and-progress-of-the-baptists-in-virginia-robert-b-semple-revised-and-extended-by-g-w-bea.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Divine Right of Infant Baptism Examined and Disproved",
+      "author": "John Gill",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-divine-right-of-infant-baptism-examined-and-disproved-john-gill.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Papacy: Its History, Dogmas, Genius, and Prospects",
+      "author": "J. A. Wylie",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-papacy-its-history-dogmas-genius-and-prospects-j-a-wylie.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Great Prophecies Concerning the Gentiles, the Jews, and the Church of God",
+      "author": "G. H. Pember",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-great-prophecies-concerning-the-gentiles-the-jews-and-the-church-of-god-g-h-pember.txt"
+    },
+    {
+      "row": 9,
+      "title": "The History of Romanism",
+      "author": "John Dowling",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-romanism-john-dowling.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
