@@ -418,5 +418,47 @@
     "bibleReferences": ["Isaiah 64:8", "Jeremiah 18:3-6", "Romans 9:20-21"],
     "recommendedUse": "Potter-and-clay passages, surrender, spiritual formation, correction, restoration, and discipleship slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a softly shadowed left-side sermon-title zone."
+  },
+  {
+    "file": "generated/shepherd-leading-flock-v1.png",
+    "slot": "shepherd-leading-flock",
+    "category": "Shepherd",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-shepherd-leading-flock",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Shepherd", "Guidance", "Care", "Discipleship"],
+    "bibleReferences": ["Psalm 23:1-3", "John 10:3-4", "1 Peter 5:2-4"],
+    "recommendedUse": "Shepherd passages, guidance, pastoral care, discipleship, leadership, and trust slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad dark right-side sermon-title zone."
+  },
+  {
+    "file": "generated/lamp-and-scroll-v1.png",
+    "slot": "lamp-and-scroll",
+    "category": "Scripture",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-lamp-and-scroll",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Scripture", "Light", "Study", "Wisdom"],
+    "bibleReferences": ["Psalm 119:105", "Proverbs 6:23", "2 Peter 1:19"],
+    "recommendedUse": "Bible study, illumination, wisdom, preaching, evening devotion, and Scripture-introduction slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a dark left-side sermon-title zone and blank parchment."
+  },
+  {
+    "file": "generated/narrow-stone-path-v1.png",
+    "slot": "narrow-stone-path",
+    "category": "Discipleship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-narrow-stone-path",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Discipleship", "Perseverance", "Pilgrimage", "Hope"],
+    "bibleReferences": ["Matthew 7:13-14", "Psalm 16:11", "Hebrews 12:1-2"],
+    "recommendedUse": "Narrow-way passages, Christian pilgrimage, perseverance, choices, hope, and discipleship slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a deep-blue left-side sermon-title zone."
   }
 ]
