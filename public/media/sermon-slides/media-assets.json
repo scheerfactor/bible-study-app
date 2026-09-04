@@ -376,5 +376,47 @@
     "bibleReferences": ["Matthew 28:6", "Luke 24:6"],
     "recommendedUse": "Matthew, Mark, Luke, John, resurrection, salvation, hope, and new-life slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a calm dark Scripture text zone."
+  },
+  {
+    "file": "generated/watchman-dawn-v1.png",
+    "slot": "watchman-dawn",
+    "category": "Watchfulness",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-watchman-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Watchfulness", "Second Coming", "Hope", "Readiness"],
+    "bibleReferences": ["Isaiah 21:11-12", "Mark 13:35-37", "1 Thessalonians 5:6"],
+    "recommendedUse": "Watchfulness, Christ's return, readiness, hope, morning, and prophetic application slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/galilee-storm-boat-v1.png",
+    "slot": "galilee-storm-boat",
+    "category": "Trials",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-galilee-storm-boat",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Trials", "Faith", "Fear", "Providence"],
+    "bibleReferences": ["Mark 4:37-41", "Psalm 107:28-30", "Acts 27:23-25"],
+    "recommendedUse": "Storm passages, trials, fear, faith, providence, missions journeys, and pastoral encouragement slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a dark right-side sermon-title zone."
+  },
+  {
+    "file": "generated/potter-clay-v1.png",
+    "slot": "potter-clay",
+    "category": "Formation",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-potter-clay",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Potter", "Surrender", "Formation", "Restoration"],
+    "bibleReferences": ["Isaiah 64:8", "Jeremiah 18:3-6", "Romans 9:20-21"],
+    "recommendedUse": "Potter-and-clay passages, surrender, spiritual formation, correction, restoration, and discipleship slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a softly shadowed left-side sermon-title zone."
   }
 ]
