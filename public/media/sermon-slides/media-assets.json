@@ -796,5 +796,47 @@
     "bibleReferences": ["Acts 2:42-47", "Ephesians 5:19", "Colossians 3:16"],
     "recommendedUse": "Early church, congregational singing, fellowship, mutual encouragement, house-church, and hymn-history slides; use light text on the left.",
     "optimized": "1672x941 PNG stored locally; original generated background with a broad warm plaster-wall left-side sermon-title zone."
+  },
+  {
+    "file": "generated/hymn-writer-by-window-v1.png",
+    "slot": "hymn-writer-by-window",
+    "category": "Hymn History",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-hymn-writer-by-window",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Hymns", "Inspiration", "Prayer", "Christian Service"],
+    "bibleReferences": ["Ephesians 5:19", "Colossians 3:16", "Psalm 96:1"],
+    "recommendedUse": "Hymn writers, sacred poetry, prayerful creativity, Fanny Crosby biography, Christian service, and music-ministry slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated historical background with a broad shadowed left-side sermon-title zone."
+  },
+  {
+    "file": "generated/chapel-congregation-singing-v1.png",
+    "slot": "chapel-congregation-singing",
+    "category": "Worship",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-chapel-congregation-singing",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Congregational Singing", "Hymns", "Fellowship", "Church"],
+    "bibleReferences": ["Psalm 100:1-2", "Ephesians 5:19", "Hebrews 2:12"],
+    "recommendedUse": "Congregational singing, hymn history, family worship, church fellowship, and music-ministry slides; use light text on the right.",
+    "optimized": "1672x941 PNG stored locally; original generated historical background with a spacious dark wood-wall right-side sermon-title zone."
+  },
+  {
+    "file": "generated/lighthouse-through-storm-v1.png",
+    "slot": "lighthouse-through-storm",
+    "category": "Assurance",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-lighthouse-through-storm",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Guidance", "Assurance", "Hope", "Storms"],
+    "bibleReferences": ["Psalm 27:1", "Psalm 43:3", "John 8:12"],
+    "recommendedUse": "Guidance, assurance, hope in storms, spiritual light, perseverance, and evangelistic invitation slides; use light text on the left.",
+    "optimized": "1672x941 PNG stored locally; original generated background with a broad dark storm-sky and sea left-side sermon-title zone."
   }
 ]

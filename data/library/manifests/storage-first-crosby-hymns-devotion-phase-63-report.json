@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-crosby-hymns-devotion-phase-63.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Memories of Eighty Years",
+      "file": "memories-of-eighty-years-fanny-crosby.txt",
+      "bytes": 380980,
+      "words": 59340,
+      "reading_time_minutes": 264
+    },
+    {
+      "title": "Fanny Crosby's Story of Ninety-Four Years",
+      "file": "fanny-crosby-s-story-of-ninety-four-years-fanny-crosby-and-samuel-trevena-jackson.txt",
+      "bytes": 176366,
+      "words": 28457,
+      "reading_time_minutes": 126
+    },
+    {
+      "title": "Bells at Evening and Other Verses",
+      "file": "bells-at-evening-and-other-verses-fanny-crosby.txt",
+      "bytes": 242366,
+      "words": 38748,
+      "reading_time_minutes": 172
+    },
+    {
+      "title": "The Blind Girl and Other Poems",
+      "file": "the-blind-girl-and-other-poems-fanny-crosby.txt",
+      "bytes": 124293,
+      "words": 19280,
+      "reading_time_minutes": 86
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Memories of Eighty Years",
+      "author": "Fanny Crosby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/memories-of-eighty-years-fanny-crosby.txt"
+    },
+    {
+      "row": 3,
+      "title": "Fanny Crosby's Story of Ninety-Four Years",
+      "author": "Fanny Crosby and Samuel Trevena Jackson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/fanny-crosby-s-story-of-ninety-four-years-fanny-crosby-and-samuel-trevena-jackson.txt"
+    },
+    {
+      "row": 4,
+      "title": "Bells at Evening and Other Verses",
+      "author": "Fanny Crosby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bells-at-evening-and-other-verses-fanny-crosby.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Blind Girl and Other Poems",
+      "author": "Fanny Crosby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-blind-girl-and-other-poems-fanny-crosby.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
