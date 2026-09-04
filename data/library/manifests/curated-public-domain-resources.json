@@ -102935,5 +102935,143 @@
     "checksum_sha256": "cb586200152abe8d8f20db5ae5219b973d9d4d1f11a09b5da21f3fe9cb65cc74",
     "file_size_bytes": 3253132,
     "word_count": 477719
+  },
+  {
+    "title": "The Theocratic Kingdom of Our Lord Jesus, the Christ, Volume 2",
+    "author": "George Nathaniel Henry Peters",
+    "year": 1884,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Prophecy and Eschatology Collection",
+    "source_url": "https://archive.org/download/theocratickingdo02pete_0/theocratickingdo02pete_0_djvu.txt",
+    "download_url": "https://archive.org/download/theocratickingdo02pete_0/theocratickingdo02pete_0_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-theocratic-kingdom-of-our-lord-jesus-the-christ-volume-2-george-nathaniel-henry-peters.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/theocratickingdo02pete_0/theocratickingdo02pete_0_djvu.txt.",
+    "notes": "Public-domain 1884 second volume of Peters's three-volume study of the promised kingdom. Useful for historical premillennial research, doctrinal comparison, and sermon preparation; test every conclusion by the KJV Bible and verify quotations against the scan. Labels/warnings: Historical non-dispensational premillennial interpretation; distinguish commentary from Scripture and verify OCR quotations against the KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1884 second volume of Peters's three-volume study of the promised kingdom. Useful for historical premillennial research, doctrinal comparison, and sermon preparation; test every conclusion by the KJV Bible and verify quotations against the scan.",
+    "resource_labels": [
+      "Prophecy and Eschatology Collection",
+      "Historical non-dispensational premillennial interpretation",
+      "distinguish commentary from Scripture and verify OCR quotations against the KJV"
+    ],
+    "resource_warnings": [
+      "Historical non-dispensational premillennial interpretation",
+      "distinguish commentary from Scripture and verify OCR quotations against the KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Theocratic Kingdom of Our Lord Jesus, the Christ, Volume 2",
+      "author": "George Nathaniel Henry Peters",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Prophecy and Eschatology Collection",
+      "badge": "Prophecy and Eschatology Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2484,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "85c239999b5814e30bd35ccd7f398c46d95e57028a4a8cc81bed01eccd4e06d9",
+    "file_size_bytes": 3326036,
+    "word_count": 558881
+  },
+  {
+    "title": "The Visions and Prophecies of Zechariah: The Prophet of Hope and of Glory",
+    "author": "David Baron",
+    "year": 1918,
+    "category": "Commentaries",
+    "collection": "Minor Prophets Commentary Collection",
+    "source_url": "https://archive.org/download/thevisions00barouoft/thevisions00barouoft_djvu.txt",
+    "download_url": "https://archive.org/download/thevisions00barouoft/thevisions00barouoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-visions-and-prophecies-of-zechariah-the-prophet-of-hope-and-of-glory-david-baron.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/thevisions00barouoft/thevisions00barouoft_djvu.txt.",
+    "notes": "Public-domain 1918 exposition of Zechariah for passage study, prophecy research, teaching, and sermon preparation. Treat the commentary as a study aid, compare every conclusion with the KJV Bible, and verify quotations against the scan. Labels/warnings: Historical interpretive commentary; use with discernment and verify OCR Scripture quotations against the KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1918 exposition of Zechariah for passage study, prophecy research, teaching, and sermon preparation. Treat the commentary as a study aid, compare every conclusion with the KJV Bible, and verify quotations against the scan.",
+    "resource_labels": [
+      "Minor Prophets Commentary Collection",
+      "Historical interpretive commentary",
+      "use with discernment and verify OCR Scripture quotations against the KJV"
+    ],
+    "resource_warnings": [
+      "Historical interpretive commentary",
+      "use with discernment and verify OCR Scripture quotations against the KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Visions and Prophecies of Zechariah: The Prophet of Hope and of Glory",
+      "author": "David Baron",
+      "category": "Commentaries",
+      "collection": "Minor Prophets Commentary Collection",
+      "badge": "Minor Prophets Commentary Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 933,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9079390fb79c110ec583dca502108d0cbb47890c4d24c2efd513229d4f9c23c5",
+    "file_size_bytes": 1354661,
+    "word_count": 210000
+  },
+  {
+    "title": "Twelve Sermons on Hope",
+    "author": "Charles Haddon Spurgeon",
+    "year": 1886,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/twelvesermonsonh00spur/twelvesermonsonh00spur_djvu.txt",
+    "download_url": "https://archive.org/download/twelvesermonsonh00spur/twelvesermonsonh00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/twelve-sermons-on-hope-charles-haddon-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/twelvesermonsonh00spur/twelvesermonsonh00spur_djvu.txt.",
+    "notes": "Public-domain 1886 collection of twelve sermons for studying biblical hope, sermon structure, application, and preaching. Treat sermon observations as study aids and verify every Scripture quotation against the KJV Bible. Labels/warnings: Historical sermon collection; use with discernment and verify OCR Scripture quotations against the KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1886 collection of twelve sermons for studying biblical hope, sermon structure, application, and preaching. Treat sermon observations as study aids and verify every Scripture quotation against the KJV Bible.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Historical sermon collection",
+      "use with discernment and verify OCR Scripture quotations against the KJV"
+    ],
+    "resource_warnings": [
+      "Historical sermon collection",
+      "use with discernment and verify OCR Scripture quotations against the KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Twelve Sermons on Hope",
+      "author": "Charles Haddon Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 397,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "fc3353f56df3e8e3a2e5ae8b08d98a3e113f4f1db93959d30649515be9dedc58",
+    "file_size_bytes": 553273,
+    "word_count": 89380
   }
 ]
