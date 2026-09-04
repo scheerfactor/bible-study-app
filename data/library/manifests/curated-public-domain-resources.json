@@ -102703,5 +102703,53 @@
     "checksum_sha256": "3bf78303acb679205429daf5031eeaec184e3f8f4415104fe4357b67921da080",
     "file_size_bytes": 458671,
     "word_count": 66786
+  },
+  {
+    "title": "The Baptist Encyclopaedia: A Dictionary of Baptist Doctrine History and Biography",
+    "author": "William Cathcart",
+    "year": 1881,
+    "category": "Dictionaries",
+    "collection": "Baptist History Collection",
+    "source_url": "https://archive.org/download/baptistencyclope0001cath/baptistencyclope0001cath_djvu.txt",
+    "download_url": "https://archive.org/download/baptistencyclope0001cath/baptistencyclope0001cath_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-baptist-encyclopaedia-a-dictionary-of-baptist-doctrine-history-and-biography-william-cathcart.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/baptistencyclope0001cath/baptistencyclope0001cath_djvu.txt.",
+    "notes": "Public-domain 1881 Baptist dictionary and biographical reference for studying Baptist doctrines, ordinances, confessions, history, ministries, and people. Search it as a historical aid; verify quotations against the page scan and test every doctrinal claim by the KJV Bible. Labels/warnings: Historical reference; use with discernment; OCR spot-check required before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain 1881 Baptist dictionary and biographical reference for studying Baptist doctrines, ordinances, confessions, history, ministries, and people. Search it as a historical aid; verify quotations against the page scan and test every doctrinal claim by the KJV Bible.",
+    "resource_labels": [
+      "Baptist History Collection",
+      "Historical reference",
+      "use with discernment",
+      "OCR spot-check required before quotation"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "use with discernment",
+      "OCR spot-check required before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Baptist Encyclopaedia: A Dictionary of Baptist Doctrine History and Biography",
+      "author": "William Cathcart",
+      "category": "Dictionaries",
+      "collection": "Baptist History Collection",
+      "badge": "Baptist History Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2543,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a761acc0fc5884a1a2eef87f8a41611633d7d263ef18706063074c178e89800d",
+    "file_size_bytes": 3462202,
+    "word_count": 572243
   }
 ]

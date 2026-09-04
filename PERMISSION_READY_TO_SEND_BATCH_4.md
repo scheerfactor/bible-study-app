@@ -2,7 +2,7 @@
 
 Prepared: 2026-09-03
 
-Status: Drafts only. No message in this packet has been sent. Recheck Inbox, Spam, Sent, and the official contact route immediately before sending, then obtain Stephen's approval for that exact message.
+Status: Baptist Authors and Sword-In-Hand requests submitted; The Gospel Hour remains a draft. Recheck Inbox, Spam, Sent, and the official contact route immediately before any later message.
 
 ## When To Ask For A Whole Catalog
 
@@ -69,13 +69,17 @@ https://study.fathersbusinessmasteryresources.com/
 
 ## 2. Sword-In-Hand Publishing / Jeffrey W. Mardis
 
-Status: `Draft - not sent`
+Status: `Submitted by direct email 2026-09-03 at 8:16 PM EDT - awaiting written reply`
 
 Official route: `https://swordinhandpub.com/contact/`
+
+Direct permission email: `swordinhandpub@gmail.com`
 
 Selected resource: *The Amazing Prophecy of Job*
 
 Official catalog: `https://swordinhandpub.com/shop/`
+
+Submission evidence: `data/library/acquisition/permission-evidence/sword-in-hand-email-submission-2026-09-03.md`
 
 Subject: `Permission question for The Amazing Prophecy of Job`
 
