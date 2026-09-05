@@ -5000,5 +5000,30 @@
       "truth"
     ],
     "recommendedUse": "Introduce the chapter's explanation of knowing, believing, and trusting the gospel."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Christina Georgina Rossetti",
+    "sourceTitle": "Verses",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/77809",
+    "sourceLicenseUrl": "https://www.gutenberg.org/policy/license.html",
+    "sourceFile": "data/library/verified/verses-christina-georgina-rossetti.txt",
+    "rightsBasis": "1894 edition, public domain in the USA. Wording checked against stored transcription; page-scan review pending.",
+    "reviewNote": "Opening four lines only, not the complete sonnet. Poetic language, not Scripture; use KJV for accompanying Bible text.",
+    "id": "rossetti-trust-and-peace-opening",
+    "type": "Poem",
+    "title": "Trust and Peace (Opening Sonnet Excerpt)",
+    "text": "Alone Lord God, in Whom our trust and peace,\nOur love and our desire, glow bright with hope;\nLift us above this transitory scope\nOf earth, these pleasures that begin and cease,",
+    "slideText": "Alone Lord God, in Whom our trust and peace,\nOur love and our desire, glow bright with hope;\nLift us above this transitory scope\nOf earth, these pleasures that begin and cease,",
+    "sourceLocator": "Opening sonnet, lines 1–4",
+    "bibleReferences": [
+      "Psalm 62:5"
+    ],
+    "topics": [
+      "hope",
+      "trust",
+      "eternity"
+    ],
+    "recommendedUse": "A four-line devotional excerpt for a reflective slide, with author attribution and an excerpt label."
   }
 ]

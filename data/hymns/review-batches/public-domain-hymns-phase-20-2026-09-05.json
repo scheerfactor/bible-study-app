@@ -1,0 +1,51 @@
+{
+  "batchId": "public-domain-hymns-phase-20-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "Complete nine-stanza Watts text with explicitly editorial ST. ANNE pairing.",
+  "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+  "sourceSha256": "9536712b57d4a814c3c9de2afd7651ffd71948cb475c2dca14929a91ca90c6a1",
+  "reviewNotes": [
+    "Checked wording against stored 1818-printing transcription, not page scans.",
+    "Common Meter editorial pairing uses existing checksum-verified MIDI. Synthesized playback, not a performance recording.",
+    "Poetic dialogue and biblical paraphrases must not be presented as KJV Scripture."
+  ],
+  "entries": [
+    {
+      "id": "begin-my-tongue-some-heavenly-theme",
+      "title": "Begin, My Tongue, Some Heavenly Theme",
+      "lyricist": "Isaac Watts",
+      "lyricYear": 1707,
+      "tune": "St. Anne (editorial Common Meter pairing)",
+      "themes": [
+        "Faithfulness",
+        "Promises",
+        "Praise"
+      ],
+      "scriptureReferences": [
+        "Psalm 89:1"
+      ],
+      "stanzas": [
+        "Begin, my tongue, some heavenly theme,\nAnd speak some boundless thing,\nThe mighty works, or mightier name\nOf our eternal King.",
+        "Tell of his wondrous faithfulness,\nAnd sound his power abroad,\nSing the sweet promise of his grace,\nAnd the performing God.",
+        "Proclaim \"salvation from the Lord\n\"For wretched dying men;\"\nHis hand has writ the sacred word\nWith an immortal pen.",
+        "Engrav'd as in eternal brass,\nThe mighty promise shines;\nNor can the powers of darkness rase\nThose everlasting lines.",
+        "He that can dash whole worlds to death\nAnd make them when he please,\nHe speaks, and that almighty breath\nFulfils his great decrees.",
+        "His very word of grace is strong\nAs that which built the skies,\nThe voice that rolls the stars along\nSpeaks all the promises.",
+        "He said, \"Let the wide heaven be spread,\"\nAnd heaven was stretch'd abroad;\n\"Abrah'm, I'll be thy God,\" he said,\nAnd he was Abrah'm's God.",
+        "O, might I hear thine heavenly tongue\nBut whisper, \"Thou art mine;\"\nThose gentle words should raise my song\nTo notes almost divine.",
+        "How would my leaping heart rejoice\nAnd think my heaven secure!\nI trust the all-creating voice,\nAnd faith desires no more."
+      ],
+      "refrain": null,
+      "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+      "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 69. Removed only stanza numbers and optional-stanza brackets. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+      "midiFile": "st_anne.mid",
+      "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+      "rdfFile": "st_anne.rdf",
+      "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+      "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+      "musicRights": "Public Domain",
+      "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+      "reviewedAt": "2026-09-05"
+    }
+  ]
+}

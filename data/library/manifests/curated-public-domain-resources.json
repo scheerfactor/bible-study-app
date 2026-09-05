@@ -110392,5 +110392,105 @@
     "checksum_sha256": "597e643b9ff246c14bd5ae2637411cf1c9ddbc8c1c235648489eb76740e8f590",
     "file_size_bytes": 181004,
     "word_count": 31940
+  },
+  {
+    "title": "Fundamental Truths of Salvation: Being Helps for the Anxious and for Young Believers",
+    "author": "Edward Dennett",
+    "year": 1876,
+    "category": "Classics",
+    "collection": "Salvation and Discipleship",
+    "source_url": "https://archive.org/download/fundamentaltruth00dennrich/fundamentaltruth00dennrich_djvu.txt",
+    "download_url": "https://archive.org/download/fundamentaltruth00dennrich/fundamentaltruth00dennrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/fundamental-truths-of-salvation-being-helps-for-the-anxious-and-for-young-believers-edward-dennett.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the 1876 London W. H. Broom edition; public domain in the USA",
+    "notes": "Full book for study of salvation and discipleship with attributed historical commentary Labels/warnings: Brethren perspective;Historical theological language;OCR requires scan review;Compare quotations with KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Full book for study of salvation and discipleship with attributed historical commentary",
+    "resource_labels": [
+      "Salvation and Discipleship",
+      "Brethren perspective",
+      "Historical theological language",
+      "OCR requires scan review",
+      "Compare quotations with KJV"
+    ],
+    "resource_warnings": [
+      "Brethren perspective",
+      "Historical theological language",
+      "OCR requires scan review",
+      "Compare quotations with KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Fundamental Truths of Salvation: Being Helps for the Anxious and for Young Believers",
+      "author": "Edward Dennett",
+      "category": "Classics",
+      "collection": "Salvation and Discipleship",
+      "badge": "Salvation and Discipleship",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 148,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d6c69f42beca31b21f5d11514e3b5934c4a0b1e4522f77c13e35547569e3357d",
+    "file_size_bytes": 210675,
+    "word_count": 33410
+  },
+  {
+    "title": "Haggai and Zechariah: With Notes and Introduction",
+    "author": "Thomas Thomason Perowne",
+    "year": 1902,
+    "category": "Commentaries",
+    "collection": "Historical Bible Commentaries",
+    "source_url": "https://archive.org/download/haggaizechariahw00pero/haggaizechariahw00pero_djvu.txt",
+    "download_url": "https://archive.org/download/haggaizechariahw00pero/haggaizechariahw00pero_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/haggai-and-zechariah-with-notes-and-introduction-thomas-thomason-perowne.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the 1902 Cambridge University Press edition; public domain in the USA",
+    "notes": "Full commentary for historical context and exposition of Haggai and Zechariah; evaluate interpretation against KJV Scripture Labels/warnings: Historical Anglican commentary;Translation and textual notes;OCR requires scan review;KJV remains primary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Full commentary for historical context and exposition of Haggai and Zechariah; evaluate interpretation against KJV Scripture",
+    "resource_labels": [
+      "Historical Bible Commentaries",
+      "Historical Anglican commentary",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "resource_warnings": [
+      "Historical Anglican commentary",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Haggai and Zechariah: With Notes and Introduction",
+      "author": "Thomas Thomason Perowne",
+      "category": "Commentaries",
+      "collection": "Historical Bible Commentaries",
+      "badge": "Historical Bible Commentaries",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 417,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1617a1697cf444cd6ba266f0a72b8706af5988d62f20b07eea032a857d523c3f",
+    "file_size_bytes": 614765,
+    "word_count": 93878
   }
 ]
