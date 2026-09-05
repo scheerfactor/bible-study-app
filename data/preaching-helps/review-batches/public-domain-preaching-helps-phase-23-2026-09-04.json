@@ -1,0 +1,160 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-23-2026-09-04",
+  "reviewedAt": "2026-09-04",
+  "purpose": "Add eight devotional poem excerpts on compassion, guidance, atonement, gratitude, service, hope, and intercession.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Charles H. Gabriel",
+    "sourceTitle": "The Slighted Stranger and Other Poems",
+    "sourceUrl": "https://archive.org/details/slightedstranger00gabr",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/the-slighted-stranger-and-other-poems-charles-h-gabriel.txt",
+    "rightsBasis": "Published in the 1915 Rodeheaver Company edition, public domain in the United States. Excerpts are checked against stored OCR; page-scan verification remains required before publication."
+  },
+  "entries": [
+    {
+      "id": "gabriel-true-compassion",
+      "type": "Poem",
+      "title": "I Want to Be True",
+      "text": "When I think how compassionate, tender, and kind\nHe was to the poor, to the sick and the blind;\nWhen nothing but love in His pathway I find,\nI want to be true to Him.",
+      "slideText": "When I think how compassionate, tender, and kind\nHe was to the poor, to the sick and the blind;\nWhen nothing but love in His pathway I find,\nI want to be true to Him.",
+      "sourceLocator": "I Want to Be True, printed page 58",
+      "bibleReferences": [
+        "Matthew 9:36",
+        "1 John 2:6"
+      ],
+      "topics": [
+        "compassion",
+        "discipleship"
+      ],
+      "recommendedUse": "Use as a poetic response to Christ's compassion, with the Gospel accounts supplying the historical teaching.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    },
+    {
+      "id": "gabriel-guide-day-by-day",
+      "type": "Poem",
+      "title": "He Is My Guide",
+      "text": "He is my guide — He knows the way;\nHe keepeth me from day to day;\nJust as He wills my path shall be,\nFor oh, I know He leadeth me.",
+      "slideText": "He is my guide — He knows the way;\nHe keepeth me from day to day;\nJust as He wills my path shall be,\nFor oh, I know He leadeth me.",
+      "sourceLocator": "He Is My Guide, printed page 59",
+      "bibleReferences": [
+        "Psalm 32:8",
+        "Proverbs 3:5-6"
+      ],
+      "topics": [
+        "guidance",
+        "trust"
+      ],
+      "recommendedUse": "Use for reflection on daily guidance; distinguish trust in God from certainty about personal impressions.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    },
+    {
+      "id": "gabriel-story-calvary-debt",
+      "type": "Poem",
+      "title": "The Story Never Old",
+      "text": "He took upon Himself the guilt\nOf all my sins and thine.\nAnd on the cross of Calvary\nHe paid thy debt and mine.",
+      "slideText": "He took upon Himself the guilt\nOf all my sins and thine.\nAnd on the cross of Calvary\nHe paid thy debt and mine.",
+      "sourceLocator": "The Story Never Old, printed page 60",
+      "bibleReferences": [
+        "Isaiah 53:6",
+        "1 Peter 2:24"
+      ],
+      "topics": [
+        "atonement",
+        "gospel"
+      ],
+      "recommendedUse": "Use as Gabriel's poetic testimony to Christ's sacrifice. The selected stanza excludes the later borrowed hymn stanzas.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    },
+    {
+      "id": "gabriel-mercy-song-praise",
+      "type": "Poem",
+      "title": "Showers of Mercy",
+      "text": "Jesus, my King, how shall I sing\nPraise that shall be worthy of Thee?\nWhy shouldst Thou, Lord,\nMe thus reward\nWith numberless, measureless blessings?",
+      "slideText": "Jesus, my King, how shall I sing\nPraise that shall be worthy of Thee?\nWhy shouldst Thou, Lord,\nMe thus reward\nWith numberless, measureless blessings?",
+      "sourceLocator": "Showers of Mercy, printed page 61",
+      "bibleReferences": [
+        "Psalm 103:1-5",
+        "James 1:17"
+      ],
+      "topics": [
+        "gratitude",
+        "praise"
+      ],
+      "recommendedUse": "Use as a prayer of gratitude; avoid treating poetic blessing language as a promise of material prosperity.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    },
+    {
+      "id": "gabriel-wounded-dependence",
+      "type": "Poem",
+      "title": "Wounded for Me",
+      "text": "THOU infinite Savior, on Thee I depend;\nThou art my salvation, Redeemer and Friend.",
+      "slideText": "THOU infinite Savior, on Thee I depend;\nThou art my salvation, Redeemer and Friend.",
+      "sourceLocator": "Wounded for Me, printed page 62",
+      "bibleReferences": [
+        "Acts 4:12",
+        "Hebrews 7:25"
+      ],
+      "topics": [
+        "salvation",
+        "dependence"
+      ],
+      "recommendedUse": "Use as a short confession of dependence on Christ, drawing doctrine from the accompanying KJV passages.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    },
+    {
+      "id": "gabriel-best-daily-praise",
+      "type": "Poem",
+      "title": "Do Your Best",
+      "text": "Make your daily life a happy song of praise;\nYou can brighten up the world in many ways.\nDo not mar the future beauties with delays —\nBut trust in God and do your best.",
+      "slideText": "Make your daily life a happy song of praise;\nYou can brighten up the world in many ways.\nDo not mar the future beauties with delays —\nBut trust in God and do your best.",
+      "sourceLocator": "Do Your Best, printed page 65",
+      "bibleReferences": [
+        "Colossians 3:23",
+        "Hebrews 13:15-16"
+      ],
+      "topics": [
+        "service",
+        "diligence"
+      ],
+      "recommendedUse": "Use to encourage faithful daily service; effort is a response to grace, not a means of earning salvation.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    },
+    {
+      "id": "gabriel-understand-grace",
+      "type": "Poem",
+      "title": "Sometime I'll Understand",
+      "text": "I'll bear the cross He gives for His dear sake.\nWhere love my ev'ry step has planned.\nFor when, thro' grace, in Heaven I awake\nSometime I'll understand.",
+      "slideText": "I'll bear the cross He gives for His dear sake.\nWhere love my ev'ry step has planned.\nFor when, thro' grace, in Heaven I awake\nSometime I'll understand.",
+      "sourceLocator": "Sometime I'll Understand, printed page 66",
+      "bibleReferences": [
+        "1 Corinthians 13:12",
+        "Romans 8:28"
+      ],
+      "topics": [
+        "hope",
+        "suffering"
+      ],
+      "recommendedUse": "Use sensitively as a poet's expression of future hope, without promising an explanation for every loss.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    },
+    {
+      "id": "gabriel-life-intercession",
+      "type": "Poem",
+      "title": "Come into My Life",
+      "text": "That I may have purity day after day.\nIn closer communion with Thee by the way.\nAnd more of Thy Spirit for others to pray.\nCome into my life, be the King of my heart.",
+      "slideText": "That I may have purity day after day.\nIn closer communion with Thee by the way.\nAnd more of Thy Spirit for others to pray.\nCome into my life, be the King of my heart.",
+      "sourceLocator": "Come into My Life, printed page 68",
+      "bibleReferences": [
+        "Psalm 51:10",
+        "Ephesians 6:18"
+      ],
+      "topics": [
+        "holiness",
+        "intercession"
+      ],
+      "recommendedUse": "Use as a devotional prayer for holiness and intercession; explain the language of invitation in its poetic context.",
+      "reviewNote": "Poetry, not a Scripture quotation. Text matches stored OCR after whitespace normalization; check punctuation and lineation against the scan before publication. Use KJV wording when quoting the accompanying Bible passages."
+    }
+  ]
+}
