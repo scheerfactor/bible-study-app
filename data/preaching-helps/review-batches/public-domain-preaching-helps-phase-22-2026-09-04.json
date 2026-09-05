@@ -1,0 +1,168 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-22-2026-09-04",
+  "reviewedAt": "2026-09-04",
+  "purpose": "Add eight attributed devotional poem excerpts for prayer, grace, trust, hope, and daily dependence on Christ.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Charles H. Gabriel",
+    "sourceTitle": "The Slighted Stranger and Other Poems",
+    "sourceUrl": "https://archive.org/details/slightedstranger00gabr",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/the-slighted-stranger-and-other-poems-charles-h-gabriel.txt",
+    "rightsBasis": "Excerpts from the 1915 Rodeheaver Company edition, public domain in the United States. Stored OCR is preserved; page-scan verification remains required before publication."
+  },
+  "entries": [
+    {
+      "id": "gabriel-thy-will-future-concealed",
+      "type": "Poem",
+      "title": "Thy Will Is Mine",
+      "text": "My future is concealed;\nThou hast not yet revealed\nThy will in me, nor do I for the knowledge pray.",
+      "slideText": "My future is concealed;\nThou hast not yet revealed\nThy will in me, nor do I for the knowledge pray.",
+      "sourceLocator": "Thy Will Is Mine, printed page 11",
+      "bibleReferences": [
+        "Proverbs 3:5-6",
+        "James 4:13-15"
+      ],
+      "topics": [
+        "guidance",
+        "trust",
+        "God's will"
+      ],
+      "recommendedUse": "A poetic reflection on trusting God when the future is unknown.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    },
+    {
+      "id": "gabriel-wonderful-love-rescue",
+      "type": "Poem",
+      "title": "Oh, It Is Wonderful",
+      "text": "I marvel that He would descend from His throne divine\nTo rescue a soul so rebellious and proud as mine;",
+      "slideText": "I marvel that He would descend from His throne divine\nTo rescue a soul so rebellious and proud as mine;",
+      "sourceLocator": "Oh, It Is Wonderful, printed page 12",
+      "bibleReferences": [
+        "Philippians 2:5-8",
+        "Romans 5:8"
+      ],
+      "topics": [
+        "grace",
+        "Christ",
+        "redemption"
+      ],
+      "recommendedUse": "A poetic expression of wonder at Christ's humility and redeeming love.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    },
+    {
+      "id": "gabriel-clinging-daily-walk",
+      "type": "Poem",
+      "title": "Clinging to Jesus",
+      "text": "CLOSE to Thee, my blessed Savior,\nKeep me walking day by day;\nLet me feel Thy presence with me.\nBe my refuge all the way.",
+      "slideText": "CLOSE to Thee, my blessed Savior,\nKeep me walking day by day;\nLet me feel Thy presence with me.\nBe my refuge all the way.",
+      "sourceLocator": "Clinging to Jesus, printed page 13",
+      "bibleReferences": [
+        "John 15:4-5",
+        "Psalm 46:1"
+      ],
+      "topics": [
+        "dependence",
+        "daily devotion",
+        "refuge"
+      ],
+      "recommendedUse": "An opening stanza for reflection on daily dependence upon Christ.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    },
+    {
+      "id": "gabriel-new-name-through-grace",
+      "type": "Poem",
+      "title": "A New Name",
+      "text": "We shall have a new name in that bright land.\nWhen, thro' grace, before the great King we stand",
+      "slideText": "We shall have a new name in that bright land.\nWhen, thro' grace, before the great King we stand",
+      "sourceLocator": "A New Name, printed page 14",
+      "bibleReferences": [
+        "Revelation 2:17",
+        "Ephesians 2:8-9"
+      ],
+      "topics": [
+        "hope",
+        "grace",
+        "eternity"
+      ],
+      "recommendedUse": "A poetic meditation on grace and the promised new name; explain Revelation's context.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    },
+    {
+      "id": "gabriel-growing-dearer-see-him",
+      "type": "Poem",
+      "title": "Growing Dearer Each Day",
+      "text": "Some day face to face I shall see Him,\nAnd oh, what a joy it will be\nTo know that His love, now so precious,\nWill forever grow dearer to me.",
+      "slideText": "Some day face to face I shall see Him,\nAnd oh, what a joy it will be\nTo know that His love, now so precious,\nWill forever grow dearer to me.",
+      "sourceLocator": "Growing Dearer Each Day, printed page 16",
+      "bibleReferences": [
+        "1 Corinthians 13:12",
+        "1 John 3:2"
+      ],
+      "topics": [
+        "hope",
+        "Christ's love",
+        "joy"
+      ],
+      "recommendedUse": "A closing stanza for devotional reflection on the hope of seeing Christ.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    },
+    {
+      "id": "gabriel-abide-troubled-sea",
+      "type": "Poem",
+      "title": "Abide with Me",
+      "text": "When foes without, and foes within assail me.\nAnd I am tossed upon a troubled sea,\nWhen, in my weakness, hope and courage fail me,\nIn mercy, then, abide with me.",
+      "slideText": "When foes without, and foes within assail me.\nAnd I am tossed upon a troubled sea,\nWhen, in my weakness, hope and courage fail me,\nIn mercy, then, abide with me.",
+      "sourceLocator": "Abide with Me, printed page 26",
+      "bibleReferences": [
+        "Hebrews 13:5-6",
+        "Psalm 56:3"
+      ],
+      "topics": [
+        "prayer",
+        "weakness",
+        "comfort"
+      ],
+      "recommendedUse": "A prayer stanza for seasons of weakness; this is Gabriel's poem, distinct from Henry Francis Lyte's hymn.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    },
+    {
+      "id": "gabriel-evening-prayer-forgive",
+      "type": "Poem",
+      "title": "An Evening Prayer",
+      "text": "Yet, blessed Lord,\nOnce again I pray:\nLove and forgive me. Amen.",
+      "slideText": "Yet, blessed Lord,\nOnce again I pray:\nLove and forgive me. Amen.",
+      "sourceLocator": "An Evening Prayer, printed page 27",
+      "bibleReferences": [
+        "1 John 1:9",
+        "Psalm 4:8"
+      ],
+      "topics": [
+        "evening prayer",
+        "forgiveness",
+        "devotion"
+      ],
+      "recommendedUse": "A brief concluding prayer for evening reflection and confession.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    },
+    {
+      "id": "gabriel-all-in-all-love-him",
+      "type": "Poem",
+      "title": "All in All to Me",
+      "text": "All In all to me is Jesus,\nBlessed One of Calvary;\nI will never cease to love Him\nWho has done so much for me.",
+      "slideText": "All In all to me is Jesus,\nBlessed One of Calvary;\nI will never cease to love Him\nWho has done so much for me.",
+      "sourceLocator": "All in All to Me, printed page 9",
+      "bibleReferences": [
+        "1 John 4:19",
+        "Galatians 2:20"
+      ],
+      "topics": [
+        "gratitude",
+        "Christ",
+        "love"
+      ],
+      "recommendedUse": "A devotional stanza responding to Christ's love with gratitude.",
+      "reviewNote": "Poetic language, not a Scripture quotation. Wording matches the stored OCR with whitespace normalized; verify punctuation and lineation against the page scan before publication. Teach doctrine from the cited KJV passages."
+    }
+  ]
+}
