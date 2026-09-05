@@ -1,5 +1,107 @@
 [
   {
+    "id": "licensed-dennett-nehemiah",
+    "title": "Nehemiah",
+    "author": "Edward Dennett",
+    "publisherMinistry": "STEM Publishing",
+    "category": "Commentaries",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.stempublishing.com/authors/dennett/Nehemiah.html",
+    "passage": "Nehemiah",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-05; full content and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text import or hosting",
+      "Audio hosting or embedding",
+      "Image or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-study-expansion-2026-09-05.md",
+    "recommendedUse": "Chapter-by-chapter reading on prayer, rebuilding, and restoration.",
+    "notes": "External reading link. Brethren/dispensational commentary; compare interpretations with KJV Scripture. Do not assume all quoted translations are KJV. No full commentary text imported."
+  },
+  {
+    "id": "licensed-dennett-haggai",
+    "title": "The Book of Haggai",
+    "author": "Edward Dennett",
+    "publisherMinistry": "STEM Publishing",
+    "category": "Commentaries",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.stempublishing.com/authors/dennett/haggaied.html",
+    "passage": "Haggai",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-05; full content and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text import or hosting",
+      "Audio hosting or embedding",
+      "Image or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-study-expansion-2026-09-05.md",
+    "recommendedUse": "Six expository sections covering Haggai; source identifies Christian Friend volume 11, 1884.",
+    "notes": "External reading link. Brethren/dispensational commentary; compare interpretations with KJV Scripture. Do not assume all quoted translations are KJV. No full commentary text imported."
+  },
+  {
+    "id": "licensed-step-bible-study-tools",
+    "title": "STEP Bible — Study Tools",
+    "author": "STEP Bible team",
+    "publisherMinistry": "Tyndale House / STEP Bible",
+    "category": "Bible Study Tools",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.stepbible.org/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-05; full content and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text import or hosting",
+      "Audio hosting or embedding",
+      "Image or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-study-expansion-2026-09-05.md",
+    "recommendedUse": "External study tools for biblical words, people, places, chronology, and parallel passages. Select KJV before Scripture study; the site initially displayed ESV during review.",
+    "notes": "External tool or guide only. No third-party datasets, translations, or software imported. Their individual licenses require separate review."
+  },
+  {
+    "id": "licensed-blb-tsk-guide",
+    "title": "Treasury of Scripture Knowledge — BLB Guide",
+    "author": "Blue Letter Bible",
+    "publisherMinistry": "Blue Letter Bible",
+    "category": "Bible Study Tools",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.blueletterbible.org/iPhone/man04_2k.cfm",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-05; full content and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text import or hosting",
+      "Audio hosting or embedding",
+      "Image or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-study-expansion-2026-09-05.md",
+    "recommendedUse": "Official guide to using TSK cross-references in the BLB iPhone app; a companion reference for learning cross-reference study.",
+    "notes": "External tool or guide only. No third-party datasets, translations, or software imported. Their individual licenses require separate review."
+  },
+  {
     "id": "licensed-dennett-ezra-restoration",
     "title": "Ezra, or Restoration from Babylon",
     "author": "Edward Dennett",
@@ -374,7 +476,7 @@
     ],
     "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
     "recommendedUse": "Read devotional poetry and select candidates for separately verified quotation and sermon use.",
-    "notes": "Official catalog identifies an 1894 New York edition and public-domain status in the USA. Link-only in this batch; no poem excerpts or text imported. Review liturgical and doctrinal context, exact wording, and applicable local rights before reuse."
+    "notes": "Official catalog identifies an 1894 New York edition and public-domain status in the USA. Full text imported separately on 2026-09-05 in the public-domain library as Verses. This source listing grants no additional reuse permissions. Review liturgical context and exact wording before excerpting."
   },
   {
     "id": "licensed-northstar-understanding-the-bible",

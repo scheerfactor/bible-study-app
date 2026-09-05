@@ -1,5 +1,27 @@
 [
   {
+    "file": "generated/olive-hillside-dawn-v1.png",
+    "slot": "olive-hillside-dawn",
+    "category": "Prayer",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-05-olive-hillside-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": [
+      "Prayer",
+      "Hope",
+      "Peace",
+      "Faithfulness"
+    ],
+    "bibleReferences": [
+      "Psalm 52:8",
+      "Romans 15:13"
+    ],
+    "recommendedUse": "Prayer and hope slides. Open sky on left for text; use dark text or the presentation's dark overlay for white text. Illustrative landscape, not a documented biblical location.",
+    "optimized": "1672x941 PNG saved locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/mixed-study-expansion-2026-09-05.md"
+  },
+  {
     "file": "generated/quiet-study-window-v1.png",
     "slot": "quiet-study-window",
     "category": "Bible Study",
