@@ -1,5 +1,19 @@
 [
   {
+    "file": "generated/watchtower-harvest-dawn-v1.png",
+    "slot": "watchtower-harvest-dawn",
+    "category": "Watchfulness",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-05-watchtower-harvest-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Watchfulness", "Harvest", "Faithfulness", "Hope"],
+    "bibleReferences": ["Habakkuk 2:1", "Matthew 9:37-38", "John 4:35"],
+    "recommendedUse": "Watchfulness, harvest, missions, faithfulness, and hope slides; use light text in the dark upper-left area or dark text over the lower-left dawn glow. Illustrative landscape, not a documented biblical location.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/watchtower-harvest-audio-hymn-2026-09-05.md"
+  },
+  {
     "file": "generated/olive-hillside-dawn-v1.png",
     "slot": "olive-hillside-dawn",
     "category": "Prayer",

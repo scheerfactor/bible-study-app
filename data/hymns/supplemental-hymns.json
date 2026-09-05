@@ -1,5 +1,44 @@
 [
   {
+    "id": "god-of-the-seas-thy-thundering-voice",
+    "title": "God of the Seas, Thy Thundering Voice",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "Hamburg (editorial Long Meter pairing)",
+    "themes": [
+      "God's Sovereignty",
+      "Creation",
+      "Sea",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Psalm 107:23-31"
+    ],
+    "stanzas": [
+      "God of the seas, thy thundering voice\nMakes all the roaring waves rejoice,\nAnd one soft word of thy command\nCan sink them silent in the sand.",
+      "If but a Moses wave thy rod,\nThe sea divides, and owns its God:\nThe stormy floods their Maker knew,\nAnd let his chosen armies thro'.",
+      "The scaly flocks amidst the sea,\nTo thee, their Lord, a tribute pay;\nThe meanest fish that swims the flood\nLeaps up, and means a praise to God.",
+      "The larger monsters of the deep,\nOn thy commands attendance keep,\nBy thy permission sport and play,\nAnd cleave along their foaming way.",
+      "If God his voice of tempest rears,\nLeviathan lies still and fears,\nAnon he lifts his nostrils high,\nAnd spouts the ocean to the sky.",
+      "How is thy glorious power ador'd,\nAmidst those watery nations, Lord!\nYet the bold men that trace the seas,\nBold men, refuse their Maker's praise.",
+      "What scenes of miracle they see,\nAnd never tune a song to thee!\nWhile on the flood they safely ride,\nThey curse the hand that smooths the tide.",
+      "Anon they plunge in watery graves,\nAnd some drink death among the waves:\nYet the surviving crew blaspheme,\nNor own the God that rescu'd them.",
+      "O for some signal of thine hand!\nShake all the seas, Lord, shake the land,\nGreat Judge, descend, lest men deny\nThat there's a God that rules the sky."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 70. Removed only stanza numbers and optional-stanza brackets. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "when-i-survey-the-wondrous-cross.mid",
+    "midiSha256": "e83c60388a0a6f68b23687c3a69f602416705504ae2996fa62ceda3bdd1982b3",
+    "rightsEvidenceFile": "when-i-survey-the-wondrous-cross-rights.html",
+    "rightsEvidenceSha256": "cc3c34dbd7aee0533c9948345b25084bbfdb962a2dd7ff415b6c68ebd77b7256",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/When_I_Survey_the_Wondrous_Cross/When_I_Survey_the_Wondrous_Cross.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HAMBURG by Lowell Mason, 1824; public-domain MIDI distributed with the cited Timeless Truths record. Editorial 8.8.8.8 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
     "id": "begin-my-tongue-some-heavenly-theme",
     "title": "Begin, My Tongue, Some Heavenly Theme",
     "lyricist": "Isaac Watts",

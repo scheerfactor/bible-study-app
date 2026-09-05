@@ -73,6 +73,7 @@
       "shortLabel": "Preaching",
       "description": "Free attributed messages from J. Vernon McGee and public-domain Spurgeon readings.",
       "trackIds": [
+        "ttb-sanctuary-of-the-soul-official-audio",
         "ttb-man-back-dead-official-audio",
         "ttb-jeremiah-man-sorrows-official-audio",
         "ttb-answers-problems-times-official-audio",
@@ -168,6 +169,12 @@
     }
   ],
   "reviewedTracks": [
+    {
+      "mediaRecordId": "ttb-sanctuary-of-the-soul-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, AAC duration, byte size, and ETag verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
     {
       "mediaRecordId": "ttb-man-back-dead-official-audio",
       "sourceManifest": "media-intake-candidates",

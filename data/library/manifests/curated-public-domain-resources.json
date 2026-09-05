@@ -110492,5 +110492,55 @@
     "checksum_sha256": "1617a1697cf444cd6ba266f0a72b8706af5988d62f20b07eea032a857d523c3f",
     "file_size_bytes": 614765,
     "word_count": 93878
+  },
+  {
+    "title": "Daniel the Prophet: Nine Lectures Delivered in the Divinity School of the University of Oxford",
+    "author": "Edward Bouverie Pusey",
+    "year": 1864,
+    "category": "Commentaries",
+    "collection": "Historical Bible Commentaries",
+    "source_url": "https://archive.org/download/MN42057ucmf_9/MN42057ucmf_9_djvu.txt",
+    "download_url": "https://archive.org/download/MN42057ucmf_9/MN42057ucmf_9_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/daniel-the-prophet-nine-lectures-delivered-in-the-divinity-school-of-the-university-of-oxford-edward-bouverie-.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the 1864 Oxford John Henry and James Parker edition; public domain in the USA",
+    "notes": "Full historical commentary defending the traditional authorship and date of Daniel; evaluate scholarly and doctrinal conclusions against KJV Scripture Labels/warnings: Historical Anglican scholarship;Detailed critical argument;Microfilm OCR requires scan review;KJV remains primary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Full historical commentary defending the traditional authorship and date of Daniel; evaluate scholarly and doctrinal conclusions against KJV Scripture",
+    "resource_labels": [
+      "Historical Bible Commentaries",
+      "Historical Anglican scholarship",
+      "Detailed critical argument",
+      "Microfilm OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "resource_warnings": [
+      "Historical Anglican scholarship",
+      "Detailed critical argument",
+      "Microfilm OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Daniel the Prophet: Nine Lectures Delivered in the Divinity School of the University of Oxford",
+      "author": "Edward Bouverie Pusey",
+      "category": "Commentaries",
+      "collection": "Historical Bible Commentaries",
+      "badge": "Historical Bible Commentaries",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 1403,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "65f4ac55f82bfee909ba38eb6d194ae35f5cc0d4f5f311b43db7d1076c43df14",
+    "file_size_bytes": 1738974,
+    "word_count": 315732
   }
 ]
