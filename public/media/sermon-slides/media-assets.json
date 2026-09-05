@@ -1,5 +1,27 @@
 [
   {
+    "file": "generated/quiet-study-window-v1.png",
+    "slot": "quiet-study-window",
+    "category": "Bible Study",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-04-quiet-study-window",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": [
+      "Study",
+      "Scripture",
+      "Wisdom",
+      "Teaching"
+    ],
+    "bibleReferences": [
+      "2 Timothy 2:15",
+      "Psalm 119:18"
+    ],
+    "recommendedUse": "Study and teaching slides; place white text in the dark left and upper-center area. Original illustrative scene, not historical evidence.",
+    "optimized": "1672x941 PNG stored locally. Prompt and visual review recorded in data/library/acquisition/permission-evidence/dennett-hymns-study-background-2026-09-04.md"
+  },
+  {
     "file": "photos/cross.jpg",
     "slot": "cross",
     "category": "Cross",

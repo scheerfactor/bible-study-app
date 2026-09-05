@@ -1,5 +1,382 @@
 [
   {
+    "id": "licensed-dennett-ezra-restoration",
+    "title": "Ezra, or Restoration from Babylon",
+    "author": "Edward Dennett",
+    "publisherMinistry": "STEM Publishing",
+    "category": "Commentaries",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.stempublishing.com/authors/dennett/Ezra.html",
+    "passage": "Ezra",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-04; full content, edition, and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, or radio rotation",
+      "Image, scan, or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/dennett-hymns-study-background-2026-09-04.md",
+    "recommendedUse": "Chapter-by-chapter study of restoration, worship, and rebuilding; source identifies the fourth edition, 1912.",
+    "notes": "Online reading link only; no full text imported. Brethren/dispensational perspective requires comparison with KJV Scripture. Source quotations and translations must not be assumed to match KJV. Edition-specific reuse review is separate from this listing."
+  },
+  {
+    "id": "licensed-dennett-second-timothy",
+    "title": "An Exposition of Second Timothy",
+    "author": "Edward Dennett",
+    "publisherMinistry": "STEM Publishing",
+    "category": "Commentaries",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.stempublishing.com/authors/dennett/2TIM.html",
+    "passage": "2 Timothy",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-04; full content, edition, and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, or radio rotation",
+      "Image, scan, or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/dennett-hymns-study-background-2026-09-04.md",
+    "recommendedUse": "Study of ministry, perseverance, and faithfulness in Paul's final pastoral epistle.",
+    "notes": "Online reading link only; no full text imported. Brethren/dispensational perspective requires comparison with KJV Scripture. Source quotations and translations must not be assumed to match KJV. Edition-specific reuse review is separate from this listing."
+  },
+  {
+    "id": "licensed-dennett-fundamental-truths",
+    "title": "Fundamental Truths of Salvation",
+    "author": "Edward Dennett",
+    "publisherMinistry": "STEM Publishing",
+    "category": "Bible Study",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.stempublishing.com/authors/dennett/Fundamen.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-04; full content, edition, and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, or radio rotation",
+      "Image, scan, or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/dennett-hymns-study-background-2026-09-04.md",
+    "recommendedUse": "Book-length reading on salvation and Christian doctrine.",
+    "notes": "Online reading link only; no full text imported. Brethren/dispensational perspective requires comparison with KJV Scripture. Source quotations and translations must not be assumed to match KJV. Edition-specific reuse review is separate from this listing."
+  },
+  {
+    "id": "licensed-dennett-young-believers-letters",
+    "title": "Twelve Letters to Young Believers",
+    "author": "Edward Dennett",
+    "publisherMinistry": "STEM Publishing",
+    "category": "Christian Living",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.stempublishing.com/authors/dennett/12lettrs.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-04; full content, edition, and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, or radio rotation",
+      "Image, scan, or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/dennett-hymns-study-background-2026-09-04.md",
+    "recommendedUse": "Discipleship reading and discussion starters for new believers.",
+    "notes": "Online reading link only; no full text imported. Brethren/dispensational perspective requires comparison with KJV Scripture. Source quotations and translations must not be assumed to match KJV. Edition-specific reuse review is separate from this listing."
+  },
+  {
+    "id": "licensed-timeless-god-leads-us-along",
+    "title": "God Leads Us Along — Hymn Source",
+    "author": "George A. Young",
+    "publisherMinistry": "Timeless Truths",
+    "category": "Hymns",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://library.timelesstruths.org/music/God_Leads_Us_Along/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-04; full content, edition, and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, or radio rotation",
+      "Image, scan, or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/dennett-hymns-study-background-2026-09-04.md",
+    "recommendedUse": "Hymn research on guidance; source attributes words and music to George A. Young, 1903.",
+    "notes": "Source page marks text and tune public domain. Direct download failed TLS hostname verification on 2026-09-04. Link-only discovery: no lyrics, MIDI, or recordings imported; do not claim playable or independently verified arrangements."
+  },
+  {
+    "id": "licensed-timeless-day-by-day",
+    "title": "Day by Day — Hymn Source",
+    "author": "Karolina W. Sandell-Berg; translated by Andrew L. Skoog",
+    "publisherMinistry": "Timeless Truths",
+    "category": "Hymns",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://library.timelesstruths.org/music/Day_by_Day/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source page reviewed 2026-09-04; full content, edition, and reuse review pending",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, or radio rotation",
+      "Image, scan, or slide reuse",
+      "AI/TTS narration",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/dennett-hymns-study-background-2026-09-04.md",
+    "recommendedUse": "Hymn research on daily trust; source credits the Blott en Dag tune to Oskar Ahnfelt.",
+    "notes": "Source page marks text and tune public domain. Direct download failed TLS hostname verification on 2026-09-04. Link-only discovery: no lyrics, MIDI, or recordings imported; do not claim playable or independently verified arrangements."
+  },
+  {
+    "id": "licensed-way-of-life-rare-commentary-treasury",
+    "title": "The Treasury of Rare Dispensational Commentaries",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Commentaries",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.wayoflife.org/reports/treasury_of_rare_dispensational_comm.html",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Find dispensational and premillennial commentary titles for independent edition review.",
+    "notes": "Historical report, not an available download. Consult current product pages; inclusion here does not approve redistribution of the publisher's compiled scans."
+  },
+  {
+    "id": "licensed-way-of-life-baptist-waldensian-history-library",
+    "title": "Baptist/Waldensian History Library",
+    "author": "Various authors",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Church History",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.wayoflife.org/publications/baptist_history_library.php",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Discover Baptist and Waldensian history books through the official collection listing.",
+    "notes": "Paid collection of 30 PDF books. Purchase and downloads remain on the publisher's site; no files acquired or copied."
+  },
+  {
+    "id": "licensed-way-of-life-digital-library-historical-reference",
+    "title": "Fundamental Baptist Digital Library — Discontinued",
+    "author": "Various authors",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Reference",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.wayoflife.org/publications/fundamental_baptist_digital_library.php",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Historical bibliography and pointers to separate replacement collections.",
+    "notes": "Publisher explicitly says this item is no longer available. Do not present as an available purchase, free book, or downloadable collection."
+  },
+  {
+    "id": "licensed-way-of-life-preacher-student",
+    "title": "The Preacher the Student",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Preaching",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.wayoflife.org/reports/the-preacher-the-student.php",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Reading and study encouragement; leads for commentary selection and quotation research.",
+    "notes": "Official article dated August 6, 2024. Historical anecdotes and quotations require checking their original sources before promotion into verified preaching helps."
+  },
+  {
+    "id": "licensed-way-of-life-audio-directory",
+    "title": "Way of Life Conference, Preaching, and Teaching Audio",
+    "author": "Various speakers",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Audio Sermons",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.wayoflife.org/audiosermons/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Open the ministry's listening directory and follow its SermonAudio broadcaster link.",
+    "notes": "The official page says its previous SermonAudio data feed is not working and directs listeners to SermonAudio. Directory link only: no individual tracks, playback, durations, or radio rotation verified."
+  },
+  {
+    "id": "licensed-way-of-life-presentation-directory",
+    "title": "Way of Life PowerPoint/Keynote Presentations",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Presentation Resources",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.wayoflife.org/publications/powerpoint.php",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Find teaching presentations on Bible geography, ancient kingdoms, and church history.",
+    "notes": "Official slide-set directory. Each set needs its own terms and content review before download, image extraction, export, or redistribution. No slide files added."
+  },
+  {
+    "id": "licensed-freebibleimages-teaching-directory",
+    "title": "FreeBibleimages — Bible Story Images",
+    "author": "Various contributors",
+    "publisherMinistry": "FreeBibleimages",
+    "category": "Illustrations",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.freebibleimages.org/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Find photographic and illustrated Bible scenes for teaching and presentation planning.",
+    "notes": "Teaching use is offered free, but reuse conditions vary by contributor and image set. Review each Terms of Download and attribution before app import or slide export. Captions may use other translations; any Scripture added to this app must be KJV."
+  },
+  {
+    "id": "licensed-hymnary-research-directory",
+    "title": "Hymnary — Hymns and Hymnal Research",
+    "author": "Various hymn writers and editors",
+    "publisherMinistry": "Hymnary.org",
+    "category": "Hymns",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://hymnary.org/",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Research hymn authors, tunes, texts, and hymnals before selecting edition-specific material.",
+    "notes": "Research directory, not a blanket public-domain license. Lyrics, tunes, arrangements, scans, and recordings each require separate rights and accuracy review; no hymn text or recording copied."
+  },
+  {
+    "id": "licensed-rossetti-verses-gutenberg",
+    "title": "Verses",
+    "author": "Christina Georgina Rossetti",
+    "publisherMinistry": "Project Gutenberg",
+    "category": "Poems",
+    "collection": "Study and Teaching — Reviewed Source Links",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/77809",
+    "permissionStatus": "Public Policy - Official Links Only",
+    "reviewStatus": "Source listing reviewed 2026-09-04; individual content and reuse review required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting or excerpt import",
+      "Audio hosting, embedding, rebroadcast, or radio rotation",
+      "Image, scan, slide, or cover reuse and presentation export",
+      "AI/TTS narration or derivative content",
+      "Paid access or subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/mixed-resource-discovery-2026-09-04.md",
+    "recommendedUse": "Read devotional poetry and select candidates for separately verified quotation and sermon use.",
+    "notes": "Official catalog identifies an 1894 New York edition and public-domain status in the USA. Link-only in this batch; no poem excerpts or text imported. Review liturgical and doctrinal context, exact wording, and applicable local rights before reuse."
+  },
+  {
     "id": "licensed-northstar-understanding-the-bible",
     "title": "Understanding the Bible",
     "author": "Dr. David H. Sorenson",

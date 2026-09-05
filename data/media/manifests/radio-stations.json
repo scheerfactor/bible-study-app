@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewedAt": "2026-09-04",
+  "reviewedAt": "2026-09-05",
   "launchStatus": "Public beta approved",
   "stations": [
     {
@@ -73,6 +73,25 @@
       "shortLabel": "Preaching",
       "description": "Free attributed messages from J. Vernon McGee and public-domain Spurgeon readings.",
       "trackIds": [
+        "ttb-answers-problems-times-official-audio",
+        "ttb-home-casualty-last-days-official-audio",
+        "ttb-dont-blame-devil-official-audio",
+        "ttb-millennial-temple-sacrifices-official-audio",
+        "ttb-angels-dirty-faces-official-audio",
+        "ttb-watchman-night-official-audio",
+        "ttb-daniel-stand-alone-official-audio",
+        "ttb-christian-different-official-audio",
+        "ttb-holy-spirit-withdrawn-official-audio",
+        "ttb-gabriel-coming-christ-official-audio",
+        "ttb-daniel-man-prayer-official-audio",
+        "ttb-gods-calendar-israel-official-audio",
+        "ttb-go-christian-go-official-audio",
+        "ttb-everyone-heaven-official-audio",
+        "ttb-children-suffer-official-audio",
+        "ttb-destination-bethlehem-field-official-audio",
+        "ttb-destination-bethlehem-grave-official-audio",
+        "ttb-destination-bethlehem-boy-official-audio",
+        "ttb-destination-bethlehem-stable-official-audio",
         "ttb-official-sunday-sermons-free-distribution-pilot",
         "ttb-the-potter-and-the-clay-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
@@ -147,6 +166,120 @@
     }
   ],
   "reviewedTracks": [
+    {
+      "mediaRecordId": "ttb-answers-problems-times-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-home-casualty-last-days-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-dont-blame-devil-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-millennial-temple-sacrifices-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-angels-dirty-faces-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-watchman-night-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-daniel-stand-alone-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-christian-different-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-holy-spirit-withdrawn-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-gabriel-coming-christ-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-daniel-man-prayer-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-gods-calendar-israel-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-go-christian-go-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-everyone-heaven-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-children-suffer-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-field-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-grave-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-boy-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-stable-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
     {
       "mediaRecordId": "kjv-john-librivox-001-john-1-4",
       "sourceManifest": "uploaded-public-domain-audio-pilots",
