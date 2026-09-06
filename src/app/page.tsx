@@ -37356,9 +37356,14 @@ function groupLibraryWorks(resources: LibraryResource[]) {
   return Array.from(byWork.entries()).map(([workKey, editions]) => {
     const sortedEditions = sortLibraryEditions(editions);
     const preferred = sortedEditions.reduce(strongerLibraryResource, sortedEditions[0]);
+    const coveredEdition = sortedEditions.find((edition) => Boolean(edition.cover_image_url));
     const bibleBooks = Array.from(new Set(sortedEditions.flatMap((edition) => edition.bible_books ?? [])));
     return {
       ...preferred,
+      cover_image_url: preferred.cover_image_url ?? coveredEdition?.cover_image_url,
+      cover_source_url: preferred.cover_source_url ?? coveredEdition?.cover_source_url,
+      cover_rights_status: preferred.cover_rights_status ?? coveredEdition?.cover_rights_status,
+      cover_metadata: preferred.cover_metadata ?? coveredEdition?.cover_metadata,
       work_key: workKey,
       work_title: preferredLibraryWorkTitle(sortedEditions),
       edition_count: sortedEditions.length,
@@ -38803,10 +38808,10 @@ function LibraryScreen({
   const preachersTeachersResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "illustration", "bible characters", "ten commandments"]))
     .slice(0, 8);
-  const newResourceReleaseResources = resources.filter((resource) => [
-    "A Treatise on the Preparation and Delivery of Sermons",
-    "An exposition of the Book of Proverbs",
-  ].includes(resource.title));
+  const newResourceReleaseResources = resources.filter((resource) => {
+    const title = normalizedLibraryText(resource.title);
+    return title.includes("preparation and delivery of sermons") || title.includes("exposition of the book of proverbs");
+  });
   const prayerClassicResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["prayer", "pray", "intercession", "müller", "muller"]))
     .slice(0, 8);
