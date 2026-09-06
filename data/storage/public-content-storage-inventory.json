@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-06T18:55:30.963Z",
+  "generated_at": "2026-09-06T20:45:12.089Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 12970,
+  "commentary_entries": 12998,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 83757,
-      "total_size": "81.79 KB"
+      "total_bytes": 83928,
+      "total_size": "81.96 KB"
     },
     "commentary_batch": {
-      "files": 351,
-      "present": 351,
+      "files": 352,
+      "present": 352,
       "missing": 0,
-      "total_bytes": 537894078,
-      "total_size": "512.98 MB"
+      "total_bytes": 538887709,
+      "total_size": "513.92 MB"
     },
     "dictionary": {
       "files": 2,
@@ -36,7 +36,7 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 5387015,
+      "total_bytes": 5387284,
       "total_size": "5.14 MB"
     },
     "study_tool": {
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2820,
-      "present": 2820,
+      "files": 2821,
+      "present": 2821,
       "missing": 0,
-      "total_bytes": 2827798533,
+      "total_bytes": 2828792604,
       "total_size": "2.63 GB"
     }
   },
@@ -86,7 +86,7 @@
     "library_text_files_over_1mb": 569,
     "library_text_bytes_over_1mb": 1469078125,
     "public_content_files_over_1mb": 697,
-    "public_content_bytes_over_1mb": 2005478682,
+    "public_content_bytes_over_1mb": 2005478951,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 83757,
-      "checksum_sha256": "c85405eb0b6d16be7e880964b8f70ac72f3e523b33578469e1fb837943771a8a"
+      "size_bytes": 83928,
+      "checksum_sha256": "faa4251e5b67bee941c0111e9c4ed7b9365e94fff2ee7cedda52e446dd147e8d"
     },
     {
       "kind": "commentary_batch",
@@ -32333,6 +32333,16 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/spurgeon-reviewed-gospel-kingdom-matthew-commentary.json",
+      "storage_path": "data/imports/spurgeon-reviewed-gospel-kingdom-matthew-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 993631,
+      "checksum_sha256": "dafaea804611b70b32c8b9036453850992dce55adaadf0916d0f4f9dc443f6bb",
+      "batch_name": "spurgeon-reviewed-gospel-kingdom-matthew-commentary.json",
+      "entries": 28
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/treasury-of-david-completion-commentary.json",
       "storage_path": "data/imports/treasury-of-david-completion-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -32772,8 +32782,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 5387015,
-      "checksum_sha256": "daa1993964ba0eb9df435a5638646e68a98f52a0ff1fec6ec1d01a4752c0616a"
+      "size_bytes": 5387284,
+      "checksum_sha256": "5ad85aa3c4bca5d7566d2efd64a146bdb73f68d0d8de9451f7530dd86b4672c2"
     },
     {
       "kind": "study_tool",

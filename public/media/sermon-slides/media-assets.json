@@ -1128,5 +1128,33 @@
     "bibleReferences": ["Matthew 7:13-14", "John 10:9", "Luke 13:24"],
     "recommendedUse": "Gospel invitation, decision, discipleship, obedience, and narrow-way slides; use light text on the right.",
     "optimized": "1600x900 JPEG stored locally; original generated ancient gate at dawn with a broad dark right-side sermon-title zone."
+  },
+  {
+    "file": "photos/lamp-open-bible-v1.jpg",
+    "slot": "lamp-open-bible",
+    "category": "Scripture",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-lamp-open-bible",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Scripture", "Guidance", "Wisdom", "Bible Study"],
+    "bibleReferences": ["Psalm 119:105", "Proverbs 6:23", "2 Peter 1:19"],
+    "recommendedUse": "Scripture, guidance, wisdom, devotional reading, and Bible-study slides; use light text on the left.",
+    "optimized": "1600x900 JPEG stored locally; original generated lamp and open Bible with a broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "photos/watchman-dawn-v1.jpg",
+    "slot": "watchman-first-light",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-watchman-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Watchfulness", "Prayer", "Hope", "Faithfulness"],
+    "bibleReferences": ["Psalm 130:6", "Habakkuk 2:1", "Mark 13:35-37"],
+    "recommendedUse": "Watchfulness, prayer, waiting upon the Lord, hope, and faithful-service slides; use dark or deep-colored text on the right.",
+    "optimized": "1600x900 JPEG stored locally; original generated watchman at first light with a broad bright right-side sky sermon-title zone."
   }
 ]

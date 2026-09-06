@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-09-06T18:55:30.963Z
+Generated: 2026-09-06T20:45:12.089Z
 
 ## Path Strategy
 
@@ -11,8 +11,8 @@ Mirror current repository-relative paths in object storage during the transition
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
 | Library text | 2,388 | 2,388 | 0 | 2.05 GB |
-| Commentary chapter index | 1 | 1 | 0 | 81.79 KB |
-| Commentary batches | 351 | 351 | 0 | 512.98 MB |
+| Commentary chapter index | 1 | 1 | 0 | 81.96 KB |
+| Commentary batches | 352 | 352 | 0 | 513.92 MB |
 | Dictionary files | 2 | 2 | 0 | 38.21 MB |
 | Library manifests | 1 | 1 | 0 | 5.14 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
@@ -20,9 +20,9 @@ Mirror current repository-relative paths in object storage during the transition
 | Strong's chapter mappings | 0 | 0 | 0 | 0 B |
 | Bible map media | 21 | 21 | 0 | 12.18 MB |
 | TSK/cross-reference batches | 45 | 45 | 0 | 5.14 MB |
-| Total public content | 2,820 | 2,820 | 0 | 2.63 GB |
+| Total public content | 2,821 | 2,821 | 0 | 2.63 GB |
 
-Commentary entries represented in public batch files: 12,970
+Commentary entries represented in public batch files: 12,998
 
 Storage-backed library text already uploaded to object storage: 486 files (457.19 MB).
 

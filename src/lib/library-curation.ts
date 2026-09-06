@@ -62,6 +62,13 @@ function projectGutenbergCoverUrl(sourceUrl: string) {
   return match ? `https://www.gutenberg.org/cache/epub/${match[1]}/pg${match[1]}.cover.medium.jpg` : null;
 }
 
+function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
+  if (entry.title === "The Gospel of the Kingdom" && entry.author === "C. H. Spurgeon") {
+    return "/media/library-covers/spurgeon-gospel-kingdom-v1.png";
+  }
+  return null;
+}
+
 const CATEGORY_LABELS: Record<string, string> = {
   "Bible study helps": "Bible Handbooks",
   "Baptist history": "Baptist History",
@@ -221,7 +228,7 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     word_count: entry.word_count ?? null,
     file_size_bytes: entry.file_size_bytes ?? null,
     checksum_sha256: entry.checksum_sha256 ?? null,
-    cover_image_url: entry.cover_image_url ?? projectGutenbergCoverUrl(entry.source_url),
+    cover_image_url: entry.cover_image_url ?? originalLibraryCoverUrl(entry) ?? projectGutenbergCoverUrl(entry.source_url),
     cover_source_url: entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: entry.cover_rights_status ?? (entry.source_url.includes("gutenberg.org") ? "Project Gutenberg hosted cover; use under source license/trademark terms." : "Generated fallback cover"),
     reading_time_minutes: entry.reading_time_minutes ?? (entry.word_count ? Math.max(1, Math.round(entry.word_count / 225)) : null),

@@ -121,6 +121,7 @@ import mediaIntakeSeedData from "../../data/media/manifests/media-intake-candida
 import licensedResourceLinksData from "../../data/library/manifests/licensed-resource-links.json";
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
 import publicSermonAudioReleaseIds from "../../data/media/manifests/public-sermon-audio-release.json";
+import publicAudiobookAudioReleaseIds from "../../data/media/manifests/public-audiobook-audio-release.json";
 import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
 import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
@@ -271,7 +272,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -1566,8 +1567,12 @@ type AudiobookPilot = {
   segments: AudiobookPilotSegment[];
 };
 
+const PUBLIC_AUDIOBOOK_AUDIO_RELEASE_IDS = new Set(publicAudiobookAudioReleaseIds as string[]);
 const UPLOADED_AUDIOBOOK_PILOTS: UploadedPublicDomainAudioPilot[] = (uploadedPublicDomainAudioPilots as UploadedPublicDomainAudioPilot[])
-  .filter((pilot) => pilot.kind === "Audiobook" && Boolean(pilot.publicUrl));
+  .filter((pilot) => pilot.kind === "Audiobook" && Boolean(pilot.publicUrl))
+  .map((pilot) => PUBLIC_AUDIOBOOK_AUDIO_RELEASE_IDS.has(pilot.id)
+    ? { ...pilot, visibility: "Public after review", intakeStatus: "Approved" }
+    : pilot);
 
 const PUBLIC_SERMON_AUDIO_RELEASE_IDS = new Set(publicSermonAudioReleaseIds as string[]);
 const PUBLIC_SERMON_AUDIO_PILOTS: UploadedPublicDomainAudioPilot[] = (uploadedPublicDomainAudioPilots as UploadedPublicDomainAudioPilot[])
@@ -2983,6 +2988,22 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Grace",
     assetUrl: "/media/sermon-slides/photos/narrow-gate-dawn-v1.jpg",
   },
+  "lamp-open-bible": {
+    label: "Lamp Beside the Open Bible",
+    description: "Scripture, guidance, wisdom, study, and walking in the light of God's Word.",
+    background: "linear-gradient(90deg, rgba(2,10,20,0.82), rgba(2,10,20,0.08) 72%)",
+    motif: "Lamp & Open Bible",
+    category: "Scripture",
+    assetUrl: "/media/sermon-slides/photos/lamp-open-bible-v1.jpg",
+  },
+  "watchman-first-light": {
+    label: "Watchman at Dawn",
+    description: "Watchfulness, prayer, warning, hope, faithfulness, and waiting upon the Lord.",
+    background: "linear-gradient(270deg, rgba(34,24,22,0.62), rgba(34,24,22,0.04) 72%)",
+    motif: "Watchman",
+    category: "Teaching",
+    assetUrl: "/media/sermon-slides/photos/watchman-dawn-v1.jpg",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -3306,6 +3327,54 @@ const SERMON_QUICK_STARTS: Record<SermonQuickStartId, {
 
 const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
   {
+    id: "illustration-lighthouse-lens",
+    topic: "Christian witness",
+    title: "A clear lens carries the light",
+    content: "A lamp may be burning, but a neglected lens dims the light reaching those outside. The message must remain bright, and the messenger's life must not cloud it.",
+    body: "A lamp may be burning, but a neglected lens dims the light reaching those outside. The message must remain bright, and the messenger's life must not cloud it.",
+    passage: "Matthew 5:16",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with Christian witness, holiness, testimony, and letting the light of Christ be seen.",
+    tags: ["witness", "light", "testimony", "holiness"],
+  },
+  {
+    id: "illustration-anchor-tested",
+    topic: "Hope and assurance",
+    title: "The anchor is proved in the storm",
+    content: "An anchor is not admired merely for its shape on the deck. Its worth is known when it holds against the pull of wind and current.",
+    body: "An anchor is not admired merely for its shape on the deck. Its worth is known when it holds against the pull of wind and current.",
+    passage: "Hebrews 6:19",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with hope, assurance, perseverance, trials, and the steadfast promises of God.",
+    tags: ["hope", "assurance", "anchor", "trials"],
+  },
+  {
+    id: "illustration-watchman-first-light",
+    topic: "Watchfulness and prayer",
+    title: "The watchman keeps looking",
+    content: "The watchman does not abandon his place because the night feels long. He keeps looking, knowing that dawn may be nearer than it appears.",
+    body: "The watchman does not abandon his place because the night feels long. He keeps looking, knowing that dawn may be nearer than it appears.",
+    passage: "Psalm 130:6",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with prayer, patient hope, watchfulness, perseverance, and waiting upon the Lord.",
+    tags: ["watchfulness", "prayer", "hope", "perseverance"],
+  },
+  {
+    id: "illustration-well-worn-path",
+    topic: "Spiritual habits",
+    title: "Faithful steps form a path",
+    content: "One walk across a field leaves little mark, but faithful steps taken day after day form a clear path. Spiritual habits are built in the same quiet way.",
+    body: "One walk across a field leaves little mark, but faithful steps taken day after day form a clear path. Spiritual habits are built in the same quiet way.",
+    passage: "Psalm 119:35",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with daily Bible reading, prayer, discipleship, consistency, and faithful Christian habits.",
+    tags: ["habits", "faithfulness", "discipleship", "devotion"],
+  },
+  {
     id: "illustration-storm-foundation",
     topic: "Trials and obedience",
     title: "The storm reveals the foundation",
@@ -3512,6 +3581,54 @@ const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
 ];
 
 const SERMON_QUOTE_STARTERS: SermonLibraryItem[] = [
+  {
+    id: "quote-light-for-next-step",
+    topic: "Scripture guidance",
+    title: "Light for the next step",
+    content: "We do not need to see the whole road before obeying the light God has already given.",
+    body: "We do not need to see the whole road before obeying the light God has already given.",
+    passage: "Psalm 119:105",
+    source: "Father's Business study principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use with Scripture guidance, decision-making, obedience, and daily faithfulness.",
+    tags: ["Scripture", "guidance", "obedience", "faithfulness"],
+  },
+  {
+    id: "quote-prayer-dependence",
+    topic: "Prayer",
+    title: "Prayer confesses dependence",
+    content: "Prayer is the continuing confession that the work belongs to God and must be done in dependence upon Him.",
+    body: "Prayer is the continuing confession that the work belongs to God and must be done in dependence upon Him.",
+    passage: "John 15:5",
+    source: "Father's Business ministry principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use with prayer, ministry preparation, dependence, service, and abiding in Christ.",
+    tags: ["prayer", "dependence", "ministry", "service"],
+  },
+  {
+    id: "quote-application-bridge",
+    topic: "Application",
+    title: "Truth calls for response",
+    content: "A lesson is not finished when the truth is understood; it must be carried into a faithful response.",
+    body: "A lesson is not finished when the truth is understood; it must be carried into a faithful response.",
+    passage: "James 1:22",
+    source: "Father's Business teaching principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use with sermon application, Bible lessons, obedience, discipleship, and practical response.",
+    tags: ["application", "obedience", "teaching", "discipleship"],
+  },
+  {
+    id: "quote-watchful-hope",
+    topic: "The return of Christ",
+    title: "Watchful hope strengthens obedience",
+    content: "Hope in Christ's return should make today's obedience more earnest, not tomorrow's speculation more distracting.",
+    body: "Hope in Christ's return should make today's obedience more earnest, not tomorrow's speculation more distracting.",
+    passage: "Titus 2:13",
+    source: "Father's Business teaching principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use with the blessed hope, watchfulness, holy living, prophecy, and faithful service.",
+    tags: ["blessed hope", "watchfulness", "obedience", "prophecy"],
+  },
   {
     id: "quote-context-before-conclusion",
     topic: "Bible interpretation",
@@ -3949,6 +4066,7 @@ const J_C_RYLE_MARK_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels:
 const J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospel of St. Matthew";
 const J_C_RYLE_LUKE_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. Luke";
 const CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION = "An Exposition of the Book of Proverbs";
+const SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION = "The Gospel of the Kingdom";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -3980,10 +4098,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION,
   J_C_RYLE_LUKE_COMMENTARY_COLLECTION,
   CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION,
+  SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "C. H. Spurgeon",
+    resourceTitle: SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 28 Matthew chapters are imported from the reviewed 1893 Internet Archive edition and connected to the chapter reader.",
+    rightsNotes: "Verified public-domain edition. Preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Pastoral, evangelistic Baptist exposition alongside the KJV text, cross references, and other historical voices.",
+  },
   {
     author: "Matthew Henry",
     resourceTitle: MATTHEW_HENRY_COMMENTARY_COLLECTION,
@@ -4099,6 +4226,22 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
 ];
 
 const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
+  {
+    author: "C. H. Spurgeon",
+    timePeriod: "1834-1892",
+    biography: "English Baptist pastor and evangelist whose final commentary offers concise, vivid, and practical exposition of Matthew.",
+    writingStyle: "Baptist, pastoral, evangelistic, concise, vivid, and application-oriented.",
+    coverageScope: "Matthew 1-28",
+    coverageSummary: "All 28 Matthew chapters reviewed from a verified 1893 public-domain edition",
+    coverageUseNote: "Follows the selected KJV chapter throughout Matthew.",
+    strengths: ["Matthew", "Preaching", "Gospel application", "Teaching preparation"],
+    weaknesses: ["Historical OCR quotations should be checked against the page scan", "Concise treatment should be compared with fuller commentaries"],
+    bestUse: "Read after the KJV chapter for concise exposition, Gospel emphasis, sermon development, and practical application.",
+    doctrinalNotes: "Historical Baptist resource. Keep Scripture primary, compare every conclusion with the KJV text, and spot-check OCR before quotation.",
+    sampleQuote: "Best used as a concise preaching companion after reading the KJV chapter itself.",
+    bestFor: ["Devotions", "Teaching", "Preaching"],
+    priority: 2,
+  },
   {
     author: "Charles Bridges",
     timePeriod: "1794-1869",
@@ -12364,6 +12507,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "spurgeon-reviewed-gospel-kingdom-matthew-commentary.json",
   "charles-bridges-reviewed-proverbs-commentary.json",
   "j-c-ryle-reviewed-john-13-21-commentary.json",
   "j-c-ryle-reviewed-john-1-12-commentary.json",
@@ -38810,7 +38954,7 @@ function LibraryScreen({
     .slice(0, 8);
   const newResourceReleaseResources = resources.filter((resource) => {
     const title = normalizedLibraryText(resource.title);
-    return title.includes("preparation and delivery of sermons") || title.includes("exposition of the book of proverbs");
+    return title.includes("preparation and delivery of sermons") || title.includes("exposition of the book of proverbs") || title.includes("gospel of the kingdom");
   });
   const prayerClassicResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["prayer", "pray", "intercession", "müller", "muller"]))

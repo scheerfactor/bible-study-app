@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { commentaryChapterIndex } from "@/lib/commentary-chapter-index";
 import { readTextContent } from "@/lib/server-content-storage";
+import spurgeonGospelKingdomRows from "../../../../../../../data/imports/spurgeon-reviewed-gospel-kingdom-matthew-commentary.json";
 
 type CommentaryRow = {
   book?: unknown;
@@ -16,6 +17,10 @@ const commentaryBookIndexAliases: Record<string, string> = {
 async function readCommentaryRows(fileName: string) {
   if (!publicCommentaryFilePattern.test(fileName)) {
     throw new Error(`Invalid indexed commentary file: ${fileName}`);
+  }
+
+  if (fileName === "spurgeon-reviewed-gospel-kingdom-matthew-commentary.json") {
+    return spurgeonGospelKingdomRows as CommentaryRow[];
   }
 
   const raw = await readTextContent(["data", "imports", fileName], {
