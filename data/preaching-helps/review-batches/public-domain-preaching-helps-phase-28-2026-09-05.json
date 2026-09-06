@@ -1,0 +1,34 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-28-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "A concise Daniel March statement about Scripture for attributed presentation use.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Daniel March",
+    "sourceTitle": "Night Scenes in the Bible",
+    "sourceUrl": "https://archive.org/details/nightscenesinbib00marc",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/night-scenes-in-the-bible-daniel-march.txt",
+    "rightsBasis": "1869 edition, public domain in the USA. Wording matched to stored OCR; page-scan verification pending.",
+    "reviewNote": "Read in the surrounding preface. Author's statement, not Scripture; use KJV for accompanying Bible text."
+  },
+  "entries": [
+    {
+      "id": "march-bible-oldest-newest",
+      "type": "Quote",
+      "title": "The Oldest and Newest Book",
+      "text": "The Bible is the oldest and the newest of books.",
+      "slideText": "The Bible is the oldest and the newest of books.",
+      "sourceLocator": "Preface, printed page 5",
+      "bibleReferences": [
+        "Psalm 119:89"
+      ],
+      "topics": [
+        "Bible",
+        "eternity",
+        "relevance"
+      ],
+      "recommendedUse": "Opening line for a Bible-study, Scripture-authority, or enduring-Word presentation slide."
+    }
+  ]
+}

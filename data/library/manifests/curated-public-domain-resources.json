@@ -110542,5 +110542,55 @@
     "checksum_sha256": "65f4ac55f82bfee909ba38eb6d194ae35f5cc0d4f5f311b43db7d1076c43df14",
     "file_size_bytes": 1738974,
     "word_count": 315732
+  },
+  {
+    "title": "Night Scenes in the Bible",
+    "author": "Daniel March",
+    "year": 1869,
+    "category": "Classics",
+    "collection": "Bible Exposition and Sermon Illustrations",
+    "source_url": "https://archive.org/download/nightscenesinbib00marc/nightscenesinbib00marc_djvu.txt",
+    "download_url": "https://archive.org/download/nightscenesinbib00marc/nightscenesinbib00marc_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/night-scenes-in-the-bible-daniel-march.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the 1869 Philadelphia Zeigler McCurdy edition; public domain in the USA",
+    "notes": "Complete book of Bible-night expositions for devotional reading sermon preparation and attributed illustrations Labels/warnings: Nineteenth-century devotional exposition;Historical illustrations require context;OCR requires scan review;Compare quotations with KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Complete book of Bible-night expositions for devotional reading sermon preparation and attributed illustrations",
+    "resource_labels": [
+      "Bible Exposition and Sermon Illustrations",
+      "Nineteenth-century devotional exposition",
+      "Historical illustrations require context",
+      "OCR requires scan review",
+      "Compare quotations with KJV"
+    ],
+    "resource_warnings": [
+      "Nineteenth-century devotional exposition",
+      "Historical illustrations require context",
+      "OCR requires scan review",
+      "Compare quotations with KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Night Scenes in the Bible",
+      "author": "Daniel March",
+      "category": "Classics",
+      "collection": "Bible Exposition and Sermon Illustrations",
+      "badge": "Bible Exposition and Sermon Illustrations",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 608,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2467d41d1fbb108e35539a5eec0df048b5b09b5ac6f2bca1d244130afbca7ddc",
+    "file_size_bytes": 872972,
+    "word_count": 136803
   }
 ]
