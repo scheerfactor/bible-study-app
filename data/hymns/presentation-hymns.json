@@ -322,6 +322,40 @@
     "reviewedAt": "2026-08-24"
   },
   {
+    "id": "blessed-morning-whose-young-dawning-rays",
+    "title": "Bless'd Morning, Whose Young Dawning Rays",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Resurrection",
+      "Lord's Day",
+      "Victory",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Matthew 28:1-6"
+    ],
+    "stanzas": [
+      "Bless'd morning, whose young dawning rays\nBeheld our rising God,\nThat saw him triumph o'er the dust,\nAnd leave his dark abode.",
+      "In the cold prison of a tomb,\nThe dead Redeemer lay,\nTill the revolving skies had brought\nThe third, th' appointed day.",
+      "Hell and the grave unite their force\nTo hold our God in vain,\nThe sleeping Conqueror arose,\nAnd burst their feeble chain.",
+      "To thy great Name, Almighty Lord,\nThese sacred hours we pay,\nAnd loud hosannas shall proclaim\nThe triumph of the day,",
+      "Salvation and immortal praise\nTo our victorious King,\nLet heaven, and earth, and rocks, and seas,\nWith glad hosannas ring."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 72. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
     "id": "the-glories-of-my-maker-god",
     "title": "The Glories of My Maker God",
     "lyricist": "Isaac Watts",

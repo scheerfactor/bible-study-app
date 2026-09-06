@@ -1,5 +1,19 @@
 [
   {
+    "file": "generated/empty-garden-tomb-dawn-v1.png",
+    "slot": "empty-garden-tomb-dawn",
+    "category": "Resurrection",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-05-empty-garden-tomb-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Resurrection", "Empty Tomb", "Hope", "Victory"],
+    "bibleReferences": ["Matthew 28:1-6", "Luke 24:1-6", "John 20:1-9"],
+    "recommendedUse": "Resurrection, empty-tomb, Easter, hope, and victory slides; use dark text over the pale right-side sky or the presentation's dark overlay for white text. Illustrative scene, not a documented tomb location or archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/life-of-christ-resurrection-expansion-2026-09-05.md"
+  },
+  {
     "file": "generated/watchtower-harvest-dawn-v1.png",
     "slot": "watchtower-harvest-dawn",
     "category": "Watchfulness",

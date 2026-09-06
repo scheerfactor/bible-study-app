@@ -110592,5 +110592,55 @@
     "checksum_sha256": "2467d41d1fbb108e35539a5eec0df048b5b09b5ac6f2bca1d244130afbca7ddc",
     "file_size_bytes": 872972,
     "word_count": 136803
+  },
+  {
+    "title": "Walks and Homes of Jesus",
+    "author": "Daniel March",
+    "year": 1866,
+    "category": "Classics",
+    "collection": "Life of Christ and Gospel Background",
+    "source_url": "https://archive.org/download/walkshomesofjesu00marc/walkshomesofjesu00marc_djvu.txt",
+    "download_url": "https://archive.org/download/walkshomesofjesu00marc/walkshomesofjesu00marc_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/walks-and-homes-of-jesus-daniel-march.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the 1866 Philadelphia Presbyterian Publication Committee and New York Ziegler and McCurdy edition; public domain in the USA",
+    "notes": "Complete devotional life-of-Christ volume for Gospel study teaching preparation and historical illustration Labels/warnings: Nineteenth-century Presbyterian devotional perspective;Historical geography requires modern verification;OCR requires scan review;Compare quotations with KJV.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Complete devotional life-of-Christ volume for Gospel study teaching preparation and historical illustration",
+    "resource_labels": [
+      "Life of Christ and Gospel Background",
+      "Nineteenth-century Presbyterian devotional perspective",
+      "Historical geography requires modern verification",
+      "OCR requires scan review",
+      "Compare quotations with KJV"
+    ],
+    "resource_warnings": [
+      "Nineteenth-century Presbyterian devotional perspective",
+      "Historical geography requires modern verification",
+      "OCR requires scan review",
+      "Compare quotations with KJV"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Walks and Homes of Jesus",
+      "author": "Daniel March",
+      "category": "Classics",
+      "collection": "Life of Christ and Gospel Background",
+      "badge": "Life of Christ and Gospel Background",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 281,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6b3b8d5c29e4fb18fce6c171c5c330299c42d73f8e677203099e042713abc010",
+    "file_size_bytes": 409705,
+    "word_count": 63337
   }
 ]
