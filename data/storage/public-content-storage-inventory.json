@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-06T22:10:17.301Z",
+  "generated_at": "2026-09-06T23:58:51.431Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13011,
+  "commentary_entries": 13015,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 84067,
-      "total_size": "82.10 KB"
+      "total_bytes": 84135,
+      "total_size": "82.16 KB"
     },
     "commentary_batch": {
-      "files": 353,
-      "present": 353,
+      "files": 354,
+      "present": 354,
       "missing": 0,
-      "total_bytes": 539788559,
-      "total_size": "514.78 MB"
+      "total_bytes": 539940941,
+      "total_size": "514.93 MB"
     },
     "dictionary": {
       "files": 2,
@@ -36,7 +36,7 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 5387603,
+      "total_bytes": 5387854,
       "total_size": "5.14 MB"
     },
     "study_tool": {
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2822,
-      "present": 2822,
+      "files": 2823,
+      "present": 2823,
       "missing": 0,
-      "total_bytes": 2829693912,
+      "total_bytes": 2829846613,
       "total_size": "2.64 GB"
     }
   },
@@ -86,7 +86,7 @@
     "library_text_files_over_1mb": 569,
     "library_text_bytes_over_1mb": 1469078125,
     "public_content_files_over_1mb": 697,
-    "public_content_bytes_over_1mb": 2005479270,
+    "public_content_bytes_over_1mb": 2005479521,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -4658,8 +4658,8 @@
       "content_type": "text/plain; charset=utf-8",
       "size_bytes": 177353,
       "checksum_sha256": "615dfe9940d434f32e092ff58075892e40eaa54faffd3db53431d989f21e3cdd",
-      "title": "Notes on the book of Nehemiah",
-      "author": "Ironside, H. A. (Henry Allan), 1876-1951",
+      "title": "Notes on the Book of Nehemiah",
+      "author": "H. A. Ironside",
       "category": "Commentaries",
       "source_url": "https://archive.org/download/notesonbookofneh0000iron/notesonbookofneh0000iron_djvu.txt"
     },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 84067,
-      "checksum_sha256": "a9776648f312fabfacf4105bf63315ced8d5ff03e75cc908aee92767e2968bbf"
+      "size_bytes": 84135,
+      "checksum_sha256": "5827e7ce1291895bee99d743ccd0ed6218f5bea7d0950d0f06dd577800906028"
     },
     {
       "kind": "commentary_batch",
@@ -30420,6 +30420,16 @@
       "checksum_sha256": "1ce8cd250562ffc4f8a28a8fc95bede8efe2cccfba68fb1905e02cf6b290e13b",
       "batch_name": "h-a-ironside-reviewed-obadiah-commentary.json",
       "entries": 1
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-philippians-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-philippians-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 152382,
+      "checksum_sha256": "ca0b23fd56d92c254cadce63a88c62e1c596bca0491e973a1a91be5ff0149a9e",
+      "batch_name": "h-a-ironside-reviewed-philippians-commentary.json",
+      "entries": 4
     },
     {
       "kind": "commentary_batch",
@@ -32792,8 +32802,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 5387603,
-      "checksum_sha256": "832c7629fccdcdca779d901a04b6efc48eeab6f8fd99076f42d6357baccaa6c0"
+      "size_bytes": 5387854,
+      "checksum_sha256": "5f092f3b43a401e1d42a564bd8caf7f6c016ed802784097e2b03e98ea8fcc5d5"
     },
     {
       "kind": "study_tool",

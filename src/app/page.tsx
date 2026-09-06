@@ -273,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3037,6 +3037,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Teaching",
     assetUrl: "/media/sermon-slides/photos/nehemiah-wall-rebuilding-v1.jpg",
   },
+  "philippians-prison-dawn": {
+    label: "Philippians: Joy at Dawn",
+    description: "Philippians, joy in Christ, prayer, peace, contentment, humility, and faithful gospel service.",
+    background: "linear-gradient(90deg, rgba(3,16,32,0.80), rgba(3,16,32,0.04) 72%)",
+    motif: "Letter from Prison",
+    category: "Teaching",
+    assetUrl: "/media/sermon-slides/generated/philippians-prison-dawn-v1.png",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -4102,6 +4110,7 @@ const CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION = "An Exposition of the Boo
 const SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION = "The Gospel of the Kingdom";
 const ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION = "The Holiest of All";
 const H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION = "Notes on the Books of Ezra, Nehemiah and Esther";
+const H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION = "Notes on the Epistle to the Philippians";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -4136,10 +4145,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION,
   ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION,
+  H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "H. A. Ironside",
+    resourceTitle: H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 4 Philippians chapters are imported from a reviewed public-domain edition and connected to the chapter reader.",
+    rightsNotes: "Verified 1927 public-domain edition. Preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Practical exposition of Christ as the believer's life, example, object, and strength after reading the KJV text.",
+  },
   {
     author: "H. A. Ironside",
     resourceTitle: H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION,
@@ -4282,17 +4300,17 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
   {
     author: "H. A. Ironside",
     timePeriod: "1876-1951",
-    biography: "American Bible teacher and preacher whose practical exposition emphasizes gospel truth, Christian service, and careful attention to Scripture.",
+    biography: "American Bible teacher and preacher whose practical exposition emphasizes gospel truth, Christian character, service, and careful attention to Scripture.",
     writingStyle: "Expository, dispensational, pastoral, direct, and application-oriented.",
-    coverageScope: "Nehemiah 1-13 in this featured volume; additional reviewed selections elsewhere in the commentary library",
-    coverageSummary: "All 13 Nehemiah chapters reviewed from a verified public-domain edition",
-    coverageUseNote: "Follows the selected KJV chapter throughout Nehemiah.",
-    strengths: ["Nehemiah", "Leadership", "Bible reading", "Prayer", "Christian service"],
-    weaknesses: ["Historical OCR quotations should be checked against the page scan", "Typological applications require Scripture-first comparison"],
-    bestUse: "Read after the KJV chapter for exposition, leadership applications, sermon development, and ministry encouragement.",
+    coverageScope: "Philippians 1-4 and Nehemiah 1-13 in featured complete volumes; additional reviewed selections elsewhere in the commentary library",
+    coverageSummary: "Complete reviewed public-domain editions for all 4 Philippians chapters and all 13 Nehemiah chapters",
+    coverageUseNote: "Follows the selected KJV chapter throughout Philippians and Nehemiah.",
+    strengths: ["Philippians", "Nehemiah", "Joy", "The mind of Christ", "Prayer", "Christian service"],
+    weaknesses: ["Historical OCR quotations should be checked against the page scan", "Typological and doctrinal conclusions require Scripture-first comparison"],
+    bestUse: "Read after the KJV chapter for exposition, devotional application, leadership lessons, sermon development, and Christian-life teaching.",
     doctrinalNotes: "Historical dispensational resource. Keep Scripture primary, compare every conclusion with the KJV text, and spot-check OCR before quotation.",
-    sampleQuote: "Best used as a practical preaching and leadership companion after reading the KJV chapter itself.",
-    bestFor: ["Preaching", "Leadership", "Bible study"],
+    sampleQuote: "Best used as a practical preaching and devotional companion after reading the KJV chapter itself.",
+    bestFor: ["Preaching", "Devotions", "Bible study"],
     priority: 2,
   },
   {
@@ -12768,6 +12786,7 @@ const deferredCommentaryImportFiles = [
   "h-a-ironside-reviewed-obadiah-commentary.json",
   "h-a-ironside-reviewed-solomons-song-commentary.json",
   "h-a-ironside-exposition-phase-2-commentary.json",
+  "h-a-ironside-reviewed-philippians-commentary.json",
   "wesley-reviewed-genesis-commentary.json",
   "wesley-reviewed-exodus-commentary.json",
   "wesley-reviewed-leviticus-partial-commentary.json",

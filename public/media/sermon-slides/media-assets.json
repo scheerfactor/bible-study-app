@@ -1198,5 +1198,19 @@
     "bibleReferences": ["Nehemiah 2:17-18", "Nehemiah 4:6", "Nehemiah 4:9"],
     "recommendedUse": "Nehemiah, rebuilding, prayerful leadership, opposition, watchfulness, stewardship, and faithful-service slides; use light text on the left.",
     "optimized": "1600x900 JPEG stored locally; original generated wall-and-gate rebuilding scene with a broad dark left-side sermon-title zone. Illustrative scene, not an archaeological reconstruction."
+  },
+  {
+    "file": "generated/philippians-prison-dawn-v1.png",
+    "slot": "philippians-prison-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-philippians-prison-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Philippians", "Joy", "Prayer", "Peace", "Contentment", "Gospel Service"],
+    "bibleReferences": ["Philippians 1:12-21", "Philippians 4:4-7", "Philippians 4:11-13"],
+    "recommendedUse": "Philippians, joy in Christ, prayer, peace, contentment, humility, and faithful gospel-service slides; place light text in the broad dark left-side field. Illustrative scene, not a documented prison reconstruction.",
+    "optimized": "1672x941 PNG stored locally; original generated first-century prison writing scene with a broad dark left-side sermon-title zone."
   }
 ]

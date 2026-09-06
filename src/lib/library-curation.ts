@@ -72,6 +72,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt")) {
     return "/media/library-covers/h-a-ironside-notes-nehemiah-v1.png";
   }
+  if (entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt")) {
+    return "/media/library-covers/h-a-ironside-notes-philippians-v1.png";
+  }
   return null;
 }
 
@@ -197,7 +200,8 @@ function recommendedUse(entry: LibraryManifestEntry, category: string) {
 export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isAndrewMurrayHoliest = entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray";
   const isIronsideNehemiah = entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt");
-  const category = isAndrewMurrayHoliest || isIronsideNehemiah ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const isIronsidePhilippians = entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
   const originalCover = originalLibraryCoverUrl(entry);
@@ -213,7 +217,9 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
       ? "Complete public-domain devotional exposition connected chapter-by-chapter to Hebrews 1-13. Keep the KJV text primary and compare doctrinal conclusions carefully with Scripture."
       : isIronsideNehemiah
         ? "Complete public-domain exposition connected chapter-by-chapter to Nehemiah 1-13, with practical studies of prayer, rebuilding, opposition, Bible reading, and faithful service."
-      : entry.notes,
+      : isIronsidePhilippians
+        ? "Complete public-domain exposition connected chapter-by-chapter to Philippians 1-4, centered on Christ as the believer's life, example, object, and strength."
+        : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
     commercial_use_status: entry.commercial_use_status,
@@ -223,10 +229,12 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
       ? "Read after each KJV chapter of Hebrews for devotional exposition on Christ, the better covenant, faith, holiness, and drawing near to God."
       : isIronsideNehemiah
         ? "Read after each KJV chapter of Nehemiah for exposition, leadership applications, sermon preparation, and ministry encouragement."
-      : recommendedUse(entry, category),
+      : isIronsidePhilippians
+        ? "Read after each KJV chapter of Philippians for practical exposition on joy, humility, prayer, contentment, gospel service, and the mind of Christ."
+        : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -248,6 +256,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     cover_image_url: originalCover ?? entry.cover_image_url ?? projectGutenbergCoverUrl(entry.source_url),
     cover_source_url: isIronsideNehemiah
       ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-nehemiah"
+      : isIronsidePhilippians
+        ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-philippians"
       : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: originalCover
       ? "Original generated asset"
@@ -268,7 +278,17 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
           badge: "Ironside Collection",
           palette: { from: "#071a2d", to: "#b38a43" },
         }
-      : entry.cover_metadata ?? null,
+      : isIronsidePhilippians
+        ? {
+            type: "original-generated",
+            title: "Notes on the Epistle to the Philippians",
+            author: "H. A. Ironside",
+            category: "Commentaries",
+            collection: "H. A. Ironside Collection",
+            badge: "H. A. Ironside Collection",
+            palette: { from: "#061b2d", to: "#b98532" },
+          }
+        : entry.cover_metadata ?? null,
     added_at: entry.import_status,
   };
 }
