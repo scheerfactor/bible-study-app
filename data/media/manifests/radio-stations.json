@@ -73,6 +73,7 @@
       "shortLabel": "Preaching",
       "description": "Free attributed messages from J. Vernon McGee and public-domain Spurgeon readings.",
       "trackIds": [
+        "ttb-mystery-of-iniquity-official-audio",
         "ttb-jeremiah-gods-crybaby-official-audio",
         "ttb-idolatry-exposed-official-audio",
         "ttb-sanctuary-of-the-soul-official-audio",
@@ -171,6 +172,12 @@
     }
   ],
   "reviewedTracks": [
+    {
+      "mediaRecordId": "ttb-mystery-of-iniquity-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, AAC duration, byte size, and ETag verified 2026-09-05. Technical review only; full listening and governing-passage review pending."
+    },
     {
       "mediaRecordId": "ttb-jeremiah-gods-crybaby-official-audio",
       "sourceManifest": "media-intake-candidates",

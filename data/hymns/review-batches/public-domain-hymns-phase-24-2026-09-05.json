@@ -1,0 +1,47 @@
+{
+  "batchId": "public-domain-hymns-phase-24-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "Complete four-stanza Watts assurance hymn with explicitly editorial ST. ANNE pairing.",
+  "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+  "sourceSha256": "9536712b57d4a814c3c9de2afd7651ffd71948cb475c2dca14929a91ca90c6a1",
+  "reviewNotes": [
+    "Checked wording against stored 1818-printing transcription, not page scans.",
+    "Common Meter editorial pairing uses existing checksum-verified MIDI and RDF evidence. Synthesized playback, not a performance recording.",
+    "Poetic dialogue must not be presented as direct KJV Scripture."
+  ],
+  "entries": [
+    {
+      "id": "hence-from-my-soul-sad-thoughts-be-gone",
+      "title": "Hence from My Soul, Sad Thoughts, Be Gone",
+      "lyricist": "Isaac Watts",
+      "lyricYear": 1707,
+      "tune": "St. Anne (editorial Common Meter pairing)",
+      "themes": [
+        "Assurance",
+        "Spiritual Joy",
+        "Grace",
+        "Comfort"
+      ],
+      "scriptureReferences": [
+        "Psalm 30:11-12"
+      ],
+      "stanzas": [
+        "Hence from my soul, sad thoughts, be gone,\nAnd leave me to my joys,\nMy tongue shall triumph in my God,\nAnd make a joyful noise.",
+        "Darkness and doubts had veil'd my mind,\nAnd drown'd my head in tears,\nTill sovereign grace with shining rays\nDispell'd my gloomy fears.",
+        "O what immortal joys I felt,\nAnd raptures all divine,\nWhen Jesus told me, I was his,\nAnd my Beloved mine.",
+        "In vain the tempter frights my soul,\nAnd breaks my peace in vain,\nOne glimpse, dear Saviour, of thy face,\nRevives my joys again."
+      ],
+      "refrain": null,
+      "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+      "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 73. Stanza numbers removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+      "midiFile": "st_anne.mid",
+      "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+      "rdfFile": "st_anne.rdf",
+      "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+      "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+      "musicRights": "Public Domain",
+      "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+      "reviewedAt": "2026-09-05"
+    }
+  ]
+}

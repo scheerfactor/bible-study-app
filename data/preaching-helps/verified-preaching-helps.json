@@ -5076,5 +5076,31 @@
       "kingdom"
     ],
     "recommendedUse": "A Christ-centered line for Nazareth, incarnation, kingdom, or worldwide-gospel presentation slides."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Samuel J. Andrews",
+    "sourceTitle": "The Life of Our Lord upon the Earth",
+    "sourceUrl": "https://archive.org/details/thelifeofourlord00andruoft",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/the-life-of-our-lord-upon-the-earth-considered-in-its-historical-chronological-and-geographical-relations-samu.txt",
+    "rightsBasis": "1891 edition, public domain in the USA. Wording matched to stored OCR; page-scan verification pending.",
+    "reviewNote": "Read in the surrounding preface. Author's historical observation, not Scripture; use KJV for accompanying Bible text.",
+    "id": "andrews-incarnation-time-place",
+    "type": "Quote",
+    "title": "The Incarnation in Time and Place",
+    "text": "Time and place are essential parts of the great fact of the Incarnation.",
+    "slideText": "Time and place are essential parts of the great fact of the Incarnation.",
+    "sourceLocator": "Preface, printed page vii",
+    "bibleReferences": [
+      "Galatians 4:4",
+      "John 1:14"
+    ],
+    "topics": [
+      "incarnation",
+      "Gospel history",
+      "geography"
+    ],
+    "recommendedUse": "A concise opening line for incarnation, Gospel chronology, historical context, or Bible-geography slides."
   }
 ]
