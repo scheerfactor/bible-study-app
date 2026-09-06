@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-06T04:55:46.470Z",
+  "generated_at": "2026-09-06T05:04:31.870Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 12903,
+  "commentary_entries": 12927,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 83380,
-      "total_size": "81.43 KB"
+      "total_bytes": 83517,
+      "total_size": "81.56 KB"
     },
     "commentary_batch": {
-      "files": 348,
-      "present": 348,
+      "files": 349,
+      "present": 349,
       "missing": 0,
-      "total_bytes": 532259216,
-      "total_size": "507.60 MB"
+      "total_bytes": 534143895,
+      "total_size": "509.40 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,18 +75,18 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2817,
-      "present": 2817,
+      "files": 2818,
+      "present": 2818,
       "missing": 0,
-      "total_bytes": 2822162999,
+      "total_bytes": 2824047815,
       "total_size": "2.63 GB"
     }
   },
   "large_file_summary": {
     "library_text_files_over_1mb": 569,
     "library_text_bytes_over_1mb": 1469078125,
-    "public_content_files_over_1mb": 694,
-    "public_content_bytes_over_1mb": 1999843525,
+    "public_content_files_over_1mb": 695,
+    "public_content_bytes_over_1mb": 2001728204,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 83380,
-      "checksum_sha256": "199fa7ada2e239d0933a49b2260e6c33b9b56c22239abd8431e7c6f66103555d"
+      "size_bytes": 83517,
+      "checksum_sha256": "88d29611991e23a401b51334841023d09a0658996197b364c49becc2c90f1588"
     },
     {
       "kind": "commentary_batch",
@@ -30430,6 +30430,16 @@
       "checksum_sha256": "d4372f0f6818ac9d1350d7d154c6c223cbdf366566759f606634ec8324e21e14",
       "batch_name": "j-c-ryle-reviewed-john-13-21-commentary.json",
       "entries": 9
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/j-c-ryle-reviewed-luke-commentary.json",
+      "storage_path": "data/imports/j-c-ryle-reviewed-luke-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1884679,
+      "checksum_sha256": "b2d0642ca20cf3cf83d9e1388342bb72bd358751dabf9888aa65f1af9e8b404b",
+      "batch_name": "j-c-ryle-reviewed-luke-commentary.json",
+      "entries": 24
     },
     {
       "kind": "commentary_batch",
