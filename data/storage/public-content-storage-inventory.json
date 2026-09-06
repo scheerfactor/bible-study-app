@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-06T04:46:37.889Z",
+  "generated_at": "2026-09-06T04:55:46.470Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 12875,
+  "commentary_entries": 12903,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 83224,
-      "total_size": "81.27 KB"
+      "total_bytes": 83380,
+      "total_size": "81.43 KB"
     },
     "commentary_batch": {
-      "files": 347,
-      "present": 347,
+      "files": 348,
+      "present": 348,
       "missing": 0,
-      "total_bytes": 531471821,
-      "total_size": "506.85 MB"
+      "total_bytes": 532259216,
+      "total_size": "507.60 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2816,
-      "present": 2816,
+      "files": 2817,
+      "present": 2817,
       "missing": 0,
-      "total_bytes": 2821375448,
+      "total_bytes": 2822162999,
       "total_size": "2.63 GB"
     }
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 83224,
-      "checksum_sha256": "e1119e7cbd5a4932a755bb3177e98863c39526a764087254f5936d7a6161ad8d"
+      "size_bytes": 83380,
+      "checksum_sha256": "199fa7ada2e239d0933a49b2260e6c33b9b56c22239abd8431e7c6f66103555d"
     },
     {
       "kind": "commentary_batch",
@@ -30440,6 +30440,16 @@
       "checksum_sha256": "ff7e43df208a967bfd050bfa776a04f8dad8c5149e3f79968ae35c76a40de499",
       "batch_name": "j-c-ryle-reviewed-mark-commentary.json",
       "entries": 16
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/j-c-ryle-reviewed-matthew-commentary.json",
+      "storage_path": "data/imports/j-c-ryle-reviewed-matthew-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 787395,
+      "checksum_sha256": "ba4587894ff953aaf3064747d2db651c18df59c46b5709bccaf4b925573ce6dd",
+      "batch_name": "j-c-ryle-reviewed-matthew-commentary.json",
+      "entries": 28
     },
     {
       "kind": "commentary_batch",

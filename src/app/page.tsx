@@ -3828,6 +3828,7 @@ const SCOFIELD_REFERENCE_NOTES_COLLECTION = "Scofield Reference Notes (1917 Edit
 const AMERICAN_COMMENTARY_NT_COLLECTION = "American Commentary on the New Testament";
 const J_C_RYLE_JOHN_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. John, Volume III";
 const J_C_RYLE_MARK_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. Mark";
+const J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospel of St. Matthew";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -3855,6 +3856,7 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   AMERICAN_COMMENTARY_NT_COLLECTION,
   J_C_RYLE_JOHN_COMMENTARY_COLLECTION,
   J_C_RYLE_MARK_COMMENTARY_COLLECTION,
+  J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
@@ -3979,9 +3981,9 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     timePeriod: "1816-1900",
     biography: "English evangelical Anglican bishop and pastor whose Expository Thoughts were written to make the Gospels clear, practical, and useful for families and teachers.",
     writingStyle: "Pastoral, plain, devotional, practical, and Gospel-centered.",
-    coverageScope: "Mark 1-16 and John 13-21",
-    coverageSummary: "25 chapters reviewed from St. Mark and St. John, Volume III",
-    coverageUseNote: "Follows the selected KJV chapter through the whole Gospel of Mark and the closing nine chapters of John.",
+    coverageScope: "Matthew 1-28, Mark 1-16, and John 13-21",
+    coverageSummary: "53 chapters reviewed from three public-domain Gospel volumes",
+    coverageUseNote: "Follows the selected KJV chapter through all of Matthew and Mark plus the closing nine chapters of John.",
     strengths: ["Gospel exposition", "Devotional application", "Family Bible study", "Teaching preparation"],
     weaknesses: ["Anglican perspective should remain visible", "Historical OCR quotations should be checked against the page scan"],
     bestUse: "Read after the KJV passage for clear exposition and practical application in John 13-21.",
@@ -12225,6 +12227,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 const deferredCommentaryImportFiles = [
   "j-c-ryle-reviewed-john-13-21-commentary.json",
   "j-c-ryle-reviewed-mark-commentary.json",
+  "j-c-ryle-reviewed-matthew-commentary.json",
   "a-c-gaebelein-reviewed-hosea-commentary.json",
   "a-c-gaebelein-reviewed-amos-commentary.json",
   "a-c-gaebelein-reviewed-exodus-1-3-commentary.json",
