@@ -3826,6 +3826,7 @@ const H_A_IRONSIDE_COLOSSIANS_COLLECTION = "Lectures on the Epistle to the Colos
 const TREASURY_OF_DAVID_COMMENTARY_COLLECTION = "The Treasury of David";
 const SCOFIELD_REFERENCE_NOTES_COLLECTION = "Scofield Reference Notes (1917 Edition)";
 const AMERICAN_COMMENTARY_NT_COLLECTION = "American Commentary on the New Testament";
+const J_C_RYLE_JOHN_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. John, Volume III";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -3851,6 +3852,7 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   TREASURY_OF_DAVID_COMMENTARY_COLLECTION,
   SCOFIELD_REFERENCE_NOTES_COLLECTION,
   AMERICAN_COMMENTARY_NT_COLLECTION,
+  J_C_RYLE_JOHN_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
@@ -3970,6 +3972,22 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
 ];
 
 const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
+  {
+    author: "J. C. Ryle",
+    timePeriod: "1816-1900",
+    biography: "English evangelical Anglican bishop and pastor whose Expository Thoughts were written to make the Gospels clear, practical, and useful for families and teachers.",
+    writingStyle: "Pastoral, plain, devotional, practical, and Gospel-centered.",
+    coverageScope: "John 13-21",
+    coverageSummary: "9 chapters reviewed from St. John, Volume III",
+    coverageUseNote: "Follows the selected KJV chapter through the farewell discourse, crucifixion, resurrection, and restoration of Peter.",
+    strengths: ["Gospel exposition", "Devotional application", "Family Bible study", "Teaching preparation"],
+    weaknesses: ["Anglican perspective should remain visible", "Historical OCR quotations should be checked against the page scan"],
+    bestUse: "Read after the KJV passage for clear exposition and practical application in John 13-21.",
+    doctrinalNotes: "Historical evangelical Anglican resource. Keep Scripture primary, compare every conclusion with the KJV text, and spot-check OCR before quotation.",
+    sampleQuote: "Best used as a warm pastoral companion after reading the KJV chapter itself.",
+    bestFor: ["Devotions", "Teaching", "Preaching"],
+    priority: 3,
+  },
   {
     author: "Matthew Henry",
     timePeriod: "1662-1714",
@@ -12203,6 +12221,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "j-c-ryle-reviewed-john-13-21-commentary.json",
   "a-c-gaebelein-reviewed-hosea-commentary.json",
   "a-c-gaebelein-reviewed-amos-commentary.json",
   "a-c-gaebelein-reviewed-exodus-1-3-commentary.json",
