@@ -3,6 +3,7 @@ import { commentaryChapterIndex } from "@/lib/commentary-chapter-index";
 import { readTextContent } from "@/lib/server-content-storage";
 import spurgeonGospelKingdomRows from "../../../../../../../data/imports/spurgeon-reviewed-gospel-kingdom-matthew-commentary.json";
 import andrewMurrayHoliestRows from "../../../../../../../data/imports/andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json";
+import ironsideExpositionPhaseTwoRows from "../../../../../../../data/imports/h-a-ironside-exposition-phase-2-commentary.json";
 
 type CommentaryRow = {
   book?: unknown;
@@ -25,6 +26,9 @@ async function readCommentaryRows(fileName: string) {
   }
   if (fileName === "andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json") {
     return andrewMurrayHoliestRows as CommentaryRow[];
+  }
+  if (fileName === "h-a-ironside-exposition-phase-2-commentary.json") {
+    return ironsideExpositionPhaseTwoRows as CommentaryRow[];
   }
 
   const raw = await readTextContent(["data", "imports", fileName], {

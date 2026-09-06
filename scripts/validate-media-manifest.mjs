@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 const manifestPath = process.argv[2] || "data/media/manifests/media-intake-candidates.json";
 const audiobookPilotPath = process.argv[3] || "data/media/manifests/audiobook-pilots.json";
 const uploadedPilotPath = process.argv[4] || "data/media/manifests/uploaded-public-domain-audio-pilots.json";
+const publicBibleAudioReleasePath = "data/media/manifests/public-bible-audio-release.json";
 
 const allowedKinds = new Set(["Audiobook", "Sermon Audio", "Sermon Video", "Teaching Series", "Bible Audio"]);
 const allowedRightsStatuses = new Set([
@@ -416,6 +417,41 @@ async function validateUploadedAudioPilots() {
 
 const uploadedAudioSummary = await validateUploadedAudioPilots();
 
+async function validatePublicBibleAudioRelease() {
+  const [releaseRaw, uploadedRaw] = await Promise.all([
+    readFile(publicBibleAudioReleasePath, "utf8"),
+    readFile(uploadedPilotPath, "utf8"),
+  ]);
+  const releaseIds = JSON.parse(releaseRaw);
+  const uploadedPilots = JSON.parse(uploadedRaw);
+
+  if (!Array.isArray(releaseIds)) {
+    errors.push("Public Bible audio release manifest must be a JSON array.");
+    return { releaseCount: 0 };
+  }
+
+  const uploadedById = new Map(uploadedPilots.map((pilot) => [pilot.id, pilot]));
+  const seenReleaseIds = new Set();
+  for (const id of releaseIds) {
+    if (seenReleaseIds.has(id)) errors.push(`public Bible audio release: duplicate id ${id}`);
+    seenReleaseIds.add(id);
+    const pilot = uploadedById.get(id);
+    if (!pilot) {
+      errors.push(`public Bible audio release: unknown uploaded pilot ${id}`);
+      continue;
+    }
+    if (pilot.kind !== "Bible Audio") errors.push(`public Bible audio release: ${id} is not Bible Audio`);
+    if (!String(pilot.rightsStatus ?? "").startsWith("Public Domain")) {
+      errors.push(`public Bible audio release: ${id} does not retain Public Domain rights status`);
+    }
+    if (!isValidUrl(pilot.publicUrl)) errors.push(`public Bible audio release: ${id} has no valid public URL`);
+  }
+
+  return { releaseCount: releaseIds.length };
+}
+
+const publicBibleAudioSummary = await validatePublicBibleAudioRelease();
+
 console.log("Media manifest validation summary");
 console.table({
   records: records.length,
@@ -426,6 +462,7 @@ console.table({
   audio_chapter_markers: uploadedAudioSummary.chapterMarkerCount,
   estimated_audio_markers: uploadedAudioSummary.estimatedChapterMarkerCount,
   verified_audio_markers: uploadedAudioSummary.verifiedChapterMarkerCount,
+  public_bible_audio_files: publicBibleAudioSummary.releaseCount,
   errors: errors.length,
   warnings: warnings.length,
   public_ready: records.filter((record) => publicReadyStatuses.has(record.intakeStatus)).length,

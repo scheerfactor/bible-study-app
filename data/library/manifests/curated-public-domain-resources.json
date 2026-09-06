@@ -16451,9 +16451,9 @@
     "word_count": 46978
   },
   {
-    "title": "Notes on the book of Nehemiah",
-    "author": "Ironside, H. A. (Henry Allan), 1876-1951",
-    "year": 2026,
+    "title": "Notes on the Book of Nehemiah",
+    "author": "H. A. Ironside",
+    "year": 1914,
     "category": "Commentaries",
     "collection": "Ironside Collection",
     "source_url": "https://archive.org/download/notesonbookofneh0000iron/notesonbookofneh0000iron_djvu.txt",
@@ -16464,11 +16464,11 @@
     "commercial_use_status": "verified_allowed_public_domain",
     "attribution_required": false,
     "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/notesonbookofneh0000iron/notesonbookofneh0000iron_djvu.txt.",
-    "notes": "Ironside exposition or Christian living resource for Bible study and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "notes": "Complete public-domain exposition connected chapter-by-chapter to Nehemiah 1-13, with practical studies of prayer, rebuilding, opposition, Bible reading, and faithful service.",
     "import_status": "imported_file",
     "rights_status": "verified public domain",
     "doctrinal_review_status": "reviewed",
-    "recommended_use": "Ironside exposition or Christian living resource for Bible study and teaching preparation. OCR text should be spot-checked before quotation.",
+    "recommended_use": "Read after each KJV chapter of Nehemiah for exposition, leadership applications, sermon preparation, and ministry encouragement. OCR should be spot-checked before public quotation.",
     "resource_labels": [
       "Ironside Collection",
       "Use with discernment",
@@ -16478,10 +16478,16 @@
       "Use with discernment",
       "OCR spot-check"
     ],
+    "bible_books": [
+      "Nehemiah"
+    ],
+    "cover_image_url": "/media/library-covers/h-a-ironside-notes-nehemiah-v1.png",
+    "cover_source_url": "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-nehemiah",
+    "cover_rights_status": "Original generated asset",
     "cover_metadata": {
-      "type": "generated-fallback",
-      "title": "Notes on the book of Nehemiah",
-      "author": "Ironside, H. A. (Henry Allan), 1876-1951",
+      "type": "original-generated",
+      "title": "Notes on the Book of Nehemiah",
+      "author": "H. A. Ironside",
       "category": "Commentaries",
       "collection": "Ironside Collection",
       "badge": "Ironside Collection",

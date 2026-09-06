@@ -69,6 +69,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray") {
     return "/media/library-covers/andrew-murray-holiest-of-all-v1.png";
   }
+  if (entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt")) {
+    return "/media/library-covers/h-a-ironside-notes-nehemiah-v1.png";
+  }
   return null;
 }
 
@@ -193,19 +196,23 @@ function recommendedUse(entry: LibraryManifestEntry, category: string) {
 
 export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isAndrewMurrayHoliest = entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray";
-  const category = isAndrewMurrayHoliest ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const isIronsideNehemiah = entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
+  const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: isAndrewMurrayHoliest ? "The Holiest of All" : entry.title,
-    author: entry.author,
-    year: entry.year,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : entry.title,
+    author: isIronsideNehemiah ? "H. A. Ironside" : entry.author,
+    year: isIronsideNehemiah ? 1914 : entry.year,
     category,
     collection,
     original_category: entry.category,
     description: isAndrewMurrayHoliest
       ? "Complete public-domain devotional exposition connected chapter-by-chapter to Hebrews 1-13. Keep the KJV text primary and compare doctrinal conclusions carefully with Scripture."
+      : isIronsideNehemiah
+        ? "Complete public-domain exposition connected chapter-by-chapter to Nehemiah 1-13, with practical studies of prayer, rebuilding, opposition, Bible reading, and faithful service."
       : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
@@ -214,10 +221,12 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     perspective_notes: perspectiveNotes(entry, category),
     recommended_use: isAndrewMurrayHoliest
       ? "Read after each KJV chapter of Hebrews for devotional exposition on Christ, the better covenant, faith, holiness, and drawing near to God."
+      : isIronsideNehemiah
+        ? "Read after each KJV chapter of Nehemiah for exposition, leadership applications, sermon preparation, and ministry encouragement."
       : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -236,16 +245,30 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     word_count: entry.word_count ?? null,
     file_size_bytes: entry.file_size_bytes ?? null,
     checksum_sha256: entry.checksum_sha256 ?? null,
-    cover_image_url: entry.cover_image_url ?? originalLibraryCoverUrl(entry) ?? projectGutenbergCoverUrl(entry.source_url),
-    cover_source_url: entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
-    cover_rights_status: entry.cover_rights_status ?? (entry.source_url.includes("gutenberg.org") ? "Project Gutenberg hosted cover; use under source license/trademark terms." : "Generated fallback cover"),
+    cover_image_url: originalCover ?? entry.cover_image_url ?? projectGutenbergCoverUrl(entry.source_url),
+    cover_source_url: isIronsideNehemiah
+      ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-nehemiah"
+      : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
+    cover_rights_status: originalCover
+      ? "Original generated asset"
+      : entry.cover_rights_status ?? (entry.source_url.includes("gutenberg.org") ? "Project Gutenberg hosted cover; use under source license/trademark terms." : "Generated fallback cover"),
     reading_time_minutes: entry.reading_time_minutes ?? (entry.word_count ? Math.max(1, Math.round(entry.word_count / 225)) : null),
     ocr_quality_score: entry.ocr_quality_score ?? null,
     ocr_quality_label: entry.ocr_quality_label ?? null,
     front_matter_cleanup_needed: entry.front_matter_cleanup_needed ?? null,
     safe_for_quotation: entry.safe_for_quotation ?? null,
     ocr_cleanup_notes: entry.ocr_cleanup_notes ?? null,
-    cover_metadata: entry.cover_metadata ?? null,
+    cover_metadata: isIronsideNehemiah
+      ? {
+          type: "original-generated",
+          title: "Notes on the Book of Nehemiah",
+          author: "H. A. Ironside",
+          category: "Commentaries",
+          collection: "Ironside Collection",
+          badge: "Ironside Collection",
+          palette: { from: "#071a2d", to: "#b38a43" },
+        }
+      : entry.cover_metadata ?? null,
     added_at: entry.import_status,
   };
 }

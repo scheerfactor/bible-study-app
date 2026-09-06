@@ -122,6 +122,7 @@ import licensedResourceLinksData from "../../data/library/manifests/licensed-res
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
 import publicSermonAudioReleaseIds from "../../data/media/manifests/public-sermon-audio-release.json";
 import publicAudiobookAudioReleaseIds from "../../data/media/manifests/public-audiobook-audio-release.json";
+import publicBibleAudioReleaseIds from "../../data/media/manifests/public-bible-audio-release.json";
 import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
 import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
@@ -272,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -1485,8 +1486,12 @@ type BibleAudioPilot = UploadedPublicDomainAudioPilot & {
   bibleEndChapter: number;
 };
 
+const PUBLIC_BIBLE_AUDIO_RELEASE_IDS = new Set(publicBibleAudioReleaseIds as string[]);
 const BIBLE_AUDIO_PILOTS: BibleAudioPilot[] = (uploadedPublicDomainAudioPilots as UploadedPublicDomainAudioPilot[])
   .filter((pilot) => pilot.kind === "Bible Audio" && pilot.publicUrl && pilot.segmentTitle)
+  .map((pilot) => PUBLIC_BIBLE_AUDIO_RELEASE_IDS.has(pilot.id)
+    ? { ...pilot, visibility: "Public after review" as const, intakeStatus: "Approved" }
+    : pilot)
   .flatMap((pilot) => {
     const match = pilot.segmentTitle.match(/^(.+?)\s+(\d+)(?:-(\d+))?$/);
     if (!match) return [];
@@ -1533,7 +1538,11 @@ function bibleAudioChapterMarkerFor(targetBook: string, targetChapter: number, c
   for (const pilot of BIBLE_AUDIO_PILOTS) {
     if (pilot.bibleBook !== targetBook) continue;
     if (pilot.visibility !== "Public after review" && !canUseAdminDrafts) continue;
-    const marker = pilot.chapterMarkers?.find((candidate) => candidate.book === targetBook && candidate.chapter === targetChapter);
+    const marker = pilot.chapterMarkers?.find((candidate) => (
+      candidate.book === targetBook &&
+      candidate.chapter === targetChapter &&
+      (candidate.status === "Verified" || canUseAdminDrafts)
+    ));
     if (marker) return { pilot, marker };
   }
   return null;
@@ -3020,6 +3029,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Harvest",
     assetUrl: "/media/sermon-slides/photos/farmers-harvest-dawn-v1.jpg",
   },
+  "nehemiah-wall-rebuilding": {
+    label: "Nehemiah: Rise Up and Build",
+    description: "Nehemiah, prayerful leadership, rebuilding, opposition, watchfulness, and faithful service.",
+    background: "linear-gradient(90deg, rgba(5,12,22,0.70), rgba(5,12,22,0.04) 72%)",
+    motif: "Rebuilding the Wall",
+    category: "Teaching",
+    assetUrl: "/media/sermon-slides/photos/nehemiah-wall-rebuilding-v1.jpg",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -4084,6 +4101,7 @@ const J_C_RYLE_LUKE_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels:
 const CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION = "An Exposition of the Book of Proverbs";
 const SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION = "The Gospel of the Kingdom";
 const ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION = "The Holiest of All";
+const H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION = "Notes on the Books of Ezra, Nehemiah and Esther";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -4117,10 +4135,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION,
   SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION,
   ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION,
+  H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "H. A. Ironside",
+    resourceTitle: H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 13 Nehemiah chapters are imported from a reviewed public-domain edition and connected to the chapter reader.",
+    rightsNotes: "Verified public-domain edition. Preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Expository and preaching-oriented study of rebuilding, prayer, opposition, Bible reading, and faithful service after reading the KJV text.",
+  },
   {
     author: "Andrew Murray",
     resourceTitle: ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION,
@@ -4252,6 +4279,22 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
 ];
 
 const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
+  {
+    author: "H. A. Ironside",
+    timePeriod: "1876-1951",
+    biography: "American Bible teacher and preacher whose practical exposition emphasizes gospel truth, Christian service, and careful attention to Scripture.",
+    writingStyle: "Expository, dispensational, pastoral, direct, and application-oriented.",
+    coverageScope: "Nehemiah 1-13 in this featured volume; additional reviewed selections elsewhere in the commentary library",
+    coverageSummary: "All 13 Nehemiah chapters reviewed from a verified public-domain edition",
+    coverageUseNote: "Follows the selected KJV chapter throughout Nehemiah.",
+    strengths: ["Nehemiah", "Leadership", "Bible reading", "Prayer", "Christian service"],
+    weaknesses: ["Historical OCR quotations should be checked against the page scan", "Typological applications require Scripture-first comparison"],
+    bestUse: "Read after the KJV chapter for exposition, leadership applications, sermon development, and ministry encouragement.",
+    doctrinalNotes: "Historical dispensational resource. Keep Scripture primary, compare every conclusion with the KJV text, and spot-check OCR before quotation.",
+    sampleQuote: "Best used as a practical preaching and leadership companion after reading the KJV chapter itself.",
+    bestFor: ["Preaching", "Leadership", "Bible study"],
+    priority: 2,
+  },
   {
     author: "Andrew Murray",
     timePeriod: "1828-1917",
