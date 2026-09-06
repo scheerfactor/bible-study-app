@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-06T11:43:30.243Z",
+  "generated_at": "2026-09-06T18:55:30.963Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 12939,
+  "commentary_entries": 12970,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 83611,
-      "total_size": "81.65 KB"
+      "total_bytes": 83757,
+      "total_size": "81.79 KB"
     },
     "commentary_batch": {
-      "files": 350,
-      "present": 350,
+      "files": 351,
+      "present": 351,
       "missing": 0,
-      "total_bytes": 536128814,
-      "total_size": "511.29 MB"
+      "total_bytes": 537894078,
+      "total_size": "512.98 MB"
     },
     "dictionary": {
       "files": 2,
@@ -36,7 +36,7 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 5386720,
+      "total_bytes": 5387015,
       "total_size": "5.14 MB"
     },
     "study_tool": {
@@ -75,18 +75,18 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2819,
-      "present": 2819,
+      "files": 2820,
+      "present": 2820,
       "missing": 0,
-      "total_bytes": 2826032828,
+      "total_bytes": 2827798533,
       "total_size": "2.63 GB"
     }
   },
   "large_file_summary": {
     "library_text_files_over_1mb": 569,
     "library_text_bytes_over_1mb": 1469078125,
-    "public_content_files_over_1mb": 696,
-    "public_content_bytes_over_1mb": 2003713123,
+    "public_content_files_over_1mb": 697,
+    "public_content_bytes_over_1mb": 2005478682,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 83611,
-      "checksum_sha256": "cc81a30d2b1c01cbabb021467db3a3f3f2fb3002291067c0ce0951e893a089ee"
+      "size_bytes": 83757,
+      "checksum_sha256": "c85405eb0b6d16be7e880964b8f70ac72f3e523b33578469e1fb837943771a8a"
     },
     {
       "kind": "commentary_batch",
@@ -29940,6 +29940,16 @@
       "checksum_sha256": "9701cdd36ca4737e46e8ca49666ddf4ff3df03388f166538d19f7a6d8c6aa501",
       "batch_name": "biblical-illustrator-reviewed-weak-books-phase-2-commentary.json",
       "entries": 13
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/charles-bridges-reviewed-proverbs-commentary.json",
+      "storage_path": "data/imports/charles-bridges-reviewed-proverbs-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1765264,
+      "checksum_sha256": "5a6749ec5ddcd0fff3ae9f936c0a7082ec8276354bbde830ee8db5357cd1006a",
+      "batch_name": "charles-bridges-reviewed-proverbs-commentary.json",
+      "entries": 31
     },
     {
       "kind": "commentary_batch",
@@ -32762,8 +32772,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 5386720,
-      "checksum_sha256": "c074f37ef0684372fada22f143d6b214fe214b59c6381822ba2fb07d13a25dbb"
+      "size_bytes": 5387015,
+      "checksum_sha256": "daa1993964ba0eb9df435a5638646e68a98f52a0ff1fec6ec1d01a4752c0616a"
     },
     {
       "kind": "study_tool",

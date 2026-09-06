@@ -120,6 +120,7 @@ import audiobookPilotSeedData from "../../data/media/manifests/audiobook-pilots.
 import mediaIntakeSeedData from "../../data/media/manifests/media-intake-candidates.json";
 import licensedResourceLinksData from "../../data/library/manifests/licensed-resource-links.json";
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
+import publicSermonAudioReleaseIds from "../../data/media/manifests/public-sermon-audio-release.json";
 import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
 import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
@@ -148,8 +149,7 @@ type AdminAcquisitionRecordType = "author" | "book" | "rights_holder" | "license
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
 type RightsPermissionStatus = "Public Domain" | "Permission Needed" | "Contacted" | "Negotiating" | "Approved" | "Denied" | "Personal Use Only" | "Do Not Import";
-type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
-type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
+type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Sermon Audio" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type PriorityMinistryPartner = {
   id: string;
   name: string;
@@ -271,7 +271,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -1461,6 +1461,7 @@ type UploadedPublicDomainAudioPilot = {
   publicUrl: string;
   contentType: string;
   sizeBytes: number;
+  duration?: string;
   visibility: ResourceVisibility;
   intakeStatus: string;
   recommendedUse: string;
@@ -1567,6 +1568,10 @@ type AudiobookPilot = {
 
 const UPLOADED_AUDIOBOOK_PILOTS: UploadedPublicDomainAudioPilot[] = (uploadedPublicDomainAudioPilots as UploadedPublicDomainAudioPilot[])
   .filter((pilot) => pilot.kind === "Audiobook" && Boolean(pilot.publicUrl));
+
+const PUBLIC_SERMON_AUDIO_RELEASE_IDS = new Set(publicSermonAudioReleaseIds as string[]);
+const PUBLIC_SERMON_AUDIO_PILOTS: UploadedPublicDomainAudioPilot[] = (uploadedPublicDomainAudioPilots as UploadedPublicDomainAudioPilot[])
+  .filter((pilot) => pilot.kind === "Sermon Audio" && Boolean(pilot.publicUrl) && PUBLIC_SERMON_AUDIO_RELEASE_IDS.has(pilot.id));
 
 function uploadedAudiobookPilotsForResource(resource: LibraryResource, canUseAdminDrafts: boolean) {
   const resourceTitleKey = canonicalLibraryTitle(resource.work_title ?? resource.title);
@@ -2962,6 +2967,22 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Creation",
     assetUrl: "/media/sermon-slides/photos/heavens-declare.jpg",
   },
+  "firm-foundation-storm": {
+    label: "Firm Foundation in the Storm",
+    description: "Obedience, perseverance, trials, refuge, and building on the rock.",
+    background: "linear-gradient(90deg, rgba(3,12,22,0.82), rgba(3,12,22,0.08) 72%)",
+    motif: "Rock in the Storm",
+    category: "Teaching",
+    assetUrl: "/media/sermon-slides/photos/firm-foundation-storm-v1.jpg",
+  },
+  "narrow-gate-dawn": {
+    label: "Narrow Gate at Dawn",
+    description: "Gospel invitation, decision, discipleship, obedience, and the narrow way.",
+    background: "linear-gradient(270deg, rgba(4,14,24,0.80), rgba(4,14,24,0.08) 72%)",
+    motif: "Narrow Gate",
+    category: "Grace",
+    assetUrl: "/media/sermon-slides/photos/narrow-gate-dawn-v1.jpg",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -3285,6 +3306,54 @@ const SERMON_QUICK_STARTS: Record<SermonQuickStartId, {
 
 const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
   {
+    id: "illustration-storm-foundation",
+    topic: "Trials and obedience",
+    title: "The storm reveals the foundation",
+    content: "Two structures may look equally sound in fair weather. The storm does not create the foundation; it reveals what was underneath all along.",
+    body: "Two structures may look equally sound in fair weather. The storm does not create the foundation; it reveals what was underneath all along.",
+    passage: "Matthew 7:24-27",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with obedience, trials, assurance, discipleship, and building on Christ's words.",
+    tags: ["obedience", "trials", "foundation", "discipleship"],
+  },
+  {
+    id: "illustration-compass-bible",
+    topic: "Scripture and direction",
+    title: "A compass must be consulted",
+    content: "A traveler may own a sound compass and still wander if he never stops to read it. Possessing a Bible is not the same as hearing and obeying it.",
+    body: "A traveler may own a sound compass and still wander if he never stops to read it. Possessing a Bible is not the same as hearing and obeying it.",
+    passage: "James 1:22",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with Bible reading, wisdom, guidance, obedience, and daily devotion.",
+    tags: ["Scripture", "guidance", "obedience", "devotion"],
+  },
+  {
+    id: "illustration-open-gate",
+    topic: "Gospel invitation",
+    title: "An open gate still must be entered",
+    content: "A gate may stand open and the path beyond it may be plain, but the traveler must still leave the old road and enter by the appointed way.",
+    body: "A gate may stand open and the path beyond it may be plain, but the traveler must still leave the old road and enter by the appointed way.",
+    passage: "Matthew 7:13-14",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with gospel invitations, repentance, decision, discipleship, and the narrow way.",
+    tags: ["Gospel", "invitation", "repentance", "decision"],
+  },
+  {
+    id: "illustration-worn-tools",
+    topic: "Faithful preparation",
+    title: "The worn tools of a faithful worker",
+    content: "Well-used tools bear marks of steady labor. In the same way, a marked Bible and careful notes can testify to quiet preparation long before public ministry begins.",
+    body: "Well-used tools bear marks of steady labor. In the same way, a marked Bible and careful notes can testify to quiet preparation long before public ministry begins.",
+    passage: "2 Timothy 2:15",
+    source: "Original starter illustration",
+    rightsStatus: "Original platform illustration - reviewed for beta use",
+    recommendedUse: "Use with sermon preparation, study discipline, ministry training, and faithfulness.",
+    tags: ["study", "preaching", "preparation", "faithfulness"],
+  },
+  {
     id: "illustration-lost-place",
     topic: "Clear teaching",
     title: "Do not lose your place",
@@ -3443,6 +3512,54 @@ const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
 ];
 
 const SERMON_QUOTE_STARTERS: SermonLibraryItem[] = [
+  {
+    id: "quote-context-before-conclusion",
+    topic: "Bible interpretation",
+    title: "Read the context before reaching the conclusion",
+    content: "A verse belongs first to its paragraph, its book, and the whole counsel of Scripture before it belongs in our outline.",
+    body: "A verse belongs first to its paragraph, its book, and the whole counsel of Scripture before it belongs in our outline.",
+    passage: "2 Timothy 2:15",
+    source: "Father's Business study principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use while checking sermon outlines, topical studies, and isolated proof texts.",
+    tags: ["context", "interpretation", "study", "preaching"],
+  },
+  {
+    id: "quote-commentary-companion",
+    topic: "Commentaries",
+    title: "A commentary is a companion, not the final authority",
+    content: "Good books help us notice and compare; the inspired text must still judge every explanation.",
+    body: "Good books help us notice and compare; the inspired text must still judge every explanation.",
+    passage: "Acts 17:11",
+    source: "Father's Business review principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use in Bible-study training and before consulting historical commentary.",
+    tags: ["commentary", "Scripture", "discernment", "study"],
+  },
+  {
+    id: "quote-sermon-prepared-heart",
+    topic: "Preaching preparation",
+    title: "The sermon should pass through the preacher's heart",
+    content: "Truth prepared only for other people will sound borrowed; truth first believed and obeyed can be preached with honest weight.",
+    body: "Truth prepared only for other people will sound borrowed; truth first believed and obeyed can be preached with honest weight.",
+    passage: "Ezra 7:10",
+    source: "Father's Business preaching principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use with sermon preparation, devotion, integrity, and pastoral ministry.",
+    tags: ["preaching", "heart", "obedience", "integrity"],
+  },
+  {
+    id: "quote-clear-main-point",
+    topic: "Clarity",
+    title: "If the main point is hidden, the hearer cannot carry it home",
+    content: "Clarity is not shallowness. It is the patient work of making the truth plain enough to remember and obey.",
+    body: "Clarity is not shallowness. It is the patient work of making the truth plain enough to remember and obey.",
+    passage: "Nehemiah 8:8",
+    source: "Father's Business teaching principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use when refining sermon purpose, lesson structure, transitions, and application.",
+    tags: ["clarity", "teaching", "preaching", "application"],
+  },
   {
     id: "quote-scripture-first",
     topic: "Scripture first",
@@ -3831,6 +3948,7 @@ const J_C_RYLE_JOHN_EARLY_COMMENTARY_COLLECTION = "Expository Thoughts on the Go
 const J_C_RYLE_MARK_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. Mark";
 const J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospel of St. Matthew";
 const J_C_RYLE_LUKE_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. Luke";
+const CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION = "An Exposition of the Book of Proverbs";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -3861,6 +3979,7 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   J_C_RYLE_MARK_COMMENTARY_COLLECTION,
   J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION,
   J_C_RYLE_LUKE_COMMENTARY_COLLECTION,
+  CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
@@ -3980,6 +4099,22 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
 ];
 
 const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
+  {
+    author: "Charles Bridges",
+    timePeriod: "1794-1869",
+    biography: "English evangelical pastor whose exposition of Proverbs combines careful explanation with pointed pastoral application.",
+    writingStyle: "Pastoral, practical, devotional, and verse-aware.",
+    coverageScope: "Proverbs 1-31",
+    coverageSummary: "All 31 Proverbs chapters reviewed from a verified 1865 public-domain edition",
+    coverageUseNote: "Follows the selected KJV chapter throughout Proverbs.",
+    strengths: ["Proverbs", "Christian living", "Pastoral application", "Teaching preparation"],
+    weaknesses: ["Historical OCR quotations should be checked against the page scan", "Denominational applications should be tested by Scripture"],
+    bestUse: "Read after the KJV chapter for practical exposition, personal application, and lesson preparation.",
+    doctrinalNotes: "Historical evangelical Anglican resource. Keep Scripture primary, compare every conclusion with the KJV text, and spot-check OCR before quotation.",
+    sampleQuote: "Best used as a practical companion after reading the KJV chapter itself.",
+    bestFor: ["Devotions", "Teaching", "Preaching"],
+    priority: 3,
+  },
   {
     author: "J. C. Ryle",
     timePeriod: "1816-1900",
@@ -12229,6 +12364,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "charles-bridges-reviewed-proverbs-commentary.json",
   "j-c-ryle-reviewed-john-13-21-commentary.json",
   "j-c-ryle-reviewed-john-1-12-commentary.json",
   "j-c-ryle-reviewed-mark-commentary.json",
@@ -38667,6 +38803,10 @@ function LibraryScreen({
   const preachersTeachersResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "illustration", "bible characters", "ten commandments"]))
     .slice(0, 8);
+  const newResourceReleaseResources = resources.filter((resource) => [
+    "A Treatise on the Preparation and Delivery of Sermons",
+    "An exposition of the Book of Proverbs",
+  ].includes(resource.title));
   const prayerClassicResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["prayer", "pray", "intercession", "müller", "muller"]))
     .slice(0, 8);
@@ -39367,6 +39507,24 @@ function LibraryScreen({
         </LibraryShelf>
       )}
 
+      {newResourceReleaseResources.length > 0 && (
+        <LibraryShelf title="New Bible Study & Preaching Resources">
+          {newResourceReleaseResources.map((resource) => (
+            <LibraryResourceCard
+              key={`new-release-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
       {preachersTeachersResources.length > 0 && (
         <LibraryShelf title="For Preachers & Teachers">
           {preachersTeachersResources.map((resource) => (
@@ -39823,7 +39981,7 @@ function LibraryMediaCenter({
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Media Library</p>
           <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Books, listening, sermons, and teaching series</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            Books are available now. Audiobooks use device text-to-speech for reviewed texts. Sermon audio and video stay permission-gated until rights are documented.
+            Books and reviewed listening are available now. Public-domain sermon readings include visible source and rights notes; other audio and video remain permission-gated.
           </p>
         </div>
         <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
@@ -39892,11 +40050,7 @@ function LibraryMediaCenter({
             <span className="rounded-xl bg-white px-3 py-2">Audio files: rights-gated later</span>
           </div>
         </article>
-        <MediaPlaceholderShelf
-          title="Sermons"
-          kind="Sermon"
-          items={SERMON_PLACEHOLDER_ITEMS}
-        />
+        <SermonAudioShelf items={PUBLIC_SERMON_AUDIO_PILOTS} />
         <MediaPlaceholderShelf
           title="Teaching Series"
           kind="Teaching Series"
@@ -39943,7 +40097,6 @@ function LibraryMediaCenter({
         />
       </div>
 
-      <SermonPlayerPreview />
     </section>
   );
 }
@@ -40118,67 +40271,52 @@ function MediaPlaceholderShelf({
   );
 }
 
-function SermonPlayerPreview() {
-  const [status, setStatus] = useState<MediaPlayerStatus>("idle");
-  const [speed, setSpeed] = useState("1");
-  const [sleepTimer, setSleepTimer] = useState("off");
-  const progress = status === "playing" ? 38 : status === "paused" ? 38 : 0;
-  const active = SERMON_PLACEHOLDER_ITEMS[0];
+function SermonAudioShelf({ items }: { items: UploadedPublicDomainAudioPilot[] }) {
+  const [activeId, setActiveId] = useState(items[0]?.id ?? "");
+  const active = items.find((item) => item.id === activeId) ?? items[0];
+  if (!active) return null;
 
   return (
-    <article className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
-      <div className="grid gap-4 lg:grid-cols-[1fr_auto]">
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+      <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Player</p>
-          <h3 className="mt-2 text-xl font-semibold text-[var(--ink)]">{active.title}</h3>
-          <p className="mt-1 text-sm font-semibold text-[var(--green)]">{active.scripturePassage} · {active.series}</p>
-          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-            Sermon audio will appear here when suitable audio files are ready for public use.
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Audio</p>
+          <h3 className="mt-2 text-xl font-semibold text-[var(--ink)]">Talks to Farmers</h3>
+          <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{items.length} public-domain readings of C. H. Spurgeon&apos;s sermons and addresses, with source and rights records attached.</p>
         </div>
-        <div className="flex flex-wrap items-start gap-2">
-          <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => setStatus(status === "playing" ? "paused" : "playing")} type="button">
-            {status === "playing" ? "Pause" : "Play"}
-          </button>
-          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => setStatus("stopped")} type="button">
-            Stop
-          </button>
-          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => setStatus("idle")} type="button">
-            Add to Queue
-          </button>
-        </div>
+        <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{items.length} ready to play</span>
       </div>
-      <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto_auto] md:items-center">
-        <div>
-          <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
-            <span>{status === "idle" ? "Ready" : status}</span>
-            <span>{progress}%</span>
+      <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,0.9fr)_minmax(340px,1.1fr)]">
+        <div className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Now selected</p>
+          <h4 className="mt-2 text-lg font-semibold text-[var(--ink)]">{active.segmentTitle}</h4>
+          <p className="mt-1 text-sm font-semibold text-[var(--green)]">{active.creator} · {active.duration ?? "Duration listed in player"}</p>
+          <audio key={active.id} className="mt-4 w-full" controls preload="metadata" src={active.publicUrl}>
+            Your browser does not support audio playback.
+          </audio>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-[var(--green)]">{active.rightsStatus}</span>
+            <a className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-[var(--green)]" href={active.sourceUrl} rel="noreferrer" target="_blank">View LibriVox source</a>
           </div>
-          <div className="mt-2 h-2 rounded-full bg-white">
-            <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: `${progress}%` }} />
-          </div>
+          <p className="mt-3 text-xs leading-5 text-[var(--muted)]">This is a public-domain volunteer reading of a historical sermon text. Keep the KJV passage primary and verify quoted wording before reuse.</p>
         </div>
-        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
-          Speed
-          <select className="mt-1 h-10 rounded-full border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={speed} onChange={(event) => setSpeed(event.target.value)}>
-            {["0.75", "1", "1.25", "1.5", "2"].map((value) => (
-              <option key={`sermon-speed-${value}`} value={value}>{value}x</option>
-            ))}
-          </select>
-        </label>
-        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
-          Sleep
-          <select className="mt-1 h-10 rounded-full border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={sleepTimer} onChange={(event) => setSleepTimer(event.target.value)}>
-            {["off", "15 min", "30 min", "60 min"].map((value) => (
-              <option key={`sermon-sleep-${value}`} value={value}>{value}</option>
-            ))}
-          </select>
-        </label>
-      </div>
-      <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-[var(--muted)]">
-        <span className="rounded-full bg-white px-3 py-1.5">Continue listening ready</span>
-        <span className="rounded-full bg-white px-3 py-1.5">Next sermon in series ready</span>
-        <span className="rounded-full bg-white px-3 py-1.5">Audio path coming soon</span>
+        <div className="max-h-[390px] space-y-2 overflow-y-auto pr-1">
+          {items.map((item, index) => (
+            <button
+              key={item.id}
+              className={`grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 rounded-2xl border p-3 text-left transition ${item.id === active.id ? "border-[var(--green)] bg-white shadow-sm" : "border-[var(--line)] bg-[var(--paper)] hover:bg-white"}`}
+              onClick={() => setActiveId(item.id)}
+              type="button"
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--green)] text-xs font-semibold text-white">{index + 1}</span>
+              <span className="min-w-0">
+                <span className="block truncate text-sm font-semibold text-[var(--ink)]">{item.segmentTitle}</span>
+                <span className="mt-1 block text-xs text-[var(--muted)]">{item.creator}</span>
+              </span>
+              <span className="text-xs font-semibold text-[var(--green)]">{item.duration ?? "Play"}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </article>
   );

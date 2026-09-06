@@ -1100,5 +1100,33 @@
     "bibleReferences": ["Matthew 11:28", "Luke 14:23", "Revelation 3:20"],
     "recommendedUse": "Invitation, welcome, refuge from storms, gospel decision, the open door, and The Slighted Stranger poetry slides; use light text on the right.",
     "optimized": "1672x941 PNG stored locally; original generated rainy country-chapel background with a broad dark right-side sermon-title zone."
+  },
+  {
+    "file": "photos/firm-foundation-storm-v1.jpg",
+    "slot": "firm-foundation-storm",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-firm-foundation-storm",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Firm Foundation", "Obedience", "Trials", "Refuge"],
+    "bibleReferences": ["Matthew 7:24-27", "Psalm 18:2", "1 Corinthians 3:11"],
+    "recommendedUse": "Obedience, perseverance, trials, refuge, and building-on-the-rock slides; use light text on the left.",
+    "optimized": "1600x900 JPEG stored locally; original generated storm shoreline and rock foundation with a broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "photos/narrow-gate-dawn-v1.jpg",
+    "slot": "narrow-gate-dawn",
+    "category": "Grace",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-narrow-gate-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Narrow Gate", "Gospel Invitation", "Decision", "Discipleship"],
+    "bibleReferences": ["Matthew 7:13-14", "John 10:9", "Luke 13:24"],
+    "recommendedUse": "Gospel invitation, decision, discipleship, obedience, and narrow-way slides; use light text on the right.",
+    "optimized": "1600x900 JPEG stored locally; original generated ancient gate at dawn with a broad dark right-side sermon-title zone."
   }
 ]
