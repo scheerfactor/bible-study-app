@@ -110694,5 +110694,57 @@
     "checksum_sha256": "14e9e159672d8e540a1156f9d23384b1b2660cadd0af94e5986c06e978b326a7",
     "file_size_bytes": 1981371,
     "word_count": 300896
+  },
+  {
+    "title": "The Progress of Doctrine in the New Testament",
+    "author": "Thomas Dehany Bernard",
+    "year": 1873,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "New Testament Theology and Survey",
+    "source_url": "https://archive.org/download/theprogressofdoc00bernuoft/theprogressofdoc00bernuoft_djvu.txt",
+    "download_url": "https://archive.org/download/theprogressofdoc00bernuoft/theprogressofdoc00bernuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-progress-of-doctrine-in-the-new-testament-thomas-dehany-bernard.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the 1873 London Macmillan edition digitized from the University of Toronto; public domain in the USA",
+    "notes": "Complete eight-lecture New Testament survey for tracing doctrinal development and preparing thematic studies Labels/warnings: Nineteenth-century Anglican lectures;Theological synthesis requires comparison;Translation and textual notes;OCR requires scan review;KJV remains primary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Complete eight-lecture New Testament survey for tracing doctrinal development and preparing thematic studies",
+    "resource_labels": [
+      "New Testament Theology and Survey",
+      "Nineteenth-century Anglican lectures",
+      "Theological synthesis requires comparison",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "resource_warnings": [
+      "Nineteenth-century Anglican lectures",
+      "Theological synthesis requires comparison",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Progress of Doctrine in the New Testament",
+      "author": "Thomas Dehany Bernard",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "New Testament Theology and Survey",
+      "badge": "New Testament Theology and Survey",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 492,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "eaef73a94339366ce14a0161609a4c07f745f0496e0a13e61293b9ebb50e94d1",
+    "file_size_bytes": 734942,
+    "word_count": 110723
   }
 ]

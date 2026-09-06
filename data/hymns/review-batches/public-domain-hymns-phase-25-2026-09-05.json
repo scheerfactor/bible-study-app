@@ -1,0 +1,51 @@
+{
+  "batchId": "public-domain-hymns-phase-25-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "Complete six-stanza Watts hymn on eternal joy with explicitly editorial ST. ANNE pairing.",
+  "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+  "sourceSha256": "9536712b57d4a814c3c9de2afd7651ffd71948cb475c2dca14929a91ca90c6a1",
+  "reviewNotes": [
+    "Skipped Book II hymn 74 because the current catalog has no independently verified Short Meter arrangement suitable for it.",
+    "Checked hymn 75 wording against stored 1818-printing transcription, not page scans.",
+    "Common Meter editorial pairing uses existing checksum-verified MIDI and RDF evidence. Synthesized playback, not a performance recording.",
+    "Poetic language must not be presented as direct KJV Scripture."
+  ],
+  "entries": [
+    {
+      "id": "from-thee-my-god-my-joys-shall-rise",
+      "title": "From Thee, My God, My Joys Shall Rise",
+      "lyricist": "Isaac Watts",
+      "lyricYear": 1707,
+      "tune": "St. Anne (editorial Common Meter pairing)",
+      "themes": [
+        "Heaven",
+        "Jesus Christ",
+        "Eternal Joy",
+        "Hope"
+      ],
+      "scriptureReferences": [
+        "Psalm 16:11",
+        "Revelation 22:4"
+      ],
+      "stanzas": [
+        "From thee, my God, my joys shall rise,\nAnd run eternal rounds,\nBeyond the limits of the skies\nAnd all created bounds.",
+        "The holy triumphs of my soul\nShall death itself out-brave,\nLeave dull mortality behind,\nAnd fly beyond the grave.",
+        "There, where my blessed Jesus reigns\nIn heaven's unmeasur'd space,\nI'll spend a long eternity\nIn pleasure and in praise.",
+        "Millions of years my wondering eyes\nShall o'er thy beauties rove,\nAnd endless ages I'll adore\nThe glories of thy love.",
+        "Sweet Jesus, every smile of thine\nShall fresh endearments bring,\nAnd thousand tastes of new delight\nFrom all thy graces spring.",
+        "Haste, my beloved, fetch my soul\nUp to thy bless'd abode,\nFly, for my spirit longs to see\nMy Saviour and my God."
+      ],
+      "refrain": null,
+      "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+      "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 75. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+      "midiFile": "st_anne.mid",
+      "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+      "rdfFile": "st_anne.rdf",
+      "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+      "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+      "musicRights": "Public Domain",
+      "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+      "reviewedAt": "2026-09-05"
+    }
+  ]
+}

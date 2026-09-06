@@ -5102,5 +5102,30 @@
       "geography"
     ],
     "recommendedUse": "A concise opening line for incarnation, Gospel chronology, historical context, or Bible-geography slides."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Thomas Dehany Bernard",
+    "sourceTitle": "The Progress of Doctrine in the New Testament",
+    "sourceUrl": "https://archive.org/details/theprogressofdoc00bernuoft",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/the-progress-of-doctrine-in-the-new-testament-thomas-dehany-bernard.txt",
+    "rightsBasis": "1873 edition, public domain in the USA. Wording matched to stored OCR; page-scan verification pending.",
+    "reviewNote": "Read in the surrounding preface. Author's observation, not Scripture; use KJV for accompanying Bible text.",
+    "id": "bernard-readers-of-the-bible",
+    "type": "Quote",
+    "title": "Readers of the Whole Bible",
+    "text": "But there is an ever increasing number who are not only readers of texts, and chapters, and books, but in a more entire sense readers of the Bible.",
+    "slideText": "But there is an ever increasing number who are not only readers of texts, and chapters, and books, but in a more entire sense readers of the Bible.",
+    "sourceLocator": "Preface, printed page xiv",
+    "bibleReferences": [
+      "2 Timothy 3:16-17"
+    ],
+    "topics": [
+      "Bible study",
+      "whole Bible",
+      "doctrine"
+    ],
+    "recommendedUse": "Encourage readers to study the Bible as a unified whole rather than isolated verses only."
   }
 ]
