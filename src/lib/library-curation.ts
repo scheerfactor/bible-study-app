@@ -66,6 +66,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.title === "The Gospel of the Kingdom" && entry.author === "C. H. Spurgeon") {
     return "/media/library-covers/spurgeon-gospel-kingdom-v1.png";
   }
+  if (entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray") {
+    return "/media/library-covers/andrew-murray-holiest-of-all-v1.png";
+  }
   return null;
 }
 
@@ -189,27 +192,32 @@ function recommendedUse(entry: LibraryManifestEntry, category: string) {
 }
 
 export function curateLibraryEntry(entry: LibraryManifestEntry) {
-  const category = normalizeLibraryCategory(entry.category);
+  const isAndrewMurrayHoliest = entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray";
+  const category = isAndrewMurrayHoliest ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
 
   return {
-    title: entry.title,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : entry.title,
     author: entry.author,
     year: entry.year,
     category,
     collection,
     original_category: entry.category,
-    description: entry.notes,
+    description: isAndrewMurrayHoliest
+      ? "Complete public-domain devotional exposition connected chapter-by-chapter to Hebrews 1-13. Keep the KJV text primary and compare doctrinal conclusions carefully with Scripture."
+      : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
     commercial_use_status: entry.commercial_use_status,
     doctrinal_review_status: entry.doctrinal_review_status ?? "beta reviewed",
     perspective_notes: perspectiveNotes(entry, category),
-    recommended_use: recommendedUse(entry, category),
+    recommended_use: isAndrewMurrayHoliest
+      ? "Read after each KJV chapter of Hebrews for devotional exposition on Christ, the better covenant, faith, holiness, and drawing near to God."
+      : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,

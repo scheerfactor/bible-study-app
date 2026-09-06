@@ -1156,5 +1156,33 @@
     "bibleReferences": ["Psalm 130:6", "Habakkuk 2:1", "Mark 13:35-37"],
     "recommendedUse": "Watchfulness, prayer, waiting upon the Lord, hope, and faithful-service slides; use dark or deep-colored text on the right.",
     "optimized": "1600x900 JPEG stored locally; original generated watchman at first light with a broad bright right-side sky sermon-title zone."
+  },
+  {
+    "file": "photos/hebrews-open-veil-v1.jpg",
+    "slot": "hebrews-open-veil",
+    "category": "Grace",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-hebrews-open-veil",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Hebrews", "Better Covenant", "Drawing Near", "Holiness"],
+    "bibleReferences": ["Hebrews 4:14-16", "Hebrews 10:19-22", "Hebrews 12:14"],
+    "recommendedUse": "Hebrews, Christ's priesthood, the better covenant, holiness, and drawing-near slides; use light text on the left.",
+    "optimized": "1600x900 JPEG stored locally; original generated parted veil and sanctuary light with a broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "photos/farmers-harvest-dawn-v1.jpg",
+    "slot": "farmers-harvest-dawn",
+    "category": "Harvest",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-farmers-harvest-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Harvest", "Sowing", "Faithful Labor", "Stewardship"],
+    "bibleReferences": ["Matthew 9:37-38", "John 4:35", "Galatians 6:7-9"],
+    "recommendedUse": "Sowing, reaping, stewardship, faithful labor, patience, and gospel-harvest slides; use light text on the right.",
+    "optimized": "1600x900 JPEG stored locally; original generated grain field and farm path at dawn with a broad dark right-side sermon-title zone."
   }
 ]

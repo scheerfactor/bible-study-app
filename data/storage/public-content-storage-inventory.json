@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-06T20:45:12.089Z",
+  "generated_at": "2026-09-06T22:10:17.301Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 12998,
+  "commentary_entries": 13011,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 83928,
-      "total_size": "81.96 KB"
+      "total_bytes": 84067,
+      "total_size": "82.10 KB"
     },
     "commentary_batch": {
-      "files": 352,
-      "present": 352,
+      "files": 353,
+      "present": 353,
       "missing": 0,
-      "total_bytes": 538887709,
-      "total_size": "513.92 MB"
+      "total_bytes": 539788559,
+      "total_size": "514.78 MB"
     },
     "dictionary": {
       "files": 2,
@@ -36,7 +36,7 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 5387284,
+      "total_bytes": 5387603,
       "total_size": "5.14 MB"
     },
     "study_tool": {
@@ -75,18 +75,18 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2821,
-      "present": 2821,
+      "files": 2822,
+      "present": 2822,
       "missing": 0,
-      "total_bytes": 2828792604,
-      "total_size": "2.63 GB"
+      "total_bytes": 2829693912,
+      "total_size": "2.64 GB"
     }
   },
   "large_file_summary": {
     "library_text_files_over_1mb": 569,
     "library_text_bytes_over_1mb": 1469078125,
     "public_content_files_over_1mb": 697,
-    "public_content_bytes_over_1mb": 2005478951,
+    "public_content_bytes_over_1mb": 2005479270,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -13682,9 +13682,9 @@
       "content_type": "text/plain; charset=utf-8",
       "size_bytes": 1157246,
       "checksum_sha256": "5798d4a60c5f58a2c48e6296518a394a281b4ad88fb83acdb21f31b1861caa2c",
-      "title": "The holiest of all : an exposition of the Epistle to the Hebrews",
+      "title": "The Holiest of All",
       "author": "Andrew Murray",
-      "category": "Prayer",
+      "category": "Commentaries",
       "source_url": "https://archive.org/download/theholiestofall00murruoft/theholiestofall00murruoft_djvu.txt"
     },
     {
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 83928,
-      "checksum_sha256": "faa4251e5b67bee941c0111e9c4ed7b9365e94fff2ee7cedda52e446dd147e8d"
+      "size_bytes": 84067,
+      "checksum_sha256": "a9776648f312fabfacf4105bf63315ced8d5ff03e75cc908aee92767e2968bbf"
     },
     {
       "kind": "commentary_batch",
@@ -29480,6 +29480,16 @@
       "checksum_sha256": "18fe9ab25c0e8e7f6541951d1af64f6aeb89432ab3f287efda30f83ff0328818",
       "batch_name": "andrew-harper-reviewed-deuteronomy-starter-commentary.json",
       "entries": 3
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json",
+      "storage_path": "data/imports/andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 900850,
+      "checksum_sha256": "3f0f4e7de7f694684c17f2887925c74ce8cabf3fd0c68eb92d91b611ef983d6e",
+      "batch_name": "andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json",
+      "entries": 13
     },
     {
       "kind": "commentary_batch",
@@ -32782,8 +32792,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 5387284,
-      "checksum_sha256": "5ad85aa3c4bca5d7566d2efd64a146bdb73f68d0d8de9451f7530dd86b4672c2"
+      "size_bytes": 5387603,
+      "checksum_sha256": "832c7629fccdcdca779d901a04b6efc48eeab6f8fd99076f42d6357baccaa6c0"
     },
     {
       "kind": "study_tool",

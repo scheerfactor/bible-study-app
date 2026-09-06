@@ -49419,10 +49419,10 @@
     "word_count": 57607
   },
   {
-    "title": "The holiest of all : an exposition of the Epistle to the Hebrews",
+    "title": "The Holiest of All",
     "author": "Andrew Murray",
-    "year": 2026,
-    "category": "Prayer",
+    "year": 1894,
+    "category": "Commentaries",
     "collection": "Andrew Murray Collection",
     "source_url": "https://archive.org/download/theholiestofall00murruoft/theholiestofall00murruoft_djvu.txt",
     "download_url": "https://archive.org/download/theholiestofall00murruoft/theholiestofall00murruoft_djvu.txt",
@@ -49432,11 +49432,17 @@
     "commercial_use_status": "verified_allowed_public_domain",
     "attribution_required": false,
     "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/theholiestofall00murruoft/theholiestofall00murruoft_djvu.txt.",
-    "notes": "Andrew Murray public-domain prayer or devotional resource for prayer study and Christian living. Labels/warnings: Prayer classic;Use with discernment;OCR spot-check.",
+    "notes": "Complete public-domain devotional exposition of Hebrews, now connected chapter-by-chapter to Hebrews 1-13. Keep the KJV text primary and compare doctrinal conclusions carefully with Scripture.",
     "import_status": "imported_file",
     "rights_status": "verified public domain",
     "doctrinal_review_status": "reviewed",
-    "recommended_use": "Andrew Murray public-domain prayer or devotional resource for prayer study and Christian living.",
+    "recommended_use": "Read after each KJV chapter of Hebrews for devotional exposition on Christ, the better covenant, faith, holiness, and drawing near to God.",
+    "bible_books": [
+      "Hebrews"
+    ],
+    "cover_image_url": "/media/library-covers/andrew-murray-holiest-of-all-v1.png",
+    "cover_source_url": "#original-generated-book-cover-prompt-2026-09-06-andrew-murray-holiest-of-all",
+    "cover_rights_status": "Original generated asset created for Father's Business Bible Study",
     "resource_labels": [
       "Andrew Murray Collection",
       "Prayer classic",
@@ -49450,9 +49456,9 @@
     ],
     "cover_metadata": {
       "type": "generated-fallback",
-      "title": "The holiest of all : an exposition of the Epistle to the Hebrews",
+      "title": "The Holiest of All",
       "author": "Andrew Murray",
-      "category": "Prayer",
+      "category": "Commentaries",
       "collection": "Andrew Murray Collection",
       "badge": "Andrew Murray Collection",
       "palette": {

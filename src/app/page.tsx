@@ -272,7 +272,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3004,6 +3004,22 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Teaching",
     assetUrl: "/media/sermon-slides/photos/watchman-dawn-v1.jpg",
   },
+  "hebrews-open-veil": {
+    label: "Hebrews: The Open Veil",
+    description: "Hebrews, the better covenant, drawing near, Christ's priesthood, faith, and holiness.",
+    background: "linear-gradient(90deg, rgba(10,12,10,0.78), rgba(10,12,10,0.06) 72%)",
+    motif: "The Open Veil",
+    category: "Grace",
+    assetUrl: "/media/sermon-slides/photos/hebrews-open-veil-v1.jpg",
+  },
+  "farmers-harvest-dawn": {
+    label: "Harvest Field at Dawn",
+    description: "Sowing, reaping, faithful labor, patience, stewardship, and gospel harvest.",
+    background: "linear-gradient(270deg, rgba(3,13,24,0.78), rgba(3,13,24,0.04) 72%)",
+    motif: "Harvest at Dawn",
+    category: "Harvest",
+    assetUrl: "/media/sermon-slides/photos/farmers-harvest-dawn-v1.jpg",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -4067,6 +4083,7 @@ const J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospe
 const J_C_RYLE_LUKE_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. Luke";
 const CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION = "An Exposition of the Book of Proverbs";
 const SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION = "The Gospel of the Kingdom";
+const ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION = "The Holiest of All";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -4099,10 +4116,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   J_C_RYLE_LUKE_COMMENTARY_COLLECTION,
   CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION,
   SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION,
+  ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "Andrew Murray",
+    resourceTitle: ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 13 Hebrews chapters are imported from the reviewed 1894 public-domain edition and connected to the chapter reader.",
+    rightsNotes: "Verified public-domain edition. Preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Devotional exposition on Christ, the better covenant, faith, holiness, and drawing near to God after reading the KJV text.",
+  },
   {
     author: "C. H. Spurgeon",
     resourceTitle: SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION,
@@ -4226,6 +4252,22 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
 ];
 
 const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
+  {
+    author: "Andrew Murray",
+    timePeriod: "1828-1917",
+    biography: "South African pastor and devotional writer whose extended exposition follows the Epistle to the Hebrews section by section.",
+    writingStyle: "Devotional, Christ-centered, earnest, meditative, and strongly application-oriented.",
+    coverageScope: "Hebrews 1-13",
+    coverageSummary: "All 13 Hebrews chapters reviewed from a verified 1894 public-domain edition",
+    coverageUseNote: "Follows the selected KJV chapter throughout Hebrews.",
+    strengths: ["Hebrews", "Christ's priesthood", "Faith", "Prayerful application"],
+    weaknesses: ["Not a Baptist commentary", "Historical OCR quotations should be checked against the page scan", "Doctrinal conclusions require Scripture-first comparison"],
+    bestUse: "Read after the KJV chapter for devotional depth, thematic tracing, and personal application.",
+    doctrinalNotes: "Historical devotional resource from a non-Baptist author. Keep Scripture primary, compare every conclusion with the KJV text, and spot-check OCR before quotation.",
+    sampleQuote: "Best used as a devotional exposition after reading the KJV chapter itself.",
+    bestFor: ["Devotions", "Hebrews study", "Teaching"],
+    priority: 3,
+  },
   {
     author: "C. H. Spurgeon",
     timePeriod: "1834-1892",
@@ -12507,6 +12549,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json",
   "spurgeon-reviewed-gospel-kingdom-matthew-commentary.json",
   "charles-bridges-reviewed-proverbs-commentary.json",
   "j-c-ryle-reviewed-john-13-21-commentary.json",

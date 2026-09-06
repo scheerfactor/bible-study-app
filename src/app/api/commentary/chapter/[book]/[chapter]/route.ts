@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { commentaryChapterIndex } from "@/lib/commentary-chapter-index";
 import { readTextContent } from "@/lib/server-content-storage";
 import spurgeonGospelKingdomRows from "../../../../../../../data/imports/spurgeon-reviewed-gospel-kingdom-matthew-commentary.json";
+import andrewMurrayHoliestRows from "../../../../../../../data/imports/andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json";
 
 type CommentaryRow = {
   book?: unknown;
@@ -21,6 +22,9 @@ async function readCommentaryRows(fileName: string) {
 
   if (fileName === "spurgeon-reviewed-gospel-kingdom-matthew-commentary.json") {
     return spurgeonGospelKingdomRows as CommentaryRow[];
+  }
+  if (fileName === "andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json") {
+    return andrewMurrayHoliestRows as CommentaryRow[];
   }
 
   const raw = await readTextContent(["data", "imports", fileName], {
