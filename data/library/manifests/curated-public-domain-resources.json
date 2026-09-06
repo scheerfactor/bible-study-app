@@ -110746,5 +110746,57 @@
     "checksum_sha256": "eaef73a94339366ce14a0161609a4c07f745f0496e0a13e61293b9ebb50e94d1",
     "file_size_bytes": 734942,
     "word_count": 110723
+  },
+  {
+    "title": "The Divine Unity of Scripture",
+    "author": "Adolph Saphir",
+    "year": 1892,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Biblical Theology and Whole-Bible Survey",
+    "source_url": "https://archive.org/download/divineunityofscr00saph/divineunityofscr00saph_djvu.txt",
+    "download_url": "https://archive.org/download/divineunityofscr00saph/divineunityofscr00saph_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-divine-unity-of-scripture-adolph-saphir.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the 1892 London Hodder and Stoughton edition digitized from Princeton Theological Seminary Library; public domain in the USA",
+    "notes": "Complete twelve-lecture study for tracing the unity of Old and New Testaments and preparing Christ-centered whole-Bible lessons Labels/warnings: Nineteenth-century Presbyterian lectures;Theological synthesis requires comparison;Translation and textual notes;OCR requires scan review;KJV remains primary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Complete twelve-lecture study for tracing the unity of Old and New Testaments and preparing Christ-centered whole-Bible lessons",
+    "resource_labels": [
+      "Biblical Theology and Whole-Bible Survey",
+      "Nineteenth-century Presbyterian lectures",
+      "Theological synthesis requires comparison",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "resource_warnings": [
+      "Nineteenth-century Presbyterian lectures",
+      "Theological synthesis requires comparison",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Divine Unity of Scripture",
+      "author": "Adolph Saphir",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Biblical Theology and Whole-Bible Survey",
+      "badge": "Biblical Theology and Whole-Bible Survey",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 515,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7580adfceb781ade27f6a734eea717b1bb1c420043f46d14fdb4264ab1447c74",
+    "file_size_bytes": 742819,
+    "word_count": 115766
   }
 ]

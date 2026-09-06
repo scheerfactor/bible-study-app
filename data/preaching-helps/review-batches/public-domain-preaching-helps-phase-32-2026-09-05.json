@@ -1,0 +1,35 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-32-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "A Saphir quotation summarizing the Christ-centered unity of Scripture.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Adolph Saphir",
+    "sourceTitle": "The Divine Unity of Scripture",
+    "sourceUrl": "https://archive.org/details/divineunityofscr00saph",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/the-divine-unity-of-scripture-adolph-saphir.txt",
+    "rightsBasis": "1892 London edition, public domain in the USA. Wording matched to stored OCR; page-scan verification pending.",
+    "reviewNote": "Read in the surrounding lecture on the Church of Christ based on the Old Testament. Author's theological summary, not Scripture; use KJV for accompanying Bible text."
+  },
+  "entries": [
+    {
+      "id": "saphir-scripture-centre-is-christ",
+      "type": "Quote",
+      "title": "The Centre Is Christ",
+      "text": "The Scripture has a centre, and that is Christ. Once we understand this centre we understand everything.",
+      "slideText": "The Scripture has a centre, and that is Christ. Once we understand this centre we understand everything.",
+      "sourceLocator": "Lecture VI, printed page 142",
+      "bibleReferences": [
+        "Luke 24:27",
+        "John 5:39"
+      ],
+      "topics": [
+        "Jesus Christ",
+        "unity of Scripture",
+        "Bible study"
+      ],
+      "recommendedUse": "Introduce a Christ-centered whole-Bible study, biblical-theology lesson, or sermon series."
+    }
+  ]
+}

@@ -1,4 +1,26 @@
 [
+{
+  "file": "generated/olive-ridge-ascension-sky-v1.png",
+  "slot": "olive-ridge-ascension-sky",
+  "category": "Ascension",
+  "source": "Original generated sermon-presentation background",
+  "source_url": "#original-generated-background-prompt-2026-09-05-olive-ridge-ascension-sky",
+  "rightsStatus": "Original generated asset",
+  "artist": "OpenAI image generation",
+  "credit": "Created for Father's Business Bible Study",
+  "themes": [
+    "Ascension",
+    "Resurrection",
+    "Hope",
+    "Jesus Christ"
+  ],
+  "bibleReferences": [
+    "Acts 1:9-11",
+    "Luke 24:50-53"
+  ],
+  "recommendedUse": "Ascension, resurrection, hope, return-of-Christ, and sermon-title slides; place white text in the dark left-side sky. Illustrative landscape, not a documented biblical location or archaeological reconstruction.",
+  "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/divine-unity-ascension-expansion-2026-09-05.md"
+},
   {
     "file": "generated/empty-garden-tomb-dawn-v1.png",
     "slot": "empty-garden-tomb-dawn",
