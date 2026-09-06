@@ -73,6 +73,7 @@
       "shortLabel": "Preaching",
       "description": "Free attributed messages from J. Vernon McGee and public-domain Spurgeon readings.",
       "trackIds": [
+        "ttb-israel-the-bible-bomb-official-audio",
         "ttb-what-death-means-to-a-christian-official-audio",
         "ttb-holy-spirit-and-will-of-god-official-audio",
         "ttb-mystery-of-iniquity-official-audio",
@@ -174,6 +175,12 @@
     }
   ],
   "reviewedTracks": [
+    {
+      "mediaRecordId": "ttb-israel-the-bible-bomb-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical check only; full listening and exact passage review pending."
+    },
     {
       "mediaRecordId": "ttb-what-death-means-to-a-christian-official-audio",
       "sourceManifest": "media-intake-candidates",

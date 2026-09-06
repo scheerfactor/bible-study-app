@@ -5153,5 +5153,31 @@
       "Bible study"
     ],
     "recommendedUse": "Introduce a Christ-centered whole-Bible study, biblical-theology lesson, or sermon series."
+  },
+  {
+    "rightsStatus": "Verified Public Domain",
+    "author": "A. B. Simpson",
+    "sourceTitle": "The Christ of the Forty Days",
+    "sourceUrl": "https://archive.org/details/christoffortyday00simprich",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/the-christ-of-the-forty-days-a-b-simpson.txt",
+    "rightsBasis": "Circa-1890 Christian Alliance Publishing Company edition, public domain in the USA. Wording matched to stored OCR; page-scan verification pending.",
+    "reviewNote": "Read in the opening chapter. Author's devotional wording, not Scripture; use KJV for accompanying Bible text.",
+    "id": "simpson-earthly-ministry-heavenly-exaltation",
+    "type": "Quote",
+    "title": "From Earthly Ministry to Heavenly Exaltation",
+    "text": "It is the transition period between His earthly ministry and His heavenly exaltation.",
+    "slideText": "It is the transition period between His earthly ministry and His heavenly exaltation.",
+    "sourceLocator": "Chapter I, printed pages 5–6",
+    "bibleReferences": [
+      "Luke 24:50-53",
+      "Acts 1:9"
+    ],
+    "topics": [
+      "Jesus Christ",
+      "resurrection",
+      "ascension"
+    ],
+    "recommendedUse": "Introduce a study of Christ's forty post-resurrection days and ascension."
   }
 ]

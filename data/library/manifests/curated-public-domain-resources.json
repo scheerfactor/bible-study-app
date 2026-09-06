@@ -110798,5 +110798,57 @@
     "checksum_sha256": "7580adfceb781ade27f6a734eea717b1bb1c420043f46d14fdb4264ab1447c74",
     "file_size_bytes": 742819,
     "word_count": 115766
+  },
+  {
+    "title": "The Christ of the Forty Days",
+    "author": "A. B. Simpson",
+    "year": 1890,
+    "category": "Classics",
+    "collection": "Resurrection and Ascension Studies",
+    "source_url": "https://archive.org/download/christoffortyday00simprich/christoffortyday00simprich_djvu.txt",
+    "download_url": "https://archive.org/download/christoffortyday00simprich/christoffortyday00simprich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-christ-of-the-forty-days-a-b-simpson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive metadata identifies the circa-1890 Christian Alliance Publishing Company edition digitized from the University of California Libraries; public domain in the USA",
+    "notes": "Complete eight-chapter study of Christ's post-resurrection appearances commission and ascension for lesson and sermon preparation Labels/warnings: Nineteenth-century Christian and Missionary Alliance teaching;Theological synthesis requires comparison;Translation and textual notes;OCR requires scan review;KJV remains primary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Complete eight-chapter study of Christ's post-resurrection appearances commission and ascension for lesson and sermon preparation",
+    "resource_labels": [
+      "Resurrection and Ascension Studies",
+      "Nineteenth-century Christian and Missionary Alliance teaching",
+      "Theological synthesis requires comparison",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "resource_warnings": [
+      "Nineteenth-century Christian and Missionary Alliance teaching",
+      "Theological synthesis requires comparison",
+      "Translation and textual notes",
+      "OCR requires scan review",
+      "KJV remains primary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Christ of the Forty Days",
+      "author": "A. B. Simpson",
+      "category": "Classics",
+      "collection": "Resurrection and Ascension Studies",
+      "badge": "Resurrection and Ascension Studies",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 176,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c1b4ec45a0e0f2b76fad27131076b4e8309078ee79092553fd4dc6b61ab044e7",
+    "file_size_bytes": 250035,
+    "word_count": 39508
   }
 ]
