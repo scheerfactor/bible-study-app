@@ -3827,6 +3827,7 @@ const TREASURY_OF_DAVID_COMMENTARY_COLLECTION = "The Treasury of David";
 const SCOFIELD_REFERENCE_NOTES_COLLECTION = "Scofield Reference Notes (1917 Edition)";
 const AMERICAN_COMMENTARY_NT_COLLECTION = "American Commentary on the New Testament";
 const J_C_RYLE_JOHN_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. John, Volume III";
+const J_C_RYLE_JOHN_EARLY_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. John, Volumes I-II";
 const J_C_RYLE_MARK_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. Mark";
 const J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospel of St. Matthew";
 const J_C_RYLE_LUKE_COMMENTARY_COLLECTION = "Expository Thoughts on the Gospels: St. Luke";
@@ -3856,6 +3857,7 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   SCOFIELD_REFERENCE_NOTES_COLLECTION,
   AMERICAN_COMMENTARY_NT_COLLECTION,
   J_C_RYLE_JOHN_COMMENTARY_COLLECTION,
+  J_C_RYLE_JOHN_EARLY_COMMENTARY_COLLECTION,
   J_C_RYLE_MARK_COMMENTARY_COLLECTION,
   J_C_RYLE_MATTHEW_COMMENTARY_COLLECTION,
   J_C_RYLE_LUKE_COMMENTARY_COLLECTION,
@@ -3983,9 +3985,9 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     timePeriod: "1816-1900",
     biography: "English evangelical Anglican bishop and pastor whose Expository Thoughts were written to make the Gospels clear, practical, and useful for families and teachers.",
     writingStyle: "Pastoral, plain, devotional, practical, and Gospel-centered.",
-    coverageScope: "Matthew 1-28, Mark 1-16, Luke 1-24, and John 13-21",
-    coverageSummary: "77 chapters reviewed from five public-domain Gospel volumes",
-    coverageUseNote: "Follows the selected KJV chapter through all of Matthew, Mark, and Luke plus the closing nine chapters of John.",
+    coverageScope: "Matthew 1-28, Mark 1-16, Luke 1-24, and John 1-21",
+    coverageSummary: "All 89 Gospel chapters reviewed from seven public-domain volumes",
+    coverageUseNote: "Follows the selected KJV chapter throughout all four Gospels.",
     strengths: ["Gospel exposition", "Devotional application", "Family Bible study", "Teaching preparation"],
     weaknesses: ["Anglican perspective should remain visible", "Historical OCR quotations should be checked against the page scan"],
     bestUse: "Read after the KJV passage for clear exposition and practical application in John 13-21.",
@@ -12228,6 +12230,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 
 const deferredCommentaryImportFiles = [
   "j-c-ryle-reviewed-john-13-21-commentary.json",
+  "j-c-ryle-reviewed-john-1-12-commentary.json",
   "j-c-ryle-reviewed-mark-commentary.json",
   "j-c-ryle-reviewed-matthew-commentary.json",
   "j-c-ryle-reviewed-luke-commentary.json",
