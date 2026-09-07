@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T03:22:30.747Z",
+  "generated_at": "2026-09-07T03:39:04.202Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13146,
+  "commentary_entries": 13158,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 84991,
-      "total_size": "83.00 KB"
+      "total_bytes": 85331,
+      "total_size": "83.33 KB"
     },
     "commentary_batch": {
-      "files": 360,
-      "present": 360,
+      "files": 361,
+      "present": 361,
       "missing": 0,
-      "total_bytes": 545057961,
-      "total_size": "519.81 MB"
+      "total_bytes": 545375887,
+      "total_size": "520.11 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2829,
-      "present": 2829,
+      "files": 2830,
+      "present": 2830,
       "missing": 0,
-      "total_bytes": 2834964489,
+      "total_bytes": 2835282755,
       "total_size": "2.64 GB"
     }
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 84991,
-      "checksum_sha256": "2791db7601c84d3ae7645b906d2db9c6f0c04c0d7e3ddb0500839b19585b993f"
+      "size_bytes": 85331,
+      "checksum_sha256": "7779c12dda541ee4ae52a673b3d90abb9ac3bbbdbe15c3b155bb230f1f193dd0"
     },
     {
       "kind": "commentary_batch",
@@ -29260,6 +29260,16 @@
       "checksum_sha256": "275ad2d989940573a671e6232133b38525bb7c448543c240a90453ea2b7f117c",
       "batch_name": "a-c-gaebelein-reviewed-amos-commentary.json",
       "entries": 9
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/a-c-gaebelein-reviewed-daniel-commentary.json",
+      "storage_path": "data/imports/a-c-gaebelein-reviewed-daniel-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 317926,
+      "checksum_sha256": "824e484561422b1fc28b8e99af0dbe935420e6e1913b76e192c4f9b06be53a0c",
+      "batch_name": "a-c-gaebelein-reviewed-daniel-commentary.json",
+      "entries": 12
     },
     {
       "kind": "commentary_batch",

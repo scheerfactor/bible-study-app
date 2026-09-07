@@ -1,5 +1,19 @@
 [
   {
+    "file": "generated/daniel-babylon-watch-dawn-v1.png",
+    "slot": "daniel-babylon-watch-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-daniel-babylon-watch-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Daniel", "Prayer", "Faithfulness", "Wisdom", "Courage", "Prophecy", "Sovereignty"],
+    "bibleReferences": ["Daniel 1:8", "Daniel 2:20-23", "Daniel 6:10", "Daniel 7:13-14"],
+    "recommendedUse": "Daniel, prayer, faithfulness, wisdom, courage, prophecy, and God's sovereign kingdom slides; place light text in the dark left-side field. Illustrative Babylon scene, not a documented chamber or archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/arno-gaebelein-daniel-study-expansion-2026-09-06.md"
+  },
+  {
     "file": "generated/revelation-patmos-watch-dawn-v1.png",
     "slot": "revelation-patmos-watch-dawn",
     "category": "Judgment",
