@@ -14,9 +14,10 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
   if (entry.file_path.endsWith("notes-on-the-book-of-esther-h-a-ironside.txt")) {
-    const start = text.indexOf("\nINTRODUCTION\n");
+    const editionPreface = text.indexOf("December, 1921.");
+    const start = text.indexOf("INTRODUCTION", editionPreface);
     const end = text.indexOf("\nBY H. A. IRONSIDE", start);
-    if (start < 0 || end < 0) return text;
+    if (editionPreface < 0 || start < 0 || end < 0) return text;
 
     return text
       .slice(start, end)
