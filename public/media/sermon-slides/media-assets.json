@@ -1212,5 +1212,19 @@
     "bibleReferences": ["Philippians 1:12-21", "Philippians 4:4-7", "Philippians 4:11-13"],
     "recommendedUse": "Philippians, joy in Christ, prayer, peace, contentment, humility, and faithful gospel-service slides; place light text in the broad dark left-side field. Illustrative scene, not a documented prison reconstruction.",
     "optimized": "1672x941 PNG stored locally; original generated first-century prison writing scene with a broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/colossians-lycus-valley-dawn-v1.png",
+    "slot": "colossians-lycus-valley-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-colossians-lycus-valley-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Colossians", "Christ Preeminent", "Things Above", "Prayer", "Gracious Witness"],
+    "bibleReferences": ["Colossians 1:15-18", "Colossians 3:1-4", "Colossians 4:2-6"],
+    "recommendedUse": "Colossians, Christ's preeminence and sufficiency, heavenly-mindedness, prayer, practical holiness, and gracious-witness slides; place light text in the broad dark left-side field. Illustrative landscape, not an archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; original generated Lycus Valley dawn scene with an ancient road, blank parchment, lamp, and broad dark left-side sermon-title zone."
   }
 ]

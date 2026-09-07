@@ -5,6 +5,7 @@ import spurgeonGospelKingdomRows from "../../../../../../../data/imports/spurgeo
 import andrewMurrayHoliestRows from "../../../../../../../data/imports/andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json";
 import ironsideExpositionPhaseTwoRows from "../../../../../../../data/imports/h-a-ironside-exposition-phase-2-commentary.json";
 import ironsidePhilippiansRows from "../../../../../../../data/imports/h-a-ironside-reviewed-philippians-commentary.json";
+import ironsideColossiansRows from "../../../../../../../data/imports/h-a-ironside-reviewed-colossians-commentary.json";
 
 type CommentaryRow = {
   book?: unknown;
@@ -33,6 +34,9 @@ async function readCommentaryRows(fileName: string) {
   }
   if (fileName === "h-a-ironside-reviewed-philippians-commentary.json") {
     return ironsidePhilippiansRows as CommentaryRow[];
+  }
+  if (fileName === "h-a-ironside-reviewed-colossians-commentary.json") {
+    return ironsideColossiansRows as CommentaryRow[];
   }
 
   const raw = await readTextContent(["data", "imports", fileName], {

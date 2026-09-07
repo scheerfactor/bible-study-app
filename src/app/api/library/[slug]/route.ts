@@ -13,6 +13,32 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-colossians-ironside-h-a-henry-allan-1876-1951.txt")) {
+    const start = text.indexOf("PREFACE");
+    const end = text.indexOf("The Complete Writings of H. A. IRONSIDE", start);
+    if (start < 0 || end < 0) return text;
+
+    return text
+      .slice(start, end)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s*\|\s*/g, " ").replace(/\s{2,}/g, " "))
+        .filter((line) => {
+          if (!line || /^\d+$/.test(line) || /^[|{}]+$/.test(line)) return false;
+          if (/^\d+ Lectures on Colossians$/i.test(line)) return false;
+          if (/^(?:School of Theology|at Claremont)$/i.test(line)) return false;
+          if (/^(?:General Considerations and Analysis|The Salutation and Introduction|Paul['’]s Prayer and Thanksgiving|Christ the Firstborn|Paul['’]s Twofold Ministry|Christ the True Wisdom|Christ the Antidote|Christ the Believer['’]s Life and Object|Practical Holiness|The Earthly Relationships of the New Man|Concluding Exhortations|Closing Salutations).*\d+$/i.test(line)) return false;
+          return true;
+        })
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (!entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt")) return text;
 
   const titleStart = text.indexOf("NOTES ON PHILIPPIANS");

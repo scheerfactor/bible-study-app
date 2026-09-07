@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 
 const sourcePath =
@@ -9,6 +10,7 @@ const sourceUrl =
 const companionEditionUrl =
   "https://archive.org/download/lecturesonepistl0000hiro/lecturesonepistl0000hiro_djvu.txt";
 const resourceTitle = "Lectures on the Epistle to the Colossians";
+const expectedSourceChecksum = "25fce00bb07bfaf2094d229f20c7bfa35fa77f18ad846b601176e7bd1c10ffa1";
 
 const romanLectures = [
   "I",
@@ -113,6 +115,10 @@ function entryFor(chapter, entryText) {
 }
 
 const source = await readFile(sourcePath, "utf8");
+const sourceChecksum = createHash("sha256").update(source).digest("hex");
+if (sourceChecksum !== expectedSourceChecksum) {
+  throw new Error(`Unexpected Colossians source checksum: ${sourceChecksum}`);
+}
 const lectures = lectureSections(source);
 const lectureFourteenTransition = lectures.XIV.findIndex((paragraph) =>
   paragraph.startsWith("It is unfortunate that the chapter break comes just where it does."),

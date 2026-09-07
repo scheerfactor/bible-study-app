@@ -273,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3045,6 +3045,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Teaching",
     assetUrl: "/media/sermon-slides/generated/philippians-prison-dawn-v1.png",
   },
+  "colossians-lycus-valley-dawn": {
+    label: "Colossians: Christ Preeminent",
+    description: "Colossians, the preeminence and sufficiency of Christ, things above, prayer, and gracious witness.",
+    background: "linear-gradient(90deg, rgba(3,18,20,0.82), rgba(3,18,20,0.04) 72%)",
+    motif: "Lycus Valley at Dawn",
+    category: "Teaching",
+    assetUrl: "/media/sermon-slides/generated/colossians-lycus-valley-dawn-v1.png",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -4150,6 +4158,14 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "H. A. Ironside",
+    resourceTitle: H_A_IRONSIDE_COLOSSIANS_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 4 Colossians chapters are imported from the reviewed 1929 first edition and connected to the chapter reader.",
+    rightsNotes: "Verified 1929 public-domain first edition. Preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Expository study of Christ's preeminence and sufficiency, practical holiness, prayer, and witness after reading the KJV text.",
+  },
   {
     author: "H. A. Ironside",
     resourceTitle: H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION,
