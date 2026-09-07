@@ -15,12 +15,13 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
   if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt")) {
     const start = text.indexOf("FOREWORD");
-    const finalSentence = "“To God only wise be glory through Jesus Christ for ever. Amen.”";
-    const finalStart = text.indexOf(finalSentence, start);
-    if (start < 0 || finalStart < 0) return text;
+    const finalStart = text.indexOf("“To God only wise be glory through Jesus", start);
+    const finalLine = "Christ for ever. Amen.”";
+    const finalEnd = text.indexOf(finalLine, finalStart);
+    if (start < 0 || finalStart < 0 || finalEnd < 0) return text;
 
     return text
-      .slice(start, finalStart + finalSentence.length)
+      .slice(start, finalEnd + finalLine.length)
       .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
       .split(/\n\s*\n/)
       .map((paragraph) => paragraph
