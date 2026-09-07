@@ -273,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "joel-harvest-restoration-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "joel-harvest-restoration-dawn" | "esther-providence-palace-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3117,6 +3117,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Harvest",
     assetUrl: "/media/sermon-slides/generated/joel-harvest-restoration-dawn-v1.png",
   },
+  "esther-providence-palace-dawn": {
+    label: "Esther: Providence and Courage",
+    description: "Esther, providence, courageous intercession, reversal, deliverance, faith, and peace.",
+    background: "linear-gradient(90deg, rgba(15,4,30,0.96), rgba(15,4,30,0.05) 72%)",
+    motif: "Persian Palace at Dawn",
+    category: "Teaching",
+    assetUrl: "/media/sermon-slides/generated/esther-providence-palace-dawn-v1.png",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -4182,6 +4190,7 @@ const CHARLES_BRIDGES_PROVERBS_COMMENTARY_COLLECTION = "An Exposition of the Boo
 const SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION = "The Gospel of the Kingdom";
 const ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION = "The Holiest of All";
 const H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION = "Notes on the Books of Ezra, Nehemiah and Esther";
+const H_A_IRONSIDE_ESTHER_COMMENTARY_COLLECTION = "Notes on the Book of Esther";
 const H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION = "Notes on the Epistle to the Philippians";
 const H_A_IRONSIDE_ROMANS_COMMENTARY_COLLECTION = "Lectures on the Epistle to the Romans";
 const GEORGE_W_CLARK_JOHN_COMMENTARY_COLLECTION = "The Gospel of John: A Popular Commentary";
@@ -4225,6 +4234,7 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION,
   ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION,
+  H_A_IRONSIDE_ESTHER_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_ROMANS_COMMENTARY_COLLECTION,
   GEORGE_W_CLARK_JOHN_COMMENTARY_COLLECTION,
@@ -4238,6 +4248,14 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "H. A. Ironside",
+    resourceTitle: H_A_IRONSIDE_ESTHER_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 10 chapters of Esther are imported from the reviewed public-domain exposition and connected to the chapter reader.",
+    rightsNotes: "First published in 1905; revised second edition dated 1921 and public domain in the United States. Front matter and advertising matter are excluded; preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Practical exposition of providence, courage, intercession, spiritual conflict, reversal, deliverance, faith, and peace after reading the KJV chapter.",
+  },
   {
     author: "Arno C. Gaebelein",
     resourceTitle: A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION,
@@ -11954,7 +11972,7 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   "2 Chronicles": "ancient-jerusalem",
   Ezra: "ancient-jerusalem",
   Nehemiah: "ancient-jerusalem",
-  Esther: "light-window",
+  Esther: "esther-providence-palace-dawn",
   Job: "storm-judgment",
   Psalms: "psalms-still-waters-generated",
   Proverbs: "scripture-lamp",
@@ -12062,6 +12080,13 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
     label: "Ironside full Philippians volume",
     priority: "Teaching focus",
     note: "Open the whole public-domain volume for extended devotional and preaching help on Philippians.",
+  },
+  {
+    resourceSlug: "notes-on-the-book-of-esther-h-a-ironside",
+    books: ["Esther"],
+    label: "Ironside full Esther volume",
+    priority: "Teaching focus",
+    note: "Open the complete public-domain volume for practical exposition of providence, courage, intercession, reversal, deliverance, faith, and peace.",
   },
   {
     resourceSlug: "the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945",
@@ -12770,6 +12795,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "h-a-ironside-reviewed-esther-commentary.json",
   "a-c-gaebelein-reviewed-joel-commentary.json",
   "a-c-gaebelein-reviewed-daniel-commentary.json",
   "a-c-gaebelein-reviewed-revelation-commentary.json",

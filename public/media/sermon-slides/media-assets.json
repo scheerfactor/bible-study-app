@@ -1,5 +1,19 @@
 [
   {
+    "file": "generated/esther-providence-palace-dawn-v1.png",
+    "slot": "esther-providence-palace-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-07-esther-providence-palace-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Esther", "Providence", "Courage", "Intercession", "Reversal", "Deliverance", "Faith", "Peace"],
+    "bibleReferences": ["Esther 4:14-16", "Esther 5:1-2", "Esther 6:1-3", "Esther 9:20-22"],
+    "recommendedUse": "Esther, providence, courageous intercession, reversal, deliverance, faith, and peace slides; place light text in the dark left-side field. Illustrative Persian palace scene, not a documented room or archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/h-a-ironside-esther-study-expansion-2026-09-07.md"
+  },
+  {
     "file": "generated/joel-harvest-restoration-dawn-v1.png",
     "slot": "joel-harvest-restoration-dawn",
     "category": "Harvest",

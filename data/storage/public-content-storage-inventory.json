@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T03:54:12.363Z",
+  "generated_at": "2026-09-07T04:16:34.747Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13161,
+  "commentary_entries": 13171,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 85510,
-      "total_size": "83.51 KB"
+      "total_bytes": 85597,
+      "total_size": "83.59 KB"
     },
     "commentary_batch": {
-      "files": 362,
-      "present": 362,
+      "files": 363,
+      "present": 363,
       "missing": 0,
-      "total_bytes": 545562490,
-      "total_size": "520.29 MB"
+      "total_bytes": 545722409,
+      "total_size": "520.44 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2831,
-      "present": 2831,
+      "files": 2832,
+      "present": 2832,
       "missing": 0,
-      "total_bytes": 2835469537,
+      "total_bytes": 2835629543,
       "total_size": "2.64 GB"
     }
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 85510,
-      "checksum_sha256": "934fad365fa0b1758cb71e2a9968a7d766164f14e716db4fde74d14b38a29139"
+      "size_bytes": 85597,
+      "checksum_sha256": "5e8821f45f6e95c13602918dffb5af5e22593be0ae221925c9917d023810524f"
     },
     {
       "kind": "commentary_batch",
@@ -30440,6 +30440,16 @@
       "checksum_sha256": "e946adadf6f8bdc66515e1f0ec6dd3e0915109b3241ef23cb97f549da9bb6f4f",
       "batch_name": "h-a-ironside-reviewed-colossians-commentary.json",
       "entries": 4
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-esther-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-esther-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 159919,
+      "checksum_sha256": "089f3216bd3a774ba01e371d002d0ca69fcc918aa716ffce876086fe7afd307c",
+      "batch_name": "h-a-ironside-reviewed-esther-commentary.json",
+      "entries": 10
     },
     {
       "kind": "commentary_batch",

@@ -72,6 +72,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt")) {
     return "/media/library-covers/h-a-ironside-notes-nehemiah-v1.png";
   }
+  if (entry.file_path.endsWith("notes-on-the-book-of-esther-h-a-ironside.txt")) {
+    return "/media/library-covers/h-a-ironside-notes-esther-v1.png";
+  }
   if (entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt")) {
     return "/media/library-covers/h-a-ironside-notes-philippians-v1.png";
   }
@@ -227,6 +230,7 @@ function recommendedUse(entry: LibraryManifestEntry, category: string) {
 export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isAndrewMurrayHoliest = entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray";
   const isIronsideNehemiah = entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt");
+  const isIronsideEsther = entry.file_path.endsWith("notes-on-the-book-of-esther-h-a-ironside.txt");
   const isIronsidePhilippians = entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt");
   const isIronsideColossians = entry.file_path.endsWith("lectures-on-the-epistle-to-the-colossians-ironside-h-a-henry-allan-1876-1951.txt");
   const isIronsideRomans = entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt");
@@ -237,15 +241,15 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isGaebeleinRevelation = entry.file_path.endsWith("the-revelation-an-analysis-and-exposition-of-the-last-book-of-the-bible-arno-c-gaebelein.txt");
   const isGaebeleinDaniel = entry.file_path.endsWith("the-prophet-daniel-a-key-to-the-visions-and-prophecies-of-the-book-of-daniel-gaebelein-arno-clemens-1861-1945-2.txt");
   const isGaebeleinJoel = entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt");
-  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsideEsther || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
   const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : isGaebeleinDaniel ? "The Prophet Daniel: A Key to the Visions and Prophecies" : isGaebeleinJoel ? "The Prophet Joel: An Exposition" : entry.title,
-    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel ? "Arno C. Gaebelein" : entry.author,
-    year: isIronsideNehemiah ? 1914 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : isGaebeleinDaniel ? 1911 : isGaebeleinJoel ? 1909 : entry.year,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isIronsideEsther ? "Notes on the Book of Esther" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : isGaebeleinDaniel ? "The Prophet Daniel: A Key to the Visions and Prophecies" : isGaebeleinJoel ? "The Prophet Joel: An Exposition" : entry.title,
+    author: isIronsideNehemiah || isIronsideEsther || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel ? "Arno C. Gaebelein" : entry.author,
+    year: isIronsideNehemiah ? 1914 : isIronsideEsther ? 1905 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : isGaebeleinDaniel ? 1911 : isGaebeleinJoel ? 1909 : entry.year,
     category,
     collection,
     original_category: entry.category,
@@ -253,6 +257,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
       ? "Complete public-domain devotional exposition connected chapter-by-chapter to Hebrews 1-13. Keep the KJV text primary and compare doctrinal conclusions carefully with Scripture."
       : isIronsideNehemiah
         ? "Complete public-domain exposition connected chapter-by-chapter to Nehemiah 1-13, with practical studies of prayer, rebuilding, opposition, Bible reading, and faithful service."
+      : isIronsideEsther
+        ? "Complete public-domain exposition connected chapter-by-chapter to Esther 1-10, with practical studies of providence, courage, intercession, spiritual conflict, reversal, deliverance, faith, and peace."
       : isIronsidePhilippians
         ? "Complete public-domain exposition connected chapter-by-chapter to Philippians 1-4, centered on Christ as the believer's life, example, object, and strength."
       : isIronsideColossians
@@ -283,6 +289,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
       ? "Read after each KJV chapter of Hebrews for devotional exposition on Christ, the better covenant, faith, holiness, and drawing near to God."
       : isIronsideNehemiah
         ? "Read after each KJV chapter of Nehemiah for exposition, leadership applications, sermon preparation, and ministry encouragement."
+      : isIronsideEsther
+        ? "Read after each KJV chapter of Esther for practical exposition of providence, courage, intercession, spiritual conflict, reversal, deliverance, faith, and peace."
       : isIronsidePhilippians
         ? "Read after each KJV chapter of Philippians for practical exposition on joy, humility, prayer, contentment, gospel service, and the mind of Christ."
       : isIronsideColossians
@@ -306,7 +314,7 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : isGaebeleinDaniel ? ["Daniel"] : isGaebeleinJoel ? ["Joel"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsideEsther ? ["Esther"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : isGaebeleinDaniel ? ["Daniel"] : isGaebeleinJoel ? ["Joel"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -328,6 +336,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     cover_image_url: originalCover ?? entry.cover_image_url ?? projectGutenbergCoverUrl(entry.source_url),
     cover_source_url: isIronsideNehemiah
       ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-nehemiah"
+      : isIronsideEsther
+        ? "#original-generated-cover-prompt-2026-09-07-h-a-ironside-notes-esther"
       : isIronsidePhilippians
         ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-philippians"
       : isIronsideColossians
@@ -368,6 +378,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
           badge: "Ironside Collection",
           palette: { from: "#071a2d", to: "#b38a43" },
         }
+      : isIronsideEsther
+        ? {
+            type: "original-generated",
+            title: "Notes on the Book of Esther",
+            author: "H. A. Ironside",
+            category: "Commentaries",
+            collection: "H. A. Ironside Collection",
+            badge: "H. A. Ironside Collection",
+            palette: { from: "#24102f", to: "#b58a42" },
+          }
       : isIronsidePhilippians
         ? {
             type: "original-generated",

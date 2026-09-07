@@ -13,6 +13,32 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("notes-on-the-book-of-esther-h-a-ironside.txt")) {
+    const start = text.indexOf("\nINTRODUCTION\n");
+    const end = text.indexOf("\nBY H. A. IRONSIDE", start);
+    if (start < 0 || end < 0) return text;
+
+    return text
+      .slice(start, end)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s{2,}/g, " "))
+        .filter((line) => {
+          if (!line || /^\d+$/.test(line)) return false;
+          if (/^\d+\s+NOTES ON THE BOOK OF ESTHER$/i.test(line)) return false;
+          if (/^NOTES ON THE BOOK OF ESTHER\s+\S+$/i.test(line) && /\d/.test(line)) return false;
+          if (line.length < 70 && /\d/.test(line) && /^(?:THE ROYAL FEAST|THE CHOICE OF ESTHER|THE WRATH OF THE AMALEKITE|IN SACKCLOTH AND ASHES|THE SCEPTRE OF GRACE|A SLEEPLESS NIGHT|THE SECOND BANQUET|THE DESPISED MAN EXALTED|THE DELIVERANCE|THE INSTITUTION OF PURIM|SPEAKING PEACE)/i.test(line)) return false;
+          return true;
+        })
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt")) {
     const expositionLead = text.indexOf("prepared  to  take  up  the  chapters  separate-");
     const start = text.indexOf("CHAPTER  I.", expositionLead);
