@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T00:29:36.194Z",
+  "generated_at": "2026-09-07T01:02:48.521Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13031,
+  "commentary_entries": 13052,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 84246,
-      "total_size": "82.27 KB"
+      "total_bytes": 84377,
+      "total_size": "82.40 KB"
     },
     "commentary_batch": {
-      "files": 355,
-      "present": 355,
+      "files": 356,
+      "present": 356,
       "missing": 0,
-      "total_bytes": 540191684,
-      "total_size": "515.17 MB"
+      "total_bytes": 541492982,
+      "total_size": "516.41 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,18 +75,18 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2824,
-      "present": 2824,
+      "files": 2825,
+      "present": 2825,
       "missing": 0,
-      "total_bytes": 2830097467,
+      "total_bytes": 2831398896,
       "total_size": "2.64 GB"
     }
   },
   "large_file_summary": {
     "library_text_files_over_1mb": 569,
     "library_text_bytes_over_1mb": 1469078125,
-    "public_content_files_over_1mb": 697,
-    "public_content_bytes_over_1mb": 2005479521,
+    "public_content_files_over_1mb": 698,
+    "public_content_bytes_over_1mb": 2006780869,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 84246,
-      "checksum_sha256": "5ab279bb46d96510f786855fbc0f16dc850448e423738aff1e168badbca2a881"
+      "size_bytes": 84377,
+      "checksum_sha256": "ee97e7d1a154ea571583798cea4136613725b171c564df08d42d87ed01e16182"
     },
     {
       "kind": "commentary_batch",
@@ -30323,6 +30323,16 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/george-w-clark-reviewed-john-commentary.json",
+      "storage_path": "data/imports/george-w-clark-reviewed-john-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1301348,
+      "checksum_sha256": "9ebbe873329b7671ce91cdde1982e9ea0c1972042e8feaba049e07c7b628b128",
+      "batch_name": "george-w-clark-reviewed-john-commentary.json",
+      "entries": 21
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/h-a-ironside-exposition-phase-2-commentary.json",
       "storage_path": "data/imports/h-a-ironside-exposition-phase-2-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -30436,8 +30446,8 @@
       "source_path": "data/imports/h-a-ironside-reviewed-romans-commentary.json",
       "storage_path": "data/imports/h-a-ironside-reviewed-romans-commentary.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 250743,
-      "checksum_sha256": "5be362b8707011665a537e2f0d7d5650c6095755ea940c78596ee6a1f7734018",
+      "size_bytes": 250693,
+      "checksum_sha256": "10ead67f6e375b9cc72f68a866d3bfc87bdf55d56f881c5f39b136b0f39f4801",
       "batch_name": "h-a-ironside-reviewed-romans-commentary.json",
       "entries": 16
     },

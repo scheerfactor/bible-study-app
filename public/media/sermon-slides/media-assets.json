@@ -1240,5 +1240,19 @@
     "bibleReferences": ["Romans 1:16-17", "Romans 3:21-26", "Romans 12:1-2"],
     "recommendedUse": "Romans, the righteousness of God, justification by faith, gospel witness, life in Christ, consecration, and practical-service slides; place light text in the broad dark left-side field. Illustrative scene, not an archaeological reconstruction.",
     "optimized": "1672x941 PNG stored locally; original generated Appian Way approach to Rome at dawn with a blank parchment, travel lamp, and broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/john-galilee-dawn-v1.png",
+    "slot": "john-galilee-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-john-galilee-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["John", "Jesus Christ", "Belief", "Eternal Life", "Discipleship", "Restoration"],
+    "bibleReferences": ["John 1:1-14", "John 3:16-18", "John 20:30-31", "John 21:15-19"],
+    "recommendedUse": "Gospel of John, the person and work of Christ, belief, eternal life, discipleship, witness, and restoration slides; place light text in the broad dark left-side field. Illustrative landscape, not an archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; original generated Sea of Galilee dawn scene with an empty wooden fishing boat, folded net, and broad dark left-side sermon-title zone."
   }
 ]

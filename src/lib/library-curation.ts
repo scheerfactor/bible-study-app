@@ -81,6 +81,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt")) {
     return "/media/library-covers/h-a-ironside-romans-v1.png";
   }
+  if (entry.file_path.endsWith("the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt")) {
+    return "/media/library-covers/george-w-clark-gospel-of-john-v1.png";
+  }
   return null;
 }
 
@@ -209,15 +212,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isIronsidePhilippians = entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt");
   const isIronsideColossians = entry.file_path.endsWith("lectures-on-the-epistle-to-the-colossians-ironside-h-a-henry-allan-1876-1951.txt");
   const isIronsideRomans = entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt");
-  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const isGeorgeClarkJohn = entry.file_path.endsWith("the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
   const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : entry.title,
-    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : entry.author,
-    year: isIronsideNehemiah ? 1914 : isIronsideRomans ? 1928 : entry.year,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : entry.title,
+    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : entry.author,
+    year: isIronsideNehemiah ? 1914 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : entry.year,
     category,
     collection,
     original_category: entry.category,
@@ -231,6 +235,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Complete public-domain exposition connected chapter-by-chapter to Colossians 1-4, emphasizing Christ's preeminence and sufficiency, the believer's life in Him, prayer, and practical holiness."
       : isIronsideRomans
         ? "Complete public-domain exposition connected chapter-by-chapter to Romans 1-16, tracing God's righteousness in the gospel, justification by faith, life in Christ, Israel, and practical Christian service."
+      : isGeorgeClarkJohn
+        ? "Complete public-domain verse-by-verse commentary connected to John 1-21, prepared for pastors, families, and Sunday schools with historical notes, doctrinal observations, and practical teaching suggestions."
         : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
@@ -247,10 +253,12 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Read after each KJV chapter of Colossians for exposition on the preeminence of Christ, freedom from human philosophy and legalism, the new man, prayer, and gracious witness."
       : isIronsideRomans
         ? "Read after each KJV chapter of Romans for gospel-centered exposition of justification by faith, union with Christ, life in the Spirit, God's dealings with Israel, and practical Christian living."
+      : isGeorgeClarkJohn
+        ? "Read after each KJV chapter of John for verse-by-verse exposition, lesson preparation, geography, chronology, and practical applications concerning the person and work of Christ."
         : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -278,6 +286,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-colossians"
       : isIronsideRomans
         ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-romans"
+      : isGeorgeClarkJohn
+        ? "#original-generated-cover-prompt-2026-09-06-george-w-clark-gospel-john"
       : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: originalCover
       ? "Original generated asset"
@@ -327,6 +337,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
               collection: "H. A. Ironside Collection",
               badge: "H. A. Ironside Collection",
               palette: { from: "#3c0e0b", to: "#b58a42" },
+            }
+        : isGeorgeClarkJohn
+          ? {
+              type: "original-generated",
+              title: "The Gospel of John: A Popular Commentary",
+              author: "George W. Clark",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#071b2d", to: "#b58a42" },
             }
         : entry.cover_metadata ?? null,
     added_at: entry.import_status,

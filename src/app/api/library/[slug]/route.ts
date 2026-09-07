@@ -13,6 +13,32 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt")) {
+    const start = text.indexOf("PREFACE.");
+    const end = text.indexOf("\nINDEX.", start);
+    if (start < 0 || end < 0) return text;
+
+    return text
+      .slice(start, end)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s{2,}/g, " "))
+        .filter((line) => {
+          if (!line || /^\d+$/.test(line)) return false;
+          if (/^A\.\s*D\.\s*[0-9A-Z.,:\s-]+$/i.test(line)) return false;
+          if (/^\d+\s+JOHN\s+[IVXLCDM]+\.?$/i.test(line)) return false;
+          if (/^JOHN\s+\S{1,6}$/i.test(line)) return false;
+          return true;
+        })
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt")) {
     const start = text.indexOf("FOREWORD");
     const finalStart = text.indexOf("“To God only wise be glory through Jesus", start);
