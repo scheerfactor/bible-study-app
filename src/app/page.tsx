@@ -45,6 +45,7 @@ import {
 } from "lucide-react";
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import CountdownBuilder from "@/components/countdown/CountdownBuilder";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
@@ -50893,6 +50894,7 @@ function SermonWorkspaceScreen({
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onSaveDraft} type="button">Save</button>
+                  <CountdownBuilder lesson={{ ...draft, series: series.find(item => item.id === draft.seriesId)?.title }} resolveScripture={onResolveScriptureText} />
                   <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("markdown")} type="button">Download Sermon Markdown</button>
                   <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("text")} type="button">Download Text</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySermonOutline} type="button">Copy Sermon Outline</button>
