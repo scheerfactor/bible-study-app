@@ -1254,5 +1254,19 @@
     "bibleReferences": ["John 1:1-14", "John 3:16-18", "John 20:30-31", "John 21:15-19"],
     "recommendedUse": "Gospel of John, the person and work of Christ, belief, eternal life, discipleship, witness, and restoration slides; place light text in the broad dark left-side field. Illustrative landscape, not an archaeological reconstruction.",
     "optimized": "1672x941 PNG stored locally; original generated Sea of Galilee dawn scene with an empty wooden fishing boat, folded net, and broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/mark-galilee-road-dawn-v1.png",
+    "slot": "mark-galilee-road-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-mark-galilee-road-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Mark", "Jesus Christ", "Authority", "Service", "Discipleship", "Resurrection"],
+    "bibleReferences": ["Mark 1:14-20", "Mark 10:42-45", "Mark 16:15-20"],
+    "recommendedUse": "Gospel of Mark, Christ's active ministry, authority, discipleship, service, cross, and resurrection slides; place light text in the broad dark left-side field. Illustrative landscape, not an archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; original generated Galilee dawn scene with a rugged road, empty fishing boat, coiled net, and broad dark left-side sermon-title zone."
   }
 ]

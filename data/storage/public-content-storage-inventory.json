@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T01:02:48.521Z",
+  "generated_at": "2026-09-07T01:44:00.136Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13052,
+  "commentary_entries": 13068,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 84377,
-      "total_size": "82.40 KB"
+      "total_bytes": 84498,
+      "total_size": "82.52 KB"
     },
     "commentary_batch": {
-      "files": 356,
-      "present": 356,
+      "files": 357,
+      "present": 357,
       "missing": 0,
-      "total_bytes": 541492982,
-      "total_size": "516.41 MB"
+      "total_bytes": 542866389,
+      "total_size": "517.72 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,18 +75,18 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2825,
-      "present": 2825,
+      "files": 2826,
+      "present": 2826,
       "missing": 0,
-      "total_bytes": 2831398896,
+      "total_bytes": 2832772424,
       "total_size": "2.64 GB"
     }
   },
   "large_file_summary": {
     "library_text_files_over_1mb": 569,
     "library_text_bytes_over_1mb": 1469078125,
-    "public_content_files_over_1mb": 698,
-    "public_content_bytes_over_1mb": 2006780869,
+    "public_content_files_over_1mb": 699,
+    "public_content_bytes_over_1mb": 2008154276,
     "storage_backed_library_files": 486,
     "storage_backed_library_bytes": 479397391
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 84377,
-      "checksum_sha256": "ee97e7d1a154ea571583798cea4136613725b171c564df08d42d87ed01e16182"
+      "size_bytes": 84498,
+      "checksum_sha256": "f488f6962f304b59a142a1ac4810870322a4ef098f614fb8bd65c4c3626313ba"
     },
     {
       "kind": "commentary_batch",
@@ -30810,6 +30810,16 @@
       "checksum_sha256": "c4b7d46fcfa6c56216c95ac6c7caa2bb567bf85b6d4dde0c3f0de142a24c3e76",
       "batch_name": "jfb-reviewed-phase-8-psalms-completion-commentary.json",
       "entries": 46
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/joseph-addison-alexander-reviewed-mark-commentary.json",
+      "storage_path": "data/imports/joseph-addison-alexander-reviewed-mark-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1373407,
+      "checksum_sha256": "e9b71064b8917c531e98282615c31826d05bbe8ef88003c2794cecfa029a9a4b",
+      "batch_name": "joseph-addison-alexander-reviewed-mark-commentary.json",
+      "entries": 16
     },
     {
       "kind": "commentary_batch",

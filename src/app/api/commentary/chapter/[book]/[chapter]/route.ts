@@ -8,6 +8,7 @@ import ironsidePhilippiansRows from "../../../../../../../data/imports/h-a-irons
 import ironsideColossiansRows from "../../../../../../../data/imports/h-a-ironside-reviewed-colossians-commentary.json";
 import ironsideRomansRows from "../../../../../../../data/imports/h-a-ironside-reviewed-romans-commentary.json";
 import georgeClarkJohnRows from "../../../../../../../data/imports/george-w-clark-reviewed-john-commentary.json";
+import josephAlexanderMarkRows from "../../../../../../../data/imports/joseph-addison-alexander-reviewed-mark-commentary.json";
 
 type CommentaryRow = {
   book?: unknown;
@@ -45,6 +46,9 @@ async function readCommentaryRows(fileName: string) {
   }
   if (fileName === "george-w-clark-reviewed-john-commentary.json") {
     return georgeClarkJohnRows as CommentaryRow[];
+  }
+  if (fileName === "joseph-addison-alexander-reviewed-mark-commentary.json") {
+    return josephAlexanderMarkRows as CommentaryRow[];
   }
 
   const raw = await readTextContent(["data", "imports", fileName], {
