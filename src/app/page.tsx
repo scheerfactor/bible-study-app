@@ -123,6 +123,7 @@ import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded
 import publicSermonAudioReleaseIds from "../../data/media/manifests/public-sermon-audio-release.json";
 import publicAudiobookAudioReleaseIds from "../../data/media/manifests/public-audiobook-audio-release.json";
 import publicBibleAudioReleaseIds from "../../data/media/manifests/public-bible-audio-release.json";
+import sermonAudioStudyIndexData from "../../data/media/manifests/sermon-audio-study-index.json";
 import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
 import presentationHymnsData from "../../data/hymns/presentation-hymns.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
@@ -1470,6 +1471,18 @@ type UploadedPublicDomainAudioPilot = {
   nextAction: string;
   chapterMarkers?: BibleAudioChapterMarker[];
 };
+
+type SermonAudioStudyIndexEntry = {
+  id: string;
+  passage: string;
+  bibleRef: string;
+  topics: string[];
+  summary: string;
+};
+
+const SERMON_AUDIO_STUDY_INDEX = new Map(
+  (sermonAudioStudyIndexData as SermonAudioStudyIndexEntry[]).map((entry) => [entry.id, entry]),
+);
 
 type BibleAudioChapterMarker = {
   book: string;
@@ -25726,6 +25739,7 @@ export default function Home() {
                 onOpenCollection={openLibraryCollection}
                 onOpenReadingPath={openReadingPath}
                 onOpenBible={() => setTab("bible")}
+                onOpenBibleReference={openReference}
                 onCreateResourcePresentation={createResourcePresentation}
                 onOpenBookIntroduction={openBookIntroduction}
                 onAddToListeningQueue={addLibraryToListeningQueue}
@@ -38976,6 +38990,7 @@ function LibraryScreen({
   onOpenCollection,
   onOpenReadingPath,
   onOpenBible,
+  onOpenBibleReference,
   onCreateResourcePresentation,
   onOpenBookIntroduction,
   onAddToListeningQueue,
@@ -39084,6 +39099,7 @@ function LibraryScreen({
   onOpenCollection: (collectionId: string) => void;
   onOpenReadingPath: (pathId: string) => void;
   onOpenBible: () => void;
+  onOpenBibleReference: (reference: string) => void;
   onCreateResourcePresentation: (seed: ResourcePresentationSeed) => void;
   onOpenBookIntroduction: (book: string) => void;
   onAddToListeningQueue: (slug: string) => void;
@@ -39817,6 +39833,7 @@ function LibraryScreen({
         onOpenDetail={onOpenDetail}
         onOpenReader={onOpenReader}
         onAddToListeningQueue={onAddToListeningQueue}
+        onOpenBibleReference={onOpenBibleReference}
       />
 
       <LibraryShelf title="Start Here" horizontal>
@@ -40461,6 +40478,7 @@ function LibraryMediaCenter({
   onOpenDetail,
   onOpenReader,
   onAddToListeningQueue,
+  onOpenBibleReference,
 }: {
   books: LibraryResource[];
   audiobooks: LibraryResource[];
@@ -40474,6 +40492,7 @@ function LibraryMediaCenter({
   onOpenDetail: (slug: string) => void;
   onOpenReader: (slug: string) => void;
   onAddToListeningQueue: (slug: string) => void;
+  onOpenBibleReference: (reference: string) => void;
 }) {
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -40551,7 +40570,7 @@ function LibraryMediaCenter({
             <span className="rounded-xl bg-white px-3 py-2">Audio files: rights-gated later</span>
           </div>
         </article>
-        <SermonAudioShelf items={PUBLIC_SERMON_AUDIO_PILOTS} />
+        <SermonAudioShelf items={PUBLIC_SERMON_AUDIO_PILOTS} onOpenBibleReference={onOpenBibleReference} />
         <MediaPlaceholderShelf
           title="Teaching Series"
           kind="Teaching Series"
@@ -40772,10 +40791,30 @@ function MediaPlaceholderShelf({
   );
 }
 
-function SermonAudioShelf({ items }: { items: UploadedPublicDomainAudioPilot[] }) {
+function SermonAudioShelf({
+  items,
+  onOpenBibleReference,
+}: {
+  items: UploadedPublicDomainAudioPilot[];
+  onOpenBibleReference: (reference: string) => void;
+}) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
-  const active = items.find((item) => item.id === activeId) ?? items[0];
-  if (!active) return null;
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredItems = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+    if (!term) return items;
+    return items.filter((item) => {
+      const study = SERMON_AUDIO_STUDY_INDEX.get(item.id);
+      return [item.segmentTitle, item.creator, study?.passage, study?.summary, ...(study?.topics ?? [])]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+        .includes(term);
+    });
+  }, [items, searchTerm]);
+  const active = filteredItems.find((item) => item.id === activeId) ?? filteredItems[0];
+  const activeStudy = active ? SERMON_AUDIO_STUDY_INDEX.get(active.id) : null;
+  if (!items.length) return null;
 
   return (
     <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -40783,15 +40822,69 @@ function SermonAudioShelf({ items }: { items: UploadedPublicDomainAudioPilot[] }
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Audio</p>
           <h3 className="mt-2 text-xl font-semibold text-[var(--ink)]">Talks to Farmers</h3>
-          <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{items.length} public-domain readings of C. H. Spurgeon&apos;s sermons and addresses, with source and rights records attached.</p>
+          <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{items.length} public-domain readings of C. H. Spurgeon&apos;s sermons and addresses, now indexed by their primary Scripture passages and study topics.</p>
         </div>
         <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{items.length} ready to play</span>
       </div>
+      <label className="mt-4 flex min-h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-4 shadow-sm">
+        <Search className="shrink-0 text-[var(--green)]" size={18} aria-hidden="true" />
+        <span className="sr-only">Search sermon audio by title, Scripture, or topic</span>
+        <input
+          className="min-w-0 flex-1 bg-transparent py-3 text-base text-[var(--ink)] outline-none placeholder:text-[var(--muted)]"
+          placeholder="Search title, Scripture, or topic — try prayer, harvest, John 12…"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
+        {searchTerm && (
+          <button className="rounded-full p-2 text-[var(--muted)]" onClick={() => setSearchTerm("")} title="Clear sermon audio search" type="button">
+            <X size={17} />
+          </button>
+        )}
+      </label>
+      <p className="mt-2 text-xs font-semibold text-[var(--muted)]" aria-live="polite">
+        {filteredItems.length} of {items.length} messages shown
+      </p>
+      {!active ? (
+        <div className="mt-4 rounded-2xl border border-dashed border-[var(--line)] bg-white p-6 text-center">
+          <p className="font-semibold text-[var(--ink)]">No sermon audio matched that search.</p>
+          <p className="mt-1 text-sm text-[var(--muted)]">Try a Bible book, passage, title word, or topic such as ministry, gospel, trials, or heaven.</p>
+        </div>
+      ) : (
       <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,0.9fr)_minmax(340px,1.1fr)]">
         <div className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Now selected</p>
           <h4 className="mt-2 text-lg font-semibold text-[var(--ink)]">{active.segmentTitle}</h4>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{active.creator} · {active.duration ?? "Duration listed in player"}</p>
+          {activeStudy && (
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Primary KJV passage</p>
+                  <p className="mt-1 text-base font-semibold text-[var(--green)]">{activeStudy.passage}</p>
+                </div>
+                <button
+                  className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+                  onClick={() => onOpenBibleReference(activeStudy.bibleRef)}
+                  type="button"
+                >
+                  Open in Bible
+                </button>
+              </div>
+              <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{activeStudy.summary}</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {activeStudy.topics.map((topic) => (
+                  <button
+                    key={`${active.id}-${topic}`}
+                    className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => setSearchTerm(topic)}
+                    type="button"
+                  >
+                    {topic}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
           <audio key={active.id} className="mt-4 w-full" controls preload="metadata" src={active.publicUrl}>
             Your browser does not support audio playback.
           </audio>
@@ -40802,23 +40895,31 @@ function SermonAudioShelf({ items }: { items: UploadedPublicDomainAudioPilot[] }
           <p className="mt-3 text-xs leading-5 text-[var(--muted)]">This is a public-domain volunteer reading of a historical sermon text. Keep the KJV passage primary and verify quoted wording before reuse.</p>
         </div>
         <div className="max-h-[390px] space-y-2 overflow-y-auto pr-1">
-          {items.map((item, index) => (
+          {filteredItems.map((item) => {
+            const study = SERMON_AUDIO_STUDY_INDEX.get(item.id);
+            const originalIndex = items.findIndex((candidate) => candidate.id === item.id);
+            return (
             <button
               key={item.id}
               className={`grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 rounded-2xl border p-3 text-left transition ${item.id === active.id ? "border-[var(--green)] bg-white shadow-sm" : "border-[var(--line)] bg-[var(--paper)] hover:bg-white"}`}
               onClick={() => setActiveId(item.id)}
               type="button"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--green)] text-xs font-semibold text-white">{index + 1}</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--green)] text-xs font-semibold text-white">{originalIndex + 1}</span>
               <span className="min-w-0">
                 <span className="block truncate text-sm font-semibold text-[var(--ink)]">{item.segmentTitle}</span>
-                <span className="mt-1 block text-xs text-[var(--muted)]">{item.creator}</span>
+                <span className="mt-1 block truncate text-xs text-[var(--muted)]">{study?.passage ?? item.creator}</span>
               </span>
               <span className="text-xs font-semibold text-[var(--green)]">{item.duration ?? "Play"}</span>
             </button>
-          ))}
+            );
+          })}
         </div>
       </div>
+      )}
+      <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+        Passage indexing was checked against the 1889 public-domain text of <cite>Talks to Farmers</cite>. Open each passage in the KJV Bible reader before or after listening.
+      </p>
     </article>
   );
 }
