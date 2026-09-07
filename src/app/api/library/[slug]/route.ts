@@ -29,6 +29,8 @@ function prepareResourceText(entry: LibraryManifestEntry, text: string) {
         .map((line) => line.trim().replace(/\s*\|\s*/g, " ").replace(/\s{2,}/g, " "))
         .filter((line) => {
           if (!line || /^\d+$/.test(line) || /^[|{}]+$/.test(line)) return false;
+          if (/^[TL]HE CINCINNATI BIBLE(?: SEMINARY)?/i.test(line)) return false;
+          if (/^(?:SEMINARY )?LIBRARY\b/i.test(line)) return false;
           if (/^\d+ Lectures on Romans$/i.test(line)) return false;
           if (/^(?:The Theme and Analysis|Salutation and Introduction|Introduction|The Need of the Gospel|The Gospel in Relation to our Sins|The Gospel in Relation to Indwelling Sin|The Triumph of Grace|The Christian’s Relation to Governments|Christian Liberty & Consideration for Others|Christ, the Believer’s Pattern|Conclusion|Salutations|The Mystery Revealed) \d+$/i.test(line)) return false;
           return true;

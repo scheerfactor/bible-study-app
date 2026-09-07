@@ -13,7 +13,8 @@ function cleanOcr(text) {
   const pageHeaders = [
     /^\d+ Lectures on Romans$/i,
     /^(?:The Theme and Analysis|Salutation and Introduction|Introduction|The Need of the Gospel|The Gospel in Relation to our Sins|The Gospel in Relation to Indwelling Sin|The Triumph of Grace|The Christian’s Relation to Governments|Christian Liberty & Consideration for Others|Christ, the Believer’s Pattern|Conclusion|Salutations|The Mystery Revealed) \d+$/i,
-    /^THE CINCINNATI BIBLE SEMINARY LIBRARY$/i,
+    /^[TL]HE CINCINNATI BIBLE(?: SEMINARY)?/i,
+    /^(?:SEMINARY )?LIBRARY\b/i,
     /^\d{1,3}$/,
     /^[|{}]+$/,
   ];
