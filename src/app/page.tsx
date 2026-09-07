@@ -273,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3053,6 +3053,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Teaching",
     assetUrl: "/media/sermon-slides/generated/colossians-lycus-valley-dawn-v1.png",
   },
+  "romans-appian-way-dawn": {
+    label: "Romans: The Gospel Road",
+    description: "Romans, the righteousness of God, justification by faith, life in Christ, gospel witness, and practical service.",
+    background: "linear-gradient(90deg, rgba(20,5,5,0.88), rgba(20,5,5,0.04) 72%)",
+    motif: "Road to Rome at Dawn",
+    category: "Grace",
+    assetUrl: "/media/sermon-slides/generated/romans-appian-way-dawn-v1.png",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -4119,6 +4127,7 @@ const SPURGEON_GOSPEL_KINGDOM_COMMENTARY_COLLECTION = "The Gospel of the Kingdom
 const ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION = "The Holiest of All";
 const H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION = "Notes on the Books of Ezra, Nehemiah and Esther";
 const H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION = "Notes on the Epistle to the Philippians";
+const H_A_IRONSIDE_ROMANS_COMMENTARY_COLLECTION = "Lectures on the Epistle to the Romans";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -4154,10 +4163,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   ANDREW_MURRAY_HOLIEST_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_NEHEMIAH_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_PHILIPPIANS_COMMENTARY_COLLECTION,
+  H_A_IRONSIDE_ROMANS_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "H. A. Ironside",
+    resourceTitle: H_A_IRONSIDE_ROMANS_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 16 Romans chapters are imported from the reviewed 1928 first edition and connected to the chapter reader.",
+    rightsNotes: "Verified 1928 public-domain first edition. Preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Gospel-centered exposition of God's righteousness, justification by faith, life in Christ, Israel, and practical service after reading the KJV text.",
+  },
   {
     author: "H. A. Ironside",
     resourceTitle: H_A_IRONSIDE_COLOSSIANS_COLLECTION,
@@ -12652,6 +12670,7 @@ const deferredCommentaryImportFiles = [
   "matthew-henry-reviewed-batch-2-commentary.json",
   "h-a-ironside-phase-2-commentary.json",
   "h-a-ironside-reviewed-colossians-commentary.json",
+  "h-a-ironside-reviewed-romans-commentary.json",
   "h-a-ironside-hosea-commentary.json",
   "h-a-ironside-minor-prophets-commentary.json",
   "g-campbell-morgan-hosea-commentary.json",

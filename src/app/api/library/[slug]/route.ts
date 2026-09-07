@@ -13,6 +13,32 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt")) {
+    const start = text.indexOf("FOREWORD");
+    const finalSentence = "“To God only wise be glory through Jesus Christ for ever. Amen.”";
+    const finalStart = text.indexOf(finalSentence, start);
+    if (start < 0 || finalStart < 0) return text;
+
+    return text
+      .slice(start, finalStart + finalSentence.length)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s*\|\s*/g, " ").replace(/\s{2,}/g, " "))
+        .filter((line) => {
+          if (!line || /^\d+$/.test(line) || /^[|{}]+$/.test(line)) return false;
+          if (/^\d+ Lectures on Romans$/i.test(line)) return false;
+          if (/^(?:The Theme and Analysis|Salutation and Introduction|Introduction|The Need of the Gospel|The Gospel in Relation to our Sins|The Gospel in Relation to Indwelling Sin|The Triumph of Grace|The Christian’s Relation to Governments|Christian Liberty & Consideration for Others|Christ, the Believer’s Pattern|Conclusion|Salutations|The Mystery Revealed) \d+$/i.test(line)) return false;
+          return true;
+        })
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-colossians-ironside-h-a-henry-allan-1876-1951.txt")) {
     const start = text.indexOf("PREFACE");
     const end = text.indexOf("The Complete Writings of H. A. IRONSIDE", start);

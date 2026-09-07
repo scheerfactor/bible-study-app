@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-06T23:58:51.431Z",
+  "generated_at": "2026-09-07T00:29:36.194Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13015,
+  "commentary_entries": 13031,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 84135,
-      "total_size": "82.16 KB"
+      "total_bytes": 84246,
+      "total_size": "82.27 KB"
     },
     "commentary_batch": {
-      "files": 354,
-      "present": 354,
+      "files": 355,
+      "present": 355,
       "missing": 0,
-      "total_bytes": 539940941,
-      "total_size": "514.93 MB"
+      "total_bytes": 540191684,
+      "total_size": "515.17 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2823,
-      "present": 2823,
+      "files": 2824,
+      "present": 2824,
       "missing": 0,
-      "total_bytes": 2829846613,
+      "total_bytes": 2830097467,
       "total_size": "2.64 GB"
     }
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 84135,
-      "checksum_sha256": "5827e7ce1291895bee99d743ccd0ed6218f5bea7d0950d0f06dd577800906028"
+      "size_bytes": 84246,
+      "checksum_sha256": "5ab279bb46d96510f786855fbc0f16dc850448e423738aff1e168badbca2a881"
     },
     {
       "kind": "commentary_batch",
@@ -30430,6 +30430,16 @@
       "checksum_sha256": "ca0b23fd56d92c254cadce63a88c62e1c596bca0491e973a1a91be5ff0149a9e",
       "batch_name": "h-a-ironside-reviewed-philippians-commentary.json",
       "entries": 4
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-romans-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-romans-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 250743,
+      "checksum_sha256": "5be362b8707011665a537e2f0d7d5650c6095755ea940c78596ee6a1f7734018",
+      "batch_name": "h-a-ironside-reviewed-romans-commentary.json",
+      "entries": 16
     },
     {
       "kind": "commentary_batch",
