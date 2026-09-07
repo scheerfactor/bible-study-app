@@ -1,5 +1,19 @@
 [
   {
+    "file": "generated/ezekiel-watchman-restoration-dawn-v1.png",
+    "slot": "ezekiel-watchman-restoration-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-07-ezekiel-watchman-restoration-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Ezekiel", "Watchman", "Responsibility", "Judgment", "Restoration", "Renewed Life", "River", "Hope", "Presence"],
+    "bibleReferences": ["Ezekiel 3:17", "Ezekiel 18:32", "Ezekiel 36:26", "Ezekiel 37:1-14", "Ezekiel 47:1-12", "Ezekiel 48:35"],
+    "recommendedUse": "Ezekiel, the watchman, responsibility, judgment, restoration, renewed life, the temple river, hope, and the Lord's presence; place light text in the broad dark left-side field. Illustrative historical landscape, not an archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/arno-gaebelein-ezekiel-study-expansion-2026-09-07.md"
+  },
+  {
     "file": "generated/genesis-beginnings-covenant-dawn-v1.png",
     "slot": "genesis-beginnings-covenant-dawn",
     "category": "Creation",

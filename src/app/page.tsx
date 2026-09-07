@@ -273,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "joel-harvest-restoration-dawn" | "esther-providence-palace-dawn" | "genesis-creation-dawn" | "genesis-beginnings-covenant-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "ezekiel-watchman-restoration-dawn" | "joel-harvest-restoration-dawn" | "esther-providence-palace-dawn" | "genesis-creation-dawn" | "genesis-beginnings-covenant-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3109,6 +3109,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Teaching",
     assetUrl: "/media/sermon-slides/generated/daniel-babylon-watch-dawn-v1.png",
   },
+  "ezekiel-watchman-restoration-dawn": {
+    label: "Ezekiel: Watchman and Restoration",
+    description: "Ezekiel, the watchman, responsibility, judgment, restoration, renewed life, the river, and the Lord's presence.",
+    background: "linear-gradient(90deg, rgba(7,14,22,0.97), rgba(7,14,22,0.05) 72%)",
+    motif: "Watchtower and River at Dawn",
+    category: "Teaching",
+    assetUrl: "/media/sermon-slides/generated/ezekiel-watchman-restoration-dawn-v1.png",
+  },
   "joel-harvest-restoration-dawn": {
     label: "Joel: Repentance and Restoration",
     description: "Joel, repentance, prayer, the day of the Lord, restored rain and harvest, hope, mercy, and the coming kingdom.",
@@ -3360,6 +3368,7 @@ const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
 };
 
 const SERMON_IMAGE_THEME_SUGGESTIONS = [
+  { terms: ["ezekiel", "watchman", "dry bones", "new heart", "temple river", "the lord is there"], slot: "ezekiel-watchman-restoration-dawn" },
   { terms: ["genesis", "in the beginning", "creation", "creator", "covenant", "patriarch"], slot: "genesis-beginnings-covenant-dawn" },
   { terms: ["psalms", "psalm 23", "still waters", "comfort", "peace"], slot: "psalms-still-waters-generated" },
   { terms: ["matthew 28", "mark 16", "luke 24", "john 20", "resurrection", "risen", "empty tomb"], slot: "gospels-empty-tomb-dawn" },
@@ -4209,6 +4218,7 @@ const A_C_GAEBELEIN_REVELATION_COMMENTARY_COLLECTION = "The Revelation: An Analy
 const A_C_GAEBELEIN_DANIEL_COMMENTARY_COLLECTION = "The Prophet Daniel: A Key to the Visions and Prophecies";
 const A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION = "The Prophet Joel: An Exposition";
 const A_C_GAEBELEIN_GENESIS_COMMENTARY_COLLECTION = "The Book of Genesis";
+const A_C_GAEBELEIN_EZEKIEL_COMMENTARY_COLLECTION = "The Prophet Ezekiel: An Analytical Exposition";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -4254,10 +4264,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   A_C_GAEBELEIN_DANIEL_COMMENTARY_COLLECTION,
   A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION,
   A_C_GAEBELEIN_GENESIS_COMMENTARY_COLLECTION,
+  A_C_GAEBELEIN_EZEKIEL_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "Arno C. Gaebelein",
+    resourceTitle: A_C_GAEBELEIN_EZEKIEL_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 48 chapters of Ezekiel are imported from the reviewed complete 1918 exposition and connected to the chapter reader.",
+    rightsNotes: "Verified 1918 public-domain Project Gutenberg text. Front matter, contents, maps, and transcriber's notes are excluded from chapter entries; preserve the source link and compare quotations with the stored edition.",
+    recommendedUse: "Dispensational exposition of Ezekiel's call, watchman ministry, judgment, responsibility, restoration, renewed life, the future temple, the river, and the Lord's presence after reading the KJV chapter.",
+  },
   {
     author: "Arno C. Gaebelein",
     resourceTitle: A_C_GAEBELEIN_GENESIS_COMMENTARY_COLLECTION,
@@ -11999,7 +12018,7 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Isaiah: "heavens-declare",
   Jeremiah: "storm-judgment",
   Lamentations: "prayer-hands",
-  Ezekiel: "babylon-lion-panel",
+  Ezekiel: "ezekiel-watchman-restoration-dawn",
   Daniel: "babylon-lion-panel",
   Hosea: "cross",
   Joel: "joel-harvest-restoration-dawn",
@@ -12098,6 +12117,13 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
     label: "Ironside full Philippians volume",
     priority: "Teaching focus",
     note: "Open the whole public-domain volume for extended devotional and preaching help on Philippians.",
+  },
+  {
+    resourceSlug: "the-prophet-ezekiel-an-analytical-exposition-gaebelein-arno-clemens",
+    books: ["Ezekiel"],
+    label: "Gaebelein full Ezekiel volume",
+    priority: "Teaching focus",
+    note: "Open the complete public-domain 1918 volume for the prophet's call, watchman ministry, judgment, responsibility, restoration, renewed life, the future temple, the river, and the Lord's presence.",
   },
   {
     resourceSlug: "the-book-of-genesis-arno-c-gaebelein",
@@ -12820,6 +12846,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "a-c-gaebelein-reviewed-ezekiel-commentary.json",
   "a-c-gaebelein-reviewed-genesis-commentary.json",
   "h-a-ironside-reviewed-esther-commentary.json",
   "a-c-gaebelein-reviewed-joel-commentary.json",

@@ -108,6 +108,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.file_path.endsWith("the-book-of-genesis-arno-c-gaebelein.txt")) {
     return "/media/library-covers/arno-gaebelein-book-genesis-v1.png";
   }
+  if (entry.file_path.endsWith("the-prophet-ezekiel-an-analytical-exposition-gaebelein-arno-clemens.txt")) {
+    return "/media/library-covers/arno-gaebelein-prophet-ezekiel-v1.png";
+  }
   return null;
 }
 
@@ -245,15 +248,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isGaebeleinDaniel = entry.file_path.endsWith("the-prophet-daniel-a-key-to-the-visions-and-prophecies-of-the-book-of-daniel-gaebelein-arno-clemens-1861-1945-2.txt");
   const isGaebeleinJoel = entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt");
   const isGaebeleinGenesis = entry.file_path.endsWith("the-book-of-genesis-arno-c-gaebelein.txt");
-  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsideEsther || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel || isGaebeleinGenesis ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const isGaebeleinEzekiel = entry.file_path.endsWith("the-prophet-ezekiel-an-analytical-exposition-gaebelein-arno-clemens.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsideEsther || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel || isGaebeleinGenesis || isGaebeleinEzekiel ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
   const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isIronsideEsther ? "Notes on the Book of Esther" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : isGaebeleinDaniel ? "The Prophet Daniel: A Key to the Visions and Prophecies" : isGaebeleinJoel ? "The Prophet Joel: An Exposition" : isGaebeleinGenesis ? "The Book of Genesis" : entry.title,
-    author: isIronsideNehemiah || isIronsideEsther || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel || isGaebeleinGenesis ? "Arno C. Gaebelein" : entry.author,
-    year: isIronsideNehemiah ? 1914 : isIronsideEsther ? 1905 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : isGaebeleinDaniel ? 1911 : isGaebeleinJoel ? 1909 : isGaebeleinGenesis ? 1912 : entry.year,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isIronsideEsther ? "Notes on the Book of Esther" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : isGaebeleinDaniel ? "The Prophet Daniel: A Key to the Visions and Prophecies" : isGaebeleinJoel ? "The Prophet Joel: An Exposition" : isGaebeleinGenesis ? "The Book of Genesis" : isGaebeleinEzekiel ? "The Prophet Ezekiel: An Analytical Exposition" : entry.title,
+    author: isIronsideNehemiah || isIronsideEsther || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel || isGaebeleinGenesis || isGaebeleinEzekiel ? "Arno C. Gaebelein" : entry.author,
+    year: isIronsideNehemiah ? 1914 : isIronsideEsther ? 1905 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : isGaebeleinDaniel ? 1911 : isGaebeleinJoel ? 1909 : isGaebeleinGenesis ? 1912 : isGaebeleinEzekiel ? 1918 : entry.year,
     category,
     collection,
     original_category: entry.category,
@@ -285,6 +289,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Complete public-domain exposition connected chapter-by-chapter to Joel 1-3, emphasizing the Word of the Lord, repentance, prayer, the day of the Lord, restoration, the outpouring of the Spirit, and the coming kingdom."
       : isGaebeleinGenesis
         ? "Complete public-domain exposition connected chapter-by-chapter to Genesis 1-50, tracing creation, the fall, promise, covenant, the patriarchs, providence, faith, and hope."
+      : isGaebeleinEzekiel
+        ? "Complete public-domain exposition connected chapter-by-chapter to Ezekiel 1-48, tracing the prophet's call, watchman ministry, judgment, responsibility, restoration, renewed life, the future temple, the river, and the Lord's presence."
         : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
@@ -319,10 +325,12 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Read after each KJV chapter of Joel for dispensational exposition, prophecy, repentance, prayer, the day of the Lord, restoration, the outpouring of the Spirit, and the coming kingdom."
       : isGaebeleinGenesis
         ? "Read after each KJV chapter of Genesis for dispensational exposition of creation, the fall, promise, covenant, the patriarchs, providence, faith, and hope."
+      : isGaebeleinEzekiel
+        ? "Read after each KJV chapter of Ezekiel for dispensational exposition of the prophet's call, watchman ministry, judgment, individual responsibility, restoration, renewed life, the future temple, the river, and the Lord's presence."
         : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsideEsther ? ["Esther"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : isGaebeleinDaniel ? ["Daniel"] : isGaebeleinJoel ? ["Joel"] : isGaebeleinGenesis ? ["Genesis"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsideEsther ? ["Esther"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : isGaebeleinDaniel ? ["Daniel"] : isGaebeleinJoel ? ["Joel"] : isGaebeleinGenesis ? ["Genesis"] : isGaebeleinEzekiel ? ["Ezekiel"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -368,6 +376,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-joel"
       : isGaebeleinGenesis
         ? "#original-generated-cover-prompt-2026-09-07-arno-gaebelein-genesis"
+      : isGaebeleinEzekiel
+        ? "#original-generated-cover-prompt-2026-09-07-arno-gaebelein-ezekiel"
       : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: originalCover
       ? "Original generated asset"
@@ -507,6 +517,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
               collection: "Classic Commentary Library",
               badge: "Classic Commentary Library",
               palette: { from: "#101c2d", to: "#9a6b35" },
+            }
+        : isGaebeleinEzekiel
+          ? {
+              type: "original-generated",
+              title: "The Prophet Ezekiel: An Analytical Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#101820", to: "#9b713c" },
             }
         : entry.cover_metadata ?? null,
     added_at: entry.import_status,
