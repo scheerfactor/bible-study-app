@@ -1,4 +1,18 @@
 [
+  {
+    "file": "generated/revelation-patmos-watch-dawn-v1.png",
+    "slot": "revelation-patmos-watch-dawn",
+    "category": "Judgment",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-revelation-patmos-watch-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Revelation", "Jesus Christ", "Prophecy", "Worship", "Watchfulness", "Hope", "Victory", "New Creation"],
+    "bibleReferences": ["Revelation 1:1", "Revelation 5:9-14", "Revelation 22:20"],
+    "recommendedUse": "Revelation, prophecy, watchfulness, worship, Christ's victory, the coming kingdom, and new-creation slides; place light text in the dark left-side field. Illustrative Patmos scene, not a documented location or archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/arno-gaebelein-revelation-study-expansion-2026-09-06.md"
+  },
 {
   "file": "generated/olive-ridge-ascension-sky-v1.png",
   "slot": "olive-ridge-ascension-sky",

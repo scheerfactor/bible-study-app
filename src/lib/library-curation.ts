@@ -93,6 +93,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.file_path.endsWith("the-gospel-of-matthew-an-exposition-gaebelein-arno-clemens-1861-1945-2.txt")) {
     return "/media/library-covers/arno-gaebelein-matthew-exposition-v1.png";
   }
+  if (entry.file_path.endsWith("the-revelation-an-analysis-and-exposition-of-the-last-book-of-the-bible-arno-c-gaebelein.txt")) {
+    return "/media/library-covers/arno-gaebelein-revelation-exposition-v1.png";
+  }
   return null;
 }
 
@@ -225,14 +228,15 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isJosephAlexanderMark = entry.file_path.endsWith("commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt");
   const isGaebeleinActs = entry.file_path.endsWith("the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt");
   const isGaebeleinMatthew = entry.file_path.endsWith("the-gospel-of-matthew-an-exposition-gaebelein-arno-clemens-1861-1945-2.txt");
-  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const isGaebeleinRevelation = entry.file_path.endsWith("the-revelation-an-analysis-and-exposition-of-the-last-book-of-the-bible-arno-c-gaebelein.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
   const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : entry.title,
-    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew ? "Arno C. Gaebelein" : entry.author,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : entry.title,
+    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation ? "Arno C. Gaebelein" : entry.author,
     year: isIronsideNehemiah ? 1914 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : entry.year,
     category,
     collection,
@@ -255,6 +259,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Complete public-domain exposition connected chapter-by-chapter to Acts 1-28, tracing the risen Christ's continuing work, Pentecost, the Holy Spirit, church growth, gospel witness, missions, and Paul's journeys."
       : isGaebeleinMatthew
         ? "Complete public-domain exposition connected chapter-by-chapter to Matthew 1-28, emphasizing Jesus Christ as King, the kingdom message, prophecy, parables, discipleship, the cross, and resurrection."
+      : isGaebeleinRevelation
+        ? "Complete public-domain exposition connected chapter-by-chapter to Revelation 1-22, emphasizing the revelation of Jesus Christ, the seven churches, worship, judgment, victory, the coming kingdom, and new creation."
         : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
@@ -279,10 +285,12 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Read after each KJV chapter of Acts for dispensational exposition, teaching preparation, church history, missionary application, and study of the risen Christ's continuing work."
       : isGaebeleinMatthew
         ? "Read after each KJV chapter of Matthew for dispensational exposition, Gospel study, prophecy, kingdom teaching, discipleship, and sermon preparation."
+      : isGaebeleinRevelation
+        ? "Read after each KJV chapter of Revelation for dispensational exposition, prophecy study, worship, watchfulness, Christ's victory, the coming kingdom, and new creation."
         : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -318,6 +326,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-acts"
       : isGaebeleinMatthew
         ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-matthew"
+      : isGaebeleinRevelation
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-revelation"
       : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: originalCover
       ? "Original generated asset"
@@ -407,6 +417,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
               collection: "Classic Commentary Library",
               badge: "Classic Commentary Library",
               palette: { from: "#2a1038", to: "#b58a42" },
+            }
+        : isGaebeleinRevelation
+          ? {
+              type: "original-generated",
+              title: "The Revelation: An Analysis and Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#4a100a", to: "#b58a42" },
             }
         : entry.cover_metadata ?? null,
     added_at: entry.import_status,

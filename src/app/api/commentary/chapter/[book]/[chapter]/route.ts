@@ -11,6 +11,7 @@ import georgeClarkJohnRows from "../../../../../../../data/imports/george-w-clar
 import josephAlexanderMarkRows from "../../../../../../../data/imports/joseph-addison-alexander-reviewed-mark-commentary.json";
 import gaebeleinActsRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-acts-commentary.json";
 import gaebeleinMatthewRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-matthew-commentary.json";
+import gaebeleinRevelationRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-revelation-commentary.json";
 
 type CommentaryRow = {
   book?: unknown;
@@ -57,6 +58,9 @@ async function readCommentaryRows(fileName: string) {
   }
   if (fileName === "a-c-gaebelein-reviewed-matthew-commentary.json") {
     return gaebeleinMatthewRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-revelation-commentary.json") {
+    return gaebeleinRevelationRows as CommentaryRow[];
   }
 
   const raw = await readTextContent(["data", "imports", fileName], {

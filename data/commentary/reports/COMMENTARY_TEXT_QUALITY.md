@@ -4,8 +4,8 @@ This report flags imported commentary rows that likely contain website navigatio
 
 ## Summary
 
-- Commentary files scanned: 363
-- Commentary rows scanned: 15509
+- Commentary files scanned: 364
+- Commentary rows scanned: 15531
 - Rows with quality flags: 0
 - Files with quality flags: 0
 
