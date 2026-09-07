@@ -47,6 +47,9 @@ import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useM
 import Image from "next/image";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
+import { offlinePresentationHtml } from "@/lib/offline-presentation";
+import LessonPlanEditor from "@/components/LessonPlanEditor";
+import { SUNDAY_LESSONS, normalizeLessonPlan, lessonSchedule, lessonSegmentNotes, lessonPlanMarkdown, type LessonPlan, type SundayLessonId } from "@/lib/sunday-school";
 import BibleStudyResourceDesk, { type ResourcePresentationSeed } from "@/components/BibleStudyResourceDesk";
 import RadioWorkspace from "@/components/RadioWorkspace";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
@@ -417,6 +420,7 @@ type SermonSeries = {
 };
 
 type SermonEntry = {
+  lessonPlan?: LessonPlan;
   id: string;
   kind: SermonKind;
   title: string;
@@ -14780,6 +14784,7 @@ function normalizeSermonEntry(entry: Partial<SermonEntry>): SermonEntry | null {
   return {
     ...EMPTY_SERMON_ENTRY,
 	    ...entry,
+      lessonPlan: normalizeLessonPlan(entry.lessonPlan),
 	    kind: entry.kind === "Lesson" ? "Lesson" : "Sermon",
 	    status,
 	    sectionOrder,
@@ -15533,7 +15538,28 @@ function createJohn3SampleSermon(): SermonEntry {
   return entry;
 }
 
-function generateSermonSlides(entry: SermonEntry, scriptureText = ""): SermonSlide[] {
+function generateSermonSlides(entry: SermonEntry, scriptureText = "", resolveScripture?: (passage: string) => string): SermonSlide[] {
+  if (entry.lessonPlan?.segments.length) {
+    const plan = entry.lessonPlan;
+    const preset = slidePresetPatch(entry.slideTheme);
+    return [
+      createSermonSlide("Title", { ...preset, title: entry.title, subtitle: `${entry.passage} · KJV`, body: plan.objective, speakerNotes: entry.introduction }),
+      ...lessonSchedule(plan).flatMap((segment) => {
+        const text = resolveScripture?.(segment.passage) || "";
+        const scriptureSlides = text ? chunkScriptureText(text, 420).map((chunk) => createSermonSlide("Scripture", {
+          ...preset, title: segment.passage, subtitle: "KJV", bibleText: chunk, layout: "Scripture Focus", speakerNotes: `${segment.start}–${segment.end} min: ${segment.title}`,
+        })) : [createSermonSlide("Scripture", { ...preset, title: segment.passage || "Scripture", body: "KJV text unavailable — review this reference before presenting.", speakerNotes: "No Scripture text was substituted." })];
+        return [
+          createSermonSlide("Main Point", { ...preset, title: segment.title, body: segment.passage, speakerNotes: lessonSegmentNotes(segment) }),
+          ...scriptureSlides,
+          ...(segment.question ? [createSermonSlide("Question", { ...preset, title: "Discuss", body: segment.question, speakerNotes: segment.answer })] : []),
+          ...(segment.application ? [createSermonSlide("Application", { ...preset, title: "Apply", body: segment.application, speakerNotes: segment.notes })] : []),
+        ];
+      }),
+      ...(entry.illustrations ? [createSermonSlide("Illustration", { ...preset, title: "Illustration", body: entry.illustrations, speakerNotes: "Original teaching analogy; return to the text." })] : []),
+      createSermonSlide("Closing / Invitation", { ...preset, title: "Prayer and response", body: plan.prayer, speakerNotes: entry.conclusion }),
+    ];
+  }
   const imageSlot = suggestedSermonImageSlot(entry);
   const imageTheme = SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label;
   const preset = slidePresetPatch(entry.slideTheme);
@@ -15612,7 +15638,7 @@ function generateSermonSlides(entry: SermonEntry, scriptureText = ""): SermonSli
       layout: "Centered",
     }),
   ];
-  return slides.slice(0, 18);
+  return slides;
 }
 
 function sermonSlideOutline(slides: SermonSlide[]) {
@@ -16415,6 +16441,7 @@ function generateSlidesFromTranscript(entry: SermonEntry, transcript: string, sc
   const extractorEntry: SermonEntry = {
     ...entry,
     ...patch,
+    lessonPlan: undefined,
   };
   return generateSermonSlides(extractorEntry, scriptureText);
 }
@@ -16444,6 +16471,7 @@ function sermonExportMarkdown(entry: SermonEntry, series: SermonSeries | null) {
       entry[section] || `No ${SERMON_SECTION_LABELS[section].toLowerCase()} yet.`,
       "",
     ]),
+    lessonPlanMarkdown(entry.lessonPlan),
     "## Imported Study Notes",
     entry.importedStudyNotes || "No imported study notes yet.",
     "",
@@ -16487,6 +16515,7 @@ function sermonPreachingNotesMarkdown(entry: SermonEntry) {
     `- Target time: ${entry.targetMinutes} minutes`,
     `- Estimated length: ${length.minutes} minutes (${length.words} words)`,
     "",
+    lessonPlanMarkdown(entry.lessonPlan),
     "## At-A-Glance Outline",
     entry.outline || "No outline yet.",
     "",
@@ -19156,6 +19185,36 @@ export default function Home() {
     setSyncMessage(`${kind} draft started.`);
   }
 
+  function loadSundayLesson(id: SundayLessonId) {
+    // Preserve the current draft before starting a separate lesson.
+    if (sermonDraft.title.trim()) {
+      try {
+        const entries = loadSermonEntries();
+        const preserved = [sermonDraft, ...entries.filter(entry => entry.id !== sermonDraft.id)];
+        saveSermonEntries(preserved);
+        setSermonEntries(preserved);
+      } catch {
+        setSyncMessage("Could not preserve the current draft. Export a backup before starting another lesson.");
+        return;
+      }
+    }
+    const template = SUNDAY_LESSONS[id];
+    const entry: SermonEntry = {
+      ...createEmptySermon("Lesson", template.passage), title: template.title, theme: template.theme,
+      introduction: template.introduction, illustrations: template.illustration,
+      lessonPlan: normalizeLessonPlan(template.plan),
+      outline: template.plan.segments.map(s => `${s.title} (${s.passage}) — ${s.minutes} min`).join("\n"),
+      points: template.plan.segments.map(s => s.notes).join("\n"),
+      applications: template.plan.segments.map(s => s.application).join("\n"),
+      conclusion: template.plan.prayer, targetMinutes: 35, slideTheme: "warm-bible-study",
+    };
+    entry.slides = generateSermonSlides(entry, "", sermonScriptureTextForPassage);
+    setSermonDraft(entry);
+    setSermonWorkspaceView("builder");
+    setTab("sermons");
+    setSyncMessage("New Sunday School draft created. Review, edit, and save it. Previous draft preserved locally.");
+  }
+
   function loadJohn3SampleSermon() {
     const entry = createJohn3SampleSermon();
     setSermonDraft(entry);
@@ -19192,7 +19251,14 @@ export default function Home() {
       updatedAt: now,
       createdAt: sermonDraft.createdAt || now,
     };
-    saveSermonEntryList((entries) => [entry, ...entries.filter((item) => item.id !== entry.id)]);
+    try {
+      const entries = [entry, ...sermonEntries.filter(item => item.id !== entry.id)].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+      saveSermonEntries(entries);
+      setSermonEntries(entries);
+    } catch {
+      setSyncMessage("Lesson could not be saved locally. Keep this page open and export a Ministry Backup.");
+      return;
+    }
     setSermonDraft(entry);
     setSyncMessage(`${entry.kind} saved locally.`);
   }
@@ -19820,13 +19886,13 @@ export default function Home() {
 	    const passageTarget = parseQuickPassage(cleanPassage, allVerses, books);
 	    if (!passageTarget) return "";
 	    const passageVerses = allVerses
-	      .filter((verse) => verse.book === passageTarget.book && verse.chapter === passageTarget.chapter && (!passageTarget.verse || verse.verse === passageTarget.verse))
-	      .slice(0, passageTarget.verse ? 1 : 5);
+	      .filter((verse) => verse.book === passageTarget.book && verse.chapter === passageTarget.chapter && (!passageTarget.verse || verse.verse === passageTarget.verse));
 	    return passageVerses.map((verse) => `${verse.ref} ${verse.text}`).join("\n");
 	  }
 
 	  function generateSlidesForSermonDraft() {
-	    const nextSlides = generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage));
+    if (sermonDraft.slides.length && !window.confirm("Replace the existing slides with slides from the current lesson? Export or save a duplicate first if you need the edited deck.")) return;
+	    const nextSlides = generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage), sermonScriptureTextForPassage);
 	    updateSermonDraft({ slides: nextSlides });
 	    setSyncMessage(`${nextSlides.length} sermon slides generated from the current draft.`);
 	  }
@@ -19868,7 +19934,7 @@ export default function Home() {
 	  async function exportSermonPowerPoint() {
 	    const slides = sermonDraft.slides.length
 	      ? sermonDraft.slides
-	      : generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage));
+	      : generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage), sermonScriptureTextForPassage);
 	    if (!slides.length) {
 	      setSyncMessage("Generate slides before exporting PowerPoint.");
 	      return;
@@ -19893,7 +19959,7 @@ export default function Home() {
 	  function exportSermonPdfPreview() {
 	    const slides = sermonDraft.slides.length
 	      ? sermonDraft.slides
-	      : generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage));
+	      : generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage), sermonScriptureTextForPassage);
 	    if (!slides.length) {
 	      setSyncMessage("Generate slides before opening the PDF print preview.");
 	      return;
@@ -24322,6 +24388,7 @@ export default function Home() {
                 onViewChange={setSermonWorkspaceView}
                 onCreateDraft={createSermonDraft}
                 onLoadSampleSermon={loadJohn3SampleSermon}
+                onLoadSundayLesson={loadSundayLesson}
                 onOpenEntry={openSermonEntry}
                 onDraftChange={updateSermonDraft}
                 onSaveDraft={saveSermonDraft}
@@ -24353,7 +24420,7 @@ export default function Home() {
                   setSermonTimerNow(Date.now());
                 }}
                 onOpenPresentationWorkspace={() => openPresentationWorkspace("manager")}
-                onBackToBible={() => setTab("bible")}
+                onBackToBible={() => quickJumpToPassage(sermonDraft.passage)}
               />
             )}
 
@@ -49845,6 +49912,7 @@ function SermonWorkspaceScreen({
   onViewChange,
   onCreateDraft,
   onLoadSampleSermon,
+  onLoadSundayLesson,
   onOpenEntry,
   onDraftChange,
   onSaveDraft,
@@ -49896,6 +49964,7 @@ function SermonWorkspaceScreen({
   onViewChange: (view: SermonWorkspaceView) => void;
   onCreateDraft: (kind: SermonKind) => void;
   onLoadSampleSermon: () => void;
+  onLoadSundayLesson: (id: SundayLessonId) => void;
   onOpenEntry: (entry: SermonEntry) => void;
   onDraftChange: (patch: Partial<SermonEntry>) => void;
   onSaveDraft: () => void;
@@ -49960,7 +50029,8 @@ function SermonWorkspaceScreen({
   const overtimeSeconds = Math.max(0, elapsedSeconds - targetSeconds);
   const orderedSections = (draft.sectionOrder?.length ? draft.sectionOrder : SERMON_SECTION_FIELDS)
     .filter((section) => SERMON_SECTION_FIELDS.includes(section));
-  const preachingSections = orderedSections
+  const teachingSchedule = draft.lessonPlan ? lessonSchedule(draft.lessonPlan) : [];
+  const preachingSections = teachingSchedule.length ? teachingSchedule.map(segment => ({ key: segment.id, label: `${segment.start}–${segment.end} min: ${segment.title}`, body: lessonSegmentNotes(segment) })) : orderedSections
     .filter((section) => section !== "outline")
     .map((section) => ({
       key: section,
@@ -49972,8 +50042,9 @@ function SermonWorkspaceScreen({
   const activePreachingSection = preachingSections[safePreachingSectionIndex] ?? null;
   const nextPreachingSection = preachingSections[Math.min(safePreachingSectionIndex + 1, Math.max(0, preachingSections.length - 1))] ?? null;
   const preachingProgressPercent = preachingSections.length ? ((safePreachingSectionIndex + 1) / preachingSections.length) * 100 : 0;
-  const sectionTargetSeconds = preachingSections.length ? Math.max(60, Math.round(targetSeconds / preachingSections.length)) : targetSeconds;
-  const expectedSectionIndex = preachingSections.length ? Math.min(preachingSections.length - 1, Math.floor(elapsedSeconds / sectionTargetSeconds)) : 0;
+  const sectionTargetSeconds = teachingSchedule.length ? (teachingSchedule[safePreachingSectionIndex]?.minutes ?? 5) * 60 : preachingSections.length ? Math.max(60, Math.round(targetSeconds / preachingSections.length)) : targetSeconds;
+  const scheduledIndex = teachingSchedule.findIndex(segment => elapsedSeconds < segment.end * 60);
+  const expectedSectionIndex = teachingSchedule.length ? (scheduledIndex < 0 ? teachingSchedule.length - 1 : scheduledIndex) : preachingSections.length ? Math.min(preachingSections.length - 1, Math.floor(elapsedSeconds / sectionTargetSeconds)) : 0;
   const preachingPace = safePreachingSectionIndex < expectedSectionIndex ? "Move forward" : safePreachingSectionIndex > expectedSectionIndex ? "Ahead" : "On pace";
   const goToPreviousPreachingSection = () => setPreachingSectionIndex((index) => Math.max(0, index - 1));
   const goToNextPreachingSection = () => setPreachingSectionIndex((index) => Math.min(Math.max(0, preachingSections.length - 1), index + 1));
@@ -50450,6 +50521,7 @@ function SermonWorkspaceScreen({
           <div className="flex flex-wrap gap-2">
             <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onCreateDraft("Sermon")} type="button">Create Sermon</button>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onCreateDraft("Lesson")} type="button">Create Lesson</button>
+            {(["2", "3", "6"] as const).map(id => <button key={id} className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onLoadSundayLesson(id)} type="button">2 Corinthians {id} lesson</button>)}
             <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onLoadSampleSermon} type="button">Load John 3 Sample</button>
             <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onExportMinistryBackup} type="button">
               <Download aria-hidden="true" size={16} />
@@ -50497,7 +50569,7 @@ function SermonWorkspaceScreen({
 	              {item === "manager" ? "Manager" : item === "builder" ? "Builder" : "Slides"}
             </button>
           ))}
-          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Back to Bible</button>
+          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Study lesson passage</button>
         </div>
         {syncMessage && <p className="mt-3 text-sm font-semibold text-[var(--muted)]">{syncMessage}</p>}
       </section>
@@ -50794,7 +50866,7 @@ function SermonWorkspaceScreen({
 	                  Add Scripture Slide
 	                </button>
 	              </div>
-	              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">One verse, a verse range, or a chapter excerpt can be added. Long Scripture text is split into readable slides.</p>
+	              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">One verse, a verse range, or a whole chapter can be added. Long Scripture text is split into readable slides.</p>
 	            </article>
 
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -50803,6 +50875,7 @@ function SermonWorkspaceScreen({
 	                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Slide Thumbnails</p>
 	                  <p className="mt-1 text-sm text-[var(--muted)]">{sermonSlides.length} slide{sermonSlides.length === 1 ? "" : "s"}</p>
 	                </div>
+                <button className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold disabled:opacity-50" disabled={!sermonSlides.length} onClick={() => downloadTextFile(`${sermonExportSlug(draft.title)}-offline-presentation.html`, offlinePresentationHtml(draft.title, sermonSlides), "text/html;charset=utf-8")} type="button">Download offline presentation</button>
 	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white disabled:opacity-50" disabled={!sermonSlides.length} onClick={() => {
 	                  setPresentationSlideIndex(activeSlideIndex);
 	                  onResetTimer();
@@ -50981,6 +51054,8 @@ function SermonWorkspaceScreen({
               </p>
             </article>
 
+            {!draft.lessonPlan && draft.kind === "Lesson" && <button className="rounded-full border border-[var(--line)] bg-white px-4 py-3 font-semibold text-[var(--green)]" type="button" onClick={() => onDraftChange({ lessonPlan: { date: "", objective: draft.theme, segments: [{ id: makeId("segment"), title: "Read and discuss", passage: draft.passage, minutes: draft.targetMinutes, notes: draft.points, question: "", answer: "", application: draft.applications }], prayer: "", resources: draft.importedStudyNotes, media: "" } })}>Add a timed teaching plan</button>}
+            {draft.lessonPlan && <LessonPlanEditor plan={draft.lessonPlan} targetMinutes={draft.targetMinutes} onChange={lessonPlan => onDraftChange({ lessonPlan })} />}
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Build the message</p>
               <div className="mt-4 grid gap-3">

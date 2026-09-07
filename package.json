@@ -83,7 +83,8 @@
     "storage:upload:strongs-shards": "node scripts/upload-strongs-chapter-shards-with-wrangler.mjs",
     "hymns:prepare": "node scripts/prepare-hymns.mjs",
     "validate:hymns": "node scripts/validate-hymns.mjs",
-    "validate:archaeology": "node scripts/validate-archaeology.mjs"
+    "validate:archaeology": "node scripts/validate-archaeology.mjs",
+    "test:sunday-school": "node scripts/test-sunday-school.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
