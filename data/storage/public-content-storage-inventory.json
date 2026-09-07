@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T01:44:00.136Z",
+  "generated_at": "2026-09-07T02:05:59.870Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13068,
+  "commentary_entries": 13096,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 84498,
-      "total_size": "82.52 KB"
+      "total_bytes": 84713,
+      "total_size": "82.73 KB"
     },
     "commentary_batch": {
-      "files": 357,
-      "present": 357,
+      "files": 358,
+      "present": 358,
       "missing": 0,
-      "total_bytes": 542866389,
-      "total_size": "517.72 MB"
+      "total_bytes": 543707449,
+      "total_size": "518.52 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2826,
-      "present": 2826,
+      "files": 2827,
+      "present": 2827,
       "missing": 0,
-      "total_bytes": 2832772424,
+      "total_bytes": 2833613699,
       "total_size": "2.64 GB"
     }
   },
@@ -29238,8 +29238,18 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 84498,
-      "checksum_sha256": "f488f6962f304b59a142a1ac4810870322a4ef098f614fb8bd65c4c3626313ba"
+      "size_bytes": 84713,
+      "checksum_sha256": "61fb47867761b687abf739ff7c40f0f4c44dd20566a7071cbfca92adf1c71fec"
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/a-c-gaebelein-reviewed-acts-commentary.json",
+      "storage_path": "data/imports/a-c-gaebelein-reviewed-acts-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 841060,
+      "checksum_sha256": "ee714cfd344b38e5ec676b80c04a4728a5b47081119760975a2d146d708b6dcf",
+      "batch_name": "a-c-gaebelein-reviewed-acts-commentary.json",
+      "entries": 28
     },
     {
       "kind": "commentary_batch",

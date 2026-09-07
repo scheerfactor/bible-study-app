@@ -87,6 +87,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.file_path.endsWith("commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt")) {
     return "/media/library-covers/joseph-addison-alexander-mark-v1.png";
   }
+  if (entry.file_path.endsWith("the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt")) {
+    return "/media/library-covers/arno-gaebelein-acts-exposition-v1.png";
+  }
   return null;
 }
 
@@ -217,14 +220,15 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isIronsideRomans = entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt");
   const isGeorgeClarkJohn = entry.file_path.endsWith("the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt");
   const isJosephAlexanderMark = entry.file_path.endsWith("commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt");
-  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const isGaebeleinActs = entry.file_path.endsWith("the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
   const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : entry.title,
-    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : entry.author,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : entry.title,
+    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs ? "Arno C. Gaebelein" : entry.author,
     year: isIronsideNehemiah ? 1914 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : entry.year,
     category,
     collection,
@@ -243,6 +247,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Complete public-domain verse-by-verse commentary connected to John 1-21, prepared for pastors, families, and Sunday schools with historical notes, doctrinal observations, and practical teaching suggestions."
       : isJosephAlexanderMark
         ? "Complete public-domain exposition connected chapter-by-chapter to Mark 1-16, with close attention to grammar, Gospel harmony, historical setting, Christ's works, and the unfolding narrative."
+      : isGaebeleinActs
+        ? "Complete public-domain exposition connected chapter-by-chapter to Acts 1-28, tracing the risen Christ's continuing work, Pentecost, the Holy Spirit, church growth, gospel witness, missions, and Paul's journeys."
         : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
@@ -263,10 +269,12 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Read after each KJV chapter of John for verse-by-verse exposition, lesson preparation, geography, chronology, and practical applications concerning the person and work of Christ."
       : isJosephAlexanderMark
         ? "Read after each KJV chapter of Mark for detailed exposition, Gospel comparison, historical background, teaching preparation, and study of Christ's active ministry."
+      : isGaebeleinActs
+        ? "Read after each KJV chapter of Acts for dispensational exposition, teaching preparation, church history, missionary application, and study of the risen Christ's continuing work."
         : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -298,6 +306,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "#original-generated-cover-prompt-2026-09-06-george-w-clark-gospel-john"
       : isJosephAlexanderMark
         ? "#original-generated-cover-prompt-2026-09-06-joseph-addison-alexander-mark"
+      : isGaebeleinActs
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-acts"
       : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: originalCover
       ? "Original generated asset"
@@ -367,6 +377,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
               collection: "Classic Commentary Library",
               badge: "Classic Commentary Library",
               palette: { from: "#17351f", to: "#b58a42" },
+            }
+        : isGaebeleinActs
+          ? {
+              type: "original-generated",
+              title: "The Acts of the Apostles: An Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#07182b", to: "#b58a42" },
             }
         : entry.cover_metadata ?? null,
     added_at: entry.import_status,

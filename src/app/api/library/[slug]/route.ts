@@ -13,6 +13,31 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt")) {
+    const start = text.indexOf("CHAPTER I.");
+    const end = text.indexOf("\nTABE-END,", start);
+    if (start < 0 || end < 0) return text;
+
+    return text
+      .slice(start, end)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s{2,}/g, " "))
+        .filter((line) => {
+          if (!line || /^\d+$/.test(line)) return false;
+          if (/^Chapter\s+\S{1,3}\s+\S{1,5}$/i.test(line)) return false;
+          if (line.length < 50 && /The Acts of the Apostles/i.test(line)) return false;
+          return true;
+        })
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (entry.file_path.endsWith("commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt")) {
     const start = text.indexOf("PREFACE");
     const end = text.indexOf("\nDate  Due", start);

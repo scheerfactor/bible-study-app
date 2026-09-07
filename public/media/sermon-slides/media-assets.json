@@ -1268,5 +1268,19 @@
     "bibleReferences": ["Mark 1:14-20", "Mark 10:42-45", "Mark 16:15-20"],
     "recommendedUse": "Gospel of Mark, Christ's active ministry, authority, discipleship, service, cross, and resurrection slides; place light text in the broad dark left-side field. Illustrative landscape, not an archaeological reconstruction.",
     "optimized": "1672x941 PNG stored locally; original generated Galilee dawn scene with a rugged road, empty fishing boat, coiled net, and broad dark left-side sermon-title zone."
+  },
+  {
+    "file": "generated/acts-pentecost-mission-dawn-v1.png",
+    "slot": "acts-pentecost-mission-dawn",
+    "category": "Missions",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-acts-pentecost-mission-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Acts", "Pentecost", "Holy Spirit", "Gospel Witness", "Church", "Missions", "Faithful Service"],
+    "bibleReferences": ["Acts 1:8", "Acts 2:1-4", "Acts 13:1-4", "Acts 28:30-31"],
+    "recommendedUse": "Acts, Pentecost, the Holy Spirit, bold gospel witness, church growth, missionary sending, and Paul's journeys; place light text in the broad dark left-side field. Illustrative scene, not an archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; original generated Jerusalem dawn scene with a glowing upper-room window, blank travel map, lamp, outward road, and broad midnight-blue sermon-title zone."
   }
 ]
