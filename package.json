@@ -99,7 +99,8 @@
     "validate:hymns": "node scripts/validate-hymns.mjs",
     "preaching-helps:import": "node scripts/import-preaching-help-batch.mjs",
     "validate:preaching-helps": "node scripts/validate-preaching-helps.mjs",
-    "validate:archaeology": "node scripts/validate-archaeology.mjs"
+    "validate:archaeology": "node scripts/validate-archaeology.mjs",
+    "test:sunday-school": "node scripts/test-sunday-school.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
