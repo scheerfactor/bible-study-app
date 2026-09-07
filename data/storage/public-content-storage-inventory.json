@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-07T04:16:34.747Z",
+  "generated_at": "2026-09-07T04:34:53.359Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 13171,
+  "commentary_entries": 13221,
   "summaries": {
     "library_text": {
       "files": 2388,
@@ -15,15 +15,15 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 85597,
-      "total_size": "83.59 KB"
+      "total_bytes": 85800,
+      "total_size": "83.79 KB"
     },
     "commentary_batch": {
-      "files": 363,
-      "present": 363,
+      "files": 364,
+      "present": 364,
       "missing": 0,
-      "total_bytes": 545722409,
-      "total_size": "520.44 MB"
+      "total_bytes": 545917753,
+      "total_size": "520.63 MB"
     },
     "dictionary": {
       "files": 2,
@@ -75,10 +75,10 @@
       "total_size": "5.14 MB"
     },
     "all_public_content": {
-      "files": 2832,
-      "present": 2832,
+      "files": 2833,
+      "present": 2833,
       "missing": 0,
-      "total_bytes": 2835629543,
+      "total_bytes": 2835825090,
       "total_size": "2.64 GB"
     }
   },
@@ -29238,8 +29238,8 @@
       "source_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "storage_path": "data/commentary/reports/commentary-chapter-file-index.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 85597,
-      "checksum_sha256": "5e8821f45f6e95c13602918dffb5af5e22593be0ae221925c9917d023810524f"
+      "size_bytes": 85800,
+      "checksum_sha256": "509c83383ef947dff714a24ca78752bfffba85c48f6ea024da89bdac8161ce9d"
     },
     {
       "kind": "commentary_batch",
@@ -29280,6 +29280,16 @@
       "checksum_sha256": "fb12637a19b19018c29ca6da9b5f85198dbde4e685a95d687063a14ca639a95b",
       "batch_name": "a-c-gaebelein-reviewed-exodus-1-3-commentary.json",
       "entries": 3
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/a-c-gaebelein-reviewed-genesis-commentary.json",
+      "storage_path": "data/imports/a-c-gaebelein-reviewed-genesis-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 195344,
+      "checksum_sha256": "16956a5ed55c1a44208ff66e0c5b0b3fa1131840bdef4561774365b9ff47af63",
+      "batch_name": "a-c-gaebelein-reviewed-genesis-commentary.json",
+      "entries": 50
     },
     {
       "kind": "commentary_batch",

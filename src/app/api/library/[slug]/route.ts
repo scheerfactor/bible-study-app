@@ -13,6 +13,31 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("the-book-of-genesis-arno-c-gaebelein.txt")) {
+    const start = text.indexOf("Introduction.");
+    const end = text.indexOf("Genesis  and  Geology.", start);
+    if (start < 0 || end < 0) return text;
+
+    return text
+      .slice(start, end)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s{2,}/g, " "))
+        .filter((line) => {
+          if (!line || /^\d+$/.test(line)) return false;
+          if (/^(?:\d+\s+)?THE BOOK OF GENESIS\.?(?:\s+\d+)?$/i.test(line)) return false;
+          if (/^THE BOOK OF GENESIS\s+\S{1,5}$/i.test(line) && /\d/.test(line)) return false;
+          return true;
+        })
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (entry.file_path.endsWith("notes-on-the-book-of-esther-h-a-ironside.txt")) {
     const editionPreface = text.indexOf("December, 1921.");
     const start = text.indexOf("INTRODUCTION", editionPreface);

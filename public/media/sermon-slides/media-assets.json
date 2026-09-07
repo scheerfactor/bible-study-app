@@ -1,5 +1,19 @@
 [
   {
+    "file": "generated/genesis-beginnings-covenant-dawn-v1.png",
+    "slot": "genesis-beginnings-covenant-dawn",
+    "category": "Creation",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-07-genesis-beginnings-covenant-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Genesis", "Creation", "Covenant", "Promise", "Pilgrimage", "Providence", "Faith", "Hope"],
+    "bibleReferences": ["Genesis 1:1", "Genesis 12:1-3", "Genesis 15:5-6", "Genesis 50:20"],
+    "recommendedUse": "Genesis, creation, promise, covenant, pilgrimage, providence, faith, and hope slides; place light text in the broad dark left-side field. Illustrative historical landscape, not an archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/arno-gaebelein-genesis-study-expansion-2026-09-07.md"
+  },
+  {
     "file": "generated/esther-providence-palace-dawn-v1.png",
     "slot": "esther-providence-palace-dawn",
     "category": "Teaching",

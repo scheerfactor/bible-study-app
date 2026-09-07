@@ -273,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "joel-harvest-restoration-dawn" | "esther-providence-palace-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "joel-harvest-restoration-dawn" | "esther-providence-palace-dawn" | "genesis-creation-dawn" | "genesis-beginnings-covenant-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3133,6 +3133,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Creation",
     assetUrl: "/media/sermon-slides/generated/genesis-creation-dawn-v1.png",
   },
+  "genesis-beginnings-covenant-dawn": {
+    label: "Genesis: Beginnings and Covenant",
+    description: "Genesis, creation, promise, covenant, pilgrimage, providence, faith, and hope.",
+    background: "linear-gradient(90deg, rgba(8,13,24,0.96), rgba(8,13,24,0.05) 72%)",
+    motif: "Beginnings and Covenant at Dawn",
+    category: "Creation",
+    assetUrl: "/media/sermon-slides/generated/genesis-beginnings-covenant-dawn-v1.png",
+  },
   "psalms-still-waters-generated": {
     label: "Psalms Still Waters",
     description: "Psalms, prayer, comfort, peace, guidance, and devotional verses.",
@@ -3352,7 +3360,7 @@ const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
 };
 
 const SERMON_IMAGE_THEME_SUGGESTIONS = [
-  { terms: ["genesis", "in the beginning", "creation", "creator"], slot: "genesis-creation-dawn" },
+  { terms: ["genesis", "in the beginning", "creation", "creator", "covenant", "patriarch"], slot: "genesis-beginnings-covenant-dawn" },
   { terms: ["psalms", "psalm 23", "still waters", "comfort", "peace"], slot: "psalms-still-waters-generated" },
   { terms: ["matthew 28", "mark 16", "luke 24", "john 20", "resurrection", "risen", "empty tomb"], slot: "gospels-empty-tomb-dawn" },
   { terms: ["exodus", "wilderness", "sinai", "tabernacle", "moses"], slot: "sinai-wilderness" },
@@ -4200,6 +4208,7 @@ const A_C_GAEBELEIN_MATTHEW_COMMENTARY_COLLECTION = "The Gospel of Matthew: An E
 const A_C_GAEBELEIN_REVELATION_COMMENTARY_COLLECTION = "The Revelation: An Analysis and Exposition";
 const A_C_GAEBELEIN_DANIEL_COMMENTARY_COLLECTION = "The Prophet Daniel: A Key to the Visions and Prophecies";
 const A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION = "The Prophet Joel: An Exposition";
+const A_C_GAEBELEIN_GENESIS_COMMENTARY_COLLECTION = "The Book of Genesis";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -4244,10 +4253,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   A_C_GAEBELEIN_REVELATION_COMMENTARY_COLLECTION,
   A_C_GAEBELEIN_DANIEL_COMMENTARY_COLLECTION,
   A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION,
+  A_C_GAEBELEIN_GENESIS_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "Arno C. Gaebelein",
+    resourceTitle: A_C_GAEBELEIN_GENESIS_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 50 chapters of Genesis are imported from the reviewed complete 1912 exposition and connected to the chapter reader.",
+    rightsNotes: "Verified 1912 public-domain text. The later Genesis and geology appendix is excluded; preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Dispensational exposition of creation, the fall, promise, covenant, the patriarchs, providence, faith, and hope after reading the KJV chapter.",
+  },
   {
     author: "H. A. Ironside",
     resourceTitle: H_A_IRONSIDE_ESTHER_COMMENTARY_COLLECTION,
@@ -11956,7 +11974,7 @@ const WHOLE_BIBLE_VOLUME_BOOKS = [
 ];
 
 const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId> = {
-  Genesis: "genesis-creation-dawn",
+  Genesis: "genesis-beginnings-covenant-dawn",
   Exodus: "sinai-wilderness",
   Leviticus: "sinai-wilderness",
   Numbers: "sinai-wilderness",
@@ -12080,6 +12098,13 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
     label: "Ironside full Philippians volume",
     priority: "Teaching focus",
     note: "Open the whole public-domain volume for extended devotional and preaching help on Philippians.",
+  },
+  {
+    resourceSlug: "the-book-of-genesis-arno-c-gaebelein",
+    books: ["Genesis"],
+    label: "Gaebelein full Genesis volume",
+    priority: "Teaching focus",
+    note: "Open the complete public-domain 1912 volume for creation, the fall, promise, covenant, patriarchal history, providence, faith, and hope.",
   },
   {
     resourceSlug: "notes-on-the-book-of-esther-h-a-ironside",
@@ -12795,6 +12820,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "a-c-gaebelein-reviewed-genesis-commentary.json",
   "h-a-ironside-reviewed-esther-commentary.json",
   "a-c-gaebelein-reviewed-joel-commentary.json",
   "a-c-gaebelein-reviewed-daniel-commentary.json",
