@@ -13,6 +13,26 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("the-gospel-of-matthew-an-exposition-gaebelein-arno-clemens-1861-1945-2.txt")) {
+    const start = text.indexOf("The  Gospel  of  Matthew  stands  first");
+    const end = text.indexOf("\nINDEX  TO  VOLUME", start);
+    if (start < 0 || end < 0) return text;
+
+    return text
+      .slice(start, end)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s{2,}/g, " "))
+        .filter((line) => line && !/^\d+$/.test(line))
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (entry.file_path.endsWith("the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt")) {
     const start = text.indexOf("CHAPTER I.");
     const end = text.indexOf("\nTABE-END,", start);

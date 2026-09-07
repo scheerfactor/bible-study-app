@@ -1282,5 +1282,19 @@
     "bibleReferences": ["Acts 1:8", "Acts 2:1-4", "Acts 13:1-4", "Acts 28:30-31"],
     "recommendedUse": "Acts, Pentecost, the Holy Spirit, bold gospel witness, church growth, missionary sending, and Paul's journeys; place light text in the broad dark left-side field. Illustrative scene, not an archaeological reconstruction.",
     "optimized": "1672x941 PNG stored locally; original generated Jerusalem dawn scene with a glowing upper-room window, blank travel map, lamp, outward road, and broad midnight-blue sermon-title zone."
+  },
+  {
+    "file": "generated/matthew-kingdom-hillside-dawn-v1.png",
+    "slot": "matthew-kingdom-hillside-dawn",
+    "category": "Teaching",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-matthew-kingdom-hillside-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Matthew", "Jesus Christ", "King", "Kingdom", "Discipleship", "Prophecy", "Resurrection"],
+    "bibleReferences": ["Matthew 4:17", "Matthew 5:1-12", "Matthew 16:13-17", "Matthew 28:18-20"],
+    "recommendedUse": "Matthew, Jesus Christ as King, the kingdom message, Sermon on the Mount, discipleship, prophecy, cross, and resurrection slides; place light text in the broad dark left-side field. Illustrative landscape, not an archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; original generated Galilee hillside dawn scene with a teaching stone, blank scroll, lake, outward paths, and broad royal-purple sermon-title zone."
   }
 ]
