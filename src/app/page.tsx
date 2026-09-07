@@ -273,7 +273,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "joel-harvest-restoration-dawn" | "genesis-creation-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3109,6 +3109,14 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     category: "Teaching",
     assetUrl: "/media/sermon-slides/generated/daniel-babylon-watch-dawn-v1.png",
   },
+  "joel-harvest-restoration-dawn": {
+    label: "Joel: Repentance and Restoration",
+    description: "Joel, repentance, prayer, the day of the Lord, restored rain and harvest, hope, mercy, and the coming kingdom.",
+    background: "linear-gradient(90deg, rgba(5,22,14,0.96), rgba(5,22,14,0.05) 72%)",
+    motif: "Harvest Restoration at Dawn",
+    category: "Harvest",
+    assetUrl: "/media/sermon-slides/generated/joel-harvest-restoration-dawn-v1.png",
+  },
   "genesis-creation-dawn": {
     label: "Genesis Creation Dawn",
     description: "Genesis, creation, beginnings, the Creator, and covenant passages.",
@@ -4182,6 +4190,7 @@ const A_C_GAEBELEIN_ACTS_COMMENTARY_COLLECTION = "The Acts of the Apostles: An E
 const A_C_GAEBELEIN_MATTHEW_COMMENTARY_COLLECTION = "The Gospel of Matthew: An Exposition";
 const A_C_GAEBELEIN_REVELATION_COMMENTARY_COLLECTION = "The Revelation: An Analysis and Exposition";
 const A_C_GAEBELEIN_DANIEL_COMMENTARY_COLLECTION = "The Prophet Daniel: A Key to the Visions and Prophecies";
+const A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION = "The Prophet Joel: An Exposition";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -4224,10 +4233,19 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   A_C_GAEBELEIN_MATTHEW_COMMENTARY_COLLECTION,
   A_C_GAEBELEIN_REVELATION_COMMENTARY_COLLECTION,
   A_C_GAEBELEIN_DANIEL_COMMENTARY_COLLECTION,
+  A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "Arno C. Gaebelein",
+    resourceTitle: A_C_GAEBELEIN_JOEL_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "All 3 chapters of Joel are imported from the reviewed complete 1909 exposition and connected to the chapter reader.",
+    rightsNotes: "Verified 1909 public-domain text. The preliminary alternate translation and appendices are excluded; preserve the source link and OCR warning, and spot-check scan pages before public quotation.",
+    recommendedUse: "Dispensational exposition of prophecy, repentance, prayer, the day of the Lord, restoration, the outpouring of the Spirit, and the coming kingdom after reading the KJV chapter.",
+  },
   {
     author: "Arno C. Gaebelein",
     resourceTitle: A_C_GAEBELEIN_DANIEL_COMMENTARY_COLLECTION,
@@ -11948,7 +11966,7 @@ const BIBLE_BOOK_PRESENTATION_BACKGROUNDS: Record<string, SermonSlideImageSlotId
   Ezekiel: "babylon-lion-panel",
   Daniel: "babylon-lion-panel",
   Hosea: "cross",
-  Joel: "field-harvest",
+  Joel: "joel-harvest-restoration-dawn",
   Amos: "field-harvest",
   Obadiah: "storm-judgment",
   Jonah: "mediterranean-passage",
@@ -12046,7 +12064,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
     note: "Open the whole public-domain volume for extended devotional and preaching help on Philippians.",
   },
   {
-    resourceSlug: "the-prophet-joel-a-c-gaebelein",
+    resourceSlug: "the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945",
     books: ["Joel"],
     label: "Gaebelein full Joel volume",
     priority: "Teaching focus",
@@ -12752,6 +12770,7 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
 ];
 
 const deferredCommentaryImportFiles = [
+  "a-c-gaebelein-reviewed-joel-commentary.json",
   "a-c-gaebelein-reviewed-daniel-commentary.json",
   "a-c-gaebelein-reviewed-revelation-commentary.json",
   "a-c-gaebelein-reviewed-matthew-commentary.json",

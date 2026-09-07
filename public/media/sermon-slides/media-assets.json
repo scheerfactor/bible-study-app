@@ -1,5 +1,19 @@
 [
   {
+    "file": "generated/joel-harvest-restoration-dawn-v1.png",
+    "slot": "joel-harvest-restoration-dawn",
+    "category": "Harvest",
+    "source": "Original generated sermon-presentation background",
+    "source_url": "#original-generated-background-prompt-2026-09-06-joel-harvest-restoration-dawn",
+    "rightsStatus": "Original generated asset",
+    "artist": "OpenAI image generation",
+    "credit": "Created for Father's Business Bible Study",
+    "themes": ["Joel", "Repentance", "Prayer", "Day of the Lord", "Restoration", "Harvest", "Hope", "Mercy"],
+    "bibleReferences": ["Joel 1:19", "Joel 2:12-13", "Joel 2:23-27", "Joel 3:16-18"],
+    "recommendedUse": "Joel, repentance, prayer, the day of the Lord, renewed rain, harvest, hope, mercy, restoration, and kingdom slides; place light text in the dark left-side field. Illustrative Judah landscape, not a documented location or archaeological reconstruction.",
+    "optimized": "1672x941 PNG stored locally; prompt and visual review recorded in data/library/acquisition/permission-evidence/arno-gaebelein-joel-study-expansion-2026-09-06.md"
+  },
+  {
     "file": "generated/daniel-babylon-watch-dawn-v1.png",
     "slot": "daniel-babylon-watch-dawn",
     "category": "Teaching",

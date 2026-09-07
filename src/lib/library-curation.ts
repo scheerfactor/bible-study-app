@@ -99,6 +99,9 @@ function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
   if (entry.file_path.endsWith("the-prophet-daniel-a-key-to-the-visions-and-prophecies-of-the-book-of-daniel-gaebelein-arno-clemens-1861-1945-2.txt")) {
     return "/media/library-covers/arno-gaebelein-prophet-daniel-v1.png";
   }
+  if (entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt")) {
+    return "/media/library-covers/arno-gaebelein-prophet-joel-v1.png";
+  }
   return null;
 }
 
@@ -233,15 +236,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const isGaebeleinMatthew = entry.file_path.endsWith("the-gospel-of-matthew-an-exposition-gaebelein-arno-clemens-1861-1945-2.txt");
   const isGaebeleinRevelation = entry.file_path.endsWith("the-revelation-an-analysis-and-exposition-of-the-last-book-of-the-bible-arno-c-gaebelein.txt");
   const isGaebeleinDaniel = entry.file_path.endsWith("the-prophet-daniel-a-key-to-the-visions-and-prophecies-of-the-book-of-daniel-gaebelein-arno-clemens-1861-1945-2.txt");
-  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel ? "Commentaries" : normalizeLibraryCategory(entry.category);
+  const isGaebeleinJoel = entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
   const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : isGaebeleinDaniel ? "The Prophet Daniel: A Key to the Visions and Prophecies" : entry.title,
-    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel ? "Arno C. Gaebelein" : entry.author,
-    year: isIronsideNehemiah ? 1914 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : isGaebeleinDaniel ? 1911 : entry.year,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : isGaebeleinDaniel ? "The Prophet Daniel: A Key to the Visions and Prophecies" : isGaebeleinJoel ? "The Prophet Joel: An Exposition" : entry.title,
+    author: isIronsideNehemiah || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel ? "Arno C. Gaebelein" : entry.author,
+    year: isIronsideNehemiah ? 1914 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : isGaebeleinDaniel ? 1911 : isGaebeleinJoel ? 1909 : entry.year,
     category,
     collection,
     original_category: entry.category,
@@ -267,6 +271,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Complete public-domain exposition connected chapter-by-chapter to Revelation 1-22, emphasizing the revelation of Jesus Christ, the seven churches, worship, judgment, victory, the coming kingdom, and new creation."
       : isGaebeleinDaniel
         ? "Complete public-domain exposition connected chapter-by-chapter to Daniel 1-12, emphasizing faithfulness, prayer, prophetic visions, the times of the Gentiles, Israel, and God's sovereign kingdom."
+      : isGaebeleinJoel
+        ? "Complete public-domain exposition connected chapter-by-chapter to Joel 1-3, emphasizing the Word of the Lord, repentance, prayer, the day of the Lord, restoration, the outpouring of the Spirit, and the coming kingdom."
         : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
@@ -295,10 +301,12 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "Read after each KJV chapter of Revelation for dispensational exposition, prophecy study, worship, watchfulness, Christ's victory, the coming kingdom, and new creation."
       : isGaebeleinDaniel
         ? "Read after each KJV chapter of Daniel for dispensational exposition, character study, prayer, prophecy, the times of the Gentiles, Israel, and God's sovereign kingdom."
+      : isGaebeleinJoel
+        ? "Read after each KJV chapter of Joel for dispensational exposition, prophecy, repentance, prayer, the day of the Lord, restoration, the outpouring of the Spirit, and the coming kingdom."
         : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
-    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : isGaebeleinDaniel ? ["Daniel"] : entry.bible_books ?? [],
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : isGaebeleinDaniel ? ["Daniel"] : isGaebeleinJoel ? ["Joel"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -338,6 +346,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
         ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-revelation"
       : isGaebeleinDaniel
         ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-daniel"
+      : isGaebeleinJoel
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-joel"
       : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: originalCover
       ? "Original generated asset"
@@ -447,6 +457,16 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
               collection: "Classic Commentary Library",
               badge: "Classic Commentary Library",
               palette: { from: "#071a33", to: "#b58a42" },
+            }
+        : isGaebeleinJoel
+          ? {
+              type: "original-generated",
+              title: "The Prophet Joel: An Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#17351f", to: "#b58a42" },
             }
         : entry.cover_metadata ?? null,
     added_at: entry.import_status,

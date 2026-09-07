@@ -13,6 +13,32 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 }
 
 function prepareResourceText(entry: LibraryManifestEntry, text: string) {
+  if (entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt")) {
+    const expositionLead = text.indexOf("prepared  to  take  up  the  chapters  separate-");
+    const start = text.indexOf("CHAPTER  I.", expositionLead);
+    const end = text.indexOf("APPENDIX  A.", start);
+    if (expositionLead < 0 || start < 0 || end < 0) return text;
+
+    return text
+      .slice(start, end)
+      .replace(/([A-Za-z])-[ \t]*\n[ \t]*([a-z])/g, "$1$2")
+      .split(/\n\s*\n/)
+      .map((paragraph) => paragraph
+        .split("\n")
+        .map((line) => line.trim().replace(/\s{2,}/g, " "))
+        .filter((line) => {
+          if (!line || /^\d+$/.test(line)) return false;
+          if (/^CHAPTER\s+[IVXLCDM0-9]+\.\s+(?:\d+|pi|ill)$/i.test(line)) return false;
+          if (/^(?:\d+\s+)?THE BOOK OF JOEL\.?(?:\s+\d+)?$/i.test(line)) return false;
+          return true;
+        })
+        .join(" ")
+        .trim())
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
   if (entry.file_path.endsWith("the-prophet-daniel-a-key-to-the-visions-and-prophecies-of-the-book-of-daniel-gaebelein-arno-clemens-1861-1945-2.txt")) {
     const start = text.indexOf("THE   PROPHET    DANIEL\nIntroduction");
     const end = text.indexOf("THE  END", start);
