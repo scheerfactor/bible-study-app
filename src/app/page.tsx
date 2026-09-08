@@ -45,6 +45,7 @@ import {
 } from "lucide-react";
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import PresentationImageLibrary from "@/components/PresentationImageLibrary";
 import CountdownBuilder from "@/components/countdown/CountdownBuilder";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import { librarySearchTextContainsTerm } from "@/lib/library-search";
@@ -2687,6 +2688,10 @@ function sermonSlideMediaRights(slotId: SermonSlideImageSlotId) {
 function sermonSlideMediaBackground(slot: { assetUrl: string | null; background: string }) {
   return slot.assetUrl ? `url("${slot.assetUrl}") center / cover no-repeat, ${slot.background}` : slot.background;
 }
+
+const PRESENTATION_IMAGES = Object.entries(SERMON_SLIDE_IMAGE_SLOTS)
+  .filter(([, slot]) => Boolean(slot.assetUrl))
+  .map(([id, slot]) => ({ id, title: slot.label, url: slot.assetUrl!, description: slot.description, rights: sermonSlideMediaRights(id as SermonSlideImageSlotId) }));
 
 const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
   name: string;
@@ -24640,7 +24645,7 @@ function TodayScreen({
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Today</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">
-              Daily Growth Dashboard
+              What would you like to do today?
             </h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
               Start with Scripture, then continue the next study, sermon, journal, or reading step without hunting through the app.
@@ -24655,6 +24660,12 @@ function TodayScreen({
         </div>
       </section>
 
+      <section className="grid gap-3 md:grid-cols-3" aria-label="Start here">
+        <button className="min-h-32 rounded-2xl border border-[var(--line)] bg-white p-5 text-left" onClick={onContinue}><span className="block text-xl font-semibold text-[var(--green)]">Read the Bible</span><span className="mt-2 block text-sm">Continue in {book} {chapter}.</span></button>
+        <button className="min-h-32 rounded-2xl border border-[var(--line)] bg-white p-5 text-left" onClick={onOpenSermonResume}><span className="block text-xl font-semibold text-[var(--green)]">Prepare to teach</span><span className="mt-2 block text-sm">Open your lesson, prepare slides, and set up the pre-class countdown.</span></button>
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-5"><h2 className="text-xl font-semibold text-[var(--green)]">Find your images</h2><p className="my-2 text-sm">Browse the backgrounds already in the app.</p><PresentationImageLibrary images={PRESENTATION_IMAGES} /></article>
+      </section>
+      <details className="rounded-2xl border border-[var(--line)] bg-white p-4"><summary className="cursor-pointer py-2 font-semibold text-[var(--green)]">More daily tools, reading plans, and progress</summary><div className="mt-4 space-y-4">
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-2xl">
@@ -25086,6 +25097,7 @@ function TodayScreen({
         <Stat label="Highlights" value={highlightCount} />
         <Stat label="Bookmarks" value={bookmarkCount} />
       </section>
+      </div></details>
     </div>
   );
 }
@@ -50443,14 +50455,16 @@ function SermonWorkspaceScreen({
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon & Bible Study Slide Builder</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare sermons, lessons, and Scripture slides</h1>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare to teach</h1>
             <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">
-              Build Bible-centered teaching notes and clean sermon slides for church use. This beta is focused on preparation, slide planning, PowerPoint export, and presenter preview.
+              Start with your lesson. Then prepare the slides and countdown you will show before class.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
             <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onCreateDraft("Sermon")} type="button">Create Sermon</button>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onCreateDraft("Lesson")} type="button">Create Lesson</button>
+            <PresentationImageLibrary images={PRESENTATION_IMAGES} />
+            <details><summary className="cursor-pointer rounded-xl border border-[var(--line)] px-4 py-2.5 text-sm font-semibold">Examples & backups</summary><div className="mt-3 flex flex-wrap gap-2">
             <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onLoadSampleSermon} type="button">Load John 3 Sample</button>
             <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onExportMinistryBackup} type="button">
               <Download aria-hidden="true" size={16} />
@@ -50474,10 +50488,12 @@ function SermonWorkspaceScreen({
               }}
               type="file"
             />
+            </div></details>
           </div>
         </div>
       </section>
 
+      <details><summary className="cursor-pointer text-sm text-[var(--muted)]">Lesson library summary</summary>
       <section className="grid grid-cols-2 gap-3 md:grid-cols-5">
         <LibraryStat label="Active" value={String(activeSermons.length)} />
         <LibraryStat label="Archived" value={String(archivedSermons.length)} />
@@ -50485,6 +50501,7 @@ function SermonWorkspaceScreen({
         <LibraryStat label="Series" value={String(series.filter((item) => !item.archived).length)} />
         <LibraryStat label="Current status" value={draft.status} />
       </section>
+      </details>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <div className="flex flex-wrap gap-2">
@@ -50495,7 +50512,7 @@ function SermonWorkspaceScreen({
               onClick={() => onViewChange(item)}
               type="button"
             >
-	              {item === "manager" ? "Manager" : item === "builder" ? "Builder" : "Slides"}
+	              {item === "manager" ? "My lessons" : item === "builder" ? "1. Prepare lesson" : "2. Slides & present"}
             </button>
           ))}
           <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Back to Bible</button>
@@ -50503,6 +50520,7 @@ function SermonWorkspaceScreen({
         {syncMessage && <p className="mt-3 text-sm font-semibold text-[var(--muted)]">{syncMessage}</p>}
       </section>
 
+      <details><summary className="cursor-pointer py-2 text-sm font-semibold text-[var(--green)]">First lesson? Show the preparation guide</summary>
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
           <div>
@@ -50534,6 +50552,7 @@ function SermonWorkspaceScreen({
           ))}
         </div>
       </section>
+      </details>
 
       {view === "manager" ? (
         <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr]">
@@ -50629,15 +50648,17 @@ function SermonWorkspaceScreen({
 	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon & Bible Study Slide Builder</p>
 	              <h2 className="mt-2 break-words text-2xl font-semibold text-[var(--ink)]">Slide builder for {draft.title || "this sermon"}</h2>
 	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-	                Build simple Scripture-first slides from the sermon draft. This is a slide-prep tool for churches, not a ProPresenter replacement yet.
+	                Create slides from your lesson, choose an image, and check the preview before presenting.
 	              </p>
 	              <div className="mt-4 flex flex-wrap gap-2">
-	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={generateAndFocusSlides} type="button">Generate Slide Outline</button>
-	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySlideOutline} type="button">Copy Slide Outline</button>
+	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={generateAndFocusSlides} type="button">Create slides from lesson</button>
+	                <PresentationImageLibrary images={PRESENTATION_IMAGES} selectedId={activeSlide?.imageSlot} label="Choose background image" onSelect={image => { if (activeSlide) updateSlide(activeSlide.id, {imageSlot: image.id as SermonSlideImageSlotId, imageTheme: image.title}); }} />
+                <details><summary className="cursor-pointer rounded-xl border border-[var(--line)] px-4 py-2 text-sm font-semibold">Download or print slides</summary><div className="mt-3 flex flex-wrap gap-2">
+<button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySlideOutline} type="button">Copy Slide Outline</button>
 	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onDownloadSlidePlan} type="button">Download Slide Outline Markdown</button>
 	                <button className="rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!sermonSlides.length} onClick={onExportPowerPoint} type="button">Download PowerPoint</button>
 	                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!sermonSlides.length} onClick={onExportPdfPreview} type="button">Print / Save PDF</button>
-	              </div>
+	              </div></details></div>
 	              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
 	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Add Slide Template</p>
 	                <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
@@ -50655,7 +50676,7 @@ function SermonWorkspaceScreen({
 	              </div>
 	            </article>
 
-	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	            <details className="rounded-2xl border border-[var(--line)] bg-white p-4"><summary className="cursor-pointer py-2 font-semibold text-[var(--green)]">Build slides from a transcript</summary><article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <div className="flex flex-wrap items-start justify-between gap-3">
 	                <div>
 	                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Extractor Integration</p>
@@ -50678,9 +50699,9 @@ function SermonWorkspaceScreen({
 	                </button>
 	                <p className="text-xs leading-5 text-[var(--muted)]">Review every slide before teaching. This organizes existing transcript text; it does not create doctrine.</p>
 	              </div>
-	            </article>
+	            </article></details>
 
-	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	            <details className="rounded-2xl border border-[var(--line)] bg-white p-4"><summary className="cursor-pointer py-2 font-semibold text-[var(--green)]">Theme, saved looks & advanced styling</summary><article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <label className="text-sm font-semibold text-[var(--muted)]">
 	                Deck Theme
 	                <select
@@ -50750,9 +50771,9 @@ function SermonWorkspaceScreen({
 	                  )) : <p className="text-xs leading-5 text-[var(--muted)]">Save a theme after choosing a deck style, background, and clean presentation settings.</p>}
 	                </div>
 	              </div>
-	            </article>
+	            </article></details>
 
-	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	            <details className="rounded-2xl border border-[var(--line)] bg-white p-4"><summary className="cursor-pointer py-2 font-semibold text-[var(--green)]">Add a Scripture passage</summary><article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Scripture Slide Builder</p>
 	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Add verses fast</h2>
 	              <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_0.4fr_0.4fr]">
@@ -50796,7 +50817,7 @@ function SermonWorkspaceScreen({
 	                </button>
 	              </div>
 	              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">One verse, a verse range, or a chapter excerpt can be added. Long Scripture text is split into readable slides.</p>
-	            </article>
+	            </article></details>
 
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <div className="flex items-center justify-between gap-3">
@@ -50872,7 +50893,7 @@ function SermonWorkspaceScreen({
 	              </article>
 	            )}
 
-	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	            <details className="rounded-2xl border border-[var(--line)] bg-white p-4"><summary className="cursor-pointer py-2 font-semibold text-[var(--green)]">Use a phone or a second display</summary><article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Preacher Control</p>
 	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Control slides from an iPad or phone</h2>
 	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Save this sermon or lesson, then attach its deck in Presentations. Presenter View creates a session code for the Controller and full-screen display.</p>
@@ -50880,7 +50901,7 @@ function SermonWorkspaceScreen({
 	                <MonitorPlay aria-hidden="true" size={16} />
 	                Open Remote Presentations
 	              </button>
-	            </article>
+	            </article></details>
 	          </section>
 	        </div>
 	      ) : (
@@ -50894,15 +50915,17 @@ function SermonWorkspaceScreen({
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onSaveDraft} type="button">Save</button>
-                  <CountdownBuilder lesson={{ ...draft, series: series.find(item => item.id === draft.seriesId)?.title }} resolveScripture={onResolveScriptureText} />
+                  <CountdownBuilder images={PRESENTATION_IMAGES} lesson={{ ...draft, series: series.find(item => item.id === draft.seriesId)?.title }} resolveScripture={onResolveScriptureText} />
+                  <details><summary className="cursor-pointer rounded-xl border border-[var(--line)] px-4 py-2 text-sm font-semibold">Downloads & more</summary><div className="mt-3 flex max-w-xl flex-wrap gap-2">
                   <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("markdown")} type="button">Download Sermon Markdown</button>
                   <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("text")} type="button">Download Text</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySermonOutline} type="button">Copy Sermon Outline</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onExportPreachingNotes} type="button">Download Preaching Notes</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onPrintDraft} type="button">Print-Friendly Notes</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onDuplicateEntry(draft)} type="button">Duplicate</button>
-	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("slides")} type="button">Slide Builder</button>
-	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onStartPreaching} type="button">Preaching Mode</button>
+                  </div></details>
+	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("slides")} type="button">Prepare slides</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onStartPreaching} type="button">Teach from notes</button>
                 </div>
               </div>
 
@@ -52021,7 +52044,7 @@ function PresentationWorkspaceScreen({
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Presentation Workspace</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Build and control church presentations</h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-              Build sermon slides, preview the next slide, and control a presentation from a presenter or controller view.
+              Edit slides here. Use Present with notes on your computer, Audience display on the projector, and Phone remote only when using a second device.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -52047,7 +52070,7 @@ function PresentationWorkspaceScreen({
             }
             onViewChange(item);
           }} type="button">
-            {item === "deck" ? "Slide Deck" : item === "presentation" ? "Presentation View" : item}
+            {item === "manager" ? "My presentations" : item === "deck" ? "Edit slides" : item === "presenter" ? "Present with notes" : item === "controller" ? "Phone remote" : "Audience display"}
           </button>
         ))}
       </div>
@@ -52530,13 +52553,21 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
 }
 
 function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: (patch: Partial<SermonSlide>) => void }) {
-  const [mediaCategory, setMediaCategory] = useState<"All" | SermonSlideMediaCategory>("All");
-  const filteredImageSlots = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).filter(([, slot]) => mediaCategory === "All" || slot.category === mediaCategory);
   const previewLightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light";
   const readability = sermonSlideReadability(slide, previewLightStyle);
   return (
     <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
       <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Slide Editor</p>
+      <div className="mt-4 grid gap-3">
+        <SermonField label="Title" value={slide.title} onChange={(value) => onChange({ title: value })} />
+        <SermonField label="Subtitle" value={slide.subtitle} onChange={(value) => onChange({ subtitle: value })} />
+        <SermonTextArea label="Body text" value={slide.body} onChange={(value) => onChange({ body: value })} />
+        <SermonTextArea label="Bible verse text" value={slide.bibleText} onChange={(value) => onChange({ bibleText: value })} />
+        <SermonTextArea label="Speaker notes" value={slide.speakerNotes} onChange={(value) => onChange({ speakerNotes: value })} />
+      </div>
+      <div className="my-4"><PresentationImageLibrary images={PRESENTATION_IMAGES} selectedId={slide.imageSlot} label="Choose background image" onSelect={image => onChange({imageSlot:image.id as SermonSlideImageSlotId,imageTheme:image.title})} /><p className="mt-2 text-sm text-[var(--muted)]">Current background: {SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot].label}</p></div>
+      <details><summary className="cursor-pointer py-3 font-semibold text-[var(--green)]">Text size, layout & advanced styling</summary>
+
       <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Automatic Readability Overlay</p>
         <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
@@ -52639,51 +52670,7 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
           ))}
         </div>
       </div>
-      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Curated Background Picker</p>
-          <p className="text-xs font-semibold text-[var(--muted)]">{SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot]?.label ?? "Open Bible"}</p>
-        </div>
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-          {SERMON_SLIDE_MEDIA_CATEGORIES.map((category) => (
-            <button
-              key={`slide-media-category-${category}`}
-              className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${mediaCategory === category ? "bg-[var(--green)] text-white" : "bg-white text-[var(--muted)]"}`}
-              onClick={() => setMediaCategory(category)}
-              type="button"
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          {filteredImageSlots.map(([id, slot]) => (
-            <button
-              key={`slide-image-slot-${id}`}
-              className={`overflow-hidden rounded-2xl border text-left ${slide.imageSlot === id ? "border-[var(--green)] bg-white shadow-sm" : "border-[var(--line)] bg-white/70"}`}
-              onClick={() => onChange({ imageSlot: id as SermonSlideImageSlotId, imageTheme: slot.label })}
-              type="button"
-            >
-              <span className="block h-24" style={{ background: `${sermonSlideMediaBackground(slot)}, linear-gradient(135deg, #244233, #efe5cd)` }} />
-              <span className="block px-3 py-2">
-                <span className="block text-xs font-semibold text-[var(--green)]">{slot.label}</span>
-                <span className="mt-1 inline-flex rounded-full bg-[var(--warm)] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]">
-                  {sermonSlideMediaKind(id as SermonSlideImageSlotId)}
-                </span>
-                <span className="mt-1 block line-clamp-2 text-[0.7rem] leading-4 text-[var(--muted)]">{slot.description}</span>
-                <span className="mt-1 block text-[0.65rem] leading-4 text-[var(--muted)]">{sermonSlideMediaRights(id as SermonSlideImageSlotId)}</span>
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="mt-4 grid gap-3">
-        <SermonField label="Title" value={slide.title} onChange={(value) => onChange({ title: value })} />
-        <SermonField label="Subtitle" value={slide.subtitle} onChange={(value) => onChange({ subtitle: value })} />
-        <SermonTextArea label="Body text" value={slide.body} onChange={(value) => onChange({ body: value })} />
-        <SermonTextArea label="Bible verse text" value={slide.bibleText} onChange={(value) => onChange({ bibleText: value })} />
-        <SermonTextArea label="Speaker notes" value={slide.speakerNotes} onChange={(value) => onChange({ speakerNotes: value })} />
-      </div>
+      </details>
     </article>
   );
 }

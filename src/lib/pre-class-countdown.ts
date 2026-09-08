@@ -3,7 +3,7 @@ export type CountdownItem = {
   title: string; body: string; reference: string; seconds: number; revealSeconds: number;
   choices: string[]; answer: number; explanation: string;
 };
-export type CountdownPlan = { version: 1; title: string; projectId: string; minutes: number; items: CountdownItem[]; reviewed: boolean; hymn: string };
+export type CountdownPlan = { version: 1; backgroundId?: string; title: string; projectId: string; minutes: number; items: CountdownItem[]; reviewed: boolean; hymn: string };
 export type LessonSource = {
   id: string; title: string; passage: string; theme?: string;
   series?: string; scripture: string;
@@ -47,6 +47,7 @@ export function validatePlan(value: unknown): string[] {
   const p = value as CountdownPlan;
   if (!p || p.version !== 1 || typeof p.title !== 'string' || typeof p.projectId !== 'string' || typeof p.hymn !== 'string' || typeof p.reviewed !== 'boolean' || !Array.isArray(p.items)) return ['Unsupported or damaged countdown file.'];
   const errors: string[] = [];
+  if (p.backgroundId !== undefined && (typeof p.backgroundId !== 'string' || !/^[a-z0-9-]{1,80}$/.test(p.backgroundId))) errors.push('Invalid background selection.');
   if (!Number.isInteger(p.minutes) || p.minutes < 1 || p.minutes > 60) errors.push('Choose a duration from 1 to 60 whole minutes.');
   if (!p.items.length || p.items.length > 40) errors.push('Include between 1 and 40 slides.');
   const ids = new Set<string>();
