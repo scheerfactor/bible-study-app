@@ -1,0 +1,35 @@
+{
+  "batch_id": "public-domain-hymns-phase-5-2026-08-23",
+  "reviewed_at": "2026-08-23",
+  "purpose": "Add Abide with Me with source-traceable public-domain text, a CC0 playable MIDI arrangement, and presentation-ready stanza text.",
+  "guardrails": [
+    "Lyrics were transcribed line by line from the cited 1927 hymnal record without modernization or correction.",
+    "Hymnary identifies both Henry F. Lyte's text and William Henry Monk's EVENTIDE tune as public domain.",
+    "The MIDI setting is retained from the exact Wikimedia Commons file page under its CC0 dedication.",
+    "The MIDI and machine-readable Wikimedia license metadata are verified by SHA-256.",
+    "No historical or modern performance recording is included or implied to be reusable."
+  ],
+  "entries": [
+    {
+      "id": "abide-with-me",
+      "title": "Abide with Me",
+      "lyricist": "Henry F. Lyte",
+      "lyric_year": 1847,
+      "text_source_url": "https://hymnary.org/hymn/HCH11927/52",
+      "text_source_edition": "Hymnal for Church and Home, 1927, hymn 52",
+      "text_rights": "Public domain",
+      "tune": "Eventide",
+      "composer": "William Henry Monk",
+      "tune_year": 1861,
+      "music_source_url": "https://commons.wikimedia.org/wiki/File:Bleibe_bei_uns.mid",
+      "music_rights": "CC0 1.0 Universal Public Domain Dedication",
+      "midi_setting_creator": "Peter Gerloff (Rabanus Flavus)",
+      "midi_file": "abide-with-me.mid",
+      "midi_sha256": "29847f715406da7f17eeac926b41d33891f0daebfcff7c30e82e385174ab4773",
+      "rights_evidence_file": "abide-with-me-wikimedia.json",
+      "rights_evidence_sha256": "e5c197b279e038c3aa3027cd51f227a66198e533d03bbc2d52ee03c35cbe3314",
+      "presentation_use": "Five exact-source stanza slides and a title slide linked to KJV Scripture references.",
+      "recording_scope": "The in-app Web Audio playback is synthesized from the retained CC0 MIDI. No third-party performance recording is copied."
+    }
+  ]
+}

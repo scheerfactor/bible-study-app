@@ -1,0 +1,62 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-21-2026-08-23",
+  "reviewed_at": "2026-08-23",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next three high-use KJV words with exact-headword source pages after rejecting higher-ranked pages that redirected to neighboring or related entries.",
+  "review_method": "Verified each page heading and entry heading in the browser, preserved the displayed wording, normalized whitespace only, and excluded any adjacent entry whose heading did not match the requested word.",
+  "unavailable_higher_ranked_candidates": [
+    "plain",
+    "excellency",
+    "robe",
+    "centurion",
+    "shewbread",
+    "vexation",
+    "hyssop",
+    "bag",
+    "pollute",
+    "astonied",
+    "bestow",
+    "treacherous"
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No neighboring-word or related-word page was accepted.",
+    "The adjacent SELF'-SEEKING paragraph on the self-same page was excluded.",
+    "No definition wording was summarized, modernized, or invented."
+  ],
+  "entries": [
+    {
+      "word": "self-same",
+      "kjv_occurrences": 15,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/self-same",
+      "source_paragraphs": 1,
+      "exact_page_heading": "Self-same",
+      "exact_entry_heading": "SELF'-SAME",
+      "exact_source_match": true
+    },
+    {
+      "word": "stiff-necked",
+      "kjv_occurrences": 9,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/stiff-necked",
+      "source_paragraphs": 1,
+      "exact_page_heading": "Stiff-necked",
+      "exact_entry_heading": "STIFF-NECKED",
+      "exact_source_match": true
+    },
+    {
+      "word": "figure",
+      "kjv_occurrences": 7,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/figure",
+      "source_paragraphs": 33,
+      "exact_page_heading": "Figure",
+      "exact_entry_heading": "FIG'URE",
+      "exact_source_match": true
+    }
+  ]
+}

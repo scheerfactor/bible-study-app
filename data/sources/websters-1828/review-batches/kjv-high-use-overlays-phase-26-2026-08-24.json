@@ -1,0 +1,111 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-26-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Reviewed the remaining visible seven-occurrence KJV cleanup candidates after phase 25, importing only pages with exact Webster headwords.",
+  "review_method": "Verified each page heading and entry heading, preserved every paragraph belonging to the exact entry, normalized whitespace only, and manually excluded two adjacent headwords that shared the source page container.",
+  "unavailable_exact_headword_candidates": [
+    "network",
+    "overwhelmed"
+  ],
+  "manual_adjacent_entry_exclusions": [
+    {
+      "word": "quite",
+      "excluded_headword": "QUIT'-RENT",
+      "reason": "The source page container appended the next dictionary entry; it is not a sense of QUITE."
+    },
+    {
+      "word": "raw",
+      "excluded_headword": "RAW'-BONED",
+      "reason": "The source page container appended the next dictionary entry; it is not a sense of RAW."
+    }
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No neighboring-word definition was retained as part of an exact entry.",
+    "The source entry for principality remains singular; the KJV plural relationship is metadata only.",
+    "No definition wording was summarized, modernized, or invented."
+  ],
+  "entries": [
+    {
+      "word": "pen",
+      "kjv_occurrences": 7,
+      "lookup_headword": "pen",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/pen",
+      "source_paragraphs": 6,
+      "exact_page_heading": "Pen",
+      "exact_entry_heading": "PEN",
+      "exact_source_match": true
+    },
+    {
+      "word": "principalities",
+      "kjv_occurrences": 7,
+      "lookup_headword": "principality",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/principality",
+      "source_paragraphs": 6,
+      "exact_page_heading": "Principality",
+      "exact_entry_heading": "PRINCIPAL'ITY",
+      "exact_source_match": true
+    },
+    {
+      "word": "provender",
+      "kjv_occurrences": 7,
+      "lookup_headword": "provender",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/provender",
+      "source_paragraphs": 4,
+      "exact_page_heading": "Provender",
+      "exact_entry_heading": "PROV'ENDER",
+      "exact_source_match": true
+    },
+    {
+      "word": "quite",
+      "kjv_occurrences": 7,
+      "lookup_headword": "quite",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/quite",
+      "source_paragraphs": 4,
+      "exact_page_heading": "Quite",
+      "exact_entry_heading": "QUITE",
+      "exact_source_match": true
+    },
+    {
+      "word": "ravished",
+      "kjv_occurrences": 7,
+      "lookup_headword": "ravished",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/ravished",
+      "source_paragraphs": 1,
+      "exact_page_heading": "Ravished",
+      "exact_entry_heading": "RAV'ISHED",
+      "exact_source_match": true
+    },
+    {
+      "word": "raw",
+      "kjv_occurrences": 7,
+      "lookup_headword": "raw",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/raw",
+      "source_paragraphs": 19,
+      "exact_page_heading": "Raw",
+      "exact_entry_heading": "RAW",
+      "exact_source_match": true
+    },
+    {
+      "word": "ripe",
+      "kjv_occurrences": 7,
+      "lookup_headword": "ripe",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/ripe",
+      "source_paragraphs": 12,
+      "exact_page_heading": "Ripe",
+      "exact_entry_heading": "RIPE",
+      "exact_source_match": true
+    }
+  ]
+}

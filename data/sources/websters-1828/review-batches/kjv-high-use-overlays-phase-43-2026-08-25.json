@@ -1,0 +1,92 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-43-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {"url":"https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt","sha256":"a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"},
+    {"url":"https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt","sha256":"31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"}
+  ],
+  "visual_scan_pages": [
+    {"headword":"anoint","url":"https://archive.org/download/americandictiona01websrich/page/n168_w2300.jpg","sha256":"8f4bc342e8233efa69b5dacbed1a0dd84b5bedc773572b83ae025a1d1d2d0429"},
+    {"headword":"beauty","url":"https://archive.org/download/americandictiona01websrich/page/n249_w2300.jpg","sha256":"7c5f6e9b2e56b5e562aac5241b92d9eff88fc1d2df4b5c0564d1d2a7cde8b941"},
+    {"headword":"conceal","url":"https://archive.org/download/americandictiona01websrich/page/n442_w2300.jpg","sha256":"17efe54deddc74268f5ed4c057b3719250f48a1e293487ae644c86de685697f8"},
+    {"headword":"conduct","url":"https://archive.org/download/americandictiona01websrich/page/n449_w2300.jpg","sha256":"64aa88d469e7506d3d550f7174b3a7aa9c170ee1b4394d7914e58334358a5247"},
+    {"headword":"conduct","url":"https://archive.org/download/americandictiona01websrich/page/n450_w2300.jpg","sha256":"5d3058589aebf49bc22323426539059521c5206f692d8a58c1cb1a3fff10806a"},
+    {"headword":"conscience","url":"https://archive.org/download/americandictiona01websrich/page/n459_w2300.jpg","sha256":"f90a7b727ac59929e0ae700f451d095fd936b926de711b7c3d55182f5dbd8cdd"},
+    {"headword":"discreet","url":"https://archive.org/download/americandictiona01websrich/page/n592_w2300.jpg","sha256":"509c6ed048ea9b90cff1488a37ac2aa57787ae726f194502b541897393ab0c9e"},
+    {"headword":"dissimulation","url":"https://archive.org/download/americandictiona01websrich/page/n606_w2300.jpg","sha256":"6f396356fd042604924e73da2425c291279e53849b8c1a8e1c2c2df0cbdf58f1"},
+    {"headword":"fornication","url":"https://archive.org/download/americandictiona01websrich/page/n792_w2300.jpg","sha256":"1f4d67e77e2c0ded97cb4239bf9a716dd3564f5240584ca329d60129ea2b4c66"},
+    {"headword":"handmaid","url":"https://archive.org/download/americandictiona01websrich/page/n875_w1000.jpg","sha256":"bbf252a2bfe5e63c2470e315a6ba7aadc31d9d02b7f48e65717b4ea6733fe110"},
+    {"headword":"language","url":"https://archive.org/download/americandictiona02websrich/page/n34_w2300.jpg","sha256":"3b8a6746cb208fa912053a92dd39038ea109deb71addca0800ff31517f47ae80"},
+    {"headword":"punishment","url":"https://archive.org/download/americandictiona02websrich/page/n387_w2300.jpg","sha256":"d02b078a8bd33d4c0a89fe5385919163148d7fd31b7c5e20235bf2b20a3b654d"},
+    {"headword":"shield","url":"https://archive.org/download/americandictiona02websrich/page/n580_w2300.jpg","sha256":"746647ce91f2ae5a746b1db7a184ab3720dd03519855a1a616ef8222a756fdf7"}
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Completed the four exact entries held from phase 42, then reviewed the highest-use unresolved KJV forms whose complete printed entries were available on exact 1828 scan pages.",
+  "review_method": "Compared each web transcription with the original printed page, restored omitted etymologies and senses, corrected visible OCR and punctuation errors, restored Webster's printed chapter-level Scripture citations, and retained historical wording without modernization.",
+  "screening_summary": {
+    "requested_source_pages": 20,
+    "exact_source_pages_found": 15,
+    "reviewed_overlays_promoted": 12,
+    "candidates_held_for_exact_scan_or_restoration": 8,
+    "net_new_reviewed_overlays": 12,
+    "automatic_inflection_forms_resolved": 11,
+    "missing_kjv_forms_resolved": 23,
+    "kjv_occurrences_resolved": 361
+  },
+  "promoted_headwords": ["anoint","beauty","conceal","conduct","conscience","discreet","dissimulation","fornication","handmaid","language","punishment","shield"],
+  "reviewed_transcription_actions": [
+    {"word":"anoint","actions":["Restored the French, Spanish, Latin, and Italian etymology.","Returned four Scripture references to Webster's printed chapter-level citations."]},
+    {"word":"beauty","actions":["Restored the French etymology and Beau cross-reference.","Restored visible punctuation and the printed chapter-level citations."]},
+    {"word":"conceal","actions":["Reconstructed the multilingual etymology from the full-resolution scan.","Restored the possessive apostrophe and Webster's printed Job 6 and Genesis 37 citations."]},
+    {"word":"conduct","actions":["Restored the noun and verb etymologies across two scan pages.","Corrected prince's, bringing, and one's self and restored the printed 2 Samuel 19 citation."]},
+    {"word":"conscience","actions":["Restored the French, Latin, Italian, and Spanish etymology.","Corrected visible OCR, capitalization, punctuation, and the printed John 8 citation."]},
+    {"word":"discreet","actions":["Reconstructed the French, Spanish, Italian, Latin, Welsh, and Greek etymology.","Corrected is arbitrary and restored the printed Genesis 41 citation."]},
+    {"word":"dissimulation","actions":["Restored the Latin etymology, sentence capitalization, punctuation, and the printed Romans 12 citation."]},
+    {"word":"fornication","actions":["Restored the omitted fifth sense concerning an arching or vault.","Returned four Scripture references to Webster's printed chapter-level citations."]},
+    {"word":"handmaid","actions":["Confirmed the complete handmaid and handmaiden entry on the exact printed page and restored heading punctuation."]},
+    {"word":"language","actions":["Restored the French, Spanish, Portuguese, Italian, Armenian, and Latin etymology.","Restored visible capitalization, punctuation, and the printed Daniel 3 citation."]},
+    {"word":"punishment","actions":["Restored visible sentence punctuation and Almighty capitalization."]},
+    {"word":"shield","actions":["Restored the complete omitted noun entry and its etymology before the surviving verb entry.","Corrected danger and from in the verb definition."]}
+  ],
+  "held_candidates": [
+    {"word":"bosom","reason":"The multilingual etymology includes a non-Latin-script form that needs a dedicated exact transcription."},
+    {"word":"sackcloth","reason":"The downloaded scan page did not contain the exact entry."},
+    {"word":"straight","reason":"The downloaded scan page did not contain the exact entry."},
+    {"word":"messenger","reason":"No exact web transcription entry was returned."},
+    {"word":"sepulchre","reason":"No exact web transcription entry was returned."},
+    {"word":"pestilence","reason":"No exact web transcription entry was returned."},
+    {"word":"carcase","reason":"No exact web transcription entry was returned."},
+    {"word":"circumcision","reason":"No exact web transcription entry was returned."}
+  ],
+  "verified_lookup_relationships": [],
+  "automatic_lookup_relationships": [
+    {"word":"shields","lookup_headword":"shield","kjv_occurrences":23,"relationship":"Automatically recognized regular noun inflection"},
+    {"word":"handmaids","lookup_headword":"handmaid","kjv_occurrences":8,"relationship":"Automatically recognized regular noun inflection"},
+    {"word":"languages","lookup_headword":"language","kjv_occurrences":7,"relationship":"Automatically recognized regular noun inflection"},
+    {"word":"fornications","lookup_headword":"fornication","kjv_occurrences":3,"relationship":"Automatically recognized regular noun inflection"},
+    {"word":"concealed","lookup_headword":"conceal","kjv_occurrences":2,"relationship":"Automatically recognized regular verb inflection"},
+    {"word":"concealeth","lookup_headword":"conceal","kjv_occurrences":2,"relationship":"Automatically recognized KJV verb inflection"},
+    {"word":"conducted","lookup_headword":"conduct","kjv_occurrences":2,"relationship":"Automatically recognized regular verb inflection"},
+    {"word":"punishments","lookup_headword":"punishment","kjv_occurrences":2,"relationship":"Automatically recognized regular noun inflection"},
+    {"word":"anointest","lookup_headword":"anoint","kjv_occurrences":1,"relationship":"Automatically recognized KJV verb inflection"},
+    {"word":"beauties","lookup_headword":"beauty","kjv_occurrences":1,"relationship":"Automatically recognized regular noun inflection"},
+    {"word":"consciences","lookup_headword":"conscience","kjv_occurrences":1,"relationship":"Automatically recognized regular noun inflection"}
+  ],
+  "entries": [
+    {"word":"anoint","kjv_occurrences":35,"lookup_headword":"anoint","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/anoint","source_line_start":1,"source_line_end":10,"exact_page_heading":"ANOINT'","exact_entry_heading":"ANOINT","exact_source_match":true},
+    {"word":"beauty","kjv_occurrences":49,"lookup_headword":"beauty","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/beauty","source_line_start":1,"source_line_end":11,"exact_page_heading":"BEAU'TY","exact_entry_heading":"BEAU'TY","exact_source_match":true},
+    {"word":"conceal","kjv_occurrences":6,"lookup_headword":"conceal","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/conceal","source_line_start":1,"source_line_end":6,"exact_page_heading":"CONCEAL","exact_entry_heading":"CONCEAL","exact_source_match":true},
+    {"word":"conduct","kjv_occurrences":3,"lookup_headword":"conduct","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/conduct","source_line_start":1,"source_line_end":25,"exact_page_heading":"CONDUCT","exact_entry_heading":"CONDUCT","exact_source_match":true},
+    {"word":"conscience","kjv_occurrences":31,"lookup_headword":"conscience","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/conscience","source_line_start":1,"source_line_end":16,"exact_page_heading":"CONSCIENCE","exact_entry_heading":"CONSCIENCE","exact_source_match":true},
+    {"word":"discreet","kjv_occurrences":3,"lookup_headword":"discreet","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/discreet","source_line_start":1,"source_line_end":4,"exact_page_heading":"DISCREET","exact_entry_heading":"DISCREET","exact_source_match":true},
+    {"word":"dissimulation","kjv_occurrences":2,"lookup_headword":"dissimulation","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/dissimulation","source_line_start":1,"source_line_end":2,"exact_page_heading":"DISSIMULATION","exact_entry_heading":"DISSIMULATION","exact_source_match":true},
+    {"word":"fornication","kjv_occurrences":36,"lookup_headword":"fornication","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/fornication","source_line_start":1,"source_line_end":5,"exact_page_heading":"FORNICA'TION","exact_entry_heading":"FORNICA'TION","exact_source_match":true},
+    {"word":"handmaid","kjv_occurrences":45,"lookup_headword":"handmaid","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/handmaid","source_line_start":1,"source_line_end":2,"exact_page_heading":"HAND'MAID","exact_entry_heading":"HAND'MAID","exact_source_match":true},
+    {"word":"language","kjv_occurrences":27,"lookup_headword":"language","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/language","source_line_start":1,"source_line_end":9,"exact_page_heading":"LAN'GUAGE","exact_entry_heading":"LAN'GUAGE","exact_source_match":true},
+    {"word":"punishment","kjv_occurrences":27,"lookup_headword":"punishment","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/punishment","source_line_start":1,"source_line_end":4,"exact_page_heading":"PUN'ISHMENT","exact_entry_heading":"PUN'ISHMENT","exact_source_match":true},
+    {"word":"shield","kjv_occurrences":45,"lookup_headword":"shield","base_entries":0,"source_url":"https://webstersdictionary1828.com/Dictionary/shield","source_line_start":1,"source_line_end":5,"exact_page_heading":"SHIELD","exact_entry_heading":"SHIELD","exact_source_match":true}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-08-26T16:22:11.210Z",
+  "source_inventory": "data/reports/webster-missing-word-inventory.csv",
+  "source_bible": "King James Bible, standard 1769 text",
+  "purpose": "Human review queue only. Entries must not be published without source and identity review.",
+  "limit": 50,
+  "entries": []
+}

@@ -1,0 +1,81 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-72-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n194_w3000.jpg", "sha256": "3e8bd7e61287010956fd25a0e96ec55e603449ec5e22a91fc36c5ce38287ced8" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n223_w3000.jpg", "sha256": "a70d5c4abad991f80fd118617e81a8790a18af2182528b3c1d33c07ab795d6d5" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n229_w3000.jpg", "sha256": "f225d488293749d210ae389458f70397b571313d12fad7176407997b0896232f" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n352_w3000.jpg", "sha256": "5a8edf2b69685eb94b83448bc4accca9bf63ad3f50327d319ec22a0b0be240c4" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n808_w3000.jpg", "sha256": "ee80e7a666203fcc98fa265cffa1d2438c3c0ca6b9babedf02e4ffc02d1b3ae4" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n876_w3000.jpg", "sha256": "9489fee2abf9848b563c3ca70fa95ab2b12e68f102ac44bc8f3f78f4b3e77c15" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n127_w3000.jpg", "sha256": "231396089b193eeb20e60b724ed06ae542733d04c2f7a6dfd1b8828e8db90643" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n169_w3000.jpg", "sha256": "7bcf27cf68a15f2d5dae646c67b9709d4d5cdd97c3d804d8625cba6a4644d1b1" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n521_w3000.jpg", "sha256": "e59b974bd11daa17f278ba73e20e14d29491706f40de7b257c0936da7c7873d6" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n660_w3000.jpg", "sha256": "c6bb86bb59daf346294dd89fb3ae8967f50b231e2f650ed67c2e0e51be7d8024" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n675_w3000.jpg", "sha256": "c36d4e222ee25a8763c97769e3d96899741e0f749b0957575391727106c3bef9" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n762_w3000.jpg", "sha256": "67630e06c5227aeb7b2726fffe3d4b2003c540f4f710330dc67a10ff0ebba07e" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected high- and medium-frequency ordinary KJV study terms from the remaining missing inventory, excluding personal names, place names, and unsupported OCR candidates. Existing reviewed aliases were checked before adding new spelling or plural relationships.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, and Scripture book names for display, and recorded KJV spelling and plural relationships rather than inventing headwords Webster did not print. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed sense.",
+  "screening_summary": {
+    "reviewed_headwords": 12,
+    "net_new_reviewed_overlays": 12,
+    "verified_lookup_relationships_added": 6,
+    "missing_kjv_forms_resolved": 15,
+    "kjv_occurrences_resolved": 255
+  },
+  "deferred_candidates": [],
+  "promoted_headwords": [
+    "armor",
+    "ax",
+    "baldness",
+    "castle",
+    "fullness",
+    "hanging",
+    "merchant",
+    "music",
+    "savior",
+    "state",
+    "straight",
+    "threshold"
+  ],
+  "verified_lookup_relationships": [
+    { "word": "armour", "lookup_headword": "armor", "kjv_occurrences": 24, "relationship": "KJV spelling mapped to Webster's printed spelling ARMOR" },
+    { "word": "axe", "lookup_headword": "ax", "kjv_occurrences": 11, "relationship": "KJV spelling mapped to Webster's printed spelling AX" },
+    { "word": "fulness", "lookup_headword": "fullness", "kjv_occurrences": 25, "relationship": "KJV spelling mapped to Webster's printed spelling FULLNESS" },
+    { "word": "hangings", "lookup_headword": "hanging", "kjv_occurrences": 18, "relationship": "Plural noun form mapped to Webster's singular HANGING" },
+    { "word": "merchants", "lookup_headword": "merchant", "kjv_occurrences": 29, "relationship": "Plural noun form mapped to Webster's singular MERCHANT" },
+    { "word": "saviour", "lookup_headword": "savior", "kjv_occurrences": 37, "relationship": "KJV spelling mapped to Webster's printed spelling SAVIOR" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "baldness", "kjv_occurrences": 9, "resolution": "Direct lookup resolved from the reviewed BALDNESS headword" },
+    { "word": "castle", "kjv_occurrences": 9, "resolution": "Direct lookup resolved from the reviewed CASTLE headword" },
+    { "word": "castles", "kjv_occurrences": 6, "resolution": "Regular plural resolved from the reviewed CASTLE headword" },
+    { "word": "merchant", "kjv_occurrences": 12, "resolution": "Direct lookup resolved from the reviewed MERCHANT headword" },
+    { "word": "musick", "kjv_occurrences": 16, "resolution": "Existing reviewed KJV spelling alias now resolves to the reviewed MUSIC headword" },
+    { "word": "state", "kjv_occurrences": 14, "resolution": "Direct lookup resolved from the reviewed STATE headword" },
+    { "word": "straight", "kjv_occurrences": 28, "resolution": "Direct lookup resolved from the reviewed STRAIGHT headword" },
+    { "word": "threshold", "kjv_occurrences": 14, "resolution": "Direct lookup resolved from the reviewed THRESHOLD headword" },
+    { "word": "thresholds", "kjv_occurrences": 3, "resolution": "Regular plural resolved from the reviewed THRESHOLD headword" }
+  ],
+  "entries": [
+    { "word": "armour", "lookup_headword": "armor", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 51960, "source_line_end": 51985, "exact_page_heading": "ARM", "exact_entry_heading": "ARMOR", "exact_source_match": true },
+    { "word": "axe", "lookup_headword": "ax", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 61057, "source_line_end": 61068, "exact_page_heading": "AXI", "exact_entry_heading": "AX", "exact_source_match": true },
+    { "word": "baldness", "lookup_headword": "baldness", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 63050, "source_line_end": 63053, "exact_page_heading": "BAL", "exact_entry_heading": "BALD'NESS", "exact_source_match": true },
+    { "word": "castle", "lookup_headword": "castle", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 102862, "source_line_end": 102886, "exact_page_heading": "CAS", "exact_entry_heading": "CAS'TLE", "exact_source_match": true },
+    { "word": "fulness", "lookup_headword": "fullness", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 252496, "source_line_end": 252505, "exact_page_heading": "FUL", "exact_entry_heading": "FULL'NESS", "exact_source_match": true },
+    { "word": "hangings", "lookup_headword": "hanging", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 274792, "source_line_end": 274806, "exact_page_heading": "HAN", "exact_entry_heading": "HANG'ING", "exact_source_match": true },
+    { "word": "merchants", "lookup_headword": "merchant", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 39790, "source_line_end": 39804, "exact_page_heading": "MER", "exact_entry_heading": "MER'CHANT", "exact_source_match": true },
+    { "word": "musick", "lookup_headword": "music", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 54017, "source_line_end": 54052, "exact_page_heading": "MUS", "exact_entry_heading": "MU'SIC", "exact_source_match": true },
+    { "word": "saviour", "lookup_headword": "savior", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 171269, "source_line_end": 171278, "exact_page_heading": "SAV", "exact_entry_heading": "SAVIOR", "exact_source_match": true },
+    { "word": "state", "lookup_headword": "state", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 217932, "source_line_end": 218016, "exact_page_heading": "STA", "exact_entry_heading": "STATE", "exact_source_match": true },
+    { "word": "straight", "lookup_headword": "straight", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 223369, "source_line_end": 223416, "exact_page_heading": "STR", "exact_entry_heading": "STRAIGHT", "exact_source_match": true },
+    { "word": "threshold", "lookup_headword": "threshold", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 252409, "source_line_end": 252426, "exact_page_heading": "THR", "exact_entry_heading": "THRESH'OLD", "exact_source_match": true }
+  ]
+}

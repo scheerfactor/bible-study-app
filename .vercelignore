@@ -2,6 +2,7 @@
 # Keep app code, metadata, and statically imported JSON available to the build.
 
 data/generated/**
+!data/generated/kjv-dictionary-reviewed-aliases.json
 data/library/verified/**
 data/library/needs-review/**
 !data/library/needs-review/ocr-cleanup-queue.json

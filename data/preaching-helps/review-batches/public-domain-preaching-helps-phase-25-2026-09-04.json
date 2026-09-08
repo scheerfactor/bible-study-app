@@ -1,0 +1,50 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-25-2026-09-04",
+  "reviewedAt": "2026-09-04",
+  "purpose": "Add two short quotations on receiving Christ and taking difficulties to God in prayer.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "C. H. Spurgeon",
+    "sourceTitle": "All of Grace",
+    "sourceUrl": "https://archive.org/details/allofgraceearnes00spur",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/all-of-grace-c-h-spurgeon.txt",
+    "rightsBasis": "Cataloged 1886 edition, public domain in the United States. Stored OCR matching does not constitute page-scan verification.",
+    "reviewNote": "Read in context and matched against stored OCR. Page-scan verification pending before publication. Spurgeon's prose, not a Bible quotation; accompanying Scripture must use KJV wording."
+  },
+  "entries": [
+    {
+      "id": "spurgeon-faith-grasps-christ",
+      "type": "Quote",
+      "title": "Faith Receives Christ",
+      "text": "Faith is the hand which grasps. When our hand takes hold of anything for itself, it does precisely what faith does when it appropriates Christ and the blessings of his redemption.",
+      "slideText": "Faith is the hand which grasps.",
+      "sourceLocator": "How May Faith Be Illustrated?, printed page 50",
+      "bibleReferences": [
+        "John 1:12"
+      ],
+      "topics": [
+        "faith",
+        "redemption"
+      ],
+      "recommendedUse": "Illustrate receiving Christ, not earning redemption by the strength of one's faith."
+    },
+    {
+      "id": "spurgeon-difficulty-prayer",
+      "type": "Quote",
+      "title": "Bring the Difficulty to God",
+      "text": "But still, if you have a difficulty, take it before God in prayer.",
+      "slideText": "But still, if you have a difficulty, take it before God in prayer.",
+      "sourceLocator": "The Increase of Faith, printed page 80",
+      "bibleReferences": [
+        "James 1:5"
+      ],
+      "topics": [
+        "prayer",
+        "faith",
+        "wisdom"
+      ],
+      "recommendedUse": "Encourage prayer when seeking understanding, alongside patient study of Scripture."
+    }
+  ]
+}

@@ -161,10 +161,8 @@ for (const file of tskFiles) {
 const tskChapters = new Set(tskRows.map((row) => parseReference(row.verse_ref)?.chapter).filter(Boolean));
 const tskVerses = new Set(tskRows.map((row) => row.verse_ref));
 
-const pageSource = await readFile("src/app/page.tsx", "utf8");
-const immediateImportFiles = new Set(
-  [...pageSource.matchAll(/import hosea\w+Commentary from "\.\.\/\.\.\/data\/imports\/([^"]+)";/g)].map((match) => match[1]),
-);
+const commentaryChapterIndex = await readJson("data/commentary/reports/commentary-chapter-file-index.json", { files: [] });
+const readerConnectedFiles = new Set(commentaryChapterIndex.files ?? []);
 const commentaryFiles = await jsonFiles("data/imports", (name) => name.includes("commentary"));
 const commentarySets = [];
 for (const file of commentaryFiles) {
@@ -177,12 +175,12 @@ for (const file of commentaryFiles) {
     entries: rows.length,
     coveredChapters,
     fullBook: expectedChapters.every((chapter) => coveredChapters.includes(chapter)),
-    immediate: immediateImportFiles.has(path.basename(file)),
+    readerConnected: readerConnectedFiles.has(path.basename(file)),
   });
 }
 
 const fullBookCommentaries = commentarySets.filter((set) => set.fullBook);
-const immediateFullBookCommentaries = fullBookCommentaries.filter((set) => set.immediate);
+const readerConnectedFullBookCommentaries = fullBookCommentaries.filter((set) => set.readerConnected);
 const assertions = {
   kjvChapters: chapters.size === 14,
   kjvVerses: hoseaVerses.length === expectedVerseCount,
@@ -193,7 +191,7 @@ const assertions = {
   crossWireStrongWordMappings: strongsMappingKeys.size >= expectedCrossWireStrongRows,
   strongsLexiconCards: missingLexiconNumbers.length === 0,
   tskEveryChapter: expectedChapters.every((chapter) => tskChapters.has(chapter)),
-  tenImmediateFullBookCommentaries: immediateFullBookCommentaries.length >= 10,
+  tenReaderConnectedFullBookCommentaries: readerConnectedFullBookCommentaries.length >= 10,
 };
 
 const report = {
@@ -226,7 +224,12 @@ const report = {
     missingLexiconNumbers,
   },
   tsk: { chapters: tskChapters.size, sourceVerses: tskVerses.size, rows: tskRows.length },
-  commentary: { sets: commentarySets.length, fullBookSets: fullBookCommentaries.length, immediateFullBookSets: immediateFullBookCommentaries.length, immediate: immediateFullBookCommentaries },
+  commentary: {
+    sets: commentarySets.length,
+    fullBookSets: fullBookCommentaries.length,
+    readerConnectedFullBookSets: readerConnectedFullBookCommentaries.length,
+    readerConnected: readerConnectedFullBookCommentaries,
+  },
 };
 
 const markdown = [
@@ -245,13 +248,13 @@ const markdown = [
   `- Contextual fallback: ${report.webster1828.contextualFallbackEntries.length} ambiguous or dirty Webster matches have verified Easton or reviewed KJV-term help instead.`,
   `- Strong's: ${report.strongs.chapters}/14 chapters, ${report.strongs.verses}/${expectedVerseCount} verses, ${report.strongs.mappedTokenPositions}/${report.strongs.expectedCrossWireStrongRows} CrossWire source-marked word positions, and ${report.strongs.missingLexiconNumbers.length} missing lexicon cards.`,
   `- TSK: ${report.tsk.chapters}/14 chapters, ${report.tsk.sourceVerses}/${expectedVerseCount} source verses, and ${report.tsk.rows} public cross-reference rows.`,
-  `- Commentary: ${report.commentary.immediateFullBookSets} full-book sets load immediately in the app; ${report.commentary.fullBookSets} verified full-book sets exist locally.`,
+  `- Commentary: ${report.commentary.readerConnectedFullBookSets} full-book sets are connected to the chapter-index reader; ${report.commentary.fullBookSets} verified full-book sets exist locally.`,
   "",
-  "## Immediate Full-Book Commentary",
+  "## Reader-Connected Full-Book Commentary",
   "",
   "| Author | Entries | Source file |",
   "| --- | ---: | --- |",
-  ...report.commentary.immediate.map((set) => `| ${set.author} | ${set.entries} | ${set.file} |`),
+  ...report.commentary.readerConnected.map((set) => `| ${set.author} | ${set.entries} | ${set.file} |`),
   "",
   "## Remaining Webster Gaps",
   "",
@@ -288,7 +291,7 @@ console.table({
   strongs_verses: report.strongs.verses,
   tsk_chapters: report.tsk.chapters,
   tsk_source_verses: report.tsk.sourceVerses,
-  immediate_commentaries: report.commentary.immediateFullBookSets,
+  reader_connected_commentaries: report.commentary.readerConnectedFullBookSets,
 });
 
 if (!Object.values(assertions).every(Boolean)) process.exitCode = 1;

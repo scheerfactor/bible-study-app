@@ -1,0 +1,119 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-24-2026-09-04",
+  "reviewedAt": "2026-09-04",
+  "purpose": "Add four source-exact quotations and two illustrative analogies on grace and faith.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "C. H. Spurgeon",
+    "sourceTitle": "All of Grace",
+    "sourceUrl": "https://archive.org/details/allofgraceearnes00spur",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/all-of-grace-c-h-spurgeon.txt",
+    "rightsBasis": "The cataloged 1886 edition is public domain in the United States. Excerpts match the stored OCR after whitespace normalization; page-scan verification is pending.",
+    "reviewNote": "Checked in the surrounding stored OCR text. This is Spurgeon's prose, not a Scripture quotation. Verify against page images before publication; quote accompanying Scripture in KJV wording only."
+  },
+  "entries": [
+    {
+      "id": "spurgeon-grace-moving-cause",
+      "type": "Quote",
+      "title": "Grace: The Source of Salvation",
+      "text": "Grace is the first and last moving cause of salvation; and faith, essential as it is, is only an important part of the machinery which grace employs.",
+      "slideText": "Grace is the first and last moving cause of salvation; and faith, essential as it is, is only an important part of the machinery which grace employs.",
+      "sourceLocator": "By Grace Through Faith, printed page 42",
+      "bibleReferences": [
+        "Ephesians 2:8-9"
+      ],
+      "topics": [
+        "grace",
+        "salvation"
+      ],
+      "recommendedUse": "Explain the distinction between the source of salvation and the means of receiving it."
+    },
+    {
+      "id": "spurgeon-power-in-god",
+      "type": "Quote",
+      "title": "The One Upon Whom Faith Relies",
+      "text": "By faith all things become possible to us; yet the power is not in the faith, but in the God upon whom faith relies.",
+      "slideText": "By faith all things become possible to us; yet the power is not in the faith, but in the God upon whom faith relies.",
+      "sourceLocator": "By Grace Through Faith, printed page 43",
+      "bibleReferences": [
+        "Mark 9:23",
+        "Hebrews 12:2"
+      ],
+      "topics": [
+        "faith",
+        "trust"
+      ],
+      "recommendedUse": "Emphasize faith's object, not confidence in one's own strength of belief."
+    },
+    {
+      "id": "spurgeon-faith-expects-promise",
+      "type": "Quote",
+      "title": "Trusting What Christ Promises",
+      "text": "Faith is believing that Christ is what he is said to be, and that he will do what he has promised to do, and then to expect this of him.",
+      "slideText": "Faith is believing that Christ is what he is said to be, and that he will do what he has promised to do, and then to expect this of him.",
+      "sourceLocator": "Faith, What Is It?, printed page 47",
+      "bibleReferences": [
+        "Romans 4:20-21"
+      ],
+      "topics": [
+        "faith",
+        "promises"
+      ],
+      "recommendedUse": "Introduce trust in Christ's revealed identity and promises, not promises invented by the speaker."
+    },
+    {
+      "id": "spurgeon-trust-obedience",
+      "type": "Quote",
+      "title": "Prove Your Trust",
+      "text": "Trust Jesus, and prove your trust by doing whatever he bids you.",
+      "slideText": "Trust Jesus, and prove your trust by doing whatever he bids you.",
+      "sourceLocator": "How May Faith Be Illustrated?, printed page 56",
+      "bibleReferences": [
+        "John 14:15",
+        "James 2:18"
+      ],
+      "topics": [
+        "obedience",
+        "discipleship"
+      ],
+      "recommendedUse": "Present obedience as the expression of trust, alongside the chapter's teaching about grace."
+    },
+    {
+      "id": "spurgeon-trembling-hand-gift",
+      "type": "Illustration",
+      "title": "A Trembling Hand Can Receive",
+      "text": "See then, dear friend, that the weakness of your faith will not destroy you. A trembling hand may receive a golden gift.",
+      "slideText": "See then, dear friend, that the weakness of your faith will not destroy you. A trembling hand may receive a golden gift.",
+      "sourceLocator": "By Grace Through Faith, printed page 43",
+      "bibleReferences": [
+        "Mark 9:24",
+        "Ephesians 2:8"
+      ],
+      "topics": [
+        "assurance",
+        "weakness",
+        "grace"
+      ],
+      "recommendedUse": "Use Spurgeon's brief gift metaphor to encourage a struggling believer; this is an analogy, not a reported historical event."
+    },
+    {
+      "id": "spurgeon-child-hand-apple",
+      "type": "Illustration",
+      "title": "The Hand Does Not Make the Gift",
+      "text": "What the child’s hand is to the apple, that your faith is to the perfect salvation of Christ. The child’s hand does not make the apple, nor improve the apple, nor deserve the apple; it only takes it; and faith is chosen by God to be the receiver of salvation, because it does not pretend to create salvation, nor to help in it, but it is content humbly to receive it.",
+      "slideText": "What the child’s hand is to the apple, that your faith is to the perfect salvation of Christ. The child’s hand does not make the apple, nor improve the apple, nor deserve the apple; it only takes it; and faith is chosen by God to be the receiver of salvation, because it does not pretend to create salvation, nor to help in it, but it is content humbly to receive it.",
+      "sourceLocator": "Why Are We Saved by Faith?, printed page 59",
+      "bibleReferences": [
+        "Ephesians 2:8-9",
+        "Romans 3:24"
+      ],
+      "topics": [
+        "salvation",
+        "grace",
+        "faith"
+      ],
+      "recommendedUse": "Use the offered-apple analogy to distinguish receiving salvation from earning it; not a factual anecdote."
+    }
+  ]
+}

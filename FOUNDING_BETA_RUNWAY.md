@@ -2,6 +2,8 @@
 
 Working target: Thursday, April 15, 2027 at 7:00 PM Eastern
 
+Founding-beta funding target: $50,000. This is the midpoint of the current $25,000-$75,000 founder-led first-year planning range. It is a runway estimate, not a forecast or promise. The public tracker counts verified contributions only.
+
 This is a prayerful target for a founding free public beta. It is not a promise to ship an unfinished product, and it is not a promise that every future library, media, radio, presentation, or storefront idea will be present on day one.
 
 ## Launch Floor

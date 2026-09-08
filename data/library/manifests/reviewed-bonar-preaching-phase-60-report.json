@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-bonar-preaching-phase-60.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Family Sermons",
+      "file": "family-sermons-horatius-bonar.txt",
+      "bytes": 810288,
+      "words": 129986,
+      "reading_time_minutes": 578
+    },
+    {
+      "title": "Earth's Morning: Thoughts on Genesis",
+      "file": "earth-s-morning-thoughts-on-genesis-horatius-bonar.txt",
+      "bytes": 676377,
+      "words": 125965,
+      "reading_time_minutes": 560
+    },
+    {
+      "title": "Words to the Winners of Souls",
+      "file": "words-to-the-winners-of-souls-horatius-bonar.txt",
+      "bytes": 110270,
+      "words": 17175,
+      "reading_time_minutes": 76
+    },
+    {
+      "title": "Words Old and New: Gems from the Christian Authorship of All Ages",
+      "file": "words-old-and-new-gems-from-the-christian-authorship-of-all-ages-horatius-bonar-editor.txt",
+      "bytes": 551656,
+      "words": 88018,
+      "reading_time_minutes": 391
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Family Sermons",
+      "author": "Horatius Bonar",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/family-sermons-horatius-bonar.txt"
+    },
+    {
+      "row": 3,
+      "title": "Earth's Morning: Thoughts on Genesis",
+      "author": "Horatius Bonar",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/earth-s-morning-thoughts-on-genesis-horatius-bonar.txt"
+    },
+    {
+      "row": 4,
+      "title": "Words to the Winners of Souls",
+      "author": "Horatius Bonar",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/words-to-the-winners-of-souls-horatius-bonar.txt"
+    },
+    {
+      "row": 5,
+      "title": "Words Old and New: Gems from the Christian Authorship of All Ages",
+      "author": "Horatius Bonar, editor",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/words-old-and-new-gems-from-the-christian-authorship-of-all-ages-horatius-bonar-editor.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

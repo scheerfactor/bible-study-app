@@ -141,3 +141,30 @@ http://apod.nasa.gov/apod/ap150314.html
 - Credit: Created for Father's Business Bible Study
 - Recommended use: Lord's supper, remembrance, worship, reverent reflection, and church service slides.
 - Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
+
+## Sinai Wilderness - photos/sinai-wilderness.jpg
+- Slot: `sinai-wilderness`
+- Final prompt: photorealistic Sinai wilderness and distant linen tabernacle encampment at early morning, scenery on the right, dark text space on the left, no text, modern objects, visible people, divine figure, or fantasy effects.
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
+- Recommended use: Exodus, Leviticus, Numbers, Deuteronomy, wilderness, covenant, testing, tabernacle, and guidance slides.
+- Optimization: 1600x900 JPEG stored locally with a reserved left-side Scripture text zone.
+
+## Ancient Jerusalem - photos/ancient-jerusalem.jpg
+- Slot: `ancient-jerusalem`
+- Final prompt: historically plausible ancient limestone Jerusalem at dawn, city on the right, dark text space on the left, no text, modern skyline, domes, crosses, visible people, divine figure, or fantasy effects.
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
+- Recommended use: Kings, Chronicles, Ezra, Nehemiah, Jerusalem Psalms, prophets, and Gospel settings.
+- Optimization: 1600x900 JPEG stored locally with a reserved left-side Scripture text zone.
+
+## Mediterranean Passage - photos/mediterranean-passage.jpg
+- Slot: `mediterranean-passage`
+- Final prompt: natural ancient Mediterranean storm beginning to clear with one distant wooden sailing vessel on the right, dark text space on the left, no text, modern vessel, visible people, sea monster, divine figure, or fantasy effects.
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
+- Recommended use: Jonah, Gospel sea crossings, storms, missions, and Paul's journeys.
+- Optimization: 1600x900 JPEG stored locally with a reserved left-side Scripture text zone.

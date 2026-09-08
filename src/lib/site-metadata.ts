@@ -1,4 +1,4 @@
-const FALLBACK_PUBLIC_SITE_URL = "https://bible-study-app-eight.vercel.app";
+const FALLBACK_PUBLIC_SITE_URL = "https://study.fathersbusinessmasteryresources.com";
 
 function resolvePublicSiteUrl() {
   try {
@@ -12,6 +12,7 @@ export const publicSiteUrl = resolvePublicSiteUrl();
 export const siteName = "Father's Business Bible Study";
 export const siteDescription =
   "KJV-first Bible reading, trusted study tools, reviewed public-domain books, and connected teaching preparation.";
+export const brandMark = "/brand/fathers-business-bible-study-mark.png";
 export const socialPreviewImage = {
   url: "/launch/bible-study-desk-hero.jpg",
   width: 1672,

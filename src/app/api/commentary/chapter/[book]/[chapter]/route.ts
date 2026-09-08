@@ -1,6 +1,22 @@
 import { NextResponse } from "next/server";
 import { commentaryChapterIndex } from "@/lib/commentary-chapter-index";
 import { readTextContent } from "@/lib/server-content-storage";
+import spurgeonGospelKingdomRows from "../../../../../../../data/imports/spurgeon-reviewed-gospel-kingdom-matthew-commentary.json";
+import andrewMurrayHoliestRows from "../../../../../../../data/imports/andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json";
+import ironsideExpositionPhaseTwoRows from "../../../../../../../data/imports/h-a-ironside-exposition-phase-2-commentary.json";
+import ironsidePhilippiansRows from "../../../../../../../data/imports/h-a-ironside-reviewed-philippians-commentary.json";
+import ironsideColossiansRows from "../../../../../../../data/imports/h-a-ironside-reviewed-colossians-commentary.json";
+import ironsideRomansRows from "../../../../../../../data/imports/h-a-ironside-reviewed-romans-commentary.json";
+import georgeClarkJohnRows from "../../../../../../../data/imports/george-w-clark-reviewed-john-commentary.json";
+import josephAlexanderMarkRows from "../../../../../../../data/imports/joseph-addison-alexander-reviewed-mark-commentary.json";
+import gaebeleinActsRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-acts-commentary.json";
+import gaebeleinMatthewRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-matthew-commentary.json";
+import gaebeleinRevelationRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-revelation-commentary.json";
+import gaebeleinDanielRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-daniel-commentary.json";
+import gaebeleinJoelRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-joel-commentary.json";
+import ironsideEstherRows from "../../../../../../../data/imports/h-a-ironside-reviewed-esther-commentary.json";
+import gaebeleinGenesisRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-genesis-commentary.json";
+import gaebeleinEzekielRows from "../../../../../../../data/imports/a-c-gaebelein-reviewed-ezekiel-commentary.json";
 
 type CommentaryRow = {
   book?: unknown;
@@ -16,6 +32,55 @@ const commentaryBookIndexAliases: Record<string, string> = {
 async function readCommentaryRows(fileName: string) {
   if (!publicCommentaryFilePattern.test(fileName)) {
     throw new Error(`Invalid indexed commentary file: ${fileName}`);
+  }
+
+  if (fileName === "spurgeon-reviewed-gospel-kingdom-matthew-commentary.json") {
+    return spurgeonGospelKingdomRows as CommentaryRow[];
+  }
+  if (fileName === "andrew-murray-reviewed-holiest-of-all-hebrews-commentary.json") {
+    return andrewMurrayHoliestRows as CommentaryRow[];
+  }
+  if (fileName === "h-a-ironside-exposition-phase-2-commentary.json") {
+    return ironsideExpositionPhaseTwoRows as CommentaryRow[];
+  }
+  if (fileName === "h-a-ironside-reviewed-philippians-commentary.json") {
+    return ironsidePhilippiansRows as CommentaryRow[];
+  }
+  if (fileName === "h-a-ironside-reviewed-colossians-commentary.json") {
+    return ironsideColossiansRows as CommentaryRow[];
+  }
+  if (fileName === "h-a-ironside-reviewed-romans-commentary.json") {
+    return ironsideRomansRows as CommentaryRow[];
+  }
+  if (fileName === "george-w-clark-reviewed-john-commentary.json") {
+    return georgeClarkJohnRows as CommentaryRow[];
+  }
+  if (fileName === "joseph-addison-alexander-reviewed-mark-commentary.json") {
+    return josephAlexanderMarkRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-acts-commentary.json") {
+    return gaebeleinActsRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-matthew-commentary.json") {
+    return gaebeleinMatthewRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-revelation-commentary.json") {
+    return gaebeleinRevelationRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-daniel-commentary.json") {
+    return gaebeleinDanielRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-joel-commentary.json") {
+    return gaebeleinJoelRows as CommentaryRow[];
+  }
+  if (fileName === "h-a-ironside-reviewed-esther-commentary.json") {
+    return ironsideEstherRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-genesis-commentary.json") {
+    return gaebeleinGenesisRows as CommentaryRow[];
+  }
+  if (fileName === "a-c-gaebelein-reviewed-ezekiel-commentary.json") {
+    return gaebeleinEzekielRows as CommentaryRow[];
   }
 
   const raw = await readTextContent(["data", "imports", fileName], {

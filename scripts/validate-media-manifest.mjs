@@ -4,6 +4,9 @@ import { readFile } from "node:fs/promises";
 const manifestPath = process.argv[2] || "data/media/manifests/media-intake-candidates.json";
 const audiobookPilotPath = process.argv[3] || "data/media/manifests/audiobook-pilots.json";
 const uploadedPilotPath = process.argv[4] || "data/media/manifests/uploaded-public-domain-audio-pilots.json";
+const publicBibleAudioReleasePath = "data/media/manifests/public-bible-audio-release.json";
+const publicSermonAudioReleasePath = "data/media/manifests/public-sermon-audio-release.json";
+const sermonAudioStudyIndexPath = "data/media/manifests/sermon-audio-study-index.json";
 
 const allowedKinds = new Set(["Audiobook", "Sermon Audio", "Sermon Video", "Teaching Series", "Bible Audio"]);
 const allowedRightsStatuses = new Set([
@@ -167,8 +170,13 @@ records.forEach((record, index) => {
 
     if (record.passageIndexed === true) {
       for (const field of ["passage", "passageEvidenceUrl"]) requireField(record, index, field);
-      if (!String(record.passageEvidenceUrl).startsWith("https://ttb.org/") && !String(record.passageEvidenceUrl).startsWith("https://www.ttb.org/")) {
-        errors.push(`record ${index + 1}: passage-indexed TTB sermon must cite an official TTB passage source`);
+      const passageEvidenceUrl = String(record.passageEvidenceUrl);
+      if (
+        !passageEvidenceUrl.startsWith("https://ttb.org/")
+        && !passageEvidenceUrl.startsWith("https://www.ttb.org/")
+        && !passageEvidenceUrl.startsWith("https://cmp.thruthebible.io/")
+      ) {
+        errors.push(`record ${index + 1}: passage-indexed TTB sermon must cite an official TTB page or feed`);
       }
     }
   }
@@ -411,6 +419,78 @@ async function validateUploadedAudioPilots() {
 
 const uploadedAudioSummary = await validateUploadedAudioPilots();
 
+async function validatePublicBibleAudioRelease() {
+  const [releaseRaw, uploadedRaw] = await Promise.all([
+    readFile(publicBibleAudioReleasePath, "utf8"),
+    readFile(uploadedPilotPath, "utf8"),
+  ]);
+  const releaseIds = JSON.parse(releaseRaw);
+  const uploadedPilots = JSON.parse(uploadedRaw);
+
+  if (!Array.isArray(releaseIds)) {
+    errors.push("Public Bible audio release manifest must be a JSON array.");
+    return { releaseCount: 0 };
+  }
+
+  const uploadedById = new Map(uploadedPilots.map((pilot) => [pilot.id, pilot]));
+  const seenReleaseIds = new Set();
+  for (const id of releaseIds) {
+    if (seenReleaseIds.has(id)) errors.push(`public Bible audio release: duplicate id ${id}`);
+    seenReleaseIds.add(id);
+    const pilot = uploadedById.get(id);
+    if (!pilot) {
+      errors.push(`public Bible audio release: unknown uploaded pilot ${id}`);
+      continue;
+    }
+    if (pilot.kind !== "Bible Audio") errors.push(`public Bible audio release: ${id} is not Bible Audio`);
+    if (!String(pilot.rightsStatus ?? "").startsWith("Public Domain")) {
+      errors.push(`public Bible audio release: ${id} does not retain Public Domain rights status`);
+    }
+    if (!isValidUrl(pilot.publicUrl)) errors.push(`public Bible audio release: ${id} has no valid public URL`);
+  }
+
+  return { releaseCount: releaseIds.length };
+}
+
+const publicBibleAudioSummary = await validatePublicBibleAudioRelease();
+
+async function validateSermonAudioStudyIndex() {
+  const [releaseRaw, studyIndexRaw] = await Promise.all([
+    readFile(publicSermonAudioReleasePath, "utf8"),
+    readFile(sermonAudioStudyIndexPath, "utf8"),
+  ]);
+  const releaseIds = JSON.parse(releaseRaw);
+  const studyEntries = JSON.parse(studyIndexRaw);
+  if (!Array.isArray(releaseIds) || !Array.isArray(studyEntries)) {
+    errors.push("Sermon audio release and study index manifests must be JSON arrays.");
+    return { releaseCount: 0, indexedCount: 0 };
+  }
+
+  const releaseIdSet = new Set(releaseIds);
+  const seenStudyIds = new Set();
+  for (const [index, entry] of studyEntries.entries()) {
+    const label = `sermon audio study index ${index + 1}`;
+    if (!String(entry.id ?? "").trim()) errors.push(`${label}: missing id`);
+    if (seenStudyIds.has(entry.id)) errors.push(`${label}: duplicate id ${entry.id}`);
+    seenStudyIds.add(entry.id);
+    if (!releaseIdSet.has(entry.id)) errors.push(`${label}: ${entry.id} is not in the public sermon release manifest`);
+    if (!/^([1-3] )?[A-Za-z]+(?: [A-Za-z]+)* \d+:\d+$/.test(String(entry.bibleRef ?? ""))) {
+      errors.push(`${label}: bibleRef must be one exact Bible verse reference`);
+    }
+    if (!String(entry.passage ?? "").trim()) errors.push(`${label}: missing passage`);
+    if (!Array.isArray(entry.topics) || entry.topics.length < 1 || entry.topics.some((topic) => !String(topic).trim())) {
+      errors.push(`${label}: topics must contain at least one non-empty topic`);
+    }
+    if (!String(entry.summary ?? "").trim()) errors.push(`${label}: missing summary`);
+  }
+  for (const id of releaseIds) {
+    if (!seenStudyIds.has(id)) errors.push(`sermon audio study index: missing released sermon ${id}`);
+  }
+  return { releaseCount: releaseIds.length, indexedCount: studyEntries.length };
+}
+
+const sermonAudioStudySummary = await validateSermonAudioStudyIndex();
+
 console.log("Media manifest validation summary");
 console.table({
   records: records.length,
@@ -421,6 +501,9 @@ console.table({
   audio_chapter_markers: uploadedAudioSummary.chapterMarkerCount,
   estimated_audio_markers: uploadedAudioSummary.estimatedChapterMarkerCount,
   verified_audio_markers: uploadedAudioSummary.verifiedChapterMarkerCount,
+  public_bible_audio_files: publicBibleAudioSummary.releaseCount,
+  public_sermon_audio_files: sermonAudioStudySummary.releaseCount,
+  scripture_indexed_sermons: sermonAudioStudySummary.indexedCount,
   errors: errors.length,
   warnings: warnings.length,
   public_ready: records.filter((record) => publicReadyStatuses.has(record.intakeStatus)).length,

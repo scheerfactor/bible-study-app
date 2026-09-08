@@ -40,6 +40,8 @@ This app is in private beta. These limitations should be visible, expected, and 
 - Sermon slide builder is a beta MVP. It supports slide creation, preview, presenter mode, and PowerPoint export, but should still be tested carefully before Sunday use.
 - Print/save-as-PDF fallback is available, but full PDF export, Keynote export, Proclaim-specific export, and full presentation replacement workflows are not complete.
 - Remote control should be tested on the actual church network before service.
+- The authenticated presentation-control RPC is prepared but its migration must be deployed and verified before shared control is treated as live-ready.
+- Live presentation views request Screen Wake Lock and reacquire it after the tab returns to the foreground. Browsers or device policies that reject Wake Lock still require Auto-Lock to be disabled manually.
 - Public personal uploads.
 - Church management, messaging, social features, and member directories.
 - Full licensed audiobook or Bible audio hosting.

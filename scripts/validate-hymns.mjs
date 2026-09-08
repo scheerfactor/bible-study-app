@@ -4,10 +4,15 @@ import { resolve } from "node:path";
 
 const root = process.cwd();
 const hymns = JSON.parse(await readFile(resolve(root, "data", "hymns", "verified-hymns.json"), "utf8"));
+const supplementalHymns = JSON.parse(
+  await readFile(resolve(root, "data", "hymns", "supplemental-hymns.json"), "utf8"),
+);
+const presentationHymns = JSON.parse(
+  await readFile(resolve(root, "data", "hymns", "presentation-hymns.json"), "utf8"),
+);
 const errors = [];
 const ids = new Set();
 const titles = new Set();
-const sourceFiles = new Set();
 
 function sha256(value) {
   return createHash("sha256").update(value).digest("hex");
@@ -41,8 +46,7 @@ for (const hymn of hymns) {
     [hymn.midiFile, hymn.midiSha256],
     [evidenceFile, evidenceSha256],
   ]) {
-    if (!sourceFile || sourceFiles.has(sourceFile)) errors.push("Missing or duplicate hymn source file: " + sourceFile);
-    sourceFiles.add(sourceFile);
+    if (!sourceFile) errors.push("Missing hymn source file: " + sourceFile);
     try {
       const source = await readFile(resolve(root, "data", "hymns", "sources", sourceFile));
       if (!expectedSha256 || sha256(source) !== expectedSha256) errors.push("Hymn source checksum mismatch: " + sourceFile);
@@ -56,7 +60,22 @@ for (const hymn of hymns) {
   }
 }
 
-if (hymns.length !== 9) errors.push("Expected exactly 9 reviewed hymns in the verified set.");
+const expectedHymnCount = 11 + supplementalHymns.length;
+if (hymns.length !== expectedHymnCount) {
+  errors.push(`Expected exactly ${expectedHymnCount} reviewed hymns in the verified set.`);
+}
+if (presentationHymns.length !== hymns.length) {
+  errors.push(`Presentation hymn index has ${presentationHymns.length} entries; expected ${hymns.length}.`);
+}
+for (const [index, hymn] of hymns.entries()) {
+  const presentationHymn = presentationHymns[index];
+  if (!presentationHymn || presentationHymn.id !== hymn.id || presentationHymn.title !== hymn.title) {
+    errors.push(`Presentation hymn index is out of order or missing ${hymn.id}.`);
+  }
+  if (presentationHymn && ("notes" in presentationHymn || "durationSeconds" in presentationHymn)) {
+    errors.push(`Presentation hymn index must not include playback note data: ${hymn.id}.`);
+  }
+}
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

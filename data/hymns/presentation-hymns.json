@@ -1,0 +1,2477 @@
+[
+  {
+    "id": "amazing-grace",
+    "title": "Amazing Grace",
+    "lyricist": "John Newton",
+    "lyricYear": 1779,
+    "tune": "New Britain",
+    "scriptureReferences": [
+      "1 Chronicles 17:16-17",
+      "Ephesians 2:8-9"
+    ],
+    "stanzas": [
+      "Amazing grace! (how sweet the sound!)\nThat saved a wretch like me!\nI once was lost, but now am found,—\nWas blind, but now I see.",
+      "'Twas grace that taught my heart to fear,\nAnd grace my fears relieved;\nHow precious did that grace appear\nThe hour I first believed!",
+      "Through many dangers, toils, and snares.\nI have already come;\n'Tis grace has brought me safe thus far,\nAnd grace will lead me home.",
+      "The Lord has promised good to me,—\nHis word my hope secures;\nHe will my shield and portion be\nAs long as life endures.",
+      "Yes, when this flesh and heart shall fail,\nAnd mortal life shall cease,\nI shall possess, within the veil,\nA life of joy and peace.",
+      "The earth shall soon dissolve like snow,\nThe sun forbear to shine;\nBut God, who call'd me here below,\nWill be for ever mine."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://en.wikisource.org/wiki/Amazing_Grace",
+    "textRights": "Public domain; text checked against the validated 1840 Olney Hymns edition.",
+    "midiFile": "amazing-grace.mid",
+    "midiSha256": "cc4cbec98afe0776d35e26333103e0bab7e7b078f2928c96022e0f42bd2a10f5",
+    "rdfFile": "amazing-grace.rdf",
+    "rdfSha256": "2d405cc5c2cd4298ecbca8be30431910aa293a0c2b9e7c8bf93ef8a50e5c0240",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/Traditional/amazing-mutopia/",
+    "musicRights": "Creative Commons Attribution-ShareAlike 3.0",
+    "musicAttribution": "Traditional tune; arrangement by Breizh Partitions, typeset 2012 for the Mutopia Project.",
+    "reviewedAt": "2026-08-14"
+  },
+  {
+    "id": "blessed-assurance",
+    "title": "Blessed Assurance",
+    "lyricist": "Fanny J. Crosby",
+    "lyricYear": 1873,
+    "tune": "Assurance",
+    "scriptureReferences": [
+      "Romans 8:16-17",
+      "Titus 2:13",
+      "Hebrews 10:19-22"
+    ],
+    "stanzas": [
+      "Blessed assurance,--Jesus is mine!\nOh, what a foretaste of glory divine!\nHeir of salvation, purchase of God,\nBorn of His Spirit, washed in His blood.",
+      "Perfect submission, perfect delight,\nVisions of rapture now burst on my sight;\nAngels, descending, bring from above\nEchoes of mercy, whispers of love.",
+      "Perfect submission, all is at rest,\nI in my Savior am happy and blest;\nWatching and waiting, looking above,\nFilled with His goodness, lost in His love."
+    ],
+    "refrain": "This is my story, this is my song,\nPraising my Savior all the day long;\nThis is my story, this is my song,\nPraising my Savior all the day long.",
+    "textSourceUrl": "https://hymnary.org/hymn/HFCH1928/333",
+    "textRights": "Public domain; text checked line by line against Hymnal for Church and Home (2nd ed., 1928), hymn 333.",
+    "midiFile": "blessed_assurance.mid",
+    "midiSha256": "e3bc4a614cb3fbc58314fa9e9b7dd38de59ae0706b85e826b716817dd9ad4c2b",
+    "rdfFile": "blessed_assurance.rdf",
+    "rdfSha256": "7710224f831ca3bf62f310225ea27a9486146200d31e11dea74a287d595d9a93",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/KnappPP/blessed_assurance/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Tune by Phoebe P. Knapp, 1873; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    "reviewedAt": "2026-08-15"
+  },
+  {
+    "id": "pass-me-not-o-gentle-savior",
+    "title": "Pass Me Not, O Gentle Savior",
+    "lyricist": "Fanny J. Crosby",
+    "lyricYear": 1868,
+    "tune": "Pass Me Not",
+    "scriptureReferences": [
+      "Mark 10:46-52",
+      "Hebrews 4:15-16",
+      "Psalm 73:25-26"
+    ],
+    "stanzas": [
+      "Pass me not, O gentle Savior,\nHear my humble cry;\nWhile on others Thou art calling,\nDo not pass me by.",
+      "Let me at a throne of mercy\nFind a sweet relief;\nKneeling there in deep contrition,\nHelp my unbelief.",
+      "Trusting only in Thy merit,\nWould I seek Thy face;\nHeal my wounded, broken spirit,\nSave me by Thy grace.",
+      "Thou the Spring of all my comfort,\nMore than life to me,\nWhom have I on earth beside Thee?\nWhom in heav'n but Thee?"
+    ],
+    "refrain": "Savior, Savior,\nHear my humble cry;\nWhile on others Thou art calling,\nDo not pass me by.",
+    "textSourceUrl": "https://hymnary.org/hymn/NCH1929/212",
+    "textRights": "Public domain; text checked line by line against The New Christian Hymnal (1929), hymn 212.",
+    "midiFile": "pass-me-not.mid",
+    "midiSha256": "e5c13fb7802f5a07ead41c693e0d6d8ed021dde28424d6e573db933f5e583143",
+    "rightsEvidenceFile": "pass-me-not-wikimedia.json",
+    "rightsEvidenceSha256": "ada053b746e2db6c67ea48f5b87ce6cc77c252c35c8023f14abb77aa352b037e",
+    "rightsEvidenceMarker": "Creative Commons Zero, Public Domain Dedication",
+    "musicSourceUrl": "https://commons.wikimedia.org/wiki/File:Pass_me_not,_o_gentle_Saviour.mid",
+    "musicRights": "CC0 1.0 Universal Public Domain Dedication",
+    "musicAttribution": "Tune by William H. Doane, 1870; MIDI setting and sound file by Peter Gerloff (Rabanus Flavus), dedicated to the public domain under CC0 1.0.",
+    "reviewedAt": "2026-08-16"
+  },
+  {
+    "id": "fairest-lord-jesus",
+    "title": "Fairest Lord Jesus",
+    "lyricist": "Joseph A. Seiss, translator",
+    "lyricYear": 1873,
+    "tune": "Crusader's Hymn",
+    "scriptureReferences": [
+      "Colossians 1:16-17",
+      "Revelation 5:12-13"
+    ],
+    "stanzas": [
+      "Fairest Lord Jesus,\nRuler of all nature,\nO Thou of God and man the Son,\nThee will I cherish, Thee will I honor,\nThou, my soul's glory, joy, and crown.",
+      "Fair are the meadows,\nFairer still the woodlands,\nRobed in the blooming garb of spring;\nJesus is fairer, Jesus is purer,\nWho makes the woeful heart to sing.",
+      "Fair is the sunshine,\nFairer still the moonlight,\nAnd all the twinkling starry host;\nJesus shines brighter, Jesus shines purer\nThan all the angels Heav'n can boast.",
+      "All fairest beauty, heavenly and earthly,\nWondrously, Jesus, is found in Thee;\nNone can be nearer, fairer or dearer,\nThan Thou, my Savior, art to me.",
+      "Beautiful Savior! Lord of all the nations!\nSon of God and Son of Man!\nGlory and honor, praise, adoration,\nNow and for evermore be Thine."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://hymnary.org/media/fetch/109275",
+    "textRights": "Public domain; text checked against the Hymnary/Cyber Hymnal public-domain sheet.",
+    "midiFile": "fairest-lord-jesus.mid",
+    "midiSha256": "4f0a4d20d66dbe9c65711decd3a5a372bcff8b465aa87a3f3a3851a3c8541d2b",
+    "rdfFile": "fairest-lord-jesus.rdf",
+    "rdfSha256": "ee17c6ac5e8f8a5c2ed17fcfa583f39fdc9f3ae434f08cdd8ffe3d5843f837cb",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/Traditional/crusaders_hymn/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Traditional Silesian tune; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    "reviewedAt": "2026-08-14"
+  },
+  {
+    "id": "this-is-my-fathers-world",
+    "title": "This Is My Father's World",
+    "lyricist": "Maltbie D. Babcock",
+    "lyricYear": 1901,
+    "tune": "Terra Beata",
+    "scriptureReferences": [
+      "Psalm 24:1",
+      "Psalm 96:11-12"
+    ],
+    "stanzas": [
+      "This is my Father's world, and to my listening ears\nAll nature sings, and round me rings the music of the spheres.\nThis is my Father's world: I rest me in the thought\nOf rocks and trees, of skies and seas;\nHis hand the wonders wrought.",
+      "This is my Father's world, the birds their carols raise,\nThe morning light, the lily white, declare their Maker's praise.\nThis is my Father's world: He shines in all that's fair;\nIn the rustling grass I hear Him pass;\nHe speaks to me everywhere.",
+      "This is my Father's world. O let me ne'er forget\nThat though the wrong seems oft so strong, God is the ruler yet.\nThis is my Father's world: the battle is not done:\nJesus Who died shall be satisfied,\nAnd earth and Heav'n be one.",
+      "This is my Father's world, dreaming, I see His face.\nI ope my eyes, and in glad surprise cry, “The Lord is in this place.”\nThis is my Father's world, from the shining courts above,\nThe Beloved One, His Only Son,\nCame—a pledge of deathless love.",
+      "This is my Father's world, should my heart be ever sad?\nThe lord is King—let the heavens ring. God reigns—let the earth be glad.\nThis is my Father's world. Now closer to Heaven bound,\nFor dear to God is the earth Christ trod.\nNo place but is holy ground.",
+      "This is my Father's world. I walk a desert lone.\nIn a bush ablaze to my wondering gaze God makes His glory known.\nThis is my Father's world, a wanderer I may roam\nWhate'er my lot, it matters not,\nMy heart is still at home."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://en.wikisource.org/wiki/This_is_my_Father%E2%80%99s_World",
+    "textRights": "Public domain worldwide; text checked against the 1901 text.",
+    "midiFile": "this-is-my-fathers-world.mid",
+    "midiSha256": "99f1e0d54e69197982e58edb2fcec341599e910fd0c9b9b8dc533c2415cf9409",
+    "rdfFile": "this-is-my-fathers-world.rdf",
+    "rdfSha256": "d5522c650b59e9b63fb6653423711578695ff986b7702bc023809d98a435d0ca",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/Traditional/terra_beata/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Traditional tune; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    "reviewedAt": "2026-08-14"
+  },
+  {
+    "id": "o-god-our-help-in-ages-past",
+    "title": "O God, Our Help in Ages Past",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1719,
+    "tune": "St. Anne",
+    "scriptureReferences": [
+      "Psalm 90:1-4",
+      "Psalm 90:12"
+    ],
+    "stanzas": [
+      "O God, our help in ages past,\nOur hope for years to come,\nOur shelter from the stormy blast,\nAnd our eternal home.",
+      "Under the shadow of Thy throne\nThy saints have dwelt secure;\nSufficient is Thine arm alone,\nAnd our defence is sure.",
+      "Before the hills in order stood,\nOr earth received her frame,\nFrom everlasting Thou art God,\nTo endless years the same.",
+      "A thousand ages in Thy sight\nAre like an evening gone;\nShort as the watch that ends the night\nBefore the rising sun.",
+      "Time, like an ever-rolling stream,\nBears all its sons away;\nThey fly forgotten, as a dream\nDies at the opening day.",
+      "O God, our help in ages past,\nOur hope for years to come,\nBe Thou our guard while life shall last,\nAnd our eternal home."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://en.wikisource.org/wiki/The_Canadian_Soldiers%27_Song_Book/O_God%2C_Our_Help_in_Ages_Past",
+    "textRights": "Public domain; text checked line by line against The Canadian Soldiers' Song Book, hymn 154.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Tune by William Croft, 1708; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    "reviewedAt": "2026-08-15"
+  },
+  {
+    "id": "praise-to-the-lord-the-almighty",
+    "title": "Praise to the Lord, the Almighty",
+    "lyricist": "Joachim Neander; translated by Catherine Winkworth",
+    "lyricYear": 1863,
+    "tune": "Lobe den Herren",
+    "scriptureReferences": [
+      "Psalm 103:1-5",
+      "Psalm 150:6"
+    ],
+    "stanzas": [
+      "Praise to the Lord, the Almighty, the King of creation!\nO my soul, praise Him, for He is thy health and salvation!\nAll ye who hear,\nNow to His temple draw near,\nJoining me in glad adoration.",
+      "Praise to the Lord, who o'er all things so wondrously reigneth,\nShelters thee under His wings, yea, so gently sustaineth;\nHast thou not seen\nHow thy desires e'er have been\nGranted in what He ordaineth?",
+      "Praise to the Lord, who hath fearfully, wondrously made thee,\nGiven thee health, and doth lovingly lead thee and aid thee;\nWhat need or grief\nHath ever failed of relief?\nWings of His mercy did shade thee.",
+      "Praise to the Lord, who doth prosper thy work and defend thee;\nSurely, His goodness and mercy here daily attend thee;\nPonder anew\nWhat the Almighty can do,\nIf with His love He befriend thee.",
+      "Praise to the Lord! O let all that is in me adore Him!\nAll that hath life and breath, come now with praises before Him!\nLet the Amen\nSound from His people again:\nGladly for aye we adore Him."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://hymnary.org/hymn/CHCS1898/167",
+    "textRights": "Public domain; text checked line by line against Christian Hymns (1898), hymn 167.",
+    "midiFile": "lobe_den_Herren.mid",
+    "midiSha256": "2ceaccb73d5b35b7ea8033426eac6f602113eb3a1bfbd2c722f9e53693e17af6",
+    "rdfFile": "lobe_den_Herren.rdf",
+    "rdfSha256": "149dc055ef280b74c42d727d93e38fe67447bb508a6c03914ba4141d2cd8b1b9",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/Anonymous/lobe_den_Herren/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Anonymous German tune, 1665; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    "reviewedAt": "2026-08-15"
+  },
+  {
+    "id": "it-is-well-with-my-soul",
+    "title": "It Is Well with My Soul",
+    "lyricist": "Horatio G. Spafford",
+    "lyricYear": 1873,
+    "tune": "Ville du Havre",
+    "scriptureReferences": [
+      "Psalm 46:1-3",
+      "Colossians 2:13-14",
+      "1 Thessalonians 4:16-17"
+    ],
+    "stanzas": [
+      "When peace, like a river, attendeth my way,\nWhen sorrows like sea billows roll;\nWhatever my lot, Thou hast taught me to say,\nIt is well, it is well with my soul.",
+      "Though Satan should buffet, though trials should come,\nLet this blest assurance control,\nThat Christ has regarded my helpless estate,\nAnd hath shed His own blood for my soul.",
+      "My sin—oh, the bliss of this glorious thought!—\nMy sin, not in part but the whole,\nIs nailed to the cross, and I bear it no more;\nPraise the Lord, praise the Lord, O my soul!",
+      "And, Lord, haste the day when the faith shall be sight,\nThe clouds be rolled back as a scroll;\nThe trump shall resound and the Lord shall descend;\nEven so—it is well with my soul."
+    ],
+    "refrain": "It is well with my soul,\nIt is well, it is well with my soul.",
+    "textSourceUrl": "https://hymnary.org/media/fetch/146502",
+    "textRights": "Public domain; text checked against the Hymnary public-domain VILLE DU HAVRE score.",
+    "midiFile": "villeduh.mid",
+    "midiSha256": "e20b3a41f78b611aaa77e17bf28173eb0c3f9d7421b7996dd877035330df52e8",
+    "rdfFile": "villeduh.rdf",
+    "rdfSha256": "dac4141a27de41b331fa151ac9c68070dbf9c0e99166e68a2a0671758f83d144",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/BlissPP/villeduh/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Tune by Philip P. Bliss, 1876; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    "reviewedAt": "2026-08-15"
+  },
+  {
+    "id": "crown-him-with-many-crowns",
+    "title": "Crown Him with Many Crowns",
+    "lyricist": "Matthew Bridges",
+    "lyricYear": 1851,
+    "tune": "Diademata",
+    "scriptureReferences": [
+      "Revelation 4:10-11",
+      "Revelation 19:12"
+    ],
+    "stanzas": [
+      "Crown him with many crowns,\nThe Lamb upon his throne;\nHark! how the heavenly anthem drowns,\nAll music but its own!\nAwake, my soul, and sing\nOf him who died for thee;\nAnd hail him as thy matchless King\nThrough all eternity.",
+      "Crown him the Lord of love!\nBehold his hands and side,\nThose wounds, yet visible above,\nIn beauty glorified:\nNo angel in the sky\nCan fully bear that sight,\nBut downward bends his wondering eye\nAt mysteries so great.",
+      "Crown him the Lord of peace!\nWhose hand a scepter sways\nFrom pole to pole, that wars may cease,\nAnd all be prayer and praise:\nHis reign shall know no end,\nAnd round his pierced feet\nFair flowers of paradise extend,\nTheir fragrance ever sweet.",
+      "Crown him the Lord of years,\nThe Potentate of time,\nCreator of the rolling spheres,\nIneffably sublime!\nAll hail! Redeemer, hail!\nFor thou hast died for me;\nThy praise shall never, never fail\nThroughout eternity."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://hymnary.org/hymn/SDAH1886/125",
+    "textRights": "Public domain; text checked line by line against The Seventh-Day Adventist Hymn and Tune Book (1886), hymn 125.",
+    "midiFile": "Diademata.mid",
+    "midiSha256": "ad8d8e84831f11d4ef5ecd60647c97f2ec37055e1e7e33d5bc18463e1285a39d",
+    "rdfFile": "Diademata.rdf",
+    "rdfSha256": "0fa012cf4add2954a8e2e02a967adbcdf7f8bcef8cd781e5b7932436b16224f8",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/ElveyGJ/Diademata/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Tune by George J. Elvey, 1868; public-domain SATB file maintained by Peter Chubb for the Mutopia Project.",
+    "reviewedAt": "2026-08-15"
+  },
+  {
+    "id": "abide-with-me",
+    "title": "Abide with Me",
+    "lyricist": "Henry F. Lyte",
+    "lyricYear": 1847,
+    "tune": "Eventide",
+    "scriptureReferences": [
+      "Luke 24:29",
+      "Psalm 46:1",
+      "1 Corinthians 15:55-57"
+    ],
+    "stanzas": [
+      "Abide with me; fast falls the eventide;\nThe darkness deepens; Lord, with me abide:\nWhen other helpers fail, and comforts flee,\nHelp of the helpless, O abide with me.",
+      "Swift to its close ebbs out life's little day;\nEarth's joys grow dim, its glories pass away;\nChange and decay in all around I see;\nO Thou who changest not, abide with me.",
+      "I need Thy presence ev'ry passing hour,\nWhat but Thy grace can foil the tempter's pow'r?\nWho like Thyself my guide and stay can be?\nThro' cloud and sunshine, O abide with me.",
+      "I fear no foe,with Thee at hand to bless;\nIlls have no weight, and tears no bitterness;\nWhere is death's sting? where, grave, thy victory?\nI triumph still, if Thou abide with me.",
+      "Hold Thou Thy cross before my closing eyes;\nShine thro' the gloom, and point me to the skies;\nHeav'n's morning breaks, and earth's vain shadows flee;\nIn life, in death, O Lord, abide with me."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://hymnary.org/hymn/HCH11927/52",
+    "textRights": "Public domain; text checked line by line against Hymnal for Church and Home (1927), hymn 52.",
+    "midiFile": "abide-with-me.mid",
+    "midiSha256": "29847f715406da7f17eeac926b41d33891f0daebfcff7c30e82e385174ab4773",
+    "rightsEvidenceFile": "abide-with-me-wikimedia.json",
+    "rightsEvidenceSha256": "e5c197b279e038c3aa3027cd51f227a66198e533d03bbc2d52ee03c35cbe3314",
+    "rightsEvidenceMarker": "Creative Commons Zero, Public Domain Dedication",
+    "musicSourceUrl": "https://commons.wikimedia.org/wiki/File:Bleibe_bei_uns.mid",
+    "musicRights": "CC0 1.0 Universal Public Domain Dedication",
+    "musicAttribution": "Tune by William Henry Monk, 1861; MIDI setting and sound file by Peter Gerloff (Rabanus Flavus), dedicated to the public domain under CC0 1.0.",
+    "reviewedAt": "2026-08-23"
+  },
+  {
+    "id": "holy-holy-holy",
+    "title": "Holy, Holy, Holy",
+    "lyricist": "Reginald Heber",
+    "lyricYear": 1826,
+    "tune": "Nicaea",
+    "scriptureReferences": [
+      "Isaiah 6:1-3",
+      "Revelation 4:8-11"
+    ],
+    "stanzas": [
+      "Holy, holy, holy! Lord God Almighty\nEarly in the morning our song shall rise to thee;\nHoly, holy, holy merciful and mighty!\nGod in Three Persons, blessèd Trinity!",
+      "Holy, holy, holy! all the saints adore thee,\nCasting down their golden crowns around the glassy sea;\nCherubim and seraphim falling down before thee,\nWhich wert, and art, and evermore shalt be.",
+      "Holy, holy, holy! tho' the darkness hide thee,\nThough the eye of sinful man thy glory may not see,\nOnly thou art holy, there is none beside thee,\nPerfect in power, in love, and purity.",
+      "Holy, holy, holy! Lord God Almighty\nAll thy works shall praise thy name, in earth, and sky, and sea;\nHoly, holy, holy merciful and mighty!\nGod in Three Persons, blessèd Trinity!\nAmen."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://en.wikisource.org/wiki/The_Army_and_Navy_Hymnal/Hymns/Holy%2C_Holy%2C_Holy%2C_Lord_God_Almighty",
+    "textRights": "Public domain; text checked line by line against The Army and Navy Hymnal (1918), hymn 4.",
+    "midiFile": "nicaea.mid",
+    "midiSha256": "57184adabcdcd0f4f63d1a4913bc061f5c7df1e44649c376f9c73f4f5c7f00c9",
+    "rdfFile": "nicaea.rdf",
+    "rdfSha256": "f7b9542e7fa95499d42c5016fb5b181443cdecfb6f477e5fe22ca4f5715b9d08",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/DykesJB/nicaea/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "Tune by John B. Dykes, 1861; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    "reviewedAt": "2026-08-24"
+  },
+  {
+    "id": "stand-up-my-soul-shake-off-thy-fears",
+    "title": "Stand Up, My Soul, Shake Off Thy Fears",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "Hamburg (editorial Long Meter pairing)",
+    "themes": [
+      "Christian Warfare",
+      "Courage",
+      "Victory",
+      "Perseverance"
+    ],
+    "scriptureReferences": [
+      "Ephesians 6:10-17",
+      "2 Timothy 4:7-8"
+    ],
+    "stanzas": [
+      "Stand up, my soul, shake off thy fears,\nAnd gird the gospel-armour on,\nMarch to the gates of endless joy\nWhere thy great Captain-Saviour's gone.",
+      "Hell and thy sins resist thy course,\nBut hell and sin are vanquish'd foes,\nThy Jesus nail'd them to the cross,\nAnd sung the triumph when he rose.",
+      "What tho' the prince of darkness rage,\nAnd waste the fury of his spite,\nEternal chains confine him down\nTo fiery deeps, and endless night.",
+      "What tho' thine inward lusts rebel,\n'Tis but a struggling gasp for life\nThe weapons of victorious grace\nShall slay thy sins, and end the strife.",
+      "Then let my soul march boldly on,\nPress forward to the heavenly gate,\nThere peace and joy eternal reign,\nAnd glittering robes for conquerors wait.",
+      "There shall I wear a starry crown,\nAnd triumph in almighty grace,\nWhile all the armies of the skies\nJoin in my glorious leader's praise."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 77. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "when-i-survey-the-wondrous-cross.mid",
+    "midiSha256": "e83c60388a0a6f68b23687c3a69f602416705504ae2996fa62ceda3bdd1982b3",
+    "rightsEvidenceFile": "when-i-survey-the-wondrous-cross-rights.html",
+    "rightsEvidenceSha256": "cc3c34dbd7aee0533c9948345b25084bbfdb962a2dd7ff415b6c68ebd77b7256",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/When_I_Survey_the_Wondrous_Cross/When_I_Survey_the_Wondrous_Cross.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HAMBURG by Lowell Mason, 1824; public-domain MIDI distributed with the cited Timeless Truths record. Editorial 8.8.8.8 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "hosanna-to-the-prince-of-light",
+    "title": "Hosanna to the Prince of Light",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Resurrection",
+      "Ascension",
+      "Jesus Christ",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Acts 1:9-11",
+      "Revelation 3:21"
+    ],
+    "stanzas": [
+      "Hosanna to the Prince of Light,\nThat cloth'd himself in clay,\nEnter'd the iron gates of death,\nAnd tore the bars away.",
+      "Death is no more the king of dread\nSince our Immanuel rose,\nHe took the tyrant's sting away,\nAnd spoil'd our hellish foes.",
+      "See how the Conqueror mounts aloft,\nAnd to his Father flies,\nWith scars of honour in his flesh,\nAnd triumph in his eyes.",
+      "There our exalted Saviour reigns,\nAnd scatters blessings down,\nOur Jesus fills the middle seat\nOf the celestial throne.",
+      "Raise your devotion, mortal tongues,\nTo reach his bless'd abode,\nSweet be the accents of your songs\nTo our incarnate God.",
+      "Bright angels, strike your loudest strings,\nYour sweetest voices raise,\nLet heaven, and all created things,\nSound our Immanuel's praise."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 76. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "from-thee-my-god-my-joys-shall-rise",
+    "title": "From Thee, My God, My Joys Shall Rise",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Heaven",
+      "Jesus Christ",
+      "Eternal Joy",
+      "Hope"
+    ],
+    "scriptureReferences": [
+      "Psalm 16:11",
+      "Revelation 22:4"
+    ],
+    "stanzas": [
+      "From thee, my God, my joys shall rise,\nAnd run eternal rounds,\nBeyond the limits of the skies\nAnd all created bounds.",
+      "The holy triumphs of my soul\nShall death itself out-brave,\nLeave dull mortality behind,\nAnd fly beyond the grave.",
+      "There, where my blessed Jesus reigns\nIn heaven's unmeasur'd space,\nI'll spend a long eternity\nIn pleasure and in praise.",
+      "Millions of years my wondering eyes\nShall o'er thy beauties rove,\nAnd endless ages I'll adore\nThe glories of thy love.",
+      "Sweet Jesus, every smile of thine\nShall fresh endearments bring,\nAnd thousand tastes of new delight\nFrom all thy graces spring.",
+      "Haste, my beloved, fetch my soul\nUp to thy bless'd abode,\nFly, for my spirit longs to see\nMy Saviour and my God."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 75. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "hence-from-my-soul-sad-thoughts-be-gone",
+    "title": "Hence from My Soul, Sad Thoughts, Be Gone",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Assurance",
+      "Spiritual Joy",
+      "Grace",
+      "Comfort"
+    ],
+    "scriptureReferences": [
+      "Psalm 30:11-12"
+    ],
+    "stanzas": [
+      "Hence from my soul, sad thoughts, be gone,\nAnd leave me to my joys,\nMy tongue shall triumph in my God,\nAnd make a joyful noise.",
+      "Darkness and doubts had veil'd my mind,\nAnd drown'd my head in tears,\nTill sovereign grace with shining rays\nDispell'd my gloomy fears.",
+      "O what immortal joys I felt,\nAnd raptures all divine,\nWhen Jesus told me, I was his,\nAnd my Beloved mine.",
+      "In vain the tempter frights my soul,\nAnd breaks my peace in vain,\nOne glimpse, dear Saviour, of thy face,\nRevives my joys again."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 73. Stanza numbers removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "blessed-morning-whose-young-dawning-rays",
+    "title": "Bless'd Morning, Whose Young Dawning Rays",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Resurrection",
+      "Lord's Day",
+      "Victory",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Matthew 28:1-6"
+    ],
+    "stanzas": [
+      "Bless'd morning, whose young dawning rays\nBeheld our rising God,\nThat saw him triumph o'er the dust,\nAnd leave his dark abode.",
+      "In the cold prison of a tomb,\nThe dead Redeemer lay,\nTill the revolving skies had brought\nThe third, th' appointed day.",
+      "Hell and the grave unite their force\nTo hold our God in vain,\nThe sleeping Conqueror arose,\nAnd burst their feeble chain.",
+      "To thy great Name, Almighty Lord,\nThese sacred hours we pay,\nAnd loud hosannas shall proclaim\nThe triumph of the day,",
+      "Salvation and immortal praise\nTo our victorious King,\nLet heaven, and earth, and rocks, and seas,\nWith glad hosannas ring."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 72. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "the-glories-of-my-maker-god",
+    "title": "The Glories of My Maker God",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Creation",
+      "Praise",
+      "God's Glory",
+      "Worship"
+    ],
+    "scriptureReferences": [
+      "Psalm 148:1-13"
+    ],
+    "stanzas": [
+      "The glories of my Maker God,\nMy joyful voice shall sing,\nAnd call the nations to adore\nTheir Former and their King.",
+      "'Twas his right-hand that shap'd our clay,\nAnd wrought this human frame,\nBut from his own immediate breath\nOur nobler spirits came.",
+      "We bring our mortal powers to God,\nAnd worship with our tongues:\nWe claim some kindred with the skies\nAnd join th' angelic songs.",
+      "Let groveling beasts of every shape,\nAnd fowls of every wing,\nAnd rocks, and trees, and fires, and seas,\nTheir various tribute bring.",
+      "Ye planets, to his honour shine,\nAnd wheels of nature roll,\nPraise him in your unwearied course\nAround the steady pole.",
+      "The brightness of our Maker's Name\nThe wide creation fills,\nAnd his unbounded grandeur flies\nBeyond the heavenly hills."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 71. Stanza numbers removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "god-of-the-seas-thy-thundering-voice",
+    "title": "God of the Seas, Thy Thundering Voice",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "Hamburg (editorial Long Meter pairing)",
+    "themes": [
+      "God's Sovereignty",
+      "Creation",
+      "Sea",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Psalm 107:23-31"
+    ],
+    "stanzas": [
+      "God of the seas, thy thundering voice\nMakes all the roaring waves rejoice,\nAnd one soft word of thy command\nCan sink them silent in the sand.",
+      "If but a Moses wave thy rod,\nThe sea divides, and owns its God:\nThe stormy floods their Maker knew,\nAnd let his chosen armies thro'.",
+      "The scaly flocks amidst the sea,\nTo thee, their Lord, a tribute pay;\nThe meanest fish that swims the flood\nLeaps up, and means a praise to God.",
+      "The larger monsters of the deep,\nOn thy commands attendance keep,\nBy thy permission sport and play,\nAnd cleave along their foaming way.",
+      "If God his voice of tempest rears,\nLeviathan lies still and fears,\nAnon he lifts his nostrils high,\nAnd spouts the ocean to the sky.",
+      "How is thy glorious power ador'd,\nAmidst those watery nations, Lord!\nYet the bold men that trace the seas,\nBold men, refuse their Maker's praise.",
+      "What scenes of miracle they see,\nAnd never tune a song to thee!\nWhile on the flood they safely ride,\nThey curse the hand that smooths the tide.",
+      "Anon they plunge in watery graves,\nAnd some drink death among the waves:\nYet the surviving crew blaspheme,\nNor own the God that rescu'd them.",
+      "O for some signal of thine hand!\nShake all the seas, Lord, shake the land,\nGreat Judge, descend, lest men deny\nThat there's a God that rules the sky."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 70. Removed only stanza numbers and optional-stanza brackets. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "when-i-survey-the-wondrous-cross.mid",
+    "midiSha256": "e83c60388a0a6f68b23687c3a69f602416705504ae2996fa62ceda3bdd1982b3",
+    "rightsEvidenceFile": "when-i-survey-the-wondrous-cross-rights.html",
+    "rightsEvidenceSha256": "cc3c34dbd7aee0533c9948345b25084bbfdb962a2dd7ff415b6c68ebd77b7256",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/When_I_Survey_the_Wondrous_Cross/When_I_Survey_the_Wondrous_Cross.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HAMBURG by Lowell Mason, 1824; public-domain MIDI distributed with the cited Timeless Truths record. Editorial 8.8.8.8 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "begin-my-tongue-some-heavenly-theme",
+    "title": "Begin, My Tongue, Some Heavenly Theme",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Faithfulness",
+      "Promises",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Psalm 89:1"
+    ],
+    "stanzas": [
+      "Begin, my tongue, some heavenly theme,\nAnd speak some boundless thing,\nThe mighty works, or mightier name\nOf our eternal King.",
+      "Tell of his wondrous faithfulness,\nAnd sound his power abroad,\nSing the sweet promise of his grace,\nAnd the performing God.",
+      "Proclaim \"salvation from the Lord\n\"For wretched dying men;\"\nHis hand has writ the sacred word\nWith an immortal pen.",
+      "Engrav'd as in eternal brass,\nThe mighty promise shines;\nNor can the powers of darkness rase\nThose everlasting lines.",
+      "He that can dash whole worlds to death\nAnd make them when he please,\nHe speaks, and that almighty breath\nFulfils his great decrees.",
+      "His very word of grace is strong\nAs that which built the skies,\nThe voice that rolls the stars along\nSpeaks all the promises.",
+      "He said, \"Let the wide heaven be spread,\"\nAnd heaven was stretch'd abroad;\n\"Abrah'm, I'll be thy God,\" he said,\nAnd he was Abrah'm's God.",
+      "O, might I hear thine heavenly tongue\nBut whisper, \"Thou art mine;\"\nThose gentle words should raise my song\nTo notes almost divine.",
+      "How would my leaping heart rejoice\nAnd think my heaven secure!\nI trust the all-creating voice,\nAnd faith desires no more."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 69. Removed only stanza numbers and optional-stanza brackets. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "there-is-a-land-of-pure-delight",
+    "title": "There Is a Land of Pure Delight",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "Heaven",
+      "Hope",
+      "Assurance"
+    ],
+    "scriptureReferences": [
+      "Revelation 21:4"
+    ],
+    "stanzas": [
+      "There is a land of pure delight\nWhere saints immortal reign,\nInfinite day excludes the night,\nAnd pleasures banish pain.",
+      "There everlasting spring abides,\nAnd never withering flowers:\nDeath like a narrow sea divides\nThis heavenly land from ours.",
+      "Sweet fields beyond the swelling flood,\nStand dress'd in living green\nSo to the Jews old Canaan stood,\nWhile Jordan roll'd between.",
+      "But timorous mortals start and shrink\nTo cross this narrow sea,\nAnd linger shivering on the brink,\nAnd fear to launch away.",
+      "O! could we make our doubts remove,\nThese gloomy doubts that rise,\nAnd see the Canaan that we love,\nWith unbeclouded eyes!",
+      "Could we but climb where Moses stood,\nAnd view the landscape o'er,\nNot Jordan's stream, nor death's cold flood,\nShould fright us from the shore."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; text checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 66. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Page-scan review remains pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "great-god-how-infinite",
+    "title": "Great God, How Infinite Art Thou!",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "St. Anne (editorial Common Meter pairing)",
+    "themes": [
+      "God",
+      "Eternity",
+      "Worship"
+    ],
+    "scriptureReferences": [
+      "Psalm 90:1-4"
+    ],
+    "stanzas": [
+      "Great God, how infinite art thou!\nWhat worthless worms are we!\nLet the whole race of creatures bow\nAnd pay their praise to thee.",
+      "Thy throne eternal ages stood,\nEre seas or stars were made;\nThou art the ever-living God\nWere all the nations dead.",
+      "Nature and time quite naked lie\nTo thine immense survey,\nFrom the formation of the sky\nTo the great burning day.",
+      "Eternity with all its years\nStands present in thy view;\nTo thee there's nothing old appears,\nGreat God, there's nothing new.",
+      "Our lives thro' various scenes are drawn,\nAnd vex'd with trifling cares;\nWhile thine eternal thought moves on\nThine undisturb'd affairs.",
+      "Great God, how infinite art thou!\nWhat worthless worms are we!\nLet the whole race of creatures bow\nAnd pay their praise to thee."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+    "textRights": "Public domain; text checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 67. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Page-scan review remains pending.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rdfFile": "st_anne.rdf",
+    "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+    "reviewedAt": "2026-09-05"
+  },
+  {
+    "id": "all-hail-the-power-of-jesus-name",
+    "title": "All Hail the Power of Jesus’ Name",
+    "lyricist": "Edward Perronet; altered by John Rippon",
+    "lyricYear": 1780,
+    "tune": "Coronation",
+    "scriptureReferences": [
+      "Philippians 2:9-11",
+      "Revelation 19:16"
+    ],
+    "stanzas": [
+      "All hail the pow’r of Jesus’ Name!\nLet angels prostrate fall;\nBring forth the royal diadem,\nAnd crown Him Lord of all!",
+      "Ye chosen seed of Israel’s race,\nYe ransomed from the fall,\nHail Him Who saves you by His grace,\nAnd crown Him Lord of all!",
+      "Let every kindred, every tribe,\nOn this terrestrial ball,\nTo Him all majesty ascribe,\nAnd crown Him Lord of all!",
+      "Oh, that with yonder sacred throng\nWe at His feet may fall!\nWe’ll join the everlasting song,\nAnd crown Him Lord of all!"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/All_Hail_the_Power_of_Jesus_Name/",
+    "textRights": "Public domain; exact four-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "all-hail-the-power.mid",
+    "midiSha256": "f691573be593d3d5a033be1631629de1a9ea07439b791a033fa4888134d74be9",
+    "rightsEvidenceFile": "all-hail-the-power-rights.html",
+    "rightsEvidenceSha256": "841d06d2e27d366dfaab292bdc2bfabbcd8f17fb179e9a95fa928f16f46b1d1a",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/A/All_Hail_the_Power_of_Jesus_Name/All_Hail_the_Power_of_Jesus_Name.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "CORONATION by Oliver Holden, published 1793; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "rock-of-ages",
+    "title": "Rock of Ages",
+    "lyricist": "Augustus M. Toplady",
+    "lyricYear": 1776,
+    "tune": "Toplady",
+    "scriptureReferences": [
+      "Deuteronomy 32:3-4",
+      "Isaiah 26:4"
+    ],
+    "stanzas": [
+      "Rock of Ages, cleft for me,\nLet me hide myself in Thee;\nLet the water and the blood,\nFrom Thy wounded side which flowed,\nBe of sin the double cure,\nSave from wrath and make me pure.",
+      "Not the labor of my hands\nCan fulfill Thy law’s demands;\nCould my zeal no respite know,\nCould my tears forever flow,\nAll for sin could not atone;\nThou must save, and Thou alone.",
+      "Nothing in my hand I bring,\nSimply to Thy cross I cling;\nNaked, come to Thee for dress;\nHelpless, look to Thee for grace;\nFoul, I to the fountain fly;\nWash me, Savior, or I die.",
+      "While I draw this fleeting breath,\nWhen my eyes shall close in death,\nWhen I rise to worlds unknown,\nAnd behold Thee on Thy throne,\nRock of Ages, cleft for me,\nLet me hide myself in Thee."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Rock_of_Ages/",
+    "textRights": "Public domain; exact four-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "rock-of-ages.mid",
+    "midiSha256": "a0d82c675c525a612651fe07ffc91e9e5abc65bc56549844c58e61aaec3f5672",
+    "rightsEvidenceFile": "rock-of-ages-rights.html",
+    "rightsEvidenceSha256": "596be37c3c44cb1e690add9c29a214c64a22872168a928116434f4c750a1b187",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Rock_of_Ages/Rock_of_Ages.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "TOPLADY by Thomas Hastings, 1830; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "nearer-my-god-to-thee",
+    "title": "Nearer, My God, to Thee",
+    "lyricist": "Sarah F. Adams; stanza 6 by Edward H. Bickersteth, Jr.",
+    "lyricYear": 1841,
+    "tune": "Bethany",
+    "scriptureReferences": [
+      "Psalm 42:2",
+      "Genesis 28:11-13"
+    ],
+    "stanzas": [
+      "Nearer, my God, to Thee, nearer to Thee!\nE’en though it be a cross that raiseth me,\nStill all my song shall be, nearer, my God, to Thee.",
+      "Though like the wanderer, the sun gone down,\nDarkness be over me, my rest a stone;\nYet in my dreams I’d be nearer, my God, to Thee.",
+      "There let the way appear, steps unto Heav’n;\nAll that Thou sendest me, in mercy giv’n;\nAngels to beckon me nearer, my God, to Thee.",
+      "Then, with my waking thoughts bright with Thy praise,\nOut of my stony griefs Bethel I’ll raise;\nSo by my woes to be nearer, my God, to Thee.",
+      "Or, if on joyful wing cleaving the sky,\nSun, moon, and stars forgot, upward I'll fly,\nStill all my song shall be, nearer, my God, to Thee.",
+      "There in my Father's home, safe and at rest,\nThere in my Savior's love, perfectly blest;\nAge after age to be nearer, my God, to Thee."
+    ],
+    "refrain": "Nearer, my God, to Thee, nearer to Thee!",
+    "textSourceUrl": "https://library.timelesstruths.org/music/Nearer_My_God_to_Thee/",
+    "textRights": "Public domain; exact six-stanza text and refrain retained from the cited Timeless Truths record.",
+    "midiFile": "nearer-my-god-to-thee.mid",
+    "midiSha256": "87398108f924e8fd55752fe041fb5db0a4f54527567f24654db86f49ff94064e",
+    "rightsEvidenceFile": "nearer-my-god-to-thee-rights.html",
+    "rightsEvidenceSha256": "b86de0220d875f64e1c306067d1f5ece8250717cbf0321940ed16b942940e7fb",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/N/Nearer_My_God_to_Thee/Nearer_My_God_to_Thee.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "BETHANY by Lowell Mason, 1856; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-25",
+    "id": "jesus-lover-of-my-soul",
+    "title": "Jesus, Lover of My Soul",
+    "lyricist": "Charles Wesley",
+    "lyricYear": 1740,
+    "tune": "Martyn",
+    "scriptureReferences": [
+      "2 Corinthians 1:3",
+      "Revelation 1:5"
+    ],
+    "stanzas": [
+      "Jesus, lover of my soul,\nLet me to Thy bosom fly,\nWhile the nearer waters roll,\nWhile the tempest still is high.\nHide me, O my Savior, hide,\nTill the storm of life is past;\nSafe into the haven guide;\nOh, receive my soul at last.",
+      "Other refuge have I none,\nHangs my helpless soul on Thee;\nLeave, ah! leave me not alone,\nStill support and comfort me.\nAll my trust on Thee is stayed,\nAll my help from Thee I bring;\nCover my defenseless head\nWith the shadow of Thy wing.",
+      "Wilt Thou not regard my call?\nWilt Thou not accept my prayer?\nLo! I sink, I faint, I fall—\nLo! on Thee I cast my care.\nReach me out Thy gracious hand!\nWhile I of Thy strength receive,\nHoping against hope I stand,\nDying, and behold, I live.",
+      "Thou, O Christ, art all I want,\nMore than all in Thee I find;\nRaise the fallen, cheer the faint,\nHeal the sick, and lead the blind.\nJust and holy is Thy Name,\nSource of all true righteousness;\nThou art evermore the same,\nThou art full of truth and grace.",
+      "Plenteous grace with Thee is found,\nGrace to cover all my sin;\nLet the healing streams abound;\nMake and keep me pure within.\nThou of life the fountain art,\nFreely let me take of Thee;\nSpring Thou up within my heart;\nRise to all eternity."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Jesus_Lover_of_My_Soul/",
+    "textRights": "Public domain; exact five-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "jesus-lover-of-my-soul.mid",
+    "midiSha256": "a8a92880a831b0279255be77b34722b2294e795dde0f350f18869d8e7a4273a7",
+    "rightsEvidenceFile": "jesus-lover-of-my-soul-rights.html",
+    "rightsEvidenceSha256": "82c1102baa3ea419132ccfa4961388bdebf138c872a2efd0c068c767c6fffe51",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/J/Jesus_Lover_of_My_Soul/Jesus_Lover_of_My_Soul.mid",
+    "musicAttribution": "MARTYN by Simeon B. Marsh, 1834; public-domain MIDI distributed with the cited Timeless Truths record."
+  },
+  {
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-25",
+    "id": "what-a-friend-we-have-in-jesus",
+    "title": "What a Friend We Have in Jesus",
+    "lyricist": "Joseph M. Scriven",
+    "lyricYear": 1855,
+    "tune": "Erie",
+    "scriptureReferences": [
+      "Exodus 33:11",
+      "John 15:13",
+      "John 16:23-24"
+    ],
+    "stanzas": [
+      "What a friend we have in Jesus,\nAll our sins and griefs to bear!\nWhat a privilege to carry\nEverything to God in prayer!\nOh, what peace we often forfeit,\nOh, what needless pain we bear,\nAll because we do not carry\nEverything to God in prayer!",
+      "Have we trials and temptations?\nIs there trouble anywhere?\nWe should never be discouraged—\nTake it to the Lord in prayer.\nCan we find a friend so faithful,\nWho will all our sorrows share?\nJesus knows our every weakness;\nTake it to the Lord in prayer.",
+      "Are we weak and heavy-laden,\nCumbered with a load of care?\nPrecious Savior, still our refuge—\nTake it to the Lord in prayer.\nDo thy friends despise, forsake thee?\nTake it to the Lord in prayer!\nIn His arms He’ll take and shield thee,\nThou wilt find a solace there.",
+      "Blessed Savior, Thou hast promised\nThou wilt all our burdens bear;\nMay we ever, Lord, be bringing\nAll to Thee in earnest prayer.\nSoon in glory bright, unclouded,\nThere will be no need for prayer—\nRapture, praise, and endless worship\nWill be our sweet portion there."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/What_a_Friend_We_Have_in_Jesus/",
+    "textRights": "Public domain; exact four-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "what-a-friend.mid",
+    "midiSha256": "647700c5afe9ee2973d0400dba58af8266f44018cbb162e31c599d9174199586",
+    "rightsEvidenceFile": "what-a-friend-rights.html",
+    "rightsEvidenceSha256": "7a9cc1b19ba47ba667062b2537074b67312e32192c40ad3627545ad4b308041b",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/What_a_Friend_We_Have_in_Jesus/What_a_Friend_We_Have_in_Jesus.mid",
+    "musicAttribution": "ERIE by Charles C. Converse, 1868; public-domain MIDI distributed with the cited Timeless Truths record."
+  },
+  {
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-25",
+    "id": "oh-for-a-thousand-tongues-to-sing",
+    "title": "Oh, for a Thousand Tongues to Sing",
+    "lyricist": "Charles Wesley",
+    "lyricYear": 1739,
+    "tune": "Azmon",
+    "scriptureReferences": [
+      "Psalm 145:10-12",
+      "Luke 4:18-19",
+      "Revelation 5:11-13"
+    ],
+    "stanzas": [
+      "Oh, for a thousand tongues to sing\nMy great Redeemer’s praise,\nThe glories of my God and king,\nThe triumphs of His grace!",
+      "My gracious Master and my God,\nAssist me to proclaim,\nTo spread through all the earth abroad,\nThe honors of Thy name.",
+      "Jesus! the name that charms our fears,\nThat bids our sorrows cease—\n’Tis music in the sinner’s ears,\n’Tis life, and health, and peace.",
+      "He breaks the pow’r of canceled sin,\nHe sets the pris’ner free;\nHis blood can make the foulest clean,\nHis blood availed for me.",
+      "He speaks, and, list’ning to His voice,\nNew life the dead receive,\nThe mournful, broken hearts rejoice,\nThe humble poor believe.",
+      "Glory to God, and praise and love\nBe ever, ever giv’n\nBy saints below and saints above,\nThe church in earth and heav’n."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Oh_for_a_Thousand_Tongues_to_Sing/",
+    "textRights": "Public domain; exact six-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "oh-for-a-thousand-tongues.mid",
+    "midiSha256": "1ce37e5449e893c247794caf5e56dc2fc3dcbaebd1f279d36b3797051021b832",
+    "rightsEvidenceFile": "oh-for-a-thousand-tongues-rights.html",
+    "rightsEvidenceSha256": "580efd8c2c16aa2f9aa9e9e0ff71842eae7853a3205bac54e50375ba637e315a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/O/Oh_for_a_Thousand_Tongues_to_Sing/Oh_for_a_Thousand_Tongues_to_Sing.mid",
+    "musicAttribution": "AZMON by Carl G. Gläser, 1828, arranged by Lowell Mason, published 1839; public-domain MIDI distributed with the cited Timeless Truths record."
+  },
+  {
+    "id": "dear-refuge-of-my-weary-soul",
+    "title": "Dear Refuge of My Weary Soul",
+    "lyricist": "Anne Steele",
+    "lyricYear": 1760,
+    "tune": "St. Anne",
+    "scriptureReferences": [
+      "Psalm 46:1",
+      "Psalm 62:8",
+      "Hebrews 4:16"
+    ],
+    "stanzas": [
+      "Dear refuge of my weary soul,\nOn thee, when sorrows rise:\nOn thee, when waves of trouble roll,\nMy fainting hope relies.",
+      "While hope revives, though prest with fears,\nAnd I can say, my God,\nBeneath thy feet I spread my cares,\nAnd pour my woes abroad.",
+      "To thee, I tell each rising grief,\nFor thou alone canst heal;\nThy word can bring a sweet relief\nFor every pain I feel.",
+      "But oh! when gloomy doubts prevail,\nI fear to call thee mine;\nThe springs of comfort seem to fail,\nAnd all my hopes decline.",
+      "Yet, gracious God, where shall I flee?\nThou art my only trust,\nAnd still my soul would cleave to thee,\nThough prostrate in the dust.",
+      "Hast thou not bid me seek thy face?\nAnd shall I seek in vain?\nAnd can the ear of sovereign grace\nBe deaf when I complain?",
+      "No, still the ear of sovereign grace\nAttends the mourner's prayer;\nO may I ever find access,\nTo breathe my sorrows there.",
+      "Thy mercy-seat is open still;\nHere let my soul retreat,\nWith humble hope attend thy will,\nAnd wait beneath thy feet."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://archive.org/details/ubjectsc01stee/page/n159/mode/1up",
+    "textRights": "Public domain; all eight stanzas transcribed from Anne Steele's Poems on Subjects Chiefly Devotional, volume 1 (1780), pages 144-146, with long-s normalized to s.",
+    "midiFile": "st_anne.mid",
+    "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+    "rightsEvidenceFile": "st_anne.rdf",
+    "rightsEvidenceSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+    "rightsEvidenceMarker": "Public Domain",
+    "musicSourceUrl": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=733",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain Mutopia MIDI. Editorially paired with Steele's Common Meter text; not represented as the original historical tune.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "come-thou-fount-of-every-blessing",
+    "title": "Come, Thou Fount of Every Blessing",
+    "lyricist": "Robert Robinson; altered",
+    "lyricYear": 1758,
+    "tune": "Nettleton",
+    "scriptureReferences": [
+      "1 Samuel 7:12",
+      "Psalm 36:9",
+      "1 Peter 1:18-19"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Come_Thou_Fount_of_Every_Blessing/",
+    "textRights": "Public domain; exact three-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "come-thou-fount.mid",
+    "midiSha256": "79d50f20cd0982fe8263d20c344ccafdbfbb754f573d44dd3815debbb8c2a825",
+    "rightsEvidenceFile": "come-thou-fount-rights.html",
+    "rightsEvidenceSha256": "128f50b53b2996557da7dec8698b6d0dfbe2a330a31e4fbb0debf72fb14e23dc",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/C/Come_Thou_Fount_of_Every_Blessing/Come_Thou_Fount_of_Every_Blessing.mid",
+    "musicAttribution": "NETTLETON, attributed to Asahel Nettleton, published 1813; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Come, Thou Fount of every blessing,\nTune my heart to sing Thy grace;\nStreams of mercy, never ceasing,\nCall for songs of loudest praise.\nTeach me some melodious sonnet,\nSung by flaming tongues above;\nPraise the mount! I’m fixed upon it,\nMount of Thy redeeming love.",
+      "Here I raise my Ebenezer:\nHere by Thy great help I’ve come;\nAnd I hope, by Thy good pleasure,\nSafely to arrive at home.\nJesus sought me when a stranger,\nWand’ring from the fold of God;\nHe, to rescue me from danger,\nInterposed His precious blood.",
+      "Oh, to grace how great a debtor\nDaily I’m constrained to be!\nLet that grace now, like a fetter,\nBind my yielded heart to Thee.\nLet me know Thee in Thy fullness;\nGuide me by Thy mighty hand,\nTill, transformed, in Thine own image\nIn Thy presence I shall stand."
+    ],
+    "refrain": null,
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "majestic-sweetness-sits-enthroned",
+    "title": "Majestic Sweetness Sits Enthroned",
+    "lyricist": "Samuel Stennett",
+    "lyricYear": 1787,
+    "tune": "Ortonville",
+    "scriptureReferences": [
+      "Psalm 45:2",
+      "Song of Solomon 5:10-16",
+      "Hebrews 2:9"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Majestic_Sweetness_Sits_Enthroned/",
+    "textRights": "Public domain; exact four-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "majestic-sweetness.mid",
+    "midiSha256": "08584b8b18138614d971012e3fbcc20a7c12cff083febc75043558e1a10d106e",
+    "rightsEvidenceFile": "majestic-sweetness-rights.html",
+    "rightsEvidenceSha256": "c66dec9166c82391a49595ef31c5cce2dfda68454742db9346c1eb29d814bb15",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/Majestic_Sweetness_Sits_Enthroned/Majestic_Sweetness_Sits_Enthroned.mid",
+    "musicAttribution": "ORTONVILLE by Thomas Hastings, 1837; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Majestic sweetness sits enthroned\nUpon the Savior’s brow;\nHis head with radiant glories crowned,\nHis lips with grace o’erflow,\nHis lips with grace o’erflow.",
+      "No mortal can with Him compare,\nAmong the sons of men;\nFairer is He than all the fair\nWho fill the heav’nly train,\nWho fill the heav’nly train.",
+      "He saw me plunged in deep distress,\nAnd flew to my relief;\nFor me He bore the shameful cross,\nAnd carried all my grief,\nAnd carried all my grief.",
+      "To Him I owe my life and breath,\nAnd all the joys I have;\nHe makes me triumph over death,\nAnd saves me from the grave,\nAnd saves me from the grave."
+    ],
+    "refrain": null,
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "on-jordans-stormy-banks-i-stand",
+    "title": "On Jordan’s Stormy Banks I Stand",
+    "lyricist": "Samuel Stennett",
+    "lyricYear": 1787,
+    "tune": "Promised Land",
+    "scriptureReferences": [
+      "Philippians 1:21",
+      "Revelation 21:23"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/On_Jordans_Stormy_Banks_I_Stand/",
+    "textRights": "Public domain; exact six-stanza text and refrain retained from the cited Timeless Truths record.",
+    "midiFile": "jordans-stormy-banks.mid",
+    "midiSha256": "b09d54b00d02e9890b2569bda904356c1a857354c39b01d7bf89ebb1c2aefe86",
+    "rightsEvidenceFile": "jordans-stormy-banks-rights.html",
+    "rightsEvidenceSha256": "6a465c708df69efa30145e2a085c0a8665ed2fa8966f8e67b42ba52ee7d97b6e",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/O/On_Jordans_Stormy_Banks_I_Stand/On_Jordans_Stormy_Banks_I_Stand.mid",
+    "musicAttribution": "PROMISED LAND by Miss M. Durham, published 1835, arranged by Rigdon M. McIntosh, 1895; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "On Jordan’s stormy banks I stand,\nAnd cast a wishful eye\nTo Canaan’s fair and happy land,\nWhere my possessions lie.",
+      "Oh, the transporting, rapturous scene\nThat rises to my sight!\nSweet fields arrayed in living green,\nAnd rivers of delight!",
+      "O’er all those wide, extended plains\nShines one eternal day;\nThere God the Son forever reigns,\nAnd scatters night away.",
+      "No chilling winds or poisonous breath\nCan reach that healthful shore;\nSickness and sorrow, pain and death,\nAre felt and feared no more.",
+      "When I shall reach that happy place,\nI’ll be forever blest,\nFor I shall see my Father’s face,\nAnd in His bosom rest.",
+      "Filled with delight my raptured soul\nWould here no longer stay;\nThough Jordan’s waves around me roll,\nFearless, I’d launch away."
+    ],
+    "refrain": "I am bound for the promised land,\nI am bound for the promised land;\nOh, who will come and go with me?\nI am bound for the promised land.",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "there-is-a-fountain",
+    "title": "There Is a Fountain",
+    "lyricist": "William Cowper; altered",
+    "lyricYear": 1772,
+    "tune": "Cleansing Fountain",
+    "scriptureReferences": [
+      "Zechariah 13:1",
+      "John 19:34",
+      "1 John 1:7"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/There_Is_a_Fountain/",
+    "textRights": "Public domain; exact five-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "there-is-a-fountain.mid",
+    "midiSha256": "82a131242840b11e402a888ddc7bd6865a6f72e67b7f0578e642acd68bd6bcac",
+    "rightsEvidenceFile": "there-is-a-fountain-rights.html",
+    "rightsEvidenceSha256": "45758a4b5ff068ce47c82d11bc5665da5f10129e3a8dd86a5b06e6ec91cfe80d",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/There_Is_a_Fountain/There_Is_a_Fountain.mid",
+    "musicAttribution": "CLEANSING FOUNTAIN, American melody, arranged and published 1874; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "There is a fountain filled with blood,\nDrawn from Immanuel’s veins,\nAnd sinners plunged beneath that flood\nLose all their guilty stains:\nLose all their guilty stains,\nLose all their guilty stains;\nAnd sinners plunged beneath that flood\nLose all their guilty stains.",
+      "The dying thief rejoiced to see\nThat fountain in His day;\nAnd there have I, though vile as he,\nWashed all my sins away:\nWashed all my sins away,\nWashed all my sins away;\nAnd there have I, though vile as he,\nWashed all my sins away.",
+      "Dear dying Lamb, Thy precious blood\nShall never lose its pow’r,\nTill all the ransomed church of God\nAre safe, to sin no more:\nAre safe, to sin no more,\nAre safe, to sin no more;\nTill all the ransomed church of God\nAre safe, to sin no more.",
+      "E’er since by faith I saw the stream\nThy flowing wounds supply,\nRedeeming love has been my theme,\nAnd shall be till I die:\nAnd shall be till I die,\nAnd shall be till I die;\nRedeeming love has been my theme,\nAnd shall be till I die.",
+      "When this poor, lisping, stamm’ring tongue\nLies silent in the grave,\nThen in a nobler, sweeter song,\nI’ll sing Thy pow’r to save:\nI’ll sing Thy pow’r to save,\nI’ll sing Thy pow’r to save;\nThen in a nobler, sweeter song,\nI’ll sing Thy pow’r to save."
+    ],
+    "refrain": null,
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "how-firm-a-foundation",
+    "title": "How Firm a Foundation",
+    "lyricist": "Anonymous/Unknown",
+    "lyricYear": 1787,
+    "tune": "Foundation",
+    "scriptureReferences": [
+      "Isaiah 43:1-5",
+      "Hebrews 13:5-6"
+    ],
+    "stanzas": [
+      "How firm a foundation, ye saints of the Lord,\nIs laid for your faith in His excellent word!\nWhat more can He say than to you He hath said—\nTo you who for refuge to Jesus have fled?",
+      "“Fear not, I am with thee, oh, be not dismayed,\nFor I am thy God, and will still give thee aid;\nI’ll strengthen thee, help thee, and cause thee to stand,\nUpheld by My gracious, omnipotent hand.",
+      "“When through the deep waters I call thee to go,\nThe rivers of sorrow shall not overflow;\nFor I will be with thee thy trouble to bless,\nAnd sanctify to thee thy deepest distress.",
+      "“When through fiery trials thy pathway shall lie,\nMy grace, all-sufficient, shall be thy supply;\nThe flame shall not harm thee; I only design\nThy dross to consume and thy gold to refine.",
+      "“The soul that on Jesus doth lean for repose,\nI will not, I will not, desert to his foes;\nThat soul, though all hell should endeavor to shake,\nI’ll never, no never, no never forsake.”"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/How_Firm_a_Foundation/",
+    "textRights": "Public domain; exact five-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "how-firm-a-foundation.mid",
+    "midiSha256": "fa8cfae28266d40e85d17546171479ef7d3b69895d75ae065258dc4f6b09305a",
+    "rightsEvidenceFile": "how-firm-a-foundation-rights.html",
+    "rightsEvidenceSha256": "ffd31798f9816665166e57ff5911745f28e0e51233323bb0a936b9fa483ec3dd",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/How_Firm_a_Foundation/How_Firm_a_Foundation.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "FOUNDATION, American melody, published 1832; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "guide-me-o-thou-great-jehovah",
+    "title": "Guide Me, O Thou Great Jehovah",
+    "lyricist": "William Williams; translated by Peter Williams; altered",
+    "lyricYear": 1771,
+    "tune": "Cwm Rhondda",
+    "scriptureReferences": [
+      "Exodus 13:21",
+      "Psalm 48:14"
+    ],
+    "stanzas": [
+      "Guide me, O Thou great Jehovah,\nPilgrim through this barren land;\nI am weak, but Thou art mighty,\nHold me with Thy pow’rful hand.\nBread of heaven, Bread of heaven,\nFeed me till I want no more;\nFeed me till I want no more.",
+      "Open now the crystal fountain,\nWhence the healing stream doth flow;\nLet the fire and cloudy pillar\nLead me all my journey through.\nStrong Deliv’rer, strong Deliv’rer,\nBe Thou still my Strength and Shield;\nBe Thou still my Strength and Shield.",
+      "Lord, I trust Thy mighty power,\nWondrous are Thy works of old;\nThou deliver’st Thine from thralldom,\nWho for naught themselves had sold:\nThou didst conquer, Thou didst conquer\nSin and Satan and the grave,\nSin and Satan and the grave.",
+      "When I tread the verge of Jordan,\nBid my anxious fears subside;\nDeath of death and hell’s Destruction,\nLand me safe on Canaan’s side.\nSongs of praises, songs of praises,\nI will ever give to Thee;\nI will ever give to Thee."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Guide_Me_O_Thou_Great_Jehovah/",
+    "textRights": "Public domain; four-stanza text retained from the cited Timeless Truths record. The record's bracketed first-line variant 'Redeemer' is documented in the retained evidence; the primary reading 'Jehovah' is used here.",
+    "midiFile": "guide-me-o-thou-great-jehovah.mid",
+    "midiSha256": "49f47187d834f29725ecba8e82e838228335e32f0b85e7083b15ded1a43fa6f8",
+    "rightsEvidenceFile": "guide-me-o-thou-great-jehovah-rights.html",
+    "rightsEvidenceSha256": "4760c2b43fb663434ce4ab6bea3dd5df7818c9cb04ef04b1d6e94e51ceaac39d",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/G/Guide_Me_O_Thou_Great_Jehovah/Guide_Me_O_Thou_Great_Jehovah.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "CWM RHONDDA by John Hughes, 1907; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "jesus-i-my-cross-have-taken",
+    "title": "Jesus, I My Cross Have Taken",
+    "lyricist": "Henry F. Lyte",
+    "lyricYear": 1833,
+    "tune": "Ellesdie",
+    "scriptureReferences": [
+      "Matthew 16:24",
+      "Philippians 3:7-8"
+    ],
+    "stanzas": [
+      "Jesus, I my cross have taken, all to leave and follow Thee;\nDestitute, despised, forsaken, Thou from hence my all shall be.\nPerish every fond ambition, all I’ve sought or hoped or known;\nYet how rich is my condition! God and heav’n are still mine own.",
+      "Let the world despise and leave me, they have left my Savior, too;\nHuman hearts and looks deceive me; Thou art not, like them, untrue.\nAnd while Thou shalt smile upon me, God of wisdom, love and might,\nFoes may hate and friends disown me, show Thy face and all is bright.",
+      "Go, then, earthly fame and treasure! Come, disaster, scorn and pain!\nIn Thy service pain is pleasure; with Thy favor, loss is gain.\nI have called Thee, “Abba, Father”; I have set my heart on Thee:\nStorms may howl, and clouds may gather, all must work for good to me.",
+      "Man may trouble and distress me, ’twill but drive me to Thy breast;\nLife with trials hard may press me; heav’n will bring me sweeter rest.\nOh, ’tis not in grief to harm me, while Thy love is left to me;\nOh, ’twere not in joy to charm me, were that joy unmixed with Thee.",
+      "Take, my soul, thy full salvation; rise o’er sin, and fear, and care;\nJoy to find in every station something still to do or bear:\nThink what Spirit dwells within thee; what a Father’s smile is thine;\nWhat a Savior died to win thee, child of heav’n, shouldst thou repine?",
+      "Haste then on from grace to glory, armed by faith, and winged by prayer,\nHeav’n’s eternal day’s before thee, God’s own hand shall guide thee there.\nSoon shall close thy earthly mission, swift shall pass thy pilgrim days;\nHope soon change to glad fruition, faith to sight, and prayer to praise."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Jesus_I_My_Cross_Have_Taken/",
+    "textRights": "Public domain; exact six-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "jesus-i-my-cross-have-taken.mid",
+    "midiSha256": "20f63cbb74ede7de4f2f89b673a0475d827adbe0c09f7a1dc92989b53b35728f",
+    "rightsEvidenceFile": "jesus-i-my-cross-have-taken-rights.html",
+    "rightsEvidenceSha256": "eaafa2fc0fa2603614e445924860ebddf23228bec94382d19d530a89e675e192",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/J/Jesus_I_My_Cross_Have_Taken/Jesus_I_My_Cross_Have_Taken.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ELLESDIE, attributed to Wolfgang A. Mozart, published 1831, arranged by Hubert P. Main, 1872; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "i-need-thee-every-hour",
+    "title": "I Need Thee Every Hour",
+    "lyricist": "Annie S. Hawks; refrain by Robert Lowry",
+    "lyricYear": 1872,
+    "tune": "Need",
+    "scriptureReferences": [
+      "Hebrews 4:16",
+      "1 Thessalonians 5:17"
+    ],
+    "stanzas": [
+      "I need Thee every hour, most gracious Lord;\nNo tender voice like Thine can peace afford.",
+      "I need Thee every hour, stay Thou nearby;\nTemptations lose their pow’r when Thou art nigh.",
+      "I need Thee every hour, in joy or pain;\nCome quickly and abide, or life is vain.",
+      "I need Thee every hour; teach me Thy will;\nAnd Thy rich promises in me fulfill.",
+      "I need Thee every hour, most Holy One;\nOh, make me Thine indeed, Thou blessed Son."
+    ],
+    "refrain": "I need Thee, oh, I need Thee;\nEvery hour I need Thee;\nOh, bless me now, my Savior,\nI come to Thee.",
+    "textSourceUrl": "https://library.timelesstruths.org/music/I_Need_Thee_Every_Hour/",
+    "textRights": "Public domain; exact five-stanza text and refrain retained from the cited Timeless Truths record.",
+    "midiFile": "i-need-thee-every-hour.mid",
+    "midiSha256": "9bb58a6a95164047f225abcfaa329ecf30c03b2778d09a4e39ecd8facab9a9b4",
+    "rightsEvidenceFile": "i-need-thee-every-hour-rights.html",
+    "rightsEvidenceSha256": "16e4aa2b8c9d3df10e8973c4b766cc987b723ba4bb6982090fa996e3d19c37c0",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/I/I_Need_Thee_Every_Hour/I_Need_Thee_Every_Hour.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "NEED by Robert Lowry, 1872; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "when-i-survey-the-wondrous-cross",
+    "title": "When I Survey the Wondrous Cross",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1707,
+    "tune": "Hamburg",
+    "scriptureReferences": [
+      "Galatians 6:14",
+      "Philippians 3:7-8"
+    ],
+    "stanzas": [
+      "When I survey the wondrous cross\nOn which the Prince of glory died,\nMy richest gain I count but loss,\nAnd pour contempt on all my pride.",
+      "Forbid it, Lord, that I should boast,\nSave in the death of Christ my God!\nAll the vain things that charm me most,\nI sacrifice them to His blood.",
+      "See from His head, His hands, His feet,\nSorrow and love flow mingled down!\nDid e’er such love and sorrow meet,\nOr thorns compose so rich a crown?",
+      "Were the whole realm of nature mine,\nThat were a present far too small;\nLove so amazing, so divine,\nDemands my soul, my life, my all."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/When_I_Survey_the_Wondrous_Cross/",
+    "textRights": "Public domain; exact four-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "when-i-survey-the-wondrous-cross.mid",
+    "midiSha256": "e83c60388a0a6f68b23687c3a69f602416705504ae2996fa62ceda3bdd1982b3",
+    "rightsEvidenceFile": "when-i-survey-the-wondrous-cross-rights.html",
+    "rightsEvidenceSha256": "cc3c34dbd7aee0533c9948345b25084bbfdb962a2dd7ff415b6c68ebd77b7256",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/When_I_Survey_the_Wondrous_Cross/When_I_Survey_the_Wondrous_Cross.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HAMBURG by Lowell Mason, 1824; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "be-thou-my-vision",
+    "title": "Be Thou My Vision",
+    "lyricist": "Attributed to Dallan Forgaill; translated by Mary E. Byrne; arranged by Eleanor H. Hull",
+    "lyricYear": 1912,
+    "tune": "Slane",
+    "scriptureReferences": [
+      "Ephesians 1:17-18",
+      "Colossians 3:11"
+    ],
+    "stanzas": [
+      "Be Thou my Vision, O Lord of my heart;\nNaught be all else to me, save that Thou art;\nThou my best Thought, by day or by night,\nWaking or sleeping, Thy presence my light.",
+      "Be Thou my Wisdom, and Thou my true Word;\nI ever with Thee and Thou with me, Lord;\nThou my great Father, I Thy true son;\nThou in me dwelling, and I with Thee one.",
+      "Be Thou my battle Shield, Sword for the fight;\nBe Thou my Dignity, Thou my Delight;\nThou my soul’s Shelter, Thou my high Tow’r:\nRaise Thou me heav’nward, O Pow’r of my pow’r.",
+      "Riches I heed not, nor man’s empty praise,\nThou mine Inheritance, now and always:\nThou and Thou only, first in my heart,\nHigh King of Heaven, my Treasure Thou art.",
+      "High King of Heaven, my victory won,\nMay I reach Heaven’s joys, O bright Heav’n’s Sun!\nHeart of my own heart, whatever befall,\nStill be my Vision, O Ruler of all."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Be_Thou_My_Vision/",
+    "textRights": "Public domain; exact five-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "be-thou-my-vision.mid",
+    "midiSha256": "d1a843599b3414a5d8ac496f430d60f792b78eb8e8abfba2f6af16d76fcad9bd",
+    "rightsEvidenceFile": "be-thou-my-vision-rights.html",
+    "rightsEvidenceSha256": "8d94b8d9a273c06ac96195909fc58ebe604991f9c7ae829ea8928be4ada1ce82",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/B/Be_Thou_My_Vision/Be_Thou_My_Vision.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "SLANE, Irish melody; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "the-solid-rock",
+    "title": "The Solid Rock",
+    "lyricist": "Edward Mote",
+    "lyricYear": 1834,
+    "tune": "Solid Rock",
+    "scriptureReferences": [
+      "Matthew 7:24-27",
+      "1 Corinthians 3:11"
+    ],
+    "stanzas": [
+      "My hope is built on nothing less\nThan Jesus’ blood and righteousness;\nI dare not trust the sweetest frame,\nBut wholly lean on Jesus’ name.",
+      "When darkness veils His lovely face,\nI rest on His unchanging grace;\nIn every high and stormy gale,\nMy anchor holds within the veil.",
+      "His oath, His covenant, His blood\nSupport me in the whelming flood;\nWhen all around my soul gives way,\nHe then is all my hope and stay.",
+      "When He shall come with trumpet sound,\nOh, may I then in Him be found;\nDressed in His righteousness alone,\nFaultless to stand before the throne."
+    ],
+    "refrain": "On Christ, the solid Rock, I stand;\nAll other ground is sinking sand,\nAll other ground is sinking sand.",
+    "textSourceUrl": "https://library.timelesstruths.org/music/The_Solid_Rock/",
+    "textRights": "Public domain; exact four-stanza text and refrain retained from the cited Timeless Truths record.",
+    "midiFile": "the-solid-rock.mid",
+    "midiSha256": "3b457b6624f6913ae678b7da8496b60b92680c7077c19dafd6b989687a687566",
+    "rightsEvidenceFile": "the-solid-rock-rights.html",
+    "rightsEvidenceSha256": "2996815c409400cd19a8fce56ae1fa4c500430fcbacf478ba5968c8584416146",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/The_Solid_Rock/The_Solid_Rock.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "SOLID ROCK by William B. Bradbury, 1863; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "alas-and-did-my-savior-bleed",
+    "title": "Alas! and Did My Savior Bleed",
+    "lyricist": "Isaac Watts; refrain by Ralph E. Hudson",
+    "lyricYear": 1885,
+    "tune": "Hudson",
+    "scriptureReferences": [
+      "1 Timothy 2:5-6",
+      "Galatians 2:20"
+    ],
+    "stanzas": [
+      "Alas! and did my Savior bleed\nAnd did my Sov’reign die?\nWould He devote that sacred head\nFor such a worm as I?",
+      "Was it for crimes that I had done\nHe groaned upon the tree?\nAmazing pity! grace unknown!\nAnd love beyond degree!",
+      "Well might the sun in darkness hide\nAnd shut his glories in,\nWhen Christ, the mighty Maker died,\nFor man the creature’s sin.",
+      "Thus might I hide my blushing face\nWhile His dear cross appears,\nDissolve my heart in thankfulness,\nAnd melt my eyes to tears.",
+      "But drops of grief can ne’er repay\nThe debt of love I owe:\nHere, Lord, I give myself away,\n’Tis all that I can do."
+    ],
+    "refrain": "At the cross, at the cross where I first saw the light,\nAnd the burden of my heart rolled away,\nIt was there by faith I received my sight,\nAnd now I am happy all the day!",
+    "textSourceUrl": "https://library.timelesstruths.org/music/Alas_and_Did_My_Savior_Bleed/",
+    "textRights": "Public domain; exact five-stanza text and Hudson refrain retained from the cited Timeless Truths record.",
+    "midiFile": "alas-and-did-my-savior-bleed.mid",
+    "midiSha256": "f353bd7a15a8ff546b0d962a0965b2054c8106035d04bdea4ff588b7b585d2cc",
+    "rightsEvidenceFile": "alas-and-did-my-savior-bleed-rights.html",
+    "rightsEvidenceSha256": "418aec849213ad5a1ac816b5819d3182abb5a13194033856194e491337a79601",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/A/Alas_and_Did_My_Savior_Bleed/Alas_and_Did_My_Savior_Bleed.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HUDSON by Ralph E. Hudson, 1885; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "jesus-paid-it-all",
+    "title": "Jesus Paid It All",
+    "lyricist": "Elvina M. Hall",
+    "lyricYear": 1865,
+    "tune": "All to Christ",
+    "themes": [
+      "Atonement",
+      "Salvation",
+      "Grace",
+      "Blood of Christ"
+    ],
+    "scriptureReferences": [
+      "Isaiah 1:18",
+      "1 Peter 1:18-19",
+      "Revelation 1:5-6"
+    ],
+    "stanzas": [
+      "I hear the Savior say,\n“Thy strength indeed is small;\nChild of weakness, watch and pray,\nFind in Me thine all in all.”",
+      "For nothing good have I\nWhereby Thy grace to claim;\nI’ll wash my garments white\nIn the blood of Calv’ry’s Lamb.",
+      "And now complete in Him,\nMy robe, His righteousness,\nClose sheltered ’neath His side,\nI am divinely blest.",
+      "Lord, now indeed I find\nThy pow’r, and Thine alone,\nCan change the *leopard’s spots [*leper’s]\nAnd melt the heart of stone.",
+      "When from my dying bed\nMy ransomed soul shall rise,\n“Jesus died my soul to save,”\nShall rend the vaulted skies.",
+      "And when before the throne\nI stand in Him complete,\nI’ll lay my trophies down,\nAll down at Jesus’ feet."
+    ],
+    "refrain": "Jesus paid it all,\nAll to Him I owe;\nSin had left a crimson stain,\nHe washed it white as snow.",
+    "textSourceUrl": "https://library.timelesstruths.org/music/Jesus_Paid_It_All/",
+    "textRights": "Public domain; exact 6-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "jesus-paid-it-all.mid",
+    "midiSha256": "0c4c4a47149e8d9592ed18da81656ebff9edd6fc6facbe004bdb78c6ed558189",
+    "rightsEvidenceFile": "jesus-paid-it-all-rights.html",
+    "rightsEvidenceSha256": "2d2b3470bd393bbcb0c93432a3f75cc4cd326433d645171efacde7fd9bc6d873",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/J/Jesus_Paid_It_All/Jesus_Paid_It_All.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ALL TO CHRIST by John T. Grape, 1868; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "take-my-life-and-let-it-be",
+    "title": "Take My Life and Let It Be",
+    "lyricist": "Frances R. Havergal",
+    "lyricYear": 1874,
+    "tune": "Hendon",
+    "themes": [
+      "Consecration",
+      "Submission",
+      "Stewardship",
+      "Service"
+    ],
+    "scriptureReferences": [
+      "Romans 12:1"
+    ],
+    "stanzas": [
+      "Take my life and let it be\nConsecrated, Lord, to Thee.\n*Take my moments and my days,\nLet them flow in endless praise.",
+      "Take my hands and let them move\nAt the impulse of Thy love.\nTake my feet and let them be\nSwift and beautiful for Thee.",
+      "Take my voice and let me sing,\nAlways, only for my King.\nTake my lips and let them be\nFilled with messages from Thee.",
+      "Take my silver and my gold,\nNot a mite would I withhold.\nTake my intellect and use\nEvery pow’r as Thou shalt choose.",
+      "Take my will and make it Thine,\nIt shall be no longer mine.\nTake my heart, it is Thine own,\nIt shall be Thy royal throne.",
+      "Take my love, my Lord, I pour\nAt Thy feet its treasure store.\nTake myself and I will be\nEver, only, all for Thee."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Take_My_Life_and_Let_It_Be/",
+    "textRights": "Public domain; exact 6-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "take-my-life.mid",
+    "midiSha256": "e2648bb235bad958ec54f1638939ee22a2f5ceb7cf8f7da4dda3ae04e215899a",
+    "rightsEvidenceFile": "take-my-life-rights.html",
+    "rightsEvidenceSha256": "39bb8f66e975f30ffebfb47621d6f0b018072e24a85c1e4467e602c5b3e6769a",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/Take_My_Life_and_Let_It_Be/Take_My_Life_and_Let_It_Be.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "HENDON by Henri A. C. Malan, 1827, harmonized by Lowell Mason, 1841; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "sweet-hour-of-prayer",
+    "title": "Sweet Hour of Prayer",
+    "lyricist": "William W. Walford",
+    "lyricYear": 1845,
+    "tune": "Sweet Hour",
+    "themes": [
+      "Prayer",
+      "Trust",
+      "Comfort",
+      "Perseverance"
+    ],
+    "scriptureReferences": [
+      "1 Thessalonians 5:17",
+      "Revelation 8:4"
+    ],
+    "stanzas": [
+      "Sweet hour of prayer! sweet hour of prayer!\nThat calls me from a world of care,\nAnd bids me at my Father’s throne\nMake all my wants and wishes known.\nIn seasons of distress and grief,\nMy soul has often found relief,\nAnd oft escaped the tempter’s snare,\nBy thy return, sweet hour of prayer!",
+      "Sweet hour of prayer! sweet hour of prayer!\nThe joys I feel, the bliss I share,\nOf those whose anxious spirits burn\nWith strong desires for thy return!\nWith such I hasten to the place\nWhere God my Savior shows His face,\nAnd gladly take my station there,\nAnd wait for thee, sweet hour of prayer!",
+      "Sweet hour of prayer! sweet hour of prayer!\nThy wings shall my petition bear\nTo Him whose truth and faithfulness\nEngage the waiting soul to bless.\nAnd since He bids me seek His face,\nBelieve His Word and trust His grace,\nI’ll cast on Him my every care,\nAnd wait for thee, sweet hour of prayer!",
+      "Sweet hour of prayer! sweet hour of prayer!\nMay I thy consolation share,\nTill, from Mount Pisgah’s lofty height,\nI view my home and take my flight.\nThis robe of flesh I’ll drop, and rise\nTo seize the everlasting prize,\nAnd shout, while passing through the air,\n“Farewell, farewell, sweet hour of prayer!”"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Sweet_Hour_of_Prayer/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "sweet-hour-of-prayer.mid",
+    "midiSha256": "43844a9f96494490f9a5b252eda3cc6556a72038b9f5ebff4b17d7024e3af5a2",
+    "rightsEvidenceFile": "sweet-hour-of-prayer-rights.html",
+    "rightsEvidenceSha256": "489c60ff0e078b9dd6d3aeb0ec2a1b3fec806f074026624c66db67ec8e6b958f",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Sweet_Hour_of_Prayer/Sweet_Hour_of_Prayer.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "SWEET HOUR by William B. Bradbury, published 1861; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "my-faith-looks-up-to-thee",
+    "title": "My Faith Looks Up to Thee",
+    "lyricist": "Ray Palmer",
+    "lyricYear": 1830,
+    "tune": "Olivet (Mason)",
+    "themes": [
+      "Faith",
+      "Prayer",
+      "Guidance",
+      "Assurance"
+    ],
+    "scriptureReferences": [
+      "Hebrews 12:2",
+      "2 Corinthians 5:7",
+      "Galatians 2:20"
+    ],
+    "stanzas": [
+      "My faith looks up to Thee,\nThou Lamb of Calvary,\nSavior divine!\nNow hear me while I pray,\nTake all my guilt away,\nOh, let me from this day\nBe wholly Thine!",
+      "May Thy rich grace impart\nStrength to my fainting heart,\nMy zeal inspire!\nAs Thou hast died for me,\nOh, may my love to Thee\nPure, warm, and changeless be,\nA living fire!",
+      "While life’s dark maze I tread,\nAnd griefs around me spread,\nBe Thou my guide;\nBid darkness turn to day,\nWipe sorrow’s tears away,\nNor let me ever stray\nFrom Thee aside.",
+      "When ends life’s transient dream,\nWhen death’s cold, sullen stream\nShall o’er me roll;\nBlest Savior, then in love,\nFear and distrust remove;\nOh, bear me safe above,\nA ransomed soul!"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/My_Faith_Looks_Up_to_Thee/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "my-faith-looks-up.mid",
+    "midiSha256": "0d0b7891f164460936a157c9cfe154d0fc334736c449ceac124157a32f56597c",
+    "rightsEvidenceFile": "my-faith-looks-up-rights.html",
+    "rightsEvidenceSha256": "83311bce161a970532c1242f6195820d201205c7a24edb1300d185f009a69128",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/My_Faith_Looks_Up_to_Thee/My_Faith_Looks_Up_to_Thee.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "OLIVET by Lowell Mason, 1832; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "rejoice-the-lord-is-king",
+    "title": "Rejoice, the Lord Is King",
+    "lyricist": "Charles Wesley",
+    "lyricYear": 1744,
+    "tune": "Darwall's 148th",
+    "themes": [
+      "Joy",
+      "Kingship of Christ",
+      "Second Coming",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Philippians 4:4",
+      "Psalm 103:19"
+    ],
+    "stanzas": [
+      "Rejoice, the Lord is King!\nYour Lord and King adore;\nRejoice, give thanks, and sing,\nAnd triumph evermore;\nLift up your heart, lift up your voice;\nRejoice, again I say, rejoice!",
+      "Jesus, the Savior, reigns,\nThe God of truth and love;\nWhen He had purged our stains\nHe took His seat above;\nLift up your heart, lift up your voice;\nRejoice, again I say, rejoice!",
+      "His kingdom cannot fail,\nHe rules o’er earth and Heav’n,\nThe keys of death and hell\nAre to our Jesus giv’n;\nLift up your heart, lift up your voice;\nRejoice, again I say, rejoice!",
+      "Rejoice in glorious hope!\nJesus the Judge shall come,\nAnd take His servants up\nTo their eternal home;\nWe soon shall hear th’ archangel’s voice;\nThe trump of God shall sound, rejoice!"
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/Rejoice_the_Lord_Is_King/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "rejoice-the-lord-is-king.mid",
+    "midiSha256": "13afacfb9441cd55ad5797fd40115a46112da74c5f6311af28cd245019a80105",
+    "rightsEvidenceFile": "rejoice-the-lord-is-king-rights.html",
+    "rightsEvidenceSha256": "330119a31d693ce7afc5e353dbd034c64535c7df5927a55f6296f467504dc480",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Rejoice_the_Lord_Is_King/Rejoice_the_Lord_Is_King.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "DARWALL'S 148TH by John Darwall, published 1770; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "i-sing-the-mighty-power-of-god",
+    "title": "I Sing the Mighty Power of God",
+    "lyricist": "Isaac Watts",
+    "lyricYear": 1715,
+    "tune": "Ellacombe",
+    "themes": [
+      "Creation",
+      "Providence",
+      "Power of God",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Jeremiah 10:12-13"
+    ],
+    "stanzas": [
+      "I sing the mighty pow’r of God, that made the mountains rise,\nThat spread the flowing seas abroad, and built the lofty skies.\nI sing the wisdom that ordained the sun to rule the day;\nThe moon shines full at His command, and all the stars obey.",
+      "I sing the goodness of the Lord, who filled the earth with food,\nWho formed the creatures through the Word, and then pronounced them good.\nLord, how Thy wonders are displayed, where’er I turn my eye,\nIf I survey the ground I tread, or gaze upon the sky.",
+      "There’s not a plant or flow’r below, but makes Thy glories known,\nAnd clouds arise, and tempests blow, by order from Thy throne;\nWhile all that borrows life from Thee is ever in Thy care;\nAnd everywhere that we can be, Thou, God, art present there."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/I_Sing_the_Mighty_Power_of_God/",
+    "textRights": "Public domain; exact 3-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "i-sing-the-mighty-power.mid",
+    "midiSha256": "5a5cbc3f09e7fdb6b55d05ab3dd47a8cdfa8bd63f61b96a7329b9a077014e275",
+    "rightsEvidenceFile": "i-sing-the-mighty-power-rights.html",
+    "rightsEvidenceSha256": "4a1363f5f08d788a151a598910eaa6fbcb6a1d500e8d25e1d7defc9af65e34d8",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/I/I_Sing_the_Mighty_Power_of_God/I_Sing_the_Mighty_Power_of_God.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "ELLACOMBE from Gesangbuch der H. W. K. Hofkapelle, 1784, arranged and harmonized by William H. Monk, 1868; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "my-jesus-i-love-thee",
+    "title": "My Jesus, I Love Thee",
+    "lyricist": "William R. Featherston",
+    "lyricYear": 1864,
+    "tune": "Gordon",
+    "themes": [
+      "Love for Christ",
+      "Devotion",
+      "Calvary",
+      "Heaven"
+    ],
+    "scriptureReferences": [
+      "1 John 4:19"
+    ],
+    "stanzas": [
+      "My Jesus, I love Thee, I know Thou art mine;\nFor Thee all the follies of sin I resign;\nMy gracious Redeemer, my Savior art Thou;\nIf ever I loved Thee, my Jesus, ’tis now.",
+      "I love Thee because Thou hast first loved me,\nAnd purchased my pardon on Calvary’s tree;\nI love Thee for wearing the thorns on Thy brow;\nIf ever I loved Thee, my Jesus, ’tis now.",
+      "I’ll love Thee in life, I will love Thee in death,\nAnd praise Thee as long as Thou lendest me breath;\nAnd say when the death dew lies cold on my brow,\nIf ever I loved Thee, my Jesus, ’tis now.",
+      "In mansions of glory and endless delight,\nI’ll ever adore Thee in heaven so bright;\nI’ll sing with the glittering crown on my brow,\nIf ever I loved Thee, my Jesus, ’tis now."
+    ],
+    "refrain": null,
+    "textSourceUrl": "https://library.timelesstruths.org/music/My_Jesus_I_Love_Thee/",
+    "textRights": "Public domain; exact 4-stanza text retained from the cited Timeless Truths record.",
+    "midiFile": "my-jesus-i-love-thee.mid",
+    "midiSha256": "35564fa770ae96f2234dd4125a938d4aa84e9e86f5c4017c6bc397c2e0474127",
+    "rightsEvidenceFile": "my-jesus-i-love-thee-rights.html",
+    "rightsEvidenceSha256": "967366111fc85201e22b054e78ccc213ae0a9d4a2fda654f383959d83db9b477",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/My_Jesus_I_Love_Thee/My_Jesus_I_Love_Thee.mid",
+    "musicRights": "Public Domain",
+    "musicAttribution": "GORDON by Adoniram J. Gordon, 1876; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "reviewedAt": "2026-08-25"
+  },
+  {
+    "id": "leaning-on-the-everlasting-arms",
+    "title": "Leaning on the Everlasting Arms",
+    "lyricist": "Elisha A. Hoffman; refrain by Anthony J. Showalter",
+    "lyricYear": 1887,
+    "tune": "Showalter",
+    "themes": [
+      "Trust",
+      "Assurance",
+      "Peace",
+      "Pilgrimage"
+    ],
+    "scriptureReferences": [
+      "Deuteronomy 33:27",
+      "Song of Solomon 8:5"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Leaning_on_the_Everlasting_Arms/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/L/Leaning_on_the_Everlasting_Arms/Leaning_on_the_Everlasting_Arms.mid",
+    "musicAttribution": "SHOWALTER by Anthony J. Showalter, published 1887; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "What a fellowship, what a joy divine,\nLeaning on the everlasting arms;\nWhat a blessedness, what a peace is mine,\nLeaning on the everlasting arms.",
+      "Oh, how sweet to walk in this pilgrim way,\nLeaning on the everlasting arms;\nOh, how bright the path grows from day to day,\nLeaning on the everlasting arms.",
+      "What have I to dread, what have I to fear,\nLeaning on the everlasting arms?\nI have blessed peace with my Lord so near,\nLeaning on the everlasting arms."
+    ],
+    "refrain": "Leaning, leaning,\nSafe and secure from all alarms;\nLeaning, leaning,\nLeaning on the everlasting arms.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "leaning-on-the-everlasting-arms.mid",
+    "midiSha256": "b409d4ebc0eb30a50d6f4428ad5ee8190fc4457203d67966de632a3b225c45d6",
+    "rightsEvidenceFile": "leaning-on-the-everlasting-arms-rights.html",
+    "rightsEvidenceSha256": "b70e311ca9823a59fe5de79413d5fd6ec1b66ab69a1e621e57f6f4b5a457a7fa",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "trust-and-obey",
+    "title": "Trust and Obey",
+    "lyricist": "John H. Sammis",
+    "lyricYear": 1887,
+    "tune": "Trust and Obey",
+    "themes": [
+      "Trust",
+      "Obedience",
+      "Fellowship",
+      "Discipleship"
+    ],
+    "scriptureReferences": [
+      "Psalm 84:11-12",
+      "Isaiah 50:10"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Trust_and_Obey/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/Trust_and_Obey/Trust_and_Obey.mid",
+    "musicAttribution": "TRUST AND OBEY by Daniel B. Towner, 1887; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "When we walk with the Lord in the light of His Word,\nWhat a glory He sheds on our way!\nWhile we do His good will, He abides with us still,\nAnd with all who will trust and obey.",
+      "Not a shadow can rise, not a cloud in the skies,\nBut His smile quickly drives it away;\nNot a doubt or a fear, not a sigh or a tear,\nCan abide while we trust and obey.",
+      "Not a burden we bear, not a sorrow we share,\nBut our toil He doth richly repay;\nNot a grief or a loss, not a frown or a cross,\nBut is blessed if we trust and obey.",
+      "But we never can prove the delights of His love\nUntil all on the altar we lay;\nFor the favor He shows, for the joy He bestows,\nAre for them who will trust and obey.",
+      "Then in fellowship sweet we will sit at His feet,\nOr we’ll walk by His side in the way;\nWhat He says we will do, where He sends we will go;\nNever fear, only trust and obey."
+    ],
+    "refrain": "Trust and obey, for there’s no other way\nTo be happy in Jesus, but to trust and obey.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "trust-and-obey.mid",
+    "midiSha256": "44e89f4e26cb674fe6ac8b752b1e891e0a2b5241bd4eb813de7463f8b9576ee8",
+    "rightsEvidenceFile": "trust-and-obey-rights.html",
+    "rightsEvidenceSha256": "146ebb3eed23460c5d630ef6786f7f1ea1b5a4d97f9c0b48e9ce01e6a30bf026",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "wonderful-words-of-life",
+    "title": "Wonderful Words of Life",
+    "lyricist": "Philip P. Bliss",
+    "lyricYear": 1874,
+    "tune": "Words of Life",
+    "themes": [
+      "Bible",
+      "Gospel",
+      "Salvation",
+      "Teaching"
+    ],
+    "scriptureReferences": [
+      "John 6:63",
+      "John 6:68",
+      "Philippians 2:15-16"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Wonderful_Words_of_Life/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/Wonderful_Words_of_Life/Wonderful_Words_of_Life.mid",
+    "musicAttribution": "WORDS OF LIFE by Philip P. Bliss, 1874; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Sing them over again to me,\nWonderful words of life;\nLet me more of their beauty see,\nWonderful words of life.\nWords of life and beauty\nTeach me faith and duty;",
+      "Christ, the blessed One, gives to all\nWonderful words of life;\nSinner, list to the loving call,\nWonderful words of life.\nAll so freely given,\nWooing us to heaven;",
+      "Sweetly echo the Gospel call,\nWonderful words of life;\nOffer pardon and peace to all,\nWonderful words of life.\nJesus, only Savior,\nSanctify forever;"
+    ],
+    "refrain": "Beautiful words, wonderful words,\nWonderful words of life;\nBeautiful words, wonderful words,\nWonderful words of life.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "wonderful-words-of-life.mid",
+    "midiSha256": "a806cdd911377cad3e96d0650d69d1da5244b74d18ff52790045a306a1f8ea2d",
+    "rightsEvidenceFile": "wonderful-words-of-life-rights.html",
+    "rightsEvidenceSha256": "ef47053ee6423eeae69acc747f289d34658062e2e5ab577ddf72305e7a8ef33e",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "rescue-the-perishing",
+    "title": "Rescue the Perishing",
+    "lyricist": "Frances J. Crosby",
+    "lyricYear": 1869,
+    "tune": "Rescue",
+    "themes": [
+      "Evangelism",
+      "Missions",
+      "Compassion",
+      "Gospel"
+    ],
+    "scriptureReferences": [
+      "Jude 1:22-23"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Rescue_the_Perishing/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Rescue_the_Perishing/Rescue_the_Perishing.mid",
+    "musicAttribution": "RESCUE by William H. Doane, published 1870; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Rescue the perishing, care for the dying,\nSnatch them in pity from sin and the grave;\nWeep o’er the erring one, lift up the fallen,\nTell them of Jesus, the mighty to save.",
+      "Though they are slighting Him, still He is waiting,\nWaiting the penitent child to receive;\nPlead with them earnestly, plead with them gently;\nHe will forgive if they only believe.",
+      "Down in the human heart, crushed by the tempter,\nFeelings lie buried that grace can restore;\nTouched by a loving heart, wakened by kindness,\nChords that were broken will vibrate once more.",
+      "Rescue the perishing, duty demands it;\nStrength for thy labor the Lord will provide;\nBack to the narrow way patiently win them;\nTell the poor wand’rer a Savior has died."
+    ],
+    "refrain": "Rescue the perishing, care for the dying,\nJesus is merciful, Jesus will save.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "rescue-the-perishing.mid",
+    "midiSha256": "da1d0236c4fbbc9e0b80fa61225e46065ba9336eb786d303f89cf98bc8258e0b",
+    "rightsEvidenceFile": "rescue-the-perishing-rights.html",
+    "rightsEvidenceSha256": "41bdbe5136beeb28b650a6334d2cdec83bcac1374d07ed49341fb0c5c324b658",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "higher-ground",
+    "title": "Higher Ground",
+    "lyricist": "Johnson Oatman, Jr.",
+    "lyricYear": 1898,
+    "tune": "Higher Ground",
+    "themes": [
+      "Growth",
+      "Faith",
+      "Holiness",
+      "Heaven"
+    ],
+    "scriptureReferences": [
+      "Deuteronomy 32:13",
+      "Psalm 18:33",
+      "Isaiah 58:14",
+      "Micah 4:2"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Higher_Ground/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/Higher_Ground/Higher_Ground.mid",
+    "musicAttribution": "HIGHER GROUND by Charles H. Gabriel, 1902; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "I’m pressing on the upward way,\nNew heights I’m gaining every day;\nStill praying as I’m onward bound,\n“Lord, plant my feet on higher ground.”",
+      "My heart has no desire to stay\nWhere doubts arise and fears dismay;\nThough some may dwell where those abound,\nMy prayer, my aim, is higher ground.",
+      "I want to live above the world,\nThough Satan’s darts at me are hurled;\nFor faith has caught the joyful sound,\nThe song of saints on higher ground.",
+      "I want to scale the utmost height\nAnd catch a gleam of glory bright;\nBut still I’ll pray till heav’n I’ve found,\n“Lord, plant my feet on higher ground.”"
+    ],
+    "refrain": "Lord, lift me up and let me stand,\nBy faith, on Heaven’s tableland,\nA higher plane than I have found;\nLord, plant my feet on higher ground.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "higher-ground.mid",
+    "midiSha256": "5c25ce55018d7524df9d4cf7d010287b706004378d3b038bd53ed72b57b99d02",
+    "rightsEvidenceFile": "higher-ground-rights.html",
+    "rightsEvidenceSha256": "7398638990221a7099b53a6bf71f9b685e29c4a8d412c8069046938eda9afb20",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "i-surrender-all",
+    "title": "I Surrender All",
+    "lyricist": "Judson W. Van DeVenter",
+    "lyricYear": 1896,
+    "tune": "Surrender",
+    "themes": [
+      "Surrender",
+      "Consecration",
+      "Submission",
+      "Invitation"
+    ],
+    "scriptureReferences": [
+      "Luke 14:33",
+      "Matthew 19:27"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/I_Surrender_All/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/I/I_Surrender_All/I_Surrender_All.mid",
+    "musicAttribution": "SURRENDER by Winfield S. Weeden, 1896; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "All to Jesus I surrender,\nAll to Him I freely give;\nI will ever love and trust Him,\nIn His presence daily live.",
+      "All to Jesus I surrender,\nHumbly at His feet I bow;\nWorldly pleasures all forsaken,\nTake me, Jesus, take me now.",
+      "All to Jesus I surrender,\nMake me, Savior, wholly Thine;\nLet me feel the Holy Spirit,\nTruly know that Thou art mine.",
+      "All to Jesus I surrender,\nLord, I give myself to Thee;\nFill me with Thy love and power,\nLet Thy blessing fall on me.",
+      "All to Jesus I surrender,\nNow I feel the sacred flame;\nOh, the joy of full salvation!\nGlory, glory, to His Name!"
+    ],
+    "refrain": "I surrender all,\nI surrender all;\nAll to Thee, my blessed Savior,\nI surrender all.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "i-surrender-all.mid",
+    "midiSha256": "b975e521809c8da4501ebc87b65061f974422bfc27cbd348c00c9b723867ecb5",
+    "rightsEvidenceFile": "i-surrender-all-rights.html",
+    "rightsEvidenceSha256": "d6ff1af60850fb271c27a3d6477ec8aa19707c4290e3c4ceb2295a0a5a27bfd3",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "he-leadeth-me",
+    "title": "He Leadeth Me",
+    "lyricist": "Joseph H. Gilmore",
+    "lyricYear": 1862,
+    "tune": "Aughton",
+    "themes": [
+      "Guidance",
+      "Providence",
+      "Trust",
+      "Comfort"
+    ],
+    "scriptureReferences": [
+      "Psalm 23:1-3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/He_Leadeth_Me/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/He_Leadeth_Me/He_Leadeth_Me.mid",
+    "musicAttribution": "AUGHTON by William B. Bradbury, published 1864; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "He leadeth me, O blessed thought!\nO words with heav’nly comfort fraught!\nWhate’er I do, where’er I be\nStill ’tis God’s hand that leadeth me.",
+      "Sometimes ’mid scenes of deepest gloom,\nSometimes where Eden’s bowers bloom,\nBy waters still, o’er troubled sea,\nStill ’tis His hand that leadeth me.",
+      "Lord, I would place my hand in Thine,\nNor ever murmur nor repine;\nContent, whatever lot I see,\nSince ’tis my God that leadeth me.",
+      "And when my task on earth is done,\nWhen by Thy grace the vict’ry’s won,\nE’en death’s cold wave I will not flee,\nSince God through Jordan leadeth me."
+    ],
+    "refrain": "He leadeth me, He leadeth me,\nBy His own hand He leadeth me;\nHis faithful foll’wer I would be,\nFor by His hand He leadeth me.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "he-leadeth-me.mid",
+    "midiSha256": "4caa6a70b031b170e520c12284f90f4a30a138ef6867fe163e93718ee397addd",
+    "rightsEvidenceFile": "he-leadeth-me-rights.html",
+    "rightsEvidenceSha256": "e5cc11900ba0a706e33b0a4569635ed123c878343f93cba8d66f8b4ac109b3d0",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "more-about-jesus",
+    "title": "More About Jesus",
+    "lyricist": "Eliza E. Hewitt",
+    "lyricYear": 1887,
+    "tune": "Sweeney",
+    "themes": [
+      "Christ",
+      "Bible Study",
+      "Discipleship",
+      "Second Coming"
+    ],
+    "scriptureReferences": [
+      "1 Chronicles 16:10",
+      "John 17:3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/More_About_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/More_About_Jesus/More_About_Jesus.mid",
+    "musicAttribution": "SWEENEY by John R. Sweney, published 1887; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "More about Jesus would I know,\nMore of His grace to others show;\nMore of His saving fullness see,\nMore of His love who died for me.",
+      "More about Jesus let me learn,\nMore of His holy will discern;\nSpirit of God, my teacher be,\nShowing the things of Christ to me.",
+      "More about Jesus, in His Word,\nHolding communion with my Lord;\nHearing His voice in every line,\nMaking each faithful saying mine.",
+      "More about Jesus on His throne,\nRiches in glory all His own;\nMore of His kingdom’s sure increase;\nMore of His coming, Prince of Peace."
+    ],
+    "refrain": "More, more about Jesus,\nMore, more about Jesus;\nMore of His saving fullness see,\nMore of His love who died for me.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "more-about-jesus.mid",
+    "midiSha256": "d5e80a9381dfdefdd420485364ea29abb676797c33740674e72257820373f5fb",
+    "rightsEvidenceFile": "more-about-jesus-rights.html",
+    "rightsEvidenceSha256": "e456132ca9499072af0b9a69be32a1b46a640fcb063cd6169ca4f0ac36f341fd",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-26"
+  },
+  {
+    "id": "a-mighty-fortress-is-our-god",
+    "title": "A Mighty Fortress Is Our God",
+    "lyricist": "Martin Luther; translated by Frederick H. Hedge",
+    "lyricYear": 1529,
+    "tune": "Ein' Feste Burg",
+    "themes": [
+      "Assurance",
+      "Trust",
+      "Spiritual Warfare"
+    ],
+    "scriptureReferences": [
+      "Psalm 46:1"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/A_Mighty_Fortress_Is_Our_God/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/A/A_Mighty_Fortress_Is_Our_God/A_Mighty_Fortress_Is_Our_God.mid",
+    "musicAttribution": "EIN' FESTE BURG by Martin Luther, circa 1529; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "A mighty fortress is our God, a bulwark never failing;\nOur helper He, amid the flood of mortal ills prevailing:\nFor still our ancient foe doth seek to work us woe;\nHis craft and pow’r are great, and, armed with cruel hate,\nOn earth is not his equal.",
+      "Did we in our own strength confide, our striving would be losing,\nWere not the right Man on our side, the Man of God’s own choosing:\nDost ask who that may be? Christ Jesus, it is He;\nLord Sabaoth, His Name, from age to age the same,\nAnd He must win the battle.",
+      "And though this world, with devils filled, should threaten to undo us,\nWe will not fear, for God hath willed His truth to triumph through us;\nThe Prince of Darkness grim, we tremble not for him;\nHis rage we can endure, for lo, his doom is sure,\nOne little word shall fell him.",
+      "That word above all earthly pow’rs, no thanks to them, abideth;\nThe Spirit and the gifts are ours through Him Who with us sideth;\nLet goods and kindred go, this mortal life also;\nThe body they may kill: God’s truth abideth still,\nHis kingdom is forever."
+    ],
+    "refrain": null,
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "a-mighty-fortress-is-our-god.mid",
+    "midiSha256": "1df2009f236e7596c66177ef8e69782aad66e6eeb76f6ddce435e634de8306e7",
+    "rightsEvidenceFile": "a-mighty-fortress-is-our-god-rights.html",
+    "rightsEvidenceSha256": "fd62464cf0d871137c3b46a652a8fb1fc28d5ff31060a2609b20720e67cb0461",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-27"
+  },
+  {
+    "id": "jesus-saves",
+    "title": "Jesus Saves",
+    "lyricist": "Priscilla J. Owens",
+    "lyricYear": 1882,
+    "tune": "Jesus Saves",
+    "themes": [
+      "Salvation",
+      "Gospel",
+      "Evangelism",
+      "Missions"
+    ],
+    "scriptureReferences": [
+      "John 12:47",
+      "Matthew 1:21"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Jesus_Saves/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/J/Jesus_Saves/Jesus_Saves.mid",
+    "musicAttribution": "JESUS SAVES by William J. Kirkpatrick, published 1882; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "We have heard the joyful sound:\nJesus saves! Jesus saves!\nSpread the tidings all around:\nJesus saves! Jesus saves!\nBear the news to every land,\nClimb the mountains, cross the waves;\nOnward! ’tis our Lord’s command;\nJesus saves! Jesus saves!",
+      "Waft it on the rolling tide:\nJesus saves! Jesus saves!\nTell to sinners far and wide:\nJesus saves! Jesus saves!\nSing, you islands of the sea;\nEcho back, you ocean caves;\nEarth shall keep her jubilee:\nJesus saves! Jesus saves!",
+      "Sing above the battle strife:\nJesus saves! Jesus saves!\nBy His death and endless life\nJesus saves! Jesus saves!\nShout it brightly through the gloom,\nWhen the heart for mercy craves;\nSing in triumph o’er the tomb:\nJesus saves! Jesus saves!",
+      "Give the winds a mighty voice:\nJesus saves! Jesus saves!\nLet the nations now rejoice:\nJesus saves! Jesus saves!\nShout salvation full and free;\nHighest hills and deepest caves;\nThis our song of victory:\nJesus saves! Jesus saves!"
+    ],
+    "refrain": null,
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "jesus-saves.mid",
+    "midiSha256": "6ea4614c1a75e0f66b971888e2aad44756eb30ca3b7afa411c6d6e964c597819",
+    "rightsEvidenceFile": "jesus-saves-rights.html",
+    "rightsEvidenceSha256": "acf8c5144de3ceb760abf4bd88b312375b675aeaf921ac16e8d094ed6ef6a653",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-27"
+  },
+  {
+    "id": "standing-on-the-promises",
+    "title": "Standing on the Promises",
+    "lyricist": "Russell K. Carter",
+    "lyricYear": 1886,
+    "tune": "Standing on the Promises",
+    "themes": [
+      "Promise",
+      "Faith",
+      "Assurance",
+      "Bible"
+    ],
+    "scriptureReferences": [
+      "2 Peter 1:2-4",
+      "Hebrews 10:23"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Standing_on_the_Promises/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Standing_on_the_Promises/Standing_on_the_Promises.mid",
+    "musicAttribution": "STANDING ON THE PROMISES by Russell K. Carter, published 1886; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Standing on the promises of Christ my King,\nThrough eternal ages let His praises ring,\nGlory in the highest, I will shout and sing,\nStanding on the promises of God.",
+      "Standing on the promises that cannot fail,\nWhen the howling storms of doubt and fear assail,\nBy the living Word of God I shall prevail,\nStanding on the promises of God.",
+      "Standing on the promises I now can see\nPerfect, present cleansing in the blood for me;\nStanding in the liberty where Christ makes free,\nStanding on the promises of God.",
+      "Standing on the promises of Christ the Lord,\nBound to Him eternally by love’s strong cord,\nOvercoming daily with the Spirit’s sword,\nStanding on the promises of God.",
+      "Standing on the promises I cannot fall,\nList’ning every moment to the Spirit’s call,\nResting in my Savior as my all in all,\nStanding on the promises of God."
+    ],
+    "refrain": "Standing, standing,\nStanding on the promises of God my Savior;\nStanding, standing,\nI’m standing on the promises of God.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "standing-on-the-promises.mid",
+    "midiSha256": "5c37cbe7545b8d1322f9331255c594529780eb7dae3afeeaba7c5416b7b602fa",
+    "rightsEvidenceFile": "standing-on-the-promises-rights.html",
+    "rightsEvidenceSha256": "ac31721c08bced9dfb8f99d23e01cd9d8869589747605dca3fbc2d214b711db4",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-27"
+  },
+  {
+    "id": "tell-me-the-story-of-jesus",
+    "title": "Tell Me the Story of Jesus",
+    "lyricist": "Frances J. Crosby; stanza 4 by Leslie C. Busbee",
+    "lyricYear": 1880,
+    "tune": "Story of Jesus",
+    "themes": [
+      "Gospel",
+      "Jesus Christ",
+      "Incarnation",
+      "Atonement"
+    ],
+    "scriptureReferences": [
+      "John 1:14",
+      "1 Timothy 2:5-6"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Tell_Me_the_Story_of_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/Tell_Me_the_Story_of_Jesus/Tell_Me_the_Story_of_Jesus.mid",
+    "musicAttribution": "STORY OF JESUS by John R. Sweney, 1880; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Tell me the story of Jesus,\nWrite on my heart every word;\nTell me the story most precious,\nSweetest that ever was heard.\nTell how the angels in chorus,\nSang as they welcomed His birth,\n“Glory to God in the highest!\nPeace and good tidings to earth.”",
+      "Fasting alone in the desert,\nTell of the days that are past,\nHow for our sins He was tempted,\nYet was triumphant at last.\nTell of the years of His labor,\nTell of the sorrow He bore;\nHe was despised and afflicted,\nHomeless, rejected and poor.",
+      "Tell of the cross where they nailed Him,\nWrithing in anguish and pain;\nTell of the grave where they laid Him,\nTell how He liveth again.\nLove in that story so tender,\nClearer than ever I see;\nStay, let me weep while you whisper,\n“Love paid the ransom for me.”",
+      "Tell how He’s gone back to heaven,\nUp to the right hand of God:\nHow He is there interceding\nWhile on this earth we must trod.\nTell of the sweet Holy Spirit\nHe has poured out from above;\nTell how He’s coming in glory\nFor all the saints of His love."
+    ],
+    "refrain": "Tell me the story of Jesus,\nWrite on my heart every word;\nTell me the story most precious,\nSweetest that ever was heard.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "tell-me-the-story-of-jesus.mid",
+    "midiSha256": "505ec8459eeaa71099840cf2fa796ebd415437120380d7b1904ed40fa5ecae05",
+    "rightsEvidenceFile": "tell-me-the-story-of-jesus-rights.html",
+    "rightsEvidenceSha256": "50576fd2e3f71785c62aea576049ec28930fb94d9387417dffbba385455fa520",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-08-27"
+  },
+  {
+    "id": "to-god-be-the-glory",
+    "title": "To God Be the Glory",
+    "lyricist": "Frances J. Crosby",
+    "lyricYear": 1875,
+    "tune": "To God Be the Glory",
+    "themes": [
+      "Praise",
+      "Redemption",
+      "Gospel"
+    ],
+    "scriptureReferences": [
+      "Psalm 126:3",
+      "Galatians 1:3-5"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/To_God_Be_the_Glory_Crosby/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/To_God_Be_the_Glory_Crosby/To_God_Be_the_Glory_Crosby.mid",
+    "musicAttribution": "TO GOD BE THE GLORY by William H. Doane, published 1875; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "To God be the glory, great things He hath done,\nSo loved He the world that He gave us His Son,\nWho yielded His life an atonement for sin,\nAnd opened the life gate that all may go in.",
+      "Oh, perfect redemption, the purchase of blood,\nTo every believer the promise of God;\nThe vilest offender who truly believes,\nThat moment from Jesus a pardon receives.",
+      "Great things He hath taught us, great things He hath done,\nAnd great our rejoicing through Jesus the Son;\nBut purer, and higher, and greater will be\nOur wonder, our transport, when Jesus we see."
+    ],
+    "refrain": "Praise the Lord, praise the Lord, let the earth hear His voice!\nPraise the Lord, praise the Lord, let the people rejoice!\nOh, come to the Father, through Jesus the Son,\nAnd give Him the glory, great things He hath done.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "to-god-be-the-glory.mid",
+    "midiSha256": "a17f3e5985ccc67d8abd8d495e94b1a5a77ae45507dbea6a0bdb205406757d34",
+    "rightsEvidenceFile": "to-god-be-the-glory-rights.html",
+    "rightsEvidenceSha256": "371a11b0cefcb2dcc8611dec7dd11d84f41590051cb92a391f086ec4c2d59d50",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "redeemed-how-i-love-to-proclaim-it",
+    "title": "Redeemed, How I Love to Proclaim It!",
+    "lyricist": "Frances J. Crosby",
+    "lyricYear": 1882,
+    "tune": "Redeemed",
+    "themes": [
+      "Redemption",
+      "Salvation",
+      "Testimony"
+    ],
+    "scriptureReferences": [
+      "Psalm 107:2",
+      "Revelation 5:9"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Redeemed_How_I_Love_to_Proclaim_It/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Redeemed_How_I_Love_to_Proclaim_It/Redeemed_How_I_Love_to_Proclaim_It.mid",
+    "musicAttribution": "REDEEMED by William J. Kirkpatrick, published 1882; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Redeemed, how I love to proclaim it!\nRedeemed by the blood of the Lamb;\nRedeemed through His infinite mercy,\nHis child and forever I am.",
+      "Redeemed, and so happy in Jesus,\nNo language my rapture can tell;\nI know that the light of His presence\nWith me doth continually dwell.",
+      "I think of my blessed Redeemer,\nI think of Him all the day long:\nI sing, for I cannot be silent;\nHis love is the theme of my song.",
+      "I know I shall see in His beauty\nThe King in whose law I delight;\nWho lovingly guardeth my footsteps,\nAnd giveth me songs in the night.",
+      "I know there’s a crown that is waiting\nIn yonder bright mansion for me,\nAnd soon, with the spirits made perfect,\nAt home with the Lord I shall be."
+    ],
+    "refrain": "Redeemed, redeemed,\nRedeemed by the blood of the Lamb;\nRedeemed, redeemed,\nHis child and forever I am.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "redeemed-how-i-love-to-proclaim-it.mid",
+    "midiSha256": "7c7729842c38633bf175947b31ee492f14c90c0ea139dfd7b183079c951639df",
+    "rightsEvidenceFile": "redeemed-how-i-love-to-proclaim-it-rights.html",
+    "rightsEvidenceSha256": "b8c2ff219a4ffcc0210710c25adc043820eb000d5c296c89e383f48fdff5816f",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "safe-in-the-arms-of-jesus",
+    "title": "Safe in the Arms of Jesus",
+    "lyricist": "Frances J. Crosby",
+    "lyricYear": 1868,
+    "tune": "Safe in the Arms of Jesus",
+    "themes": [
+      "Refuge",
+      "Comfort",
+      "Jesus"
+    ],
+    "scriptureReferences": [
+      "Deuteronomy 33:27",
+      "Psalm 46:1"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Safe_in_the_Arms_of_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Safe_in_the_Arms_of_Jesus/Safe_in_the_Arms_of_Jesus.mid",
+    "musicAttribution": "SAFE IN THE ARMS OF JESUS by William H. Doane, published 1868; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Safe in the arms of Jesus,\nSafe on His gentle breast;\nThere by His love o’ershaded,\nSweetly my soul shall rest.\nHark! ’tis the voice of angels\nBorne in a song to me,\nOver the fields of glory,\nOver the jasper sea.",
+      "Safe in the arms of Jesus,\nSafe from corroding care,\nSafe from the world’s temptations;\nSin cannot harm me there.\nFree from the blight of sorrow,\nFree from my doubts and fears;\nOnly a few more trials,\nOnly a few more tears!",
+      "Jesus, my heart’s dear Refuge,\nJesus has died for me;\nFirm on the Rock of Ages\nEver my trust shall be.\nHere let me wait with patience,\nWait till the night is o’er;\nWait till I see the morning\nBreak on the golden shore."
+    ],
+    "refrain": "Safe in the arms of Jesus,\nSafe on His gentle breast;\nThere by His love o’ershaded,\nSweetly my soul shall rest.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "safe-in-the-arms-of-jesus.mid",
+    "midiSha256": "68177e824b5a01cf5dd5a027349dbbace1447bfcad620e8c53bd87963245d5bd",
+    "rightsEvidenceFile": "safe-in-the-arms-of-jesus-rights.html",
+    "rightsEvidenceSha256": "7c05458f65e5842ce67a2d35cea242e762830ae0f0d5c1c82975545214fc8fda",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "blessed-be-the-name",
+    "title": "Blessed Be the Name",
+    "lyricist": "William H. Clark",
+    "lyricYear": 1888,
+    "tune": "Blessed Name",
+    "themes": [
+      "Praise",
+      "Jesus",
+      "Redemption"
+    ],
+    "scriptureReferences": [
+      "Job 1:21",
+      "Psalm 72:17-19",
+      "Philippians 2:10"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Blessed_Be_the_Name/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/B/Blessed_Be_the_Name/Blessed_Be_the_Name.mid",
+    "musicAttribution": "BLESSED NAME, attributed to William H. Havergal and arranged by Ralph E. Hudson and William J. Kirkpatrick, 1887-1888; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "All praise to Him who reigns above\nIn majesty supreme,\nWho gave His Son for man to die,\nThat He might man redeem!",
+      "His name above all names shall stand,\nExalted more and more,\nAt God the Father’s own right hand,\nWhere angel hosts adore.",
+      "Redeemer, Savior, friend of man\nOnce ruined by the fall,\nThou hast devised salvation’s plan,\nFor Thou hast died for all.",
+      "His name shall be the Counselor,\nThe mighty Prince of Peace,\nOf all earth’s kingdoms conqueror,\nWhose reign shall never cease."
+    ],
+    "refrain": "Blessed be the name! Blessed be the name!\nBlessed be the name of the Lord!\nBlessed be the name! Blessed be the name!\nBlessed be the name of the Lord!",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "blessed-be-the-name.mid",
+    "midiSha256": "ca702ab5b24a1009edbebaf11e1e4b93315888a2f9629c45021095c4a4371101",
+    "rightsEvidenceFile": "blessed-be-the-name-rights.html",
+    "rightsEvidenceSha256": "75575257cc5d616bc52edd2df73f6359c463d7009928813a8a341e2014e48d55",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "at-calvary",
+    "title": "At Calvary",
+    "lyricist": "William R. Newell",
+    "lyricYear": 1895,
+    "tune": "At Calvary",
+    "themes": [
+      "Atonement",
+      "Salvation",
+      "Grace"
+    ],
+    "scriptureReferences": [
+      "Luke 23:33",
+      "Galatians 6:14"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/At_Calvary/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/A/At_Calvary/At_Calvary.mid",
+    "musicAttribution": "AT CALVARY by Daniel B. Towner, 1895; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Years I spent in vanity and pride,\nCaring not my Lord was crucified,\nKnowing not it was for me He died\nOn Calvary.",
+      "By God’s Word at last my sin I learned;\nThen I trembled at the law I’d spurned,\nTill my guilty soul imploring turned\nTo Calvary.",
+      "Now I’ve giv’n to Jesus everything,\nNow I gladly own Him as my King,\nNow my raptured soul can only sing\nOf Calvary!",
+      "Oh, the love that drew salvation’s plan!\nOh, the grace that brought it down to man!\nOh, the mighty gulf that God did span\nAt Calvary!"
+    ],
+    "refrain": "Mercy there was great, and grace was free;\nPardon there was multiplied to me;\nThere my burdened soul found liberty\nAt Calvary.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "at-calvary.mid",
+    "midiSha256": "37065d8a5732a0168f8d00611f7707aad36c86666913db8b08b056910ad9bd7f",
+    "rightsEvidenceFile": "at-calvary-rights.html",
+    "rightsEvidenceSha256": "444d62eb1cd20808a0f58e287e5d6e5b02a70ce169c24e776f0c1f4b5df6f701",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "nothing-but-the-blood",
+    "title": "Nothing but the Blood",
+    "lyricist": "Robert Lowry",
+    "lyricYear": 1876,
+    "tune": "Plainfield",
+    "themes": [
+      "Blood",
+      "Atonement",
+      "Salvation"
+    ],
+    "scriptureReferences": [
+      "Hebrews 9:22",
+      "1 John 1:7"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Nothing_but_the_Blood/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/N/Nothing_but_the_Blood/Nothing_but_the_Blood.mid",
+    "musicAttribution": "PLAINFIELD by Robert Lowry, published 1876; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "What can wash away my sin?\nNothing but the blood of Jesus;\nWhat can make me whole again?\nNothing but the blood of Jesus.",
+      "For my pardon, this I see,\nNothing but the blood of Jesus;\nFor my cleansing this my plea,\nNothing but the blood of Jesus.",
+      "Nothing can for sin atone,\nNothing but the blood of Jesus;\nNaught of good that I have done,\nNothing but the blood of Jesus.",
+      "This is all my hope and peace,\nNothing but the blood of Jesus;\nThis is all my righteousness,\nNothing but the blood of Jesus.",
+      "Now by this I’ll overcome—\nNothing but the blood of Jesus;\nNow by this I’ll reach my home—\nNothing but the blood of Jesus.",
+      "Glory! Glory! This I sing—\nNothing but the blood of Jesus,\nAll my praise for this I bring—\nNothing but the blood of Jesus."
+    ],
+    "refrain": "Oh! precious is the flow\nThat makes me white as snow;\nNo other fount I know,\nNothing but the blood of Jesus.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "nothing-but-the-blood.mid",
+    "midiSha256": "3f7d12ca5360707671f68976d6a87aa2df239ba0d6abb3472a1454c8485b1f06",
+    "rightsEvidenceFile": "nothing-but-the-blood-rights.html",
+    "rightsEvidenceSha256": "409b77e43caca07e75815cd0b5e52a3173752e278c3b40dee2531dc5d602486e",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "bringing-in-the-sheaves",
+    "title": "Bringing in the Sheaves",
+    "lyricist": "Knowles Shaw",
+    "lyricYear": 1874,
+    "tune": "Bringing in the Sheaves",
+    "themes": [
+      "Sowing",
+      "Reaping",
+      "Service",
+      "Joy"
+    ],
+    "scriptureReferences": [
+      "Psalm 126:5-6",
+      "Galatians 6:9"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Bringing_in_the_Sheaves/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/B/Bringing_in_the_Sheaves/Bringing_in_the_Sheaves.mid",
+    "musicAttribution": "BRINGING IN THE SHEAVES by George A. Minor, 1880; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Sowing in the morning, sowing seeds of kindness,\nSowing in the noontide and the dewy eve;\nWaiting for the harvest, and the time of reaping,\nWe shall come rejoicing, bringing in the sheaves.",
+      "Sowing in the sunshine, sowing in the shadows,\nFearing neither clouds nor winter’s chilling breeze;\nBy and by the harvest, and the labor ended,\nWe shall come rejoicing, bringing in the sheaves.",
+      "Going forth with weeping, sowing for the Master,\nThough the loss sustained our spirit often grieves;\nWhen our weeping’s over, He will bid us welcome,\nWe shall come rejoicing, bringing in the sheaves."
+    ],
+    "refrain": "Bringing in the sheaves, bringing in the sheaves,\nWe shall come rejoicing, bringing in the sheaves;\nBringing in the sheaves, bringing in the sheaves,\nWe shall come rejoicing, bringing in the sheaves.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "bringing-in-the-sheaves.mid",
+    "midiSha256": "6c15d7bcdbab058b7c4d1130c71b381e970b6cd58590f9732161eadb8f26ef15",
+    "rightsEvidenceFile": "bringing-in-the-sheaves-rights.html",
+    "rightsEvidenceSha256": "360c646920d84ad9ed2be1629ec78e4ea8b7da2758af9765bdcaf3d0df4c1544",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "there-shall-be-showers-of-blessing",
+    "title": "There Shall Be Showers of Blessing",
+    "lyricist": "Daniel W. Whittle",
+    "lyricYear": 1883,
+    "tune": "Showers of Blessing",
+    "themes": [
+      "Prayer",
+      "Faith",
+      "Encouragement",
+      "Revival"
+    ],
+    "scriptureReferences": [
+      "Ezekiel 34:26",
+      "Psalm 115:12",
+      "Genesis 32:26"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/There_Shall_Be_Showers_of_Blessing/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/There_Shall_Be_Showers_of_Blessing/There_Shall_Be_Showers_of_Blessing.mid",
+    "musicAttribution": "SHOWERS OF BLESSING by James McGranahan, 1883; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "There shall be showers of blessing:\nThis is the promise of love;\nThere shall be seasons refreshing,\nSent from the Savior above.",
+      "There shall be showers of blessing,\nPrecious reviving again;\nOver the hills and the valleys,\nSound of abundance of rain.",
+      "There shall be showers of blessing;\nSend them upon us, O Lord;\nGrant to us now a refreshing,\nCome, and now honor Thy Word.",
+      "There shall be showers of blessing:\nOh, that today they might fall,\nNow as to God we’re confessing,\nNow as on Jesus we call!",
+      "There shall be showers of blessing,\nIf we but trust and obey;\nThere shall be seasons refreshing,\nIf we let God have His way."
+    ],
+    "refrain": "Showers of blessing,\nShowers of blessing we need:\nMercy-drops round us are falling,\nBut for the showers we plead.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "there-shall-be-showers-of-blessing.mid",
+    "midiSha256": "1a5d69872a88950bff9f1e5d8d7cf40fd1e6ba87dd046dec54894681f07c7c5e",
+    "rightsEvidenceFile": "there-shall-be-showers-of-blessing-rights.html",
+    "rightsEvidenceSha256": "51b6820bffa2a975a357e9eb70aa8539101185f2bcc46838c55e7601acfc80f2",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "he-hideth-my-soul",
+    "title": "He Hideth My Soul",
+    "lyricist": "Frances J. Crosby",
+    "lyricYear": 1890,
+    "tune": "He Hideth My Soul",
+    "themes": [
+      "Refuge",
+      "Jesus",
+      "Assurance",
+      "Praise"
+    ],
+    "scriptureReferences": [
+      "Exodus 33:22",
+      "Psalm 32:7"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/He_Hideth_My_Soul/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/He_Hideth_My_Soul/He_Hideth_My_Soul.mid",
+    "musicAttribution": "HE HIDETH MY SOUL by William J. Kirkpatrick, circa 1890; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "A wonderful Savior is Jesus my Lord,\nA wonderful Savior to me;\nHe hideth my soul in the cleft of the rock,\nWhere rivers of pleasure I see.",
+      "A wonderful Savior is Jesus my Lord,\nHe taketh my burden away,\nHe holdeth me up and I shall not be moved,\nHe giveth me strength as my day.",
+      "With numberless blessings each moment He crowns,\nAnd filled with His fullness divine,\nI sing in my rapture, oh, glory to God!\nFor such a Redeemer as mine.",
+      "When clothed with His brightness transported I rise\nTo meet Him in clouds of the sky,\nHis perfect salvation, His wonderful love,\nI’ll shout with the millions on high."
+    ],
+    "refrain": "He hideth my soul in the cleft of the rock,\nThat shadows a dry, thirsty land;\nHe hideth my life in the depths of His love,\nAnd covers me there with His hand,\nAnd covers me there with His hand.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "he-hideth-my-soul.mid",
+    "midiSha256": "f24278592a5b0a2e6eb1d1212dddb796b01853542be05e1498a8acc7220326e7",
+    "rightsEvidenceFile": "he-hideth-my-soul-rights.html",
+    "rightsEvidenceSha256": "c66b5532cf864fa3089814b04cd8b2a5d46dbbbc34020c43e57cdc3c169f71b0",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "count-your-blessings",
+    "title": "Count Your Blessings",
+    "lyricist": "Johnson Oatman, Jr.",
+    "lyricYear": 1897,
+    "tune": "Blessings",
+    "themes": [
+      "Thanksgiving",
+      "Praise",
+      "Encouragement"
+    ],
+    "scriptureReferences": [
+      "Psalm 40:5",
+      "1 Thessalonians 5:18",
+      "Ephesians 1:3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Count_Your_Blessings/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/C/Count_Your_Blessings/Count_Your_Blessings.mid",
+    "musicAttribution": "BLESSINGS by Edwin O. Excell, 1897; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "When upon life’s billows you are tempest-tossed,\nWhen you are discouraged, thinking all is lost,\nCount your many blessings, name them one by one,\nAnd it will surprise you what the Lord has done.",
+      "Are you ever burdened with a load of care?\nDoes the cross seem heavy you are called to bear?\nCount your many blessings, every doubt will fly,\nAnd you will keep singing as the days go by.",
+      "When you look at others with their lands and gold,\nThink that Christ has promised you His wealth untold;\nCount your many blessings—*money cannot buy [*wealth can never buy]\nYour reward in heaven, nor your home on high.",
+      "So, amid the conflict whether great or small,\nDo not be discouraged, God is over all;\nCount your many blessings, angels will attend,\nHelp and comfort give you to your journey’s end."
+    ],
+    "refrain": "Count your blessings, name them one by one,\nCount your blessings, see what God has done!\nCount your blessings, name them one by one,\n*Count your many blessings, see what God has done.\n[*And it will surprise you what the Lord has done.]",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "count-your-blessings.mid",
+    "midiSha256": "202b556a3e12a5d2039247cb490b36ef3927f91766de1d779ca0c81e05363b14",
+    "rightsEvidenceFile": "count-your-blessings-rights.html",
+    "rightsEvidenceSha256": "cfc2c7bcee04e57407452e01a9500621f5289cac4e44eaa4036bd6a3edde4efe",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "stand-up-stand-up-for-jesus",
+    "title": "Stand Up, Stand Up for Jesus",
+    "lyricist": "George Duffield, Jr.",
+    "lyricYear": 1858,
+    "tune": "Webb",
+    "themes": [
+      "Christian Duty",
+      "Spiritual Warfare",
+      "Prayer",
+      "Victory"
+    ],
+    "scriptureReferences": [
+      "Ephesians 6:11-18",
+      "2 Timothy 2:3"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Stand_Up_Stand_Up_for_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Stand_Up_Stand_Up_for_Jesus/Stand_Up_Stand_Up_for_Jesus.mid",
+    "musicAttribution": "WEBB by George J. Webb, 1830; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Stand up, stand up for Jesus! ye soldiers of the cross;\nLift high His royal banner, it must not suffer loss:\nFrom vict’ry unto vict’ry, His army shall He lead,\nTill every foe is vanquished, and Christ is Lord indeed.",
+      "Stand up, stand up for Jesus! The trumpet call obey:\nForth to the mighty conflict, in this His glorious day;\nYe that are men now serve Him against unnumbered foes;\nLet courage rise with danger, and strength to strength oppose.",
+      "Stand up, stand up for Jesus! Stand in His strength alone,\nThe arm of flesh will fail you, ye dare not trust your own;\nPut on the gospel armor, and watching unto prayer,\nWhere calls the voice of duty, be never wanting there.",
+      "Stand up, stand up for Jesus! the strife will not be long;\nThis day the noise of battle, the next the victor’s song;\nTo him that overcometh a crown of life shall be;\nHe with the King of glory shall reign eternally."
+    ],
+    "refrain": null,
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "stand-up-stand-up-for-jesus.mid",
+    "midiSha256": "8bc31a3ec946766caa468509cb46af23342ce7ba78fd75189516ba51c3dc1374",
+    "rightsEvidenceFile": "stand-up-stand-up-for-jesus-rights.html",
+    "rightsEvidenceSha256": "14108a19ddbbc4028f5e28fe0971f15df5cb372e112ae5020b39847407576d61",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "grace-greater-than-our-sin",
+    "title": "Grace Greater than Our Sin",
+    "lyricist": "Julia H. Johnston",
+    "lyricYear": 1910,
+    "tune": "Moody",
+    "themes": [
+      "Grace",
+      "Invitation",
+      "Salvation",
+      "Cross"
+    ],
+    "scriptureReferences": [
+      "Romans 5:20-21"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Grace_Greater_than_Our_Sin/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/G/Grace_Greater_than_Our_Sin/Grace_Greater_than_Our_Sin.mid",
+    "musicAttribution": "MOODY by Daniel B. Towner, 1910; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Marvelous grace of our loving Lord,\nGrace that exceeds our sin and our guilt!\nYonder on Calvary’s mount outpoured,\nThere where the blood of the Lamb was spilled.",
+      "Sin and despair, like the sea waves cold,\nThreaten the soul with infinite loss;\nGrace that is greater, yes, grace untold,\nPoints to the refuge, the mighty cross.",
+      "Dark is the stain that we cannot hide;\nWhat can we do to wash it away?\nLook! There is flowing a crimson tide,\nBrighter than snow you may be today.",
+      "Marvelous, infinite, matchless grace,\nFreely bestowed on all who believe!\nYou that are longing to see His face,\nWill you this moment His grace receive?"
+    ],
+    "refrain": "Grace, grace, God’s grace,\nGrace that will pardon and cleanse within;\nGrace, grace, God’s grace,\nGrace that is greater than all our sin!",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "grace-greater-than-our-sin.mid",
+    "midiSha256": "083a60bcfa7f4a53b5aecd5cb987334e7f64e0550a8d68b23b784975fa93bba5",
+    "rightsEvidenceFile": "grace-greater-than-our-sin-rights.html",
+    "rightsEvidenceSha256": "a7c73700f91c4f3868948f037ea68fe2e2e1d23eea8f27fd0665a1c72e0fc6e8",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "my-redeemer",
+    "title": "I Will Sing of My Redeemer",
+    "lyricist": "Philip P. Bliss",
+    "lyricYear": 1876,
+    "tune": "My Redeemer",
+    "themes": [
+      "Redemption",
+      "Jesus",
+      "Praise",
+      "Cross"
+    ],
+    "scriptureReferences": [
+      "Galatians 3:13",
+      "Ephesians 1:7"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/My_Redeemer/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/M/My_Redeemer/My_Redeemer.mid",
+    "musicAttribution": "MY REDEEMER by James McGranahan, 1877; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "I will sing of my Redeemer,\nAnd His wondrous love to me;\nOn the cruel cross He suffered,\nFrom the curse to set me free.",
+      "I will tell the wondrous story,\nHow my lost estate to save,\nIn His boundless love and mercy,\nHe the ransom freely gave.",
+      "I will praise my dear Redeemer,\nHis triumphant pow’r I’ll tell,\nHow the victory He giveth\nOver sin, and death, and hell.",
+      "I will sing of my Redeemer,\nAnd His heav’nly love to me;\nHe from death to life hath brought me,\nSon of God with Him to be."
+    ],
+    "refrain": "Sing, oh, sing of my Redeemer,\nWith His blood He purchased me;\nOn the cross He sealed my pardon,\nPaid the debt, and made me free.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "my-redeemer.mid",
+    "midiSha256": "79e313c11233d22a05803e2466b8be4b78b9d94e7ad4a6124e19d0232c19d099",
+    "rightsEvidenceFile": "my-redeemer-rights.html",
+    "rightsEvidenceSha256": "e86b9dc19d33b4738d085e458aca66a8c30fe63b7515f3422830c1fc1d8612d7",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "faith-is-the-victory",
+    "title": "Faith Is the Victory",
+    "lyricist": "John H. Yates",
+    "lyricYear": 1891,
+    "tune": "Sankey",
+    "themes": [
+      "Faith",
+      "Victory",
+      "Spiritual Warfare",
+      "Perseverance"
+    ],
+    "scriptureReferences": [
+      "1 John 5:4",
+      "Ephesians 6:11-18"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Faith_Is_the_Victory/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/F/Faith_Is_the_Victory/Faith_Is_the_Victory.mid",
+    "musicAttribution": "SANKEY by Ira D. Sankey, 1891; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Encamped along the hills of light,\nYe Christian soldiers, rise,\nAnd press the battle ere the night\nShall veil the glowing skies.\nAgainst the foe in vales below\nLet all our strength be hurled;\nFaith is the victory, we know,\nThat overcomes the world.",
+      "His banner over us is love,\nOur sword the Word of God;\nWe tread the road the saints above\nWith shouts of triumph trod.\nBy faith, they like a whirlwind’s breath,\nSwept on o’er every field;\nThe faith by which they conquered death\nIs still our shining shield.",
+      "On every hand the foe we find\nDrawn up in dread array;\nLet tents of ease be left behind,\nAnd onward to the fray.\nSalvation’s helmet on each head,\nWith truth all girt about,\nThe earth shall tremble ’neath our tread,\nAnd echo with our shout.",
+      "To him that overcomes the foe,\nWhite raiment shall be giv’n;\nBefore the angels he shall know\nHis name confessed in heav’n.\nThen onward from the hills of light,\nOur hearts with love aflame,\nWe’ll vanquish all the hosts of night,\nIn Jesus’ conqu’ring name."
+    ],
+    "refrain": "Faith is the victory!\nFaith is the victory!\nOh, glorious victory,\nThat overcomes the world.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "faith-is-the-victory.mid",
+    "midiSha256": "dec0427e49c0c7e2fb6bbd6c8ba200ac8fca6cf55147501df290dba361dac46f",
+    "rightsEvidenceFile": "faith-is-the-victory-rights.html",
+    "rightsEvidenceSha256": "1cad56826287afb189dc9a0c6069dd38a3908043dacd900a624c82762c0a3859",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "revive-us-again",
+    "title": "Revive Us Again",
+    "lyricist": "William P. Mackay",
+    "lyricYear": 1863,
+    "tune": "Revive Us Again",
+    "themes": [
+      "Revival",
+      "Praise",
+      "Prayer",
+      "Supplication"
+    ],
+    "scriptureReferences": [
+      "Psalm 85:6",
+      "1 Chronicles 29:11"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Revive_Us_Again/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/R/Revive_Us_Again/Revive_Us_Again.mid",
+    "musicAttribution": "REVIVE US AGAIN by John J. Husband, 1815; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "We praise Thee, O God!\nFor the Son of Thy love,\nFor Jesus Who died,\nAnd is now gone above.",
+      "We praise Thee, O God!\nFor Thy Spirit of light,\nWho hath shown us our Savior,\nAnd scattered our night.",
+      "All glory and praise\nTo the Lamb that was slain,\nWho hath borne all our sins,\nAnd hath cleansed every stain.",
+      "All glory and praise\nTo the God of all grace,\nWho hast brought us, and sought us,\nAnd guided our ways.",
+      "Revive us again;\nFill each heart with Thy love;\nMay each soul be rekindled\nWith fire from above."
+    ],
+    "refrain": "Hallelujah! Thine the glory.\nHallelujah! Amen.\nHallelujah! Thine the glory.\nRevive us again.",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "revive-us-again.mid",
+    "midiSha256": "ad21e7d26c327c408a3bcce15453261318b01e31d3461dbf1f38a7fb4c12f428",
+    "rightsEvidenceFile": "revive-us-again-rights.html",
+    "rightsEvidenceSha256": "5abbe08c0491078821be913e22fe0e7116ca589486d8643138bf7e25f678eb70",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  },
+  {
+    "id": "wonderful-grace-of-jesus",
+    "title": "Wonderful Grace of Jesus",
+    "lyricist": "Haldor Lillenas",
+    "lyricYear": 1918,
+    "tune": "Wonderful Grace",
+    "themes": [
+      "Grace",
+      "Jesus",
+      "Praise",
+      "Salvation"
+    ],
+    "scriptureReferences": [
+      "1 Timothy 1:14",
+      "2 Corinthians 9:8",
+      "Revelation 22:21"
+    ],
+    "textSourceUrl": "https://library.timelesstruths.org/music/Wonderful_Grace_of_Jesus/",
+    "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/Wonderful_Grace_of_Jesus/Wonderful_Grace_of_Jesus.mid",
+    "musicAttribution": "WONDERFUL GRACE by Haldor Lillenas, 1918; public-domain MIDI distributed with the cited Timeless Truths record.",
+    "stanzas": [
+      "Wonderful grace of Jesus,\nGreater than all my sin;\nHow shall my tongue describe it,\nWhere shall its praise begin?\nTaking away my burden,\nSetting my spirit free;\nFor the wonderful grace of Jesus reaches me.",
+      "Wonderful grace of Jesus,\nReaching to all the lost,\nBy it I have been pardoned,\nSaved to the uttermost;\nChains have been torn asunder,\nGiving me liberty;\nFor the wonderful grace of Jesus reaches me.",
+      "Wonderful grace of Jesus,\nReaching the most defiled,\nBy its transforming power,\nMaking him God’s dear child,\nPurchasing peace and heaven\nFor all eternity—\nAnd the wonderful grace of Jesus reaches me."
+    ],
+    "refrain": "Wonderful the matchless grace of Jesus,\nDeeper than the mighty rolling sea;\nHigher than the mountain, sparkling like a fountain,\nAll-sufficient grace for even me!\nBroader than the scope of my transgressions,\nGreater far than all my sin and shame;\nOh, magnify the precious Name of Jesus,\nPraise His Name!",
+    "textRights": "Public domain; every retained lyric line was verified against the cited Timeless Truths record.",
+    "midiFile": "wonderful-grace-of-jesus.mid",
+    "midiSha256": "ef028b2fd442b2465501d8a2e8a8cb4adab39ceb67251b9c69b2cbdd16334479",
+    "rightsEvidenceFile": "wonderful-grace-of-jesus-rights.html",
+    "rightsEvidenceSha256": "68c735388aa1635ebee762e64b5f72984d2a745f3b82c323eaf5742e2398af68",
+    "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain -->",
+    "musicRights": "Public Domain",
+    "reviewedAt": "2026-09-01"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-77-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n186_w3000.jpg", "sha256": "1ada292ee5669e5375a9960422b756e69ac31b339a06ea5b221042d7e05ed118" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n251_w3000.jpg", "sha256": "81e8e509cf762b72f332ced5db4f90429a5cb7c8769fce11df1e9157d4d95e3f" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n328_w3000.jpg", "sha256": "dbf3d4a12003c41c32c8259cb10668448ee8fb4a7cb3b98552cdfd7a969baa48" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n357_w3000.jpg", "sha256": "d756a728b7062eb73bdfa80f8d28d4d830746e61d689ed810c10b6b544505afe" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n418_w3000.jpg", "sha256": "6a5d73573d7947ae3e6aff493d173c0e1680276e49a45b62b695c818464f57fa" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n516_w3000.jpg", "sha256": "e85c05067cb1f6213664ab94e52ede6d15fc9824bc336dafc05844eb9bd53838" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n871_w3000.jpg", "sha256": "62cbaafb0f38aeb7bb5114a425de8c8a126adaa4bebbf10c8c0d3466a597d4a5" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n872_w3000.jpg", "sha256": "cbae14e4d4a6fac6a05607ba42688057b60bf6573cee2010fe9c91412ebbd23e" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n918_w3000.jpg", "sha256": "05aedb84356c1ed84a7ad74ffe67a43d9d8f763cf42ff0649c80a53dcb6e6cf8" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n188_w3000.jpg", "sha256": "942bb574a24fa8e8f458b5fbc11df1dca28aa82912e0af16fe43b8cdd3f48638" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n200_w3000.jpg", "sha256": "d5c1e5b96bf6046a73e700467e6c331602d3b9d8f2a4be57d10de0f2713ac074" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n478_w3000.jpg", "sha256": "b703c0655b1923c139aa3db5fd3a574d83b81873d0d7bc9ca2df097dbaa3b5c1" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n783_w3000.jpg", "sha256": "f5caf504a630d5b5a76dabca36d545daa663171da61cd88c397bb5e92a369657" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected repeated concrete and study-relevant KJV vocabulary from the remaining inventory, excluding personal and geographic names and deferring forms without a clear standalone 1828 headword.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, source names, and Scripture book names for display, and recorded plural or historical-spelling lookup relationships rather than inventing duplicate headwords. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed technical sense.",
+  "screening_summary": {
+    "reviewed_headwords": 12,
+    "net_new_reviewed_overlays": 11,
+    "verified_lookup_relationships_added": 8,
+    "missing_kjv_forms_resolved": 16,
+    "kjv_occurrences_resolved": 39,
+    "total_kjv_occurrences_with_reviewed_lookup": 39
+  },
+  "promoted_headwords": ["apron", "bee", "cage", "causey", "college", "cuckoo", "halleluiah", "hostage", "niter", "oar", "revolt", "tow"],
+  "verified_lookup_relationships": [
+    { "word": "alleluia", "lookup_headword": "halleluiah", "kjv_occurrences": 4, "relationship": "KJV spelling mapped to Webster's HALLELUIAH headword" },
+    { "word": "aprons", "lookup_headword": "apron", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular APRON" },
+    { "word": "bees", "lookup_headword": "bee", "kjv_occurrences": 3, "relationship": "Plural noun form mapped to Webster's singular BEE" },
+    { "word": "causeway", "lookup_headword": "causey", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's CAUSEY headword" },
+    { "word": "cuckow", "lookup_headword": "cuckoo", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's CUCKOO headword" },
+    { "word": "hostages", "lookup_headword": "hostage", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular HOSTAGE" },
+    { "word": "nitre", "lookup_headword": "niter", "kjv_occurrences": 2, "relationship": "KJV spelling mapped to Webster's NITER headword" },
+    { "word": "oars", "lookup_headword": "oar", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular OAR" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "bee", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed BEE headword" },
+    { "word": "cage", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed CAGE headword" },
+    { "word": "college", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed COLLEGE headword" },
+    { "word": "revolt", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed REVOLT headword" },
+    { "word": "revolted", "kjv_occurrences": 7, "resolution": "Inflected verb form resolved from the reviewed REVOLT headword" },
+    { "word": "revolting", "kjv_occurrences": 1, "resolution": "Inflected verb form resolved from the reviewed REVOLT headword" },
+    { "word": "tow", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed TOW noun headword" },
+    { "word": "oar", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed OAR headword" }
+  ],
+  "deferred_candidates": [
+    { "word": "jawbone", "reason": "No clear standalone JAWBONE headword was located in the 1828 printing; do not synthesize one from JAW and BONE." },
+    { "word": "sheepfolds", "reason": "No clear standalone SHEEPFOLD headword was located in the 1828 printing; retain for a later compound-word review." },
+    { "word": "therefrom", "reason": "No clear standalone THEREFROM headword was located in the 1828 printing; retain for a later compound/adverb review." }
+  ],
+  "entries": [
+    { "word": "alleluia", "lookup_headword": "halleluiah", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 273380, "source_line_end": 273418, "exact_page_heading": "HAL", "exact_entry_heading": "HALLELUIAH", "exact_source_match": true },
+    { "word": "aprons", "lookup_headword": "apron", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 49407, "source_line_end": 49412, "exact_page_heading": "APR", "exact_entry_heading": "A'PRON", "exact_source_match": true },
+    { "word": "bees", "lookup_headword": "bee", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 70039, "source_line_end": 70050, "exact_page_heading": "BEE", "exact_entry_heading": "BEE", "exact_source_match": true },
+    { "word": "cage", "lookup_headword": "cage", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 95222, "source_line_end": 95235, "exact_page_heading": "CAG", "exact_entry_heading": "CAGE", "exact_source_match": true },
+    { "word": "causeway", "lookup_headword": "causey", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 104468, "source_line_end": 104492, "exact_page_heading": "CAU", "exact_entry_heading": "CAUS'EY", "exact_source_match": true },
+    { "word": "college", "lookup_headword": "college", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 124237, "source_line_end": 124287, "exact_page_heading": "COL", "exact_entry_heading": "COL'LEGE", "exact_source_match": true },
+    { "word": "cuckow", "lookup_headword": "cuckoo", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 156269, "source_line_end": 156285, "exact_page_heading": "CUC", "exact_entry_heading": "CUCK'OO", "exact_source_match": true },
+    { "word": "hostages", "lookup_headword": "hostage", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 289081, "source_line_end": 289090, "exact_page_heading": "HOS", "exact_entry_heading": "HOS'TAGE", "exact_source_match": true },
+    { "word": "nitre", "lookup_headword": "niter", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 60360, "source_line_end": 60393, "exact_page_heading": "NIT", "exact_entry_heading": "NI'TER", "exact_source_match": true },
+    { "word": "oars", "lookup_headword": "oar", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 64351, "source_line_end": 64364, "exact_page_heading": "OAR", "exact_entry_heading": "OAR", "exact_source_match": true },
+    { "word": "revolt", "lookup_headword": "revolt", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 156748, "source_line_end": 156810, "exact_page_heading": "REV", "exact_entry_heading": "REVOLT'", "exact_source_match": true },
+    { "word": "tow", "lookup_headword": "tow", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 259808, "source_line_end": 259814, "exact_page_heading": "TOW", "exact_entry_heading": "TOW", "exact_source_match": true }
+  ]
+}

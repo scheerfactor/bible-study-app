@@ -1,0 +1,88 @@
+{
+  "batch_id": "public-domain-hymns-phase-9-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "purpose": "Add five source-traceable public-domain hymns, including Anne Steele's complete eight-stanza text, with playable public-domain MIDI tunes.",
+  "guardrails": [
+    "Anne Steele's text was transcribed from the 1780 printed volume and visually checked across all three scan pages; long-s was normalized to s without modernizing the wording.",
+    "The other four texts were parsed directly from retained source records that explicitly mark both text and selected tune as public domain.",
+    "Exact MIDI and retained rights-evidence files are verified by SHA-256.",
+    "Playback is synthesized in the app from MIDI; no third-party performance recording is included.",
+    "ST. ANNE is disclosed as an editorial Common Meter pairing for Steele's text, not its claimed original historical tune."
+  ],
+  "anne_steele_scan_evidence": [
+    {
+      "page": 144,
+      "url": "https://archive.org/download/ubjectsc01stee/page/n159_w2300.jpg",
+      "sha256": "eff26685e58b1069a8f6da5deb4140349f8ea0dc97861bbd2a211fb2ecd81dc2"
+    },
+    {
+      "page": 145,
+      "url": "https://archive.org/download/ubjectsc01stee/page/n160_w2300.jpg",
+      "sha256": "0bf5300bd103946ba1c8c0d6ef1760312041839c199b8f29f5ebf4c13f90212b"
+    },
+    {
+      "page": 146,
+      "url": "https://archive.org/download/ubjectsc01stee/page/n161_w2300.jpg",
+      "sha256": "9b494fc197598a522dbe8602d565d6f8799065986d5dbd6d6ea3ca7c1b7e5b30"
+    }
+  ],
+  "entries": [
+    {
+      "id": "dear-refuge-of-my-weary-soul",
+      "title": "Dear Refuge of My Weary Soul",
+      "text_source_url": "https://archive.org/details/ubjectsc01stee/page/n159/mode/1up",
+      "text_rights": "Public Domain",
+      "tune": "St. Anne",
+      "composer": "William Croft",
+      "music_source_url": "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=733",
+      "music_rights": "Public Domain",
+      "midi_sha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+      "rights_evidence_sha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+      "pairing_note": "Editorial Common Meter pairing; the tune is not represented as Steele's original historical tune."
+    },
+    {
+      "id": "come-thou-fount-of-every-blessing",
+      "title": "Come, Thou Fount of Every Blessing",
+      "text_source_url": "https://library.timelesstruths.org/music/Come_Thou_Fount_of_Every_Blessing/",
+      "text_rights": "Public Domain",
+      "tune": "Nettleton",
+      "composer": "Attributed to Asahel Nettleton",
+      "music_rights": "Public Domain",
+      "midi_sha256": "79d50f20cd0982fe8263d20c344ccafdbfbb754f573d44dd3815debbb8c2a825",
+      "rights_evidence_sha256": "128f50b53b2996557da7dec8698b6d0dfbe2a330a31e4fbb0debf72fb14e23dc"
+    },
+    {
+      "id": "majestic-sweetness-sits-enthroned",
+      "title": "Majestic Sweetness Sits Enthroned",
+      "text_source_url": "https://library.timelesstruths.org/music/Majestic_Sweetness_Sits_Enthroned/",
+      "text_rights": "Public Domain",
+      "tune": "Ortonville",
+      "composer": "Thomas Hastings",
+      "music_rights": "Public Domain",
+      "midi_sha256": "08584b8b18138614d971012e3fbcc20a7c12cff083febc75043558e1a10d106e",
+      "rights_evidence_sha256": "c66dec9166c82391a49595ef31c5cce2dfda68454742db9346c1eb29d814bb15"
+    },
+    {
+      "id": "on-jordans-stormy-banks-i-stand",
+      "title": "On Jordan's Stormy Banks I Stand",
+      "text_source_url": "https://library.timelesstruths.org/music/On_Jordans_Stormy_Banks_I_Stand/",
+      "text_rights": "Public Domain",
+      "tune": "Promised Land",
+      "composer": "Miss M. Durham; arranged by Rigdon M. McIntosh",
+      "music_rights": "Public Domain",
+      "midi_sha256": "b09d54b00d02e9890b2569bda904356c1a857354c39b01d7bf89ebb1c2aefe86",
+      "rights_evidence_sha256": "6a465c708df69efa30145e2a085c0a8665ed2fa8966f8e67b42ba52ee7d97b6e"
+    },
+    {
+      "id": "there-is-a-fountain",
+      "title": "There Is a Fountain",
+      "text_source_url": "https://library.timelesstruths.org/music/There_Is_a_Fountain/",
+      "text_rights": "Public Domain",
+      "tune": "Cleansing Fountain",
+      "composer": "American melody; arranged and published 1874",
+      "music_rights": "Public Domain",
+      "midi_sha256": "82a131242840b11e402a888ddc7bd6865a6f72e67b7f0578e642acd68bd6bcac",
+      "rights_evidence_sha256": "45758a4b5ff068ce47c82d11bc5665da5f10129e3a8dd86a5b06e6ec91cfe80d"
+    }
+  ]
+}

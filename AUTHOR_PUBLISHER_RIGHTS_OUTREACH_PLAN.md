@@ -9,8 +9,8 @@ Prepare Father's Business Bible Study to request permission for modern copyright
 The app is close enough to begin conversations with rights holders because it can show:
 
 - a working Bible-centered study platform
-- a curated public-domain library with 2,241 verified public/free resources
-- 135 licensed-link records with separate scope tracking
+- a curated public-domain library with 2,250 verified public/free resources
+- 143 licensed-link records with separate scope tracking
 - public commentary coverage across all 66 Bible books at chapter level
 - admin-only rights tracking
 - public/private resource separation
@@ -231,9 +231,9 @@ Stephen Scheer
 ## Follow-Up Schedule
 
 - Day 0: Send first request.
-- Day 7: Follow up once with a shorter note.
-- Day 21: Mark "Needs follow-up" or "No response yet."
-- Day 45: Move to "Permission Needed" and do not import.
+- After 10-14 business days: recheck Inbox, Spam, and Sent, then follow up once with a shorter note.
+- About 14 calendar days later: optionally send one final close-the-loop note for a high-priority opportunity.
+- Day 45: close as no response, leave the resource "Permission Needed," and do not import.
 - Any approval: store the exact written terms, contact, date, permitted uses, and restrictions.
 
 ## Permission Fields To Track

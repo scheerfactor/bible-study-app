@@ -1,0 +1,149 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-way-of-life-recommendations-phase-48.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 20,
+  "total_attempted": 8,
+  "imported": 8,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Bible Wines; or, The Laws of Fermentation and Wines of the Ancients",
+      "file": "bible-wines-or-the-laws-of-fermentation-and-wines-of-the-ancients-william-patton.txt",
+      "bytes": 265454,
+      "words": 44892,
+      "reading_time_minutes": 200
+    },
+    {
+      "title": "The History of the Christian Church, Volume I",
+      "file": "the-history-of-the-christian-church-volume-i-william-jones.txt",
+      "bytes": 1227847,
+      "words": 180925,
+      "reading_time_minutes": 804
+    },
+    {
+      "title": "The History of the Christian Church, Volume II",
+      "file": "the-history-of-the-christian-church-volume-ii-william-jones.txt",
+      "bytes": 1181783,
+      "words": 175356,
+      "reading_time_minutes": 779
+    },
+    {
+      "title": "The Tabernacle, Priesthood and Offerings",
+      "file": "the-tabernacle-priesthood-and-offerings-i-m-haldeman.txt",
+      "bytes": 584206,
+      "words": 103846,
+      "reading_time_minutes": 462
+    },
+    {
+      "title": "A New and Concise Bible Dictionary, Volume I",
+      "file": "a-new-and-concise-bible-dictionary-volume-i-g-morrish-editors.txt",
+      "bytes": 1826294,
+      "words": 290293,
+      "reading_time_minutes": 1290
+    },
+    {
+      "title": "A New and Concise Bible Dictionary, Volume II",
+      "file": "a-new-and-concise-bible-dictionary-volume-ii-g-morrish-editors.txt",
+      "bytes": 1871573,
+      "words": 295662,
+      "reading_time_minutes": 1314
+    },
+    {
+      "title": "Great Joy: Sermons and Prayer-Meeting Talks Delivered at the Chicago Tabernacle",
+      "file": "great-joy-sermons-and-prayer-meeting-talks-delivered-at-the-chicago-tabernacle-d-l-moody.txt",
+      "bytes": 1025271,
+      "words": 193593,
+      "reading_time_minutes": 860
+    },
+    {
+      "title": "To All People: Sermons, Bible Readings, Temperance Addresses, and Prayer-Meeting Talks",
+      "file": "to-all-people-sermons-bible-readings-temperance-addresses-and-prayer-meeting-talks-d-l-moody.txt",
+      "bytes": 1144636,
+      "words": 190815,
+      "reading_time_minutes": 848
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Bible Wines; or, The Laws of Fermentation and Wines of the Ancients",
+      "author": "William Patton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bible-wines-or-the-laws-of-fermentation-and-wines-of-the-ancients-william-patton.txt"
+    },
+    {
+      "row": 3,
+      "title": "The History of the Christian Church, Volume I",
+      "author": "William Jones",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-the-christian-church-volume-i-william-jones.txt"
+    },
+    {
+      "row": 4,
+      "title": "The History of the Christian Church, Volume II",
+      "author": "William Jones",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-the-christian-church-volume-ii-william-jones.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Tabernacle, Priesthood and Offerings",
+      "author": "I. M. Haldeman",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-tabernacle-priesthood-and-offerings-i-m-haldeman.txt"
+    },
+    {
+      "row": 6,
+      "title": "A New and Concise Bible Dictionary, Volume I",
+      "author": "G. Morrish editors",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-new-and-concise-bible-dictionary-volume-i-g-morrish-editors.txt"
+    },
+    {
+      "row": 7,
+      "title": "A New and Concise Bible Dictionary, Volume II",
+      "author": "G. Morrish editors",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-new-and-concise-bible-dictionary-volume-ii-g-morrish-editors.txt"
+    },
+    {
+      "row": 8,
+      "title": "Great Joy: Sermons and Prayer-Meeting Talks Delivered at the Chicago Tabernacle",
+      "author": "D. L. Moody",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/great-joy-sermons-and-prayer-meeting-talks-delivered-at-the-chicago-tabernacle-d-l-moody.txt"
+    },
+    {
+      "row": 9,
+      "title": "To All People: Sermons, Bible Readings, Temperance Addresses, and Prayer-Meeting Talks",
+      "author": "D. L. Moody",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/to-all-people-sermons-bible-readings-temperance-addresses-and-prayer-meeting-talks-d-l-moody.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

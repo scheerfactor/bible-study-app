@@ -1,0 +1,146 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-66-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n400_w3000.jpg",
+      "sha256": "3a5146d32fe8e8578c14bfe0a3ef918d3536e49fa83bee9f59d5e3845d8505ab"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n423_w3000.jpg",
+      "sha256": "d8d4f40b72b4446ca883f771a503a22757119ddc7d7dc284f99d97a86d5e70cb"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n434_w3000.jpg",
+      "sha256": "4f42ca1f2bd78f34267fa3def6174e8c0529cc0c0bdcea74a9e187fb44bc90cc"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n442_w3000.jpg",
+      "sha256": "17efe54deddc74268f5ed4c057b3719250f48a1e293487ae644c86de685697f8"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n469_w3000.jpg",
+      "sha256": "e3f546ac2a53631b4bfe5c30c96ea3154b58148bce531fd0bd60e02f9e13264c"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n495_w3000.jpg",
+      "sha256": "d25ea0a1d7ed61aa47522d6cea0209581571ba97fb9e786c3fe6b98a1df00d6a"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected six defensible five-occurrence Webster targets from the remaining KJV cleanup queue. Salmon, wert, aloes, and carmelite remain deferred because their KJV senses require biblical-name, special-entry, semantic, or gentilic review.",
+  "review_method": "Compared every retained sense with the original printed page image, corrected clear OCR substitutions and broken words, retained Webster's wording and sense order, and lightly abridged literary and legal examples. The CONCEIT overlay restores Webster's complete noun entry, which the generated OCR parser had lost before retaining only the verb.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 30
+  },
+  "deferred_candidates": [
+    {
+      "word": "salmon",
+      "kjv_occurrences": 6,
+      "reason": "The KJV form names a person or place; Webster's common-noun entry defines the fish and would mislead a verse-context lookup."
+    },
+    {
+      "word": "wert",
+      "kjv_occurrences": 6,
+      "reason": "The alias to BE is linguistically correct, but Webster's extensive multi-form BE entry requires a dedicated transcription and display review."
+    },
+    {
+      "word": "aloes",
+      "kjv_occurrences": 5,
+      "reason": "Webster's parsed common entry primarily describes the aloe plant and medicinal juice, while the KJV passages concern an aromatic substance or aloes-wood."
+    },
+    {
+      "word": "carmelite",
+      "kjv_occurrences": 5,
+      "reason": "The KJV gentilic identifies a person from Carmel, while Webster's common entry may describe a member of the Carmelite religious order."
+    }
+  ],
+  "promoted_headwords": [
+    "clearly",
+    "comeliness",
+    "compel",
+    "conceit",
+    "contentious",
+    "courageous"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "clearly",
+      "lookup_headword": "clearly",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 118392,
+      "source_line_end": 118410,
+      "exact_page_heading": "CLE",
+      "exact_entry_heading": "CLE'ARLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "comeliness",
+      "lookup_headword": "comeliness",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 126045,
+      "source_line_end": 126060,
+      "exact_page_heading": "COM",
+      "exact_entry_heading": "COMELINESS",
+      "exact_source_match": true
+    },
+    {
+      "word": "compel",
+      "lookup_headword": "compel",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 129433,
+      "source_line_end": 129479,
+      "exact_page_heading": "COM",
+      "exact_entry_heading": "COMPEL'",
+      "exact_source_match": true
+    },
+    {
+      "word": "conceit",
+      "lookup_headword": "conceit",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 132071,
+      "source_line_end": 132132,
+      "exact_page_heading": "CON",
+      "exact_entry_heading": "CONCE'IT",
+      "exact_source_match": true
+    },
+    {
+      "word": "contentious",
+      "lookup_headword": "contentious",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 140941,
+      "source_line_end": 140965,
+      "exact_page_heading": "CON",
+      "exact_entry_heading": "CONTEN'TIOUS",
+      "exact_source_match": true
+    },
+    {
+      "word": "courageous",
+      "lookup_headword": "courageous",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 149471,
+      "source_line_end": 149478,
+      "exact_page_heading": "COU",
+      "exact_entry_heading": "COURA'GEOUS",
+      "exact_source_match": true
+    }
+  ]
+}

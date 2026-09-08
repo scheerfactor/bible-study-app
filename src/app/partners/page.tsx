@@ -110,6 +110,7 @@ export default function PartnersPage() {
           </a>
           <Link href="/doctrine">Read the doctrinal basis</Link>
           <Link href="/rights">Read the content-rights policy</Link>
+          <Link href="/sponsorships">Review sponsorship safeguards</Link>
         </div>
       </section>
     </PublicInfoPage>

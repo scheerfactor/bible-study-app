@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { BookOpenText, ChevronLeft } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
+import { brandMark } from "@/lib/site-metadata";
 
 type PublicInfoPageProps = {
   eyebrow: string;
@@ -14,7 +16,9 @@ const publicLinks = [
   ["Terms", "/terms"],
   ["Content rights", "/rights"],
   ["Doctrinal basis", "/doctrine"],
+  ["Why this app", "/why"],
   ["Author partnerships", "/partners"],
+  ["Support the work", "/support-the-work"],
   ["Support", "/support"],
 ] as const;
 
@@ -23,7 +27,7 @@ export default function PublicInfoPage({ eyebrow, title, intro, children }: Publ
     <main className="public-info-page">
       <header className="public-info-header">
         <Link className="public-info-brand" href="/" aria-label="Father's Business Bible Study home">
-          <BookOpenText aria-hidden="true" size={23} />
+          <Image alt="" aria-hidden="true" height={38} priority src={brandMark} width={38} />
           <span>
             <strong>Father&apos;s Business</strong>
             <small>Bible Study</small>

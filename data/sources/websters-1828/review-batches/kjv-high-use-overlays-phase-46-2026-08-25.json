@@ -1,0 +1,250 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-46-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive full-resolution page scans and OCR XML, with the existing Webster web transcription used for OFFENSE.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {
+      "headword": "messenger",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n129_w2300.jpg",
+      "sha256": "bfabcb891c6af7a7dfd837ddb0475f086f630f649666841639d01e887616f771"
+    },
+    {
+      "headword": "circumcision",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n392_w2300.jpg",
+      "sha256": "8ea6031bd39df1946f01ebcdaa0743f90537a87f0def39eaf707586cef42afdf"
+    },
+    {
+      "headword": "pestilence",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n282_w2300.jpg",
+      "sha256": "8ee238678c4c475e98cea96f57c1da7d951fc62fec2c91d579163c7f5e87bea7"
+    },
+    {
+      "headword": "sepulcher",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n560_w2300.jpg",
+      "sha256": "beef8f6fde8dfc73e83162d59cf7ea4532dfce66bcb58dce8c6f35ee7be79988"
+    },
+    {
+      "headword": "offense",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n210_w2300.jpg",
+      "sha256": "5f67af19a63415876ccbd93ab2621552df2c03e93bed926b3fd4bdbd5d3d6fb8"
+    },
+    {
+      "headword": "offense",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n211_w2300.jpg",
+      "sha256": "60e0d158008e7cb65e7bd79e6619e1006382140d8c1c3a886192fdc3ae9839c8"
+    },
+    {
+      "headword": "carcass",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n343_w2300.jpg",
+      "sha256": "bb82908137e3eb455efe37530b90259e9fc81efe5af253e6d525948651cc9f91"
+    },
+    {
+      "headword": "carcass",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n344_w2300.jpg",
+      "sha256": "2344a39bdc2dccbb41a519a6db6a64ad96a5f8abe6faef8cbaf2a467fc55859c"
+    }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Completed the highest-use common KJV headwords held because the web transcription had no exact entry, using exact original scan pages and conservative KJV-to-Webster spelling relationships.",
+  "review_method": "Located each printed entry in the OCR XML, verified every word against its full-resolution page scan, joined line wraps, expanded abbreviated language labels, retained historical wording, and restored printed chapter-level citations and attributions.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 5,
+    "existing_overlay_repaired": 1,
+    "verified_lookup_relationships_added": 6,
+    "automatic_inflection_forms_resolved": 2,
+    "missing_kjv_forms_resolved": 11,
+    "kjv_occurrences_resolved": 350
+  },
+  "promoted_headwords": [
+    "messenger",
+    "circumcision",
+    "pestilence",
+    "sepulcher",
+    "carcass",
+    "offense"
+  ],
+  "reviewed_transcription_actions": [
+    {
+      "word": "messenger",
+      "actions": [
+        "Transcribed the paired MESSAGER and MESSENGER heading, etymology, and two senses directly from the exact scan page."
+      ]
+    },
+    {
+      "word": "circumcision",
+      "actions": [
+        "Transcribed the concise printed definition directly from the exact scan page."
+      ]
+    },
+    {
+      "word": "pestilence",
+      "actions": [
+        "Restored the Latin etymology, both printed senses, and author attributions."
+      ]
+    },
+    {
+      "word": "sepulcher",
+      "actions": [
+        "Restored the multilingual etymology, noun and verb entries, and printed Isaiah 22 and Matthew 27 citations."
+      ]
+    },
+    {
+      "word": "carcass",
+      "actions": [
+        "Transcribed the animal-body entry across two pages, including its multilingual etymology and three senses."
+      ]
+    },
+    {
+      "word": "offense",
+      "actions": [
+        "Restored the omitted Italian, Spanish, and French etymology.",
+        "Corrected punctuation and restored the printed attributions and chapter-level citations across two pages."
+      ]
+    }
+  ],
+  "held_candidates": [
+    {
+      "word": "sackclothes",
+      "reason": "The rare KJV plural still needs a separately reviewed relationship because it does not follow the conservative suffix rules."
+    }
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "sepulchre",
+      "lookup_headword": "sepulcher",
+      "kjv_occurrences": 54,
+      "relationship": "KJV British spelling mapped to Webster's printed American spelling"
+    },
+    {
+      "word": "sepulchres",
+      "lookup_headword": "sepulcher",
+      "kjv_occurrences": 16,
+      "relationship": "KJV British spelling and plural form mapped to Webster's printed American spelling"
+    },
+    {
+      "word": "carcase",
+      "lookup_headword": "carcass",
+      "kjv_occurrences": 34,
+      "relationship": "KJV spelling mapped to Webster's printed spelling"
+    },
+    {
+      "word": "carcases",
+      "lookup_headword": "carcass",
+      "kjv_occurrences": 22,
+      "relationship": "KJV spelling and plural form mapped to Webster's printed spelling"
+    },
+    {
+      "word": "offence",
+      "lookup_headword": "offense",
+      "kjv_occurrences": 19,
+      "relationship": "KJV British spelling mapped to Webster's printed American spelling"
+    },
+    {
+      "word": "offences",
+      "lookup_headword": "offense",
+      "kjv_occurrences": 7,
+      "relationship": "KJV British spelling and plural form mapped to Webster's printed American spelling"
+    }
+  ],
+  "automatic_lookup_relationships": [
+    {
+      "word": "messengers",
+      "lookup_headword": "messenger",
+      "kjv_occurrences": 79,
+      "relationship": "Automatically recognized regular noun inflection"
+    },
+    {
+      "word": "pestilences",
+      "lookup_headword": "pestilence",
+      "kjv_occurrences": 2,
+      "relationship": "Automatically recognized regular noun inflection"
+    }
+  ],
+  "entries": [
+    {
+      "word": "messenger",
+      "kjv_occurrences": 34,
+      "lookup_headword": "messenger",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.xml",
+      "source_line_start": 253537,
+      "source_line_end": 253660,
+      "exact_page_heading": "MES'SAGER, MES'SENGER",
+      "exact_entry_heading": "MES'SAGER",
+      "exact_source_match": true
+    },
+    {
+      "word": "circumcision",
+      "kjv_occurrences": 36,
+      "lookup_headword": "circumcision",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.xml",
+      "source_line_start": 805200,
+      "source_line_end": 805237,
+      "exact_page_heading": "CIRCUMCIS'ION",
+      "exact_entry_heading": "CIRCUMCIS'ION",
+      "exact_source_match": true
+    },
+    {
+      "word": "pestilence",
+      "kjv_occurrences": 47,
+      "lookup_headword": "pestilence",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.xml",
+      "source_line_start": 567022,
+      "source_line_end": 567101,
+      "exact_page_heading": "PEST'ILENCE",
+      "exact_entry_heading": "PEST'ILENCE",
+      "exact_source_match": true
+    },
+    {
+      "word": "sepulchre",
+      "kjv_occurrences": 54,
+      "lookup_headword": "sepulcher",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.xml",
+      "source_line_start": 1144900,
+      "source_line_end": 1145140,
+      "exact_page_heading": "SEP'ULCHER",
+      "exact_entry_heading": "SEP'ULCHER",
+      "exact_source_match": true
+    },
+    {
+      "word": "carcase",
+      "kjv_occurrences": 34,
+      "lookup_headword": "carcass",
+      "base_entries": 0,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.xml",
+      "source_line_start": 704546,
+      "source_line_end": 704707,
+      "exact_page_heading": "CARCASS",
+      "exact_entry_heading": "CARCASS",
+      "exact_source_match": true
+    },
+    {
+      "word": "offence",
+      "kjv_occurrences": 19,
+      "lookup_headword": "offense",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/offense",
+      "source_line_start": 1,
+      "source_line_end": 9,
+      "exact_page_heading": "OFFENSE",
+      "exact_entry_heading": "OFFENSE",
+      "exact_source_match": true
+    }
+  ]
+}

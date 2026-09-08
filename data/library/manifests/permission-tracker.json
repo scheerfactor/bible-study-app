@@ -22,12 +22,12 @@
   {
     "id": "permission-john-phillips",
     "author": "John Phillips",
-    "publisherMinistry": "Kregel Publications / rights holder to verify",
-    "contactInfo": "Rights and permissions contact to research before outreach.",
-    "resourceTitle": "John Phillips commentary and preaching resources",
-    "requestedRights": "Digital library listing, searchable metadata, in-app reading, optional device text-to-speech, and future premium/license access.",
+    "publisherMinistry": "Kregel Publications (book inquiry); John Phillips Ministries International (sermon inquiry); authority for each use to confirm",
+    "contactInfo": "permissions@kregel.com; johnphillipsministries@gmail.com — official routes checked 2026-08-30",
+    "resourceTitle": "Exploring Romans (ISBN 9780825434945); The Gospel According to Paul (sermon video)",
+    "requestedRights": "Separate one-title inquiries: book metadata, cover and approved sample; sermon metadata, official link and optional authorized playback. Full text, transcripts, TTS, slide exports, download and paid access require distinct grants.",
     "status": "Not contacted",
-    "notes": "Modern copyrighted works. Do not import or expose text without written permission or a license agreement."
+    "notes": "Title-specific drafts prepared, not sent. A general Kregel inquiry was sent 2026-07-03; check its mailbox thread before following up. Ministry video source: https://drjohnphillips.com/english/resources/video/. Free download availability is not an app redistribution grant. No public content, extracted audio, transcript, narration or paid use approved. See data/library/acquisition/author-profiles/john-phillips.md."
   },
   {
     "id": "permission-kregel-publications",
@@ -96,8 +96,8 @@
     "contactInfo": "2knowhim@cbc-web.org",
     "resourceTitle": "Bible teaching, preaching, and ministry resources",
     "requestedRights": "Limited listing, official links, approved excerpts, cover/promotional graphics, audio/video embed permission, and future licensing for specific titles if appropriate.",
-    "status": "Permission requested 2026-07-04",
-    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Review exact title rights, audio/video ownership, and theological fit before any public recommendation."
+    "status": "Follow-up sent 2026-08-14 - awaiting written title/use confirmation",
+    "notes": "Pastor Bo Wagner replied positively and July 7 messages coordinated a possible phone call, but no title-level or use-level grant is documented. A narrow written-scope follow-up was sent in the original thread on 2026-08-14. Review exact title rights, audio/video ownership, and theological fit before any public listing or recommendation."
   },
   {
     "id": "permission-john-goetsch-striving-together",
@@ -118,6 +118,16 @@
     "requestedRights": "Official links, excerpts, cover graphics, and future title-level review for study integration.",
     "status": "Permission granted scoped 2026-07-04",
     "notes": "Dr. David Sorenson granted permission to link to Northstar Ministries resources, use excerpts as desired, and display cover graphics. No licensing is required for that scoped use. Do not assume permission to host full copyrighted books, audio/video files, transcripts, AI/TTS narration, or paid subscription content without separate confirmation. Evidence: data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md."
+  },
+  {
+    "id": "permission-david-sorenson-understanding-bible-pilot",
+    "author": "David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "contactInfo": "dhs.northstar@gmail.com",
+    "resourceTitle": "Understanding the Bible - current PDF edition",
+    "requestedRights": "Secure full-text delivery to authenticated purchasers, purchaser-only search and passage indexing, approved public samples, and an agreed publisher-checkout entitlement or in-app commercial model.",
+    "status": "Permission requested 2026-08-23",
+    "notes": "Request sent from hello@fathersbusinessmasteryresources.com at 9:58 PM EDT. No new rights granted. Audio, video, transcripts, AI narration, and TTS were excluded. Review 2026-08-31 if no reply. Evidence: data/library/acquisition/permission-evidence/northstar-understanding-the-bible-pilot-request-2026-08-23.md."
   },
   {
     "id": "permission-leonard-ravenhill-voice-of-life",

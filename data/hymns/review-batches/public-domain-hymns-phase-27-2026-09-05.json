@@ -1,0 +1,52 @@
+{
+  "batchId": "public-domain-hymns-phase-27-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "Complete six-stanza Watts Christian-warfare hymn with explicitly editorial HAMBURG pairing.",
+  "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+  "sourceSha256": "9536712b57d4a814c3c9de2afd7651ffd71948cb475c2dca14929a91ca90c6a1",
+  "reviewNotes": [
+    "Checked hymn 77 wording against the stored 1818-printing transcription, not page scans.",
+    "Optional-stanza brackets and stanza numbers are editorial apparatus and were removed; wording and punctuation were retained.",
+    "Long Meter editorial pairing uses existing checksum-verified MIDI and rights evidence. Synthesized playback, not a performance recording.",
+    "Poetic language must not be presented as direct KJV Scripture."
+  ],
+  "entries": [
+    {
+      "id": "stand-up-my-soul-shake-off-thy-fears",
+      "title": "Stand Up, My Soul, Shake Off Thy Fears",
+      "lyricist": "Isaac Watts",
+      "lyricYear": 1707,
+      "tune": "Hamburg (editorial Long Meter pairing)",
+      "themes": [
+        "Christian Warfare",
+        "Courage",
+        "Victory",
+        "Perseverance"
+      ],
+      "scriptureReferences": [
+        "Ephesians 6:10-17",
+        "2 Timothy 4:7-8"
+      ],
+      "stanzas": [
+        "Stand up, my soul, shake off thy fears,\nAnd gird the gospel-armour on,\nMarch to the gates of endless joy\nWhere thy great Captain-Saviour's gone.",
+        "Hell and thy sins resist thy course,\nBut hell and sin are vanquish'd foes,\nThy Jesus nail'd them to the cross,\nAnd sung the triumph when he rose.",
+        "What tho' the prince of darkness rage,\nAnd waste the fury of his spite,\nEternal chains confine him down\nTo fiery deeps, and endless night.",
+        "What tho' thine inward lusts rebel,\n'Tis but a struggling gasp for life\nThe weapons of victorious grace\nShall slay thy sins, and end the strife.",
+        "Then let my soul march boldly on,\nPress forward to the heavenly gate,\nThere peace and joy eternal reign,\nAnd glittering robes for conquerors wait.",
+        "There shall I wear a starry crown,\nAnd triumph in almighty grace,\nWhile all the armies of the skies\nJoin in my glorious leader's praise."
+      ],
+      "refrain": null,
+      "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+      "textRights": "Public domain; wording checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 77. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Poetic paraphrases are not KJV quotations. Page-scan review pending.",
+      "midiFile": "when-i-survey-the-wondrous-cross.mid",
+      "midiSha256": "e83c60388a0a6f68b23687c3a69f602416705504ae2996fa62ceda3bdd1982b3",
+      "rightsEvidenceFile": "when-i-survey-the-wondrous-cross-rights.html",
+      "rightsEvidenceSha256": "cc3c34dbd7aee0533c9948345b25084bbfdb962a2dd7ff415b6c68ebd77b7256",
+      "rightsEvidenceMarker": "copyright status is <!-- Creative Commons Public Domain --><a",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/W/When_I_Survey_the_Wondrous_Cross/When_I_Survey_the_Wondrous_Cross.mid",
+      "musicRights": "Public Domain",
+      "musicAttribution": "HAMBURG by Lowell Mason, 1824; public-domain MIDI distributed with the cited Timeless Truths record. Editorial 8.8.8.8 pairing, not claimed as the original tune for this text.",
+      "reviewedAt": "2026-09-05"
+    }
+  ]
+}

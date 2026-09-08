@@ -1,0 +1,100 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-40-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {
+      "headword": "affect",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n129_w2300.jpg",
+      "sha256": "1b17cea65a449c5c588fd9270e35b2f17f4c56af3e6e609d4e0ccd7095e4b79a"
+    },
+    {
+      "headword": "conclude",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n445_w2300.jpg",
+      "sha256": "569214f6c01127064d71e06ad454865aca9ff4434437043225ebedc2db846f37"
+    },
+    {
+      "headword": "weak",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n910_w2300.jpg",
+      "sha256": "10d21a0993af577d306244dd25fcbe88761620813ba4efac8dbf9466f9ae3320"
+    },
+    {
+      "headword": "weave",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n912_w2300.jpg",
+      "sha256": "f65c2245b13fc2c95d633e6d04387eb8e1661e4dc258cb2d10e565a51bb02254"
+    }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Completed dedicated scan restoration for the four exact source entries held from phase 39 because their web transcriptions contained damaged etymologies, citations, spelling, capitalization, or punctuation.",
+  "review_method": "Compared each web entry with its original 1828 scan page at full resolution, restored complete etymologies from the printed pages, applied only visually confirmed corrections, retained Webster's printed Romans 11 citation in conclude, and inspected each final promoted definition after transformation.",
+  "screening_summary": {
+    "requested_source_pages": 4,
+    "exact_source_pages_found": 4,
+    "requested_spellings_without_exact_entry": 0,
+    "reviewed_overlays_promoted": 4,
+    "existing_reviewed_overlay_replaced": 1,
+    "net_new_reviewed_overlays": 3,
+    "automatic_inflection_forms_resolved": 3,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 10
+  },
+  "promoted_headwords": ["affect", "conclude", "weak", "weave"],
+  "reviewed_transcription_actions": [
+    {
+      "word": "affect",
+      "actions": [
+        "Corrected the damaged etymology from same room to same root.",
+        "Restored sentence capitalization and the comma in upon, to press upon.",
+        "Restored punctuation after the Fairfax usage example."
+      ]
+    },
+    {
+      "word": "conclude",
+      "actions": [
+        "Restored the complete Latin, Greek, Italian, Spanish, Portuguese, and French etymology from the scan.",
+        "Restored punctuation in the Romans 3:28 quotation and the Verb Transitive reference.",
+        "Retained the scan's printed Romans 11 citation for the Gentiles usage instead of the web transcription's unsupported verse 32.",
+        "Corrected speech, one's, had, and Luther's from damaged web transcription.",
+        "Restored capitalization in the Dryden quotation."
+      ]
+    },
+    {
+      "word": "weak",
+      "actions": [
+        "Restored the complete Saxon, German, Dutch, Danish, and Swedish etymology from the scan.",
+        "Corrected si to is in the Beattie quotation.",
+        "Restored capitalization in sense 16 and punctuation in both obsolete verb entries."
+      ]
+    },
+    {
+      "word": "weave",
+      "actions": [
+        "Restored the complete Saxon, German, Dutch, Swedish, Danish, Persian, and Greek etymology from the scan after the web entry reduced it to an incomplete fragment."
+      ]
+    }
+  ],
+  "verified_lookup_relationships": [],
+  "automatic_lookup_relationships": [
+    {"word": "concluded", "lookup_headword": "conclude", "kjv_occurrences": 3, "relationship": "Automatically recognized regular verb inflection"},
+    {"word": "affecteth", "lookup_headword": "affect", "kjv_occurrences": 1, "relationship": "Automatically recognized KJV verb inflection"},
+    {"word": "weavest", "lookup_headword": "weave", "kjv_occurrences": 1, "relationship": "Automatically recognized KJV verb inflection"}
+  ],
+  "entries": [
+    {"word": "affect", "kjv_occurrences": 2, "lookup_headword": "affect", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/affect", "source_line_start": 1, "source_line_end": 10, "exact_page_heading": "AFFECT'", "exact_entry_heading": "AFFECT'", "exact_source_match": true},
+    {"word": "conclude", "kjv_occurrences": 1, "lookup_headword": "conclude", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/conclude", "source_line_start": 1, "source_line_end": 26, "exact_page_heading": "CONCLUDE", "exact_entry_heading": "CONCLUDE", "exact_source_match": true},
+    {"word": "weak", "kjv_occurrences": 46, "lookup_headword": "weak", "base_entries": 3, "source_url": "https://webstersdictionary1828.com/Dictionary/weak", "source_line_start": 1, "source_line_end": 20, "exact_page_heading": "WEAK", "exact_entry_heading": "WEAK", "exact_source_match": true},
+    {"word": "weave", "kjv_occurrences": 2, "lookup_headword": "weave", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/weave", "source_line_start": 1, "source_line_end": 7, "exact_page_heading": "WEAVE", "exact_entry_heading": "WEAVE", "exact_source_match": true}
+  ]
+}

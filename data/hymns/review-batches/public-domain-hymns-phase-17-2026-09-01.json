@@ -1,0 +1,74 @@
+{
+  "batchId": "public-domain-hymns-phase-17-2026-09-01",
+  "reviewedAt": "2026-09-01",
+  "sourceProvider": "Timeless Truths Free Online Library",
+  "purpose": "Add five Scripture-connected public-domain hymns through the accelerated verified batch pipeline.",
+  "guardrails": [
+    "Import only when the source page marks both words and tune Public Domain.",
+    "Require a direct Scripture connection and a clear gospel, prayer, praise, refuge, or Christian-duty theme.",
+    "Retain the exact source page and MIDI checksums with every record.",
+    "Keep Scripture references as topical indexes; KJV Scripture remains primary."
+  ],
+  "entries": [
+    {
+      "id": "bringing-in-the-sheaves",
+      "title": "Bringing in the Sheaves",
+      "lyricist": "Knowles Shaw",
+      "lyricYear": 1874,
+      "tune": "Bringing in the Sheaves",
+      "themes": ["Sowing", "Reaping", "Service", "Joy"],
+      "scriptureReferences": ["Psalm 126:5-6", "Galatians 6:9"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Bringing_in_the_Sheaves/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/B/Bringing_in_the_Sheaves/Bringing_in_the_Sheaves.mid",
+      "musicAttribution": "BRINGING IN THE SHEAVES by George A. Minor, 1880; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "there-shall-be-showers-of-blessing",
+      "title": "There Shall Be Showers of Blessing",
+      "lyricist": "Daniel W. Whittle",
+      "lyricYear": 1883,
+      "tune": "Showers of Blessing",
+      "themes": ["Prayer", "Faith", "Encouragement", "Revival"],
+      "scriptureReferences": ["Ezekiel 34:26", "Psalm 115:12", "Genesis 32:26"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/There_Shall_Be_Showers_of_Blessing/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/T/There_Shall_Be_Showers_of_Blessing/There_Shall_Be_Showers_of_Blessing.mid",
+      "musicAttribution": "SHOWERS OF BLESSING by James McGranahan, 1883; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "he-hideth-my-soul",
+      "title": "He Hideth My Soul",
+      "lyricist": "Frances J. Crosby",
+      "lyricYear": 1890,
+      "tune": "He Hideth My Soul",
+      "themes": ["Refuge", "Jesus", "Assurance", "Praise"],
+      "scriptureReferences": ["Exodus 33:22", "Psalm 32:7"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/He_Hideth_My_Soul/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/H/He_Hideth_My_Soul/He_Hideth_My_Soul.mid",
+      "musicAttribution": "HE HIDETH MY SOUL by William J. Kirkpatrick, circa 1890; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "count-your-blessings",
+      "title": "Count Your Blessings",
+      "lyricist": "Johnson Oatman, Jr.",
+      "lyricYear": 1897,
+      "tune": "Blessings",
+      "themes": ["Thanksgiving", "Praise", "Encouragement"],
+      "scriptureReferences": ["Psalm 40:5", "1 Thessalonians 5:18", "Ephesians 1:3"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Count_Your_Blessings/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/C/Count_Your_Blessings/Count_Your_Blessings.mid",
+      "musicAttribution": "BLESSINGS by Edwin O. Excell, 1897; public-domain MIDI distributed with the cited Timeless Truths record."
+    },
+    {
+      "id": "stand-up-stand-up-for-jesus",
+      "title": "Stand Up, Stand Up for Jesus",
+      "lyricist": "George Duffield, Jr.",
+      "lyricYear": 1858,
+      "tune": "Webb",
+      "themes": ["Christian Duty", "Spiritual Warfare", "Prayer", "Victory"],
+      "scriptureReferences": ["Ephesians 6:11-18", "2 Timothy 2:3"],
+      "textSourceUrl": "https://library.timelesstruths.org/music/Stand_Up_Stand_Up_for_Jesus/",
+      "musicSourceUrl": "https://library.timelesstruths.org/library/music/S/Stand_Up_Stand_Up_for_Jesus/Stand_Up_Stand_Up_for_Jesus.mid",
+      "musicAttribution": "WEBB by George J. Webb, 1830; public-domain MIDI distributed with the cited Timeless Truths record."
+    }
+  ]
+}

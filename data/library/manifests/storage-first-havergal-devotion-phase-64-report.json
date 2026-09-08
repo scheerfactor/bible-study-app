@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-havergal-devotion-phase-64.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Fulness of Joy",
+      "file": "fulness-of-joy-frances-ridley-havergal.txt",
+      "bytes": 19884,
+      "words": 4105,
+      "reading_time_minutes": 18
+    },
+    {
+      "title": "Life Chords: Comprising Zenith, Loyal Responses, and Other Poems",
+      "file": "life-chords-comprising-zenith-loyal-responses-and-other-poems-frances-ridley-havergal.txt",
+      "bytes": 317337,
+      "words": 49733,
+      "reading_time_minutes": 221
+    },
+    {
+      "title": "Under His Shadow: The Last Poems of Frances Ridley Havergal",
+      "file": "under-his-shadow-the-last-poems-of-frances-ridley-havergal-frances-ridley-havergal.txt",
+      "bytes": 195964,
+      "words": 30240,
+      "reading_time_minutes": 134
+    },
+    {
+      "title": "My King; or, Daily Thoughts for the King's Children",
+      "file": "my-king-or-daily-thoughts-for-the-king-s-children-frances-ridley-havergal.txt",
+      "bytes": 149584,
+      "words": 24420,
+      "reading_time_minutes": 109
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Fulness of Joy",
+      "author": "Frances Ridley Havergal",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/fulness-of-joy-frances-ridley-havergal.txt"
+    },
+    {
+      "row": 3,
+      "title": "Life Chords: Comprising Zenith, Loyal Responses, and Other Poems",
+      "author": "Frances Ridley Havergal",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-chords-comprising-zenith-loyal-responses-and-other-poems-frances-ridley-havergal.txt"
+    },
+    {
+      "row": 4,
+      "title": "Under His Shadow: The Last Poems of Frances Ridley Havergal",
+      "author": "Frances Ridley Havergal",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/under-his-shadow-the-last-poems-of-frances-ridley-havergal-frances-ridley-havergal.txt"
+    },
+    {
+      "row": 5,
+      "title": "My King; or, Daily Thoughts for the King's Children",
+      "author": "Frances Ridley Havergal",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/my-king-or-daily-thoughts-for-the-king-s-children-frances-ridley-havergal.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

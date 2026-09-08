@@ -6,8 +6,10 @@
 | --- | --- |
 | Primary source | https://www.wayoflife.org/sharing/ |
 | Supporting source | https://www.wayoflife.org/reports/way_of_life_literatures_free_ebook.html |
+| Supplemental report policy | https://www.wayoflife.org/reports/the_power_of_the_ancient_sling.html |
 | Contact source | https://www.wayoflife.org/about/contactus.php |
 | Date reviewed | 2026-08-14 |
+| Report policy re-reviewed | 2026-08-28 |
 | Primary page last-updated statement | 2023-12-19 |
 | Supporting page last-updated statement | 2026-08-13 |
 | Evidence type | Official public sharing policy and current free-eBook list |
@@ -24,6 +26,19 @@ because no private permission grant has been received.
 The official sharing page identifies audio sermons, video presentations,
 O Timothy magazine, free eBooks, and website reports as shareable categories.
 It also says that proper credit is required.
+
+The policy displayed on *The Power of the Ancient Sling* expressly permits
+parts or entire reports to be posted to websites or blogs when proper credit
+is given; it says an original-source link is appreciated because reports are
+updated or expanded. This report-level permission is broader than the
+free-eBook website-hosting rule below.
+
+The app still applies item-level editorial review before copying report text.
+A report may contain an image, quotations from third-party sources, or an
+excerpt from a non-shareable Store book. The report-sharing statement does not
+automatically establish that every embedded asset can be extracted and reused
+separately. First-release records therefore remain official links unless a
+specific reviewed record documents a broader use.
 
 The free-eBook rule is narrower than general sharing language. The official
 page says the files may be given to others intact, but they may not be posted

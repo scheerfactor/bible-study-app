@@ -1,0 +1,90 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-74-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n199_w3000.jpg", "sha256": "ea4a7f0d5474759000dbb982e02bc988906745409aea4264e97b9ac6a7316367" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n232_w3000.jpg", "sha256": "507e63b94c2e375df4de5b450554132f0c30b076052a853a3320b7a8ec2bcd26" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n443_w3000.jpg", "sha256": "d4dde24e20899b151ba4e4999b78f6a9365de4e2706342fd0a5073572ac95e21" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n482_w3000.jpg", "sha256": "f19f0121eee6c51aa371ae75c465f645c86685b4e017500c25fbc6388baef639" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n898_w3000.jpg", "sha256": "7574cc0f7846a697b7a5c3d390f4c03473e2698699a58e3c7fcafe7396e42624" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n101_w3000.jpg", "sha256": "043b78c4eba5396ee3341bb13e14c48eded97d8e4494b5e794cba40e4294f68a" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n204_w3000.jpg", "sha256": "cbb06b60e65a0218f5e03c8ec8a9af1f6e73e37a90709db4872ace8d33ae5334" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n439_w3000.jpg", "sha256": "3a6d6ff1177db373bf54c4a885a113798257ebe58078b64995aebeadf0d53824" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n604_w3000.jpg", "sha256": "ec81cf412ae84ae7a46d5305dfa14787894b094277afe26b57b6219daf6c868a" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n638_w3000.jpg", "sha256": "784b4f48de6665d0dc94a77f86e29ac9a1bb0384ab1214d51b6f32b1fabcc41c" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n843_w3000.jpg", "sha256": "e8e9cca5cd550e2e5971214ae6832012e3109d409ed4f96edfa63186c6375eb8" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n906_w3000.jpg", "sha256": "e07c55d61eef4c2e0b2942291d1bcdf08065ae0c3ac3a1e3345247067820307f" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected ordinary KJV study vocabulary with printed Webster headwords from the remaining medium-, low-, and single-use inventory after excluding names, places, unsupported compounds, and entries already covered by reviewed overlays.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, source names, and Scripture book names for display, and recorded plural relationships rather than inventing headwords Webster did not print. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed sense.",
+  "screening_summary": {
+    "reviewed_headwords": 12,
+    "net_new_reviewed_overlays": 12,
+    "verified_lookup_relationships_added": 3,
+    "missing_kjv_forms_resolved": 20,
+    "kjv_occurrences_resolved": 47
+  },
+  "deferred_candidates": [
+    { "word": "inasmuch", "reason": "Webster prints 'In as much' as a phrase within the preposition IN rather than as a standalone headword; retain supplemental help rather than inventing a Webster overlay." },
+    { "word": "bedchamber", "reason": "The phrase appears inside another article but not as a standalone BEDCHAMBER headword in the reviewed alphabetical sequence." },
+    { "word": "hundredfold", "reason": "Webster explains 'a hundred fold' under other vocabulary but does not print a standalone HUNDREDFOLD headword in the reviewed sequence." }
+  ],
+  "promoted_headwords": [
+    "artificer",
+    "banishment",
+    "conception",
+    "coriander",
+    "herdman",
+    "manger",
+    "obscurity",
+    "refiner",
+    "slander",
+    "spider",
+    "unity",
+    "watcher"
+  ],
+  "verified_lookup_relationships": [
+    { "word": "artificers", "lookup_headword": "artificer", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular ARTIFICER" },
+    { "word": "herdmen", "lookup_headword": "herdman", "kjv_occurrences": 8, "relationship": "Existing plural noun relationship now resolves through the reviewed joint HERDMAN, HERDS-MAN entry" },
+    { "word": "slanders", "lookup_headword": "slander", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular SLANDER" },
+    { "word": "watchers", "lookup_headword": "watcher", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's singular WATCHER" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "artificer", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed ARTIFICER headword" },
+    { "word": "banishment", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed BANISHMENT headword" },
+    { "word": "conception", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed CONCEPTION headword" },
+    { "word": "coriander", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed CORIANDER headword" },
+    { "word": "herdman", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed HERDMAN headword" },
+    { "word": "manger", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed MANGER headword" },
+    { "word": "obscurity", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed joint OBSCURENESS, OBSCURITY entry" },
+    { "word": "refiner", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed REFINER headword" },
+    { "word": "slander", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed SLANDER headword" },
+    { "word": "slandered", "kjv_occurrences": 1, "resolution": "KJV inflected form resolved through the reviewed SLANDER headword" },
+    { "word": "slanderest", "kjv_occurrences": 1, "resolution": "KJV second-person verb form resolved through the reviewed SLANDER headword" },
+    { "word": "slandereth", "kjv_occurrences": 1, "resolution": "KJV third-person verb form resolved through the reviewed SLANDER headword" },
+    { "word": "slanderously", "kjv_occurrences": 1, "resolution": "Derived adverb resolved through the reviewed SLANDER headword" },
+    { "word": "spider", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed SPIDER headword" },
+    { "word": "unity", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed UNITY headword" },
+    { "word": "watcher", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed WATCHER headword" }
+  ],
+  "entries": [
+    { "word": "artificer", "lookup_headword": "artificer", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 53323, "source_line_end": 53336, "exact_page_heading": "ART", "exact_entry_heading": "ARTIFI'CER", "exact_source_match": true },
+    { "word": "banishment", "lookup_headword": "banishment", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 64053, "source_line_end": 64068, "exact_page_heading": "BAN", "exact_entry_heading": "BAN'ISHMENT", "exact_source_match": true },
+    { "word": "conception", "lookup_headword": "conception", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 132392, "source_line_end": 132406, "exact_page_heading": "CON", "exact_entry_heading": "CONCEP'TION", "exact_source_match": true },
+    { "word": "coriander", "lookup_headword": "coriander", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 145186, "source_line_end": 145192, "exact_page_heading": "COR", "exact_entry_heading": "CORIAN'DER", "exact_source_match": true },
+    { "word": "herdmen", "lookup_headword": "herdman", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 282188, "source_line_end": 282192, "exact_page_heading": "HER", "exact_entry_heading": "HERD'MAN, HERDS-MAN", "exact_source_match": true },
+    { "word": "manger", "lookup_headword": "manger", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 31323, "source_line_end": 31331, "exact_page_heading": "MAN", "exact_entry_heading": "MAN'GER", "exact_source_match": true },
+    { "word": "obscurity", "lookup_headword": "obscurity", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 65507, "source_line_end": 65531, "exact_page_heading": "OBS", "exact_entry_heading": "OBSCU'RENESS, OBSCU'RITY", "exact_source_match": true },
+    { "word": "refiner", "lookup_headword": "refiner", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 143875, "source_line_end": 143883, "exact_page_heading": "REF", "exact_entry_heading": "REFI'NER", "exact_source_match": true },
+    { "word": "slander", "lookup_headword": "slander", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 198820, "source_line_end": 198839, "exact_page_heading": "SLA", "exact_entry_heading": "SLAN'DER", "exact_source_match": true },
+    { "word": "spider", "lookup_headword": "spider", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 210592, "source_line_end": 210603, "exact_page_heading": "SPI", "exact_entry_heading": "SPI'DER", "exact_source_match": true },
+    { "word": "unity", "lookup_headword": "unity", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 280343, "source_line_end": 280364, "exact_page_heading": "UNI", "exact_entry_heading": "U'NITY", "exact_source_match": true },
+    { "word": "watcher", "lookup_headword": "watcher", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 301663, "source_line_end": 301668, "exact_page_heading": "WAT", "exact_entry_heading": "WATCH'ER", "exact_source_match": true }
+  ]
+}

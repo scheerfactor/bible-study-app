@@ -1,0 +1,56 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-80-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n250_w1000.jpg", "sha256": "c593a47221269f1339a1598ccf159b1280db6baa35e79ff756c53ac1c1efd69f" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n310_w1000.jpg", "sha256": "6fd0016397a11a1fdbb56b08dadfd56f420357de47425ca4222c58be8e929e2c" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n698_w1000.jpg", "sha256": "830173c551fc923858bbc8de71458748a89e93d89384f97ddef02fae761afa25" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n335_w1000.jpg", "sha256": "f71b3c4d007da2e2312e638563eb4cd49dd0b8b66a3ae638f811c417428d8a43" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n475_w1000.jpg", "sha256": "62f22ca04f253937d0b7a251cb0c4af1fa5ec8de942856562e1c83a6d1aa18d4" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n600_w1000.jpg", "sha256": "49ea5e489199403ecefe35ae9d3a9fd6da681a2f5b5df3d4053ed559be9d652c" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n633_w1000.jpg", "sha256": "5e8e207312adc86b7e51fff61b3d4fd2465091c405a49f5f3b782ec7aa1dbeb1" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n755_w1000.jpg", "sha256": "b1106c9c2ea29acaaa70c9268479cca25bcd587816878b794360e5b662d8ecce" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n761_w1000.jpg", "sha256": "95dc71add65ea5f1153fd2264e6f98669aa267f7a6b27e9911f714016983ed9d" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected repeated ordinary KJV compounds, historical spellings, and inflected forms from the remaining inventory, excluding personal and geographic names and limiting the batch to entries with clear standalone 1828 headwords.",
+  "review_method": "Compared every retained definition with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, source names, and Scripture book names for display, and recorded historical-spelling or inflection lookup relationships rather than inventing duplicate headwords.",
+  "screening_summary": {
+    "reviewed_headwords": 8,
+    "net_new_reviewed_overlays": 8,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 6,
+    "missing_kjv_forms_resolved": 9,
+    "kjv_occurrences_resolved": 23,
+    "total_kjv_occurrences_with_reviewed_lookup": 23
+  },
+  "promoted_headwords": ["bedchamber", "broken-hearted", "even-tide", "prancing", "reveling", "sixscore", "spearman", "therefrom"],
+  "verified_lookup_relationships": [
+    { "word": "brokenhearted", "lookup_headword": "broken-hearted", "kjv_occurrences": 2, "relationship": "KJV closed compound mapped to Webster's hyphenated BROKEN-HEARTED headword" },
+    { "word": "eveningtide", "lookup_headword": "even-tide", "kjv_occurrences": 2, "relationship": "KJV compound spelling mapped to Webster's EVEN-TIDE headword" },
+    { "word": "pransings", "lookup_headword": "prancing", "kjv_occurrences": 2, "relationship": "KJV historical spelling and plural noun form mapped to Webster's PRANCING headword" },
+    { "word": "revellings", "lookup_headword": "reveling", "kjv_occurrences": 2, "relationship": "KJV historical spelling and plural noun form mapped to Webster's REVELING headword" },
+    { "word": "spearmen", "lookup_headword": "spearman", "kjv_occurrences": 2, "relationship": "Plural noun form mapped to Webster's SPEARMAN headword" },
+    { "word": "threshingfloors", "lookup_headword": "thrashing-floor", "kjv_occurrences": 2, "relationship": "KJV spelling and plural compound mapped to Webster's THRASHING-FLOOR headword" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "bedchamber", "kjv_occurrences": 6, "resolution": "Direct lookup resolved from the reviewed BEDCHAMBER headword" },
+    { "word": "sixscore", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed SIXSCORE headword" },
+    { "word": "therefrom", "kjv_occurrences": 3, "resolution": "Direct lookup resolved from the reviewed THEREFROM headword" }
+  ],
+  "entries": [
+    { "word": "bedchamber", "lookup_headword": "bedchamber", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 69793, "source_line_end": 69795, "exact_page_heading": "BED", "exact_entry_heading": "BED'CHAMBER", "exact_source_match": true },
+    { "word": "brokenhearted", "lookup_headword": "broken-hearted", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 89569, "source_line_end": 89571, "exact_page_heading": "BRO", "exact_entry_heading": "BRO'KEN-HEARTED", "exact_source_match": true },
+    { "word": "eveningtide", "lookup_headword": "even-tide", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 215905, "source_line_end": 215914, "exact_page_heading": "EVE", "exact_entry_heading": "E'VEN-TIDE", "exact_source_match": true },
+    { "word": "pransings", "lookup_headword": "prancing", "base_entries": 2, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 109283, "source_line_end": 109287, "exact_page_heading": "PRA", "exact_entry_heading": "PR'ANCING", "exact_source_match": true },
+    { "word": "revellings", "lookup_headword": "reveling", "base_entries": 2, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 155816, "source_line_end": 155821, "exact_page_heading": "REV", "exact_entry_heading": "REV'ELING", "exact_source_match": true },
+    { "word": "sixscore", "lookup_headword": "sixscore", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 197612, "source_line_end": 197615, "exact_page_heading": "SIX", "exact_entry_heading": "SIX'SCORE", "exact_source_match": true },
+    { "word": "spearmen", "lookup_headword": "spearman", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 209089, "source_line_end": 209091, "exact_page_heading": "SPE", "exact_entry_heading": "SPE'ARMAN", "exact_source_match": true },
+    { "word": "therefrom", "lookup_headword": "therefrom", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 250149, "source_line_end": 250153, "exact_page_heading": "THE", "exact_entry_heading": "THEREFROM'", "exact_source_match": true }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewedAt": "2026-08-15",
+  "reviewedAt": "2026-09-05",
   "launchStatus": "Public beta approved",
   "stations": [
     {
@@ -14,6 +14,15 @@
         "essentials-of-prayer-librivox-000-preface",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "all-of-grace-librivox-001-to-you",
+        "ttb-contrary-winds-troubled-waters-official-audio",
+        "ttb-some-seed-official-audio",
+        "ttb-from-prison-to-palace-official-audio",
+        "ttb-to-tell-the-truth-official-audio",
+        "ttb-man-who-never-died-official-audio",
+        "ttb-god-created-official-audio",
+        "ttb-stranger-of-galilee-official-audio",
+        "ttb-millennium-what-where-when-how-who-official-audio",
+        "ttb-coming-of-lord-is-near-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
         "kjv-john-librivox-004-john-13-17",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
@@ -23,10 +32,28 @@
       "id": "kjv-bible",
       "title": "KJV Bible Radio",
       "shortLabel": "KJV Bible",
-      "description": "Continuous King James Bible listening from the Gospel of John.",
+      "description": "Sequential King James Bible listening through the complete Gospel of John pilot.",
+      "coverage": "John 1-21",
+      "listeningMode": "Sequential full-book pilot",
+      "markerStatus": "Five range files are playback-verified. Chapter buttons appear only after every marker in that range file is manually verified.",
       "trackIds": [
         "kjv-john-librivox-001-john-1-4",
-        "kjv-john-librivox-004-john-13-17"
+        "kjv-john-librivox-002-john-5-8",
+        "kjv-john-librivox-003-john-9-12",
+        "kjv-john-librivox-004-john-13-17",
+        "kjv-john-librivox-005-john-18-21"
+      ]
+    },
+    {
+      "id": "kjv-genesis-pilot",
+      "title": "Genesis Bible Radio Pilot",
+      "shortLabel": "Genesis Pilot",
+      "description": "A rights-cleared King James Bible listening pilot from the beginning of Genesis.",
+      "coverage": "Genesis 1-14",
+      "listeningMode": "Single verified range-file pilot",
+      "markerStatus": "Fourteen candidate chapter boundaries are prepared. Chapter buttons remain unavailable until every Genesis 1-14 marker is manually verified by ear.",
+      "trackIds": [
+        "bible-kjv-complete-librivox-001-genesis-1-14"
       ]
     },
     {
@@ -46,16 +73,276 @@
       "shortLabel": "Preaching",
       "description": "Free attributed messages from J. Vernon McGee and public-domain Spurgeon readings.",
       "trackIds": [
+        "ttb-israel-the-bible-bomb-official-audio",
+        "ttb-what-death-means-to-a-christian-official-audio",
+        "ttb-holy-spirit-and-will-of-god-official-audio",
+        "ttb-mystery-of-iniquity-official-audio",
+        "ttb-jeremiah-gods-crybaby-official-audio",
+        "ttb-idolatry-exposed-official-audio",
+        "ttb-sanctuary-of-the-soul-official-audio",
+        "ttb-man-back-dead-official-audio",
+        "ttb-jeremiah-man-sorrows-official-audio",
+        "ttb-answers-problems-times-official-audio",
+        "ttb-home-casualty-last-days-official-audio",
+        "ttb-dont-blame-devil-official-audio",
+        "ttb-millennial-temple-sacrifices-official-audio",
+        "ttb-angels-dirty-faces-official-audio",
+        "ttb-watchman-night-official-audio",
+        "ttb-daniel-stand-alone-official-audio",
+        "ttb-christian-different-official-audio",
+        "ttb-holy-spirit-withdrawn-official-audio",
+        "ttb-gabriel-coming-christ-official-audio",
+        "ttb-daniel-man-prayer-official-audio",
+        "ttb-gods-calendar-israel-official-audio",
+        "ttb-go-christian-go-official-audio",
+        "ttb-everyone-heaven-official-audio",
+        "ttb-children-suffer-official-audio",
+        "ttb-destination-bethlehem-field-official-audio",
+        "ttb-destination-bethlehem-grave-official-audio",
+        "ttb-destination-bethlehem-boy-official-audio",
+        "ttb-destination-bethlehem-stable-official-audio",
         "ttb-official-sunday-sermons-free-distribution-pilot",
         "ttb-the-potter-and-the-clay-official-audio",
         "ttb-believers-in-days-of-apostasy-official-audio",
+        "ttb-on-eagles-wings-official-audio",
+        "ttb-watch-for-the-lord-official-audio",
+        "ttb-mount-of-olives-official-audio",
+        "ttb-contrary-winds-troubled-waters-official-audio",
+        "ttb-recipe-for-bread-official-audio",
+        "ttb-sermon-on-the-mount-for-today-official-audio",
+        "ttb-some-seed-official-audio",
+        "ttb-john-baptist-and-prophet-official-audio",
+        "ttb-gospel-in-genealogy-official-audio",
+        "ttb-israel-faces-sunset-official-audio",
+        "ttb-from-prison-to-palace-official-audio",
+        "ttb-chickens-come-home-to-roost-official-audio",
+        "ttb-to-tell-the-truth-official-audio",
+        "ttb-camels-are-coming-official-audio",
+        "ttb-greatest-tongues-movement-official-audio",
+        "ttb-new-world-official-audio",
+        "ttb-bird-watching-official-audio",
+        "ttb-man-who-never-died-official-audio",
+        "ttb-cain-and-abel-official-audio",
+        "ttb-god-created-official-audio",
+        "ttb-what-is-doctrine-official-audio",
+        "ttb-stranger-of-galilee-official-audio",
+        "ttb-new-jerusalem-eternal-home-official-audio",
+        "ttb-what-and-where-is-heaven-official-audio",
+        "ttb-millennium-what-where-when-how-who-official-audio",
+        "ttb-time-of-armageddon-official-audio",
+        "ttb-next-happening-program-of-god-official-audio",
+        "ttb-curtain-prophecy-near-east-official-audio",
+        "ttb-coming-of-lord-is-near-official-audio",
+        "ttb-church-through-great-tribulation-official-audio",
+        "ttb-grace-three-time-zones-official-audio",
+        "ttb-shepherd-and-sheep-official-audio",
+        "ttb-psalm-old-shepherd-official-audio",
+        "ttb-fullness-spirit-worship-witness-official-audio",
+        "ttb-singing-lords-song-strange-land-official-audio",
+        "ttb-when-did-jesus-sing-official-audio",
+        "ttb-abounding-grace-official-audio",
+        "ttb-storms-new-creation-official-audio",
+        "ttb-pilgrims-progress-official-audio",
+        "ttb-major-motivation-missions-official-audio",
+        "ttb-authority-for-missions-official-audio",
+        "ttb-faith-plus-nothing-salvation-official-audio",
+        "ttb-why-gospel-not-preached-today-official-audio",
+        "ttb-call-commission-isaiah-official-audio",
+        "ttb-when-jesus-chose-disciples-official-audio",
+        "ttb-looking-faith-laboratory-life-official-audio",
+        "ttb-house-faith-built-official-audio",
+        "ttb-faith-in-action-official-audio",
         "spurgeon-talks-to-farmers-librivox-01-the-sluggard-s-farm",
         "spurgeon-talks-to-farmers-librivox-07-the-parable-of-the-sower",
         "spurgeon-talks-to-farmers-librivox-14-the-joy-of-harvest"
       ]
+    },
+    {
+      "id": "classic-books",
+      "title": "Classic Books & Bible History Radio",
+      "shortLabel": "Classic Books",
+      "description": "Public-domain Spurgeon prayer readings and H. A. Ironside Bible-history chapters.",
+      "trackIds": [
+        "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
+        "spurgeon-prayers-librivox-009-009-prayer-a-prayer-for-holiness",
+        "spurgeon-prayers-librivox-018-018-prayer-to-be-like-christ",
+        "spurgeon-prayers-librivox-028-028-sermon-the-golden-key-of-prayer",
+        "ironside-four-hundred-silent-years-librivox-001-000-preface",
+        "ironside-four-hundred-silent-years-librivox-002-001-the-jews-under-priestly-rule",
+        "ironside-four-hundred-silent-years-librivox-003-002-the-days-of-the-maccabees",
+        "ironside-four-hundred-silent-years-librivox-006-005-the-literature-of-the-jews"
+      ]
     }
   ],
   "reviewedTracks": [
+    {
+      "mediaRecordId": "ttb-israel-the-bible-bomb-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-what-death-means-to-a-christian-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-holy-spirit-and-will-of-god-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, AAC duration, byte size, and ETag verified 2026-09-05. Technical review only; full listening and governing-passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-mystery-of-iniquity-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, AAC duration, byte size, and ETag verified 2026-09-05. Technical review only; full listening and governing-passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-jeremiah-gods-crybaby-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, AAC duration, byte size, and ETag verified 2026-09-05. Technical review only; full listening and exact Jeremiah passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-idolatry-exposed-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, AAC duration, byte size, and ETag verified 2026-09-05. Technical review only; full listening and exact Jeremiah passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-sanctuary-of-the-soul-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, AAC duration, byte size, and ETag verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-man-back-dead-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file hash, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-jeremiah-man-sorrows-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file hash, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-answers-problems-times-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-home-casualty-last-days-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-dont-blame-devil-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-millennial-temple-sacrifices-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-angels-dirty-faces-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-watchman-night-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-05. Technical review only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-daniel-stand-alone-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-christian-different-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-holy-spirit-withdrawn-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-gabriel-coming-christ-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-daniel-man-prayer-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-gods-calendar-israel-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, full-file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-go-christian-go-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-everyone-heaven-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-children-suffer-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range delivery, complete file SHA-256, and AAC duration verified 2026-09-04. Technical check only; full listening and exact passage review pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-field-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-grave-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-boy-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
+    {
+      "mediaRecordId": "ttb-destination-bethlehem-stable-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response, full-file SHA-256, and MP4/AAC duration verified 2026-09-04. Technical playback check only; exact passages remain unindexed and full listening review is pending."
+    },
     {
       "mediaRecordId": "kjv-john-librivox-001-john-1-4",
       "sourceManifest": "uploaded-public-domain-audio-pilots",
@@ -63,10 +350,34 @@
       "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
     },
     {
+      "mediaRecordId": "kjv-john-librivox-002-john-5-8",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
+    },
+    {
+      "mediaRecordId": "kjv-john-librivox-003-john-9-12",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
+    },
+    {
       "mediaRecordId": "kjv-john-librivox-004-john-13-17",
       "sourceManifest": "uploaded-public-domain-audio-pilots",
       "approvalStatus": "Public beta approved",
       "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "kjv-john-librivox-005-john-18-21",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
+    },
+    {
+      "mediaRecordId": "bible-kjv-complete-librivox-001-genesis-1-14",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Public beta range pilot approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-08-29"
     },
     {
       "mediaRecordId": "essentials-of-prayer-librivox-000-preface",
@@ -121,6 +432,342 @@
       "sourceManifest": "media-intake-candidates",
       "approvalStatus": "Free public radio approved",
       "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-08-15"
+    },
+    {
+      "mediaRecordId": "ttb-on-eagles-wings-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ttb-watch-for-the-lord-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ttb-mount-of-olives-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ttb-contrary-winds-troubled-waters-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-recipe-for-bread-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-sermon-on-the-mount-for-today-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-some-seed-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-john-baptist-and-prophet-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-gospel-in-genealogy-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-israel-faces-sunset-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-from-prison-to-palace-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-chickens-come-home-to-roost-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-to-tell-the-truth-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-camels-are-coming-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-greatest-tongues-movement-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-new-world-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-bird-watching-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-man-who-never-died-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-cain-and-abel-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise chapter remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-god-created-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04"
+    },
+    {
+      "mediaRecordId": "ttb-what-is-doctrine-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-stranger-of-galilee-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing Gospel passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-new-jerusalem-eternal-home-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; precise Revelation passage range remains editorially inferred"
+    },
+    {
+      "mediaRecordId": "ttb-what-and-where-is-heaven-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-millennium-what-where-when-how-who-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Revelation 20 and Isaiah are named by the official description"
+    },
+    {
+      "mediaRecordId": "ttb-time-of-armageddon-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-next-happening-program-of-god-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-curtain-prophecy-near-east-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; dated geopolitical context and governing passages require review"
+    },
+    {
+      "mediaRecordId": "ttb-coming-of-lord-is-near-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; prophetic timing and governing passages require review"
+    },
+    {
+      "mediaRecordId": "ttb-church-through-great-tribulation-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Tribulation interpretation and governing passages require review"
+    },
+    {
+      "mediaRecordId": "ttb-grace-three-time-zones-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-shepherd-and-sheep-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; complete governing passage range requires review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-psalm-old-shepherd-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalm 23 identified by the official title and description"
+    },
+    {
+      "mediaRecordId": "ttb-fullness-spirit-worship-witness-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-singing-lords-song-strange-land-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; governing Psalm remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-when-did-jesus-sing-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalm 116 identified explicitly by the official feed"
+    },
+    {
+      "mediaRecordId": "ttb-abounding-grace-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; 2 Corinthians is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-storms-new-creation-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalm 29 identified explicitly by the official feed"
+    },
+    {
+      "mediaRecordId": "ttb-pilgrims-progress-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalms 120–134 identified explicitly by the official feed"
+    },
+    {
+      "mediaRecordId": "ttb-major-motivation-missions-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Jonah is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-authority-for-missions-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Psalms are identified generally but the governing references remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-faith-plus-nothing-salvation-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Galatians is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-why-gospel-not-preached-today-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; no governing biblical passage is identified, so indexing remains disabled pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-call-commission-isaiah-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Isaiah is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-when-jesus-chose-disciples-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; no specific Gospel passage is identified, so indexing remains disabled pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-looking-faith-laboratory-life-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Hebrews is identified but the governing chapter remains unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "ttb-house-faith-built-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Hebrews 11 and Hebrews 11:1 are identified explicitly by the official feed"
+    },
+    {
+      "mediaRecordId": "ttb-faith-in-action-official-audio",
+      "sourceManifest": "media-intake-candidates",
+      "approvalStatus": "Free public radio approved",
+      "playbackReview": "HTTP 206 audio/mp4 range response and full-file MP4/AAC integrity verified 2026-09-04; Abel, Enoch, and Noah are identified but exact passages remain unindexed pending review by ear"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-002-002-prayer-help-from-on-high",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-009-009-prayer-a-prayer-for-holiness",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-018-018-prayer-to-be-like-christ",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "spurgeon-prayers-librivox-028-028-sermon-the-golden-key-of-prayer",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-001-000-preface",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-002-001-the-jews-under-priestly-rule",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-003-002-the-days-of-the-maccabees",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
+    },
+    {
+      "mediaRecordId": "ironside-four-hundred-silent-years-librivox-006-005-the-literature-of-the-jews",
+      "sourceManifest": "uploaded-public-domain-audio-pilots",
+      "approvalStatus": "Public beta approved",
+      "playbackReview": "HTTP 206 audio/mpeg range response verified 2026-09-01"
     }
   ]
 }

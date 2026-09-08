@@ -1,0 +1,72 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-88-2026-08-29",
+  "reviewed_at": "2026-08-29",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n123_w1800.jpg", "sha256": "38a0dabfa5303584dc845459ad21b6111257ce1f67f41923058bb4438005fa55" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n124_w1800.jpg", "sha256": "9e70879d849f3736eb33c3a75d2ff863be4ea530c8529def70ac2461a0c6dbc1" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n155_w1800.jpg", "sha256": "8b7c0f020ae82d6d76d965c7652bd968fe97fe2c723a39405bf1bd7727795dc0" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n210_w1800.jpg", "sha256": "95b7db097b9a65fa4d347f040f15865dd9a1a60457a5c80fdbf21b7379ce2f50" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n211_w1800.jpg", "sha256": "fad59249d81b4126577c0fdcaa578a5cd3cf260c718380339e829c2a44efba54" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n233_w1800.jpg", "sha256": "8f44d8de6f8b74cf26243bd3cee6323a6a9cfc6a3bac0c897c2575b5ff264784" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n847_w1800.jpg", "sha256": "3f6899402b05bb1554d4b89521dfe16b57bbdcec882b8f08a93976b6a5ef649d" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n852_w1800.jpg", "sha256": "2bac6da1be11e31c7762253b93c53ae6c7c779a88463c28a9bd8af6cbf9e558f" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n862_w1800.jpg", "sha256": "aa26fcb0caeec154ee50ae4aea5b0d9635634a9ed424c29468d424d53473424e" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n922_w1800.jpg", "sha256": "1497c5f1ed32b90d7bd5d8c10cc2dc96e6d165b6c1596ffbbefe08cd393cfd44" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n934_w1800.jpg", "sha256": "a330bc980b2e4fbdf18342b8cae7cb42cf5311c9138c68b2bc9ad24ab84a6b88" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n938_w1800.jpg", "sha256": "196fabb5148db2c6481cc5170b9c41d9356405450d85ab4e9b9ad562c94ce081" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n963_w1800.jpg", "sha256": "2f5d23d4dafd247791d9ed9cdbf38eb671f5b2e7b5f5d71c6e512421d70ad656" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n985_w1800.jpg", "sha256": "b57609b9b20904bd67f6f1d8a103f61e3f8deb5ea053523d81788c2c563f36fd" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n990_w1800.jpg", "sha256": "98a19cbd1b9ee277cdc1c4106b0aaa9fcd0795272e199245d30a589bb46a0be8" }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected nine remaining single-use KJV English headwords from the G- through I-word inventory whose printed Webster entries were absent from app lookup because source OCR damaged or merged their headwords; also audited four high-use doctrinal overlays after quality signals showed that their existing web transcriptions were incomplete or included editorial wording.",
+  "review_method": "Compared every retained definition with the original printed page image; corrected clear OCR substitutions, omissions, broken words, column-order damage, and an editorial sentence that was not part of Webster's text; restored omitted senses, examples, and citations; preserved Webster's wording and sense order; and expanded abbreviated parts of speech, language names, author names, and Scripture book names for display.",
+  "screening_summary": {
+    "reviewed_headwords": 13,
+    "net_new_reviewed_overlays": 9,
+    "upgraded_existing_reviewed_overlays": 4,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 10,
+    "kjv_occurrences_resolved": 10,
+    "total_kjv_occurrences_with_reviewed_lookup": 196
+  },
+  "promoted_headwords": ["adoption", "amen", "atonement", "baptism", "gorgeous", "grandmother", "grudgingly", "huge", "idolatrous", "imagery", "incredible", "inscription", "instructor"],
+  "verified_lookup_relationships": [],
+  "additional_resolved_forms": [
+    { "word": "gorgeous", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed GORGEOUS headword" },
+    { "word": "grandmother", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed GRANDMOTHER headword" },
+    { "word": "grudgingly", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed GRUDGINGLY headword" },
+    { "word": "huge", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed HUGE headword" },
+    { "word": "idolatrous", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed IDOLATROUS headword" },
+    { "word": "imagery", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed IMAGERY headword" },
+    { "word": "incredible", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed INCREDIBLE headword" },
+    { "word": "inscription", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed INSCRIPTION headword" },
+    { "word": "instructor", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed INSTRUCTOR headword" },
+    { "word": "instructors", "kjv_occurrences": 1, "resolution": "Regular plural noun form resolved from the reviewed INSTRUCTOR headword" }
+  ],
+  "audited_existing_headwords": [
+    { "word": "adoption", "kjv_occurrences": 5, "finding": "Restored the Latin etymology, Scripture citation, and omitted source attributions." },
+    { "word": "amen", "kjv_occurrences": 78, "finding": "Restored both printed biblical examples and the concluding explanation omitted by the prior transcription." },
+    { "word": "atonement", "kjv_occurrences": 81, "finding": "Restored all three senses, examples, citations, and the complete theological wording from the two-page printed entry." },
+    { "word": "baptism", "kjv_occurrences": 22, "finding": "Restored the etymology and all three senses, and removed an editorial doctrinal note that was not Webster's text." }
+  ],
+  "entries": [
+    { "word": "adoption", "lookup_headword": "adoption", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 29339, "source_line_end": 29404, "exact_page_heading": "ADO", "exact_entry_heading": "ADOP'TION", "exact_source_match": true },
+    { "word": "amen", "lookup_headword": "amen", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 39396, "source_line_end": 39414, "exact_page_heading": "AME", "exact_entry_heading": "AMEN'", "exact_source_match": true },
+    { "word": "atonement", "lookup_headword": "atonement", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 57169, "source_line_end": 57202, "exact_page_heading": "ATO / ATT", "exact_entry_heading": "ATONE'MENT", "exact_source_match": true },
+    { "word": "baptism", "lookup_headword": "baptism", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 64381, "source_line_end": 64400, "exact_page_heading": "BAP", "exact_entry_heading": "BAP'TISM", "exact_source_match": true },
+    { "word": "gorgeous", "lookup_headword": "gorgeous", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 265403, "source_line_end": 265415, "exact_page_heading": "GOR", "exact_entry_heading": "GOR'GEOUS", "exact_source_match": true },
+    { "word": "grandmother", "lookup_headword": "grandmother", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 266883, "source_line_end": 266885, "exact_page_heading": "GRA", "exact_entry_heading": "GRAND'MOTHER", "exact_source_match": true },
+    { "word": "grudgingly", "lookup_headword": "grudgingly", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 270453, "source_line_end": 270455, "exact_page_heading": "GRU", "exact_entry_heading": "GRUDG'INGLY", "exact_source_match": true },
+    { "word": "huge", "lookup_headword": "huge", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 290200, "source_line_end": 290222, "exact_page_heading": "HUL / HUM", "exact_entry_heading": "HUGE", "exact_source_match": true },
+    { "word": "idolatrous", "lookup_headword": "idolatrous", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 294207, "source_line_end": 294330, "exact_page_heading": "IDO", "exact_entry_heading": "IDOL'ATROUS", "exact_source_match": true },
+    { "word": "imagery", "lookup_headword": "imagery", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 295526, "source_line_end": 295552, "exact_page_heading": "IMA", "exact_entry_heading": "IM'AGERY", "exact_source_match": true },
+    { "word": "incredible", "lookup_headword": "incredible", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 303884, "source_line_end": 303897, "exact_page_heading": "INC", "exact_entry_heading": "INCRED'IBLE", "exact_source_match": true },
+    { "word": "inscription", "lookup_headword": "inscription", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 311195, "source_line_end": 311212, "exact_page_heading": "INS", "exact_entry_heading": "INSCRIP'TION", "exact_source_match": true },
+    { "word": "instructor", "lookup_headword": "instructor", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 312794, "source_line_end": 312809, "exact_page_heading": "INS", "exact_entry_heading": "INSTRUCT'OR", "exact_source_match": true }
+  ]
+}

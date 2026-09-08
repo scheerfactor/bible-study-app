@@ -1,0 +1,50 @@
+{
+  "batch_id": "public-domain-hymns-phase-8-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "purpose": "Add three source-traceable public-domain hymns with exact lyrics and playable public-domain MIDI tunes.",
+  "guardrails": [
+    "Stanzas were parsed directly from each retained source record without theological modernization.",
+    "Each source record explicitly marks both the text and selected tune as public domain.",
+    "The exact MIDI and retained HTML rights-evidence snapshot are verified by SHA-256.",
+    "Playback is synthesized in the app from MIDI; no third-party performance recording is included.",
+    "No hymn was added from a source with unclear text, tune, arrangement, or recording rights."
+  ],
+  "entries": [
+    {
+      "id": "jesus-lover-of-my-soul",
+      "title": "Jesus, Lover of My Soul",
+      "text_source_url": "https://library.timelesstruths.org/music/Jesus_Lover_of_My_Soul/",
+      "text_rights": "Public Domain",
+      "tune": "Martyn",
+      "composer": "Simeon B. Marsh",
+      "music_source_url": "https://library.timelesstruths.org/library/music/J/Jesus_Lover_of_My_Soul/Jesus_Lover_of_My_Soul.mid",
+      "music_rights": "Public Domain",
+      "midi_sha256": "a8a92880a831b0279255be77b34722b2294e795dde0f350f18869d8e7a4273a7",
+      "rights_evidence_sha256": "82c1102baa3ea419132ccfa4961388bdebf138c872a2efd0c068c767c6fffe51"
+    },
+    {
+      "id": "what-a-friend-we-have-in-jesus",
+      "title": "What a Friend We Have in Jesus",
+      "text_source_url": "https://library.timelesstruths.org/music/What_a_Friend_We_Have_in_Jesus/",
+      "text_rights": "Public Domain",
+      "tune": "Erie",
+      "composer": "Charles C. Converse",
+      "music_source_url": "https://library.timelesstruths.org/library/music/W/What_a_Friend_We_Have_in_Jesus/What_a_Friend_We_Have_in_Jesus.mid",
+      "music_rights": "Public Domain",
+      "midi_sha256": "647700c5afe9ee2973d0400dba58af8266f44018cbb162e31c599d9174199586",
+      "rights_evidence_sha256": "7a9cc1b19ba47ba667062b2537074b67312e32192c40ad3627545ad4b308041b"
+    },
+    {
+      "id": "oh-for-a-thousand-tongues-to-sing",
+      "title": "Oh, for a Thousand Tongues to Sing",
+      "text_source_url": "https://library.timelesstruths.org/music/Oh_for_a_Thousand_Tongues_to_Sing/",
+      "text_rights": "Public Domain",
+      "tune": "Azmon",
+      "composer": "Carl G. Gläser; arranged by Lowell Mason",
+      "music_source_url": "https://library.timelesstruths.org/library/music/O/Oh_for_a_Thousand_Tongues_to_Sing/Oh_for_a_Thousand_Tongues_to_Sing.mid",
+      "music_rights": "Public Domain",
+      "midi_sha256": "1ce37e5449e893c247794caf5e56dc2fc3dcbaebd1f279d36b3797051021b832",
+      "rights_evidence_sha256": "580efd8c2c16aa2f9aa9e9e0ff71842eae7853a3205bac54e50375ba637e315a"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "source_csv": "data/library/bulk-import-christian-teaching-phase-57.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 3,
+  "total_attempted": 3,
+  "imported": 3,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Seven Laws of Teaching",
+      "file": "the-seven-laws-of-teaching-john-milton-gregory.txt",
+      "bytes": 237852,
+      "words": 36164,
+      "reading_time_minutes": 161
+    },
+    {
+      "title": "How to Teach Religion: Principles and Methods",
+      "file": "how-to-teach-religion-principles-and-methods-george-herbert-betts.txt",
+      "bytes": 369335,
+      "words": 62125,
+      "reading_time_minutes": 276
+    },
+    {
+      "title": "Crayon and Character: Truth Made Clear Through Eye and Ear",
+      "file": "crayon-and-character-truth-made-clear-through-eye-and-ear-b-j-griswold.txt",
+      "bytes": 327315,
+      "words": 57501,
+      "reading_time_minutes": 256
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Seven Laws of Teaching",
+      "author": "John Milton Gregory",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-seven-laws-of-teaching-john-milton-gregory.txt"
+    },
+    {
+      "row": 3,
+      "title": "How to Teach Religion: Principles and Methods",
+      "author": "George Herbert Betts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/how-to-teach-religion-principles-and-methods-george-herbert-betts.txt"
+    },
+    {
+      "row": 4,
+      "title": "Crayon and Character: Truth Made Clear Through Eye and Ear",
+      "author": "B. J. Griswold",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/crayon-and-character-truth-made-clear-through-eye-and-ear-b-j-griswold.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

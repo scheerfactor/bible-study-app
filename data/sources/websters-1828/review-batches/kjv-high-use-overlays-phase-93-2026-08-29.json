@@ -1,0 +1,50 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-93-2026-08-29",
+  "reviewed_at": "2026-08-29",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Cleaned public-domain transcription checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n204_w3000.jpg", "sha256": "cbb06b60e65a0218f5e03c8ec8a9af1f6e73e37a90709db4872ace8d33ae5334" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n205_w3000.jpg", "sha256": "84ef8c5561d5424f64e51c4790fd42f7ca2ec12e57aed48e30d4895ac6948288" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n207_w3000.jpg", "sha256": "ae2a56555801f6cd7d8f8af64a8fea440011a5fe6150b20220b948ad3e65462d" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n208_w3000.jpg", "sha256": "f385a4b0b739f315fa56b2eb0ab5c2ba46d38d57c677ac7965531e129eb4552b" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n212_w3000.jpg", "sha256": "df5a97a80564d77489373151a06e5aa2fa5c6efe1291ebe138f867f7e34b4e05" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n219_w3000.jpg", "sha256": "218689d20366da2e4a114e7aab85f687bee2f45f791394d2a0c6148dc9b7b973" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n220_w3000.jpg", "sha256": "3c6f1c27f1c39dc6d9f3c8f9a10a7eebdbbb34963bb21abef3788187aac68d76" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n235_w3000.jpg", "sha256": "a20e76f1af69869a5b82b524bc54853370eeecbd32935b5e2d4f08f242621d0b" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n236_w3000.jpg", "sha256": "b16ebc4643e8191c1dc1c3e1086fb265f3b9a13060c6b94d8d12f4bad69a035d" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected every ordinary KJV study word from the unresolved O inventory; biblical names and places already supported by Easton or Nave were excluded.",
+  "review_method": "Compared every retained entry with the original printed page image, corrected transcription punctuation and wording, preserved Webster's definitions, normalized the quoted overran citation to its exact KJV verse, and recorded KJV inflections as lookup relationships rather than inventing headwords Webster did not print.",
+  "screening_summary": {
+    "reviewed_headwords": 5,
+    "net_new_reviewed_overlays": 5,
+    "verified_lookup_relationships_added": 4,
+    "missing_kjv_forms_resolved": 7,
+    "kjv_occurrences_resolved": 7
+  },
+  "promoted_headwords": ["obscure", "observation", "opposition", "overplus", "overrun"],
+  "verified_lookup_relationships": [
+    { "word": "occupieth", "lookup_headword": "occupy", "kjv_occurrences": 1, "relationship": "Third-person singular KJV verb form mapped to the already-reviewed Webster OCCUPY entry" },
+    { "word": "oftener", "lookup_headword": "often", "kjv_occurrences": 1, "relationship": "Comparative adverb printed within Webster's already-reviewed OFTEN entry" },
+    { "word": "oppositions", "lookup_headword": "opposition", "kjv_occurrences": 1, "relationship": "Regular plural noun form mapped to Webster's OPPOSITION entry" },
+    { "word": "overran", "lookup_headword": "overrun", "kjv_occurrences": 1, "relationship": "Past-tense form explicitly quoted under Webster's OVERRUN sense 3 from 2 Samuel 18:23" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "obscure", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed OBSCURE headword" },
+    { "word": "observation", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed OBSERVATION headword" },
+    { "word": "overplus", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed OVERPLUS headword" }
+  ],
+  "entries": [
+    { "word": "obscure", "lookup_headword": "obscure", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/obscure", "source_line_start": 1, "source_line_end": 22, "exact_page_heading": "OBS", "exact_entry_heading": "OBSCU'RE", "exact_source_match": true },
+    { "word": "observation", "lookup_headword": "observation", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/observation", "source_line_start": 1, "source_line_end": 7, "exact_page_heading": "OBS", "exact_entry_heading": "OBSERVA'TION", "exact_source_match": true },
+    { "word": "occupieth", "lookup_headword": "occupy", "base_entries": 2, "source_url": "https://webstersdictionary1828.com/Dictionary/occupy", "source_line_start": 1, "source_line_end": 13, "exact_page_heading": "OCC", "exact_entry_heading": "OC'CUPY", "exact_source_match": true },
+    { "word": "oftener", "lookup_headword": "often", "base_entries": 3, "source_url": "https://webstersdictionary1828.com/Dictionary/often", "source_line_start": 1, "source_line_end": 2, "exact_page_heading": "OFF", "exact_entry_heading": "OFTEN", "exact_source_match": true },
+    { "word": "oppositions", "lookup_headword": "opposition", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/opposition", "source_line_start": 1, "source_line_end": 11, "exact_page_heading": "OPP", "exact_entry_heading": "OPPOSI'TION", "exact_source_match": true },
+    { "word": "overplus", "lookup_headword": "overplus", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/overplus", "source_line_start": 1, "source_line_end": 3, "exact_page_heading": "OVE", "exact_entry_heading": "O'VERPLUS", "exact_source_match": true },
+    { "word": "overran", "lookup_headword": "overrun", "base_entries": 2, "source_url": "https://webstersdictionary1828.com/Dictionary/overrun", "source_line_start": 1, "source_line_end": 10, "exact_page_heading": "OVE", "exact_entry_heading": "OVERRUN'", "exact_source_match": true }
+  ]
+}

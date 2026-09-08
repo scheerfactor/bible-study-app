@@ -1,0 +1,83 @@
+{
+  "batchId": "public-domain-hymns-phase-19-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "Two complete Watts texts with explicitly editorial Common Meter ST. ANNE pairings.",
+  "sourceFile": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+  "sourceSha256": "9536712b57d4a814c3c9de2afd7651ffd71948cb475c2dca14929a91ca90c6a1",
+  "reviewNotes": [
+    "The source transcriber's note identifies an 1818 printing and notes edition differences. No claim of visual scan verification.",
+    "All six stanzas retained for each hymn. Removed only stanza numbers and brackets marking optional stanzas; retained original words and punctuation.",
+    "Both texts follow Common Meter 8.6.8.6. ST. ANNE is an editorial pairing disclosed in the visible tune field and attribution.",
+    "Existing MIDI and rights-evidence checksums reused and revalidated. App playback is synthesized; no performance recording imported."
+  ],
+  "entries": [
+    {
+      "id": "there-is-a-land-of-pure-delight",
+      "title": "There Is a Land of Pure Delight",
+      "lyricist": "Isaac Watts",
+      "lyricYear": 1707,
+      "tune": "St. Anne (editorial Common Meter pairing)",
+      "themes": [
+        "Heaven",
+        "Hope",
+        "Assurance"
+      ],
+      "scriptureReferences": [
+        "Revelation 21:4"
+      ],
+      "stanzas": [
+        "There is a land of pure delight\nWhere saints immortal reign,\nInfinite day excludes the night,\nAnd pleasures banish pain.",
+        "There everlasting spring abides,\nAnd never withering flowers:\nDeath like a narrow sea divides\nThis heavenly land from ours.",
+        "Sweet fields beyond the swelling flood,\nStand dress'd in living green\nSo to the Jews old Canaan stood,\nWhile Jordan roll'd between.",
+        "But timorous mortals start and shrink\nTo cross this narrow sea,\nAnd linger shivering on the brink,\nAnd fear to launch away.",
+        "O! could we make our doubts remove,\nThese gloomy doubts that rise,\nAnd see the Canaan that we love,\nWith unbeclouded eyes!",
+        "Could we but climb where Moses stood,\nAnd view the landscape o'er,\nNot Jordan's stream, nor death's cold flood,\nShould fright us from the shore."
+      ],
+      "refrain": null,
+      "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+      "textRights": "Public domain; text checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 66. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Page-scan review remains pending.",
+      "midiFile": "st_anne.mid",
+      "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+      "rdfFile": "st_anne.rdf",
+      "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+      "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+      "musicRights": "Public Domain",
+      "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+      "reviewedAt": "2026-09-05"
+    },
+    {
+      "id": "great-god-how-infinite",
+      "title": "Great God, How Infinite Art Thou!",
+      "lyricist": "Isaac Watts",
+      "lyricYear": 1707,
+      "tune": "St. Anne (editorial Common Meter pairing)",
+      "themes": [
+        "God",
+        "Eternity",
+        "Worship"
+      ],
+      "scriptureReferences": [
+        "Psalm 90:1-4"
+      ],
+      "stanzas": [
+        "Great God, how infinite art thou!\nWhat worthless worms are we!\nLet the whole race of creatures bow\nAnd pay their praise to thee.",
+        "Thy throne eternal ages stood,\nEre seas or stars were made;\nThou art the ever-living God\nWere all the nations dead.",
+        "Nature and time quite naked lie\nTo thine immense survey,\nFrom the formation of the sky\nTo the great burning day.",
+        "Eternity with all its years\nStands present in thy view;\nTo thee there's nothing old appears,\nGreat God, there's nothing new.",
+        "Our lives thro' various scenes are drawn,\nAnd vex'd with trifling cares;\nWhile thine eternal thought moves on\nThine undisturb'd affairs.",
+        "Great God, how infinite art thou!\nWhat worthless worms are we!\nLet the whole race of creatures bow\nAnd pay their praise to thee."
+      ],
+      "refrain": null,
+      "textSourceUrl": "https://www.gutenberg.org/ebooks/13341",
+      "textRights": "Public domain; text checked against stored Project Gutenberg text, Hymns and Spiritual Songs, Book II, hymn 67. Stanza numbers and optional-stanza brackets removed; words and punctuation retained. Page-scan review remains pending.",
+      "midiFile": "st_anne.mid",
+      "midiSha256": "45908040246ba48da3244679674fcf87fa29cce0fb2cc304dc3fb9bc7444014d",
+      "rdfFile": "st_anne.rdf",
+      "rdfSha256": "a219e2e0a24d3c07c23453b1959788188a660318dbed913a26bbfab6c7babaf6",
+      "musicSourceUrl": "https://www.mutopiaproject.org/ftp/CroftW/st_anne/",
+      "musicRights": "Public Domain",
+      "musicAttribution": "ST. ANNE by William Croft, 1708; public-domain SATB MIDI maintained by Steve Dunlop for Mutopia. Editorial 8.6.8.6 pairing, not claimed as the original tune for this text.",
+      "reviewedAt": "2026-09-05"
+    }
+  ]
+}

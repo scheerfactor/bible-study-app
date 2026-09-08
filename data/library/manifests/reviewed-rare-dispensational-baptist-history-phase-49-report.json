@@ -1,0 +1,149 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-rare-dispensational-baptist-history-phase-49.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 20,
+  "total_attempted": 8,
+  "imported": 8,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Ten Sermons on the Second Coming of Our Lord Jesus Christ",
+      "file": "ten-sermons-on-the-second-coming-of-our-lord-jesus-christ-i-m-haldeman.txt",
+      "bytes": 881206,
+      "words": 137639,
+      "reading_time_minutes": 612
+    },
+    {
+      "title": "Voices from Babylon; or, The Records of Daniel the Prophet",
+      "file": "voices-from-babylon-or-the-records-of-daniel-the-prophet-j-a-seiss.txt",
+      "bytes": 717669,
+      "words": 109310,
+      "reading_time_minutes": 486
+    },
+    {
+      "title": "History of the Donatists, with Notes",
+      "file": "history-of-the-donatists-with-notes-david-benedict-notes-by-h-c-graves.txt",
+      "bytes": 417697,
+      "words": 61267,
+      "reading_time_minutes": 272
+    },
+    {
+      "title": "Did They Dip? Baptism Among English and American Baptists Before 1641",
+      "file": "did-they-dip-baptism-among-english-and-american-baptists-before-1641-john-t-christian-introduction-by-t-t-eato.txt",
+      "bytes": 419965,
+      "words": 62538,
+      "reading_time_minutes": 278
+    },
+    {
+      "title": "Some Remarks upon the Ecclesiastical History of the Ancient Churches of Piedmont",
+      "file": "some-remarks-upon-the-ecclesiastical-history-of-the-ancient-churches-of-piedmont-peter-allix.txt",
+      "bytes": 852392,
+      "words": 128224,
+      "reading_time_minutes": 570
+    },
+    {
+      "title": "A History of the German Baptist Brethren in Europe and America",
+      "file": "a-history-of-the-german-baptist-brethren-in-europe-and-america-martin-g-brumbaugh.txt",
+      "bytes": 809165,
+      "words": 118739,
+      "reading_time_minutes": 528
+    },
+    {
+      "title": "History of the Welsh Baptists, 63-1770",
+      "file": "history-of-the-welsh-baptists-63-1770-jonathan-davis-based-on-joshua-thomas.txt",
+      "bytes": 584874,
+      "words": 88173,
+      "reading_time_minutes": 392
+    },
+    {
+      "title": "Light on the Last Days: Familiar Talks on the Book of Revelation",
+      "file": "light-on-the-last-days-familiar-talks-on-the-book-of-revelation-charles-a-blanchard.txt",
+      "bytes": 248244,
+      "words": 44357,
+      "reading_time_minutes": 197
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Ten Sermons on the Second Coming of Our Lord Jesus Christ",
+      "author": "I. M. Haldeman",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/ten-sermons-on-the-second-coming-of-our-lord-jesus-christ-i-m-haldeman.txt"
+    },
+    {
+      "row": 3,
+      "title": "Voices from Babylon; or, The Records of Daniel the Prophet",
+      "author": "J. A. Seiss",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/voices-from-babylon-or-the-records-of-daniel-the-prophet-j-a-seiss.txt"
+    },
+    {
+      "row": 4,
+      "title": "History of the Donatists, with Notes",
+      "author": "David Benedict; notes by H. C. Graves",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-donatists-with-notes-david-benedict-notes-by-h-c-graves.txt"
+    },
+    {
+      "row": 5,
+      "title": "Did They Dip? Baptism Among English and American Baptists Before 1641",
+      "author": "John T. Christian; introduction by T. T. Eaton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/did-they-dip-baptism-among-english-and-american-baptists-before-1641-john-t-christian-introduction-by-t-t-eato.txt"
+    },
+    {
+      "row": 6,
+      "title": "Some Remarks upon the Ecclesiastical History of the Ancient Churches of Piedmont",
+      "author": "Peter Allix",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/some-remarks-upon-the-ecclesiastical-history-of-the-ancient-churches-of-piedmont-peter-allix.txt"
+    },
+    {
+      "row": 7,
+      "title": "A History of the German Baptist Brethren in Europe and America",
+      "author": "Martin G. Brumbaugh",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-the-german-baptist-brethren-in-europe-and-america-martin-g-brumbaugh.txt"
+    },
+    {
+      "row": 8,
+      "title": "History of the Welsh Baptists, 63-1770",
+      "author": "Jonathan Davis; based on Joshua Thomas",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-welsh-baptists-63-1770-jonathan-davis-based-on-joshua-thomas.txt"
+    },
+    {
+      "row": 9,
+      "title": "Light on the Last Days: Familiar Talks on the Book of Revelation",
+      "author": "Charles A. Blanchard",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/light-on-the-last-days-familiar-talks-on-the-book-of-revelation-charles-a-blanchard.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

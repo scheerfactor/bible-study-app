@@ -1,0 +1,87 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-101-2026-08-31",
+  "reviewed_at": "2026-08-31",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain; only its historical definitions and examples are transcribed, not website editorial material.",
+  "transcription_source": "Internet Archive volume 2 printed page scans and OCR, cross-checked against clean online Webster transcriptions where available; original OCR is retained unchanged.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n588.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n598.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n604.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n605.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n615.jpg" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/shroud" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/slave" }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the first four exact KJV-used S headwords in alphabetical order from the unreviewed high/medium OCR queue. This is a targeted OCR queue, not a claim that all Webster entries have been reviewed.",
+  "review_method": "Visually checked all four entries against printed page scans, resolving online transcription differences from the scans. Corrected OCR substitutions, scan breaks, page headers, punctuation, and numbering; retained historical examples, usage labels, and author citations. Expanded parts of speech and normalized whitespace for display. Source spans are one-based lines in the hash-verified OCR file.",
+  "review_scope": "All definitions and examples: four SHROUD noun senses, six transitive senses, and its intransitive definition; six SINGULAR adjective senses and its noun definition; four SLAVE noun senses and its intransitive definition; three SNOUT noun senses and its transitive definition. Clearly readable etymology is retained for SHROUD, SINGULAR, and SLAVE. The uncertain SNOUT etymology is omitted rather than guessed; original OCR remains available.",
+  "screening_summary": {
+    "reviewed_headwords": 4,
+    "net_new_reviewed_overlays": 4,
+    "base_high_severity_ocr_entries_replaced": 4,
+    "kjv_occurrences_resolved": 4,
+    "exact_kjv_s_headwords_in_high_medium_queue_before": 16,
+    "exact_kjv_s_headwords_in_high_medium_queue_after": 12
+  },
+  "promoted_headwords": ["shroud", "singular", "slave", "snout"],
+  "entries": [
+    {
+      "word": "shroud",
+      "kjv_occurrences": 1,
+      "sample_references": ["Ezekiel 31:3"],
+      "lookup_headword": "shroud",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 193363,
+      "source_line_end": 193431,
+      "exact_entry_heading": "SHROUD",
+      "exact_source_match": true,
+      "review_note": "Scan n588 confirms all three parts of speech, new born, mizen and futtock shrouds, linen besmeared with gums, and To shroud my shame. The clean website incorrectly gives name in that Dryden line."
+    },
+    {
+      "word": "singular",
+      "kjv_occurrences": 1,
+      "sample_references": ["Leviticus 27:2"],
+      "lookup_headword": "singular",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 196631,
+      "source_line_end": 196670,
+      "exact_entry_heading": "SIN'GULAR",
+      "exact_source_match": true,
+      "review_note": "Scan n598 confirms the readable etymology, six adjective senses, noun definition, usage label, and Watts, Milton, Addison, and More citations. Excluded following SINGULARITY."
+    },
+    {
+      "word": "slave",
+      "kjv_occurrences": 1,
+      "sample_references": ["Jeremiah 2:14"],
+      "lookup_headword": "slave",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 199054,
+      "source_line_end": 199097,
+      "exact_entry_heading": "SLAVE",
+      "exact_source_match": true,
+      "review_note": "Scans n604-n605 confirm the readable etymology, four noun senses, intransitive definition, prisoners of war, and The slaves of modern times. Removed page headers and did not merge SLAVEBORN."
+    },
+    {
+      "word": "snout",
+      "kjv_occurrences": 1,
+      "sample_references": ["Proverbs 11:22"],
+      "lookup_headword": "snout",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 202768,
+      "source_line_end": 202788,
+      "exact_entry_heading": "SNOUT",
+      "exact_source_match": true,
+      "review_note": "Scan n615 confirms three noun senses, the transitive definition, hollow pipe, and Camden citation. Omitted uncertain multilingual etymology; excluded SNOUTED and SNOUTY."
+    }
+  ]
+}

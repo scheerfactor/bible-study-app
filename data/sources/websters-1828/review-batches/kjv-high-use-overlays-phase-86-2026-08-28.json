@@ -1,0 +1,53 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-86-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n563_w3000.jpg", "sha256": "5c21dbd6611f6c2d9eb4dbaf8cc9177275436b30d98ca5d093edd047b81e40cd" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n587_w3000.jpg", "sha256": "40ef8b206ce8030df847969589221efd1047fdaa48404ffbb38890ba0c7b4e45" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n588_w3000.jpg", "sha256": "6c4cce08172cfe0af704f6baeb509dd20ad49a42c5804eb9911b1bf095dd1a48" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n589_w3000.jpg", "sha256": "61427d89fb092dd0956a4c20e90a160f8781b72c8f0817797e845c91161b27b4" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n591_w3000.jpg", "sha256": "5906e460263c4601916fb066a4f564337bfccfce6eed67d57818872785a51ab5" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n597_w3000.jpg", "sha256": "3d9595df5078b616cec5e54b0e8903cb8c0fe533d7b6a05c7290c13665ea7bbd" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n603_w3000.jpg", "sha256": "e22b74c9721580657691334a84a09c90efc4970c9dbf4888372496df80721086" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n608_w3000.jpg", "sha256": "24bb9c79b7c8d84cdc6b520cdebf92753c07e3d1b147541b004a048865105bb1" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n667_w3000.jpg", "sha256": "a314f67c6e9840c0171776d4aead373f415625a856b2cf867690e7f1baf700f2" }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected eight remaining single-use KJV forms from the nearby D- and E-word inventory whose standalone Webster entries were absent from app lookup because source OCR damaged their headwords; deferred inflected and possessive forms that require separate lookup-relationship review.",
+  "review_method": "Compared every retained definition with the original printed page images, including both pages of the long DISCHARGE entry; corrected clear OCR substitutions and broken words; preserved Webster's wording and sense order; and expanded abbreviated parts of speech, language names, author names, and Scripture book names for display.",
+  "screening_summary": {
+    "reviewed_headwords": 8,
+    "net_new_reviewed_overlays": 8,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 8,
+    "kjv_occurrences_resolved": 8,
+    "total_kjv_occurrences_with_reviewed_lookup": 8
+  },
+  "promoted_headwords": ["deride", "discharge", "discomfiture", "discourage", "disinherit", "disposition", "distant", "employment"],
+  "verified_lookup_relationships": [],
+  "additional_resolved_forms": [
+    { "word": "deride", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DERIDE headword" },
+    { "word": "discharge", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DISCHARGE headword" },
+    { "word": "discomfiture", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DISCOMFITURE headword" },
+    { "word": "discourage", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DISCOURAGE headword" },
+    { "word": "disinherit", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DISINHERIT headword" },
+    { "word": "disposition", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DISPOSITION headword" },
+    { "word": "distant", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DISTANT headword" },
+    { "word": "employment", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed EMPLOYMENT headword" }
+  ],
+  "entries": [
+    { "word": "deride", "lookup_headword": "deride", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 171558, "source_line_end": 171572, "exact_page_heading": "DER", "exact_entry_heading": "DERI'DE", "exact_source_match": true },
+    { "word": "discharge", "lookup_headword": "discharge", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 179736, "source_line_end": 179873, "exact_page_heading": "DIS", "exact_entry_heading": "DISCH'ARGE", "exact_source_match": true },
+    { "word": "discomfiture", "lookup_headword": "discomfiture", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 180274, "source_line_end": 180280, "exact_page_heading": "DIS", "exact_entry_heading": "DISCOM'FITURE", "exact_source_match": true },
+    { "word": "discourage", "lookup_headword": "discourage", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 180825, "source_line_end": 180844, "exact_page_heading": "DIS", "exact_entry_heading": "DISCOUR'AGE", "exact_source_match": true },
+    { "word": "disinherit", "lookup_headword": "disinherit", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 182797, "source_line_end": 182807, "exact_page_heading": "DIS", "exact_entry_heading": "DISINHER'IT", "exact_source_match": true },
+    { "word": "disposition", "lookup_headword": "disposition", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 184737, "source_line_end": 184780, "exact_page_heading": "DIS", "exact_entry_heading": "DISPOSI'TION", "exact_source_match": true },
+    { "word": "distant", "lookup_headword": "distant", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 186464, "source_line_end": 186509, "exact_page_heading": "DIS", "exact_entry_heading": "DIS'TANT", "exact_source_match": true },
+    { "word": "employment", "lookup_headword": "employment", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 205585, "source_line_end": 205600, "exact_page_heading": "EMP", "exact_entry_heading": "EMPLOY'MENT", "exact_source_match": true }
+  ]
+}

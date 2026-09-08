@@ -4,7 +4,7 @@ Thank you for testing Father's Business Bible Study. Please use the app normally
 
 Production app:
 
-https://bible-study-app-eight.vercel.app/
+https://study.fathersbusinessmasteryresources.com/
 
 ## First Five Minutes
 

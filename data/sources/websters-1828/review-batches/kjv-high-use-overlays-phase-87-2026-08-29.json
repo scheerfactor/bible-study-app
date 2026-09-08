@@ -1,0 +1,54 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-87-2026-08-29",
+  "reviewed_at": "2026-08-29",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n674_w3000.jpg", "sha256": "a58f242b813102efe76c2ee8bb8ce0d9fe6f8c7136d80487f7c4b35667d14537" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n680_w3000.jpg", "sha256": "129bcef13f9299b6600c5d98634a78cf639b7da83ea4d25603c41dfaddb37172" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n682_w3000.jpg", "sha256": "22f161b7071f35f1d526f6e4505d831dd30795a457ea20401af9fec28c9f61cf" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n701_w3000.jpg", "sha256": "306fe40d5871f59d662c665e2921eee9d6ea8f7996cd9e30f689fa5e88f9e707" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n705_w3000.jpg", "sha256": "e15b22bc104de7b21df752d8755cac3db4ae360dced765fcd3e226abfd125525" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n707_w3000.jpg", "sha256": "5e9ea53d273bdfcf51fba5579c4bb23e4d230553b5b899cdbdb27cbf32de3479" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n722_w3000.jpg", "sha256": "ed93d2b77fa49a179c61f3a5d8bba5663730dcbd3a7fc587e1bb7cd5ac6ebd2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n741_w3000.jpg", "sha256": "a244bb5e071c152f0d9d9cc7ab28b36948c68017b745fa172f6199016b3640af" }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected eight remaining single-use KJV English headwords from the E- and F-word inventory whose printed Webster entries were absent from app lookup because source OCR damaged their headwords; retained biblical proper names in Easton and Nave rather than forcing them into Webster.",
+  "review_method": "Compared every retained definition with the original printed page image; corrected clear OCR substitutions, omissions, broken words, and column-order damage; preserved Webster's wording and sense order; expanded abbreviated parts of speech, language names, author names, and Scripture book names for display; and recorded the regular plural and past-participle lookup relationships resolved by the reviewed headwords.",
+  "screening_summary": {
+    "reviewed_headwords": 8,
+    "net_new_reviewed_overlays": 8,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 10,
+    "kjv_occurrences_resolved": 10,
+    "total_kjv_occurrences_with_reviewed_lookup": 10
+  },
+  "promoted_headwords": ["engraven", "entire", "environ", "exaction", "exclude", "executioner", "eyesight", "fearfully"],
+  "verified_lookup_relationships": [],
+  "additional_resolved_forms": [
+    { "word": "engraven", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the printed ENGRAVEN participle headword" },
+    { "word": "entire", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed ENTIRE headword" },
+    { "word": "environ", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed ENVIRON headword" },
+    { "word": "exaction", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed EXACTION headword" },
+    { "word": "exactions", "kjv_occurrences": 1, "resolution": "Regular plural noun form resolved from the reviewed EXACTION headword" },
+    { "word": "exclude", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed EXCLUDE headword" },
+    { "word": "excluded", "kjv_occurrences": 1, "resolution": "Past-participle form resolved from the reviewed EXCLUDE headword" },
+    { "word": "executioner", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed EXECUTIONER headword" },
+    { "word": "eyesight", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed EYESIGHT headword" },
+    { "word": "fearfully", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed FEARFULLY headword" }
+  ],
+  "entries": [
+    { "word": "engraven", "lookup_headword": "engraven", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 208052, "source_line_end": 208055, "exact_page_heading": "ENG", "exact_entry_heading": "ENGRA'VED, ENGRA'VEN", "exact_source_match": true },
+    { "word": "entire", "lookup_headword": "entire", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 209898, "source_line_end": 209943, "exact_page_heading": "ENT", "exact_entry_heading": "ENTI'RE", "exact_source_match": true },
+    { "word": "environ", "lookup_headword": "environ", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 210569, "source_line_end": 210586, "exact_page_heading": "ENV", "exact_entry_heading": "ENVI'RON", "exact_source_match": true },
+    { "word": "exaction", "lookup_headword": "exaction", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 216980, "source_line_end": 216998, "exact_page_heading": "EXA", "exact_entry_heading": "EXAC'TION", "exact_source_match": true },
+    { "word": "exclude", "lookup_headword": "exclude", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 218336, "source_line_end": 218362, "exact_page_heading": "EXC", "exact_entry_heading": "EXCLU'DE", "exact_source_match": true },
+    { "word": "executioner", "lookup_headword": "executioner", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 218916, "source_line_end": 218926, "exact_page_heading": "EXE", "exact_entry_heading": "EXECU'TIONER", "exact_source_match": true },
+    { "word": "eyesight", "lookup_headword": "eyesight", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 223835, "source_line_end": 223841, "exact_page_heading": "EYE", "exact_entry_heading": "EY'ESIGHT", "exact_source_match": true },
+    { "word": "fearfully", "lookup_headword": "fearfully", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 230045, "source_line_end": 230059, "exact_page_heading": "FEA", "exact_entry_heading": "FE'ARFULLY", "exact_source_match": true }
+  ]
+}

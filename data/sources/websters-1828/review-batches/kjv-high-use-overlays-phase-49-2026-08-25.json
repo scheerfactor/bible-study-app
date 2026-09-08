@@ -1,0 +1,116 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-49-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive full-resolution page scans and OCR text, with Webster's 1828 web transcription used as a locator and cross-check.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {
+      "headword": "outwardly",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n232_w2300.jpg",
+      "sha256": "66332a3ad7aa1776163d1dd4cb394de052b285a835108514de95c443d74cd5b1"
+    },
+    {
+      "headword": "unthankful",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n858_w2300.jpg",
+      "sha256": "2f2f5fc119d9702f86acd2720efea1074eff32aa492d6513385121b968190ae0"
+    },
+    {
+      "headword": "vigilant",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n884_w2300.jpg",
+      "sha256": "fe8391252259988f18421f8741d1492587600313378714a2040c20ec058d9564"
+    },
+    {
+      "headword": "wantonness",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n900_w2300.jpg",
+      "sha256": "c852b1381e98753046c065dfabc7d384b6ca12dc80923b73e8f793abf1332458"
+    },
+    {
+      "headword": "watchtower",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n906_w2300.jpg",
+      "sha256": "e07c55d61eef4c2e0b2942291d1bcdf08065ae0c3ac3a1e3345247067820307f"
+    }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Reviewed the next unresolved common KJV forms and rejected fifteen requested forms that Webster did not print as independent headwords.",
+  "review_method": "Located each printed entry in the OCR text, verified every word against its full-resolution page scan, joined line wraps, expanded abbreviated language and author labels, and retained historical wording and citations.",
+  "screening_summary": {
+    "reviewed_headwords": 5,
+    "net_new_reviewed_overlays": 5,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 5,
+    "kjv_occurrences_resolved": 10,
+    "requested_forms_rejected_as_non_headwords": 15
+  },
+  "promoted_headwords": [
+    "outwardly",
+    "unthankful",
+    "vigilant",
+    "wantonness",
+    "watchtower"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "outwardly",
+      "lookup_headword": "outwardly",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/outwardly",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Outwardly",
+      "exact_entry_heading": "OUT'WARDLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "unthankful",
+      "lookup_headword": "unthankful",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/unthankful",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "Unthankful",
+      "exact_entry_heading": "UNTHANK'FUL",
+      "exact_source_match": true
+    },
+    {
+      "word": "vigilant",
+      "lookup_headword": "vigilant",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/vigilant",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Vigilant",
+      "exact_entry_heading": "VIG'ILANT",
+      "exact_source_match": true
+    },
+    {
+      "word": "wantonness",
+      "lookup_headword": "wantonness",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/wantonness",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Wantonness",
+      "exact_entry_heading": "WAN'TONNESS",
+      "exact_source_match": true
+    },
+    {
+      "word": "watchtower",
+      "lookup_headword": "watchtower",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/watchtower",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Watchtower",
+      "exact_entry_heading": "WATCH'TOWER",
+      "exact_source_match": true
+    }
+  ]
+}

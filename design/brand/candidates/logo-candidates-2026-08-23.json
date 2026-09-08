@@ -1,0 +1,39 @@
+{
+  "createdAt": "2026-08-23",
+  "generator": "OpenAI built-in image generation tool",
+  "purpose": "Professional logo exploration for Father's Business Bible Study",
+  "currentPublishedMarkChanged": true,
+  "approvedAt": "2026-08-23",
+  "approvedCandidate": "pulpit-bible-cross-crown-flat-b.png",
+  "recommendedCandidate": "pulpit-bible-cross-crown-flat-b.png",
+  "sharedDirection": {
+    "primaryPalette": [
+      "deep forest green",
+      "parchment white",
+      "muted antique gold"
+    ],
+    "redemptionAccent": "Restrained burgundy bookmark rather than literal blood imagery",
+    "background": "Transparent",
+    "requiredSmallSize": "Readable at 24px and 32px"
+  },
+  "candidates": [
+    {
+      "file": "pulpit-bible-cross-crown-ornate-a.png",
+      "status": "Review candidate",
+      "decision": "Theologically clear but too ornate for the primary application icon.",
+      "prompt": "Create an original Christian Bible study emblem centered on a dignified pulpit supporting an open Bible; the Bible's center gutter and the pulpit upright form a clear cross in negative space; a small simple crown rests above the cross. Use deep forest green, parchment white, aged brass gold, and one restrained burgundy-red ribbon accent. Transparent background, no text, no initials, no literal blood, no compass or north star."
+    },
+    {
+      "file": "pulpit-bible-cross-crown-flat-b.png",
+      "status": "Approved and promoted",
+      "decision": "Selected as the primary project mark for its professional simplicity, theological clarity, and small-icon recognition.",
+      "prompt": "Create an original minimal emblem showing an open Bible resting on a simple pulpit; carve a bold cross into the pulpit face as clean negative space; add a very small three-point crown directly above the cross, visually subordinate to the Bible. Use broad flat vector-like geometry, deep forest green, parchment white, muted antique gold, and one narrow burgundy-red bookmark. Transparent background, no text, no realistic materials, no literal blood, no compass or north star."
+    },
+    {
+      "file": "bible-cross-crown-redemption-c.png",
+      "status": "Rejected direction retained for review history",
+      "decision": "The glow and literal drop make the mark feel more decorative and less durable than candidate B.",
+      "prompt": "Create a compact emblem in which an open Bible forms the base, a simple upright cross rises from its center, and a small restrained crown sits above the cross; suggest a pulpit through a broad geometric base. Use deep forest green, parchment white, muted aged gold, and a small enclosed burgundy-red atonement accent. Transparent background, no text, no gore, no compass or north star."
+    }
+  ]
+}

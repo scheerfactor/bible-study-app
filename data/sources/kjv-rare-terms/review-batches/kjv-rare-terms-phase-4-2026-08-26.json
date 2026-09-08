@@ -1,0 +1,115 @@
+{
+  "batch_id": "kjv-rare-terms-phase-4-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "King James Bible, standard 1769 text",
+  "rights_basis": "The KJV Scripture text used for this review is public domain in the United States.",
+  "definition_method": "Original concise study aids written from the cited KJV passages. No copyrighted commentary wording was imported.",
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv",
+  "screening_summary": {
+    "reviewed_entries": 10,
+    "resolved_kjv_forms": 10,
+    "kjv_word_occurrences": 50
+  },
+  "entries": [
+    {
+      "headword": "GOMORRHA",
+      "normalized_headword": "gomorrha",
+      "definition": "The KJV New Testament form of Gomorrah, the city named with Sodom as an example of divine judgment. See GOMORRAH.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Matthew 10:15; Romans 9:29; 2 Peter 2:6; Jude 1:7",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["gomorrha"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "HARARITE",
+      "normalized_headword": "hararite",
+      "definition": "A designation applied to Shammah, Ahiam, and other men named in the records of David's mighty men.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 2 Samuel 23:11, 33; 1 Chronicles 11:34-35",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["hararite"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "HUSHATHITE",
+      "normalized_headword": "hushathite",
+      "definition": "A designation applied to Mebunnai and Sibbecai or Sibbechai in records of David's mighty men and military captains.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 2 Samuel 21:18; 23:27; 1 Chronicles 11:29; 20:4; 27:11",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["hushathite"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "JEZREELITESS",
+      "normalized_headword": "jezreelitess",
+      "definition": "A woman of Jezreel; the designation used of Ahinoam, David's wife and the mother of Amnon.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: 1 Samuel 27:3; 30:5; 2 Samuel 2:2; 3:2; 1 Chronicles 3:1",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["jezreelitess"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "JOZADAK",
+      "normalized_headword": "jozadak",
+      "definition": "The father of Jeshua, the priest who helped build the altar and the house of God after the captivity.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Ezra 3:2, 8; 5:2; 10:18; Nehemiah 12:26",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["jozadak"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "NOE",
+      "normalized_headword": "noe",
+      "definition": "The KJV New Testament form of Noah, who entered the ark before the flood. See NOAH.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Matthew 24:37-38; Luke 3:36; 17:26-27",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["noe"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "PAROSH",
+      "normalized_headword": "parosh",
+      "definition": "A family name among those who returned from the captivity and were recorded in Ezra and Nehemiah.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Ezra 2:3; 10:25; Nehemiah 3:25; 7:8; 10:14",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["parosh"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "PERIZZITE",
+      "normalized_headword": "perizzite",
+      "definition": "PERIZZITE, noun or adjective. One of the Perizzites, a people dwelling in Canaan and repeatedly listed among the peoples of the land.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Genesis 13:7; Exodus 33:2; 34:11; Joshua 9:1; 11:3",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["perizzite"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "REU",
+      "normalized_headword": "reu",
+      "definition": "A son of Peleg and the father of Serug in the genealogy from Shem toward Abraham.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Genesis 11:18-21; 1 Chronicles 1:25",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["reu"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "SHELUMIEL",
+      "normalized_headword": "shelumiel",
+      "definition": "The son of Zurishaddai, prince and captain of the children of Simeon during Israel's wilderness journey.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Numbers 1:6; 2:12; 7:36, 41; 10:19",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["shelumiel"],
+      "kjv_occurrences": 5
+    }
+  ]
+}

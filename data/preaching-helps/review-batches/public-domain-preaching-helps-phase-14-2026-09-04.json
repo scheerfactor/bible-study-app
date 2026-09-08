@@ -1,0 +1,112 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-14-2026-09-04",
+  "reviewedAt": "2026-09-04",
+  "purpose": "Add eight source-exact Horatius Bonar excerpts for pastoral self-examination and sermon preparation.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Horatius Bonar",
+    "sourceTitle": "Words to the Winners of Souls",
+    "sourceUrl": "https://archive.org/details/wordstowinnersof00bona",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/words-to-the-winners-of-souls-horatius-bonar.txt",
+    "rightsBasis": "This 1860 American Tract Society edition is public domain; each excerpt is verified against the stored OCR and should be checked against the scan before publication."
+  },
+  "entries": [
+    {
+      "id": "bonar-ministry-convert-and-edify",
+      "type": "Quote",
+      "title": "The object of Christian ministry",
+      "text": "We take for granted that the object of the Christian ministry is to convert sinners and to edify the body of Christ.",
+      "slideText": "We take for granted that the object of the Christian ministry is to convert sinners and to edify the body of Christ.",
+      "sourceLocator": "Chapter 1, page 11",
+      "bibleReferences": ["2 Corinthians 5:18-20", "Ephesians 4:11-12"],
+      "topics": ["ministry", "evangelism", "edification"],
+      "recommendedUse": "Use as an attributed ministry-purpose statement before teaching evangelism and edification from Scripture.",
+      "reviewNote": "The wording summarizes Bonar's pastoral priorities. Define conversion, ministry, and edification from the cited KJV passages."
+    },
+    {
+      "id": "bonar-if-souls-not-won",
+      "type": "Quote",
+      "title": "If souls are not won",
+      "text": "If souls are not won, if saints are not matured, our ministry itself is vain.",
+      "slideText": "If souls are not won, if saints are not matured, our ministry itself is vain.",
+      "sourceLocator": "Chapter 1, page 11",
+      "bibleReferences": ["1 Corinthians 3:6-7", "Colossians 1:28-29"],
+      "topics": ["ministry", "spiritual growth", "evangelism"],
+      "recommendedUse": "Use as an attributed challenge to keep Gospel ministry aimed at conversion and mature discipleship.",
+      "reviewNote": "God gives the increase; numerical outcomes are not fully controlled by the preacher. Balance Bonar's urgency with the cited KJV texts."
+    },
+    {
+      "id": "bonar-without-actual-fruit",
+      "type": "Quote",
+      "title": "Without actual fruit",
+      "text": "His plans may proceed smoothly, and his external machinery may work steadily ; but without actual fruit in the saving of souls, he counts all these as nothing.",
+      "slideText": "His plans may proceed smoothly, and his external machinery may work steadily ; but without actual fruit in the saving of souls, he counts all these as nothing.",
+      "sourceLocator": "Chapter 1, page 13",
+      "bibleReferences": ["1 Corinthians 15:58", "Galatians 6:9"],
+      "topics": ["faithfulness", "ministry fruit", "perseverance"],
+      "recommendedUse": "Use as an attributed discussion prompt about longing for spiritual fruit while remaining faithful in difficult fields.",
+      "reviewNote": "Do not make visible results the sole measure of faithfulness or imply that every faithful ministry receives immediate conversions."
+    },
+    {
+      "id": "bonar-not-church-doctrine-forms-but-christ",
+      "type": "Quote",
+      "title": "But Christ",
+      "text": "Not the church, but Christ. Not doctrine, but Christ. Not forms, but Christ.",
+      "slideText": "Not doctrine, but Christ. Not forms, but Christ.",
+      "sourceLocator": "Chapter 1, pages 14-15",
+      "bibleReferences": ["Matthew 11:28-29", "John 14:6"],
+      "topics": ["Christ", "rest", "assurance"],
+      "recommendedUse": "Use as an attributed Christ-centered contrast against trusting institutions, abstractions, or outward forms in place of Christ.",
+      "reviewNote": "Do not use the rhetorical contrast to dismiss the local church, sound doctrine, or biblical ordinances. Bonar's point is that none can replace Christ."
+    },
+    {
+      "id": "bonar-seek-lord-early",
+      "type": "Quote",
+      "title": "Seek the Lord early",
+      "text": "Let us seek the Lord early.",
+      "slideText": "Let us seek the Lord early.",
+      "sourceLocator": "Chapter 2, page 21",
+      "bibleReferences": ["Psalm 5:3", "Mark 1:35"],
+      "topics": ["prayer", "morning devotion", "ministry"],
+      "recommendedUse": "Use as an attributed prompt for cultivating morning prayer and Scripture meditation.",
+      "reviewNote": "This is wise devotional counsel, not a rule that makes one hour holier than another. Teach prayer from the cited KJV passages."
+    },
+    {
+      "id": "bonar-spiritual-men-walked-with-god",
+      "type": "Quote",
+      "title": "They walked with God",
+      "text": "They were spiritual men, and walked with God.",
+      "slideText": "They were spiritual men, and walked with God.",
+      "sourceLocator": "Chapter 2, page 26",
+      "bibleReferences": ["Genesis 5:24", "Colossians 2:6"],
+      "topics": ["walking with God", "spirituality", "ministry"],
+      "recommendedUse": "Use as an attributed transition from discussing historic preachers to examining the preacher's own walk with God.",
+      "reviewNote": "The statement refers to ministers discussed in context. Avoid making reputation or historical success the measure of spirituality."
+    },
+    {
+      "id": "bonar-personal-joy-in-christ",
+      "type": "Quote",
+      "title": "Personal joy in Christ",
+      "text": "Our power in drawing men to Christ springs chiefly from the fullness of our personal joy in him",
+      "slideText": "Our power in drawing men to Christ springs chiefly from the fullness of our personal joy in him",
+      "sourceLocator": "Chapter 2, pages 27-28",
+      "bibleReferences": ["John 15:9-11", "Psalm 51:12-13"],
+      "topics": ["joy", "communion", "witness"],
+      "recommendedUse": "Use as an attributed application about how delight in Christ strengthens sincere Christian witness.",
+      "reviewNote": "Only the Holy Spirit convicts and draws effectively. Present personal joy as testimony, not a human technique for producing conversion."
+    },
+    {
+      "id": "bonar-ministry-of-power",
+      "type": "Quote",
+      "title": "A ministry of power",
+      "text": "A ministry of power must be the fruit of a holy, peaceful, loving intimacy with the Lord.",
+      "slideText": "A ministry of power must be the fruit of a holy, peaceful, loving intimacy with the Lord.",
+      "sourceLocator": "Chapter 2, page 28",
+      "bibleReferences": ["John 15:5", "Acts 6:4"],
+      "topics": ["prayer", "holiness", "ministry"],
+      "recommendedUse": "Use as an attributed call to private devotion, prayer, and abiding in Christ before public ministry.",
+      "reviewNote": "Avoid implying mystical intimacy apart from Scripture or making private experience the source of doctrinal authority."
+    }
+  ]
+}

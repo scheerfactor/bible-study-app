@@ -1,0 +1,119 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-39-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Screened a broad batch of unresolved KJV ordinary words, compounds, historical spellings, and source-form candidates with three or more KJV occurrences.",
+  "review_method": "Required an exact Webster page and entry heading, compared every promoted entry with the Internet Archive 1828 scans, restored two truncated compound entries from the scans, applied only scan-confirmed transcription corrections, and held damaged or incomplete entries for dedicated review.",
+  "screening_summary": {
+    "requested_source_pages": 74,
+    "exact_source_pages_found": 32,
+    "requested_spellings_without_exact_entry": 42,
+    "reviewed_overlays_promoted": 28,
+    "source_pages_held_for_further_review": 4,
+    "lookup_relationships_promoted": 10,
+    "automatic_inflection_forms_resolved": 1,
+    "missing_kjv_forms_resolved": 30,
+    "kjv_occurrences_resolved": 97
+  },
+  "promoted_headwords": [
+    "grizzled", "spew", "trumpeter", "unmarried", "behavior", "buyer", "cloven-footed",
+    "deceitfulness", "dweller", "kinswoman", "loaf", "overflow", "pruning-hook", "shipman",
+    "subtilly", "temperate", "terribly", "thereat", "thitherward", "tillage", "tomb", "unwalled",
+    "vehement", "visage", "whensoever", "whereinto", "whorish", "yesternight"
+  ],
+  "reviewed_transcription_actions": [
+    {"word": "behavior", "actions": ["Restored the final period in the closing sentence."]},
+    {"word": "cloven-footed", "actions": ["Restored the adjective label and complete definition from the scan after the web capture returned only the entry heading."]},
+    {"word": "grizzled", "actions": ["Corrected the Scripture citation from Genesis 31:1 to Genesis 31:10."]},
+    {"word": "overflow", "actions": ["Restored capitalization in Christendom."]},
+    {"word": "pruning-hook", "actions": ["Restored the noun label and complete two-sentence definition from the scan after the web capture returned only the entry heading."]},
+    {"word": "shipman", "actions": ["Expanded the scan's obsolete usage label for consistent display."]},
+    {"word": "spew", "actions": ["Corrected the Scripture citation from Leviticus 18:1 to Leviticus 18:28."]},
+    {"word": "terribly", "actions": ["Restored the final period in the usage example."]},
+    {"word": "thereat", "actions": ["Restored punctuation before the Matthew 7:13 citation and at the end of the final usage example."]},
+    {"word": "thitherward", "actions": ["Restored punctuation before the Jeremiah 50:5 citation."]},
+    {"word": "tillage", "actions": ["Restored sentence capitalization twice in the continuous definition."]},
+    {"word": "tomb", "actions": ["Restored punctuation between the usage example and sense 2."]},
+    {"word": "visage", "actions": ["Restored punctuation after the wolfish visage usage example."]}
+  ],
+  "held_for_further_review": [
+    {
+      "words": ["conclude"],
+      "reason": "The exact web entry contains damaged etymology, multiple transcription errors, damaged possessives, and a wrong Scripture citation; it requires dedicated scan transcription."
+    },
+    {
+      "words": ["weave"],
+      "reason": "The web entry reduces Webster's long etymology to an incomplete bracketed fragment; it requires dedicated scan transcription."
+    },
+    {
+      "words": ["weak"],
+      "reason": "The exact web entry contains a broken etymology, a sentence-level transcription error, and capitalization defects; it requires dedicated scan transcription."
+    },
+    {
+      "words": ["affect"],
+      "reason": "The exact web entry contains damaged etymology and sentence capitalization; it requires dedicated scan transcription."
+    },
+    {
+      "words": ["ciel", "behaviour", "bride-chamber", "crumb", "faint-hearted", "four-footed", "snuff-dish", "unwashen", "womanservant", "awl", "austere", "bountiful", "broken-hearted", "chestnut", "childhood", "chide", "clad", "clift", "cloven", "comfortable", "commonly", "concourse", "confirmation", "corruptly", "countryman", "courteously", "cuckoo", "deliciously", "dissimulation", "distil", "doubtful", "embroiderer", "engrave", "inquiry", "evening-tide", "evidently", "extinct", "faultless", "fellow-laborer", "foretold", "fry", "furtherance"],
+      "reason": "No exact Webster page and entry heading was found under these requested spellings."
+    }
+  ],
+  "verified_lookup_relationships": [
+    {"word": "bondwomen", "lookup_headword": "bondswoman", "kjv_occurrences": 3, "relationship": "KJV irregular plural of Webster's bondswoman entry"},
+    {"word": "dwellers", "lookup_headword": "dweller", "kjv_occurrences": 3, "relationship": "KJV regular plural of Webster's dweller entry"},
+    {"word": "grisled", "lookup_headword": "grizzled", "kjv_occurrences": 4, "relationship": "KJV historical spelling variant of Webster's grizzled entry"},
+    {"word": "overflown", "lookup_headword": "overflow", "kjv_occurrences": 3, "relationship": "KJV participial form of Webster's overflow entry"},
+    {"word": "pruninghooks", "lookup_headword": "pruning-hook", "kjv_occurrences": 3, "relationship": "KJV joined plural compound corresponding to Webster's hyphenated singular entry"},
+    {"word": "shipmen", "lookup_headword": "shipman", "kjv_occurrences": 3, "relationship": "KJV irregular plural of Webster's shipman entry"},
+    {"word": "spue", "lookup_headword": "spew", "kjv_occurrences": 4, "relationship": "KJV historical spelling variant of Webster's spew entry"},
+    {"word": "trumpeters", "lookup_headword": "trumpeter", "kjv_occurrences": 4, "relationship": "KJV regular plural of Webster's trumpeter entry"},
+    {"word": "behaviour", "lookup_headword": "behavior", "kjv_occurrences": 3, "relationship": "KJV British spelling corresponding to Webster's behavior entry"},
+    {"word": "clovenfooted", "lookup_headword": "cloven-footed", "kjv_occurrences": 3, "relationship": "KJV joined compound corresponding to Webster's hyphenated entry"}
+  ],
+  "automatic_lookup_relationships": [
+    {"word": "tombs", "lookup_headword": "tomb", "kjv_occurrences": 6, "relationship": "Automatically recognized regular plural"}
+  ],
+  "entries": [
+    {"word": "grizzled", "kjv_occurrences": 0, "lookup_headword": "grizzled", "base_entries": 1, "source_url": "https://webstersdictionary1828.com/Dictionary/grizzled", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "GRIZ'ZLED", "exact_entry_heading": "GRIZ'ZLED", "exact_source_match": true},
+    {"word": "spew", "kjv_occurrences": 0, "lookup_headword": "spew", "base_entries": 2, "source_url": "https://webstersdictionary1828.com/Dictionary/spew", "source_line_start": 1, "source_line_end": 5, "exact_page_heading": "SPEW", "exact_entry_heading": "SPEW", "exact_source_match": true},
+    {"word": "trumpeter", "kjv_occurrences": 0, "lookup_headword": "trumpeter", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/trumpeter", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "TRUMP'ETER", "exact_entry_heading": "TRUMP'ETER", "exact_source_match": true},
+    {"word": "unmarried", "kjv_occurrences": 4, "lookup_headword": "unmarried", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/unmarried", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "UNMAR'RIED", "exact_entry_heading": "UNMAR'RIED", "exact_source_match": true},
+    {"word": "behavior", "kjv_occurrences": 0, "lookup_headword": "behavior", "base_entries": 1, "source_url": "https://webstersdictionary1828.com/Dictionary/behavior", "source_line_start": 1, "source_line_end": 3, "exact_page_heading": "BEHA'VIOR", "exact_entry_heading": "BEHA'VIOR", "exact_source_match": true},
+    {"word": "buyer", "kjv_occurrences": 3, "lookup_headword": "buyer", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/buyer", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "BUYER", "exact_entry_heading": "BUYER", "exact_source_match": true},
+    {"word": "cloven-footed", "kjv_occurrences": 0, "lookup_headword": "cloven-footed", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/cloven-footed", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "CLOVEN-FOOTED", "exact_entry_heading": "CLOVEN-FOOTED", "exact_source_match": true},
+    {"word": "deceitfulness", "kjv_occurrences": 3, "lookup_headword": "deceitfulness", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/deceitfulness", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "DECE'ITFULNESS", "exact_entry_heading": "DECE'ITFULNESS", "exact_source_match": true},
+    {"word": "dweller", "kjv_occurrences": 0, "lookup_headword": "dweller", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/dweller", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "DWELL'ER", "exact_entry_heading": "DWELL'ER", "exact_source_match": true},
+    {"word": "kinswoman", "kjv_occurrences": 3, "lookup_headword": "kinswoman", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/kinswoman", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "KINS'WOMAN", "exact_entry_heading": "KINS'WOMAN", "exact_source_match": true},
+    {"word": "loaf", "kjv_occurrences": 3, "lookup_headword": "loaf", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/loaf", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "LOAF", "exact_entry_heading": "LOAF", "exact_source_match": true},
+    {"word": "overflow", "kjv_occurrences": 0, "lookup_headword": "overflow", "base_entries": 3, "source_url": "https://webstersdictionary1828.com/Dictionary/overflow", "source_line_start": 1, "source_line_end": 9, "exact_page_heading": "OVERFLOW", "exact_entry_heading": "OVERFLOW", "exact_source_match": true},
+    {"word": "pruning-hook", "kjv_occurrences": 0, "lookup_headword": "pruning-hook", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/pruning-hook", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "PRU'NING-HOOK", "exact_entry_heading": "PRU'NING-HOOK", "exact_source_match": true},
+    {"word": "shipman", "kjv_occurrences": 0, "lookup_headword": "shipman", "base_entries": 1, "source_url": "https://webstersdictionary1828.com/Dictionary/shipman", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "SHIP'MAN", "exact_entry_heading": "SHIP'MAN", "exact_source_match": true},
+    {"word": "subtilly", "kjv_occurrences": 3, "lookup_headword": "subtilly", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/subtilly", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "SUB'TILLY", "exact_entry_heading": "SUB'TILLY", "exact_source_match": true},
+    {"word": "temperate", "kjv_occurrences": 3, "lookup_headword": "temperate", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/temperate", "source_line_start": 1, "source_line_end": 8, "exact_page_heading": "TEM'PERATE", "exact_entry_heading": "TEM'PERATE", "exact_source_match": true},
+    {"word": "terribly", "kjv_occurrences": 3, "lookup_headword": "terribly", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/terribly", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "TER'RIBLY", "exact_entry_heading": "TER'RIBLY", "exact_source_match": true},
+    {"word": "thereat", "kjv_occurrences": 3, "lookup_headword": "thereat", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/thereat", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "THEREAT'", "exact_entry_heading": "THEREAT'", "exact_source_match": true},
+    {"word": "thitherward", "kjv_occurrences": 3, "lookup_headword": "thitherward", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/thitherward", "source_line_start": 1, "source_line_end": 2, "exact_page_heading": "THITH'ERWARD", "exact_entry_heading": "THITH'ERWARD", "exact_source_match": true},
+    {"word": "tillage", "kjv_occurrences": 3, "lookup_headword": "tillage", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/tillage", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "TILL'AGE", "exact_entry_heading": "TILL'AGE", "exact_source_match": true},
+    {"word": "tomb", "kjv_occurrences": 3, "lookup_headword": "tomb", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/tomb", "source_line_start": 1, "source_line_end": 6, "exact_page_heading": "TOMB", "exact_entry_heading": "TOMB", "exact_source_match": true},
+    {"word": "unwalled", "kjv_occurrences": 3, "lookup_headword": "unwalled", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/unwalled", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "UNWALL'ED", "exact_entry_heading": "UNWALL'ED", "exact_source_match": true},
+    {"word": "vehement", "kjv_occurrences": 3, "lookup_headword": "vehement", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/vehement", "source_line_start": 1, "source_line_end": 3, "exact_page_heading": "VE'HEMENT", "exact_entry_heading": "VE'HEMENT", "exact_source_match": true},
+    {"word": "visage", "kjv_occurrences": 3, "lookup_headword": "visage", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/visage", "source_line_start": 1, "source_line_end": 4, "exact_page_heading": "VIS'AGE", "exact_entry_heading": "VIS'AGE", "exact_source_match": true},
+    {"word": "whensoever", "kjv_occurrences": 3, "lookup_headword": "whensoever", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/whensoever", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "WHENSOEVER", "exact_entry_heading": "WHENSOEVER", "exact_source_match": true},
+    {"word": "whereinto", "kjv_occurrences": 3, "lookup_headword": "whereinto", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/whereinto", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "WHEREINTO", "exact_entry_heading": "WHEREINTO", "exact_source_match": true},
+    {"word": "whorish", "kjv_occurrences": 3, "lookup_headword": "whorish", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/whorish", "source_line_start": 1, "source_line_end": 1, "exact_page_heading": "WHORISH", "exact_entry_heading": "WHORISH", "exact_source_match": true},
+    {"word": "yesternight", "kjv_occurrences": 3, "lookup_headword": "yesternight", "base_entries": 0, "source_url": "https://webstersdictionary1828.com/Dictionary/yesternight", "source_line_start": 1, "source_line_end": 3, "exact_page_heading": "YESTERNIGHT", "exact_entry_heading": "YESTERNIGHT", "exact_source_match": true}
+  ]
+}

@@ -1,0 +1,105 @@
+import assert from "node:assert/strict";
+import { readFile, mkdtemp, readdir } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { createRequire } from "node:module";
+import { pathToFileURL } from "node:url";
+import ts from "typescript";
+import JSZip from "jszip";
+
+const require = createRequire(import.meta.url);
+const page = await readFile(new URL("../src/app/page.tsx", import.meta.url), "utf8");
+const ast = ts.createSourceFile("page.tsx", page, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+const names = ["pptxHex", "pptxFontSize", "pptxCleanText", "pptxBundledBackgroundAssets", "exportSlideDeckPowerPoint"];
+const functions = ast.statements.filter((node) => ts.isFunctionDeclaration(node) && names.includes(node.name?.text)).map((node) => node.getText(ast));
+assert.equal(functions.length, names.length);
+const optionsSource = await readFile(new URL("../src/lib/presentation-export.ts", import.meta.url), "utf8");
+const input = `${optionsSource}\nconst SERMON_SLIDE_THEMES = { "classic-pulpit": {background:"#203A31",foreground:"#FFFFFF",muted:"#DDEEDD",accent:"#AA9955"} }; const SERMON_SLIDE_IMAGE_SLOTS = {none:{label:"None",assetUrl:null},cross:{label:"Cross",assetUrl:"/media/sermon-slides/photos/cross.jpg"}};\n${functions.join("\n")}\nexport {exportSlideDeckPowerPoint};`;
+const compiled = ts.transpileModule(input, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText.replace('import("pptxgenjs")', `import(${JSON.stringify(pathToFileURL(require.resolve("pptxgenjs")).href)})`);
+const { exportSlideDeckPowerPoint: exportDeck, presentationExportOptions: options, powerPointTextIssues: issues, powerPointBodyText: clean, splitPresentationBodyText: splitBody } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString("base64")}`);
+const output = await mkdtemp(path.join(tmpdir(), "presentation-privacy-"));
+const kjv = "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.";
+const base = { imageSlot:"none", showImageMotif:false, backgroundStyle:"Dark", textPlacement:"Left", layout:"Centered", titleScale:"Medium", fontScale:"Medium", showTypeLabel:false, showFooterBranding:false };
+const slides = [
+  { ...base, type:"Scripture", title:"John 3:16", subtitle:"King James Version", bibleText:kjv, body:"", speakerNotes:"PRIVATE_COUNSEL_SENTINEL" },
+  { ...base, type:"Quote", title:"Commentary test", subtitle:"Test author · Test source", bibleText:"", body:"Exact quotation fixture.", speakerNotes:"PRIVATE_TEACHING_SENTINEL\nSource: https://example.org/source" },
+];
+const original = JSON.stringify(slides);
+for (const mode of ["slides-only", "presenter"]) {
+  const config = options(mode, "privacy-fixture", "PRIVATE_METADATA_SENTINEL");
+  const file = path.join(output, config.filename);
+  await exportDeck({ slides, themeId:"classic-pulpit", title:"Privacy fixture", ...config, filename:file });
+  const zip = await JSZip.loadAsync(await readFile(file));
+  const xml = (await Promise.all(Object.values(zip.files).filter((entry) => entry.name.endsWith(".xml")).map((entry) => entry.async("string")))).join("\n");
+  const publicXml = (await Promise.all(Object.values(zip.files).filter((entry) => /^ppt\/slides\/slide\d+\.xml$/.test(entry.name)).map((entry) => entry.async("string")))).join("\n");
+  for (const value of [kjv, "Exact quotation fixture.", "Test author · Test source"]) assert.ok(publicXml.includes(value), `Visible content changed: ${value}`);
+  assert.ok(!publicXml.includes("PRIVATE_"), "Private notes leaked onto visible slides");
+  for (const marker of ["PRIVATE_COUNSEL_SENTINEL", "PRIVATE_TEACHING_SENTINEL", "PRIVATE_METADATA_SENTINEL"]) assert.equal(xml.includes(marker), mode === "presenter", `${mode}: ${marker}`);
+  if (mode === "presenter") assert.ok(xml.includes("https://example.org/source"), "Presenter rights/source record lost");
+}
+assert.equal(JSON.stringify(slides), original, "Export mutated the saved deck");
+const boundary = `${"a".repeat(1384)} FINAL_KJV_WORDS`;
+assert.equal(boundary.length, 1400);
+assert.deepEqual(issues([]), []);
+assert.deepEqual(issues([{ ...slides[0], bibleText: boundary }]), []);
+assert.deepEqual(issues([{ ...slides[0], bibleText: "", body: "" }]), []);
+assert.deepEqual(issues([{ ...slides[0], body: "b".repeat(2000) }]), [], "Unused body should not block Scripture export");
+assert.equal(clean(`  ${boundary}\n\n\n `), boundary);
+const oversized = [{ ...slides[0], id:"scripture", bibleText: boundary + "!" }, { ...slides[1], id:"quote", title:"", body:"b".repeat(1500) }];
+assert.deepEqual(issues(oversized).map(({number, title, length}) => ({number, title, length})), [{number:1,title:"John 3:16",length:1401},{number:2,title:"Untitled slide",length:1500}]);
+const beforeBlocked = JSON.stringify(oversized);
+for (const mode of ["slides-only", "presenter"]) {
+  await assert.rejects(exportDeck({slides:oversized,themeId:"classic-pulpit",title:"Too long",...options(mode,"blocked","PRIVATE"),filename:path.join(output,`blocked-${mode}.pptx`)}), /slides 1, 2 exceed/);
+}
+assert.equal(JSON.stringify(oversized), beforeBlocked, "Blocked export changed input text");
+assert.ok(!(await readdir(output)).some((file) => file.startsWith("blocked-")), "Blocked export wrote a file");
+const boundaryFile = path.join(output,"boundary.pptx");
+await exportDeck({slides:[{...slides[0], bibleText:boundary}],themeId:"classic-pulpit",title:"Boundary",subject:"",filename:boundaryFile});
+const boundaryZip = await JSZip.loadAsync(await readFile(boundaryFile));
+assert.ok((await boundaryZip.file("ppt/slides/slide1.xml").async("string")).includes(boundary), "Final words lost at boundary");
+const prose = "First sentence has a source. Second sentence explains the point!\n\nA new paragraph asks a question? OneUnbrokenWordThatMustNotBeLost.";
+const proseChunks = splitBody(prose, 48);
+assert.ok(proseChunks.length > 1);
+assert.ok(proseChunks.every((chunk) => chunk.length <= 48));
+assert.equal(proseChunks.join(" ").replace(/\s+/g, " "), clean(prose).replace(/\s+/g, " "), "Teaching split changed words or punctuation");
+assert.deepEqual(splitBody(" Short text. ", 48), ["Short text."]);
+const jpegBytes = await readFile(new URL("../public/media/sermon-slides/photos/cross.jpg", import.meta.url));
+const originalFetch = globalThis.fetch;
+globalThis.fetch = async (url) => {
+  if (url === "/media/sermon-slides/media-assets.json") return new Response(JSON.stringify([{file:"photos/cross.jpg",source:"QA background source",source_url:"https://example.org/background",rightsStatus:"Public domain",artist:"QA artist",credit:"QA credit"}]), {status:200,headers:{"content-type":"application/json"}});
+  if (url === "/media/sermon-slides/photos/cross.jpg") return new Response(jpegBytes, {status:200,headers:{"content-type":"image/jpeg"}});
+  return new Response("missing", {status:404});
+};
+try {
+  for (const mode of ["slides-only", "presenter"]) {
+    const backgroundFile = path.join(output, `background-${mode}.pptx`);
+    await exportDeck({slides:[{...slides[1],imageSlot:"cross",showImageMotif:true,speakerNotes:"PRIVATE_BACKGROUND_NOTE"}],themeId:"classic-pulpit",title:"Background",...options(mode,"background","PRIVATE_BACKGROUND_METADATA"),filename:backgroundFile});
+    const backgroundZip = await JSZip.loadAsync(await readFile(backgroundFile));
+    assert.ok(Object.keys(backgroundZip.files).some((name) => /^ppt\/media\/image[-\d]+\.jpeg$/.test(name)), `${mode}: background image not embedded`);
+    const allXml = (await Promise.all(Object.values(backgroundZip.files).filter((entry) => entry.name.endsWith(".xml")).map((entry) => entry.async("string")))).join("\n");
+    for (const marker of ["QA background source", "https://example.org/background", "Public domain", "QA artist", "QA credit"]) assert.equal(allXml.includes(marker), mode === "presenter", `${mode}: rights metadata ${marker}`);
+    assert.ok(!(await backgroundZip.file("ppt/slides/slide1.xml").async("string")).includes("QA background source"), `${mode}: source metadata became visible slide text`);
+  }
+  globalThis.fetch = async (url) => url === "/media/sermon-slides/media-assets.json"
+    ? new Response("[]", {status:200,headers:{"content-type":"application/json"}})
+    : new Response(jpegBytes, {status:200,headers:{"content-type":"image/jpeg"}});
+  const missingRightsFile = path.join(output, "missing-rights.pptx");
+  await assert.rejects(exportDeck({slides:[{...slides[1],imageSlot:"cross"}],themeId:"classic-pulpit",title:"Missing rights",...options("presenter","missing-rights",""),filename:missingRightsFile}), /rights record/);
+  assert.ok(!(await readdir(output)).includes("missing-rights.pptx"), "Missing rights record still wrote a file");
+  globalThis.fetch = async (url) => url === "/media/sermon-slides/media-assets.json"
+    ? new Response(JSON.stringify([{file:"photos/cross.jpg"}]), {status:200,headers:{"content-type":"application/json"}})
+    : new Response("not a jpeg", {status:200,headers:{"content-type":"image/jpeg"}});
+  const invalidImageFile = path.join(output, "invalid-image.pptx");
+  await assert.rejects(exportDeck({slides:[{...slides[1],imageSlot:"cross"}],themeId:"classic-pulpit",title:"Invalid image",...options("presenter","invalid-image",""),filename:invalidImageFile}), /JPEG validation/);
+  assert.ok(!(await readdir(output)).includes("invalid-image.pptx"), "Invalid image still wrote a file");
+} finally {
+  globalThis.fetch = originalFetch;
+}
+assert.equal(options("unknown", "test", "PRIVATE").includeSpeakerNotes, false, "Unknown mode should fail closed");
+const presentationHandler = page.slice(page.indexOf("async function exportPresentationPowerPoint"), page.indexOf("function exportPresentationPdfPreview"));
+assert.ok(presentationHandler.includes('= "slides-only"'));
+assert.ok(!presentationHandler.includes("downloadTextFile"), "Export failure must not silently download a private Markdown plan");
+const sermonHandler = page.slice(page.indexOf("async function exportSermonPowerPoint"),page.indexOf("function exportSermonPdfPreview"));
+for (const handler of [presentationHandler,sermonHandler]) assert.ok(handler.indexOf("powerPointTextWarning") < handler.indexOf("try {"), "Oversize warning must precede fallback/error handling");
+console.log("PASS: 1400/1401 boundary, multiple offenders, body precedence, no mutation, blocked file creation, and final exported words.");
+console.log(`PASS: actual PowerPoint ZIPs verified in ${output}; visible KJV/quotation/author text preserved, public copy excludes private notes and metadata, presenter copy retains notes, source unchanged, failure path safe.`);

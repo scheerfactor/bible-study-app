@@ -101,6 +101,27 @@ for (const [index, record] of records.entries()) {
     }
   }
 
+  if (record.collection === "Leonard Ravenhill — Free Noncommercial Listening") {
+    const approvedText = record.approvedPublicUse.join(" ").toLowerCase();
+    const blockedTextForRavenhill = record.notApprovedWithoutFollowup.join(" ").toLowerCase();
+    for (const phrase of ["source attribution", "free noncommercial"]) {
+      if (!approvedText.includes(phrase)) {
+        errors.push(`${label}: Ravenhill pilot must preserve ${phrase}`);
+      }
+    }
+    for (const phrase of ["audio file hosting", "radio rotation", "paid access", "advertising", "sponsorship", "affiliate revenue", "resale"]) {
+      if (!blockedTextForRavenhill.includes(phrase)) {
+        errors.push(`${label}: Ravenhill pilot must block ${phrase}`);
+      }
+    }
+    if (!String(record.sourceUrl).startsWith("https://www.sermonindex.net/speakers/leonard-ravenhill/")) {
+      errors.push(`${label}: Ravenhill pilot must use the reviewed SermonIndex speaker path`);
+    }
+    if (!String(record.notes).includes("David Ravenhill granted noncommercial use with source attribution on 2026-09-03.")) {
+      errors.push(`${label}: Ravenhill pilot must retain the direct-permission note`);
+    }
+  }
+
   if (!Array.isArray(record.notApprovedWithoutFollowup) || record.notApprovedWithoutFollowup.length === 0) {
     errors.push(`${label}: notApprovedWithoutFollowup must preserve broader-rights limits`);
   }

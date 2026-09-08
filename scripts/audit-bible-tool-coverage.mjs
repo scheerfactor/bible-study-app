@@ -6,6 +6,11 @@ import { readJsonOrCsv } from "./import-utils.mjs";
 
 const reportJsonPath = "data/reports/bible-tool-coverage-audit.json";
 const reportMdPath = "BIBLE_TOOL_COVERAGE_AUDIT.md";
+const websterMissingJsonPath = "data/reports/webster-missing-word-inventory.json";
+const websterMissingCsvPath = "data/reports/webster-missing-word-inventory.csv";
+const reviewedDictionaryAliases = JSON.parse(
+  await readFile("data/generated/kjv-dictionary-reviewed-aliases.json", "utf8"),
+);
 
 const bookOrder = [
   "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth",
@@ -186,6 +191,7 @@ const dictionaryAliases = {
   doth: "do",
   didst: "do",
   testifieth: "testify",
+  ...reviewedDictionaryAliases,
 };
 
 const stopWords = new Set([
@@ -204,6 +210,11 @@ function percent(value, total) {
   return Math.round((value / total) * 1000) / 10;
 }
 
+function csvCell(value) {
+  const text = Array.isArray(value) ? value.join("; ") : String(value ?? "");
+  return `"${text.replaceAll('"', '""')}"`;
+}
+
 function normalizeWord(value) {
   return String(value ?? "").toLowerCase().replace(/[^a-z]/g, "");
 }
@@ -213,7 +224,11 @@ function dictionaryLookupCandidates(value) {
   if (!cleaned) return [];
 
   const candidates = [cleaned];
-  if (dictionaryAliases[cleaned]) candidates.push(dictionaryAliases[cleaned]);
+  if (dictionaryAliases[cleaned]) {
+    const reviewedAlias = normalizeWord(dictionaryAliases[cleaned]);
+    candidates.push(reviewedAlias);
+    if (reviewedAlias === cleaned) return [...new Set(candidates)];
+  }
 
   const suffixRules = [
     [/eth$/, ""],
@@ -419,6 +434,24 @@ const dictionaryRows = meaningfulBibleWords.map((item) => {
 
 const dictionaryMissing = dictionaryRows.filter((item) => !item.hasDefinition);
 const dictionaryDirty = dictionaryRows.filter((item) => item.hasDefinition && item.dirtyDefinition);
+const websterMissingInventory = dictionaryMissing.map((item) => ({
+  ...item,
+  priority:
+    item.count >= 20 ? "high" :
+      item.count >= 5 ? "medium" :
+        item.count >= 2 ? "low" : "single-use",
+  supplementalHelp:
+    item.hasEaston || item.hasNave || item.hasRareTerm
+      ? [item.hasEaston ? "Easton" : "", item.hasNave ? "Nave" : "", item.hasRareTerm ? "KJV rare-term help" : ""].filter(Boolean)
+      : [],
+}));
+const websterMissingPriorityCounts = Object.fromEntries(
+  ["high", "medium", "low", "single-use"].map((priority) => [
+    priority,
+    websterMissingInventory.filter((item) => item.priority === priority).length,
+  ]),
+);
+const websterMissingWithoutSupplementalHelp = websterMissingInventory.filter((item) => item.supplementalHelp.length === 0);
 
 const strongsMappingFiles = await findJsonFiles("data/strongs/mapping-batches", (name) => name.endsWith(".json"));
 const strongsMappings = [];
@@ -498,6 +531,9 @@ const summary = {
     meaningfulWordsWithDefinition: dictionaryRows.filter((item) => item.hasDefinition).length,
     meaningfulWordsWithoutDefinition: dictionaryMissing.length,
     meaningfulDefinitionCoveragePercent: percent(dictionaryRows.filter((item) => item.hasDefinition).length, dictionaryRows.length),
+    missingPriorityCounts: websterMissingPriorityCounts,
+    missingWithSupplementalHelp: websterMissingInventory.length - websterMissingWithoutSupplementalHelp.length,
+    missingWithoutSupplementalHelp: websterMissingWithoutSupplementalHelp.length,
     topUsedWordsNeedingDefinition: topDictionaryMissing,
     topUsedWordsNeedingCleanup: topDictionaryDirty,
   },
@@ -561,7 +597,7 @@ const md = [
   `- Bible text: ${summary.bible.books} books, ${summary.bible.chapters} chapters, ${summary.bible.verses} verses.`,
   `- KJV words measured: ${summary.bible.totalWordTokens.toLocaleString()} tokens, ${summary.bible.uniqueWords.toLocaleString()} unique words, ${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful unique words after common-word filtering.`,
   `- Webster 1828: ${summary.webster1828.meaningfulWordsWithDefinition.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words have a lookup candidate (${summary.webster1828.meaningfulDefinitionCoveragePercent}%).`,
-  `- Combined word/topic lookup: ${summary.bibleDictionariesAndTopics.meaningfulWordsWithAnyStudyLookup.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words have Webster, Easton, or Nave help (${summary.bibleDictionariesAndTopics.combinedStudyLookupCoveragePercent}%).`,
+  `- Combined word/topic lookup: ${summary.bibleDictionariesAndTopics.meaningfulWordsWithAnyStudyLookup.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words have Webster, Easton, Nave, or reviewed KJV word-guide help (${summary.bibleDictionariesAndTopics.combinedStudyLookupCoveragePercent}%).`,
   `- Strong's lexicon: ${summary.strongs.lexiconEntries.toLocaleString()} entries available; reviewed KJV mappings cover ${summary.strongs.mappedChapters}/${summary.bible.chapters} chapters and ${summary.strongs.mappedVerses.toLocaleString()} source verses.`,
   `- Strong's KJV word mapping: ${summary.strongs.meaningfulWordsWithMapping.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words appear in reviewed mapping batches (${summary.strongs.meaningfulWordMappingCoveragePercent}%).`,
   `- Combined word-study help: ${summary.combinedWordStudy.meaningfulWordsWithDictionaryOrStrongs.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (${summary.combinedWordStudy.meaningfulWordCoveragePercent}%).`,
@@ -672,6 +708,45 @@ await writeFile(
   )}\n`,
 );
 await writeFile(reportMdPath, `${md}\n`);
+await writeFile(
+  websterMissingJsonPath,
+  `${JSON.stringify(
+    {
+      generated_at: summary.generated_at,
+      source: "KJV 1769 text compared with the reviewed and base Webster 1828 indexes",
+      scope: "Meaningful KJV word forms of three or more letters after common stop-word filtering",
+      total: websterMissingInventory.length,
+      priorityCounts: websterMissingPriorityCounts,
+      withSupplementalHelp: websterMissingInventory.length - websterMissingWithoutSupplementalHelp.length,
+      withoutSupplementalHelp: websterMissingWithoutSupplementalHelp.length,
+      completeInventoryCsv: websterMissingCsvPath,
+      topWordsWithoutSupplementalHelp: websterMissingWithoutSupplementalHelp.slice(0, 100).map((item) => ({
+        word: item.word,
+        count: item.count,
+        priority: item.priority,
+        lookupCandidates: item.lookupCandidates,
+        sampleRefs: item.sampleRefs,
+      })),
+    },
+    null,
+    2,
+  )}\n`,
+);
+const websterMissingCsvRows = [
+  ["word", "kjv_count", "priority", "lookup_candidates", "sample_references", "supplemental_help"],
+  ...websterMissingInventory.map((item) => [
+    item.word,
+    item.count,
+    item.priority,
+    item.lookupCandidates,
+    item.sampleRefs,
+    item.supplementalHelp,
+  ]),
+];
+await writeFile(
+  websterMissingCsvPath,
+  `${websterMissingCsvRows.map((row) => row.map(csvCell).join(",")).join("\n")}\n`,
+);
 
 console.log("Bible tool coverage audit complete");
 console.table({
@@ -684,3 +759,5 @@ console.table({
 });
 console.log(`Wrote ${reportMdPath}`);
 console.log(`Wrote ${reportJsonPath}`);
+console.log(`Wrote ${websterMissingJsonPath}`);
+console.log(`Wrote ${websterMissingCsvPath}`);

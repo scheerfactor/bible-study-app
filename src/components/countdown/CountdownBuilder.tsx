@@ -5,14 +5,15 @@ import { clockText, frameAt, newItem, suggestPlan, templatePresets, timeline, va
 import PresentationImageLibrary, { type PresentationImage } from '../PresentationImageLibrary';
 import styles from './countdown.module.css';
 
-type Props = { images?: PresentationImage[]; lesson: Omit<LessonSource, 'scripture'>; resolveScripture: (passage: string) => string };
+type Props = { storageScope?: string; images?: PresentationImage[]; lesson: Omit<LessonSource, 'scripture'>; resolveScripture: (passage: string) => string };
 export default function CountdownBuilder(props: Props) {
   const [open, setOpen] = useState(false);
   return <><button type="button" className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold" onClick={() => setOpen(true)}>Pre-class countdown</button>{open && createPortal(<Builder {...props} onClose={() => setOpen(false)} />, document.body)}</>;
 }
-function Builder({ lesson, resolveScripture, onClose, images = [] }: Props & { onClose: () => void }) {
+function Builder({ lesson, resolveScripture, onClose, images = [], storageScope = "local" }: Props & { onClose: () => void }) {
   const source = { ...lesson, scripture: resolveScripture(lesson.passage) };
-  const key = `fathers-business-countdown-v1:${lesson.id}`;
+  const key = storageScope === "local" ? `fathers-business-countdown-v1:${lesson.id}` : `fathers-business-countdown-v1:${storageScope}:${lesson.id}`;
+  const templateKey = storageScope === "local" ? "fathers-business-countdown-templates-v1" : `fathers-business-countdown-templates-v1:${storageScope}`;
   const [initial] = useState(() => {
     let raw: string | null = null;
     let error = '';
@@ -33,7 +34,7 @@ function Builder({ lesson, resolveScripture, onClose, images = [] }: Props & { o
   const [selected, setSelected] = useState(0);
   const [editing, setEditing] = useState(false);
   const [templates, setTemplates] = useState<CountdownPlan[]>(() => {
-    try { const v = JSON.parse(localStorage.getItem('fathers-business-countdown-templates-v1') || '[]'); return Array.isArray(v) ? v.filter(x => !validatePlan(x).length) : []; } catch { return []; }
+    try { const v = JSON.parse(localStorage.getItem(templateKey) || '[]'); return Array.isArray(v) ? v.filter(x => !validatePlan(x).length) : []; } catch { return []; }
   });
   const [templateName, setTemplateName] = useState('');
   const [elapsed, setElapsed] = useState(0);
@@ -171,7 +172,7 @@ function Builder({ lesson, resolveScripture, onClose, images = [] }: Props & { o
       <h2>2. Confirm it is ready</h2><label><input type="checkbox" checked={plan.reviewed} onChange={e => { setPlan({ ...plan, reviewed: e.target.checked }); setDirty(true); }} /> I reviewed the answers, KJV wording, doctrine, announcements, and permission to display this content.</label>
       </fieldset>
       <div className={styles.actions}><button onClick={save}>Save countdown</button><button onClick={download}>Export backup</button><label className={styles.file}>Import backup<input type="file" accept="application/json,.json" disabled={running} onChange={async e => { const f=e.target.files?.[0]; if(!f)return; try { if(f.size>200000)throw new Error('File is too large.'); const p=JSON.parse(await f.text()); const problems=validatePlan(p); if(problems.length)throw new Error(problems.join(' ')); change({ ...p, projectId: lesson.id, reviewed: false }); setSelected(0); reset(); }catch(error){setMessage(error instanceof Error ? error.message : 'Import failed.');} e.target.value=''; }} /></label></div>
-      <details><summary>Reusable templates</summary><p>Templates contain pacing, slides, and text; review announcements and content for each class. Music files and approvals are not carried over.</p><label>Template name<input value={templateName} onChange={e => setTemplateName(e.target.value)} /></label><button disabled={!templateName.trim() || errors.length > 0} onClick={() => { try { const next=[...templates.filter(t => t.title!==templateName.trim()),{...plan,title:templateName.trim(),reviewed:false}];localStorage.setItem('fathers-business-countdown-templates-v1',JSON.stringify(next));setTemplates(next);setMessage('Template saved.');}catch{setMessage('Template could not be saved. Export a backup.');} }}>Save template</button>{templates.map(t => <button disabled={running} key={t.title} onClick={() => { change({...t, projectId:lesson.id, reviewed:false});setSelected(0);reset(); }}>Use {t.title}</button>)}</details>
+      <details><summary>Reusable templates</summary><p>Templates contain pacing, slides, and text; review announcements and content for each class. Music files and approvals are not carried over.</p><label>Template name<input value={templateName} onChange={e => setTemplateName(e.target.value)} /></label><button disabled={!templateName.trim() || errors.length > 0} onClick={() => { try { const next=[...templates.filter(t => t.title!==templateName.trim()),{...plan,title:templateName.trim(),reviewed:false}];localStorage.setItem(templateKey,JSON.stringify(next));setTemplates(next);setMessage('Template saved.');}catch{setMessage('Template could not be saved. Export a backup.');} }}>Save template</button>{templates.map(t => <button disabled={running} key={t.title} onClick={() => { change({...t, projectId:lesson.id, reviewed:false});setSelected(0);reset(); }}>Use {t.title}</button>)}</details>
       {dirty && <button onClick={() => { stop(); onClose(); }}>Close without saving</button>}
     </section><section className={styles.preview}><h2>3. Preview & present</h2>
       <div ref={stage} className={`${styles.stage} ${presenting ? styles.presenting : ''}`} aria-label="Audience preview" style={background ? {backgroundImage:`linear-gradient(rgba(7,22,15,.78),rgba(7,22,15,.82)), url("${background.url}")`,backgroundSize:"cover",backgroundPosition:"center"} : undefined} onDoubleClick={() => { if(presenting){stop();setPresenting(false);if(document.fullscreenElement)void document.exitFullscreen();} }}>

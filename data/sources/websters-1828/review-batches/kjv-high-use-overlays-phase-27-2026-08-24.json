@@ -1,0 +1,136 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-27-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_source": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+  "cross_check_sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next seven high-use KJV lookup candidates after phase 26. The KJV plural Samaritans was reviewed through the exact singular Webster headword Samaritan.",
+  "review_method": "Verified page and entry headings, spot-checked the web transcription against the Internet Archive volume 2 OCR, retained the dictionary senses, and corrected only discrepancies supported by the cross-check source and context.",
+  "reviewed_transcription_actions": [
+    {
+      "word": "secure",
+      "actions": [
+        "Corrected Teh to The.",
+        "Corrected distrultful to distrustful.",
+        "Restored The first duty and the highest interest from the cross-check source.",
+        "Corrected theif to thief and made to make.",
+        "Corrected mail to bail and normalized the OCR line-wrap in otherwise."
+      ]
+    },
+    {
+      "word": "sigh",
+      "actions": [
+        "Corrected grief of debility to grief or debility from the cross-check source."
+      ]
+    },
+    {
+      "word": "skill",
+      "actions": [
+        "Excluded the orphaned tail of the etymology because the web page did not preserve the preceding etymological text.",
+        "Retained both noun senses and all displayed transitive and intransitive verb senses."
+      ]
+    },
+    {
+      "word": "solitary",
+      "actions": [
+        "Restored punctuation in the cited phrase Those rare and solitary, these in flocks.",
+        "Corrected alone of in solitude to alone or in solitude from the cross-check source."
+      ]
+    }
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No unsupported modernization or summary was introduced.",
+    "The incomplete Skill etymology fragment was omitted rather than reconstructed.",
+    "The source entry for Samaritan remains singular; the KJV plural relationship is metadata only."
+  ],
+  "entries": [
+    {
+      "word": "robbery",
+      "kjv_occurrences": 7,
+      "lookup_headword": "robbery",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/robbery",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Robbery",
+      "exact_entry_heading": "ROB'BERY",
+      "exact_source_match": true
+    },
+    {
+      "word": "samaritans",
+      "kjv_occurrences": 7,
+      "lookup_headword": "samaritan",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/samaritan",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Samaritan",
+      "exact_entry_heading": "SAMAR'ITAN",
+      "exact_source_match": true
+    },
+    {
+      "word": "secure",
+      "kjv_occurrences": 7,
+      "lookup_headword": "secure",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/secure",
+      "source_line_start": 1,
+      "source_line_end": 23,
+      "exact_page_heading": "Secure",
+      "exact_entry_heading": "SECU'RE",
+      "exact_source_match": true
+    },
+    {
+      "word": "sigh",
+      "kjv_occurrences": 7,
+      "lookup_headword": "sigh",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/sigh",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "Sigh",
+      "exact_entry_heading": "SIGH",
+      "exact_source_match": true
+    },
+    {
+      "word": "skill",
+      "kjv_occurrences": 7,
+      "lookup_headword": "skill",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/skill",
+      "source_line_start": 2,
+      "source_line_end": 7,
+      "exact_page_heading": "Skill",
+      "exact_entry_heading": "SKILL",
+      "exact_source_match": true
+    },
+    {
+      "word": "solitary",
+      "kjv_occurrences": 7,
+      "lookup_headword": "solitary",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/solitary",
+      "source_line_start": 1,
+      "source_line_end": 8,
+      "exact_page_heading": "Solitary",
+      "exact_entry_heading": "SOL'ITARY",
+      "exact_source_match": true
+    },
+    {
+      "word": "stony",
+      "kjv_occurrences": 7,
+      "lookup_headword": "stony",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/stony",
+      "source_line_start": 1,
+      "source_line_end": 7,
+      "exact_page_heading": "Stony",
+      "exact_entry_heading": "STONY",
+      "exact_source_match": true
+    }
+  ]
+}

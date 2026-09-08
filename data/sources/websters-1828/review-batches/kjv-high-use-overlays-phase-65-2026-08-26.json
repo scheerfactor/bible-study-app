@@ -1,0 +1,154 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-65-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n252_w3000.jpg",
+      "sha256": "66144e0ea0952b9a16358eb84c7a246a7916c92b963418d0b4647366efc437e8"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n253_w3000.jpg",
+      "sha256": "f13ec9992350b41db9ba91fab56ef3b43e8e6fb9f1b3eb370780da9fe53597a0"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n259_w3000.jpg",
+      "sha256": "9c3b34c7fcf95dd3698364762cc9c9658349e81012ed590e4be6fef90d11dbe3"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n317_w3000.jpg",
+      "sha256": "f414b5858ae40d937719739f327014eb5b6fa10ee4e41b963bdcb2bd66bae5db"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n318_w3000.jpg",
+      "sha256": "ea65601980b47cb6d130e05b3ade978a19878f5519c46cb323eb0d72b5b32fd6"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n363_w3000.jpg",
+      "sha256": "c262a3411690f806a2da7b8faeab2f34ad85bfae78580006eec14381caf3ce0f"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six five-occurrence defensible Webster targets in the KJV cleanup queue. Salmon, aloes, and wert remain deferred for biblical-name, semantic, and special-entry review reasons documented in phase 64.",
+  "review_method": "Compared every retained sense with the original printed page image, corrected clear OCR substitutions and broken words, retained Webster's wording and sense order, lightly abridged literary and legal examples, and recorded the inflectional and plural relationships for BEGUILED and BULWARKS.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 2,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 30
+  },
+  "deferred_candidates": [
+    {
+      "word": "salmon",
+      "kjv_occurrences": 6,
+      "reason": "The KJV form names a person or place; Webster's common-noun entry defines the fish and would mislead a verse-context lookup."
+    },
+    {
+      "word": "aloes",
+      "kjv_occurrences": 5,
+      "reason": "Webster's parsed common entry primarily describes the aloe plant and medicinal juice, while the KJV passages concern an aromatic substance or aloes-wood."
+    },
+    {
+      "word": "wert",
+      "kjv_occurrences": 6,
+      "reason": "The alias to BE is linguistically correct, but Webster's extensive multi-form BE entry requires a dedicated transcription and display review."
+    }
+  ],
+  "promoted_headwords": [
+    "beforehand",
+    "beguile",
+    "benefit",
+    "bulwark",
+    "burdensome",
+    "certify"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "beguiled",
+      "lookup_headword": "beguile",
+      "kjv_occurrences": 5,
+      "relationship": "Past-tense and participial form mapped to Webster's verb headword; the reviewed overlay also retains Webster's BEGUILED participial definition"
+    },
+    {
+      "word": "bulwarks",
+      "lookup_headword": "bulwark",
+      "kjv_occurrences": 5,
+      "relationship": "Plural noun form mapped to Webster's singular headword; the complete noun senses and related verb entry are retained"
+    }
+  ],
+  "entries": [
+    {
+      "word": "beforehand",
+      "lookup_headword": "beforehand",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 70487,
+      "source_line_end": 70503,
+      "exact_page_heading": "BEG",
+      "exact_entry_heading": "BEFO'REHAND",
+      "exact_source_match": true
+    },
+    {
+      "word": "beguiled",
+      "lookup_headword": "beguile",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 70859,
+      "source_line_end": 70885,
+      "exact_page_heading": "BEG",
+      "exact_entry_heading": "BEGUI'LE",
+      "exact_source_match": true
+    },
+    {
+      "word": "benefit",
+      "lookup_headword": "benefit",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 72786,
+      "source_line_end": 72812,
+      "exact_page_heading": "BEN",
+      "exact_entry_heading": "BEN'EFIT",
+      "exact_source_match": true
+    },
+    {
+      "word": "bulwarks",
+      "lookup_headword": "bulwark",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 91825,
+      "source_line_end": 91852,
+      "exact_page_heading": "BUL",
+      "exact_entry_heading": "BUL'WARK",
+      "exact_source_match": true
+    },
+    {
+      "word": "burdensome",
+      "lookup_headword": "burdensome",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 92241,
+      "source_line_end": 92245,
+      "exact_page_heading": "BUR",
+      "exact_entry_heading": "BURD'ENSOME",
+      "exact_source_match": true
+    },
+    {
+      "word": "certify",
+      "lookup_headword": "certify",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 106437,
+      "source_line_end": 106462,
+      "exact_page_heading": "CER",
+      "exact_entry_heading": "CER'TIFY",
+      "exact_source_match": true
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-# Leonard Ravenhill Acquisition Profile Stub
+# Leonard Ravenhill Acquisition Profile
 
-## Do Not Use Yet
+## Permission-Limited Intake
 
-This author/profile is for acquisition review only. No content may be imported, displayed, summarized, embedded, or recommended until copyright status, permission status, and theological review are complete.
+David Ravenhill granted written permission on 2026-09-03 to use his father's material when it is not used for profitable purposes and the source is quoted. This is a noncommercial permission lane, not a public-domain declaration or commercial license. Each item still requires a verified source, clear attribution, content review, and confirmation that it remains outside every paid or profit-generating feature.
 
 ## Review Status
 
@@ -10,15 +10,15 @@ This author/profile is for acquisition review only. No content may be imported, 
 | --- | --- |
 | Author / ministry | Leonard Ravenhill |
 | Resource category | Revival prayer and preaching |
-| Profile status | Needs Review |
-| Resource approval status | Needs Review |
-| Copyright status | Unknown - verify |
-| Permission needed | Yes |
-| Permission/contact info | VoiceOfLifeMinistries@gmail.com (bounced - no such user); alternate to verify: sermonindex@gmail.com |
+| Profile status | Permission Received - Intake Review |
+| Resource approval status | Noncommercial Use Only - Item Review Required |
+| Copyright status | Copyrighted - family permission for noncommercial use |
+| Permission needed | Granted for noncommercial use with source attribution; separate permission required for commercial use |
+| Permission/contact info | David Ravenhill; direct written reply received 2026-09-03 after referral by Greg Gordon at SermonIndex |
 | Website | https://www.ravenhill.org/ |
-| Collection label | Needs Review |
+| Collection label | Free Ministry Resource - Noncommercial |
 | Review score | Not scored |
-| License obtained | No |
+| License obtained | Yes - limited written permission |
 
 ## Biography
 
@@ -52,30 +52,33 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| TBD | Revival prayer and preaching | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
+| First pilot items TBD | Books, sermons, and audio | TBD | Noncommercial permission; source required | Needs Review | Select only verified-source items and document attribution before import. |
 
 ## Audio / Video Availability
 
 | Media type | Availability | Rights / permission status | Notes |
 | --- | --- | --- | --- |
-| Audio | Unknown | Needs Review | Do not host, transcribe, summarize, or generate narration without permission. |
-| Video | Unknown | Needs Review | Official links or embeds require documented permission. |
+| Audio | Available from multiple sources; verify item provenance | Noncommercial permission; source required | Keep outside paid and profit-generating features; prefer official or verified source files. |
+| Video | Availability and source ownership vary | Needs item-level source review | Do not assume a third-party upload is the authorized source. |
 
 ## Permission And Contact Notes
 
 | Field | Value |
 | --- | --- |
-| Known contact | VoiceOfLifeMinistries@gmail.com (bounced - no such user); alternate to verify: sermonindex@gmail.com |
+| Known contact | David Ravenhill, referred by Greg Gordon at SermonIndex |
 | Website | https://www.ravenhill.org/ |
-| Permission status | Bounced - Alternate Contact Needed |
-| Requested use | Limited listing/link/excerpt/audio-video inquiry |
-| Follow-up needed | Yes |
+| Permission status | Permission Granted - Noncommercial With Source Attribution |
+| Approved use | Leonard Ravenhill material used for non-profitable purposes with the source quoted |
+| Commercial use | Not granted; paid access, resale, affiliate revenue, sponsorship, advertising-linked use, and other profit-generating use remain blocked |
+| Follow-up | Hosting-versus-links clarification sent 2026-09-03; awaiting reply |
 
 Notes:
 
-- Do not approve broad catalog use.
-- Ask about specific titles, excerpts, links, audio, video, transcript use, image/chart use, and future paid-access terms separately.
-- Record written permission before any copyrighted material becomes public in the app.
+- Record a source and attribution line for every item.
+- Keep Ravenhill material in a permanently free, noncommercial lane and outside subscriptions, purchases, sponsorships, affiliate links, advertising, and other profit-generating features.
+- Ask separately before any future commercial use.
+- Prefer verified official or first-party source material; do not treat an unverified third-party copy as cleared merely because the underlying material has permission.
+- A hosting-versus-links clarification was sent on 2026-09-03. Keep the current pilot link-only until David replies.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
 
 ## Review Score
@@ -102,8 +105,8 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Modern copyrighted works require permission. Contact route identified from Ravenhill.org ordering/media page on 2026-07-04, but Gmail reported the account does not exist. OnePlace lists SermonIndex as contact for SermonIndex Classics - Leonard Ravenhill; verify whether they can answer listing/embed/audio questions and whether separate estate/publisher permission is needed. No permission granted yet.
+> The address published by Ravenhill.org bounced on 2026-07-04. Greg Gordon at SermonIndex routed the inquiry to David Ravenhill on 2026-09-01. David replied in writing on 2026-09-03 that Leonard Ravenhill material may be used when it is not for profitable purposes and the source is quoted. Treat this as limited noncommercial permission: verify and record the source for each item, keep the material free and outside every profit-generating feature, and obtain new written permission before any commercial use.
 
 ## Final Recommendation
 
-Needs Review. No author, ministry, publisher, book, sermon, audio, video, quote, chart, transcript, or excerpt is approved by this stub.
+Proceed with a small, free, source-attributed pilot after title-level provenance and doctrinal review. This profile does not approve a specific file or third-party copy, and it does not permit profitable use.

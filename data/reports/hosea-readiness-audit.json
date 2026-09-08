@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T19:28:44.188Z",
+  "generated_at": "2026-08-23T20:33:55.602Z",
   "status": "ready",
   "assertions": {
     "kjvChapters": true,
@@ -11,7 +11,7 @@
     "crossWireStrongWordMappings": true,
     "strongsLexiconCards": true,
     "tskEveryChapter": true,
-    "tenImmediateFullBookCommentaries": true
+    "tenReaderConnectedFullBookCommentaries": true
   },
   "kjv": {
     "chapters": 14,
@@ -23,7 +23,7 @@
     "coveragePercent": 93.6,
     "wordsWithDictionaryHelp": 906,
     "combinedLookupCoveragePercent": 100,
-    "reviewedOverlayWords": 693,
+    "reviewedOverlayWords": 696,
     "wordsWithBibleDictionaryFallback": 60,
     "unresolvedWords": [],
     "dirtyBaseEntries": [],
@@ -74,8 +74,8 @@
   "commentary": {
     "sets": 14,
     "fullBookSets": 12,
-    "immediateFullBookSets": 12,
-    "immediate": [
+    "readerConnectedFullBookSets": 12,
+    "readerConnected": [
       {
         "file": "a-c-gaebelein-reviewed-hosea-commentary.json",
         "author": "A. C. Gaebelein",
@@ -97,7 +97,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "adam-clarke-reviewed-completion-prophets-commentary.json",
@@ -120,7 +120,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "barnes-reviewed-completion-prophets-commentary.json",
@@ -143,7 +143,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "biblical-illustrator-reviewed-weak-books-commentary.json",
@@ -166,7 +166,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "g-campbell-morgan-hosea-commentary.json",
@@ -189,7 +189,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "h-a-ironside-hosea-commentary.json",
@@ -212,7 +212,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json",
@@ -235,7 +235,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "matthew-henry-reviewed-completion-batch-09-commentary.json",
@@ -258,7 +258,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "matthew-poole-reviewed-weak-books-commentary.json",
@@ -281,7 +281,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "preachers-homiletical-reviewed-hosea-commentary.json",
@@ -304,7 +304,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "pulpit-commentary-reviewed-weak-books-commentary.json",
@@ -327,7 +327,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       },
       {
         "file": "wesley-reviewed-minor-prophets-commentary.json",
@@ -350,7 +350,7 @@
           14
         ],
         "fullBook": true,
-        "immediate": true
+        "readerConnected": true
       }
     ]
   }

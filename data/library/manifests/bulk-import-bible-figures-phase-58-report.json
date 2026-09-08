@@ -1,0 +1,41 @@
+{
+  "source_csv": "data/library/bulk-import-bible-figures-phase-58.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 1,
+  "total_attempted": 1,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Figures of Speech Used in the Bible: Explained and Illustrated",
+      "file": "figures-of-speech-used-in-the-bible-explained-and-illustrated-e-w-bullinger.txt",
+      "bytes": 2551514,
+      "words": 401512,
+      "reading_time_minutes": 1784
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Figures of Speech Used in the Bible: Explained and Illustrated",
+      "author": "E. W. Bullinger",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/figures-of-speech-used-in-the-bible-explained-and-illustrated-e-w-bullinger.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

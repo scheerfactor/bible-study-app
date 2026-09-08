@@ -20,10 +20,12 @@ import {
   verifiedRightsStatuses,
   wordCount,
 } from "./library-utils.mjs";
+import { rollbackImportedLibraryEntries } from "./library-atomic-import.mjs";
 
 const defaultSourceCsv = "data/library/bulk-import-sources.csv";
 const defaultReportPath = "data/library/manifests/bulk-import-report.json";
 const dryRun = process.argv.includes("--dry-run");
+const atomic = process.argv.includes("--atomic");
 const cleanGutenberg = !process.argv.includes("--no-clean-gutenberg");
 
 function argValue(name, fallback) {
@@ -219,6 +221,7 @@ const report = {
   source_csv: sourceCsvPath,
   manifest: manifestPath,
   dry_run: dryRun,
+  atomic,
   batch_size: batchSize,
   total_attempted: sourceRows.length,
   imported: 0,
@@ -230,6 +233,8 @@ const report = {
   duplicate_titles: 0,
   duplicate_sources: 0,
   duplicate_checksums: 0,
+  rolled_back: 0,
+  rollback_cleanup_failures: [],
   file_sizes: [],
   rows: [],
 };
@@ -426,6 +431,14 @@ for (const [index, row] of sourceRows.entries()) {
   }
 }
 
+if (!dryRun && atomic && report.failed > 0 && importedEntries.length) {
+  const rollback = await rollbackImportedLibraryEntries({ entries: importedEntries, rows: report.rows });
+  report.rolled_back = rollback.rolledBack;
+  report.rollback_cleanup_failures = rollback.cleanupFailures;
+  report.imported = 0;
+  report.file_sizes = [];
+}
+
 if (!dryRun && importedEntries.length) {
   const updatedManifest = [...manifestEntries, ...importedEntries];
   await writeFile(manifestPath, `${JSON.stringify(updatedManifest, null, 2)}\n`, "utf8");
@@ -461,6 +474,7 @@ console.table({
   duplicate_titles: report.duplicate_titles,
   duplicate_sources: report.duplicate_sources,
   duplicate_checksums: report.duplicate_checksums,
+  rolled_back: report.rolled_back,
 });
 
 if (report.file_sizes.length) {
@@ -481,6 +495,10 @@ if (notableRows.length) {
 
 if (dryRun) {
   console.log(`Dry run only. Run without --dry-run to import the first ${batchSize} eligible rows.`);
+}
+
+if (report.rolled_back > 0) {
+  console.log(`Atomic import rolled back ${report.rolled_back} resource${report.rolled_back === 1 ? "" : "s"}; the library manifest was not changed.`);
 }
 
 if (report.failed > 0) process.exit(1);

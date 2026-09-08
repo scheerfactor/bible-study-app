@@ -1,0 +1,115 @@
+{
+  "batch_id": "kjv-rare-terms-phase-6-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "King James Bible, standard 1769 text",
+  "rights_basis": "The KJV Scripture text used for this review is public domain in the United States.",
+  "definition_method": "Original concise study aids written from the cited KJV passages. No copyrighted commentary wording was imported.",
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv",
+  "screening_summary": {
+    "reviewed_entries": 10,
+    "resolved_kjv_forms": 12,
+    "kjv_word_occurrences": 45
+  },
+  "entries": [
+    {
+      "headword": "BEEROTHITE",
+      "normalized_headword": "beerothite",
+      "definition": "BEEROTHITE, noun or adjective. A person of Beeroth; the plural denotes its inhabitants. The designation is applied to Rimmon and Naharai in Second Samuel.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: 2 Samuel 4:2-3, 5, 9; 23:37",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["beerothite", "beerothites"],
+      "kjv_occurrences": 5
+    },
+    {
+      "headword": "DANITES",
+      "normalized_headword": "danites",
+      "definition": "DANITES, plural noun. Members or descendants of the tribe of Dan.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Judges 13:2; 18:1, 11; 1 Chronicles 12:35",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["danites"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "GIDDEL",
+      "normalized_headword": "giddel",
+      "definition": "A name associated with two family groups recorded among the temple servants and the servants of Solomon who returned from captivity.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Ezra 2:47, 56; Nehemiah 7:49, 58",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["giddel"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "GILEADITES",
+      "normalized_headword": "gileadites",
+      "definition": "GILEADITES, plural noun. Members of the family descended from Gilead or inhabitants and men of Gilead.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Numbers 26:29; Judges 12:4-5; 2 Kings 15:25",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["gileadites"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "HUSHAM",
+      "normalized_headword": "husham",
+      "definition": "A man of the land of Temani who reigned as a king of Edom after Jobab.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Genesis 36:34-35; 1 Chronicles 1:45-46",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["husham"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "HUSHIM",
+      "normalized_headword": "hushim",
+      "definition": "A name used in genealogical records for a son or descendant of Dan, for sons of Aher, and for a wife of Shaharaim.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Genesis 46:23; 1 Chronicles 7:12; 8:8, 11",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["hushim"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "KIRIATHAIM",
+      "normalized_headword": "kiriathaim",
+      "definition": "A place name connected with the Emims at Shaveh Kiriathaim and later listed among the cities of Moab.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Genesis 14:5; Jeremiah 48:1, 23; Ezekiel 25:9",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["kiriathaim"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "LOD",
+      "normalized_headword": "lod",
+      "definition": "A town built with Ono and later named among the places whose families returned from captivity and resettled the land.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: 1 Chronicles 8:12; Ezra 2:33; Nehemiah 7:37; 11:35",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["lod"],
+      "kjv_occurrences": 4
+    },
+    {
+      "headword": "MAACHATHITE",
+      "normalized_headword": "maachathite",
+      "definition": "MAACHATHITE, noun or adjective. A person of the Maachathites; the plural names a people whose border is associated with Geshur and Bashan.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Joshua 12:5; 13:11, 13; 2 Samuel 23:34; 2 Kings 25:23; Jeremiah 40:8",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["maachathite", "maachathites"],
+      "kjv_occurrences": 8
+    },
+    {
+      "headword": "MICHAH",
+      "normalized_headword": "michah",
+      "definition": "A son of Uzziel and the father of Shamir in the Levitical genealogies of Chronicles.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 1 Chronicles 23:20; 24:24-25",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["michah"],
+      "kjv_occurrences": 4
+    }
+  ]
+}

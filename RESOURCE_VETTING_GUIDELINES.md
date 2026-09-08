@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Father's Business Bible Study should be a curated KJV-friendly, Baptist-friendly, dispensational-friendly resource library. Resources may be useful even when not every doctrinal detail is endorsed, but users should not be left confused about the perspective of a resource.
+Father's Business Bible Study should be a curated library governed by its stated KJV, Baptist, and dispensational doctrinal basis. Resources may be useful even when they disagree with that basis, but users should not be left confused about what the resource teaches, where the app disagrees, or why the resource is present.
 
 Every author and resource must be reviewed before being marked suitable for the app. Avoid broad labels like "safe" or "unsafe" for authors in general. Classify each resource based on its relationship to the app's stated doctrinal basis, intended audience, rights status, and usefulness.
 
@@ -35,7 +35,7 @@ Examples:
 
 ### Historical Collection
 
-Use for valuable historical works that may differ on some secondary doctrines or denominational assumptions. These can be useful for history, quotations, background, and mature study, but should not be treated as primary doctrinal guidance.
+Use for valuable historical works that differ from the app's doctrinal basis or denominational position. These can be useful for history, quotations, background, and mature study, but should not be treated as primary doctrinal guidance or as evidence that the disagreement is unimportant.
 
 ### Comparative Study
 
@@ -49,6 +49,17 @@ Examples:
 - opposing or contrasting views used for careful study
 
 These should be clearly labeled and should not appear as default recommendations for new believers.
+
+Every comparative-study note should state:
+
+- what the resource teaches on the disputed point
+- where the app disagrees
+- which KJV passages the reader should examine
+- why the app's reviewed position differs
+- why the resource is included
+- whether it is intended for mature students, historical research, or a specific comparison
+
+Do not use vague language that makes doctrinal disagreement sound inconsequential. A comparison label should help readers test the argument by Scripture, understand the opposing view accurately, and know that inclusion is not endorsement.
 
 Examples:
 

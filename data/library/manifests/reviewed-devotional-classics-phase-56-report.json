@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-devotional-classics-phase-56.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "The Still Hour; or, Communion with God",
+      "file": "the-still-hour-or-communion-with-god-austin-phelps.txt",
+      "bytes": 116486,
+      "words": 20873,
+      "reading_time_minutes": 93
+    },
+    {
+      "title": "Daily Strength for Daily Needs",
+      "file": "daily-strength-for-daily-needs-mary-wilder-tileston.txt",
+      "bytes": 429541,
+      "words": 79080,
+      "reading_time_minutes": 351
+    },
+    {
+      "title": "The Changed Life",
+      "file": "the-changed-life-henry-drummond.txt",
+      "bytes": 60809,
+      "words": 9515,
+      "reading_time_minutes": 42
+    },
+    {
+      "title": "The Greatest Thing in the World",
+      "file": "the-greatest-thing-in-the-world-henry-drummond.txt",
+      "bytes": 57464,
+      "words": 9121,
+      "reading_time_minutes": 41
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Still Hour; or, Communion with God",
+      "author": "Austin Phelps",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-still-hour-or-communion-with-god-austin-phelps.txt"
+    },
+    {
+      "row": 3,
+      "title": "Daily Strength for Daily Needs",
+      "author": "Mary Wilder Tileston",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/daily-strength-for-daily-needs-mary-wilder-tileston.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Changed Life",
+      "author": "Henry Drummond",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-changed-life-henry-drummond.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Greatest Thing in the World",
+      "author": "Henry Drummond",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-greatest-thing-in-the-world-henry-drummond.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

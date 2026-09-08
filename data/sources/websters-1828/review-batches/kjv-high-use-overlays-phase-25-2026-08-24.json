@@ -1,0 +1,51 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-25-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next three high-use KJV lookup candidates remaining after phase 24. The KJV plural masons was reviewed through its exact Webster singular headword mason.",
+  "review_method": "Verified each page heading and entry heading, preserved every displayed sense and the displayed wording, normalized whitespace only, and documented the one plural-to-singular lookup relationship.",
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No neighboring-word or related-word page was accepted.",
+    "The source entry for mason remains singular; the KJV plural relationship is metadata only.",
+    "No definition wording was summarized, modernized, or invented."
+  ],
+  "entries": [
+    {
+      "word": "market",
+      "kjv_occurrences": 7,
+      "lookup_headword": "market",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/market",
+      "source_paragraphs": 7,
+      "exact_page_heading": "Market",
+      "exact_entry_heading": "M'ARKET",
+      "exact_source_match": true
+    },
+    {
+      "word": "masons",
+      "kjv_occurrences": 7,
+      "lookup_headword": "mason",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/mason",
+      "source_paragraphs": 3,
+      "exact_page_heading": "Mason",
+      "exact_entry_heading": "MA'SON",
+      "exact_source_match": true
+    },
+    {
+      "word": "ministration",
+      "kjv_occurrences": 7,
+      "lookup_headword": "ministration",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/ministration",
+      "source_paragraphs": 4,
+      "exact_page_heading": "Ministration",
+      "exact_entry_heading": "MINISTRA'TION",
+      "exact_source_match": true
+    }
+  ]
+}

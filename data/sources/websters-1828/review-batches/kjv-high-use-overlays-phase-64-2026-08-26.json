@@ -1,0 +1,145 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-64-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n101_w3000.jpg",
+      "sha256": "0cd26a0bef91dff728a0a8876a1f8cff7b61cf2cfa7073073341ccaa3fda283d"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n142_w3000.jpg",
+      "sha256": "b15226db959a9f190623da6f5c4d3cb5dd7e264f95d10dd0d23bcb6575544c8b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n221_w3000.jpg",
+      "sha256": "36b366bca14f550d458b2cc5dccea13b773672e7385b8a0b65f87c1f629c7574"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n264_w3000.jpg",
+      "sha256": "97b3545d910a16a7c6539772c534ab4da53f34b0d67412cddd280e294ff3941e"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n933_w3000.jpg",
+      "sha256": "7af875faae36ea1ccdc284d72ee15fecab58d0dce9e738341912efd1cace32b6"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six highest-frequency defensible Webster targets in the KJV cleanup queue. Salmon remains deferred as a biblical name, aloes was deferred because Webster's medicinal aloe entry does not safely define the KJV aromatic substance, and wert was reserved for a separate review of Webster's extensive BE entry.",
+  "review_method": "Compared every retained sense with the original printed page image, corrected clear OCR substitutions and broken words, retained Webster's wording and sense order, abridged historical legal examples that do not affect the definitions, and recorded the inflectional relationship for ABOLISHED.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 1,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 31,
+    "semantically_unsafe_candidates_deferred": 1,
+    "special_review_candidates_reserved": 1
+  },
+  "deferred_candidates": [
+    {
+      "word": "aloes",
+      "kjv_occurrences": 5,
+      "reason": "Webster's parsed common entry primarily describes the aloe plant and medicinal juice, while the KJV passages concern an aromatic substance or aloes-wood. Easton remains available for biblical context, and the common Webster entry should not be promoted automatically."
+    },
+    {
+      "word": "wert",
+      "kjv_occurrences": 6,
+      "reason": "The reviewed alias to BE is linguistically correct, but Webster's extensive multi-form BE entry requires a dedicated transcription and display review rather than a hurried overlay."
+    }
+  ],
+  "promoted_headwords": [
+    "abolish",
+    "alien",
+    "avoid",
+    "aware",
+    "betimes",
+    "wish"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "abolished",
+      "lookup_headword": "abolish",
+      "kjv_occurrences": 5,
+      "relationship": "Past participle mapped to Webster's verb headword; the reviewed definition retains both annulment and destruction senses used in the KJV"
+    }
+  ],
+  "entries": [
+    {
+      "word": "abolished",
+      "lookup_headword": "abolish",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 22176,
+      "source_line_end": 22190,
+      "exact_page_heading": "ABO",
+      "exact_entry_heading": "ABOL'ISH",
+      "exact_source_match": true
+    },
+    {
+      "word": "alien",
+      "lookup_headword": "alien",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 35319,
+      "source_line_end": 35369,
+      "exact_page_heading": "ALI",
+      "exact_entry_heading": "A'LIEN",
+      "exact_source_match": true
+    },
+    {
+      "word": "avoid",
+      "lookup_headword": "avoid",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 60430,
+      "source_line_end": 60472,
+      "exact_page_heading": "AVO",
+      "exact_entry_heading": "AVOID'",
+      "exact_source_match": true
+    },
+    {
+      "word": "aware",
+      "lookup_headword": "aware",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 60769,
+      "source_line_end": 60781,
+      "exact_page_heading": "AWA",
+      "exact_entry_heading": "AWA'RE",
+      "exact_source_match": true
+    },
+    {
+      "word": "betimes",
+      "lookup_headword": "betimes",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 74213,
+      "source_line_end": 74226,
+      "exact_page_heading": "BET",
+      "exact_entry_heading": "BETI'ME, BETI'MES",
+      "exact_source_match": true
+    },
+    {
+      "word": "wish",
+      "lookup_headword": "wish",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 310647,
+      "source_line_end": 310718,
+      "exact_page_heading": "WIS",
+      "exact_entry_heading": "WISH",
+      "exact_source_match": true
+    }
+  ]
+}

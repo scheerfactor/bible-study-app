@@ -1,15 +1,15 @@
 # Core Study Data Audit
 
-Generated: 2026-08-22T16:50:22.131Z
+Generated: 2026-09-02T00:43:02.966Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
-- Library: 2241 verified resources.
+- Library: 2248 verified resources.
 - Public commentary rows: 12857.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 72.
-- Webster 1828 entries: 60901 (51272 normalized headwords; 2473 reviewed overlay).
+- Webster 1828 entries: 61614 (51708 normalized headwords; 3186 reviewed overlay).
 - Strong's lexicon entries: 14296; reviewed KJV word mappings: 729289 rows from 66 batch files across 66 books and 1189 chapters (broad import).
 - Public TSK rows: 6994; staged TSK rows: 50; source verses covered: 2563; chapters covered: 1189; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
@@ -108,4 +108,3 @@ Generated: 2026-08-22T16:50:22.131Z
 - Webster is large enough to be useful, but OCR quality remains the main cleanup need. Favor reviewed entries first in user-facing displays.
 - Continue commentary expansion by thinnest books first rather than by raw count.
 - Public-domain audio should be piloted through the media intake workflow before becoming public.
-

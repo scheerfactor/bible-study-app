@@ -1,0 +1,149 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-45-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {
+      "headword": "bosom",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n293_w2300.jpg",
+      "sha256": "ac15962f5379bd066c4f13e74867ad97f91104fe207be510b1f664942db17c71"
+    },
+    {
+      "headword": "eunuch",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n696_w2300.jpg",
+      "sha256": "022041643fdeb4ab116a9a683c7ee5b332dcb23de0040bd04ee9c74243480671"
+    },
+    {
+      "headword": "sackcloth",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n508_w2300.jpg",
+      "sha256": "f2624fed8cbee4a4b68bd8a8bd819de10cae241eaba58e2184e0882221f85d43"
+    }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Reviewed the highest-use unresolved common KJV forms for which the web transcription returned an exact entry, then located each entry on its exact full-resolution 1828 scan page.",
+  "review_method": "Compared every transcription with its exact printed page, restored omitted multilingual etymologies, corrected citation precision and visible OCR omissions, and retained Webster's historical wording without doctrinal modernization.",
+  "screening_summary": {
+    "requested_headwords": 9,
+    "exact_web_entries_found": 3,
+    "reviewed_overlays_promoted": 3,
+    "missing_kjv_forms_resolved": 4,
+    "kjv_occurrences_resolved": 114
+  },
+  "promoted_headwords": [
+    "sackcloth",
+    "bosom",
+    "eunuch"
+  ],
+  "reviewed_transcription_actions": [
+    {
+      "word": "sackcloth",
+      "actions": [
+        "Confirmed the complete entry on the exact scan page.",
+        "Restored Webster's printed chapter-level citations."
+      ]
+    },
+    {
+      "word": "bosom",
+      "actions": [
+        "Restored the Saxon, Dutch, German, and Chaldee etymology.",
+        "Restored printed punctuation, chapter-level citations, sense numbering, and author attributions."
+      ]
+    },
+    {
+      "word": "eunuch",
+      "actions": [
+        "Restored the Greek headword etymology omitted by the web transcription.",
+        "Confirmed the definition on the exact scan page."
+      ]
+    }
+  ],
+  "held_candidates": [
+    {
+      "word": "messenger",
+      "reason": "No exact web transcription entry was returned; a dedicated original-scan transcription is still required."
+    },
+    {
+      "word": "sepulchre",
+      "reason": "No exact web transcription entry was returned; a dedicated original-scan transcription is still required."
+    },
+    {
+      "word": "pestilence",
+      "reason": "No exact web transcription entry was returned; a dedicated original-scan transcription is still required."
+    },
+    {
+      "word": "circumcision",
+      "reason": "No exact web transcription entry was returned; a dedicated original-scan transcription is still required."
+    },
+    {
+      "word": "carcase",
+      "reason": "No exact web transcription entry was returned; a dedicated original-scan transcription is still required."
+    },
+    {
+      "word": "offence",
+      "reason": "No exact web transcription entry was returned; a dedicated original-scan transcription is still required."
+    },
+    {
+      "word": "sackclothes",
+      "reason": "The rare KJV plural does not resolve through the current conservative inflection rules; no unreviewed alias was added."
+    }
+  ],
+  "verified_lookup_relationships": [],
+  "automatic_lookup_relationships": [
+    {
+      "word": "eunuchs",
+      "lookup_headword": "eunuch",
+      "kjv_occurrences": 20,
+      "relationship": "Automatically recognized regular noun inflection"
+    }
+  ],
+  "entries": [
+    {
+      "word": "sackcloth",
+      "kjv_occurrences": 46,
+      "lookup_headword": "sackcloth",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/sackcloth",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "SACK'CLOTH",
+      "exact_entry_heading": "SACK'CLOTH",
+      "exact_source_match": true
+    },
+    {
+      "word": "bosom",
+      "kjv_occurrences": 41,
+      "lookup_headword": "bosom",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/bosom",
+      "source_line_start": 1,
+      "source_line_end": 20,
+      "exact_page_heading": "BO'SOM",
+      "exact_entry_heading": "BO'SOM",
+      "exact_source_match": true
+    },
+    {
+      "word": "eunuch",
+      "kjv_occurrences": 7,
+      "lookup_headword": "eunuch",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/eunuch",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "EU'NUCH",
+      "exact_entry_heading": "EU'NUCH",
+      "exact_source_match": true
+    }
+  ]
+}

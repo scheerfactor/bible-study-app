@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
-export type PresentationImage = { id: string; title: string; url: string; description: string; rights: string };
+export type PresentationImage = { id: string; title: string; url: string; description: string; rights: string; searchTerms?: string };
 export default function PresentationImageLibrary({ images, selectedId, onSelect, label = 'Images & backgrounds' }: { images: PresentationImage[]; selectedId?: string; onSelect?: (image: PresentationImage) => void; label?: string }) {
   const [open, setOpen] = useState(false);
   return <><button type="button" className="min-h-11 rounded-xl border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => setOpen(true)}>{label}</button>{open && createPortal(<Gallery images={images} selectedId={selectedId} onSelect={onSelect} onClose={() => setOpen(false)} />, document.body)}</>;
@@ -25,7 +25,7 @@ function Gallery({images, selectedId, onSelect, onClose}: { images: Presentation
     document.addEventListener('keydown', keys, true);
     return () => {document.removeEventListener('keydown', keys, true);previous?.focus();};
   }, [onClose]);
-  const filtered = images.filter(image => `${image.title} ${image.description}`.toLowerCase().includes(search.trim().toLowerCase()));
+  const filtered = images.filter(image => `${image.title} ${image.description} ${image.searchTerms || ""}`.toLowerCase().includes(search.trim().toLowerCase()));
   return <div ref={root} role="dialog" aria-modal="true" aria-label="Images and backgrounds" className="fixed inset-0 overflow-y-auto bg-[var(--paper)] p-4 text-[var(--ink)] md:p-8" style={{zIndex:1400}}>
     <div className="mx-auto max-w-6xl space-y-5">
       <header className="flex items-start justify-between gap-4"><div><h1 className="text-3xl font-semibold">Images & backgrounds</h1><p className="mt-2 max-w-2xl text-sm leading-6">Your app’s built-in presentation images are all here. Choose an image to see it clearly{onSelect ? ', then apply it.' : '.'}</p></div><button className="min-h-11 rounded-xl border border-[var(--line)] bg-white px-4 font-semibold" onClick={onClose}>Close images</button></header>

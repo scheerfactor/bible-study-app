@@ -1,0 +1,84 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-54-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n703_w3000.jpg",
+      "sha256": "f80a62894f1be2b805f5d21964f89e72ccdf07b510bb57423aafa26f0bbab3b0"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n301_w3000.jpg",
+      "sha256": "001c90f75fbbc93ee82060616639d6a5d7dd35621044b9feef0a144a1de0cd25"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n489_w3000.jpg",
+      "sha256": "52a7682f12f8ba685bb8099990e729f37ea44cc4a58bffb0528584b8382a5e53"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n490_w3000.jpg",
+      "sha256": "a446dbc41bb28b3c7ca60a95e637d1caee5d49e6ac008922f3b1193a48573a39"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the three highest-frequency remaining Webster headwords in the KJV cleanup queue and grouped their regular plural forms under the same reviewed entries.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts, retained Webster's definition wording and sense order, lightly abridged long etymological notes, expanded part-of-speech abbreviations for readability, and supplied exact KJV wording and verse numbers where the printed entry cited Scripture only by chapter.",
+  "screening_summary": {
+    "reviewed_headwords": 3,
+    "net_new_reviewed_overlays": 3,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 5,
+    "kjv_occurrences_resolved": 163
+  },
+  "promoted_headwords": [
+    "plain",
+    "excellency",
+    "robe"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "plain",
+      "lookup_headword": "plain",
+      "base_entries": 4,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 97896,
+      "source_line_end": 98023,
+      "exact_page_heading": "PLAIN",
+      "exact_entry_heading": "PLAIN",
+      "exact_source_match": true
+    },
+    {
+      "word": "excellency",
+      "lookup_headword": "excellency",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 217678,
+      "source_line_end": 217710,
+      "exact_page_heading": "EXCELLENCY",
+      "exact_entry_heading": "EX'CELLENCY",
+      "exact_source_match": true
+    },
+    {
+      "word": "robe",
+      "lookup_headword": "robe",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 160539,
+      "source_line_end": 160590,
+      "exact_page_heading": "ROBE",
+      "exact_entry_heading": "ROBE",
+      "exact_source_match": true
+    }
+  ]
+}

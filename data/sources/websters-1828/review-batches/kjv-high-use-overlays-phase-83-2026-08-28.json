@@ -1,0 +1,42 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-83-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n445_w3000.jpg", "sha256": "569214f6c01127064d71e06ad454865aca9ff4434437043225ebedc2db846f37" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n446_w3000.jpg", "sha256": "d302c84ca859e0796cd0976b5e2027691e9ce5619e33162748dfa29470d97950" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n448_w3000.jpg", "sha256": "7c644d929cdf76ce34151f96a2db2baad70638962e634efe07c461cf082ba37e" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n449_w3000.jpg", "sha256": "64aa88d469e7506d3d550f7174b3a7aa9c170ee1b4394d7914e58334358a5247" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n467_w3000.jpg", "sha256": "27682394e24dde1b1ef52cc3981f9df4eb67c98ca381d44307333f34443895f3" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected four remaining ordinary KJV words whose standalone Webster entries were absent from app lookup because the source OCR damaged their headwords; prioritized CONDITION because its reviewed noun entry resolves both condition and conditions.",
+  "review_method": "Compared every retained definition with the original printed page images, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, author names, and Scripture book names for display, and relied on normal plural lookup only where the reviewed headword supports it.",
+  "screening_summary": {
+    "reviewed_headwords": 4,
+    "net_new_reviewed_overlays": 4,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 5,
+    "kjv_occurrences_resolved": 5,
+    "total_kjv_occurrences_with_reviewed_lookup": 5
+  },
+  "promoted_headwords": ["conclusion", "concord", "condition", "consultation"],
+  "verified_lookup_relationships": [],
+  "additional_resolved_forms": [
+    { "word": "conclusion", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONCLUSION headword" },
+    { "word": "concord", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONCORD headword" },
+    { "word": "condition", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONDITION headword" },
+    { "word": "conditions", "kjv_occurrences": 1, "resolution": "Plural lookup resolved from the reviewed CONDITION headword" },
+    { "word": "consultation", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONSULTATION headword" }
+  ],
+  "entries": [
+    { "word": "conclusion", "lookup_headword": "conclusion", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 133060, "source_line_end": 133098, "exact_page_heading": "CON", "exact_entry_heading": "CONCLU'SION", "exact_source_match": true },
+    { "word": "concord", "lookup_headword": "concord", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 133236, "source_line_end": 133309, "exact_page_heading": "CON", "exact_entry_heading": "CON'CORD", "exact_source_match": true },
+    { "word": "condition", "lookup_headword": "condition", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 134113, "source_line_end": 134197, "exact_page_heading": "CON", "exact_entry_heading": "CONDI'TION", "exact_source_match": true },
+    { "word": "consultation", "lookup_headword": "consultation", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 140139, "source_line_end": 140159, "exact_page_heading": "CON", "exact_entry_heading": "CONSULTA'TION", "exact_source_match": true }
+  ]
+}

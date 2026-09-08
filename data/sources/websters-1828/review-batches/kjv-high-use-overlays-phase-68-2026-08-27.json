@@ -1,0 +1,145 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-68-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n506_w3000.jpg",
+      "sha256": "9a29c3ebf245789999845dddd15ab22dcbc3a7314aab3b2b6ac277a16ef2e470"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n507_w3000.jpg",
+      "sha256": "23223e3a56e3276e71f8f0a40f8967b56ecde9bf4d93946a2a385c2455d08922"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n523_w3000.jpg",
+      "sha256": "2dc6bd741db9aebd28376e52da0bb521970ec69c62c4b050c456f8dfedf394b5"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n548_w3000.jpg",
+      "sha256": "6e4ca6be6134be117144559e62836d9145dbee5d51a84022bb84146886771a13"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n551_w3000.jpg",
+      "sha256": "8960bef74a77636bcaab9fca527cfa65e8a056041e11fac980a02e8cef1a7a32"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n552_w3000.jpg",
+      "sha256": "14892f51781b634cf6e570a26a64c34eea0ec8c5bc11cacd189aef5e6913e221"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n562_w3000.jpg",
+      "sha256": "08779a1168cb51f232c33d28c82bfee7ee8bc7ac2a4688435c97b12c3ed97f5c"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six defensible five-occurrence Webster cleanup targets after excluding SALMON, ALOES, and CARMELITE because their common dictionary senses could mislead a Bible-context lookup.",
+  "review_method": "Compared every retained sense with the original printed page images, corrected clear OCR substitutions and broken words, retained Webster's wording and sense order, expanded abbreviated parts of speech and Scripture book names for display, and lightly abridged non-definitional literary and legal examples.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 30
+  },
+  "deferred_candidates": [
+    {
+      "word": "salmon",
+      "kjv_occurrences": 6,
+      "reason": "The KJV form names a person; Webster's common-noun entry defines the fish and would mislead a verse-context lookup."
+    },
+    {
+      "word": "aloes",
+      "kjv_occurrences": 5,
+      "reason": "Webster's parsed common entry primarily describes the aloe plant and medicinal juice, while the KJV passages concern an aromatic substance or aloes-wood."
+    },
+    {
+      "word": "carmelite",
+      "kjv_occurrences": 5,
+      "reason": "The KJV gentilic identifies a person from Carmel, while Webster's common entry describes a member of the Carmelite religious order."
+    }
+  ],
+  "promoted_headwords": [
+    "crew",
+    "crimson",
+    "custody",
+    "defraud",
+    "delicate",
+    "deputy"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "crew",
+      "lookup_headword": "crew",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 152928,
+      "source_line_end": 152931,
+      "exact_page_heading": "CRE",
+      "exact_entry_heading": "CREW",
+      "exact_source_match": true
+    },
+    {
+      "word": "crimson",
+      "lookup_headword": "crimson",
+      "base_entries": 4,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 153234,
+      "source_line_end": 153261,
+      "exact_page_heading": "CRI",
+      "exact_entry_heading": "CRIM'SON",
+      "exact_source_match": true
+    },
+    {
+      "word": "custody",
+      "lookup_headword": "custody",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 158428,
+      "source_line_end": 158492,
+      "exact_page_heading": "CUS",
+      "exact_entry_heading": "CUS'TODY",
+      "exact_source_match": true
+    },
+    {
+      "word": "defraud",
+      "lookup_headword": "defraud",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 166769,
+      "source_line_end": 166809,
+      "exact_page_heading": "DEF",
+      "exact_entry_heading": "DEFRAUD'",
+      "exact_source_match": true
+    },
+    {
+      "word": "delicate",
+      "lookup_headword": "delicate",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 167858,
+      "source_line_end": 167913,
+      "exact_page_heading": "DEL",
+      "exact_entry_heading": "DEL'ICATE",
+      "exact_source_match": true
+    },
+    {
+      "word": "deputy",
+      "lookup_headword": "deputy",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 171406,
+      "source_line_end": 171434,
+      "exact_page_heading": "DEP",
+      "exact_entry_heading": "DEP'UTY",
+      "exact_source_match": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "batchId": "public-domain-preaching-helps-phase-29-2026-09-05",
+  "reviewedAt": "2026-09-05",
+  "purpose": "A source-exact Daniel March quotation for Christ-centered presentation use.",
+  "defaults": {
+    "rightsStatus": "Verified Public Domain",
+    "author": "Daniel March",
+    "sourceTitle": "Walks and Homes of Jesus",
+    "sourceUrl": "https://archive.org/details/walkshomesofjesu00marc",
+    "sourceLicenseUrl": "https://archive.org/about/terms.php",
+    "sourceFile": "data/library/verified/walks-and-homes-of-jesus-daniel-march.txt",
+    "rightsBasis": "1866 edition, public domain in the USA. Wording matched to stored OCR; page-scan verification pending.",
+    "reviewNote": "Read in the surrounding Nazareth chapter. Author's historical-devotional statement, not Scripture; use KJV for accompanying Bible text."
+  },
+  "entries": [
+    {
+      "id": "march-nazareth-worldwide-power",
+      "type": "Quote",
+      "title": "From Nazareth to All Nations",
+      "text": "From that humble home in Nazareth there has gone forth a power which has already encompassed the earth, and is destined to sway the sceptre of supreme command over all nations.",
+      "slideText": "From that humble home in Nazareth there has gone forth a power which has already encompassed the earth, and is destined to sway the sceptre of supreme command over all nations.",
+      "sourceLocator": "Nazareth chapter, printed page 47",
+      "bibleReferences": [
+        "Matthew 2:23",
+        "Philippians 2:9-11"
+      ],
+      "topics": [
+        "Jesus Christ",
+        "Nazareth",
+        "kingdom"
+      ],
+      "recommendedUse": "A Christ-centered line for Nazareth, incarnation, kingdom, or worldwide-gospel presentation slides."
+    }
+  ]
+}

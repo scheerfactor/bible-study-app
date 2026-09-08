@@ -1,0 +1,53 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-84-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n428_w3000.jpg", "sha256": "87b5db96f468d0eaacba4c9666b5b68e64d35ac0b0796f8a732739ece5222cda" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n431_w3000.jpg", "sha256": "41f50d479ea6e82152993618ea3b6dd0e1660b837a90a54a7b66a4f3adff55cb" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n432_w3000.jpg", "sha256": "b5014693f65cc48fcb8a9a901e24cc70a307f46d1ba3d5c220ec32da770a60ab" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n451_w3000.jpg", "sha256": "9259aa422beb37061863ba832c48a3b577c002ed3b18664ca7576a40de781c70" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n456_w3000.jpg", "sha256": "cdffce8f7d853171ce671faefaa6c15319c595ba4557af4ef3e6614685eaebec" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n459_w3000.jpg", "sha256": "f90a7b727ac59929e0ae700f451d095fd936b926de711b7c3d55182f5dbd8cdd" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n465_w3000.jpg", "sha256": "b5971efb8eccc62b18ab61233e9740cac105ed3ff623e97a2e878f08c3719693" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n466_w3000.jpg", "sha256": "3d81f4f260d4fce678e607380840a2e4a35170909035e4cacfe0f04ba1a8dd15" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n473_w3000.jpg", "sha256": "21737351eb81e3e91c09bf4a38a9725a6f0f32529e91a47cc4b1100af6198015" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected eight remaining ordinary single-use KJV forms from the nearby C-word inventory whose clear standalone Webster entries were absent from app lookup because source OCR damaged their headwords; excluded names and ambiguous candidates.",
+  "review_method": "Compared every retained definition with the original printed page images, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, author names, and Scripture book names for display, and relied on normal plural lookup only where the reviewed headword supports it.",
+  "screening_summary": {
+    "reviewed_headwords": 8,
+    "net_new_reviewed_overlays": 8,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 8,
+    "kjv_occurrences_resolved": 8,
+    "total_kjv_occurrences_with_reviewed_lookup": 8
+  },
+  "promoted_headwords": ["commodious", "compact", "comparable", "conference", "congratulate", "conqueror", "constraint", "contribution"],
+  "verified_lookup_relationships": [],
+  "additional_resolved_forms": [
+    { "word": "commodious", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed COMMODIOUS headword" },
+    { "word": "compact", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed COMPACT headword" },
+    { "word": "comparable", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed COMPARABLE headword" },
+    { "word": "conference", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONFERENCE headword" },
+    { "word": "congratulate", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONGRATULATE headword" },
+    { "word": "conquerors", "kjv_occurrences": 1, "resolution": "Plural lookup resolved from the reviewed CONQUEROR headword" },
+    { "word": "constraint", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONSTRAINT headword" },
+    { "word": "contribution", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONTRIBUTION headword" }
+  ],
+  "entries": [
+    { "word": "commodious", "lookup_headword": "commodious", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 127608, "source_line_end": 127620, "exact_page_heading": "COM", "exact_entry_heading": "COMMO'DIOUS", "exact_source_match": true },
+    { "word": "compact", "lookup_headword": "compact", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 128538, "source_line_end": 128564, "exact_page_heading": "COM", "exact_entry_heading": "COM'PACT", "exact_source_match": true },
+    { "word": "comparable", "lookup_headword": "comparable", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 128811, "source_line_end": 128827, "exact_page_heading": "COM", "exact_entry_heading": "COM'PARABLE", "exact_source_match": true },
+    { "word": "conference", "lookup_headword": "conference", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 134868, "source_line_end": 134890, "exact_page_heading": "CON", "exact_entry_heading": "CON'FERENCE", "exact_source_match": true },
+    { "word": "congratulate", "lookup_headword": "congratulate", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 136523, "source_line_end": 136548, "exact_page_heading": "CON", "exact_entry_heading": "CONGRAT'ULATE", "exact_source_match": true },
+    { "word": "conquerors", "lookup_headword": "conqueror", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 137482, "source_line_end": 137490, "exact_page_heading": "CON", "exact_entry_heading": "CON'QUEROR", "exact_source_match": true },
+    { "word": "constraint", "lookup_headword": "constraint", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 139732, "source_line_end": 139761, "exact_page_heading": "CON", "exact_entry_heading": "CONSTRAINT", "exact_source_match": true },
+    { "word": "contribution", "lookup_headword": "contribution", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 142214, "source_line_end": 142233, "exact_page_heading": "CON", "exact_entry_heading": "CONTRIBU'TION", "exact_source_match": true }
+  ]
+}

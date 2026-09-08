@@ -14,7 +14,7 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Approved With Permission Pending Review |
 | Copyright status | Permission Granted - scoped |
 | Permission needed | No for links/excerpts/cover graphics; yes for any broader use |
-| Permission/contact info | dhs.northstar@charter.net |
+| Permission/contact info | Permission reply: dhs.northstar@charter.net; current public route verified 2026-08-23: dhs.northstar@gmail.com |
 | Website | https://northstarministries.com/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
@@ -22,16 +22,16 @@ This author/profile is for acquisition review only. No content may be imported, 
 
 ## Biography
 
-Placeholder. Add a short verified biography after source review.
+Northstar Ministries identifies Dr. David H. Sorenson as a third-generation independent Baptist preacher, founder
+and Pastor Emeritus of Northstar Baptist Church in Duluth, Minnesota, and author of the eleven-volume
+`Understanding the Bible` commentary. The ministry describes the commentary as KJV-based, fundamental Baptist,
+dispensational, pre-tribulation, and premillennial.
 
-Include:
+Current official source and catalog: https://northstarministries.com/
 
-- birth and death years, if applicable
-- ministry background
-- major ministry work
-- theological tradition
-- publication history
-- source citations
+The official catalog was rechecked 2026-08-23. It describes `Understanding the Bible` as an eleven-volume,
+8,368-page commentary and offers hardback, USB, and direct-download PDF formats. Those public sales formats verify
+the product route only; they do not grant app hosting, purchaser unlock, search, passage indexing, or resale rights.
 
 ## Doctrinal Notes
 
@@ -52,7 +52,7 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Understanding the Bible | Whole-Bible commentary | TBD | Permission Granted - Scoped | Needs title-level review | Highest priority. Link, cover graphic, and excerpts permitted. Do not host full text without separate confirmation. |
+| Understanding the Bible | Whole-Bible commentary | Current hardback, USB, and PDF formats verified 2026-08-23 | Permission Granted - Scoped | Needs title-level review | Highest priority. Link, cover graphic, and excerpts permitted. A one-title commercial/full-text pilot request is drafted; do not host or index full text without a new written agreement. |
 | The Majesty of the Psalms | Psalms commentary / devotional exposition | TBD | Permission Granted - Scoped | Needs title-level review | Strong Psalms ecosystem candidate. |
 | When He Shall Come | Prophecy / doctrine | TBD | Permission Granted - Scoped | Needs title-level review | Strong Daniel/Revelation/prophecy candidate. |
 | The Faithful Word | KJV / English Bible history | TBD | Permission Granted - Scoped | Needs title-level review | Strong KJV study resource candidate. |
@@ -74,7 +74,7 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | dhs.northstar@charter.net |
+| Known contact | Scoped permission reply: dhs.northstar@charter.net; current public book/order contact: dhs.northstar@gmail.com and (218) 726-0209 |
 | Website | https://northstarministries.com/ |
 | Permission status | Permission Granted - Scoped |
 | Requested use | Links to official resources, excerpts, and cover graphics |
@@ -83,9 +83,12 @@ Review:
 Notes:
 
 - Permission granted for linking to Northstar Ministries resources, use of excerpts, and display of cover graphics.
+- The current official site lists `dhs.northstar@gmail.com`; preserve the original permission email separately as evidence of the 2026-07-04 grant.
 - Do not treat this as permission to host full copyrighted books, audio/video files, transcripts, AI/TTS narration, or paid subscription content unless separately confirmed.
 - Title-level review and theological/resource review are still required before public recommendation.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
+- The send-ready one-title request and commercial-rights checklist are in `SORENSON_HAMMETT_PERMISSION_PACKET_2026-08-24.md`.
+- The `Understanding the Bible` digital-access pilot request was sent 2026-08-23 to `dhs.northstar@gmail.com`. No new rights are granted unless a written reply supplies the exact terms. Review for a reply on 2026-08-31.
 
 ## Review Score
 

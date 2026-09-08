@@ -4,6 +4,10 @@ import path from "node:path";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { readJsonOrCsv } from "./import-utils.mjs";
 
+const reviewedDictionaryAliases = JSON.parse(
+  await readFile("data/generated/kjv-dictionary-reviewed-aliases.json", "utf8"),
+);
+
 const bookOrder = [
   "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth",
   "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job", "Psalms", "Proverbs", "Ecclesiastes", "Solomon's Song", "Isaiah", "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi",
@@ -86,6 +90,7 @@ const dictionaryAliases = {
   doeth: "do",
   doth: "do",
   didst: "do",
+  ...reviewedDictionaryAliases,
 };
 
 function normalizeDictionaryWord(value) {

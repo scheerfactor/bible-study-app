@@ -1,4 +1,5 @@
 import { readTextContent } from "@/lib/server-content-storage";
+import reviewedKjvDictionaryAliases from "../../data/generated/kjv-dictionary-reviewed-aliases.json";
 
 export type WebsterEntry = {
   headword: string;
@@ -63,6 +64,7 @@ const reviewedDictionaryOverlays: WebsterEntry[] = [
 ];
 
 const dictionaryAliases: Record<string, string> = {
+  ...reviewedKjvDictionaryAliases,
   innocency: "innocence",
   sware: "swear",
   sworn: "swear",
@@ -244,7 +246,7 @@ export function cleanDictionaryWord(value: string) {
 export function normalizeDictionaryWord(value: string) {
   const cleaned = cleanDictionaryWord(value);
   if (!cleaned) return "";
-  if (dictionaryAliases[cleaned]) return dictionaryAliases[cleaned];
+  if (dictionaryAliases[cleaned]) return cleanDictionaryWord(dictionaryAliases[cleaned]);
   return cleaned;
 }
 
@@ -257,6 +259,10 @@ function dictionaryLookupCandidates(value: string) {
   if (!cleaned) return [];
 
   const candidates = [normalizeDictionaryWord(cleaned), cleaned];
+  const reviewedAlias = dictionaryAliases[cleaned];
+  if (reviewedAlias && cleanDictionaryWord(reviewedAlias) === cleaned) {
+    return uniqueValues(candidates);
+  }
   const suffixRules: Array<[RegExp, string]> = [
     [/eth$/, ""],
     [/est$/, ""],

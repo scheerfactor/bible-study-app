@@ -1,0 +1,177 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-53-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "WebstersDictionary1828.com entry transcriptions and the Internet Archive 1828 OCR source, checked against the corresponding printed entry text.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the highest-frequency KJV forms whose current Webster candidates still carried high-risk OCR signals, grouping inflected and British-spelling forms under one reviewed headword.",
+  "review_method": "Compared the public transcription with the 1828 Internet Archive OCR, removed only clear scan artifacts, retained Webster's senses, and corrected Scripture references to the cited KJV passages. Ambiguous entries were not promoted.",
+  "screening_summary": {
+    "reviewed_headwords": 8,
+    "net_new_reviewed_overlays": 8,
+    "verified_lookup_relationships_added": 8,
+    "missing_kjv_forms_resolved": 11,
+    "kjv_occurrences_resolved": 163
+  },
+  "promoted_headwords": [
+    "fulfill",
+    "defense",
+    "jubilee",
+    "entreat",
+    "shewbread",
+    "dishonor",
+    "rumor",
+    "hasten"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "fulfil",
+      "lookup_headword": "fulfill",
+      "kjv_occurrences": 24,
+      "relationship": "KJV spelling mapped to Webster's headword"
+    },
+    {
+      "word": "defence",
+      "lookup_headword": "defense",
+      "kjv_occurrences": 22,
+      "relationship": "KJV/British spelling mapped to Webster's headword"
+    },
+    {
+      "word": "defenced",
+      "lookup_headword": "defense",
+      "kjv_occurrences": 9,
+      "relationship": "KJV adjectival form mapped to Webster's headword"
+    },
+    {
+      "word": "jubile",
+      "lookup_headword": "jubilee",
+      "kjv_occurrences": 22,
+      "relationship": "KJV spelling mapped to Webster's headword"
+    },
+    {
+      "word": "intreat",
+      "lookup_headword": "entreat",
+      "kjv_occurrences": 15,
+      "relationship": "KJV spelling mapped to Webster's headword"
+    },
+    {
+      "word": "intreated",
+      "lookup_headword": "entreat",
+      "kjv_occurrences": 18,
+      "relationship": "KJV spelling and past-tense form mapped to Webster's headword"
+    },
+    {
+      "word": "dishonour",
+      "lookup_headword": "dishonor",
+      "kjv_occurrences": 11,
+      "relationship": "KJV/British spelling mapped to Webster's headword"
+    },
+    {
+      "word": "rumour",
+      "lookup_headword": "rumor",
+      "kjv_occurrences": 10,
+      "relationship": "KJV/British spelling mapped to Webster's headword"
+    }
+  ],
+  "entries": [
+    {
+      "word": "fulfill",
+      "lookup_headword": "fulfill",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/fulfill",
+      "source_line_start": 1,
+      "source_line_end": 11,
+      "exact_page_heading": "FULFILL",
+      "exact_entry_heading": "FULFILL'",
+      "exact_source_match": true
+    },
+    {
+      "word": "defense",
+      "lookup_headword": "defense",
+      "base_entries": 2,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/defense",
+      "source_line_start": 1,
+      "source_line_end": 10,
+      "exact_page_heading": "DEFENSE",
+      "exact_entry_heading": "DEFENSE",
+      "exact_source_match": true
+    },
+    {
+      "word": "jubilee",
+      "lookup_headword": "jubilee",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/jubilee",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "JUBILEE",
+      "exact_entry_heading": "JU'BILEE",
+      "exact_source_match": true
+    },
+    {
+      "word": "entreat",
+      "lookup_headword": "entreat",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 210178,
+      "source_line_end": 210232,
+      "exact_page_heading": "ENTREAT",
+      "exact_entry_heading": "ENTRE'AT",
+      "exact_source_match": true
+    },
+    {
+      "word": "shewbread",
+      "lookup_headword": "shewbread",
+      "base_entries": 2,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/show-bread",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "SHOW-BREAD",
+      "exact_entry_heading": "SHOW-BREAD",
+      "exact_source_match": true
+    },
+    {
+      "word": "dishonor",
+      "lookup_headword": "dishonor",
+      "base_entries": 3,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dishonor",
+      "source_line_start": 1,
+      "source_line_end": 9,
+      "exact_page_heading": "DISHONOR",
+      "exact_entry_heading": "DISHONOR",
+      "exact_source_match": true
+    },
+    {
+      "word": "rumor",
+      "lookup_headword": "rumor",
+      "base_entries": 2,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/rumor",
+      "source_line_start": 1,
+      "source_line_end": 10,
+      "exact_page_heading": "RUMOR",
+      "exact_entry_heading": "RU'MOR",
+      "exact_source_match": true
+    },
+    {
+      "word": "hasten",
+      "lookup_headword": "hasten",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "source_line_start": 276603,
+      "source_line_end": 276622,
+      "exact_page_heading": "HASTEN",
+      "exact_entry_heading": "HASTE, HASTEN",
+      "exact_source_match": true
+    }
+  ]
+}

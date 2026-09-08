@@ -56,6 +56,17 @@ export default function SupportPage() {
       </section>
 
       <section>
+        <h2>Support the work</h2>
+        <div>
+          <p>
+            Technical help and financial support are kept separate. Review the founding-beta target, budget,
+            safeguards, and current no-payment interest path before offering financial support.
+          </p>
+          <p><Link href="/support-the-work">See the founding-beta funding plan</Link></p>
+        </div>
+      </section>
+
+      <section>
         <h2>Email fallback</h2>
         <p>
           If direct feedback delivery is unavailable, the form can prepare an email to

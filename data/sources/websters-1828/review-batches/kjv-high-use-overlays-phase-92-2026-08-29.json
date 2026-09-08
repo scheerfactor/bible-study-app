@@ -1,0 +1,39 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-92-2026-08-29",
+  "reviewed_at": "2026-08-29",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n175_w3000.jpg", "sha256": "4f28d9dddccd7fa00707a19e8dcd69b521c55048564734c9436eff6eb0773ec4" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n182_w3000.jpg", "sha256": "9a0fe30846e3f0acc59f16e7af1d8fc30bde8549d9558ffa9746cacb4fe2f933" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n196_w3000.jpg", "sha256": "d4e99ddaa3db4ab1d7883f11fbeb5ae3ece0c078904860cd1bbdb8d9d5046796" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected ordinary KJV study vocabulary from the unresolved N inventory, excluding biblical names and people-group forms already supported by Easton, Nave, or passage-specific rare-term help.",
+  "review_method": "Compared every retained entry with the original printed page image, corrected OCR substitutions and broken words, preserved Webster's wording, expanded abbreviated parts of speech for display, and recorded KJV inflections as lookup relationships rather than inventing headwords Webster did not print.",
+  "screening_summary": {
+    "reviewed_headwords": 2,
+    "net_new_reviewed_overlays": 2,
+    "verified_lookup_relationships_added": 2,
+    "missing_kjv_forms_resolved": 3,
+    "kjv_occurrences_resolved": 3
+  },
+  "deferred_candidates": [
+    { "word": "newborn", "reason": "No standalone NEW-BORN headword was found in the reviewed alphabetical sequence; Webster uses new-born in a quotation under SINCERE, so retain the passage-specific rare-term help instead of mapping only to BORN." }
+  ],
+  "promoted_headwords": ["neigh", "nourisher"],
+  "verified_lookup_relationships": [
+    { "word": "narrower", "lookup_headword": "narrow", "kjv_occurrences": 1, "relationship": "Comparative adjective form mapped to the already-reviewed Webster NARROW adjective entry" },
+    { "word": "neighings", "lookup_headword": "neigh", "kjv_occurrences": 1, "relationship": "Plural verbal noun form mapped to Webster's NEIGH verb and noun senses" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "nourisher", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed NOURISHER headword" }
+  ],
+  "entries": [
+    { "word": "narrower", "lookup_headword": "narrow", "base_entries": 4, "source_url": "https://webstersdictionary1828.com/Dictionary/narrow", "source_line_start": 1, "source_line_end": 11, "exact_page_heading": "NAR", "exact_entry_heading": "NAR'ROW", "exact_source_match": true },
+    { "word": "neighings", "lookup_headword": "neigh", "base_entries": 2, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 58025, "source_line_end": 58035, "exact_page_heading": "NEI", "exact_entry_heading": "NEIGH", "exact_source_match": true },
+    { "word": "nourisher", "lookup_headword": "nourisher", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 62892, "source_line_end": 62894, "exact_page_heading": "NOU", "exact_entry_heading": "NOURISHER", "exact_source_match": true }
+  ]
+}

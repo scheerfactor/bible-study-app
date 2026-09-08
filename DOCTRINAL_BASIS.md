@@ -60,11 +60,11 @@ The Lord's Supper is a memorial ordinance for believers, pointing back to the de
 
 ## Israel And The Church
 
-The app is dispensational-friendly and keeps Israel and the Church distinct in God's program. Resources with covenant theology, replacement theology, or strongly allegorical prophecy interpretation may still have historical or comparative value, but should be labeled clearly and should not be default recommendations for new believers.
+The app's working doctrinal position is dispensational and keeps Israel and the Church distinct in God's program. Resources with covenant theology, replacement theology, or strongly allegorical prophecy interpretation may still have historical or comparative value, but they must be labeled clearly, compared with relevant KJV passages, and kept out of default recommendations for new believers.
 
 ## Future Events
 
-The app is friendly to a literal, premillennial, dispensational understanding of prophecy. Future-events resources must be reviewed carefully because prophecy material can easily become speculative.
+The app's working position is a literal, premillennial, dispensational understanding of prophecy. Future-events resources must be reviewed carefully because prophecy material can easily become speculative.
 
 Recommended prophecy resources should:
 
@@ -125,5 +125,15 @@ Every resource should be compared against this doctrinal basis before being mark
 - Needs Review
 - Do Not Include
 
-Differences on secondary issues do not automatically disqualify a resource. But users should be told what kind of resource they are reading, why it is included, and where caution is needed.
+Doctrinal disagreement is never treated as unimportant merely because a resource is old, respected, or useful. A work that conflicts with this basis may be included for clearly identified historical or comparative study, but it should not become a default doctrinal recommendation.
 
+When such a work is available, readers should be told:
+
+- what the author teaches
+- where that teaching differs from this doctrinal basis
+- which KJV passages should be examined
+- why the app's reviewed position differs
+- why the work remains useful for historical or comparative study
+- which readers and uses the resource is appropriate for
+
+Inclusion preserves access to historical evidence and opposing arguments. It does not imply agreement, make doctrine a matter of indifference, or endorse every conclusion in the resource.

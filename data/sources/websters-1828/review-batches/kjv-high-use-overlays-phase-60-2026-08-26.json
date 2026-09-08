@@ -1,0 +1,141 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-60-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n250_w3000.jpg",
+      "sha256": "6d70134c7b1e06e29fc734bc92f65431c9ad3d96e85abaea639aba8079156af4"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n281_w3000.jpg",
+      "sha256": "08402215f82ae2e96a9b90ca48d419402be2f3f159bb7a90e14c09fac14e44a8"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n296_w3000.jpg",
+      "sha256": "4bb6ad96a4324c87905352f365f792da0de48a06ad973481fd451afa3b518706"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n297_w3000.jpg",
+      "sha256": "87287ad51848786598566598249469dedc7f8e7c7f4e6e7bcf206fb1e1926d1c"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n413_w3000.jpg",
+      "sha256": "3c44e2f9c60ed66ed2d19d85fab6abade6e115d355bf78aac7b2712230148483"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n419_w3000.jpg",
+      "sha256": "bcfc0efd410788b279b8f2bbc8bf183772207d329ec79ca99a39ff9e78abb6eb"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n420_w3000.jpg",
+      "sha256": "47c6ff189b24afd0426cb93970233e26fab29111123e143faf0b7e55bd31d4bc"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six highest-frequency remaining defensible Webster targets in the KJV cleanup queue.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological and literary examples, and recorded the exact KJV inflection relationships for PIPES and PISSETH.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 2,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 36
+  },
+  "promoted_headwords": [
+    "parcel",
+    "perverseness",
+    "pipe",
+    "piss",
+    "rank",
+    "raven"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "pipes",
+      "lookup_headword": "pipe",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword; the complete noun entry is retained for the KJV lookup"
+    },
+    {
+      "word": "pisseth",
+      "lookup_headword": "piss",
+      "kjv_occurrences": 6,
+      "relationship": "Third-person singular KJV verb form mapped to Webster's infinitive headword"
+    }
+  ],
+  "entries": [
+    {
+      "word": "parcel",
+      "lookup_headword": "parcel",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 80829,
+      "source_line_end": 80866,
+      "exact_page_heading": "PAR",
+      "exact_entry_heading": "P'ARCEL",
+      "exact_source_match": true
+    },
+    {
+      "word": "perverseness",
+      "lookup_headword": "perverseness",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 91425,
+      "source_line_end": 91434,
+      "exact_page_heading": "PER",
+      "exact_entry_heading": "PERVERSENESS",
+      "exact_source_match": true
+    },
+    {
+      "word": "pipes",
+      "lookup_headword": "pipe",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 96377,
+      "source_line_end": 96413,
+      "exact_page_heading": "PIP",
+      "exact_entry_heading": "PIPE",
+      "exact_source_match": true
+    },
+    {
+      "word": "pisseth",
+      "lookup_headword": "piss",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 96762,
+      "source_line_end": 96780,
+      "exact_page_heading": "PIS",
+      "exact_entry_heading": "PISS",
+      "exact_source_match": true
+    },
+    {
+      "word": "rank",
+      "lookup_headword": "rank",
+      "base_entries": 4,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 135232,
+      "source_line_end": 135410,
+      "exact_page_heading": "RAN",
+      "exact_entry_heading": "RANK",
+      "exact_source_match": true
+    },
+    {
+      "word": "raven",
+      "lookup_headword": "raven",
+      "base_entries": 4,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 136963,
+      "source_line_end": 137009,
+      "exact_page_heading": "RAV",
+      "exact_entry_heading": "RAVEN",
+      "exact_source_match": true
+    }
+  ]
+}

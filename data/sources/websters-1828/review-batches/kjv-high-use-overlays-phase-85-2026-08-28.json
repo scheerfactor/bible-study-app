@@ -1,0 +1,51 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-85-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n455_w3000.jpg", "sha256": "972a3b920cb2b38876282a908a858f8948b0a58cd502e5e2ce2bcf66a5bb2d07" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n495_w3000.jpg", "sha256": "d25ea0a1d7ed61aa47522d6cea0209581571ba97fb9e786c3fe6b98a1df00d6a" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n497_w3000.jpg", "sha256": "43364236dca18209e31a034c145271ef0a7716b3eb2cce3842a5b0aeae87f3fd" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n513_w3000.jpg", "sha256": "df110a235c1cacfea5cb21df505e45154226b1ae4785ed07616397ec466f8ecd" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n518_w3000.jpg", "sha256": "dcc1bae878a79242be0837b3318f0f344ed6ee6b5e672c4c7e5635f4dd660f62" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n520_w3000.jpg", "sha256": "cad42eca8405073c9b4b0eb664bad8397bf109aa2d7ac3ac6fb6afe4d3f29161" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n551_w3000.jpg", "sha256": "8960bef74a77636bcaab9fca527cfa65e8a056041e11fac980a02e8cef1a7a32" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected eight remaining ordinary single-use KJV forms from the nearby C- and D-word inventory whose clear standalone Webster entries were absent from app lookup because source OCR damaged their headwords; excluded names and ambiguous candidates.",
+  "review_method": "Compared every retained definition with the original printed page images, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, and expanded abbreviated parts of speech, language names, author names, and Scripture book names for display.",
+  "screening_summary": {
+    "reviewed_headwords": 8,
+    "net_new_reviewed_overlays": 8,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 8,
+    "kjv_occurrences_resolved": 8,
+    "total_kjv_occurrences_with_reviewed_lookup": 8
+  },
+  "promoted_headwords": ["congealed", "courageously", "courteous", "cruelly", "cumbrance", "curdled", "curiously", "delectable"],
+  "verified_lookup_relationships": [],
+  "additional_resolved_forms": [
+    { "word": "congealed", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CONGEALED headword" },
+    { "word": "courageously", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed COURAGEOUSLY headword" },
+    { "word": "courteous", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed COURTEOUS headword" },
+    { "word": "cruelly", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CRUELLY headword" },
+    { "word": "cumbrance", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CUMBRANCE headword" },
+    { "word": "curdled", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CURDLED headword" },
+    { "word": "curiously", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed CURIOUSLY headword" },
+    { "word": "delectable", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed DELECTABLE headword" }
+  ],
+  "entries": [
+    { "word": "congealed", "lookup_headword": "congealed", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 136236, "source_line_end": 136238, "exact_page_heading": "CON", "exact_entry_heading": "CONGE'ALED", "exact_source_match": true },
+    { "word": "courageously", "lookup_headword": "courageously", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 149479, "source_line_end": 149480, "exact_page_heading": "COU", "exact_entry_heading": "COURA'GEOUSLY", "exact_source_match": true },
+    { "word": "courteous", "lookup_headword": "courteous", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 149851, "source_line_end": 149859, "exact_page_heading": "COU", "exact_entry_heading": "COURT'EOUS", "exact_source_match": true },
+    { "word": "cruelly", "lookup_headword": "cruelly", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 155149, "source_line_end": 155160, "exact_page_heading": "CRU", "exact_entry_heading": "CRU'ELLY", "exact_source_match": true },
+    { "word": "cumbrance", "lookup_headword": "cumbrance", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 156929, "source_line_end": 156933, "exact_page_heading": "CUM", "exact_entry_heading": "CUM'BRANCE", "exact_source_match": true },
+    { "word": "curdled", "lookup_headword": "curdled", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 157427, "source_line_end": 157427, "exact_page_heading": "CUR", "exact_entry_heading": "CURD'LED", "exact_source_match": true },
+    { "word": "curiously", "lookup_headword": "curiously", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 157674, "source_line_end": 157685, "exact_page_heading": "CUR", "exact_entry_heading": "CU'RIOUSLY", "exact_source_match": true },
+    { "word": "delectable", "lookup_headword": "delectable", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 167568, "source_line_end": 167575, "exact_page_heading": "DEL", "exact_entry_heading": "DELEC'TABLE", "exact_source_match": true }
+  ]
+}

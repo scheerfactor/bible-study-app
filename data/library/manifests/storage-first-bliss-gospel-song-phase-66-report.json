@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-bliss-gospel-song-phase-66.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Memoirs of Philip P. Bliss",
+      "file": "memoirs-of-philip-p-bliss-d-w-whittle.txt",
+      "bytes": 901268,
+      "words": 142583,
+      "reading_time_minutes": 634
+    },
+    {
+      "title": "Golden Songs for Sunday Schools and the Home Circle",
+      "file": "golden-songs-for-sunday-schools-and-the-home-circle-philip-p-bliss.txt",
+      "bytes": 233888,
+      "words": 36268,
+      "reading_time_minutes": 161
+    },
+    {
+      "title": "Sunshine for Sunday-schools",
+      "file": "sunshine-for-sunday-schools-philip-p-bliss.txt",
+      "bytes": 232437,
+      "words": 36989,
+      "reading_time_minutes": 164
+    },
+    {
+      "title": "Gospel Hymns and Sacred Songs",
+      "file": "gospel-hymns-and-sacred-songs-philip-p-bliss-and-ira-d-sankey.txt",
+      "bytes": 489372,
+      "words": 79377,
+      "reading_time_minutes": 353
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Memoirs of Philip P. Bliss",
+      "author": "D. W. Whittle",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/memoirs-of-philip-p-bliss-d-w-whittle.txt"
+    },
+    {
+      "row": 3,
+      "title": "Golden Songs for Sunday Schools and the Home Circle",
+      "author": "Philip P. Bliss",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/golden-songs-for-sunday-schools-and-the-home-circle-philip-p-bliss.txt"
+    },
+    {
+      "row": 4,
+      "title": "Sunshine for Sunday-schools",
+      "author": "Philip P. Bliss",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sunshine-for-sunday-schools-philip-p-bliss.txt"
+    },
+    {
+      "row": 5,
+      "title": "Gospel Hymns and Sacred Songs",
+      "author": "Philip P. Bliss and Ira D. Sankey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/gospel-hymns-and-sacred-songs-philip-p-bliss-and-ira-d-sankey.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

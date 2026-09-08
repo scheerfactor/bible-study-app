@@ -12,7 +12,10 @@ export type LibraryManifestEntry = {
   content_storage_status?: string;
   file_format?: string;
   publisher?: string;
+  publication_date?: string;
   edition_note?: string;
+  source_accessed_at?: string;
+  rights_evidence_url?: string;
   free_access_notice?: string;
   rights_notice?: string;
   attribution_statement?: string;
@@ -27,6 +30,7 @@ export type LibraryManifestEntry = {
   recommended_use?: string;
   resource_labels?: string[];
   resource_warnings?: string[];
+  bible_books?: string[];
   word_count?: number;
   file_size_bytes?: number;
   checksum_sha256?: string;
@@ -56,6 +60,58 @@ export type LibraryManifestEntry = {
 function projectGutenbergCoverUrl(sourceUrl: string) {
   const match = sourceUrl.match(/^https:\/\/www\.gutenberg\.org\/ebooks\/(\d+)/);
   return match ? `https://www.gutenberg.org/cache/epub/${match[1]}/pg${match[1]}.cover.medium.jpg` : null;
+}
+
+function originalLibraryCoverUrl(entry: LibraryManifestEntry) {
+  if (entry.title === "The Gospel of the Kingdom" && entry.author === "C. H. Spurgeon") {
+    return "/media/library-covers/spurgeon-gospel-kingdom-v1.png";
+  }
+  if (entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray") {
+    return "/media/library-covers/andrew-murray-holiest-of-all-v1.png";
+  }
+  if (entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt")) {
+    return "/media/library-covers/h-a-ironside-notes-nehemiah-v1.png";
+  }
+  if (entry.file_path.endsWith("notes-on-the-book-of-esther-h-a-ironside.txt")) {
+    return "/media/library-covers/h-a-ironside-notes-esther-v1.png";
+  }
+  if (entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt")) {
+    return "/media/library-covers/h-a-ironside-notes-philippians-v1.png";
+  }
+  if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-colossians-ironside-h-a-henry-allan-1876-1951.txt")) {
+    return "/media/library-covers/h-a-ironside-colossians-v1.png";
+  }
+  if (entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt")) {
+    return "/media/library-covers/h-a-ironside-romans-v1.png";
+  }
+  if (entry.file_path.endsWith("the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt")) {
+    return "/media/library-covers/george-w-clark-gospel-of-john-v1.png";
+  }
+  if (entry.file_path.endsWith("commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt")) {
+    return "/media/library-covers/joseph-addison-alexander-mark-v1.png";
+  }
+  if (entry.file_path.endsWith("the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt")) {
+    return "/media/library-covers/arno-gaebelein-acts-exposition-v1.png";
+  }
+  if (entry.file_path.endsWith("the-gospel-of-matthew-an-exposition-gaebelein-arno-clemens-1861-1945-2.txt")) {
+    return "/media/library-covers/arno-gaebelein-matthew-exposition-v1.png";
+  }
+  if (entry.file_path.endsWith("the-revelation-an-analysis-and-exposition-of-the-last-book-of-the-bible-arno-c-gaebelein.txt")) {
+    return "/media/library-covers/arno-gaebelein-revelation-exposition-v1.png";
+  }
+  if (entry.file_path.endsWith("the-prophet-daniel-a-key-to-the-visions-and-prophecies-of-the-book-of-daniel-gaebelein-arno-clemens-1861-1945-2.txt")) {
+    return "/media/library-covers/arno-gaebelein-prophet-daniel-v1.png";
+  }
+  if (entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt")) {
+    return "/media/library-covers/arno-gaebelein-prophet-joel-v1.png";
+  }
+  if (entry.file_path.endsWith("the-book-of-genesis-arno-c-gaebelein.txt")) {
+    return "/media/library-covers/arno-gaebelein-book-genesis-v1.png";
+  }
+  if (entry.file_path.endsWith("the-prophet-ezekiel-an-analytical-exposition-gaebelein-arno-clemens.txt")) {
+    return "/media/library-covers/arno-gaebelein-prophet-ezekiel-v1.png";
+  }
+  return null;
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -178,26 +234,103 @@ function recommendedUse(entry: LibraryManifestEntry, category: string) {
 }
 
 export function curateLibraryEntry(entry: LibraryManifestEntry) {
-  const category = normalizeLibraryCategory(entry.category);
+  const isAndrewMurrayHoliest = entry.title.toLowerCase().startsWith("the holiest of all") && entry.author === "Andrew Murray";
+  const isIronsideNehemiah = entry.file_path.endsWith("notes-on-the-book-of-nehemiah-ironside-h-a-henry-allan-1876-1951.txt");
+  const isIronsideEsther = entry.file_path.endsWith("notes-on-the-book-of-esther-h-a-ironside.txt");
+  const isIronsidePhilippians = entry.file_path.endsWith("notes-on-the-epistle-to-the-philippians-h-a-ironside.txt");
+  const isIronsideColossians = entry.file_path.endsWith("lectures-on-the-epistle-to-the-colossians-ironside-h-a-henry-allan-1876-1951.txt");
+  const isIronsideRomans = entry.file_path.endsWith("lectures-on-the-epistle-to-the-romans-h-a-ironside.txt");
+  const isGeorgeClarkJohn = entry.file_path.endsWith("the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt");
+  const isJosephAlexanderMark = entry.file_path.endsWith("commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt");
+  const isGaebeleinActs = entry.file_path.endsWith("the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt");
+  const isGaebeleinMatthew = entry.file_path.endsWith("the-gospel-of-matthew-an-exposition-gaebelein-arno-clemens-1861-1945-2.txt");
+  const isGaebeleinRevelation = entry.file_path.endsWith("the-revelation-an-analysis-and-exposition-of-the-last-book-of-the-bible-arno-c-gaebelein.txt");
+  const isGaebeleinDaniel = entry.file_path.endsWith("the-prophet-daniel-a-key-to-the-visions-and-prophecies-of-the-book-of-daniel-gaebelein-arno-clemens-1861-1945-2.txt");
+  const isGaebeleinJoel = entry.file_path.endsWith("the-prophet-joel-an-exposition-gaebelein-arno-clemens-1861-1945.txt");
+  const isGaebeleinGenesis = entry.file_path.endsWith("the-book-of-genesis-arno-c-gaebelein.txt");
+  const isGaebeleinEzekiel = entry.file_path.endsWith("the-prophet-ezekiel-an-analytical-exposition-gaebelein-arno-clemens.txt");
+  const category = isAndrewMurrayHoliest || isIronsideNehemiah || isIronsideEsther || isIronsidePhilippians || isIronsideColossians || isIronsideRomans || isGeorgeClarkJohn || isJosephAlexanderMark || isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel || isGaebeleinGenesis || isGaebeleinEzekiel ? "Commentaries" : normalizeLibraryCategory(entry.category);
   const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
+  const originalCover = originalLibraryCoverUrl(entry);
 
   return {
-    title: entry.title,
-    author: entry.author,
-    year: entry.year,
+    title: isAndrewMurrayHoliest ? "The Holiest of All" : isIronsideNehemiah ? "Notes on the Book of Nehemiah" : isIronsideEsther ? "Notes on the Book of Esther" : isGeorgeClarkJohn ? "The Gospel of John: A Popular Commentary" : isJosephAlexanderMark ? "Commentary on the Gospel of Mark" : isGaebeleinActs ? "The Acts of the Apostles: An Exposition" : isGaebeleinMatthew ? "The Gospel of Matthew: An Exposition" : isGaebeleinRevelation ? "The Revelation: An Analysis and Exposition" : isGaebeleinDaniel ? "The Prophet Daniel: A Key to the Visions and Prophecies" : isGaebeleinJoel ? "The Prophet Joel: An Exposition" : isGaebeleinGenesis ? "The Book of Genesis" : isGaebeleinEzekiel ? "The Prophet Ezekiel: An Analytical Exposition" : entry.title,
+    author: isIronsideNehemiah || isIronsideEsther || isIronsideColossians || isIronsideRomans ? "H. A. Ironside" : isGeorgeClarkJohn ? "George W. Clark" : isJosephAlexanderMark ? "Joseph Addison Alexander" : isGaebeleinActs || isGaebeleinMatthew || isGaebeleinRevelation || isGaebeleinDaniel || isGaebeleinJoel || isGaebeleinGenesis || isGaebeleinEzekiel ? "Arno C. Gaebelein" : entry.author,
+    year: isIronsideNehemiah ? 1914 : isIronsideEsther ? 1905 : isIronsideRomans ? 1928 : isGeorgeClarkJohn ? 1896 : isGaebeleinDaniel ? 1911 : isGaebeleinJoel ? 1909 : isGaebeleinGenesis ? 1912 : isGaebeleinEzekiel ? 1918 : entry.year,
     category,
     collection,
     original_category: entry.category,
-    description: entry.notes,
+    description: isAndrewMurrayHoliest
+      ? "Complete public-domain devotional exposition connected chapter-by-chapter to Hebrews 1-13. Keep the KJV text primary and compare doctrinal conclusions carefully with Scripture."
+      : isIronsideNehemiah
+        ? "Complete public-domain exposition connected chapter-by-chapter to Nehemiah 1-13, with practical studies of prayer, rebuilding, opposition, Bible reading, and faithful service."
+      : isIronsideEsther
+        ? "Complete public-domain exposition connected chapter-by-chapter to Esther 1-10, with practical studies of providence, courage, intercession, spiritual conflict, reversal, deliverance, faith, and peace."
+      : isIronsidePhilippians
+        ? "Complete public-domain exposition connected chapter-by-chapter to Philippians 1-4, centered on Christ as the believer's life, example, object, and strength."
+      : isIronsideColossians
+        ? "Complete public-domain exposition connected chapter-by-chapter to Colossians 1-4, emphasizing Christ's preeminence and sufficiency, the believer's life in Him, prayer, and practical holiness."
+      : isIronsideRomans
+        ? "Complete public-domain exposition connected chapter-by-chapter to Romans 1-16, tracing God's righteousness in the gospel, justification by faith, life in Christ, Israel, and practical Christian service."
+      : isGeorgeClarkJohn
+        ? "Complete public-domain verse-by-verse commentary connected to John 1-21, prepared for pastors, families, and Sunday schools with historical notes, doctrinal observations, and practical teaching suggestions."
+      : isJosephAlexanderMark
+        ? "Complete public-domain exposition connected chapter-by-chapter to Mark 1-16, with close attention to grammar, Gospel harmony, historical setting, Christ's works, and the unfolding narrative."
+      : isGaebeleinActs
+        ? "Complete public-domain exposition connected chapter-by-chapter to Acts 1-28, tracing the risen Christ's continuing work, Pentecost, the Holy Spirit, church growth, gospel witness, missions, and Paul's journeys."
+      : isGaebeleinMatthew
+        ? "Complete public-domain exposition connected chapter-by-chapter to Matthew 1-28, emphasizing Jesus Christ as King, the kingdom message, prophecy, parables, discipleship, the cross, and resurrection."
+      : isGaebeleinRevelation
+        ? "Complete public-domain exposition connected chapter-by-chapter to Revelation 1-22, emphasizing the revelation of Jesus Christ, the seven churches, worship, judgment, victory, the coming kingdom, and new creation."
+      : isGaebeleinDaniel
+        ? "Complete public-domain exposition connected chapter-by-chapter to Daniel 1-12, emphasizing faithfulness, prayer, prophetic visions, the times of the Gentiles, Israel, and God's sovereign kingdom."
+      : isGaebeleinJoel
+        ? "Complete public-domain exposition connected chapter-by-chapter to Joel 1-3, emphasizing the Word of the Lord, repentance, prayer, the day of the Lord, restoration, the outpouring of the Spirit, and the coming kingdom."
+      : isGaebeleinGenesis
+        ? "Complete public-domain exposition connected chapter-by-chapter to Genesis 1-50, tracing creation, the fall, promise, covenant, the patriarchs, providence, faith, and hope."
+      : isGaebeleinEzekiel
+        ? "Complete public-domain exposition connected chapter-by-chapter to Ezekiel 1-48, tracing the prophet's call, watchman ministry, judgment, responsibility, restoration, renewed life, the future temple, the river, and the Lord's presence."
+        : entry.notes,
     public_domain_status: entry.public_domain_status,
     rights_status: entry.rights_status ?? entry.commercial_use_status,
     commercial_use_status: entry.commercial_use_status,
     doctrinal_review_status: entry.doctrinal_review_status ?? "beta reviewed",
     perspective_notes: perspectiveNotes(entry, category),
-    recommended_use: recommendedUse(entry, category),
+    recommended_use: isAndrewMurrayHoliest
+      ? "Read after each KJV chapter of Hebrews for devotional exposition on Christ, the better covenant, faith, holiness, and drawing near to God."
+      : isIronsideNehemiah
+        ? "Read after each KJV chapter of Nehemiah for exposition, leadership applications, sermon preparation, and ministry encouragement."
+      : isIronsideEsther
+        ? "Read after each KJV chapter of Esther for practical exposition of providence, courage, intercession, spiritual conflict, reversal, deliverance, faith, and peace."
+      : isIronsidePhilippians
+        ? "Read after each KJV chapter of Philippians for practical exposition on joy, humility, prayer, contentment, gospel service, and the mind of Christ."
+      : isIronsideColossians
+        ? "Read after each KJV chapter of Colossians for exposition on the preeminence of Christ, freedom from human philosophy and legalism, the new man, prayer, and gracious witness."
+      : isIronsideRomans
+        ? "Read after each KJV chapter of Romans for gospel-centered exposition of justification by faith, union with Christ, life in the Spirit, God's dealings with Israel, and practical Christian living."
+      : isGeorgeClarkJohn
+        ? "Read after each KJV chapter of John for verse-by-verse exposition, lesson preparation, geography, chronology, and practical applications concerning the person and work of Christ."
+      : isJosephAlexanderMark
+        ? "Read after each KJV chapter of Mark for detailed exposition, Gospel comparison, historical background, teaching preparation, and study of Christ's active ministry."
+      : isGaebeleinActs
+        ? "Read after each KJV chapter of Acts for dispensational exposition, teaching preparation, church history, missionary application, and study of the risen Christ's continuing work."
+      : isGaebeleinMatthew
+        ? "Read after each KJV chapter of Matthew for dispensational exposition, Gospel study, prophecy, kingdom teaching, discipleship, and sermon preparation."
+      : isGaebeleinRevelation
+        ? "Read after each KJV chapter of Revelation for dispensational exposition, prophecy study, worship, watchfulness, Christ's victory, the coming kingdom, and new creation."
+      : isGaebeleinDaniel
+        ? "Read after each KJV chapter of Daniel for dispensational exposition, character study, prayer, prophecy, the times of the Gentiles, Israel, and God's sovereign kingdom."
+      : isGaebeleinJoel
+        ? "Read after each KJV chapter of Joel for dispensational exposition, prophecy, repentance, prayer, the day of the Lord, restoration, the outpouring of the Spirit, and the coming kingdom."
+      : isGaebeleinGenesis
+        ? "Read after each KJV chapter of Genesis for dispensational exposition of creation, the fall, promise, covenant, the patriarchs, providence, faith, and hope."
+      : isGaebeleinEzekiel
+        ? "Read after each KJV chapter of Ezekiel for dispensational exposition of the prophet's call, watchman ministry, judgment, individual responsibility, restoration, renewed life, the future temple, the river, and the Lord's presence."
+        : recommendedUse(entry, category),
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
+    bible_books: isAndrewMurrayHoliest ? ["Hebrews"] : isIronsideNehemiah ? ["Nehemiah"] : isIronsideEsther ? ["Esther"] : isIronsidePhilippians ? ["Philippians"] : isIronsideColossians ? ["Colossians"] : isIronsideRomans ? ["Romans"] : isGeorgeClarkJohn ? ["John"] : isJosephAlexanderMark ? ["Mark"] : isGaebeleinActs ? ["Acts"] : isGaebeleinMatthew ? ["Matthew"] : isGaebeleinRevelation ? ["Revelation"] : isGaebeleinDaniel ? ["Daniel"] : isGaebeleinJoel ? ["Joel"] : isGaebeleinGenesis ? ["Genesis"] : isGaebeleinEzekiel ? ["Ezekiel"] : entry.bible_books ?? [],
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
@@ -205,7 +338,10 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     content_storage_status: entry.content_storage_status ?? null,
     file_format: entry.file_format ?? null,
     publisher: entry.publisher ?? null,
+    publication_date: entry.publication_date ?? null,
     edition_note: entry.edition_note ?? null,
+    source_accessed_at: entry.source_accessed_at ?? null,
+    rights_evidence_url: entry.rights_evidence_url ?? null,
     free_access_notice: entry.free_access_notice ?? null,
     rights_notice: entry.rights_notice ?? null,
     attribution_statement: entry.attribution_statement ?? null,
@@ -213,16 +349,186 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     word_count: entry.word_count ?? null,
     file_size_bytes: entry.file_size_bytes ?? null,
     checksum_sha256: entry.checksum_sha256 ?? null,
-    cover_image_url: entry.cover_image_url ?? projectGutenbergCoverUrl(entry.source_url),
-    cover_source_url: entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
-    cover_rights_status: entry.cover_rights_status ?? (entry.source_url.includes("gutenberg.org") ? "Project Gutenberg hosted cover; use under source license/trademark terms." : "Generated fallback cover"),
+    cover_image_url: originalCover ?? entry.cover_image_url ?? projectGutenbergCoverUrl(entry.source_url),
+    cover_source_url: isIronsideNehemiah
+      ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-nehemiah"
+      : isIronsideEsther
+        ? "#original-generated-cover-prompt-2026-09-07-h-a-ironside-notes-esther"
+      : isIronsidePhilippians
+        ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-notes-philippians"
+      : isIronsideColossians
+        ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-colossians"
+      : isIronsideRomans
+        ? "#original-generated-cover-prompt-2026-09-06-h-a-ironside-romans"
+      : isGeorgeClarkJohn
+        ? "#original-generated-cover-prompt-2026-09-06-george-w-clark-gospel-john"
+      : isJosephAlexanderMark
+        ? "#original-generated-cover-prompt-2026-09-06-joseph-addison-alexander-mark"
+      : isGaebeleinActs
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-acts"
+      : isGaebeleinMatthew
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-matthew"
+      : isGaebeleinRevelation
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-revelation"
+      : isGaebeleinDaniel
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-daniel"
+      : isGaebeleinJoel
+        ? "#original-generated-cover-prompt-2026-09-06-arno-gaebelein-joel"
+      : isGaebeleinGenesis
+        ? "#original-generated-cover-prompt-2026-09-07-arno-gaebelein-genesis"
+      : isGaebeleinEzekiel
+        ? "#original-generated-cover-prompt-2026-09-07-arno-gaebelein-ezekiel"
+      : entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
+    cover_rights_status: originalCover
+      ? "Original generated asset"
+      : entry.cover_rights_status ?? (entry.source_url.includes("gutenberg.org") ? "Project Gutenberg hosted cover; use under source license/trademark terms." : "Generated fallback cover"),
     reading_time_minutes: entry.reading_time_minutes ?? (entry.word_count ? Math.max(1, Math.round(entry.word_count / 225)) : null),
     ocr_quality_score: entry.ocr_quality_score ?? null,
     ocr_quality_label: entry.ocr_quality_label ?? null,
     front_matter_cleanup_needed: entry.front_matter_cleanup_needed ?? null,
     safe_for_quotation: entry.safe_for_quotation ?? null,
     ocr_cleanup_notes: entry.ocr_cleanup_notes ?? null,
-    cover_metadata: entry.cover_metadata ?? null,
+    cover_metadata: isIronsideNehemiah
+      ? {
+          type: "original-generated",
+          title: "Notes on the Book of Nehemiah",
+          author: "H. A. Ironside",
+          category: "Commentaries",
+          collection: "Ironside Collection",
+          badge: "Ironside Collection",
+          palette: { from: "#071a2d", to: "#b38a43" },
+        }
+      : isIronsideEsther
+        ? {
+            type: "original-generated",
+            title: "Notes on the Book of Esther",
+            author: "H. A. Ironside",
+            category: "Commentaries",
+            collection: "H. A. Ironside Collection",
+            badge: "H. A. Ironside Collection",
+            palette: { from: "#24102f", to: "#b58a42" },
+          }
+      : isIronsidePhilippians
+        ? {
+            type: "original-generated",
+            title: "Notes on the Epistle to the Philippians",
+            author: "H. A. Ironside",
+            category: "Commentaries",
+            collection: "H. A. Ironside Collection",
+            badge: "H. A. Ironside Collection",
+            palette: { from: "#061b2d", to: "#b98532" },
+          }
+        : isIronsideColossians
+          ? {
+              type: "original-generated",
+              title: "Lectures on the Epistle to the Colossians",
+              author: "H. A. Ironside",
+              category: "Commentaries",
+              collection: "H. A. Ironside Collection",
+              badge: "H. A. Ironside Collection",
+              palette: { from: "#102b1d", to: "#b58a42" },
+            }
+        : isIronsideRomans
+          ? {
+              type: "original-generated",
+              title: "Lectures on the Epistle to the Romans",
+              author: "H. A. Ironside",
+              category: "Commentaries",
+              collection: "H. A. Ironside Collection",
+              badge: "H. A. Ironside Collection",
+              palette: { from: "#3c0e0b", to: "#b58a42" },
+            }
+        : isGeorgeClarkJohn
+          ? {
+              type: "original-generated",
+              title: "The Gospel of John: A Popular Commentary",
+              author: "George W. Clark",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#071b2d", to: "#b58a42" },
+            }
+        : isJosephAlexanderMark
+          ? {
+              type: "original-generated",
+              title: "Commentary on the Gospel of Mark",
+              author: "Joseph Addison Alexander",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#17351f", to: "#b58a42" },
+            }
+        : isGaebeleinActs
+          ? {
+              type: "original-generated",
+              title: "The Acts of the Apostles: An Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#07182b", to: "#b58a42" },
+            }
+        : isGaebeleinMatthew
+          ? {
+              type: "original-generated",
+              title: "The Gospel of Matthew: An Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#2a1038", to: "#b58a42" },
+            }
+        : isGaebeleinRevelation
+          ? {
+              type: "original-generated",
+              title: "The Revelation: An Analysis and Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#4a100a", to: "#b58a42" },
+            }
+        : isGaebeleinDaniel
+          ? {
+              type: "original-generated",
+              title: "The Prophet Daniel: A Key to the Visions and Prophecies",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#071a33", to: "#b58a42" },
+            }
+        : isGaebeleinJoel
+          ? {
+              type: "original-generated",
+              title: "The Prophet Joel: An Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#17351f", to: "#b58a42" },
+            }
+        : isGaebeleinGenesis
+          ? {
+              type: "original-generated",
+              title: "The Book of Genesis",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#101c2d", to: "#9a6b35" },
+            }
+        : isGaebeleinEzekiel
+          ? {
+              type: "original-generated",
+              title: "The Prophet Ezekiel: An Analytical Exposition",
+              author: "Arno C. Gaebelein",
+              category: "Commentaries",
+              collection: "Classic Commentary Library",
+              badge: "Classic Commentary Library",
+              palette: { from: "#101820", to: "#9b713c" },
+            }
+        : entry.cover_metadata ?? null,
     added_at: entry.import_status,
   };
 }

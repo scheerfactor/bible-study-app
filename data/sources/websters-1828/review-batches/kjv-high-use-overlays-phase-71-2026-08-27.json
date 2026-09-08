@@ -1,0 +1,178 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-71-2026-08-27",
+  "reviewed_at": "2026-08-27",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n194_w3000.jpg",
+      "sha256": "3e8bd7e61287010956fd25a0e96ec55e603449ec5e22a91fc36c5ce38287ced8"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n477_w3000.jpg",
+      "sha256": "fd86b465df716880d85c269859c9ec1421996f26cffae291845131d7c89f05eb"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n527_w3000.jpg",
+      "sha256": "86dced4b5cfa22f2e26ba1f23f595c06b1e269065aa81cee56f1d059924cb5d1"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n931_w3000.jpg",
+      "sha256": "2e66253a292332205b100fa6a764d0c193600887ccebfbace02e2b529e681805"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n419_w3000.jpg",
+      "sha256": "a61a85ef1ea3ed9d16d8c05bb6aeb22c0c605ba0f49dcbce2a9babc800133d2"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n491_w3000.jpg",
+      "sha256": "a224d8971d1f1aba52f4d16236601e95fc0d4df4e99a515bf5eca43e373208f0"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n149_w3000.jpg",
+      "sha256": "a3b126b2d5bc1a10ab3ff61b79f67a6f82dae00c46857e23739b8d5f957af039"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n189_w3000.jpg",
+      "sha256": "ff301f6482ac1d309e16b6d79b2939f3d98da10cef809e3be19bd4b21579f200"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n906_w3000.jpg",
+      "sha256": "e07c55d61eef4c2e0b2942291d1bcdf08065ae0c3ac3a1e3345247067820307f"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n292_w3000.jpg",
+      "sha256": "8b93fececca736e545f1275e168c218573137dae110f5b3f4ad9de4d6e3335cd"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n582_w3000.jpg",
+      "sha256": "ee7654af532aa976bb5c2198809248b2908ce5a774f720fe8ebab6e034da523c"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n432_w3000.jpg",
+      "sha256": "a3e3b6de596f577821fa3d204307c0709758391b8c9953e49f954222e5e573ba"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n148_w3000.jpg",
+      "sha256": "6f84372dc06d04194f63e34f0b6a061234740a4a861e10b0dfb390a193fc3c0"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n406_w3000.jpg",
+      "sha256": "fe595365086d1e65684100cc3e510effaabba0ff5e41d5155544f535827bd305"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n10_w3000.jpg",
+      "sha256": "2d6d0e778e7f712a20b36d7c5417119d781ca76a177ae00c76ec24dcb6b390d4"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n93_w3000.jpg",
+      "sha256": "71fd6e69ce94885353be3950fc1fa28b337e0e349b9f4fbb99098aa80b13d323"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n146_w3000.jpg",
+      "sha256": "b5c6e7a3b98930a86d7d7fc132c2db2d8a89ce520a933cf67d272a11ed06301c"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/page/n298_w3000.jpg",
+      "sha256": "2de5a07845f4252a91b7a0d3e518c8a8f52f89fc2a685c9f987fcc93b520b7d1"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected a larger batch of high- and medium-frequency ordinary KJV study terms after separating personal names, place names, and unsupported OCR candidates from the priority inventory. Existing reviewed WATCHMAN and HERDMAN help was checked before adding anything new.",
+  "review_method": "Compared every retained definition or passage-relevant sense with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, and Scripture book names for display, and recorded spelling, compound, and plural relationships rather than inventing KJV-spelling headwords Webster did not print. Long articles retain complete passage-relevant senses and are not represented as exhaustive transcriptions of every printed sense.",
+  "screening_summary": {
+    "reviewed_headwords": 18,
+    "net_new_reviewed_overlays": 17,
+    "verified_lookup_relationships_added": 17,
+    "missing_kjv_forms_resolved": 30,
+    "kjv_occurrences_resolved": 289
+  },
+  "deferred_candidates": [
+    {
+      "word": "herdmen",
+      "reason": "Already mapped to the reviewed HERDMAN rare-term entry; no duplicate Webster overlay or alias was added."
+    }
+  ],
+  "promoted_headwords": [
+    "almond",
+    "alms",
+    "archer",
+    "armor-bearer",
+    "bracelet",
+    "color",
+    "convocation",
+    "counselor",
+    "javelin",
+    "magician",
+    "miter",
+    "pigeon",
+    "rabbi",
+    "recorder",
+    "scepter",
+    "shoe",
+    "wine-press"
+  ],
+  "verified_lookup_relationships": [
+    { "word": "armourbearer", "lookup_headword": "armor-bearer", "kjv_occurrences": 18, "relationship": "Unhyphenated British KJV spelling mapped to Webster's printed compound ARMOR-BEARER" },
+    { "word": "sceptre", "lookup_headword": "scepter", "kjv_occurrences": 15, "relationship": "KJV spelling mapped to Webster's printed spelling SCEPTER" },
+    { "word": "sceptres", "lookup_headword": "scepter", "kjv_occurrences": 1, "relationship": "KJV plural spelling mapped to Webster's singular SCEPTER" },
+    { "word": "winepress", "lookup_headword": "wine-press", "kjv_occurrences": 15, "relationship": "Unhyphenated KJV compound mapped to Webster's printed WINE-PRESS" },
+    { "word": "winepresses", "lookup_headword": "wine-press", "kjv_occurrences": 3, "relationship": "KJV plural compound mapped to Webster's singular WINE-PRESS" },
+    { "word": "colour", "lookup_headword": "color", "kjv_occurrences": 14, "relationship": "KJV spelling mapped to Webster's printed spelling COLOR" },
+    { "word": "colours", "lookup_headword": "color", "kjv_occurrences": 12, "relationship": "KJV plural spelling mapped to Webster's singular COLOR" },
+    { "word": "coloured", "lookup_headword": "color", "kjv_occurrences": 1, "relationship": "KJV inflected spelling mapped to Webster's COLOR" },
+    { "word": "counsellor", "lookup_headword": "counselor", "kjv_occurrences": 14, "relationship": "KJV spelling mapped to Webster's printed spelling COUNSELOR" },
+    { "word": "counsellors", "lookup_headword": "counselor", "kjv_occurrences": 21, "relationship": "KJV plural spelling mapped to Webster's singular COUNSELOR" },
+    { "word": "archers", "lookup_headword": "archer", "kjv_occurrences": 12, "relationship": "Plural noun form mapped to Webster's singular ARCHER" },
+    { "word": "watchmen", "lookup_headword": "watchman", "kjv_occurrences": 12, "relationship": "Irregular plural mapped to the existing reviewed WATCHMAN overlay" },
+    { "word": "pigeons", "lookup_headword": "pigeon", "kjv_occurrences": 10, "relationship": "Plural noun form mapped to Webster's singular PIGEON" },
+    { "word": "almonds", "lookup_headword": "almond", "kjv_occurrences": 8, "relationship": "Plural noun form mapped to Webster's singular ALMOND" },
+    { "word": "magicians", "lookup_headword": "magician", "kjv_occurrences": 15, "relationship": "Plural noun form mapped to Webster's singular MAGICIAN" },
+    { "word": "mitre", "lookup_headword": "miter", "kjv_occurrences": 13, "relationship": "KJV spelling mapped to Webster's printed spelling MITER" },
+    { "word": "bracelets", "lookup_headword": "bracelet", "kjv_occurrences": 10, "relationship": "Plural noun form mapped to Webster's singular BRACELET" }
+  ],
+  "additional_resolved_forms": [
+    { "word": "shoes", "kjv_occurrences": 21, "resolution": "Regular plural resolved from the reviewed SHOE headword" },
+    { "word": "convocation", "kjv_occurrences": 16, "resolution": "Direct lookup resolved from the reviewed CONVOCATION headword" },
+    { "word": "alms", "kjv_occurrences": 13, "resolution": "Direct lookup resolved from the reviewed ALMS headword" },
+    { "word": "shoe", "kjv_occurrences": 10, "resolution": "Direct lookup resolved from the reviewed SHOE headword" },
+    { "word": "recorder", "kjv_occurrences": 9, "resolution": "Direct lookup resolved from the reviewed RECORDER headword" },
+    { "word": "rabbi", "kjv_occurrences": 8, "resolution": "Direct lookup resolved from the reviewed RABBI headword" },
+    { "word": "javelin", "kjv_occurrences": 7, "resolution": "Direct lookup resolved from the reviewed JAVELIN headword" },
+    { "word": "convocations", "kjv_occurrences": 3, "resolution": "Regular plural resolved from the reviewed CONVOCATION headword" },
+    { "word": "almond", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed ALMOND headword" },
+    { "word": "archer", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed ARCHER headword" },
+    { "word": "pigeon", "kjv_occurrences": 2, "resolution": "Direct lookup resolved from the reviewed PIGEON headword" },
+    { "word": "bracelet", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed BRACELET headword" },
+    { "word": "magician", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed MAGICIAN headword" }
+  ],
+  "entries": [
+    { "word": "armourbearer", "lookup_headword": "armor-bearer", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 51992, "source_line_end": 51993, "exact_page_heading": "ARM", "exact_entry_heading": "ARMOR-BEARER", "exact_source_match": true },
+    { "word": "convocation", "lookup_headword": "convocation", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 143573, "source_line_end": 143579, "exact_page_heading": "CON", "exact_entry_heading": "CONVOCA'TION", "exact_source_match": true },
+    { "word": "sceptre", "lookup_headword": "scepter", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 173034, "source_line_end": 173054, "exact_page_heading": "SCE", "exact_entry_heading": "SCEP'TER", "exact_source_match": true },
+    { "word": "winepress", "lookup_headword": "wine-press", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 309942, "source_line_end": 309944, "exact_page_heading": "WIN", "exact_entry_heading": "WI'NE-PRESS", "exact_source_match": true },
+    { "word": "colour", "lookup_headword": "color", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 124865, "source_line_end": 124897, "exact_page_heading": "COL", "exact_entry_heading": "COL'OR", "exact_source_match": true },
+    { "word": "counsellor", "lookup_headword": "counselor", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 148113, "source_line_end": 148136, "exact_page_heading": "COU", "exact_entry_heading": "COUN'SELOR", "exact_source_match": true },
+    { "word": "alms", "lookup_headword": "alms", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 37425, "source_line_end": 37441, "exact_page_heading": "ALM", "exact_entry_heading": "ALMS", "exact_source_match": true },
+    { "word": "archers", "lookup_headword": "archer", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 50332, "source_line_end": 50337, "exact_page_heading": "ARC", "exact_entry_heading": "ARCHER", "exact_source_match": true },
+    { "word": "watchmen", "lookup_headword": "watchman", "base_entries": 1, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 301722, "source_line_end": 301723, "exact_page_heading": "WAT", "exact_entry_heading": "WATCH'MAN", "exact_source_match": true },
+    { "word": "pigeons", "lookup_headword": "pigeon", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 95096, "source_line_end": 95107, "exact_page_heading": "PIG", "exact_entry_heading": "PIG'EON", "exact_source_match": true },
+    { "word": "shoe", "lookup_headword": "shoe", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 191593, "source_line_end": 191608, "exact_page_heading": "SHO", "exact_entry_heading": "SHOE", "exact_source_match": true },
+    { "word": "recorder", "lookup_headword": "recorder", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 141417, "source_line_end": 141432, "exact_page_heading": "REC", "exact_entry_heading": "RECORD'ER", "exact_source_match": true },
+    { "word": "almonds", "lookup_headword": "almond", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 37330, "source_line_end": 37343, "exact_page_heading": "ALM", "exact_entry_heading": "AL'MOND", "exact_source_match": true },
+    { "word": "rabbi", "lookup_headword": "rabbi", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 132809, "source_line_end": 132819, "exact_page_heading": "RAB", "exact_entry_heading": "RAB'BI", "exact_source_match": true },
+    { "word": "javelin", "lookup_headword": "javelin", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 952, "source_line_end": 960, "exact_page_heading": "JAW", "exact_entry_heading": "JAV'ELIN", "exact_source_match": true },
+    { "word": "magicians", "lookup_headword": "magician", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 28456, "source_line_end": 28459, "exact_page_heading": "MAG", "exact_entry_heading": "MAGI'CIAN", "exact_source_match": true },
+    { "word": "mitre", "lookup_headword": "miter", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 46222, "source_line_end": 46237, "exact_page_heading": "MIT", "exact_entry_heading": "MI'TER", "exact_source_match": true },
+    { "word": "bracelets", "lookup_headword": "bracelet", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 85578, "source_line_end": 85589, "exact_page_heading": "BRA", "exact_entry_heading": "BRACELET", "exact_source_match": true }
+  ]
+}

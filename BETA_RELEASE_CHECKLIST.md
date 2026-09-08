@@ -4,7 +4,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 
 ## Release Snapshot
 
-- Production URL: https://bible-study-app-eight.vercel.app/
+- Production URL: https://study.fathersbusinessmasteryresources.com/
+- Technical Vercel fallback: https://bible-study-app-eight.vercel.app/
 - Current focus: Bible-centered daily growth, KJV reading, passage study, prayer, journal, memory, library, commentary, teaching prep, and feedback.
 - Storage mode: signed-out users save locally; signed-in Supabase sync is available when the project, schema, RLS, and environment variables are configured.
 - Content posture: public-domain or reviewed resources only; staged, permission-needed, and unclear resources stay labeled and hidden from normal public use.
@@ -100,7 +101,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - `npm run audit:public-access` while the production build is running
 - `npm run audit:release` while the production build is running
 - `npm run audit:study-apis` while the production build is running
-- `npm run audit:release:live` after deployment and before sharing the beta URL
+- `npm run audit:release:live` after deployment and before sharing the beta URL; it must confirm the current
+  header logo asset, founding-beta launch target, and supporter-interest path as well as authentication and storage
 - `npm run audit:study-apis:live` after deployment and before sharing the beta URL
 - `npm run lint`
 - `npm run build`

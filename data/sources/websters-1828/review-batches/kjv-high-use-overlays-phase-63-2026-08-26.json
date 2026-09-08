@@ -1,0 +1,145 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-63-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n765_w3000.jpg",
+      "sha256": "e9e7cd02da95fde6e11837bf5e53464df484595c4a932d2ce8ca39213285a5b2"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n774_w3000.jpg",
+      "sha256": "013d0ec824f6e07c29e58ad3630807144bf275596a30792e7d1286df7eaed624"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n815_w3000.jpg",
+      "sha256": "0ee524a123fef2ea46726534fb107fe9342d6a5420e907646cc75b21995c52bb"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n845_w3000.jpg",
+      "sha256": "1a66c7bfed5dd96178ca1f12b65a4e6717f7330f0ddf414808fec0b51e2d156d"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n863_w3000.jpg",
+      "sha256": "84f609b7d83baaf300fa228efcca248d74cce16c54bb631bcb54b2ec8f509b6a"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n910_w3000.jpg",
+      "sha256": "10d21a0993af577d306244dd25fcbe88761620813ba4efac8dbf9466f9ae3320"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next six highest-frequency defensible Webster targets in the KJV cleanup queue. Salmon was explicitly deferred because its KJV occurrences are a person or place name while Webster's parsed entry defines the fish.",
+  "review_method": "Compared every definition with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's wording and sense order, lightly abridged literary examples, separated UNLEARNED's participial and adjective uses, and recorded exact plural relationships for THUNDERINGS and TWINS.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 2,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 36,
+    "semantically_unsafe_candidates_deferred": 1
+  },
+  "deferred_candidates": [
+    {
+      "word": "salmon",
+      "kjv_occurrences": 6,
+      "reason": "The KJV form names a person or place; Webster's common-noun entry defines the fish and would mislead a verse-context lookup. Easton and Nave remain available for the biblical-name context."
+    }
+  ],
+  "promoted_headwords": [
+    "thundering",
+    "tolerable",
+    "twin",
+    "unlearned",
+    "urged",
+    "wayfaring"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "thunderings",
+      "lookup_headword": "thundering",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular verbal-noun headword; both the participial and noun entries are retained"
+    },
+    {
+      "word": "twins",
+      "lookup_headword": "twin",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword; the complete noun, adjective, and verb entries are retained"
+    }
+  ],
+  "entries": [
+    {
+      "word": "thunderings",
+      "lookup_headword": "thundering",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 253512,
+      "source_line_end": 253519,
+      "exact_page_heading": "THU",
+      "exact_entry_heading": "THUN'DERING",
+      "exact_source_match": true
+    },
+    {
+      "word": "tolerable",
+      "lookup_headword": "tolerable",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 256729,
+      "source_line_end": 256739,
+      "exact_page_heading": "TOL",
+      "exact_entry_heading": "TOLERABLE",
+      "exact_source_match": true
+    },
+    {
+      "word": "twins",
+      "lookup_headword": "twin",
+      "base_entries": 4,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 270560,
+      "source_line_end": 270593,
+      "exact_page_heading": "TWI",
+      "exact_entry_heading": "TWIN",
+      "exact_source_match": true
+    },
+    {
+      "word": "unlearned",
+      "lookup_headword": "unlearned",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 280844,
+      "source_line_end": 280854,
+      "exact_page_heading": "UNL",
+      "exact_entry_heading": "UNLEARN'ED",
+      "exact_source_match": true
+    },
+    {
+      "word": "urged",
+      "lookup_headword": "urged",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 287529,
+      "source_line_end": 287530,
+      "exact_page_heading": "URI",
+      "exact_entry_heading": "URG'ED",
+      "exact_source_match": true
+    },
+    {
+      "word": "wayfaring",
+      "lookup_headword": "wayfaring",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 302799,
+      "source_line_end": 302800,
+      "exact_page_heading": "WAY",
+      "exact_entry_heading": "WA'YFARING",
+      "exact_source_match": true
+    }
+  ]
+}

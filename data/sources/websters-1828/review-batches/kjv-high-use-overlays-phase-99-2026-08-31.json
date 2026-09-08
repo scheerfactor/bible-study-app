@@ -1,0 +1,87 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-99-2026-08-31",
+  "reviewed_at": "2026-08-31",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain; only its historical definitions and examples are transcribed, not website editorial material.",
+  "transcription_source": "Internet Archive volume 2 OCR and printed page scans, cross-checked against online Webster transcriptions; original OCR is retained unchanged.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n557.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n564.jpg" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n571.jpg" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/seducing" },
+    { "url": "https://webstersdictionary1828.com/Dictionary/senate" },
+    { "url": "https://www.1828.mshaffer.com/d/word/servitor" },
+    { "url": "https://webstersdictionary1828.com/Home?word=shade" }
+  ],
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the first four exact KJV-used S headwords in alphabetical order from the unreviewed high/medium OCR queue. This is a targeted OCR queue, not a claim that all Webster entries have been reviewed.",
+  "review_method": "Compared SEDUCING with an intact duplicate OCR occurrence and its online transcription. Visually checked SENATE, SERVITOR, and both SHADE entries against printed page scans, using the scans to resolve errors and omissions in the online transcriptions. Corrected scan breaks, OCR substitutions, sense numbering, and the SERVITOR accent; retained historical examples and author citations. Expanded parts of speech and normalized whitespace and punctuation for display. Source spans are one-based lines in the hash-verified OCR file.",
+  "review_scope": "Definitions and examples, with readable etymology retained for SERVITOR and the SHADE verb. Damaged multilingual etymology for SENATE and the SHADE noun is omitted rather than guessed. All three SENATE senses, four SERVITOR senses, nine SHADE noun senses, and seven SHADE verb senses are retained. Original OCR remains available; this is not a complete etymological review.",
+  "screening_summary": {
+    "reviewed_headwords": 4,
+    "net_new_reviewed_overlays": 4,
+    "base_high_severity_ocr_entries_replaced": 5,
+    "kjv_occurrences_resolved": 4,
+    "exact_kjv_s_headwords_in_high_medium_queue_before": 24,
+    "exact_kjv_s_headwords_in_high_medium_queue_after": 20
+  },
+  "promoted_headwords": ["seducing", "senate", "servitor", "shade"],
+  "entries": [
+    {
+      "word": "seducing",
+      "kjv_occurrences": 1,
+      "sample_references": ["1 Timothy 4:1"],
+      "lookup_headword": "seducing",
+      "base_entries": 3,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 179825,
+      "source_line_end": 179827,
+      "exact_entry_heading": "SEDU'CING",
+      "exact_source_match": true,
+      "review_note": "Used the intact duplicate occurrence. Excluded SEDUCTION and SEDUCTIVE text merged into other base rows; preserved all three original rows."
+    },
+    {
+      "word": "senate",
+      "kjv_occurrences": 1,
+      "sample_references": ["Acts 5:21"],
+      "lookup_headword": "senate",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 182948,
+      "source_line_end": 182987,
+      "exact_entry_heading": "SEN'ATE",
+      "exact_source_match": true,
+      "review_note": "Printed scan n557 confirms a city or state, invested with a share, and house of a legislature, where online transcriptions have missing or altered words. Preserved U. States and all three senses; omitted damaged etymology."
+    },
+    {
+      "word": "servitor",
+      "kjv_occurrences": 1,
+      "sample_references": ["2 Kings 4:43"],
+      "lookup_headword": "servitor",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 185512,
+      "source_line_end": 185529,
+      "exact_entry_heading": "SERV'ITOR",
+      "exact_source_match": true,
+      "review_note": "Printed scan n564 confirms Oxford, his maintenance, sizer, the accent, and four numbered senses. Retained Hooker, Davies, Shak., and Encyc. citations and the readable etymology."
+    },
+    {
+      "word": "shade",
+      "kjv_occurrences": 1,
+      "sample_references": ["Psalms 121:5"],
+      "lookup_headword": "shade",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 187619,
+      "source_line_end": 187732,
+      "exact_entry_heading": "SHADE",
+      "exact_source_match": true,
+      "review_note": "Combined both parts of speech without dropping senses. Printed scan n571 confirms crop the sylvan scenes and our own house, the sentence about the earth's shade, citations, and numbering. Preserved the verb etymology; omitted the damaged noun etymology. Excluded SHADED and SHADOW."
+    }
+  ]
+}

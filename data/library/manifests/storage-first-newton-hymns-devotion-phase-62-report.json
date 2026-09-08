@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-newton-hymns-devotion-phase-62.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Olney Hymns: In Three Books",
+      "file": "olney-hymns-in-three-books-john-newton-and-william-cowper.txt",
+      "bytes": 481842,
+      "words": 78270,
+      "reading_time_minutes": 348
+    },
+    {
+      "title": "Cardiphonia: Or, The Utterance of the Heart",
+      "file": "cardiphonia-or-the-utterance-of-the-heart-john-newton.txt",
+      "bytes": 1068464,
+      "words": 168911,
+      "reading_time_minutes": 751
+    },
+    {
+      "title": "The Works of the Rev. John Newton: Complete in Two Volumes in One",
+      "file": "the-works-of-the-rev-john-newton-complete-in-two-volumes-in-one-john-newton.txt",
+      "bytes": 5756371,
+      "words": 905840,
+      "reading_time_minutes": 4026
+    },
+    {
+      "title": "The Life of the Rev. John Newton",
+      "file": "the-life-of-the-rev-john-newton-john-newton-and-richard-cecil.txt",
+      "bytes": 387834,
+      "words": 61154,
+      "reading_time_minutes": 272
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Olney Hymns: In Three Books",
+      "author": "John Newton and William Cowper",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/olney-hymns-in-three-books-john-newton-and-william-cowper.txt"
+    },
+    {
+      "row": 3,
+      "title": "Cardiphonia: Or, The Utterance of the Heart",
+      "author": "John Newton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/cardiphonia-or-the-utterance-of-the-heart-john-newton.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Works of the Rev. John Newton: Complete in Two Volumes in One",
+      "author": "John Newton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-newton-complete-in-two-volumes-in-one-john-newton.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Life of the Rev. John Newton",
+      "author": "John Newton and Richard Cecil",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-the-rev-john-newton-john-newton-and-richard-cecil.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

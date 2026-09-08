@@ -1,0 +1,34 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-poetry-commentary-sermons-phase-53.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 20,
+  "total_attempted": 5,
+  "imported": 5,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    { "title": "The Poetical Works of Frances Ridley Havergal", "file": "the-poetical-works-of-frances-ridley-havergal-frances-ridley-havergal-edited-by-frances-anna-shaw-and-maria-v-.txt", "bytes": 938177, "words": 146927, "reading_time_minutes": 653 },
+    { "title": "The Sermon Bible: Genesis to 2 Samuel", "file": "the-sermon-bible-genesis-to-2-samuel-various-authors-and-preachers.txt", "bytes": 1292925, "words": 225016, "reading_time_minutes": 1000 },
+    { "title": "The Sermon Bible: Isaiah to Malachi", "file": "the-sermon-bible-isaiah-to-malachi-various-authors-and-preachers.txt", "bytes": 1274749, "words": 223348, "reading_time_minutes": 993 },
+    { "title": "The Sermon Bible: Matthew 1-21", "file": "the-sermon-bible-matthew-1-21-various-authors-and-preachers.txt", "bytes": 1051809, "words": 186969, "reading_time_minutes": 831 },
+    { "title": "The Sermon Bible: 1 Peter to Revelation", "file": "the-sermon-bible-1-peter-to-revelation-various-authors-and-preachers.txt", "bytes": 998208, "words": 177835, "reading_time_minutes": 790 }
+  ],
+  "rows": [
+    { "row": 2, "title": "The Poetical Works of Frances Ridley Havergal", "author": "Frances Ridley Havergal; edited by Frances Anna Shaw and Maria V. G. Havergal", "status": "imported", "issues": [], "file_path": "data/library/verified/the-poetical-works-of-frances-ridley-havergal-frances-ridley-havergal-edited-by-frances-anna-shaw-and-maria-v-.txt" },
+    { "row": 3, "title": "The Sermon Bible: Genesis to 2 Samuel", "author": "Various authors and preachers", "status": "imported", "issues": [], "file_path": "data/library/verified/the-sermon-bible-genesis-to-2-samuel-various-authors-and-preachers.txt" },
+    { "row": 4, "title": "The Sermon Bible: Isaiah to Malachi", "author": "Various authors and preachers", "status": "imported", "issues": [], "file_path": "data/library/verified/the-sermon-bible-isaiah-to-malachi-various-authors-and-preachers.txt" },
+    { "row": 5, "title": "The Sermon Bible: Matthew 1-21", "author": "Various authors and preachers", "status": "imported", "issues": [], "file_path": "data/library/verified/the-sermon-bible-matthew-1-21-various-authors-and-preachers.txt" },
+    { "row": 6, "title": "The Sermon Bible: 1 Peter to Revelation", "author": "Various authors and preachers", "status": "imported", "issues": [], "file_path": "data/library/verified/the-sermon-bible-1-peter-to-revelation-various-authors-and-preachers.txt" }
+  ],
+  "review_queues": { "Needs Review": [], "Permission Needed": [], "Personal Use Only": [], "Do Not Import": [] }
+}

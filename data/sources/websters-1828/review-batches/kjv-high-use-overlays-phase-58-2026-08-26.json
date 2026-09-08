@@ -1,0 +1,127 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-58-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n31_w3000.jpg",
+      "sha256": "41b74ce044e82b0160771cc9d0976c8273a8d81b988591d339aa652c603efcd9"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n85_w3000.jpg",
+      "sha256": "60f316ea709a226f22cde4660e2608631e2808ef37f2f6b315cd9721b8be0b30"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n101_w3000.jpg",
+      "sha256": "043b78c4eba5396ee3341bb13e14c48eded97d8e4494b5e794cba40e4294f68a"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n102_w3000.jpg",
+      "sha256": "dde7a6b5fc52db52d08d3bc82a47f8cec7fbd1d4dbb751740591d067e6a09638"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/page/n103_w3000.jpg",
+      "sha256": "33c47787bc346c733da5624773b10ced7daad33376fb4ec397b215c2587b51da"
+    }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next five six-occurrence Webster targets in the KJV cleanup queue and corrected the six-occurrence JARED lookup defect by protecting the exact Bible proper name from generic suffix stemming.",
+  "review_method": "Compared every sense with the original printed page image, removed clear scan artifacts and cross-entry bleed, retained Webster's definition wording and sense order, lightly abridged etymological and literary examples, and supplied exact KJV wording for retained Scripture examples.",
+  "screening_summary": {
+    "reviewed_headwords": 5,
+    "net_new_reviewed_overlays": 5,
+    "verified_lookup_relationships_added": 3,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 36
+  },
+  "promoted_headwords": [
+    "laden",
+    "lowly",
+    "mandrake",
+    "mankind",
+    "manner"
+  ],
+  "verified_lookup_relationships": [
+    {
+      "word": "jared",
+      "lookup_headword": "jared",
+      "kjv_occurrences": 6,
+      "relationship": "Exact Bible proper name protected from the generic -ed suffix rule; the existing reviewed Easton entry supplies the definition"
+    },
+    {
+      "word": "mandrakes",
+      "lookup_headword": "mandrake",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword"
+    },
+    {
+      "word": "manners",
+      "lookup_headword": "manner",
+      "kjv_occurrences": 6,
+      "relationship": "Plural noun form mapped to Webster's singular headword"
+    }
+  ],
+  "entries": [
+    {
+      "word": "laden",
+      "lookup_headword": "laden",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 7902,
+      "source_line_end": 7906,
+      "exact_page_heading": "LAD",
+      "exact_entry_heading": "LA'DEN",
+      "exact_source_match": true
+    },
+    {
+      "word": "lowly",
+      "lookup_headword": "lowly",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 25833,
+      "source_line_end": 25868,
+      "exact_page_heading": "LOW",
+      "exact_entry_heading": "LOWLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "mandrakes",
+      "lookup_headword": "mandrake",
+      "base_entries": 1,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 31176,
+      "source_line_end": 31184,
+      "exact_page_heading": "MAN",
+      "exact_entry_heading": "MAN'DRAKE",
+      "exact_source_match": true
+    },
+    {
+      "word": "mankind",
+      "lookup_headword": "mankind",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 31680,
+      "source_line_end": 31694,
+      "exact_page_heading": "MAN",
+      "exact_entry_heading": "MANKIND",
+      "exact_source_match": true
+    },
+    {
+      "word": "manners",
+      "lookup_headword": "manner",
+      "base_entries": 2,
+      "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "source_line_start": 31785,
+      "source_line_end": 31862,
+      "exact_page_heading": "MAN",
+      "exact_entry_heading": "MAN'NER",
+      "exact_source_match": true
+    }
+  ]
+}

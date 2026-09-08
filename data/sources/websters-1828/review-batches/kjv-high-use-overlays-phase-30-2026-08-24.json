@@ -1,0 +1,222 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-30-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_source": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+  "cross_check_sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected twelve useful words from the six-occurrence KJV queue. Bonnets was reviewed through the exact singular Webster headword Bonnet; the other accepted words use exact KJV headwords.",
+  "review_method": "Verified exact page and entry headings, compared every web transcription with the Internet Archive volume 1 OCR, retained the displayed dictionary senses, removed neighboring entries, and corrected only discrepancies supported by the scan or cited KJV wording.",
+  "reviewed_transcription_actions": [
+    {
+      "word": "blackness",
+      "actions": [
+        "Removed the neighboring Black-pudding, Black-rod, and Black-row grains entries that the web page merged into the requested entry.",
+        "Reduced the retained source span from four paragraphs to the single Blackness paragraph."
+      ]
+    },
+    {
+      "word": "blossom",
+      "actions": [
+        "Corrected the flourish and prosper verb sense number from 1 to 2 as printed in the scan."
+      ]
+    },
+    {
+      "word": "bolster",
+      "actions": [
+        "Restored punctuation around a compress and the bolster/pillow list.",
+        "Corrected the transitive verb sense numbers from 1 and 2 to 2 and 3 as printed in the scan.",
+        "Restored the scan's Unusual usage label for the final verb sense."
+      ]
+    },
+    {
+      "word": "brotherly",
+      "actions": [
+        "Restored the period inside the cited Shakespeare quotation."
+      ]
+    },
+    {
+      "word": "chance",
+      "actions": [
+        "Corrected bing to bring from the scan.",
+        "Restored the period after take their chance.",
+        "Corrected You ladyship to Your ladyship from the scan.",
+        "Restored the apostrophe in bird's nest from the scan and Deuteronomy 22:6 KJV."
+      ]
+    }
+  ],
+  "unavailable_exact_headword_candidates": [
+    {
+      "word": "arabians",
+      "lookup_headword": "arabian",
+      "kjv_occurrences": 6,
+      "reason": "Neither capitalization variant exposed an exact usable Webster entry page."
+    },
+    {
+      "word": "byword",
+      "lookup_headword": "byword",
+      "kjv_occurrences": 6,
+      "reason": "Neither capitalization variant exposed an exact usable Webster entry page."
+    },
+    {
+      "word": "cankerworm",
+      "lookup_headword": "cankerworm",
+      "kjv_occurrences": 6,
+      "reason": "Neither capitalization variant exposed an exact usable Webster entry page."
+    }
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No unsupported modernization or summary was introduced.",
+    "The merged neighboring Blackness entries were excluded rather than published under the wrong headword.",
+    "Unavailable exact pages were documented and skipped."
+  ],
+  "entries": [
+    {
+      "word": "abib",
+      "kjv_occurrences": 6,
+      "lookup_headword": "abib",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/abib",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "Abib",
+      "exact_entry_heading": "A'BIB",
+      "exact_source_match": true
+    },
+    {
+      "word": "abstain",
+      "kjv_occurrences": 6,
+      "lookup_headword": "abstain",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/abstain",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "Abstain",
+      "exact_entry_heading": "ABSTA'IN",
+      "exact_source_match": true
+    },
+    {
+      "word": "amend",
+      "kjv_occurrences": 6,
+      "lookup_headword": "amend",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/amend",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Amend",
+      "exact_entry_heading": "AMEND",
+      "exact_source_match": true
+    },
+    {
+      "word": "bewail",
+      "kjv_occurrences": 6,
+      "lookup_headword": "bewail",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/bewail",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Bewail",
+      "exact_entry_heading": "BEWA'IL",
+      "exact_source_match": true
+    },
+    {
+      "word": "blackness",
+      "kjv_occurrences": 6,
+      "lookup_headword": "blackness",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/blackness",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Blackness",
+      "exact_entry_heading": "BLACK'NESS",
+      "exact_source_match": true
+    },
+    {
+      "word": "blossom",
+      "kjv_occurrences": 6,
+      "lookup_headword": "blossom",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/blossom",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Blossom",
+      "exact_entry_heading": "BLOS'SOM",
+      "exact_source_match": true
+    },
+    {
+      "word": "boat",
+      "kjv_occurrences": 6,
+      "lookup_headword": "boat",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/boat",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "Boat",
+      "exact_entry_heading": "BOAT",
+      "exact_source_match": true
+    },
+    {
+      "word": "bolster",
+      "kjv_occurrences": 6,
+      "lookup_headword": "bolster",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/bolster",
+      "source_line_start": 1,
+      "source_line_end": 8,
+      "exact_page_heading": "Bolster",
+      "exact_entry_heading": "BOLSTER",
+      "exact_source_match": true
+    },
+    {
+      "word": "bonnets",
+      "kjv_occurrences": 6,
+      "lookup_headword": "bonnet",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/bonnet",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "Bonnet",
+      "exact_entry_heading": "BON'NET",
+      "exact_source_match": true
+    },
+    {
+      "word": "brotherly",
+      "kjv_occurrences": 6,
+      "lookup_headword": "brotherly",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/brotherly",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "Brotherly",
+      "exact_entry_heading": "BROTH'ERLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "chance",
+      "kjv_occurrences": 6,
+      "lookup_headword": "chance",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/chance",
+      "source_line_start": 1,
+      "source_line_end": 11,
+      "exact_page_heading": "Chance",
+      "exact_entry_heading": "CHANCE",
+      "exact_source_match": true
+    },
+    {
+      "word": "chest",
+      "kjv_occurrences": 6,
+      "lookup_headword": "chest",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/chest",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Chest",
+      "exact_entry_heading": "CHEST",
+      "exact_source_match": true
+    }
+  ]
+}

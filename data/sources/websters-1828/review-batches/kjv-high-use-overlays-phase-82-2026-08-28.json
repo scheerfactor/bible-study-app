@@ -1,0 +1,52 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-82-2026-08-28",
+  "reviewed_at": "2026-08-28",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive OCR checked directly against the corresponding 1828 printed page images.",
+  "cross_check_sources": [
+    { "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832" },
+    { "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n170_w1000.jpg", "sha256": "c38f77c8a08e4c5c549de57f52ff558205be75df712afa64457a84a4e6f4f6e4" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n430_w1000.jpg", "sha256": "ca842759326a022c8ff3db2bc9fb70a967418f3d83b5c4ece0f20a4a3b41955c" },
+    { "url": "https://archive.org/download/americandictiona01websrich/page/n664_w1000.jpg", "sha256": "b1d71cd99da3fc5736b1b004c36c612e82afcbff1402ce004c29d1baef6789cf" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n98_w1000.jpg", "sha256": "38484d2456b43edbc4de896b68f1564e00cbe97019082cee30555760d11f59b0" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n277_w1000.jpg", "sha256": "07c66ab87c4d38633d909b589334d2464eed129cbbdd49a3a3c5c711f3d3e670" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n660_w1000.jpg", "sha256": "7cb2a87b4e582a13abb20efad7102f57b8367720ab2d6f30054ae8303bd49fac" },
+    { "url": "https://archive.org/download/americandictiona02websrich/page/n947_w1000.jpg", "sha256": "062bcb8e0971b4733460ddd3532315cbffb3db9ebc75095dfad8e84905c69524" }
+  ],
+  "frequency_source": "data/reports/bible-tool-coverage-audit.json, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Selected remaining ordinary KJV words whose clear standalone Webster entries were absent from app lookup because source OCR damaged the headword; excluded names and deferred the much longer CONDITION entry for separate review.",
+  "review_method": "Compared every retained definition with the original printed page image, corrected clear OCR substitutions and broken words, preserved Webster's wording and sense order, expanded abbreviated parts of speech, language names, source names, and Scripture book names for display, and relied on normal plural or tense lookup only where the reviewed headword supports it.",
+  "screening_summary": {
+    "reviewed_headwords": 7,
+    "net_new_reviewed_overlays": 7,
+    "upgraded_existing_reviewed_overlays": 0,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 9,
+    "kjv_occurrences_resolved": 9,
+    "total_kjv_occurrences_with_reviewed_lookup": 9
+  },
+  "promoted_headwords": ["answerable", "commotion", "empire", "malicious", "pernicious", "stately", "yearn"],
+  "verified_lookup_relationships": [],
+  "additional_resolved_forms": [
+    { "word": "answerable", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed ANSWERABLE headword" },
+    { "word": "commotion", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed COMMOTION headword" },
+    { "word": "commotions", "kjv_occurrences": 1, "resolution": "Plural lookup resolved from the reviewed COMMOTION headword" },
+    { "word": "empire", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed EMPIRE headword" },
+    { "word": "malicious", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed MALICIOUS headword" },
+    { "word": "pernicious", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed PERNICIOUS headword" },
+    { "word": "stately", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed STATELY headword" },
+    { "word": "yearn", "kjv_occurrences": 1, "resolution": "Direct lookup resolved from the reviewed YEARN headword" },
+    { "word": "yearned", "kjv_occurrences": 1, "resolution": "Past-tense lookup resolved from the reviewed YEARN headword" }
+  ],
+  "entries": [
+    { "word": "answerable", "lookup_headword": "answerable", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 44050, "source_line_end": 44074, "exact_page_heading": "ANS", "exact_entry_heading": "'ANSWERABLE", "exact_source_match": true },
+    { "word": "commotion", "lookup_headword": "commotion", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 128109, "source_line_end": 128129, "exact_page_heading": "COM", "exact_entry_heading": "COMMO'TION", "exact_source_match": true },
+    { "word": "empire", "lookup_headword": "empire", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt", "source_line_start": 204760, "source_line_end": 204795, "exact_page_heading": "EMP", "exact_entry_heading": "EM'PIRE", "exact_source_match": true },
+    { "word": "malicious", "lookup_headword": "malicious", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 30225, "source_line_end": 30234, "exact_page_heading": "MAL", "exact_entry_heading": "MALI'CIOUS", "exact_source_match": true },
+    { "word": "pernicious", "lookup_headword": "pernicious", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 90004, "source_line_end": 90017, "exact_page_heading": "PER", "exact_entry_heading": "PERNI'CIOUS", "exact_source_match": true },
+    { "word": "stately", "lookup_headword": "stately", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 218112, "source_line_end": 218121, "exact_page_heading": "STA", "exact_entry_heading": "STA'TELY", "exact_source_match": true },
+    { "word": "yearn", "lookup_headword": "yearn", "base_entries": 0, "source_url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt", "source_line_start": 315420, "source_line_end": 315455, "exact_page_heading": "YEL", "exact_entry_heading": "YEARN", "exact_source_match": true }
+  ]
+}

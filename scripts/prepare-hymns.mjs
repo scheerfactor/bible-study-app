@@ -5,7 +5,7 @@ import midiFile from "midi-file";
 
 const { parseMidi } = midiFile;
 const root = process.cwd();
-const hymns = [
+const curatedHymns = [
   {
     id: "amazing-grace",
     title: "Amazing Grace",
@@ -284,7 +284,63 @@ const hymns = [
     musicAttribution: "Tune by George J. Elvey, 1868; public-domain SATB file maintained by Peter Chubb for the Mutopia Project.",
     reviewedAt: "2026-08-15",
   },
+  {
+    id: "abide-with-me",
+    title: "Abide with Me",
+    lyricist: "Henry F. Lyte",
+    lyricYear: 1847,
+    tune: "Eventide",
+    scriptureReferences: ["Luke 24:29", "Psalm 46:1", "1 Corinthians 15:55-57"],
+    stanzas: [
+      "Abide with me; fast falls the eventide;\nThe darkness deepens; Lord, with me abide:\nWhen other helpers fail, and comforts flee,\nHelp of the helpless, O abide with me.",
+      "Swift to its close ebbs out life's little day;\nEarth's joys grow dim, its glories pass away;\nChange and decay in all around I see;\nO Thou who changest not, abide with me.",
+      "I need Thy presence ev'ry passing hour,\nWhat but Thy grace can foil the tempter's pow'r?\nWho like Thyself my guide and stay can be?\nThro' cloud and sunshine, O abide with me.",
+      "I fear no foe,with Thee at hand to bless;\nIlls have no weight, and tears no bitterness;\nWhere is death's sting? where, grave, thy victory?\nI triumph still, if Thou abide with me.",
+      "Hold Thou Thy cross before my closing eyes;\nShine thro' the gloom, and point me to the skies;\nHeav'n's morning breaks, and earth's vain shadows flee;\nIn life, in death, O Lord, abide with me.",
+    ],
+    refrain: null,
+    textSourceUrl: "https://hymnary.org/hymn/HCH11927/52",
+    textRights: "Public domain; text checked line by line against Hymnal for Church and Home (1927), hymn 52.",
+    midiFile: "abide-with-me.mid",
+    midiSha256: "29847f715406da7f17eeac926b41d33891f0daebfcff7c30e82e385174ab4773",
+    rightsEvidenceFile: "abide-with-me-wikimedia.json",
+    rightsEvidenceSha256: "e5c197b279e038c3aa3027cd51f227a66198e533d03bbc2d52ee03c35cbe3314",
+    rightsEvidenceMarker: "Creative Commons Zero, Public Domain Dedication",
+    musicSourceUrl: "https://commons.wikimedia.org/wiki/File:Bleibe_bei_uns.mid",
+    musicRights: "CC0 1.0 Universal Public Domain Dedication",
+    musicAttribution: "Tune by William Henry Monk, 1861; MIDI setting and sound file by Peter Gerloff (Rabanus Flavus), dedicated to the public domain under CC0 1.0.",
+    reviewedAt: "2026-08-23",
+  },
+  {
+    id: "holy-holy-holy",
+    title: "Holy, Holy, Holy",
+    lyricist: "Reginald Heber",
+    lyricYear: 1826,
+    tune: "Nicaea",
+    scriptureReferences: ["Isaiah 6:1-3", "Revelation 4:8-11"],
+    stanzas: [
+      "Holy, holy, holy! Lord God Almighty\nEarly in the morning our song shall rise to thee;\nHoly, holy, holy merciful and mighty!\nGod in Three Persons, blessèd Trinity!",
+      "Holy, holy, holy! all the saints adore thee,\nCasting down their golden crowns around the glassy sea;\nCherubim and seraphim falling down before thee,\nWhich wert, and art, and evermore shalt be.",
+      "Holy, holy, holy! tho' the darkness hide thee,\nThough the eye of sinful man thy glory may not see,\nOnly thou art holy, there is none beside thee,\nPerfect in power, in love, and purity.",
+      "Holy, holy, holy! Lord God Almighty\nAll thy works shall praise thy name, in earth, and sky, and sea;\nHoly, holy, holy merciful and mighty!\nGod in Three Persons, blessèd Trinity!\nAmen.",
+    ],
+    refrain: null,
+    textSourceUrl: "https://en.wikisource.org/wiki/The_Army_and_Navy_Hymnal/Hymns/Holy%2C_Holy%2C_Holy%2C_Lord_God_Almighty",
+    textRights: "Public domain; text checked line by line against The Army and Navy Hymnal (1918), hymn 4.",
+    midiFile: "nicaea.mid",
+    midiSha256: "57184adabcdcd0f4f63d1a4913bc061f5c7df1e44649c376f9c73f4f5c7f00c9",
+    rdfFile: "nicaea.rdf",
+    rdfSha256: "f7b9542e7fa95499d42c5016fb5b181443cdecfb6f477e5fe22ca4f5715b9d08",
+    musicSourceUrl: "https://www.mutopiaproject.org/ftp/DykesJB/nicaea/",
+    musicRights: "Public Domain",
+    musicAttribution: "Tune by John B. Dykes, 1861; public-domain SATB file maintained by Steve Dunlop for the Mutopia Project.",
+    reviewedAt: "2026-08-24",
+  },
 ];
+const supplementalHymns = JSON.parse(
+  await readFile(resolve(root, "data", "hymns", "supplemental-hymns.json"), "utf8"),
+);
+const hymns = [...curatedHymns, ...supplementalHymns];
 
 function round(value) {
   return Math.round(value * 1000) / 1000;
@@ -357,8 +413,19 @@ async function main() {
   }
 
   const outputPath = resolve(root, "data", "hymns", "verified-hymns.json");
+  const presentationIndexPath = resolve(root, "data", "hymns", "presentation-hymns.json");
   await writeFile(outputPath, JSON.stringify(prepared, null, 2) + "\n");
+  await writeFile(
+    presentationIndexPath,
+    JSON.stringify(prepared.map((hymn) => {
+      const presentationHymn = { ...hymn };
+      delete presentationHymn.notes;
+      delete presentationHymn.durationSeconds;
+      return presentationHymn;
+    }), null, 2) + "\n",
+  );
   console.log("Prepared " + prepared.length + " hymns at " + outputPath);
+  console.log("Prepared lightweight presentation index at " + presentationIndexPath);
 }
 
 await main();

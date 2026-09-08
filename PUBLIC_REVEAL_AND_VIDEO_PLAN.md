@@ -2,6 +2,12 @@
 
 Reviewed: August 16, 2026
 
+Production files:
+
+- `PUBLIC_REVEAL_VIDEO_PRODUCTION_PACKET.md` contains the approved narration, timed shots, recording safeguards, calls to action, and export checklist.
+- `public/launch/fathers-business-bible-study-teaser-captions.srt` contains the 45-second teaser captions.
+- `public/launch/fathers-business-bible-study-complete-promise-captions.srt` contains the 90-second full-promise captions.
+
 ## The Reason To Choose It
 
 Father's Business Bible Study should not introduce itself as a smaller replacement for Logos, e-Sword, SwordSearcher, Olive Tree, or Blue Letter Bible. Those products already have established libraries, study systems, and loyal users.

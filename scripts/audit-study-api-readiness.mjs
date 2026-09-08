@@ -1,8 +1,26 @@
-const LIVE_BETA_URL = "https://bible-study-app-eight.vercel.app/";
+const LIVE_BETA_URL = "https://study.fathersbusinessmasteryresources.com/";
+
+function argument(name) {
+  const prefix = `--${name}=`;
+  const inline = process.argv.find((value) => value.startsWith(prefix));
+  if (inline) return inline.slice(prefix.length);
+
+  const index = process.argv.indexOf(`--${name}`);
+  return index === -1 ? undefined : process.argv[index + 1];
+}
+
 const useLiveBeta = process.argv.includes("--live");
+const explicitBaseUrl = argument("base-url") ?? process.env.STUDY_API_AUDIT_BASE_URL;
+
+if (useLiveBeta && explicitBaseUrl) {
+  throw new Error("Use either --live or --base-url/STUDY_API_AUDIT_BASE_URL, not both.");
+}
+
 const baseUrl = new URL(
-  process.env.STUDY_API_AUDIT_BASE_URL ?? (useLiveBeta ? LIVE_BETA_URL : "http://127.0.0.1:3000/"),
+  explicitBaseUrl ?? (useLiveBeta ? LIVE_BETA_URL : "http://127.0.0.1:3000/"),
 );
+
+console.log(`Checking study APIs at ${baseUrl.origin}.`);
 
 function strongMappingProbe(reference) {
   return {
@@ -19,7 +37,24 @@ function strongMappingProbe(reference) {
   };
 }
 
+function biblePartProbe(part, expectedVerses) {
+  return {
+    label: `KJV corpus part ${part}`,
+    path: `/api/bible?part=${part}`,
+    validate(data) {
+      return data?.part === part && Object.keys(data?.verses ?? {}).length === expectedVerses;
+    },
+    summary(data) {
+      return `${Object.keys(data.verses).length} KJV verses`;
+    },
+  };
+}
+
 const probes = [
+  biblePartProbe(1, 10_253),
+  biblePartProbe(2, 7_402),
+  biblePartProbe(3, 5_490),
+  biblePartProbe(4, 7_957),
   {
     label: "Webster lookup",
     path: "/api/dictionary/believeth",

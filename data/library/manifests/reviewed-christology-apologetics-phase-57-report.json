@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-christology-apologetics-phase-57.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "The Silence of God",
+      "file": "the-silence-of-god-sir-robert-anderson.txt",
+      "bytes": 249713,
+      "words": 43740,
+      "reading_time_minutes": 194
+    },
+    {
+      "title": "Christianized Rationalism and the Higher Criticism",
+      "file": "christianized-rationalism-and-the-higher-criticism-sir-robert-anderson.txt",
+      "bytes": 107614,
+      "words": 18007,
+      "reading_time_minutes": 80
+    },
+    {
+      "title": "Christ Ever with You",
+      "file": "christ-ever-with-you-octavius-winslow.txt",
+      "bytes": 137771,
+      "words": 21538,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "Midnight Harmonies",
+      "file": "midnight-harmonies-octavius-winslow.txt",
+      "bytes": 287618,
+      "words": 45042,
+      "reading_time_minutes": 200
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Silence of God",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-silence-of-god-sir-robert-anderson.txt"
+    },
+    {
+      "row": 3,
+      "title": "Christianized Rationalism and the Higher Criticism",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/christianized-rationalism-and-the-higher-criticism-sir-robert-anderson.txt"
+    },
+    {
+      "row": 4,
+      "title": "Christ Ever with You",
+      "author": "Octavius Winslow",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/christ-ever-with-you-octavius-winslow.txt"
+    },
+    {
+      "row": 5,
+      "title": "Midnight Harmonies",
+      "author": "Octavius Winslow",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/midnight-harmonies-octavius-winslow.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

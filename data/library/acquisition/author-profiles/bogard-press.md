@@ -14,7 +14,7 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | Official web form and customer-service route verified 2026-08-22 |
+| Permission/contact info | Nathan Luellen, Editor in Chief, invited a discussion; scheduling reply sent 2026-08-24 |
 | Website | https://bogardpress.org/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
@@ -61,9 +61,9 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | Official contact form; general calls 903-792-2783; customer service 903-793-5112 |
+| Known contact | Nathan Luellen, Editor in Chief; Nathan.Luellen@bogardpress.org; 903-793-5131 |
 | Website | https://bogardpress.org/contact/ |
-| Permission status | Requested 2026-08-22 - awaiting written reply |
+| Permission status | Scheduling reply sent 2026-08-24 - awaiting meeting time; no rights granted |
 | Requested use | Proposed metadata, official link, approved cover/promotional image, and approved excerpt/sample for *Baptist & the Bible - Adult* |
 | Follow-up needed | Yes |
 
@@ -101,7 +101,13 @@ Current intake note:
 
 The verified contact route and public ministry description do not grant permission and do not approve any title.
 
-Title-specific request submitted through the official contact form on 2026-08-22 for *Baptist & the Bible - Adult*. The form confirmed successful receipt. Follow up on 2026-08-29 if no reply is received. No permission has been granted.
+Title-specific request submitted through the official contact form on 2026-08-22 for *Baptist & the
+Bible - Adult*. Nathan Luellen replied on 2026-08-24 and invited a phone or Teams discussion about using
+selected elements to point users toward the book. Stephen replied at 6:54 PM EDT, requested a
+30-minute Teams meeting after 6:30 PM Eastern on weekdays or another time arranged with advance
+notice, and preserved the narrow title-level boundary. No permission has been granted. Use
+`data/library/acquisition/BOGARD_PRESS_MEETING_BRIEF_2026-08-24.md` for the meeting and obtain written
+title-level scope before publishing anything.
 
 Stephen's longer-term objective is a multi-title commercial relationship that could support authorized purchases, account unlocks, full-text reading, search, verse-linked notes, and publisher royalties. That broader objective was not included in the submitted request and has not been approved. If Bogard Press replies positively, use the separate catalog partnership proposal as a follow-up discussion rather than treating the first request as commercial permission.
 

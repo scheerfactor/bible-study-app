@@ -1,0 +1,142 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-50-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "Internet Archive full-resolution page scans and OCR text, with Webster's 1828 web transcription used as a locator and cross-check.",
+  "cross_check_sources": [
+    {
+      "url": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+      "sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832"
+    },
+    {
+      "url": "https://archive.org/download/americandictiona02websrich/americandictiona02websrich_djvu.txt",
+      "sha256": "31666d1d34d7579a135a3865a6fe21671991f0e56b025f9025772df0c3923b2b"
+    }
+  ],
+  "visual_scan_pages": [
+    {
+      "headword": "chode",
+      "url": "https://archive.org/download/americandictiona01websrich/page/n384_w2300.jpg",
+      "sha256": "1a735b67f29eebea3cd6159f6823e55230a8d81e5a2a20f5e907214e77c5bd99"
+    },
+    {
+      "headword": "northern",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n193_w2300.jpg",
+      "sha256": "c743cc005181852e25f9469dfa71e8b8e346805cb5f9cdff7b5d4580219e7658"
+    },
+    {
+      "headword": "ospray",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n227_w2300.jpg",
+      "sha256": "95b2b5a7ca326e574de3c304499ccda2ac78a5bbba51411e96dfc51360b14e64"
+    },
+    {
+      "headword": "plenteousness",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n310_w2300.jpg",
+      "sha256": "b12873eca21770c86f33153dd9bb3e1578863cd59610cfd422097ac9b28b1b50"
+    },
+    {
+      "headword": "plowman",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n311_w2300.jpg",
+      "sha256": "40ed4dff555ae088391ae234fd5008ebaea0d49ba7a764e0d8f0faf44ea246ae"
+    },
+    {
+      "headword": "rampart",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n412_w2300.jpg",
+      "sha256": "931f1751ce00693e084e39ca88ba8ee819376e5a6d53b4a506280cbb6fed7c1a"
+    },
+    {
+      "headword": "rampart-continuation",
+      "url": "https://archive.org/download/americandictiona02websrich/page/n413_w2300.jpg",
+      "sha256": "3c44e2f9c60ed66ed2d19d85fab6abade6e115d355bf78aac7b2712230148483"
+    }
+  ],
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv, derived from es-kjv/json/verses-1769.js",
+  "selection_method": "Separated unresolved lowercase KJV prose forms from proper names, then tested fifty-seven likely lexical forms and retained only exact independent Webster headwords.",
+  "review_method": "Located each printed entry in the OCR text, verified every word against its full-resolution page scan, joined line wraps, expanded abbreviated language and author labels, corrected three web-transcription defects, and retained historical wording and citations.",
+  "screening_summary": {
+    "reviewed_headwords": 6,
+    "net_new_reviewed_overlays": 6,
+    "verified_lookup_relationships_added": 0,
+    "missing_kjv_forms_resolved": 6,
+    "kjv_occurrences_resolved": 12,
+    "requested_forms_rejected_as_non_headwords": 51
+  },
+  "promoted_headwords": [
+    "chode",
+    "northern",
+    "ospray",
+    "plenteousness",
+    "plowman",
+    "rampart"
+  ],
+  "verified_lookup_relationships": [],
+  "entries": [
+    {
+      "word": "chode",
+      "lookup_headword": "chode",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/chode",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Chode",
+      "exact_entry_heading": "CHODE",
+      "exact_source_match": true
+    },
+    {
+      "word": "northern",
+      "lookup_headword": "northern",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/northern",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Northern",
+      "exact_entry_heading": "NORTH'ERN",
+      "exact_source_match": true
+    },
+    {
+      "word": "ospray",
+      "lookup_headword": "ospray",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/ospray",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "Ospray",
+      "exact_entry_heading": "OS'PRAY",
+      "exact_source_match": true
+    },
+    {
+      "word": "plenteousness",
+      "lookup_headword": "plenteousness",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/plenteousness",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Plenteousness",
+      "exact_entry_heading": "PLEN'TEOUSNESS",
+      "exact_source_match": true
+    },
+    {
+      "word": "plowman",
+      "lookup_headword": "plowman",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/plowman",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "Plowman",
+      "exact_entry_heading": "PLOW'MAN",
+      "exact_source_match": true
+    },
+    {
+      "word": "rampart",
+      "lookup_headword": "rampart",
+      "base_entries": 0,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/rampart",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "Rampart",
+      "exact_entry_heading": "RAM'PART",
+      "exact_source_match": true
+    }
+  ]
+}

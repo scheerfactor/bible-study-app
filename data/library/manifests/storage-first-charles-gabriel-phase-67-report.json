@@ -1,0 +1,71 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-charles-gabriel-phase-67.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 4,
+  "total_attempted": 4,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 3,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 3,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "The Slighted Stranger and Other Poems",
+      "file": "the-slighted-stranger-and-other-poems-charles-h-gabriel.txt",
+      "bytes": 257826,
+      "words": 40334,
+      "reading_time_minutes": 179
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Gospel Songs and Their Writers",
+      "author": "Charles H. Gabriel",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "The Singers and Their Songs: Sketches of Living Gospel Hymn Writers",
+      "author": "Charles H. Gabriel",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "The Slighted Stranger and Other Poems",
+      "author": "Charles H. Gabriel",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-slighted-stranger-and-other-poems-charles-h-gabriel.txt"
+    },
+    {
+      "row": 5,
+      "title": "Sixty Scripture Songs",
+      "author": "Charles H. Gabriel",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

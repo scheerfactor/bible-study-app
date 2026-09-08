@@ -1,0 +1,149 @@
+{
+  "source_csv": "data/library/import-batches/reviewed-church-history-prophecy-phase-50.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "atomic": true,
+  "batch_size": 20,
+  "total_attempted": 8,
+  "imported": 8,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "rolled_back": 0,
+  "rollback_cleanup_failures": [],
+  "file_sizes": [
+    {
+      "title": "Bye-paths in Baptist History",
+      "file": "bye-paths-in-baptist-history-j-jackson-goadby.txt",
+      "bytes": 813250,
+      "words": 139391,
+      "reading_time_minutes": 620
+    },
+    {
+      "title": "History of the Ancient Christians Inhabiting the Valleys of the Alps",
+      "file": "history-of-the-ancient-christians-inhabiting-the-valleys-of-the-alps-jean-paul-perrin-essay-by-robert-baird.txt",
+      "bytes": 1899738,
+      "words": 285498,
+      "reading_time_minutes": 1269
+    },
+    {
+      "title": "History of the Progress and Suppression of the Reformation in Spain",
+      "file": "history-of-the-progress-and-suppression-of-the-reformation-in-spain-thomas-mccrie.txt",
+      "bytes": 800228,
+      "words": 118101,
+      "reading_time_minutes": 525
+    },
+    {
+      "title": "Earth's Earliest Ages and Their Lessons for Us",
+      "file": "earth-s-earliest-ages-and-their-lessons-for-us-g-h-pember.txt",
+      "bytes": 579895,
+      "words": 101521,
+      "reading_time_minutes": 451
+    },
+    {
+      "title": "The History of Protestantism, Volume 2",
+      "file": "the-history-of-protestantism-volume-2-j-a-wylie.txt",
+      "bytes": 3000255,
+      "words": 447391,
+      "reading_time_minutes": 1988
+    },
+    {
+      "title": "A History of the English Baptists, Volume 2",
+      "file": "a-history-of-the-english-baptists-volume-2-joseph-ivimey.txt",
+      "bytes": 1294194,
+      "words": 193215,
+      "reading_time_minutes": 859
+    },
+    {
+      "title": "The Unfolding of the Ages in the Revelation of John",
+      "file": "the-unfolding-of-the-ages-in-the-revelation-of-john-ford-c-ottman.txt",
+      "bytes": 1271718,
+      "words": 197371,
+      "reading_time_minutes": 877
+    },
+    {
+      "title": "Miller's Church History, Volume 2",
+      "file": "miller-s-church-history-volume-2-andrew-miller.txt",
+      "bytes": 1022689,
+      "words": 172292,
+      "reading_time_minutes": 766
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Bye-paths in Baptist History",
+      "author": "J. Jackson Goadby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bye-paths-in-baptist-history-j-jackson-goadby.txt"
+    },
+    {
+      "row": 3,
+      "title": "History of the Ancient Christians Inhabiting the Valleys of the Alps",
+      "author": "Jean Paul Perrin; essay by Robert Baird",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-ancient-christians-inhabiting-the-valleys-of-the-alps-jean-paul-perrin-essay-by-robert-baird.txt"
+    },
+    {
+      "row": 4,
+      "title": "History of the Progress and Suppression of the Reformation in Spain",
+      "author": "Thomas McCrie",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-progress-and-suppression-of-the-reformation-in-spain-thomas-mccrie.txt"
+    },
+    {
+      "row": 5,
+      "title": "Earth's Earliest Ages and Their Lessons for Us",
+      "author": "G. H. Pember",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/earth-s-earliest-ages-and-their-lessons-for-us-g-h-pember.txt"
+    },
+    {
+      "row": 6,
+      "title": "The History of Protestantism, Volume 2",
+      "author": "J. A. Wylie",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-protestantism-volume-2-j-a-wylie.txt"
+    },
+    {
+      "row": 7,
+      "title": "A History of the English Baptists, Volume 2",
+      "author": "Joseph Ivimey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-the-english-baptists-volume-2-joseph-ivimey.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Unfolding of the Ages in the Revelation of John",
+      "author": "Ford C. Ottman",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-unfolding-of-the-ages-in-the-revelation-of-john-ford-c-ottman.txt"
+    },
+    {
+      "row": 9,
+      "title": "Miller's Church History, Volume 2",
+      "author": "Andrew Miller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/miller-s-church-history-volume-2-andrew-miller.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

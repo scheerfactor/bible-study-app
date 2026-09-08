@@ -1,0 +1,115 @@
+{
+  "batch_id": "kjv-rare-terms-phase-8-2026-08-26",
+  "reviewed_at": "2026-08-26",
+  "source_work": "King James Bible, standard 1769 text",
+  "rights_basis": "The KJV Scripture text used for this review is public domain in the United States.",
+  "definition_method": "Original concise study aids written from the cited KJV passages. No copyrighted commentary wording was imported.",
+  "frequency_source": "data/reports/webster-missing-word-inventory.csv",
+  "screening_summary": {
+    "reviewed_entries": 10,
+    "resolved_kjv_forms": 10,
+    "kjv_word_occurrences": 30
+  },
+  "entries": [
+    {
+      "headword": "ASKELON",
+      "normalized_headword": "askelon",
+      "definition": "A KJV spelling of Ashkelon, a city of the Philistines. See ASHKELON.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Judges 1:18; 1 Samuel 6:17; 2 Samuel 1:20",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["askelon"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "AZMON",
+      "normalized_headword": "azmon",
+      "definition": "A boundary point named in the description of the southern border of Israel and Judah.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Numbers 34:4-5; Joshua 15:4",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["azmon"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "AZRIEL",
+      "normalized_headword": "azriel",
+      "definition": "A name borne by several men, including a head of a Manassite family and the fathers of Jerimoth and Seraiah.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: 1 Chronicles 5:24; 27:19; Jeremiah 36:26",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["azriel"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "BOOZ",
+      "normalized_headword": "booz",
+      "definition": "The KJV New Testament spelling of Boaz, the son of Salmon and Rachab, husband of Ruth, and father of Obed. See BOAZ.",
+      "source_title": "KJV Bible Name Guide",
+      "source_file": "KJV: Matthew 1:5; Luke 3:32",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["booz"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "ELOTH",
+      "normalized_headword": "eloth",
+      "definition": "A KJV spelling of Elath, a place beside Ezion-geber on the shore of the Red sea in the land of Edom. See ELATH.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: 1 Kings 9:26; 2 Chronicles 8:17; 26:2",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["eloth"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "GALILAEAN",
+      "normalized_headword": "galilaean",
+      "definition": "GALILAEAN, noun or adjective. A person of Galilee; belonging to Galilee.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: Mark 14:70; Luke 22:59; 23:6",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["galilaean"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "GERSHONITE",
+      "normalized_headword": "gershonite",
+      "definition": "GERSHONITE, noun or adjective. A member or descendant of the family of Gershon; belonging to that family.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: 1 Chronicles 26:21; 29:8",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["gershonite"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "GRECIA",
+      "normalized_headword": "grecia",
+      "definition": "The KJV name for Greece in Daniel's references to its king, prince, and realm. See GREECE.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Daniel 8:21; 10:20; 11:2",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["grecia"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "HAGARITES",
+      "normalized_headword": "hagarites",
+      "definition": "HAGARITES, plural noun. A people east of Gilead against whom the tribes of Reuben, Gad, and half Manasseh made war.",
+      "source_title": "KJV English Word Guide",
+      "source_file": "KJV: 1 Chronicles 5:10, 19-20",
+      "review_status": "reviewed_kjv_form",
+      "kjv_forms": ["hagarites"],
+      "kjv_occurrences": 3
+    },
+    {
+      "headword": "HOLON",
+      "normalized_headword": "holon",
+      "definition": "A place name used for a city of Judah assigned to the Levites and for a place in Moab named in Jeremiah's judgment prophecy.",
+      "source_title": "KJV Bible Place Guide",
+      "source_file": "KJV: Joshua 15:51; 21:15; Jeremiah 48:21",
+      "review_status": "reviewed_scripture_profile",
+      "kjv_forms": ["holon"],
+      "kjv_occurrences": 3
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "batch_id": "public-domain-hymns-phase-11-2026-08-25",
+  "reviewed_at": "2026-08-25",
+  "purpose": "Add four source-traceable public-domain hymn texts with playable public-domain MIDI tunes.",
+  "guardrails": [
+    "Each text was transcribed from the retained Timeless Truths source record.",
+    "Both the text record and selected tune record explicitly display a Public Domain mark.",
+    "Exact MIDI and retained rights-evidence files are verified by SHA-256.",
+    "Playback is synthesized from MIDI; no third-party performance recording is included.",
+    "Where a source offers multiple tunes or refrains, the catalog includes only the text paired with the retained MIDI selection."
+  ],
+  "entries": [
+    {
+      "id": "when-i-survey-the-wondrous-cross",
+      "title": "When I Survey the Wondrous Cross",
+      "text_source_url": "https://library.timelesstruths.org/music/When_I_Survey_the_Wondrous_Cross/",
+      "text_rights": "Public Domain",
+      "tune": "Hamburg",
+      "composer": "Lowell Mason",
+      "music_source_url": "https://library.timelesstruths.org/library/music/W/When_I_Survey_the_Wondrous_Cross/When_I_Survey_the_Wondrous_Cross.mid",
+      "music_rights": "Public Domain",
+      "midi_sha256": "e83c60388a0a6f68b23687c3a69f602416705504ae2996fa62ceda3bdd1982b3",
+      "rights_evidence_sha256": "cc3c34dbd7aee0533c9948345b25084bbfdb962a2dd7ff415b6c68ebd77b7256"
+    },
+    {
+      "id": "be-thou-my-vision",
+      "title": "Be Thou My Vision",
+      "text_source_url": "https://library.timelesstruths.org/music/Be_Thou_My_Vision/",
+      "text_rights": "Public Domain",
+      "tune": "Slane",
+      "composer": "Irish melody",
+      "music_source_url": "https://library.timelesstruths.org/library/music/B/Be_Thou_My_Vision/Be_Thou_My_Vision.mid",
+      "music_rights": "Public Domain",
+      "midi_sha256": "d1a843599b3414a5d8ac496f430d60f792b78eb8e8abfba2f6af16d76fcad9bd",
+      "rights_evidence_sha256": "8d94b8d9a273c06ac96195909fc58ebe604991f9c7ae829ea8928be4ada1ce82"
+    },
+    {
+      "id": "the-solid-rock",
+      "title": "The Solid Rock",
+      "text_source_url": "https://library.timelesstruths.org/music/The_Solid_Rock/",
+      "text_rights": "Public Domain",
+      "tune": "Solid Rock",
+      "composer": "William B. Bradbury",
+      "music_source_url": "https://library.timelesstruths.org/library/music/T/The_Solid_Rock/The_Solid_Rock.mid",
+      "music_rights": "Public Domain",
+      "midi_sha256": "3b457b6624f6913ae678b7da8496b60b92680c7077c19dafd6b989687a687566",
+      "rights_evidence_sha256": "2996815c409400cd19a8fce56ae1fa4c500430fcbacf478ba5968c8584416146"
+    },
+    {
+      "id": "alas-and-did-my-savior-bleed",
+      "title": "Alas! and Did My Savior Bleed",
+      "text_source_url": "https://library.timelesstruths.org/music/Alas_and_Did_My_Savior_Bleed/",
+      "text_rights": "Public Domain",
+      "tune": "Hudson",
+      "composer": "Ralph E. Hudson",
+      "music_source_url": "https://library.timelesstruths.org/library/music/A/Alas_and_Did_My_Savior_Bleed/Alas_and_Did_My_Savior_Bleed.mid",
+      "music_rights": "Public Domain",
+      "midi_sha256": "f353bd7a15a8ff546b0d962a0965b2054c8106035d04bdea4ff588b7b585d2cc",
+      "rights_evidence_sha256": "418aec849213ad5a1ac816b5819d3182abb5a13194033856194e491337a79601"
+    }
+  ]
+}

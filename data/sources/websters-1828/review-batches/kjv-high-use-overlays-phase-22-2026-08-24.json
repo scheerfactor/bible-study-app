@@ -1,0 +1,68 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-22-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected the next three high-use KJV words with exact-headword source pages after rejecting higher-ranked pages that did not expose an exact entry.",
+  "review_method": "Verified each page heading and entry heading, preserved the displayed wording, normalized whitespace only, and excluded any page whose heading did not match the requested word.",
+  "unavailable_higher_ranked_candidates": [
+    "plain",
+    "excellency",
+    "robe",
+    "centurion",
+    "shewbread",
+    "vexation",
+    "hyssop",
+    "bag",
+    "pollute",
+    "astonied",
+    "bestow",
+    "treacherous",
+    "hasten",
+    "helmet",
+    "kin",
+    "alienated",
+    "fishers",
+    "foes",
+    "fragments"
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No neighboring-word or related-word page was accepted.",
+    "No definition wording was summarized, modernized, or invented."
+  ],
+  "entries": [
+    {
+      "word": "got",
+      "kjv_occurrences": 7,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/got",
+      "source_paragraphs": 1,
+      "exact_page_heading": "Got",
+      "exact_entry_heading": "GOT",
+      "exact_source_match": true
+    },
+    {
+      "word": "grievously",
+      "kjv_occurrences": 7,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/grievously",
+      "source_paragraphs": 4,
+      "exact_page_heading": "Grievously",
+      "exact_entry_heading": "GRIE'VOUSLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "grind",
+      "kjv_occurrences": 7,
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/grind",
+      "source_paragraphs": 18,
+      "exact_page_heading": "Grind",
+      "exact_entry_heading": "GRIND",
+      "exact_source_match": true
+    }
+  ]
+}

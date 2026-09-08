@@ -1,6 +1,6 @@
 # Hosea Readiness Audit
 
-Generated: 2026-07-15T19:28:44.188Z
+Generated: 2026-08-23T20:33:55.602Z
 
 Status: **ready**
 
@@ -13,9 +13,9 @@ Status: **ready**
 - Contextual fallback: 2 ambiguous or dirty Webster matches have verified Easton or reviewed KJV-term help instead.
 - Strong's: 14/14 chapters, 197/197 verses, 4807/4807 CrossWire source-marked word positions, and 0 missing lexicon cards.
 - TSK: 14/14 chapters, 196/197 source verses, and 403 public cross-reference rows.
-- Commentary: 12 full-book sets load immediately in the app; 12 verified full-book sets exist locally.
+- Commentary: 12 full-book sets are connected to the chapter-index reader; 12 verified full-book sets exist locally.
 
-## Immediate Full-Book Commentary
+## Reader-Connected Full-Book Commentary
 
 | Author | Entries | Source file |
 | --- | ---: | --- |

@@ -1,0 +1,307 @@
+{
+  "batch_id": "webster-kjv-high-use-overlays-phase-31-2026-08-24",
+  "reviewed_at": "2026-08-24",
+  "source_work": "Noah Webster, An American Dictionary of the English Language (1828)",
+  "rights_basis": "The original 1828 dictionary text is public domain.",
+  "transcription_source": "https://webstersdictionary1828.com/Dictionary/",
+  "cross_check_source": "https://archive.org/download/americandictiona01websrich/americandictiona01websrich_djvu.txt",
+  "cross_check_sha256": "a6983cbcd36b07355b57a6cae6342da40008557468781e575ac68cceec652832",
+  "frequency_source": "es-kjv/json/verses-1769.js",
+  "selection_method": "Selected sixteen exact or safely inflected Webster headwords from the six-occurrence KJV queue. Doted, drams, drunkards, and flanks were reviewed through their singular dictionary headwords. The Fort overlay serves both fort and forts, each occurring six times in the KJV.",
+  "review_method": "Verified exact page and entry headings, compared every web transcription with the Internet Archive volume 1 OCR and scan context, retained the displayed dictionary senses, removed neighboring entries, and corrected only discrepancies supported by the scan or cited KJV wording.",
+  "reviewed_transcription_actions": [
+    {
+      "word": "cloudy",
+      "actions": [
+        "Restored the hyphen in ill-nature from the scan."
+      ]
+    },
+    {
+      "word": "craft",
+      "actions": [
+        "Restored the apostrophe in poet's from the scan.",
+        "Corrected hinds to kinds in the small-vessel example after contextual review of the scan."
+      ]
+    },
+    {
+      "word": "damage",
+      "actions": [
+        "Corrected mulet to mulct from the scan.",
+        "Restored the capital D in Damage then from the scan."
+      ]
+    },
+    {
+      "word": "ditch",
+      "actions": [
+        "Restored the final period after the last transitive sense."
+      ]
+    },
+    {
+      "word": "doted",
+      "actions": [
+        "Restored the apostrophe in 'tis from the scan.",
+        "Corrected dotes to doted from the scan and Ezekiel 23:5 KJV."
+      ]
+    },
+    {
+      "word": "drams",
+      "actions": [
+        "Removed the stray space immediately after the opening bracket in the usage label."
+      ]
+    },
+    {
+      "word": "dying",
+      "actions": [
+        "Corrected the adjective sense number from 1 to 2 as printed in the scan."
+      ]
+    },
+    {
+      "word": "flanks",
+      "actions": [
+        "Restored the period after the first transitive verb sense."
+      ]
+    }
+  ],
+  "kjv_form_relationships": [
+    {
+      "word": "doted",
+      "lookup_headword": "dote",
+      "kjv_occurrences": 6
+    },
+    {
+      "word": "drams",
+      "lookup_headword": "dram",
+      "kjv_occurrences": 6
+    },
+    {
+      "word": "drunkards",
+      "lookup_headword": "drunkard",
+      "kjv_occurrences": 6
+    },
+    {
+      "word": "flanks",
+      "lookup_headword": "flank",
+      "kjv_occurrences": 6
+    },
+    {
+      "word": "fort",
+      "lookup_headword": "fort",
+      "kjv_occurrences": 6
+    },
+    {
+      "word": "forts",
+      "lookup_headword": "fort",
+      "kjv_occurrences": 6
+    }
+  ],
+  "guardrails": [
+    "No base OCR entry was rewritten.",
+    "No unsupported modernization or summary was introduced.",
+    "Only exact dictionary pages or transparent singular-headword relationships were accepted.",
+    "Every retained entry was cross-checked against the public-domain volume 1 scan text."
+  ],
+  "entries": [
+    {
+      "word": "choked",
+      "kjv_occurrences": 6,
+      "lookup_headword": "choked",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/choked",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Choked",
+      "exact_entry_heading": "CHOKED",
+      "exact_source_match": true
+    },
+    {
+      "word": "cloudy",
+      "kjv_occurrences": 6,
+      "lookup_headword": "cloudy",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/cloudy",
+      "source_line_start": 1,
+      "source_line_end": 8,
+      "exact_page_heading": "Cloudy",
+      "exact_entry_heading": "CLOUDY",
+      "exact_source_match": true
+    },
+    {
+      "word": "constrained",
+      "kjv_occurrences": 6,
+      "lookup_headword": "constrained",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/constrained",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Constrained",
+      "exact_entry_heading": "CONSTRAINED",
+      "exact_source_match": true
+    },
+    {
+      "word": "craft",
+      "kjv_occurrences": 6,
+      "lookup_headword": "craft",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/craft",
+      "source_line_start": 1,
+      "source_line_end": 10,
+      "exact_page_heading": "Craft",
+      "exact_entry_heading": "CRAFT",
+      "exact_source_match": true
+    },
+    {
+      "word": "damage",
+      "kjv_occurrences": 6,
+      "lookup_headword": "damage",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/damage",
+      "source_line_start": 1,
+      "source_line_end": 5,
+      "exact_page_heading": "Damage",
+      "exact_entry_heading": "DAM'AGE",
+      "exact_source_match": true
+    },
+    {
+      "word": "ditch",
+      "kjv_occurrences": 6,
+      "lookup_headword": "ditch",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/ditch",
+      "source_line_start": 1,
+      "source_line_end": 7,
+      "exact_page_heading": "Ditch",
+      "exact_entry_heading": "DITCH",
+      "exact_source_match": true
+    },
+    {
+      "word": "doted",
+      "kjv_occurrences": 6,
+      "lookup_headword": "dote",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dote",
+      "source_line_start": 1,
+      "source_line_end": 7,
+      "exact_page_heading": "Dote",
+      "exact_entry_heading": "DOTE",
+      "exact_source_match": true
+    },
+    {
+      "word": "drams",
+      "kjv_occurrences": 6,
+      "lookup_headword": "dram",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dram",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Dram",
+      "exact_entry_heading": "DRAM",
+      "exact_source_match": true
+    },
+    {
+      "word": "drunkards",
+      "kjv_occurrences": 6,
+      "lookup_headword": "drunkard",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/drunkard",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "Drunkard",
+      "exact_entry_heading": "DRUNKARD",
+      "exact_source_match": true
+    },
+    {
+      "word": "dying",
+      "kjv_occurrences": 6,
+      "lookup_headword": "dying",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/dying",
+      "source_line_start": 1,
+      "source_line_end": 2,
+      "exact_page_heading": "Dying",
+      "exact_entry_heading": "DY'ING",
+      "exact_source_match": true
+    },
+    {
+      "word": "envied",
+      "kjv_occurrences": 6,
+      "lookup_headword": "envied",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/envied",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "exact_page_heading": "Envied",
+      "exact_entry_heading": "EN'VIED",
+      "exact_source_match": true
+    },
+    {
+      "word": "expert",
+      "kjv_occurrences": 6,
+      "lookup_headword": "expert",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/expert",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Expert",
+      "exact_entry_heading": "EXPERT",
+      "exact_source_match": true
+    },
+    {
+      "word": "finally",
+      "kjv_occurrences": 6,
+      "lookup_headword": "finally",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/finally",
+      "source_line_start": 1,
+      "source_line_end": 4,
+      "exact_page_heading": "Finally",
+      "exact_entry_heading": "FI'NALLY",
+      "exact_source_match": true
+    },
+    {
+      "word": "flanks",
+      "kjv_occurrences": 6,
+      "lookup_headword": "flank",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/flank",
+      "source_line_start": 1,
+      "source_line_end": 11,
+      "exact_page_heading": "Flank",
+      "exact_entry_heading": "FLANK",
+      "exact_source_match": true
+    },
+    {
+      "word": "fort",
+      "kjv_occurrences": 12,
+      "lookup_headword": "fort",
+      "related_kjv_forms": [
+        {
+          "word": "fort",
+          "kjv_occurrences": 6
+        },
+        {
+          "word": "forts",
+          "kjv_occurrences": 6
+        }
+      ],
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/fort",
+      "source_line_start": 1,
+      "source_line_end": 3,
+      "exact_page_heading": "Fort",
+      "exact_entry_heading": "FORT",
+      "exact_source_match": true
+    },
+    {
+      "word": "fortify",
+      "kjv_occurrences": 6,
+      "lookup_headword": "fortify",
+      "base_entries": 1,
+      "source_url": "https://webstersdictionary1828.com/Dictionary/fortify",
+      "source_line_start": 1,
+      "source_line_end": 6,
+      "exact_page_heading": "Fortify",
+      "exact_entry_heading": "FOR'TIFY",
+      "exact_source_match": true
+    }
+  ]
+}

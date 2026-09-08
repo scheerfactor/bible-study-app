@@ -6,7 +6,7 @@ The goal of this beta is stability, clarity, and usefulness for real Bible readi
 
 Production app:
 
-https://bible-study-app-eight.vercel.app/
+https://study.fathersbusinessmasteryresources.com/
 
 ## What Works Now
 
