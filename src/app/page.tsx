@@ -45,6 +45,7 @@ import {
 } from "lucide-react";
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import presentationImageRecords from "../../public/media/sermon-slides/media-assets.json";
 import PresentationImageLibrary from "@/components/PresentationImageLibrary";
 import CountdownBuilder from "@/components/countdown/CountdownBuilder";
 import { brandMark } from "@/lib/site-metadata";
@@ -276,7 +277,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "ezekiel-watchman-restoration-dawn" | "joel-harvest-restoration-dawn" | "esther-providence-palace-dawn" | "genesis-creation-dawn" | "genesis-beginnings-covenant-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field" | "worship-piano" | "still-waters" | "scripture-lamp" | "heavens-declare" | "firm-foundation-storm" | "narrow-gate-dawn" | "lamp-open-bible" | "watchman-first-light" | "hebrews-open-veil" | "farmers-harvest-dawn" | "nehemiah-wall-rebuilding" | "philippians-prison-dawn" | "colossians-lycus-valley-dawn" | "romans-appian-way-dawn" | "john-galilee-dawn" | "mark-galilee-road-dawn" | "acts-pentecost-mission-dawn" | "matthew-kingdom-hillside-dawn" | "revelation-patmos-watch-dawn" | "daniel-babylon-watch-dawn" | "ezekiel-watchman-restoration-dawn" | "joel-harvest-restoration-dawn" | "esther-providence-palace-dawn" | "genesis-creation-dawn" | "genesis-beginnings-covenant-dawn" | "psalms-still-waters-generated" | "gospels-empty-tomb-dawn" | "sinai-wilderness" | "ancient-jerusalem" | "mediterranean-passage" | "nimrud-relief" | "nineveh-cavalry-relief" | "babylon-lion-panel" | `catalog-${string}`;
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -3230,6 +3231,21 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
   },
 };
 
+// Expose existing, rights-documented image files that had no picker entry.
+for (const record of presentationImageRecords) {
+  const assetUrl = `/media/sermon-slides/${record.file}`;
+  if (Object.values(SERMON_SLIDE_IMAGE_SLOTS).some(slot => slot.assetUrl === assetUrl)) continue;
+  if (!['Original generated asset', 'Public domain', 'Public domain / CC0'].includes(record.rightsStatus)) continue;
+  if (!/^(photos|generated)\/[a-z0-9-]+\.(jpg|png)$/.test(record.file)) continue;
+  const id: SermonSlideImageSlotId = `catalog-${record.slot}`;
+  SERMON_SLIDE_IMAGE_SLOTS[id] = {
+    label: record.slot.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+    description: record.recommendedUse,
+    background: 'linear-gradient(90deg, rgba(3,13,24,0.72), rgba(3,13,24,0.30))',
+    motif: record.category, category: 'Teaching', assetUrl,
+  };
+}
+
 const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Worship", "Scripture", "Creation", "Wilderness", "Jerusalem", "Sea", "Archaeology", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
 
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
@@ -3239,9 +3255,9 @@ function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
 }
 
 function sermonSlideMediaRights(slotId: SermonSlideImageSlotId) {
-  return slotId === "none"
-    ? "No image asset"
-    : "Rights documented";
+  if (slotId === "none") return "No image asset";
+  const record = presentationImageRecords.find(item => `/media/sermon-slides/${item.file}` === SERMON_SLIDE_IMAGE_SLOTS[slotId]?.assetUrl);
+  return record ? `${record.rightsStatus}. ${record.credit}. ${record.rightsStatus === 'Original generated asset' ? 'Illustrative artwork; review for suitability to your lesson.' : ''}` : "Rights documented in the app’s media audit.";
 }
 
 function sermonSlideMediaBackground(slot: { assetUrl: string | null; background: string }) {
@@ -55709,6 +55725,7 @@ function PresentationWorkspaceScreen({
               <textarea className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm normal-case leading-6 tracking-normal text-[var(--ink)]" value={draft.notes} onChange={(event) => onDraftChange({ notes: event.target.value })} />
             </label>
 
+            <details open={Boolean(remoteSessionId)} className="mt-5"><summary className="cursor-pointer py-3 font-semibold text-[var(--green)]">Phone & projector setup (optional)</summary>
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
@@ -55765,30 +55782,13 @@ function PresentationWorkspaceScreen({
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => void joinPresentationSession()} type="button">Join Presentation</button>
               </div>
             </div>
+            </details>
 
             <div className="mt-5">
               <PresentationContentFinder books={books} commentary={commentary} onAddScripture={addKjvPassageSlide} onAddSlides={addReviewedContentSlides} loadCommentaryCatalog={fetchDeferredCommentaryCatalog} loadCommentaryChapter={fetchDeferredCommentaryChapterEntries} />
             </div>
 
-            <div className="mt-5">
-              <p className="text-sm font-semibold text-[var(--ink)]">Curated real image backgrounds</p>
-              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Public-domain, CC0, and original generated backgrounds are stored locally for speed. No copyrighted photos or external image search are used.</p>
-              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
-                {SERMON_SLIDE_MEDIA_CATEGORIES.filter((category) => category !== "All").map((category) => {
-                  const slot = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).find(([id, value]) => id !== "none" && value.category === category)?.[0] as SermonSlideImageSlotId | undefined;
-                  const targetSlot = slot ?? "open-bible";
-                  return (
-                    <button key={`presentation-image-${category}`} className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] text-left text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!activeSlide} onClick={() => activeSlide && updateSlide(activeSlide.id, { imageSlot: targetSlot, imageTheme: SERMON_SLIDE_IMAGE_SLOTS[targetSlot].label })} type="button">
-                      <span className="block h-20 sm:h-24" style={{ background: `${sermonSlideMediaBackground(SERMON_SLIDE_IMAGE_SLOTS[targetSlot])}, linear-gradient(135deg, #244233, #efe5cd)` }} />
-                      <span className="block px-3 py-2">
-                        <span className="block">{category}</span>
-                        <span className="mt-0.5 block text-[0.68rem] text-[var(--muted)]">{sermonSlideMediaKind(targetSlot)}</span>
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+            <div className="my-5"><PresentationImageLibrary images={PRESENTATION_IMAGES} selectedId={activeSlide?.imageSlot} label="Choose background image" onSelect={image => { if (activeSlide) updateSlide(activeSlide.id, {imageSlot:image.id as SermonSlideImageSlotId,imageTheme:image.title}); }} /></div>
 
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">

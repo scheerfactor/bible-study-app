@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { frameAt, suggestPlan, validatePlan, timeline } from '../src/lib/pre-class-countdown.ts';
+import { countdownStorageKeys, frameAt, suggestPlan, validatePlan, timeline } from '../src/lib/pre-class-countdown.ts';
 const source = { id: 'lesson-2', title: 'The ministry of forgiveness', passage: '2 Corinthians 2:8', scripture: '2 Corinthians 2:8 Wherefore I beseech you that ye would confirm [your] love toward him.' };
 const plan = suggestPlan(source);
 assert.deepEqual(validatePlan(plan), []);
@@ -22,3 +22,9 @@ assert.equal(frameAt(plan, 999).remaining, 0);
 for (const bad of [null, {}, { ...plan, minutes: NaN }, { ...plan, items: [] }, { ...plan, items: [null] }, { ...plan, items: [{ ...q.item, answer: 10 }] }, { ...plan, items: [{ ...q.item, choices: ['same', 'same'] }] }, { ...plan, items: [{ ...q.item, seconds: -1 }] }]) assert.ok(validatePlan(bad).length);
 assert.equal(suggestPlan({...source, announcements:['Class meets at 9 AM'],lessonPlan:{prayer:'Pray for understanding.'}}).items.filter(x=>x.kind==='announcement').length,1);
 console.log('PASS: KJV suggestions, question/reveal boundaries, cycling, zero clamp, invalid imports, explicit announcements.');
+
+assert.notEqual(countdownStorageKeys('account:a','lesson').plan,countdownStorageKeys('account:b','lesson').plan);
+assert.notEqual(countdownStorageKeys('account:a','lesson').templates,countdownStorageKeys('local','lesson').templates);
+assert.equal(countdownStorageKeys('local','lesson').plan,'fathers-business-countdown-v1:lesson');
+assert.ok(validatePlan({...plan,backgroundId:'https://untrusted.test/a.jpg'}).length);
+console.log('PASS: account/local storage separation, legacy local keys, invalid background identifiers.');

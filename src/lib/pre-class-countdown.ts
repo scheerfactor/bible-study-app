@@ -79,3 +79,8 @@ export function frameAt(plan: CountdownPlan, elapsed: number) {
   return { remaining, complete: remaining === 0, phase: phases.find(p => position >= p.start && position < p.end) || phases[0] };
 }
 export function clockText(seconds: number) { return `${Math.floor(seconds / 60).toString().padStart(2, '0')}:${(seconds % 60).toString().padStart(2, '0')}`; }
+
+export function countdownStorageKeys(scope: string, projectId: string) {
+  const suffix = scope === 'local' ? '' : `:${scope}`;
+  return { plan: `fathers-business-countdown-v1${suffix}:${projectId}`, templates: `fathers-business-countdown-templates-v1${suffix}` };
+}

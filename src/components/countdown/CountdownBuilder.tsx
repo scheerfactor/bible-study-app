@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { clockText, frameAt, newItem, suggestPlan, templatePresets, timeline, validatePlan, type CountdownItem, type CountdownPlan, type LessonSource } from '@/lib/pre-class-countdown';
+import { countdownStorageKeys, clockText, frameAt, newItem, suggestPlan, templatePresets, timeline, validatePlan, type CountdownItem, type CountdownPlan, type LessonSource } from '@/lib/pre-class-countdown';
 import PresentationImageLibrary, { type PresentationImage } from '../PresentationImageLibrary';
 import styles from './countdown.module.css';
 
@@ -12,8 +12,7 @@ export default function CountdownBuilder(props: Props) {
 }
 function Builder({ lesson, resolveScripture, onClose, images = [], storageScope = "local" }: Props & { onClose: () => void }) {
   const source = { ...lesson, scripture: resolveScripture(lesson.passage) };
-  const key = storageScope === "local" ? `fathers-business-countdown-v1:${lesson.id}` : `fathers-business-countdown-v1:${storageScope}:${lesson.id}`;
-  const templateKey = storageScope === "local" ? "fathers-business-countdown-templates-v1" : `fathers-business-countdown-templates-v1:${storageScope}`;
+  const {plan: key, templates: templateKey} = countdownStorageKeys(storageScope, lesson.id);
   const [initial] = useState(() => {
     let raw: string | null = null;
     let error = '';
