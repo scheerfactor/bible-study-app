@@ -100,7 +100,10 @@
     "preaching-helps:import": "node scripts/import-preaching-help-batch.mjs",
     "validate:preaching-helps": "node scripts/validate-preaching-helps.mjs",
     "validate:archaeology": "node scripts/validate-archaeology.mjs",
-    "test:sunday-school": "node scripts/test-sunday-school.mjs"
+    "test:sunday-school": "node scripts/test-sunday-school.mjs",
+    "postbuild": "node scripts/build-offline-worker.mjs",
+    "test:offline": "node scripts/test-offline-worker.mjs",
+    "test:release-browser": "node scripts/check-release-browser.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",

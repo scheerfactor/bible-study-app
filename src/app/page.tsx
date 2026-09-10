@@ -20618,6 +20618,10 @@ export default function Home() {
   }
 
   function loadSundayLesson(id: SundayLessonId) {
+    if (allVerses.length !== COMPLETE_KJV_VERSE_COUNT) {
+      setSyncMessage("Wait for the KJV Bible to finish loading before creating lesson slides.");
+      return;
+    }
     // Preserve the current draft before starting a separate lesson.
     if (sermonDraft.title.trim()) {
       try {

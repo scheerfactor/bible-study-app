@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { publicSiteUrl, siteDescription, siteName, socialPreviewImage } from "@/lib/site-metadata";
 import "./globals.css";
+import OfflineStudy from "@/components/OfflineStudy";
 
 export const metadata: Metadata = {
   metadataBase: publicSiteUrl,
   applicationName: siteName,
+  appleWebApp: { capable: true, title: "Bible Study", statusBarStyle: "default" },
+  icons: { apple: "/icons/apple-touch-icon.png" },
   title: {
     default: siteName,
     template: `%s | ${siteName}`,
@@ -33,6 +36,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#203e30",
 };
 
 export default function RootLayout({
@@ -42,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col"><OfflineStudy />{children}</body>
     </html>
   );
 }
