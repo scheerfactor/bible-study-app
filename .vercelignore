@@ -26,3 +26,11 @@ data/storage/**
 *.mp4
 *.mov
 *.webm
+
+# Build-time source batches; the app reads generated chapter shards instead.
+data/strongs/mapping-batches/**
+*.tsbuildinfo
+
+# Never include local environment credentials in a source deployment.
+.env*
+!.env.example
