@@ -1,5 +1,14 @@
 # Release Notes
 
+## Teaching archive RC1 — 2026-09-17
+
+- Search preserved sermon/lesson teaching occasions by content, passage, date, location and audience.
+- Keep immutable prepared snapshots and append-only delivery notes; create linked revised copies with fresh illustrations/quotes.
+- Add account-scoped offline archive backups/lesson packs and explicit Supabase sync through the existing preaching tables.
+- Offline audience HTML decks now run Countdown slides and advance automatically.
+- Migration and frontend are not deployed. See [TEACHING_ARCHIVE_RC1.md](TEACHING_ARCHIVE_RC1.md) for rollout, validation and limitations.
+
+
 ## Private Beta Ready - Pre-Tester QA (June 9, 2026)
 
 Status: Private Beta Ready for 3-5 invited testers.

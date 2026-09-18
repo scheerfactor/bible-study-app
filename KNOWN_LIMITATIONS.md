@@ -1,5 +1,10 @@
 # Known Limitations
 
+## Teaching archive RC1
+
+The archive is implemented locally; deployment and real two-device sign-in/sync verification remain release gates. Archive backups are separate from Ministry Backup. Lesson packs preserve the lesson's own deck and history, not separately edited presentation decks, pre-class configuration, external media or audio. Downloaded audience decks preserve text/Scripture and countdowns with a simple layout. See [TEACHING_ARCHIVE_RC1.md](TEACHING_ARCHIVE_RC1.md).
+
+
 This app is in private beta. These limitations should be visible, expected, and safe.
 
 ## Storage And Sync
