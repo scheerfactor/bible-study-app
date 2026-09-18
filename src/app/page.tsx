@@ -69,6 +69,8 @@ import PresentationPowerPointExport from "@/components/PresentationPowerPointExp
 import { presentationExportOptions, powerPointBodyText, powerPointTextWarning, splitPresentationBodyText, type PresentationExportMode } from "@/lib/presentation-export";
 import QuickStudyPalette, { type QuickStudyCommand } from "@/components/QuickStudyPalette";
 import { offlinePresentationHtml } from "@/lib/offline-presentation";
+import TeachingArchive from "@/components/TeachingArchive";
+import { type TeachingEvent } from "@/lib/teaching-archive";
 import LessonPlanEditor from "@/components/LessonPlanEditor";
 import { SUNDAY_LESSONS, normalizeLessonPlan, lessonSchedule, lessonSegmentNotes, lessonPlanMarkdown, type LessonPlan, type SundayLessonId } from "@/lib/sunday-school";
 import RadioWorkspace from "@/components/RadioWorkspace";
@@ -273,7 +275,7 @@ type JournalSourceType = "Today" | "Bible Verse" | "Passage Guide" | "Study Draw
 type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Testament in 90 Days" | "Romans Study" | "Amos Study" | "Hosea Study" | "Prayer Study" | "Evangelism Study" | "Fear of the Lord Study";
 type SermonKind = "Sermon" | "Lesson";
 type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
-type SermonWorkspaceView = "manager" | "schedule" | "builder" | "slides" | "preaching" | "presenting";
+type SermonWorkspaceView = "manager" | "archive" | "schedule" | "builder" | "slides" | "preaching" | "presenting";
 type SermonQuickStartId = "expository" | "topical" | "evangelistic" | "doctrinal" | "devotional";
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
 type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Hymn" | "Application" | "Countdown" | "Announcement" | "Question" | "Closing / Invitation";
@@ -464,6 +466,11 @@ type SermonSeries = {
 };
 
 type SermonEntry = {
+  ministryMessageId?: string;
+  reusedFromEventId?: string;
+  churchLocation?: string;
+  audience?: string;
+  deliveryDate?: string;
   lessonPlan?: LessonPlan;
   id: string;
   kind: SermonKind;
@@ -20666,6 +20673,10 @@ export default function Home() {
   }
 
   function updateSermonDraft(patch: Partial<SermonEntry>) {
+    if (patch.status === "Preached" || patch.status === "Taught" || patch.status === "Archived") {
+      setSyncMessage("Use Preserve taught version in the archive to record the date, location and exact teaching materials.");
+      return;
+    }
     setSermonDraft((draft) => ({
       ...draft,
       ...patch,
@@ -20699,22 +20710,54 @@ export default function Home() {
     setSyncMessage(`${entry.kind} saved locally.`);
   }
 
+  function reuseArchivedSermon(entry: SermonEntry) {
+    try {
+      entry = normalizeSermonEntry(entry)!;
+      // Save both the current working draft and the new copy before switching screens.
+      const current = sermonDraftHasUserContent(sermonDraft) ? [sermonDraft] : [];
+      const entries = [entry, ...current, ...sermonEntries.filter(item => item.id !== entry.id && !current.some(d => d.id === item.id))];
+      saveSermonEntries(entries);
+      setSermonEntries(entries);
+      setSermonDraft(entry);
+      setSermonWorkspaceView("builder");
+      setSyncMessage("Revised copy saved. Set its new location and date; edit illustrations or quotes, then review and regenerate slides as needed. The historical version is unchanged.");
+    } catch { setSyncMessage("Could not save the revised copy. Current draft retained. Export a backup and free device storage before retrying."); }
+  }
+
+  function recordedTeachingEvent(event: TeachingEvent<SermonEntry>) {
+    const entry: SermonEntry = { ...event.snapshot, ministryMessageId: event.messageId,
+      status: event.snapshot.kind === "Lesson" ? "Taught" : "Preached", preachedAt: event.delivery.date };
+    setSermonDraft(entry);
+    try {
+      const entries = [entry, ...sermonEntries.filter(item => item.id !== entry.id)];
+      saveSermonEntries(entries); setSermonEntries(entries);
+      setSyncMessage("Taught version preserved in Sermon / Lesson Archive. This working draft can still be revised; its historical snapshot cannot.");
+    } catch { setSyncMessage("Historical archive saved, but the working draft could not be saved. Export the archive backup before closing."); }
+  }
+
   function updateSermonStatus(id: string, status: SermonStatus) {
+    if (status === "Preached" || status === "Taught" || status === "Archived") {
+      const entry = sermonDraft.id === id ? sermonDraft : sermonEntries.find(item => item.id === id);
+      if (entry) openSermonEntry(entry);
+      setSermonWorkspaceView("archive");
+      setSyncMessage("Enter the actual teaching date and church/location in Sermon / Lesson Archive, then choose Preserve taught version.");
+      return;
+    }
     const now = new Date().toISOString();
     saveSermonEntryList((entries) =>
       entries.map((entry) => entry.id === id ? {
         ...entry,
         status,
-        archived: status === "Archived" || entry.archived,
-        preachedAt: status === "Preached" || status === "Taught" ? (entry.preachedAt || now) : entry.preachedAt,
+        archived: entry.archived,
+        preachedAt: entry.preachedAt,
         updatedAt: now,
       } : entry),
     );
     if (sermonDraft.id === id) {
       updateSermonDraft({
         status,
-        archived: status === "Archived" || sermonDraft.archived,
-        preachedAt: status === "Preached" || status === "Taught" ? (sermonDraft.preachedAt || now) : sermonDraft.preachedAt,
+        archived: sermonDraft.archived,
+        preachedAt: sermonDraft.preachedAt,
       });
     }
     setSyncMessage(`Marked ${status.toLowerCase()}.`);
@@ -26051,6 +26094,10 @@ export default function Home() {
             {tab === "sermons" && (
               <SermonWorkspaceScreen
                 storageScope={user?.id ? `account:${user.id}` : "local"}
+                archiveClient={supabase}
+                archiveUserId={user?.id}
+                onReuseArchived={reuseArchivedSermon}
+                onRecordedTeaching={recordedTeachingEvent}
                 view={sermonWorkspaceView}
                 sermons={sermonEntries}
                 series={sermonSeries}
@@ -53233,6 +53280,7 @@ function CompactActionButton({
 }
 
 function SermonWorkspaceScreen({
+  archiveClient, archiveUserId, onReuseArchived, onRecordedTeaching,
   storageScope,
   view,
   sermons,
@@ -53287,6 +53335,10 @@ function SermonWorkspaceScreen({
 	  onOpenPresentationWorkspace,
 	  onBackToBible,
 }: {
+  archiveClient: SupabaseClient | null;
+  archiveUserId?: string;
+  onReuseArchived: (entry: SermonEntry) => void;
+  onRecordedTeaching: (event: TeachingEvent<SermonEntry>) => void;
   storageScope: string;
   view: SermonWorkspaceView;
   sermons: SermonEntry[];
@@ -53954,20 +54006,27 @@ function SermonWorkspaceScreen({
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <div className="flex flex-wrap gap-2">
-	          {(["manager", "schedule", "builder", "slides"] as SermonWorkspaceView[]).map((item) => (
+	          {(["manager", "archive", "schedule", "builder", "slides"] as SermonWorkspaceView[]).map((item) => (
             <button
               key={`sermon-view-${item}`}
               className={`rounded-full px-4 py-2 text-sm font-semibold ${view === item ? "bg-[var(--ink)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`}
               onClick={() => onViewChange(item)}
               type="button"
             >
-              {item === "manager" ? "My lessons" : item === "schedule" ? "Teaching schedule" : item === "builder" ? "1. Prepare lesson" : "2. Slides & present"}
+              {item === "manager" ? "My lessons" : item === "archive" ? "Sermon / Lesson Archive" : item === "schedule" ? "Teaching schedule" : item === "builder" ? "1. Prepare lesson" : "2. Slides & present"}
             </button>
           ))}
           <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Study lesson passage</button>
         </div>
         {syncMessage && <p className="mt-3 text-sm font-semibold text-[var(--muted)]">{syncMessage}</p>}
       </section>
+
+      {(view === "archive" || view === "builder") && <details open={view === "archive" || !!draft.reusedFromEventId}>
+        <summary className="cursor-pointer py-3 font-semibold text-[var(--green)]">Archive and reuse tools</summary>
+        <TeachingArchive key={storageScope} scope={storageScope} userId={archiveUserId} supabase={archiveClient}
+          draft={draft} showLog onMetadataChange={onDraftChange} onReuse={onReuseArchived} onRecorded={onRecordedTeaching} />
+      </details>}
+      {draft.reusedFromEventId && <p className="rounded-xl border border-[var(--line)] bg-white p-4 text-sm">Revised working copy. Edit the Illustrations and Reviewed quotes fields to replace or add material. The prior version remains in the archive. Review slides after changing teaching content.</p>}
 
       <details><summary className="cursor-pointer py-2 text-sm font-semibold text-[var(--green)]">First lesson? Show the preparation guide</summary>
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -54003,7 +54062,7 @@ function SermonWorkspaceScreen({
       </section>
       </details>
 
-      {view === "manager" ? (
+      {view === "archive" ? null : view === "manager" ? (
         <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr]">
           <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3">

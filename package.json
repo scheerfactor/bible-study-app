@@ -103,7 +103,8 @@
     "test:sunday-school": "node scripts/test-sunday-school.mjs",
     "postbuild": "node scripts/build-offline-worker.mjs",
     "test:offline": "node scripts/test-offline-worker.mjs",
-    "test:release-browser": "node scripts/check-release-browser.mjs"
+    "test:release-browser": "node scripts/check-release-browser.mjs",
+    "test:teaching-archive": "node scripts/test-teaching-archive.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
